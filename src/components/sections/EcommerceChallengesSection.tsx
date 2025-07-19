@@ -80,7 +80,7 @@ const EcommerceChallengesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -118,7 +118,7 @@ const EcommerceChallengesSection: React.FC = () => {
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className={`${challenge.bgColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-opacity-20 group`}
+              className={`${challenge.bgColor} rounded-3xl p-8 shadow-lg ring-1 hover:ring-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group`}
             >
               <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 <challenge.icon className="w-8 h-8 text-white" />
@@ -165,26 +165,26 @@ const EcommerceChallengesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaChartLine className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+            <div className="text-center p-6 bg-white text-red-500 bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Revenue Loss</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 Unoptimized e-commerce sites lose 20-40% of potential revenue due to technical issues and poor user experience.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaUsers className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+            <div className="text-center p-6 bg-white text-red-500 bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Customer Churn</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 88% of online consumers are less likely to return to a site after a bad experience, leading to permanent customer loss.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaShieldAlt className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+            <div className="text-center p-6 bg-white text-red-500 bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaShieldAlt className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Brand Damage</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 Security breaches and poor performance damage brand reputation, requiring years and millions to rebuild trust.
               </p>
             </div>
@@ -198,7 +198,7 @@ const EcommerceChallengesSection: React.FC = () => {
         </div>
 
         {/* Solution Preview */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-12 text-white text-center">
+        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-4">Don't Let These Challenges Hold You Back</h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our comprehensive e-commerce testing solutions address every challenge mentioned above, 
@@ -209,7 +209,7 @@ const EcommerceChallengesSection: React.FC = () => {
             <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
               See Our Solutions
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
               Get Free Audit
             </button>
           </div>

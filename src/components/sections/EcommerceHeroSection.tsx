@@ -38,42 +38,42 @@ const EcommerceHeroSection: React.FC = () => {
 
       {/* Floating Icons */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 left-1/4 animate-float">
+        <div className="absolute top-32 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 2xl:left-1/2 animate-float">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaShoppingCart className="w-8 h-8 text-[theme(color.brand.blue)]" />
           </div>
         </div>
-        <div className="absolute top-48 right-1/4 animate-float delay-1000">
+        <div className="absolute top-56 md:top-46 xl:top-16 right-1/4 md:right-1/5 animate-float delay-1000">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaCreditCard className="w-8 h-8 text-green-500" />
           </div>
         </div>
-        <div className="absolute bottom-48 left-1/3 animate-float delay-2000">
+        <div className="absolute bottom-0 xl:bottom-80 left-2/4 md:left-1/4 lg:left-3/4 lg:bottom-96 animate-float delay-2000">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaMobile className="w-8 h-8 text-purple-500" />
+            <FaMobile className="w-8 h-8 text-[theme(color.brand.blue)]" />
           </div>
         </div>
-        <div className="absolute bottom-32 right-1/3 animate-float delay-3000">
+        <div className="absolute bottom-0 xl:bottom-80 lg:bottom-3/12 left-1/6 md:right-1/6 lg:left-1/2 animate-float delay-3000">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaShieldAlt className="w-8 h-8 text-red-500" />
           </div>
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 md:px-12 lg:px-24 pt-32 pb-20">
+      <div className="relative max-w-7xl mx-auto px-8 md:px-12 lg:px-20 pt-10  pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-3 border border-[theme(color.brand.blue)] border-opacity-20">
-              <FaShoppingCart className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span className="text-sm font-semibold text-[theme(color.brand.blue)]">E-Commerce Testing Solutions</span>
+            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
+              <FaShoppingCart color="white" className="w-4 h-4]" />
+              <span className="text-sm font-semibold text-white">E-Commerce Testing Solutions</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Maximize Your
-              <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
                 E-Commerce Success
               </span>
               <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">with Expert QA Testing</span>
@@ -107,8 +107,8 @@ const EcommerceHeroSection: React.FC = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+            <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
+              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 <FaRocket className="w-5 h-5" />
                 Start Free E-Commerce Audit
               </button>
@@ -120,8 +120,8 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* Trust Badges */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4">Trusted by leading e-commerce brands worldwide</p>
-              <div className="flex flex-wrap gap-3">
+              <p className="text-sm text-gray-500 mb-4 text-center">Trusted by leading e-commerce brands worldwide</p>
+              <div className="grid grid-cols-2 md:grid-cols-2 text-center gap-3 items-center">
                 {trustBadges.map((badge, index) => (
                   <span
                     key={index}
@@ -146,7 +146,7 @@ const EcommerceHeroSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-6">
                 {keyStats.map((stat, index) => (
                   <div key={index} className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
@@ -186,7 +186,7 @@ const EcommerceHeroSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA Strip */}
-        <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 text-white text-center">
+        <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white text-center">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Ready to Optimize Your E-Commerce Platform?</h3>
             <p className="text-blue-100 mb-6 text-lg">
@@ -196,7 +196,7 @@ const EcommerceHeroSection: React.FC = () => {
               <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
                 Get Free Testing Strategy
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
                 View Case Studies
               </button>
             </div>
