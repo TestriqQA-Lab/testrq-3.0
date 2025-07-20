@@ -59,14 +59,14 @@ const EcommerceCaseStudiesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaStar className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-medium text-[theme(color.brand.blue)]">Success Stories</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-blue to-sky-600 bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaStar className="w-4 h-4 text-white" />
+            <span className="text-sm font-medium text-white">Success Stories</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Real Results from
-            <span className="block text-[theme(color.brand.blue)]">Real E-Commerce Businesses</span>
+            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">Real E-Commerce Businesses</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -120,7 +120,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
                   </div>
 
                   <div className="mt-8 text-center">
-                    <button className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-90 transition-colors flex items-center gap-2 mx-auto">
+                    <button className="bg-gradient-to-l from-[theme(color.brand.blue)] via-sky-600 to-blue-400 text-white px-6 py-3 rounded-xl font-semibold hover:scale-95 transition-all duration-300 ease-in-out flex items-center gap-2 mx-auto">
                       Read Full Case Study
                       <FaArrowRight className="w-4 h-4" />
                     </button>
@@ -132,7 +132,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-12 text-white text-center">
+        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] via-sky-600 to-blue-500 rounded-3xl p-12 text-white text-center">
           <FaRocket className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Ready to Achieve Similar Results?</h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
@@ -140,10 +140,10 @@ const EcommerceCaseStudiesSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:bg-gray-100 hover:scale-95 transition-all duration-300 ease-in-out">
               Start Your Success Story
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-95 transition-all duration-300 ease-in-out border border-white border-opacity-30">
               View More Case Studies
             </button>
           </div>

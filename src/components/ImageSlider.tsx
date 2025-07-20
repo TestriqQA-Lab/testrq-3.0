@@ -61,7 +61,7 @@ const ImageSlider = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute top-3 left-3 w-full h-full ${
+            className={`absolute top-3 right-15 md:left-3 w-full h-full ${
               index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
             }`}
           >

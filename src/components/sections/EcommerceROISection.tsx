@@ -55,14 +55,14 @@ const EcommerceROISection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-green-100 rounded-full px-6 py-2 mb-6">
-            <FaChartLine className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-600">Return on Investment</span>
+          <div className="inline-flex items-center text-white gap-2 bg-gradient-to-r from-brand-blue to-sky-600 rounded-full px-6 py-2 mb-6">
+            <FaChartLine className="w-4 h-4" />
+            <span className="text-sm font-medium">Return on Investment</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Measurable ROI from
-            <span className="block text-green-600">E-Commerce Testing</span>
+            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">E-Commerce Testing</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -74,7 +74,7 @@ const EcommerceROISection: React.FC = () => {
         {/* ROI Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {roiMetrics.map((metric, index) => (
-            <div key={index} className="bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+            <div key={index} className="bg-gray-50 rounded-3xl ring-1 ring-brand-blue p-8 text-center hover:ring-3 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
               <div className={`w-16 h-16 bg-gradient-to-r ${metric.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                 <metric.icon className="w-8 h-8 text-white" />
               </div>
@@ -88,7 +88,7 @@ const EcommerceROISection: React.FC = () => {
         {/* ROI Calculator Example */}
         <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-12 mb-16 border border-gray-100">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">ROI Calculator Example</h3>
+            <h3 className="text-3xl font-bold bg-gradient-to-l from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent mb-4">ROI Calculator Example</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Based on a typical e-commerce business with $500K annual revenue
             </p>
@@ -96,7 +96,7 @@ const EcommerceROISection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {investmentBreakdown.map((item, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div key={index} className="bg-white rounded-2xl p-6 ring-1 ring-brand-blue text-center shadow-sm hover:shadow-md hover:scale-102 hover:ring-3 transition-all duration-200">
                 <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">{item.amount}</div>
                 <h4 className="font-semibold text-gray-900 mb-2">{item.category}</h4>
                 <div className="text-sm text-gray-600">{item.percentage}% of investment</div>
@@ -193,18 +193,18 @@ const EcommerceROISection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-12 text-white text-center">
+        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] via-sky-600 to-blue-500 rounded-3xl p-12 text-white text-center">
           <FaRocket className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Calculate Your Potential ROI</h3>
-          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
             Get a personalized ROI projection based on your current e-commerce metrics and business goals.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-95 transition-all shadow-lg">
               Get Free ROI Analysis
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-95 transition-all border border-white border-opacity-30">
               Schedule ROI Consultation
             </button>
           </div>

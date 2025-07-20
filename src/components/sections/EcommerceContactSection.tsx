@@ -50,9 +50,9 @@ const EcommerceContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 rounded-full px-6 py-2 mb-6">
-            <FaShoppingCart className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">Get Started Today</span>
+          <div className="inline-flex items-center gap-2 text-brand-blue bg-white bg-opacity-20 rounded-full px-6 py-2 mb-6">
+            <FaShoppingCart className="w-4 h-4" />
+            <span className="text-sm font-medium">Get Started Today</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -78,9 +78,9 @@ const EcommerceContactSection: React.FC = () => {
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-white mb-2">{method.title}</h4>
-                    <p className="text-blue-100 text-sm mb-4 leading-relaxed">{method.description}</p>
-                    <button className="text-white font-semibold hover:underline flex items-center gap-2 group">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">{method.title}</h4>
+                    <p className="text-sky-600 text-sm mb-4 leading-relaxed">{method.description}</p>
+                    <button className="text-sky-600 font-semibold hover:underline flex items-center gap-2 group">
                       {method.action}
                       <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                     </button>
@@ -152,7 +152,7 @@ const EcommerceContactSection: React.FC = () => {
                 ></textarea>
                 <button
                   type="submit"
-                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-xl font-semibold hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-xl font-semibold hover:bg-opacity-90 hover:scale-97 transition-all flex items-center justify-center gap-2"
                 >
                   <FaRocket className="w-4 h-4" />
                   Get Free E-Commerce Assessment
@@ -168,16 +168,16 @@ const EcommerceContactSection: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
+          <div className="bg-gradient-to-br from-[theme(color.brand.blue)] via-sky-600 to-blue-500 bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-white mb-4">Join 500+ Successful E-Commerce Businesses</h3>
             <p className="text-blue-100 mb-6">
               Don't let technical issues hold back your e-commerce success. Start optimizing today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:-translate-x-2 transition-all shadow-lg">
                 Start Free Assessment
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:translate-x-2 transition-all border border-white border-opacity-30">
                 View Success Stories
               </button>
             </div>
