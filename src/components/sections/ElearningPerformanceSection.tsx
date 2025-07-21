@@ -116,18 +116,18 @@ const ElearningPerformanceSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="py-20 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gray-50">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-green-100 rounded-full px-6 py-2 mb-6">
-            <FaRocket className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-600">Performance Optimization</span>
+          <div className="inline-flex items-center gap-2 text-brand-blue bg-sky-100 rounded-full px-6 py-2 mb-6">
+            <FaRocket className="w-4 h-4" />
+            <span className="text-sm font-medium">Performance Optimization</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Lightning-Fast
-            <span className="block text-green-600">E-Learning Performance</span>
+            <span className="block text-brand-blue">E-Learning Performance</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -165,7 +165,7 @@ const ElearningPerformanceSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {performanceMetrics.map((metric, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300">
+              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:ring-3 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-r ${metric.color} rounded-2xl flex items-center justify-center shadow-lg`}>
                     <metric.icon className="w-8 h-8 text-white" />
@@ -204,7 +204,7 @@ const ElearningPerformanceSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {testingApproach.map((phase, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <phase.icon className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-3">{phase.phase}</h4>
@@ -217,7 +217,7 @@ const ElearningPerformanceSection: React.FC = () => {
         {/* Performance Scenarios */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Peak Usage Scenarios */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-3xl ring-1 ring-brand-blue hover:ring-3 transition-all duration-300 ease-in-out p-8 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <FaUsers className="w-8 h-8 text-purple-600" />
               <h3 className="text-2xl font-bold text-gray-900">Peak Usage Testing</h3>
@@ -240,7 +240,7 @@ const ElearningPerformanceSection: React.FC = () => {
           </div>
 
           {/* Content Delivery Testing */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:ring-3 transition-all duration-300 ease-in-out">
             <div className="flex items-center gap-3 mb-6">
               <FaGlobe className="w-8 h-8 text-green-600" />
               <h3 className="text-2xl font-bold text-gray-900">Content Delivery Testing</h3>
@@ -291,24 +291,24 @@ const ElearningPerformanceSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-12 text-white text-center">
+        <div className="bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
           <FaRocket className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Supercharge Your E-Learning Performance</h3>
-          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Don&apos;t let slow performance hinder learning outcomes. Let us optimize your platform 
             for speed, scalability, and reliability.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+          <div className="flex flex-col sm:flex-row gap-4 text-brand-blue justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Get Performance Audit
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Schedule Consultation
             </button>
           </div>
 
-          <div className="mt-8 text-green-100 text-sm">
+          <div className="mt-8 text-sm">
             <p>✓ Comprehensive performance testing • ✓ Optimization recommendations • ✓ Scalability planning</p>
           </div>
         </div>

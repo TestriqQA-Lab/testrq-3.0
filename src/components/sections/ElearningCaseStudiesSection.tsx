@@ -81,14 +81,14 @@ const ElearningCaseStudiesSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-indigo-100 rounded-full px-6 py-2 mb-6">
-            <FaStar className="w-4 h-4 text-indigo-600" />
-            <span className="text-sm font-medium text-indigo-600">Success Stories</span>
+          <div className="inline-flex items-center text-brand-blue gap-2 bg-sky-100 rounded-full px-6 py-2 mb-6">
+            <FaStar className="w-4 h-4" />
+            <span className="text-sm font-medium">Success Stories</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Transforming E-Learning
-            <span className="block text-indigo-600">Through Quality Testing</span>
+            <span className="block text-brand-blue">Through Quality Testing</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -107,7 +107,7 @@ const ElearningCaseStudiesSection: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {successMetrics.map((metric, index) => (
               <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                <div className="text-3xl font-bold text-indigo-600 mb-2">{metric.value}</div>
+                <div className="text-3xl font-bold text-brand-blue mb-2">{metric.value}</div>
                 <h4 className="font-semibold text-gray-900 mb-2">{metric.label}</h4>
                 <p className="text-gray-600 text-sm">{metric.description}</p>
               </div>
@@ -178,11 +178,11 @@ const ElearningCaseStudiesSection: React.FC = () => {
                   </div>
 
                   <div className="space-y-4">
-                    <button className={`w-full bg-${study.accentColor} text-white py-3 px-6 rounded-xl font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2`}>
+                    <button className={`w-full bg-${study.accentColor} text-white py-3 px-6 rounded-xl font-semibold hover:opacity-90 hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2`}>
                       Read Full Case Study
                       <FaArrowRight className="w-4 h-4" />
                     </button>
-                    <button className="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-xl font-semibold hover:border-gray-400 transition-colors">
+                    <button className="w-full border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-xl font-semibold hover:border-gray-400 hover:scale-98 transition-all duration-200 ease-in-out">
                       Download PDF Report
                     </button>
                   </div>
@@ -229,19 +229,19 @@ const ElearningCaseStudiesSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-3xl p-12 text-white text-center">
-          <FaGraduationCap className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
+        <div className="mt-16 bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
+          <FaGraduationCap className="w-16 h-16 mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your E-Learning Platform?</h3>
-          <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Join these successful educational institutions and create exceptional learning experiences 
             that drive real results for your students and organization.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+          <div className="flex flex-col text-brand-blue sm:flex-row gap-4 justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Start Your Success Story
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               View More Case Studies
             </button>
           </div>

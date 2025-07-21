@@ -41,7 +41,7 @@ const ElearningHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative w-full py-16 mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -51,42 +51,42 @@ const ElearningHeroSection: React.FC = () => {
 
       {/* Floating Learning Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 left-1/4 animate-float">
+        <div className="absolute md:top-48 md:right-1/6 lg:top-24 lg:left-1/3 animate-float">
           <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaGraduationCap className="w-8 h-8 text-indigo-600" />
+            <FaGraduationCap className="w-8 h-8 text-brand-blue" />
           </div>
         </div>
-        <div className="absolute top-48 right-1/4 animate-float delay-1000">
+        <div className="absolute md:top-28 md:right-1/2 lg:top-48 lg:right-1/2 animate-float delay-1000">
           <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaBook className="w-8 h-8 text-blue-500" />
+            <FaBook className="w-8 h-8 text-brand-blue" />
           </div>
         </div>
-        <div className="absolute bottom-48 left-1/3 animate-float delay-2000">
+        <div className="absolute md:top-5/12 md:left-2/3 lg:bottom-96 lg:left-1/8 animate-float delay-2000">
           <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaLaptop className="w-8 h-8 text-green-500" />
+            <FaLaptop className="w-8 h-8 text-brand-blue" />
           </div>
         </div>
-        <div className="absolute bottom-32 right-1/3 animate-float delay-3000">
+        <div className="absolute md:top-5/12 md:left-2/12 lg:bottom-96 lg:right-3/5 animate-float delay-3000">
           <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaUsers className="w-8 h-8 text-purple-500" />
+            <FaUsers className="w-8 h-8 text-brand-blue" />
           </div>
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 md:px-12 lg:px-24 pt-32 pb-20">
+      <div className="flex flex-col text-center md:text-start relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-8">
+          <div className="space-y-10 mb-48">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-indigo-100 rounded-full px-6 py-3 border border-indigo-200">
-              <FaGraduationCap className="w-4 h-4 text-indigo-600" />
-              <span className="text-sm font-semibold text-indigo-600">E-Learning Testing Solutions</span>
+            <div className="inline-flex items-center text-brand-blue gap-2 bg-indigo-100 rounded-full px-3 py-2 border border-indigo-200">
+              <FaGraduationCap className="w-4 h-4" />
+              <span className="text-sm font-semibold">E-Learning Testing Solutions</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
               Empower Learning
-              <span className="block bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="block text-brand-blue">
                 Through Quality
               </span>
               <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">E-Learning Testing</span>
@@ -131,11 +131,11 @@ const ElearningHeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 <FaRocket className="w-5 h-5" />
                 Start Free LMS Audit
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300 flex items-center justify-center gap-2">
+              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-sky-600 hover:text-sky-600 transition-all duration-200 flex items-center justify-center gap-2">
                 <FaUsers className="w-5 h-5" />
                 Schedule Demo
               </button>
@@ -144,7 +144,7 @@ const ElearningHeroSection: React.FC = () => {
             {/* Compliance Badges */}
             <div className="pt-8">
               <p className="text-sm text-gray-500 mb-4">Trusted by leading educational institutions worldwide</p>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-3 text-center gap-3 py-5">
                 {complianceStandards.map((standard, index) => (
                   <span
                     key={index}
@@ -169,7 +169,7 @@ const ElearningHeroSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-6">
                 {keyStats.map((stat, index) => (
                   <div key={index} className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                    <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
@@ -233,17 +233,17 @@ const ElearningHeroSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA Strip */}
-        <div className="mt-20 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-3xl p-8 text-white text-center">
+        <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white text-center">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Ready to Transform Your E-Learning Platform?</h3>
             <p className="text-indigo-100 mb-6 text-lg">
               Join 200+ educational institutions that trust Testriq for comprehensive e-learning QA solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-brand-blue px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-97 transition-all duration-300 ease-in-out">
                 Get Free Platform Assessment
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 text-brand-blue px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-97 transition-all duration-300 ease-in-out border border-white border-opacity-30">
                 View Success Stories
               </button>
             </div>

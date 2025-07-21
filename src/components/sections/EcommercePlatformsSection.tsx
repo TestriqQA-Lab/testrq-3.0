@@ -16,8 +16,8 @@ const EcommercePlatformsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="py-16 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-white">
+      <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             E-Commerce <span className="bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">Platform Expertise</span>

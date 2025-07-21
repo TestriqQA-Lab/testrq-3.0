@@ -64,14 +64,14 @@ const ElearningFAQSection: React.FC = () => {
       <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-indigo-100 rounded-full px-6 py-2 mb-6">
-            <FaQuestionCircle className="w-4 h-4 text-indigo-600" />
-            <span className="text-sm font-medium text-indigo-600">Frequently Asked Questions</span>
+          <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue rounded-full px-6 py-2 mb-6">
+            <FaQuestionCircle className="w-4 h-4" />
+            <span className="text-sm font-medium">Frequently Asked Questions</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             E-Learning Testing
-            <span className="block text-indigo-600">Questions Answered</span>
+            <span className="block text-brand-blue">Questions Answered</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -118,7 +118,7 @@ const ElearningFAQSection: React.FC = () => {
 
         {/* Additional Help Section */}
         <div className="bg-white rounded-3xl p-12 shadow-lg border border-gray-100 text-center">
-          <FaGraduationCap className="w-16 h-16 text-indigo-600 mx-auto mb-6 opacity-80" />
+          <FaGraduationCap className="w-16 h-16 text-brand-blue mx-auto mb-6 opacity-80" />
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Still Have Questions About E-Learning Testing?</h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Our e-learning testing specialists are here to help. Get personalized answers to your specific 
@@ -126,10 +126,10 @@ const ElearningFAQSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-indigo-700 transition-colors shadow-lg">
+            <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg">
               Schedule Free Consultation
             </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-indigo-600 hover:text-indigo-600 transition-all duration-300">
+            <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300">
               Contact Our E-Learning Experts
             </button>
           </div>
@@ -142,7 +142,7 @@ const ElearningFAQSection: React.FC = () => {
         {/* Expert Tip */}
         <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <FaRocket className="w-6 h-6 text-white" />
             </div>
             <div>

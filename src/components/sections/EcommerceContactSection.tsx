@@ -46,8 +46,8 @@ const EcommerceContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[theme(color.brand.blue)] to-purple-600">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="py-16 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gradient-to-br from-[theme(color.brand.blue)] to-purple-600">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-brand-blue bg-white bg-opacity-20 rounded-full px-6 py-2 mb-6">
