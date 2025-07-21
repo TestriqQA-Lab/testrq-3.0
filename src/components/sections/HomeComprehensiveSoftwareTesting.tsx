@@ -14,7 +14,7 @@ const HomeComprehensiveSoftwareTesting = () => {
 
     const heading = {
         title: 'Comprehensive Software Testing Services',
-        info: 'Explore our specialized software testing services and comprehensive QA solutions, meticulously designed to meet your unique quality assurance needs with responsive support and proven expertise from our certified QA experts, ensuring reliable QA services for your mobile application testing, web application testing, and more.'
+        info: 'Explore specialized software testing services and end-to-end QA solutions tailored to your needs. Our ISTQB Certified Experts ensure reliable, scalable QA for mobile, web, performance, automation, and security testing.'
     }
 
     // Split the title into parts to style "Software Testing" in blue

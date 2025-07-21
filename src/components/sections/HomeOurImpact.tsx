@@ -15,7 +15,7 @@ const renderTitle = () => {
 const impactSection = {
   title: "Our Impact: Real-World Successes",
   subtitle:
-    "Discover how Testriq has helped clients achieve their software quality goals and overcome complex QA challenges.",
+    "Testriq’s enterprise QA solutions deliver real-world success—accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
   caseStudies: [
     {
       title: "E-commerce Performance Boost",

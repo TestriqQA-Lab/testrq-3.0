@@ -45,8 +45,8 @@ const HomeProcesses = () => {
         <h2 className="text-3xl sm:text-4xl font-bold">
           Simple. <span className="text-[theme(color.brand.blue)]">Effective.</span> Proven.
         </h2>
-        <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-          Our streamlined 4-step process ensures quality delivery every time.
+        <p className="text-gray-500 mt-4 max-w-4xl mx-auto">
+          Our 4-step QA testing process ensures consistent software quality through strategic planning, precise execution, detailed reporting, and ongoing support across web, mobile, and API testing environments.
         </p>
       </div>
 
