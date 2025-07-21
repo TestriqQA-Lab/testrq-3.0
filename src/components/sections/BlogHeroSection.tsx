@@ -5,7 +5,7 @@ import { FaSearch, FaRss, FaBell } from "react-icons/fa";
 
 const BlogHeroSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blur Circles */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 bg-opacity-30 rounded-full blur-2xl" />
