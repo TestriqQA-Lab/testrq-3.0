@@ -10,22 +10,22 @@ const IoTAnyQuestions: React.FC = () => {
       title: "IoT Expert Consultation",
       description: "Speak directly with our IoT testing specialists",
       action: "Call Now",
-      contact: "+1 (555) 123-4567"
+      contact: "+1 (555) 123-4567",
     },
     {
       icon: <FaEnvelope className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "IoT Testing Support",
       description: "Get detailed responses about IoT testing",
       action: "Send Email",
-      contact: "iot-testing@testriq.com"
+      contact: "iot-testing@testriq.com",
     },
     {
       icon: <FaComments className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Live IoT Chat",
       description: "Instant support from our IoT experts",
       action: "Start Chat",
-      contact: "Available 24/7"
-    }
+      contact: "Available 24/7",
+    },
   ];
 
   return (
@@ -33,12 +33,14 @@ const IoTAnyQuestions: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Have Questions About IoT Testing?
+            Have{" "}
+            <span className="text-[theme(color.brand.blue)]">Questions</span>{" "}
+            About IoT Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our IoT testing experts are here to help. Get in touch with us to discuss 
-            your specific IoT requirements and learn how we can ensure your connected 
-            devices are reliable, secure, and performant.
+            Our IoT testing experts are here to help. Get in touch with us to
+            discuss your specific IoT requirements and learn how we can ensure
+            your connected devices are reliable, secure, and performant.
           </p>
         </div>
 
@@ -56,9 +58,7 @@ const IoTAnyQuestions: React.FC = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {method.title}
               </h3>
-              <p className="text-gray-700 mb-4">
-                {method.description}
-              </p>
+              <p className="text-gray-700 mb-4">{method.description}</p>
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
@@ -75,8 +75,8 @@ const IoTAnyQuestions: React.FC = () => {
             Ready to Test Your IoT Devices?
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Join 100+ companies who trust our IoT testing expertise. Schedule a 
-            free consultation to discuss your IoT testing needs and get a 
+            Join 100+ companies who trust our IoT testing expertise. Schedule a
+            free consultation to discuss your IoT testing needs and get a
             customized solution for your connected device project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -95,4 +95,3 @@ const IoTAnyQuestions: React.FC = () => {
 };
 
 export default IoTAnyQuestions;
-

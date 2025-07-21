@@ -1,7 +1,7 @@
 "use client";
-
+import { FaWifi } from "react-icons/fa";
 import React from "react";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaCertificate } from "react-icons/fa";
 
 const IoTTestingHeroSection: React.FC = () => {
   return (
@@ -22,9 +22,9 @@ const IoTTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your IoT devices deliver seamless connectivity, optimal 
-            performance, and robust security with our comprehensive testing 
-            services. From smart homes to industrial IoT - we validate every 
+            Ensure your IoT devices deliver seamless connectivity, optimal
+            performance, and robust security with our comprehensive testing
+            services. From smart homes to industrial IoT - we validate every
             aspect of your connected ecosystem.
           </p>
 
@@ -64,13 +64,18 @@ const IoTTestingHeroSection: React.FC = () => {
             {/* Central Hub/Gateway */}
             <div className="relative flex items-center justify-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+                <div className="w-12 h-12 text-4xl flex items-center justify-center text-white rounded-full animate-pulse">
+                  <FaWifi />
+                </div>
               </div>
-              
+
               {/* Connection Waves */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-28 h-28 border-2 border-teal-300 rounded-full animate-ping opacity-30"></div>
-                <div className="absolute w-36 h-36 border-2 border-blue-300 rounded-full animate-ping opacity-20" style={{animationDelay: '0.5s'}}></div>
+                <div
+                  className="absolute w-36 h-36 border-2 border-blue-300 rounded-full animate-ping opacity-20"
+                  style={{ animationDelay: "0.5s" }}
+                ></div>
               </div>
             </div>
 
@@ -79,49 +84,64 @@ const IoTTestingHeroSection: React.FC = () => {
               {/* Smart Home Devices */}
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-3 h-3 text-4xl flex items-center justify-center text-white rounded-full animate-pulse">
+                    {" "}
+                    <FaCertificate />
+                  </div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Smart Light</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Smart Light
+                </div>
                 <div className="text-xs text-green-600">Online</div>
               </div>
-              
+
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-blue-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Thermostat</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Thermostat
+                </div>
                 <div className="text-xs text-blue-600">23°C</div>
               </div>
-              
+
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-purple-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Security Cam</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Security Cam
+                </div>
                 <div className="text-xs text-purple-600">Recording</div>
               </div>
-              
+
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-orange-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Sensor</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Sensor
+                </div>
                 <div className="text-xs text-orange-600">Active</div>
               </div>
-              
+
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-red-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Smart Lock</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Smart Lock
+                </div>
                 <div className="text-xs text-red-600">Secured</div>
               </div>
-              
+
               <div className="bg-white p-3 rounded-lg shadow-md text-center">
                 <div className="w-8 h-8 bg-indigo-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
-                <div className="text-xs font-semibold text-gray-700">Speaker</div>
+                <div className="text-xs font-semibold text-gray-700">
+                  Speaker
+                </div>
                 <div className="text-xs text-indigo-600">Playing</div>
               </div>
             </div>
@@ -129,8 +149,12 @@ const IoTTestingHeroSection: React.FC = () => {
             {/* Network Status */}
             <div className="bg-white p-4 rounded-lg shadow-md">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-gray-700">Network Health</span>
-                <span className="text-xs text-green-600 font-semibold">Excellent</span>
+                <span className="text-sm font-semibold text-gray-700">
+                  Network Health
+                </span>
+                <span className="text-xs text-green-600 font-semibold">
+                  Excellent
+                </span>
               </div>
               <div className="grid grid-cols-3 gap-2 text-center">
                 <div>
@@ -154,12 +178,12 @@ const IoTTestingHeroSection: React.FC = () => {
             <div className="text-xs font-semibold text-gray-700">WiFi</div>
             <div className="text-lg font-bold text-green-600">📶</div>
           </div>
-          
+
           <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">Bluetooth</div>
             <div className="text-lg font-bold text-blue-600">🔗</div>
           </div>
-          
+
           <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">Zigbee</div>
             <div className="text-lg font-bold text-purple-600">⚡</div>
@@ -171,4 +195,3 @@ const IoTTestingHeroSection: React.FC = () => {
 };
 
 export default IoTTestingHeroSection;
-

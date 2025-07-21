@@ -10,13 +10,28 @@ const IoTToolsFramework: React.FC = () => {
       category: "IoT Testing Platforms",
       icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "AWS IoT Device Tester", description: "Automated testing for IoT devices" },
-        { name: "Azure IoT Hub", description: "Cloud-based IoT testing platform" },
-        { name: "Google Cloud IoT Core", description: "Secure device connection and management" },
+        {
+          name: "AWS IoT Device Tester",
+          description: "Automated testing for IoT devices",
+        },
+        {
+          name: "Azure IoT Hub",
+          description: "Cloud-based IoT testing platform",
+        },
+        {
+          name: "Google Cloud IoT Core",
+          description: "Secure device connection and management",
+        },
         { name: "ThingWorx", description: "Industrial IoT platform testing" },
-        { name: "IBM Watson IoT", description: "AI-powered IoT testing solutions" },
-        { name: "Particle Console", description: "IoT device fleet management" }
-      ]
+        {
+          name: "IBM Watson IoT",
+          description: "AI-powered IoT testing solutions",
+        },
+        {
+          name: "Particle Console",
+          description: "IoT device fleet management",
+        },
+      ],
     },
     {
       category: "Network & Protocol Testing",
@@ -27,8 +42,8 @@ const IoTToolsFramework: React.FC = () => {
         { name: "CoAP Client", description: "CoAP protocol testing" },
         { name: "Bluetooth LE Explorer", description: "BLE device testing" },
         { name: "WiFi Analyzer", description: "Wireless network testing" },
-        { name: "Zigbee Test Tool", description: "Zigbee protocol validation" }
-      ]
+        { name: "Zigbee Test Tool", description: "Zigbee protocol validation" },
+      ],
     },
     {
       category: "Performance & Load Testing",
@@ -39,32 +54,38 @@ const IoTToolsFramework: React.FC = () => {
         { name: "Artillery", description: "Modern load testing toolkit" },
         { name: "K6", description: "Developer-centric load testing" },
         { name: "LoadRunner", description: "Enterprise load testing" },
-        { name: "BlazeMeter", description: "Cloud-based performance testing" }
-      ]
+        { name: "BlazeMeter", description: "Cloud-based performance testing" },
+      ],
     },
     {
       category: "Security Testing Tools",
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Nmap", description: "Network discovery and security auditing" },
+        {
+          name: "Nmap",
+          description: "Network discovery and security auditing",
+        },
         { name: "Metasploit", description: "Penetration testing framework" },
         { name: "OWASP ZAP", description: "Web application security scanner" },
         { name: "Burp Suite", description: "Web vulnerability scanner" },
         { name: "Nessus", description: "Vulnerability assessment" },
-        { name: "OpenVAS", description: "Open-source vulnerability scanner" }
-      ]
+        { name: "OpenVAS", description: "Open-source vulnerability scanner" },
+      ],
     },
     {
       category: "Automation Frameworks",
       icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Robot Framework", description: "Generic automation framework" },
+        {
+          name: "Robot Framework",
+          description: "Generic automation framework",
+        },
         { name: "Selenium", description: "Web-based IoT interface testing" },
         { name: "Appium", description: "Mobile IoT app testing" },
         { name: "TestComplete", description: "Automated testing platform" },
         { name: "Cucumber", description: "BDD testing framework" },
-        { name: "PyTest", description: "Python testing framework" }
-      ]
+        { name: "PyTest", description: "Python testing framework" },
+      ],
     },
     {
       category: "Cloud & Edge Testing",
@@ -75,9 +96,9 @@ const IoTToolsFramework: React.FC = () => {
         { name: "Terraform", description: "Infrastructure as code testing" },
         { name: "Ansible", description: "Configuration management testing" },
         { name: "Prometheus", description: "Monitoring and alerting" },
-        { name: "Grafana", description: "Metrics visualization" }
-      ]
-    }
+        { name: "Grafana", description: "Metrics visualization" },
+      ],
+    },
   ];
 
   return (
@@ -85,12 +106,15 @@ const IoTToolsFramework: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            IoT Testing Tools & Frameworks
+            IoT Testing{" "}
+            <span className="text-[theme(color.brand.blue)]">
+              Tools & Frameworks
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage cutting-edge tools and frameworks specifically designed for 
-            IoT testing to ensure comprehensive validation of your connected devices 
-            and systems across all layers of the IoT stack.
+            We leverage cutting-edge tools and frameworks specifically designed
+            for IoT testing to ensure comprehensive validation of your connected
+            devices and systems across all layers of the IoT stack.
           </p>
         </div>
 
@@ -106,7 +130,7 @@ const IoTToolsFramework: React.FC = () => {
                   {category.category}
                 </h3>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {category.tools.map((tool, toolIndex) => (
                   <div
@@ -116,9 +140,7 @@ const IoTToolsFramework: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 mb-2">
                       {tool.name}
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      {tool.description}
-                    </p>
+                    <p className="text-gray-600 text-sm">{tool.description}</p>
                   </div>
                 ))}
               </div>
@@ -131,9 +153,9 @@ const IoTToolsFramework: React.FC = () => {
             Custom IoT Testing Solutions
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
-            We can adapt our testing approach to work with your specific IoT protocols, 
-            devices, and infrastructure requirements, ensuring comprehensive coverage 
-            for your unique IoT ecosystem.
+            We can adapt our testing approach to work with your specific IoT
+            protocols, devices, and infrastructure requirements, ensuring
+            comprehensive coverage for your unique IoT ecosystem.
           </p>
           <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
             Discuss Your IoT Testing Needs
@@ -145,4 +167,3 @@ const IoTToolsFramework: React.FC = () => {
 };
 
 export default IoTToolsFramework;
-

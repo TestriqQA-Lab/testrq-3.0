@@ -1,7 +1,14 @@
 "use client";
 
 import React from "react";
-import { FaWifi, FaShieldAlt, FaBatteryFull, FaNetworkWired, FaCloud, FaMobile } from "react-icons/fa";
+import {
+  FaWifi,
+  FaShieldAlt,
+  FaBatteryFull,
+  FaNetworkWired,
+  FaCloud,
+  FaMobile,
+} from "react-icons/fa";
 import { MdDevices, MdSensors, MdSpeed } from "react-icons/md";
 
 const IoTComprehensiveSection: React.FC = () => {
@@ -9,33 +16,41 @@ const IoTComprehensiveSection: React.FC = () => {
     {
       icon: <FaWifi className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Connectivity Testing",
-      description: "Comprehensive testing of wireless protocols including WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular connectivity for reliable device communication."
+      description:
+        "Comprehensive testing of wireless protocols including WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular connectivity for reliable device communication.",
     },
     {
       icon: <MdSensors className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Sensor Validation",
-      description: "Accurate testing of various sensors including temperature, humidity, motion, light, and pressure sensors to ensure precise data collection."
+      description:
+        "Accurate testing of various sensors including temperature, humidity, motion, light, and pressure sensors to ensure precise data collection.",
     },
     {
-      icon: <FaBatteryFull className="w-8 h-8 text-[theme(color.brand.blue)]" />,
+      icon: (
+        <FaBatteryFull className="w-8 h-8 text-[theme(color.brand.blue)]" />
+      ),
       title: "Power Management Testing",
-      description: "Battery life optimization, power consumption analysis, and energy efficiency testing to maximize device operational time."
+      description:
+        "Battery life optimization, power consumption analysis, and energy efficiency testing to maximize device operational time.",
     },
     {
       icon: <FaShieldAlt className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "IoT Security Testing",
-      description: "Comprehensive security assessment including device authentication, data encryption, firmware security, and vulnerability testing."
+      description:
+        "Comprehensive security assessment including device authentication, data encryption, firmware security, and vulnerability testing.",
     },
     {
       icon: <MdDevices className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Interoperability Testing",
-      description: "Cross-platform compatibility testing to ensure seamless integration with different IoT ecosystems and third-party devices."
+      description:
+        "Cross-platform compatibility testing to ensure seamless integration with different IoT ecosystems and third-party devices.",
     },
     {
       icon: <FaCloud className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Cloud Integration Testing",
-      description: "End-to-end testing of cloud connectivity, data synchronization, and remote device management capabilities."
-    }
+      description:
+        "End-to-end testing of cloud connectivity, data synchronization, and remote device management capabilities.",
+    },
   ];
 
   return (
@@ -43,12 +58,15 @@ const IoTComprehensiveSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive IoT Device Testing Services
+            <span className="text-[theme(color.brand.blue)]">
+              Comprehensive
+            </span>{" "}
+            IoT Device Testing Services
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our expert team provides end-to-end IoT testing solutions to ensure your 
-            connected devices perform reliably, communicate seamlessly, and maintain 
-            the highest security standards in real-world environments.
+            Our expert team provides end-to-end IoT testing solutions to ensure
+            your connected devices perform reliably, communicate seamlessly, and
+            maintain the highest security standards in real-world environments.
           </p>
         </div>
 
@@ -82,4 +100,3 @@ const IoTComprehensiveSection: React.FC = () => {
 };
 
 export default IoTComprehensiveSection;
-
