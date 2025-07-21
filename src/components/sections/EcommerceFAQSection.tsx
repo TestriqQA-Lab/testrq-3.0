@@ -6,7 +6,6 @@ import {
   FaChevronDown, 
   FaChevronUp,
   FaShoppingCart,
-  FaRocket
 } from "react-icons/fa";
 
 const EcommerceFAQSection: React.FC = () => {

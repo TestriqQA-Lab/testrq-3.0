@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaGraduationCap, FaCheckCircle } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa";
 
 const ElearningPlatformsSection: React.FC = () => {
   const platforms = [

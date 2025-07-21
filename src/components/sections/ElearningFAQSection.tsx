@@ -149,7 +149,7 @@ const ElearningFAQSection: React.FC = () => {
               <h4 className="font-bold text-gray-900 mb-2">Expert Tip: Start Testing Early</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
                 The best time to start e-learning platform testing is during the development phase, not after launch. 
-                Early testing identifies issues when they're less expensive to fix and ensures a smooth learning experience 
+                Early testing identifies issues when they&apos;re less expensive to fix and ensures a smooth learning experience 
                 from day one. Contact us to discuss testing strategies for your development timeline.
               </p>
             </div>

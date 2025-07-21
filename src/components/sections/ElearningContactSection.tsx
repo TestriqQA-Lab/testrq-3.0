@@ -235,7 +235,7 @@ const ElearningContactSection: React.FC = () => {
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
             <h3 className="text-2xl font-bold text-white mb-4">Join 250+ Educational Institutions</h3>
             <p className="text-indigo-100 mb-6">
-              Don't let technical issues hinder learning outcomes. Start optimizing your e-learning platform today.
+              Don&apos;t let technical issues hinder learning outcomes. Start optimizing your e-learning platform today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">

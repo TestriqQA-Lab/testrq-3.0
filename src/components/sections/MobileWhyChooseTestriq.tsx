@@ -182,8 +182,8 @@ const MobileWhyChooseTestriq: React.FC = () => {
                 {/* Mobile Testimonial */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-gray-700 italic mb-2">
-                    "Testriq's mobile testing helped us achieve a 5-star rating on both app stores. 
-                    Their thorough approach caught issues we never would have found."
+                    &quot;Testriq&apos;s mobile testing helped us achieve a 5-star rating on both app stores. 
+                    Their thorough approach caught issues we never would have found.&quote;
                   </p>
                   <div className="text-xs text-gray-600">
                     - Mobile App Developer, Tech Startup

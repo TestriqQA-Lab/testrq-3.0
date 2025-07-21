@@ -169,10 +169,10 @@ const MobileComprehensive: React.FC = () => {
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Ensure Your Mobile App's Quality?
+              Ready to Ensure Your Mobile App&apos;s Quality?
             </h3>
             <p className="text-gray-600 mb-6">
-              Get a comprehensive testing strategy tailored to your mobile application's specific needs and target audience.
+              Get a comprehensive testing strategy tailored to your mobile application&apos;s specific needs and target audience.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">

@@ -20,7 +20,7 @@ const MobileAnyQuestions: React.FC = () => {
             
             <p className="text-lg mb-8 leading-relaxed">
               Our mobile testing experts are ready to help you understand how our comprehensive 
-              testing services can ensure your app's success on both iOS and Android platforms. 
+              testing services can ensure your app&apos;s success on both iOS and Android platforms. 
               Get personalized answers to your specific mobile app requirements.
             </p>
 

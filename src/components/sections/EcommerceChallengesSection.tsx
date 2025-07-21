@@ -199,7 +199,7 @@ const EcommerceChallengesSection: React.FC = () => {
 
         {/* Solution Preview */}
         <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">Don't Let These Challenges Hold You Back</h3>
+          <h3 className="text-3xl font-bold mb-4">Don&apos;t Let These Challenges Hold You Back</h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Our comprehensive e-commerce testing solutions address every challenge mentioned above, 
             helping you maximize revenue, improve customer satisfaction, and stay ahead of the competition.

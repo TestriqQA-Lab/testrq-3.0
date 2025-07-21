@@ -5,7 +5,7 @@ import Image from 'next/image';
 import image1 from '../../public/launchfastqa-1.svg';
 import image2 from '../../public/Group-computers.svg';
 import image3 from '../../public/Robot-AI.svg';
-import Link from 'next/link';
+
 
 const images = [
   { src: image1, alt: 'Launch Fast QA', text: 'Text 1' },
@@ -21,6 +21,7 @@ const ImageSlider = () => {
     const interval = setInterval(() => {
       setCurrentIdx((prevIndex) => (prevIndex + 1) % images.length);
     }, 2500); // 3.5 seconds for a dynamic yet comfortable pace
+
 
     return () => clearInterval(interval);
   }, []);
