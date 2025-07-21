@@ -121,14 +121,14 @@ const ElearningROISection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-green-100 rounded-full px-6 py-2 mb-6">
-            <FaChartLine className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-600">Return on Investment</span>
+          <div className="inline-flex items-center gap-2 text-brand-blue bg-sky-100 rounded-full px-6 py-2 mb-6">
+            <FaChartLine className="w-4 h-4" />
+            <span className="text-sm font-medium">Return on Investment</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Measurable ROI from
-            <span className="block text-green-600">E-Learning Optimization</span>
+            <span className="block text-brand-blue">E-Learning Optimization</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -140,7 +140,7 @@ const ElearningROISection: React.FC = () => {
         {/* ROI Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {roiMetrics.map((metric, index) => (
-            <div key={index} className="bg-gray-50 rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+            <div key={index} className="bg-gray-50 rounded-3xl p-8 text-center ring-1 ring-brand-blue  hover:ring-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
               <div className={`w-16 h-16 bg-gradient-to-r ${metric.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                 <metric.icon className="w-8 h-8 text-white" />
               </div>
@@ -154,12 +154,12 @@ const ElearningROISection: React.FC = () => {
         {/* Business Impact by Sector */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {businessImpact.map((sector, index) => (
-            <div key={index} className="bg-gray-50 rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div key={index} className="bg-gray-50 ring-1 ring-gray-300 rounded-3xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{sector.category}</h3>
               
               <div className="space-y-6">
                 {sector.metrics.map((metric, metricIndex) => (
-                  <div key={metricIndex} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <div key={metricIndex} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md ring-1 ring-brand-blue hover:ring-3 transition-all duration-300 ease-in-out">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-gray-900">{metric.label}</h4>
                       <span className="text-2xl font-bold text-green-600">{metric.value}</span>
@@ -183,7 +183,7 @@ const ElearningROISection: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Investment */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">Initial Investment</h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
@@ -206,7 +206,7 @@ const ElearningROISection: React.FC = () => {
             </div>
 
             {/* Year 1 Benefits */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">Year 1 Benefits</h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
@@ -229,7 +229,7 @@ const ElearningROISection: React.FC = () => {
             </div>
 
             {/* ROI Summary */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">ROI Summary</h4>
               <div className="space-y-6">
                 <div className="text-center p-4 bg-green-50 rounded-lg">
@@ -256,10 +256,10 @@ const ElearningROISection: React.FC = () => {
             <p className="text-lg text-gray-600">When you can expect to see returns on your investment</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto gap-8">
             {implementationTimeline.map((phase, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg shadow-lg">
+              <div key={index} className="text-center rounded-xl p-3 ring-1 ring-brand-blue hover:ring-3 transition-all duration-300 ease-in-out">
+                <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-lg shadow-lg">
                   {index + 1}
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">{phase.phase}</h4>
@@ -307,24 +307,24 @@ const ElearningROISection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-3xl p-12 text-white text-center">
+        <div className="bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
           <FaCalculator className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Calculate Your E-Learning ROI</h3>
-          <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Get a personalized ROI projection based on your current e-learning metrics, 
             user base, and organizational goals.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-green-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+          <div className="flex flex-col sm:flex-row text-brand-blue gap-4 justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Get Free ROI Analysis
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Schedule ROI Consultation
             </button>
           </div>
 
-          <div className="mt-8 text-green-100 text-sm">
+          <div className="mt-8 text-white text-sm">
             <p>✓ Custom ROI projections • ✓ Industry benchmarking • ✓ Implementation roadmap • ✓ Cost-benefit analysis</p>
           </div>
         </div>

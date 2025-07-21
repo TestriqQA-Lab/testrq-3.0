@@ -73,12 +73,12 @@ const ElearningHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="flex flex-col text-center md:text-start relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-10 mb-48">
             {/* Badge */}
-            <div className="inline-flex items-center text-brand-blue gap-2 bg-indigo-100 rounded-full px-6 py-3 border border-indigo-200">
+            <div className="inline-flex items-center text-brand-blue gap-2 bg-indigo-100 rounded-full px-3 py-2 border border-indigo-200">
               <FaGraduationCap className="w-4 h-4" />
               <span className="text-sm font-semibold">E-Learning Testing Solutions</span>
             </div>

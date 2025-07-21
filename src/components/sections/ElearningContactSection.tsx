@@ -73,13 +73,13 @@ const ElearningContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-600 to-purple-600">
+    <section className="py-20 bg-gradient-to-r from-brand-blue via-sky-600  to-sky-700">
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-white bg-opacity-20 rounded-full px-6 py-2 mb-6">
-            <FaGraduationCap className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">Transform Your E-Learning</span>
+          <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue bg-opacity-20 rounded-full px-6 py-2 mb-6">
+            <FaGraduationCap className="w-4 h-4" />
+            <span className="text-sm font-medium">Transform Your E-Learning</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -87,7 +87,7 @@ const ElearningContactSection: React.FC = () => {
             <span className="block">E-Learning Platform?</span>
           </h2>
           
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
             Take the first step towards better learning outcomes, higher engagement, and improved accessibility. 
             Our e-learning testing experts are ready to help you create exceptional educational experiences.
           </p>
@@ -105,13 +105,13 @@ const ElearningContactSection: React.FC = () => {
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-white mb-2">{method.title}</h4>
-                    <p className="text-indigo-100 text-sm mb-3 leading-relaxed">{method.description}</p>
-                    <button className="text-white font-semibold hover:underline flex items-center gap-2 group mb-2">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">{method.title}</h4>
+                    <p className="text-sky-700 text-sm mb-3 leading-relaxed">{method.description}</p>
+                    <button className="text-sky-700 font-semibold hover:underline flex items-center gap-2 group mb-2">
                       {method.action}
                       <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                     </button>
-                    <p className="text-indigo-200 text-xs">{method.availability}</p>
+                    <p className="text-sky-400 text-xs">{method.availability}</p>
                   </div>
                 </div>
               </div>
@@ -151,20 +151,20 @@ const ElearningContactSection: React.FC = () => {
                   <input
                     type="text"
                     placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
                   />
                   <input
                     type="email"
                     placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
                   />
                 </div>
                 <input
                   type="text"
                   placeholder="Institution/Organization"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
                 />
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors">
+                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors">
                   <option value="">Select Your Platform Type</option>
                   <option value="moodle">Moodle</option>
                   <option value="canvas">Canvas</option>
@@ -174,7 +174,7 @@ const ElearningContactSection: React.FC = () => {
                   <option value="corporate">Corporate Training Platform</option>
                   <option value="other">Other</option>
                 </select>
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors">
+                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors">
                   <option value="">Number of Users</option>
                   <option value="small">Under 1,000 users</option>
                   <option value="medium">1,000 - 10,000 users</option>
@@ -184,11 +184,11 @@ const ElearningContactSection: React.FC = () => {
                 <textarea
                   placeholder="Tell us about your e-learning testing needs..."
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-indigo-600 focus:outline-none transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors resize-none"
                 ></textarea>
                 <button
                   type="submit"
-                  className="w-full bg-indigo-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2"
                 >
                   <FaRocket className="w-4 h-4" />
                   Get Free E-Learning Assessment
@@ -204,24 +204,24 @@ const ElearningContactSection: React.FC = () => {
 
         {/* Client Types */}
         <div className="mt-16">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-white mb-4">We Serve All Educational Sectors</h3>
-            <p className="text-indigo-100">Specialized expertise for different types of educational organizations</p>
+          <div className="text-center mb-12 text-white">
+            <h3 className="text-2xl font-bold mb-4">We Serve All Educational Sectors</h3>
+            <p>Specialized expertise for different types of educational organizations</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {clientTypes.map((type, index) => (
               <div key={index} className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                  <type.icon className="w-8 h-8 text-white" />
-                  <h4 className="text-lg font-bold text-white">{type.title}</h4>
+                  <type.icon className="w-8 h-8 text-brand-blue" />
+                  <h4 className="text-lg font-bold text-sky-600">{type.title}</h4>
                 </div>
-                <p className="text-indigo-100 text-sm mb-4 leading-relaxed">{type.description}</p>
+                <p className="text-brand-blue text-sm mb-4 leading-relaxed">{type.description}</p>
                 <div className="space-y-2">
                   {type.examples.map((example, exampleIndex) => (
                     <div key={exampleIndex} className="flex items-center gap-2">
                       <FaCheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span className="text-indigo-200 text-xs">{example}</span>
+                      <span className="text-xs">{example}</span>
                     </div>
                   ))}
                 </div>
@@ -232,16 +232,16 @@ const ElearningContactSection: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
-            <h3 className="text-2xl font-bold text-white mb-4">Join 250+ Educational Institutions</h3>
-            <p className="text-indigo-100 mb-6">
+          <div className="bg-white bg-opacity-10 text-brand-blue backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
+            <h3 className="text-2xl font-bold mb-4">Join 250+ Educational Institutions</h3>
+            <p className="mb-6">
               Don&apos;t let technical issues hinder learning outcomes. Start optimizing your e-learning platform today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+              <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
                 Start Free Assessment
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="px-8 py-4 rounded-2xl font-semibold text-lg ring-1 hover:ring-2 hover:text-sky-700 hover:scale-98 hover:bg-opacity-30 transition-all duration-200 ease-in-out">
                 View Success Stories
               </button>
             </div>
