@@ -65,7 +65,7 @@ const CareersHeroSection: React.FC = () => {
       {floatingIcons.map((item, index) => (
         <div
           key={index}
-          className={`absolute ${item.position} w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg flex items-center justify-center animate-bounce hidden lg:flex`}
+          className={`absolute ${item.position} w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg flex items-center justify-center animate-bounce lg:flex`}
           style={{ animationDelay: item.delay, animationDuration: "3s" }}
         >
           <item.icon className="w-6 h-6 text-[theme(color.brand.blue)]" />
@@ -78,7 +78,7 @@ const CareersHeroSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-8">
             <FaRocket className="w-4 h-4 text-white" />
             <span className="text-sm font-medium text-white">
-              We're Hiring!
+              We&apos;re Hiring!
             </span>
           </div>
 
@@ -143,10 +143,10 @@ const CareersHeroSection: React.FC = () => {
               </div>
 
               <blockquote className="text-lg text-gray-700 mb-6 italic leading-relaxed">
-                "Working at Testriq has been transformative for my career. The
+                &quot;Working at Testriq has been transformative for my career. The
                 learning opportunities, collaborative culture, and cutting-edge
-                projects make every day exciting. I've grown more in two years
-                here than in my previous five years elsewhere."
+                projects make every day exciting. I&apos;ve grown more in two years
+                here than in my previous five years elsewhere.&quot;
               </blockquote>
 
               <div className="flex items-center justify-center gap-4">

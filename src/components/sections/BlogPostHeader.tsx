@@ -1,10 +1,9 @@
 "use client";
-
+import Image from "next/image";
 import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
-  FaUser,
   FaEye,
   FaHeart,
   FaShare,
@@ -78,7 +77,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
             {/* Author + Meta */}
             <div className="flex flex-wrap items-center gap-6 mb-8">
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={post.authorImage}
                   alt={post.author}
                   className="w-12 h-12 rounded-full border-2 border-blue-400"
@@ -125,7 +124,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
           {/* Right - Image */}
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
                 className="w-full h-80 object-cover"

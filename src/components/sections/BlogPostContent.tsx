@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
 import {
   FaHeart,
@@ -191,7 +191,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
       {/* Author Bio */}
       <div className="bg-gray-50 rounded-xl p-8 my-12">
         <div className="flex items-start gap-6">
-          <img
+          <Image
             src={post.authorImage}
             alt={post.author}
             className="w-20 h-20 rounded-full border-4 border-white shadow-md"

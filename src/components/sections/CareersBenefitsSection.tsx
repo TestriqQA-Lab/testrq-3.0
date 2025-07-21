@@ -282,7 +282,7 @@ const CareersBenefitsSection: React.FC = () => {
               Why Our Team Loves Working Here
             </h3>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Our benefits aren't just competitive—they're designed around what
+              Our benefits aren&apos;t just competitive—they&apos;re designed around what
               our team actually values.
             </p>
           </div>

@@ -182,8 +182,8 @@ const DesktopWhyChooseTestriq: React.FC = () => {
                 {/* Testimonial */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-gray-700 italic mb-2">
-                    "Testriq's desktop testing services exceeded our expectations. 
-                    Their thorough approach and quick turnaround helped us launch on time."
+                    &quot;Testriq&apos;s desktop testing services exceeded our expectations. 
+                    Their thorough approach and quick turnaround helped us launch on time.&quot;
                   </p>
                   <div className="text-xs text-gray-600">
                     - Senior Developer, Tech Startup

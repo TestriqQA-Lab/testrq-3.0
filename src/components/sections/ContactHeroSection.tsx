@@ -88,7 +88,7 @@ const ContactHeroSection: React.FC = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Let's Connect and
+                Let&apos;s Connect and
                 <span className="block text-[theme(color.brand.blue)]">
                   Build Together
                 </span>
@@ -96,7 +96,7 @@ const ContactHeroSection: React.FC = () => {
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Reach out to our QA experts for consultation, support, or
-                partnership opportunities. We're here to help you achieve
+                partnership opportunities. We&apos;re here to help you achieve
                 software excellence.
               </p>
             </div>
@@ -137,7 +137,7 @@ const ContactHeroSection: React.FC = () => {
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <div>
                   <div className="font-semibold text-green-800">
-                    We're Online Now!
+                    We&apos;re Online Now!
                   </div>
                   <div className="text-green-600 text-sm">
                     Average response time: 2 hours
@@ -154,7 +154,7 @@ const ContactHeroSection: React.FC = () => {
                 Send us a Message
               </h2>
               <p className="text-gray-600">
-                Fill out the form below and we'll get back to you within 2
+                Fill out the form below and we&apos;ll get back to you within 2
                 hours.
               </p>
             </div>
@@ -166,7 +166,7 @@ const ContactHeroSection: React.FC = () => {
                   Message Sent!
                 </h3>
                 <p className="text-gray-600">
-                  Thank you for reaching out. We'll get back to you soon.
+                  Thank you for reaching out. We&apos;ll get back to you soon.
                 </p>
               </div>
             ) : (
@@ -288,7 +288,7 @@ const ContactHeroSection: React.FC = () => {
 
                 <p className="text-xs text-gray-500 text-center">
                   By submitting this form, you agree to our Privacy Policy.
-                  We'll never share your information.
+                  We&apos;ll never share your information.
                 </p>
               </form>
             )}

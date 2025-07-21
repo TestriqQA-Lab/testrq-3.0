@@ -24,7 +24,7 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Ready to Ensure Your Desktop Application's{" "}
+              Ready to Ensure Your Desktop Application&apos;s{" "}
               <span className="text-blue-200">Quality & Performance?</span>
             </h2>
 

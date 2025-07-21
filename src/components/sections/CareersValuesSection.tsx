@@ -154,7 +154,7 @@ const CareersValuesSection: React.FC = () => {
               Why Top Talent Chooses Testriq
             </h3>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              We're not just another tech company. We're a place where careers
+              We&apos;re not just another tech company. We&apos;re a place where careers
               flourish and innovation thrives.
             </p>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaArrowLeft, FaUsers, FaBookOpen, FaTags, FaRss, FaBell } from "react-icons/fa";
+import { FaArrowLeft, FaTags, FaRss, FaBell } from "react-icons/fa";
 import Link from "next/link";
 
 interface Category {
