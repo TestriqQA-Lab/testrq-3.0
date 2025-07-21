@@ -80,7 +80,7 @@ const MobileFAQs: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-200 ease-in-out"
               >
                 <h3 className="text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}

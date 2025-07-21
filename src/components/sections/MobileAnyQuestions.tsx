@@ -5,21 +5,20 @@ import { FaArrowRight, FaPhone, FaEnvelope, FaCalendarAlt, FaComments } from "re
 
 const MobileAnyQuestions: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-800 text-white py-16 px-8 md:px-12 lg:px-24">
+    <section className="text-white bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-800  py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block bg-blue-500 bg-opacity-30 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
+            <span className="inline-block bg-blue-500 bg-opacity-30 text-white text-sm px-4 py-2 rounded-full mb-6">
               Get In Touch
             </span>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Have Any Questions About{" "}
-              <span className="text-blue-200">Mobile Testing?</span>
+              Have Any Questions About Mobile Testing?
             </h2>
             
-            <p className="text-blue-100 text-lg mb-8 leading-relaxed">
+            <p className="text-lg mb-8 leading-relaxed">
               Our mobile testing experts are ready to help you understand how our comprehensive 
               testing services can ensure your app's success on both iOS and Android platforms. 
               Get personalized answers to your specific mobile app requirements.
@@ -51,15 +50,15 @@ const MobileAnyQuestions: React.FC = () => {
                 }
               ].map((option, index) => (
                 <div key={index} className="flex items-start gap-4 p-4 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm border border-white border-opacity-20">
-                  <div className="flex-shrink-0 w-10 h-10 bg-blue-500 bg-opacity-30 rounded-lg flex items-center justify-center text-blue-200">
+                  <div className="flex-shrink-0 w-10 h-10 bg-sky-600 bg-opacity-30 rounded-lg flex items-center justify-center text-blue-50">
                     {option.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-white mb-1">{option.title}</h3>
-                    <p className="text-blue-200 text-sm mb-2">{option.description}</p>
-                    <p className="text-blue-100 text-sm font-medium">{option.contact}</p>
+                  <div className="flex-1 text-sky-600">
+                    <h3 className="font-semibold mb-1">{option.title}</h3>
+                    <p className="text-sm mb-2">{option.description}</p>
+                    <p className="text-sm font-medium">{option.contact}</p>
                   </div>
-                  <button className="text-blue-200 hover:text-white text-sm font-semibold transition-colors">
+                  <button className="text-sky-600 text-sm font-semibold hover:text-sky-800 hover:scale-105 transition-all duration-300 ease-in-out">
                     {option.action}
                   </button>
                 </div>
@@ -84,62 +83,62 @@ const MobileAnyQuestions: React.FC = () => {
           {/* Right Content - Contact Form */}
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
             <div className="text-center mb-8">
-              <FaComments className="w-12 h-12 text-blue-200 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">Mobile Testing Contact Form</h3>
-              <p className="text-blue-200">Get a response within 1 hour</p>
+              <FaComments className="w-12 h-12 text-sky-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-sky-600 mb-2">Mobile Testing Contact Form</h3>
+              <p className="text-sky-600">Get a response within 1 hour</p>
             </div>
 
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-blue-200 text-sm font-medium mb-2">
+                  <label className="block text-sky-600 text-sm font-medium mb-2">
                     First Name *
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                     placeholder="John"
                   />
                 </div>
                 <div>
-                  <label className="block text-blue-200 text-sm font-medium mb-2">
+                  <label className="block text-sky-600 text-sm font-medium mb-2">
                     Last Name *
                   </label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                     placeholder="Doe"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-blue-200 text-sm font-medium mb-2">
+                <label className="block text-sky-600 text-sm font-medium mb-2">
                   Email Address *
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                   placeholder="john.doe@company.com"
                 />
               </div>
 
               <div>
-                <label className="block text-blue-200 text-sm font-medium mb-2">
+                <label className="block text-sky-600 text-sm font-medium mb-2">
                   Company
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent"
                   placeholder="Your Company Name"
                 />
               </div>
 
               <div>
-                <label className="block text-blue-200 text-sm font-medium mb-2">
+                <label className="block text-sky-600 text-sm font-medium mb-2">
                   Mobile Platform
                 </label>
-                <select className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent">
+                <select className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent">
                   <option value="" className="text-gray-900">Select platform</option>
                   <option value="ios" className="text-gray-900">iOS</option>
                   <option value="android" className="text-gray-900">Android</option>
@@ -149,10 +148,10 @@ const MobileAnyQuestions: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-blue-200 text-sm font-medium mb-2">
+                <label className="block text-sky-600 text-sm font-medium mb-2">
                   App Category
                 </label>
-                <select className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent">
+                <select className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent">
                   <option value="" className="text-gray-900">Select category</option>
                   <option value="ecommerce" className="text-gray-900">E-commerce</option>
                   <option value="social" className="text-gray-900">Social Media</option>
@@ -165,19 +164,19 @@ const MobileAnyQuestions: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-blue-200 text-sm font-medium mb-2">
+                <label className="block text-sky-600 text-sm font-medium mb-2">
                   Message *
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-white bg-opacity-20 border border-sky-600 border-opacity-30 rounded-lg text-sky-600 placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent resize-none"
                   placeholder="Tell us about your mobile app testing requirements..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-800 hover:scale-95 transition-all duration-300 ease-in-out"
               >
                 <span>Send Message</span>
                 <FaArrowRight className="w-4 h-4" />
@@ -185,9 +184,9 @@ const MobileAnyQuestions: React.FC = () => {
             </form>
 
             <div className="text-center mt-6">
-              <p className="text-blue-200 text-sm">
+              <p className="text-sky-600 text-sm">
                 By submitting this form, you agree to our{" "}
-                <a href="#" className="text-white hover:underline">Privacy Policy</a>
+                <a href="#" className="text-sky-800 hover:underline">Privacy Policy</a>
               </p>
             </div>
           </div>

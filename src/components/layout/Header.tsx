@@ -153,7 +153,7 @@ const Navbar = () => {
       submenu: [
         {
           label: "Ecommerce Testing Services",
-          link: "/ecommerce-testing",
+          link: "/e-commerce-testing-services",
         },
         {
           label: "Automation Testing Services",

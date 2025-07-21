@@ -92,11 +92,11 @@ export default function CardSlider() {
 
 
     return (
-        <section className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
+        <section className="bg-gray-100 py-16 px-8 2xl:px-64 md:px-12 lg:px-24">
 
-            <div className="text-center leading-16">
+            <div className="text-center xl:leading-16">
                 <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
-                <p className="text-gray-500">{headings.info}</p>
+                <p className="text-gray-500 mt-5">{headings.info}</p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
 
@@ -148,8 +148,8 @@ export default function CardSlider() {
                                 {cards[activeCard].icon}
                             </div>
                             <div className=" px-5">
-                                <h2 className={`text-xl md:text-3xl font-extrabold`}>{cards[activeCard].title}</h2>
-                                <p className={`mt-2 text-xl font-semibold text-${cards[activeCard].colordark}`}>
+                                <h2 className={`text-xl lg:text-3xl font-extrabold`}>{cards[activeCard].title}</h2>
+                                <p className={`mt-2 lg:text-xl font-semibold text-${cards[activeCard].colordark}`}>
                                     {cards[activeCard].quote}
                                 </p>
                             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaMobile, FaShieldAlt, FaCogs, FaUsers, FaChartLine, FaSync } from "react-icons/fa";
+import { FaMobile, FaShieldAlt, FaCogs, FaUsers, FaChartLine, FaSync, FaApple } from "react-icons/fa";
 
 const MobileComprehensive: React.FC = () => {
   const testingServices = [
@@ -105,7 +105,7 @@ const MobileComprehensive: React.FC = () => {
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-lg">🍎</span>
+                  <span className="text-white text-lg"><FaApple width={4} height={4}/></span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">iOS Testing</h4>
               </div>

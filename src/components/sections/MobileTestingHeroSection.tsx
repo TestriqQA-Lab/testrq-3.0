@@ -2,7 +2,7 @@
 
 import React from "react";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
-import { FaMobile } from "react-icons/fa";
+import { FaMobile, FaApple } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
@@ -73,7 +73,7 @@ const MobileTestingHeroSection: React.FC = () => {
                     </div>
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-xs">🍎</span>
+                    <span className="text-xs"><FaApple className="w-4 h-4" /></span>
                   </div>
                 </div>
                 
@@ -124,7 +124,7 @@ const MobileTestingHeroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200">
         <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
           <span className="text-sm text-gray-500">Trusted by leading mobile app companies</span>
-          <div className="flex items-center gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-6">
             <div className="w-24 h-8 bg-gray-200 rounded flex items-center justify-center">
               <span className="text-xs text-gray-500">App Store</span>
             </div>

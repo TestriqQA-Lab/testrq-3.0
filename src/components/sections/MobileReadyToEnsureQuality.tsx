@@ -61,8 +61,8 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             {/* Main Card */}
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-white mb-2">Mobile Testing Excellence</h3>
-                <p className="text-blue-200">Comprehensive Quality Assurance</p>
+                <h3 className="text-2xl font-bold text-blue-500 mb-2">Mobile Testing Excellence</h3>
+                <p className="text-blue-500">Comprehensive Quality Assurance</p>
               </div>
 
               {/* Device Icons */}
@@ -81,21 +81,21 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">1000+</div>
-                  <div className="text-blue-200 text-sm">Mobile Apps Tested</div>
+                <div className="text-center text-blue-500">
+                  <div className="text-3xl font-bold mb-1">1000+</div>
+                  <div className="text-sm">Mobile Apps Tested</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">99.9%</div>
-                  <div className="text-blue-200 text-sm">Bug Detection Rate</div>
+                <div className="text-center text-blue-500">
+                  <div className="text-3xl font-bold mb-1">99.9%</div>
+                  <div className="text-sm">Bug Detection Rate</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">50+</div>
-                  <div className="text-blue-200 text-sm">Device Models</div>
+                <div className="text-center text-blue-500">
+                  <div className="text-3xl font-bold mb-1">50+</div>
+                  <div className="text-sm">Device Models</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1">12hr</div>
-                  <div className="text-blue-200 text-sm">Average Turnaround</div>
+                <div className="text-center text-blue-500">
+                  <div className="text-3xl font-bold mb-1">12hr</div>
+                  <div className="text-sm">Average Turnaround</div>
                 </div>
               </div>
 
@@ -107,13 +107,13 @@ const MobileReadyToEnsureQuality: React.FC = () => {
                   { label: "Security Testing", percentage: 98 }
                 ].map((item, index) => (
                   <div key={index}>
-                    <div className="flex justify-between text-sm text-blue-200 mb-1">
+                    <div className="flex justify-between text-sm text-blue-700 mb-1">
                       <span>{item.label}</span>
                       <span>{item.percentage}%</span>
                     </div>
-                    <div className="w-full bg-blue-800 bg-opacity-50 rounded-full h-2">
+                    <div className="w-full border border-blue-800 bg-opacity-50 rounded-full h-2.5">
                       <div 
-                        className="bg-gradient-to-r from-blue-300 to-white h-2 rounded-full transition-all duration-1000"
+                        className="bg-blue-800 h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${item.percentage}%` }}
                       ></div>
                     </div>
