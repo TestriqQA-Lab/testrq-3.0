@@ -16,7 +16,7 @@ const renderTitle = () => {
 const techStack = {
   title: "Our Technology Stack",
   subtitle:
-    "We leverage cutting-edge tools and technologies to deliver comprehensive testing solutions across all platforms and environments.",
+    "We leverage cutting-edge tools and technologies to deliver comprehensive software testing services across all platforms and environments.",
   categories: [
     {
       title: "Automation Tools",

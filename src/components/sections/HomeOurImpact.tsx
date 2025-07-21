@@ -15,7 +15,7 @@ const renderTitle = () => {
 const impactSection = {
   title: "Our Impact: Real-World Successes",
   subtitle:
-    "Discover how Testriq has helped clients achieve their quality goals and overcome complex challenges.",
+    "Discover how Testriq has helped clients achieve their software quality goals and overcome complex QA challenges.",
   caseStudies: [
     {
       title: "E-commerce Performance Boost",
@@ -27,7 +27,7 @@ const impactSection = {
       title: "Mobile Banking Security",
       badge: "Zero security incidents",
       description:
-        "Identified and mitigated critical vulnerabilities for a mobile banking application through thorough security audit.",
+        "Identified and mitigated critical vulnerabilities for a mobile banking application through thorough security audit and security testing.",
     },
     {
       title: "Smart Home Compatibility",

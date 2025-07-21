@@ -14,7 +14,7 @@ const HomeComprehensiveSoftwareTesting = () => {
 
     const heading = {
         title: 'Comprehensive Software Testing Services',
-        info: 'Explore our specialized testing services designed to meet your unique quality assurance needs with responsive support and proven expertise.'
+        info: 'Explore our specialized software testing services and comprehensive QA solutions, meticulously designed to meet your unique quality assurance needs with responsive support and proven expertise from our certified QA experts, ensuring reliable QA services for your mobile application testing, web application testing, and more.'
     }
 
     // Split the title into parts to style "Software Testing" in blue
@@ -30,12 +30,12 @@ const HomeComprehensiveSoftwareTesting = () => {
     };
 
     const cardData = [
-        { icon: TbWorld, title: 'Web & Mobile Testing', href: '#', detail: 'End-to-end testing for web applications and mobile apps (iOS & Android), covering functional, usability, performance and security aspects.' },
+        { icon: TbWorld, title: 'Web & Mobile Testing', href: '#', detail: 'Experience end-to-end testing for web applications and mobile apps (iOS & Android), covering functional, usability, performance and security testing aspects.' },
         { icon: IoServerOutline, title: 'API Testing', href: '#', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
         { icon: FaMicrochip, title: 'AI & ML Testing', href: '#', detail: 'Specialized testing for AI-powered applications, including data integrity, model accuracy validation, and bias detection.' },
-        { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
-        { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits.' },
-        { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability under various load conditions.' }
+        { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
+        { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
+        { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
     ]
     return (
         // Main section container
@@ -43,7 +43,7 @@ const HomeComprehensiveSoftwareTesting = () => {
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
+                <p className='text-lg text-gray-500 mx-auto max-w-6xl'>{heading.info}</p>
             </div>
 
             {/* Card grid layout */}

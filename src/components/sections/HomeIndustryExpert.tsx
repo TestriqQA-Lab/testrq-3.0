@@ -7,7 +7,7 @@ const HomeIndustryExpert = () => {
 
     const heading = {
         title: 'Industry Expertise',
-        info: 'We serve diverse industries with specialized testing solutions tailored to unique business requirements and compliance standards.'
+        info: 'We serve diverse industries with specialized QA solutions tailored to unique business requirements and regulatory compliance standards.'
     }
 
     // Split the title into parts to style "Client" in blue
