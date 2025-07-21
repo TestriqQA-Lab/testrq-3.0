@@ -10,13 +10,19 @@ const ApiToolsFramework: React.FC = () => {
       category: "Testing Tools",
       icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Postman", description: "API development and testing platform" },
+        {
+          name: "Postman",
+          description: "API development and testing platform",
+        },
         { name: "SoapUI", description: "Comprehensive API testing tool" },
         { name: "JMeter", description: "Performance and load testing" },
         { name: "Rest-Assured", description: "Java-based REST API testing" },
         { name: "Karate", description: "Open-source API test automation" },
-        { name: "Newman", description: "Command-line Postman collection runner" }
-      ]
+        {
+          name: "Newman",
+          description: "Command-line Postman collection runner",
+        },
+      ],
     },
     {
       category: "Frameworks",
@@ -27,8 +33,11 @@ const ApiToolsFramework: React.FC = () => {
         { name: "TestNG", description: "Java testing framework" },
         { name: "Mocha", description: "Node.js testing framework" },
         { name: "Cucumber", description: "BDD testing framework" },
-        { name: "Robot Framework", description: "Generic automation framework" }
-      ]
+        {
+          name: "Robot Framework",
+          description: "Generic automation framework",
+        },
+      ],
     },
     {
       category: "CI/CD Integration",
@@ -39,8 +48,8 @@ const ApiToolsFramework: React.FC = () => {
         { name: "GitHub Actions", description: "Workflow automation" },
         { name: "Azure DevOps", description: "Microsoft DevOps platform" },
         { name: "CircleCI", description: "Cloud-based CI/CD platform" },
-        { name: "Docker", description: "Containerization platform" }
-      ]
+        { name: "Docker", description: "Containerization platform" },
+      ],
     },
     {
       category: "Security Tools",
@@ -51,9 +60,9 @@ const ApiToolsFramework: React.FC = () => {
         { name: "Nessus", description: "Vulnerability scanner" },
         { name: "Wireshark", description: "Network protocol analyzer" },
         { name: "SQLMap", description: "SQL injection testing tool" },
-        { name: "Nikto", description: "Web server scanner" }
-      ]
-    }
+        { name: "Nikto", description: "Web server scanner" },
+      ],
+    },
   ];
 
   return (
@@ -61,11 +70,15 @@ const ApiToolsFramework: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Tools & Frameworks We Use
+            <span className="text-[theme(color.brand.blue)]">
+              Tools & Frameworks
+            </span>{" "}
+            We Use
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage industry-leading tools and frameworks to deliver comprehensive 
-            API testing solutions that ensure reliability, performance, and security.
+            We leverage industry-leading tools and frameworks to deliver
+            comprehensive API testing solutions that ensure reliability,
+            performance, and security.
           </p>
         </div>
 
@@ -81,7 +94,7 @@ const ApiToolsFramework: React.FC = () => {
                   {category.category}
                 </h3>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {category.tools.map((tool, toolIndex) => (
                   <div
@@ -91,9 +104,7 @@ const ApiToolsFramework: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 mb-2">
                       {tool.name}
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      {tool.description}
-                    </p>
+                    <p className="text-gray-600 text-sm">{tool.description}</p>
                   </div>
                 ))}
               </div>
@@ -106,8 +117,9 @@ const ApiToolsFramework: React.FC = () => {
             Custom Tool Integration
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
-            We can integrate with your existing tools and frameworks, or recommend 
-            the best combination for your specific API testing requirements.
+            We can integrate with your existing tools and frameworks, or
+            recommend the best combination for your specific API testing
+            requirements.
           </p>
           <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
             Discuss Your Requirements
@@ -119,4 +131,3 @@ const ApiToolsFramework: React.FC = () => {
 };
 
 export default ApiToolsFramework;
-

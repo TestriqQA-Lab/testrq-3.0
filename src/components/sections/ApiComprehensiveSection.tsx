@@ -1,7 +1,14 @@
 "use client";
 
 import React from "react";
-import { FaCode, FaShieldAlt, FaRocket, FaCogs, FaDatabase, FaCloud } from "react-icons/fa";
+import {
+  FaCode,
+  FaShieldAlt,
+  FaRocket,
+  FaCogs,
+  FaDatabase,
+  FaCloud,
+} from "react-icons/fa";
 import { MdSpeed, MdSecurity } from "react-icons/md";
 
 const ApiComprehensiveSection: React.FC = () => {
@@ -9,33 +16,39 @@ const ApiComprehensiveSection: React.FC = () => {
     {
       icon: <FaCode className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "REST API Testing",
-      description: "Comprehensive testing of RESTful APIs including endpoint validation, HTTP methods, status codes, and response data verification."
+      description:
+        "Comprehensive testing of RESTful APIs including endpoint validation, HTTP methods, status codes, and response data verification.",
     },
     {
       icon: <FaCogs className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "SOAP API Testing",
-      description: "Complete SOAP web service testing including WSDL validation, XML schema verification, and protocol compliance testing."
+      description:
+        "Complete SOAP web service testing including WSDL validation, XML schema verification, and protocol compliance testing.",
     },
     {
       icon: <FaDatabase className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "GraphQL Testing",
-      description: "Advanced GraphQL API testing including query validation, mutation testing, subscription handling, and schema verification."
+      description:
+        "Advanced GraphQL API testing including query validation, mutation testing, subscription handling, and schema verification.",
     },
     {
       icon: <MdSpeed className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Performance Testing",
-      description: "Load testing, stress testing, and scalability assessment to ensure your APIs perform under high traffic conditions."
+      description:
+        "Load testing, stress testing, and scalability assessment to ensure your APIs perform under high traffic conditions.",
     },
     {
       icon: <FaShieldAlt className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Security Testing",
-      description: "Comprehensive security assessment including authentication, authorization, injection attacks, and data exposure vulnerabilities."
+      description:
+        "Comprehensive security assessment including authentication, authorization, injection attacks, and data exposure vulnerabilities.",
     },
     {
       icon: <FaCloud className="w-8 h-8 text-[theme(color.brand.blue)]" />,
       title: "Microservices Testing",
-      description: "End-to-end testing of microservices architecture including service communication, data consistency, and fault tolerance."
-    }
+      description:
+        "End-to-end testing of microservices architecture including service communication, data consistency, and fault tolerance.",
+    },
   ];
 
   return (
@@ -43,12 +56,15 @@ const ApiComprehensiveSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive API Testing Services
+            <span className="text-[theme(color.brand.blue)]">
+              Comprehensive
+            </span>{" "}
+            API Testing Services
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our expert team provides end-to-end API testing solutions to ensure your 
-            applications communicate flawlessly, perform optimally, and maintain the 
-            highest security standards.
+            Our expert team provides end-to-end API testing solutions to ensure
+            your applications communicate flawlessly, perform optimally, and
+            maintain the highest security standards.
           </p>
         </div>
 
@@ -82,4 +98,3 @@ const ApiComprehensiveSection: React.FC = () => {
 };
 
 export default ApiComprehensiveSection;
-

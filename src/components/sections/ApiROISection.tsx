@@ -1,34 +1,47 @@
 "use client";
 
 import React from "react";
-import { FaChartLine, FaDollarSign, FaClock, FaShieldAlt } from "react-icons/fa";
+import {
+  FaChartLine,
+  FaDollarSign,
+  FaClock,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 const ApiROISection: React.FC = () => {
   const roiMetrics = [
     {
-      icon: <FaDollarSign className="w-12 h-12 text-[theme(color.brand.blue)]" />,
+      icon: (
+        <FaDollarSign className="w-12 h-12 text-[theme(color.brand.blue)]" />
+      ),
       value: "40%",
       label: "Cost Reduction",
-      description: "Average cost savings through early bug detection and prevention"
+      description:
+        "Average cost savings through early bug detection and prevention",
     },
     {
       icon: <FaClock className="w-12 h-12 text-[theme(color.brand.blue)]" />,
       value: "60%",
       label: "Faster Deployment",
-      description: "Reduced time-to-market with automated API testing processes"
+      description:
+        "Reduced time-to-market with automated API testing processes",
     },
     {
-      icon: <FaShieldAlt className="w-12 h-12 text-[theme(color.brand.blue)]" />,
+      icon: (
+        <FaShieldAlt className="w-12 h-12 text-[theme(color.brand.blue)]" />
+      ),
       value: "99.8%",
       label: "Issue Prevention",
-      description: "Critical API issues prevented from reaching production"
+      description: "Critical API issues prevented from reaching production",
     },
     {
-      icon: <FaChartLine className="w-12 h-12 text-[theme(color.brand.blue)]" />,
+      icon: (
+        <FaChartLine className="w-12 h-12 text-[theme(color.brand.blue)]" />
+      ),
       value: "300%",
       label: "ROI Increase",
-      description: "Average return on investment within the first year"
-    }
+      description: "Average return on investment within the first year",
+    },
   ];
 
   return (
@@ -36,11 +49,15 @@ const ApiROISection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Measurable ROI from API Testing
+            <span className="text-[theme(color.brand.blue)]">
+              Measurable ROI
+            </span>{" "}
+            from API Testing
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive API testing services deliver quantifiable business 
-            value through improved quality, reduced costs, and faster time-to-market.
+            Our comprehensive API testing services deliver quantifiable business
+            value through improved quality, reduced costs, and faster
+            time-to-market.
           </p>
         </div>
 
@@ -50,9 +67,7 @@ const ApiROISection: React.FC = () => {
               key={index}
               className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex justify-center mb-4">
-                {metric.icon}
-              </div>
+              <div className="flex justify-center mb-4">{metric.icon}</div>
               <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {metric.value}
               </div>
@@ -71,7 +86,7 @@ const ApiROISection: React.FC = () => {
             Calculate Your API Testing ROI
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Discover how much you can save and gain with our comprehensive API 
+            Discover how much you can save and gain with our comprehensive API
             testing services. Get a personalized ROI analysis for your project.
           </p>
           <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
@@ -84,4 +99,3 @@ const ApiROISection: React.FC = () => {
 };
 
 export default ApiROISection;
-

@@ -7,37 +7,40 @@ const ApiCardSlider: React.FC = () => {
   const testingTypes = [
     {
       title: "Functional Testing",
-      description: "Comprehensive validation of API functionality, endpoints, and business logic.",
+      description:
+        "Comprehensive validation of API functionality, endpoints, and business logic.",
       features: [
         "Request/Response validation",
         "Data integrity testing",
         "Error handling verification",
-        "Business logic validation"
+        "Business logic validation",
       ],
-      highlight: "99.8% accuracy"
+      highlight: "99.8% accuracy",
     },
     {
       title: "Performance Testing",
-      description: "Ensure your APIs perform optimally under various load conditions.",
+      description:
+        "Ensure your APIs perform optimally under various load conditions.",
       features: [
         "Load testing",
         "Stress testing",
         "Scalability assessment",
-        "Response time optimization"
+        "Response time optimization",
       ],
-      highlight: "Sub-second response"
+      highlight: "Sub-second response",
     },
     {
       title: "Security Testing",
-      description: "Comprehensive security assessment to protect your APIs from threats.",
+      description:
+        "Comprehensive security assessment to protect your APIs from threats.",
       features: [
         "Authentication testing",
         "Authorization validation",
         "Vulnerability assessment",
-        "Data encryption verification"
+        "Data encryption verification",
       ],
-      highlight: "Zero vulnerabilities"
-    }
+      highlight: "Zero vulnerabilities",
+    },
   ];
 
   return (
@@ -45,10 +48,13 @@ const ApiCardSlider: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive API Testing Types
+            Comprehensive{" "}
+            <span className="text-[theme(color.brand.blue)]">
+              API Testing Types
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized testing approaches ensure your APIs meet the highest 
+            Our specialized testing approaches ensure your APIs meet the highest
             standards of functionality, performance, and security.
           </p>
         </div>
@@ -66,13 +72,13 @@ const ApiCardSlider: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {type.title}
                 </h3>
-                <p className="text-gray-700 mb-6">
-                  {type.description}
-                </p>
+                <p className="text-gray-700 mb-6">{type.description}</p>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  Key Features:
+                </h4>
                 <ul className="space-y-2">
                   {type.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
@@ -102,4 +108,3 @@ const ApiCardSlider: React.FC = () => {
 };
 
 export default ApiCardSlider;
-

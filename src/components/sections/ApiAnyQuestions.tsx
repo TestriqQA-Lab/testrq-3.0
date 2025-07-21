@@ -10,22 +10,22 @@ const ApiAnyQuestions: React.FC = () => {
       title: "Phone Consultation",
       description: "Speak directly with our API testing experts",
       action: "Call Now",
-      contact: "+1 (555) 123-4567"
+      contact: "+1 (555) 123-4567",
     },
     {
       icon: <FaEnvelope className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Email Support",
       description: "Get detailed responses to your questions",
       action: "Send Email",
-      contact: "api-testing@testriq.com"
+      contact: "api-testing@testriq.com",
     },
     {
       icon: <FaComments className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Live Chat",
       description: "Instant support from our team",
       action: "Start Chat",
-      contact: "Available 24/7"
-    }
+      contact: "Available 24/7",
+    },
   ];
 
   return (
@@ -33,12 +33,14 @@ const ApiAnyQuestions: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Have Questions About API Testing?
+            Have{" "}
+            <span className="text-[theme(color.brand.blue)]">Questions</span>{" "}
+            About API Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our API testing experts are here to help. Get in touch with us to discuss 
-            your specific requirements and learn how we can ensure your APIs are 
-            reliable, secure, and performant.
+            Our API testing experts are here to help. Get in touch with us to
+            discuss your specific requirements and learn how we can ensure your
+            APIs are reliable, secure, and performant.
           </p>
         </div>
 
@@ -56,9 +58,7 @@ const ApiAnyQuestions: React.FC = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {method.title}
               </h3>
-              <p className="text-gray-700 mb-4">
-                {method.description}
-              </p>
+              <p className="text-gray-700 mb-4">{method.description}</p>
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
@@ -75,8 +75,8 @@ const ApiAnyQuestions: React.FC = () => {
             Ready to Get Started?
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Join 200+ companies who trust our API testing expertise. Schedule a 
-            free consultation to discuss your API testing needs and get a 
+            Join 200+ companies who trust our API testing expertise. Schedule a
+            free consultation to discuss your API testing needs and get a
             customized solution for your project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -95,4 +95,3 @@ const ApiAnyQuestions: React.FC = () => {
 };
 
 export default ApiAnyQuestions;
-

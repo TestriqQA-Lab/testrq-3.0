@@ -11,9 +11,9 @@ const ApiReadyToEnsureQuality: React.FC = () => {
           Ready to Ensure API Quality?
         </h2>
         <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-          Join 200+ companies who trust our API testing services. Get started with 
-          a comprehensive API assessment today and ensure your integrations are 
-          reliable, secure, and performant.
+          Join 200+ companies who trust our API testing services. Get started
+          with a comprehensive API assessment today and ensure your integrations
+          are reliable, secure, and performant.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <button className="flex items-center gap-2 py-3 px-8 bg-white text-[theme(color.brand.blue)] font-semibold text-lg rounded-md hover:bg-gray-100 transition-colors duration-300">
@@ -30,4 +30,3 @@ const ApiReadyToEnsureQuality: React.FC = () => {
 };
 
 export default ApiReadyToEnsureQuality;
-

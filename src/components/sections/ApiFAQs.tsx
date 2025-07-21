@@ -9,36 +9,44 @@ const ApiFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of APIs can you test?",
-      answer: "We test all types of APIs including REST, SOAP, GraphQL, gRPC, and WebSocket APIs. Our team has experience with various protocols, authentication methods, and data formats to ensure comprehensive testing coverage."
+      answer:
+        "We test all types of APIs including REST, SOAP, GraphQL, gRPC, and WebSocket APIs. Our team has experience with various protocols, authentication methods, and data formats to ensure comprehensive testing coverage.",
     },
     {
       question: "How long does API testing typically take?",
-      answer: "The duration depends on the complexity and scope of your APIs. Simple API testing can be completed in 1-2 weeks, while comprehensive testing for complex systems may take 4-6 weeks. We provide detailed timelines during the planning phase."
+      answer:
+        "The duration depends on the complexity and scope of your APIs. Simple API testing can be completed in 1-2 weeks, while comprehensive testing for complex systems may take 4-6 weeks. We provide detailed timelines during the planning phase.",
     },
     {
       question: "Do you provide automated API testing?",
-      answer: "Yes, we specialize in automated API testing using industry-leading tools like Postman, REST Assured, and custom frameworks. Automation helps ensure consistent testing, faster feedback, and continuous validation in CI/CD pipelines."
+      answer:
+        "Yes, we specialize in automated API testing using industry-leading tools like Postman, REST Assured, and custom frameworks. Automation helps ensure consistent testing, faster feedback, and continuous validation in CI/CD pipelines.",
     },
     {
       question: "What security testing do you perform on APIs?",
-      answer: "Our security testing includes authentication and authorization testing, input validation, SQL injection testing, XSS prevention, rate limiting validation, and data encryption verification. We follow OWASP API Security guidelines."
+      answer:
+        "Our security testing includes authentication and authorization testing, input validation, SQL injection testing, XSS prevention, rate limiting validation, and data encryption verification. We follow OWASP API Security guidelines.",
     },
     {
       question: "Can you integrate API testing into our CI/CD pipeline?",
-      answer: "Absolutely! We can integrate automated API tests into your existing CI/CD pipeline using tools like Jenkins, GitLab CI, GitHub Actions, or Azure DevOps. This ensures continuous validation of your APIs with every deployment."
+      answer:
+        "Absolutely! We can integrate automated API tests into your existing CI/CD pipeline using tools like Jenkins, GitLab CI, GitHub Actions, or Azure DevOps. This ensures continuous validation of your APIs with every deployment.",
     },
     {
       question: "What deliverables do you provide?",
-      answer: "We provide comprehensive test reports, automated test scripts, performance benchmarks, security assessment reports, and detailed documentation. All deliverables include actionable recommendations for improvement."
+      answer:
+        "We provide comprehensive test reports, automated test scripts, performance benchmarks, security assessment reports, and detailed documentation. All deliverables include actionable recommendations for improvement.",
     },
     {
       question: "Do you test third-party API integrations?",
-      answer: "Yes, we test integrations with third-party APIs including payment gateways, social media APIs, cloud services, and other external systems. We ensure proper error handling, data mapping, and performance optimization."
+      answer:
+        "Yes, we test integrations with third-party APIs including payment gateways, social media APIs, cloud services, and other external systems. We ensure proper error handling, data mapping, and performance optimization.",
     },
     {
       question: "What tools do you use for API testing?",
-      answer: "We use a comprehensive toolkit including Postman, SoapUI, REST Assured, JMeter, Karate, Newman, and custom frameworks. Tool selection depends on your specific requirements and technology stack."
-    }
+      answer:
+        "We use a comprehensive toolkit including Postman, SoapUI, REST Assured, JMeter, Karate, Newman, and custom frameworks. Tool selection depends on your specific requirements and technology stack.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -50,10 +58,12 @@ const ApiFAQs: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            <span className="text-[theme(color.brand.blue)]">Frequently</span>{" "}
+            Asked Questions
           </h2>
           <p className="text-gray-700 text-lg">
-            Get answers to common questions about our API testing services and processes.
+            Get answers to common questions about our API testing services and
+            processes.
           </p>
         </div>
 
@@ -78,9 +88,7 @@ const ApiFAQs: React.FC = () => {
               </button>
               {openFAQ === index && (
                 <div className="px-6 py-4 bg-white">
-                  <p className="text-gray-700 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -101,4 +109,3 @@ const ApiFAQs: React.FC = () => {
 };
 
 export default ApiFAQs;
-
