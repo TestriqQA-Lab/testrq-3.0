@@ -241,7 +241,7 @@ const Navbar = () => {
                               {column.services.map((service, subIdx) => (
                                 <li key={subIdx}>
                                   <Link href={service.link}>
-                                    <span className="text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                    <span className=" text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer  hover:bg-blue-50 rounded-md p-2">
                                       {service.label}
                                     </span>
                                   </Link>
