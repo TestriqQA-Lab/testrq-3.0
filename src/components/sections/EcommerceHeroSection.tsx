@@ -60,7 +60,7 @@ const EcommerceHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8 md:px-12 lg:px-20 pt-10  pb-20">
+      <div className="relative max-w-7xl mx-auto px-8 md:px-12 lg:px-8 pt-10  pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
