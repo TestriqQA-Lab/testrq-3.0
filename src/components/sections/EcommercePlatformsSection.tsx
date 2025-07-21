@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-import { FaShoppingCart, FaCheckCircle } from "react-icons/fa";
 
 const EcommercePlatformsSection: React.FC = () => {
   const platforms = [

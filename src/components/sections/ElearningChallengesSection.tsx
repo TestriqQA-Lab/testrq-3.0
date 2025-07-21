@@ -9,7 +9,7 @@ import {
   FaShieldAlt,
   FaMobile,
   FaPlay,
-  FaClock,
+  // FaClock,
   FaGraduationCap,
   FaArrowRight,
   FaBook,
@@ -233,7 +233,7 @@ const ElearningChallengesSection: React.FC = () => {
             <FaExclamationTriangle className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
             <h3 className="text-3xl font-bold mb-4">The True Cost of Poor E-Learning Quality</h3>
             <p className="text-red-100 text-lg max-w-3xl mx-auto">
-              Technical issues in e-learning platforms don't just affect user experience—they directly impact 
+              Technical issues in e-learning platforms don&apos;t just affect user experience—they directly impact 
               educational outcomes, institutional reputation, and long-term success.
             </p>
           </div>

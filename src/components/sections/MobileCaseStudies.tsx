@@ -176,7 +176,7 @@ const MobileCaseStudies: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-gray-700 italic mb-4 leading-relaxed">
-                      "{caseStudies[activeCase].testimonial}"
+                      &quot;{caseStudies[activeCase].testimonial}&quot;
                     </p>
                     <div className="text-sm text-gray-600">
                       <strong>{caseStudies[activeCase].author}</strong>

@@ -2,11 +2,7 @@
 
 import React from "react";
 import { 
-  FaShoppingCart, 
-  FaChartLine, 
-  FaUsers, 
   FaRocket,
-  FaCheckCircle,
   FaArrowRight,
   FaStar
 } from "react-icons/fa";
@@ -99,7 +95,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
 
                   {/* Testimonial */}
                   <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-[theme(color.brand.blue)]">
-                    <p className="text-gray-700 italic mb-4">"{study.testimonial}"</p>
+                    <p className="text-gray-700 italic mb-4">&quote;{study.testimonial}&quote;</p>
                     <p className="font-semibold text-gray-900">— {study.author}</p>
                   </div>
                 </div>

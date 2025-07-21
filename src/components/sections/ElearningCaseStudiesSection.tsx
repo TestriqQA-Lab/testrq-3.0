@@ -4,7 +4,7 @@ import React from "react";
 import { 
   FaGraduationCap, 
   FaChartLine, 
-  FaUsers, 
+  // FaUsers, 
   FaRocket,
   FaCheckCircle,
   FaArrowRight,
@@ -154,7 +154,7 @@ const ElearningCaseStudiesSection: React.FC = () => {
 
                   {/* Testimonial */}
                   <div className="bg-white bg-opacity-70 rounded-2xl p-6 border-l-4 border-gray-300">
-                    <p className="text-gray-700 italic mb-4">"{study.testimonial}"</p>
+                    <p className="text-gray-700 italic mb-4">&quot;{study.testimonial}&quot;</p>
                     <p className="font-semibold text-gray-900">— {study.author}</p>
                   </div>
                 </div>

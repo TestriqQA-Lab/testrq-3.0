@@ -11,7 +11,6 @@ import {
   FaGlobe,
   FaCheckCircle,
   FaPlay,
-  FaDatabase
 } from "react-icons/fa";
 
 const ElearningPerformanceSection: React.FC = () => {
@@ -296,7 +295,7 @@ const ElearningPerformanceSection: React.FC = () => {
           <FaRocket className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Supercharge Your E-Learning Performance</h3>
           <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-            Don't let slow performance hinder learning outcomes. Let us optimize your platform 
+            Don&apos;t let slow performance hinder learning outcomes. Let us optimize your platform 
             for speed, scalability, and reliability.
           </p>
           

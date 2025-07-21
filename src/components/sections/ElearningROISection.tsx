@@ -133,7 +133,7 @@ const ElearningROISection: React.FC = () => {
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our comprehensive e-learning testing approach delivers quantifiable results that directly impact 
-            learning outcomes, operational efficiency, and your organization's bottom line.
+            learning outcomes, operational efficiency, and your organization&apos;s bottom line.
           </p>
         </div>
 

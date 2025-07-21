@@ -6,7 +6,7 @@ const renderTitle = () => {
   return (
     <>
       {titleParts[0]}
-      <span className="text-[theme(color.brand.blue)]">Web App's Quality?</span>
+      <span className="text-[theme(color.brand.blue)]">Web App&apos;s Quality?</span>
       {titleParts[1]}
     </>
   );

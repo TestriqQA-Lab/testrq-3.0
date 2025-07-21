@@ -276,7 +276,7 @@ const ElearningAccessibilitySection: React.FC = () => {
           <FaAccessibleIcon className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Make Your E-Learning Platform Accessible Today</h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Don't exclude potential learners due to accessibility barriers. Let us help you create 
+            Don&apos;t exclude potential learners due to accessibility barriers. Let us help you create 
             an inclusive learning environment that benefits everyone.
           </p>
           
