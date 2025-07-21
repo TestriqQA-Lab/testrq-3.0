@@ -9,7 +9,7 @@ const HomeChooseTestriq = () => {
     // Define the heading and card data
     const heading = {
         title: 'Why Choose Testriq?',
-        info: 'We combine technical expertise with business understanding to deliver testingsolutions that drive real results.'
+        info: 'We combine technical expertise with business understanding to deliver software testing services and QA solutions that drive real business results and enhance software quality.'
     }
 
     // Split the title into parts to style "Software Testing" in blue
