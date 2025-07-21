@@ -182,7 +182,7 @@ const CareersCultureSection: React.FC = () => {
               Culture in Action
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here's how we bring our values to life through regular activities
+              Here&apos;s how we bring our values to life through regular activities
               and initiatives.
             </p>
           </div>
@@ -264,7 +264,7 @@ const CareersCultureSection: React.FC = () => {
               </h3>
 
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                Being remote-first doesn't mean being disconnected. We've built
+                Being remote-first doesn&apos;t mean being disconnected. We&apos;ve built
                 a culture that thrives across time zones, bringing people
                 together through shared goals, regular communication, and
                 meaningful interactions.
@@ -308,16 +308,16 @@ const CareersCultureSection: React.FC = () => {
 
               <div className="space-y-6">
                 <blockquote className="text-[theme(color.brand.blue)] italic">
-                  "I've never felt more connected to a team while working
-                  remotely. The culture here makes distance irrelevant."
+                  &quot;I&apos;ve never felt more connected to a team while working
+                  remotely. The culture here makes distance irrelevant.&quot;
                 </blockquote>
                 <div className="text-sm text-[theme(color.brand.blue)]">
                   — Alex Chen, Senior QA Engineer (Singapore)
                 </div>
 
                 <blockquote className="text-[theme(color.brand.blue)] italic">
-                  "The flexibility to work from anywhere while being part of
-                  such a supportive team is incredible. Best of both worlds!"
+                  &quot;The flexibility to work from anywhere while being part of
+                  such a supportive team is incredible. Best of both worlds!&quot;
                 </blockquote>
                 <div className="text-sm text-[theme(color.brand.blue)]">
                   — Maria Rodriguez, Test Automation Lead (Spain)

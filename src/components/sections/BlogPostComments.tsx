@@ -1,8 +1,7 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
 import {
-  FaHeart,
   FaReply,
   FaFlag,
   FaThumbsUp,
@@ -26,7 +25,7 @@ interface BlogPostCommentsProps {
   postId: number;
 }
 
-const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ postId }) => {
+const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
   const [newComment, setNewComment] = useState("");
   const [replyTo, setReplyTo] = useState<number | null>(null);
   const [replyContent, setReplyContent] = useState("");
@@ -91,7 +90,7 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ postId }) => {
       } bg-white rounded-lg p-6 border border-gray-200`}
     >
       <div className="flex items-start gap-4">
-        <img
+        <Image
           src={comment.authorImage}
           alt={comment.author}
           className="w-10 h-10 rounded-full"

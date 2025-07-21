@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarAlt, FaClock, FaUser, FaEye, FaHeart, FaShare, FaArrowRight, FaFilter, FaSort } from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaEye, FaHeart, FaShare, FaArrowRight, FaFilter, FaSort } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Category {
   id: string;
@@ -249,7 +250,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
             <div className="md:flex">
               {/* Image */}
               <div className="md:w-1/3 relative">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
                   className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -304,7 +305,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
-                      <img
+                      <Image
                         src={post.authorImage}
                         alt={post.author}
                         className="w-5 h-5 rounded-full"

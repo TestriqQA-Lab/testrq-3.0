@@ -113,7 +113,7 @@ const ContactMethodsSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We understand that every client has different preferences. That's
+            We understand that every client has different preferences. That&apos;s
             why we offer multiple ways to connect with our QA experts.
           </p>
         </div>

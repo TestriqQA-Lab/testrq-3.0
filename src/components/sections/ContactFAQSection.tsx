@@ -127,8 +127,8 @@ const ContactFAQSection: React.FC = () => {
           <FaLightbulb className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
           <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Can't find the answer you're looking for? Our team is here to help!
-            Reach out through any of our contact methods and we'll get back to
+            Can&apos;t find the answer youre looking for? Our team is here to help!
+            Reach out through any of our contact methods and we&apos;ll get back to
             you promptly.
           </p>
 

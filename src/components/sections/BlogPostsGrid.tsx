@@ -1,7 +1,7 @@
 "use client";
-
+import Image from "next/image";
 import React, { useState } from "react";
-import { FaCalendarAlt, FaClock, FaUser, FaArrowRight, FaFire, FaStar, FaEye } from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaArrowRight, FaFire, FaStar, FaEye } from "react-icons/fa";
 
 const BlogPostsGrid: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -171,7 +171,7 @@ const BlogPostsGrid: React.FC = () => {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -198,7 +198,7 @@ const BlogPostsGrid: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4 text-sm text-gray-500">
                       <div className="flex items-center gap-2">
-                        <img
+                        <Image
                           src={post.authorImage}
                           alt={post.author}
                           className="w-6 h-6 rounded-full"
@@ -240,7 +240,7 @@ const BlogPostsGrid: React.FC = () => {
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -289,7 +289,7 @@ const BlogPostsGrid: React.FC = () => {
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -318,7 +318,7 @@ const BlogPostsGrid: React.FC = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 text-sm text-gray-500">
                       <div className="flex items-center gap-2">
-                        <img
+                        <Image
                           src={post.authorImage}
                           alt={post.author}
                           className="w-5 h-5 rounded-full"

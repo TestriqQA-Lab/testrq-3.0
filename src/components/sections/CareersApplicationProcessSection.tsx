@@ -178,8 +178,8 @@ const CareersApplicationProcessSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We've designed our hiring process to be thorough yet respectful of
-            your time. Here's what you can expect at each step of your
+            We&apos;ve designed our hiring process to be thorough yet respectful of
+            your time. Here&apos;s what you can expect at each step of your
             application journey.
           </p>
         </div>
@@ -314,7 +314,7 @@ const CareersApplicationProcessSection: React.FC = () => {
             Ready to Start Your Application?
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Take the first step towards joining our world-class QA team. We're
+            Take the first step towards joining our world-class QA team. We&apos;re
             excited to learn about your experience and discuss how you can
             contribute to our mission of delivering exceptional software
             quality.

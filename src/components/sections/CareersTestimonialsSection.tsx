@@ -175,7 +175,7 @@ const CareersTestimonialsSection: React.FC = () => {
               <FaQuoteLeft className="w-8 h-8 text-[theme(color.brand.blue)] opacity-50 mb-6" />
 
               <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 italic">
-                "{currentTestimonialData.quote}"
+                &quot;{currentTestimonialData.quote}&quot;
               </blockquote>
 
               <div className="flex flex-wrap gap-3 mb-8">
@@ -313,7 +313,7 @@ const CareersTestimonialsSection: React.FC = () => {
               </div>
 
               <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                "{testimonial.quote.substring(0, 120)}..."
+                &quot;{testimonial.quote.substring(0, 120)}...&quot;
               </p>
             </div>
           ))}

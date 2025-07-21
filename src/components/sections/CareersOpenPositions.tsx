@@ -262,7 +262,7 @@ const CareersOpenPositions: React.FC = () => {
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore exciting opportunities to grow your career in software
-            testing. We're looking for passionate professionals to join our
+            testing. We&apos;re looking for passionate professionals to join our
             world-class QA team.
           </p>
         </div>
@@ -478,11 +478,11 @@ const CareersOpenPositions: React.FC = () => {
         <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
           <FaFire className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
           <h3 className="text-2xl font-bold mb-4">
-            Don't See Your Perfect Role?
+            Don&apos;t See Your Perfect Role?
           </h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            We're always looking for exceptional talent! Send us your resume and
-            tell us about your QA expertise. We'll reach out when a position
+            We&apos;re always looking for exceptional talent! Send us your resume and
+            tell us about your QA expertise. We&apos;ll reach out when a position
             matches your skills.
           </p>
 

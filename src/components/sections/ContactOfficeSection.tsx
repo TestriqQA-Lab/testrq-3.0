@@ -100,7 +100,7 @@ const ContactOfficeSection: React.FC = () => {
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             With offices across major time zones and a distributed remote team,
-            we're positioned to provide round-the-clock support for your QA
+            we&apos;re positioned to provide round-the-clock support for your QA
             needs.
           </p>
         </div>
@@ -264,7 +264,7 @@ const ContactOfficeSection: React.FC = () => {
         <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">Ready to Connect?</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            No matter where you're located, our global team is ready to support
+            No matter where you&apos;re located, our global team is ready to support
             your QA needs. Choose the contact method that works best for you.
           </p>
 

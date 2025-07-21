@@ -1,8 +1,7 @@
 "use client";
-
+import Image from "next/image";
 import React from "react";
 import {
-  FaCalendarAlt,
   FaClock,
   FaEye,
   FaHeart,
@@ -205,7 +204,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
               href="#"
               className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
             >
-              <img
+              <Image
                 src={relatedPost.image}
                 alt={relatedPost.title}
                 className="w-16 h-12 object-cover rounded-lg"
