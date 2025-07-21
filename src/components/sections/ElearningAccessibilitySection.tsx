@@ -104,18 +104,18 @@ const ElearningAccessibilitySection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="py-20 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-white">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 rounded-full px-6 py-2 mb-6">
-            <FaAccessibleIcon className="w-4 h-4 text-blue-600" />
-            <span className="text-sm font-medium text-blue-600">Accessibility & Inclusion</span>
+          <div className="inline-flex items-center gap-2 text-brand-blue bg-blue-100 rounded-full px-6 py-2 mb-6">
+            <FaAccessibleIcon className="w-4 h-4" />
+            <span className="text-sm font-medium">Accessibility & Inclusion</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Making E-Learning
-            <span className="block text-blue-600">Accessible to Everyone</span>
+            <span className="block text-brand-blue">Accessible to Everyone</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -133,8 +133,8 @@ const ElearningAccessibilitySection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {accessibilityStats.map((stat, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</div>
+              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-sm ring-1 ring-brand-blue hover:ring-3 hover:shadow-md transition-all duration-300 ease-in-out">
+                <div className="text-3xl font-bold text-brand-blue mb-2">{stat.value}</div>
                 <h4 className="font-semibold text-gray-900 mb-2">{stat.label}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{stat.description}</p>
               </div>
@@ -153,7 +153,7 @@ const ElearningAccessibilitySection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {accessibilityFeatures.map((feature, index) => (
-              <div key={index} className="bg-gray-50 rounded-3xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div key={index} className="bg-gray-50 rounded-3xl p-8 ring-1 ring-brand-blue hover:ring-3 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-6">
                   <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center shadow-lg`}>
                     <feature.icon className="w-8 h-8 text-white" />
@@ -179,7 +179,7 @@ const ElearningAccessibilitySection: React.FC = () => {
         {/* Compliance Standards */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12 mb-16 border border-blue-100">
           <div className="text-center mb-12">
-            <FaGavel className="w-16 h-16 text-blue-600 mx-auto mb-6" />
+            <FaGavel className="w-16 h-16 text-brand-blue mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Legal Compliance & Standards</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We ensure your e-learning platform meets all relevant accessibility standards and legal requirements.
@@ -189,7 +189,7 @@ const ElearningAccessibilitySection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {complianceStandards.map((standard, index) => (
               <div key={index} className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
-                <div className="text-2xl font-bold text-blue-600 mb-2">{standard.coverage}</div>
+                <div className="text-2xl font-bold text-brand-blue mb-2">{standard.coverage}</div>
                 <h4 className="font-semibold text-gray-900 mb-3">{standard.standard}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{standard.description}</p>
               </div>
@@ -272,19 +272,19 @@ const ElearningAccessibilitySection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-12 text-white text-center">
-          <FaAccessibleIcon className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
+        <div className="bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
+          <FaAccessibleIcon className="w-16 h-16 mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Make Your E-Learning Platform Accessible Today</h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Don&apos;t exclude potential learners due to accessibility barriers. Let us help you create 
             an inclusive learning environment that benefits everyone.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+          <div className="flex flex-col text-brand-blue sm:flex-row gap-4 justify-center">
+            <button className="bg-white  px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-gray-100 transition-all duration-200 ease-in-out shadow-lg">
               Get Free Accessibility Audit
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-opacity-30 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Learn About Compliance
             </button>
           </div>

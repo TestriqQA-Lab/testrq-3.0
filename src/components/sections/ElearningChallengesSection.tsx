@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  FaExclamationTriangle, 
-  FaAccessibleIcon, 
-  FaUsers, 
+import {
+  FaExclamationTriangle,
+  FaAccessibleIcon,
+  FaUsers,
   FaChartLine,
   FaShieldAlt,
   FaMobile,
@@ -122,23 +122,23 @@ const ElearningChallengesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="py-20 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gray-50">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-6 py-2 mb-6">
             <FaExclamationTriangle className="w-4 h-4 text-red-600" />
             <span className="text-sm font-medium text-red-600">E-Learning Challenges</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Critical E-Learning Issues
-            <span className="block text-indigo-600">Blocking Educational Success</span>
+            <span className="block text-brand-blue">Blocking Educational Success</span>
           </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            E-learning platforms face unique challenges that can significantly impact educational outcomes 
-            and learner satisfaction. Our testing solutions address these critical issues to ensure 
+
+          <p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+            E-learning platforms face unique challenges that can significantly impact educational outcomes
+            and learner satisfaction. Our testing solutions address these critical issues to ensure
             effective and accessible learning experiences.
           </p>
         </div>
@@ -164,7 +164,7 @@ const ElearningChallengesSection: React.FC = () => {
           {challenges.map((challenge, index) => (
             <div
               key={index}
-              className={`${challenge.bgColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-opacity-20 group`}
+              className={`${challenge.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:ring-3 transition-all duration-300 hover:-translate-y-2 ring-1 ring-brand-blue border-opacity-20 group`}
             >
               <div className="flex items-center justify-between mb-4">
                 <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
@@ -174,26 +174,26 @@ const ElearningChallengesSection: React.FC = () => {
                   {challenge.urgency}
                 </span>
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-900 mb-4">{challenge.title}</h3>
-              
+
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-red-700 text-sm mb-2">THE PROBLEM:</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{challenge.problem}</p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-orange-700 text-sm mb-2">EDUCATIONAL IMPACT:</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{challenge.impact}</p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-green-700 text-sm mb-2">OUR SOLUTION:</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{challenge.solution}</p>
                 </div>
               </div>
-              
+
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <button className="text-indigo-600 font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
@@ -215,9 +215,9 @@ const ElearningChallengesSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {learningImpact.map((impact, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
+              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl ring-1 ring-brand-blue hover:ring-3 hover:bg-gray-100 transition-all duration-300">
                 <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <impact.icon className="w-8 h-8 text-indigo-600" />
+                  <impact.icon className="w-8 h-8 text-sky-600" />
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4">{impact.title}</h4>
                 <p className="text-gray-600 mb-4 leading-relaxed">{impact.description}</p>
@@ -228,63 +228,63 @@ const ElearningChallengesSection: React.FC = () => {
         </div>
 
         {/* Cost of Poor E-Learning Quality */}
-        <div className="bg-gradient-to-br from-red-600 to-pink-700 rounded-3xl p-12 text-white mb-16">
+        <div className="bg-gradient-to-tr from-red-700 to-red-300 rounded-3xl p-12 text-white mb-16">
           <div className="text-center mb-12">
-            <FaExclamationTriangle className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
+            <FaExclamationTriangle className="w-16 h-16 mx-auto mb-6 opacity-80" />
             <h3 className="text-3xl font-bold mb-4">The True Cost of Poor E-Learning Quality</h3>
-            <p className="text-red-100 text-lg max-w-3xl mx-auto">
-              Technical issues in e-learning platforms don&apos;t just affect user experience—they directly impact 
+            <p className="text-lg max-w-3xl mx-auto">
+              Technical issues in e-learning platforms don&apos;t just affect user experience—they directly impact
               educational outcomes, institutional reputation, and long-term success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-red-500">
             <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaChartLine className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+              <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Educational Outcomes</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 Poor platform quality leads to 25% lower course completion rates and reduced learning effectiveness.
               </p>
             </div>
-            
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaUsers className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+
+            <div className="text-center text-red-500 p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Student Retention</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 Technical difficulties cause 40% of students to abandon courses, leading to significant revenue loss.
               </p>
             </div>
-            
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaGlobe className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+
+            <div className="text-center text-red-500 p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaGlobe className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Institutional Reputation</h4>
-              <p className="text-red-100 text-sm">
+              <p className="text-sm">
                 Accessibility violations and security breaches can result in legal action and permanent reputation damage.
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Prevent These Issues Now
             </button>
           </div>
         </div>
 
         {/* Solution Preview */}
-        <div className="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-3xl p-12 text-white text-center">
+        <div className="bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
           <FaGraduationCap className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Transform Your E-Learning Platform</h3>
           <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
-            Our comprehensive e-learning testing solutions address every challenge mentioned above, 
+            Our comprehensive e-learning testing solutions address every challenge mentioned above,
             ensuring accessible, engaging, and effective learning experiences for all students.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               See Our Solutions
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Get Free Assessment
             </button>
           </div>

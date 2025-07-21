@@ -156,6 +156,10 @@ const Navbar = () => {
           link: "/e-commerce-testing-services",
         },
         {
+          label: "Elearning Testing Services",
+          link: "/e-learning-testing-services",
+        },
+        {
           label: "Automation Testing Services",
           link: "/automation-testing",
         },
