@@ -1,8 +1,7 @@
 import React from "react";
-import { FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { link } from "fs";
 
 const TeamLeadershipSection = () => {
   const leaders = [
@@ -19,13 +18,13 @@ const TeamLeadershipSection = () => {
         "Speaker at 20+ industry conferences"
       ],
       linkedin: "https://www.linkedin.com/in/sandeep-maske-qa/",
-      img : <Image
-              src="/sandeep-maske-img.webp"
-              alt="Sandeep Maske"
-              width={350}
-              height={250}
-              className="object-cover rounded-full"
-            />
+      img: <Image
+        src="/sandeep-maske-img.webp"
+        alt="Sandeep Maske"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
     },
     {
       name: "Santosh Kakade",
@@ -40,13 +39,13 @@ const TeamLeadershipSection = () => {
         "Published 15+ technical articles"
       ],
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
-      img : <Image
-              src="/Santosh_Kakade.webp"
-              alt="Santosh_Kakade"
-              width={350}
-              height={250}
-              className="object-cover rounded-full"
-            />
+      img: <Image
+        src="/Santosh_Kakade.webp"
+        alt="Santosh_Kakade"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
     },
     {
       name: "Goutam_Mishra",
@@ -61,13 +60,13 @@ const TeamLeadershipSection = () => {
         "Mentored 30+ junior testers"
       ],
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
-      img : <Image
-              src="/Goutam_Mishra.webp"
-              alt="Goutam_Mishra"
-              width={350}
-              height={250}
-              className="object-cover rounded-full"
-            />
+      img: <Image
+        src="/Goutam_Mishra.webp"
+        alt="Goutam_Mishra"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
     },
     {
       name: "Rohan Maske",
@@ -82,13 +81,13 @@ const TeamLeadershipSection = () => {
         "Mentored 30+ junior testers"
       ],
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
-      img : <Image
-              src="/Rohan_Maske.webp"
-              alt="Rohan_Maske"
-              width={350}
-              height={250}
-              className="object-cover rounded-full"
-            />
+      img: <Image
+        src="/Rohan_Maske.webp"
+        alt="Rohan_Maske"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
     },
     {
       name: "Aatish Jadhav",
@@ -103,14 +102,16 @@ const TeamLeadershipSection = () => {
         "Mentored 30+ junior testers"
       ],
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
-      img : <Image
-              src="/Aatish_Jadhav.webp"
-              alt="Aatish_Jadhav"
-              width={350}
-              height={250}
-              className="object-cover rounded-full"
-            />
+      img: <Image
+        src="/Aatish_Jadhav.webp"
+        alt="Aatish_Jadhav"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
     },
+    
+    
   ];
 
   return (
@@ -130,15 +131,17 @@ const TeamLeadershipSection = () => {
           </p>
         </div>
 
+        
+
         {/* Leaders Grid */}
         <div className="space-y-12">
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
                 }`}
             >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+              <div className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                 }`}>
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -155,7 +158,30 @@ const TeamLeadershipSection = () => {
                     </div>
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed mb-6">{leader.bio}</p>
+                  {/* Leader Visual */}
+                  <div className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <div className="relative">
+
+                      <div className="text-center text-black">
+                        <div className="w-50 h-50 md:w-80 md:h-90 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                          {leader.img}
+                        </div>
+                        <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
+                        <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                      </div>
+
+
+                      {/* Floating Badge */}
+                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                          <div className="text-xs text-gray-100">Years</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">{leader.bio}</p>
 
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
@@ -170,21 +196,21 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Social Links */}
-                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30}/></Link>
+                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30} /></Link>
                 </div>
 
                 {/* Leader Visual */}
-                <div className={`flex justify-center ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                <div className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
                   <div className="relative">
-                    
-                      <div className="text-center text-black">
-                        <div className="w-80 h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
-                          {leader.img}
-                        </div>
-                        <div className="text-2xl font-semibold">{leader.name}</div>
-                        <div className="text-md opacity-90">{leader.position}</div>
+
+                    <div className="text-center text-black py-0">
+                      <div className="w-60 h-60 md:w-80 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                        {leader.img}
                       </div>
-                  
+                      <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
+                      <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                    </div>
+
 
                     {/* Floating Badge */}
                     <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">

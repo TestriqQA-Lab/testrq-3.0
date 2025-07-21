@@ -63,9 +63,7 @@ const HomeComprehensiveSoftwareTesting = () => {
                     })
                 }
             </div>
-            <div className='flex justify-center'>
-                <button className='p-2 border bg-[theme(color.brand.blue)] hover:bg-sky-600 transition duration-300 cursor-pointer text-white w-50 rounded-lg'>View All Services<span className='text-2xl'>&#8594;</span></button>
-            </div>
+            
         </section>
     )
 }

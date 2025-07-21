@@ -63,118 +63,150 @@ const Navbar = () => {
       link: "",
       submenu: [
         {
-          heading: "Testing Services",
+          heading: "By Expertise Focus Area",
           services: [
-            { label: "LaunchFast QA", link: "/services/launchfast-qa" },
+            { label: "LaunchFast QA", link: "/launchfast-qa" },
             {
               label: "Exploratory Testing",
-              link: "/services/exploratory-testing",
+              link: "/exploratory-testing",
             },
             {
               label: "Web Application Testing",
-              link: "/services/web-application-testing",
+              link: "/web-application-testing-services",
             },
             {
               label: "Desktop Application Testing",
-              link: "/services/desktop-application-testing",
+              link: "/desktop-application-testing-services",
             },
             {
               label: "Mobile Application Testing",
-              link: "/services/mobile-application-testing",
+              link: "/mobile-application-testing",
             },
-            { label: "API Testing", link: "/services/api-testing" },
-          ],
-        },
-        {
-          heading: "Specialized Testing",
-          services: [
             {
-              label: "IoT Device Testing",
-              link: "/services/iot-device-testing",
+              label: "IoT Testing",
+              link: "/iot-device-testing-services",
             },
             {
               label: "AI Application Testing",
-              link: "/services/ai-application-testing",
+              link: "/ai-application-testing",
             },
-            { label: "Robotics Testing", link: "/services/robotics-testing" },
+            {
+              label: "Robotics Testing",
+              link: "/robotics-testing-services",
+            },
             {
               label: "Smart Device Testing",
-              link: "/services/smart-device-testing",
+              link: "/smart-device-testing-services",
             },
-            { label: "ETL Testing", link: "/services/etl-testing" },
-            { label: "Security Testing", link: "/services/security-testing" },
+            {
+              label: "ETL Testing",
+              link: "/etl-testing-services",
+            },
           ],
         },
         {
-          heading: "Quality Assurance",
+          heading: "By Testing Coverage",
           services: [
-            { label: "Manual Testing", link: "/services/manual-testing" },
+            {
+              label: "Manual Testing",
+              link: "/manual-testing",
+            },
             {
               label: "Automation Testing",
-              link: "/services/automation-testing",
+              link: "/automation-testing-services",
             },
             {
-              label: "Regression Testing",
-              link: "/services/regression-testing",
+              label: "API Testing",
+              link: "/api-testing",
             },
-            {
-              label: "Performance Testing",
-              link: "/services/performance-testing",
-            },
-            { label: "QA Documentation", link: "/services/qa-documentation" },
-            { label: "Data Analysis", link: "/services/data-analysis" },
+            { label: "Regression Testing", link: "/regression-testing" },
+            { label: "Performance Testing", link: "/performance-testing-services" },
+            { label: "Security Testing", link: "/security-testing" },
+            { label: "QA Documentation Services", link: "/qa-documentation-services" },
+            { label: "Data Analysis", link: "/data-analysis-services" },
           ],
         },
         {
-          heading: "Advanced Testing",
+          heading: "By Industries Expertise",
           services: [
-            { label: "Load Testing", link: "/services/load-testing" },
+            { label: "Ecommerce Testing Service", link: "/e-commerce-testing-services" },
             {
-              label: "Compatibility Testing",
-              link: "/services/compatibility-testing",
+              label: "Elearning Testing Service",
+              link: "/e-learning-testing-services",
             },
-            { label: "Usability Testing", link: "/services/usability-testing" },
             {
-              label: "Accessibility Testing",
-              link: "/services/accessibility-testing",
+              label: "Healthcare Testing Service",
+              link: "/healthcare-testing-services",
             },
-            { label: "Database Testing", link: "/services/database-testing" },
             {
-              label: "Integration Testing",
-              link: "/services/integration-testing",
+              label: "Gaming App Testing Service",
+              link: "/gaming-app-testing-services",
+            },
+            {
+              label: "Iot Appliances & App Testing Service",
+              link: "/iot-appliances-and-apps-testing-services",
+            },
+            {
+              label: "Banking & Finance Testing Service",
+              link: "/banking-finance-industry-testing-services",
+            },
+            {
+              label: "Telecommunication Testing Service",
+              link: "/telecommunications-testing-services",
+            },
+            
+          ],
+        },
+        {
+          heading: "Trust Certification",
+          services: [
+            { label: "Matrimonial Apps Certification", link: "/usability-testing" },
+            { label: "Dating Apps Certification", link: "/load-testing" },
+            {
+              label: "Betting Apps Certification",
+              link: "/compatibility-testing",
+            },
+            {
+              label: "Trading Apps Certification",
+              link: "/accessibility-testing",
+            },
+            { label: "Shopping Apps Certification", link: "/database-testing" },
+            {
+              label: "Chatting Apps Certification",
+              link: "/integration-testing",
             },
           ],
         },
       ],
     },
-    {
-      label: "QA Solutions",
-      link: "",
-      submenu: [
-        {
-          label: "Ecommerce Testing Services",
-          link: "/qa-solutions/ecommerce-testing",
-        },
-        {
-          label: "Automation Testing Services",
-          link: "/qa-solutions/automation-testing",
-        },
-        {
-          label: "Gaming App Testing Services",
-          link: "/qa-solutions/gaming-app-testing",
-        },
-        { label: "Manual Testing", link: "/qa-solutions/manual-testing" },
-        {
-          label: "Banking & Finance Testing Services",
-          link: "/qa-solutions/banking-finance-testing",
-        },
-      ],
-    },
+    // {
+    //   label: "QA Solutions",
+    //   link: "",
+    //   submenu: [
+    //     {
+    //       label: "Ecommerce Testing Services",
+    //       link: "/e-commerce-testing-services",
+    //     },
+    //     {
+    //       label: "Automation Testing Services",
+    //       link: "/automation-testing",
+    //     },
+    //     {
+    //       label: "Gaming App Testing Services",
+    //       link: "/gaming-app-testing",
+    //     },
+    //     { label: "Manual Testing", link: "/manual-testing" },
+    //     {
+    //       label: "Banking & Finance Testing Services",
+    //       link: "/banking-finance-testing",
+    //     },
+    //   ],
+    // },
     { label: "Tools", link: "/tools" },
     { label: "Our Clients", link: "/clients" },
     { label: "Jobs", link: "/careers" },
     { label: "Blog", link: "/blog" },
-    { label: "Contact", link: "/contact" },
+    { label: "Contact", link: "/contact-us" },
   ];
 
   return (
@@ -205,7 +237,7 @@ const Navbar = () => {
 
               {/* Mega Menu for 'Services' */}
               {item.label === "Services" && item.submenu && (
-                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-38vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
+                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
                   <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
                     {item.submenu.map((column, colIdx) => {
                       // Check if the column is of type { heading: string, services: SubmenuItem[] }
@@ -223,7 +255,7 @@ const Navbar = () => {
 
                       // If it's the complex object, render the heading and services
                       return (
-                        <div key={colIdx} className="space-y-3 xl:space-y-4">
+                        <div key={colIdx} className="space-y-3 xl:space-y-4 xl:gap-8">
                           <h2 className="text-base xl:text-lg font-semibold text-gray-800">
                             {column.heading}
                           </h2>

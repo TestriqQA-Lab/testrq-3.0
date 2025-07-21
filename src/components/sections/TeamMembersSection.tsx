@@ -105,7 +105,8 @@ const TeamMembersSection = () => {
       department: "Testriq QA Lab",
       linkedin: 'https://www.linkedin.com/in/elvita07',
       src: "/elvita-gomes.png",
-    }
+    },
+    
   ];
 
   return (
@@ -177,7 +178,7 @@ const TeamMembersSection = () => {
                 key={index}
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="text-center">
+                <div className="text-center rounded-full">
                   <div className='w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Image src={member.src} alt="Employees Photo" width={200} height={250} />
                     

@@ -89,7 +89,7 @@ const TeamHeroSection = () => {
             <div className="absolute top-12 right-12 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
               <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full"></div>
             </div>
-            <div className="absolute bottom-16 left-12 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
+            <div className="absolute bottom-12 left-16 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
               <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-green-500 rounded-full"></div>
             </div>
             <div className="absolute bottom-8 right-8 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
@@ -98,17 +98,17 @@ const TeamHeroSection = () => {
           </div>
           
           {/* Floating Stats */}
-          <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border">
+          <div className="absolute -top-8 -right-4 bg-linear-to-t from-sky-500 to-indigo-500 rounded-lg shadow-lg p-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-[theme(color.brand.blue)]">8+</div>
-              <div className="text-sm text-gray-600">Avg Experience</div>
+              <div className="text-2xl font-bold text-white">8+</div>
+              <div className="text-sm text-white">Avg Experience</div>
             </div>
           </div>
           
-          <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 border">
+          <div className="absolute -bottom-4 -left-4 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-[theme(color.brand.blue)]">100%</div>
-              <div className="text-sm text-gray-600">Certified</div>
+              <div className="text-2xl font-bold text-white">100%</div>
+              <div className="text-sm text-white">Certified</div>
             </div>
           </div>
         </div>
