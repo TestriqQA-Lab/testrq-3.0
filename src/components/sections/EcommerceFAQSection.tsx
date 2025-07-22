@@ -95,7 +95,7 @@ const EcommerceFAQSection: React.FC = () => {
             </h3>
             <div className="flex-shrink-0">
               {openFAQ === index ? (
-                <FaChevronUp className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <FaChevronUp className="w-5 h-5 text-brand-blue" />
               ) : (
                 <FaChevronDown className="w-5 h-5 text-gray-400" />
               )}
