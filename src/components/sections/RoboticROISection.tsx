@@ -6,25 +6,29 @@ import { FaDollarSign, FaClock, FaShieldAlt, FaChartLine } from "react-icons/fa"
 const RoboticROISection: React.FC = () => {
   const roiMetrics = [
     {
-      icon: <FaDollarSign className="w-8 h-8 text-blue-500" />,
+      icon: <FaDollarSign className="w-8 h-8" />,
+      colour: "text-blue-500",
       percentage: "45%",
       title: "Cost Reduction",
       description: "Average cost savings through early defect detection and prevention in robotic systems"
     },
     {
-      icon: <FaClock className="w-8 h-8 text-green-500" />,
+      icon: <FaClock className="w-8 h-8" />,
+      colour: "text-green-500",
       percentage: "65%",
       title: "Faster Deployment",
       description: "Reduced time-to-market with automated robotic testing processes and validation"
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8 text-red-500" />,
+      icon: <FaShieldAlt className="w-8 h-8 " />,
+      colour: "text-red-500",
       percentage: "99.8%",
       title: "Safety Assurance",
       description: "Critical safety issues prevented from reaching production environments"
     },
     {
-      icon: <FaChartLine className="w-8 h-8 text-purple-500" />,
+      icon: <FaChartLine className="w-8 h-8 " />,
+      colour: "text-purple-500",
       percentage: "350%",
       title: "ROI Increase",
       description: "Average return on investment within the first year of implementation"
@@ -47,10 +51,10 @@ const RoboticROISection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {roiMetrics.map((metric, index) => (
             <div key={index} className="text-center">
-              <div className="mb-4">
+              <div className={`mb-4 ${metric.colour}`}>
                 {metric.icon}
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+              <div className={`text-4xl md:text-5xl font-bold ${metric.colour} mb-2`}>
                 {metric.percentage}
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
@@ -72,7 +76,7 @@ const RoboticROISection: React.FC = () => {
             Discover how much you can save and gain with our comprehensive robotic testing services. 
             Get a personalized ROI analysis for your robotic project.
           </p>
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Get ROI Analysis
           </button>
         </div>

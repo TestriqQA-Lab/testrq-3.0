@@ -89,15 +89,15 @@ const RoboticTestingHeroSection: React.FC = () => {
                 </div>
 
                 {/* Robot Status Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="bg-blue-50 p-3 rounded-lg">
                     <div className="flex items-center justify-between">
                       <span className="text-sm font-medium text-gray-700">
                         Arm Movement
                       </span>
-                      <FaCog className="w-4 h-4 text-blue-500 animate-spin" />
+                      <FaCog className="w-4 h-4 text-blue-500 animate-spin hidden md:block" />
                     </div>
-                    <div className="text-lg font-bold text-blue-600">
+                    <div className="text-sm md:text-lg md:font-bold  text-blue-600">
                       Operational
                     </div>
                   </div>
@@ -107,9 +107,9 @@ const RoboticTestingHeroSection: React.FC = () => {
                       <span className="text-sm font-medium text-gray-700">
                         Safety Systems
                       </span>
-                      <FaShieldAlt className="w-4 h-4 text-green-500" />
+                      <FaShieldAlt className="w-4 h-4 text-green-500 hidden md:block" />
                     </div>
-                    <div className="text-lg font-bold text-green-600">
+                    <div className="text-sm md:text-lg md:font-bold text-green-600">
                       99.8% Pass
                     </div>
                   </div>
@@ -119,9 +119,9 @@ const RoboticTestingHeroSection: React.FC = () => {
                       <span className="text-sm font-medium text-gray-700">
                         Performance
                       </span>
-                      <FaChartLine className="w-4 h-4 text-purple-500" />
+                      <FaChartLine className="w-4 h-4 text-purple-500 hidden md:block" />
                     </div>
-                    <div className="text-lg font-bold text-purple-600">
+                    <div className="text-sm md:text-lg md:font-bold text-purple-600">
                       Optimal
                     </div>
                   </div>
@@ -131,9 +131,9 @@ const RoboticTestingHeroSection: React.FC = () => {
                       <span className="text-sm font-medium text-gray-700">
                         Precision
                       </span>
-                      <div className="w-4 h-4 bg-orange-500 rounded-full"></div>
+                      <div className="w-4 h-4 bg-orange-500 rounded-full hidden md:block"></div>
                     </div>
-                    <div className="text-lg font-bold text-orange-600">
+                    <div className="text-sm md:text-lg md:font-bold text-orange-600">
                       ±0.1mm
                     </div>
                   </div>
