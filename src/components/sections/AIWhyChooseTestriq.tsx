@@ -287,7 +287,7 @@ const AIWhyChooseTestriq: React.FC = () => {
               AI Testing Intelligence Network
             </h3>
             <p className="text-gray-600">
-              Machine learning models and AI systems we've successfully
+              Machine learning models and AI systems we&apos;ve successfully
               validated
             </p>
           </div>

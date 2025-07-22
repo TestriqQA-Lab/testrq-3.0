@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
+import { FaTools, FaRocket, FaShieldAlt } from "react-icons/fa";
 import { MdModelTraining, MdAnalytics } from "react-icons/md";
 
 const AIToolsFramework: React.FC = () => {

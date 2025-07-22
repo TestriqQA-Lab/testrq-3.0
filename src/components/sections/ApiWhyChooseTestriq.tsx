@@ -266,7 +266,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Join 200+ companies who trust our API testing expertise. Get
-              started with a comprehensive API assessment and see why we're the
+              started with a comprehensive API assessment and see why we&apos;re the
               preferred choice.
             </p>
             <button className="bg-white text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">

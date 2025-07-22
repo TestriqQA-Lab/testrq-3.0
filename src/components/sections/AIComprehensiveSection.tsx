@@ -2,12 +2,9 @@
 
 import React from "react";
 import {
-  FaBrain,
   FaShieldAlt,
   FaChartLine,
-  FaRobot,
   FaDatabase,
-  FaEye,
 } from "react-icons/fa";
 import { MdPsychology, MdModelTraining, MdSecurity } from "react-icons/md";
 
