@@ -27,7 +27,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-           Accelerate your product launch with our comprehensive QA solutions and premium software testing services. With over a decade of experience, our ISTQB Certified Experts deliver exceptional software quality and scalable solutions to startups and industry leaders, ensuring faster time-to-market and award-winning apps.
+           Accelerate your product launch with premium software testing services and QA solutions. With over a decade of experience, our ISTQB Certified Experts deliver software quality, scalable QA services, and award-winning apps for startups and industry leaders.
         </p>
 
         {/* CTAs */}
@@ -45,7 +45,7 @@ const Hero = () => {
         {/* Stats */}
         <div className="flex flex-wrap justify-center md:justify-center xl:justify-start gap-6 lg:mx-0">
           {[
-            ["14+", "Years Experience"],
+            ["14+", "Years of Experience"],
             ["500K", "Test Cases Executed"],
             ["180", "Certified Experts"],
             ["100%", "Client Satisfaction"],

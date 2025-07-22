@@ -15,7 +15,7 @@ const renderTitle = () => {
 const ctaSection = {
   title: "Ready to Elevate Your Software Quality?",
   subtitle:
-    "Join 50+ leading companies who trust our software testing services. Get started with a free QA consultation today.",
+    "With 14+ years of experience, Testriq is a trusted QA partner for 50+ companies—offering expert-led software testing services and free QA consultations to elevate software quality.",
   primaryButton: {
     label: "Start Free Consultation",
     href: "#",

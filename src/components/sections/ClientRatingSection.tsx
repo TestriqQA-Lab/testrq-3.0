@@ -19,7 +19,7 @@ const ClientRatingSection = () => {
     // Define the heading and card data
     const heading = {
         title: 'What Our Clients Say?',
-        info: 'See what our clients say about our exceptional QA services'
+        info: 'Trusted by global startups and enterprises, Testriq is a leading QA outsourcing partner known for ISTQB certified experts, dependable QA support, and consistent software quality across every project.'
     }
 
     // Split the title into parts to style "Client" in blue
