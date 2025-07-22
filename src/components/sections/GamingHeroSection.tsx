@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
+import React from "react";
 import { 
   FaGamepad, 
   FaMobile, 
   FaDesktop, 
   FaTrophy,
-  FaRocket,
   FaUsers,
   FaChartLine,
   FaCheckCircle,
@@ -142,7 +141,7 @@ const GamingHeroSection: React.FC = () => {
             {/* Hero Illustration */}
             <div className="relative">
               <div className="w-full h-96 bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl flex items-center justify-center overflow-hidden shadow-2xl">
-                <img 
+                <Image 
                   src="/gaming-hero-animated.png" 
                   alt="Gaming App Testing Services - Gaming controllers, devices, and platforms"
                   className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"

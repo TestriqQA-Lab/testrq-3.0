@@ -4,7 +4,6 @@ import React from "react";
 import { 
   FaShoppingCart, 
   FaCreditCard, 
-  FaMobile, 
   FaShieldAlt,
   FaRocket,
   FaUsers,
@@ -28,7 +27,7 @@ const EcommerceHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -36,32 +35,8 @@ const EcommerceHeroSection: React.FC = () => {
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-2000"></div>
       </div>
 
-      {/* Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 2xl:left-1/2 animate-float">
-          <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaShoppingCart className="w-8 h-8 text-[theme(color.brand.blue)]" />
-          </div>
-        </div>
-        <div className="absolute top-56 md:top-46 xl:top-16 right-1/4 md:right-1/5 animate-float delay-1000">
-          <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaCreditCard className="w-8 h-8 text-green-500" />
-          </div>
-        </div>
-        <div className="absolute bottom-0 xl:bottom-80 left-2/4 md:left-1/4 lg:left-3/4 lg:bottom-96 animate-float delay-2000">
-          <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaMobile className="w-8 h-8 text-[theme(color.brand.blue)]" />
-          </div>
-        </div>
-        <div className="absolute bottom-0 xl:bottom-80 lg:bottom-3/12 left-1/6 md:right-1/6 lg:left-1/2 animate-float delay-3000">
-          <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaShieldAlt className="w-8 h-8 text-red-500" />
-          </div>
-        </div>
-      </div>
-
-      <div className="relative pt-10  pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Badge */}
@@ -71,12 +46,12 @@ const EcommerceHeroSection: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Maximize Your
               <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
                 E-Commerce Success
               </span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">with Expert QA Testing</span>
+              with Expert QA Testing
             </h1>
 
             {/* Description */}
@@ -108,8 +83,7 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-                <FaRocket className="w-5 h-5" />
+              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-3 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-98 transition-all duration-300 flex items-center justify-center gap-2">
                 Start Free E-Commerce Audit
               </button>
               <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-[theme(color.brand.blue)] transition-all duration-300 flex items-center justify-center gap-2">
@@ -135,7 +109,7 @@ const EcommerceHeroSection: React.FC = () => {
           </div>
 
           {/* Right Column - Stats & Visual */}
-          <div className="space-y-8">
+          <div className="space-y-8 py-10">
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
@@ -193,10 +167,10 @@ const EcommerceHeroSection: React.FC = () => {
               Join 500+ e-commerce businesses that trust Testriq for comprehensive QA testing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
                 Get Free Testing Strategy
               </button>
-              <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
                 View Case Studies
               </button>
             </div>

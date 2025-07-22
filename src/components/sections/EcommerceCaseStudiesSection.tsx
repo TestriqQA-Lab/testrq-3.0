@@ -51,7 +51,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gray-50">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

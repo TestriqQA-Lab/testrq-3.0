@@ -13,7 +13,6 @@ import {
   FaCheckCircle,
   FaClock,
   FaAward,
-  FaTrophy
 } from "react-icons/fa";
 
 const GamingContactSection: React.FC = () => {

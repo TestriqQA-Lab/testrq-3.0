@@ -46,7 +46,7 @@ const EcommerceContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gradient-to-br from-[theme(color.brand.blue)] to-purple-600">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-brand-blue to-sky-600 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -168,16 +168,16 @@ const EcommerceContactSection: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-br from-[theme(color.brand.blue)] via-sky-600 to-blue-500 bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">Join 500+ Successful E-Commerce Businesses</h3>
-            <p className="text-blue-100 mb-6">
+          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-brand-blue mb-4">Join 500+ Successful E-Commerce Businesses</h3>
+            <p className="text-brand-blue mb-6">
               Don&apos;t let technical issues hold back your e-commerce success. Start optimizing today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:-translate-x-2 transition-all shadow-lg">
+              <button className="bg-gradient-to-br from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all shadow-lg">
                 Start Free Assessment
               </button>
-              <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:translate-x-2 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 transition-all ring-2 ring-brand-blue border-opacity-30">
                 View Success Stories
               </button>
             </div>

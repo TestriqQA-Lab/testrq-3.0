@@ -10,7 +10,6 @@ import {
   FaExclamationTriangle,
   FaCheckCircle,
   FaArrowUp,
-  FaArrowDown,
   FaShieldAlt,
   FaRocket,
   FaUsers
