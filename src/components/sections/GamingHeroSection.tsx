@@ -45,7 +45,7 @@ const GamingHeroSection: React.FC = () => {
             <FaGamepad className="w-8 h-8 text-[theme(color.brand.blue)]" />
           </div>
         </div>
-        <div className="absolute top-56 md:top-46 xl:top-16 right-1/4 md:right-1/5 animate-float delay-1000">
+        <div className="absolute top-64 md:top-46 lg:top-56 right-1/4 md:right-1/5 lg:right-6/12 xl:right-6/12 animate-float delay-1000">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaTrophy className="w-8 h-8 text-yellow-500" />
           </div>
@@ -138,16 +138,7 @@ const GamingHeroSection: React.FC = () => {
 
           {/* Right Column - Visual & Stats */}
           <div className="space-y-8">
-            {/* Hero Illustration */}
-            <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl flex items-center justify-center overflow-hidden shadow-2xl">
-                <Image 
-                  src="/gaming-hero-animated.png" 
-                  alt="Gaming App Testing Services - Gaming controllers, devices, and platforms"
-                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            </div>
+            
 
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
