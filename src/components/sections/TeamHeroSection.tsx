@@ -26,13 +26,29 @@ const TeamHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Our diverse team of ISTQB certified professionals brings together decades of 
-          experience, cutting-edge expertise, and a shared passion for quality assurance 
+          Our diverse team of ISTQB certified professionals brings together decades of
+          experience, cutting-edge expertise, and a shared passion for quality assurance
           excellence. Meet the people who make Testriq exceptional.
         </p>
 
+        {/* Team Highlights */}
+        <div className="space-y-3 max-w-xl mx-auto xl:mx-0">
+          {[
+            "ISTQB Certified Testing Professionals",
+            "Average 8+ Years Industry Experience",
+            "Expertise Across Multiple Domains",
+            "Continuous Learning & Development Culture"
+          ].map((highlight, index) => (
+            <div key={index} className="flex items-center gap-3 text-left">
+              <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full flex-shrink-0"></div>
+              <span className="text-gray-700 text-base">{highlight}</span>
+            </div>
+          ))}
+        </div>
+
+
         {/* Team Stats */}
-        <div className="grid grid-cols-3 gap-6 mb-8 max-w-lg mx-auto xl:mx-0">
+        <div className="grid grid-cols-3 gap-6 mb-8 max-w-sm my-5 xl:mx-0">
           {[
             { icon: FaUsers, number: "50+", label: "Team Members" },
             { icon: FaGraduationCap, number: "40+", label: "Certifications" },
@@ -50,20 +66,6 @@ const TeamHeroSection = () => {
           ))}
         </div>
 
-        {/* Team Highlights */}
-        <div className="space-y-3 max-w-xl mx-auto xl:mx-0">
-          {[
-            "ISTQB Certified Testing Professionals",
-            "Average 8+ Years Industry Experience",
-            "Expertise Across Multiple Domains",
-            "Continuous Learning & Development Culture"
-          ].map((highlight, index) => (
-            <div key={index} className="flex items-center gap-3 text-left">
-              <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full flex-shrink-0"></div>
-              <span className="text-gray-700 text-base">{highlight}</span>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Right Section - Team Visual */}
@@ -81,7 +83,7 @@ const TeamHeroSection = () => {
                 United by passion for quality and excellence
               </p>
             </div>
-            
+
             {/* Floating Team Member Avatars */}
             <div className="absolute top-8 left-8 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full"></div>
@@ -96,7 +98,7 @@ const TeamHeroSection = () => {
               <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
             </div>
           </div>
-          
+
           {/* Floating Stats */}
           <div className="absolute -top-8 -right-4 bg-linear-to-t from-sky-500 to-indigo-500 rounded-lg shadow-lg p-4">
             <div className="text-center">
@@ -104,7 +106,7 @@ const TeamHeroSection = () => {
               <div className="text-sm text-white">Avg Experience</div>
             </div>
           </div>
-          
+
           <div className="absolute -bottom-4 -left-4 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-white">100%</div>
