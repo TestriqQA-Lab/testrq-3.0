@@ -106,7 +106,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Proven Smart Device Testing Process
+            Our Proven Smart Device Testing <span className="text-brand-blue">Process</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our systematic approach ensures comprehensive smart device testing coverage, delivering reliable, 
@@ -233,7 +233,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Learn More About Our Process
           </button>
         </div>
