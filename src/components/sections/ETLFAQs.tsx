@@ -50,7 +50,7 @@ const ETLFAQs: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            <span className="text-brand-blue">Frequently</span> Asked Questions
           </h2>
           <p className="text-lg text-gray-600">
             Get answers to common questions about our ETL testing services and methodologies.
@@ -89,7 +89,7 @@ const ETLFAQs: React.FC = () => {
           <p className="text-gray-600 mb-4">
             Have more questions about our ETL testing services?
           </p>
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Contact Our ETL Experts
           </button>
         </div>

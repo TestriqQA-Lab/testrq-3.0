@@ -5,22 +5,22 @@ import { FaDatabase, FaExchangeAlt, FaCloudUploadAlt, FaCheckCircle } from "reac
 
 const ETLTestingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-20 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-bounce"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-25"></div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold">
+          <div className="space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-semibold">
               ETL Testing Specialists
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Comprehensive <span className="text-blue-500">ETL Testing</span> Services
+              Comprehensive <span className="text-brand-blue">ETL Testing</span> Services
             </h1>
             
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
@@ -29,10 +29,10 @@ const ETLTestingHeroSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+              <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
                 Get Started Today
               </button>
-              <button className="border-2 border-purple-500 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
+              <button className="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
                 <span className="mr-2">▶</span>
                 Watch Demo
               </button>
@@ -99,7 +99,7 @@ const ETLTestingHeroSection: React.FC = () => {
               </div>
 
               {/* Metrics */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div className="bg-gray-50 rounded-lg p-3">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-600">Data Quality</span>
