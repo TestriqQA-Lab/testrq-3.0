@@ -93,17 +93,17 @@ const GamingTestingServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaGamepad className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Gaming Testing Services</span>
+          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaGamepad className="w-4 h-4" />
+            <span className="text-sm">Gaming Testing Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive Gaming
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Testing Solutions
             </span>
           </h2>
@@ -116,8 +116,8 @@ const GamingTestingServicesSection: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30">
-              <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:ring-3">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               
@@ -149,32 +149,32 @@ const GamingTestingServicesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 bg-blue-50 rounded-2xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaMobile className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">Mobile Gaming</h4>
               <p className="text-gray-600 text-sm">iOS, Android, cross-platform mobile games</p>
             </div>
 
-            <div className="text-center p-6 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 bg-blue-50 rounded-2xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaDesktop className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">PC Gaming</h4>
               <p className="text-gray-600 text-sm">Windows, Mac, Linux, Steam, Epic Games</p>
             </div>
 
-            <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 bg-blue-50 rounded-2xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaGamepad className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">Console Gaming</h4>
               <p className="text-gray-600 text-sm">PlayStation, Xbox, Nintendo Switch</p>
             </div>
 
-            <div className="text-center p-6 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 bg-blue-50 rounded-2xl">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <FaVrCardboard className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">AR/VR Gaming</h4>
@@ -185,7 +185,7 @@ const GamingTestingServicesSection: React.FC = () => {
 
         {/* Gaming Expertise */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-6">Gaming Industry Expertise</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -215,16 +215,16 @@ const GamingTestingServicesSection: React.FC = () => {
           <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Gaming Testing Metrics</h3>
             <div className="space-y-6">
-              <div className="text-center p-4 bg-green-50 rounded-2xl">
-                <div className="text-3xl font-bold text-green-600 mb-1">99.9%</div>
+              <div className="text-center p-4 bg-blue-50 rounded-2xl">
+                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-1">99.9%</div>
                 <div className="text-sm text-gray-600">Bug-free game launches</div>
               </div>
               <div className="text-center p-4 bg-blue-50 rounded-2xl">
                 <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-1">500+</div>
                 <div className="text-sm text-gray-600">Games successfully tested</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-2xl">
-                <div className="text-3xl font-bold text-purple-600 mb-1">85%</div>
+              <div className="text-center p-4 bg-blue-50 rounded-2xl">
+                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-1">85%</div>
                 <div className="text-sm text-gray-600">Average bug reduction rate</div>
               </div>
             </div>
@@ -232,18 +232,18 @@ const GamingTestingServicesSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Ready to Level Up Your Game Testing?</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Our gaming testing experts are ready to help you deliver exceptional player experiences 
               and achieve successful game launches across all platforms.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get Gaming Testing Quote
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Schedule Gaming Consultation
               </button>
             </div>

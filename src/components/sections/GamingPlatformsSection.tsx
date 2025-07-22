@@ -128,13 +128,13 @@ const GamingPlatformsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaGamepad className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Gaming Platforms</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaGamepad className="w-4 h-4" />
+            <span className="text-sm">Gaming Platforms</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Complete Gaming Platform
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Testing Coverage
             </span>
           </h2>
@@ -246,7 +246,7 @@ const GamingPlatformsSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {gameEngines.map((engine, index) => (
-              <div key={index} className="text-center p-8 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <div key={index} className="text-center p-8 bg-white rounded-3xl shadow-lg ring-1 ring-brand-blue hover:ring-3 hover:shadow-xl transition-all duration-300">
                 <div className={`w-20 h-20 bg-gradient-to-r ${engine.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
                   <engine.icon className="w-10 h-10 text-white" />
                 </div>
@@ -285,18 +285,18 @@ const GamingPlatformsSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Test Your Game Across All Platforms</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Ensure your game delivers exceptional experiences on every platform your players use. 
               Our comprehensive platform testing covers everything from mobile to VR.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
+              <button className="bg-white  px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-gray-100 transition-all">
                 Get Platform Testing Quote
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 View Platform Coverage
               </button>
             </div>

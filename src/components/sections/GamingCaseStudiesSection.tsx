@@ -12,7 +12,7 @@ import {
   FaChartLine,
   FaClock,
   FaAward,
-  FaTrophy,
+  FaTrophy
 } from "react-icons/fa";
 
 const GamingCaseStudiesSection: React.FC = () => {
@@ -131,17 +131,17 @@ const GamingCaseStudiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-purple-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaTrophy className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Success Stories</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaTrophy className="w-4 h-4" />
+            <span className="text-sm">Success Stories</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Gaming Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Success Stories
             </span>
           </h2>
@@ -215,7 +215,7 @@ const GamingCaseStudiesSection: React.FC = () => {
                 </div>
 
                 {/* CTA */}
-                <button className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+                <button className="w-full bg-brand-blue text-white py-3 px-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
                   View Full Case Study
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -238,7 +238,7 @@ const GamingCaseStudiesSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {successMetrics.map((metric, index) => (
               <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <metric.icon className="w-10 h-10 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-2">{metric.value}</div>
@@ -250,12 +250,12 @@ const GamingCaseStudiesSection: React.FC = () => {
         </div>
 
         {/* Gaming Genres */}
-        <div className="bg-gradient-to-r from-gray-900 to-purple-900 rounded-3xl p-8 md:p-12 text-white mb-16">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white mb-16">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Tested Across All Gaming Genres
             </h3>
-            <p className="text-purple-100 text-lg max-w-2xl mx-auto">
+            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
               Our gaming testing expertise spans every genre, from casual mobile games 
               to complex AAA titles and cutting-edge VR experiences.
             </p>
@@ -267,25 +267,25 @@ const GamingCaseStudiesSection: React.FC = () => {
               "Simulation", "Fighting", "Shooter", "MMORPG", "Battle Royale", "VR/AR"
             ].map((genre, index) => (
               <div key={index} className="text-center p-4 bg-white bg-opacity-10 rounded-2xl hover:bg-opacity-20 transition-all">
-                <div className="text-sm font-semibold">{genre}</div>
+                <div className="text-sm text-brand-blue font-semibold">{genre}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Let us help you achieve similar results with our proven gaming testing methodologies 
               and deep industry expertise across all gaming platforms and genres.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Start Your Success Story
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Download Gaming Case Studies
               </button>
             </div>
@@ -297,4 +297,3 @@ const GamingCaseStudiesSection: React.FC = () => {
 };
 
 export default GamingCaseStudiesSection;
-
