@@ -137,17 +137,17 @@ const GamingROISection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaCalculator className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Return on Investment</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaCalculator className="w-4 h-4" />
+            <span className="text-sm">Return on Investment</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Gaming Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               ROI & Financial Impact
             </span>
           </h2>
@@ -175,7 +175,7 @@ const GamingROISection: React.FC = () => {
         {/* Cost Comparison */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {/* Without Testing */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-red-200">
+          <div className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-red-300 hover:ring-3 transition-all">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaExclamationTriangle className="w-8 h-8 text-white" />
@@ -205,7 +205,7 @@ const GamingROISection: React.FC = () => {
           </div>
 
           {/* With Testing */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border-2 border-green-200">
+          <div className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-green-300 hover:ring-3 transition-all">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaCheckCircle className="w-8 h-8 text-white" />
@@ -238,9 +238,9 @@ const GamingROISection: React.FC = () => {
         {/* ROI by Industry */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-purple-100 rounded-full px-6 py-2 mb-6">
-              <FaGamepad className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-semibold text-purple-600">ROI by Gaming Platform</span>
+            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white rounded-full px-6 py-2 mb-6">
+              <FaGamepad className="w-4 h-4" />
+              <span className="text-sm">ROI by Gaming Platform</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Average ROI: 2,500% - 3,750%
@@ -253,8 +253,8 @@ const GamingROISection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {industryROI.map((industry, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-gray-50 to-purple-50 rounded-2xl">
-                <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl">
+                <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <industry.icon className="w-8 h-8 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-3">{industry.industry}</h4>
@@ -278,7 +278,7 @@ const GamingROISection: React.FC = () => {
         </div>
 
         {/* ROI Calculator */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white mb-16">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white mb-16">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Game Testing Value Calculator
@@ -291,23 +291,23 @@ const GamingROISection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {roiCalculator.map((item, index) => (
-              <div key={index} className="flex items-center gap-4 p-6 bg-white bg-opacity-10 rounded-2xl">
-                <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
+              <div key={index} className="flex items-center gap-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl">
+                <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center">
                   <FaArrowUp className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <div className="text-2xl font-bold mb-1">{item.savings}</div>
-                  <div className="text-lg font-semibold mb-1">{item.category}</div>
-                  <div className="text-sm text-blue-100">{item.description}</div>
+                  <div className="text-2xl font-bold text-brand-blue mb-1">{item.savings}</div>
+                  <div className="text-lg font-semibold text-gray-900 mb-1">{item.category}</div>
+                  <div className="text-sm text-gray-600">{item.description}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center p-8 bg-white bg-opacity-10 rounded-2xl">
-            <div className="text-4xl font-bold mb-2">$41.8M</div>
-            <div className="text-xl font-semibold mb-2">Total Potential Value</div>
-            <div className="text-blue-100">Average value generated for gaming clients</div>
+          <div className="text-center p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl">
+            <div className="text-4xl font-bold text-brand-blue mb-2">$41.8M</div>
+            <div className="text-xl font-semibold text-gray-900 mb-2">Total Potential Value</div>
+            <div className="text-gray-600">Average value generated for gaming clients</div>
           </div>
         </div>
 
@@ -345,18 +345,18 @@ const GamingROISection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Calculate Your Game Testing ROI</h3>
             <p className="text-blue-100 mb-8 text-lg">
               See how much you could gain and the risks you&apos;ll avoid with professional game testing. 
               Get a personalized ROI analysis for your gaming project.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get ROI Analysis
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Download ROI Calculator
               </button>
             </div>
@@ -368,4 +368,3 @@ const GamingROISection: React.FC = () => {
 };
 
 export default GamingROISection;
-

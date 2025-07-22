@@ -178,7 +178,7 @@ const GamingTestingProcessSection: React.FC = () => {
               <FaGamepad className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Player-Centric Testing</h3>
-            <p className="text-gray-600">Every test is designed from the player's perspective, ensuring exceptional gaming experiences and high player satisfaction.</p>
+            <p className="text-gray-600">Every test is designed from the player&apos;s perspective, ensuring exceptional gaming experiences and high player satisfaction.</p>
           </div>
 
           <div className="text-center p-8 bg-green-50 rounded-2xl">
@@ -236,7 +236,7 @@ const GamingTestingProcessSection: React.FC = () => {
               <h3 className="text-3xl font-bold mb-4">Ready to Start Your Gaming Testing Journey?</h3>
               <p className="text-blue-100 mb-8 text-lg">
                 Let our gaming testing experts guide you through a comprehensive, player-focused testing process 
-                that ensures your game's success.
+                that ensures your game&apos;s success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
                 <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
