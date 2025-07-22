@@ -196,7 +196,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
                     {testingTypes[activeTab].title}
                   </h4>
                   
-                  <div className={`text-sm font-semibold ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[1]}`}>
+                  <div className="text-sm font-semibold text-gray-700">
                     {testingTypes[activeTab].coverage}
                   </div>
 
@@ -206,7 +206,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
                       <div key={index} className="text-left">
                         <div className="flex justify-between text-sm mb-1">
                           <span className="text-gray-600">{feature}</span>
-                          <span className={`font-semibold ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[1]}`}>
+                          <span className="font-semibold text-gray-700">
                             {95 + index * 2}%
                           </span>
                         </div>

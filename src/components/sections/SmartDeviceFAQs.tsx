@@ -50,7 +50,7 @@ const SmartDeviceFAQs: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+            <span className="text-brand-blue">Frequently</span> Asked Questions
           </h2>
           <p className="text-lg text-gray-600">
             Get answers to common questions about our smart device testing services and methodologies.
@@ -89,7 +89,7 @@ const SmartDeviceFAQs: React.FC = () => {
           <p className="text-gray-600 mb-4">
             Have more questions about our smart device testing services?
           </p>
-          <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Contact Our Experts
           </button>
         </div>
