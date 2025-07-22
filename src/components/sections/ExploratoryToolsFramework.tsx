@@ -65,7 +65,7 @@ const ExploratoryToolsFramework: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Exploratory Testing Tools & Frameworks
+            Exploratory Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             We leverage specialized tools and frameworks designed for exploratory testing to ensure systematic 
@@ -78,14 +78,14 @@ const ExploratoryToolsFramework: React.FC = () => {
             <div key={categoryIndex} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
-                <div className="w-12 h-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-full"></div>
+                <div className="w-12 h-1 bg-brand-blue rounded-full"></div>
               </div>
               
               <div className="space-y-6">
                 {category.tools.map((tool, toolIndex) => (
                   <div key={toolIndex} className="bg-white p-4 rounded-lg border border-gray-100 hover:border-green-200 transition-all duration-300 group">
                     <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                      <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-white font-bold text-sm">
                         {tool.name.charAt(0)}
                       </div>
                       <h4 className="font-semibold text-gray-900 group-hover:text-green-600 transition-colors duration-300">
@@ -190,7 +190,7 @@ const ExploratoryToolsFramework: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Explore Our Toolkit
           </button>
         </div>

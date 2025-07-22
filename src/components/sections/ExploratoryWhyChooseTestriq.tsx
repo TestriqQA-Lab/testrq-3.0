@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaSearch, FaLightbulb, FaUsers, FaChartLine, FaShieldAlt, FaClock } from "react-icons/fa";
+import {
+  FaSearch,
+  FaLightbulb,
+  FaUsers,
+  FaChartLine,
+  FaShieldAlt,
+  FaClock,
+} from "react-icons/fa";
 
 const ExploratoryWhyChooseTestriq: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -13,13 +20,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "95% Issue Discovery",
       icon: <FaSearch className="text-3xl" />,
       color: "green",
-      description: "Our certified exploratory testing experts combine systematic investigation with creative thinking to uncover critical issues.",
+      description:
+        "Our certified exploratory testing experts combine systematic investigation with creative thinking to uncover critical issues.",
       capabilities: [
         "Session-based test management",
         "Charter-driven exploration",
         "Heuristic evaluation expertise",
-        "Risk-based investigation"
-      ]
+        "Risk-based investigation",
+      ],
     },
     {
       id: 2,
@@ -27,13 +35,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "100% User Journeys",
       icon: <FaLightbulb className="text-3xl" />,
       color: "blue",
-      description: "Systematic exploration of all user scenarios, edge cases, and integration points for complete coverage.",
+      description:
+        "Systematic exploration of all user scenarios, edge cases, and integration points for complete coverage.",
       capabilities: [
         "End-to-end journey testing",
         "Edge case discovery",
         "Integration point validation",
-        "Cross-platform exploration"
-      ]
+        "Cross-platform exploration",
+      ],
     },
     {
       id: 3,
@@ -41,13 +50,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "Real User Perspective",
       icon: <FaUsers className="text-3xl" />,
       color: "purple",
-      description: "Testing from real user perspectives using personas, scenarios, and actual usage patterns.",
+      description:
+        "Testing from real user perspectives using personas, scenarios, and actual usage patterns.",
       capabilities: [
         "Persona-based testing",
         "User empathy mapping",
         "Accessibility evaluation",
-        "Usability assessment"
-      ]
+        "Usability assessment",
+      ],
     },
     {
       id: 4,
@@ -55,13 +65,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "Detailed Reporting",
       icon: <FaChartLine className="text-3xl" />,
       color: "orange",
-      description: "Comprehensive documentation with actionable insights, improvement recommendations, and priority guidance.",
+      description:
+        "Comprehensive documentation with actionable insights, improvement recommendations, and priority guidance.",
       capabilities: [
         "Detailed bug reports",
         "Improvement recommendations",
         "Risk assessment",
-        "Priority guidance"
-      ]
+        "Priority guidance",
+      ],
     },
     {
       id: 5,
@@ -69,13 +80,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "Zero Missed Issues",
       icon: <FaShieldAlt className="text-3xl" />,
       color: "teal",
-      description: "Rigorous quality processes ensure no critical issues are missed during exploration sessions.",
+      description:
+        "Rigorous quality processes ensure no critical issues are missed during exploration sessions.",
       capabilities: [
         "Systematic documentation",
         "Peer review process",
         "Quality checkpoints",
-        "Verification protocols"
-      ]
+        "Verification protocols",
+      ],
     },
     {
       id: 6,
@@ -83,24 +95,37 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       metric: "Same-Day Results",
       icon: <FaClock className="text-3xl" />,
       color: "indigo",
-      description: "Fast exploration cycles with immediate feedback and rapid issue identification for agile teams.",
+      description:
+        "Fast exploration cycles with immediate feedback and rapid issue identification for agile teams.",
       capabilities: [
         "Real-time reporting",
         "Immediate feedback",
         "Agile integration",
-        "Continuous exploration"
-      ]
-    }
+        "Continuous exploration",
+      ],
+    },
   ];
 
   const getColorClasses = (color: string, isHovered: boolean) => {
     const colorMap = {
-      green: isHovered ? "bg-green-600 text-white" : "bg-green-50 text-green-600 border-green-200",
-      blue: isHovered ? "bg-blue-600 text-white" : "bg-blue-50 text-blue-600 border-blue-200",
-      purple: isHovered ? "bg-purple-600 text-white" : "bg-purple-50 text-purple-600 border-purple-200",
-      orange: isHovered ? "bg-orange-600 text-white" : "bg-orange-50 text-orange-600 border-orange-200",
-      teal: isHovered ? "bg-teal-600 text-white" : "bg-teal-50 text-teal-600 border-teal-200",
-      indigo: isHovered ? "bg-indigo-600 text-white" : "bg-indigo-50 text-indigo-600 border-indigo-200"
+      green: isHovered
+        ? "bg-green-600 text-white"
+        : "bg-green-50 text-green-600 border-green-200",
+      blue: isHovered
+        ? "bg-blue-600 text-white"
+        : "bg-blue-50 text-blue-600 border-blue-200",
+      purple: isHovered
+        ? "bg-purple-600 text-white"
+        : "bg-purple-50 text-purple-600 border-purple-200",
+      orange: isHovered
+        ? "bg-orange-600 text-white"
+        : "bg-orange-50 text-orange-600 border-orange-200",
+      teal: isHovered
+        ? "bg-teal-600 text-white"
+        : "bg-teal-50 text-teal-600 border-teal-200",
+      indigo: isHovered
+        ? "bg-indigo-600 text-white"
+        : "bg-indigo-50 text-indigo-600 border-indigo-200",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.green;
   };
@@ -112,7 +137,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       purple: "bg-purple-600",
       orange: "bg-orange-600",
       teal: "bg-teal-600",
-      indigo: "bg-indigo-600"
+      indigo: "bg-indigo-600",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.green;
   };
@@ -122,15 +147,18 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why Choose Testriq for Exploratory Testing?
+            <span className="text-brand-blue">Why Choose Testriq </span>for
+            Exploratory Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We combine expert exploration skills with systematic investigation techniques to deliver 
-            comprehensive exploratory testing that uncovers critical issues and provides actionable insights for product improvement.
+            We combine expert exploration skills with systematic investigation
+            techniques to deliver comprehensive exploratory testing that
+            uncovers critical issues and provides actionable insights for
+            product improvement.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
@@ -145,30 +173,54 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div
                   className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${
-                    hoveredCard === advantage.id ? "bg-white bg-opacity-20" : getIconBgColor(advantage.color)
+                    hoveredCard === advantage.id
+                      ? getColorClasses(advantage.color, true)
+                      : getIconBgColor(advantage.color)
                   }`}
                 >
                   {advantage.icon}
                 </div>
                 <div className="text-right">
-                  <div className={`text-lg font-bold ${hoveredCard === advantage.id ? "text-white" : "text-gray-900"}`}>
+                  <div
+                    className={`text-lg font-bold ${
+                      hoveredCard === advantage.id
+                        ? "text-white"
+                        : "text-gray-900"
+                    }`}
+                  >
                     {advantage.metric}
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <h3 className={`text-xl font-bold mb-4 ${hoveredCard === advantage.id ? "text-white" : "text-gray-900"}`}>
+              <h3
+                className={`text-xl font-bold mb-4 ${
+                  hoveredCard === advantage.id ? "text-white" : "text-gray-900"
+                }`}
+              >
                 {advantage.title}
               </h3>
-              
-              <p className={`mb-6 leading-relaxed ${hoveredCard === advantage.id ? "text-white text-opacity-90" : "text-gray-600"}`}>
+
+              <p
+                className={`mb-6 leading-relaxed ${
+                  hoveredCard === advantage.id
+                    ? "text-white text-opacity-90"
+                    : "text-gray-600"
+                }`}
+              >
                 {advantage.description}
               </p>
 
               {/* Capabilities */}
               <div className="space-y-3">
-                <h4 className={`font-semibold ${hoveredCard === advantage.id ? "text-white" : "text-gray-900"}`}>
+                <h4
+                  className={`font-semibold ${
+                    hoveredCard === advantage.id
+                      ? "text-white"
+                      : "text-gray-900"
+                  }`}
+                >
                   Key Capabilities:
                 </h4>
                 <div className="space-y-2">
@@ -176,10 +228,18 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
                     <div key={index} className="flex items-center space-x-3">
                       <div
                         className={`w-2 h-2 rounded-full ${
-                          hoveredCard === advantage.id ? "bg-white bg-opacity-70" : getIconBgColor(advantage.color)
+                          hoveredCard === advantage.id
+                            ? "bg-white bg-opacity-70"
+                            : getIconBgColor(advantage.color)
                         }`}
                       ></div>
-                      <span className={`text-sm ${hoveredCard === advantage.id ? "text-white text-opacity-90" : "text-gray-700"}`}>
+                      <span
+                        className={`text-sm ${
+                          hoveredCard === advantage.id
+                            ? "text-white text-opacity-90"
+                            : "text-gray-700"
+                        }`}
+                      >
                         {capability}
                       </span>
                     </div>
@@ -192,8 +252,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
                 <button
                   className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
                     hoveredCard === advantage.id
-                      ? "bg-white bg-opacity-20 text-white border-2 border-white border-opacity-30"
-                      : `${getColorClasses(advantage.color, false)} hover:shadow-lg`
+                      ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
+                          advantage.color,
+                          false
+                        )} border-white border-opacity-30`
+                      : `${getColorClasses(
+                          advantage.color,
+                          false
+                        )} hover:shadow-lg`
                   }`}
                 >
                   Explore Testing
@@ -210,9 +276,10 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               Exploratory Testing Excellence Network
             </h3>
             <p className="text-gray-600 mb-8">
-              Exploration techniques and methodologies we&apos;ve successfully implemented
+              Exploration techniques and methodologies we&apos;ve successfully
+              implemented
             </p>
-            
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">2,500+</div>
@@ -220,7 +287,9 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">95%</div>
-                <div className="text-sm text-gray-600">Issue Detection Rate</div>
+                <div className="text-sm text-gray-600">
+                  Issue Detection Rate
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-600">500+</div>
@@ -239,10 +308,11 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Ready to Discover Hidden Issues?
           </h3>
           <p className="text-gray-600 mb-6">
-            Join 500+ companies who trust our exploratory testing expertise. Get started with systematic 
-            exploration and uncover critical issues that scripted testing misses.
+            Join 500+ companies who trust our exploratory testing expertise. Get
+            started with systematic exploration and uncover critical issues that
+            scripted testing misses.
           </p>
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Get Started with Exploratory Testing
           </button>
         </div>
@@ -252,4 +322,3 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
 };
 
 export default ExploratoryWhyChooseTestriq;
-

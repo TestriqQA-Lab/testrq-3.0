@@ -87,7 +87,7 @@ const ExploratoryCaseStudies: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Exploratory Testing Success Stories
+            Exploratory Testing <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Discover how our exploratory testing services have helped companies uncover critical issues, 
@@ -216,7 +216,7 @@ const ExploratoryCaseStudies: React.FC = () => {
         </div>
 
         {/* Summary Stats */}
-        <div className="mt-16 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white text-center">
+        <div className="mt-16 bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-8">Exploratory Testing Impact Summary</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
@@ -245,7 +245,7 @@ const ExploratoryCaseStudies: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Let exploratory testing help you uncover critical issues and improve your product quality through systematic investigation.
           </p>
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Start Your Exploration
           </button>
         </div>

@@ -84,7 +84,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Proven Exploratory Testing Process
+            Our Proven Exploratory Testing <span className="text-brand-blue">Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Our systematic approach combines structured exploration with creative investigation techniques 
@@ -233,7 +233,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Learn More About Our Process
           </button>
         </div>

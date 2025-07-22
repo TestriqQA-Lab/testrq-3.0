@@ -1,26 +1,26 @@
 "use client";
 
 import React from "react";
-import { FaSearch, FaLightbulb, FaEye, FaBug, FaRoute, FaUsers, FaMobile, FaDesktop, FaCloud } from "react-icons/fa";
+import { FaSearch, FaLightbulb, FaEye, FaBug, FaMobile, FaDesktop, FaCloud } from "react-icons/fa";
+import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const ExploratoryTestingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-20 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden">
+    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-medium">
+          <div className="space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-medium">
               <FaSearch className="mr-2" />
               Exploratory Testing Specialists
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Discover Hidden
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
-                {" "}Issues{" "}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Discover Hidden Issues with
+              <span className="text-transparent bg-clip-text bg-brand-blue">
+                {" "}Expert Exploration
               </span>
-              with Expert Exploration
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
@@ -30,13 +30,13 @@ const ExploratoryTestingHeroSection: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
-                <FaLightbulb className="mr-2" />
+              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
                 Get Started Today
+                <FaArrowRight className="ml-2" />
               </button>
-              <button className="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-300 flex items-center justify-center">
-                <FaEye className="mr-2" />
-                ▶ Watch Demo
+              <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-300 flex items-center justify-center">
+                <FaPlay className="mr-2" />
+                Watch Demo
               </button>
             </div>
             
@@ -77,7 +77,7 @@ const ExploratoryTestingHeroSection: React.FC = () => {
               </div>
               
               {/* Testing Approach */}
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-green-50 p-4 rounded-lg text-center">
                   <FaSearch className="text-2xl text-green-600 mx-auto mb-2" />
                   <div className="text-sm font-medium text-green-900">Investigate</div>
@@ -148,29 +148,10 @@ const ExploratoryTestingHeroSection: React.FC = () => {
                   <span className="text-purple-600 font-medium">68%</span>
                 </div>
               </div>
-              
-              {/* Testing Techniques */}
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="bg-green-100 p-2 rounded text-center">
-                  <FaRoute className="text-green-600 mx-auto mb-1" />
-                  <div className="text-xs text-green-800">User Tours</div>
-                </div>
-                <div className="bg-blue-100 p-2 rounded text-center">
-                  <FaUsers className="text-blue-600 mx-auto mb-1" />
-                  <div className="text-xs text-blue-800">Personas</div>
-                </div>
-                <div className="bg-purple-100 p-2 rounded text-center">
-                  <FaBug className="text-purple-600 mx-auto mb-1" />
-                  <div className="text-xs text-purple-800">Bug Hunting</div>
-                </div>
-                <div className="bg-orange-100 p-2 rounded text-center">
-                  <FaLightbulb className="text-orange-600 mx-auto mb-1" />
-                  <div className="text-xs text-orange-800">Heuristics</div>
-                </div>
-              </div>
+        
               
               {/* Platform Icons */}
-              <div className="flex justify-center space-x-6 pt-4 border-t border-gray-100">
+              <div className="flex justify-center space-x-6 pt-2 border-t border-gray-100">
                 <div className="text-center">
                   <FaMobile className="text-xl text-green-600 mx-auto mb-1" />
                   <div className="text-xs text-gray-600">Mobile</div>

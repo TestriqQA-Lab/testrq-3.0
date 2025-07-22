@@ -40,7 +40,7 @@ const ExploratoryROISection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Exploratory Testing ROI & Business Impact
+            Exploratory Testing <span className="text-brand-blue">ROI & Business Impact</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Discover the measurable business value and return on investment that our exploratory testing services 
@@ -48,10 +48,10 @@ const ExploratoryROISection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
           {roiMetrics.map((metric, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center group">
-              <div className="bg-gradient-to-r from-green-600 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-brand-blue w-20 h-20 rounded-2xl flex items-center justify-center text-white mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 {metric.icon}
               </div>
               <div className="text-4xl font-bold text-gray-900 mb-2">{metric.value}</div>
@@ -81,23 +81,23 @@ const ExploratoryROISection: React.FC = () => {
                 Traditional Testing Only
               </h4>
               <div className="space-y-3">
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Issue Discovery Rate:</span>
                   <span className="font-semibold text-red-600">65%</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Production Bugs:</span>
                   <span className="font-semibold text-red-600">25-30 issues</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">User Experience Issues:</span>
                   <span className="font-semibold text-red-600">Frequently missed</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Edge Case Coverage:</span>
                   <span className="font-semibold text-red-600">Limited</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Post-Release Fixes:</span>
                   <span className="font-semibold text-red-600">High cost</span>
                 </div>
@@ -111,23 +111,23 @@ const ExploratoryROISection: React.FC = () => {
                 With Exploratory Testing
               </h4>
               <div className="space-y-3">
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Issue Discovery Rate:</span>
                   <span className="font-semibold text-green-600">95%</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Production Bugs:</span>
                   <span className="font-semibold text-green-600">5-8 issues</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">User Experience Issues:</span>
                   <span className="font-semibold text-green-600">Proactively identified</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Edge Case Coverage:</span>
                   <span className="font-semibold text-green-600">Comprehensive</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between flex-col md:flex-row">
                   <span className="text-gray-700">Post-Release Fixes:</span>
                   <span className="font-semibold text-green-600">Minimal cost</span>
                 </div>
@@ -136,7 +136,7 @@ const ExploratoryROISection: React.FC = () => {
           </div>
 
           {/* Value Summary */}
-          <div className="mt-8 bg-gradient-to-r from-green-600 to-blue-600 p-6 rounded-xl text-white text-center">
+          <div className="mt-8 bg-brand-blue p-6 rounded-xl text-white text-center">
             <h4 className="text-xl font-bold mb-4">Total Value & Benefits</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
@@ -228,7 +228,7 @@ const ExploratoryROISection: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Calculate your potential savings and see how exploratory testing can improve your product quality.
           </p>
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Calculate Your ROI
           </button>
         </div>
