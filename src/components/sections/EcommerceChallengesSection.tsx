@@ -80,7 +80,7 @@ const EcommerceChallengesSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full py-16 px-8 md:px-12 lg:px-24 2xl:px-56 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -191,7 +191,7 @@ const EcommerceChallengesSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Prevent These Issues Now
             </button>
           </div>
@@ -206,10 +206,10 @@ const EcommerceChallengesSection: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               See Our Solutions
             </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Get Free Audit
             </button>
           </div>

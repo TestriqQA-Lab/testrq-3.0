@@ -14,7 +14,7 @@ const HomeComprehensiveSoftwareTesting = () => {
 
     const heading = {
         title: 'Comprehensive Software Testing Services',
-        info: 'Explore our specialized software testing services and comprehensive QA solutions, meticulously designed to meet your unique quality assurance needs with responsive support and proven expertise from our certified QA experts, ensuring reliable QA services for your mobile application testing, web application testing, and more.'
+        info: 'Explore specialized software testing services and end-to-end QA solutions tailored to your needs. Our ISTQB Certified Experts ensure reliable, scalable QA for mobile, web, performance, automation, and security testing.'
     }
 
     // Split the title into parts to style "Software Testing" in blue
@@ -30,9 +30,9 @@ const HomeComprehensiveSoftwareTesting = () => {
     };
 
     const cardData = [
-        { icon: TbWorld, title: 'Web & Mobile Testing', href: '#', detail: 'Experience end-to-end testing for web applications and mobile apps (iOS & Android), covering functional, usability, performance and security testing aspects.' },
+        { icon: TbWorld, title: 'Mobile Testing', href: '#', detail: 'Experience end-to-end testing for mobile applications (iOS & Android), covering functional, usability, performance and security testing aspects.' },
         { icon: IoServerOutline, title: 'API Testing', href: '#', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
-        { icon: FaMicrochip, title: 'AI & ML Testing', href: '#', detail: 'Specialized testing for AI-powered applications, including data integrity, model accuracy validation, and bias detection.' },
+        { icon: FaMicrochip, title: 'Data Analysis', href: '#', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
         { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
         { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
         { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }

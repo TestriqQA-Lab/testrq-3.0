@@ -28,7 +28,7 @@ const EcommerceTestingProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

@@ -7,7 +7,7 @@ const HomeIndustryExpert = () => {
 
     const heading = {
         title: 'Industry Expertise',
-        info: 'We serve diverse industries with specialized QA solutions tailored to unique business requirements and regulatory compliance standards.'
+        info: 'Testriq delivers specialized QA services for regulated and growth-focused industries—ensuring compliance, usability, and performance across e-commerce, fintech, healthcare, SaaS, EdTech, IoT, mobile apps, and gaming platforms.'
     }
 
     // Split the title into parts to style "Client" in blue

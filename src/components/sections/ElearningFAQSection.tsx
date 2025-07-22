@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { 
-  FaQuestionCircle, 
-  FaChevronDown, 
+import {
+  FaQuestionCircle,
+  FaChevronDown,
   FaChevronUp,
   FaGraduationCap,
   FaRocket
@@ -60,28 +60,28 @@ const ElearningFAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue rounded-full px-6 py-2 mb-6">
             <FaQuestionCircle className="w-4 h-4" />
             <span className="text-sm font-medium">Frequently Asked Questions</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             E-Learning Testing
             <span className="block text-brand-blue">Questions Answered</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most common questions about our e-learning testing services, 
+            Get answers to the most common questions about our e-learning testing services,
             methodologies, and what you can expect when optimizing your educational platform.
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-10">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -89,29 +89,30 @@ const ElearningFAQSection: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
                 <h3 className="text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
                   {openFAQ === index ? (
-                    <FaChevronUp className="w-5 h-5 text-indigo-600" />
+                    <FaChevronUp className="w-5 h-5 text-brand-blue" />
                   ) : (
                     <FaChevronDown className="w-5 h-5 text-gray-400" />
                   )}
                 </div>
               </button>
-              
-              {openFAQ === index && (
-                <div className="px-8 pb-6">
-                  <div className="border-t border-gray-100 pt-6">
-                    <p className="text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+
+              <div
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+              >
+                <div className="px-6 pb-4">
+                  <div className="border-t border-gray-100 pt-4">
+                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
@@ -121,10 +122,10 @@ const ElearningFAQSection: React.FC = () => {
           <FaGraduationCap className="w-16 h-16 text-brand-blue mx-auto mb-6 opacity-80" />
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Still Have Questions About E-Learning Testing?</h3>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Our e-learning testing specialists are here to help. Get personalized answers to your specific 
+            Our e-learning testing specialists are here to help. Get personalized answers to your specific
             questions and learn how we can optimize your educational platform for better learning outcomes.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg">
               Schedule Free Consultation
@@ -148,8 +149,8 @@ const ElearningFAQSection: React.FC = () => {
             <div>
               <h4 className="font-bold text-gray-900 mb-2">Expert Tip: Start Testing Early</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                The best time to start e-learning platform testing is during the development phase, not after launch. 
-                Early testing identifies issues when they&apos;re less expensive to fix and ensures a smooth learning experience 
+                The best time to start e-learning platform testing is during the development phase, not after launch.
+                Early testing identifies issues when they&apos;re less expensive to fix and ensures a smooth learning experience
                 from day one. Contact us to discuss testing strategies for your development timeline.
               </p>
             </div>
