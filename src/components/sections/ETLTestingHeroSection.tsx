@@ -19,7 +19,7 @@ const ETLTestingHeroSection: React.FC = () => {
               ETL Testing Specialists
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Comprehensive <span className="text-brand-blue">ETL Testing</span> Services
             </h1>
             
