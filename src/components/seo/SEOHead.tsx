@@ -13,8 +13,6 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title,
-  description,
   canonical,
   noindex = false,
   additionalMetaTags = [],

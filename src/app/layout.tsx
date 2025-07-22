@@ -53,20 +53,23 @@ export const metadata: Metadata = {
     description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og/testriq-qa-lab-llp-og-img.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq - Professional Software Testing Services',
+        type: 'image/webp',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
+    
     site: '@testriq',
     creator: '@testriq',
     title: 'Testriq - Professional Software Testing Services | QA Solutions',
     description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
-    images: ['/twitter-image.jpg'],
+    images: ['/og/testriq-qa-lab-llp-og-img.webp'],
+    
   },
   robots: {
     index: true,
