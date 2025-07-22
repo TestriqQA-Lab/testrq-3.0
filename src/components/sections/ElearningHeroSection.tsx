@@ -41,7 +41,7 @@ const ElearningHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full py-16 mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 min-h-screen bg-gradient-to-br from-indigo-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -49,47 +49,24 @@ const ElearningHeroSection: React.FC = () => {
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-2000"></div>
       </div>
 
-      {/* Floating Learning Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute md:top-48 md:right-1/6 lg:top-24 lg:left-1/3 animate-float">
-          <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaGraduationCap className="w-8 h-8 text-brand-blue" />
-          </div>
-        </div>
-        <div className="absolute md:top-28 md:right-1/2 lg:top-48 lg:right-1/2 animate-float delay-1000">
-          <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaBook className="w-8 h-8 text-brand-blue" />
-          </div>
-        </div>
-        <div className="absolute md:top-5/12 md:left-2/3 lg:bottom-96 lg:left-1/8 animate-float delay-2000">
-          <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaLaptop className="w-8 h-8 text-brand-blue" />
-          </div>
-        </div>
-        <div className="absolute md:top-5/12 md:left-2/12 lg:bottom-96 lg:right-3/5 animate-float delay-3000">
-          <div className="w-16 h-16 bg-white bg-opacity-90 rounded-2xl shadow-lg flex items-center justify-center">
-            <FaUsers className="w-8 h-8 text-brand-blue" />
-          </div>
-        </div>
-      </div>
 
       <div className="flex flex-col text-center md:text-start relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-10 mb-48">
             {/* Badge */}
-            <div className="inline-flex items-center text-brand-blue gap-2 bg-indigo-100 rounded-full px-3 py-2 border border-indigo-200">
+            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
               <FaGraduationCap className="w-4 h-4" />
               <span className="text-sm font-semibold">E-Learning Testing Solutions</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
               Empower Learning
               <span className="block text-brand-blue">
                 Through Quality
               </span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">E-Learning Testing</span>
+              E-Learning Testing
             </h1>
 
             {/* Description */}

@@ -30,7 +30,7 @@ const HealthcareHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl:px-56 min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>

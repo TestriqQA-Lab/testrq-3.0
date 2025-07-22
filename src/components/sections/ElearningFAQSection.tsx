@@ -60,8 +60,8 @@ const ElearningFAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue rounded-full px-6 py-2 mb-6">
@@ -81,7 +81,7 @@ const ElearningFAQSection: React.FC = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-10">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -89,7 +89,7 @@ const ElearningFAQSection: React.FC = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
               >
                 <h3 className="text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}
@@ -107,8 +107,8 @@ const ElearningFAQSection: React.FC = () => {
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
               >
-                <div className="px-8 pb-6">
-                  <div className="border-t border-gray-100 pt-6">
+                <div className="px-6 pb-4">
+                  <div className="border-t border-gray-100 pt-4">
                     <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
