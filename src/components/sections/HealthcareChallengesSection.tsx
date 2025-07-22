@@ -8,9 +8,7 @@ import {
   FaDatabase,
   FaLock,
   FaClipboardCheck,
-  FaHeartbeat,
   FaClock,
-  FaGlobe,
   FaArrowRight
 } from "react-icons/fa";
 
@@ -131,7 +129,7 @@ const HealthcareChallengesSection: React.FC = () => {
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Don't Let These Challenges Compromise Patient Care
+              Don&apos;t Let These Challenges Compromise Patient Care
             </h3>
             <p className="text-lg text-gray-600 mb-8">
               Our specialized healthcare testing services address these critical challenges, 

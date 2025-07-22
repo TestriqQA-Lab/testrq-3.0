@@ -12,7 +12,6 @@ import {
   FaCheckCircle,
   FaBug,
   FaTrophy,
-  FaClipboardCheck,
   FaPlay
 } from "react-icons/fa";
 

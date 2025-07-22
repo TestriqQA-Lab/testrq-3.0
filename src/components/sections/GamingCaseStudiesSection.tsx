@@ -13,7 +13,6 @@ import {
   FaClock,
   FaAward,
   FaTrophy,
-  FaRocket
 } from "react-icons/fa";
 
 const GamingCaseStudiesSection: React.FC = () => {
