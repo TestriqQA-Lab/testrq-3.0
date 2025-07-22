@@ -100,17 +100,17 @@ const IoTTestingProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaWifi className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Testing Process</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaWifi className="w-4 h-4" />
+            <span className="text-sm">Testing Process</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Process & Methodology
             </span>
           </h2>
@@ -130,7 +130,7 @@ const IoTTestingProcessSection: React.FC = () => {
               </div>
               
               {/* Card */}
-              <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30 h-full">
+              <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group ring-1 ring-brand-blue hover:ring-3 hover:border-opacity-30 h-full">
                 <div className={`w-14 h-14 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <step.icon className="w-7 h-7 text-white" />
                 </div>
@@ -154,9 +154,9 @@ const IoTTestingProcessSection: React.FC = () => {
         {/* Testing Methodologies */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-cyan-100 rounded-full px-6 py-2 mb-6">
-              <FaPlay className="w-4 h-4 text-cyan-600" />
-              <span className="text-sm font-semibold text-cyan-600">Testing Excellence</span>
+            <div className="inline-flex items-center gap-2 text-white bg-brand-blue rounded-full px-6 py-2 mb-6">
+              <FaPlay className="w-4 h-4" />
+              <span className="text-sm">Testing Excellence</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               IoT-Focused Methodologies
@@ -213,28 +213,28 @@ const IoTTestingProcessSection: React.FC = () => {
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Proven IoT Testing Results
             </h3>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto">
               Our systematic IoT testing process delivers measurable results that ensure 
               reliable, secure, and scalable IoT deployments.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl">
+            <div className="text-center p-6 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
               <div className="text-4xl font-bold mb-2">99.8%</div>
-              <div className="text-blue-100">Device Uptime</div>
+              <div>Device Uptime</div>
             </div>
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl">
+            <div className="text-center p-6 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
               <div className="text-4xl font-bold mb-2">90%</div>
-              <div className="text-blue-100">Security Issue Reduction</div>
+              <div>Security Issue Reduction</div>
             </div>
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl">
+            <div className="text-center p-6 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
               <div className="text-4xl font-bold mb-2">75%</div>
-              <div className="text-blue-100">Performance Improvement</div>
+              <div>Performance Improvement</div>
             </div>
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl">
+            <div className="text-center p-6 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
               <div className="text-4xl font-bold mb-2">50%</div>
-              <div className="text-blue-100">Faster Deployment</div>
+              <div>Faster Deployment</div>
             </div>
           </div>
         </div>
@@ -249,10 +249,10 @@ const IoTTestingProcessSection: React.FC = () => {
                 that ensures your IoT ecosystem&apos;s success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300">
+                <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg hover:scale-98 transition-all duration-300">
                   Start Your IoT Project
                 </button>
-                <button className="bg-gray-100 text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-200 transition-colors">
+                <button className="bg-gray-100 text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg hover:text-brand-blue hover:scale-98 hover:ring-brand-blue hover:ring-1 transition-all">
                   Learn More About Our Process
                 </button>
               </div>

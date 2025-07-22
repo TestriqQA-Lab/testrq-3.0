@@ -93,21 +93,21 @@ const IoTTestingServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-cyan-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaWifi className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">IoT Testing Services</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaWifi className="w-4 h-4" />
+            <span className="text-sm">IoT Testing Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive IoT
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Testing Solutions
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Specialized testing services designed for IoT applications, ensuring reliable connectivity, 
             robust security, and seamless integration across your entire IoT ecosystem.
           </p>
@@ -235,15 +235,15 @@ const IoTTestingServicesSection: React.FC = () => {
         <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Ready to Secure Your IoT Ecosystem?</h3>
-            <p className="text-blue-100 mb-8 text-lg">
+            <p className="mb-8 text-lg">
               Our IoT testing experts are ready to help you build reliable, secure, and scalable 
               IoT solutions that perform flawlessly in real-world conditions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get IoT Testing Quote
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Schedule IoT Consultation
               </button>
             </div>

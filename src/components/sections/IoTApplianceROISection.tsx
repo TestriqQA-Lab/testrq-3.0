@@ -136,17 +136,17 @@ const IoTROISection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaCalculator className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Return on Investment</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaCalculator className="w-4 h-4" />
+            <span className="text-sm">Return on Investment</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               ROI & Financial Impact
             </span>
           </h2>
@@ -237,14 +237,14 @@ const IoTROISection: React.FC = () => {
         {/* ROI by Industry */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl mb-16">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-cyan-100 rounded-full px-6 py-2 mb-6">
-              <FaWifi className="w-4 h-4 text-cyan-600" />
-              <span className="text-sm font-semibold text-cyan-600">ROI by Industry</span>
+            <div className="inline-flex items-center gap-2 text-white bg-brand-blue rounded-full px-6 py-2 mb-6">
+              <FaWifi className="w-4 h-4" />
+              <span className="text-sm">ROI by Industry</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Average ROI: 2,000% - 4,000%
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg z max-w-2xl mx-auto">
               ROI varies by industry and implementation scale, but all sectors show exceptional 
               returns on professional IoT testing investment.
             </p>
@@ -282,7 +282,7 @@ const IoTROISection: React.FC = () => {
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               IoT Testing Value Calculator
             </h3>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto">
               Based on our client data, here&apos;s the typical value generated through 
               professional IoT testing services across different benefit categories.
             </p>
@@ -292,21 +292,21 @@ const IoTROISection: React.FC = () => {
             {roiCalculator.map((item, index) => (
               <div key={index} className="flex items-center gap-4 p-6 bg-white bg-opacity-10 rounded-2xl">
                 <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                  <FaArrowUp className="w-6 h-6 text-white" />
+                  <FaArrowUp className="w-6 h-6 text-brand-blue" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 text-brand-blue">
                   <div className="text-2xl font-bold mb-1">{item.savings}</div>
                   <div className="text-lg font-semibold mb-1">{item.category}</div>
-                  <div className="text-sm text-blue-100">{item.description}</div>
+                  <div className="text-sm">{item.description}</div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center p-8 bg-white bg-opacity-10 rounded-2xl">
+          <div className="text-center p-8 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
             <div className="text-4xl font-bold mb-2">$29.8M</div>
             <div className="text-xl font-semibold mb-2">Total Potential Value</div>
-            <div className="text-blue-100">Average value generated for IoT clients</div>
+            <div className="">Average value generated for IoT clients</div>
           </div>
         </div>
 
@@ -347,15 +347,15 @@ const IoTROISection: React.FC = () => {
         <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Calculate Your IoT Testing ROI</h3>
-            <p className="text-blue-100 mb-8 text-lg">
+            <p className="mb-8 text-lg">
               See how much you could gain and the risks you&apos;ll avoid with professional IoT testing. 
               Get a personalized ROI analysis for your IoT project.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get ROI Analysis
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 100 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Download ROI Calculator
               </button>
             </div>

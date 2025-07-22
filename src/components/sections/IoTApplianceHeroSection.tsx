@@ -29,7 +29,7 @@ const IoTHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto px-8 md:px-12 lg:px-24 2xl:px-56 min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative w-full mx-auto px-8 md:px-12 lg:px-24 min-h-screen bg-gradient-to-br from-cyan-50 via-white to-blue-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -39,12 +39,12 @@ const IoTHeroSection: React.FC = () => {
 
       {/* Floating Icons */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 2xl:left-1/2 animate-float">
+        <div className="absolute top-32 lg:top-22 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 xl:left-1/4 2xl:left-1/4 animate-float">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaWifi className="w-8 h-8 text-[theme(color.brand.blue)]" />
           </div>
         </div>
-        <div className="absolute top-56 md:top-46 xl:top-16 right-1/4 md:right-1/5 animate-float delay-1000">
+        <div className="absolute top-64 md:top-46 lg:top-56 right-1/4 md:right-1/5 lg:right-6/12 xl:right-6/12 animate-float delay-1000">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaCloud className="w-8 h-8 text-cyan-500" />
           </div>
@@ -66,18 +66,18 @@ const IoTHeroSection: React.FC = () => {
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
-              <FaWifi className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span className="text-sm font-semibold text-[theme(color.brand.blue)]">IoT Testing Solutions</span>
+            <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
+              <FaWifi className="w-4 h-4" />
+              <span className="text-sm">IoT Testing Solutions</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Connect Your
-              <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+              <span className="block text-brand-blue">
                 Smart Ecosystem
               </span>
-              <span className="block text-3xl md:text-4xl lg:text-5xl mt-2">with Expert IoT Testing</span>
+              with Expert IoT Testing
             </h1>
 
             {/* Description */}
@@ -109,7 +109,7 @@ const IoTHeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                 <FaRocket className="w-5 h-5" />
                 Start IoT Assessment
               </button>
@@ -193,11 +193,11 @@ const IoTHeroSection: React.FC = () => {
             <p className="text-blue-100 mb-6 text-lg">
               Join 1000+ IoT companies that trust Testriq for comprehensive connected device testing solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get Free IoT Audit
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 View IoT Case Studies
               </button>
             </div>

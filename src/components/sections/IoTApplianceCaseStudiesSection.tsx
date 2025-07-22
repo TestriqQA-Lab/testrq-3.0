@@ -131,21 +131,21 @@ const IoTCaseStudiesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaTrophy className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Success Stories</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaTrophy className="w-4 h-4" />
+            <span className="text-sm">Success Stories</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Success Stories
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Real-world examples of how our comprehensive IoT testing services have enabled 
             successful deployments across industries, delivering measurable business value.
           </p>
@@ -256,7 +256,7 @@ const IoTCaseStudiesSection: React.FC = () => {
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
               Tested Across All IoT Industries
             </h3>
-            <p className="text-cyan-100 text-lg max-w-2xl mx-auto">
+            <p className="text-lg max-w-3xl mx-auto">
               Our IoT testing expertise spans every industry, from smart homes to industrial 
               automation, ensuring reliable and secure connected solutions.
             </p>
@@ -267,7 +267,7 @@ const IoTCaseStudiesSection: React.FC = () => {
               "Smart Homes", "Industrial IoT", "Healthcare", "Automotive", "Smart Cities", "Agriculture",
               "Retail", "Energy", "Logistics", "Security", "Environmental", "Wearables"
             ].map((industry, index) => (
-              <div key={index} className="text-center p-4 bg-white bg-opacity-10 rounded-2xl hover:bg-opacity-20 transition-all">
+              <div key={index} className="text-center p-4 bg-white text-brand-blue bg-opacity-10 rounded-2xl hover:bg-opacity-20 transition-all">
                 <div className="text-sm font-semibold">{industry}</div>
               </div>
             ))}
@@ -282,11 +282,11 @@ const IoTCaseStudiesSection: React.FC = () => {
               Let us help you achieve similar results with our proven IoT testing methodologies 
               and deep expertise across all connected device ecosystems.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Start Your IoT Success Story
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Download IoT Case Studies
               </button>
             </div>

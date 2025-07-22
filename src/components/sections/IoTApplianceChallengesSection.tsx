@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import { 
-  FaWifi, 
-  FaShieldAlt, 
+import {
+  FaWifi,
+  FaShieldAlt,
   FaCog,
   FaNetworkWired,
   FaBatteryHalf,
@@ -106,22 +106,22 @@ const IoTChallengesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaWifi className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">IoT Challenges</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaWifi className="w-4 h-4" />
+            <span className="text-sm">IoT Challenges</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Critical IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Challenges & Solutions
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            IoT applications face unique challenges that can compromise functionality, security, and user trust. 
+            IoT applications face unique challenges that can compromise functionality, security, and user trust.
             Our specialized testing addresses these critical issues before they impact your IoT ecosystem.
           </p>
         </div>
@@ -202,38 +202,38 @@ const IoTChallengesSection: React.FC = () => {
         {/* Solution Overview */}
         <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 md:p-12 text-white">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-8">
-              <FaWifi className="w-10 h-10 text-white" />
+            <div className="w-20 h-20 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <FaWifi className="w-12 h-12 text-white" />
             </div>
             <h3 className="text-3xl md:text-4xl font-bold mb-6">
               Don&apos;t Let These Challenges Compromise Your IoT Success
             </h3>
             <p className="text-blue-100 mb-8 text-lg leading-relaxed">
-              Our comprehensive IoT testing methodology addresses all these critical challenges 
-              before they impact your devices, users, and business operations. From edge-to-cloud 
+              Our comprehensive IoT testing methodology addresses all these critical challenges
+              before they impact your devices, users, and business operations. From edge-to-cloud
               validation to security hardening, we ensure your IoT ecosystem performs flawlessly.
             </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 text-brand-blue gap-6 mb-8">
               <div className="text-center p-4 bg-white bg-opacity-10 rounded-2xl">
                 <div className="text-2xl font-bold mb-2">1000+</div>
-                <div className="text-blue-100 text-sm">IoT Devices Tested</div>
+                <div className=" text-sm">IoT Devices Tested</div>
               </div>
-              <div className="text-center p-4 bg-white bg-opacity-10 rounded-2xl">
+              <div className="text-center p-4 bg-white text-brand-blue bg-opacity-10 rounded-2xl">
                 <div className="text-2xl font-bold mb-2">99.8%</div>
-                <div className="text-blue-100 text-sm">Uptime Achievement</div>
+                <div className="text-sm">Uptime Achievement</div>
               </div>
               <div className="text-center p-4 bg-white bg-opacity-10 rounded-2xl">
                 <div className="text-2xl font-bold mb-2">90%</div>
-                <div className="text-blue-100 text-sm">Security Issue Reduction</div>
+                <div className="text-sm">Security Issue Reduction</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
                 Get IoT Testing Quote
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 View IoT Case Studies
               </button>
             </div>

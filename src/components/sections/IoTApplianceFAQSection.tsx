@@ -139,21 +139,21 @@ const IoTFAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaQuestionCircle className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Frequently Asked Questions</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaQuestionCircle className="w-4 h-4" />
+            <span className="text-sm">Frequently Asked Questions</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Questions & Answers
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Get answers to the most common questions about IoT software testing, 
             device compatibility, security, and our comprehensive testing services.
           </p>
@@ -167,7 +167,7 @@ const IoTFAQSection: React.FC = () => {
               <div className={`bg-gradient-to-r ${category.color} p-6`}>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                    <category.icon className="w-6 h-6 text-white" />
+                    <category.icon className="w-6 h-6 text-brand-blue" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
@@ -215,19 +215,19 @@ const IoTFAQSection: React.FC = () => {
         {/* Additional Support */}
         <div className="mt-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaWifi className="w-8 h-8 text-white" />
+            <div className="w-16 h-16 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <FaWifi className="w-12 h-12 text-white" />
             </div>
             <h3 className="text-3xl font-bold mb-4">Still Have Questions About IoT Testing?</h3>
-            <p className="text-blue-100 mb-8 text-lg">
+            <p className="mb-8 text-lg">
               Our IoT testing experts are here to help. Get personalized answers 
               to your specific IoT project questions and requirements.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+              <button className="bg-white  px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Schedule IoT Consultation
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Contact IoT Team
               </button>
             </div>

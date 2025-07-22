@@ -88,21 +88,21 @@ const IoTToolsFrameworkSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaTools className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Tools &amp; Frameworks</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaTools className="w-4 h-4" />
+            <span className="text-sm">Tools &amp; Frameworks</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Advanced IoT Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Tools &amp; Technologies
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Leverage specialized tools and frameworks designed for IoT ecosystems, 
             ensuring seamless connectivity, robust security, and optimal performance across edge-to-cloud architectures.
           </p>
@@ -111,7 +111,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
         {/* Testing Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {testingTools.map((category, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl hover:ring-2 transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-12 h-12 ${category.bgColor} rounded-xl flex items-center justify-center`}>
                   <category.icon className={`w-6 h-6 ${category.color}`} />
@@ -121,7 +121,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
               
               <div className="space-y-4">
                 {category.tools.map((tool, toolIndex) => (
-                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-sky-100 transition-colors">
                     <FaCheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-gray-900">{tool.name}</h4>
@@ -137,9 +137,9 @@ const IoTToolsFrameworkSection: React.FC = () => {
         {/* Protocol Frameworks */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-cyan-100 rounded-full px-6 py-2 mb-6">
-              <FaNetworkWired className="w-4 h-4 text-cyan-600" />
-              <span className="text-sm font-semibold text-cyan-600">Protocol Frameworks</span>
+            <div className="inline-flex items-center gap-2 text-white bg-brand-blue rounded-full px-6 py-2 mb-6">
+              <FaNetworkWired className="w-4 h-4" />
+              <span className="text-sm">Protocol Frameworks</span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               IoT Protocol &amp; Standards Validation
@@ -180,27 +180,27 @@ const IoTToolsFrameworkSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <FaMicrochip className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <FaMicrochip className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Edge Testing</h4>
-              <p className="text-blue-100">Device, sensor, and gateway validation</p>
+              <p>Device, sensor, and gateway validation</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <FaNetworkWired className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <FaNetworkWired className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Network Testing</h4>
-              <p className="text-blue-100">Connectivity and protocol validation</p>
+              <p>Connectivity and protocol validation</p>
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <FaCloud className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <FaCloud className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Cloud Testing</h4>
-              <p className="text-blue-100">Platform integration and scalability</p>
+              <p>Platform integration and scalability</p>
             </div>
           </div>
         </div>
