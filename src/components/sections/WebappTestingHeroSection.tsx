@@ -9,7 +9,7 @@ import { BsLightningCharge } from "react-icons/bs";
 
 const WebappTestingHeroSection: React.FC = () => {
   return (
-    <section className="bg-white text-black py-10 px-8 md:px-12 lg:px-24">
+    <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">

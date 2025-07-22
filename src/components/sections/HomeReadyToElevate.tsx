@@ -15,7 +15,7 @@ const renderTitle = () => {
 const ctaSection = {
   title: "Ready to Elevate Your Software Quality?",
   subtitle:
-    "Join 50+ companies who trust us with their critical testing needs. Get started with a free consultation today.",
+    "Join 50+ leading companies who trust our software testing services. Get started with a free QA consultation today.",
   primaryButton: {
     label: "Start Free Consultation",
     href: "#",

@@ -27,7 +27,7 @@ const DesktopAnyQuestions: React.FC = () => {
 
             <p className="text-gray-700 text-lg mb-8 leading-relaxed">
               Our desktop testing experts are ready to help you understand how
-              our comprehensive testing services can ensure your application's
+              our comprehensive testing services can ensure your application&apos;s
               success across all platforms. Get personalized answers to your
               specific requirements.
             </p>

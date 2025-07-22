@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, act } from "react";
+import { useState, useEffect } from "react";
 
 export default function CardSlider() {
   const [activeCard, setActiveCard] = useState(0);

@@ -27,9 +27,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Accelerate your product launch with our comprehensive QA solutions.
-          Over a decade of experience delivering exceptional software testing
-          services to startups and industry leaders.
+           Accelerate your product launch with our comprehensive QA solutions and premium software testing services. With over a decade of experience, our ISTQB Certified Experts deliver exceptional software quality and scalable solutions to startups and industry leaders, ensuring faster time-to-market and award-winning apps.
         </p>
 
         {/* CTAs */}
