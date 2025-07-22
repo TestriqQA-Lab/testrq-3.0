@@ -53,17 +53,17 @@ const HealthcareTestingProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-20 bg-gradient-to-br from-gray-100 to-blue-100">
       <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaCog className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Testing Process</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaCog className="w-4 h-4" />
+            <span className="text-sm">Testing Process</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Healthcare Testing
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Process & Methodology
             </span>
           </h2>
@@ -83,8 +83,8 @@ const HealthcareTestingProcessSection: React.FC = () => {
               </div>
               
               {/* Card */}
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30 h-full">
-                <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:ring-2 hover:ring-brand-blue h-full">
+                <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
                 
@@ -149,16 +149,16 @@ const HealthcareTestingProcessSection: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Start Your Healthcare Testing Journey?</h3>
-            <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
+            <p className="mb-8 text-lg max-w-2xl mx-auto">
               Let our healthcare testing experts guide you through a compliant, secure, and efficient testing process.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white  px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Start Your Project
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Learn More About Our Process
               </button>
             </div>
