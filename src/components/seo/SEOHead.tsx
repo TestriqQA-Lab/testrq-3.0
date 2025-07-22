@@ -60,9 +60,6 @@ export default function SEOHead({
       <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       
-      {/* Theme color for mobile browsers */}
-      <meta name="theme-color" content="#000000" />
-      <meta name="msapplication-TileColor" content="#000000" />
       
       {/* Open Graph locale alternatives */}
       <meta property="og:locale:alternate" content="en_GB" />

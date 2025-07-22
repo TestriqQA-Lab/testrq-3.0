@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Testriq - Professional Software Testing Services | QA Solutions",
-    template: "%s | Testriq - Professional Software Testing Services"
+    template: "%s | Testriq"
   },
   description: "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
   keywords: [
