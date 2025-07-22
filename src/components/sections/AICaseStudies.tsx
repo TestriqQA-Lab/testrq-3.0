@@ -308,7 +308,7 @@ const AICaseStudies: React.FC = () => {
                   className={`absolute top-4 right-4 w-3 h-3 bg-${caseStudies[activeCase].color}-500 rounded-full animate-ping opacity-50`}
                 ></div>
                 <blockquote className="text-gray-700 italic mb-3">
-                  "{caseStudies[activeCase].testimonial}"
+                  &quot;{caseStudies[activeCase].testimonial}&quot;
                 </blockquote>
                 <cite
                   className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm flex items-center`}

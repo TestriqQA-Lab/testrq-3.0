@@ -83,7 +83,7 @@ const AboutStorySection = () => {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="hidden md:block w-2/12 flex justify-center">
+                <div className="hidden md:block w-2/12 justify-center">
                   <div className="w-4 h-4 bg-[theme(color.brand.blue)] rounded-full border-4 border-white shadow-lg"></div>
                 </div>
 

@@ -5,11 +5,9 @@ import {
   FaWifi,
   FaShieldAlt,
   FaBatteryFull,
-  FaNetworkWired,
   FaCloud,
-  FaMobile,
 } from "react-icons/fa";
-import { MdDevices, MdSensors, MdSpeed } from "react-icons/md";
+import { MdDevices, MdSensors } from "react-icons/md";
 
 const IoTComprehensiveSection: React.FC = () => {
   const services = [

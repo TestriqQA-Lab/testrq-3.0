@@ -4,12 +4,11 @@ import React from "react";
 import {
   FaCode,
   FaShieldAlt,
-  FaRocket,
   FaCogs,
   FaDatabase,
   FaCloud,
 } from "react-icons/fa";
-import { MdSpeed, MdSecurity } from "react-icons/md";
+import { MdSpeed } from "react-icons/md";
 
 const ApiComprehensiveSection: React.FC = () => {
   const services = [

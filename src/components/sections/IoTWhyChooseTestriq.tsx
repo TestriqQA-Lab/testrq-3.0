@@ -268,7 +268,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
               IoT Testing Network
             </h3>
             <p className="text-gray-600">
-              Connected devices and protocols we've successfully tested
+              Connected devices and protocols we&apos;ve successfully tested
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">

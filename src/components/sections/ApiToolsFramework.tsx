@@ -2,7 +2,6 @@
 
 import React from "react";
 import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
-import { SiPostman, SiJest, SiJenkins, SiDocker } from "react-icons/si";
 
 const ApiToolsFramework: React.FC = () => {
   const toolCategories = [

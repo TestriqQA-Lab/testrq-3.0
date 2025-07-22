@@ -255,7 +255,7 @@ const ApiCaseStudies: React.FC = () => {
                 className={`bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-white p-6 rounded-xl border-l-4 border-${caseStudies[activeCase].color}-500`}
               >
                 <blockquote className="text-gray-700 italic mb-3">
-                  "{caseStudies[activeCase].testimonial}"
+                  &quot;{caseStudies[activeCase].testimonial}&quot;
                 </blockquote>
                 <cite
                   className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm`}
