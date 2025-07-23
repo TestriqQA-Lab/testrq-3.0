@@ -70,8 +70,8 @@ const AboutAchievementsSection = () => {
             Celebrating <span className="text-[theme(color.brand.blue)]">Excellence</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our achievements reflect our commitment to excellence and the trust our clients 
-            place in us. Each milestone represents countless hours of dedication and expertise.
+            Our award-winning QA team, with 40+ professional certifications and a 99.8% project success rate, delivers software testing services trusted by clients in 15+ countries. We’re consistently rated 5 stars for quality, agility, and customer satisfaction across fintech, healthcare, SaaS, and more.
+
           </p>
         </div>
 
@@ -101,11 +101,11 @@ const AboutAchievementsSection = () => {
               Professional <span className="text-[theme(color.brand.blue)]">Certifications</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Our team holds industry-leading certifications, ensuring we stay current with 
-              the latest testing methodologies and best practices.
+              Our QA professionals proudly hold industry-recognized certifications, bringing hands-on expertise in agile, automated, performance, and secure software testing to every project we deliver.
+
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {certifications.map((cert, index) => (
               <div
@@ -126,7 +126,7 @@ const AboutAchievementsSection = () => {
               Recent <span className="text-[theme(color.brand.blue)]">Awards & Recognition</span>
             </h3>
           </div>
-          
+
           <div className="space-y-8">
             {[
               {

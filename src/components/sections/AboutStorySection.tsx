@@ -41,9 +41,8 @@ const AboutStorySection = () => {
             The <span className="text-[theme(color.brand.blue)]">Testriq Story</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            From a small team of passionate QA engineers to a globally recognized testing partner, 
-            our journey has been defined by innovation, excellence, and an unwavering commitment 
-            to quality assurance.
+            Testriq began with a vision to redefine software testing through precision, innovation, and a commitment to quality. Today, we're a globally trusted QA partner helping businesses ship better products with confidence and speed.
+
           </p>
         </div>
 
@@ -56,9 +55,8 @@ const AboutStorySection = () => {
             {milestones.map((milestone, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
+                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
               >
                 {/* Content */}
                 <div className="w-full md:w-5/12">
