@@ -71,8 +71,8 @@ const HealthcareChallengesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-6 py-2 mb-6">
@@ -81,7 +81,7 @@ const HealthcareChallengesSection: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Critical Healthcare Software
-            <span className="block bg-gradient-to-r from-red-500 to-orange-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Testing Challenges
             </span>
           </h2>
@@ -94,7 +94,7 @@ const HealthcareChallengesSection: React.FC = () => {
         {/* Challenges Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {challenges.map((challenge, index) => (
-            <div key={index} className={`${challenge.bgColor} rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group`}>
+            <div key={index} className={`${challenge.bgColor} ring-1 ring-${challenge.bgColor} hover:ring-3 rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group`}>
               <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <challenge.icon className="w-8 h-8 text-white" />
               </div>
@@ -126,20 +126,20 @@ const HealthcareChallengesSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl text-center">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-3xl p-8 md:p-12 shadow-xl text-center">
+          <div className="max-w-3xl mx-auto text-white">
+            <h3 className="text-3xl font-bold mb-4">
               Don&apos;t Let These Challenges Compromise Patient Care
             </h3>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg mb-8">
               Our specialized healthcare testing services address these critical challenges, 
               ensuring your medical software meets the highest standards of safety, security, and compliance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
                 Get Healthcare Testing Audit
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-[theme(color.brand.blue)] transition-all duration-300">
+              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-sky-700 hover:shadow-xl hover:scale-98 transition-all duration-300">
                 Download Compliance Checklist
               </button>
             </div>

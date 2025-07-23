@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
+import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const RoboticTestingHeroSection: React.FC = () => {
   return (
@@ -28,9 +29,10 @@ const RoboticTestingHeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
                 Get Started Today
+                <FaArrowRight className="inline ml-2" />
               </button>
               <button className="border border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center gap-2">
-                <span className="w-3 h-3 bg-brand-blue rounded-full"></span>
+                <FaPlay className="w-4 h-4" />
                 Watch Demo
               </button>
             </div>

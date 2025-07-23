@@ -93,17 +93,17 @@ const HealthcareTestingServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaHeartbeat className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Healthcare Testing Services</span>
+          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaHeartbeat className="w-4 h-4" />
+            <span className="text-sm">Healthcare Testing Services</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive Healthcare
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Testing Solutions
             </span>
           </h2>
@@ -116,8 +116,8 @@ const HealthcareTestingServicesSection: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30">
-              <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:ring-3">
+              <div className="w-16 h-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               
@@ -137,18 +137,18 @@ const HealthcareTestingServicesSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-teal-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Ready to Secure Your Healthcare Software?</h3>
-            <p className="text-blue-100 mb-8 text-lg">
+            <p className="mb-8 text-lg">
               Our healthcare testing experts are ready to help you achieve compliance, ensure patient safety, 
               and optimize your medical software performance.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                 Get Healthcare Testing Quote
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                 Schedule Expert Consultation
               </button>
             </div>

@@ -61,7 +61,7 @@ const ElearningHeroSection: React.FC = () => {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Empower Learning
               <span className="block text-brand-blue">
                 Through Quality

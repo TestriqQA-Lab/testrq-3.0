@@ -110,7 +110,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Testriq for Smart Device Testing?
+            <span className="text-brand-blue">Why Choose Testriq</span> for Smart Device Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We combine smart device expertise with testing excellence to deliver smart device testing services 
@@ -233,7 +233,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to Connect with Excellence?</h3>
             <p className="text-gray-600">Join 500+ companies who trust our smart device testing expertise. Get started with a comprehensive smart device assessment and ensure your connected devices are reliable and secure.</p>
           </div>
-          <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Get Started with Smart Device Testing
           </button>
         </div>

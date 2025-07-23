@@ -85,17 +85,17 @@ const GamingContactSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50">
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+      <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaGamepad className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Get Started Today</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaGamepad className="w-4 h-4" />
+            <span className="text-sm">Get Started Today</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Ready to Level Up Your
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Game Testing?
             </span>
           </h2>
@@ -108,7 +108,7 @@ const GamingContactSection: React.FC = () => {
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {contactOptions.map((option, index) => (
-            <div key={index} className={`${option.bgColor} rounded-3xl p-8 text-center hover:shadow-lg transition-all duration-300 group`}>
+            <div key={index} className={`${option.bgColor} ring-1 ring-brand-blue rounded-3xl p-8 text-center hover:shadow-lg hover:ring-3 transition-all duration-300 group`}>
               <div className={`w-16 h-16 bg-gradient-to-r ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <option.icon className="w-8 h-8 text-white" />
               </div>
@@ -218,11 +218,11 @@ const GamingContactSection: React.FC = () => {
                 <textarea 
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Tell us about your game, testing requirements, timeline, and any specific challenges you&apos;re facing..."
+                  placeholder="Tell us about your game, testing requirements, timeline, and any specific challenges you're facing..."
                 ></textarea>
               </div>
 
-              <button className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+              <button className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
                 Get Free Assessment
                 <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
@@ -237,7 +237,7 @@ const GamingContactSection: React.FC = () => {
               <div className="space-y-4">
                 {expertiseAreas.map((area, index) => (
                   <div key={index} className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl">
-                    <div className="w-10 h-10 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
                       <area.icon className="w-5 h-5 text-white" />
                     </div>
                     <div>
@@ -250,13 +250,13 @@ const GamingContactSection: React.FC = () => {
             </div>
 
             {/* Why Choose Us */}
-            <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-6">Why Choose Testriq for Gaming Testing?</h3>
               <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <reason.icon className="w-4 h-4 text-white" />
+                    <div className="w-8 h-8 bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <reason.icon className="w-8 h-8" />
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">{reason.title}</h4>
@@ -304,18 +304,18 @@ const GamingContactSection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Start Your Gaming Success Story Today</h3>
-            <p className="text-blue-100 mb-8 text-lg">
+            <p className="mb-8 text-lg">
               Join 500+ game developers who trust Testriq for comprehensive gaming testing 
               and successful game launches across all platforms.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
                 Schedule Free Consultation
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 Download Gaming Testing Guide
               </button>
             </div>
@@ -327,4 +327,3 @@ const GamingContactSection: React.FC = () => {
 };
 
 export default GamingContactSection;
-
