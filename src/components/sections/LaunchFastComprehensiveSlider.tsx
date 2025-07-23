@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaBolt, FaRocket, FaShieldAlt, FaMobile, FaDesktop, FaCloud } from "react-icons/fa";
+import {
+  FaBolt,
+  FaRocket,
+  FaShieldAlt,
+  FaMobile,
+  FaDesktop,
+  FaCloud,
+} from "react-icons/fa";
 
 const LaunchFastComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -13,15 +20,16 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
       icon: <FaBolt className="text-2xl" />,
       percentage: "98%",
       color: "blue",
-      description: "Lightning-fast functional validation for agile development cycles",
+      description:
+        "Lightning-fast functional validation for agile development cycles",
       features: [
         "Core feature testing",
-        "User flow validation", 
+        "User flow validation",
         "Critical path verification",
         "Regression testing",
         "Smoke testing",
-        "Sanity testing"
-      ]
+        "Sanity testing",
+      ],
     },
     {
       id: "performance-optimization",
@@ -36,8 +44,8 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Performance bottleneck identification",
         "Response time optimization",
         "Scalability validation",
-        "Resource utilization testing"
-      ]
+        "Resource utilization testing",
+      ],
     },
     {
       id: "security-validation",
@@ -52,8 +60,8 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Data protection validation",
         "Input validation testing",
         "Session management testing",
-        "Security compliance verification"
-      ]
+        "Security compliance verification",
+      ],
     },
     {
       id: "mobile-app-testing",
@@ -68,8 +76,8 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "App store optimization",
         "Touch interface testing",
         "Battery performance testing",
-        "Network connectivity testing"
-      ]
+        "Network connectivity testing",
+      ],
     },
     {
       id: "web-application-testing",
@@ -77,15 +85,16 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
       icon: <FaDesktop className="text-2xl" />,
       percentage: "99%",
       color: "teal",
-      description: "Cross-browser compatibility and responsive design validation",
+      description:
+        "Cross-browser compatibility and responsive design validation",
       features: [
         "Cross-browser compatibility",
         "Responsive design validation",
         "Web performance testing",
         "Accessibility testing",
         "SEO optimization testing",
-        "Progressive web app testing"
-      ]
+        "Progressive web app testing",
+      ],
     },
     {
       id: "api-integration-testing",
@@ -100,9 +109,9 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Microservices communication",
         "Data validation testing",
         "Error handling testing",
-        "Performance testing"
-      ]
-    }
+        "Performance testing",
+      ],
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -112,7 +121,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
       purple: "text-purple-600 bg-purple-50 border-purple-200",
       orange: "text-orange-600 bg-orange-50 border-orange-200",
       teal: "text-teal-600 bg-teal-50 border-teal-200",
-      indigo: "text-indigo-600 bg-indigo-50 border-indigo-200"
+      indigo: "text-indigo-600 bg-indigo-50 border-indigo-200",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -124,7 +133,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
       purple: "from-purple-600 to-purple-400",
       orange: "from-orange-600 to-orange-400",
       teal: "from-teal-600 to-teal-400",
-      indigo: "from-indigo-600 to-indigo-400"
+      indigo: "from-indigo-600 to-indigo-400",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -134,11 +143,13 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Complete LaunchFast QA <span className="text-brand-blue">Services</span>
+            Complete LaunchFast QA{" "}
+            <span className="text-brand-blue">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our comprehensive LaunchFast QA services cover every aspect of rapid product development, 
-            ensuring quality, performance, and security across all platforms and technologies for successful launches.
+            Our comprehensive LaunchFast QA services cover every aspect of rapid
+            product development, ensuring quality, performance, and security
+            across all platforms and technologies for successful launches.
           </p>
         </div>
 
@@ -158,7 +169,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 {type.icon}
               </span>
               <span className="hidden sm:inline">{type.title}</span>
-              <span className="sm:hidden">{type.title.split(' ')[0]}</span>
+              <span className="sm:hidden">{type.title.split(" ")[0]}</span>
             </button>
           ))}
         </div>
@@ -169,7 +180,11 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
             {/* Left Content */}
             <div>
               <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${getColorClasses(testingTypes[activeTab].color)}`}>
+                <div
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center ${getColorClasses(
+                    testingTypes[activeTab].color
+                  )}`}
+                >
                   {testingTypes[activeTab].icon}
                 </div>
                 <div>
@@ -183,18 +198,28 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                  Key Features:
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {testingTypes[activeTab].features.map((feature, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${getProgressColor(testingTypes[activeTab].color)}`}></div>
+                      <div
+                        className={`w-2 h-2 rounded-full bg-gradient-to-r ${getProgressColor(
+                          testingTypes[activeTab].color
+                        )}`}
+                      ></div>
                       <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <button className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(testingTypes[activeTab].color)} hover:shadow-lg`}>
+              <button
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(
+                  testingTypes[activeTab].color
+                )} hover:shadow-lg`}
+              >
                 Learn More
               </button>
             </div>
@@ -216,14 +241,30 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 <div>
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-gray-600">Test Coverage</span>
-                    <span className={`font-medium ${testingTypes[activeTab].color === 'blue' ? 'text-blue-600' : testingTypes[activeTab].color === 'green' ? 'text-green-600' : testingTypes[activeTab].color === 'purple' ? 'text-purple-600' : testingTypes[activeTab].color === 'orange' ? 'text-orange-600' : testingTypes[activeTab].color === 'teal' ? 'text-teal-600' : 'text-indigo-600'}`}>
+                    <span
+                      className={`font-medium ${
+                        testingTypes[activeTab].color === "blue"
+                          ? "text-blue-600"
+                          : testingTypes[activeTab].color === "green"
+                          ? "text-green-600"
+                          : testingTypes[activeTab].color === "purple"
+                          ? "text-purple-600"
+                          : testingTypes[activeTab].color === "orange"
+                          ? "text-orange-600"
+                          : testingTypes[activeTab].color === "teal"
+                          ? "text-teal-600"
+                          : "text-indigo-600"
+                      }`}
+                    >
                       {testingTypes[activeTab].percentage}
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div 
-                      className={`bg-gradient-to-r ${getProgressColor(testingTypes[activeTab].color)} h-3 rounded-full transition-all duration-1000`}
-                      style={{width: testingTypes[activeTab].percentage}}
+                    <div
+                      className={`bg-gradient-to-r ${getProgressColor(
+                        testingTypes[activeTab].color
+                      )} h-3 rounded-full transition-all duration-1000`}
+                      style={{ width: testingTypes[activeTab].percentage }}
                     ></div>
                   </div>
                 </div>
@@ -242,10 +283,16 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
 
               {/* Testing Coverage Visualization */}
               <div className="mt-6 p-4 bg-white rounded-lg">
-                <h5 className="font-semibold text-gray-900 mb-3">Testing Coverage Visualization</h5>
+                <h5 className="font-semibold text-gray-900 mb-3">
+                  Testing Coverage Visualization
+                </h5>
                 <div className="flex items-center justify-center space-x-4">
                   <div className="text-center">
-                    <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${getProgressColor(testingTypes[activeTab].color)} flex items-center justify-center text-white text-sm font-bold`}>
+                    <div
+                      className={`w-8 h-8 rounded-full bg-gradient-to-r ${getProgressColor(
+                        testingTypes[activeTab].color
+                      )} flex items-center justify-center text-white text-sm font-bold`}
+                    >
                       ✓
                     </div>
                     <div className="text-xs text-gray-600 mt-1">Validated</div>
@@ -273,4 +320,3 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
 };
 
 export default LaunchFastComprehensiveSlider;
-

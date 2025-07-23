@@ -6,7 +6,7 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 const AITestingHeroSection: React.FC = () => {
   return (
     <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
@@ -22,10 +22,10 @@ const AITestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your AI applications deliver accurate, fair, and reliable 
-            results with our comprehensive testing services. From machine 
-            learning models to generative AI - we validate every aspect of 
-            your intelligent systems.
+            Ensure your AI applications deliver accurate, fair, and reliable
+            results with our comprehensive testing services. From machine
+            learning models to generative AI - we validate every aspect of your
+            intelligent systems.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
@@ -69,8 +69,12 @@ const AITestingHeroSection: React.FC = () => {
                     <span className="text-white font-bold text-sm">AI</span>
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-gray-700">AI Model Testing Dashboard</div>
-                    <div className="text-xs text-gray-500">Real-time validation & monitoring</div>
+                    <div className="text-sm font-semibold text-gray-700">
+                      AI Model Testing Dashboard
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      Real-time validation & monitoring
+                    </div>
                   </div>
                 </div>
                 <div className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-semibold">
@@ -83,34 +87,42 @@ const AITestingHeroSection: React.FC = () => {
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Model Validation</span>
+                  <span className="text-sm font-semibold text-gray-700">
+                    Model Validation
+                  </span>
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-lg font-bold text-green-600">94%</div>
                 <div className="text-xs text-gray-500">Accuracy Score</div>
               </div>
-              
+
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Performance Testing</span>
+                  <span className="text-sm font-semibold text-gray-700">
+                    Performance Testing
+                  </span>
                   <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-lg font-bold text-blue-600">⚡</div>
                 <div className="text-xs text-gray-500">Sub-second response</div>
               </div>
-              
+
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Bias Detection</span>
+                  <span className="text-sm font-semibold text-gray-700">
+                    Bias Detection
+                  </span>
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-lg font-bold text-orange-600">🎯</div>
                 <div className="text-xs text-gray-500">Zero bias tolerance</div>
               </div>
-              
+
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">Explainability Testing</span>
+                  <span className="text-sm font-semibold text-gray-700">
+                    Explainability Testing
+                  </span>
                   <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
                 </div>
                 <div className="text-lg font-bold text-purple-600">📊</div>
@@ -121,10 +133,14 @@ const AITestingHeroSection: React.FC = () => {
             {/* AI Testing Progress */}
             <div className="bg-white p-4 rounded-lg shadow-md">
               <div className="flex items-center justify-between mb-3">
-                <span className="text-sm font-semibold text-gray-700">AI Testing Progress</span>
-                <span className="text-xs text-purple-600 font-semibold">94% Complete</span>
+                <span className="text-sm font-semibold text-gray-700">
+                  AI Testing Progress
+                </span>
+                <span className="text-xs text-purple-600 font-semibold">
+                  94% Complete
+                </span>
               </div>
-              
+
               {/* Progress Bars */}
               <div className="space-y-3">
                 <div>
@@ -133,27 +149,36 @@ const AITestingHeroSection: React.FC = () => {
                     <span>100%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{ width: "100%" }}></div>
+                    <div
+                      className="bg-green-500 h-2 rounded-full"
+                      style={{ width: "100%" }}
+                    ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-xs text-gray-600 mb-1">
                     <span>Model Training</span>
                     <span>95%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{ width: "95%" }}></div>
+                    <div
+                      className="bg-blue-500 h-2 rounded-full"
+                      style={{ width: "95%" }}
+                    ></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-xs text-gray-600 mb-1">
                     <span>Validation Tests</span>
                     <span>87%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-500 h-2 rounded-full" style={{ width: "87%" }}></div>
+                    <div
+                      className="bg-purple-500 h-2 rounded-full"
+                      style={{ width: "87%" }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -165,17 +190,21 @@ const AITestingHeroSection: React.FC = () => {
             <div className="text-xs font-semibold text-gray-700">ML Model</div>
             <div className="text-lg font-bold text-green-600">🧠</div>
           </div>
-          
+
           <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-            <div className="text-xs font-semibold text-gray-700">Neural Net</div>
+            <div className="text-xs font-semibold text-gray-700">
+              Neural Net
+            </div>
             <div className="text-lg font-bold text-purple-600">🔗</div>
           </div>
-          
+
           <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-            <div className="text-xs font-semibold text-gray-700">Deep Learning</div>
+            <div className="text-xs font-semibold text-gray-700">
+              Deep Learning
+            </div>
             <div className="text-lg font-bold text-blue-600">⚡</div>
           </div>
-          
+
           <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">AI Ethics</div>
             <div className="text-lg font-bold text-orange-600">⚖️</div>
@@ -187,4 +216,3 @@ const AITestingHeroSection: React.FC = () => {
 };
 
 export default AITestingHeroSection;
-
