@@ -5,7 +5,6 @@ interface FAQ {
     answer: string | string[];
 }
 
-import { li } from "framer-motion/client";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 

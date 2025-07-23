@@ -96,12 +96,12 @@ const TelecomFAQSection: React.FC = () => {
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-      <div className="mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaQuestionCircle className="w-4 h-4 text-[theme(color.brand.blue)]" />
-            <span className="text-sm font-medium text-[theme(color.brand.blue)]">Frequently Asked Questions</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaQuestionCircle className="w-4 h-4" />
+            <span className="text-sm">Frequently Asked Questions</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -184,16 +184,16 @@ const TelecomFAQSection: React.FC = () => {
         {/* Knowledge Base CTA */}
         <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-4">Explore Our Knowledge Base</h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Access our comprehensive library of telecommunications testing resources, best practices, 
             network optimization guides, and industry insights.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+          <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               Browse Knowledge Base
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Download Testing Guide
             </button>
           </div>

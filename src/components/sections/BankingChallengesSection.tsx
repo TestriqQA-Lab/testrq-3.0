@@ -12,7 +12,6 @@ import {
   FaGavel,
   FaDatabase,
   FaMobile,
-  FaNetworkWired,
   FaCode
 } from "react-icons/fa";
 
@@ -167,28 +166,28 @@ const BankingChallengesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaChartLine className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Financial Loss</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Financial Loss</h4>
+              <p className="text-sm">
                 Cyber attacks on financial institutions result in average losses of $18.3 million per incident, 
                 not including regulatory fines and reputation damage.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaUsers className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Customer Trust</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Customer Trust</h4>
+              <p className="text-sm">
                 65% of customers would switch banks after a security breach, leading to permanent customer 
                 loss and reduced market share.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaUniversity className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Regulatory Penalties</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaUniversity className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Regulatory Penalties</h4>
+              <p className="text-sm">
                 Non-compliance with banking regulations can result in fines exceeding $100 million, 
                 plus ongoing regulatory scrutiny and operational restrictions.
               </p>
@@ -210,11 +209,11 @@ const BankingChallengesSection: React.FC = () => {
             helping you maintain regulatory compliance, protect customer data, and ensure operational excellence.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+          <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               Explore Our Solutions
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Get Security Assessment
             </button>
           </div>

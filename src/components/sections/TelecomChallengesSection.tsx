@@ -166,28 +166,28 @@ const TelecomChallengesSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaChartLine className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Revenue Loss</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Revenue Loss</h4>
+              <p className="text-sm">
                 Network outages cost telecom operators an average of $100,000 per hour, with major 
                 incidents reaching millions in lost revenue and compensation.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaUsers className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Customer Churn</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Customer Churn</h4>
+              <p className="text-sm">
                 Poor network quality leads to 30% customer churn rate, with customers switching to 
                 competitors offering better service reliability and performance.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
-              <FaNetworkWired className="w-12 h-12 mx-auto mb-4 text-white opacity-80" />
-              <h4 className="text-xl font-bold mb-2 text-white">Network Degradation</h4>
-              <p className="text-sm text-white">
+            <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
+              <FaNetworkWired className="w-12 h-12 mx-auto mb-4 opacity-80" />
+              <h4 className="text-xl font-bold mb-2">Network Degradation</h4>
+              <p className="text-sm">
                 Unaddressed network issues compound over time, leading to 50% performance degradation 
                 and requiring costly infrastructure overhauls.
               </p>
@@ -204,16 +204,16 @@ const TelecomChallengesSection: React.FC = () => {
         {/* Solution Preview */}
         <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-4">Don&apos;t Let These Challenges Compromise Your Network</h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-lg mb-8 max-w-2xl mx-auto">
             Our comprehensive telecommunication testing solutions address every challenge mentioned above, 
             helping you deliver superior network performance, enhance customer satisfaction, and stay ahead of the competition.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+          <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               Explore Our Solutions
             </button>
-            <button className="bg-white bg-opacity-20 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Get Network Assessment
             </button>
           </div>

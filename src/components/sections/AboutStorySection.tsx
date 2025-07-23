@@ -41,7 +41,7 @@ const AboutStorySection = () => {
             The <span className="text-[theme(color.brand.blue)]">Testriq Story</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Testriq began with a vision to redefine software testing through precision, innovation, and a commitment to quality. Today, we're a globally trusted QA partner helping businesses ship better products with confidence and speed.
+            Testriq began with a vision to redefine software testing through precision, innovation, and a commitment to quality. Today, we&apos;re a globally trusted QA partner helping businesses ship better products with confidence and speed.
 
           </p>
         </div>

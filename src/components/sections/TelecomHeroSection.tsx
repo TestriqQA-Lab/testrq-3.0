@@ -40,9 +40,9 @@ const TelecomHeroSection: React.FC = () => {
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
-              <FaWifi className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span className="text-sm font-semibold text-[theme(color.brand.blue)]">Telecommunication Testing Solutions</span>
+            <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
+              <FaWifi className="w-4 h-4" />
+              <span className="text-sm">Telecommunication Testing Solutions</span>
             </div>
 
             {/* Main Headline */}
@@ -167,11 +167,11 @@ const TelecomHeroSection: React.FC = () => {
             <p className="text-blue-100 mb-6 text-lg">
               Join 300+ telecom operators that trust Testriq for comprehensive network testing solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+            <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
+              <button className="bg-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
                 Get Free Network Analysis
               </button>
-              <button className="bg-white bg-opacity-20 text-white px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+              <button className="bg-white bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
                 View Telecom Case Studies
               </button>
             </div>

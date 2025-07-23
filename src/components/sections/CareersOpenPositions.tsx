@@ -1,7 +1,6 @@
 "use client";
 
-import { count } from "console";
-import { label } from "framer-motion/client";
+
 import React, { useState } from "react";
 import {
   FaSearch,
