@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/web-app-testing-og.jpg",
+        url: "/OG/Web-Application-Testing-OG-IMG.webp",
         width: 1200,
         height: 630,
         alt: "Web Application Testing Services by Testriq",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
     description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    images: ["/web-app-testing-twitter.jpg"],
+    images: ["/OG/Web-Application-Testing-Twitter-IMG.webp"],
   },
   alternates: {
     canonical: "/web-application-testing-services",
