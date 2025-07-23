@@ -52,10 +52,10 @@ const CareersHeroSection: React.FC = () => {
   return (
     <section className="relative bg-white py-8 lg:py-16 overflow-hidden px-8 md:px-12 lg:px-24">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-white"></div>
 
       {/* Animated Background Shapes */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[theme(color.brand.blue)] to-purple-600 opacity-10 rounded-full transform translate-x-48 -translate-y-48 animate-pulse"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[theme(color.brand.blue)] to-brand-blue opacity-10 rounded-full transform translate-x-48 -translate-y-48 animate-pulse"></div>
       <div
         className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-blue-400 to-[theme(color.brand.blue)] opacity-10 rounded-full transform -translate-x-40 translate-y-40 animate-pulse"
         style={{ animationDelay: "1s" }}
@@ -85,7 +85,7 @@ const CareersHeroSection: React.FC = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
             Shape the Future of
-            <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 bg-clip-text text-transparent">
+            <span className="block text-brand-blue">
               Software Quality
             </span>
           </h1>
@@ -131,38 +131,6 @@ const CareersHeroSection: React.FC = () => {
                 <div className="text-xs text-gray-500">{stat.description}</div>
               </div>
             ))}
-          </div>
-
-          {/* Employee Quote */}
-          <div className="mt-16 max-w-3xl mx-auto">
-            <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100">
-              <div className="flex items-center justify-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="w-5 h-5 text-yellow-400" />
-                ))}
-              </div>
-
-              <blockquote className="text-lg text-gray-700 mb-6 italic leading-relaxed">
-                &quot;Working at Testriq has been transformative for my career. The
-                learning opportunities, collaborative culture, and cutting-edge
-                projects make every day exciting. I&apos;ve grown more in two years
-                here than in my previous five years elsewhere.&quot;
-              </blockquote>
-
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                  S
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900">
-                    Sarah Johnson
-                  </div>
-                  <div className="text-sm text-gray-600">
-                    Senior QA Automation Engineer
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Scroll Indicator */}
