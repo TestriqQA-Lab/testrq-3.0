@@ -9,7 +9,7 @@ import { BsLightningCharge } from "react-icons/bs";
 
 const MobileTestingHeroSection: React.FC = () => {
   return (
-    <section className="bg-white text-black py-10 px-8 md:px-12 lg:px-24">
+    <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
@@ -27,8 +27,8 @@ const MobileTestingHeroSection: React.FC = () => {
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Ensure your mobile applications deliver exceptional user experiences
-            across all devices and platforms. From iOS to Android, functionality to performance, 
-            security to usability - we test it all.
+            across all devices and platforms. From iOS to Android, functionality
+            to performance, security to usability - we test it all.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
@@ -73,10 +73,12 @@ const MobileTestingHeroSection: React.FC = () => {
                     </div>
                   </div>
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-xs"><FaApple className="w-4 h-4" /></span>
+                    <span className="text-xs">
+                      <FaApple className="w-4 h-4" />
+                    </span>
                   </div>
                 </div>
-                
+
                 {/* Android */}
                 <div className="relative">
                   <div className="w-20 h-36 bg-gray-800 rounded-2xl p-1">
@@ -89,20 +91,20 @@ const MobileTestingHeroSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Floating Icons */}
               <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
                 <MdOutlineSecurity className="w-8 h-8 text-green-500" />
               </div>
-              
+
               <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
                 <BsLightningCharge className="w-8 h-8 text-yellow-500" />
               </div>
-              
+
               <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
                 <FaUsers className="w-8 h-8 text-purple-500" />
               </div>
-              
+
               <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
                 <div className="w-8 h-8 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">QA</span>
@@ -123,7 +125,9 @@ const MobileTestingHeroSection: React.FC = () => {
       {/* Trust Indicators */}
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200">
         <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-          <span className="text-sm text-gray-500">Trusted by leading mobile app companies</span>
+          <span className="text-sm text-gray-500">
+            Trusted by leading mobile app companies
+          </span>
           <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-6">
             <div className="w-24 h-8 bg-gray-200 rounded flex items-center justify-center">
               <span className="text-xs text-gray-500">App Store</span>
@@ -145,4 +149,3 @@ const MobileTestingHeroSection: React.FC = () => {
 };
 
 export default MobileTestingHeroSection;
-

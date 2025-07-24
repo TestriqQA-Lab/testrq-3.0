@@ -1,7 +1,5 @@
 import React from "react";
 import ExploratoryTestingHeroSection from "@/components/sections/ExploratoryTestingHeroSection";
-import ExploratoryComprehensiveSection from "@/components/sections/ExploratoryComprehensiveSection";
-import ExploratoryReadyToEnsureQuality from "@/components/sections/ExploratoryReadyToEnsureQuality";
 import ExploratoryComprehensiveSlider from "@/components/sections/ExploratoryComprehensiveSlider";
 import ExploratoryProvenTestingProcess from "@/components/sections/ExploratoryProvenTestingProcess";
 import ExploratoryWhyChooseTestriq from "@/components/sections/ExploratoryWhyChooseTestriq";
@@ -15,8 +13,6 @@ export default function ExploratoryTestingPage() {
   return (
     <div className="min-h-screen bg-white">
       <ExploratoryTestingHeroSection />
-      <ExploratoryComprehensiveSection />
-      <ExploratoryReadyToEnsureQuality />
       <ExploratoryComprehensiveSlider />
       <ExploratoryProvenTestingProcess />
       <ExploratoryWhyChooseTestriq />
@@ -28,4 +24,3 @@ export default function ExploratoryTestingPage() {
     </div>
   );
 }
-

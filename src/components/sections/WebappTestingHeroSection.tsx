@@ -10,14 +10,14 @@ import { BsLightningCharge } from "react-icons/bs";
 const WebappTestingHeroSection: React.FC = () => {
   return (
     <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
             Web Application Testing Experts
           </span>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
             Comprehensive{" "}
             <span className="text-[theme(color.brand.blue)]">
               Web-App Testing&nbsp;
