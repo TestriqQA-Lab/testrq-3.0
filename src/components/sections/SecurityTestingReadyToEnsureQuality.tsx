@@ -262,7 +262,7 @@ const SecurityTestingReadyToEnsureQuality: React.FC = () => {
               Start Your Security Testing Journey Today
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Don't wait for a security breach to discover vulnerabilities.
+              Don&apos;t wait for a security breach to discover vulnerabilities.
               Protect your applications and data with comprehensive security
               testing from industry experts.
             </p>

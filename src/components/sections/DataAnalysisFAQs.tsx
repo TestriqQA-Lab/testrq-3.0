@@ -4,12 +4,9 @@ import React, { useState } from 'react';
 import {
   FaChevronRight,
   FaChartBar,
-  FaChartLine,
   FaBrain,
   FaDatabase,
-  FaBullseye,
   FaCheckCircle,
-  FaArrowRight
 } from 'react-icons/fa';
 
 const DataAnalysisFAQs = () => {

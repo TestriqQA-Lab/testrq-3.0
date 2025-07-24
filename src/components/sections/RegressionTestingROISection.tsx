@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaChartLine, FaClock, FaDollarSign, FaCheckCircle } from "react-icons/fa";
+import {FaBug,  FaClock, FaDollarSign, FaCheckCircle } from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
   return (

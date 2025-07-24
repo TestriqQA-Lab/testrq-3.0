@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFileAlt, FaClipboardList, FaChartLine, FaUsers, FaCog, FaShieldAlt } from 'react-icons/fa';
+import { FaFileAlt, FaClipboardList, FaChartLine, FaCog, FaShieldAlt } from 'react-icons/fa';
 
 const QADocumentationHeroSection = () => {
   return (

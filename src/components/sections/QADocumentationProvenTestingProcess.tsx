@@ -139,7 +139,7 @@ const QADocumentationProvenTestingProcess = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our comprehensive 6-step process ensures consistent, high-quality documentation delivery 
-            that meets your specific requirements and enhances your team's productivity and effectiveness.
+            that meets your specific requirements and enhances your team&apos;s productivity and effectiveness.
           </p>
         </div>
 
@@ -243,7 +243,7 @@ const QADocumentationProvenTestingProcess = () => {
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our systematic approach ensures consistent quality, efficient delivery, and measurable results 
-              that enhance your team's productivity and project success.
+              that enhance your team&apos;s productivity and project success.
             </p>
           </div>
 
@@ -288,7 +288,7 @@ const QADocumentationProvenTestingProcess = () => {
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 lg:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">Ready to Start Your Documentation Project?</h3>
             <p className="text-xl mb-8 opacity-90">
-              Our proven process ensures comprehensive, high-quality documentation that enhances your team's productivity.
+              Our proven process ensures comprehensive, high-quality documentation that enhances your team&apos;s productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200">

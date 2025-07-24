@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBook, FaCode, FaChartLine, FaUsers, FaCog, FaShieldAlt } from 'react-icons/fa';
+import { FaBook, FaCode, FaChartLine, FaCog, FaShieldAlt } from 'react-icons/fa';
 
 const SoftwareTestingGuideHeroSection = () => {
   return (
@@ -26,7 +26,7 @@ const SoftwareTestingGuideHeroSection = () => {
               </p>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                Whether you're a beginner starting your testing journey or an experienced professional looking to enhance your skills, 
+                Whether you&apos;re a beginner starting your testing journey or an experienced professional looking to enhance your skills, 
                 this comprehensive guide covers manual testing, automation testing, performance testing, security testing, and more.
               </p>
             </div>

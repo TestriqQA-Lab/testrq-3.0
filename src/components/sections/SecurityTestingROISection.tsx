@@ -98,7 +98,7 @@ const SecurityTestingROISection: React.FC = () => {
               Secure Your Future with Testriq
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Don't let security vulnerabilities put your business at risk. Partner with Testriq for comprehensive security testing and robust protection.
+              Don&apos;t let security vulnerabilities put your business at risk. Partner with Testriq for comprehensive security testing and robust protection.
             </p>
             <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
               Request a Security Quote

@@ -230,10 +230,14 @@ export default function RegressionTestingPage() {
       <MainLayout>
         <RegressionTestingHeroSection />
         <RegressionTestingComprehensiveSlider />
+        <RegressionTestingROISection/>
         <RegressionTestingProvenTestingProcess />
         <RegressionTestingWhyChooseTestriq />
         <RegressionTestingToolsFramework />
+        <RegressionTestingCaseStudies/>
         <RegressionTestingReadyToEnsureQuality />
+        <RegressionTestingFAQs/>
+        <RegressionTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

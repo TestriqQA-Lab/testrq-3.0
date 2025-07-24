@@ -230,11 +230,13 @@ export default function ManualTestingPage() {
         <ManualTestingHeroSection />
         <ManualTestingComprehensiveSlider />
         <ManualTestingProvenTestingProcess />
+        <ManualTestingROISection/>
         <ManualTestingWhyChooseTestriq />
         <ManualTestingToolsFramework />
         <ManualTestingCaseStudies />
         <ManualTestingFAQs />
         <ManualTestingReadyToEnsureQuality />
+        <ManualTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

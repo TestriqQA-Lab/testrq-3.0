@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle, BookOpen, Users, Award } from 'lucide-react';
 
 const SoftwareTestingGuideFAQs = () => {
-  const [openFAQ, setOpenFAQ] = useState(null);
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
 
   const faqCategories = [
     {
@@ -97,7 +97,7 @@ const SoftwareTestingGuideFAQs = () => {
     }
   ];
 
-  const toggleFAQ = (categoryIndex, faqIndex) => {
+  const toggleFAQ = (categoryIndex: number, faqIndex: number) => {
     const key = `${categoryIndex}-${faqIndex}`;
     setOpenFAQ(openFAQ === key ? null : key);
   };

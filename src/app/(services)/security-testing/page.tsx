@@ -231,11 +231,13 @@ export default function SecurityTestingPage() {
         <SecurityTestingHeroSection />
         <SecurityTestingComprehensiveSlider />
         <SecurityTestingProvenTestingProcess />
+        <SecurityTestingROISection/>
         <SecurityTestingWhyChooseTestriq />
         <SecurityTestingToolsFramework />
         <SecurityTestingCaseStudies />
         <SecurityTestingFAQs />
         <SecurityTestingReadyToEnsureQuality />
+        <SecurityTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

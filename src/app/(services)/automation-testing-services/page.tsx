@@ -231,9 +231,13 @@ export default function AutomationTestingPage() {
         <AutomationTestingHeroSection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
+        <AutomationTestingROISection/>
         <AutomationTestingWhyChooseTestriq />
         <AutomationTestingToolsFramework />
+        <AutomationTestingCaseStudies/>
+        <AutomationTestingFAQs/>
         <AutomationTestingReadyToEnsureQuality />
+        <AutomationTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

@@ -49,7 +49,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
           {/* Left Column - Benefits */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              What You'll Achieve
+              What You&apos;ll Achieve
             </h3>
             
             <div className="space-y-4 mb-8">
@@ -148,7 +148,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
                 </div>
                 
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 
                 <div className="flex items-center">
@@ -169,7 +169,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
         <div className="text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Don't Wait - Start Learning Today!
+              Don&apos;t Wait - Start Learning Today!
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               The demand for skilled testing professionals is growing rapidly. Secure your future in software quality assurance with our comprehensive training program.

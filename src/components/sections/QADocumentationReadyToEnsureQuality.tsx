@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFileAlt, FaRocket, FaUsers, FaCheckCircle, FaPhone, FaEnvelope, FaCalendarAlt, FaCog } from 'react-icons/fa';
+import { FaFileAlt, FaRocket, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa';
 
 const QADocumentationReadyToEnsureQuality = () => {
   return (

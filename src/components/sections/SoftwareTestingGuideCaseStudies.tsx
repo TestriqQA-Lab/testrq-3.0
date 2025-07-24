@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Building2, TrendingUp, CheckCircle, ArrowRight, Users, Clock, Target } from 'lucide-react';
+import { Building2, CheckCircle, ArrowRight, Users, Clock, Target } from 'lucide-react';
 
 const SoftwareTestingGuideCaseStudies = () => {
   const [activeCase, setActiveCase] = useState(0);

@@ -151,7 +151,7 @@ const RegressionTestingCaseStudies: React.FC = () => {
 
                     <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-brand-blue">
                       <p className="text-gray-700 italic mb-4 leading-relaxed">
-                        "{study.testimonial}"
+                        &quot;{study.testimonial}&quot;
                       </p>
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center">

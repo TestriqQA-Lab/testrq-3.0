@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaShieldAlt, FaBuilding, FaHeart, FaUniversity, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import {  FaBuilding, FaHeart, FaUniversity, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const SecurityTestingCaseStudies: React.FC = () => {
   const [currentStudy, setCurrentStudy] = useState(0);

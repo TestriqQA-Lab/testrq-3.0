@@ -3,12 +3,10 @@
 import React, { useState } from 'react';
 import {
   FaBuilding,
-  FaChartLine,
   FaCheckCircle,
   FaArrowRight,
   FaUsers,
   FaClock,
-  FaBullseye,
   FaChartBar
 } from 'react-icons/fa';
 

@@ -164,7 +164,7 @@ const DataAnalysisWhyChooseTestriq = () => {
                 </div>
                 
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 
                 <div>

@@ -66,7 +66,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Ready to Unlock Your Data's Potential?
+            Ready to Unlock Your Data&apos;s Potential?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Transform your raw data into strategic business advantages with our comprehensive analytics services. Join industry leaders who trust us with their most critical data initiatives.
@@ -180,7 +180,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
                 </div>
                 
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 
                 <div className="flex items-center">
@@ -205,7 +205,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
               Our Analytics Value Proposition
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We don't just provide data analysis - we deliver strategic insights that drive measurable business outcomes.
+              We don&apos;t just provide data analysis - we deliver strategic insights that drive measurable business outcomes.
             </p>
           </div>
           
@@ -249,7 +249,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
               Transform Your Business with Data Analytics
             </h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Don't let your data remain untapped. Join the data-driven revolution and unlock insights that will propel your business to new heights.
+              Don&apos;t let your data remain untapped. Join the data-driven revolution and unlock insights that will propel your business to new heights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
