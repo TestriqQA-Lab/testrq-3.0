@@ -94,7 +94,7 @@ const ContactFAQSection: React.FC = () => {
               >
                 <div className="flex items-start gap-4 flex-1">
                   <div className="w-6 h-6 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <FaQuestionCircle className="w-3 h-3 text-[theme(color.brand.blue)]" />
+                    <FaQuestionCircle className="w-3 h-3 text-white" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 pr-4">
                     {faq.question}
@@ -123,7 +123,7 @@ const ContactFAQSection: React.FC = () => {
         </div>
 
         {/* Additional Help */}
-        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
+        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl p-8 text-white text-center">
           <FaLightbulb className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
           <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
@@ -133,10 +133,10 @@ const ContactFAQSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
               Contact Support
             </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
               Schedule a Call
             </button>
           </div>
@@ -146,7 +146,7 @@ const ContactFAQSection: React.FC = () => {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center p-6 bg-gray-50 rounded-xl">
             <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-green-600 font-bold">⚡</span>
+              <span className="text-green-600 text-2xl font-bold">⚡</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
               Fastest Response
@@ -159,7 +159,7 @@ const ContactFAQSection: React.FC = () => {
 
           <div className="text-center p-6 bg-gray-50 rounded-xl">
             <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-blue-600 font-bold">📧</span>
+              <span className="text-blue-600 text-2xl font-bold">📧</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
               Detailed Inquiries
@@ -171,7 +171,7 @@ const ContactFAQSection: React.FC = () => {
 
           <div className="text-center p-6 bg-gray-50 rounded-xl">
             <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-purple-600 font-bold">📅</span>
+              <span className="text-purple-600 text-2xl font-bold">📅</span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">
               Project Discussions
