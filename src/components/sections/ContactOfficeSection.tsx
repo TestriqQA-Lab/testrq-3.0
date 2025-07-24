@@ -3,44 +3,9 @@
 import React from "react";
 import {
   FaMapMarkerAlt,
-  FaClock,
-  FaPhone,
-  FaEnvelope,
-  FaGlobe,
-  FaUsers,
-  FaBuilding,
-  FaRoute,
 } from "react-icons/fa";
 
 const ContactOfficeSection: React.FC = () => {
-
-
-  const globalStats = [
-    {
-      icon: FaGlobe,
-      label: "Countries Served",
-      value: "25+",
-      description: "Global reach",
-    },
-    {
-      icon: FaUsers,
-      label: "Team Members",
-      value: "70+",
-      description: "QA experts",
-    },
-    {
-      icon: FaClock,
-      label: "Time Zones",
-      value: "12+",
-      description: "Coverage",
-    },
-    {
-      icon: FaBuilding,
-      label: "Office Locations",
-      value: "3",
-      description: "Physical + Remote",
-    },
-  ];
 
   return (
     <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">

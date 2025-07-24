@@ -172,7 +172,7 @@ const ContactMethodsSection: React.FC = () => {
                 </p>
                 <p className="text-sm text-gray-500 mb-6">{method.details}</p>
 
-                <button onClick={() => { method.action }}
+                <button
                   className={`w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
