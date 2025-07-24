@@ -5,7 +5,7 @@ import { FaArrowRight, FaPhone, FaEnvelope, FaCalendarAlt } from "react-icons/fa
 
 const AutomationTestingReadyToEnsureQuality: React.FC = () => {
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-brand-blue to-blue-600">
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-white mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -105,7 +105,7 @@ const AutomationTestingReadyToEnsureQuality: React.FC = () => {
             
             <div className="space-y-6">
               {/* Primary CTA */}
-              <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
+              <button className="w-full bg-gradient-to-br from-brand-blue to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
                 <span>Get Free Automation Assessment</span>
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -117,7 +117,7 @@ const AutomationTestingReadyToEnsureQuality: React.FC = () => {
               {/* Contact Options */}
               <div className="grid grid-cols-1 gap-4">
                 <button className="flex items-center justify-center space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-purple-300 hover:bg-purple-50 transition-all duration-300 group">
-                  <FaCalendarAlt className="text-purple-600 group-hover:scale-110 transition-transform" />
+                  <FaCalendarAlt className="text-brand-blue group-hover:scale-110 transition-transform" />
                   <span className="font-medium text-gray-700">Schedule Demo</span>
                 </button>
 

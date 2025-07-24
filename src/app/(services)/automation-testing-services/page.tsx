@@ -69,17 +69,6 @@ const AutomationTestingHeroSection = dynamic(
   }
 );
 
-const AutomationTestingComprehensiveSection = dynamic(
-  () => import("@/components/sections/AutomationTestingComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const AutomationTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
@@ -240,7 +229,6 @@ export default function AutomationTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AutomationTestingHeroSection />
-        <AutomationTestingComprehensiveSection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
         <AutomationTestingWhyChooseTestriq />

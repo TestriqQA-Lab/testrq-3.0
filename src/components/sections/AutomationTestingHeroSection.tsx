@@ -11,14 +11,14 @@ const AutomationTestingHeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-medium">
               <FaRobot className="mr-2" />
               Test Automation Experts
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Accelerate Testing with
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+              <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}Intelligent Automation
               </span>
             </h1>
@@ -42,7 +42,7 @@ const AutomationTestingHeroSection: React.FC = () => {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-600">10,000+</div>
                 <div className="text-sm text-gray-600">Automated Tests</div>
