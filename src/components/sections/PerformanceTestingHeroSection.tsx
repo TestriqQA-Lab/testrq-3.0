@@ -6,19 +6,19 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const PerformanceTestingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-orange-50 to-red-50 overflow-hidden">
+    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
               <FaTachometerAlt className="mr-2" />
               Performance Testing Experts
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Optimize Performance with
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+              <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}Advanced Load Testing
               </span>
             </h1>
@@ -42,7 +42,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-orange-600">50M+</div>
                 <div className="text-sm text-gray-600">Virtual Users</div>

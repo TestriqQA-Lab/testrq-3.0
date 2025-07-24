@@ -107,14 +107,14 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
                 onClick={() => setActiveStep(step.id)}
               >
                 {/* Step Number Circle */}
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white border-4 border-brand-blue rounded-full flex items-center justify-center z-10">
-                  <span className="text-brand-blue font-bold text-lg">{step.id}</span>
+                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white border-4 border-brand-blue rounded-full items-center justify-center z-10">
+                  <span className="text-brand-blue font-bold text-lg flex justify-center pt-1">{step.id}</span>
                 </div>
 
                 {/* Step Content */}
-                <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:text-right lg:pr-8" : "lg:text-left lg:pl-8"}`}>
+                <div className={`w-full lg:w-5/12`}>
                   <div
-                    className={`bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
+                    className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
                       activeStep === step.id ? "ring-2 ring-brand-blue" : ""
                     }`}
                   >
@@ -163,7 +163,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-orange-50 to-red-50 p-8 rounded-2xl">
+          <div className="bg-white p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Optimize Your Application Performance?</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Our proven performance testing process ensures your applications deliver exceptional speed, scalability, and reliability.

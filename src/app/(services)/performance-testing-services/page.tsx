@@ -69,17 +69,6 @@ const PerformanceTestingHeroSection = dynamic(
   }
 );
 
-const PerformanceTestingComprehensiveSection = dynamic(
-  () => import("@/components/sections/PerformanceTestingComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const PerformanceTestingComprehensiveSlider = dynamic(
   () => import("@/components/sections/PerformanceTestingComprehensiveSlider"),
@@ -216,7 +205,6 @@ export default function PerformanceTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <PerformanceTestingHeroSection />
-        <PerformanceTestingComprehensiveSection />
         <PerformanceTestingComprehensiveSlider />
         <PerformanceTestingProvenTestingProcess />
         <PerformanceTestingWhyChooseTestriq />

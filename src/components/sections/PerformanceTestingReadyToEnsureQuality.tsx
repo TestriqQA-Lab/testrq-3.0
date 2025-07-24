@@ -5,7 +5,7 @@ import { FaArrowRight, FaPhone, FaEnvelope, FaCalendarAlt } from "react-icons/fa
 
 const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-orange-600 via-red-600 to-pink-700">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-brand-blue to-blue-600">
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-white mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -105,7 +105,7 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
             
             <div className="space-y-6">
               {/* Primary CTA */}
-              <button className="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
+              <button className="w-full bg-gradient-to-br from-brand-blue to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
                 <span>Get Free Performance Assessment</span>
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
@@ -167,7 +167,7 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
               Let&apos;s discuss how we can optimize your application performance and scalability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-400 text-orange-900 px-8 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition-all duration-300">
+              <button className="bg-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition-all duration-300">
                 Start Performance Assessment
               </button>
               <button className="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-orange-900 transition-all duration-300">
