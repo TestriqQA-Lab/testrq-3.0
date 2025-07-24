@@ -29,11 +29,11 @@ const ToolsHeroSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center items-center xl:justify-start gap-4 mb-8">
-          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
+          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-sky-400 transition-all cursor-pointer w-full sm:w-auto">
             <span className="text-base">Explore Our Tools</span>
             <FaArrowRight className="w-4 h-5" />
           </button>
-          <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
+          <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer hover:text-sky-700 hover:border-sky-700 transition-all w-full sm:w-auto">
             <FaPlay className="w-4 h-4" />
             Watch Demo
           </button>
@@ -59,8 +59,8 @@ const ToolsHeroSection = () => {
       </div>
 
       {/* Right Section - Tool Icons */}
-      <div className="w-full mt-20 md:w-1/2 lg:my-10 md:my-10 max-w-xl">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-8">
+      <div className="w-full mt-15 lg:w-1/2 xl:w-2/3 lg:my-10 md:my-10 max-w-xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pb-10">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaCogs className="w-12 h-12 text-[theme(color.brand.blue)] mx-auto mb-3" />
             <h3 className="font-semibold text-gray-800">Automation</h3>

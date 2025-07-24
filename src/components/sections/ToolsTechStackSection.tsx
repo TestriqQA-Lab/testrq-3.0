@@ -107,7 +107,7 @@ const ToolsTechStackSection = () => {
         </div>
 
         {/* Integration Benefits */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">Integrated Testing Excellence</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">

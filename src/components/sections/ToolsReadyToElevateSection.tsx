@@ -43,7 +43,7 @@ const ToolsReadyToElevateSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 px-8 py-16 xl:px-24 text-white relative overflow-hidden">
+    <section className="bg-gradient-to-br from-brand-blue via-sky-700 to-sky-600 px-8 py-16 xl:px-24 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-white to-transparent rounded-full -translate-x-48 -translate-y-48"></div>
@@ -53,13 +53,12 @@ const ToolsReadyToElevateSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main CTA Section */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-700 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
+          <span className="inline-block bg-sky-700 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
             Ready to Get Started?
           </span>
           
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Elevate Your Testing with{" "}
-            <span className="text-blue-300">Advanced Tools</span>
+            Elevate Your Testing with Advanced Tools
           </h2>
           
           <p className="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto mb-8">
@@ -68,7 +67,7 @@ const ToolsReadyToElevateSection = () => {
           </p>
 
           {/* Primary CTA Button */}
-          <button className="bg-white text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-colors inline-flex items-center gap-3 mb-12">
+          <button className="bg-white text-sky-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center gap-3 mb-12">
             Start Your Testing Journey
             <FaArrowRight className="w-5 h-5" />
           </button>
@@ -84,13 +83,13 @@ const ToolsReadyToElevateSection = () => {
                 className={`rounded-xl p-8 text-center transition-all duration-300 hover:scale-105 ${
                   option.highlight
                     ? "bg-white text-gray-900 shadow-2xl"
-                    : "bg-blue-800 bg-opacity-50 backdrop-blur-sm border border-blue-700"
+                    : "bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 bg-opacity-50 backdrop-blur-sm"
                 }`}
               >
                 <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
                   option.highlight 
-                    ? "bg-blue-100 text-blue-600" 
-                    : "bg-blue-700 text-white"
+                    ? "bg-brand-blue text-white" 
+                    : "bg-brand-blue text-white"
                 }`}>
                   <IconComponent className="w-8 h-8" />
                 </div>
@@ -109,8 +108,8 @@ const ToolsReadyToElevateSection = () => {
                 
                 <button className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                   option.highlight
-                    ? "bg-blue-600 text-white hover:bg-blue-700"
-                    : "bg-white text-blue-900 hover:bg-blue-50"
+                    ? "bg-brand-blue text-white hover:bg-sky-700"
+                    : "bg-white text-sky-700 hover:bg-blue-50"
                 }`}>
                   {option.action}
                 </button>
@@ -120,7 +119,7 @@ const ToolsReadyToElevateSection = () => {
         </div>
 
         {/* Benefits Section */}
-        <div className="bg-blue-800 bg-opacity-30 backdrop-blur-sm rounded-xl p-8 mb-16">
+        <div className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 bg-opacity-30 backdrop-blur-sm rounded-xl p-8 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-4">
               What You Get with Our Testing Tools
@@ -163,7 +162,7 @@ const ToolsReadyToElevateSection = () => {
 
         {/* Final CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-xl p-8 inline-block">
+          <div className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 rounded-xl p-8 inline-block">
             <h4 className="text-xl font-bold text-white mb-4">
               Ready to Transform Your Testing?
             </h4>
@@ -171,10 +170,10 @@ const ToolsReadyToElevateSection = () => {
               Join the ranks of successful companies using our advanced testing tools and frameworks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+              <button className="bg-white text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:scale-98 transition-all">
                 Get Started Today
               </button>
-              <button className="border border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors">
+              <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors">
                 View Pricing
               </button>
             </div>

@@ -72,7 +72,7 @@ const ToolsCategoriesSection = () => {
             <span className="text-[theme(color.brand.blue)]">Tool Arsenal</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our extensive collection of testing tools and frameworks covers every aspect of software quality assurance, 
+            Our extensive collection of testing tools and frameworks covers every aspect of software quality assurance,
             from functional testing to performance optimization and security validation.
           </p>
         </div>
@@ -84,31 +84,33 @@ const ToolsCategoriesSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-border-pulse"
               >
-                <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${getColorClasses(category.color)} flex items-center justify-center mb-6`}>
-                  <IconComponent className="w-8 h-8" />
-                </div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {category.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {category.description}
-                </p>
-                
-                <div className="space-y-2">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-3">Key Tools:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {category.tools.map((tool, toolIndex) => (
-                      <span
-                        key={toolIndex}
-                        className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full"
-                      >
-                        {tool}
-                      </span>
-                    ))}
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${getColorClasses(category.color)} flex items-center justify-center mb-6`}>
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {category.title}
+                  </h3>
+
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {category.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-gray-800 mb-3">Key Tools:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {category.tools.map((tool, toolIndex) => (
+                        <span
+                          key={toolIndex}
+                          className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -118,7 +120,7 @@ const ToolsCategoriesSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors">
+          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 hover:scale-98 transition-all">
             Explore All Testing Tools
           </button>
         </div>

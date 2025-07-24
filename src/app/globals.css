@@ -19,6 +19,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@property --border-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: '<angle>';
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     /* --background: #0a0a0a;

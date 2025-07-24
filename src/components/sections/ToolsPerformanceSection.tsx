@@ -161,7 +161,7 @@ const ToolsPerformanceSection = () => {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-white ring-1 ring-brand-blue rounded-xl p-6 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-[theme(color.brand.blue)] rounded-lg flex items-center justify-center">
@@ -219,7 +219,7 @@ const ToolsPerformanceSection = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {performanceMetrics.map((metric, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
+              <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 ring-1 ring-brand-blue hover:shadow-lg transition-all duration-300">
                 <h4 className="font-bold text-gray-900 mb-2">{metric.metric}</h4>
                 <p className="text-gray-600 text-sm mb-3">{metric.description}</p>
                 <div className="flex items-center justify-between mb-3">
@@ -298,7 +298,7 @@ const ToolsPerformanceSection = () => {
         </div>
 
         {/* Performance Testing Benefits */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">Performance Testing Impact</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">

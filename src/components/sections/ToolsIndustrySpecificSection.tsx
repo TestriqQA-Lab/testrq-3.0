@@ -126,7 +126,8 @@ const ToolsIndustrySpecificSection = () => {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-br from-gray-50 to-white ring-1 ring-brand-blue rounded-xl p-8 hover:ring-3
+                hover:shadow-xl transition-all duration-300"
               >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">

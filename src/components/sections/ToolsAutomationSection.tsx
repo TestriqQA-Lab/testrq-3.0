@@ -141,7 +141,7 @@ const ToolsAutomationSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-xl p-8 shadow-lg ring-1 ring-gray-300 hover:ring-brand-blue hover:ring-3 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 bg-[theme(color.brand.blue)] rounded-lg flex items-center justify-center">
@@ -228,7 +228,7 @@ const ToolsAutomationSection = () => {
         </div>
 
         {/* Automation Benefits */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">Automation Impact</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">

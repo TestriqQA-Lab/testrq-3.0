@@ -81,7 +81,7 @@ const ToolsFrameworksSection = () => {
           {frameworks.map((framework, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-gray-50 to-white ring-1 ring-brand-blue rounded-xl p-8 hover:shadow-xl hover:ring-3 transition-all duration-300"
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
