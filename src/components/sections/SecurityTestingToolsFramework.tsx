@@ -240,7 +240,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
           {activeCategoryData && (
             <div className="p-8 md:p-12">
               <div className="flex items-center space-x-4 mb-8">
-                <div className={`${getColorClasses(activeCategoryData.color).accent} w-16 h-16 rounded-2xl flex items-center justify-center`}>
+                <div className={`${getColorClasses(activeCategoryData.color).accent} w-16 h-16 px-2 rounded-2xl flex items-center justify-center`}>
                   <span className="text-white">{activeCategoryData.icon}</span>
                 </div>
                 <div>
@@ -281,7 +281,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
         </div>
 
         {/* Security Testing Methodology */}
-        <div className="mt-16 bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8">
+        <div className="mt-16 bg-white rounded-2xl p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Security Testing Methodology</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
@@ -335,7 +335,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
               Our comprehensive security testing toolkit ensures thorough vulnerability assessment and protection 
               against the latest cyber threats.
             </p>
-            <button className="bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
               Start Security Assessment
             </button>
           </div>

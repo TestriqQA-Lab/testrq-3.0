@@ -6,19 +6,19 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const SecurityTestingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-red-50 to-pink-50 overflow-hidden">
+    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-medium">
               <FaShieldAlt className="mr-2" />
               Cybersecurity Testing Experts
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Fortify Your Applications with
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-pink-600">
+              <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}Advanced Security Testing
               </span>
             </h1>
@@ -42,7 +42,7 @@ const SecurityTestingHeroSection: React.FC = () => {
             </div>
             
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-red-600">8,500+</div>
                 <div className="text-sm text-gray-600">Vulnerabilities Found</div>

@@ -101,7 +101,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
         </div>
 
         {/* Security Metrics */}
-        <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8 mb-16">
+        <div className="bg-gray-100 rounded-2xl p-8 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Security Testing Success Metrics</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">

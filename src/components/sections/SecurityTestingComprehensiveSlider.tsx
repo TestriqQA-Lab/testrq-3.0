@@ -240,7 +240,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           {activeTabData && (
             <div className="p-8 md:p-12">
               <div className="flex items-center space-x-4 mb-8">
-                <div className={`${getColorClasses(activeTabData.color).accent} w-16 h-16 rounded-2xl flex items-center justify-center`}>
+                <div className={`${getColorClasses(activeTabData.color).accent} w-16 h-16 px-2 rounded-full md:rounded-2xl flex items-center justify-center`}>
                   <span className="text-white">{activeTabData.icon}</span>
                 </div>
                 <div>
@@ -290,7 +290,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-2xl">
+          <div className="bg-white p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Secure Your Applications?
             </h3>
@@ -298,7 +298,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
               Our comprehensive security testing services ensure your applications are protected against the latest cyber threats 
               and comply with industry security standards.
             </p>
-            <button className="bg-red-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
               Start Security Assessment
             </button>
           </div>

@@ -69,17 +69,6 @@ const SecurityTestingHeroSection = dynamic(
   }
 );
 
-const SecurityTestingComprehensiveSection = dynamic(
-  () => import("@/components/sections/SecurityTestingComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const SecurityTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/SecurityTestingReadyToEnsureQuality"),
@@ -240,7 +229,6 @@ export default function SecurityTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <SecurityTestingHeroSection />
-        <SecurityTestingComprehensiveSection />
         <SecurityTestingComprehensiveSlider />
         <SecurityTestingProvenTestingProcess />
         <SecurityTestingWhyChooseTestriq />
