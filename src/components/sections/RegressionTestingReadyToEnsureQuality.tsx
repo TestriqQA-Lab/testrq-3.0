@@ -5,7 +5,7 @@ import { FaArrowRight, FaPhone, FaEnvelope, FaCalendarAlt } from "react-icons/fa
 
 const RegressionTestingReadyToEnsureQuality: React.FC = () => {
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-green-600 via-blue-600 to-teal-700">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-brand-blue to-blue-600">
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-white mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -105,7 +105,7 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
             
             <div className="space-y-6">
               {/* Primary CTA */}
-              <button className="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
+              <button className="w-full bg-gradient-to-br from-brand-blue to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
                 <span>Get Free Regression Assessment</span>
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>

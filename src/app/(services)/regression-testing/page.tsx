@@ -69,17 +69,6 @@ const RegressionTestingHeroSection = dynamic(
   }
 );
 
-const RegressionTestingComprehensiveSection = dynamic(
-  () => import("@/components/sections/RegressionTestingComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const RegressionTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/RegressionTestingReadyToEnsureQuality"),
@@ -240,7 +229,6 @@ export default function RegressionTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <RegressionTestingHeroSection />
-        <RegressionTestingComprehensiveSection />
         <RegressionTestingComprehensiveSlider />
         <RegressionTestingProvenTestingProcess />
         <RegressionTestingWhyChooseTestriq />
