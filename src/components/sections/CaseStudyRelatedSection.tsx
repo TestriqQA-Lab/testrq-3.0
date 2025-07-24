@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowRight, FaCalendarAlt, FaIndustry } from "react-icons/fa";
 import Link from "next/link";
-import { getRelatedCaseStudies } from "@/lib/caseStudies";
+import { getRelatedCaseStudies } from "@/app/lib/caseStudies";
 
 interface CaseStudyRelatedSectionProps {
   currentSlug: string;
