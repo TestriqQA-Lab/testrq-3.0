@@ -43,7 +43,7 @@ const SmartDeviceComprehensiveSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Smart Device Testing Services
+            <span className="text-brand-blue">Comprehensive</span> Smart Device Testing Services
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our expert team provides end-to-end smart device testing solutions to ensure your connected devices 
@@ -57,7 +57,7 @@ const SmartDeviceComprehensiveSection: React.FC = () => {
               key={index}
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:border-green-200 group"
             >
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 group-hover:scale-105 transition-transform duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -71,7 +71,7 @@ const SmartDeviceComprehensiveSection: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Explore All Services
           </button>
         </div>

@@ -104,7 +104,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Testriq for ETL Testing?
+            <span className="text-brand-blue">Why Choose Testriq</span> for ETL Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
             We combine ETL expertise with testing excellence to deliver ETL testing services that ensure reliable, 
@@ -225,7 +225,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
               data pipeline assessment and ensure your ETL processes are reliable and accurate.
             </p>
           </div>
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-lg">
+          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Get Started with ETL Testing
           </button>
         </div>

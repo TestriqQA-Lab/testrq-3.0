@@ -1,5 +1,53 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
+import type { Metadata } from "next";
+import StructuredData, { webAppTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+
+export const metadata: Metadata = {
+  title: "Web Application Testing Services - Comprehensive QA Solutions",
+  description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+  keywords: [
+    "web application testing",
+    "web app testing services",
+    "functional testing",
+    "performance testing",
+    "security testing",
+    "cross-browser testing",
+    "responsive testing",
+    "web QA services",
+    "web application quality assurance",
+    "UI testing",
+    "UX testing",
+    "web testing automation"
+  ],
+  openGraph: {
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    url: "https://testrq-3-0.vercel.app/web-application-testing-services",
+    type: "website",
+    images: [
+      {
+        url: "/web-app-testing-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Web Application Testing Services by Testriq",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    images: ["/web-app-testing-twitter.jpg"],
+  },
+  alternates: {
+    canonical: "/web-application-testing-services",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const WebappTestingHeroSection = dynamic(
   () => import("@/components/sections/WebappTestingHeroSection"),
@@ -131,8 +179,16 @@ const CardSlider = dynamic(
 );
 
 export default function WebAppTesting() {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://testrq-3-0.vercel.app" },
+    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
+    { name: "Web Application Testing", url: "https://testrq-3-0.vercel.app/web-application-testing-services" }
+  ];
+
   return (
     <div>
+      <StructuredData data={webAppTestingServiceSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <WebappTestingHeroSection />
         <WebappComprehensiveSection />

@@ -27,6 +27,9 @@ const Navbar = () => {
   const [activeTabletSubmenu, setActiveTabletSubmenu] = useState<number | null>(
     null
   ); // State to track active submenu in tablet
+  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<number | null>(
+    null
+  ); // State to track active submenu in desktop
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -40,11 +43,21 @@ const Navbar = () => {
     setActiveTabletSubmenu(activeTabletSubmenu === index ? null : index);
   };
 
+  // Handle desktop submenu hover
+  const handleDesktopSubmenuEnter = (index: number) => {
+    setActiveDesktopSubmenu(index);
+  };
+
+  const handleDesktopSubmenuLeave = () => {
+    setActiveDesktopSubmenu(null);
+  };
+
   // Close navbar when a link is clicked
   const handleLinkClick = () => {
     setMenuOpen(false);
     setActiveSubmenu(null);
     setActiveTabletSubmenu(null);
+    setActiveDesktopSubmenu(null); // Also close desktop submenu
   };
 
   // Define menu items with proper types and links
@@ -185,7 +198,7 @@ const Navbar = () => {
     { label: "Blog", link: "/blog" },
     { label: "Contact", link: "/contact-us" },
   ];
- 
+
   return (
     <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
       <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
@@ -204,7 +217,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl text-gray-700 text-sm xl:text-base relative">
           {menuItems.map((item, idx) => (
-            <li key={idx} className="relative group cursor-pointer">
+            <li 
+              key={idx} 
+              className="relative cursor-pointer"
+              onMouseEnter={() => item.submenu && handleDesktopSubmenuEnter(idx)}
+              onMouseLeave={handleDesktopSubmenuLeave}
+            >
               <Link href={item.link}>
                 <div className="flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1">
                   {item.label}
@@ -213,15 +231,15 @@ const Navbar = () => {
               </Link>
 
               {/* Mega Menu for 'Services' */}
-              {item.label === "Services" && item.submenu && (
-                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 w-screen pointer-events-none group-hover:pointer-events-auto">
+              {item.label === "Services" && item.submenu && activeDesktopSubmenu === idx && (
+                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
                   <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
                     {item.submenu.map((column, colIdx) => {
                       // Check if the column is of type { heading: string, services: SubmenuItem[] }
                       if ("label" in column && "link" in column) {
                         return (
                           <div key={colIdx} className="space-y-3 xl:space-y-4">
-                            <Link href={column.link}>
+                            <Link href={column.link} onClick={handleLinkClick}>
                               <h2 className="text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
                                 {column.label}
                               </h2>
@@ -240,7 +258,7 @@ const Navbar = () => {
                             <ul className="space-y-2 xl:space-y-4">
                               {column.services.map((service, subIdx) => (
                                 <li key={subIdx}>
-                                  <Link href={service.link}>
+                                  <Link href={service.link} onClick={handleLinkClick}>
                                     <span className=" text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer  hover:bg-blue-50 rounded-md p-2">
                                       {service.label}
                                     </span>
@@ -257,11 +275,11 @@ const Navbar = () => {
               )}
 
               {/* Dropdown for other items */}
-              {item.submenu && item.label !== "Services" && (
-                <ul className="absolute top-full left-0 bg-white shadow-md rounded-md py-2 w-max z-[55] translate-y-4 opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+              {item.submenu && item.label !== "Services" && activeDesktopSubmenu === idx && (
+                <ul className="absolute top-full left-0 bg-white shadow-md rounded-md py-2 w-max z-[55]">
                   {item.submenu.map((subItem, subIdx) => (
                     <li key={subIdx}>
-                      <Link href={"link" in subItem ? subItem.link : "#"}>
+                      <Link href={"link" in subItem ? subItem.link : "#"} onClick={handleLinkClick}>
                         <span className="block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer">
                           {"label" in subItem ? subItem.label : subItem.heading}
                         </span>
@@ -521,4 +539,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
