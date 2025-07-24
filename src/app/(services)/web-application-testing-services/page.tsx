@@ -1,11 +1,15 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { webAppTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, {
+  webAppTestingServiceSchema,
+  createBreadcrumbSchema,
+} from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Web Application Testing Services - Comprehensive QA Solutions",
-  description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+  description:
+    "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
   keywords: [
     "web application testing",
     "web app testing services",
@@ -18,11 +22,13 @@ export const metadata: Metadata = {
     "web application quality assurance",
     "UI testing",
     "UX testing",
-    "web testing automation"
+    "web testing automation",
   ],
   openGraph: {
-    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    title:
+      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description:
+      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     url: "https://testrq-3-0.vercel.app/web-application-testing-services",
     type: "website",
     images: [
@@ -31,13 +37,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Web Application Testing Services by Testriq",
-      }
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    title:
+      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description:
+      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/web-app-testing-twitter.jpg"],
   },
   alternates: {
@@ -51,30 +59,6 @@ export const metadata: Metadata = {
 
 const WebappTestingHeroSection = dynamic(
   () => import("@/components/sections/WebappTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const WebappComprehensiveSection = dynamic(
-  () => import("@/components/sections/WebappComprehensive"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const WebappReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/WebappReadyToEnsureQuality"),
   {
     ssr: true,
     loading: () => (
@@ -182,7 +166,10 @@ export default function WebAppTesting() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testrq-3-0.vercel.app" },
     { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Web Application Testing", url: "https://testrq-3-0.vercel.app/web-application-testing-services" }
+    {
+      name: "Web Application Testing",
+      url: "https://testrq-3-0.vercel.app/web-application-testing-services",
+    },
   ];
 
   return (
@@ -191,8 +178,6 @@ export default function WebAppTesting() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <WebappTestingHeroSection />
-        <WebappComprehensiveSection />
-        <WebappReadyToEnsureQuality />
         <WebappComprehensiveSlider />
         <CardSlider />
         <WebappProvenTestingProcess />

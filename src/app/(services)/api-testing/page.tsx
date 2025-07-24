@@ -13,30 +13,6 @@ const ApiTestingHeroSection = dynamic(
   }
 );
 
-const ApiComprehensiveSection = dynamic(
-  () => import("@/components/sections/ApiComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ApiReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/ApiReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const ApiProvenTestingProcess = dynamic(
   () => import("@/components/sections/ApiProvenTestingProcess"),
   {
@@ -147,8 +123,6 @@ export default function ApiTesting() {
     <div>
       <MainLayout>
         <ApiTestingHeroSection />
-        <ApiComprehensiveSection />
-        <ApiReadyToEnsureQuality />
         <ApiComprehensiveSlider />
         <ApiCardSlider />
         <ApiProvenTestingProcess />
@@ -162,4 +136,3 @@ export default function ApiTesting() {
     </div>
   );
 }
-

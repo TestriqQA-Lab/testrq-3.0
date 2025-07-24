@@ -13,30 +13,6 @@ const AITestingHeroSection = dynamic(
   }
 );
 
-const AIComprehensiveSection = dynamic(
-  () => import("@/components/sections/AIComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const AIReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/AIReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const AIProvenTestingProcess = dynamic(
   () => import("@/components/sections/AIProvenTestingProcess"),
   {
@@ -147,8 +123,6 @@ export default function AIApplicationTesting() {
     <div>
       <MainLayout>
         <AITestingHeroSection />
-        <AIComprehensiveSection />
-        <AIReadyToEnsureQuality />
         <AIComprehensiveSlider />
         <AICardSlider />
         <AIProvenTestingProcess />
@@ -162,4 +136,3 @@ export default function AIApplicationTesting() {
     </div>
   );
 }
-

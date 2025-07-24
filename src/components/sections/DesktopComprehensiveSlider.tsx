@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaDesktop, FaApple, FaLinux, FaWindows } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaDesktop,
+  FaApple,
+  FaLinux,
+  FaWindows,
+} from "react-icons/fa";
 
 const DesktopComprehensiveSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -17,10 +24,10 @@ const DesktopComprehensiveSlider: React.FC = () => {
         "Legacy system support",
         ".NET framework testing",
         "Registry and file system validation",
-        "Windows-specific UI testing"
+        "Windows-specific UI testing",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-blue-500 to-blue-700"
+      color: "from-blue-500 to-blue-700",
     },
     {
       title: "macOS Application Testing",
@@ -32,10 +39,10 @@ const DesktopComprehensiveSlider: React.FC = () => {
         "Cocoa framework testing",
         "App Store compliance",
         "Security sandbox validation",
-        "Native UI/UX testing"
+        "Native UI/UX testing",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-gray-600 to-gray-800"
+      color: "from-gray-600 to-gray-800",
     },
     {
       title: "Linux Application Testing",
@@ -47,10 +54,10 @@ const DesktopComprehensiveSlider: React.FC = () => {
         "Package manager validation",
         "Desktop environment compatibility",
         "Command-line interface testing",
-        "Open-source compliance"
+        "Open-source compliance",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-orange-500 to-red-600"
+      color: "from-orange-500 to-red-600",
     },
     {
       title: "Cross-Platform Testing",
@@ -62,11 +69,11 @@ const DesktopComprehensiveSlider: React.FC = () => {
         "Shared codebase validation",
         "Platform-specific feature testing",
         "Performance comparison",
-        "User experience standardization"
+        "User experience standardization",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-purple-500 to-purple-700"
-    }
+      color: "from-purple-500 to-purple-700",
+    },
   ];
 
   const nextSlide = () => {
@@ -81,14 +88,17 @@ const DesktopComprehensiveSlider: React.FC = () => {
     <section className="bg-white py-12 px-4 sm:px-6 md:px-8 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
-          <span className="inline-block bg-blue-100 text-blue-600 text-xs sm:text-sm px-4 py-1 rounded-full mb-3">
+          <span className="inline-block bg-blue-100 text-brand-blue text-xs sm:text-sm px-4 py-1 rounded-full mb-3">
             Platform Expertise
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-snug">
-            Desktop Testing Across <span className="text-blue-600">All Platforms</span>
+            Desktop Testing Across{" "}
+            <span className="text-brand-blue">All Platforms</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto px-2">
-            Our comprehensive desktop testing services cover all major platforms and operating systems, ensuring your application works flawlessly everywhere.
+            Our comprehensive desktop testing services cover all major platforms
+            and operating systems, ensuring your application works flawlessly
+            everywhere.
           </p>
         </div>
 
@@ -101,10 +111,12 @@ const DesktopComprehensiveSlider: React.FC = () => {
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0">
                   <div className={`bg-gradient-to-r ${slide.color} text-white`}>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-8 md:p-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 p-6 sm:p-10 md:p-20">
                       <div className="flex flex-col justify-center">
                         <div className="flex items-center gap-4 mb-6">
-                          <div className="text-white opacity-80">{slide.icon}</div>
+                          <div className="text-white opacity-80">
+                            {slide.icon}
+                          </div>
                           <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">
                             {slide.title}
                           </h3>
@@ -116,9 +128,14 @@ const DesktopComprehensiveSlider: React.FC = () => {
 
                         <div className="space-y-3 mb-6 sm:mb-8">
                           {slide.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-start gap-2 text-sm sm:text-base">
+                            <div
+                              key={featureIndex}
+                              className="flex items-start gap-2 text-sm sm:text-base"
+                            >
                               <div className="w-2 h-2 mt-2 bg-white rounded-full"></div>
-                              <span className="text-white opacity-90">{feature}</span>
+                              <span className="text-white opacity-90">
+                                {feature}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -133,7 +150,9 @@ const DesktopComprehensiveSlider: React.FC = () => {
                           <div className="w-64 h-48 sm:w-80 sm:h-60 bg-opacity-20 rounded-xl backdrop-blur-sm border border-white border-opacity-30 flex items-center justify-center">
                             <div className="flex flex-col items-center">
                               <div className="mb-4">{slide.icon}</div>
-                              <div className="text-white font-semibold">Platform Testing</div>
+                              <div className="text-white font-semibold">
+                                Platform Testing
+                              </div>
                             </div>
                           </div>
                           <div className="absolute -top-4 -right-4 w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -168,13 +187,15 @@ const DesktopComprehensiveSlider: React.FC = () => {
             { number: "15+", label: "Platforms Supported" },
             { number: "500+", label: "Apps Tested" },
             { number: "99.8%", label: "Compatibility Rate" },
-            { number: "24/7", label: "Testing Support" }
+            { number: "24/7", label: "Testing Support" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">
+              <div className="text-2xl sm:text-3xl font-bold text-brand-blue mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 text-sm sm:text-base">{stat.label}</div>
+              <div className="text-gray-600 text-sm sm:text-base">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

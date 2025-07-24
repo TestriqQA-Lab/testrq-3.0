@@ -16,41 +16,41 @@ const DesktopAnyQuestions: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block bg-blue-100 text-blue-600 text-sm px-4 py-2 rounded-full mb-6">
+            <span className="inline-block bg-blue-100 text-brand-blue text-sm px-4 py-2 rounded-full mb-6">
               Get In Touch
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               Have Any Questions About{" "}
-              <span className="text-blue-600">Desktop Testing?</span>
+              <span className="text-brand-blue">Desktop Testing?</span>
             </h2>
 
             <p className="text-gray-700 text-lg mb-8 leading-relaxed">
               Our desktop testing experts are ready to help you understand how
-              our comprehensive testing services can ensure your application&apos;s
-              success across all platforms. Get personalized answers to your
-              specific requirements.
+              our comprehensive testing services can ensure your
+              application&apos;s success across all platforms. Get personalized
+              answers to your specific requirements.
             </p>
 
             {/* Contact Options */}
             <div className="space-y-4 mb-8">
               {[
                 {
-                  icon: <FaPhone className="w-5 h-5 text-blue-600" />,
+                  icon: <FaPhone className="w-5 h-5 text-brand-blue" />,
                   title: "Call Us Directly",
                   description: "Speak with our testing experts",
                   contact: "+1 (555) 123-4567",
                   action: "Call Now",
                 },
                 {
-                  icon: <FaEnvelope className="w-5 h-5 text-blue-600" />,
+                  icon: <FaEnvelope className="w-5 h-5 text-brand-blue" />,
                   title: "Email Support",
                   description: "Get detailed information via email",
                   contact: "desktop-testing@testriq.com",
                   action: "Send Email",
                 },
                 {
-                  icon: <FaCalendarAlt className="w-5 h-5 text-blue-600" />,
+                  icon: <FaCalendarAlt className="w-5 h-5 text-brand-blue" />,
                   title: "Schedule Consultation",
                   description: "Book a free 30-minute consultation",
                   contact: "Available Mon-Fri, 9 AM - 6 PM EST",
@@ -71,11 +71,11 @@ const DesktopAnyQuestions: React.FC = () => {
                     <p className="text-sm text-gray-600 mb-1">
                       {option.description}
                     </p>
-                    <p className="text-sm font-medium text-blue-700">
+                    <p className="text-sm font-medium text-brand-blue">
                       {option.contact}
                     </p>
                   </div>
-                  <button className="text-blue-600 hover:underline text-sm font-semibold transition">
+                  <button className="text-brand-blue hover:underline text-sm font-semibold transition">
                     {option.action}
                   </button>
                 </div>
@@ -90,7 +90,7 @@ const DesktopAnyQuestions: React.FC = () => {
                 { number: "24/7", label: "Support Available" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">
+                  <div className="text-2xl font-bold text-brand-blue mb-1">
                     {stat.number}
                   </div>
                   <div className="text-sm text-gray-700">{stat.label}</div>
@@ -102,7 +102,7 @@ const DesktopAnyQuestions: React.FC = () => {
           {/* Right Content - Contact Form */}
           <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100 shadow">
             <div className="text-center mb-8">
-              <FaComments className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+              <FaComments className="w-12 h-12 text-brand-blue mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Quick Contact Form</h3>
               <p className="text-gray-600">Get a response within 2 hours</p>
             </div>
@@ -180,7 +180,7 @@ const DesktopAnyQuestions: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition"
               >
                 <span>Send Message</span>
                 <FaArrowRight className="w-4 h-4" />
@@ -190,7 +190,7 @@ const DesktopAnyQuestions: React.FC = () => {
             <div className="text-center mt-6">
               <p className="text-sm text-gray-600">
                 By submitting this form, you agree to our{" "}
-                <a href="#" className="text-blue-600 hover:underline">
+                <a href="#" className="text-brand-blue hover:underline">
                   Privacy Policy
                 </a>
               </p>
@@ -209,10 +209,10 @@ const DesktopAnyQuestions: React.FC = () => {
             consultation and project assessment.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+            <button className="px-8 py-3 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition">
               Start Free Consultation
             </button>
-            <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition">
+            <button className="px-8 py-3 border-2 border-brand-blue text-brand-blue font-semibold rounded-lg hover:bg-blue-50 transition">
               View Pricing Plans
             </button>
           </div>

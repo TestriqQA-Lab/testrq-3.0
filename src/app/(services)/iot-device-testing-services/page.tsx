@@ -13,30 +13,6 @@ const IoTTestingHeroSection = dynamic(
   }
 );
 
-const IoTComprehensiveSection = dynamic(
-  () => import("@/components/sections/IoTComprehensiveSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const IoTReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/IoTReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const IoTProvenTestingProcess = dynamic(
   () => import("@/components/sections/IoTProvenTestingProcess"),
   {
@@ -147,8 +123,6 @@ export default function IoTDeviceTesting() {
     <div>
       <MainLayout>
         <IoTTestingHeroSection />
-        <IoTComprehensiveSection />
-        <IoTReadyToEnsureQuality />
         <IoTComprehensiveSlider />
         <IoTCardSlider />
         <IoTProvenTestingProcess />
