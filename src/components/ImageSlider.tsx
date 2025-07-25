@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import image1 from '../../public/launchfastqa-1.svg';
 import image2 from '../../public/Group-computers.svg';
@@ -8,9 +9,9 @@ import image3 from '../../public/Robot-AI.svg';
 
 
 const images = [
-  { src: image1, alt: 'Launch Fast QA', text: 'Text 1' },
-  { src: image2, alt: 'Group Computers', text: 'Text 2' },
-  { src: image3, alt: 'Robot AI', text: 'Text 3' },
+  { src: image1, alt: 'Launch Fast QA', text: 'LaunchFast QA Start-Up Specials' },
+  { src: image2, alt: 'Group Computers', text: 'Web and Mobile Applications' },
+  { src: image3, alt: 'Robot AI', text: 'AI and ML Applications' },
 ];
 
 const ImageSlider = () => {
@@ -27,7 +28,7 @@ const ImageSlider = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[700px] mx-auto h-[450px] overflow-hidden">
+    <div className="relative w-full max-w-[700px] mx-auto h-[500px] overflow-hidden">
       <style jsx>{`
         @keyframes slideIn {
           0% {
@@ -62,7 +63,7 @@ const ImageSlider = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute top-3 right-15 md:left-3 w-full h-full ${
+            className={`absolute right-15 md:left-3 w-full h-full ${
               index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
             }`}
           >
@@ -75,7 +76,7 @@ const ImageSlider = () => {
               priority={index === 0} // Prioritize first image for faster loading
             />
 
-            {/* <Link href={'#'} className='flex justify-center text-2xl text-[theme(color.brand.blue)] ' >{image.text}</Link> */}
+            <p className='flex justify-center my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent ' >{image.text}</p>
             
           </div>
         ))}

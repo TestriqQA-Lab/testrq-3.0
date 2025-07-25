@@ -157,39 +157,6 @@ const TeamCultureSection = () => {
           </div>
         </div>
 
-        {/* Team Testimonials */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              What Our <span className="text-[theme(color.brand.blue)]">Team Says</span>
-            </h3>
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Hear directly from our team members about their experience working at Testriq.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-center mb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${testimonial.gradient} rounded-full flex items-center justify-center mx-auto mb-3`}>
-                    <span className="text-white text-lg font-bold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <h4 className="text-lg font-bold text-gray-900">{testimonial.name}</h4>
-                  <div className="text-[theme(color.brand.blue)] text-sm">{testimonial.role}</div>
-                </div>
-                <blockquote className="text-gray-700 italic text-center leading-relaxed">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Fun Activities */}
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">

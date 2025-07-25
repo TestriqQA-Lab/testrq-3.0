@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
   const featuredCaseStudies = [
@@ -23,7 +24,8 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const 
       technologies: ["Selenium", "JMeter", "Cypress", "API Testing"],
       testimonial: "Testriq's testing expertise transformed our platform reliability. We now handle 10x more traffic without issues.",
       clientRole: "CTO",
-      image: "/case-study-ecommerce.jpg"
+      image: "/case-study-ecommerce.jpg",
+      slug: "/case-studies/ecommerce-platform-transformation/"
     },
     {
       id: 2,
@@ -47,7 +49,8 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const 
       technologies: ["OWASP ZAP", "Burp Suite", "Security Testing", "Compliance Testing"],
       testimonial: "Their security testing expertise was crucial for our FDA approval and market launch success.",
       clientRole: "Head of Product",
-      image: "/case-study-healthcare.jpg"
+      image: "/case-study-healthcare.jpg",
+      slug: "/case-studies/healthcare-app-security-compliance/"
     },
     {
       id: 3,
@@ -71,7 +74,8 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const 
       technologies: ["Appium", "REST Assured", "Mobile Testing", "API Testing"],
       testimonial: "The mobile testing strategy delivered by Testriq exceeded our expectations and user satisfaction goals.",
       clientRole: "VP of Engineering",
-      image: "/case-study-fintech.jpg"
+      image: "/case-study-fintech.jpg",
+      slug: "/case-studies/fintech-mobile-app-optimization/"
     }
   ];
 
@@ -185,8 +189,8 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const 
                 </div>
 
                 {/* CTA */}
-                <button className="flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
-                  <span>Read Full Case Study</span>
+                <button  className="flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
+                  <Link href={`${caseStudy.slug}`}>Read Full Case Study</Link>
                   <FaArrowRight className="w-4 h-4" />
                 </button>
               </div>
