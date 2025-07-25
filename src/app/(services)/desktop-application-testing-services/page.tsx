@@ -7,10 +7,8 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: {
-    default: "",
-    template: "Desktop Application Testing Services Company | Testriq"
-  },
+  title: "Desktop Application Testing Services Company",
+
   description: "We are one of the best desktop application testing services companies in Mumbai. With expertise in testing Web applications and mobile apps. Contact Us!",
   keywords: [
     "desktop application testing",

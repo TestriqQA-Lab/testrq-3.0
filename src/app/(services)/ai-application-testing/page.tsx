@@ -7,10 +7,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: {
-    default: "AI Application Testing Services - Accurate, Fair, and Reliable | Testriq",
-    template: "%s | Testriq"
-  },
+  title:
+"AI Application Testing Services |(10+ Yrs)",
+
   description: "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and AI security testing. Ensure your intelligent systems are accurate, fair, and reliable.",
   keywords: [
     "AI application testing",
@@ -32,7 +31,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: '',
   },
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://testriq.com/ai-application-testing',
     siteName: 'Testriq - AI Testing Services',
-    title: 'AI Application Testing Services - Accurate, Fair, and Reliable | Testriq',
+    title: 'AI Application Testing Services - Accurate, Fair, and Reliable ',
     description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
     images: [
       {
@@ -56,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@testriq',
     creator: '@testriq',
-    title: 'AI Application Testing Services - Accurate, Fair, and Reliable | Testriq',
+    title: 'AI Application Testing Services - Accurate, Fair, and Reliable',
     description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
     images: ['C:/OG/Ai-Application-Testing-Twitter.webp'],
   },

@@ -15,10 +15,8 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Launch-Fast QA Services for Companies | Testriq QA Lab",
-    template: "Launch-Fast QA Services for Companies | Testriq QA Lab"
-  },
+  title:"Launch-Fast QA Services for Companies ",
+
   description: "Empower your startup with LaunchFast QA, your key to delivering flawless applications from day one. Gain a competitive edge with robust quality assurance.",
   keywords: [
     "LaunchFast QA",
@@ -40,7 +38,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/launchfast-qa',
   },
