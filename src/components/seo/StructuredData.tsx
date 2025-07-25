@@ -273,3 +273,80 @@ export const aiTestingServiceSchema = {
   }
 };
 
+
+export const launchFastQASchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "LaunchFast QA Services",
+  "description": "Rapid software testing services tailored for startups and agile development teams. Includes functional testing, performance optimization, security validation, and launch readiness assessment.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Rapid QA for Startups",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "LaunchFast QA Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Rapid Functional Testing",
+          "description": "Agile-friendly functional validation including regression, sanity, and smoke testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization",
+          "description": "Load, stress, and scalability testing to ensure optimal product performance at launch."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Validation",
+          "description": "Security testing for authentication, vulnerabilities, and data protection during launch cycles."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile App Testing",
+          "description": "Device compatibility, OS testing, and store-readiness validation for mobile platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Application Testing",
+          "description": "Cross-browser and responsive testing to ensure flawless web launch experience."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API & Integration Testing",
+          "description": "Validation of APIs, third-party integrations, and backend connectivity for launch readiness."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
