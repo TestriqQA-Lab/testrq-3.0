@@ -36,7 +36,7 @@ const processSteps = [
 
 const HomeProcesses = () => {
   return (
-    <section className="py-20 px-6 sm:px-10 md:px-20 lg:px-32 bg-white">
+    <section className="py-12 px-6 sm:px-10 md:px-20 lg:px-32 bg-white">
       {/* Top Badge + Heading */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full text-sm font-medium text-[theme(color.brand.blue)] bg-blue-100 w-fit mx-auto mb-4">

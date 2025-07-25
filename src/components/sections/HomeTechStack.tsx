@@ -211,7 +211,7 @@ const techStack = {
 
 const HeroTechStack = () => {
   return (
-    <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 bg-white text-center">
+    <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 bg-[theme(color.background.gray)] text-center">
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">

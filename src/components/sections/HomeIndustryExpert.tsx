@@ -33,7 +33,7 @@ const HomeIndustryExpert = () => {
         { icon: '📱', title: 'Mobile Apps', detail: 'Cross-platform, performance, usability' }
     ]
     return (
-        <section className='flex flex-col w-full bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
+        <section className='flex flex-col w-full bg-white mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
                 <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>

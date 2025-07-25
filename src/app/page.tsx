@@ -28,7 +28,7 @@ const HomeComprehensiveSoftwareTesting = dynamic(
 );
 
 const ClientRatingSection = dynamic(
-  () => import("@/components/sections/ClientRatingSection"),
+  () => import("@/components/sections/HomeClientRatingSection"),
   {
     ssr: true,
     loading: () => (

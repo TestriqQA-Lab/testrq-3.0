@@ -28,7 +28,7 @@ const ctaSection = {
 
 const HomeReadyToElevate = () => {
   return (
-    <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 text-center bg-white">
+    <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 text-center bg-[theme(color.background.gray)]">
       <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
       <p className="mt-4 text-gray-500 text-base sm:text-lg">
         {ctaSection.subtitle}
