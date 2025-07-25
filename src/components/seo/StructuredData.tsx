@@ -196,3 +196,80 @@ export const createFAQSchema = (faqs: Array<{question: string, answer: string}>)
   }))
 });
 
+export const aiTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "AI Application Testing Services",
+  "description": "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and security testing for machine learning and generative AI systems.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "AI Testing Services",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Model Validation Testing",
+          "description": "Validation of AI/ML models including accuracy, precision, recall, and F1-score across datasets."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Bias Detection",
+          "description": "Testing for demographic and algorithmic bias in AI systems to ensure fairness and ethical compliance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Explainability Testing",
+          "description": "Ensuring transparency in AI decision-making with tools like SHAP, LIME, and InterpretML."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Testing for latency, throughput, and scalability of AI applications under load."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Security Testing",
+          "description": "Robust testing for AI threats including adversarial attacks, model evasion, and data poisoning."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Quality Testing",
+          "description": "Validation of training data for completeness, consistency, and quality assurance."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+

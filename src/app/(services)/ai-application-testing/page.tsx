@@ -1,5 +1,83 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
+import type { Metadata } from "next";
+import StructuredData, {
+  aiTestingServiceSchema,
+  createBreadcrumbSchema,
+} from "@/components/seo/StructuredData";
+
+export const metadata: Metadata = {
+  title: {
+    default: "AI Application Testing Services - Accurate, Fair, and Reliable | Testriq",
+    template: "%s | Testriq"
+  },
+  description: "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and AI security testing. Ensure your intelligent systems are accurate, fair, and reliable.",
+  keywords: [
+    "AI application testing",
+    "AI testing services",
+    "machine learning model testing",
+    "AI bias detection",
+    "AI security testing",
+    "AI model validation",
+    "AI performance testing",
+    "generative AI testing",
+    "AI explainability",
+    "ethical AI testing"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: '/https://testriq.com/ai-application-testing',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/ai-application-testing',
+    siteName: 'Testriq - AI Testing Services',
+    title: 'AI Application Testing Services - Accurate, Fair, and Reliable | Testriq',
+    description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
+    images: [
+      {
+        url: '/OG/Ai-Application-Testing-OG.webp',
+        width: 1200,
+        height: 630,
+        alt: 'AI Application Testing Services - Testriq',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'AI Application Testing Services - Accurate, Fair, and Reliable | Testriq',
+    description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
+    images: ['C:/OG/Ai-Application-Testing-Twitter.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+  },
+};
+
 
 const AITestingHeroSection = dynamic(
   () => import("@/components/sections/AITestingHeroSection"),
@@ -119,8 +197,15 @@ const AIToolsFramework = dynamic(
 );
 
 export default function AIApplicationTesting() {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "/https://testriq.com/ai-application-testing" },
+    { name: "AI Application Testing", url: "https://testriq.com/ai-application-testing" }
+  ];
   return (
     <div>
+       <StructuredData data={aiTestingServiceSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AITestingHeroSection />
         <AIComprehensiveSlider />
