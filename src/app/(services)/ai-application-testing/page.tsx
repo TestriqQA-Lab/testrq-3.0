@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://testriq.com/'),
   alternates: {
-    canonical: '/https://testriq.com/ai-application-testing',
+    canonical: '',
   },
   openGraph: {
     type: 'website',
@@ -199,7 +199,7 @@ const AIToolsFramework = dynamic(
 export default function AIApplicationTesting() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "/https://testriq.com/ai-application-testing" },
+    { name: "Services", url: "https://testriq.com/ai-application-testing" },
     { name: "AI Application Testing", url: "https://testriq.com/ai-application-testing" }
   ];
   return (
