@@ -98,7 +98,7 @@ const DataAnalysisToolsFramework = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Advanced Analytics Tools & Technologies
+            Advanced Analytics <span className='text-brand-blue'>Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Leverage cutting-edge tools and frameworks to unlock the full potential of your data. Our expertise spans the entire analytics technology stack.
@@ -234,7 +234,7 @@ const DataAnalysisToolsFramework = () => {
         </div>
 
         {/* Implementation Approach */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-brand-blue rounded-2xl p-8 text-white">
           <h3 className="text-2xl font-bold text-center mb-6">
             Our Technology Implementation Approach
           </h3>
