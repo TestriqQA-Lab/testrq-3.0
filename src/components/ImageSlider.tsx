@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import image1 from '../../public/launchfastqa-1.svg';
 import image2 from '../../public/Group-computers.svg';
