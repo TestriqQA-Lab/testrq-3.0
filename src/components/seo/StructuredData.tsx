@@ -432,3 +432,81 @@ export const exploratoryTestingSchema = {
   }
 };
 
+export const desktopAppTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Desktop Application Testing Services",
+  "description": "Comprehensive testing of desktop applications for functionality, compatibility, security, and performance across Windows, macOS, and Linux platforms.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Desktop App QA Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Functional Testing",
+          "description": "Feature validation and business logic verification of desktop apps on various OS."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Vulnerability scanning, data encryption testing, access control validation for desktop software."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Load, stress, memory, and CPU usage analysis to optimize desktop app performance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Usability Testing",
+          "description": "UX testing, interface design validation, and accessibility compliance across platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compatibility Testing",
+          "description": "Cross-OS and hardware compatibility validation for Windows, macOS, and Linux apps."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Regression Testing",
+          "description": "Automated regression suites to ensure updates do not break existing functionality."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+

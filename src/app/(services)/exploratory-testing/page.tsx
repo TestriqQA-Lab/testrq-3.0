@@ -16,7 +16,7 @@ import StructuredData, {
 
 export const metadata: Metadata = {
   title: {
-    default: "Exploratory Testing Services | Testriq QA Lab ",
+    default: " ",
     template: "Exploratory Testing Services | Testriq QA Lab"
   },
   description: "Empower your company with exploratory testing, our key to delivering flawless applications from day one. Gain a competitive edge with quality assurance.",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
+    yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
   },
 };
