@@ -1,5 +1,6 @@
 import Script from 'next/script';
 
+
 interface StructuredDataProps {
   data: object;
 }
@@ -432,6 +433,8 @@ export const exploratoryTestingSchema = {
   }
 };
 
+
+// Service Schema for Desktop Application service
 export const desktopAppTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -494,6 +497,84 @@ export const desktopAppTestingSchema = {
           "@type": "Service",
           "name": "Regression Testing",
           "description": "Automated regression suites to ensure updates do not break existing functionality."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
+export const mobileAppTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Mobile Application Testing Services",
+  "description": "End-to-end mobile app testing services across iOS and Android platforms, covering functionality, performance, security, usability, compatibility, and automation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Mobile Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile QA Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Functional Testing",
+          "description": "Validating mobile features, user flows, and API integrations on iOS and Android."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Mobile security testing including penetration, encryption, authentication, and OWASP validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Battery usage, memory optimization, and load handling across devices and networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Usability Testing",
+          "description": "UI/UX assessment, accessibility checks, and user journey validation for mobile apps."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compatibility Testing",
+          "description": "Cross-device and OS version compatibility checks across 50+ iOS and Android devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automation Testing",
+          "description": "Automated testing for regression, CI/CD integration, and fast release cycles."
         }
       }
     ]
