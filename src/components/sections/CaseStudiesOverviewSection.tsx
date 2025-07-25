@@ -73,7 +73,7 @@ const CaseStudiesOverviewSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our comprehensive testing solutions have consistently delivered exceptional results across diverse industries. 
-            Here's how we've helped our clients achieve their quality assurance goals and business objectives.
+            Here&apos;s how we&apos;ve helped our clients achieve their quality assurance goals and business objectives.
           </p>
         </div>
 
@@ -110,7 +110,7 @@ const CaseStudiesOverviewSection = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
               Proven Track Record

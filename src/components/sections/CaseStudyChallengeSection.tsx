@@ -1,6 +1,6 @@
 import React from "react";
 import { FaExclamationTriangle, FaChartLine, FaListUl } from "react-icons/fa";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudyChallengeSectionProps {
   caseStudy: CaseStudy;

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaStar, FaQuoteLeft, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaStar, FaQuoteLeft, FaLinkedin } from "react-icons/fa";
 
 const CaseStudiesTestimonialsSection = () => {
   const testimonials = [
@@ -113,7 +113,7 @@ const CaseStudiesTestimonialsSection = () => {
             <span className="text-[theme(color.brand.blue)]">Clients Say</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Don't just take our word for it. Hear directly from the leaders who have experienced 
+            Don&apos;t just take our word for it. Hear directly from the leaders who have experienced 
             the transformative impact of our testing services on their businesses.
           </p>
         </div>
@@ -191,7 +191,7 @@ const CaseStudiesTestimonialsSection = () => {
         </div>
 
         {/* Summary Stats */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
               Trusted by Industry Leaders
@@ -232,10 +232,10 @@ const CaseStudiesTestimonialsSection = () => {
             how our testing expertise can transform your software quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+            <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold hover:bg-sky-600 hover:scale-98 transition-all">
               Schedule Consultation
             </button>
-            <button className="border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button className="border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 hover:text-sky-600 hover:border-sky-600 hover:scale-98 transition-all">
               View More Testimonials
             </button>
           </div>

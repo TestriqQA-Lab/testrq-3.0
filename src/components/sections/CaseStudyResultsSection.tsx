@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTrophy, FaChartBar, FaArrowUp, FaStar } from "react-icons/fa";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudyResultsSectionProps {
   caseStudy: CaseStudy;

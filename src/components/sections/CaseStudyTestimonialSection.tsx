@@ -1,6 +1,6 @@
 import React from "react";
 import { FaQuoteLeft, FaStar, FaUser } from "react-icons/fa";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudyTestimonialSectionProps {
   caseStudy: CaseStudy;
@@ -52,7 +52,7 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-gray-800 text-center leading-relaxed mb-8 font-medium">
-              "{caseStudy.testimonial.quote}"
+              &quot;{caseStudy.testimonial.quote}&quot;
             </blockquote>
 
             {/* Author Info */}

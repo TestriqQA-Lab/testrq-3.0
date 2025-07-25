@@ -19,7 +19,7 @@ const CaseStudyCallToActionSection: React.FC = () => {
             
             <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-8">
               Join hundreds of satisfied clients who have achieved exceptional results with our comprehensive 
-              testing solutions. Let's discuss how we can help you achieve similar success.
+              testing solutions. Let&apos;s discuss how we can help you achieve similar success.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

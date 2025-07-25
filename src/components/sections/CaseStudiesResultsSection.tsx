@@ -191,14 +191,14 @@ const CaseStudiesResultsSection = () => {
         </div>
 
         {/* ROI Calculator */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
               Average Return on Investment
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
               Our clients typically see significant ROI within the first 6 months of engagement. 
-              Here's how our testing services deliver measurable business value.
+              Here&apos;s how our testing services deliver measurable business value.
             </p>
           </div>
           
@@ -221,7 +221,7 @@ const CaseStudiesResultsSection = () => {
           </div>
           
           <div className="text-center mt-8">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <button className="bg-white text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-sky-600 hover:scale-98 transition-all">
               Calculate Your ROI
             </button>
           </div>

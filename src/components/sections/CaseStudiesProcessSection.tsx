@@ -120,12 +120,12 @@ const CaseStudiesProcessSection = () => {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: "from-blue-50 to-blue-100 text-blue-600 border-blue-200",
-      green: "from-green-50 to-green-100 text-green-600 border-green-200",
-      purple: "from-purple-50 to-purple-100 text-purple-600 border-purple-200",
-      orange: "from-orange-50 to-orange-100 text-orange-600 border-orange-200",
-      red: "from-red-50 to-red-100 text-red-600 border-red-200",
-      indigo: "from-indigo-50 to-indigo-100 text-indigo-600 border-indigo-200"
+      blue: "from-blue-400 to-blue-500 text-blue-600 border-blue-200",
+      green: "from-green-300 to-green-400 text-green-600 border-green-200",
+      purple: "from-purple-300 to-purple-400 text-purple-600 border-purple-200",
+      orange: "from-orange-300 to-orange-400 text-orange-600 border-orange-200",
+      red: "from-red-300 to-red-400 text-red-600 border-red-200",
+      indigo: "from-indigo-300 to-indigo-400 text-indigo-600 border-indigo-200"
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -162,7 +162,7 @@ const CaseStudiesProcessSection = () => {
                 {/* Content */}
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${getColorClasses(process.color).split(' ').slice(0, 2).join(' ')} flex items-center justify-center`}>
+                    <div className={`w-16 h-16 rounded-full text-white bg-gradient-to-br ${getColorClasses(process.color).split(' ').slice(0, 2).join(' ')} flex items-center justify-center`}>
                       <IconComponent className="w-8 h-8" />
                     </div>
                     <div>
@@ -217,10 +217,7 @@ const CaseStudiesProcessSection = () => {
                 {/* Visual */}
                 <div className="flex-1 max-w-md">
                   <div className={`bg-gradient-to-br ${getColorClasses(process.color).split(' ').slice(0, 2).join(' ')} rounded-xl p-8 h-64 flex items-center justify-center`}>
-                    <div className="text-center">
-                      <div className="text-6xl font-bold text-white mb-4 opacity-20">
-                        {process.step}
-                      </div>
+                    <div className="text-center text-white">
                       <IconComponent className="w-16 h-16 mx-auto" />
                     </div>
                   </div>
@@ -253,13 +250,13 @@ const CaseStudiesProcessSection = () => {
         </div>
 
         {/* Timeline Overview */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold mb-4">
               Typical Project Timeline
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              While every project is unique, here's what you can typically expect 
+              While every project is unique, here&apos;s what you can typically expect 
               from our engagement timeline and key milestones.
             </p>
           </div>

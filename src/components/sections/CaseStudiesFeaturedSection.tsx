@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCalendarAlt, FaArrowRight, FaCheckCircle, FaChartLine } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
+import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
   const featuredCaseStudies = [
     {
       id: 1,
@@ -98,7 +98,7 @@ import { FaCalendarAlt, FaArrowRight, FaCheckCircle, FaChartLine } from "react-i
           {featuredCaseStudies.map((caseStudy, index) => (
             <div
               key={caseStudy.id}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center ring-1 ring-gray-200 rounded-xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300`}
             >
               {/* Content */}
               <div className="flex-1">
@@ -177,7 +177,7 @@ import { FaCalendarAlt, FaArrowRight, FaCheckCircle, FaChartLine } from "react-i
                 {/* Testimonial */}
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-6">
                   <blockquote className="text-gray-700 italic mb-3">
-                    "                    &ldquo;{caseStudy.testimonial}&rdquo;"
+                    &quot;{caseStudy.testimonial}&quot;
                   </blockquote>
                   <div className="text-sm text-gray-600">
                     — {caseStudy.clientRole}, {caseStudy.client}
@@ -207,7 +207,7 @@ import { FaCalendarAlt, FaArrowRight, FaCheckCircle, FaChartLine } from "react-i
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-600 transition-colors">
+          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 hover:scale-98 transition-all">
             View All Case Studies
           </button>
         </div>

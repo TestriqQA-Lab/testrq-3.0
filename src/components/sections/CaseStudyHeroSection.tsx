@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCalendarAlt, FaIndustry, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudyHeroSectionProps {
   caseStudy: CaseStudy;

@@ -113,7 +113,7 @@ const CaseStudiesIndustrySection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our diverse portfolio spans multiple industries, each with unique challenges and requirements. 
-            Discover how we've delivered tailored testing solutions that drive success across sectors.
+            Discover how we&apos;ve delivered tailored testing solutions that drive success across sectors.
           </p>
         </div>
 

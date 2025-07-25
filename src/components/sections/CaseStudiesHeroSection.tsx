@@ -10,7 +10,7 @@ const CaseStudiesHeroSection = () => {
           Proven Success Stories
         </span>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        <h1 className="text-4xl hidden md:block md:text-5xl font-bold text-gray-900 leading-tight mb-4">
           Client{" "}
           <span className="text-[theme(color.brand.blue)]">
             Success Stories <br />& Case Studies
@@ -29,11 +29,11 @@ const CaseStudiesHeroSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center items-center xl:justify-start gap-4 mb-8">
-          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
+          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-sky-800 transition-all duration-200 cursor-pointer w-full sm:w-auto">
             <span className="text-base">View Case Studies</span>
             <FaArrowRight className="w-4 h-5" />
           </button>
-          <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
+          <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer hover:text-sky-800 hover:border-sky-800 transition-all duration-200 w-full sm:w-auto">
             <FaPlay className="w-4 h-4" />
             Watch Success Stories
           </button>
@@ -59,7 +59,7 @@ const CaseStudiesHeroSection = () => {
       </div>
 
       {/* Right Section - Success Icons */}
-      <div className="w-full mt-20 md:w-1/2 lg:my-10 md:my-10 max-w-xl">
+      <div className="w-full mt-20 md:w-2/3 xl:w-2/3 lg:my-10 md:my-10 max-w-xl">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaChartLine className="w-12 h-12 text-[theme(color.brand.blue)] mx-auto mb-3" />

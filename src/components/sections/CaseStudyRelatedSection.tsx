@@ -23,7 +23,7 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ curre
             Related Case Studies
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore more success stories and discover how we've helped other clients achieve their quality assurance goals.
+            Explore more success stories and discover how we&apos;ve helped other clients achieve their quality assurance goals.
           </p>
         </div>
 

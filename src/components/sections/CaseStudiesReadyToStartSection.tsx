@@ -66,7 +66,7 @@ const CaseStudiesReadyToStartSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 px-8 py-16 xl:px-24">
+    <section className="bg-gradient-to-br from-brand-blue via-sky-700 to-sky-600 px-8 py-16 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Main CTA Header */}
         <div className="text-center text-white mb-16">
@@ -76,7 +76,7 @@ const CaseStudiesReadyToStartSection = () => {
           </h2>
           <p className="text-blue-100 text-lg max-w-3xl mx-auto mb-8">
             Join hundreds of satisfied clients who have transformed their software quality with our expert testing services. 
-            Let's discuss how we can help you achieve similar results.
+            Let&apos;s discuss how we can help you achieve similar results.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -95,7 +95,7 @@ const CaseStudiesReadyToStartSection = () => {
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center">
+              <div key={index} className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 rounded-xl p-6 text-white text-center">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <IconComponent className="w-8 h-8" />
                 </div>
@@ -107,20 +107,20 @@ const CaseStudiesReadyToStartSection = () => {
         </div>
 
         {/* Next Steps */}
-        <div className="bg-white rounded-xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+        <div className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 rounded-xl p-8 mb-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
             How to Get Started
           </h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nextSteps.map((step, index) => (
+            {nextSteps.map((step) => (
               <div key={step.step} className="text-center">
                 <div className="w-12 h-12 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                   {step.step}
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">{step.title}</h4>
-                <p className="text-gray-600 mb-4">{step.description}</p>
-                <button className="text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
+                <h4 className="text-lg font-semibold text-white mb-3">{step.title}</h4>
+                <p className="text-blue-100 mb-4">{step.description}</p>
+                <button className="text-white p-3 bg-brand-blue rounded-xl font-semibold hover:scale-95 transition-all">
                   {step.action} →
                 </button>
               </div>
@@ -140,26 +140,16 @@ const CaseStudiesReadyToStartSection = () => {
               return (
                 <div
                   key={index}
-                  className={`${
-                    option.primary 
-                      ? 'bg-yellow-400 text-gray-900' 
-                      : 'bg-white/20 text-white'
-                  } rounded-lg p-6 text-center hover:scale-105 transition-transform cursor-pointer`}
+                  className={`bg-white/20 text-white rounded-lg p-6 text-center hover:scale-105 transition-transform cursor-pointer`}
                 >
                   <IconComponent className={`w-8 h-8 mx-auto mb-4 ${
-                    option.primary ? 'text-gray-900' : 'text-white'
+                    option.primary ? 'text-white' : 'text-white'
                   }`} />
                   <h4 className="font-semibold mb-2">{option.title}</h4>
-                  <p className={`text-sm mb-4 ${
-                    option.primary ? 'text-gray-700' : 'text-blue-100'
-                  }`}>
+                  <p className={`text-sm mb-4 text-white`}>
                     {option.description}
                   </p>
-                  <button className={`font-semibold ${
-                    option.primary 
-                      ? 'text-gray-900 hover:text-gray-700' 
-                      : 'text-white hover:text-blue-200'
-                  } transition-colors`}>
+                  <button className={`font-semibold text-white transition-colors`}>
                     {option.action}
                   </button>
                 </div>
@@ -169,15 +159,15 @@ const CaseStudiesReadyToStartSection = () => {
         </div>
 
         {/* Guarantee */}
-        <div className="bg-white rounded-xl p-8 text-center">
+        <div className="bg-gray-200 rounded-xl p-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <FaCheckCircle className="w-8 h-8 text-green-500" />
             <h3 className="text-2xl font-bold text-gray-900">Our Guarantee</h3>
           </div>
           
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-            We're so confident in our testing services that we offer a 30-day money-back guarantee. 
-            If you're not completely satisfied with our work, we'll refund your investment.
+            We&apos;re so confident in our testing services that we offer a 30-day money-back guarantee. 
+            If you&apos;re not completely satisfied with our work, we&apos;ll refund your investment.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
@@ -199,9 +189,9 @@ const CaseStudiesReadyToStartSection = () => {
         {/* Final CTA */}
         <div className="text-center mt-16">
           <p className="text-blue-100 mb-6">
-            Don't let software bugs and quality issues hold your business back.
+            Don&apos;t let software bugs and quality issues hold your business back.
           </p>
-          <button className="bg-yellow-400 text-gray-900 px-12 py-4 rounded-lg font-bold text-xl hover:bg-yellow-300 transition-colors">
+          <button className="bg-yellow-400 text-gray-900 px-12 py-4 rounded-lg font-bold text-xl hover:bg-yellow-300 hover:scale-98 transition-all">
             Get Started Today
           </button>
         </div>

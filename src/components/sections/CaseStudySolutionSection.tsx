@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLightbulb, FaCogs, FaRocket, FaCheckCircle } from "react-icons/fa";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudySolutionSectionProps {
   caseStudy: CaseStudy;

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCogs, FaCode, FaTools, FaRocket } from "react-icons/fa";
-import { CaseStudy } from "@/lib/caseStudies";
+import { CaseStudy } from "@/app/lib/caseStudies";
 
 interface CaseStudyTechnologiesSectionProps {
   caseStudy: CaseStudy;
