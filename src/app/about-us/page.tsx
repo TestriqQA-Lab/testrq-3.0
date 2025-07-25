@@ -73,6 +73,18 @@ const HomeReadyToElevate = dynamic(
   }
 );
 
+const AboutFAQ = dynamic(
+  () => import("@/components/sections/AboutFAQ"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function AboutUs() {
   return (
     <div>
@@ -83,6 +95,7 @@ export default function AboutUs() {
         <AboutValuesSection />
         <AboutAchievementsSection />
         <HomeReadyToElevate />
+        <AboutFAQ />
       </MainLayout>
     </div>
   );

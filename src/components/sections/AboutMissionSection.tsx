@@ -35,8 +35,8 @@ const AboutMissionSection = () => {
             Our <span className="text-[theme(color.brand.blue)]">Purpose & Values</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            At Testriq, we&apos;re driven by a clear mission to transform how businesses approach 
-            software quality, guided by our vision for the future of testing.
+            At Testriq, we&apos;re driven by a shared mission to transform the way businesses achieve software quality. Our vision is rooted in innovation, accountability, and a commitment to long-term success.
+
           </p>
         </div>
 
@@ -65,11 +65,12 @@ const AboutMissionSection = () => {
               </h3>
               <div className="space-y-4">
                 {[
-                  "ISTQB certified professionals ensuring industry-standard practices",
-                  "Continuous learning and adaptation to emerging technologies",
-                  "Transparent communication throughout every project phase",
-                  "Customized testing strategies tailored to your specific needs",
-                  "24/7 support and dedicated project management",
+                  "Certified QA Engineers applying industry-approved testing methodologies",
+                  "Continuous skill upgrades aligned with evolving QA technologies",
+                  "Transparent project communication and real-time status updates",
+                  "Tailored QA strategies customized for your product lifecycle",
+                  "24/7 QA support and dedicated project coordination for agile delivery",
+                  "100% Client Satisfaction, backed by results across 500K+ test cases"
                 ].map((commitment, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full mt-2 flex-shrink-0"></div>

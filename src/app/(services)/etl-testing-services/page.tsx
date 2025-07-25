@@ -1,7 +1,5 @@
 import React from "react";
 import ETLTestingHeroSection from "@/components/sections/ETLTestingHeroSection";
-import ETLComprehensiveSection from "@/components/sections/ETLComprehensiveSection";
-import ETLReadyToEnsureQuality from "@/components/sections/ETLReadyToEnsureQuality";
 import ETLComprehensiveSlider from "@/components/sections/ETLComprehensiveSlider";
 import ETLProvenTestingProcess from "@/components/sections/ETLProvenTestingProcess";
 import ETLWhyChooseTestriq from "@/components/sections/ETLWhyChooseTestriq";
@@ -15,8 +13,6 @@ export default function ETLTestingPage() {
   return (
     <main className="min-h-screen bg-white">
       <ETLTestingHeroSection />
-      <ETLComprehensiveSection />
-      <ETLReadyToEnsureQuality />
       <ETLComprehensiveSlider />
       <ETLProvenTestingProcess />
       <ETLWhyChooseTestriq />
@@ -28,4 +24,3 @@ export default function ETLTestingPage() {
     </main>
   );
 }
-

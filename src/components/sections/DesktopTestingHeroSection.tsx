@@ -7,7 +7,7 @@ import { BsLightningCharge } from "react-icons/bs";
 
 const DesktopTestingHeroSection: React.FC = () => {
   return (
-    <section className="bg-white text-black py-10 px-8 md:px-12 lg:px-24">
+    <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
@@ -15,7 +15,7 @@ const DesktopTestingHeroSection: React.FC = () => {
             Desktop Application Testing Experts
           </span>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
             Comprehensive{" "}
             <span className="text-[theme(color.brand.blue)]">
               Desktop-App Testing&nbsp;

@@ -53,9 +53,8 @@ const AboutValuesSection = () => {
             What We <span className="text-[theme(color.brand.blue)]">Stand For</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our core values shape every decision we make, every relationship we build, 
-            and every solution we deliver. They are the pillars that support our commitment 
-            to excellence in software testing.
+            Our values define who we are as a quality assurance partner. For decades, we&apos;ve shaped global QA strategies, built trusted relationships, and delivered performance-driven software testing solutions that scale with business growth.
+
           </p>
         </div>
 
@@ -83,8 +82,7 @@ const AboutValuesSection = () => {
                 Building a Culture of <span className="text-[theme(color.brand.blue)]">Excellence</span>
               </h3>
               <p className="text-gray-700 text-lg mb-6">
-                Our values aren&apos;t just words on a wall – they&apos;re lived experiences that shape 
-                our daily interactions, decision-making processes, and long-term strategic vision.
+                Our values aren&apos;t just words on a wall—they guide daily actions, strategic decisions, and quality-first delivery across our software QA services.
               </p>
               <div className="space-y-4">
                 {[
@@ -101,7 +99,7 @@ const AboutValuesSection = () => {
                 ))}
               </div>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-6">
               {[
                 { metric: "98%", label: "Employee Satisfaction" },

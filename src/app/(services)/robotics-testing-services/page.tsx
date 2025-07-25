@@ -1,7 +1,5 @@
 import React from "react";
 import RoboticTestingHeroSection from "@/components/sections/RoboticTestingHeroSection";
-import RoboticComprehensiveSection from "@/components/sections/RoboticComprehensiveSection";
-import RoboticReadyToEnsureQuality from "@/components/sections/RoboticReadyToEnsureQuality";
 import RoboticComprehensiveSlider from "@/components/sections/RoboticComprehensiveSlider";
 import RoboticProvenTestingProcess from "@/components/sections/RoboticProvenTestingProcess";
 import RoboticWhyChooseTestriq from "@/components/sections/RoboticWhyChooseTestriq";
@@ -15,8 +13,6 @@ export default function RoboticTestingPage() {
   return (
     <div className="min-h-screen bg-white">
       <RoboticTestingHeroSection />
-      <RoboticComprehensiveSection />
-      <RoboticReadyToEnsureQuality />
       <RoboticComprehensiveSlider />
       <RoboticProvenTestingProcess />
       <RoboticWhyChooseTestriq />
@@ -28,4 +24,3 @@ export default function RoboticTestingPage() {
     </div>
   );
 }
-

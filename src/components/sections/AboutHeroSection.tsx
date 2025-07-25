@@ -26,9 +26,8 @@ const AboutHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          For over 14 years, Testriq has been at the forefront of software testing innovation, 
-          delivering comprehensive QA solutions that empower businesses to launch with confidence. 
-          Our ISTQB certified experts combine deep technical expertise with industry best practices.
+          Testriq QA Lab LLP is a globally trusted software testing company with over 14 years of experience. We deliver expert-led QA solutions across the SDLC, combining ISTQB-certified talent, agile practices, and a commitment to innovation and software quality.
+
         </p>
 
         {/* Key Points */}
@@ -69,7 +68,7 @@ const AboutHeroSection = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Floating Stats */}
           <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border">
             <div className="text-center">
@@ -77,7 +76,7 @@ const AboutHeroSection = () => {
               <div className="text-sm text-gray-600">Years</div>
             </div>
           </div>
-          
+
           <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 border">
             <div className="text-center">
               <div className="text-2xl font-bold text-[theme(color.brand.blue)]">500K+</div>
