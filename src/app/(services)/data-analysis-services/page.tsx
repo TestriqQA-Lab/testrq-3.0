@@ -1,6 +1,5 @@
 import React from 'react';
 import DataAnalysisHeroSection from '@/components/sections/DataAnalysisHeroSection';
-import DataAnalysisComprehensiveSection from '@/components/sections/DataAnalysisComprehensiveSection';
 import DataAnalysisComprehensiveSlider from '@/components/sections/DataAnalysisComprehensiveSlider';
 import DataAnalysisProvenTestingProcess from '@/components/sections/DataAnalysisProvenTestingProcess';
 import DataAnalysisWhyChooseTestriq from '@/components/sections/DataAnalysisWhyChooseTestriq';
@@ -19,7 +18,6 @@ const DataAnalysisPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <DataAnalysisHeroSection />
-      <DataAnalysisComprehensiveSection />
       <DataAnalysisComprehensiveSlider />
       <DataAnalysisProvenTestingProcess />
       <DataAnalysisWhyChooseTestriq />

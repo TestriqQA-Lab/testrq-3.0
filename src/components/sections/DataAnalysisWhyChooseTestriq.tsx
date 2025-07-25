@@ -76,7 +76,7 @@ const DataAnalysisWhyChooseTestriq = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Why Choose Testriq for Data Analytics?
+            Why Choose Testriq for <span className='text-brand-blue'>Data Analytics</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Partner with industry-leading data analytics experts who transform complex data into strategic business advantages through proven methodologies and cutting-edge technologies.
@@ -104,7 +104,7 @@ const DataAnalysisWhyChooseTestriq = () => {
         </div>
 
         {/* Success Statistics */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 mb-16">
           <div className="text-center text-white mb-8">
             <h3 className="text-2xl font-bold mb-4">Proven Track Record</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">

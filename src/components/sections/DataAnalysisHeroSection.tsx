@@ -3,21 +3,21 @@ import { FaChartLine, FaDatabase, FaBrain, FaCog, FaEye } from 'react-icons/fa';
 
 const DataAnalysisHeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 py-16 overflow-hidden px-8 md:px-12 lg:px-24">
       <div className="absolute inset-0 bg-white/60"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+          <div className="space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-medium">
               <FaChartLine className="mr-2" />
               Professional Data Analysis Services
             </div>
             
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Transform Data into <span className="text-purple-600">Actionable Insights</span>
+                Transform Data into <span className="text-brand-blue">Actionable Insights</span>
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -32,14 +32,14 @@ const DataAnalysisHeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-200 shadow-lg">
+              <button className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-brand-blue transition-colors duration-200 shadow-lg">
                 Start Data Analysis
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
               
-              <button className="inline-flex items-center px-8 py-4 bg-white text-teal-600 font-semibold rounded-lg border-2 border-teal-600 hover:bg-teal-50 transition-colors duration-200">
+              <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
                 <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                 </svg>

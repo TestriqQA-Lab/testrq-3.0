@@ -66,7 +66,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Ready to Unlock Your Data&apos;s Potential?
+            <span className='text-brand-blue'>Ready to Unlock</span> Your Data&apos;s Potential?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Transform your raw data into strategic business advantages with our comprehensive analytics services. Join industry leaders who trust us with their most critical data initiatives.
@@ -244,7 +244,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
 
         {/* Final CTA */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Transform Your Business with Data Analytics
             </h3>
@@ -252,10 +252,10 @@ const DataAnalysisReadyToEnsureQuality = () => {
               Don&apos;t let your data remain untapped. Join the data-driven revolution and unlock insights that will propel your business to new heights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Schedule Free Demo
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors">
                 View Case Studies
               </button>
             </div>
