@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/Canva_Logo.png',
-  '/Milton_Logo.jpg',
   '/Ace-learning-1_IMG.svg',
   '/attom-1_IMG.svg',
   '/awl-sundry-1_IMG.svg',
