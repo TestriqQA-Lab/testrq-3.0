@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 const AboutHeroSection = () => {
   return (
@@ -45,13 +45,6 @@ const AboutHeroSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row justify-center items-center xl:justify-start gap-4 mb-8">
-          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
-            <span className="text-base">Learn More About Us</span>
-            <FaArrowRight className="w-4 h-5" />
-          </button>
-        </div>
       </div>
 
       {/* Right Section - Image/Visual */}

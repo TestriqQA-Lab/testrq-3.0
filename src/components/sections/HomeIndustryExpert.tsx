@@ -23,14 +23,14 @@ const HomeIndustryExpert = () => {
     };
 
     const cardData = [
-        { icon: '🛒', title: 'E-commerce', detail: 'Payment gateways, user experience, performance' },
-        { icon: '🏥', title: 'Healthcare', detail: 'HIPAA compliance, data security, usability' },
-        { icon: '💳', title: 'Fin Tech', detail: 'Financial regulations, security, transaction integrity' },
-        { icon: '📚', title: 'EdTech', detail: 'Learning platforms, accessibility, scalability' },
-        { icon: '🎮', title: 'Gaming', detail: 'Performance, multiplayer, cross- platform' },
-        { icon: '🌐', title: 'IoT', detail: 'Device connectivity, data integrity, security' },
-        { icon: '☁️', title: 'SaaS', detail: 'Multi-tenancy, scalability, integration' },
-        { icon: '📱', title: 'Mobile Apps', detail: 'Cross-platform, performance, usability' }
+        { icon: '🛒', title: 'E-commerce', detail: 'Payment gateways, user experience, performance, load testing, checkout testing' },
+        { icon: '🏥', title: 'Healthcare', detail: 'HIPAA compliance, data security, usability, EHR/EMR testing, patient portal validation, PHI protection' },
+        { icon: '💳', title: 'Fin Tech', detail: 'Financial regulations, security, transaction integrity, real-time payment validation, API security' },
+        { icon: '📚', title: 'EdTech', detail: 'Learning platforms, accessibility, scalability, LMS testing, online assessments, and student data privacy' },
+        { icon: '🎮', title: 'Gaming', detail: 'Performance, multiplayer, cross-platform, load handling,  mobile game compatibility,  FairPlay Testing' },
+        { icon: '🌐', title: 'IoT', detail: 'Device connectivity, data integrity, security, firmware testing, real-time monitoring' },
+        { icon: '☁️', title: 'SaaS', detail: 'Multi-tenancy, scalability, integration, CI/CD validation, role-based access, cloud performance' },
+        { icon: '📱', title: 'Mobile Apps', detail: 'Cross-platform, performance, usability,  network testing, and real device testing' }
     ]
     return (
         <section className='flex flex-col w-full bg-white mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>

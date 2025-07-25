@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import ImageSlider from "../ImageSlider";
 
 const Hero = () => {

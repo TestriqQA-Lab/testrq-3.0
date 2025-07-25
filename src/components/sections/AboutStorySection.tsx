@@ -1,31 +1,62 @@
 import React from "react";
-import { FaRocket, FaUsers, FaGlobe, FaAward } from "react-icons/fa";
+import {
+  FaRocket,
+  FaUsers,
+  FaHandshake,
+  FaBuilding,
+  FaLock,
+  FaPlane,
+} from "react-icons/fa";
 
 const AboutStorySection = () => {
   const milestones = [
     {
       year: "2010",
       title: "Foundation",
-      description: "Testriq was founded with a vision to revolutionize software testing",
+      description: "A Team of 2 members started working in a shared workspace",
       icon: FaRocket,
     },
     {
       year: "2015",
       title: "Team Expansion",
-      description: "Grew to 50+ certified testing professionals across multiple domains",
+      description:
+        "Grew to 50+ certified testing professionals across multiple domains.",
       icon: FaUsers,
     },
     {
-      year: "2018",
-      title: "Global Reach",
-      description: "Expanded services globally, serving clients across 15+ countries",
-      icon: FaGlobe,
+      year: "2017",
+      title: "Incorporation",
+      description:
+        "Formally incorporated as a Limited Liability Partnership (LLP).",
+      icon: FaBuilding,
+    },
+    {
+      year: "2020",
+      title: "Scaling Up",
+      description:
+        "Achieved 100+ QA experts and scaled delivery across critical verticals.",
+      icon: FaUsers,
+    },
+    {
+      year: "2023",
+      title: "Major Milestone",
+      description:
+        "Completed 8+ years with the world’s #1 VPN and launched CDPL Pvt. Ltd.",
+      icon: FaHandshake,
     },
     {
       year: "2024",
-      title: "Industry Recognition",
-      description: "Recognized as a leading QA partner with 500K+ test cases executed",
-      icon: FaAward,
+      title: "Tech Expansion",
+      description:
+        "Ventured into Cybersecurity and Artificial Intelligence testing.",
+      icon: FaLock,
+    },
+    {
+      year: "2025",
+      title: "Drone QA Success",
+      description:
+        "Delivered our first successful QA project in the Drone industry.",
+      icon: FaPlane,
     },
   ];
 
@@ -38,11 +69,16 @@ const AboutStorySection = () => {
             Our Journey
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            The <span className="text-[theme(color.brand.blue)]">Testriq Story</span>
+            The{" "}
+            <span className="text-[theme(color.brand.blue)]">
+              Testriq Story
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Testriq began with a vision to redefine software testing through precision, innovation, and a commitment to quality. Today, we&apos;re a globally trusted QA partner helping businesses ship better products with confidence and speed.
-
+            Testriq began with a vision to redefine software testing through
+            precision, innovation, and a commitment to quality. Today,
+            we&apos;re a globally trusted QA partner helping businesses ship
+            better products with confidence and speed.
           </p>
         </div>
 
@@ -55,8 +91,9 @@ const AboutStorySection = () => {
             {milestones.map((milestone, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+                className={`flex flex-col md:flex-row items-center gap-8 ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
                 {/* Content */}
                 <div className="w-full md:w-5/12">
@@ -81,8 +118,11 @@ const AboutStorySection = () => {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="hidden md:block w-2/12 justify-center">
-                  <div className="w-4 h-4 bg-[theme(color.brand.blue)] rounded-full border-4 border-white shadow-lg"></div>
+                <div className="hidden md:flex w-2/12 justify-center">
+                  <div
+                    className={`w-4 h-4 bg-[theme(color.brand.blue)] rounded-full border-4 border-white shadow-lg 
+    ${index % 2 === 0 ? "mr-auto" : "ml-auto"}`}
+                  ></div>
                 </div>
 
                 {/* Spacer for alternating layout */}
@@ -114,4 +154,3 @@ const AboutStorySection = () => {
 };
 
 export default AboutStorySection;
-

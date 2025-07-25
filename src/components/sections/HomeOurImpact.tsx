@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const renderTitle = () => {
         const titleParts = impactSection.title.split('Real-World Successes');
@@ -67,10 +68,15 @@ const HomeOurImpact = () => {
 
       {/* Button */}
       <div className="mt-10 text-center">
-        <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
-          View All Case Studies
-          <FaArrowRight className="text-xs" />
-        </button>
+        
+          <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
+             <Link href={"/case-studies"}>
+                View All Case Studies
+             </Link>
+            <FaArrowRight className="text-xs" />
+          </button>
+        
+        
       </div>
     </section>
   );

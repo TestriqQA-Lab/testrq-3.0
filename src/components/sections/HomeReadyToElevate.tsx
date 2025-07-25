@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const renderTitle = () => {
   const titleParts = ctaSection.title.split('Software Quality?');
@@ -22,7 +23,7 @@ const ctaSection = {
   },
   secondaryButton: {
     label: "View Our Work",
-    href: "#",
+    href: "/case-studies",
   },
 };
 
@@ -36,21 +37,21 @@ const HomeReadyToElevate = () => {
 
       <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
         {/* Primary Button */}
-        <a
+        <Link
           href={ctaSection.primaryButton.href}
           className="inline-flex items-center gap-2 px-6 py-3 text-white bg-[theme(color.brand.blue)] transition rounded-md text-sm font-medium"
         >
           {ctaSection.primaryButton.label}
           <FaArrowRight className="text-xs" />
-        </a>
+        </Link>
 
         {/* Secondary Button */}
-        <a
+        <Link
           href={ctaSection.secondaryButton.href}
           className="inline-flex items-center px-6 py-3 rounded-md ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white text-sm font-medium"
         >
           {ctaSection.secondaryButton.label}
-        </a>
+        </Link>
       </div>
     </section>
   );
