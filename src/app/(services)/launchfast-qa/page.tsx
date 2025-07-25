@@ -16,7 +16,7 @@ import StructuredData, {
 
 export const metadata: Metadata = {
   title: {
-    default: "LaunchFast QA Services - Rapid Product Testing for Startups | Testriq",
+    default: "Launch-Fast QA Services for Companies | Testriq QA Lab",
     template: "Launch-Fast QA Services for Companies | Testriq QA Lab"
   },
   description: "Empower your startup with LaunchFast QA, your key to delivering flawless applications from day one. Gain a competitive edge with robust quality assurance.",
