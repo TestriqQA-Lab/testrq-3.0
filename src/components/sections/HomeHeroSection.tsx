@@ -4,7 +4,7 @@ import ImageSlider from "../ImageSlider";
 
 const Hero = () => {
   return (
-    <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
+    <section className="bg-white px-8 md:py-14 xl:py-0 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
         <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
@@ -62,7 +62,7 @@ const Hero = () => {
       </div>
 
       {/* Right Section */}
-      <div className="w-full mt-20 md:[w-1/2] lg:[my-10] md:my-10 max-w-xl">
+      <div className="flex flex-col justify-center text-center mt-20 md:mt-24 xl:mt-20 xl:w-1/2 lg:[my-10] md:my-10">
       <ImageSlider/>
       </div>
       
