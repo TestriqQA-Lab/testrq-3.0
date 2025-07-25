@@ -591,3 +591,81 @@ export const mobileAppTestingSchema = {
 };
 
 
+export const iotDeviceTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "IoT Device Testing Services",
+  "description": "End-to-end IoT testing services for smart devices, sensors, and connected ecosystems. Validate connectivity, interoperability, performance, and security across all protocols and layers.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "IoT Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IoT Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Connectivity Testing",
+          "description": "Wireless protocol testing including WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sensor Validation",
+          "description": "Validation of temperature, motion, humidity, pressure, and light sensors for accurate data capture."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Power Management Testing",
+          "description": "Battery usage analysis, power efficiency optimization, and runtime validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IoT Security Testing",
+          "description": "Firmware security, encryption validation, and authentication testing for connected devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interoperability Testing",
+          "description": "Cross-device and third-party system compatibility testing across ecosystems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Integration Testing",
+          "description": "Testing cloud platform connectivity, data sync, and remote control across platforms like AWS IoT and Azure IoT Hub."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
