@@ -196,6 +196,8 @@ export const createFAQSchema = (faqs: Array<{question: string, answer: string}>)
   }))
 });
 
+
+// Service Schema for AI Application Testing
 export const aiTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -350,3 +352,83 @@ export const launchFastQASchema = {
     }
   }
 };
+
+
+// Service Schema for LaunchFast QA
+export const exploratoryTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Exploratory Testing Services",
+  "description": "Discover hidden bugs and usability issues with expert-led exploratory testing. Our systematic, human-centered approach ensures your product delivers exceptional quality and seamless user experiences.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Exploratory Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Exploratory Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Session-Based Testing",
+          "description": "Charter-driven sessions with time-boxed exploration, documentation, and issue discovery."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Journey Exploration",
+          "description": "End-to-end user scenario and edge case testing for better user experience validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Usability Investigation",
+          "description": "Assessment of user interface design, accessibility, and UX flows for optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bug Discovery",
+          "description": "Heuristic evaluation and creative scenario testing to find unexpected bugs and failures."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Persona-Based Testing",
+          "description": "Testing using role-based personas to mimic real-user interactions and uncover contextual issues."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Heuristic Evaluation",
+          "description": "Expert usability review using Nielsen heuristics and design best practices."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
