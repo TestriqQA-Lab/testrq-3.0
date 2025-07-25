@@ -158,7 +158,7 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Complete Testing Methodology Guide
+            Complete <span className='text-brand-blue'>Testing Methodology Guide</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore comprehensive testing methodologies with detailed guides, practical examples, and structured learning paths for every testing discipline.
@@ -233,12 +233,12 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl text-white">
+                <div className="mt-8 p-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-xl text-white">
                   <h5 className="font-semibold mb-2">Ready to Start Learning?</h5>
                   <p className="text-blue-100 text-sm mb-4">
                     Access comprehensive guides, practical examples, and hands-on exercises.
                   </p>
-                  <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                  <button className="bg-white text-brand-blue px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
                     Start Learning
                   </button>
                 </div>

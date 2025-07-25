@@ -1,6 +1,5 @@
 import React from 'react';
 import SoftwareTestingGuideHeroSection from '@/components/sections/SoftwareTestingGuideHeroSection';
-import SoftwareTestingGuideComprehensiveSection from '@/components/sections/SoftwareTestingGuideComprehensiveSection';
 import SoftwareTestingGuideComprehensiveSlider from '@/components/sections/SoftwareTestingGuideComprehensiveSlider';
 import SoftwareTestingGuideProvenTestingProcess from '@/components/sections/SoftwareTestingGuideProvenTestingProcess';
 import SoftwareTestingGuideWhyChooseTestriq from '@/components/sections/SoftwareTestingGuideWhyChooseTestriq';
@@ -19,7 +18,6 @@ const SoftwareTestingGuidePage = () => {
   return (
     <div className="min-h-screen bg-white">
       <SoftwareTestingGuideHeroSection />
-      <SoftwareTestingGuideComprehensiveSection />
       <SoftwareTestingGuideComprehensiveSlider />
       <SoftwareTestingGuideProvenTestingProcess />
       <SoftwareTestingGuideWhyChooseTestriq />

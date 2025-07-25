@@ -107,7 +107,7 @@ const SoftwareTestingGuideFAQs = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            <span className='text-brand-blue'>Frequently</span> Asked Questions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Find answers to common questions about software testing methodologies, tools, best practices, and career guidance.
@@ -117,7 +117,7 @@ const SoftwareTestingGuideFAQs = () => {
         <div className="space-y-8">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
+              <div className="bg-gradient-to-r from-brand-blue to-blue-600 px-6 py-4">
                 <div className="flex items-center text-white">
                   {category.icon}
                   <h3 className="text-xl font-semibold ml-3">{category.category}</h3>

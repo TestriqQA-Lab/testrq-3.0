@@ -67,7 +67,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Why Choose Testriq for Testing Education?
+           <span className='text-brand-blue'>Why Choose Testriq</span> for Testing Education?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of testing professionals who have advanced their careers through our comprehensive, industry-proven testing education platform.
@@ -95,7 +95,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
         </div>
 
         {/* Success Statistics */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 mb-16">
           <div className="text-center text-white mb-8">
             <h3 className="text-2xl font-bold mb-4">Proven Success Record</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">

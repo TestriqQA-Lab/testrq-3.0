@@ -137,6 +137,7 @@ const Navbar = () => {
             { label: "Security Testing", link: "/security-testing" },
             { label: "QA Documentation Services", link: "/qa-documentation-services" },
             { label: "Data Analysis", link: "/data-analysis-services" },
+            { label: "Software Testing Guide", link: "/software-testing-guide" },
           ],
         },
         {

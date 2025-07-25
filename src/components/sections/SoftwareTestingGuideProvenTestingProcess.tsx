@@ -101,7 +101,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Proven Learning Process
+            <span className='text-brand-blue'>Proven</span> Learning Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our structured approach to software testing education ensures comprehensive skill development through hands-on practice, expert guidance, and industry-recognized certifications.
@@ -155,7 +155,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
                 </div>
                 
                 {/* Step Number Circle */}
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
                   {step.step}
                 </div>
                 
@@ -191,12 +191,12 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Start Your Testing Journey?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Join thousands of professionals who have advanced their careers through our comprehensive testing education program.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
+            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
               Begin Learning Path
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
