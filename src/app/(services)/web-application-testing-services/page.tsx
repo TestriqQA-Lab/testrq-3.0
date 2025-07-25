@@ -25,11 +25,9 @@ export const metadata: Metadata = {
     "web testing automation",
   ],
   openGraph: {
-    title:
-      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    url: "https://testrq-3-0.vercel.app/web-application-testing-services",
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    url: "https://testriq.com/web-application-testing-services",
     type: "website",
     images: [
       {
@@ -42,11 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    images: ["/web-app-testing-twitter.jpg"],
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    images: ["/OG/Web-Application-Testing-Twitter-IMG.webp"],
   },
   alternates: {
     canonical: "/web-application-testing-services",
@@ -164,12 +160,9 @@ const CardSlider = dynamic(
 
 export default function WebAppTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    {
-      name: "Web Application Testing",
-      url: "https://testrq-3-0.vercel.app/web-application-testing-services",
-    },
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/web-application-testing-services" },
+    { name: "Web Application Testing", url: "https://testriq.com/web-application-testing-services" }
   ];
 
   return (
