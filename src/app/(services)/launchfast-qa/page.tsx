@@ -1,7 +1,5 @@
 import React from "react";
 import LaunchFastQAHeroSection from "@/components/sections/LaunchFastQAHeroSection";
-import LaunchFastComprehensiveSection from "@/components/sections/LaunchFastComprehensiveSection";
-import LaunchFastReadyToEnsureQuality from "@/components/sections/LaunchFastReadyToEnsureQuality";
 import LaunchFastComprehensiveSlider from "@/components/sections/LaunchFastComprehensiveSlider";
 import LaunchFastProvenTestingProcess from "@/components/sections/LaunchFastProvenTestingProcess";
 import LaunchFastWhyChooseTestriq from "@/components/sections/LaunchFastWhyChooseTestriq";
@@ -15,8 +13,6 @@ export default function LaunchFastQAPage() {
   return (
     <div className="min-h-screen bg-white">
       <LaunchFastQAHeroSection />
-      <LaunchFastComprehensiveSection />
-      <LaunchFastReadyToEnsureQuality />
       <LaunchFastComprehensiveSlider />
       <LaunchFastProvenTestingProcess />
       <LaunchFastWhyChooseTestriq />
@@ -28,4 +24,3 @@ export default function LaunchFastQAPage() {
     </div>
   );
 }
-

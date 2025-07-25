@@ -1,5 +1,6 @@
 "use client";
 
+
 import React, { useState } from "react";
 import {
   FaSearch,
@@ -33,10 +34,10 @@ const CareersOpenPositions: React.FC = () => {
   ];
 
   const locations = [
-    { value: "all", label: "All Locations", count: 8 },
-    { value: "remote", label: "Remote", count: 5 },
-    { value: "new-york", label: "New York, NY", count: 2 },
-    { value: "london", label: "London, UK", count: 1 },
+    { value: "select-mode", label: "Select-Mode", count: 15 },
+    { value: "on-site", label: "On-Site", count: 5 },
+    { value: "hybrid", label: "Hybrid", count: 5 },
+    { value: "remote", label: "Remote", count: 5 }
   ];
 
   const positions = [
@@ -223,7 +224,7 @@ const CareersOpenPositions: React.FC = () => {
     const matchesLocation =
       selectedLocation === "all" ||
       position.location.toLowerCase().replace(/[^a-z]/g, "") ===
-        selectedLocation.replace("-", "");
+      selectedLocation.replace("-", "");
 
     return matchesSearch && matchesDepartment && matchesLocation;
   });
@@ -308,10 +309,10 @@ const CareersOpenPositions: React.FC = () => {
               </div>
             </div>
 
-            {/* Location Filter */}
+            {/* Work Mode Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Location
+                Work-Mode
               </label>
               <div className="relative">
                 <FaMapMarkerAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />

@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaMobile, FaApple, FaAndroid, FaTabletAlt } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaMobile,
+  FaApple,
+  FaAndroid,
+  FaTabletAlt,
+} from "react-icons/fa";
 
 const MobileComprehensiveSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,60 +16,64 @@ const MobileComprehensiveSlider: React.FC = () => {
   const slides = [
     {
       title: "iOS Application Testing",
-      description: "Comprehensive testing for iOS applications across all Apple devices and iOS versions.",
+      description:
+        "Comprehensive testing for iOS applications across all Apple devices and iOS versions.",
       icon: <FaApple className="w-12 h-12" />,
       features: [
         "iPhone & iPad compatibility",
         "iOS version testing (12.0 - 17.x)",
         "App Store compliance",
         "TestFlight beta testing",
-        "Native iOS UI/UX validation"
+        "Native iOS UI/UX validation",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-gray-700 to-gray-900"
+      color: "from-gray-700 to-gray-900",
     },
     {
       title: "Android Application Testing",
-      description: "Expert testing services for Android applications across diverse devices and Android versions.",
+      description:
+        "Expert testing services for Android applications across diverse devices and Android versions.",
       icon: <FaAndroid className="w-12 h-12" />,
       features: [
         "Multi-device compatibility",
         "Android 7.0 - 14.0 testing",
         "Google Play Store compliance",
         "Custom ROM testing",
-        "Material Design validation"
+        "Material Design validation",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-green-500 to-green-700"
+      color: "from-green-500 to-green-700",
     },
     {
       title: "Cross-Platform Testing",
-      description: "Ensure consistent functionality and user experience across both iOS and Android platforms.",
+      description:
+        "Ensure consistent functionality and user experience across both iOS and Android platforms.",
       icon: <FaMobile className="w-12 h-12" />,
       features: [
         "React Native & Flutter apps",
         "Xamarin & Ionic testing",
         "Hybrid app validation",
         "Platform-specific feature testing",
-        "Consistent UX validation"
+        "Consistent UX validation",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-purple-500 to-purple-700"
+      color: "from-purple-500 to-purple-700",
     },
     {
       title: "Tablet & Wearable Testing",
-      description: "Specialized testing for tablets, smartwatches, and other mobile form factors.",
+      description:
+        "Specialized testing for tablets, smartwatches, and other mobile form factors.",
       icon: <FaTabletAlt className="w-12 h-12" />,
       features: [
         "iPad & Android tablet testing",
         "Apple Watch & Wear OS",
         "Responsive design validation",
         "Touch & gesture testing",
-        "Screen orientation testing"
+        "Screen orientation testing",
       ],
       image: "/api/placeholder/600/400",
-      color: "from-indigo-500 to-indigo-700"
-    }
+      color: "from-indigo-500 to-indigo-700",
+    },
   ];
 
   const nextSlide = () => {
@@ -83,11 +94,14 @@ const MobileComprehensiveSlider: React.FC = () => {
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing Across{" "}
-            <span className="text-[theme(color.brand.blue)]">All Platforms</span>
+            <span className="text-[theme(color.brand.blue)]">
+              All Platforms
+            </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Our comprehensive mobile testing services cover all major platforms and devices, 
-            ensuring your application works flawlessly across the entire mobile ecosystem.
+            Our comprehensive mobile testing services cover all major platforms
+            and devices, ensuring your application works flawlessly across the
+            entire mobile ecosystem.
           </p>
         </div>
 
@@ -95,14 +109,14 @@ const MobileComprehensiveSlider: React.FC = () => {
         <div className="relative">
           {/* Main Slide */}
           <div className="overflow-hidden rounded-2xl shadow-2xl">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0">
                   <div className={`bg-gradient-to-r ${slide.color} text-white`}>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-10 lg:p-20">
                       {/* Left Content */}
                       <div className="flex flex-col justify-center">
                         <div className="flex items-center gap-4 mb-6">
@@ -113,7 +127,7 @@ const MobileComprehensiveSlider: React.FC = () => {
                             {slide.title}
                           </h3>
                         </div>
-                        
+
                         <p className="text-lg mb-8 opacity-90 leading-relaxed">
                           {slide.description}
                         </p>
@@ -121,9 +135,14 @@ const MobileComprehensiveSlider: React.FC = () => {
                         {/* Features */}
                         <div className="space-y-3 mb-8">
                           {slide.features.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center gap-3">
+                            <div
+                              key={featureIndex}
+                              className="flex items-center gap-3"
+                            >
                               <div className="w-2 h-2 bg-white rounded-full"></div>
-                              <span className="text-white opacity-90">{feature}</span>
+                              <span className="text-white opacity-90">
+                                {feature}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -153,12 +172,12 @@ const MobileComprehensiveSlider: React.FC = () => {
                               </div>
                             </div>
                           </div>
-                          
+
                           {/* Floating Elements */}
                           <div className="absolute -top-4 -right-4 w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
                             <span className="text-white font-bold">QA</span>
                           </div>
-                          
+
                           <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
                             <span className="text-white text-xs">✓</span>
                           </div>
@@ -178,7 +197,7 @@ const MobileComprehensiveSlider: React.FC = () => {
           >
             <FaChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
-          
+
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
@@ -194,9 +213,9 @@ const MobileComprehensiveSlider: React.FC = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentSlide 
-                  ? 'bg-[theme(color.brand.blue)] scale-125' 
-                  : 'bg-gray-300 hover:bg-gray-400'
+                index === currentSlide
+                  ? "bg-[theme(color.brand.blue)] scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
@@ -208,15 +227,13 @@ const MobileComprehensiveSlider: React.FC = () => {
             { number: "50+", label: "Device Models" },
             { number: "1000+", label: "Apps Tested" },
             { number: "99.9%", label: "Compatibility Rate" },
-            { number: "12hr", label: "Average Turnaround" }
+            { number: "12hr", label: "Average Turnaround" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 text-sm">
-                {stat.label}
-              </div>
+              <div className="text-gray-600 text-sm">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -226,4 +243,3 @@ const MobileComprehensiveSlider: React.FC = () => {
 };
 
 export default MobileComprehensiveSlider;
-

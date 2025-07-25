@@ -193,8 +193,8 @@ const Navbar = () => {
       ],
     },
     { label: "Tools", link: "/tools" },
-    { label: "Our Clients", link: "/clients" },
-    { label: "Jobs", link: "/careers" },
+    { label: "Case Studies", link: "/case-studies" },
+    { label: "Careers", link: "/careers" },
     { label: "Blog", link: "/blog" },
     { label: "Contact", link: "/contact-us" },
   ];

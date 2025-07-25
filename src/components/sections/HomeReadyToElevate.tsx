@@ -2,24 +2,24 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const renderTitle = () => {
-        const titleParts = ctaSection.title.split('Software Quality?');
-        return (
-            <>
-                {titleParts[0]}
-                <span className="text-[theme(color.brand.blue)]">Software Quality?</span>
-                {titleParts[1]}
-            </>
-        );
-    };
+  const titleParts = ctaSection.title.split('Software Quality?');
+  return (
+    <>
+      {titleParts[0]}
+      <span className="text-[theme(color.brand.blue)]">Software Quality?</span>
+      {titleParts[1]}
+    </>
+  );
+};
 
 const ctaSection = {
   title: "Ready to Elevate Your Software Quality?",
   subtitle:
-    "With 14+ years of experience, Testriq is a trusted QA partner for 50+ companies—offering expert-led software testing services and free QA consultations to elevate software quality.",
+    "With 14+ years of QA excellence, Testriq has earned the trust of 50+ companies by delivering expert-led software testing and free QA consultations that help teams build reliable, high-performing products.",
   primaryButton: {
     label: "Start Free Consultation",
     href: "#",
-  }, 
+  },
   secondaryButton: {
     label: "View Our Work",
     href: "#",
