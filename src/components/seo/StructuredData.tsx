@@ -1391,3 +1391,74 @@ export const dataAnalysisServiceSchema = {
     }
   }
 };
+
+
+
+export const completeTestingGuideSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Complete Software Testing Guide",
+  "description": "Master software testing with our comprehensive guide covering manual, automation, performance, and security testing. Learn tools, types, methodologies, and best practices.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Software Testing Education",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Software Testing Guide Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Manual Testing",
+          "description": "Learn the fundamentals of manual testing including test case design, bug tracking, and test execution processes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automation Testing",
+          "description": "Explore automation frameworks and tools like Selenium, Cypress, and Playwright through hands-on examples."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Understand load testing, stress testing, and performance tuning using tools like JMeter and LoadRunner."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Learn security testing techniques to identify vulnerabilities and ensure application security."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Testing",
+          "description": "Get practical guidance on testing APIs using tools like Postman, REST Assured, and SoapUI."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Free"
+    }
+  }
+};
