@@ -829,6 +829,82 @@ export const etlTestingSchema = {
 };
 
 
+export const manualTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Manual Testing Services",
+  "description": "Expert-led manual testing services including functional, usability, exploratory, compatibility, and accessibility testing to ensure exceptional software quality.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testrq-3-0.vercel.app"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Manual Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Functional Testing",
+          "description": "Validates application functionality against business requirements with 98% success rate."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Usability Testing",
+          "description": "Evaluates user experience to identify intuitive design issues and improve user satisfaction."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Exploratory Testing",
+          "description": "Unstructured, creative testing to identify edge cases and unexpected user behaviors."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Acceptance Testing (UAT)",
+          "description": "Validates that the software meets user expectations and is ready for production release."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compatibility Testing",
+          "description": "Ensures proper functioning across different browsers, operating systems, and devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Accessibility Testing",
+          "description": "Evaluates compliance with accessibility standards like WCAG to ensure inclusive user experience."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
 
 
 
