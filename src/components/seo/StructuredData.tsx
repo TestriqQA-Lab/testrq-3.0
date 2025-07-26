@@ -1048,7 +1048,7 @@ export const apiTestingSchema = {
   }
 };
 
-
+// Service Schema for regression Testing ServiceS
 export const regressionTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1126,3 +1126,80 @@ export const regressionTestingServiceSchema = {
   }
 };
 
+
+export const performanceTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Performance Testing Services",
+  "description": "Comprehensive performance testing services including load testing, stress testing, endurance testing, and spike testing to ensure application speed, scalability, and reliability under any load conditions.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Performance Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Load Testing",
+          "description": "Simulate user loads to evaluate application behavior and performance under expected traffic."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Stress Testing",
+          "description": "Determine the system’s breaking point by applying load beyond normal operational capacity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Spike Testing",
+          "description": "Evaluate how applications respond to sudden and extreme increases in traffic."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Endurance Testing",
+          "description": "Assess application behavior and memory leaks under sustained load for long periods."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scalability Testing",
+          "description": "Determine the system’s ability to scale up or out to accommodate increased load."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Volume Testing",
+          "description": "Assess system performance with large volumes of data to validate database and processing capabilities."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
