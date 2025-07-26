@@ -1245,3 +1245,81 @@ export const securityTestingServiceSchema = {
       ]
     }
   };
+
+  export const qaDocumentationServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "QA Documentation Services",
+  "description": "Professional QA documentation services including test plans, test cases, requirements documentation, and compliance-ready deliverables.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "QA Documentation Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Test Planning & Strategy",
+          "description": "Comprehensive documentation for test planning, test strategy, scope, timelines, risk management, and test entry/exit criteria."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Test Case Documentation",
+          "description": "Detailed test cases with expected results, test data, and traceability to requirements."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Requirements Documentation",
+          "description": "Functional and non-functional requirement documentation aligned with business goals."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Process Documentation",
+          "description": "QA process flows, standard operating procedures (SOPs), and test lifecycle documentation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reporting & Analytics",
+          "description": "Test summary reports, defect metrics, coverage reports, and executive dashboards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Acceptance Testing Documentation",
+          "description": "UAT planning, scenarios, test logs, and sign-off documents for stakeholder validation."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
