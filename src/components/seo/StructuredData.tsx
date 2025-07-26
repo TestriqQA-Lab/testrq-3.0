@@ -513,6 +513,7 @@ export const desktopAppTestingSchema = {
 };
 
 
+// Service Schema for Mobile Application service
 export const mobileAppTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -591,6 +592,7 @@ export const mobileAppTestingSchema = {
 };
 
 
+// Service Schema for IOT Testing Service
 export const iotDeviceTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -669,6 +671,7 @@ export const iotDeviceTestingSchema = {
 };
 
 
+// Service Schema for Robotics  Testing Service
 export const roboticTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -746,6 +749,86 @@ export const roboticTestingSchema = {
     }
   }
 };
+
+// Service Schema for ETL Testing Service
+export const etlTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ETL Testing Services",
+  "description": "Comprehensive ETL testing solutions for data extraction, transformation, and loading processes. Ensure accuracy, performance, and security across your data pipelines.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "ETL QA Services",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "ETL Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Extraction Testing",
+          "description": "Validates data completeness, accuracy, and connectivity from source systems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Transformation Testing",
+          "description": "Ensures business rules and transformation logic are applied correctly across pipelines."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Loading Testing",
+          "description": "Verifies successful and accurate loading of data into target databases or warehouses."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Quality Testing",
+          "description": "Checks for completeness, consistency, uniqueness, and accuracy across all stages."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Tests throughput, latency, and scalability of ETL processes under real-world data volumes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Security Testing",
+          "description": "Validates access controls, encryption, compliance, and secure data handling."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
 
 
 
