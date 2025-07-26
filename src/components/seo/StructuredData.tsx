@@ -1323,3 +1323,71 @@ export const securityTestingServiceSchema = {
   }
 };
 
+export const dataAnalysisServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Data Analysis Services",
+  "description": "Transform raw data into actionable insights through descriptive, predictive, prescriptive, and cognitive analytics. Our services help businesses make data-driven decisions for growth and efficiency.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Data Analysis & Analytics",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Data Analytics Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Descriptive Analytics",
+          "description": "Understand historical data and business performance through visualizations and statistical summaries."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Predictive Analytics",
+          "description": "Leverage machine learning to forecast trends and predict future outcomes."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Prescriptive Analytics",
+          "description": "Generate data-backed recommendations for optimal business decision-making."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diagnostic Analytics",
+          "description": "Analyze past performance to identify causes and correlations within your data."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cognitive Analytics",
+          "description": "Use AI and natural language processing to simulate human thought processes in data interpretation."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
