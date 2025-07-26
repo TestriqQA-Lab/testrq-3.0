@@ -157,7 +157,7 @@ const ClientRatingSection = () => {
     return () => {
       if (autoSlideRef.current) clearInterval(autoSlideRef.current);
     };
-  }, []);
+  });
 
   const getVisibleCards = () => {
     const visible: typeof cardData = [];
