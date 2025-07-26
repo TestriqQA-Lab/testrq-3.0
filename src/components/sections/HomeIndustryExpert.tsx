@@ -25,7 +25,7 @@ const HomeIndustryExpert = () => {
     const cardData = [
         { icon: '🛒', title: 'E-commerce', detail: 'Payment gateways, user experience, performance' },
         { icon: '🏥', title: 'Healthcare', detail: 'HIPAA compliance, data security, usability' },
-        { icon: '💳', title: 'Fin Tech', detail: 'Financial regulations, security, transaction integrity' },
+        { icon: '💳', title: 'FinTech', detail: 'Financial regulations, security, transaction integrity' },
         { icon: '📚', title: 'EdTech', detail: 'Learning platforms, accessibility, scalability' },
         { icon: '🎮', title: 'Gaming', detail: 'Performance, multiplayer, cross- platform' },
         { icon: '🌐', title: 'IoT', detail: 'Device connectivity, data integrity, security' },

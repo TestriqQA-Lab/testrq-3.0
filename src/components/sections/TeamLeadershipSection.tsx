@@ -111,8 +111,31 @@ const TeamLeadershipSection = () => {
       />
     },
     
-    
   ];
+
+  const cdplLeaders = [
+    {
+      name: "Shoeb Shaikh",
+      position: "Head - Learning and Development",
+      experience: "12+ Years",
+      specialization: "Software Testing and Data Science Expert",
+      bio: "Shoeb Shaikh is a seasoned Software Testing and Data Science Expert and a Mentor with over 12 years of experience in the field.",
+      achievements: [
+        "Designed QA processes for 200+ projects",
+        "ISTQB Expert Level Certified",
+        "Reduced bug leakage by 95%",
+        "Mentored 30+ junior testers"
+      ],
+      linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
+      img: <Image
+        src="/ShoebShaikh.webp"
+        alt="ShoebShaikh"
+        width={350}
+        height={250}
+        className="object-cover rounded-full"
+      />
+    },
+    ]
 
   return (
     <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
@@ -225,6 +248,103 @@ const TeamLeadershipSection = () => {
             </div>
           ))}
         </div>
+
+        {/* CDPL-Leaders Learning and Development */}
+        <div className="space-y-12 my-16">
+
+          <h2 className="text-3xl md:text-5xl text-center font-semibold"><span className="text-brand-blue">Learning and Development</span> <span className="block leading-16">Wing with <span className="text-[#FF8B00]">CDPL</span></span></h2>
+
+          {cdplLeaders.map((leader, index) => (
+            <div
+              key={index}
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+                }`}
+            >
+              <div className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                }`}>
+                {/* Leader Info */}
+                <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
+                  <div className="mb-6">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{leader.name}</h3>
+                    <div className="text-xl text-[theme(color.brand.blue)] font-semibold mb-2">
+                      {leader.position}
+                    </div>
+                    <div className="flex items-center gap-4 text-gray-600">
+                      <span className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                        {leader.experience}
+                      </span>
+                      <span className="text-sm">{leader.specialization}</span>
+                    </div>
+                  </div>
+
+                  {/* Leader Visual */}
+                  <div className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                    <div className="relative">
+
+                      <div className="text-center text-black">
+                        <div className="w-50 h-50 md:w-80 md:h-90 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                          {leader.img}
+                        </div>
+                        <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
+                        <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                      </div>
+
+
+                      {/* Floating Badge */}
+                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                          <div className="text-xs text-gray-100">Years</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">{leader.bio}</p>
+
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                    <div className="space-y-2">
+                      {leader.achievements.map((achievement, achIndex) => (
+                        <div key={achIndex} className="flex items-center gap-3">
+                          <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
+                          <span className="text-gray-700">{achievement}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Social Links */}
+                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30} /></Link>
+                </div>
+
+                {/* Leader Visual */}
+                <div className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <div className="relative">
+
+                    <div className="text-center text-black py-0">
+                      <div className="w-60 h-60 md:w-80 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                        {leader.img}
+                      </div>
+                      <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
+                      <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                    </div>
+
+
+                    {/* Floating Badge */}
+                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                      <div className="text-center">
+                        <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                        <div className="text-xs text-gray-100">Years</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
 
         {/* Leadership Philosophy */}
         <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">

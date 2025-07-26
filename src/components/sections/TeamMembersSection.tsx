@@ -59,7 +59,7 @@ const TeamMembersSection = () => {
   const teamMembers = [
     {
       name: "Siddharth Desai",
-      role: "Siddharth Desai",
+      role: "Automation Architect",
       department: "Testriq QA Lab",
       linkedin: 'https://www.linkedin.com/in/siddharth-desai-852996201',
       src: "/siddharth-desai.png",
@@ -86,7 +86,7 @@ const TeamMembersSection = () => {
       src: "/aakash-yadav.png",
     },
     {
-      name: "Ami khambhatta",
+      name: "Ami Khambhatta",
       role: "Quality Assurance Architect",
       department: "Testriq QA Lab",
       linkedin: 'https://www.linkedin.com/in/amikhambhatta/',
@@ -106,7 +106,7 @@ const TeamMembersSection = () => {
       linkedin: 'https://www.linkedin.com/in/elvita07',
       src: "/elvita-gomes.png",
     },
-    
+
   ];
 
   return (
@@ -121,7 +121,7 @@ const TeamMembersSection = () => {
             Specialized <span className="text-[theme(color.brand.blue)]">Departments</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our team is organized into specialized departments, each bringing deep expertise 
+            Our team is organized into specialized departments, each bringing deep expertise
             in their respective domains to deliver comprehensive testing solutions.
           </p>
         </div>
@@ -136,13 +136,13 @@ const TeamMembersSection = () => {
               <div className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                 <dept.icon className="text-white w-8 h-8" />
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-900 mb-2">{dept.name}</h3>
               <div className="text-[theme(color.brand.blue)] font-semibold mb-3">
                 {dept.memberCount} Team Members
               </div>
               <p className="text-gray-700 mb-4 leading-relaxed">{dept.description}</p>
-              
+
               <div className="space-y-2">
                 <div className="text-sm font-semibold text-gray-800">Key Skills:</div>
                 <div className="flex flex-wrap gap-2">
@@ -164,14 +164,14 @@ const TeamMembersSection = () => {
         <div className="bg-[theme(color.background.gray)] rounded-2xl p-8 md:p-12 mb-16">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured <span className="text-[theme(color.brand.blue)]">Team Members</span>
+              Featured <span className="text-[theme(color.brand.blue)]">Team Leads</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Meet some of our exceptional team members who exemplify our commitment 
+              Meet some of our exceptional team members who exemplify our commitment
               to excellence and innovation in software testing.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div
@@ -181,16 +181,16 @@ const TeamMembersSection = () => {
                 <div className="text-center rounded-full">
                   <div className='w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4'>
                     <Image src={member.src} alt="Employees Photo" width={200} height={250} />
-                    
+
                   </div>
-                  
+
                   <h4 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h4>
                   <div className="text-[theme(color.brand.blue)] font-semibold mb-2">{member.role}</div>
                   <div className="text-gray-600 text-sm mb-3">{member.department}</div>
-                  <Link href={member.linkedin} className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={20}/></Link>
-                  
-                  
-                  
+                  <Link href={member.linkedin} className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={20} /></Link>
+
+
+
                   {/* <div className="space-y-2">
                     <div className="text-sm font-semibold text-gray-800">Specialties:</div>
                     <div className="flex flex-wrap gap-1 justify-center">
@@ -208,6 +208,10 @@ const TeamMembersSection = () => {
               </div>
             ))}
           </div>
+
+          <div className="">
+
+          </div>
         </div>
 
         {/* Team Stats */}
@@ -217,10 +221,10 @@ const TeamMembersSection = () => {
               Team <span className="text-[theme(color.brand.blue)]">Excellence</span>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { metric: "50+", label: "Team Members", description: "Across all departments" },
+              { metric: "180+", label: "Team Members", description: "Across all departments" },
               { metric: "8.5", label: "Avg. Experience", description: "Years in testing" },
               { metric: "40+", label: "Certifications", description: "Industry recognized" },
               { metric: "15+", label: "Technologies", description: "Expertise areas" },

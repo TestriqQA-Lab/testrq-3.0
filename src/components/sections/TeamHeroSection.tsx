@@ -50,7 +50,7 @@ const TeamHeroSection = () => {
         {/* Team Stats */}
         <div className="grid grid-cols-3 gap-6 mb-8 max-w-sm my-5 xl:mx-0">
           {[
-            { icon: FaUsers, number: "50+", label: "Team Members" },
+            { icon: FaUsers, number: "180+", label: "Team Members" },
             { icon: FaGraduationCap, number: "40+", label: "Certifications" },
             { icon: FaGlobe, number: "15+", label: "Countries" },
           ].map((stat, index) => (
