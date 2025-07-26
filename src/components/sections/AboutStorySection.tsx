@@ -135,9 +135,9 @@ const AboutStorySection = () => {
         {/* Bottom Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { number: "14+", label: "Years Experience" },
-            { number: "500K+", label: "Test Cases" },
-            { number: "100+", label: "Happy Clients" },
+            { number: "14+", label: "Years of  Experience" },
+            { number: "500K+", label: "Test Cases Executed" },
+            { number: "100+", label: "Happy Client" },
             { number: "15+", label: "Countries Served" },
           ].map((stat, index) => (
             <div key={index} className="text-center">

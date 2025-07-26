@@ -19,16 +19,15 @@ const TeamHeroSection = () => {
         </h1>
         <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Exceptional{" "}
-          <span className="text-[theme(color.brand.blue)]">
-            Talent Driving
-          </span>{" "}
+          <span className="text-[theme(color.brand.blue)]">Talent Driving</span>{" "}
           Innovation
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Our diverse team of ISTQB certified professionals brings together decades of
-          experience, cutting-edge expertise, and a shared passion for quality assurance
-          excellence. Meet the people who make Testriq exceptional.
+          At Testriq QA Lab, our ISTQB-certified team brings decades of
+          real-world experience in automation, manual, and performance testing.
+          We&apos;re passionate about helping companies launch faster, safer,
+          and smoother software.
         </p>
 
         {/* Team Highlights */}
@@ -37,7 +36,7 @@ const TeamHeroSection = () => {
             "ISTQB Certified Testing Professionals",
             "Average 8+ Years Industry Experience",
             "Expertise Across Multiple Domains",
-            "Continuous Learning & Development Culture"
+            "Continuous Learning & Development Culture",
           ].map((highlight, index) => (
             <div key={index} className="flex items-center gap-3 text-left">
               <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full flex-shrink-0"></div>
@@ -45,7 +44,6 @@ const TeamHeroSection = () => {
             </div>
           ))}
         </div>
-
 
         {/* Team Stats */}
         <div className="grid grid-cols-3 gap-6 mb-8 max-w-sm my-5 xl:mx-0">
@@ -65,7 +63,6 @@ const TeamHeroSection = () => {
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Right Section - Team Visual */}
@@ -78,7 +75,9 @@ const TeamHeroSection = () => {
               <div className="w-24 h-24 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaUsers className="text-white w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Our Team</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                Our Team
+              </h3>
               <p className="text-gray-600 text-sm px-4">
                 United by passion for quality and excellence
               </p>
@@ -120,4 +119,3 @@ const TeamHeroSection = () => {
 };
 
 export default TeamHeroSection;
-

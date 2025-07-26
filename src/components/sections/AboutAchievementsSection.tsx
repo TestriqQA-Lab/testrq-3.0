@@ -1,12 +1,20 @@
 import React from "react";
-import { FaTrophy, FaCertificate, FaAward, FaStar, FaGlobe, FaUsers } from "react-icons/fa";
+import {
+  FaTrophy,
+  FaCertificate,
+  FaAward,
+  FaStar,
+  FaGlobe,
+  FaUsers,
+} from "react-icons/fa";
 
 const AboutAchievementsSection = () => {
   const achievements = [
     {
       icon: FaTrophy,
       title: "Industry Recognition",
-      description: "Recognized as a leading QA partner by multiple industry publications",
+      description:
+        "Recognized as a leading QA partner by multiple industry publications",
       stats: "Top 10 QA Companies",
       color: "bg-yellow-500",
     },
@@ -20,14 +28,16 @@ const AboutAchievementsSection = () => {
     {
       icon: FaAward,
       title: "Client Excellence",
-      description: "Consistently rated 5-star by our clients for quality and service",
+      description:
+        "Consistently rated 5-star by our clients for quality and service",
       stats: "5.0/5.0 Rating",
       color: "bg-green-500",
     },
     {
       icon: FaStar,
       title: "Project Success",
-      description: "99.8% project success rate with zero critical bugs in production",
+      description:
+        "99.8% project success rate with zero critical bugs in production",
       stats: "99.8% Success Rate",
       color: "bg-purple-500",
     },
@@ -41,7 +51,8 @@ const AboutAchievementsSection = () => {
     {
       icon: FaUsers,
       title: "Team Growth",
-      description: "Grown from 5 to 50+ professionals while maintaining quality",
+      description:
+        "Grown from 5 to 50+ professionals while maintaining quality",
       stats: "50+ Experts",
       color: "bg-orange-500",
     },
@@ -67,11 +78,18 @@ const AboutAchievementsSection = () => {
             Our Achievements
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Celebrating <span className="text-[theme(color.brand.blue)]">Excellence</span>
+            Celebrating{" "}
+            <span className="text-[theme(color.brand.blue)]">
+              QA Excellence
+            </span>{" "}
+            Across Industries
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our award-winning QA team, with 40+ professional certifications and a 99.8% project success rate, delivers software testing services trusted by clients in 15+ countries. We’re consistently rated 5 stars for quality, agility, and customer satisfaction across fintech, healthcare, SaaS, and more.
-
+            Our award-winning QA team, with 40+ professional certifications and
+            a 99.8% project success rate, delivers software testing services
+            trusted by clients in 15+ countries. We&apos;re consistently rated 5
+            stars for quality, agility, and customer satisfaction across
+            fintech, healthcare, SaaS, and more.
           </p>
         </div>
 
@@ -82,11 +100,17 @@ const AboutAchievementsSection = () => {
               key={index}
               className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
             >
-              <div className={`w-14 h-14 ${achievement.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-14 h-14 ${achievement.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <achievement.icon className="text-white w-7 h-7" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{achievement.title}</h3>
-              <p className="text-gray-700 mb-4 leading-relaxed">{achievement.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {achievement.title}
+              </h3>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {achievement.description}
+              </p>
               <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
                 {achievement.stats}
               </div>
@@ -98,11 +122,16 @@ const AboutAchievementsSection = () => {
         <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8 md:p-12 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Professional <span className="text-[theme(color.brand.blue)]">Certifications</span>
+              Professional{" "}
+              <span className="text-[theme(color.brand.blue)]">
+                Certifications
+              </span>
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Our QA professionals proudly hold industry-recognized certifications, bringing hands-on expertise in agile, automated, performance, and secure software testing to every project we deliver.
-
+              Our QA professionals proudly hold industry-recognized
+              certifications, bringing hands-on expertise in agile, automated,
+              performance, and secure software testing to every project we
+              deliver.
             </p>
           </div>
 
@@ -124,4 +153,3 @@ const AboutAchievementsSection = () => {
 };
 
 export default AboutAchievementsSection;
-
