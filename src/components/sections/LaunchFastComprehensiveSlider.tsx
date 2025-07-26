@@ -309,11 +309,6 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Explore All LaunchFast QA Services
-          </button>
-        </div>
       </div>
     </section>
   );

@@ -118,54 +118,6 @@ const AboutAchievementsSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Awards Timeline */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Recent <span className="text-[theme(color.brand.blue)]">Awards & Recognition</span>
-            </h3>
-          </div>
-
-          <div className="space-y-8">
-            {[
-              {
-                year: "2024",
-                award: "Best QA Partner of the Year",
-                organization: "Tech Excellence Awards",
-                description: "Recognized for outstanding quality assurance services and client satisfaction",
-              },
-              {
-                year: "2023",
-                award: "Innovation in Testing Award",
-                organization: "Software Testing Summit",
-                description: "Honored for implementing cutting-edge testing methodologies",
-              },
-              {
-                year: "2022",
-                award: "Client Choice Award",
-                organization: "QA Industry Forum",
-                description: "Voted by clients as the most trusted QA service provider",
-              },
-            ].map((award, index) => (
-              <div key={index} className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-                    <FaTrophy className="text-white w-8 h-8" />
-                  </div>
-                </div>
-                <div className="flex-grow">
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 mb-2">
-                    <h4 className="text-xl font-bold text-gray-900">{award.award}</h4>
-                    <span className="text-[theme(color.brand.blue)] font-semibold">({award.year})</span>
-                  </div>
-                  <div className="text-gray-600 font-medium mb-2">{award.organization}</div>
-                  <p className="text-gray-700">{award.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

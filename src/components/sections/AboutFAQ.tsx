@@ -137,62 +137,6 @@ const AboutFAQ: React.FC = () => {
                     ))}
                 </div>
 
-                {/* Bottom CTA */}
-                <div className="text-center mt-16">
-                    <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                            Still Have Questions About Mobile Testing?
-                        </h3>
-                        <p className="text-gray-600 mb-6">
-                            Our mobile testing experts are here to help. Get personalized answers
-                            to your specific mobile app testing requirements and challenges.
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                                Schedule Mobile Consultation
-                            </button>
-                            <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                                Contact Mobile Experts
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Quick Contact Info */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <span className="text-[theme(color.brand.blue)] font-bold">📱</span>
-                        </div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Mobile Testing Hotline</h4>
-                        <p className="text-gray-600 text-sm">Direct line to mobile experts</p>
-                        <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-                            +1 (555) 123-MOBILE
-                        </p>
-                    </div>
-
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <span className="text-[theme(color.brand.blue)] font-bold">📧</span>
-                        </div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Mobile Testing Email</h4>
-                        <p className="text-gray-600 text-sm">Detailed mobile testing inquiries</p>
-                        <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-                            mobile@testriq.com
-                        </p>
-                    </div>
-
-                    <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <span className="text-[theme(color.brand.blue)] font-bold">🚀</span>
-                        </div>
-                        <h4 className="font-semibold text-gray-900 mb-2">Quick Start</h4>
-                        <p className="text-gray-600 text-sm">Get testing started in 24 hours</p>
-                        <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-                            Express Testing Available
-                        </p>
-                    </div>
-                </div>
             </div>
         </section>
     );

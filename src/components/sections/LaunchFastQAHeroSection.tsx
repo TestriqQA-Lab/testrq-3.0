@@ -20,7 +20,7 @@ const LaunchFastQAHeroSection: React.FC = () => {
           {/* Left Content */}
           <div className="space-y-4">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
-              LaunchFast QA Specialists
+              LaunchFast QA Service
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -64,7 +64,7 @@ const LaunchFastQAHeroSection: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-600">
-                  300+
+                  20+
                 </div>
                 <div className="text-sm text-gray-600">Startups Launched</div>
               </div>

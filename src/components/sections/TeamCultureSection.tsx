@@ -72,26 +72,7 @@ const TeamCultureSection = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Alex Thompson",
-      role: "Senior Automation Engineer",
-      quote: "The learning opportunities at Testriq are incredible. I've grown more in 3 years here than in my previous 5 years elsewhere.",
-      gradient: "from-blue-400 to-blue-500",
-    },
-    {
-      name: "Priya Sharma",
-      role: "Mobile Testing Lead",
-      quote: "The work-life balance and supportive team environment make Testriq feel like a second family. I love coming to work every day.",
-      gradient: "from-green-400 to-green-500",
-    },
-    {
-      name: "David Kim",
-      role: "Security Testing Specialist",
-      quote: "The company's investment in cutting-edge tools and technologies keeps me excited about the future of testing.",
-      gradient: "from-purple-400 to-purple-500",
-    },
-  ];
+
 
   return (
     <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
