@@ -828,7 +828,7 @@ export const etlTestingSchema = {
   }
 };
 
-
+// Service Schema for manual Testing Service
 export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -906,5 +906,80 @@ export const manualTestingServiceSchema = {
   }
 };
 
-
-
+// Service Schema for automation Testing Service
+export const automationTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Automation Testing Services",
+  "description": "Advanced automation testing services with intelligent frameworks, CI/CD integration, and expert support. Reduce testing time by 80% and improve software quality across web, mobile, and APIs.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testrq-3-0.vercel.app"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Automation Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Automation",
+          "description": "Automated testing for web applications using Selenium, Playwright, and Cypress across browsers and platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Automation",
+          "description": "Comprehensive automation of RESTful and SOAP APIs ensuring robust backend validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Automation",
+          "description": "Cross-device automation testing for Android and iOS apps ensuring smooth mobile experiences."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CI/CD Integration",
+          "description": "Seamless integration of test automation in CI/CD pipelines using tools like Jenkins, GitHub Actions, and Azure DevOps."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Automation",
+          "description": "Automation testing on cloud-based platforms for scalable, parallel, and remote test execution."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Automation",
+          "description": "Load and stress testing using automation to ensure high-performing and scalable applications."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
