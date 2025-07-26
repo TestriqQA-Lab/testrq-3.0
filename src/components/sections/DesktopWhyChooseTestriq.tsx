@@ -57,7 +57,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             We combine industry expertise, cutting-edge tools, and proven methodologies 
-            to deliver exceptional desktop application testing services that exceed expectations.Whether you're a startup or an enterprise, our QA testing for desktop software ensures speed, coverage, and quality.
+            to deliver exceptional desktop application testing services that exceed expectations.Whether you&apos;re a startup or an enterprise, our QA testing for desktop software ensures speed, coverage, and quality.
           </p>
         </div>
 
