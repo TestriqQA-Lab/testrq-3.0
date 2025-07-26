@@ -983,3 +983,67 @@ export const automationTestingServiceSchema = {
     }
   }
 };
+
+
+
+// Service Schema for api testing
+export const apiTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "API Testing Services",
+  "description": "Ensure your APIs deliver reliable, secure, and high-performance integrations with Testriq’s comprehensive API testing services. REST, SOAP, GraphQL, microservices covered.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "API Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Functional API Testing",
+          "description": "End-to-end API testing for functionality, input/output validation, and error handling."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Performance Testing",
+          "description": "Ensure optimal response times and performance under load for REST, SOAP, and GraphQL APIs."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing for APIs",
+          "description": "Vulnerability assessments and security testing for APIs including authentication, encryption, and authorization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Integration Testing",
+          "description": "Validation of complex API workflows, request chaining, and inter-service communication for microservices."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
