@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, securityTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
-  description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
+  title: "Security Testing Services | Penetration Testing ",
+  description: "We are one of the best Security Testing Services services companies in Mumbai. With expertise in Penetration Testing Services too. Protect your applications from cyber threats with advanced security validation.",
   keywords: [
     "security testing",
     "security testing services",
@@ -31,11 +31,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
-    url: "https://testrq-3-0.vercel.app/security-testing",
+    url: "https://testriq.com/security-testing",
     type: "website",
     images: [
       {
-        url: "/security-testing-og.jpg",
+        url: "/OG/security-testing_og-.webp",
         width: 1200,
         height: 630,
         alt: "Security Testing Services by Testriq",
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
-    images: ["/security-testing-twitter.jpg"],
+    images: ["/OG/security-testing-twitter.webp"],
   },
   alternates: {
-    canonical: "/security-testing",
+    canonical: "https://testriq.com/security-testing",
   },
   robots: {
     index: true,
@@ -177,51 +177,12 @@ const SecurityTestingAnyQuestions = dynamic(
 
 export default function SecurityTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Security Testing", url: "https://testrq-3-0.vercel.app/security-testing" }
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/security-testing" },
+    { name: "Security Testing", url: "https://testriq.com/security-testing" }
   ];
 
-  const securityTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Security Testing Services",
-    "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "https://testrq-3-0.vercel.app"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Security Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Penetration Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Vulnerability Assessment"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Security Code Review"
-          }
-        }
-      ]
-    }
-  };
+
 
   return (
     <div>

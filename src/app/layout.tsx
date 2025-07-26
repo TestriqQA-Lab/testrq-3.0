@@ -33,21 +33,21 @@ export const metadata: Metadata = {
     "test automation"
   ],
   authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab",
-  publisher: "Testriq QA Lab",
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app',
+    url: 'https://testriq.com/',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Testriq - Professional Software Testing Services | QA Solutions',
     description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
     yandex: 'your-yandex-verification-code',
     yahoo: 'your-yahoo-verification-code',
   },
