@@ -13,39 +13,39 @@ const DesktopFAQs: React.FC = () => {
     },
     {
       question: "Which platforms and operating systems do you support?",
-      answer: "We provide comprehensive testing across Windows (7, 8, 10, 11, Server editions), macOS (10.14+), and major Linux distributions (Ubuntu, CentOS, RHEL, SUSE). We also test on various hardware configurations, screen resolutions, and system specifications to ensure broad compatibility."
+      answer: "We support Windows (10/11, legacy systems), macOS (all recent versions), and Linux (multiple distributions like Ubuntu, Fedora, Debian). Our cross-platform testing ensures compatibility across 15+ platform configurations."
     },
     {
       question: "How long does desktop application testing typically take?",
-      answer: "Testing duration depends on application complexity and scope. Simple applications typically take 1-2 weeks, while complex enterprise applications may require 4-6 weeks. We provide detailed timelines during project planning and offer expedited testing for urgent requirements with 24-48 hour turnaround options."
+      answer: "Testing duration varies by project complexity, but our typical timeline is 7-14 days, with functional and regression testing taking 3-5 days, and rapid turnaround options available within 24-48 hours for urgent needs."
     },
     {
       question: "Do you provide automated testing for desktop applications?",
-      answer: "Yes, we implement comprehensive automated testing using industry-leading tools like TestComplete, Ranorex, and custom automation frameworks. We create reusable test suites for regression testing, performance monitoring, and continuous integration pipelines to ensure long-term testing efficiency."
+      answer: "Yes, we offer automated testing, including automated regression suites, to accelerate testing cycles and ensure consistency. We also combine automation with manual and exploratory testing for comprehensive coverage."
     },
     {
       question: "What security testing do you perform on desktop applications?",
-      answer: "Our security testing includes vulnerability assessments, penetration testing, data encryption validation, authentication testing, and compliance verification (GDPR, HIPAA, SOX). We also test for common desktop security issues like DLL hijacking, privilege escalation, and data leakage."
+      answer: "We conduct vulnerability scanning, data encryption testing, access control validation, and security compliance checks to protect your desktop applications from threats and ensure adherence to standards like ISO 27001:2013."
     },
     {
       question: "Can you test desktop applications that integrate with web services or databases?",
-      answer: "Absolutely. We specialize in testing complex desktop applications with API integrations, database connections, cloud services, and third-party system integrations. Our testing covers data synchronization, offline functionality, network resilience, and integration point validation."
+      answer: "Yes, we test desktop applications with web service and database integrations, validating APIs, data flows, and connectivity across platforms like SQL Server, Oracle, and cloud-based services."
     },
     {
       question: "Do you provide performance testing for desktop applications?",
-      answer: "Yes, we conduct comprehensive performance testing including load testing, stress testing, memory usage analysis, CPU optimization, and startup time optimization. We test under various system conditions and provide detailed performance reports with optimization recommendations."
+      answer: "Yes, our performance testing includes load testing, stress testing, memory usage analysis, and CPU optimization to ensure your application performs optimally under various conditions."
     },
     {
       question: "What deliverables do you provide after testing?",
-      answer: "We provide comprehensive test reports including executive summaries, detailed bug reports with reproduction steps, test coverage analysis, performance benchmarks, security assessment reports, and recommendations for improvements. All documentation is provided in professional formats suitable for stakeholder review."
+      answer: "We provide detailed test reports, including bug logs with reproducible steps, screenshots, logs, system context, test coverage metrics, and recommendations for improvements."
     },
     {
       question: "Do you offer post-deployment support and maintenance testing?",
-      answer: "Yes, we provide ongoing support including post-deployment monitoring, regression testing for updates, performance monitoring, and maintenance testing services. We also offer retainer-based support for continuous testing needs and rapid issue resolution."
+      answer: "Yes, we offer post-deployment support, including maintenance testing, regression testing for updates, and 24/7 monitoring to ensure ongoing application stability."
     },
     {
       question: "How do you ensure the confidentiality of our application and data?",
-      answer: "We maintain strict confidentiality through comprehensive NDAs, secure testing environments, encrypted data handling, and ISO 27001 compliant security practices. Our team follows strict data protection protocols, and we can work within your secure environments when required."
+      answer: "We adhere to ISO 27001:2013 standards, implement strict NDAs, use secure testing environments, and encrypt all data to ensure the confidentiality of your application and data."
     }
   ];
 

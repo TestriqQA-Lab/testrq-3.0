@@ -12,7 +12,7 @@ const DesktopCaseStudies: React.FC = () => {
       client: "Fortune 500 Financial Services",
       industry: "Financial Services",
       challenge: "Complex desktop CRM application with multiple integrations needed comprehensive testing across Windows, macOS, and Linux platforms before enterprise rollout.",
-      solution: "Implemented comprehensive testing strategy covering functional, performance, security, and compatibility testing across 15+ platform configurations.",
+      solution: "Implemented a comprehensive desktop application testing strategy covering functional, performance, security, and cross-platform compatibility testing across 15+ configurations.",
       results: [
         { metric: "Bug Detection", value: "99.2%", description: "Critical bugs identified before release" },
         { metric: "Performance", value: "40%", description: "Improvement in application response time" },

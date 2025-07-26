@@ -99,9 +99,7 @@ const MobileComprehensiveSlider: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Our comprehensive mobile testing services cover all major platforms
-            and devices, ensuring your application works flawlessly across the
-            entire mobile ecosystem.
+            Our comprehensive mobile app testing services cover all major platforms and devices, ensuring your application performs flawlessly across the iOS, Android, and cross-platform app mobile ecosystem.
           </p>
         </div>
 
@@ -212,11 +210,10 @@ const MobileComprehensiveSlider: React.FC = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentSlide
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide
                   ? "bg-[theme(color.brand.blue)] scale-125"
                   : "bg-gray-300 hover:bg-gray-400"
-              }`}
+                }`}
             />
           ))}
         </div>

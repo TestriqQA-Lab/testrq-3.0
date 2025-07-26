@@ -12,7 +12,7 @@ const MobileCaseStudies: React.FC = () => {
       client: "Leading Retail Chain",
       industry: "E-commerce",
       challenge: "Multi-platform e-commerce mobile app needed comprehensive testing across iOS and Android devices before nationwide launch during peak shopping season.",
-      solution: "Implemented comprehensive mobile testing strategy covering functional, performance, security, and usability testing across 50+ real devices and multiple OS versions.",
+      solution: "Implemented a comprehensive mobile app testing strategy that included functional validation, performance optimization, security testing, and usability analysis across 50+ real devices, custom screen sizes, and multiple OS versions using real device testing.",
       results: [
         { metric: "App Store Rating", value: "4.8/5", description: "Average rating across both platforms" },
         { metric: "Performance", value: "60%", description: "Improvement in app loading speed" },
@@ -70,8 +70,7 @@ const MobileCaseStudies: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Case Studies</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Discover how our comprehensive mobile testing services have helped companies 
-            across various industries achieve app store success and deliver exceptional mobile experiences.
+            Discover how our comprehensive mobile app testing services helped companies across industries achieve faster app store approvals, reduce post-launch bugs, and deliver exceptional user experiences through real device testing and QA expertise.
           </p>
         </div>
 

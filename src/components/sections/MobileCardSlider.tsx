@@ -7,7 +7,8 @@ export default function CardSlider() {
     const [autoHover, setAutoHover] = useState(true);
 
     const headings = {
-        title: 'Systematic 6-Steps Testing Methodolgy', info: 'Our proven methodology ensures comprehensive testing coverage, efficient issue detection, and reliable web application performance through systematic execution.'
+        title: 'Systematic 6-Steps Testing Methodolgy',
+        info: 'Our proven mobile testing methodology ensures full coverage across devices and platforms, efficient issue detection, and reliable mobile app performance through systematic execution tailored for iOS, Android, and cross-platform environments.'
     }
 
     const cards = [
@@ -15,7 +16,7 @@ export default function CardSlider() {
             title: "Discovery & Analysis",
             days: "1-2 days",
             quote: 'Understanding Your Requirements',
-            content: "Understanding Your Requirements\nWe begin with a comprehensive analysis of your web application, understanding your business requirements, user expectations, and technical specifications to create a tailored testing strategy.",
+            content: "Understanding Your Requirements We begin with a comprehensive analysis of your mobile application, understanding your business requirements, user expectations, and technical specifications to create a tailored testing strategy.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>,
             colordark: "blue-500",
             colorlight: "blue-50",
@@ -28,7 +29,7 @@ export default function CardSlider() {
             title: "Environment Setup",
             days: "1-2 days",
             quote: 'Preparing Testing Infrastructure',
-            content: "Preparing Testing Infrastructure\nConfigure comprehensive testing environments that accurately mirror your production setup, ensuring reliable and consistent test results across all testing scenarios.",
+            content: "Preparing Testing Infrastructure Configure comprehensive testing environments that accurately mirror your production setup, ensuring reliable and consistent test results across all mobile testing scenarios.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83zM3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25z" /></svg>,
             colordark: "green-500",
             colorlight: "green-50",
@@ -40,7 +41,7 @@ export default function CardSlider() {
             title: "Test Execution",
             days: "3-5 days",
             quote: 'Comprehensive Testing Implementation',
-            content: "Comprehensive Testing Implementation\nExecute systematic testing across all defined scenarios using both manual and automated approaches to ensure comprehensive coverage of your web application functionality.",
+            content: "Comprehensive Testing Implementation Execute systematic testing across all defined scenarios using both manual and automated approaches to ensure comprehensive coverage of your mobile application functionality.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>,
             colordark: "purple-500",
             colorlight: "purple-50",

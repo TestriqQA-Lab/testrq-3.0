@@ -26,9 +26,7 @@ const MobileTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your mobile applications deliver exceptional user experiences
-            across all devices and platforms. From iOS to Android, functionality
-            to performance, security to usability - we test it all.
+            Ensure your mobile applications deliver seamless user experiences and top performance across all platforms. From Android to iOS, our mobile app testing services include functionality testing, performance, usability, and mobile security testing — for every device and scenario.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

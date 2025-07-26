@@ -62,7 +62,7 @@ const ImageSlider = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`right-15 md:left-3 w-full h-full ${
+            className={`flex flex-col justify-center text-center w-full h-full ${
               index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
             }`}
           >
@@ -74,7 +74,7 @@ const ImageSlider = () => {
               priority={index === 0} // Prioritize first image for faster loading
             />
 
-            <p className='flex overflow-hidden justify-center text-center my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent ' >{image.text}</p>
+            <p className=' my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent' >{image.text}</p>
             
           </div>
         ))}
