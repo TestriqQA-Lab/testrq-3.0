@@ -58,11 +58,11 @@ const ImageSlider = () => {
       `}</style>
 
       {/* Slides */}
-      <div className="relative w-full h-full">
+      <div className="w-full h-full">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute right-15 md:left-3 w-full h-full ${
+            className={`flex flex-col justify-center text-center w-full h-full ${
               index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
             }`}
           >
@@ -71,11 +71,10 @@ const ImageSlider = () => {
               alt={image.alt}
             //   fill
               style={{ objectFit: 'cover' }}
-              className="mx-15"
               priority={index === 0} // Prioritize first image for faster loading
             />
 
-            <p className='flex justify-center my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent ' >{image.text}</p>
+            <p className=' my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent' >{image.text}</p>
             
           </div>
         ))}

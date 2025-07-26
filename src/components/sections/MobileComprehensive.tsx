@@ -8,7 +8,7 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaMobile className="w-8 h-8" />,
       title: "Functional Testing",
-      description: "Comprehensive testing of all mobile app features, user flows, and interactions across iOS and Android platforms.",
+      description: "Comprehensive functionality testing of all mobile app features, user flows, and interactions across iOS and Android devices — including software UI testing and API validation.",
       features: ["Feature validation", "User flow testing", "Data synchronization", "API integration testing"]
     },
     {
@@ -26,19 +26,19 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaUsers className="w-8 h-8" />,
       title: "Usability Testing",
-      description: "Ensure your mobile app provides an intuitive and engaging user experience across different user personas and scenarios.",
+      description: "Ensure your mobile app delivers intuitive user journeys with usability testing, accessibility checks, and UI interaction validation across user personas and use cases.",
       features: ["UX/UI testing", "Accessibility compliance", "User journey optimization", "Touch interaction testing"]
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
       title: "Compatibility Testing",
-      description: "Verify your mobile app works seamlessly across different devices, OS versions, screen sizes, and orientations.",
+      description: "Verify mobile app compatibility across devices, OS versions, screen sizes, and orientations with full-cycle testing for cross-platform mobile environments.",
       features: ["Device compatibility", "OS version testing", "Screen resolution testing", "Orientation testing"]
     },
     {
       icon: <FaSync className="w-8 h-8" />,
       title: "Automation Testing",
-      description: "Implement comprehensive automated testing suites for continuous integration and faster release cycles.",
+      description: "Implement mobile test automation with CI/CD pipelines. Our QA team builds automated suites for iOS, Android, and cross-platform apps using tools like Appium.",
       features: ["Automated regression", "CI/CD integration", "Cross-platform automation", "Continuous testing"]
     }
   ];

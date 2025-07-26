@@ -8,7 +8,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
     "Cross-platform iOS & Android testing",
     "Real device testing lab access",
     "Automated regression testing suites",
-    "Performance & battery optimization",
+    "Performance testing & battery optimization",
     "App store compliance validation",
     "24/7 testing environment support"
   ];

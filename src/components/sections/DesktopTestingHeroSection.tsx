@@ -27,7 +27,7 @@ const DesktopTestingHeroSection: React.FC = () => {
             Ensure your desktop applications deliver exceptional performance and
             reliability with our comprehensive testing services. From
             functionality to compatibility, security to usability - we test
-            across all platforms and environments.
+            across all platforms and environments using manual desktop application testing and exploratory desktop testing techniques.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

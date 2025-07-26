@@ -65,8 +65,7 @@ const MobileROISection: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Mobile Testing ROI</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Our mobile testing services deliver measurable business value through cost reduction, 
-            faster app store approval, and improved user satisfaction across all mobile platforms.
+            Our mobile testing services deliver measurable business value through cost reduction, faster app store approvals, increased testing automation, real device coverage, and improved user satisfaction across iOS, Android, and cross-platform apps.
           </p>
         </div>
 
