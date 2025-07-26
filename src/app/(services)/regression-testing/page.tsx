@@ -1,61 +1,78 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, regressionTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Regression Testing Services - Comprehensive Quality Assurance | Testriq",
-  description: "Professional regression testing services including automated regression testing, selective regression testing, progressive regression testing, and corrective regression testing. Ensure your software updates don't break existing functionality.",
+  title: "Best Regression Testing Services Company",
+  description: "Ensure your app's reliability with Testriq's Regression Testing Services. Catch bugs early and maintain stability across every release cycle.",
   keywords: [
     "regression testing",
-    "regression testing services",
-    "automated regression testing",
-    "selective regression testing",
-    "progressive regression testing",
-    "corrective regression testing",
-    "partial regression testing",
-    "complete regression testing",
-    "regression test automation",
-    "regression testing tools",
-    "continuous regression testing",
-    "regression testing strategy",
     "regression test suite",
-    "regression testing best practices",
-    "software regression testing",
-    "web regression testing",
-    "mobile regression testing",
-    "API regression testing",
-    "visual regression testing",
-    "database regression testing"
+    "automated regression testing",
+    "manual regression testing",
+    "CI/CD regression testing",
+    "software stability testing",
+    "test optimization",
+    "quality assurance services",
+    "risk-based testing",
+    "software quality assurance"
   ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: 'https://testriq.com/regression-testing',
+  },
   openGraph: {
-    title: "Regression Testing Services - Comprehensive Quality Assurance | Testriq",
-    description: "Professional regression testing services including automated regression testing, selective regression testing, progressive regression testing, and corrective regression testing. Ensure your software updates don't break existing functionality.",
-    url: "https://testrq-3-0.vercel.app/regression-testing",
-    type: "website",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/regression-testings',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
+    description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
     images: [
       {
-        url: "/regression-testing-og.jpg",
+        url: '/OG/regression-testing-og.webp',
         width: 1200,
         height: 630,
-        alt: "Regression Testing Services by Testriq",
+        alt: 'Regression Testing Services - Testriq',
+        type: 'image/webp',
       }
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Regression Testing Services - Comprehensive Quality Assurance | Testriq",
-    description: "Professional regression testing services including automated regression testing, selective regression testing, progressive regression testing, and corrective regression testing. Ensure your software updates don't break existing functionality.",
-    images: ["/regression-testing-twitter.jpg"],
-  },
-  alternates: {
-    canonical: "/regression-testing",
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
+    description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
+    images: ['/OG/regression-testing-twitter.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
+
 
 const RegressionTestingHeroSection = dynamic(
   () => import("@/components/sections/RegressionTestingHeroSection"),
@@ -177,51 +194,10 @@ const RegressionTestingAnyQuestions = dynamic(
 
 export default function RegressionTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Regression Testing", url: "https://testrq-3-0.vercel.app/regression-testing" }
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/regression-testing" },
+    { name: "Regression Testing", url: "https://testriq.com/regression-testing" }
   ];
-
-  const regressionTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Regression Testing Services",
-    "description": "Professional regression testing services including automated regression testing, selective regression testing, progressive regression testing, and corrective regression testing.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "https://testrq-3-0.vercel.app"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Regression Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Automated Regression Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Selective Regression Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Progressive Regression Testing"
-          }
-        }
-      ]
-    }
-  };
 
   return (
     <div>

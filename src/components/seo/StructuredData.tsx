@@ -1047,3 +1047,82 @@ export const apiTestingSchema = {
     }
   }
 };
+
+
+export const regressionTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Regression Testing Services",
+  "description": "Testriq provides comprehensive regression testing services including automated, manual, and risk-based testing to ensure software stability across updates. We help you prevent defects, maintain quality, and accelerate releases.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Regression Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automated Regression Testing",
+          "description": "Run automated regression test suites across releases for faster and more consistent validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Manual Regression Testing",
+          "description": "Manual test execution for scenarios requiring human judgment or not yet automated."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Risk-Based Regression Testing",
+          "description": "Prioritize regression tests based on business impact and likelihood of defect introduction."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Regression Testing",
+          "description": "CI/CD-integrated regression testing for real-time validation during deployments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Impact Analysis",
+          "description": "Determine affected functionalities due to code changes to scope regression suites efficiently."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cross-Platform Testing",
+          "description": "Regression testing across web, mobile, legacy systems, and APIs for end-to-end quality."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
