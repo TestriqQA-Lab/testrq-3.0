@@ -17,7 +17,7 @@ export default function CardSlider() {
       days: "1-2 days",
       quote: "Understanding System Functionality",
       content:
-        "Understanding System Functionality\nWe begin by analyzing your desktop application's architecture, business logic, and user interactions to define a precise testing roadmap aligned with functional and non-functional requirements.",
+        "Understanding System Functionality\nWe begin by analyzing your desktop application's architecture, business logic, and user interactions to define a precise testing roadmap aligned with requirements and the desktop testing lifecycle.",
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -44,7 +44,7 @@ export default function CardSlider() {
       days: "1-2 days",
       quote: "Preparing OS-Based Test Environments",
       content:
-        "Preparing OS-Based Test Environments\nWe configure controlled test environments simulating all supported operating systems, screen resolutions, user roles, and system permissions to ensure realistic evaluation of your desktop app.",
+        "Preparing OS-Based Test Environments\nWe configure controlled test environments simulating all supported operating systems, screen resolutions, user roles, and system permissions to ensure realistic evaluation real device testing desktop standards.",
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"

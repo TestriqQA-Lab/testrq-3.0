@@ -8,7 +8,7 @@ const DesktopComprehensive: React.FC = () => {
     {
       icon: <FaDesktop className="w-8 h-8" />,
       title: "Functional Testing",
-      description: "Comprehensive testing of all desktop application features, workflows, and user interactions to ensure everything works as intended.",
+      description: "Comprehensive testing of all desktop application features, workflows, and user interactions to ensure everything works as intended. Our software testing for desktop apps ensures complete validation across modules.",
       features: ["Feature validation", "Workflow testing", "Data integrity", "Business logic verification"]
     },
     {
@@ -57,7 +57,7 @@ const DesktopComprehensive: React.FC = () => {
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             From functional validation to performance optimization, our comprehensive desktop testing services 
-            ensure your applications deliver exceptional user experiences across all platforms and environments.
+            ensure your applications deliver exceptional user experiences across all platforms and environments, including enterprise desktop testing needs.
           </p>
         </div>
 
