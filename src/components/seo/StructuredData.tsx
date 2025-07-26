@@ -669,3 +669,83 @@ export const iotDeviceTestingSchema = {
 };
 
 
+export const roboticTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Robotic Testing Services",
+  "description": "Expert robotic testing services covering safety validation, software logic, sensor precision, actuator accuracy, and performance for industrial and service robots.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Robotic QA",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Comprehensive Robotic QA Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Functional Testing",
+          "description": "Validation of robotic movements, precision control, sensors, and actuators."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Safety Validation",
+          "description": "Testing of safety features such as collision detection, emergency stops, and human-robot interaction protocols."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Speed, load, endurance, and accuracy testing for robotic efficiency and optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Integration Testing",
+          "description": "Validation of robotic system communication with software platforms, PLCs, and control systems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Software Testing",
+          "description": "Validation of control algorithms, automation logic, sensor data handling, and decision engines."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Autonomous Testing",
+          "description": "Testing autonomous navigation, AI-driven actions, obstacle avoidance, and environment adaptability."
+        }
+      }
+    ]
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
+
