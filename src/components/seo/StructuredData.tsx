@@ -1203,3 +1203,45 @@ export const performanceTestingServiceSchema = {
     }
   }
 };
+
+
+export const securityTestingServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Security Testing Services",
+    "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Testriq",
+      "url": "https://testriq.com/"
+    },
+    "serviceType": "Software Testing",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Security Testing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Penetration Testing"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Vulnerability Assessment"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Security Code Review"
+          }
+        }
+      ]
+    }
+  };
