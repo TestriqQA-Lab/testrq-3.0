@@ -33,10 +33,7 @@ const ExploratoryTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Uncover critical bugs and usability issues that scripted testing
-              misses. Our expert exploratory testing combines human intuition
-              with systematic investigation to ensure comprehensive quality
-              validation and exceptional user experiences.
+              Uncover critical bugs and usability issues that traditional scripted testing often overlooks. Our systematic exploratory testing blends human intuition with structured investigation to deliver comprehensive quality validation and actionable UX insights for exceptional user experiences.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

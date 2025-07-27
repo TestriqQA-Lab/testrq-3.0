@@ -13,7 +13,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaSearch className="text-2xl" />,
       percentage: "95%",
       color: "green",
-      description: "Structured exploration sessions with defined charters and systematic documentation",
+      description: "Our comprehensive exploratory testing services merge systematic investigation with human intuition to uncover critical issues, usability problems, and edge cases across all platforms, devices, and real-world user scenarios.",
       features: [
         "Time-boxed exploration sessions",
         "Charter-based investigation",
@@ -137,8 +137,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
             Complete Exploratory Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our comprehensive exploratory testing services combine systematic investigation techniques with 
-            human intuition to uncover critical issues, usability problems, and edge cases across all platforms and user scenarios.
+            Our comprehensive exploratory testing services merge systematic investigation with human intuition to uncover critical issues, usability problems, and edge cases across all platforms, devices, and real-world user scenarios.
           </p>
         </div>
 
@@ -207,7 +206,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
                 </h4>
                 <div className="text-3xl font-bold text-gray-900">
                   {explorationTypes[activeTab].percentage}
-                  <span className="text-lg text-gray-600"> effectiveness rate</span>
+                  <span className="text-lg text-gray-600"> issue discovery rate</span>
                 </div>
               </div>
 

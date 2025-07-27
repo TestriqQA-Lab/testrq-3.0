@@ -13,7 +13,7 @@ const ExploratoryCaseStudies: React.FC = () => {
       industry: "Retail & E-commerce",
       icon: <FaDesktop className="text-2xl" />,
       challenge: "An e-commerce platform was experiencing high cart abandonment rates and poor user engagement despite passing all functional tests.",
-      solution: "Conducted comprehensive exploratory testing focusing on user journey exploration, usability investigation, and checkout flow analysis.",
+      solution: "We conducted comprehensive exploratory testing with a focus on user journey exploration, usability investigation, and checkout flow analysis to uncover hidden friction points and critical UX issues.",
       results: [
         { metric: "Cart Abandonment", value: "45%", improvement: "Reduced from 78%" },
         { metric: "UX Issues Found", value: "23", improvement: "Critical usability problems" },
@@ -90,8 +90,7 @@ const ExploratoryCaseStudies: React.FC = () => {
             Exploratory Testing <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our exploratory testing services have helped companies uncover critical issues, 
-            improve user experiences, and prevent costly post-release problems through systematic investigation.
+            Discover how our exploratory testing services help companies uncover critical issues, enhance user experiences, and prevent costly post-release bugs through systematic investigation and deep application insight.
           </p>
         </div>
 

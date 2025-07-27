@@ -21,7 +21,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
       icon: <FaSearch className="text-3xl" />,
       color: "green",
       description:
-        "Our certified exploratory testing experts combine systematic investigation with creative thinking to uncover critical issues.",
+        "Our ISTQB-certified exploratory testing specialists blend systematic investigation with creative thinking to uncover critical issues that traditional testing often misses.",
       capabilities: [
         "Session-based test management",
         "Charter-driven exploration",
@@ -151,10 +151,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Exploratory Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We combine expert exploration skills with systematic investigation
-            techniques to deliver comprehensive exploratory testing that
-            uncovers critical issues and provides actionable insights for
-            product improvement.
+            We combine expert exploratory testing skills with systematic investigation techniques to deliver comprehensive exploratory testing that uncovers critical issues and provides actionable insights for continuous product improvement.
           </p>
         </div>
 
@@ -308,9 +305,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Ready to Discover Hidden Issues?
           </h3>
           <p className="text-gray-600 mb-6">
-            Join 500+ companies who trust our exploratory testing expertise. Get
-            started with systematic exploration and uncover critical issues that
-            scripted testing misses.
+            Join 500+ companies who trust our exploratory testing expertise. Get started with systematic exploration and uncover critical issues that scripted testing misses.
           </p>
           <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Get Started with Exploratory Testing
