@@ -98,8 +98,7 @@ const ETLToolsFramework: React.FC = () => {
             ETL Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We leverage cutting-edge tools and frameworks specifically designed for ETL testing to ensure comprehensive 
-            validation of your data pipelines across all extraction, transformation, and loading processes.
+            We leverage cutting-edge ETL testing tools and frameworks to ensure comprehensive validation of your data pipelines across all extraction, transformation, and loading stages—ensuring data accuracy, quality assurance, and pipeline reliability.
           </p>
         </div>
 
@@ -140,9 +139,7 @@ const ETLToolsFramework: React.FC = () => {
                 Comprehensive ETL Testing Approach
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Our ETL testing methodology combines industry-leading tools with proven testing frameworks to deliver 
-                comprehensive validation of your data integration processes. We ensure data accuracy, performance, 
-                and reliability across all stages of your ETL pipeline.
+                Our ETL testing methodology combines industry-leading tools with proven testing frameworks to deliver comprehensive validation of your data integration processes. We ensure data accuracy, performance optimization, and pipeline reliability across all stages of your ETL workflow.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center">

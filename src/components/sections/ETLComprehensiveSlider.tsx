@@ -12,7 +12,7 @@ const ETLComprehensiveSlider: React.FC = () => {
       title: "Data Extraction Testing",
       icon: <FaDatabase className="w-6 h-6" />,
       coverage: "99.8% data accuracy",
-      description: "Comprehensive validation of data extraction processes from multiple source systems and formats.",
+      description: "Comprehensive validation of data extraction processes from diverse source systems and file formats, ensuring data completeness, accuracy, and seamless integration into your ETL pipeline.",
       features: [
         "Source system connectivity validation",
         "Data completeness verification",
@@ -139,8 +139,7 @@ const ETLComprehensiveSlider: React.FC = () => {
             Complete ETL Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Our comprehensive ETL testing services cover every aspect of your data pipeline ecosystem, 
-            ensuring reliability, accuracy, and optimal performance across all ETL processes and data workflows.
+            Our comprehensive ETL testing services cover every aspect of your data pipeline ecosystem, ensuring data reliability, accuracy, and optimal performance across all ETL processes and data workflows, including extraction, transformation, and loading.
           </p>
         </div>
 

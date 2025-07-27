@@ -84,8 +84,7 @@ const ETLProvenTestingProcess: React.FC = () => {
             Our Proven ETL Testing <span className="text-brand-blue">Process</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Our systematic approach ensures comprehensive ETL testing coverage, delivering reliable, accurate, 
-            and high-performance data pipelines for your business-critical applications and analytics.
+            Our systematic ETL testing approach ensures comprehensive coverage, delivering reliable, accurate, and high-performance data pipelines for your business-critical applications and data analytics workflows.
           </p>
         </div>
 
