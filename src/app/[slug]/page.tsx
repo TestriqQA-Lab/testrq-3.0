@@ -11,12 +11,11 @@ import CityTestingCTASection from '@/components/sections/CityTestingCTASection';
 import CityTestingTrendingServicesSection from '@/components/sections/CityTestingTrendingServicesSection';
 
 interface CityPageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export async function generateMetadata({ params }: CityPageProps) {
-  const { slug: citySlug } = await params;
-  const cityData = getCityData(citySlug);
+  const cityData = getCityData(params.slug);
 
   if (!cityData) {
     return {};
@@ -30,8 +29,7 @@ export async function generateMetadata({ params }: CityPageProps) {
 }
 
 export default async function CityPage({ params }: CityPageProps) {
-  const { slug: citySlug } = await params;
-  const cityData = getCityData(citySlug);
+  const cityData = getCityData(params.slug);
 
   if (!cityData) {
     notFound();
@@ -58,4 +56,6 @@ export async function generateStaticParams() {
     slug: city.slug,
   }));
 }
+
+
 
