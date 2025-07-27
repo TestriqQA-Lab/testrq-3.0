@@ -8,21 +8,21 @@ const AutomationTestingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaRocket className="text-3xl" />,
       title: "Accelerated Testing Cycles",
-      description: "Our automation expertise reduces testing time by 80% while increasing test coverage and reliability through intelligent automation strategies.",
+      description: "Reduce testing time by 80% and boost test coverage with Testriq’s intelligent automation strategies, ensuring faster releases and high software reliability.",
       stats: "80% Faster Testing",
       color: "blue"
     },
     {
       icon: <FaCogs className="text-3xl" />,
       title: "Advanced Automation Frameworks",
-      description: "Custom-built, scalable automation frameworks designed for maintainability, reusability, and seamless integration with your development workflow.",
+      description: "Custom-built, scalable automation frameworks engineered for high maintainability, test reusability, and seamless integration into your CI/CD pipelines and agile development workflows.",
       stats: "100+ Frameworks Built",
       color: "purple"
     },
     {
       icon: <FaShieldAlt className="text-3xl" />,
       title: "Robust & Reliable Testing",
-      description: "Self-healing automation scripts with intelligent error handling and recovery mechanisms ensure consistent and reliable test execution.",
+      description: "Self-healing automation scripts with intelligent error handling and recovery mechanisms deliver consistent, reliable, and resilient test execution across your software applications and CI/CD pipelines.",
       stats: "99.5% Test Reliability",
       color: "green"
     },
@@ -69,9 +69,7 @@ const AutomationTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Automation Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers cutting-edge automation testing solutions that accelerate your development cycles, 
-            improve software quality, and provide exceptional ROI through intelligent automation strategies 
-            and expert implementation.
+            Testriq offers cutting-edge automation testing solutions that boost development speed, enhance software quality, and deliver high ROI with intelligent automation strategies and expert implementation.
           </p>
         </div>
 

@@ -87,8 +87,7 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
             Our <span className="text-brand-blue">Proven</span> Automation Testing Process
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic automation testing process ensures efficient implementation, reliable execution, 
-            and continuous optimization for maximum ROI and testing effectiveness.
+            Our systematic automation testing process ensures streamlined implementation, dependable execution, and ongoing optimization to maximize ROI, accelerate testing cycles, and ensure high software quality.
           </p>
         </div>
 
