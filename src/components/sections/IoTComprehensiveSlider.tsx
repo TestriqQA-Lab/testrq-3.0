@@ -19,7 +19,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       icon: <FaWifi className="w-8 h-8" />,
       title: "Connectivity Testing",
       description:
-        "Comprehensive testing of wireless protocols including WiFi, Bluetooth, Zigbee, and cellular connectivity.",
+        "Comprehensive testing of wireless protocols including WiFi, Bluetooth, Zigbee, and cellular connectivity to ensure seamless communication.",
       features: [
         "WiFi Protocol Testing",
         "Bluetooth LE Validation",
@@ -110,9 +110,7 @@ const IoTComprehensiveSlider: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Coverage</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive IoT testing services cover every aspect of your
-            connected device ecosystem, ensuring reliability, security, and
-            optimal performance across all IoT layers and protocols.
+            Our comprehensive IoT device testing services cover every layer of your connected ecosystem, ensuring device reliability, security compliance, protocol interoperability, and performance validation across real-world conditions and all supported IoT protocols.
           </p>
         </div>
 
