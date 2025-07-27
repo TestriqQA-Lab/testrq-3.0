@@ -43,8 +43,7 @@ const LaunchFastROISection: React.FC = () => {
             LaunchFast QA <span className="text-brand-blue">ROI & Business Impact</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover the measurable business value and return on investment that our LaunchFast QA services 
-            deliver to startups and fast-moving development teams across various industries.
+            Discover the measurable ROI and business value our LaunchFast QA services bring to startups and agile development teams through rapid testing sprints across diverse industries.
           </p>
         </div>
 

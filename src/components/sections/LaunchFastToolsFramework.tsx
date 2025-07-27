@@ -68,8 +68,7 @@ const LaunchFastToolsFramework: React.FC = () => {
             LaunchFast QA <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage cutting-edge tools and frameworks specifically optimized for rapid testing cycles 
-            and agile development to ensure comprehensive validation of your products across all platforms and environments.
+            We leverage cutting-edge tools like Selenium, Cypress, and JMeter, optimized for rapid testing sprints and agile development, to ensure comprehensive QA validation across all platforms and environments.
           </p>
         </div>
 
@@ -109,8 +108,7 @@ const LaunchFastToolsFramework: React.FC = () => {
               Comprehensive LaunchFast QA Technology Stack
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our technology stack is specifically curated for rapid testing cycles, ensuring maximum efficiency 
-              and coverage while maintaining the speed required for agile development and fast product launches.
+              Our curated tech stack supports rapid testing sprints, delivering maximum efficiency and test coverage for agile QA testing, fast product launches, and seamless go-to-market QA execution.
             </p>
           </div>
 
@@ -140,8 +138,7 @@ const LaunchFastToolsFramework: React.FC = () => {
             Technology Expertise for Rapid Launches
           </h3>
           <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-            Our team stays current with the latest testing technologies and methodologies, 
-            ensuring your LaunchFast QA processes leverage the most effective tools for your specific technology stack.
+            Our expert QA engineers stay updated with the latest testing tools and methodologies, ensuring your LaunchFast QA processes use the most effective frameworks for your specific tech stack and agile development needs.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {["React", "Angular", "Vue.js", "Node.js", "Python", "Java", "C#", ".NET", "PHP", "Ruby", "Go", "Swift", "Kotlin", "Flutter", "React Native"].map((tech, index) => (

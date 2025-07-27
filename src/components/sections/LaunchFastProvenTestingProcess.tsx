@@ -87,8 +87,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
             Our Proven <span className="text-brand-blue">LaunchFast QA Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our streamlined approach ensures rapid testing cycles and quality delivery, 
-            perfectly aligned with agile development methodologies for faster time-to-market.
+            Our streamlined approach enables rapid testing sprints and quality delivery, seamlessly aligned with agile QA testing and iterative development for a faster go-to-market.
           </p>
         </div>
 
