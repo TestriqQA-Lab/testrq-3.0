@@ -112,9 +112,7 @@ const ApiComprehensiveSlider: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive API testing services cover every aspect of your
-            API ecosystem, ensuring reliability, security, and optimal
-            performance across all integration points.
+            Our full-spectrum API testing services validate every component of your API ecosystem—ensuring seamless integration, performance scalability, low-latency responses, and strong security compliance across REST, SOAP, and microservices architectures.
           </p>
         </div>
 

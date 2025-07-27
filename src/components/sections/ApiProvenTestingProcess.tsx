@@ -93,8 +93,7 @@ const ApiProvenTestingProcess: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Process</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures comprehensive API testing coverage,
-            delivering reliable and secure integrations for your applications.
+            Our systematic approach ensures comprehensive API testing coverage, delivering reliable and secure integrations for your applications.
           </p>
         </div>
 
