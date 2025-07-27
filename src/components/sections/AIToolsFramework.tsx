@@ -135,10 +135,7 @@ const AIToolsFramework: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage state-of-the-art tools and frameworks specifically
-            designed for AI and machine learning testing to ensure comprehensive
-            validation of your intelligent systems across all aspects of AI
-            development and deployment.
+            We leverage state-of-the-art AI testing tools and AI testing frameworks to ensure comprehensive validation of intelligent systems, covering the full spectrum of QA for AI applications, from bias detection to performance benchmarking.
           </p>
         </div>
 
