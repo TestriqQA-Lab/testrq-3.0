@@ -121,8 +121,7 @@ const ManualTestingToolsFramework: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading tools and frameworks to ensure efficient manual testing processes, 
-            comprehensive defect tracking, and detailed reporting for optimal software quality assurance.
+            We leverage industry-leading tools and frameworks to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting—delivering reliable, high-quality software assurance.
           </p>
         </div>
 
