@@ -135,8 +135,7 @@ const RoboticToolsFramework: React.FC = () => {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Tool Integration</h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              We can integrate with your existing robotic tools and frameworks, or recommend the best combination 
-              for your specific robotic testing requirements.
+              We support full-cycle testing for robotics software and can integrate with your tools or recommend best-fit frameworks, or recommend the best combination for your specific robotic testing requirements.
             </p>
             <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
               Discuss Your Requirements
