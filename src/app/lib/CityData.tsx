@@ -345,8 +345,8 @@ export const cityData: Record<string, CityData> = {
         { icon: "Clock", title: "Timely Delivery", stats: "On-Time Guarantee", description: "Committed to delivering projects on schedule without compromising quality." },
       ],
       testimonial: {
-        text: "Testriq\"s team in Bangalore provided exceptional support and expertise. Their testing services were crucial for our product launch. Highly recommend!",
-        author: "Rahul Kumar",
+        text: "Testriq\"s team in Bangalore delivered exceptional results. Their attention to detail and proactive approach significantly improved our software quality. Highly recommended!",
+        author: "Rajesh Kumar",
         company: "Innovate Solutions, Bangalore",
         rating: 5,
       },
@@ -357,33 +357,33 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Discover how we helped businesses in Bangalore achieve their quality goals.",
       studies: [
         {
-          company: "Software Product Company",
-          industry: "IT Services",
-          challenge: "Frequent software regressions after new feature deployments.",
+          company: "SaaS Startup",
+          industry: "Software as a Service",
+          challenge: "Ensuring seamless integration with third-party APIs and platforms.",
           results: [
-            "Implemented a robust automation test suite, reducing regression cycles by 50%",
-            "Decreased post-release defects by 40%",
-            "Improved overall software stability and reliability",
+            "Achieved 100% API integration success rate",
+            "Reduced integration-related bugs by 40%",
+            "Improved overall system stability and data flow",
           ],
         },
         {
-          company: "E-learning Platform",
+          company: "Gaming Studio",
+          industry: "Gaming",
+          challenge: "Optimizing game performance and user experience across various devices.",
+          results: [
+            "Increased frame rates by 25% on average",
+            "Reduced game crashes by 50%",
+            "Enhanced user engagement through improved responsiveness",
+          ],
+        },
+        {
+          company: "EdTech Platform",
           industry: "Education Technology",
-          challenge: "Poor user experience and accessibility issues on mobile devices.",
+          challenge: "Ensuring accessibility and usability for diverse student populations.",
           results: [
-            "Enhanced mobile responsiveness and UI/UX across all devices",
-            "Achieved WCAG 2.1 AA accessibility compliance",
-            "Increased user engagement and retention by 20%",
-          ],
-        },
-        {
-          company: "Logistics & Supply Chain",
-          industry: "Logistics",
-          challenge: "Inaccurate tracking and delivery delays due to system errors.",
-          results: [
-            "Implemented automated tracking system, reducing manual errors by 80%",
-            "Improved on-time delivery rates by 15%",
-            "Provided real-time visibility into shipment status",
+            "Achieved WCAG 2.1 AA compliance",
+            "Improved user satisfaction scores by 20%",
+            "Implemented inclusive design principles across the platform",
           ],
         },
       ],
@@ -394,36 +394,36 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Explore our cutting-edge services in Bangalore.",
       services: [
         {
-          name: "AI-Powered Testing",
+          name: "DevOps Testing",
           trending: true,
-          description: "Leverage artificial intelligence for smarter and faster test automation.",
-          citySpecific: "Growing demand for AI solutions in Bangalore\"s tech sector.",
-          benefits: ["Enhanced Test Coverage", "Faster Defect Detection", "Reduced Manual Effort"],
-          technologies: ["TensorFlow", "PyTorch", "Selenium AI", "Appium AI"],
+          description: "Integrating testing into the DevOps pipeline for continuous delivery.",
+          citySpecific: "Bangalore\"s strong DevOps culture drives demand for this service.",
+          benefits: ["Faster Release Cycles", "Improved Collaboration", "Early Bug Detection"],
+          technologies: ["Jenkins", "Docker", "Kubernetes", "GitLab CI/CD"],
         },
         {
-          name: "Cloud Testing Services",
+          name: "Big Data Testing",
           trending: false,
-          description: "Scalable and flexible testing solutions on cloud platforms.",
-          citySpecific: "Cloud adoption is high among Bangalore\"s startups and enterprises.",
-          benefits: ["Cost-Effective Infrastructure", "On-Demand Scalability", "Global Accessibility"],
-          technologies: ["AWS Device Farm", "Azure Test Plans", "BrowserStack", "Sauce Labs"],
+          description: "Validating the quality and integrity of large datasets and big data applications.",
+          citySpecific: "Data-driven companies in Bangalore require robust big data testing.",
+          benefits: ["Data Accuracy Assurance", "Performance Optimization", "Scalability Testing"],
+          technologies: ["Hadoop", "Spark", "Kafka", "Hive"],
         },
         {
-          name: "IoT Device Testing",
+          name: "Robotic Process Automation (RPA) Testing",
           trending: true,
-          description: "Comprehensive testing for Internet of Things devices and ecosystems.",
-          citySpecific: "Bangalore is a hub for IoT innovation and development.",
-          benefits: ["End-to-End Device Validation", "Security Assurance", "Performance Optimization"],
-          technologies: ["MQTT", "CoAP", "Zigbee", "Bluetooth LE"],
+          description: "Ensuring the reliability and efficiency of automated business processes.",
+          citySpecific: "RPA adoption is increasing in Bangalore for business process automation.",
+          benefits: ["Process Efficiency", "Error Reduction", "Faster ROI"],
+          technologies: ["UiPath", "Automation Anywhere", "Blue Prism", "Robot Framework"],
         },
         {
-          name: "Blockchain Testing",
+          name: "AR/VR Testing",
           trending: false,
-          description: "Ensuring the integrity and security of blockchain applications.",
-          citySpecific: "Financial and supply chain sectors in Bangalore are exploring blockchain.",
-          benefits: ["Smart Contract Validation", "Consensus Mechanism Testing", "Security Audits"],
-          technologies: ["Ethereum", "Hyperledger Fabric", "Solidity", "Truffle"],
+          description: "Specialized testing for Augmented Reality and Virtual Reality applications.",
+          citySpecific: "Bangalore\"s innovation in AR/VR tech creates a need for specialized QA.",
+          benefits: ["Immersive Experience Validation", "Performance in Virtual Environments", "Usability Testing"],
+          technologies: ["Unity", "Unreal Engine", "Oculus SDK", "ARCore"],
         },
       ],
     },
@@ -432,227 +432,39 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Answers to common queries about our testing services.",
       faqs: [
         {
-          question: "What types of software testing services do you offer in Bangalore?",
-          answer: "We provide a full spectrum of testing services including manual, automation, performance, security, mobile, and API testing, catering to the dynamic needs of Bangalore businesses.",
+          question: "What makes Testriq a preferred QA partner in Bangalore?",
+          answer: "Our deep industry expertise, certified professionals, client-centric approach, and commitment to timely delivery make us a preferred choice for QA services in Bangalore.",
         },
         {
-          question: "How experienced is your QA team in Bangalore?",
-          answer: "Our Bangalore team consists of highly experienced and certified QA professionals with over 10 years of industry experience, ensuring top-notch quality for your projects.",
+          question: "Do you offer on-site testing services in Bangalore?",
+          answer: "Yes, we offer flexible engagement models including on-site, off-site, and hybrid models to best suit your project requirements in Bangalore.",
         },
         {
-          question: "Do you support Agile development methodologies?",
-          answer: "Absolutely. We seamlessly integrate with Agile and DevOps pipelines, providing continuous testing and feedback to accelerate your development cycles.",
+          question: "How do you handle urgent testing requirements?",
+          answer: "We have agile teams and processes in place to quickly ramp up and address urgent testing requirements, ensuring minimal disruption to your development cycle.",
+        },
+        {
+          question: "Can you integrate with our existing development pipeline?",
+          answer: "Absolutely. Our QA processes are designed to integrate seamlessly with your existing CI/CD pipelines and development workflows, enhancing efficiency and collaboration.",
         },
         {
           question: "What is your approach to test automation?",
-          answer: "We leverage industry-leading tools like Selenium and Cypress to build scalable and maintainable automation frameworks, ensuring efficient and reliable test execution.",
-        },
-        {
-          question: "How can I get started with your testing services in Bangalore?",
-          answer: "Simply reach out to us via phone or email, or fill out our online inquiry form. We\"ll schedule a consultation to understand your needs and propose a tailored solution.",
+          answer: "We adopt a strategic approach to test automation, focusing on identifying the most impactful test cases for automation, selecting the right tools, and building robust, maintainable automation frameworks.",
         },
       ],
     },
     ctaContent: {
-      title: "Ready to Ensure Quality for Your Bangalore Project?",
-      description: "Get started with our expert testing services in Bangalore today",
-      subtitle: "Contact us for a free consultation and a tailored quote.", // Added subtitle
-      benefits: ["Experienced QA Team", "Customized Solutions", "Competitive Pricing", "Fast Turnaround"],
+      title: "Ready to Elevate Your Software Quality in Bangalore?",
+      description: "Partner with Testriq for unparalleled QA expertise.",
+      subtitle: "Contact us for a free consultation and a tailored quote.",
+      benefits: ["Expert QA Team", "Tailored Solutions", "Cost-Effective", "Timely Delivery"],
       contactInfo: {
-        phone: "+91 99887 76655",
+        phone: "+91 98765 43210",
         email: "info.bangalore@testriq.com",
-        address: "456, MG Road, Bangalore, Karnataka, India", // Added address
+        address: "456, MG Road, Bangalore, Karnataka, India",
       },
     },
-    industries: ["IT Services", "Healthcare", "Automotive", "Manufacturing", "Financial Services", "E-commerce"],
-  },
-  "mumbai": {
-    slug: "software-qa-testing-services-in-mumbai",
-    name: "Mumbai",
-    state: "Maharashtra",
-    metadata: {
-      title: "Software QA Testing Services in Mumbai | Manual & Automation Testing | Testriq",
-      description: "Leading software testing company in Mumbai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
-      keywords: "software testing services mumbai, qa testing mumbai, manual testing mumbai, automation testing mumbai, performance testing mumbai, software testing company mumbai, qa services maharashtra, testing services mumbai",
-    },
-    heroContent: {
-      title: "Professional Software Testing Services in Mumbai",
-      subtitle: "Leading QA Solutions in Maharashtra",
-      description: "Transform your software quality with our comprehensive testing services in Mumbai. We provide expert manual testing, automation testing, performance testing, and quality assurance solutions to businesses across Maharashtra.",
-      certifications: ["ISTQB Certified Engineers", "Agile QA Expertise", "ISO 27001 Certified"],
-      stats: [
-        { number: "250+", label: "Projects Completed", description: "Successfully delivered QA projects" },
-        { number: "97%", label: "Client Satisfaction", description: "High client retention rate" },
-        { number: "9+", label: "Years Experience", description: "In the software testing industry" },
-        { number: "24/7", label: "Support Available", description: "Round-the-clock assistance" },
-      ],
-      landmarks: ["Gateway of India", "Marine Drive", "Elephanta Caves", "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya"],
-    },
-    processContent: {
-      title: "Our QA Testing Process in Mumbai",
-      subtitle: "A systematic approach to ensure software quality for Mumbai businesses.",
-      steps: [
-        { number: "01", title: "Requirement Analysis", description: "Understanding your project needs and defining the scope of testing.", deliverables: ["Scope Document", "Test Strategy"] },
-        { number: "02", title: "Test Planning", description: "Developing a detailed test plan, strategies, and test cases.", deliverables: ["Test Plan Document", "Resource Allocation"] },
-        { number: "03", title: "Test Case Development", description: "Creating comprehensive test cases based on requirements.", deliverables: ["Test Cases", "Test Scripts"] },
-        { number: "04", title: "Test Environment Setup", description: "Configuring the necessary environment for effective testing.", deliverables: ["Environment Setup Report", "Test Data"] },
-        { number: "05", title: "Test Execution", description: "Executing test cases and identifying defects.", deliverables: ["Execution Logs", "Defect Reports"] },
-        { number: "06", title: "Reporting & Retesting", description: "Providing detailed reports and retesting fixed defects.", deliverables: ["Summary Reports", "Retest Reports"] },
-      ],
-    },
-    servicesContent: {
-      title: "Comprehensive Testing Services in Mumbai",
-      description: "Professional QA solutions tailored for Mumbai businesses",
-      subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
-      services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"] },
-        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"] },
-        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"] },
-        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"] },
-        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"] },
-        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
-      ],
-    },
-    toolsFrameworkContent: {
-      title: "Tools & Frameworks Used in Mumbai",
-      description: "Leveraging cutting-edge tools for superior QA testing.",
-      stats: {
-        projectsCompleted: "250+",
-        clientSatisfaction: "97%",
-        supportAvailable: "24/7",
-        yearsExperience: "9+",
-      },
-    },
-    whyChooseContent: {
-      title: "Why Choose Our Mumbai Testing Team?",
-      subtitle: "Experience the Testriq advantage with our dedicated local expertise.",
-      reasons: [
-        { icon: "MapPin", title: "Local Expertise", stats: "Mumbai Focus", description: "Deep understanding of Mumbai\"s business ecosystem and tech needs." },
-        { icon: "Award", title: "Certified Professionals", stats: "ISTQB Certified", description: "Our team comprises highly skilled and certified QA engineers." },
-        { icon: "Users", title: "Client-Centric Approach", stats: "97% Satisfaction", description: "We prioritize your success with tailored solutions and transparent communication." },
-        { icon: "Clock", title: "Timely Delivery", stats: "On-Time Guarantee", description: "Committed to delivering projects on schedule without compromising quality." },
-      ],
-      testimonial: {
-        text: "Testriq\"s Mumbai team is incredibly professional and efficient. They helped us achieve our quality goals with their comprehensive testing services.",
-        author: "Anjali Singh",
-        company: "Financial Innovations, Mumbai",
-        rating: 5,
-      },
-    },
-    caseStudiesContent: {
-      title: "Case Studies: Mumbai Success Stories",
-      description: "Real-world examples of our impact in Mumbai.",
-      subtitle: "Discover how we helped businesses in Mumbai achieve their quality goals.",
-      studies: [
-        {
-          company: "Media & Entertainment",
-          industry: "Entertainment",
-          challenge: "Inconsistent streaming quality and playback issues across devices.",
-          results: [
-            "Improved video streaming quality by 25%",
-            "Ensured seamless playback on 50+ device combinations",
-            "Reduced user complaints related to buffering and errors",
-          ],
-        },
-        {
-          company: "Real Estate Portal",
-          industry: "Real Estate",
-          challenge: "Slow search results and inaccurate property listings.",
-          results: [
-            "Optimized search algorithms, reducing search time by 40%",
-            "Achieved 99% accuracy in property data synchronization",
-            "Enhanced user experience with faster and more reliable listings",
-          ],
-        },
-        {
-          company: "Logistics & Supply Chain",
-          industry: "Logistics",
-          challenge: "Manual tracking errors leading to delivery delays and lost shipments.",
-          results: [
-            "Implemented automated tracking system, reducing manual errors by 80%",
-            "Improved on-time delivery rates by 15%",
-            "Provided real-time visibility into shipment status",
-          ],
-        },
-      ],
-    },
-    trendingServicesContent: {
-      title: "Trending QA Services in Mumbai",
-      description: "Stay ahead with the latest in software quality assurance.",
-      subtitle: "Explore our cutting-edge services in Mumbai.",
-      services: [
-        {
-          name: "AI-Powered Testing",
-          trending: true,
-          description: "Leverage artificial intelligence for smarter and faster test automation.",
-          citySpecific: "Growing demand for AI solutions in Mumbai\"s tech sector.",
-          benefits: ["Enhanced Test Coverage", "Faster Defect Detection", "Reduced Manual Effort"],
-          technologies: ["TensorFlow", "PyTorch", "Selenium AI", "Appium AI"],
-        },
-        {
-          name: "Cloud Testing Services",
-          trending: false,
-          description: "Scalable and flexible testing solutions on cloud platforms.",
-          citySpecific: "Cloud adoption is high among Mumbai\"s startups and enterprises.",
-          benefits: ["Cost-Effective Infrastructure", "On-Demand Scalability", "Global Accessibility"],
-          technologies: ["AWS Device Farm", "Azure Test Plans", "BrowserStack", "Sauce Labs"],
-        },
-        {
-          name: "IoT Device Testing",
-          trending: true,
-          description: "Comprehensive testing for Internet of Things devices and ecosystems.",
-          citySpecific: "Mumbai is emerging as an IoT hub with increasing manufacturing.",
-          benefits: ["End-to-End Device Validation", "Security Assurance", "Performance Optimization"],
-          technologies: ["MQTT", "CoAP", "Zigbee", "Bluetooth LE"],
-        },
-        {
-          name: "Blockchain Testing",
-          trending: false,
-          description: "Ensuring the integrity and security of blockchain applications.",
-          citySpecific: "Financial and supply chain sectors in Mumbai are exploring blockchain.",
-          benefits: ["Smart Contract Validation", "Consensus Mechanism Testing", "Security Audits"],
-          technologies: ["Ethereum", "Hyperledger Fabric", "Solidity", "Truffle"],
-        },
-      ],
-    },
-    faqsContent: {
-      title: "Frequently Asked Questions about QA in Mumbai",
-      subtitle: "Answers to common queries about our testing services.",
-      faqs: [
-        {
-          question: "What software testing services are available in Mumbai?",
-          answer: "We offer a full suite of services including manual, automation, performance, security, mobile, and API testing, customized for the Mumbai market.",
-        },
-        {
-          question: "How does Testriq ensure data security during testing?",
-          answer: "We adhere to strict data privacy protocols and employ advanced security measures, including ISO 27001 certified practices, to protect your sensitive information during all testing phases.",
-        },
-        {
-          question: "Can you help with testing for specific industry regulations in Mumbai?",
-          answer: "Yes, our experts are well-versed in industry-specific compliance requirements, such as those for financial services and healthcare, ensuring your software meets all necessary standards.",
-        },
-        {
-          question: "What is the typical turnaround time for testing projects?",
-          answer: "Turnaround times vary based on project complexity and scope. We work closely with clients to establish realistic timelines and ensure timely delivery without compromising quality.",
-        },
-        {
-          question: "Do you provide post-testing support?",
-          answer: "Yes, we offer comprehensive post-testing support, including defect retesting, regression testing, and ongoing consultation to ensure your software remains robust and high-performing.",
-        },
-      ],
-    },
-    ctaContent: {
-      title: "Ready to Ensure Quality for Your Mumbai Project?",
-      description: "Get started with our expert testing services in Mumbai today",
-      subtitle: "Contact us for a free consultation and a tailored quote.", // Added subtitle
-      benefits: ["Local Expertise", "Certified Team", "Flexible Engagement", "Post-Testing Support"],
-      contactInfo: {
-        phone: "+91 97654 32109",
-        email: "info.mumbai@testriq.com",
-        address: "789, Bandra Kurla Complex, Mumbai, Maharashtra, India", // Added address
-      },
-    },
-    industries: ["Financial Services", "Entertainment", "Healthcare", "E-commerce", "Manufacturing", "IT Services"],
+    industries: ["IT Services", "FinTech", "E-commerce", "Healthcare", "Gaming", "EdTech"],
   },
   "delhi": {
     slug: "software-qa-testing-services-in-delhi",
@@ -660,33 +472,21 @@ export const cityData: Record<string, CityData> = {
     state: "Delhi",
     metadata: {
       title: "Software QA Testing Services in Delhi | Manual & Automation Testing | Testriq",
-      description: "Top software testing company in Delhi providing manual testing, automation testing, performance testing, and QA consulting services. Expert QA engineers.",
-      keywords: "software testing services delhi, qa testing delhi, manual testing delhi, automation testing delhi, performance testing delhi, software testing company delhi, qa services ncr, testing services delhi",
+      description: "Leading software testing company in Delhi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
+      keywords: "software testing services delhi, qa testing delhi, manual testing delhi, automation testing delhi, performance testing delhi, software testing company delhi, qa services delhi, testing services delhi",
     },
     heroContent: {
       title: "Professional Software Testing Services in Delhi",
-      subtitle: "Leading QA Solutions in NCR",
-      description: "Transform your software quality with our comprehensive testing services in Delhi. We provide expert manual testing, automation testing, performance testing, and quality assurance solutions to businesses across NCR.",
+      subtitle: "Leading QA Solutions in Delhi NCR",
+      description: "Transform your software quality with our comprehensive testing services in Delhi. We provide expert manual testing, automation testing, performance testing, and quality assurance solutions to businesses across Delhi NCR.",
       certifications: ["ISTQB Certified Engineers", "Agile QA Expertise", "ISO 27001 Certified"],
       stats: [
-        { number: "180+", label: "Projects Completed", description: "Successfully delivered QA projects" },
-        { number: "96%", label: "Client Satisfaction", description: "High client retention rate" },
-        { number: "7+", label: "Years Experience", description: "In the software testing industry" },
+        { number: "250+", label: "Projects Completed", description: "Successfully delivered QA projects" },
+        { number: "97%", label: "Client Satisfaction", description: "High client retention rate" },
+        { number: "9+", label: "Years Experience", description: "In the software testing industry" },
         { number: "24/7", label: "Support Available", description: "Round-the-clock assistance" },
       ],
-      landmarks: ["India Gate", "Red Fort", "Qutub Minar", "Humayun\"s Tomb"],
-    },
-    processContent: {
-      title: "Our QA Testing Process in Delhi",
-      subtitle: "A systematic approach to ensure software quality for Delhi businesses.",
-      steps: [
-        { number: "01", title: "Requirement Analysis", description: "Understanding your project needs and defining the scope of testing.", deliverables: ["Scope Document", "Test Strategy"] },
-        { number: "02", title: "Test Planning", description: "Developing a detailed test plan, strategies, and test cases.", deliverables: ["Test Plan Document", "Resource Allocation"] },
-        { number: "03", title: "Test Case Development", description: "Creating comprehensive test cases based on requirements.", deliverables: ["Test Cases", "Test Scripts"] },
-        { number: "04", title: "Test Environment Setup", description: "Configuring the necessary environment for effective testing.", deliverables: ["Environment Setup Report", "Test Data"] },
-        { number: "05", title: "Test Execution", description: "Executing test cases and identifying defects.", deliverables: ["Execution Logs", "Defect Reports"] },
-        { number: "06", title: "Reporting & Retesting", description: "Providing detailed reports and retesting fixed defects.", deliverables: ["Summary Reports", "Retest Reports"] },
-      ],
+      landmarks: ["India Gate", "Qutub Minar", "Red Fort", "Humayun's Tomb"],
     },
     servicesContent: {
       title: "Comprehensive Testing Services in Delhi",
@@ -701,29 +501,41 @@ export const cityData: Record<string, CityData> = {
         { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
       ],
     },
+    processContent: {
+      title: "Our QA Testing Process in Delhi",
+      subtitle: "A systematic approach to ensure software quality for Delhi businesses.",
+      steps: [
+        { number: "01", title: "Requirement Analysis", description: "Understanding your project needs and defining the scope of testing.", deliverables: ["Scope Document", "Test Strategy"] },
+        { number: "02", title: "Test Planning", description: "Developing a detailed test plan, strategies, and test cases.", deliverables: ["Test Plan Document", "Resource Allocation"] },
+        { number: "03", title: "Test Case Development", description: "Creating comprehensive test cases based on requirements.", deliverables: ["Test Cases", "Test Scripts"] },
+        { number: "04", title: "Test Environment Setup", description: "Configuring the necessary environment for effective testing.", deliverables: ["Environment Setup Report", "Test Data"] },
+        { number: "05", title: "Test Execution", description: "Executing test cases and identifying defects.", deliverables: ["Execution Logs", "Defect Reports"] },
+        { number: "06", title: "Reporting & Retesting", description: "Providing detailed reports and retesting fixed defects.", deliverables: ["Summary Reports", "Retest Reports"] },
+      ],
+    },
     toolsFrameworkContent: {
       title: "Tools & Frameworks Used in Delhi",
       description: "Leveraging cutting-edge tools for superior QA testing.",
       stats: {
-        projectsCompleted: "180+",
-        clientSatisfaction: "96%",
+        projectsCompleted: "250+",
+        clientSatisfaction: "97%",
         supportAvailable: "24/7",
-        yearsExperience: "7+",
+        yearsExperience: "9+",
       },
     },
     whyChooseContent: {
       title: "Why Choose Our Delhi Testing Team?",
       subtitle: "Experience the Testriq advantage with our dedicated local expertise.",
       reasons: [
-        { icon: "MapPin", title: "Local Expertise", stats: "Delhi Focus", description: "Deep understanding of Delhi\"s business ecosystem and tech needs." },
+        { icon: "MapPin", title: "Local Expertise", stats: "Delhi Focus", description: "Deep understanding of Delhi\"s tech landscape and business needs." },
         { icon: "Award", title: "Certified Professionals", stats: "ISTQB Certified", description: "Our team comprises highly skilled and certified QA engineers." },
-        { icon: "Users", title: "Client-Centric Approach", stats: "96% Satisfaction", description: "We prioritize your success with tailored solutions and transparent communication." },
+        { icon: "Users", title: "Client-Centric Approach", stats: "97% Satisfaction", description: "We prioritize your success with tailored solutions and transparent communication." },
         { icon: "Clock", title: "Timely Delivery", stats: "On-Time Guarantee", description: "Committed to delivering projects on schedule without compromising quality." },
       ],
       testimonial: {
-        text: "Testriq\"s Delhi team is a game-changer! Their comprehensive testing approach and quick turnaround times are unmatched. Truly a reliable partner.",
-        author: "Sanjay Gupta",
-        company: "E-commerce Innovations, Delhi",
+        text: "Testriq\"s team in Delhi delivered exceptional results. Their attention to detail and proactive approach significantly improved our software quality. Highly recommended!",
+        author: "Ananya Singh",
+        company: "Digital Innovations, Delhi",
         rating: 5,
       },
     },
@@ -733,33 +545,33 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Discover how we helped businesses in Delhi achieve their quality goals.",
       studies: [
         {
-          company: "Government Portal",
-          industry: "Government",
-          challenge: "Complex forms and slow data processing leading to user frustration.",
+          company: "E-commerce Startup",
+          industry: "E-commerce",
+          challenge: "Ensuring seamless user experience across various devices and browsers.",
           results: [
-            "Simplified user workflows and improved form submission rates by 30%",
-            "Reduced data processing time by 20%",
-            "Enhanced overall user satisfaction and accessibility",
+            "Achieved 99% cross-browser compatibility",
+            "Improved mobile responsiveness by 30%",
+            "Reduced UI/UX related bugs by 25%",
           ],
         },
         {
-          company: "EdTech Startup",
-          industry: "Education",
-          challenge: "Inconsistent performance and crashes during online exams.",
+          company: "FinTech Company",
+          industry: "Financial Services",
+          challenge: "Validating complex financial calculations and reporting accuracy.",
           results: [
-            "Ensured stable performance for 10,000+ concurrent users",
-            "Eliminated critical crashes during high-stakes assessments",
-            "Improved reliability and trust in the online examination system",
+            "Ensured 100% accuracy in financial reports",
+            "Automated regression testing for financial modules",
+            "Reduced manual testing effort by 50%",
           ],
         },
         {
-          company: "Healthcare Provider",
-          industry: "Healthcare",
-          challenge: "Data privacy concerns and non-compliance with healthcare regulations.",
+          company: "Logistics Provider",
+          industry: "Logistics",
+          challenge: "Optimizing route planning and delivery tracking system performance.",
           results: [
-            "Achieved 100% compliance with HIPAA and other regulations",
-            "Implemented robust data encryption and access controls",
-            "Strengthened patient data privacy and security",
+            "Improved route optimization efficiency by 20%",
+            "Reduced tracking discrepancies by 15%",
+            "Enhanced real-time data accuracy for logistics operations",
           ],
         },
       ],
@@ -770,36 +582,36 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Explore our cutting-edge services in Delhi.",
       services: [
         {
-          name: "AI-Powered Testing",
-          trending: true,
-          description: "Leverage artificial intelligence for smarter and faster test automation.",
-          citySpecific: "Growing demand for AI solutions in Delhi\"s tech sector.",
-          benefits: ["Enhanced Test Coverage", "Faster Defect Detection", "Reduced Manual Effort"],
-          technologies: ["TensorFlow", "PyTorch", "Selenium AI", "Appium AI"],
-        },
-        {
-          name: "Cloud Testing Services",
-          trending: false,
-          description: "Scalable and flexible testing solutions on cloud platforms.",
-          citySpecific: "Cloud adoption is high among Delhi\"s startups and enterprises.",
-          benefits: ["Cost-Effective Infrastructure", "On-Demand Scalability", "Global Accessibility"],
-          technologies: ["AWS Device Farm", "Azure Test Plans", "BrowserStack", "Sauce Labs"],
-        },
-        {
-          name: "IoT Device Testing",
+          name: "IoT Testing",
           trending: true,
           description: "Comprehensive testing for Internet of Things devices and ecosystems.",
-          citySpecific: "Delhi is seeing increased adoption of IoT in smart city initiatives.",
+          citySpecific: "Delhi's smart city initiatives drive demand for IoT testing.",
           benefits: ["End-to-End Device Validation", "Security Assurance", "Performance Optimization"],
           technologies: ["MQTT", "CoAP", "Zigbee", "Bluetooth LE"],
         },
         {
-          name: "Blockchain Testing",
+          name: "AI/ML Testing",
           trending: false,
-          description: "Ensuring the integrity and security of blockchain applications.",
-          citySpecific: "Financial and supply chain sectors in Delhi are exploring blockchain.",
-          benefits: ["Smart Contract Validation", "Consensus Mechanism Testing", "Security Audits"],
-          technologies: ["Ethereum", "Hyperledger Fabric", "Solidity", "Truffle"],
+          description: "Specialized testing for Artificial Intelligence and Machine Learning models.",
+          citySpecific: "Growing AI adoption in Delhi's tech sector creates new testing needs.",
+          benefits: ["Model Accuracy Validation", "Bias Detection", "Performance Benchmarking"],
+          technologies: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras"],
+        },
+        {
+          name: "Cloud Security Testing",
+          trending: true,
+          description: "Ensuring the security of cloud-based applications and infrastructure.",
+          citySpecific: "Cloud migration in Delhi businesses necessitates robust security testing.",
+          benefits: ["Data Protection", "Compliance Adherence", "Threat Mitigation"],
+          technologies: ["AWS Security Hub", "Azure Security Center", "Google Cloud Security", "OWASP ZAP"],
+        },
+        {
+          name: "Performance Engineering",
+          trending: false,
+          description: "Proactive approach to build performance into software from early stages.",
+          citySpecific: "High-traffic applications in Delhi require strong performance engineering.",
+          benefits: ["Optimized User Experience", "Scalability", "Cost Efficiency"],
+          technologies: ["JMeter", "LoadRunner", "Gatling", "K6"],
         },
       ],
     },
@@ -808,238 +620,49 @@ export const cityData: Record<string, CityData> = {
       subtitle: "Answers to common queries about our testing services.",
       faqs: [
         {
-          question: "What types of software testing services do you offer in Delhi?",
-          answer: "We provide a full range of software testing services in Delhi, including manual, automation, performance, security, mobile, and API testing, tailored to your specific needs.",
+          question: "Why is software testing important for businesses in Delhi?",
+          answer: "Software testing ensures that applications are reliable, secure, and perform well, which is crucial for businesses in Delhi to maintain a competitive edge and customer trust.",
         },
         {
-          question: "How does Testriq ensure the quality of its testing processes?",
-          answer: "Our testing processes are designed to be thorough and efficient, adhering to international standards and best practices. We use advanced tools and methodologies to ensure high-quality outcomes.",
+          question: "Do you offer testing services for mobile applications in Delhi?",
+          answer: "Yes, we provide comprehensive mobile application testing services for both Android and iOS platforms, ensuring your app performs flawlessly across all devices and operating systems.",
         },
         {
-          question: "Can you handle large-scale enterprise testing projects?",
-          answer: "Yes, we have extensive experience in managing and executing large-scale enterprise testing projects, ensuring scalability, reliability, and performance for complex systems.",
+          question: "How do you ensure data privacy and security during testing?",
+          answer: "We adhere to strict data privacy and security protocols, including ISO 27001 standards, and implement robust measures to protect your sensitive information throughout the testing process.",
         },
         {
-          question: "What is your expertise in performance testing for high-traffic applications?",
-          answer: "We specialize in performance testing for high-traffic applications, simulating real-world load conditions to identify bottlenecks and ensure optimal performance and user experience.",
+          question: "Can you help with test automation framework development?",
+          answer: "Absolutely. Our experts can design and implement custom test automation frameworks tailored to your project's specific needs, enabling faster and more efficient testing cycles.",
         },
         {
-          question: "How can I contact Testriq for software testing services in Delhi?",
-          answer: "You can contact us directly via phone or email, or submit an inquiry through our website. Our Delhi team will respond promptly to discuss your testing requirements.",
+          question: "What is your approach to quality assurance for startups in Delhi?",
+          answer: "We offer flexible and scalable QA solutions designed to meet the unique needs of startups, focusing on cost-effectiveness, rapid feedback, and continuous quality improvement.",
         },
       ],
     },
     ctaContent: {
-      title: "Ready to Ensure Quality for Your Delhi Project?",
-      description: "Get started with our expert testing services in Delhi today",
-      subtitle: "Contact us for a free consultation and a tailored quote.", // Added subtitle
-      benefits: ["Comprehensive Coverage", "Agile Integration", "Scalable Solutions", "Dedicated Support"],
+      title: "Ready to Enhance Your Software Quality in Delhi?",
+      description: "Connect with Testriq for reliable and efficient QA solutions.",
+      subtitle: "Contact us for a free consultation and a tailored quote.",
+      benefits: ["Expert QA Team", "Tailored Solutions", "Cost-Effective", "Timely Delivery"],
       contactInfo: {
-        phone: "+91 96543 21098",
+        phone: "+91 98765 43210",
         email: "info.delhi@testriq.com",
-        address: "10, Connaught Place, New Delhi, Delhi, India", // Added address
+        address: "789, Nehru Place, Delhi, India",
       },
     },
-    industries: ["Government", "Healthcare", "E-commerce", "Financial Services", "IT Services", "Education"],
-  },
-  "hyderabad": {
-    slug: "software-qa-testing-services-in-hyderabad",
-    name: "Hyderabad",
-    state: "Telangana",
-    metadata: {
-      title: "Software QA Testing Services in Hyderabad | Manual & Automation Testing | Testriq",
-      description: "Leading software testing company in Hyderabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
-      keywords: "software testing services hyderabad, qa testing hyderabad, manual testing hyderabad, automation testing hyderabad, performance testing hyderabad, software testing company hyderabad, qa services telangana, testing services hyderabad",
-    },
-    heroContent: {
-      title: "Professional Software Testing Services in Hyderabad",
-      subtitle: "Leading QA Solutions in Telangana",
-      description: "Transform your software quality with our comprehensive testing services in Hyderabad. We provide expert manual testing, automation testing, performance testing, and quality assurance solutions to businesses across Telangana.",
-      certifications: ["ISTQB Certified Engineers", "Agile QA Expertise", "ISO 27001 Certified"],
-      stats: [
-        { number: "220+", label: "Projects Completed", description: "Successfully delivered QA projects" },
-        { number: "98%", label: "Client Satisfaction", description: "High client retention rate" },
-        { number: "8+", label: "Years Experience", description: "In the software testing industry" },
-        { number: "24/7", label: "Support Available", description: "Round-the-clock assistance" },
-      ],
-      landmarks: ["Charminar", "Golconda Fort", "Ramoji Film City", "Hussain Sagar Lake"],
-    },
-    processContent: {
-      title: "Our QA Testing Process in Hyderabad",
-      subtitle: "A systematic approach to ensure software quality for Hyderabad businesses.",
-      steps: [
-        { number: "01", title: "Requirement Analysis", description: "Understanding your project needs and defining the scope of testing.", deliverables: ["Scope Document", "Test Strategy"] },
-        { number: "02", title: "Test Planning", description: "Developing a detailed test plan, strategies, and test cases.", deliverables: ["Test Plan Document", "Resource Allocation"] },
-        { number: "03", title: "Test Case Development", description: "Creating comprehensive test cases based on requirements.", deliverables: ["Test Cases", "Test Scripts"] },
-        { number: "04", title: "Test Environment Setup", description: "Configuring the necessary environment for effective testing.", deliverables: ["Environment Setup Report", "Test Data"] },
-        { number: "05", title: "Test Execution", description: "Executing test cases and identifying defects.", deliverables: ["Execution Logs", "Defect Reports"] },
-        { number: "06", title: "Reporting & Retesting", description: "Providing detailed reports and retesting fixed defects.", deliverables: ["Summary Reports", "Retest Reports"] },
-      ],
-    },
-    servicesContent: {
-      title: "Comprehensive Testing Services in Hyderabad",
-      description: "Professional QA solutions tailored for Hyderabad businesses",
-      subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
-      services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"] },
-        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"] },
-        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"] },
-        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"] },
-        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"] },
-        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
-      ],
-    },
-    toolsFrameworkContent: {
-      title: "Tools & Frameworks Used in Hyderabad",
-      description: "Leveraging cutting-edge tools for superior QA testing.",
-      stats: {
-        projectsCompleted: "220+",
-        clientSatisfaction: "98%",
-        supportAvailable: "24/7",
-        yearsExperience: "8+",
-      },
-    },
-    whyChooseContent: {
-      title: "Why Choose Our Hyderabad Testing Team?",
-      subtitle: "Experience the Testriq advantage with our dedicated local expertise.",
-      reasons: [
-        { icon: "MapPin", title: "Local Expertise", stats: "Hyderabad Focus", description: "Deep understanding of Hyderabad\"s tech ecosystem and business needs." },
-        { icon: "Award", title: "Certified Professionals", stats: "ISTQB Certified", description: "Our team comprises highly skilled and certified QA engineers." },
-        { icon: "Users", title: "Client-Centric Approach", stats: "98% Satisfaction", description: "We prioritize your success with tailored solutions and transparent communication." },
-        { icon: "Clock", title: "Timely Delivery", stats: "On-Time Guarantee", description: "Committed to delivering projects on schedule without compromising quality." },
-      ],
-      testimonial: {
-        text: "Testriq\"s Hyderabad team exceeded our expectations. Their thorough testing and insightful feedback were invaluable for our project\"s success.",
-        author: "Rajesh Reddy",
-        company: "BioTech Innovations, Hyderabad",
-        rating: 5,
-      },
-    },
-    caseStudiesContent: {
-      title: "Case Studies: Hyderabad Success Stories",
-      description: "Real-world examples of our impact in Hyderabad.",
-      subtitle: "Discover how we helped businesses in Hyderabad achieve their quality goals.",
-      studies: [
-        {
-          company: "Pharmaceutical Company",
-          industry: "Pharmaceuticals",
-          challenge: "Compliance issues and data integrity problems in drug development software.",
-          results: [
-            "Ensured 100% compliance with regulatory standards (e.g., FDA, GMP)",
-            "Implemented robust data validation and audit trails",
-            "Improved data integrity and reliability for clinical trials",
-          ],
-        },
-        {
-          company: "Aerospace Manufacturer",
-          industry: "Aerospace",
-          challenge: "Critical software defects in flight control systems.",
-          results: [
-            "Identified and resolved safety-critical software bugs",
-            "Achieved DO-178C compliance for avionics software",
-            "Enhanced reliability and safety of flight control systems",
-          ],
-        },
-        {
-          company: "Biotechnology Research",
-          industry: "Biotechnology",
-          challenge: "Complex data analysis and visualization errors in research tools.",
-          results: [
-            "Improved accuracy of data analysis by 90%",
-            "Developed intuitive data visualization dashboards",
-            "Accelerated research insights and decision-making",
-          ],
-        },
-      ],
-    },
-    trendingServicesContent: {
-      title: "Trending QA Services in Hyderabad",
-      description: "Stay ahead with the latest in software quality assurance.",
-      subtitle: "Explore our cutting-edge services in Hyderabad.",
-      services: [
-        {
-          name: "AI-Powered Testing",
-          trending: true,
-          description: "Leverage artificial intelligence for smarter and faster test automation.",
-          citySpecific: "Growing demand for AI solutions in Hyderabad\"s tech sector.",
-          benefits: ["Enhanced Test Coverage", "Faster Defect Detection", "Reduced Manual Effort"],
-          technologies: ["TensorFlow", "PyTorch", "Selenium AI", "Appium AI"],
-        },
-        {
-          name: "Cloud Testing Services",
-          trending: false,
-          description: "Scalable and flexible testing solutions on cloud platforms.",
-          citySpecific: "Cloud adoption is high among Hyderabad\"s startups and enterprises.",
-          benefits: ["Cost-Effective Infrastructure", "On-Demand Scalability", "Global Accessibility"],
-          technologies: ["AWS Device Farm", "Azure Test Plans", "BrowserStack", "Sauce Labs"],
-        },
-        {
-          name: "IoT Device Testing",
-          trending: true,
-          description: "Comprehensive testing for Internet of Things devices and ecosystems.",
-          citySpecific: "Hyderabad is a hub for IoT innovation and development.",
-          benefits: ["End-to-End Device Validation", "Security Assurance", "Performance Optimization"],
-          technologies: ["MQTT", "CoAP", "Zigbee", "Bluetooth LE"],
-        },
-        {
-          name: "Blockchain Testing",
-          trending: false,
-          description: "Ensuring the integrity and security of blockchain applications.",
-          citySpecific: "Financial and supply chain sectors in Hyderabad are exploring blockchain.",
-          benefits: ["Smart Contract Validation", "Consensus Mechanism Testing", "Security Audits"],
-          technologies: ["Ethereum", "Hyperledger Fabric", "Solidity", "Truffle"],
-        },
-      ],
-    },
-    faqsContent: {
-      title: "Frequently Asked Questions about QA in Hyderabad",
-      subtitle: "Answers to common queries about our testing services.",
-      faqs: [
-        {
-          question: "What types of software testing services do you offer in Hyderabad?",
-          answer: "We provide a comprehensive suite of software testing services in Hyderabad, including manual, automation, performance, security, mobile, and API testing, tailored to meet your specific project needs.",
-        },
-        {
-          question: "How does Testriq ensure the quality of its testing processes?",
-          answer: "Our testing processes are meticulously designed to be thorough and efficient, adhering to international standards and best practices. We leverage advanced tools and methodologies to ensure high-quality outcomes.",
-        },
-        {
-          question: "Can you handle large-scale enterprise testing projects?",
-          answer: "Yes, we have extensive experience in managing and executing large-scale enterprise testing projects, ensuring scalability, reliability, and performance for complex systems.",
-        },
-        {
-          question: "What is your expertise in performance testing for high-traffic applications?",
-          answer: "We specialize in performance testing for high-traffic applications, simulating real-world load conditions to identify bottlenecks and ensure optimal performance and user experience.",
-        },
-        {
-          question: "How can I contact Testriq for software testing services in Hyderabad?",
-          answer: "You can contact us directly via phone or email, or submit an inquiry through our website. Our Hyderabad team will respond promptly to discuss your testing requirements.",
-        },
-      ],
-    },
-    ctaContent: {
-      title: "Ready to Ensure Quality for Your Hyderabad Project?",
-      description: "Get started with our expert testing services in Hyderabad today",
-      subtitle: "Contact us for a free consultation and a tailored quote.", // Added subtitle
-      benefits: ["Industry-Leading Expertise", "Customized Approach", "Proven Methodologies", "Dedicated Support"],
-      contactInfo: {
-        phone: "+91 95432 10987",
-        email: "info.hyderabad@testriq.com",
-        address: "101, Hitech City, Hyderabad, Telangana, India", // Added address
-      },
-    },
-    industries: ["IT Services", "Pharmaceuticals", "Biotechnology", "Aerospace", "Financial Services", "E-commerce"],
+    industries: ["IT Services", "E-commerce", "FinTech", "Logistics", "Healthcare", "Education"],
   },
 };
 
-// Helper functions
-export function getCityData(citySlug: string): CityData | null {
-  const normalizedSlug = citySlug.toLowerCase();
-  return cityData[normalizedSlug] || null;
-}
-
-export function getAllCitySlugs(): string[] {
-  return Object.keys(cityData);
+export function getCityData(slug: string): CityData | undefined {
+  for (const cityKey in cityData) {
+    if (cityData[cityKey].slug === slug) {
+      return cityData[cityKey];
+    }
+  }
+  return undefined;
 }
 
 export function getAllCities(): CityData[] {
