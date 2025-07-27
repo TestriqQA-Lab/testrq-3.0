@@ -31,7 +31,7 @@ const testingServices: FeatureSet[] = [
     title: "Security Testing",
     subtitle: "Vulnerability Assessment",
     description:
-      "Identify vulnerabilities and security flaws to protect your web application from potential threats, data breaches, and malicious attacks with comprehensive security analysis.",
+      "Identify vulnerabilities and security flaws to protect your web application from threats, data breaches, and malicious attacks through comprehensive security testing and robust data protection validation.",
     icon: "🛡️",
     stats: [
       { label: "Tests Run", value: "200+" },

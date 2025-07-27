@@ -6,27 +6,27 @@ const faqs = [
   {
     question: "What types of web applications do you test?",
     answer:
-      "We test all types of web applications including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare applications, and custom web solutions. Our testing approach is tailored to each application's specific requirements and technology stack.",
+      "We test all types of web applications, including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare apps, and custom web solutions. Our web application testing approach is tailored to each product’s specific requirements, technology stack, and user scenarios to ensure complete functionality, security, and performance validation.",
   },
   {
     question: "How long does web application testing typically take?",
     answer:
-      "The duration depends on the complexity and scope of the project. On average, testing engagements range from 2 to 12 weeks. We provide a detailed timeline after assessing the application and project goals.",
+      "Web application testing typically takes 1-4 weeks, depending on the application’s complexity, testing scope, and requirements. Simple applications may require 5-7 days, while complex platforms (e.g., e-commerce or SaaS) may take 2-4 weeks. Our systematic 6-step methodology ensures efficient execution, with rapid turnaround for urgent projects.",
   },
   {
     question: "What testing tools and technologies do you use?",
     answer:
-      "We use a wide array of tools like Selenium, Cypress, Playwright, JMeter, Postman, and others based on project needs. We also work with popular CI/CD platforms and cloud-based testing tools for automation and scalability.",
+      "We use industry-leading tools like Selenium, Cypress, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for security testing; and WAVE and Lighthouse for usability and accessibility. Our ISTQB-certified team supports modern tech stacks (React, Angular, Node.js, etc.) and integrates with CI/CD platforms like Jenkins and GitLab CI.",
   },
   {
     question: "Do you provide automated testing for web applications?",
     answer:
-      "Yes, we offer both manual and automated testing services. We design and implement automation frameworks tailored to your technology stack and business needs to ensure efficient, scalable, and repeatable test processes.",
+      "Yes, we provide automated testing using tools like Selenium, Cypress, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenarios. Automation is integrated with manual testing to maximize coverage and efficiency, tailored to your application’s needs and CI/CD pipeline.",
   },
   {
     question: "How do you ensure cross-browser compatibility?",
     answer:
-      "We perform cross-browser testing using real devices and emulators to ensure that your application functions seamlessly across major browsers such as Chrome, Firefox, Safari, and Edge, on both desktop and mobile devices.",
+      "We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs. Our testing covers responsive design, functionality, and performance across devices, ensuring consistent user experiences and compliance with accessibility standards like WCAG.",
   },
 ];
 

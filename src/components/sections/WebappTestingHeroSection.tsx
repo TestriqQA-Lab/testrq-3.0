@@ -26,9 +26,7 @@ const WebappTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your web applications deliver exceptional user experiences
-            with our comprehensive testing services. From functionality to
-            performance, security to usability - we test it all.
+            Ensure your web applications deliver exceptional user experiences with our systematic web application testing services. From functionality and performance to security, usability, and bug detection — we test it all to ensure maximum quality, compliance, and cross-platform compatibility.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

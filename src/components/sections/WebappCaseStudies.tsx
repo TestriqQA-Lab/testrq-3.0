@@ -7,14 +7,14 @@ const caseStudies = [
     title: "Major Retail Platform Performance Optimization",
     icon: <FaShoppingCart className="text-white text-xl" />,
     challenge:
-      "A leading e-commerce platform was experiencing slow page load times and cart abandonment issues during peak shopping seasons.",
+      "A leading e-commerce platform faced slow page load times and high cart abandonment rates during peak shopping seasons, affecting performance, user satisfaction, and conversion rates.",
     solution:
-      "Implemented comprehensive performance testing, load testing, and optimization strategies across the entire web application.",
+      "Implemented comprehensive performance testing, including load testing, stress testing, and optimization strategies across the entire web application to enhance speed, responsiveness, and scalability.",
     keyResults: [
-      "70% improvement in page load times",
-      "200% increase in concurrent user capacity",
-      "45% reduction in cart abandonment",
-      "$2M additional revenue during Black Friday",
+      "70% improvement in page load times, enhancing performance and user experience",
+      "200% increase in concurrent user capacity, boosting scalability",
+      "45% reduction in cart abandonment, improving conversion rates",
+      "$2M additional revenue generated during Black Friday, showcasing measurable ROI",
     ],
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
     duration: "8 weeks",
@@ -36,14 +36,14 @@ const caseStudies = [
     title: "Online Learning Platform Security Enhancement",
     icon: <MdCastForEducation className="text-white text-xl" />,
     challenge:
-      "An educational institution needed to ensure their online learning platform met strict security standards and protected student data.",
+      "An educational institution needed to ensure their online learning platform complied with strict security standards and provided robust student data protection to meet regulatory and privacy requirements.",
     solution:
-      "Conducted thorough security testing, penetration testing, and implemented comprehensive security measures across the platform.",
+      "Conducted thorough security testing and penetration testing, and implemented comprehensive security measures across the online learning platform to ensure data protection, vulnerability mitigation, and full compliance.",
     keyResults: [
-      "100% compliance with educational data standards",
-      "50% improvement in user authentication speed",
-      "Zero security vulnerabilities identified post-launch",
-      "Enhanced student data protection protocols",
+      "100% compliance with educational data standards, ensuring full regulatory adherence",
+      "50% improvement in user authentication speed, enhancing login performance",
+      "Zero security vulnerabilities identified post-launch, confirming strong security validation",
+      "Enhanced student data protection protocols, boosting data privacy and user trust",
     ],
     technologies: ["Angular", "Java", "PostgreSQL", "Azure"],
     duration: "12 weeks",
@@ -77,9 +77,7 @@ export default function CaseStudies() {
           </span>
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-          Discover how our comprehensive web application testing services have
-          helped businesses across various industries achieve their quality and
-          performance goals.
+          Discover how our comprehensive web application testing services have helped businesses across diverse industries achieve their quality assurance, performance optimization, and user experience goals.
         </p>
       </div>
 

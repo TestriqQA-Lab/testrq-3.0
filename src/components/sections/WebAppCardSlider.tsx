@@ -7,7 +7,8 @@ export default function CardSlider() {
     const [autoHover, setAutoHover] = useState(true);
 
     const headings = {
-        title: 'Systematic 6-Steps Testing Methodolgy', info: 'Our proven methodology ensures comprehensive testing coverage, efficient issue detection, and reliable web application performance through systematic execution.'
+        title: 'Systematic 6-Steps Testing Methodolgy', 
+        info: 'Our proven testing methodology ensures comprehensive coverage, efficient issue detection, and reliable web application performance through systematic execution, detailed bug reporting, and actionable QA insights.'
     }
 
     const cards = [
@@ -15,7 +16,7 @@ export default function CardSlider() {
             title: "Discovery & Analysis",
             days: "1-2 days",
             quote: 'Understanding Your Requirements',
-            content: "Understanding Your Requirements\nWe begin with a comprehensive analysis of your web application, understanding your business requirements, user expectations, and technical specifications to create a tailored testing strategy.",
+            content: "We begin with a thorough analysis of your web application, aligning with business goals, user expectations, and technical specifications to craft a tailored testing strategy that ensures full coverage, compliance, and optimal performance.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 001.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 00-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 005.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" /></svg>,
             colordark: "blue-500",
             colorlight: "blue-50",
@@ -28,7 +29,7 @@ export default function CardSlider() {
             title: "Environment Setup",
             days: "1-2 days",
             quote: 'Preparing Testing Infrastructure',
-            content: "Preparing Testing Infrastructure\nConfigure comprehensive testing environments that accurately mirror your production setup, ensuring reliable and consistent test results across all testing scenarios.",
+            content: "We configure robust testing environments that mirror your production setup, ensuring reliable, consistent test results across all web application testing scenarios, including functionality, security, performance, and usability.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83zM3 17.25V21h3.75l11.06-11.06-3.75-3.75L3 17.25z" /></svg>,
             colordark: "green-500",
             colorlight: "green-50",
@@ -40,7 +41,7 @@ export default function CardSlider() {
             title: "Test Execution",
             days: "3-5 days",
             quote: 'Comprehensive Testing Implementation',
-            content: "Comprehensive Testing Implementation\nExecute systematic testing across all defined scenarios using both manual and automated approaches to ensure comprehensive coverage of your web application functionality.",
+            content: "We execute systematic testing across all defined scenarios using a blend of manual and automated testing approaches to ensure comprehensive coverage of functionality, performance, security, and usability.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>,
             colordark: "purple-500",
             colorlight: "purple-50",
@@ -52,7 +53,7 @@ export default function CardSlider() {
             title: "Issue Documentation",
             days: "1-2 days",
             quote: 'Detailed Bug Reporting',
-            content: "Detailed Bug Reporting\nSystematically identify, document, and prioritize all issues found during testing with detailed reproduction steps and visual evidence for efficient resolution.",
+            content: "We systematically identify, document, and prioritize issues with detailed reproduction steps, visual evidence, and actionable insights to facilitate efficient bug resolution and maintain high web application quality.",
             icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" /></svg>,
             colordark: "red-500",
             colorlight: "red-50",
@@ -60,6 +61,31 @@ export default function CardSlider() {
             keyTitle: 'Key Activities',
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
+        {
+            title: "Validation & Optimization",
+            days: "1-2 days",
+            quote: 'Verifying Fixes & Enhancing Performance',
+            content: "We validate bug fixes and optimize performance through retesting and fine-tuning, ensuring your web application meets quality standards and delivers seamless user experiences.",
+            icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" /></svg>,
+            colordark: "orange-500",
+            colorlight: "orange-50",
+            progress: "80%",
+            keyTitle: 'Key Activities',
+            keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
+        },
+        {
+            title: "Final Reporting",
+            days: "1 day",
+            quote: 'Comprehensive QA Summary',
+            content: "We deliver a detailed final report with test coverage metrics, resolved issues, performance benchmarks, and recommendations for ongoing maintenance and quality assurance.",
+            icon: <svg className="w-7 h-10 md:w-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" /></svg>,
+            colordark: "yellow-500",
+            colorlight: "yellow-50",
+            progress: "80%",
+            keyTitle: 'Key Activities',
+            keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
+        },
+        
     ];
 
     useEffect(() => {
@@ -94,9 +120,9 @@ export default function CardSlider() {
     return (
         <section className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
 
-            <div className="text-center leading-16">
+            <div className="text-center leading-8">
                 <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
-                <p className="text-gray-500">{headings.info}</p>
+                <p className="text-gray-500 my-8">{headings.info}</p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
 
