@@ -13,14 +13,11 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: 
-'/software-qa-testing-services-in-:city',
-        destination: 
-'/:city',
+        source: '/software-qa-testing-services-in-:city',
+        destination: '/:city',
       },
     ];
   },
 };
 module.exports = nextConfig;
-
 
