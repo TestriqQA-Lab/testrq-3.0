@@ -20,7 +20,7 @@ const RoboticTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your robotic systems deliver precise, reliable, and safe performance with our comprehensive testing services. From industrial automation to service robots - we validate every aspect of your robotic ecosystem
+              Ensure your robotic systems deliver precise, reliable, and safe performance with our comprehensive robotics testing services. From industrial automation to service robots - we validate every aspect of your robotic ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

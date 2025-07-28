@@ -92,8 +92,8 @@ const ElearningCaseStudiesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            See how our comprehensive e-learning testing solutions have helped educational institutions 
-            and corporate training programs achieve remarkable improvements in learning outcomes.
+            See how our comprehensive e-learning testing solutions have helped educational institutions and corporate learning platforms achieve remarkable improvements in learning outcomes, platform usability, and system reliability.
+
           </p>
         </div>
 

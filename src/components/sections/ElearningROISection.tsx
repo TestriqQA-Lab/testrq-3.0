@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  FaChartLine, 
-  FaGraduationCap, 
-  FaUsers, 
+import {
+  FaChartLine,
+  FaGraduationCap,
+  FaUsers,
   FaRocket,
   FaCheckCircle,
   FaCalculator,
@@ -125,15 +125,15 @@ const ElearningROISection: React.FC = () => {
             <FaChartLine className="w-4 h-4" />
             <span className="text-sm font-medium">Return on Investment</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Measurable ROI from
             <span className="block text-brand-blue">E-Learning Optimization</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our comprehensive e-learning testing approach delivers quantifiable results that directly impact 
-            learning outcomes, operational efficiency, and your organization&apos;s bottom line.
+            Our comprehensive e-learning QA testing approach delivers quantifiable results that directly impact learning outcomes, platform performance, operational efficiency, and your organization&apos;s bottom line.
+
           </p>
         </div>
 
@@ -156,7 +156,7 @@ const ElearningROISection: React.FC = () => {
           {businessImpact.map((sector, index) => (
             <div key={index} className="bg-gray-50 ring-1 ring-gray-300 rounded-3xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">{sector.category}</h3>
-              
+
               <div className="space-y-6">
                 {sector.metrics.map((metric, metricIndex) => (
                   <div key={metricIndex} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md ring-1 ring-brand-blue hover:ring-3 transition-all duration-300 ease-in-out">
@@ -177,8 +177,7 @@ const ElearningROISection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Cost-Benefit Analysis</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Typical ROI projection for a mid-sized educational institution or corporate training program
-            </p>
+              Typical ROI projection for a mid-sized e-learning platform, educational institution, or corporate training solution.            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -311,10 +310,10 @@ const ElearningROISection: React.FC = () => {
           <FaCalculator className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
           <h3 className="text-3xl font-bold mb-4">Calculate Your E-Learning ROI</h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Get a personalized ROI projection based on your current e-learning metrics, 
+            Get a personalized ROI projection based on your current e-learning metrics,
             user base, and organizational goals.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row text-brand-blue gap-4 justify-center">
             <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
               Get Free ROI Analysis
