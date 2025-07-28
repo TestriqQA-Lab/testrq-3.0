@@ -8,20 +8,91 @@ import BankingCaseStudiesSection from "@/components/sections/BankingCaseStudiesS
 import BankingROISection from "@/components/sections/BankingROISection";
 import BankingFAQSection from "@/components/sections/BankingFAQSection";
 import BankingContactSection from "@/components/sections/BankingContactSection";
+import { Metadata } from "next";
+import StructuredData, { bankingFinanceTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
-export const metadata = {
-  title: "Banking & Finance Testing Solutions | BFSI QA Services | Testriq",
-  description: "Expert banking and finance testing services for financial institutions, FinTech companies, and payment systems. Ensure regulatory compliance, security, and optimal performance across all financial platforms.",
-  keywords: "banking testing, finance testing, BFSI testing, financial software QA, payment gateway testing, core banking testing, regulatory compliance testing, FinTech testing, mobile banking QA",
-  openGraph: {
-    title: "Banking & Finance Testing Solutions | Testriq",
-    description: "Comprehensive QA testing services for banking and financial institutions, ensuring secure transactions, regulatory compliance, and exceptional user experiences.",
-    type: "website",
+export const metadata: Metadata = {
+  title: "Banking App Testing Services | QA for Finance Applications",
+  description: "Get secure, scalable, and compliant banking app testing with TESTRIQ QA Lab. Ensure performance, security, and regulatory compliance in finance applications..",
+  keywords: [
+    "banking testing solutions",
+    "BFSI QA services",
+    "PCI DSS compliance testing",
+    "core banking validation",
+    "mobile banking QA",
+    "financial software testing",
+    "banking automation testing",
+    "regulatory compliance testing",
+    "financial QA services",
+    "SOX testing",
+    "GDPR testing",
+    "security testing for banks"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: 'https://testriq.com/banking-finance-industry-testing-services',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/banking-finance-industry-testing-services',
+    siteName: 'Testriq - Banking & Finance QA Services',
+    title: 'Banking & Finance Testing Solutions | BFSI QA Services | Testriq',
+    description: 'Ensure secure, compliant, and high-performance banking platforms with Testriq’s comprehensive BFSI testing solutions. PCI DSS, SOX, GDPR compliant QA services.',
+    images: [
+      {
+        url: '/OG/Banking-Finance-testing-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Banking & Finance Testing Solutions | Testriq',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Banking & Finance Testing Solutions | BFSI QA Services | Testriq',
+    description: 'Secure your financial applications with Testriq’s expert BFSI testing services. Compliance, performance, and security all-in-one.',
+    images: ['/OG/Banking-Finance-testing-twitter.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+}
 };
 
+
 const BankingFinanceTestingPage: React.FC = () => {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/banking-finance-industry-testing-services" },
+    { name: "Banking FinanceTesting Service", url: "https://testriq.com/banking-finance-industry-testing-servicess" }
+  ];
   return (
+    <div>
+           <StructuredData data={bankingFinanceTestingServiceSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
     <main className="min-h-screen bg-white">
       <BankingHeroSection />
       <BankingChallengesSection />
@@ -33,6 +104,7 @@ const BankingFinanceTestingPage: React.FC = () => {
       <BankingFAQSection />
       <BankingContactSection />
     </main>
+    </div>
   );
 };
 

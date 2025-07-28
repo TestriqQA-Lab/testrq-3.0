@@ -1880,3 +1880,88 @@ export const iotTestingServiceSchema = {
   }
 };
 
+export const bankingFinanceTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Banking & Finance Testing Solutions",
+  "description": "Comprehensive BFSI testing services by Testriq including security testing, compliance validation (PCI DSS, SOX, GDPR), core banking QA, mobile banking validation, and performance testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Banking & Finance Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "BFSI Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Advanced penetration testing, vulnerability assessments, and threat modeling for financial systems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compliance Testing",
+          "description": "Validation for PCI DSS, SOX, GDPR, Basel III and other financial regulations."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Core Banking Validation",
+          "description": "QA for core banking platforms including account management, transactions, and data integrity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Banking QA",
+          "description": "Cross-platform testing for mobile apps with biometric, security, and offline functionality validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Stress, load, and scalability testing for high-volume banking transactions and peak loads."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automation Testing",
+          "description": "CI/CD integrated regression testing and automated workflows for BFSI platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Security Testing",
+          "description": "Testing for open banking APIs, OAuth validation, and secure financial integrations."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
