@@ -95,8 +95,8 @@ const EcommerceChallengesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            E-commerce platforms face unique challenges that can significantly impact revenue and customer satisfaction. 
-            Our testing solutions address these critical issues before they affect your bottom line.
+            E-commerce platforms face unique challenges such as performance bottlenecks, payment failures, and security vulnerabilities that can significantly impact revenue and customer satisfaction. Our e-commerce QA testing solutions address these critical issues through functional testing, checkout validation, and cross-browser compatibility testing — ensuring risks are mitigated before they affect your bottom line.
+
           </p>
         </div>
 

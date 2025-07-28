@@ -66,8 +66,8 @@ const EcommerceCaseStudiesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            See how our comprehensive e-commerce testing solutions have helped businesses 
-            increase revenue, improve customer satisfaction, and achieve their growth goals.
+            See how our end-to-end e-commerce testing services have helped businesses increase revenue, improve user experience, and achieve their e-commerce growth goals.
+
           </p>
         </div>
 
@@ -95,7 +95,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
 
                   {/* Testimonial */}
                   <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-[theme(color.brand.blue)]">
-                    <p className="text-gray-700 italic mb-4">&quote;{study.testimonial}&quote;</p>
+                    <p className="text-gray-700 italic mb-4">&quot;{study.testimonial}&quot;</p>
                     <p className="font-semibold text-gray-900">— {study.author}</p>
                   </div>
                 </div>

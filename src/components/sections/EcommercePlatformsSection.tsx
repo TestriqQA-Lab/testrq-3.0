@@ -23,7 +23,7 @@ const EcommercePlatformsSection: React.FC = () => {
             E-Commerce <span className="bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">Platform Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We test all major e-commerce platforms with specialized knowledge of their unique features and requirements.
+            We test all major e-commerce platforms with specialized knowledge of their framework-specific risks and requirements.
           </p>
         </div>
 

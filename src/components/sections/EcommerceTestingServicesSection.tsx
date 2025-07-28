@@ -35,7 +35,7 @@ const EcommerceTestingServicesSection: React.FC = () => {
             Comprehensive <span className="text-[theme(color.brand.blue)]">E-Commerce Testing</span> Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end testing solutions for every aspect of your e-commerce platform.
+            End-to-end e-commerce testing services for every aspect of your online shopping platform.
           </p>
         </div>
 

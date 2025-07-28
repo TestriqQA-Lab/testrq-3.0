@@ -66,8 +66,8 @@ const EcommerceROISection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our comprehensive testing approach delivers quantifiable results that directly impact 
-            your bottom line. See the average returns our clients achieve.
+            Our comprehensive e-commerce testing approach delivers quantifiable results through performance optimization and checkout validation that directly impact your bottom line. See the average returns our clients achieve.
+
           </p>
         </div>
 
