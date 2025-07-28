@@ -143,8 +143,8 @@ const QADocumentationCaseStudies = () => {
             Real Results from QA Documentation Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how our comprehensive QA documentation services have helped organizations across 
-            various industries achieve compliance, improve efficiency, and accelerate project delivery.
+            Discover how our comprehensive QA documentation services have helped organizations across various industries achieve compliance, enhance software quality assurance, improve documentation clarity and efficiency, and accelerate project delivery through well-structured test plans, test cases, and QA process documentation.
+
           </p>
         </div>
 

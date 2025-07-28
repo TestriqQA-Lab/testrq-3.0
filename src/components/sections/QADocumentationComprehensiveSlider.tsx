@@ -210,8 +210,8 @@ const QADocumentationComprehensiveSlider = () => {
             Comprehensive QA Documentation Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our complete range of QA documentation services designed to streamline your testing processes, 
-            ensure compliance, and maintain consistent quality standards across all your projects.
+            Explore our complete range of QA documentation services designed to streamline your testing roadmap, ensure requirements traceability and QA best practices, and maintain consistent quality assurance documentation standards across all your projects.
+
           </p>
         </div>
 
