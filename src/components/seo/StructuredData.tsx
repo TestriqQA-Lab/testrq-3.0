@@ -1546,3 +1546,97 @@ export const ecommerceTestingServiceSchema = {
   }
 };
 
+
+export const elearningTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "E-Learning Testing Services",
+  "description":
+    "Comprehensive testing for LMS platforms, online courses, and educational applications including accessibility compliance, SCORM/xAPI validation, video QA, mobile optimization, security, and performance testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "E-Learning Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "LMS Platform Testing",
+          "description":
+            "Functional and usability testing for Moodle, Canvas, Blackboard, Google Classroom, and custom LMS platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Accessibility Compliance Testing",
+          "description":
+            "Testing against WCAG 2.1 AA, ADA, Section 508, and EN 301 549 standards for inclusive education platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SCORM & xAPI Compliance Testing",
+          "description":
+            "SCORM 1.2/2004 and Tin Can (xAPI) compatibility testing across LMS environments and devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Multimedia & Video Content Testing",
+          "description":
+            "QA for video playback, audio clarity, captioning, device compatibility, and streaming optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Learning Optimization",
+          "description":
+            "Performance and usability testing across smartphones and tablets to reduce dropout and enhance engagement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Load Testing",
+          "description":
+            "Testing e-learning platforms for scalability, uptime, and stress-handling during high-traffic academic periods."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Privacy Testing",
+          "description":
+            "Ensuring GDPR, FERPA, and COPPA compliance through secure login, encryption, and data protection validation."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
