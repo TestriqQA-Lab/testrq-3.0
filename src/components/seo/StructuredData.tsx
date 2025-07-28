@@ -2105,3 +2105,69 @@ export const aboutPageSchema = {
 };
 
 
+export const ourTeamPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Meet Our Team - Testriq QA Lab",
+  "description": "Meet the certified QA professionals behind Testriq's success. Our team of ISTQB-certified experts brings decades of software testing experience across multiple domains.",
+  "url": "https://testriq.com/our-team",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com",
+    "logo": "https://testriq.com/images/Testriq_Logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9152929343",
+      "contactType": "customer support",
+      "email": "contact@testriq.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/testriq",
+      "https://twitter.com/testriq",
+      "https://www.facebook.com/testriq"
+    ]
+  },
+  "hasPart": {
+    "@type": "ItemList",
+    "name": "Testriq Team Members",
+    "itemListElement": [
+      {
+        "@type": "Person",
+        "name": "Sandeep Maske",
+        "jobTitle": "Founder & CEO",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#sandeep-maske"
+      },
+      {
+        "@type": "Person",
+        "name": "Santosh Kakade",
+        "jobTitle": "VP Operations",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#santosh-kakade"
+      },
+      {
+        "@type": "Person",
+        "name": "Goutam Mishra",
+        "jobTitle": "Head of QA and BD",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#goutam-mishra"
+      },
+      {
+        "@type": "Person",
+        "name": "Rohan Maske",
+        "jobTitle": "VP - Marketing",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#rohan-maske"
+      },
+      {
+        "@type": "Person",
+        "name": "Aatish Jadhav",
+        "jobTitle": "Senior Manager - Strategic Growth",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#aatish-jadhav"
+      }
+    ]
+  }
+};
+
