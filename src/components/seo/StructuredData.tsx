@@ -1522,7 +1522,7 @@ export const ecommerceTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for elearning Testing Service
 export const elearningTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1616,6 +1616,8 @@ export const elearningTestingServiceSchema = {
   }
 };
 
+
+// Service Schema for healthcare Testing Service
 export const healthcareTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1693,7 +1695,7 @@ export const healthcareTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for gaming Testing Service
 export const gamingTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1787,6 +1789,7 @@ export const gamingTestingServiceSchema = {
   }
 };
 
+// Service Schema for iot Testing Service
 export const iotTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1856,6 +1859,7 @@ export const iotTestingServiceSchema = {
   }
 };
 
+// Service Schema for banking Finance Testing Service
 export const bankingFinanceTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1941,6 +1945,7 @@ export const bankingFinanceTestingServiceSchema = {
   }
 };
 
+// Service Schema for telecommunication Testing
 export const telecommunicationTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -2018,6 +2023,7 @@ export const telecommunicationTestingSchema = {
   }
 };
 
+// Service Schema for about page
 export const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -2080,7 +2086,7 @@ export const aboutPageSchema = {
   }
 };
 
-
+// Service Schema for our Team Page
 export const ourTeamPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -2147,6 +2153,7 @@ export const ourTeamPageSchema = {
   }
 };
 
+// Service Schema for careers Page
 export const careersPageSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
