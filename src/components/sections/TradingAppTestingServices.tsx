@@ -1,0 +1,280 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  Smartphone,
+  Globe,
+  Zap,
+  Shield,
+  TrendingUp,
+  Database,
+  CheckCircle,
+  ArrowRight,
+  Clock,
+} from "lucide-react";
+
+const TradingAppTestingServices = () => {
+  const testingServices = [
+    {
+      icon: <Smartphone className="w-10 h-10" />,
+      title: "Mobile Trading App Testing",
+      description: "Comprehensive testing across iOS and Android platforms for optimal trading experience.",
+      features: [
+        "Cross-platform compatibility testing",
+        "Real-time data synchronization",
+        "Touch interface and gesture testing",
+        "App store compliance verification",
+      ],
+      color: "text-blue-600",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200",
+    },
+    {
+      icon: <Globe className="w-10 h-10" />,
+      title: "Web Trading Platform Testing",
+      description: "Full-stack web application testing for trading platforms and admin panels.",
+      features: [
+        "Cross-browser compatibility testing",
+        "Responsive design validation",
+        "Progressive web app (PWA) testing",
+        "SEO and accessibility compliance",
+      ],
+      color: "text-green-600",
+      bgColor: "bg-green-50",
+      borderColor: "border-green-200",
+    },
+    {
+      icon: <Zap className="w-10 h-10" />,
+      title: "Performance & Latency Testing",
+      description: "Low latency and high-frequency trading performance optimization.",
+      features: [
+        "Ultra-low latency testing",
+        "High-frequency trading validation",
+        "Market data feed testing",
+        "Order execution speed optimization",
+      ],
+      color: "text-purple-600",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200",
+    },
+    {
+      icon: <Shield className="w-10 h-10" />,
+      title: "Security & Penetration Testing",
+      description: "Comprehensive security assessment and penetration testing for financial platforms.",
+      features: [
+        "Financial data security testing",
+        "API security and endpoint protection",
+        "Authentication and authorization testing",
+        "Fraud detection system validation",
+      ],
+      color: "text-red-600",
+      bgColor: "bg-red-50",
+      borderColor: "border-red-200",
+    },
+    {
+      icon: <TrendingUp className="w-10 h-10" />,
+      title: "Algorithmic Trading Testing",
+      description: "Specialized testing for algorithmic and automated trading systems.",
+      features: [
+        "Algorithm validation and verification",
+        "Risk management system testing",
+        "Backtesting and simulation",
+        "Market impact analysis",
+      ],
+      color: "text-orange-600",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200",
+    },
+    {
+      icon: <Database className="w-10 h-10" />,
+      title: "Data Integrity & API Testing",
+      description: "Market data accuracy and trading API validation services.",
+      features: [
+        "Real-time market data validation",
+        "Trading API testing and validation",
+        "Data feed integration testing",
+        "Transaction reconciliation testing",
+      ],
+      color: "text-pink-600",
+      bgColor: "bg-pink-50",
+      borderColor: "border-pink-200",
+    },
+  ];
+
+  const testingProcess = [
+    {
+      step: "01",
+      title: "Trading Requirements Analysis",
+      description: "Comprehensive analysis of trading workflows, regulatory requirements, and performance benchmarks.",
+    },
+    {
+      step: "02",
+      title: "Test Strategy Development",
+      description: "Creation of detailed test strategy covering functional, performance, and security aspects.",
+    },
+    {
+      step: "03",
+      title: "Automated Test Execution",
+      description: "Systematic execution of automated and manual tests with real-time monitoring.",
+    },
+    {
+      step: "04",
+      title: "Performance Optimization",
+      description: "Performance tuning and optimization based on test results and industry benchmarks.",
+    },
+  ];
+
+  return (
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Comprehensive{" "}
+            <span className="text-brand-blue">Testing Services</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            End-to-end testing services specifically designed for trading platforms, 
+            covering every aspect from ultra-low latency to regulatory compliance.
+          </p>
+        </motion.div>
+
+        {/* Testing Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {testingServices.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
+            >
+              <div className={`${service.color} mb-4`}>
+                {service.icon}
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                {service.description}
+              </p>
+              
+              <div className="space-y-2">
+                {service.features.map((feature, featureIndex) => (
+                  <div key={featureIndex} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-gray-700">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Testing Process */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-xl p-8 shadow-lg mb-16"
+        >
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            Our Trading App Testing Process
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {testingProcess.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center relative"
+              >
+                <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                  {step.step}
+                </div>
+                
+                <h4 className="font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h4>
+                
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
+
+                {index < testingProcess.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 -right-3 text-brand-blue">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Performance Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.0 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4">
+              Performance Metrics We Deliver
+            </h3>
+            <p className="text-blue-100 max-w-2xl mx-auto">
+              Our testing services ensure your trading app meets the highest performance standards 
+              with measurable improvements in speed, reliability, and user satisfaction.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { metric: "< 1ms", label: "Order Execution Latency", icon: <Clock className="w-6 h-6" /> },
+              { metric: "99.99%", label: "Uptime Guarantee", icon: <Shield className="w-6 h-6" /> },
+              { metric: "10,000+", label: "Orders/Second", icon: <TrendingUp className="w-6 h-6" /> },
+              { metric: "Zero", label: "Critical Bugs", icon: <CheckCircle className="w-6 h-6" /> },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center bg-white/10 rounded-lg p-4"
+              >
+                <div className="text-white mb-2 flex justify-center">{item.icon}</div>
+                <div className="text-2xl font-bold mb-1">{item.metric}</div>
+                <div className="text-blue-100 text-sm">{item.label}</div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2 mx-auto">
+              Start Performance Assessment
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default TradingAppTestingServices;
+
