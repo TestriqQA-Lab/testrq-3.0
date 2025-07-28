@@ -117,8 +117,8 @@ const SecurityTestingProvenTestingProcess: React.FC = () => {
             Our Proven <span className="text-brand-blue">Security Testing Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic security testing process ensures comprehensive evaluation of application security, vulnerability identification, 
-            and effective remediation to protect against cyber threats and maintain the highest security standards.
+            Our systematic security testing process ensures comprehensive evaluation of application security, vulnerability identification, and effective remediation to protect against cyber threats and maintain the highest security standards, including regulatory compliance and data protection.
+
           </p>
         </div>
 
@@ -216,8 +216,7 @@ const SecurityTestingProvenTestingProcess: React.FC = () => {
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Security Testing Process Benefits</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our proven security testing process ensures comprehensive protection against cyber threats while maintaining 
-              compliance with industry security standards and best practices.
+              Our proven security testing process ensures comprehensive protection against cyber threats while maintaining compliance with industry security standards such as ISO 27001, PCI DSS, and HIPAA, and aligning with secure code practices and industry best practices.
             </p>
           </div>
 

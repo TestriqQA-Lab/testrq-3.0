@@ -88,8 +88,8 @@ const QADocumentationWhyChooseTestriq = () => {
             Your Trusted Partner for Professional QA Documentation
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            With over 15 years of experience and 500+ successful projects, we deliver comprehensive QA documentation 
-            solutions that enhance team productivity, ensure compliance, and accelerate project delivery.
+            With over 15 years of experience and 500+ successful projects, we deliver comprehensive QA documentation solutions that enhance team productivity through documentation clarity, ensure compliance with QA standards documentation, and accelerate project delivery with structured test plans and requirements analysis.
+
           </p>
         </div>
 
@@ -98,9 +98,9 @@ const QADocumentationWhyChooseTestriq = () => {
           {advantages.map((advantage, index) => {
             const IconComponent = advantage.icon;
             const colors = getColorClasses(advantage.color);
-            
+
             return (
-              <div 
+              <div
                 key={index}
                 className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200 group"
               >
@@ -130,7 +130,7 @@ const QADocumentationWhyChooseTestriq = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Proven Track Record of Success</h3>
             <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Our comprehensive QA documentation services have helped organizations worldwide improve their 
+              Our comprehensive QA documentation services have helped organizations worldwide improve their
               testing processes and achieve measurable results.
             </p>
           </div>
@@ -166,7 +166,7 @@ const QADocumentationWhyChooseTestriq = () => {
               Certifications & Industry Standards
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our team holds industry-leading certifications and follows international standards 
+              Our team holds industry-leading certifications and follows international standards
               to ensure the highest quality documentation delivery.
             </p>
           </div>
@@ -218,11 +218,11 @@ const QADocumentationWhyChooseTestriq = () => {
           <div className="text-center">
             <div className="mb-8">
               <svg className="w-12 h-12 text-blue-600 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
               <blockquote className="text-2xl font-medium text-gray-900 mb-6">
-                &quot;Testriq&apos;s QA documentation services transformed our testing processes. Their comprehensive documentation 
-                reduced our onboarding time by 50% and improved our overall quality delivery significantly.&quot;
+                &quot;Testriq&apos;s QA documentation services transformed our testing processes. Their comprehensive quality assurance documentation and well-structured test case documentation reduced our onboarding time by 50% and significantly improved our overall QA deliverables and quality delivery.
+                &quot;
               </blockquote>
               <div className="text-lg font-semibold text-gray-900">Sarah Johnson</div>
               <div className="text-gray-600">VP of Quality Assurance, TechCorp Solutions</div>

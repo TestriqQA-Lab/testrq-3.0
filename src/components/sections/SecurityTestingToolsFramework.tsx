@@ -205,8 +205,8 @@ const SecurityTestingToolsFramework: React.FC = () => {
             Security Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading security testing tools and frameworks to provide comprehensive vulnerability assessment, 
-            penetration testing, and security validation across all technology platforms and environments.
+            We leverage industry-leading security testing tools and frameworks such as OWASP ZAP, Burp Suite, Metasploit, and Nessus to provide comprehensive vulnerability assessments, penetration testing, and security validation across all technology platforms and environments.
+
           </p>
         </div>
 

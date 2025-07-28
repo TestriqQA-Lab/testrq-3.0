@@ -121,8 +121,8 @@ const PerformanceTestingToolsFramework: React.FC = () => {
             Performance Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading performance testing tools and frameworks to deliver comprehensive, 
-            accurate, and efficient performance validation that ensures optimal application speed and scalability.
+            We leverage industry-leading performance testing tools and frameworks such as Apache JMeter, Gatling, K6, Prometheus, New Relic, and Grafana to deliver comprehensive, accurate, and efficient performance validation that ensures optimal application performance, speed, and scalability across all environments.
+
           </p>
         </div>
 

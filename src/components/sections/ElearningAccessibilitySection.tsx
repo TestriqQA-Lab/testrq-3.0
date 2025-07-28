@@ -113,7 +113,7 @@ const ElearningAccessibilitySection: React.FC = () => {
             <span className="text-sm font-medium">Accessibility & Inclusion</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Making E-Learning
             <span className="block text-brand-blue">Accessible to Everyone</span>
           </h2>

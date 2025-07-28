@@ -15,12 +15,12 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
       color: "blue",
       description: "Comprehensive validation of application functionality against business requirements",
       features: [
-        "Business logic validation",
-        "Feature functionality testing",
-        "Input/output verification",
-        "Error handling validation",
-        "Workflow testing",
-        "Data integrity checks"
+        "Business logic validation to ensure alignment with core requirements",
+        "Feature functionality testing for end-to-end use case coverage",
+        "Input/output verification to confirm accurate data handling",
+        "Error handling validation for robust system behavior",
+        "Workflow testing across user journeys and process flows",
+        "Data integrity checks to maintain consistency and reliability"
       ]
     },
     {
@@ -125,7 +125,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive manual testing services designed to ensure exceptional software quality through human-centered testing approaches.
+            Explore our comprehensive manual testing services built to ensure exceptional software quality through human-centered testing approaches, including functional testing, usability testing, exploratory testing, and UAT—executed by ISTQB-certified experts.
           </p>
         </div>
 

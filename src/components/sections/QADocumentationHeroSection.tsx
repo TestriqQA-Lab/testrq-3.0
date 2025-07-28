@@ -5,7 +5,7 @@ const QADocumentationHeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 py-16  px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-white/60"></div>
-      
+
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
@@ -14,18 +14,18 @@ const QADocumentationHeroSection = () => {
               <FaFileAlt className="mr-2" />
               QA Documentation Specialists
             </div>
-            
+
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Professional <span className="text-brand-blue">QA Documentation</span> Services
               </h1>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed">
-                Comprehensive quality assurance documentation services to streamline your testing processes, ensure compliance, and maintain consistent quality standards across all software development projects.
+                Comprehensive quality assurance documentation services to streamline your QA process documentation, ensure requirements traceability, and maintain consistent QA standards documentation across all software development projects.
               </p>
-              
+
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert technical writers and QA professionals create detailed test plans, test cases, requirements documentation, and process documentation that enhance team collaboration, reduce errors, and accelerate project delivery.
+                Our expert technical writers and QA professionals create detailed test plans, test cases, requirements documentation, and QA deliverables that enhance client collaboration, reduce errors, and accelerate project delivery.
               </p>
             </div>
 
@@ -36,7 +36,7 @@ const QADocumentationHeroSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
-              
+
               <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200">
                 <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
@@ -138,7 +138,7 @@ const QADocumentationHeroSection = () => {
                     <span>87% Complete</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style={{width: '87%'}}></div>
+                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style={{ width: '87%' }}></div>
                   </div>
                 </div>
 

@@ -74,8 +74,7 @@ const ManualTestingCaseStudies: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our comprehensive manual testing services have helped organizations across various industries 
-            achieve exceptional software quality, improved user experiences, and significant business outcomes.
+            Discover how our comprehensive manual testing services have helped organizations across industries achieve exceptional software quality, enhanced user experiences, and measurable business outcomes.
           </p>
         </div>
 

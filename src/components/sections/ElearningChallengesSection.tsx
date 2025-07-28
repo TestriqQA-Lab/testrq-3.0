@@ -131,7 +131,7 @@ const ElearningChallengesSection: React.FC = () => {
             <span className="text-sm font-medium text-red-600">E-Learning Challenges</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Critical E-Learning Issues
             <span className="block text-brand-blue">Blocking Educational Success</span>
           </h2>

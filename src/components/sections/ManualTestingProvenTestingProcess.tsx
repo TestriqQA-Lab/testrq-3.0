@@ -14,10 +14,10 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       icon: <FaClipboardList className="text-2xl" />,
       description: "Comprehensive test planning including requirement analysis, test strategy definition, and resource allocation.",
       activities: [
-        "Requirement analysis and understanding",
-        "Test strategy and approach definition",
-        "Test environment setup planning",
-        "Resource allocation and timeline planning"
+        "Requirement analysis and understanding to align test objectives with business needs",
+        "Test strategy and approach definition for structured manual testing execution",
+        "Test environment setup planning to mirror real-world conditions",
+        "Resource allocation and timeline planning to ensure efficient delivery and faster time-to-market"
       ],
       nextStep: "Test Case Design"
     },
@@ -28,10 +28,10 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       icon: <FaFileAlt className="text-2xl" />,
       description: "Detailed test case creation covering functional, usability, and edge case scenarios.",
       activities: [
-        "Test case design and documentation",
-        "Test data preparation",
-        "Test scenario prioritization",
-        "Traceability matrix creation"
+        "Test case design and documentation to ensure clear, repeatable manual test coverage",
+        "Test data preparation for accurate and context-aware scenario execution",
+        "Test scenario prioritization based on risk and business impact",
+        "Traceability matrix creation to link test cases with requirements and ensure complete validation"
       ],
       nextStep: "Test Execution"
     },
@@ -87,8 +87,7 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
             Our <span className="text-brand-blue">Proven</span> Manual Testing Process
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic manual testing process ensures comprehensive coverage, efficient execution, 
-            and reliable results through structured methodologies and expert human insight.
+            Our systematic manual testing process ensures comprehensive test coverage, efficient execution, and reliable results by combining structured testing methodologies with expert human insight and ISTQB-certified practices.
           </p>
         </div>
 

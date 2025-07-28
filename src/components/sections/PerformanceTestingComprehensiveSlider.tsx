@@ -125,7 +125,7 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
             Performance Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive performance testing services designed to ensure your applications are fast, scalable, and stable under any load.
+            Explore our comprehensive performance testing services designed to ensure your applications are fast, scalable, and stable under any load. Our solutions focus on application performance, scalability testing, and load simulation to deliver high-speed, reliable digital experiences.
           </p>
         </div>
 

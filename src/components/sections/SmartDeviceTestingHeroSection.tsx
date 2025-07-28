@@ -22,9 +22,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your smart devices deliver seamless connectivity, optimal performance, 
-              and robust security with our comprehensive testing services. From wearables to 
-              smart home devices - we validate every aspect of your connected ecosystem.
+              Ensure your smart devices deliver seamless connectivity, optimal performance, and robust security with our smart device testing services. From wearables to smart home devices – we validate every aspect of your IoT device and connected ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

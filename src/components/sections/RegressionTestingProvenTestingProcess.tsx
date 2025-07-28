@@ -87,23 +87,21 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
             Our <span className="text-brand-blue">Proven</span> Regression Testing Process
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic regression testing process ensures comprehensive validation of software stability 
-            and quality with every release, minimizing risks and maintaining user satisfaction.
+            Our systematic regression testing process ensures comprehensive validation of software stability and quality with every release, minimizing risks and maintaining user satisfaction.
           </p>
         </div>
 
         <div className="relative">
           {/* Process Timeline */}
           <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
-          
+
           {/* Process Steps */}
           <div className="space-y-12">
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } flex-col lg:space-x-8`}
+                className={`relative flex items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } flex-col lg:space-x-8`}
                 onClick={() => setActiveStep(step.id)}
               >
                 {/* Step Number Circle */}
@@ -114,9 +112,8 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
                 {/* Step Content */}
                 <div className={`w-full lg:w-5/12 `}>
                   <div
-                    className={`bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
-                      activeStep === step.id ? "ring-2 ring-brand-blue" : ""
-                    }`}
+                    className={`bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${activeStep === step.id ? "ring-2 ring-brand-blue" : ""
+                      }`}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="bg-brand-blue w-12 h-12 rounded-xl flex items-center justify-center">
@@ -127,7 +124,7 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
                         <span className="text-sm text-brand-blue font-medium">{step.duration}</span>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {step.description}
                     </p>

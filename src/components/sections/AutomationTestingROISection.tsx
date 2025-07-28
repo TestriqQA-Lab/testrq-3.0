@@ -12,8 +12,7 @@ const AutomationTestingROISection: React.FC = () => {
             Realizing the <span className="text-brand-blue">ROI of Automation</span> Testing
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Automation testing is an investment that yields significant returns by accelerating development cycles, 
-            improving software quality, and reducing long-term operational costs. See how Testriq helps you maximize your ROI.
+            Automation testing delivers high ROI by speeding up development, enhancing software quality, and cutting long-term costs. Discover how Testriq helps maximize your returns.
           </p>
         </div>
 

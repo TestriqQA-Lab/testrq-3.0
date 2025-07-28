@@ -20,7 +20,7 @@ const AIProvenTestingProcess: React.FC = () => {
       title: "Data & Model Analysis",
       shortTitle: "Analysis",
       description:
-        "Comprehensive analysis of training data, model architecture, and AI requirements to create a detailed testing strategy.",
+        "Comprehensive analysis of training data, model architecture, and AI requirements to create a tailored testing strategy for optimal AI performance.",
       details: [
         "Training data quality assessment",
         "Model architecture review",
@@ -95,8 +95,7 @@ const AIProvenTestingProcess: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures comprehensive AI testing coverage,
-            delivering accurate, fair, and reliable intelligent systems.
+            Our systematic approach ensures end-to-end AI testing coverage, delivering accurate, fair, and reliable intelligent systems.
           </p>
         </div>
 

@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { CityData } from "@/app/lib/CityData";
-import { ChevronDown, ChevronUp, HelpCircle, Phone, Mail } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Mail } from 'lucide-react';
 
 interface CityTestingFAQsSectionProps {
   cityData: CityData;

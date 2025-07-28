@@ -31,10 +31,8 @@ const SecurityTestingReadyToEnsureQuality: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            Partner with our expert security testing team to protect your
-            applications from cyber threats, ensure compliance with security
-            standards, and maintain the highest levels of data protection and
-            user trust.
+            Partner with our expert security testing team to protect your applications from cyber threats, ensure compliance with security standards like PCI DSS, GDPR, and HIPAA, and maintain the highest levels of data protection, application security, and user trust.
+
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

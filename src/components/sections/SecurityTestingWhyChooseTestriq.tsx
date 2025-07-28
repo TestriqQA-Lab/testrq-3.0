@@ -69,8 +69,8 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Security Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive security testing solutions that protect your applications from cyber threats, 
-            ensure regulatory compliance, and maintain the highest standards of data protection and user trust.
+            Testriq delivers comprehensive security testing solutions that protect your applications from cyber threats, ensure regulatory compliance with standards like GDPR and HIPAA, and maintain the highest standards of data protection, application security, and user trust.
+
           </p>
         </div>
 
@@ -105,8 +105,8 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Security Testing Success Metrics</h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Proven track record of delivering exceptional security testing results that protect organizations from cyber threats 
-              and ensure compliance with industry security standards.
+              Proven track record of delivering exceptional security testing results that protect organizations from cyber threats, ensure compliance with industry security standards like PCI DSS and ISO 27001, and support strong risk analysis and vulnerability assessments.
+
             </p>
           </div>
 
@@ -135,8 +135,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Security Certifications & Expertise</h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Our security testing team holds industry-leading certifications and follows established security frameworks 
-              to ensure comprehensive protection and compliance validation.
+              Our security testing team holds industry-leading certifications such as CEH, CISSP, and OSCP, and follows established security frameworks and secure development lifecycle practices to ensure comprehensive protection, compliance validation, and alignment with regulatory standards.
             </p>
             
             <div className="space-y-4">

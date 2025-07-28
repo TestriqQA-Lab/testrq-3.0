@@ -38,7 +38,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     {
       id: 3,
       title: "Connectivity & Security Testing",
-      description: "Executing comprehensive connectivity tests and security validations to ensure reliable and secure device operation.",
+      description: "Executing comprehensive connectivity tests and smart device security testing validations to ensure reliable and secure device operation.",
       icon: <FaShieldAlt className="w-6 h-6" />,
       activities: [
         "Connectivity testing execution",

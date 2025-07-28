@@ -205,8 +205,8 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
             Security Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Explore our comprehensive security testing services designed to protect your applications from cyber threats, 
-            ensure compliance with security standards, and maintain the highest levels of data protection and user trust.
+            Explore our comprehensive security testing services designed to protect your applications from cyber threats, ensure compliance with security standards like GDPR, HIPAA, and PCI DSS, and maintain the highest levels of data protection and user trust.
+
           </p>
         </div>
 

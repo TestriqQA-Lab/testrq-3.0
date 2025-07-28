@@ -27,10 +27,7 @@ const ManualTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Leverage human intuition and expertise to uncover critical usability issues, 
-              edge cases, and user experience problems that automated testing can&apos;t detect. Our skilled 
-              manual testers ensure your software delivers exceptional quality 
-              through comprehensive functional, usability, and exploratory testing.
+              Leverage human intuition and testing expertise to uncover critical usability issues, edge cases, and user experience challenges that automated testing often misses. Our skilled manual testers ensure your software delivers exceptional quality through comprehensive functional testing, usability testing, and exploratory testing—powered by ISTQB-certified professionals and real-world insight.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

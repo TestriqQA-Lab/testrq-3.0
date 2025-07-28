@@ -10,42 +10,42 @@ const IoTFAQs: React.FC = () => {
     {
       question: "What types of IoT devices can you test?",
       answer:
-        "We test all types of IoT devices including smart home devices, industrial sensors, wearables, connected vehicles, medical devices, smart city infrastructure, and edge computing devices across various protocols like WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular.",
+        "We test a wide range of IoT devices, including smart home devices (e.g., lights, thermostats, locks), industrial IoT systems (e.g., sensors, actuators), wearable devices, healthcare monitors, and automotive IoT solutions. Our testing covers hardware, firmware, and software across consumer, industrial, and enterprise applications.",
     },
     {
       question: "How do you test IoT device security?",
       answer:
-        "Our IoT security testing includes device authentication, data encryption validation, network security assessment, firmware analysis, vulnerability scanning, penetration testing, and compliance with IoT security frameworks like OWASP IoT Top 10.",
+        "We conduct comprehensive security testing using tools like Nmap, Metasploit, and OWASP ZAP to identify vulnerabilities. Our process includes device authentication testing, data encryption validation, penetration testing, and privacy protection assessments to ensure zero vulnerabilities and compliance with standards like GDPR and IoT Security Foundation guidelines.",
     },
     {
       question: "What IoT protocols do you support?",
       answer:
-        "We support testing for all major IoT protocols including MQTT, CoAP, HTTP/HTTPS, WebSocket, Bluetooth LE, WiFi, Zigbee, Z-Wave, LoRaWAN, NB-IoT, LTE-M, and proprietary protocols used in industrial IoT applications.",
+        "We support 15+ IoT protocols, including WiFi, Bluetooth LE, Zigbee, Z-Wave, MQTT, CoAP, LoRaWAN, and cellular (4G/5G). Our testing ensures protocol compliance, interoperability, and reliable data transmission across diverse network environments using tools like Wireshark and MQTT.fx.",
     },
     {
       question: "How long does IoT device testing take?",
       answer:
-        "The duration depends on device complexity and testing scope. Simple device testing can take 2-3 weeks, while comprehensive testing for complex IoT ecosystems may take 6-10 weeks. We provide detailed timelines during the planning phase.",
+        "IoT device testing typically takes 2-4 weeks, depending on device complexity and testing scope. Our 4-step process (Analysis: 2-3 days, Security: 4-6 days, Performance: 3-5 days, Delivery: 2-3 days) ensures efficient execution, with rapid 36-hour turnaround for urgent validations.",
     },
     {
       question: "Do you test IoT device interoperability?",
       answer:
-        "Yes, we perform comprehensive interoperability testing to ensure your IoT devices work seamlessly with different platforms, operating systems, cloud services, and other connected devices in the ecosystem.",
+        "Yes, we validate interoperability across devices, protocols, and platforms using real-world scenarios and simulation tools. Our testing ensures seamless communication between devices (e.g., hubs, sensors, apps) and compatibility with cloud platforms like AWS IoT and Azure IoT Hub.",
     },
     {
       question: "Can you test IoT devices at scale?",
       answer:
-        "Absolutely! We can simulate large-scale IoT deployments to test device performance, network capacity, data handling, and system scalability under real-world conditions with thousands of connected devices.",
+        "We test IoT devices at scale using automated frameworks like Robot Framework and load testing tools like JMeter and Gatling. Our testing simulates thousands of concurrent devices, validates scalability, and ensures performance under high-traffic conditions for enterprise-grade IoT ecosystems.",
     },
     {
       question: "What deliverables do you provide for IoT testing?",
       answer:
-        "We provide comprehensive IoT testing reports, security assessment reports, performance benchmarks, interoperability test results, compliance validation reports, automated test scripts, and detailed recommendations for optimization.",
+        "Deliverables include detailed test reports, bug logs with reproduction steps, security vulnerability assessments, performance benchmarks, and actionable recommendations. We provide visual evidence (screenshots/videos) and integrate reports with tools like Jira or Azure DevOps for seamless collaboration.",
     },
     {
       question: "Do you test edge computing and IoT analytics?",
       answer:
-        "Yes, we test edge computing capabilities, real-time data processing, IoT analytics platforms, machine learning models running on edge devices, and the integration between edge and cloud systems.",
+        "Yes, we test edge computing and IoT analytics using tools like Docker, Kubernetes, and Prometheus. Our testing validates edge device performance, data processing, and analytics accuracy, ensuring seamless integration with cloud platforms and real-time data insights.",
     },
   ];
 
@@ -100,7 +100,7 @@ const IoTFAQs: React.FC = () => {
             Have more questions about our IoT testing services?
           </p>
           <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Contact Our IoT Experts
+            Contact our IoT testing experts for personalized answers and tailored solutions.
           </button>
         </div>
       </div>

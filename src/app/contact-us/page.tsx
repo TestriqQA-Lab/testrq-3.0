@@ -34,45 +34,31 @@ export const metadata: Metadata = {
     canonical: 'https://testriq.com/contact-us',
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testriq.com/contact-us',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Contact Us | Get in Touch with Testriq QA Experts | Testriq',
-    description: 'Reach out to Testriq for expert QA consultations, support, or partnerships. Call, email, chat, or schedule a meeting with our certified software testing specialists.',
+    title: "Contact Us | Get in Touch with Testriq QA Experts",
+    description: "Reach out to Testriq for your QA and software testing needs.",
+    type: "website",
+    url: "https://testriq.com/contact-us",
     images: [
       {
-        url: '/og/testriq-contact-page-og-img.webp',
+        url: "/OG/og_image_final.png",
         width: 1200,
         height: 630,
-        alt: 'Contact Testriq QA Experts',
-        type: 'image/webp',
-      }
+        alt: "Testriq Contact Us OG Image",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Contact Us | Get in Touch with Testriq QA Experts | Testriq',
-    description: 'Reach out to Testriq for expert QA consultations, support, or partnerships. Call, email, chat, or schedule a meeting with our certified software testing specialists.',
-    images: ['/og/testriq-contact-page-og-img.webp'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    card: "summary_large_image",
+    title: "Contact Us | Get in Touch with Testriq QA Experts",
+    description: "Reach out to Testriq for your QA and software testing needs.",
+    images: [
+      {
+        url: "/OG/twitter_image_final.png",
+        width: 1200,
+        height: 675,
+        alt: "Testriq Contact Us Twitter Image",
+      },
+    ],
   },
 };
 

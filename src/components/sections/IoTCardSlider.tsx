@@ -32,7 +32,7 @@ const IoTCardSlider: React.FC = () => {
     {
       title: "Security & Privacy Testing",
       description:
-        "Comprehensive security assessment to protect your IoT devices from threats and vulnerabilities.",
+        "Comprehensive security assessment to protect your IoT devices from threats and vulnerabilities with robust encryption and privacy protocols.",
       features: [
         "Device authentication testing",
         "Data encryption validation",

@@ -68,8 +68,7 @@ const ExploratoryToolsFramework: React.FC = () => {
             Exploratory Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage specialized tools and frameworks designed for exploratory testing to ensure systematic 
-            investigation, comprehensive documentation, and effective collaboration throughout the exploration process.
+            We leverage specialized tools and frameworks purpose-built for exploratory testing to enable systematic investigation, comprehensive documentation, and seamless collaboration throughout the exploration process.
           </p>
         </div>
 
@@ -109,8 +108,7 @@ const ExploratoryToolsFramework: React.FC = () => {
               Exploratory Testing Methodologies
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our systematic approach combines proven exploration techniques with modern tools 
-              to ensure comprehensive coverage and maximum issue discovery.
+              Our systematic exploratory approach blends proven investigation techniques with modern testing tools to ensure comprehensive coverage and maximum issue discovery across your application.
             </p>
           </div>
 
@@ -140,8 +138,7 @@ const ExploratoryToolsFramework: React.FC = () => {
             Exploration Techniques & Approaches
           </h3>
           <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
-            Our team employs various exploration techniques and approaches to ensure comprehensive 
-            coverage and effective issue discovery across different application types and domains.
+            Our team applies diverse exploration techniques and investigation approaches to ensure comprehensive coverage and effective issue discovery across all application types and domains.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[

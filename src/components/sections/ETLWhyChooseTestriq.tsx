@@ -11,7 +11,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaDatabase className="w-8 h-8" />,
       metric: "500+ ETL Pipelines Tested",
       title: "ETL Testing Experts",
-      description: "Our team consists of certified ETL testing professionals with extensive experience in data integration and pipeline validation.",
+      description: "Our team includes certified ETL testing professionals with deep expertise in data integration, pipeline validation, and ensuring data accuracy, quality assurance, and compliance across complex ETL workflows.",
       capabilities: [
         "Data Pipeline Testing",
         "ETL Process Validation",
@@ -24,7 +24,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaShieldAlt className="w-8 h-8" />,
       metric: "Zero Data Breaches",
       title: "Data Security Excellence",
-      description: "Advanced security testing protocols to ensure your ETL processes meet the highest security standards and compliance requirements.",
+      description: "We implement advanced security testing protocols to ensure your ETL processes meet the highest levels of data security, regulatory compliance, and access control validation, safeguarding sensitive information throughout the pipeline.",
       capabilities: [
         "Data Encryption Testing",
         "Access Control Validation",
@@ -37,7 +37,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaChartLine className="w-8 h-8" />,
       metric: "99.8% Data Accuracy",
       title: "Quality Assurance",
-      description: "Comprehensive data quality testing and validation to ensure your ETL processes deliver accurate and reliable data.",
+      description: "We perform comprehensive data quality testing and validation to ensure your ETL processes deliver accurate, reliable, and business-ready data across all extraction, transformation, and loading stages.",
       capabilities: [
         "Data Accuracy Testing",
         "Quality Metrics",
@@ -50,7 +50,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaClock className="w-8 h-8" />,
       metric: "60% Performance Boost",
       title: "Performance Optimization",
-      description: "Advanced performance testing and optimization to ensure your ETL pipelines operate at peak efficiency and scalability.",
+      description: "We conduct advanced performance testing and optimization to ensure your ETL pipelines run at peak efficiency, support high scalability, and maintain consistent data processing speed under heavy loads.",
       capabilities: [
         "Performance Testing",
         "Bottleneck Analysis",
@@ -63,7 +63,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaUsers className="w-8 h-8" />,
       metric: "24/7 Support",
       title: "Dedicated Support",
-      description: "24/7 support from our ETL testing specialists who understand your unique data challenges and business requirements.",
+      description: "Get 24/7 support from our dedicated ETL testing specialists, equipped to handle your unique data challenges, pipeline complexities, and business-specific requirements with expert guidance and rapid issue resolution.",
       capabilities: [
         "Expert Consultation",
         "Technical Support",
@@ -76,7 +76,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       icon: <FaRocket className="w-8 h-8" />,
       metric: "36hr Turnaround",
       title: "Rapid Testing Cycles",
-      description: "Fast and efficient ETL testing processes with comprehensive reporting and quick turnaround times for faster deployment.",
+      description: "Experience fast and efficient ETL testing processes with comprehensive reporting, quick turnaround times, and accelerated data pipeline validation for faster deployment and reduced time-to-production.",
       capabilities: [
         "Rapid Testing",
         "Quick Reports",
@@ -107,8 +107,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
             <span className="text-brand-blue">Why Choose Testriq</span> for ETL Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We combine ETL expertise with testing excellence to deliver ETL testing services that ensure reliable, 
-            accurate, and high-performance data pipelines for your business-critical applications and analytics.
+            We combine ETL expertise with testing excellence to deliver ETL testing services that ensure reliable, accurate, and high-performance data pipelines for your business-critical applications, data integration workflows, and analytics platforms.
           </p>
         </div>
 
@@ -221,8 +220,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
               Ready to Validate ETL Excellence?
             </h3>
             <p className="text-gray-600">
-              Join 300+ companies who trust our ETL testing expertise. Get started with a comprehensive 
-              data pipeline assessment and ensure your ETL processes are reliable and accurate.
+              Join 300+ companies that trust our ETL testing expertise. Start with a comprehensive data pipeline assessment to ensure your ETL processes are reliable, accurate, and optimized for performance and compliance.
             </p>
           </div>
           <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">

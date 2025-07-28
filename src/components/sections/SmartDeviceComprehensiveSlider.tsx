@@ -126,8 +126,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
             Complete Smart Device Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive smart device testing services cover every aspect of your connected device ecosystem, 
-            ensuring reliability, security, and optimal performance across all smart device types and applications.
+            Our smart product testing services cover every aspect of your connected device ecosystem, ensuring reliability, security, and optimal performance across all smart devices and smart appliances.
           </p>
         </div>
 
@@ -154,14 +153,14 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
               <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 ${getColorClasses(testingTypes[activeTab].color, false)}`}>
                 {testingTypes[activeTab].coverage}
               </div>
-              
+
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <span className={`mr-3 p-2 rounded-lg ${getColorClasses(testingTypes[activeTab].color, false)}`}>
                   {testingTypes[activeTab].icon}
                 </span>
                 {testingTypes[activeTab].title}
               </h3>
-              
+
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {testingTypes[activeTab].description}
               </p>
@@ -192,11 +191,11 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                       {testingTypes[activeTab].icon}
                     </div>
                   </div>
-                  
+
                   <h4 className="font-bold text-gray-900 mb-2">
                     {testingTypes[activeTab].title}
                   </h4>
-                  
+
                   <div className={`text-sm font-semibold ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[1]}`}>
                     {testingTypes[activeTab].coverage}
                   </div>
@@ -212,7 +211,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div 
+                          <div
                             className={`h-2 rounded-full ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[0]}`}
                             style={{ width: `${96 + index * 2}%` }}
                           ></div>

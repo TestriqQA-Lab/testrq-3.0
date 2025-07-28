@@ -52,7 +52,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
     {
       id: 4,
       title: "Performance & Integration Testing",
-      description: "Advanced performance testing and system integration validation to ensure optimal robotic operation in real-world scenarios.",
+      description: "Advanced performance testing, test automation for robotics, and system integration validation to ensure optimal operation in real-world scenarios.",
       icon: <FaChartLine className="w-6 h-6" />,
       activities: [
         "Performance optimization testing",
@@ -66,7 +66,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
     {
       id: 5,
       title: "Validation & Delivery",
-      description: "Final validation, comprehensive reporting, and delivery of certified robotic systems with detailed documentation.",
+      description: "Final validation, end-user validation for robotics platforms, and delivery of certified systems with documentation.",
       icon: <FaCheckCircle className="w-6 h-6" />,
       activities: [
         "Final validation testing",

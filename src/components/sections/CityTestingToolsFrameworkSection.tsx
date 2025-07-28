@@ -1,20 +1,15 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { CityData } from "@/app/lib/CityData";
 import {
   Settings,
-  Code,
-  Shield,
   Zap,
-  TrendingUp,
   Star,
   CheckCircle,
   ArrowRight,
   Monitor,
-  Smartphone,
-  Cloud,
   Database
 } from 'lucide-react';
 
@@ -23,16 +18,16 @@ interface CityTestingToolsFrameworkSectionProps {
 }
 
 const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectionProps> = ({ cityData }) => {
-  const [activeCategory, setActiveCategory] = useState(0);
+  // const [activeCategory, setActiveCategory] = useState(0);
 
-  const categoryIcons = {
-    'Automation Testing Tools': Code,
-    'Performance Testing Tools': Zap,
-    'API Testing Tools': Database,
-    'Security Testing Tools': Shield,
-    'Mobile Testing Tools': Smartphone,
-    'Cloud Testing Tools': Cloud
-  };
+  // const categoryIcons = {
+  //   'Automation Testing Tools': Code,
+  //   'Performance Testing Tools': Zap,
+  //   'API Testing Tools': Database,
+  //   'Security Testing Tools': Shield,
+  //   'Mobile Testing Tools': Smartphone,
+  //   'Cloud Testing Tools': Cloud
+  // };
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">

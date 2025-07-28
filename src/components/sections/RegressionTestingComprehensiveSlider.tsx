@@ -125,7 +125,7 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
             Regression Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive regression testing services designed to maintain software quality and stability with every release.
+            Explore our risk-based regression testing services tailored to safeguard software stability, prevent defects in critical workflows, and enable rapid, reliable releases through intelligent automation and continuous integration pipelines.
           </p>
         </div>
 
@@ -138,11 +138,10 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                 <button
                   key={type.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${
-                    activeTab === index
+                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
                       ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-center space-x-2">
                     <span className={activeTab === index ? colors.text : "text-gray-400"}>

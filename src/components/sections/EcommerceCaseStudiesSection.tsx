@@ -60,7 +60,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
             <span className="text-sm font-medium text-white">Success Stories</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Real Results from
             <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">Real E-Commerce Businesses</span>
           </h2>

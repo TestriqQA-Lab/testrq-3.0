@@ -55,7 +55,7 @@ const EcommerceContactSection: React.FC = () => {
             <span className="text-sm font-medium">Get Started Today</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:leading-14">
             Ready to Optimize Your
             <span className="block">E-Commerce Platform?</span>
           </h2>

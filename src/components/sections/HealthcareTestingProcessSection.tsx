@@ -61,7 +61,7 @@ const HealthcareTestingProcessSection: React.FC = () => {
             <FaCog className="w-4 h-4" />
             <span className="text-sm">Testing Process</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Our Healthcare Testing
             <span className="block text-brand-blue">
               Process & Methodology

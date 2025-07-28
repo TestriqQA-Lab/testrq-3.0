@@ -43,8 +43,7 @@ const ETLROISection: React.FC = () => {
             <span className="text-brand-blue">Measurable ROI</span> from ETL Testing
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive ETL testing services deliver quantifiable business value through improved 
-            data quality, reduced costs, and faster deployment cycles for your data integration projects.
+            Our comprehensive ETL testing services deliver quantifiable business value by enhancing data quality, reducing ETL-related costs, and accelerating deployment cycles for your data integration projects, ensuring accuracy, compliance, and ROI.
           </p>
         </div>
 
@@ -73,8 +72,7 @@ const ETLROISection: React.FC = () => {
             Calculate Your ETL Testing ROI
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Discover how much you can save and gain with our comprehensive ETL testing services. 
-            Get a personalized ROI analysis for your data integration project.
+            Discover how much you can save and gain with our comprehensive ETL testing services. Request a personalized ROI analysis to measure the impact on your data integration project’s cost, accuracy, and performance.
           </p>
           <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Get ROI Analysis

@@ -106,8 +106,7 @@ const ETLCaseStudies: React.FC = () => {
             ETL Testing <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover how our comprehensive ETL testing services have helped companies achieve 
-            remarkable improvements in data quality, processing speed, and compliance across various industries.
+            Discover how our comprehensive ETL testing services have helped companies achieve significant improvements in data quality, processing speed, and regulatory compliance across diverse industries and data ecosystems.
           </p>
         </div>
 

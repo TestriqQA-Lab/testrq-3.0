@@ -125,7 +125,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
             Automation Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive automation testing services designed to accelerate your testing cycles and improve software quality.
+            Explore our comprehensive automation testing services built to accelerate testing cycles, enhance test efficiency, and deliver superior software quality across web, mobile, and API platforms.
           </p>
         </div>
 

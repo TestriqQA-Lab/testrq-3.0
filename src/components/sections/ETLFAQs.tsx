@@ -9,7 +9,7 @@ const ETLFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What is ETL testing and why is it important?",
-      answer: "ETL testing is the process of validating data accuracy, completeness, and quality as it moves through the Extract, Transform, Load pipeline. It's crucial for ensuring data integrity, business rule compliance, and reliable analytics. ETL testing prevents data quality issues from reaching production systems and ensures your data-driven decisions are based on accurate information."
+      answer: "ETL testing is the process of validating data accuracy, completeness, and quality as it moves through the Extract, Transform, Load (ETL) pipeline. It is essential for maintaining data integrity, enforcing business rule compliance, and supporting reliable analytics. By identifying issues early, ETL testing prevents data quality problems from reaching production environments, ensuring your data-driven decisions are based on trusted, accurate information."
     },
     {
       question: "What types of ETL testing do you perform?",

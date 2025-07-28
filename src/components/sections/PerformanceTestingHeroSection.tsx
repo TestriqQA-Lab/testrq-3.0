@@ -24,10 +24,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ensure your applications perform flawlessly under any load with our 
-              comprehensive performance testing services. We conduct load, stress, 
-              spike, and endurance testing using industry-leading tools like JMeter, 
-              LoadRunner, and Gatling to guarantee optimal user experiences at scale.
+              Ensure your applications perform flawlessly under any load with our comprehensive performance testing services. We conduct load testing, stress testing, spike testing, and endurance testing using industry-leading tools like Apache JMeter, LoadRunner, and Gatling to guarantee optimal user experiences, application performance, and scalability at scale.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

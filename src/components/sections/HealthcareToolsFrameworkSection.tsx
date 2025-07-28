@@ -96,7 +96,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
             <FaTools className="w-4 h-4" />
             <span className="text-sm">Tools &amp; Frameworks</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Advanced Healthcare Testing
             <span className="block text-brand-blue">
               Tools &amp; Technologies

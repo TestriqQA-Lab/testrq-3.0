@@ -69,9 +69,8 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Performance Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive performance testing solutions that ensure your applications are fast, 
-            scalable, and stable under any load. Our expert team and advanced methodologies guarantee optimal 
-            performance and exceptional user experiences.
+            Testriq delivers comprehensive performance testing solutions that ensure your applications are fast, scalable, and stable under any load testing or infrastructure performance testing scenario. Our expert team and advanced methodologies guarantee optimal performance, enterprise-grade QA, and exceptional user experiences, while helping you achieve faster time-to-market.
+
           </p>
         </div>
 

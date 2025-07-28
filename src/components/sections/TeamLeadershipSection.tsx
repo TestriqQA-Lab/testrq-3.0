@@ -126,14 +126,14 @@ const TeamLeadershipSection = () => {
     {
       name: "Shoeb Shaikh",
       position: "Head - Learning and Development",
-      experience: "12+ Years",
+      experience: "14+ Years",
       specialization: "Software Testing and Data Science Expert",
-      bio: "Shoeb Shaikh is a seasoned Software Testing and Data Science Expert and a Mentor with over 12 years of experience in the field.",
+      bio: "Shoeb Shaikh is a seasoned Software Testing and Data Science Expert and a Mentor with over 14 years of experience in the field. Specialist in designing and managing processes, and leading high-performing teams to deliver impactful results.",
       achievements: [
-        "Designed QA processes for 200+ projects",
-        "ISTQB Expert Level Certified",
-        "Reduced bug leakage by 95%",
-        "Mentored 30+ junior testers",
+        "Designed & Delivered 50+ QA and Data Science training programs",
+        "Trained 1000+ professionals in QA and Data Science",
+        "ISTQB Certified Test Manager (Selenium, Pytest, API, DBMS)",
+        "Led L&D initiatives in academic and corporate environments"
       ],
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
       img: (
@@ -146,7 +146,29 @@ const TeamLeadershipSection = () => {
         />
       ),
     },
-  ];
+    {
+      name: "Ashish Shetty",
+      position: "Business Intelligence & Data Analytics Specialist | L&D Expert",
+      experience: "11+ Years",
+      specialization: "Business Intelligence and learning and development professional",
+      bio: "Ashish Shetty is a seasoned Business Intelligence and learning and development professional with over 11 years of experience empowering students and professionals to unlock career success through data-driven skills. Specializing in Power BI, Tableau, and Prompt Engineering, Ashish is known for delivering practical, high-impact workshops and training programs across academic and corporate sectors.",
+      achievements: [
+        "Trained 7,000+ students & professionals in BI, ML, and Analytics",
+        "Delivered 50+ workshops and national-level programs",
+        "Keynote speaker at leading conferences and UGC events",
+        "Designed industry-certified training and faculty development courses",
+        "Advanced Data Science & Machine Learning certified"
+      ],
+      linkedin: "https://www.linkedin.com/in/profashishshetty/",
+      img: <Image
+        src="/AshishShetty.png"
+        alt="ShoebShaikh"
+        width={550}
+        height={450}
+        className="object-cover rounded-full"
+      />
+    }
+    ]
 
   return (
     <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
@@ -395,7 +417,7 @@ const TeamLeadershipSection = () => {
                 >
                   <div className="relative">
                     <div className="text-center text-black py-0">
-                      <div className="w-60 h-60 md:w-80 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
+                      <div className="w-60 h-60 md:w-90 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                         {leader.img}
                       </div>
                       <div className="text-xl font-semibold hidden lg:block">
