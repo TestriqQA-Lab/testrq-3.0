@@ -12,7 +12,7 @@ export const metadata = {
     title: "Contact Us | Get in Touch with Testriq QA Experts",
     description: "Reach out to Testriq for your QA and software testing needs.",
     type: "website",
-    url: "https://testriq.com/contact-us",
+    url: "https://testrq-3-0.vercel.app/contact-us",
     images: [
       {
         url: "/OG/og_image_final.png",
