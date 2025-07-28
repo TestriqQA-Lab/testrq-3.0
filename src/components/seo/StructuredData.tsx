@@ -1810,3 +1810,73 @@ export const gamingTestingServiceSchema = {
     }
   }
 };
+
+export const iotTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "IoT Testing Solutions",
+  "description": "Comprehensive IoT testing services including device connectivity, edge computing, cloud integration, protocol validation, performance, and IoT security testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "IoT Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IoT Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Device Connectivity Testing",
+          "description": "Testing smart devices for reliable network connectivity across various protocols."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IoT Security Testing",
+          "description": "Security validation through penetration testing, encryption, access control, and compliance checks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Edge Computing Testing",
+          "description": "Validation of edge processing, latency optimization, and edge-cloud synchronization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Integration Testing",
+          "description": "Testing device integration with cloud platforms like AWS IoT, Azure IoT, and Google Cloud."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Protocol Interoperability",
+          "description": "Testing cross-platform compatibility and communication across IoT protocols like MQTT, CoAP, Zigbee, LoRaWAN, etc."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
