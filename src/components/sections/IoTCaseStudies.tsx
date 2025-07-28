@@ -420,9 +420,9 @@ const IoTCaseStudies: React.FC = () => {
                 Ready to Connect Your IoT Success?
               </h3>
               <p className="text-teal-100 mb-6 max-w-2xl mx-auto">
-                Let our IoT testing experts help you achieve the same level of
-                connectivity and reliability. Get started with a comprehensive
-                IoT device assessment today.
+                Let our IoT testing experts help you achieve the same level of connectivity and reliability. Get started with a comprehensive IoT device assessment today.
+
+
               </p>
               <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
                 Start Your IoT Success Story

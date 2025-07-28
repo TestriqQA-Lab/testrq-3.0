@@ -24,10 +24,7 @@ const AutomationTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Transform your testing strategy with cutting-edge automation frameworks, 
-              CI/CD integration, and intelligent test execution. Our automation solutions 
-              reduce testing time by 80% while increasing coverage and reliability through 
-              advanced Selenium, API, and mobile testing automation.
+              Transform your testing strategy with cutting-edge automation testing frameworks, seamless CI/CD pipeline integration, and intelligent test execution. Our advanced test automation solutions using Selenium, API automation, and mobile automation reduce testing time by up to 80%, while significantly improving test coverage, reliability, and overall software quality.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

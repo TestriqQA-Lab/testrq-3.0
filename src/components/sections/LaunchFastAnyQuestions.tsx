@@ -10,8 +10,7 @@ const LaunchFastAnyQuestions: React.FC = () => {
           Ready to Launch Fast with Quality?
         </h2>
         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-          Get expert LaunchFast QA services that accelerate your time-to-market without compromising quality. 
-          Contact our rapid testing specialists today for a comprehensive launch readiness assessment.
+          Our global QA team operates across multiple time zones to deliver 24/7 testing support. For urgent product launches, we can mobilize rapid testing teams within hours and provide round-the-clock coverage. Using a follow-the-sun testing model, we ensure continuous execution, maximum productivity, and the fastest turnaround times for critical go-to-market QA needs.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">

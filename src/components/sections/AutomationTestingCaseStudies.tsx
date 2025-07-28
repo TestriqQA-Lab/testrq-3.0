@@ -74,7 +74,7 @@ const AutomationTestingCaseStudies: React.FC = () => {
             Automation Testing <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our comprehensive Automation testing services have helped organizations achieve exceptional software quality and significant business outcomes.
+            Discover how our automation testing services drive software quality, faster releases, and real-world business outcomes across industries through intelligent frameworks and expert implementation.
           </p>
         </div>
 

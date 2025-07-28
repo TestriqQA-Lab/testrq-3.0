@@ -20,7 +20,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
       title: "IoT Testing Experts",
       shortTitle: "IoT Experts",
       description:
-        "Our team consists of certified IoT testing professionals with extensive experience in connected device technologies.",
+        "Our team consists of ISTQB-certified IoT testing professionals with extensive experience in connected device technologies.",
       stats: "500+ IoT Devices Tested",
       color: "teal",
       gradient: "from-teal-500 to-teal-600",
@@ -52,7 +52,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
       title: "Comprehensive Security",
       shortTitle: "Security Shield",
       description:
-        "Advanced security testing to protect your IoT devices from vulnerabilities and ensure data protection.",
+        "Advanced security testing to protect your IoT devices from vulnerabilities and ensure robust data protection.",
       stats: "Zero Security Breaches",
       color: "red",
       gradient: "from-red-500 to-red-600",
@@ -122,9 +122,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">IoT Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine IoT expertise with testing excellence to deliver IoT
-            testing services that ensure reliable, secure, and high-performance
-            connected device ecosystems.
+            We combine certified IoT QA expertise, real-world simulation, and advanced tools to deliver IoT testing services that ensure reliable performance, secure connectivity, and protocol-compliant IoT device ecosystems.
           </p>
         </div>
 

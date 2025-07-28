@@ -10,7 +10,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaRobot className="w-8 h-8" />,
       title: "Robotic Testing Experts",
-      description: "Our team consists of certified robotic testing professionals with extensive experience in industrial and service robotics.",
+      description: "Our team includes certified experts in robotic quality assurance and testing professionals with extensive experience in industrial and service robotics.",
       achievement: "300+ Robots Tested",
       capabilities: [
         "Industrial Robotics",

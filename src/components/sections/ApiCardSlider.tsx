@@ -54,8 +54,7 @@ const ApiCardSlider: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized testing approaches ensure your APIs meet the highest
-            standards of functionality, performance, and security.
+            Our specialized testing approaches ensure your APIs meet the highest standards of functionality, performance, and security.
           </p>
         </div>
 

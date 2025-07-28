@@ -12,8 +12,8 @@ const LaunchFastCaseStudies: React.FC = () => {
       title: "FinTech Startup MVP Launch",
       industry: "Financial Technology",
       icon: <FaRocket className="text-2xl" />,
-      challenge: "A fintech startup needed to launch their MVP within 6 weeks to secure Series A funding and beat competitors to market.",
-      solution: "Implemented LaunchFast QA with parallel testing streams, automated regression testing, and continuous security validation.",
+      challenge: "A fintech startup needed to launch their MVP within 6 weeks to secure Series A funding and outperform competitors in a fast-moving go-to-market race.",
+      solution: "We implemented LaunchFast QA with parallel testing streams, automated regression testing, and continuous security validation to support agile QA workflows and rapid release cycles.",
       results: [
         { metric: "Launch Timeline", value: "4 weeks", improvement: "33% faster than planned" },
         { metric: "Testing Coverage", value: "98%", improvement: "Comprehensive validation" },
@@ -90,8 +90,7 @@ const LaunchFastCaseStudies: React.FC = () => {
             LaunchFast QA <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our LaunchFast QA services have helped startups and fast-moving teams 
-            achieve successful launches, secure funding, and accelerate their growth.
+            Discover how our LaunchFast QA services help startups and agile teams achieve successful product launches, secure funding, and accelerate growth with go-to-market QA and investor-ready QA support.
           </p>
         </div>
 

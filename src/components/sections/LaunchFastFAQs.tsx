@@ -9,43 +9,43 @@ const LaunchFastFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What is LaunchFast QA and how does it differ from traditional testing?",
-      answer: "LaunchFast QA is our specialized rapid testing service designed for startups and fast-moving development teams. Unlike traditional testing that can take weeks or months, LaunchFast QA delivers comprehensive quality assurance in 48-72 hours through parallel testing streams, automated processes, and agile methodologies. We focus on critical path validation, MVP testing, and launch readiness assessment to help you get to market faster without compromising quality."
+      answer: "LaunchFast QA is our specialized rapid testing sprint service tailored for startups and fast-moving development teams. Unlike traditional QA that takes weeks, LaunchFast QA delivers comprehensive quality assurance within 48–72 hours using parallel testing streams, automated regression testing, and agile QA methodologies. We focus on critical path validation, MVP QA testing, and launch readiness assessments to help you go to market faster without compromising on quality or reliability."
     },
     {
       question: "How quickly can you start testing our application?",
-      answer: "We can begin LaunchFast QA within 24 hours of project initiation. Our rapid onboarding process includes immediate requirement analysis, test environment setup, and team allocation. For urgent launches, we offer same-day testing initiation with our dedicated rapid response team. The key is having your application ready for testing and clear acceptance criteria defined."
+      answer: "We can initiate LaunchFast QA within 24 hours of project kickoff. Our rapid onboarding includes immediate requirement analysis, test environment setup, and QA team allocation. For urgent go-to-market timelines, our dedicated rapid response team enables same-day testing initiation. To accelerate execution, ensure your application is ready and acceptance criteria are clearly defined."
     },
     {
       question: "What types of applications and technologies do you support?",
-      answer: "LaunchFast QA supports all major platforms and technologies including web applications (React, Angular, Vue.js), mobile apps (iOS, Android, React Native, Flutter), APIs (REST, GraphQL, SOAP), cloud platforms (AWS, Azure, GCP), and emerging technologies like AI/ML applications. Our team is experienced with modern development stacks and can adapt quickly to new technologies."
+      answer: "LaunchFast QA supports all major platforms and technologies, including web application testing (React, Angular, Vue.js), mobile testing (iOS, Android, React Native, Flutter), API testing services (REST, GraphQL, SOAP), and cloud platforms like AWS, Azure, and GCP. We also cover AI application testing and modern tech stacks. Our expert QA engineers adapt rapidly to evolving tools and technologies, ensuring seamless integration with your development workflow."
     },
     {
       question: "How do you ensure quality with such rapid testing cycles?",
-      answer: "We maintain quality through risk-based testing, automated regression suites, parallel test execution, and experienced QA professionals. Our approach prioritizes critical user journeys, business-critical features, and security vulnerabilities. We use advanced testing tools, continuous monitoring, and real-time reporting to ensure comprehensive coverage despite the accelerated timeline."
+      answer: "We ensure quality with risk-based testing, automated regression suites, and parallel test execution, led by experienced QA professionals. Our LaunchFast QA approach prioritizes critical user journeys, business-critical features, and security vulnerabilities. Using tools like Selenium, Cypress, and JMeter, we provide real-time defect detection, continuous monitoring, and comprehensive test coverage—even within accelerated timelines."
     },
     {
       question: "What is included in your LaunchFast QA service?",
-      answer: "LaunchFast QA includes functional testing, performance validation, security assessment, cross-platform compatibility, API testing, user experience validation, and launch readiness checklist. We also provide real-time reporting, bug triage, regression testing, and post-launch monitoring. Each service is customized based on your specific application type and launch requirements."
+      answer: "LaunchFast QA includes functional testing, performance validation, security assessment, cross-platform compatibility, API testing services, user experience validation, and a detailed launch readiness checklist. We also offer real-time reporting, bug triage, automated regression testing, and post-launch monitoring. Each service is tailored to your application type, tech stack, and go-to-market requirements, ensuring agile, high-impact QA delivery."
     },
     {
       question: "How do you integrate with our development and CI/CD processes?",
-      answer: "We seamlessly integrate with popular CI/CD tools like Jenkins, GitHub Actions, GitLab CI, and Azure DevOps. Our team can plug into your existing workflows, participate in daily standups, and provide continuous feedback throughout development sprints. We support automated test execution, real-time reporting, and can trigger testing based on code commits or deployment events."
+      answer: "We seamlessly integrate LaunchFast QA with popular CI/CD tools like Jenkins, GitHub Actions, GitLab CI, and Azure DevOps. Our team embeds into your agile development workflows, joins daily standups, and delivers continuous QA feedback throughout development sprints. We support automated test execution, real-time reporting, and trigger tests based on code commits or deployment events, ensuring faster, defect-free releases."
     },
     {
       question: "What happens if critical issues are found during testing?",
-      answer: "Critical issues are immediately escalated with detailed reproduction steps, impact analysis, and recommended fixes. We provide real-time communication through Slack, Teams, or your preferred platform. Our team works closely with your developers to verify fixes quickly and ensure rapid resolution. We also offer emergency testing services for critical bug fixes that need immediate validation."
+      answer: "Critical issues are escalated immediately with detailed reproduction steps, impact analysis, and recommended fixes. We maintain real-time communication via Slack, Teams, or your preferred platform. Our QA engineers collaborate directly with your developers to verify fixes and ensure rapid resolution. For urgent scenarios, we offer emergency testing services to validate critical bug fixes with speed and precision."
     },
     {
       question: "Do you provide testing for MVP and early-stage products?",
-      answer: "Yes, LaunchFast QA is specifically designed for MVPs and early-stage products. We understand startup constraints and focus on validating core functionality, user experience, and market readiness. Our MVP testing includes feature validation, user journey testing, performance baseline establishment, and feedback collection setup to help you iterate quickly based on real user data."
+      answer: "Yes, LaunchFast QA is purpose-built for MVPs and early-stage products. We understand startup constraints and focus on validating core functionality, user experience, and market readiness. Our MVP QA testing includes feature validation, user journey testing, performance baseline setup, and feedback loop integration—empowering you to iterate quickly based on real user insights."
     },
     {
       question: "What are your pricing models for LaunchFast QA?",
-      answer: "We offer flexible pricing models including project-based pricing for one-time launches, sprint-based pricing for ongoing development, and retainer models for continuous testing support. Pricing depends on application complexity, testing scope, timeline requirements, and team size needed. We provide transparent quotes within 24 hours and offer startup-friendly packages for early-stage companies."
+      answer: "We offer flexible pricing models including project-based pricing for one-time launches, sprint-based QA pricing for ongoing development, and retainer models for continuous QA services. Costs vary by application complexity, testing scope, timeline, and team size. We deliver transparent quotes within 24 hours and offer startup-friendly QA packages tailored for early-stage companies."
     },
     {
       question: "How do you handle testing for different time zones and urgent launches?",
-      answer: "Our global team operates across multiple time zones to provide 24/7 testing support. For urgent launches, we can mobilize testing teams within hours and provide round-the-clock coverage. We offer follow-the-sun testing models where testing continues across different time zones, ensuring maximum productivity and fastest possible turnaround times for critical launches."
+      answer: "Our global QA team operates across multiple time zones to deliver 24/7 testing support. For urgent product launches, we can mobilize rapid testing teams within hours and provide round-the-clock coverage. Using a follow-the-sun testing model, we ensure continuous execution, maximum productivity, and the fastest turnaround times for critical go-to-market QA needs."
     }
   ];
 

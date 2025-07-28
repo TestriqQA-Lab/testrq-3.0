@@ -21,7 +21,7 @@ const AIWhyChooseTestriq: React.FC = () => {
       title: "AI Testing Experts",
       shortTitle: "AI Experts",
       description:
-        "Our team consists of certified AI testing professionals with extensive experience in machine learning and AI technologies.",
+        "Our team consists of ISTQB-certified AI testing professionals with extensive experience in machine learning and AI technologies.",
       stats: "150+ AI Models Tested",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
@@ -53,7 +53,7 @@ const AIWhyChooseTestriq: React.FC = () => {
       title: "Ethical AI Assurance",
       shortTitle: "Ethical AI",
       description:
-        "Advanced bias detection and fairness testing to ensure your AI systems are ethical and compliant with regulations.",
+        "Advanced bias detection and fairness testing to ensure your AI systems are ethical and compliant with global regulations.",
       stats: "99.5% Bias Detection",
       color: "red",
       gradient: "from-red-500 to-red-600",
@@ -123,9 +123,7 @@ const AIWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">AI Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine AI expertise with testing excellence to deliver AI
-            testing services that ensure accurate, fair, and reliable
-            intelligent systems for your applications.
+            We combine certified AI QA expertise with testing excellence to deliver AI testing services that ensure accurate, fair, and reliable intelligent systems for your applications.
           </p>
         </div>
 

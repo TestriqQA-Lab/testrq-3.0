@@ -10,8 +10,7 @@ const ExploratoryAnyQuestions: React.FC = () => {
           Ready to Discover Hidden Issues?
         </h2>
         <p className="text-xl text-green-100 mb-8 leading-relaxed">
-          Get expert exploratory testing services that uncover critical issues and improve user experience. 
-          Contact our investigation specialists today for a comprehensive exploration assessment.
+          Get expert exploratory testing services that uncover critical issues and improve user experience. Contact our investigation specialists today for a comprehensive exploration assessment.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">

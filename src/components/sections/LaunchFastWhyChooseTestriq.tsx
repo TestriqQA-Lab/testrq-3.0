@@ -151,9 +151,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
             LaunchFast QA?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We combine rapid testing expertise with agile methodologies to
-            deliver LaunchFast QA services that accelerate your time-to-market
-            while ensuring exceptional quality and reliability.
+            We blend rapid testing sprint expertise with agile QA methodologies to deliver LaunchFast QA services that boost your go-to-market speed while ensuring exceptional quality, reliability, and investor-ready products.
           </p>
         </div>
 
@@ -305,9 +303,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
             Ready to Accelerate Your Launch?
           </h3>
           <p className="text-gray-600 mb-6">
-            Join 300+ startups who trust our LaunchFast QA expertise. Get
-            started with rapid testing cycles and ensure your product launches
-            successfully and on time.
+            Join 300+ startups that trust our LaunchFast QA expertise. Start your journey with rapid testing sprints, pre-launch testing, and go-to-market QA to ensure on-time, successful launches.
           </p>
           <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Get Started with LaunchFast QA

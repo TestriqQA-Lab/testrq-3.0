@@ -10,42 +10,42 @@ const AIFAQs: React.FC = () => {
     {
       question: "What types of AI models can you test?",
       answer:
-        "We test all types of AI models including supervised learning, unsupervised learning, reinforcement learning, deep learning, neural networks, natural language processing models, computer vision models, and generative AI systems like GPT and diffusion models.",
+        "We test a wide range of AI models, including machine learning models (e.g., regression, classification, clustering), deep learning models (e.g., neural networks, CNNs, RNNs), generative AI (e.g., LLMs, GANs), and reinforcement learning models, across domains like NLP, computer vision, and predictive analytics.",
     },
     {
       question: "How do you test for AI bias and fairness?",
       answer:
-        "We use advanced bias detection tools and frameworks like Fairlearn, AI Fairness 360, and custom testing methodologies to identify and measure bias across different demographic groups, ensuring your AI systems are fair and ethical.",
+        "We use tools like Fairlearn, AI Fairness 360, and Aequitas to detect demographic bias, evaluate fairness metrics (e.g., demographic parity, equal opportunity), and validate ethical compliance. Our process includes bias mitigation recommendations and testing across diverse datasets to ensure fairness across all user groups.",
     },
     {
       question: "What is AI explainability testing?",
       answer:
-        "AI explainability testing ensures that AI model decisions can be understood and interpreted by humans. We use tools like SHAP, LIME, and other interpretability frameworks to validate that your AI systems provide transparent and explainable results.",
+        "AI explainability testing ensures model decisions are transparent and interpretable, using tools like SHAP, LIME, and InterpretML. We validate feature importance, decision pathways, and model outputs to provide clear explanations, meeting regulatory requirements like GDPR and ensuring user trust.",
     },
     {
       question: "How long does AI model testing take?",
       answer:
-        "The duration depends on model complexity and testing scope. Simple model validation can take 2-3 weeks, while comprehensive testing for complex AI systems may take 6-8 weeks. We provide detailed timelines during the planning phase.",
+        "AI model testing typically takes 2-4 weeks, depending on model complexity and testing scope. Our 4-step process (Analysis: 3-4 days, Validation: 5-7 days, Performance: 4-6 days, Delivery: 2-3 days) ensures efficient execution, with rapid 48-hour turnaround for urgent validations.",
     },
     {
       question: "Do you test AI security and robustness?",
       answer:
-        "Yes, we perform comprehensive AI security testing including adversarial attack simulation, data poisoning detection, model evasion testing, and privacy protection validation using tools like Adversarial Robustness Toolbox and CleverHans.",
+        "Yes, we conduct comprehensive security testing using tools like Adversarial Robustness Toolbox and CleverHans to assess adversarial attacks, data poisoning, and model evasion. We also validate robustness against edge cases and ensure privacy compliance with tools like Privacy Meter.",
     },
     {
       question: "Can you integrate AI testing into MLOps pipelines?",
       answer:
-        "Absolutely! We can integrate automated AI testing into your MLOps pipeline using tools like MLflow, Kubeflow, and custom frameworks. This ensures continuous validation of your AI models throughout the development and deployment lifecycle.",
+        "We integrate AI testing into MLOps pipelines using tools like Kubeflow, MLflow, and TFX, ensuring seamless validation within CI/CD workflows. Our automated testing frameworks support continuous monitoring, model retraining, and deployment validation for scalable AI operations.",
     },
     {
       question: "What deliverables do you provide for AI testing?",
       answer:
-        "We provide comprehensive AI testing reports, bias assessment reports, performance benchmarks, security vulnerability assessments, explainability analysis, automated test scripts, and detailed recommendations for model improvement.",
+        "Deliverables include detailed test reports, bias and fairness metrics, security vulnerability assessments, performance benchmarks, explainability reports, and actionable recommendations. We provide visual evidence and integrate with tools like Jira or Weights & Biases for collaboration.",
     },
     {
       question: "Do you test generative AI applications?",
       answer:
-        "Yes, we specialize in testing generative AI applications including large language models, image generation models, and other generative systems. We test for hallucinations, content quality, safety, and alignment with intended use cases.",
+        "Yes, we test generative AI applications (e.g., LLMs, GANs) for output quality, coherence, safety, and ethical compliance. We use tools like TextAttack for adversarial testing and evaluate content generation against bias, toxicity, and regulatory standards.",
     },
   ];
 
@@ -100,7 +100,7 @@ const AIFAQs: React.FC = () => {
             Have more questions about our AI testing services?
           </p>
           <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Contact Our AI Experts
+            Contact our AI testing experts for personalized answers and tailored solutions.
           </button>
         </div>
       </div>

@@ -30,10 +30,7 @@ const ETLTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Ensure your data pipelines deliver accurate, complete, and
-              reliable data with our comprehensive ETL testing services. From
-              data extraction to transformation and loading - we validate every
-              aspect of your data integration ecosystem.
+              Ensure your data pipelines deliver accurate, complete, and reliable data with our comprehensive ETL testing services. From data extraction, transformation, and loading, we validate every layer of your ETL process to ensure seamless data integration, quality assurance, and regulatory compliance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

@@ -20,7 +20,7 @@ const IoTProvenTestingProcess: React.FC = () => {
       title: "Device & Network Analysis",
       shortTitle: "Analysis",
       description:
-        "Comprehensive analysis of IoT devices, protocols, and network infrastructure to create a detailed testing strategy.",
+        "Comprehensive analysis of IoT devices, protocols, and network infrastructure to create a tailored testing strategy for optimal coverage.",
       details: [
         "IoT device specification review",
         "Network topology analysis",
@@ -93,8 +93,7 @@ const IoTProvenTestingProcess: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Process</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures comprehensive IoT testing coverage,
-            delivering reliable and secure connected device ecosystems.
+            Our systematic approach ensures end-to-end IoT testing coverage, delivering reliable and secure connected device ecosystems.
           </p>
         </div>
 

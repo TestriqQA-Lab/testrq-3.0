@@ -69,7 +69,7 @@ const ElearningFAQSection: React.FC = () => {
             <span className="text-sm font-medium">Frequently Asked Questions</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             E-Learning Testing
             <span className="block text-brand-blue">Questions Answered</span>
           </h2>

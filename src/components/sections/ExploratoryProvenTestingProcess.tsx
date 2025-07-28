@@ -87,8 +87,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
             Our Proven Exploratory Testing <span className="text-brand-blue">Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic approach combines structured exploration with creative investigation techniques 
-            to ensure comprehensive coverage and maximum issue discovery across all application areas.
+            Our investigation-driven QA approach blends structured exploration with creative investigation techniques to ensure comprehensive coverage and maximum issue discovery across all application areas.
           </p>
         </div>
 

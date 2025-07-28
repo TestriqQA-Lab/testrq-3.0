@@ -147,9 +147,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
             <span className="text-brand-blue">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our comprehensive LaunchFast QA services cover every aspect of rapid
-            product development, ensuring quality, performance, and security
-            across all platforms and technologies for successful launches.
+            Our LaunchFast QA services cover every aspect of rapid product development, delivering quality, performance, and security across all platforms with pre-launch testing, MVP QA, and go-to-market QA for successful launches.
           </p>
         </div>
 

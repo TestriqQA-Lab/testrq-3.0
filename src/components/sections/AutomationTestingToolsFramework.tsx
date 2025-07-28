@@ -121,8 +121,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
             Automation Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage cutting-edge automation tools and frameworks to deliver efficient, reliable, 
-            and scalable testing solutions that accelerate your development cycles and improve software quality.
+            We use cutting-edge automation tools and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across web, mobile, API, and CI/CD environments.
           </p>
         </div>
 

@@ -9,7 +9,7 @@ const ManualTestingFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What is manual testing and why is it important?",
-      answer: "Manual testing is a software testing approach where human testers manually execute test cases without using automation tools. It's crucial because it can identify usability issues, user experience problems, and edge cases that automated testing might miss. Manual testing provides the human perspective needed to evaluate software from an end-user standpoint, ensuring applications are intuitive, accessible, and meet real-world user expectations."
+      answer: "Manual testing is a software testing approach where human testers manually execute test cases without relying on automation tools. It's essential for identifying usability issues, user experience problems, and edge cases that automated testing often overlooks. Manual testing brings a human perspective, ensuring applications are intuitive, accessible, and aligned with real-world user expectations."
     },
     {
       question: "When should I choose manual testing over automated testing?",

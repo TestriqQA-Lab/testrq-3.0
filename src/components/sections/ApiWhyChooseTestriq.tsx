@@ -122,9 +122,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">API Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine technical expertise with business understanding to
-            deliver API testing services that ensure reliable, secure, and
-            high-performance integrations for your applications.
+            We combine technical expertise with business understanding to deliver API testing services that ensure reliable, secure, and high-performance integrations for your applications.
           </p>
         </div>
 

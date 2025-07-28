@@ -22,9 +22,7 @@ const ApiTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your APIs deliver reliable, secure, and high-performance
-            integrations with our comprehensive testing services. From REST to
-            GraphQL, SOAP to microservices - we test it all with precision.
+            Guarantee robust, secure, and high-performance API integrations with our end-to-end API testing services. From RESTful and SOAP APIs to GraphQL and microservices, we perform functional, load, and security testing to ensure reliable data exchange and seamless system communication.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

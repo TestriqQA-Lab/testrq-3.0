@@ -22,10 +22,7 @@ const AITestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your AI applications deliver accurate, fair, and reliable
-            results with our comprehensive testing services. From machine
-            learning models to generative AI - we validate every aspect of your
-            intelligent systems.
+            Ensure your AI applications deliver accurate, fair, and reliable results with our systematic AI testing services. From machine learning models to generative AI — our QA for AI applications covers everything from functionality to ethical compliance and end-to-end validation.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

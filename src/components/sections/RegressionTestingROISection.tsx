@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import {FaBug,  FaClock, FaDollarSign, FaCheckCircle } from "react-icons/fa";
+import { FaBug, FaClock, FaDollarSign, FaCheckCircle } from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
   return (
@@ -12,8 +12,8 @@ const RegressionTestingROISection: React.FC = () => {
             Realizing the <span className="text-brand-blue">ROI of Regression</span> Testing
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Regression testing is a critical investment that ensures software stability and quality with every release. 
-            By preventing defects and reducing risks, it delivers significant returns and maintains user satisfaction.
+            Regression testing is a critical investment that ensures software stability and quality with every release. By preventing defects and reducing risks, it delivers significant returns and maintains user satisfaction.
+
           </p>
         </div>
 

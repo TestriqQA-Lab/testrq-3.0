@@ -38,9 +38,7 @@ const AIAnyQuestions: React.FC = () => {
             About AI Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our AI testing experts are here to help. Get in touch with us to
-            discuss your specific AI requirements and learn how we can ensure
-            your AI systems are accurate, fair, and reliable.
+            Our AI testing specialists are here to help. Get in touch with us to discuss your specific AI requirements and learn how we can ensure your AI systems are accurate, fair, and reliable.
           </p>
         </div>
 
@@ -75,9 +73,7 @@ const AIAnyQuestions: React.FC = () => {
             Ready to Test Your AI?
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Join 150+ companies who trust our AI testing expertise. Schedule a
-            free consultation to discuss your AI testing needs and get a
-            customized solution for your AI project.
+            Join 150+ companies who trust our AI testing expertise. Schedule a free consultation to discuss your AI testing needs and get a customized solution for your AI project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <button className="flex items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:bg-blue-400 transition-colors duration-300">

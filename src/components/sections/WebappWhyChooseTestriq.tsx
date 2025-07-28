@@ -68,8 +68,7 @@ export default function WebappWhyChooseTestriq() {
           </span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          Our comprehensive web application testing delivers measurable results
-          that directly impact your business success and user satisfaction.
+          Our systematic web application testing delivers measurable results that drive business success, enhance user satisfaction, and ensure performance, security, and bug-free functionality.
         </p>
       </div>
 
