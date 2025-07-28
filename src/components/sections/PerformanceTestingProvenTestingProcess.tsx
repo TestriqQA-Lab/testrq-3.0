@@ -87,23 +87,21 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
             Our <span className="text-brand-blue">Proven</span> Performance Testing Process
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic performance testing process ensures comprehensive evaluation of application performance, 
-            scalability, and reliability under various load conditions for optimal user experiences.
+            Our systematic performance testing process ensures comprehensive evaluation of application performance, scalability, and system reliability under various load testing, stress testing, and performance regression testing scenarios. We identify performance bottlenecks, simulate real-world traffic conditions, and apply automated performance testing to deliver optimal user experiences at scale.
           </p>
         </div>
 
         <div className="relative">
           {/* Process Timeline */}
           <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
-          
+
           {/* Process Steps */}
           <div className="space-y-12">
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } flex-col lg:space-x-8`}
+                className={`relative flex items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } flex-col lg:space-x-8`}
                 onClick={() => setActiveStep(step.id)}
               >
                 {/* Step Number Circle */}
@@ -114,9 +112,8 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
                 {/* Step Content */}
                 <div className={`w-full lg:w-5/12`}>
                   <div
-                    className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
-                      activeStep === step.id ? "ring-2 ring-brand-blue" : ""
-                    }`}
+                    className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${activeStep === step.id ? "ring-2 ring-brand-blue" : ""
+                      }`}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="bg-brand-blue w-12 h-12 rounded-xl flex items-center justify-center">
@@ -127,7 +124,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
                         <span className="text-sm text-brand-blue font-medium">{step.duration}</span>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {step.description}
                     </p>
