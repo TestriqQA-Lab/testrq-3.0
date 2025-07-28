@@ -86,8 +86,7 @@ const HealthcareChallengesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Healthcare software faces unique challenges that require specialized testing approaches. 
-            Patient safety, regulatory compliance, and data security are non-negotiable requirements.
+            Healthcare software faces unique challenges that require specialized healthcare testing approaches. Patient safety, HIPAA compliance, and healthcare data security are non-negotiable requirements for any medical application.
           </p>
         </div>
 

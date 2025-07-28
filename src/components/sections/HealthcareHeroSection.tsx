@@ -83,9 +83,7 @@ const HealthcareHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure patient safety, regulatory compliance, and data security with our specialized
-              healthcare testing services. From EHR systems to medical devices, we validate your
-              healthcare solutions meet HIPAA, FDA, and industry standards.
+              Ensure patient safety, regulatory compliance, and healthcare data security with our specialized healthcare testing services. From EHR system testing to medical software QA, we validate your healthcare solutions meet HIPAA compliance, FDA regulations, and other industry standards.
             </p>
 
             {/* Key Benefits */}

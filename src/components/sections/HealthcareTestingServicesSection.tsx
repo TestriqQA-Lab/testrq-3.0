@@ -27,13 +27,13 @@ const HealthcareTestingServicesSection: React.FC = () => {
     {
       icon: FaShieldAlt,
       title: "HIPAA Compliance Testing",
-      description: "Ensure complete HIPAA compliance with thorough security testing, access controls, audit trails, and patient data protection validation.",
+      description: "Ensure complete HIPAA compliance with thorough security testing, access control validation, audit trail verification, and patient data protection through our specialized healthcare QA services.",
       features: ["PHI Protection", "Access Control Testing", "Audit Trail Validation", "Risk Assessment"]
     },
     {
       icon: FaUserMd,
       title: "Medical Device Testing",
-      description: "Specialized testing for medical devices, IoMT systems, and connected healthcare equipment ensuring FDA compliance and patient safety.",
+      description: "Specialized healthcare testing for medical devices, IoMT systems, and connected healthcare equipment, ensuring FDA compliance, regulatory validation, and patient safety across all digital health platforms.",
       features: ["FDA 21 CFR Part 820", "IEC 62304 Compliance", "Device Connectivity", "Safety Validation"]
     },
     {
@@ -108,8 +108,7 @@ const HealthcareTestingServicesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Specialized testing services designed for healthcare applications, ensuring patient safety, 
-            regulatory compliance, and optimal performance across all medical software systems.
+            Specialized healthcare testing services designed for digital healthcare applications, ensuring patient safety, HIPAA compliance, FDA regulations, and optimal performance testing across all healthcare software systems and medical applications.
           </p>
         </div>
 

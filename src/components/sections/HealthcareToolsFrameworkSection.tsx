@@ -103,8 +103,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage industry-leading tools and frameworks specifically designed for healthcare
-            software testing, ensuring compliance, security, and optimal performance.
+            Leverage industry-leading tools and QA frameworks specifically designed for healthcare software testing, ensuring HIPAA compliance, data security, and optimal performance testing across all medical applications.
           </p>
         </div>
 
@@ -145,8 +144,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
               Healthcare Regulatory Compliance
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive testing frameworks ensuring your healthcare software meets
-              all regulatory requirements and industry standards.
+              Comprehensive healthcare testing frameworks ensuring your healthcare software meets all regulatory requirements, including HIPAA, FDA, and GDPR compliance, along with recognized industry standard.
             </p>
           </div>
 
