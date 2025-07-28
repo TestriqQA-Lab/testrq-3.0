@@ -171,31 +171,7 @@ export const webAppTestingServiceSchema = {
   }
 };
 
-// Breadcrumb Schema
-export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": items.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-    "item": item.url
-  }))
-});
 
-// FAQ Schema
-export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-});
 
 
 // Service Schema for AI Application Testing
@@ -1126,7 +1102,7 @@ export const regressionTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for performance Testing Service
 export const performanceTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1204,7 +1180,7 @@ export const performanceTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for security Testing Service
 export const securityTestingServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -1246,6 +1222,7 @@ export const securityTestingServiceSchema = {
     }
   };
 
+// Service Schema for qa Documentation Service 
   export const qaDocumentationServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1323,6 +1300,8 @@ export const securityTestingServiceSchema = {
   }
 };
 
+
+// Service Schema for data Analysis Service
 export const dataAnalysisServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1393,7 +1372,7 @@ export const dataAnalysisServiceSchema = {
 };
 
 
-
+// Service Schema for complete Testing Guide
 export const completeTestingGuideSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1462,3 +1441,866 @@ export const completeTestingGuideSchema = {
     }
   }
 };
+
+
+
+// Service Schema for E-Commerce Testing
+export const ecommerceTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "E-Commerce Testing Services",
+  "description": "Comprehensive QA testing solutions for online stores including cart, payment, performance, and security testing. Testriq ensures optimized user experiences, reduced cart abandonment, and secure transactions for e-commerce businesses.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "E-Commerce QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "E-Commerce QA Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Shopping Cart Testing",
+          "description": "Validating shopping cart functionality, checkout flows, and payment integration accuracy."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payment Gateway Testing",
+          "description": "Secure testing for multiple payment gateways ensuring PCI DSS compliance and transaction success."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Commerce Testing",
+          "description": "Mobile-first testing approach covering responsiveness, performance, and mobile payment workflows."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Load Testing",
+          "description": "Stress, spike, and load testing during peak sales periods like Black Friday to ensure uptime and speed."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Compliance Testing",
+          "description": "Testing for vulnerabilities, SSL, data privacy (GDPR), and security compliance (SOC2, ISO 27001)."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cross-Platform Compatibility Testing",
+          "description": "Ensuring seamless user experience across devices, browsers, and operating systems."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for elearning Testing Service
+export const elearningTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "E-Learning Testing Services",
+  "description":
+    "Comprehensive testing for LMS platforms, online courses, and educational applications including accessibility compliance, SCORM/xAPI validation, video QA, mobile optimization, security, and performance testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "E-Learning Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "LMS Platform Testing",
+          "description":
+            "Functional and usability testing for Moodle, Canvas, Blackboard, Google Classroom, and custom LMS platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Accessibility Compliance Testing",
+          "description":
+            "Testing against WCAG 2.1 AA, ADA, Section 508, and EN 301 549 standards for inclusive education platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SCORM & xAPI Compliance Testing",
+          "description":
+            "SCORM 1.2/2004 and Tin Can (xAPI) compatibility testing across LMS environments and devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Multimedia & Video Content Testing",
+          "description":
+            "QA for video playback, audio clarity, captioning, device compatibility, and streaming optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Learning Optimization",
+          "description":
+            "Performance and usability testing across smartphones and tablets to reduce dropout and enhance engagement."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Load Testing",
+          "description":
+            "Testing e-learning platforms for scalability, uptime, and stress-handling during high-traffic academic periods."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Privacy Testing",
+          "description":
+            "Ensuring GDPR, FERPA, and COPPA compliance through secure login, encryption, and data protection validation."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
+// Service Schema for healthcare Testing Service
+export const healthcareTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Healthcare Testing Services",
+  "description": "Testriq provides professional QA testing for healthcare software, including HIPAA compliance testing, FDA validation, EHR integration testing, medical device validation, and patient data security audits.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Healthcare Software QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Healthcare Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HIPAA Compliance Testing",
+          "description": "Comprehensive validation of patient data protection, PHI access controls, and HIPAA Security & Privacy Rule compliance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "EHR System Testing",
+          "description": "Functional, integration, and workflow testing of Electronic Health Record and EMR systems including HL7 and FHIR standards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "FDA Validation Support",
+          "description": "Test documentation and compliance validation for FDA regulations including 21 CFR Part 820 and IEC 62304."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medical Device Testing",
+          "description": "QA for IoT-enabled medical devices including connectivity, real-time data validation, and device integration testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Telehealth App Testing",
+          "description": "Testing of video quality, mobile compatibility, encryption, and security for telemedicine applications and mHealth platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Healthcare Cybersecurity",
+          "description": "Penetration testing, threat modeling, and vulnerability assessment tailored for healthcare applications and cloud systems."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for gaming Testing Service
+export const gamingTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gaming App Testing Solutions",
+  "description": "Testriq provides game QA services including mobile game testing, console compatibility, VR/AR validation, multiplayer synchronization, performance testing, anti-cheat validation, and cloud gaming QA.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Game Testing & QA",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Gaming App Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Game Testing",
+          "description": "Functional and performance testing for iOS and Android games, including device compatibility and battery optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Console Game Testing",
+          "description": "Testing across PlayStation, Xbox, and Nintendo Switch platforms for certification, controls, and hardware compatibility."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Multiplayer & Network Testing",
+          "description": "Multiplayer synchronization, matchmaking, network load testing, and social features validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VR/AR Game Testing",
+          "description": "Motion tracking, comfort testing, hand tracking, and immersive experience validation for VR and AR platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization",
+          "description": "Frame rate testing, load time analysis, memory usage optimization, and platform stress testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Game Security Testing",
+          "description": "Anti-cheat system validation, penetration testing, and protection against hacking or data leaks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Gaming Testing",
+          "description": "Streaming quality validation, latency optimization, cross-device sync, and bandwidth testing for cloud-based games."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Launch Readiness Testing",
+          "description": "Final validation before release including day-one patch verification, stress testing, and launch-day monitoring."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for iot Testing Service
+export const iotTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "IoT Testing Solutions",
+  "description": "Comprehensive IoT testing services including device connectivity, edge computing, cloud integration, protocol validation, performance, and IoT security testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "IoT Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IoT Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Device Connectivity Testing",
+          "description": "Testing smart devices for reliable network connectivity across various protocols."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IoT Security Testing",
+          "description": "Security validation through penetration testing, encryption, access control, and compliance checks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Edge Computing Testing",
+          "description": "Validation of edge processing, latency optimization, and edge-cloud synchronization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Integration Testing",
+          "description": "Testing device integration with cloud platforms like AWS IoT, Azure IoT, and Google Cloud."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Protocol Interoperability",
+          "description": "Testing cross-platform compatibility and communication across IoT protocols like MQTT, CoAP, Zigbee, LoRaWAN, etc."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for banking Finance Testing Service
+export const bankingFinanceTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Banking & Finance Testing Solutions",
+  "description": "Comprehensive BFSI testing services by Testriq including security testing, compliance validation (PCI DSS, SOX, GDPR), core banking QA, mobile banking validation, and performance testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Banking & Finance Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "BFSI Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Advanced penetration testing, vulnerability assessments, and threat modeling for financial systems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compliance Testing",
+          "description": "Validation for PCI DSS, SOX, GDPR, Basel III and other financial regulations."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Core Banking Validation",
+          "description": "QA for core banking platforms including account management, transactions, and data integrity."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Banking QA",
+          "description": "Cross-platform testing for mobile apps with biometric, security, and offline functionality validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Stress, load, and scalability testing for high-volume banking transactions and peak loads."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automation Testing",
+          "description": "CI/CD integrated regression testing and automated workflows for BFSI platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Security Testing",
+          "description": "Testing for open banking APIs, OAuth validation, and secure financial integrations."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for telecommunication Testing
+export const telecommunicationTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Telecommunication Testing Solutions",
+  "description": "Testriq provides comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN testing, and performance optimization for telecom operators worldwide.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Telecom Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Telecommunication Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "5G Network Testing",
+          "description": "Protocol validation, network slicing, edge computing, and latency optimization for 5G networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IoT Connectivity Testing",
+          "description": "Device compatibility testing, protocol validation, and connectivity performance monitoring for IoT networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VoIP/VoLTE Testing",
+          "description": "Voice quality analysis, jitter optimization, codec validation, and call setup testing for voice networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "NFV/SDN Testing",
+          "description": "Validation of network function virtualization and software-defined networking in cloud-native telecom environments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Network Security Testing",
+          "description": "Penetration testing, vulnerability assessment, protocol security validation, and threat modeling for telecom networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization",
+          "description": "Load and stress testing, capacity planning, throughput analysis, and real-time network performance improvement."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Service Schema for about page
+export const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Us - Testriq QA Lab",
+  "url": "https://testriq.com/about",
+  "description": "Testriq QA Lab is a trusted software testing company with 14+ years of global experience. Our ISTQB-certified team delivers expert QA services with precision, innovation, and client satisfaction.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com",
+    "logo": "https://testriq.com/images/Testriq_Logo.png",
+    "foundingDate": "2010",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Testriq QA Founders"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park",
+      "addressLocality": "Mira Road East",
+      "addressRegion": "Mira Bhayandar",
+      "postalCode": "401107",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9152929343",
+      "contactType": "customer support",
+      "email": "contact@testriq.com",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/testriq",
+      "https://www.twitter.com/testriq"
+    ],
+    "employee": {
+      "@type": "OrganizationRole",
+      "employee": {
+        "@type": "Person",
+        "name": "Certified QA Professionals"
+      },
+      "roleName": "Software Testing Engineer"
+    },
+    "award": [
+      "Best QA Partner of the Year 2024",
+      "Innovation in Testing Award 2023",
+      "Client Choice Award 2022"
+    ],
+    "numberOfEmployees": "50+",
+    "knowsAbout": [
+      "ISTQB Certified Testing",
+      "Agile QA Practices",
+      "Automation Testing",
+      "Security Testing",
+      "Performance Testing"
+    ],
+    "slogan": "Pioneering Quality Assurance Excellence"
+  }
+};
+
+// Service Schema for our Team Page
+export const ourTeamPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Meet Our Team - Testriq QA Lab",
+  "description": "Meet the certified QA professionals behind Testriq's success. Our team of ISTQB-certified experts brings decades of software testing experience across multiple domains.",
+  "url": "https://testriq.com/our-team",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com",
+    "logo": "https://testriq.com/images/Testriq_Logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9152929343",
+      "contactType": "customer support",
+      "email": "contact@testriq.com"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/testriq",
+      "https://twitter.com/testriq",
+      "https://www.facebook.com/testriq"
+    ]
+  },
+  "hasPart": {
+    "@type": "ItemList",
+    "name": "Testriq Team Members",
+    "itemListElement": [
+      {
+        "@type": "Person",
+        "name": "Sandeep Maske",
+        "jobTitle": "Founder & CEO",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#sandeep-maske"
+      },
+      {
+        "@type": "Person",
+        "name": "Santosh Kakade",
+        "jobTitle": "VP Operations",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#santosh-kakade"
+      },
+      {
+        "@type": "Person",
+        "name": "Goutam Mishra",
+        "jobTitle": "Head of QA and BD",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#goutam-mishra"
+      },
+      {
+        "@type": "Person",
+        "name": "Rohan Maske",
+        "jobTitle": "VP - Marketing",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#rohan-maske"
+      },
+      {
+        "@type": "Person",
+        "name": "Aatish Jadhav",
+        "jobTitle": "Senior Manager - Strategic Growth",
+        "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
+        "url": "https://testriq.com/our-team#aatish-jadhav"
+      }
+    ]
+  }
+};
+
+// Service Schema for careers Page
+export const careersPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Testriq QA Lab",
+  "url": "https://testriq.com",
+  "logo": "https://testriq.com/logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/testriq",
+    "https://twitter.com/testriq"
+  ],
+  "department": {
+    "@type": "Organization",
+    "name": "Testriq Careers",
+    "url": "https://testriq.com/careers"
+  },
+  "makesOffer": {
+    "@type": "OfferCatalog",
+    "name": "QA Career Opportunities at Testriq",
+    "itemListElement": [
+      {
+        "@type": "JobPosting",
+        "title": "Senior Test Automation Engineer",
+        "description": "Lead automation initiatives using Selenium, Cypress, and CI/CD. Design scalable test strategies for web/mobile.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Testriq QA Lab",
+          "sameAs": "https://testriq.com"
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "QA Test Engineer",
+        "description": "Execute manual testing and ensure quality for web and mobile apps. Collaborate with developers and designers.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Performance Testing Specialist",
+        "description": "Use JMeter, LoadRunner for performance and load testing. Analyze system bottlenecks and optimize throughput.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Mobile QA Engineer",
+        "description": "Test iOS and Android apps using Appium and other tools. Focus on real device testing and user experience.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Security Testing Engineer",
+        "description": "Conduct penetration tests, vulnerability scans, OWASP compliance, and secure code assessments.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Junior QA Analyst",
+        "description": "Start your QA career with mentorship and hands-on experience in real projects. Open to freshers.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Lead QA Engineer",
+        "description": "Lead QA teams, define testing strategies, mentor juniors, and ensure delivery quality across projects.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "API Testing Specialist",
+        "description": "Test REST/GraphQL APIs using Postman/Newman. Build automated test suites and ensure backend reliability.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      }
+    ]
+  }
+};
+
+
+// Breadcrumb Schema
+export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+});
+
+// FAQ Schema
+export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+

@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 // SEO metadata for the Tools page
 export const metadata: Metadata = {
-  title: "Testing Tools & Frameworks | Professional QA Automation Solutions",
+  title: "Top Tools use in Software Testing Companies",
   description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing. Expert QA automation solutions with Selenium, Cypress, Playwright, and more.",
   keywords: [
     "testing tools",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing.",
   },
   alternates: {
-    canonical: "/tools",
+    canonical: "https://testriq.com/tools",
   },
 };
 
