@@ -1,6 +1,6 @@
 import React from 'react';
 import { CityData } from "@/app/lib/CityData";
-import { CheckCircle, ArrowRight, Clock, Users, FileText, Award } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 interface CityTestingProcessSectionProps {
   cityData: CityData;
@@ -32,7 +32,7 @@ const CityTestingProcessSection: React.FC<CityTestingProcessSectionProps> = ({ c
                 {step.description}
               </p>
               <div className="space-y-2">
-                {step.deliverables.map((deliverable, idx) => (
+                {step.deliverables?.map((deliverable, idx) => (
                   <div key={idx} className="flex items-center text-sm">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                     <span className="text-gray-700">{deliverable}</span>

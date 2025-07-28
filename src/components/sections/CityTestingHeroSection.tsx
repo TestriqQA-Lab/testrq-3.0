@@ -4,9 +4,7 @@
 import React from 'react';
 import {
   MapPin,
-  Users,
   Building2,
-  TrendingUp,
   CheckCircle,
   Star,
   ArrowRight,

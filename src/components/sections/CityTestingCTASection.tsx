@@ -1,6 +1,6 @@
 import React from 'react';
 import { CityData } from "@/app/lib/CityData";
-import { ArrowRight, CheckCircle, Phone, Mail, MapPin, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 
 interface CityTestingCTASectionProps {
   cityData: CityData;
@@ -23,7 +23,7 @@ const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData 
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {cityData.ctaContent.benefits.map((benefit, index) => (
+          {(cityData.ctaContent.benefits ?? []).map((benefit, index) => (
             <div key={index} className="flex items-start bg-white bg-opacity-25 rounded-xl p-6 border border-white border-opacity-30 backdrop-blur-sm">
               <CheckCircle className="h-6 w-6 text-green-400 mr-3 flex-shrink-0 mt-1" />
               <span className="text-white text-lg font-medium">{benefit}</span>
