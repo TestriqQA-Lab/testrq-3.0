@@ -171,31 +171,7 @@ export const webAppTestingServiceSchema = {
   }
 };
 
-// Breadcrumb Schema
-export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": items.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-    "item": item.url
-  }))
-});
 
-// FAQ Schema
-export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
-});
 
 
 // Service Schema for AI Application Testing
@@ -2293,3 +2269,31 @@ export const careersPageSchema = {
     ]
   }
 };
+
+
+// Breadcrumb Schema
+export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+});
+
+// FAQ Schema
+export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
