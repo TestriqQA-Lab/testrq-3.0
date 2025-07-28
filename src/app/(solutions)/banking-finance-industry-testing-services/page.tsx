@@ -12,7 +12,7 @@ import { Metadata } from "next";
 import StructuredData, { bankingFinanceTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Banking App Testing Services | QA for Finance Applications",
+  title: "Banking App Testing Services ",
   description: "Get secure, scalable, and compliant banking app testing with TESTRIQ QA Lab. Ensure performance, security, and regulatory compliance in finance applications..",
   keywords: [
     "banking testing solutions",

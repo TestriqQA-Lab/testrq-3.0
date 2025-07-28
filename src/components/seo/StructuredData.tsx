@@ -1965,3 +1965,81 @@ export const bankingFinanceTestingServiceSchema = {
   }
 };
 
+export const telecommunicationTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Telecommunication Testing Solutions",
+  "description": "Testriq provides comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN testing, and performance optimization for telecom operators worldwide.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Telecom Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Telecommunication Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "5G Network Testing",
+          "description": "Protocol validation, network slicing, edge computing, and latency optimization for 5G networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "IoT Connectivity Testing",
+          "description": "Device compatibility testing, protocol validation, and connectivity performance monitoring for IoT networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VoIP/VoLTE Testing",
+          "description": "Voice quality analysis, jitter optimization, codec validation, and call setup testing for voice networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "NFV/SDN Testing",
+          "description": "Validation of network function virtualization and software-defined networking in cloud-native telecom environments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Network Security Testing",
+          "description": "Penetration testing, vulnerability assessment, protocol security validation, and threat modeling for telecom networks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization",
+          "description": "Load and stress testing, capacity planning, throughput analysis, and real-time network performance improvement."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+

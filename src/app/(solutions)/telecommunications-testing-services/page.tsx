@@ -8,20 +8,90 @@ import TelecomCaseStudiesSection from "@/components/sections/TelecomCaseStudiesS
 import TelecomROISection from "@/components/sections/TelecomROISection";
 import TelecomFAQSection from "@/components/sections/TelecomFAQSection";
 import TelecomContactSection from "@/components/sections/TelecomContactSection";
+import { Metadata } from "next";
+import StructuredData, { createBreadcrumbSchema, telecommunicationTestingSchema } from "@/components/seo/StructuredData";
 
-export const metadata = {
-  title: "Telecommunication Testing Solutions | 5G & Network QA Services | Testriq",
-  description: "Expert telecommunication testing services for 5G networks, IoT connectivity, VoIP systems, and telecom applications. Ensure seamless connectivity, optimal performance, and network reliability.",
-  keywords: "telecommunication testing, 5G testing, network testing, VoIP testing, IoT connectivity testing, telecom QA, wireless testing, network performance testing, telecom automation",
+export const metadata: Metadata = {
+  title: "Telecommunication Testing Services",
+  description: "Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization.Ensure seamless connectivity with Testriq’s telecom testing services: performance, security, and compliance testing for telecom systems.",
+  keywords: [
+    "telecommunication testing",
+    "5G network testing",
+    "VoIP testing",
+    "IoT connectivity testing",
+    "network performance testing",
+    "NFV testing",
+    "SDN testing",
+    "network security testing",
+    "latency optimization",
+    "mobile network QA"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: 'https://testriq.com/telecommunications-testing-services',
+  },
   openGraph: {
-    title: "Telecommunication Testing Solutions | Testriq",
-    description: "Comprehensive QA testing services for telecommunications, ensuring reliable networks, seamless connectivity, and optimal performance across all telecom platforms.",
-    type: "website",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/telecommunications-testing-services',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Telecommunication Testing Solutions | 5G & Network QA Services | Testriq',
+    description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
+    images: [
+      {
+        url: '/OG/telecom-testing-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Telecommunication Testing Solutions by Testriq',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Telecommunication Testing Solutions | 5G & Network QA Services | Testriq',
+    description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
+    images: ['/OG/telecom-testing-twitter.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
 
+
+
 const TelecommunicationTestingPage: React.FC = () => {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/telecommunications-testing-services" },
+    { name: "Telecommunication Testing ", url: "https://testriq.com/telecommunications-testing-services" }
+  ];
   return (
+    <div>
+            <StructuredData data={telecommunicationTestingSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
     <main className="min-h-screen bg-white">
       <TelecomHeroSection />
       <TelecomChallengesSection />
@@ -33,6 +103,7 @@ const TelecommunicationTestingPage: React.FC = () => {
       <TelecomFAQSection />
       <TelecomContactSection />
     </main>
+    </div>
   );
 };
 
