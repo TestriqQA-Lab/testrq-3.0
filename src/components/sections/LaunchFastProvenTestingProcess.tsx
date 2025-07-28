@@ -218,12 +218,6 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <div className="text-center">
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Learn More About Our Process
-          </button>
-        </div>
       </div>
     </section>
   );

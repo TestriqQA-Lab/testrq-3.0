@@ -25,15 +25,13 @@ export const metadata: Metadata = {
     "web testing automation",
   ],
   openGraph: {
-    title:
-      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    url: "https://testrq-3-0.vercel.app/web-application-testing-services",
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    url: "https://testriq.com/web-application-testing-services",
     type: "website",
     images: [
       {
-        url: "/web-app-testing-og.jpg",
+        url: "/OG/Web-Application-Testing-OG-IMG.webp",
         width: 1200,
         height: 630,
         alt: "Web Application Testing Services by Testriq",
@@ -42,11 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    images: ["/web-app-testing-twitter.jpg"],
+    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    images: ["/OG/Web-Application-Testing-Twitter-IMG.webp"],
   },
   alternates: {
     canonical: "/web-application-testing-services",
@@ -54,6 +50,18 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
 
@@ -164,12 +172,9 @@ const CardSlider = dynamic(
 
 export default function WebAppTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    {
-      name: "Web Application Testing",
-      url: "https://testrq-3-0.vercel.app/web-application-testing-services",
-    },
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/web-application-testing-services" },
+    { name: "Web Application Testing", url: "https://testriq.com/web-application-testing-services" }
   ];
 
   return (

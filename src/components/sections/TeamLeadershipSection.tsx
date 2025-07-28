@@ -15,16 +15,18 @@ const TeamLeadershipSection = () => {
         "Founded Testriq in 2010",
         "Scaled company to 50+ employees",
         "ISTQB Advanced Level Certified",
-        "Speaker at 20+ industry conferences"
+        "Speaker at 20+ industry conferences",
       ],
       linkedin: "https://www.linkedin.com/in/sandeep-maske-qa/",
-      img: <Image
-        src="/sandeep-maske-img.webp"
-        alt="Sandeep Maske"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/sandeep-maske-img.webp"
+          alt="Sandeep Maske"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
     {
       name: "Santosh Kakade",
@@ -36,16 +38,18 @@ const TeamLeadershipSection = () => {
         "Led 100+ automation projects",
         "Expert in Selenium, Cypress, Playwright",
         "DevOps and CI/CD specialist",
-        "Published 15+ technical articles"
+        "Published 15+ technical articles",
       ],
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
-      img: <Image
-        src="/Santosh_Kakade.webp"
-        alt="Santosh_Kakade"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/Santosh_Kakade.webp"
+          alt="Santosh_Kakade"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
     {
       name: "Goutam_Mishra",
@@ -57,16 +61,18 @@ const TeamLeadershipSection = () => {
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
         "Reduced bug leakage by 95%",
-        "Mentored 30+ junior testers"
+        "Mentored 30+ junior testers",
       ],
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
-      img: <Image
-        src="/Goutam_Mishra.webp"
-        alt="Goutam_Mishra"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/Goutam_Mishra.webp"
+          alt="Goutam_Mishra"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
     {
       name: "Rohan Maske",
@@ -78,16 +84,18 @@ const TeamLeadershipSection = () => {
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
         "Reduced bug leakage by 95%",
-        "Mentored 30+ junior testers"
+        "Mentored 30+ junior testers",
       ],
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
-      img: <Image
-        src="/Rohan_Maske.webp"
-        alt="Rohan_Maske"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/Rohan_Maske.webp"
+          alt="Rohan_Maske"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
     {
       name: "Aatish Jadhav",
@@ -99,18 +107,19 @@ const TeamLeadershipSection = () => {
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
         "Reduced bug leakage by 95%",
-        "Mentored 30+ junior testers"
+        "Mentored 30+ junior testers",
       ],
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
-      img: <Image
-        src="/Aatish_Jadhav.webp"
-        alt="Aatish_Jadhav"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/Aatish_Jadhav.webp"
+          alt="Aatish_Jadhav"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
-    
   ];
 
   const cdplLeaders = [
@@ -127,13 +136,15 @@ const TeamLeadershipSection = () => {
         "Led L&D initiatives in academic and corporate environments"
       ],
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
-      img: <Image
-        src="/ShoebShaikh.webp"
-        alt="ShoebShaikh"
-        width={350}
-        height={250}
-        className="object-cover rounded-full"
-      />
+      img: (
+        <Image
+          src="/ShoebShaikh.webp"
+          alt="ShoebShaikh"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
     },
     {
       name: "Ashish Shetty",
@@ -168,30 +179,36 @@ const TeamLeadershipSection = () => {
             Leadership Team
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Meet Our <span className="text-[theme(color.brand.blue)]">Leaders</span>
+            Meet Our{" "}
+            <span className="text-[theme(color.brand.blue)]">Leaders</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our leadership team combines decades of experience with a forward-thinking approach
-            to quality assurance, driving innovation and excellence across all our services.
+            Our leadership team brings decades of quality assurance and business
+            development experience across global enterprises, driving digital
+            transformation and testing innovation.
           </p>
         </div>
-
-        
 
         {/* Leaders Grid */}
         <div className="space-y-12">
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
-                }`}
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                index % 2 === 0 ? "" : ""
+              }`}
             >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}>
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                }`}
+              >
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                   <div className="mb-6">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{leader.name}</h3>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      {leader.name}
+                    </h3>
                     <div className="text-xl text-[theme(color.brand.blue)] font-semibold mb-2">
                       {leader.position}
                     </div>
@@ -204,32 +221,44 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Leader Visual */}
-                  <div className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <div
+                    className={`flex lg:hidden justify-center px-0 ${
+                      index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
+                  >
                     <div className="relative">
-
                       <div className="text-center text-black">
                         <div className="w-50 h-50 md:w-80 md:h-90 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                           {leader.img}
                         </div>
-                        <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
-                        <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                        <div className="text-xl font-semibold hidden lg:block">
+                          {leader.name}
+                        </div>
+                        <div className="text-md opacity-90 hidden lg:block">
+                          {leader.position}
+                        </div>
                       </div>
-
 
                       {/* Floating Badge */}
                       <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
                         <div className="text-center">
-                          <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
                           <div className="text-xs text-gray-100">Years</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">{leader.bio}</p>
+                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">
+                    {leader.bio}
+                  </p>
 
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                      Key Achievements
+                    </h4>
                     <div className="space-y-2">
                       {leader.achievements.map((achievement, achIndex) => (
                         <div key={achIndex} className="flex items-center gap-3">
@@ -241,26 +270,39 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Social Links */}
-                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30} /></Link>
+                  <Link
+                    href={leader.linkedin}
+                    className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
+                  >
+                    <FaLinkedin size={30} />
+                  </Link>
                 </div>
 
                 {/* Leader Visual */}
-                <div className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                <div
+                  className={`hidden lg:flex justify-center px-0 ${
+                    index % 2 === 1 ? "lg:col-start-1" : ""
+                  }`}
+                >
                   <div className="relative">
-
                     <div className="text-center text-black py-0">
                       <div className="w-60 h-60 md:w-80 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                         {leader.img}
                       </div>
-                      <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
-                      <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                      <div className="text-xl font-semibold hidden lg:block">
+                        {leader.name}
+                      </div>
+                      <div className="text-md opacity-90 hidden lg:block">
+                        {leader.position}
+                      </div>
                     </div>
-
 
                     {/* Floating Badge */}
                     <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                        <div className="text-lg font-bold text-white">
+                          {leader.experience.split("+")[0]}+
+                        </div>
                         <div className="text-xs text-gray-100">Years</div>
                       </div>
                     </div>
@@ -273,21 +315,31 @@ const TeamLeadershipSection = () => {
 
         {/* CDPL-Leaders Learning and Development */}
         <div className="space-y-12 my-16">
-
-          <h2 className="text-3xl md:text-5xl text-center font-semibold"><span className="text-brand-blue">Learning and Development</span> <span className="block leading-16">Wing with <span className="text-[#FF8B00]">CDPL</span></span></h2>
+          <h2 className="text-3xl md:text-5xl text-center font-semibold">
+            <span className="text-brand-blue">Learning and Development</span>{" "}
+            <span className="block leading-16">
+              Wing with <span className="text-[#FF8B00]">CDPL</span>
+            </span>
+          </h2>
 
           {cdplLeaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
-                }`}
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
+                index % 2 === 0 ? "" : ""
+              }`}
             >
-              <div className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}>
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                }`}
+              >
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                   <div className="mb-6">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-2">{leader.name}</h3>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                      {leader.name}
+                    </h3>
                     <div className="text-xl text-[theme(color.brand.blue)] font-semibold mb-2">
                       {leader.position}
                     </div>
@@ -300,32 +352,44 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Leader Visual */}
-                  <div className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <div
+                    className={`flex lg:hidden justify-center px-0 ${
+                      index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
+                  >
                     <div className="relative">
-
                       <div className="text-center text-black">
                         <div className="w-50 h-50 md:w-80 md:h-90 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                           {leader.img}
                         </div>
-                        <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
-                        <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                        <div className="text-xl font-semibold hidden lg:block">
+                          {leader.name}
+                        </div>
+                        <div className="text-md opacity-90 hidden lg:block">
+                          {leader.position}
+                        </div>
                       </div>
-
 
                       {/* Floating Badge */}
                       <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
                         <div className="text-center">
-                          <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
                           <div className="text-xs text-gray-100">Years</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">{leader.bio}</p>
+                  <p className="text-gray-700 leading-relaxed mt-6 mb-6">
+                    {leader.bio}
+                  </p>
 
                   <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                      Key Achievements
+                    </h4>
                     <div className="space-y-2">
                       {leader.achievements.map((achievement, achIndex) => (
                         <div key={achIndex} className="flex items-center gap-3">
@@ -337,26 +401,39 @@ const TeamLeadershipSection = () => {
                   </div>
 
                   {/* Social Links */}
-                  <Link href={leader.linkedin} className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer" ><FaLinkedin size={30} /></Link>
+                  <Link
+                    href={leader.linkedin}
+                    className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
+                  >
+                    <FaLinkedin size={30} />
+                  </Link>
                 </div>
 
                 {/* Leader Visual */}
-                <div className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                <div
+                  className={`hidden lg:flex justify-center px-0 ${
+                    index % 2 === 1 ? "lg:col-start-1" : ""
+                  }`}
+                >
                   <div className="relative">
-
                     <div className="text-center text-black py-0">
                       <div className="w-60 h-60 md:w-90 md:h-100 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto hover:scale-105 transition-transform duration-300">
                         {leader.img}
                       </div>
-                      <div className="text-xl font-semibold hidden lg:block">{leader.name}</div>
-                      <div className="text-md opacity-90 hidden lg:block">{leader.position}</div>
+                      <div className="text-xl font-semibold hidden lg:block">
+                        {leader.name}
+                      </div>
+                      <div className="text-md opacity-90 hidden lg:block">
+                        {leader.position}
+                      </div>
                     </div>
-
 
                     {/* Floating Badge */}
                     <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
                       <div className="text-center">
-                        <div className="text-lg font-bold text-white">{leader.experience.split('+')[0]}+</div>
+                        <div className="text-lg font-bold text-white">
+                          {leader.experience.split("+")[0]}+
+                        </div>
                         <div className="text-xs text-gray-100">Years</div>
                       </div>
                     </div>
@@ -367,16 +444,17 @@ const TeamLeadershipSection = () => {
           ))}
         </div>
 
-
         {/* Leadership Philosophy */}
         <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Leadership <span className="text-[theme(color.brand.blue)]">Philosophy</span>
+              Our Leadership{" "}
+              <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              We believe in leading by example, fostering innovation, and creating an environment
-              where every team member can thrive and contribute to our collective success.
+              At Testriq, we lead by example and foster innovation in software
+              testing, building a QA team culture where every member thrives and
+              drives collective success.
             </p>
           </div>
 
@@ -384,22 +462,29 @@ const TeamLeadershipSection = () => {
             {[
               {
                 title: "Empowerment",
-                description: "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
+                description:
+                  "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
               },
               {
                 title: "Transparency",
-                description: "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
+                description:
+                  "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
               },
               {
                 title: "Growth",
-                description: "We invest in continuous learning and development, helping our team members reach their full potential.",
+                description:
+                  "We invest in continuous learning and development, helping our team members reach their full potential.",
               },
             ].map((principle, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl font-bold">{index + 1}</span>
+                  <span className="text-white text-2xl font-bold">
+                    {index + 1}
+                  </span>
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{principle.title}</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {principle.title}
+                </h4>
                 <p className="text-gray-700">{principle.description}</p>
               </div>
             ))}
@@ -411,4 +496,3 @@ const TeamLeadershipSection = () => {
 };
 
 export default TeamLeadershipSection;
-

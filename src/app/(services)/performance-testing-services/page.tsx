@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, performanceTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
-  description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
+  title: "Stress Testing Services | Performance Testing Services",
+  description: "We are one of the best Load testing services and performance testing services Company services companies in Mumbai. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
   keywords: [
     "performance testing",
     "performance testing services",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    url: "https://testrq-3-0.vercel.app/performance-testing",
+    url: "/OG/performance-testing-og.webp",
     type: "website",
     images: [
       {
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    images: ["/performance-testing-twitter.jpg"],
+    images: ["/OG/performance-testing-twitter.webp"],
   },
   alternates: {
-    canonical: "/performance-testing",
+    canonical: "https://testriq.com/performance-testing-services",
   },
   robots: {
     index: true,
@@ -153,51 +153,12 @@ const PerformanceTestingReadyToEnsureQuality = dynamic(
 
 export default function PerformanceTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Performance Testing", url: "https://testrq-3-0.vercel.app/performance-testing" }
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testriq.com/performance-testing-services" },
+    { name: "Performance Testing", url: "https://testriq.com/performance-testing-services" }
   ];
 
-  const performanceTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Performance Testing Services",
-    "description": "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "https://testrq-3-0.vercel.app"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Performance Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Load Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Stress Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Scalability Testing"
-          }
-        }
-      ]
-    }
-  };
+  
 
   return (
     <div>

@@ -118,7 +118,7 @@ const DataAnalysisCaseStudies = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Data-Driven Success Stories
+            Data-Driven <span className='text-brand-blue'>Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover how industry leaders have transformed their business outcomes through our advanced analytics solutions and achieved measurable results.
@@ -250,7 +250,7 @@ const DataAnalysisCaseStudies = () => {
         </div>
 
         {/* Success Metrics */}
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 mb-16">
           <div className="text-center text-white mb-8">
             <h3 className="text-2xl font-bold mb-4">Our Analytics Impact</h3>
             <p className="text-purple-100 max-w-2xl mx-auto">
@@ -279,11 +279,11 @@ const DataAnalysisCaseStudies = () => {
               Join the ranks of industry leaders who have unlocked the power of their data through our advanced analytics solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors inline-flex items-center justify-center">
+              <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors inline-flex items-center justify-center">
                 Start Your Analytics Journey
                 <FaArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition-colors">
+              <button className="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue hover:text-white transition-colors">
                 View Our Portfolio
               </button>
             </div>

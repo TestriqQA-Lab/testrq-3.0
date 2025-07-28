@@ -168,7 +168,7 @@ const DataAnalysisComprehensiveSlider = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Complete Analytics Methodology Suite
+            Complete <span className='text-brand-blue'>Analytics Methodology Suite</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of analytics services designed to extract maximum value from your data at every stage of the analytics maturity journey.
@@ -243,12 +243,12 @@ const DataAnalysisComprehensiveSlider = () => {
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl text-white">
+                <div className="mt-8 p-6 bg-gradient-to-br from-brand-blue to-blue-600 rounded-xl text-white">
                   <h5 className="font-semibold mb-2">Ready to Get Started?</h5>
                   <p className="text-blue-100 text-sm mb-4">
                     Transform your data into actionable insights with our expert analytics services.
                   </p>
-                  <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
+                  <button className="bg-white text-brand-blue px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors">
                     Start Analysis
                   </button>
                 </div>
@@ -263,7 +263,7 @@ const DataAnalysisComprehensiveSlider = () => {
             Analytics Maturity Journey
           </h3>
           
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+          <div className="flex flex-col lg:flex-row  items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
             {['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive'].map((stage, index) => (
               <div key={stage} className="flex items-center">
                 <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center">
@@ -274,7 +274,7 @@ const DataAnalysisComprehensiveSlider = () => {
                   <div className="text-sm text-gray-500">Analytics</div>
                 </div>
                 {index < 4 && (
-                  <FaArrowRight className="h-5 w-5 text-gray-400 ml-4 hidden md:block" />
+                  <FaArrowRight className="h-5 w-5 text-gray-400 ml-4 hidden" />
                 )}
               </div>
             ))}

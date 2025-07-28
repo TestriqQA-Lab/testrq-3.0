@@ -1,50 +1,40 @@
 import React from 'react';
-import {
-  FaChartBar,
-  FaChartLine,
-  FaChartPie,
-  FaDatabase,
-  FaBrain,
-  FaBullseye,
-  FaCheckCircle,
-  FaBolt
-} from 'react-icons/fa';
-
+import { BarChart3, TrendingUp, PieChart, Database, Brain, Target, CheckCircle, Zap } from 'lucide-react';
 
 const DataAnalysisComprehensiveSection = () => {
   const analyticsServices = [
     {
-      icon: <FaChartBar className="h-8 w-8 text-blue-600" />,
+      icon: <BarChart3 className="h-8 w-8 text-blue-600" />,
       title: "Descriptive Analytics",
       description: "Transform raw data into meaningful insights through comprehensive statistical analysis, data visualization, and historical trend identification to understand what happened in your business.",
       features: ["Historical Data Analysis", "Statistical Summaries", "Data Visualization", "Trend Identification"]
     },
     {
-      icon: <FaChartLine className="h-8 w-8 text-green-600" />,
+      icon: <TrendingUp className="h-8 w-8 text-green-600" />,
       title: "Predictive Analytics",
       description: "Leverage machine learning algorithms and statistical models to forecast future trends, predict customer behavior, and anticipate market changes for strategic decision-making.",
       features: ["Forecasting Models", "Risk Assessment", "Customer Behavior Prediction", "Market Trend Analysis"]
     },
     {
-      icon: <FaBrain className="h-8 w-8 text-purple-600" />,
+      icon: <Brain className="h-8 w-8 text-purple-600" />,
       title: "Prescriptive Analytics",
       description: "Go beyond predictions with actionable recommendations using advanced optimization techniques and AI-driven insights to determine the best course of action for your business.",
       features: ["Optimization Models", "Decision Support", "Scenario Analysis", "Action Recommendations"]
     },
     {
-      icon: <FaChartPie className="h-8 w-8 text-orange-600" />,
+      icon: <PieChart className="h-8 w-8 text-orange-600" />,
       title: "Business Intelligence",
       description: "Create comprehensive dashboards and reporting systems that provide real-time insights into key performance indicators and business metrics for informed decision-making.",
       features: ["Interactive Dashboards", "KPI Monitoring", "Real-time Reporting", "Executive Summaries"]
     },
     {
-      icon: <FaDatabase className="h-8 w-8 text-indigo-600" />,
+      icon: <Database className="h-8 w-8 text-indigo-600" />,
       title: "Data Mining & Discovery",
       description: "Uncover hidden patterns, correlations, and insights within large datasets using advanced data mining techniques and exploratory data analysis methodologies.",
       features: ["Pattern Recognition", "Correlation Analysis", "Anomaly Detection", "Data Exploration"]
     },
     {
-      icon: <FaBullseye className="h-8 w-8 text-red-600" />,
+      icon: <Target className="h-8 w-8 text-red-600" />,
       title: "Customer Analytics",
       description: "Deep dive into customer data to understand behavior patterns, segment audiences, predict churn, and optimize customer lifetime value through advanced analytics techniques.",
       features: ["Customer Segmentation", "Churn Prediction", "Lifetime Value Analysis", "Behavioral Analytics"]
@@ -87,7 +77,7 @@ const DataAnalysisComprehensiveSection = () => {
               <div className="space-y-3">
                 {service.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center">
-                    <FaCheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                     <span className="text-sm text-gray-700">{feature}</span>
                   </div>
                 ))}
@@ -126,7 +116,7 @@ const DataAnalysisComprehensiveSection = () => {
 
         {/* Data Analytics Process */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-center text-white">
-          <FaBolt className="h-12 w-12 mx-auto mb-4" />
+          <Zap className="h-12 w-12 mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-4">End-to-End Analytics Process</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
             Our systematic approach ensures comprehensive data analysis from collection to actionable insights, delivering measurable business value.

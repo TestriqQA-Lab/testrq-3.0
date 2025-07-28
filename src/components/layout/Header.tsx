@@ -27,9 +27,9 @@ const Navbar = () => {
   const [activeTabletSubmenu, setActiveTabletSubmenu] = useState<number | null>(
     null
   ); // State to track active submenu in tablet
-  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<number | null>(
-    null
-  ); // State to track active submenu in desktop
+  const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
+    number | null
+  >(null); // State to track active submenu in desktop
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -133,16 +133,29 @@ const Navbar = () => {
               link: "/api-testing",
             },
             { label: "Regression Testing", link: "/regression-testing" },
-            { label: "Performance Testing", link: "/performance-testing-services" },
+            {
+              label: "Performance Testing",
+              link: "/performance-testing-services",
+            },
             { label: "Security Testing", link: "/security-testing" },
-            { label: "QA Documentation Services", link: "/qa-documentation-services" },
+            {
+              label: "QA Documentation Services",
+              link: "/qa-documentation-services",
+            },
             { label: "Data Analysis", link: "/data-analysis-services" },
+            {
+              label: "Software Testing Guide",
+              link: "/software-testing-guide",
+            },
           ],
         },
         {
           heading: "By Industries Expertise",
           services: [
-            { label: "Ecommerce Testing Service", link: "/e-commerce-testing-services" },
+            {
+              label: "Ecommerce Testing Service",
+              link: "/e-commerce-testing-services",
+            },
             {
               label: "Elearning Testing Service",
               link: "/e-learning-testing-services",
@@ -167,14 +180,19 @@ const Navbar = () => {
               label: "Telecommunication Testing Service",
               link: "/telecommunications-testing-services",
             },
-            
           ],
         },
         {
           heading: "Trust Certification",
           services: [
-            { label: "Matrimonial Apps Certification", link: "/usability-testing" },
-            { label: "Dating Apps Certification", link: "/load-testing" },
+            {
+              label: "Matrimonial Apps Certification",
+              link: "/usability-testing",
+            },
+            {
+              label: "Dating Apps Certification",
+              link: "/dating-app-certification",
+            },
             {
               label: "Betting Apps Certification",
               link: "/compatibility-testing",
@@ -217,10 +235,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl text-gray-700 text-sm xl:text-base relative">
           {menuItems.map((item, idx) => (
-            <li 
-              key={idx} 
+            <li
+              key={idx}
               className="relative cursor-pointer"
-              onMouseEnter={() => item.submenu && handleDesktopSubmenuEnter(idx)}
+              onMouseEnter={() =>
+                item.submenu && handleDesktopSubmenuEnter(idx)
+              }
               onMouseLeave={handleDesktopSubmenuLeave}
             >
               <Link href={item.link}>
@@ -231,63 +251,84 @@ const Navbar = () => {
               </Link>
 
               {/* Mega Menu for 'Services' */}
-              {item.label === "Services" && item.submenu && activeDesktopSubmenu === idx && (
-                <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
-                  <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
-                    {item.submenu.map((column, colIdx) => {
-                      // Check if the column is of type { heading: string, services: SubmenuItem[] }
-                      if ("label" in column && "link" in column) {
+              {item.label === "Services" &&
+                item.submenu &&
+                activeDesktopSubmenu === idx && (
+                  <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
+                    <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
+                      {item.submenu.map((column, colIdx) => {
+                        // Check if the column is of type { heading: string, services: SubmenuItem[] }
+                        if ("label" in column && "link" in column) {
+                          return (
+                            <div
+                              key={colIdx}
+                              className="space-y-3 xl:space-y-4"
+                            >
+                              <Link
+                                href={column.link}
+                                onClick={handleLinkClick}
+                              >
+                                <h2 className="text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                  {column.label}
+                                </h2>
+                              </Link>
+                            </div>
+                          );
+                        }
+
+                        // If it's the complex object, render the heading and services
                         return (
-                          <div key={colIdx} className="space-y-3 xl:space-y-4">
-                            <Link href={column.link} onClick={handleLinkClick}>
-                              <h2 className="text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
-                                {column.label}
-                              </h2>
-                            </Link>
+                          <div
+                            key={colIdx}
+                            className="space-y-3 xl:space-y-4 xl:gap-8"
+                          >
+                            <h2 className="text-base xl:text-lg font-semibold text-gray-800">
+                              {column.heading}
+                            </h2>
+                            <div className="flex flex-row">
+                              <ul className="space-y-2 xl:space-y-4">
+                                {column.services.map((service, subIdx) => (
+                                  <li key={subIdx}>
+                                    <Link
+                                      href={service.link}
+                                      onClick={handleLinkClick}
+                                    >
+                                      <span className=" text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer  hover:bg-blue-50 rounded-md p-2">
+                                        {service.label}
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         );
-                      }
-
-                      // If it's the complex object, render the heading and services
-                      return (
-                        <div key={colIdx} className="space-y-3 xl:space-y-4 xl:gap-8">
-                          <h2 className="text-base xl:text-lg font-semibold text-gray-800">
-                            {column.heading}
-                          </h2>
-                          <div className="flex flex-row">
-                            <ul className="space-y-2 xl:space-y-4">
-                              {column.services.map((service, subIdx) => (
-                                <li key={subIdx}>
-                                  <Link href={service.link} onClick={handleLinkClick}>
-                                    <span className=" text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer  hover:bg-blue-50 rounded-md p-2">
-                                      {service.label}
-                                    </span>
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      );
-                    })}
+                      })}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
               {/* Dropdown for other items */}
-              {item.submenu && item.label !== "Services" && activeDesktopSubmenu === idx && (
-                <ul className="absolute top-full left-0 bg-white shadow-md rounded-md py-2 w-max z-[55]">
-                  {item.submenu.map((subItem, subIdx) => (
-                    <li key={subIdx}>
-                      <Link href={"link" in subItem ? subItem.link : "#"} onClick={handleLinkClick}>
-                        <span className="block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer">
-                          {"label" in subItem ? subItem.label : subItem.heading}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              {item.submenu &&
+                item.label !== "Services" &&
+                activeDesktopSubmenu === idx && (
+                  <ul className="absolute top-full left-0 bg-white shadow-md rounded-md py-2 w-max z-[55]">
+                    {item.submenu.map((subItem, subIdx) => (
+                      <li key={subIdx}>
+                        <Link
+                          href={"link" in subItem ? subItem.link : "#"}
+                          onClick={handleLinkClick}
+                        >
+                          <span className="block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer">
+                            {"label" in subItem
+                              ? subItem.label
+                              : subItem.heading}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
             </li>
           ))}
         </ul>

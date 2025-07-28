@@ -3,21 +3,21 @@ import { FaBook, FaCode, FaChartLine, FaCog, FaShieldAlt } from 'react-icons/fa'
 
 const SoftwareTestingGuideHeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-white/60"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 ">
           {/* Left Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <div className="space-y-4">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
               <FaBook className="mr-2" />
               Complete Software Testing Guide
             </div>
             
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Master <span className="text-green-600">Software Testing</span> with Our Comprehensive Guide
+                Master <span className="text-brand-blue">Software Testing</span> with Our Comprehensive Guide
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -32,14 +32,14 @@ const SoftwareTestingGuideHeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-lg">
+              <button className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200 shadow-lg">
                 Start Learning Now
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
               
-              <button className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors duration-200">
+              <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
                 <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                 </svg>
@@ -77,7 +77,7 @@ const SoftwareTestingGuideHeroSection = () => {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                <div className="flex items-center space-x-3 text-sm text-gray-600">
                   <FaBook className="text-green-500" />
                   <span>Software Testing Guide</span>
                   <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
@@ -92,7 +92,7 @@ const SoftwareTestingGuideHeroSection = () => {
                 </div>
 
                 {/* Learning Modules */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-green-50 rounded-lg">
                     <FaCode className="mx-auto text-2xl text-green-600 mb-2" />
                     <div className="text-sm font-medium text-green-800">Fundamentals</div>

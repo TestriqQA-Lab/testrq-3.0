@@ -121,7 +121,7 @@ const DataAnalysisProvenTestingProcess = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Proven Data Analysis Process
+            <span className='text-brand-blue'>Proven</span> Data Analysis Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our systematic approach to data analysis ensures reliable insights and actionable recommendations through rigorous methodology and quality assurance at every step.
@@ -175,7 +175,7 @@ const DataAnalysisProvenTestingProcess = () => {
                 </div>
                 
                 {/* Step Number Circle */}
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
+                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
                   {step.step}
                 </div>
                 
@@ -227,13 +227,13 @@ const DataAnalysisProvenTestingProcess = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <FaChartLine className="h-12 w-12 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Data?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Let our proven data analysis process unlock the hidden insights in your data and drive strategic business decisions.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
+            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center">
               Start Your Analysis
               <FaArrowRight className="ml-2 h-5 w-5" />
             </button>

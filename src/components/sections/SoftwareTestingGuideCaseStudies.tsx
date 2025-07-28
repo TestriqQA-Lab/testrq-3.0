@@ -81,7 +81,7 @@ const SoftwareTestingGuideCaseStudies = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Real-World Success Stories
+            Real-World <span className='text-brand-blue'>Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover how industry leaders have transformed their software quality through our comprehensive testing methodologies and achieved measurable business results.
@@ -177,7 +177,7 @@ const SoftwareTestingGuideCaseStudies = () => {
         </div>
 
         {/* Success Metrics */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-16">
+        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 mb-16">
           <div className="text-center text-white mb-8">
             <h3 className="text-2xl font-bold mb-4">Our Track Record</h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
@@ -205,7 +205,7 @@ const SoftwareTestingGuideCaseStudies = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Join the ranks of industry leaders who have transformed their software quality through our proven testing methodologies.
             </p>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center">
+            <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors inline-flex items-center">
               Start Your Success Story
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>

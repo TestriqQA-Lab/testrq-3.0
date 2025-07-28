@@ -214,29 +214,6 @@ const LaunchFastCaseStudies: React.FC = () => {
           </button>
         </div>
 
-        {/* Summary Stats */}
-        <div className="mt-16 bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-8">LaunchFast QA Impact Summary</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl font-bold mb-2">300+</div>
-              <div className="text-blue-100">Successful Launches</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">60%</div>
-              <div className="text-blue-100">Faster Time-to-Market</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">$50M+</div>
-              <div className="text-blue-100">Funding Secured</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">99.5%</div>
-              <div className="text-blue-100">Launch Success Rate</div>
-            </div>
-          </div>
-        </div>
-
         <div className="text-center mt-12">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
             Ready to Join Our Success Stories?

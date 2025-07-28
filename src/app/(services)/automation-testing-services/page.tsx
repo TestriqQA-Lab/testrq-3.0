@@ -1,59 +1,76 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { automationTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
-  description: "Professional automation testing services including test automation frameworks, CI/CD integration, Selenium testing, API automation, and mobile test automation. Accelerate your testing cycles with cutting-edge automation solutions.",
+  title:  "Automation Testing Services | Automated QA Testing",
+
+  description: "We are one of the best Automation Testing Services and Automated QA Company services companies in Mumbai. We ensure faster releases with fewer bugs.",
   keywords: [
     "automation testing",
     "test automation",
-    "automation testing services",
+    "QA automation services",
     "selenium testing",
-    "test automation framework",
-    "CI/CD testing",
-    "API automation",
-    "mobile test automation",
-    "web automation testing",
-    "automated regression testing",
-    "continuous testing",
-    "DevOps testing",
-    "test automation tools",
-    "automated functional testing",
-    "keyword driven testing",
-    "data driven testing",
-    "hybrid automation framework",
-    "test automation strategy",
-    "automated performance testing",
-    "cross browser testing automation"
+    "API test automation",
+    "mobile automation testing",
+    "CI/CD testing integration",
+    "automated testing solutions",
+    "software quality assurance",
+    "continuous testing"
   ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: 'https://testriq.com/automation-testing-services',
+  },
   openGraph: {
-    title: "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
-    description: "Professional automation testing services including test automation frameworks, CI/CD integration, Selenium testing, API automation, and mobile test automation. Accelerate your testing cycles with cutting-edge automation solutions.",
-    url: "https://testrq-3-0.vercel.app/automation-testing",
-    type: "website",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/automation-testing-services',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Automation Testing Services - Advanced Test Automation Solutions | Testriq',
+    description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
     images: [
       {
-        url: "/automation-testing-og.jpg",
+        url: '/OG/automation-testing-og.webp',
         width: 1200,
         height: 630,
-        alt: "Automation Testing Services by Testriq",
+        alt: 'Automation Testing Services - Testriq',
+        type: 'image/webp',
       }
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
-    description: "Professional automation testing services including test automation frameworks, CI/CD integration, Selenium testing, API automation, and mobile test automation. Accelerate your testing cycles with cutting-edge automation solutions.",
-    images: ["/automation-testing-twitter.jpg"],
-  },
-  alternates: {
-    canonical: "/automation-testing",
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Automation Testing Services - Advanced Test Automation Solutions | Testriq',
+    description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
+    images: ['/OG/automation-testing-twitter.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
 
@@ -177,51 +194,11 @@ const AutomationTestingAnyQuestions = dynamic(
 
 export default function AutomationTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Automation Testing", url: "https://testrq-3-0.vercel.app/automation-testing" }
+    { name: "Home", url: "https://testriq.com" },
+    { name: "Services", url: "https://testriq.com/automation-testing-services" },
+    { name: "Automation Testing", url: "https://testriq.com/automation-testing-services" }
   ];
 
-  const automationTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Automation Testing Services",
-    "description": "Professional automation testing services including test automation frameworks, CI/CD integration, Selenium testing, API automation, and mobile test automation.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "https://testrq-3-0.vercel.app"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Automation Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Selenium Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "API Automation"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mobile Test Automation"
-          }
-        }
-      ]
-    }
-  };
 
   return (
     <div>

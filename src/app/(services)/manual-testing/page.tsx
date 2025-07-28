@@ -1,61 +1,79 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, manualTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
-  description: "Professional manual testing services including functional testing, usability testing, exploratory testing, and user acceptance testing. Ensure your software delivers exceptional user experiences with human-centered testing approaches.",
+  title: "Manual Testing Services for Software QA",
+  description: "We are one of the best Manual QA Testing Services Companies in Mumbai. With expertise in web manual testing and manual mobile app testing. Contact Us Now!",
   keywords: [
-    "manual testing",
     "manual testing services",
     "functional testing",
     "usability testing",
     "exploratory testing",
-    "user acceptance testing",
-    "black box testing",
-    "white box testing",
-    "grey box testing",
-    "manual QA testing",
-    "test case execution",
-    "bug tracking",
-    "quality assurance",
-    "software testing",
-    "manual test execution",
-    "test planning",
-    "test design",
-    "regression testing",
-    "smoke testing",
-    "sanity testing"
+    "UAT testing",
+    "accessibility testing",
+    "QA testing solutions",
+    "human-centered testing",
+    "manual QA experts",
+    "software quality assurance"
   ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testriq.com/'),
+  alternates: {
+    canonical: 'https://testriq.com/manual-testing',
+  },
   openGraph: {
-    title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
-    description: "Professional manual testing services including functional testing, usability testing, exploratory testing, and user acceptance testing. Ensure your software delivers exceptional user experiences with human-centered testing approaches.",
-    url: "https://testrq-3-0.vercel.app/manual-testing",
-    type: "website",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testriq.com/manual-testing',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Manual Testing Services - Expert QA Testing Solutions | Testriq',
+    description: "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
     images: [
       {
-        url: "/manual-testing-og.jpg",
+        url: '/OG/testriq-manual-testing-og.webp',
         width: 1200,
         height: 630,
-        alt: "Manual Testing Services by Testriq",
+        alt: 'Testriq Manual Testing Services by QA Experts',
+        type: 'image/webp',
       }
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
-    description: "Professional manual testing services including functional testing, usability testing, exploratory testing, and user acceptance testing. Ensure your software delivers exceptional user experiences with human-centered testing approaches.",
-    images: ["/manual-testing-twitter.jpg"],
-  },
-  alternates: {
-    canonical: "/manual-testing",
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Manual Testing Services - Expert QA Testing Solutions | Testriq',
+    description: "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
+    images: ['/OG/testriq-manual-testing-twitter.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
   },
 };
+
+
 
 const ManualTestingHeroSection = dynamic(
   () => import("@/components/sections/ManualTestingHeroSection"),
@@ -176,51 +194,12 @@ const ManualTestingAnyQuestions = dynamic(
 
 export default function ManualTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testrq-3-0.vercel.app" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/services" },
-    { name: "Manual Testing", url: "https://testrq-3-0.vercel.app/manual-testing" }
+    { name: "Home", url: "https://testriq.com" },
+    { name: "Services", url: "https://testriq.com/manual-testing" },
+    { name: "Manual Testing", url: "https://testriq.com/manual-testing" }
   ];
 
-  const manualTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Manual Testing Services",
-    "description": "Professional manual testing services including functional testing, usability testing, exploratory testing, and user acceptance testing.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "https://testrq-3-0.vercel.app"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Manual Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Functional Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Usability Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Exploratory Testing"
-          }
-        }
-      ]
-    }
-  };
+  
 
   return (
     <div>

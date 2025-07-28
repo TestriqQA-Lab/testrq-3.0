@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 const renderTitle = () => {
         const titleParts = impactSection.title.split('Real-World Successes');
@@ -40,7 +41,7 @@ const impactSection = {
 
 const HomeOurImpact = () => {
   return (
-    <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24">
+    <section className="py-12 px-8 sm:px-8 md:px-12 lg:px-24 bg-[theme(color.background.gray)]">
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
@@ -67,10 +68,15 @@ const HomeOurImpact = () => {
 
       {/* Button */}
       <div className="mt-10 text-center">
-        <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
-          View All Case Studies
-          <FaArrowRight className="text-xs" />
-        </button>
+        
+          <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
+             <Link href={"/case-studies"}>
+                View All Case Studies
+             </Link>
+            <FaArrowRight className="text-xs" />
+          </button>
+        
+        
       </div>
     </section>
   );
