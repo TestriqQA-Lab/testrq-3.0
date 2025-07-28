@@ -2042,4 +2042,66 @@ export const telecommunicationTestingSchema = {
   }
 };
 
+export const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Us - Testriq QA Lab",
+  "url": "https://testriq.com/about",
+  "description": "Testriq QA Lab is a trusted software testing company with 14+ years of global experience. Our ISTQB-certified team delivers expert QA services with precision, innovation, and client satisfaction.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com",
+    "logo": "https://testriq.com/images/Testriq_Logo.png",
+    "foundingDate": "2010",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Testriq QA Founders"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park",
+      "addressLocality": "Mira Road East",
+      "addressRegion": "Mira Bhayandar",
+      "postalCode": "401107",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9152929343",
+      "contactType": "customer support",
+      "email": "contact@testriq.com",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/testriq",
+      "https://www.twitter.com/testriq"
+    ],
+    "employee": {
+      "@type": "OrganizationRole",
+      "employee": {
+        "@type": "Person",
+        "name": "Certified QA Professionals"
+      },
+      "roleName": "Software Testing Engineer"
+    },
+    "award": [
+      "Best QA Partner of the Year 2024",
+      "Innovation in Testing Award 2023",
+      "Client Choice Award 2022"
+    ],
+    "numberOfEmployees": "50+",
+    "knowsAbout": [
+      "ISTQB Certified Testing",
+      "Agile QA Practices",
+      "Automation Testing",
+      "Security Testing",
+      "Performance Testing"
+    ],
+    "slogan": "Pioneering Quality Assurance Excellence"
+  }
+};
+
 
