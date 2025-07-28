@@ -1126,7 +1126,7 @@ export const regressionTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for performance Testing Service
 export const performanceTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1204,7 +1204,7 @@ export const performanceTestingServiceSchema = {
   }
 };
 
-
+// Service Schema for security Testing Service
 export const securityTestingServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -1246,6 +1246,7 @@ export const securityTestingServiceSchema = {
     }
   };
 
+// Service Schema for qa Documentation Service 
   export const qaDocumentationServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1323,6 +1324,8 @@ export const securityTestingServiceSchema = {
   }
 };
 
+
+// Service Schema for data Analysis Service
 export const dataAnalysisServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1393,7 +1396,7 @@ export const dataAnalysisServiceSchema = {
 };
 
 
-
+// Service Schema for complete Testing Guide
 export const completeTestingGuideSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -1462,3 +1465,84 @@ export const completeTestingGuideSchema = {
     }
   }
 };
+
+
+
+// Service Schema for E-Commerce Testing
+export const ecommerceTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "E-Commerce Testing Services",
+  "description": "Comprehensive QA testing solutions for online stores including cart, payment, performance, and security testing. Testriq ensures optimized user experiences, reduced cart abandonment, and secure transactions for e-commerce businesses.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "E-Commerce QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "E-Commerce QA Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Shopping Cart Testing",
+          "description": "Validating shopping cart functionality, checkout flows, and payment integration accuracy."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payment Gateway Testing",
+          "description": "Secure testing for multiple payment gateways ensuring PCI DSS compliance and transaction success."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Commerce Testing",
+          "description": "Mobile-first testing approach covering responsiveness, performance, and mobile payment workflows."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Load Testing",
+          "description": "Stress, spike, and load testing during peak sales periods like Black Friday to ensure uptime and speed."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Compliance Testing",
+          "description": "Testing for vulnerabilities, SSL, data privacy (GDPR), and security compliance (SOC2, ISO 27001)."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cross-Platform Compatibility Testing",
+          "description": "Ensuring seamless user experience across devices, browsers, and operating systems."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
