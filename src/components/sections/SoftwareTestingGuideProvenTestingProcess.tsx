@@ -104,7 +104,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
             <span className='text-brand-blue'>Proven</span> Learning Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our structured approach to software testing education ensures comprehensive skill development through hands-on practice, expert guidance, and industry-recognized certifications.
+            Our structured approach to software testing education ensures comprehensive QA skill development through hands-on practice, expert QA guidance, and industry-recognized QA certifications—covering everything from manual testing and automation testing to performance testing and security testing.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
         <div className="relative mb-16">
           {/* Connection Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-200 to-teal-200 hidden lg:block"></div>
-          
+
           <div className="space-y-12">
             {learningSteps.map((step, index) => (
               <div key={index} className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
@@ -128,11 +128,11 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
                         <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {step.description}
                     </p>
-                    
+
                     <div className="space-y-2 mb-6">
                       {step.details.map((detail, detailIndex) => (
                         <div key={detailIndex} className="flex items-center">
@@ -141,7 +141,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <div className="flex items-center text-sm text-gray-500">
                         <Clock className="h-4 w-4 mr-1" />
@@ -153,12 +153,12 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Step Number Circle */}
                 <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
                   {step.step}
                 </div>
-                
+
                 {/* Spacer for opposite side */}
                 <div className="w-full lg:w-5/12"></div>
               </div>
@@ -171,7 +171,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Process Success Metrics
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processMetrics.map((metric, index) => (
               <div key={index} className="text-center">
