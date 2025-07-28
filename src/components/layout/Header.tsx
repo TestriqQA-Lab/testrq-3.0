@@ -187,7 +187,7 @@ const Navbar = () => {
           services: [
             {
               label: "Matrimonial Apps Certification",
-              link: "/usability-testing",
+              link: "/matrimonial-apps-certification",
             },
             {
               label: "Dating Apps Certification",
@@ -199,7 +199,7 @@ const Navbar = () => {
             },
             {
               label: "Trading Apps Certification",
-              link: "/accessibility-testing",
+              link: "/trading-apps-certification",
             },
             { label: "Shopping Apps Certification", link: "/database-testing" },
             {
