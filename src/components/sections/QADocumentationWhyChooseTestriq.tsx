@@ -221,7 +221,7 @@ const QADocumentationWhyChooseTestriq = () => {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
               </svg>
               <blockquote className="text-2xl font-medium text-gray-900 mb-6">
-                &quot;Testriq's QA documentation services transformed our testing processes. Their comprehensive quality assurance documentation and well-structured test case documentation reduced our onboarding time by 50% and significantly improved our overall QA deliverables and quality delivery.
+                &quot;Testriq&apos;s QA documentation services transformed our testing processes. Their comprehensive quality assurance documentation and well-structured test case documentation reduced our onboarding time by 50% and significantly improved our overall QA deliverables and quality delivery.
                 &quot;
               </blockquote>
               <div className="text-lg font-semibold text-gray-900">Sarah Johnson</div>
