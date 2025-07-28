@@ -13,11 +13,27 @@ export const metadata = {
     description: "Reach out to Testriq for your QA and software testing needs.",
     type: "website",
     url: "https://testriq.com/contact-us",
+    images: [
+      {
+        url: "/OG/og_image_final.png",
+        width: 1200,
+        height: 630,
+        alt: "Testriq Contact Us OG Image",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact Us | Get in Touch with Testriq QA Experts",
     description: "Reach out to Testriq for your QA and software testing needs.",
+    images: [
+      {
+        url: "/OG/twitter_image_final.png",
+        width: 1200,
+        height: 675,
+        alt: "Testriq Contact Us Twitter Image",
+      },
+    ],
   },
 };
 
