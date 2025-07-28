@@ -1716,3 +1716,97 @@ export const healthcareTestingServiceSchema = {
     }
   }
 };
+
+
+export const gamingTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gaming App Testing Solutions",
+  "description": "Testriq provides game QA services including mobile game testing, console compatibility, VR/AR validation, multiplayer synchronization, performance testing, anti-cheat validation, and cloud gaming QA.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Game Testing & QA",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Gaming App Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Game Testing",
+          "description": "Functional and performance testing for iOS and Android games, including device compatibility and battery optimization."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Console Game Testing",
+          "description": "Testing across PlayStation, Xbox, and Nintendo Switch platforms for certification, controls, and hardware compatibility."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Multiplayer & Network Testing",
+          "description": "Multiplayer synchronization, matchmaking, network load testing, and social features validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VR/AR Game Testing",
+          "description": "Motion tracking, comfort testing, hand tracking, and immersive experience validation for VR and AR platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization",
+          "description": "Frame rate testing, load time analysis, memory usage optimization, and platform stress testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Game Security Testing",
+          "description": "Anti-cheat system validation, penetration testing, and protection against hacking or data leaks."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Gaming Testing",
+          "description": "Streaming quality validation, latency optimization, cross-device sync, and bandwidth testing for cloud-based games."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Launch Readiness Testing",
+          "description": "Final validation before release including day-one patch verification, stress testing, and launch-day monitoring."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
