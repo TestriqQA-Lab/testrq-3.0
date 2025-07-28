@@ -21,13 +21,13 @@ const DataAnalysisHeroSection = () => {
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
-                Professional data analysis services that turn your raw data into powerful business insights. 
-                From descriptive analytics to predictive modeling, we help you make data-driven decisions that drive growth.
+                Professional data analysis services that transform your raw data into powerful business insights. From descriptive analytics to predictive modeling, we empower you to make data-driven decisions that steer your business ahead and drive measurable growth.
+
               </p>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert data scientists and analysts use advanced statistical methods, machine learning algorithms, 
-                and cutting-edge visualization tools to uncover hidden patterns, trends, and opportunities in your data.
+                Our dedicated data team of expert data scientists and analysts leverages advanced statistical modeling, machine learning model building, and cutting-edge data analysis tools to uncover hidden patterns, trends, and strategic opportunities within your data—turning complex information into realistic, actionable insights.
+
               </p>
             </div>
 
