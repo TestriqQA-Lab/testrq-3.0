@@ -24,10 +24,7 @@ const SecurityTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Protect your applications from cyber threats with comprehensive security 
-              testing services. Our expert team conducts penetration testing, vulnerability 
-              assessments, SAST, DAST, and compliance testing to identify and eliminate 
-              security vulnerabilities before they become critical risks.
+              Protect your applications from cybersecurity threats with our comprehensive security testing services. Our expert team conducts penetration testing, vulnerability assessments, static application security testing (SAST), dynamic application security testing (DAST), and compliance testing to identify and eliminate risks like SQL injection, cross-site scripting (XSS), and insecure APIs before they become critical.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

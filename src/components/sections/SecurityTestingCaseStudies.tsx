@@ -114,8 +114,8 @@ const SecurityTestingCaseStudies: React.FC = () => {
             Security Testing <span className="text-brand-blue">Case Studies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our comprehensive security testing services have helped organizations across various industries 
-            strengthen their cybersecurity posture, achieve compliance, and protect against sophisticated threats.
+            Discover how our comprehensive security testing services have helped organizations across various industries strengthen their cybersecurity posture, achieve regulatory compliance with standards like ISO 27001 and HIPAA, and protect against sophisticated threats such as phishing attacks, unauthorized access, and data breaches.
+
           </p>
         </div>
 

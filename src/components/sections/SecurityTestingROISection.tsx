@@ -12,7 +12,8 @@ const SecurityTestingROISection: React.FC = () => {
             The ROI of <span className="text-brand-blue">Security Testing</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Investing in robust security testing is not just a cost, but a strategic investment that yields significant returns by protecting your assets, reputation, and bottom line.
+            Investing in robust security testing is not just a cost, but a strategic investment that yields significant returns by protecting sensitive data, preserving your reputation, avoiding regulatory fines, and securing your infrastructure and bottom line.
+
           </p>
         </div>
 
