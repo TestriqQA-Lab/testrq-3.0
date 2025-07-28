@@ -1640,3 +1640,79 @@ export const elearningTestingServiceSchema = {
   }
 };
 
+export const healthcareTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Healthcare Testing Services",
+  "description": "Testriq provides professional QA testing for healthcare software, including HIPAA compliance testing, FDA validation, EHR integration testing, medical device validation, and patient data security audits.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Healthcare Software QA Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Healthcare Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HIPAA Compliance Testing",
+          "description": "Comprehensive validation of patient data protection, PHI access controls, and HIPAA Security & Privacy Rule compliance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "EHR System Testing",
+          "description": "Functional, integration, and workflow testing of Electronic Health Record and EMR systems including HL7 and FHIR standards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "FDA Validation Support",
+          "description": "Test documentation and compliance validation for FDA regulations including 21 CFR Part 820 and IEC 62304."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medical Device Testing",
+          "description": "QA for IoT-enabled medical devices including connectivity, real-time data validation, and device integration testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Telehealth App Testing",
+          "description": "Testing of video quality, mobile compatibility, encryption, and security for telemedicine applications and mHealth platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Healthcare Cybersecurity",
+          "description": "Penetration testing, threat modeling, and vulnerability assessment tailored for healthcare applications and cloud systems."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
