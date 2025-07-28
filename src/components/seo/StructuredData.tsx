@@ -2171,3 +2171,125 @@ export const ourTeamPageSchema = {
   }
 };
 
+export const careersPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Testriq QA Lab",
+  "url": "https://testriq.com",
+  "logo": "https://testriq.com/logo.png",
+  "sameAs": [
+    "https://www.linkedin.com/company/testriq",
+    "https://twitter.com/testriq"
+  ],
+  "department": {
+    "@type": "Organization",
+    "name": "Testriq Careers",
+    "url": "https://testriq.com/careers"
+  },
+  "makesOffer": {
+    "@type": "OfferCatalog",
+    "name": "QA Career Opportunities at Testriq",
+    "itemListElement": [
+      {
+        "@type": "JobPosting",
+        "title": "Senior Test Automation Engineer",
+        "description": "Lead automation initiatives using Selenium, Cypress, and CI/CD. Design scalable test strategies for web/mobile.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Testriq QA Lab",
+          "sameAs": "https://testriq.com"
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "QA Test Engineer",
+        "description": "Execute manual testing and ensure quality for web and mobile apps. Collaborate with developers and designers.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Performance Testing Specialist",
+        "description": "Use JMeter, LoadRunner for performance and load testing. Analyze system bottlenecks and optimize throughput.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Mobile QA Engineer",
+        "description": "Test iOS and Android apps using Appium and other tools. Focus on real device testing and user experience.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Security Testing Engineer",
+        "description": "Conduct penetration tests, vulnerability scans, OWASP compliance, and secure code assessments.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Junior QA Analyst",
+        "description": "Start your QA career with mentorship and hands-on experience in real projects. Open to freshers.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Lead QA Engineer",
+        "description": "Lead QA teams, define testing strategies, mentor juniors, and ensure delivery quality across projects.",
+        "employmentType": "FULL_TIME",
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "addressCountry": "US"
+          }
+        },
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      },
+      {
+        "@type": "JobPosting",
+        "title": "API Testing Specialist",
+        "description": "Test REST/GraphQL APIs using Postman/Newman. Build automated test suites and ensure backend reliability.",
+        "employmentType": "FULL_TIME",
+        "jobLocationType": "TELECOMMUTE",
+        "validThrough": "2025-12-31",
+        "datePosted": "2025-07-28"
+      }
+    ]
+  }
+};
