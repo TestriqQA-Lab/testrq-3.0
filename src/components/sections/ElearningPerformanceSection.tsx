@@ -125,7 +125,7 @@ const ElearningPerformanceSection: React.FC = () => {
             <span className="text-sm font-medium">Performance Optimization</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Lightning-Fast
             <span className="block text-brand-blue">E-Learning Performance</span>
           </h2>

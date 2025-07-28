@@ -60,7 +60,7 @@ const EcommerceROISection: React.FC = () => {
             <span className="text-sm font-medium">Return on Investment</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Measurable ROI from
             <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">E-Commerce Testing</span>
           </h2>

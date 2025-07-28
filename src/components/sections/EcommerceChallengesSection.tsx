@@ -89,7 +89,7 @@ const EcommerceChallengesSection: React.FC = () => {
             <span className="text-sm font-medium text-red-600">E-Commerce Challenges</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-14">
             Common E-Commerce Issues
             <span className="block text-[theme(color.brand.blue)]">That Cost You Revenue</span>
           </h2>

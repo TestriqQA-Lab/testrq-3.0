@@ -24,10 +24,7 @@ const RegressionTestingHeroSection: React.FC = () => {
             </h1>
             
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ensure your software updates don&apos;t break existing functionality with our 
-              comprehensive regression testing services. We use selective, progressive, 
-              and automated regression testing strategies to maintain software quality 
-              while accelerating your development cycles and reducing deployment risks.
+              Ensure your software updates don't break existing functionality with our comprehensive regression testing services. We use selective, progressive, and automated regression testing strategies—supported by robust test scripts, continuous regression testing, and impact analysis—to maintain software stability while accelerating your CI/CD pipelines and reducing production defects.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

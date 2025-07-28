@@ -69,9 +69,7 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Regression Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive regression testing solutions that ensure software stability, 
-            maintain quality standards, and provide confidence in every release through proven methodologies 
-            and expert execution.
+            Testriq delivers comprehensive regression testing solutions that ensure software stability, maintain quality standards, and provide confidence in every release through proven methodologies and expert execution.
           </p>
         </div>
 
@@ -86,13 +84,13 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
                 <div className={`${colors.iconBg} w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <span className="text-white">{advantage.icon}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {advantage.description}
                 </p>
-                
+
                 <div className={`${colors.text} font-bold text-lg`}>
                   {advantage.stats}
                 </div>
@@ -135,10 +133,10 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Advanced Regression Testing Methodology</h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Our regression testing approach combines intelligent automation, risk-based prioritization, 
-              and comprehensive coverage analysis to ensure maximum efficiency and effectiveness in maintaining software quality.
+              Our regression testing approach combines intelligent automation, risk-based prioritization, and comprehensive coverage analysis to ensure maximum efficiency and effectiveness in maintaining software quality.
+
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
@@ -169,7 +167,7 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
 
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
             <h4 className="text-xl font-bold text-gray-900 mb-6">Regression Testing Excellence</h4>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="bg-green-600 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
