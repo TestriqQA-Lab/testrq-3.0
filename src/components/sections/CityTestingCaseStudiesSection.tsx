@@ -1,15 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { CityData } from "@/app/lib/CityData";
-import { Building, TrendingUp, CheckCircle, ArrowRight, Star } from 'lucide-react';
+import { Building, CheckCircle } from 'lucide-react';
 
 interface CityTestingCaseStudiesSectionProps {
   cityData: CityData;
 }
 
 const CityTestingCaseStudiesSection: React.FC<CityTestingCaseStudiesSectionProps> = ({ cityData }) => {
-  const [activeStudy, setActiveStudy] = useState(0);
+  // const [activeStudy, setActiveStudy] = useState(0);
 
   return (
     <section className="py-20 bg-white">

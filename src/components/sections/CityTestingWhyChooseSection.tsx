@@ -173,7 +173,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
             <div className="max-w-4xl mx-auto">
               <div className="text-center">
                 <p className="text-xl text-gray-700 italic leading-relaxed mb-8">
-                  "{cityData.whyChooseContent.testimonial.text}"
+                  &qout;{cityData.whyChooseContent.testimonial.text}&qout;
                 </p>
 
                 <div className="flex items-center justify-center space-x-4">
@@ -206,7 +206,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               Industries We Serve in {cityData.name}
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our specialized expertise spans across {cityData.name}'s key industries
+              Our specialized expertise spans across {cityData.name}&apos;s key industries
             </p>
           </div>
 

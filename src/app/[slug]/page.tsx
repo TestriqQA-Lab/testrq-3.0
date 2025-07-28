@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getCityData, CityData, getAllCities } from '@/app/lib/CityData';
+import { getCityData, getAllCities } from '@/app/lib/CityData';
 import CityTestingHeroSection from '@/components/sections/CityTestingHeroSection';
 import CityTestingServicesSection from '@/components/sections/CityTestingServicesSection';
 import CityTestingProcessSection from '@/components/sections/CityTestingProcessSection';
@@ -11,11 +11,14 @@ import CityTestingCTASection from '@/components/sections/CityTestingCTASection';
 import CityTestingTrendingServicesSection from '@/components/sections/CityTestingTrendingServicesSection';
 
 interface CityPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: CityPageProps) {
-  const cityData = getCityData(params.slug);
+  const resolvedParams = await params; // Await params
+  console.log('generateMetadata resolvedParams:', resolvedParams); // Debug
+  const cityData = getCityData(resolvedParams.slug);
+  console.log('generateMetadata cityData:', cityData);
 
   if (!cityData) {
     return {};
@@ -29,7 +32,10 @@ export async function generateMetadata({ params }: CityPageProps) {
 }
 
 export default async function CityPage({ params }: CityPageProps) {
-  const cityData = getCityData(params.slug);
+  const resolvedParams = await params; // Await params
+  console.log('CityPage resolvedParams:', resolvedParams); // Debug
+  const cityData = getCityData(resolvedParams.slug);
+  console.log('CityPage cityData:', cityData); // Debug
 
   if (!cityData) {
     notFound();
@@ -52,6 +58,7 @@ export default async function CityPage({ params }: CityPageProps) {
 
 export async function generateStaticParams() {
   const cities = getAllCities();
+  console.log('Generated slugs:', cities.map((city) => city.slug)); // Debug
   return cities.map((city) => ({
     slug: city.slug,
   }));
