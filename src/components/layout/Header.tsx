@@ -194,7 +194,7 @@ const Navbar = () => {
               link: "/dating-app-certification",
             },
             {
-              label: "Betting Apps Certification",
+              label: "Fantasy Sports App Certification",
               link: "/compatibility-testing",
             },
             {
@@ -202,10 +202,6 @@ const Navbar = () => {
               link: "/trading-apps-certification",
             },
             { label: "Shopping Apps Certification", link: "/database-testing" },
-            {
-              label: "Chatting Apps Certification",
-              link: "/integration-testing",
-            },
           ],
         },
       ],
