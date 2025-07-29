@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
-  alternates: {
-    canonical: 'https://testriq.com/about-us',
-  },
+  // metadataBase: new URL('https://testriq.com/'),
+  // alternates: {
+  //   canonical: 'https://testriq.com/about-us',
+  // },
   openGraph: {
     type: 'website',
     locale: 'en_US',
