@@ -24,7 +24,8 @@ const ToolsHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Discover our comprehensive suite of industry-leading testing tools and frameworks. From Selenium and Cypress to Playwright and specialized healthcare testing solutions, we leverage the most advanced QA automation technologies to ensure your software meets the highest quality standards.
+          Discover our comprehensive suite of industry-leading testing tools and frameworks. From Selenium, Cypress, and Playwright to specialized healthcare testing solutions, we leverage the most advanced QA automation technologies to ensure your software meets the highest quality standards, achieves regulatory compliance, and delivers reliable performance across platforms.
+
         </p>
 
         {/* CTAs */}

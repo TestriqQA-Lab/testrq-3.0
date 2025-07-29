@@ -149,8 +149,8 @@ const ToolsPerformanceSection = () => {
             <span className="text-[theme(color.brand.blue)]">Performance Testing</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Comprehensive performance testing solutions to ensure your applications can handle 
-            real-world traffic, scale efficiently, and deliver optimal user experiences.
+            Comprehensive performance testing solutions to ensure your applications can handle real-world user traffic, scale efficiently, and deliver optimal user experiences—leveraging tools like JMeter, BlazeMeter, Loader.io, and Neustar for load testing, stress testing, and scalability validation.
+
           </p>
         </div>
 
