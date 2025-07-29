@@ -44,11 +44,11 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Business</strong>, for the purpose of the CCPA (California Consumer Privacy Act), refers to the Company as the legal entity that collects Consumers' personal information and determines the purposes and means of the processing of Consumers' personal information, or on behalf of which such information is collected and that alone, or jointly with others, determines the purposes and means of the processing of consumers' personal information, that does business in the State of California.
+                <strong>Business</strong>, for the purpose of the CCPA (California Consumer Privacy Act), refers to the Company as the legal entity that collects Consumers&apos; personal information and determines the purposes and means of the processing of Consumers&apos; personal information, or on behalf of which such information is collected and that alone, or jointly with others, determines the purposes and means of the processing of consumer&apos;s personal information, that does business in the State of California.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Company</strong> (referred to as either "The Company", "We", "Us" or "Our" in this Agreement) refers to TESTRIQ QA Lab, Office No:- 2 & 3, 2nd Floor, Ashley Tower, Beverly Park, Kanakia Road, adj. to PVR Multiplex, Mira Road East, Thane – 401107.
+                <strong>Company</strong> (referred to as either &quot;The Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to TESTRIQ QA Lab, Office No:- 2 & 3, 2nd Floor, Ashley Tower, Beverly Park, Kanakia Road, adj. to PVR Multiplex, Mira Road East, Thane – 401107.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Sale</strong>, for the purpose of the CCPA (California Consumer Privacy Act), means selling, renting, releasing, disclosing, disseminating, making available, transferring, or otherwise communicating orally, in writing, or by electronic or other means, a Consumer's personal information to another business or a third party for monetary or other valuable consideration.
+                <strong>Sale</strong>, for the purpose of the CCPA (California Consumer Privacy Act), means selling, renting, releasing, disclosing, disseminating, making available, transferring, or otherwise communicating orally, in writing, or by electronic or other means, a Consumer&apos;s personal information to another business or a third party for monetary or other valuable consideration.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+              Usage Data may include information such as Your Device&apos;s Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -196,11 +196,11 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your name, Your email address, Your activities or Your contact list associated with that account.
+              If You decide to register through or otherwise grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service&apos;s account, such as Your name, Your email address, Your activities or Your contact list associated with that account.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.
+              You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service&apos;s account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.
             </p>
           </section>
 
@@ -237,7 +237,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-gray-700 leading-relaxed mt-6 mb-6">
-              Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <a href="https://www.privacypolicies.com/blog/cookies/" className="text-blue-600 hover:text-blue-800 underline">Cookies by Privacy Policies Generator.</a>
+              Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <a href="https://www.privacypolicies.com/blog/cookies/" className="text-blue-600 hover:text-blue-800 underline">Cookies by Privacy Policies Generator.</a>
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -310,7 +310,7 @@ const PrivacyPolicy = () => {
 
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>To contact You</strong>: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.
+                  <strong>To contact You</strong>: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application&apos;s push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.
                 </p>
               </div>
 
@@ -400,7 +400,7 @@ const PrivacyPolicy = () => {
               Transfer of Your Personal Data
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+              Your information, including Personal Data, is processed at the Company&apos;s operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -454,10 +454,10 @@ const PrivacyPolicy = () => {
 
           <section>
             <h2 className="text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-green-500 pl-4">
-              Your California Privacy Rights (California's Shine the Light law)
+              Your California Privacy Rights (California&apos;s Shine the Light law)
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Under California Civil Code Section 1798.83, California residents with an established business relationship with us can request information once a year about the Personal Data We shared with third parties for the third parties' direct marketing purposes. If you would like to request more information under the California Shine the Light Law, and if You are a California resident, You can contact Us using the contact information provided below.
+              Under California Civil Code Section 1798.83, California residents with an established business relationship with us can request information once a year about the Personal Data We shared with third parties for the third parties&apos; direct marketing purposes. If you would like to request more information under the California Shine the Light Law, and if You are a California resident, You can contact Us using the contact information provided below.
             </p>
           </section>
 
@@ -475,7 +475,7 @@ const PrivacyPolicy = () => {
               Links to Other Websites
             </h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
+              Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party&apos;s site. We strongly advise You to review the Privacy Policy of every site You visit.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -492,7 +492,7 @@ const PrivacyPolicy = () => {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
+              We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">

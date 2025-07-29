@@ -46,7 +46,7 @@ const CookiesPolicy = () => {
 
             <div className="bg-gray-50 p-6 rounded-lg space-y-4">
               <p className="text-gray-700 leading-relaxed">
-                <strong>Company</strong> (Referred to as either "The Company", "We", "Us" or "Our" in this Cookies Policy) refers to TESTRIQ QA Lab, Office No:- 2 & 3, 2nd Floor, Ashley Tower, Beverly Park, Kanakia Road, adj. to PVR Multiplex, Mira Road East, Thane – 401107.
+                <strong>Company</strong> (Referred to as either &quot;The Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Cookies Policy) refers to TESTRIQ QA Lab, Office No:- 2 & 3, 2nd Floor, Ashley Tower, Beverly Park, Kanakia Road, adj. to PVR Multiplex, Mira Road East, Thane – 401107.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -73,7 +73,7 @@ const CookiesPolicy = () => {
             </h3>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser.
+              Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close your web browser.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -124,7 +124,7 @@ const CookiesPolicy = () => {
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              If You'd like to delete Cookies or instruct your web browser to delete or refuse Cookies, please visit the help pages of your web browser.
+              If You&apos;d like to delete Cookies or instruct your web browser to delete or refuse Cookies, please visit the help pages of your web browser.
             </p>
 
             <div className="bg-gray-50 p-6 rounded-lg">
@@ -134,7 +134,7 @@ const CookiesPolicy = () => {
                 <li>For the Internet Explorer web browser, please visit this page from Microsoft: <a href="http://support.microsoft.com/kb/278835" className="text-blue-600 hover:text-blue-800 underline">http://support.microsoft.com/kb/278835</a></li>
                 <li>For the Firefox web browser, please visit this page from Mozilla: <a href="https://support.mozilla.org/" className="text-blue-600 hover:text-blue-800 underline">https://support.mozilla.org/</a></li>
                 <li>For the Safari web browser, please visit this page from Apple: <a href="https://support.apple.com/guide/safari/" className="text-blue-600 hover:text-blue-800 underline">https://support.apple.com/guide/safari/</a></li>
-                <li>For any other web browser, please visit your web browser's official web pages.</li>
+                <li>For any other web browser, please visit your web browser&apos;s official web pages.</li>
               </ul>
             </div>
           </section>
