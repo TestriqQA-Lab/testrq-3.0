@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/robotics-testing-services',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Get expert-led robotic testing across safety systems, movement accuracy, AI logic, and integration. Trusted by 200+ companies for robotic QA validation.',
     images: [
       {
-        url: '/OG/Robotic-Testing-OG.webp',
+        url: '/OG/Robotics-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Robotic Testing Services - Testriq',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Robotic Testing Services - Safety, Precision & Performance Validation | Testriq',
     description: 'Get expert-led robotic testing across safety systems, movement accuracy, AI logic, and integration. Trusted by 200+ companies for robotic QA validation.',
-    images: ['/OG/Robotic-Testing-Twitter.webp'],
+    images: ['/OG/Robotics-Testing-service-twitter.webp'],
   },
   robots: {
     index: true,
