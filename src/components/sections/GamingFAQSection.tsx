@@ -24,7 +24,7 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What types of games do you test?",
-          answer: "We test all types of games including mobile games (iOS/Android), PC games (Windows/Mac/Linux), console games (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based games. Our expertise covers all genres from casual puzzle games to complex AAA titles, MMORPGs, and battle royale games."
+          answer: "We test all types of games including mobile games (iOS/Android), PC games (Windows/Mac/Linux), console games (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based games. Our game testing services cover all genres—from casual puzzle games to complex AAA titles, MMORPGs, and battle royale games, ensuring cross-platform game compatibility, immersive gameplay, and flawless gaming experiences."
         },
         {
           question: "How long does game testing typically take?",

@@ -108,8 +108,8 @@ const GamingTestingServicesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Specialized testing services designed for gaming applications, ensuring flawless gameplay, 
-            optimal performance, and exceptional player experiences across all platforms.
+            Comprehensive game testing services designed for gaming applications, ensuring flawless gaming experiences, optimized game performance, and exceptional player engagement across mobile, console, and PC platforms.
+
           </p>
         </div>
 

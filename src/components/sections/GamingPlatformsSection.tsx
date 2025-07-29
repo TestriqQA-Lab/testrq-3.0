@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  FaMobile, 
-  FaDesktop, 
-  FaGamepad, 
+import {
+  FaMobile,
+  FaDesktop,
+  FaGamepad,
   FaVrCardboard,
   FaApple,
   FaAndroid,
@@ -139,8 +139,8 @@ const GamingPlatformsSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive testing across all major gaming platforms and devices, ensuring your game 
-            delivers exceptional experiences everywhere your players want to play.
+            Comprehensive game testing across all major gaming platforms and devices, ensuring your game delivers exceptional player experiences, seamless cross-platform game performance, and reliable gameplay everywhere your players want to play.
+
           </p>
         </div>
 
@@ -215,8 +215,7 @@ const GamingPlatformsSection: React.FC = () => {
               Trusted by Leading Platforms
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We work with all major gaming platforms and distribution channels to ensure 
-              your games meet platform-specific requirements and standards.
+              We work with all major gaming platforms and game distribution channels to ensure your games meet platform-specific requirements, compliance standards, and deliver flawless gaming experiences across console, mobile, PC, and browser-based environments.
             </p>
           </div>
 
@@ -239,7 +238,7 @@ const GamingPlatformsSection: React.FC = () => {
               Game Engine Expertise
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Specialized testing for popular game engines with deep technical knowledge 
+              Specialized testing for popular game engines with deep technical knowledge
               and engine-specific optimization techniques.
             </p>
           </div>
@@ -289,7 +288,7 @@ const GamingPlatformsSection: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">Test Your Game Across All Platforms</h3>
             <p className="text-blue-100 mb-8 text-lg">
-              Ensure your game delivers exceptional experiences on every platform your players use. 
+              Ensure your game delivers exceptional experiences on every platform your players use.
               Our comprehensive platform testing covers everything from mobile to VR.
             </p>
             <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">

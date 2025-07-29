@@ -106,8 +106,8 @@ const GamingTestingProcessSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A proven, systematic approach designed specifically for gaming applications, 
-            ensuring exceptional player experiences and successful game launches.
+            A proven, systematic game QA approach designed specifically for gaming applications, ensuring exceptional player experiences, flawless game performance, and successful game launches across mobile, console, and PC platforms.
+
           </p>
         </div>
 
@@ -153,8 +153,8 @@ const GamingTestingProcessSection: React.FC = () => {
               Gaming-Focused Methodologies
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our specialized approach ensures that every aspect of gaming software testing 
-              meets the highest standards of quality, performance, and player satisfaction.
+              Our specialized game testing approach ensures that every aspect of gaming software testing meets the highest standards of quality assurance, game performance, and player satisfaction across all platforms.
+
             </p>
           </div>
 

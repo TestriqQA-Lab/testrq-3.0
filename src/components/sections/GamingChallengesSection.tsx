@@ -121,8 +121,8 @@ const GamingChallengesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Gaming applications face unique challenges that can make or break player experience. 
-            Our specialized testing addresses these critical issues before they impact your players.
+            Gaming applications face unique challenges like performance and scalability, cross-platform compatibility, and security risks that can make or break the player experience. Our specialized game testing services address these critical issues—from gameplay mechanics testing to vulnerability scanning—before they impact your players.
+
           </p>
         </div>
 
