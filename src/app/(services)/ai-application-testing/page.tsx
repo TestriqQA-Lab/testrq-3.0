@@ -31,8 +31,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
-    canonical: '',
+    canonical: 'https://testriq.com/ai-application-testing',
   },
   openGraph: {
     type: 'website',
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
     images: [
       {
-        url: '/OG/Ai-Application-Testing-OG.webp',
+        url: '/OG/AI-Aplication-Tesing-Service-og.webp',
         width: 1200,
         height: 630,
         alt: 'AI Application Testing Services - Testriq',
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'AI Application Testing Services - Accurate, Fair, and Reliable',
     description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
-    images: ['C:/OG/Ai-Application-Testing-Twitter.webp'],
+    images: ['/OG/AI-Application-Testing-service-Twitter.webp'],
   },
   robots: {
     index: true,

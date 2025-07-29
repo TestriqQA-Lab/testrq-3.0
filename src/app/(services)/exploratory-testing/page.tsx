@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Exploratory Testing Services - Discover Hidden Issues | Testriq',
     description: 'Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.',
-    images: ['/OG/Exploratory-Testing-Twitter.webpp'],
+    images: ['/OG/Exploratory-Testing-Twitter.webp'],
   },
   robots: {
     index: true,
