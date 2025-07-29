@@ -121,8 +121,8 @@ const IoTChallengesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            IoT applications face unique challenges that can compromise functionality, security, and user trust.
-            Our specialized testing addresses these critical issues before they impact your IoT ecosystem.
+            IoT applications face unique challenges that can compromise functionality, IoT security, and user trust. Our specialized IoT testing services proactively address these critical issues—such as interoperability, real-time performance, and data privacy risks—before they impact your IoT ecosystem..
+
           </p>
         </div>
 
