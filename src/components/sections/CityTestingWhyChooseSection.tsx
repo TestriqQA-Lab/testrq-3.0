@@ -27,8 +27,8 @@ const iconMap = {
 
 const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = ({ cityData }) => {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -50,7 +50,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                 <div key={index} className="flex items-start space-x-4">
                   {/* Icon */}
                   <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <IconComponent className="h-8 w-8 text-blue-600" />
+                    <IconComponent className="h-8 w-8 text-brand-blue" />
                   </div>
                   
                   {/* Content */}
@@ -59,7 +59,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                       <h3 className="text-xl font-bold text-gray-900">
                         {reason.title}
                       </h3>
-                      <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      <div className="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-sm font-semibold">
                         {reason.stats}
                       </div>
                     </div>
@@ -88,7 +88,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 mb-1">200+</div>
+                  <div className="text-3xl font-bold text-brand-blue mb-1">200+</div>
                   <div className="text-sm text-gray-600">Happy Clients</div>
                 </div>
                 <div className="text-center">
@@ -132,7 +132,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-6 -right-6 bg-blue-600 text-white rounded-lg p-4 shadow-lg z-20">
+            <div className="absolute -top-6 -right-6 bg-brand-blue text-white rounded-lg p-4 shadow-lg z-20">
               <div className="flex items-center">
                 <CheckCircle className="h-6 w-6 mr-2" />
                 <div>
@@ -158,13 +158,13 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
         <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-blue-600 rounded-full -translate-x-16 -translate-y-16"></div>
+            <div className="absolute top-0 left-0 w-32 h-32 bg-brand-blue rounded-full -translate-x-16 -translate-y-16"></div>
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-600 rounded-full translate-x-16 translate-y-16"></div>
           </div>
 
           <div className="relative z-10">
             <div className="text-center mb-8">
-              <Quote className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+              <Quote className="h-12 w-12 text-brand-blue mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 What Our {cityData.name} Clients Say
               </h3>
@@ -177,7 +177,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                 </p>
 
                 <div className="flex items-center justify-center space-x-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
                     {cityData.whyChooseContent.testimonial.author.charAt(0)}
                   </div>
                   <div className="text-left">
@@ -216,7 +216,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                 key={index}
                 className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-200 group"
               >
-                <Building className="h-8 w-8 text-blue-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
+                <Building className="h-8 w-8 text-brand-blue mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
                 <div className="text-sm font-medium text-gray-900">{industry}</div>
               </div>
             ))}
@@ -225,7 +225,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 lg:p-12 text-white">
             <h3 className="text-3xl font-bold mb-4">
               Ready to Experience the Testriq Difference?
             </h3>
@@ -233,10 +233,10 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               Join 200+ satisfied clients in {cityData.name} who trust us with their software quality
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200">
+              <button className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200">
                 Start Your Project Today
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200">
+              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-all duration-200">
                 Schedule Consultation
               </button>
             </div>
