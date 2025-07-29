@@ -2304,3 +2304,57 @@ export const createFAQSchema = (faqs: Array<{question: string, answer: string}>)
   }))
 });
 
+export const contactUsPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Us",
+  "url": "https://testriq.com/contact",
+  "description": "Reach out to Testriq QA Lab for expert QA consultation, project inquiries, support requests, or partnership opportunities. Get in touch via call, email, video consultation, or schedule a meeting.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab LLP",
+    "url": "https://testriq.com",
+    "logo": "https://testriq.com/images/Testriq_Logo.png",
+    "email": "contact@testriq.com",
+    "telephone": "+91-915-2929-343",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East",
+      "addressLocality": "Mira Bhayandar",
+      "addressRegion": "Maharashtra",
+      "postalCode": "401107",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "+91-915-2929-343",
+        "email": "contact@testriq.com",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": "Worldwide"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "emergency",
+        "telephone": "+91-915-2929-343",
+        "availableLanguage": ["English"],
+        "areaServed": "Worldwide",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    ]
+  }
+};
