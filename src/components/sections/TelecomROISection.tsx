@@ -148,8 +148,7 @@ const TelecomROISection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our telecommunications testing solutions deliver quantifiable returns through improved network 
-            performance, reduced operational costs, and enhanced customer satisfaction.
+            Our telecommunications testing solutions deliver quantifiable ROI through improved network performance, reduced operational costs, enhanced service reliability, and increased customer satisfaction across 5G networks, VoIP systems, and real-time communication platforms.
           </p>
         </div>
 

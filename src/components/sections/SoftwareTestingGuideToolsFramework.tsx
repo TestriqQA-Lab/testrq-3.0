@@ -101,7 +101,7 @@ const SoftwareTestingGuideToolsFramework = () => {
             Essential Testing <span className='text-brand-blue'>Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Master the most popular and effective testing tools across all domains. Learn hands-on with comprehensive guides and practical examples.
+            Master the most popular and effective software testing tools across all domains. Gain hands-on experience with comprehensive QA guides, test automation frameworks, and practical examples covering tools like Selenium, Pytest, Postman, JIRA, TestRail, and Jenkins used in manual testing, automation testing, API testing, and more.
           </p>
         </div>
 
@@ -112,11 +112,10 @@ const SoftwareTestingGuideToolsFramework = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(index)}
-                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeCategory === index
+                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeCategory === index
                     ? 'bg-blue-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                  }`}
               >
                 {category.icon}
                 <span className="ml-2 hidden sm:inline">{category.title}</span>
@@ -142,25 +141,25 @@ const SoftwareTestingGuideToolsFramework = () => {
                     <h4 className="text-lg font-semibold text-gray-900">{tool.name}</h4>
                     <ExternalLink className="h-4 w-4 text-gray-400 hover:text-blue-600 cursor-pointer" />
                   </div>
-                  
+
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                     {tool.description}
                   </p>
-                  
+
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-500">Difficulty Level:</span>
                       <span className="font-medium text-gray-700">{tool.level}</span>
                     </div>
-                    
+
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-gray-500">Industry Usage:</span>
                       <span className="font-medium text-green-600">{tool.popularity}</span>
                     </div>
-                    
+
                     <div className="pt-2">
                       <div className="bg-gray-200 rounded-full h-2">
-                        <div 
+                        <div
                           className="bg-blue-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: tool.popularity }}
                         ></div>
@@ -177,7 +176,7 @@ const SoftwareTestingGuideToolsFramework = () => {
             <h4 className="text-lg font-semibold text-gray-900 mb-4">
               Available Learning Resources for {toolCategories[activeCategory].title}
             </h4>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 'Video Tutorials',
@@ -199,7 +198,7 @@ const SoftwareTestingGuideToolsFramework = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             How to Choose the Right Testing Tools
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -210,7 +209,7 @@ const SoftwareTestingGuideToolsFramework = () => {
                 Identify your testing requirements, team skills, and project constraints.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-purple-600">2</span>
@@ -220,7 +219,7 @@ const SoftwareTestingGuideToolsFramework = () => {
                 Evaluate tools based on features, cost, learning curve, and community support.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-green-600">3</span>

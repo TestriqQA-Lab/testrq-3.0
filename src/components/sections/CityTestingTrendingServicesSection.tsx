@@ -36,8 +36,8 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 px-6 py-3 rounded-full text-sm font-bold mb-6">
@@ -190,7 +190,7 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                   {cityData.trendingServicesContent.services[activeService].technologies.map((tech, idx) => (
                     <span 
                       key={idx}
-                      className="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-sm font-medium border border-white border-opacity-30"
+                      className="bg-white bg-opacity-20 text-blue-800 px-3 py-1 rounded-full text-sm font-medium border border-white border-opacity-30"
                     >
                       {tech}
                     </span>
@@ -200,11 +200,11 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
 
               {/* City Relevance */}
               <div className="bg-white bg-opacity-15 rounded-lg p-6 mb-8 border border-white border-opacity-20">
-                <h4 className="text-lg font-semibold mb-2 flex items-center text-white">
-                  <Globe className="h-5 w-5 mr-2 text-blue-400" />
+                <h4 className="text-lg font-semibold mb-2 flex items-center text-blue-800">
+                  <Globe className="h-5 w-5 mr-2 text-blue-800" />
                   {cityData.name} Market Opportunity
                 </h4>
-                <p className="text-gray-100">
+                <p className="text-blue-800">
                   {cityData.trendingServicesContent.services[activeService].citySpecific}
                 </p>
               </div>
@@ -225,14 +225,14 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
             <div className="relative">
               {/* Service Impact Stats */}
               <div className="bg-white bg-opacity-25 rounded-xl p-6 mb-6 border border-white border-opacity-30 backdrop-blur-sm">
-                <h4 className="text-lg font-semibold mb-4 text-white">
+                <h4 className="text-lg font-semibold mb-4 text-blue-800">
                   Service Impact in {cityData.name}
                 </h4>
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-white font-medium">Market Adoption</span>
-                      <span className="text-white font-bold">85%</span>
+                      <span className="text-blue-800 font-medium">Market Adoption</span>
+                      <span className="text-blue-800 font-bold">85%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div className="bg-gradient-to-r from-orange-500 to-red-500 h-2 rounded-full" style={{width: '85%'}}></div>
@@ -241,8 +241,8 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                   
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-white font-medium">ROI Improvement</span>
-                      <span className="text-white font-bold">120%</span>
+                      <span className="text-blue-800 font-medium">ROI Improvement</span>
+                      <span className="text-blue-800 font-bold">120%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full" style={{width: '100%'}}></div>
@@ -251,8 +251,8 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                   
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-white font-medium">Client Satisfaction</span>
-                      <span className="text-white font-bold">98%</span>
+                      <span className="text-blue-800 font-medium">Client Satisfaction</span>
+                      <span className="text-blue-800 font-bold">98%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
                       <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{width: '98%'}}></div>
@@ -265,11 +265,11 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center border border-white border-opacity-30 backdrop-blur-sm">
                   <div className="text-2xl font-bold text-orange-400 mb-1">50+</div>
-                  <div className="text-sm text-white font-medium">Projects Delivered</div>
+                  <div className="text-sm text-blue-800 font-medium">Projects Delivered</div>
                 </div>
                 <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center border border-white border-opacity-30 backdrop-blur-sm">
                   <div className="text-2xl font-bold text-green-400 mb-1">99%</div>
-                  <div className="text-sm text-white font-medium">Success Rate</div>
+                  <div className="text-sm text-blue-800 font-medium">Success Rate</div>
                 </div>
               </div>
 

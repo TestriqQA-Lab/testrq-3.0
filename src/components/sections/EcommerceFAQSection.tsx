@@ -14,7 +14,7 @@ const EcommerceFAQSection: React.FC = () => {
   const faqs = [
     {
       question: "What types of e-commerce platforms do you test?",
-      answer: "We test all major e-commerce platforms including Shopify, WooCommerce, Magento, BigCommerce, and custom-built solutions. Our team has expertise in platform-specific features, integrations, and best practices for each system."
+      answer: "We test all major e-commerce platforms including Shopify, WooCommerce, Magento, BigCommerce, and custom-built solutions. Our team has expertise in framework-specific risks, payment gateway testing, and best practices for each system’s functionality and performance."
     },
     {
       question: "How long does e-commerce testing typically take?",
@@ -74,8 +74,8 @@ const EcommerceFAQSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most common questions about our e-commerce testing services,
-            processes, and what you can expect when working with our team.
+            Get answers to the most common questions about our e-commerce testing services, QA processes, and what to expect from our cross-platform testing and security validation team.
+
           </p>
         </div>
 

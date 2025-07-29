@@ -107,8 +107,8 @@ const BankingTestingServicesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            End-to-end testing services designed specifically for the banking and financial services industry, 
-            ensuring security, compliance, and optimal performance across all your financial platforms.
+            End-to-end banking and finance testing services designed specifically for the banking and financial services industry, ensuring application security, regulatory compliance (including PCI DSS, GDPR, and SOX), and optimal performance across all your financial platforms and transactional systems.
+
           </p>
         </div>
 
@@ -166,7 +166,8 @@ const BankingTestingServicesSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Choose Our Banking Testing Services?</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We understand the unique challenges and requirements of the banking and financial services industry.
+              We understand the unique challenges, regulatory requirements, and security demands of the banking and financial services industry, enabling us to deliver specialized testing for financial applications with precision and compliance focus.
+
             </p>
           </div>
 

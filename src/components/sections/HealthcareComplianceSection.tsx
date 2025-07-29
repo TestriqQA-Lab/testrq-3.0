@@ -141,8 +141,7 @@ const HealthcareComplianceSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive compliance testing and validation services ensuring your healthcare software 
-            meets all regulatory requirements and industry standards.
+            Comprehensive compliance testing and regulatory validation services ensuring your healthcare software meets all HIPAA, FDA, and GDPR regulatory requirements and healthcare industry standards.
           </p>
         </div>
 
@@ -176,8 +175,7 @@ const HealthcareComplianceSection: React.FC = () => {
               Our Compliance Testing Process
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A systematic approach to ensure your healthcare software meets all regulatory requirements 
-              and maintains ongoing compliance.
+              A systematic healthcare QA approach to ensure your healthcare software meets all regulatory requirements, including HIPAA and FDA compliance, and maintains ongoing compliance testing.
             </p>
           </div>
 

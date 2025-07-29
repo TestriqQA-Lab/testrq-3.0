@@ -112,8 +112,8 @@ const IoTEcosystemSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Understanding the intricate layers of the Internet of Things is crucial for successful 
-            deployment. We provide comprehensive testing across every component of your IoT ecosystem.
+            Understanding the intricate layers of IoT architecture is crucial for successful deployment. We provide comprehensive IoT testing services across every component of your IoT ecosystem—from edge devices and sensors to gateways, protocols, and cloud platforms.
+
           </p>
         </div>
 
@@ -170,8 +170,7 @@ const IoTEcosystemSection: React.FC = () => {
               IoT Applications Across Industries
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our IoT testing expertise spans diverse industries, ensuring your connected solutions 
-              meet the unique demands and regulatory requirements of your target market.
+              Our IoT testing expertise spans diverse industries, ensuring your connected IoT solutions meet the unique demands, compliance standards, and regulatory requirements of your target market—from healthcare IoT and industrial IoT to smart home and automotive systems.
             </p>
           </div>
 

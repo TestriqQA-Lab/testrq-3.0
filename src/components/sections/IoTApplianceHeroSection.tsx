@@ -82,9 +82,8 @@ const IoTHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure seamless connectivity, robust security, and optimal performance across 
-              your IoT ecosystem. From smart devices to industrial systems, we validate 
-              every connection in your edge-to-cloud architecture.
+              Ensure seamless connectivity, robust IoT security, and optimized performance across your entire IoT ecosystem. From smart devices to industrial IoT systems, we validate every connection in your edge-to-cloud architecture through advanced IoT testing services.
+
             </p>
 
             {/* Key Benefits */}

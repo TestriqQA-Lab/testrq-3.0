@@ -146,9 +146,8 @@ const CareersCultureSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our culture is built on mutual respect, continuous learning, and
-            genuine care for each other. Discover what makes Testriq a place
-            where careers and friendships flourish.
+            Our QA culture is built on mutual respect, continuous learning, and a genuine commitment to team collaboration and professional growth. Discover what makes Testriq a place where careers in software testing and meaningful workplace connections flourish.
+
           </p>
         </div>
 

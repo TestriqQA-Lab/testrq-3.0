@@ -100,8 +100,8 @@ const GamingContactSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Connect with our gaming testing experts to discuss your project needs, 
-            get a custom quote, and start your journey to a successful game launch.
+            Connect with our game testing experts to discuss your gaming QA requirements, get a custom game testing quote, and start your journey toward a successful game launch with flawless gameplay, optimized performance, and cross-platform compatibility.
+
           </p>
         </div>
 

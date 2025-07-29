@@ -15,7 +15,7 @@ const ContactFAQSection: React.FC = () => {
     {
       question: "What's the best way to contact Testriq for urgent issues?",
       answer:
-        "For urgent issues, we recommend calling our direct line at +1 (555) 012-3456 during business hours (9 AM - 6 PM EST). For critical production issues outside business hours, our emergency line is available 24/7. You can also use our live chat for immediate assistance during business hours.",
+        "For urgent QA issues, we recommend calling our direct support line at +1 (555) 012-3456 during business hours (9 AM – 6 PM EST). For critical production issues, our 24/7 emergency QA support is available. You can also use our live chat for immediate QA assistance with software testing, bug resolution, or deployment-related incidents.",
     },
     {
       question: "How quickly can I expect a response to my inquiry?",

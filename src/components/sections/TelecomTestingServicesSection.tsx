@@ -107,8 +107,8 @@ const TelecomTestingServicesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            End-to-end testing services designed specifically for the telecommunications industry, 
-            ensuring network reliability, optimal performance, and seamless connectivity across all platforms.
+            End-to-end telecom testing services designed specifically for the telecommunications industry, ensuring network reliability, optimal telecom performance, and seamless connectivity across all telecommunication platforms, including 5G networks, VoIP systems, and IoT-enabled infrastructures.
+
           </p>
         </div>
 

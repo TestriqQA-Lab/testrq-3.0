@@ -4,7 +4,6 @@
 import React from 'react';
 import {
   MapPin,
-  Building2,
   CheckCircle,
   Star,
   ArrowRight,
@@ -21,30 +20,30 @@ interface CityTestingHeroSectionProps {
 
 const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityData }) => {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-600 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-20 w-64 h-64 bg-brand-blue rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-64 h-64 bg-purple-600 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Content */}
           <div>
             {/* Location Badge */}
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex bg-blue-100 text-brand-blue px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="h-4 w-4 mr-2" />
               {cityData.name}, {cityData.state}
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-2">
               {cityData.heroContent.title}
             </h1>
 
             {/* Subtitle */}
-            <h2 className="text-xl lg:text-2xl text-blue-600 font-semibold mb-4">
+            <h2 className="text-xl lg:text-2xl text-brand-blue font-semibold mb-4">
               {cityData.heroContent.subtitle}
             </h2>
 
@@ -65,11 +64,11 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center justify-center">
+              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center justify-center">
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
+              <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
                 Schedule Consultation
               </button>
             </div>
@@ -77,15 +76,15 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row gap-6 text-sm text-gray-600">
               <div className="flex items-center">
-                <Phone className="h-4 w-4 mr-2 text-blue-600" />
+                <Phone className="h-4 w-4 mr-2 text-brand-blue" />
                 <span>+91 915-2929-343</span>
               </div>
               <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-blue-600" />
+                <Mail className="h-4 w-4 mr-2 text-brand-blue" />
                 <span>contact@testriq.com</span>
               </div>
               <div className="flex items-center">
-                <Clock className="h-4 w-4 mr-2 text-blue-600" />
+                <Clock className="h-4 w-4 mr-2 text-brand-blue" />
                 <span>24/7 Support</span>
               </div>
             </div>
@@ -109,7 +108,7 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
               <div className="grid grid-cols-2 gap-4 mb-6">
                 {cityData.heroContent.stats.map((stat, index) => (
                   <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-4">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">
+                    <div className="text-2xl font-bold text-brand-blue mb-1">
                       {stat.number}
                     </div>
                     <div className="text-sm font-medium text-gray-900 mb-1">
@@ -131,7 +130,7 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                   {(cityData.heroContent.landmarks || []).slice(0, 4).map((landmark, index) => (
                     <span 
                       key={index}
-                      className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium"
+                      className="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-xs font-medium"
                     >
                       {landmark}
                     </span>
@@ -174,7 +173,7 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute -top-6 -right-6 bg-white rounded-lg shadow-lg p-4 z-20">
+            <div className="absolute -top-10 -right-6 bg-white rounded-lg shadow-lg p-4 z-20">
               <div className="flex items-center">
                 <Award className="h-8 w-8 text-yellow-500 mr-3" />
                 <div>
@@ -184,7 +183,7 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 z-20">
+            <div className="absolute -bottom-10 -left-6 bg-white rounded-lg shadow-lg p-4 z-20">
               <div className="flex items-center">
                 <div className="flex text-yellow-500 mr-3">
                   <Star className="h-4 w-4 fill-current" />
@@ -199,30 +198,6 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom Section - Industry Focus */}
-        <div className="mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Serving Key Industries in {cityData.name}
-            </h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our specialized testing expertise covers the major industries driving growth in {cityData.state}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {cityData.industries.map((industry, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <Building2 className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-900">{industry}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

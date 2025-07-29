@@ -30,8 +30,8 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
   // };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -57,7 +57,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
         {/* Active Category Content */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Category Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 p-8 text-white">
             <div className="flex items-center mb-4">
               <Settings className="h-12 w-12 mr-4" />
               <div>
@@ -96,7 +96,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
                     <div className="bg-green-500 h-2 rounded-full" style={{width: '100%'}}></div>
                   </div>
                 </div>
-                <button className="w-full bg-blue-50 text-blue-600 py-2 rounded-lg font-medium hover:bg-blue-100 transition-colors duration-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white">
+                <button className="w-full bg-blue-50 text-blue-600 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white">
                   Learn More
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </button>
@@ -187,7 +187,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
 
         {/* Expertise Showcase */}
         <div className="mt-16">
-          <div className="bg-gradient-to-r from-gray-900 to-blue-900 rounded-2xl p-8 lg:p-12 text-white">
+          <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 lg:p-12 text-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left Column */}
               <div>
@@ -217,27 +217,27 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
               {/* Right Column - Stats */}
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
-                  <div className="text-3xl font-bold mb-2 text-white">{cityData.toolsFrameworkContent.stats.projectsCompleted}</div>
-                  <div className="text-sm text-white font-medium">Projects Completed</div>
+                  <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.projectsCompleted}</div>
+                  <div className="text-sm text-brand-blue font-medium">Projects Completed</div>
                 </div>
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
-                  <div className="text-3xl font-bold mb-2 text-white">{cityData.toolsFrameworkContent.stats.clientSatisfaction}</div>
-                  <div className="text-sm text-white font-medium">Client Satisfaction</div>
+                  <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.clientSatisfaction}</div>
+                  <div className="text-sm text-brand-blue font-medium">Client Satisfaction</div>
                 </div>
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
-                  <div className="text-3xl font-bold mb-2 text-white">{cityData.toolsFrameworkContent.stats.supportAvailable}</div>
-                  <div className="text-sm text-white font-medium">Tool Support</div>
+                  <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.supportAvailable}</div>
+                  <div className="text-sm text-brand-blue font-medium">Tool Support</div>
                 </div>
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
-                  <div className="text-3xl font-bold mb-2 text-white">{cityData.toolsFrameworkContent.stats.yearsExperience}</div>
-                  <div className="text-sm text-white font-medium">Years Experience</div>
+                  <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.yearsExperience}</div>
+                  <div className="text-sm text-brand-blue font-medium">Years Experience</div>
                 </div>
               </div>
             </div>
 
             {/* CTA */}
             <div className="text-center mt-8">
-              <button className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg">
+              <button className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg">
                 Discuss Your Tool Requirements
               </button>
             </div>

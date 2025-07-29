@@ -71,8 +71,8 @@ const ToolsFrameworksSection = () => {
             <span className="text-[theme(color.brand.blue)]">Testing Frameworks</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage the most advanced and reliable testing frameworks in the industry to deliver 
-            comprehensive quality assurance solutions for your software projects.
+            We leverage the most advanced and reliable testing frameworks in the industry to deliver comprehensive software quality assurance solutions for your projects—covering functional testing, automation testing, API validation, performance benchmarking, and security assurance with tools like Selenium, Cypress, JMeter, and Postman.
+
           </p>
         </div>
 

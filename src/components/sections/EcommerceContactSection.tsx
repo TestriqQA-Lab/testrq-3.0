@@ -61,8 +61,8 @@ const EcommerceContactSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards higher conversions, better user experience, and increased revenue. 
-            Our e-commerce testing experts are ready to help you succeed.
+            Take the first step towards higher conversion rates, enhanced e-commerce user experience, and increased revenue. Our e-commerce testing experts are ready to ensure your platform is secure, scalable, and successful.
+
           </p>
         </div>
 

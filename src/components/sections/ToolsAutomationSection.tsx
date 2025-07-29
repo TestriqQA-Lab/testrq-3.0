@@ -129,8 +129,8 @@ const ToolsAutomationSection = () => {
             <span className="text-[theme(color.brand.blue)]">Automation Solutions</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our cutting-edge automation tools and frameworks enable continuous testing, 
-            intelligent analysis, and seamless integration with your development workflow.
+            Our cutting-edge automation testing tools and frameworks enable continuous testing, intelligent test analysis, and seamless CI/CD integration with your development workflow—leveraging technologies like Selenium, Cypress, Appium, and GitLab CI for faster, more reliable software delivery.
+
           </p>
         </div>
 

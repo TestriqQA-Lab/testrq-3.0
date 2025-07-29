@@ -152,8 +152,8 @@ const GamingROISection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the significant financial benefits and risk mitigation that professional 
-            game testing brings to your development process and player satisfaction.
+            Discover the significant financial benefits and risk mitigation that professional game testing services bring to your game development process, ensuring bug-free releases, player satisfaction, and faster time-to-market across all gaming platforms.
+
           </p>
         </div>
 
@@ -246,8 +246,8 @@ const GamingROISection: React.FC = () => {
               Average ROI: 2,500% - 3,750%
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              ROI varies by platform and game complexity, but all gaming sectors show exceptional 
-              returns on professional testing investment.
+              ROI varies by gaming platform and game complexity, but all gaming sectors demonstrate exceptional returns on professional game testing investment, thanks to bug-free gameplay, optimized performance, and faster release cycles.
+
             </p>
           </div>
 

@@ -96,8 +96,8 @@ const BankingChallengesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Banking and financial institutions face unprecedented challenges in today&apos;s digital landscape. 
-            Our specialized testing solutions address these critical vulnerabilities before they impact your operations.
+            Banking and financial institutions face unprecedented challenges in today’s digital landscape, from regulatory compliance risks to data breaches and transaction failures. Our specialized banking app testing solutions proactively address these critical vulnerabilities before they impact your financial operations, customer trust, or platform performance.
+
           </p>
         </div>
 

@@ -110,8 +110,8 @@ const TelecomFAQSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most frequently asked questions about our telecommunications 
-            testing services, network optimization, and implementation processes.
+            Get answers to the most frequently asked questions about our telecommunications testing services, including network performance testing, telecom protocol validation, 5G implementation support, VoIP system testing, and end-to-end network optimization processes.
+
           </p>
         </div>
 

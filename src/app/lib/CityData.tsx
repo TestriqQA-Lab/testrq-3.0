@@ -1,6 +1,8 @@
 
 // City Data Structure for Dynamic QA Testing Services Pages
 
+import { Url } from "next/dist/shared/lib/router/router";
+
 export interface CityData {
   slug: string;
   name: string;
@@ -22,7 +24,7 @@ export interface CityData {
     title: string;
     description: string;
     subtitle: string;
-    services: { icon: string; trending: boolean; name: string; description: string; features: string[]; }[];
+    services: { icon: string; trending: boolean; name: string; description: string; features: string[]; link: Url }[];
   };
   processContent: {
     title: string;
@@ -117,12 +119,12 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Chennai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"] },
-        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"] },
-        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"] },
-        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"] },
-        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"] },
-        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
+        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
+        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
+        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"], link: "/mobile-application-testing" },
+        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"], link: "/api-testing" },
       ],
     },
     processContent: {
@@ -305,12 +307,12 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bangalore businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"] },
-        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"] },
-        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"] },
-        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"] },
-        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"] },
-        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
+        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
+        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
+        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"], link: "/mobile-application-testing" },
+        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"], link: "/api-testing" },
       ],
     },
     processContent: {
@@ -493,12 +495,12 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Delhi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"] },
-        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"] },
-        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"] },
-        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"] },
-        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"] },
-        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"] },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
+        { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
+        { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
+        { icon: "Smartphone", trending: true, name: "Mobile App Testing", description: "Ensure flawless performance across diverse mobile devices and platforms.", features: ["iOS Testing", "Android Testing", "Cross-Browser Testing"], link: "/mobile-application-testing" },
+        { icon: "Link", trending: false, name: "API Testing", description: "Validate the functionality, reliability, performance, and security of your APIs.", features: ["REST API Testing", "SOAP API Testing", "Microservices Testing"], link: "/api-testing" },
       ],
     },
     processContent: {

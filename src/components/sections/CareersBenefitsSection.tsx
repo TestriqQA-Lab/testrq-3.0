@@ -198,9 +198,8 @@ const CareersBenefitsSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We believe in taking care of our team members with competitive
-            benefits, meaningful perks, and a supportive work environment that
-            helps you thrive.
+            We believe in supporting our QA professionals with competitive employee benefits, meaningful perks, and a collaborative work environment that fosters career growth, work-life balance, and long-term employee satisfaction in the software testing industry.
+
           </p>
         </div>
 

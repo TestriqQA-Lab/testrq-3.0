@@ -82,9 +82,8 @@ const GamingHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Deliver flawless gaming experiences across all platforms with our comprehensive 
-              game testing services. From mobile games to AAA titles, we ensure optimal 
-              performance, engaging gameplay, and bug-free launches.
+              Deliver flawless gaming experiences across all platforms with our comprehensive game testing services. From mobile games to AAA titles, our gaming software testing solutions ensure optimal performance, engaging gameplay, and bug-free launches through cross-platform compatibility, gameplay mechanics testing, and security-focused game QA.
+
             </p>
 
             {/* Key Benefits */}

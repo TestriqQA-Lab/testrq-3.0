@@ -146,8 +146,8 @@ const GamingCaseStudiesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real-world examples of how our specialized gaming testing services have helped 
-            developers achieve successful launches, exceptional player experiences, and commercial success.
+            Real-world examples of how our specialized game testing services have helped developers achieve successful game launches, exceptional player experiences, and long-term commercial success through flawless gameplay, bug-free releases, and optimized game performance.
+
           </p>
         </div>
 

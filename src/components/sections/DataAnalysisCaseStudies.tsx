@@ -121,7 +121,7 @@ const DataAnalysisCaseStudies = () => {
             Data-Driven <span className='text-brand-blue'>Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how industry leaders have transformed their business outcomes through our advanced analytics solutions and achieved measurable results.
+            Discover how industry leaders have transformed their business outcomes through our advanced data analysis services, leveraging predictive analytics, business intelligence, and data-driven strategies to achieve measurable results and drive strategic decisions.
           </p>
         </div>
 
@@ -131,11 +131,10 @@ const DataAnalysisCaseStudies = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                activeCase === index
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${activeCase === index
                   ? 'bg-purple-600 text-white shadow-lg'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {study.company}
             </button>
@@ -225,7 +224,7 @@ const DataAnalysisCaseStudies = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Industry Expertise & Impact
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200">
@@ -233,7 +232,7 @@ const DataAnalysisCaseStudies = () => {
                   <h4 className="text-lg font-semibold text-gray-900">{industry.name}</h4>
                   <FaChartBar className="h-6 w-6 text-purple-600" />
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-2xl font-bold text-purple-600">{industry.projects}</div>
@@ -257,7 +256,7 @@ const DataAnalysisCaseStudies = () => {
               Proven track record of delivering measurable business value through advanced data analytics and machine learning solutions.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
             {successMetrics.map((item, index) => (
               <div key={index}>

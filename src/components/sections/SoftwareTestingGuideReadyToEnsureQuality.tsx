@@ -41,7 +41,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
             <span className='text-brand-blue'>Ready to Master</span> Software Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of professionals who have advanced their careers through our comprehensive testing education program. Start your journey to becoming a testing expert today.
+            Join thousands of QA professionals who have advanced their careers through our comprehensive software testing education program. Start your journey to becoming a certified testing expert in manual testing, automation testing, performance testing, security testing, and more—guided by industry-recognized QA best practices and hands-on learning.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               What You&apos;ll Achieve
             </h3>
-            
+
             <div className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center">
@@ -121,7 +121,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Join Our Success Community
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index}>
@@ -137,7 +137,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             What Our Students Say
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
@@ -146,11 +146,11 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-                
+
                 <div className="flex items-center">
                   <div className="bg-blue-100 rounded-full w-10 h-10 flex items-center justify-center mr-3">
                     <Users className="h-5 w-5 text-blue-600" />

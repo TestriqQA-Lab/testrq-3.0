@@ -56,9 +56,8 @@ const TelecomHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Deliver flawless network performance, crystal-clear voice quality, and ultra-fast data speeds 
-              across all your telecommunication platforms. Our comprehensive testing solutions ensure your 
-              networks meet the demands of 5G, IoT, and next-generation connectivity.
+              Deliver flawless network performance, crystal-clear voice quality, and ultra-fast data speeds across all your telecommunication platforms. Our comprehensive telecom testing services ensure your networks meet the demands of 5G, IoT, and next-generation connectivity through rigorous performance testing, protocol validation, and network quality assurance.
+
             </p>
 
             {/* Key Benefits */}

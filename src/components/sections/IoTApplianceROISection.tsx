@@ -151,8 +151,8 @@ const IoTROISection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the significant financial benefits and risk mitigation that professional 
-            IoT testing brings to your connected device deployments and business operations.
+            Discover the significant financial benefits and risk mitigation that professional IoT testing services bring to your connected device deployments and IoT-enabled business operations, ensuring regulatory compliance, data security, and performance reliability across the entire IoT ecosystem.
+
           </p>
         </div>
 
@@ -245,8 +245,8 @@ const IoTROISection: React.FC = () => {
               Average ROI: 2,000% - 4,000%
             </h3>
             <p className="text-lg z max-w-2xl mx-auto">
-              ROI varies by industry and implementation scale, but all sectors show exceptional 
-              returns on professional IoT testing investment.
+              ROI varies by industry vertical and IoT implementation scale, but all sectors demonstrate exceptional returns on professional IoT testing investment through enhanced device reliability, regulatory compliance, risk reduction, and improved IoT performance.
+
             </p>
           </div>
 

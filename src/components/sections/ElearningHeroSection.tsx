@@ -71,9 +71,7 @@ const ElearningHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure exceptional learning experiences with comprehensive testing for LMS platforms, 
-              online courses, and educational applications. From accessibility compliance to performance 
-              optimization, we help you deliver education that truly makes an impact.
+              Ensure exceptional learner experiences with comprehensive e-learning testing for LMS platforms, online learning systems, and educational applications. From WCAG accessibility compliance to performance testing and scalability, we help you deliver inclusive, secure education platforms that truly make an impact.
             </p>
 
             {/* Learning Types */}

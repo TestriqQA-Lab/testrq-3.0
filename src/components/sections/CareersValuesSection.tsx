@@ -109,9 +109,8 @@ const CareersValuesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our core values shape our culture, guide our decisions, and define
-            how we work together to create exceptional software testing
-            solutions.
+            Our core values shape our QA culture and drive collaboration to deliver high-quality software testing solutions in automation, manual QA, performance, and security, ensuring compliance and customer satisfaction.
+
           </p>
         </div>
 

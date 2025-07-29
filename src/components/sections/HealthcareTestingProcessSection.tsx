@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  FaClipboardList, 
-  FaShieldAlt, 
-  FaCheckCircle, 
+import {
+  FaClipboardList,
+  FaShieldAlt,
+  FaCheckCircle,
   FaRocket,
   FaSearch,
   FaCog,
@@ -68,8 +68,7 @@ const HealthcareTestingProcessSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A proven, systematic approach designed specifically for healthcare applications, 
-            ensuring compliance, security, and patient safety at every step.
+            A proven, systematic healthcare QA approach designed specifically for healthcare applications, ensuring regulatory compliance, data security, and patient safety at every step.
           </p>
         </div>
 
@@ -81,16 +80,16 @@ const HealthcareTestingProcessSection: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center text-sm font-bold z-10">
                 {index + 1}
               </div>
-              
+
               {/* Card */}
               <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group hover:ring-2 hover:ring-brand-blue h-full">
                 <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">{step.description}</p>
-                
+
                 <div className="space-y-2">
                   {step.details.map((detail, detailIndex) => (
                     <div key={detailIndex} className="flex items-center gap-2">
@@ -115,8 +114,7 @@ const HealthcareTestingProcessSection: React.FC = () => {
               Healthcare-Focused Methodology
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our specialized approach ensures that every aspect of healthcare software testing 
-              meets the highest standards of quality, security, and regulatory compliance.
+              Our specialized approach ensures that every aspect of healthcare software testing meets the highest standards of quality assurance, data security, and regulatory compliance, including HIPAA and FDA standards.
             </p>
           </div>
 

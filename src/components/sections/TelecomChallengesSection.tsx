@@ -96,8 +96,8 @@ const TelecomChallengesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Telecommunications networks face unprecedented complexity and challenges in today&apos;s connected world. 
-            Our specialized testing solutions address these critical issues before they impact your network performance.
+            Telecommunications networks face unprecedented complexity and challenges in today’s hyper-connected world. Our specialized telecom testing solutions proactively address these critical network issues—including interoperability, protocol compatibility, 5G performance, and real-time data processing—before they impact your network performance and service reliability.
+
           </p>
         </div>
 

@@ -45,19 +45,19 @@ const DataAnalysisWhyChooseTestriq = () => {
     {
       name: 'David Thompson',
       role: 'Chief Data Officer at JPMorgan Chase',
-      content: 'Testriq\'s analytics team transformed our risk assessment models, resulting in 35% improvement in fraud detection accuracy.',
+      content: 'Testriq\'s data analytics team transformed our risk assessment models, resulting in a 35% improvement in fraud detection accuracy through advanced predictive analytics and machine learning model building.',
       rating: 5
     },
     {
       name: 'Lisa Wang',
       role: 'VP Analytics at Amazon',
-      content: 'The predictive models developed by Testriq helped us optimize our supply chain, reducing costs by $2.3M annually.',
+      content: 'The predictive analytics models developed by Testriq helped us optimize our supply chain operations, enabling data-driven decisions and reducing costs by $2.3M annually.',
       rating: 5
     },
     {
       name: 'Carlos Rodriguez',
       role: 'Head of Business Intelligence at Microsoft',
-      content: 'Outstanding data visualization and dashboard development. The insights have been crucial for our strategic decision-making.',
+      content: 'Outstanding data visualization and dashboard development using cutting-edge data analysis tools. The insights have been crucial for our strategic decisions and business performance improvement.',
       rating: 5
     }
   ];
@@ -79,7 +79,7 @@ const DataAnalysisWhyChooseTestriq = () => {
             Why Choose Testriq for <span className='text-brand-blue'>Data Analytics</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Partner with industry-leading data analytics experts who transform complex data into strategic business advantages through proven methodologies and cutting-edge technologies.
+            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced data analysis tools, and cutting-edge technologies like machine learning model building and natural language processing.
           </p>
         </div>
 
@@ -91,11 +91,11 @@ const DataAnalysisWhyChooseTestriq = () => {
                 {advantage.icon}
                 <h3 className="text-xl font-semibold text-gray-900 ml-3">{advantage.title}</h3>
               </div>
-              
+
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {advantage.description}
               </p>
-              
+
               <div className="bg-white rounded-lg p-3 border-l-4 border-blue-500">
                 <span className="text-sm font-semibold text-blue-600">{advantage.metrics}</span>
               </div>
@@ -111,7 +111,7 @@ const DataAnalysisWhyChooseTestriq = () => {
               Our data analytics solutions have delivered measurable business impact across Fortune 500 companies worldwide.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
             <div>
               <div className="text-3xl font-bold mb-2">500+</div>
@@ -137,7 +137,7 @@ const DataAnalysisWhyChooseTestriq = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Professional Certifications & Expertise
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
               <div key={index} className="bg-white rounded-lg p-4 flex items-center">
@@ -153,7 +153,7 @@ const DataAnalysisWhyChooseTestriq = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             What Our Clients Say
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6">
@@ -162,11 +162,11 @@ const DataAnalysisWhyChooseTestriq = () => {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-                
+
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.role}</div>
@@ -181,7 +181,7 @@ const DataAnalysisWhyChooseTestriq = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             What Sets Us Apart
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'End-to-end analytics solutions from data collection to insights',

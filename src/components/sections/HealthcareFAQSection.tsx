@@ -24,7 +24,7 @@ const HealthcareFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What does HIPAA compliance testing include?",
-          answer: "Our HIPAA compliance testing includes comprehensive evaluation of PHI protection, access controls, audit trails, encryption standards, business associate agreements, risk assessments, and breach notification procedures. We ensure your healthcare software meets all HIPAA Security Rule and Privacy Rule requirements."
+          answer: "Our HIPAA compliance testing includes comprehensive evaluation of PHI protection, access control validation, audit trail verification, encryption standards, business associate agreements, risk assessments, and breach notification procedures. We ensure your healthcare software meets all HIPAA Security Rule and Privacy Rule requirements through expert healthcare QA services."
         },
         {
           question: "How long does HIPAA compliance testing take?",

@@ -15,7 +15,7 @@ const ElearningFAQSection: React.FC = () => {
   const faqs = [
     {
       question: "What types of e-learning platforms do you test?",
-      answer: "We test all major e-learning platforms including Moodle, Canvas, Blackboard, Google Classroom, custom LMS solutions, and SCORM-compliant systems. Our team has expertise in educational technology standards, accessibility requirements, and platform-specific features for both academic and corporate training environments."
+      answer: "We test all major e-learning platforms including Moodle, Canvas, Blackboard, Google Classroom, custom LMS solutions, and SCORM-compliant systems. Our team has expertise in educational technology standards, WCAG accessibility requirements, and platform-specific QA features for both academic and corporate learning environments."
     },
     {
       question: "How do you ensure accessibility compliance in e-learning platforms?",
@@ -75,8 +75,8 @@ const ElearningFAQSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most common questions about our e-learning testing services,
-            methodologies, and what you can expect when optimizing your educational platform.
+            Get answers to the most common questions about our e-learning testing services, QA methodologies, and what to expect when optimizing your learning management system or educational platform for performance, accessibility, and security.
+
           </p>
         </div>
 
@@ -149,9 +149,8 @@ const ElearningFAQSection: React.FC = () => {
             <div>
               <h4 className="font-bold text-gray-900 mb-2">Expert Tip: Start Testing Early</h4>
               <p className="text-gray-600 text-sm leading-relaxed">
-                The best time to start e-learning platform testing is during the development phase, not after launch.
-                Early testing identifies issues when they&apos;re less expensive to fix and ensures a smooth learning experience
-                from day one. Contact us to discuss testing strategies for your development timeline.
+                The best time to start e-learning platform testing is during the development phase, not after launch. Early e-learning QA testing identifies accessibility issues, performance bottlenecks, and usability concerns when they&apos;re less expensive to fix, ensuring a smooth learning experience from day one. Contact us to discuss QA strategies for your LMS development timeline..
+
               </p>
             </div>
           </div>

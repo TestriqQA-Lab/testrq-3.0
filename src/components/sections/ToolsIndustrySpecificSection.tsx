@@ -114,8 +114,8 @@ const ToolsIndustrySpecificSection = () => {
             <span className="text-[theme(color.brand.blue)]">Testing Solutions</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized testing tools and frameworks are tailored for specific industries, 
-            ensuring compliance with regulatory requirements and industry best practices.
+            Our specialized testing tools and frameworks are tailored for industry-specific QA solutions, ensuring regulatory compliance and adherence to industry best practices across sectors like healthcare, banking and finance, telecommunications, and e-commerce through tools such as OWASP ZAP, Postman, JMeter, and Selenium.
+
           </p>
         </div>
 
@@ -182,8 +182,8 @@ const ToolsIndustrySpecificSection = () => {
               Industry Testing Expertise
             </h3>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              Our deep industry knowledge and specialized tools ensure your software meets 
-              the highest standards of quality, security, and regulatory compliance.
+              Our deep industry knowledge and specialized QA tools ensure your software meets the highest standards of quality assurance, application security, and regulatory compliance across sectors like healthcare, finance, telecommunications, and e-commerce.
+
             </p>
           </div>
           
