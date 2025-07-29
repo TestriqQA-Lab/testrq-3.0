@@ -90,8 +90,7 @@ const TelecomCaseStudiesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how leading telecommunications operators have transformed their networks and achieved 
-            superior performance with our comprehensive testing solutions.
+            Discover how leading telecommunications operators have transformed their network infrastructure and achieved superior telecom performance with our comprehensive telecom testing solutions, including 5G validation, protocol interoperability, and real-time network optimization.
           </p>
         </div>
 
@@ -179,7 +178,8 @@ const TelecomCaseStudiesSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Industry Recognition</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our telecommunications testing expertise has been recognized by leading industry organizations and publications.
+              Our telecommunications testing expertise has been recognized by leading industry organizations and telecom publications for excellence in network performance testing, protocol validation, 5G readiness, and compliance with telecom standards such as 3GPP, ETSI, and ITU-T.
+
             </p>
           </div>
 

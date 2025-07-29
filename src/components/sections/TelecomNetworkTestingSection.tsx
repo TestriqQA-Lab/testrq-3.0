@@ -146,8 +146,8 @@ const TelecomNetworkTestingSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            From 5G networks to legacy systems, our comprehensive network testing ensures optimal 
-            performance, reliability, and seamless connectivity across all telecommunications technologies.
+            From 5G networks to legacy telecom systems, our comprehensive network testing services ensure optimal telecom performance, high network reliability, and seamless connectivity across all telecommunications technologies, including VoIP, LTE, and real-time data transmission.
+
           </p>
         </div>
 
@@ -253,8 +253,8 @@ const TelecomNetworkTestingSection: React.FC = () => {
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Network Testing is Critical</h3>
               <p className="text-lg text-gray-600 mb-8">
-                In today&apos;s connected world, network reliability and performance directly impact business 
-                success, customer satisfaction, and competitive advantage.
+                In today’s hyper-connected telecommunications landscape, network reliability and telecom performance directly impact business success, customer satisfaction, and competitive advantage across 5G networks, VoIP systems, and real-time communication platforms.
+
               </p>
               
               <div className="space-y-4">
