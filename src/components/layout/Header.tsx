@@ -195,13 +195,14 @@ const Navbar = () => {
             },
             {
               label: "Fantasy Sports App Certification",
-              link: "/compatibility-testing",
+              link: "/fantasy-sports-app-certification",
             },
             {
               label: "Trading Apps Certification",
               link: "/trading-apps-certification",
             },
-            { label: "Shopping Apps Certification", link: "/database-testing" },
+            { label: "Shopping Apps Certification", 
+              link: "/shopping-apps-certification" },
           ],
         },
       ],

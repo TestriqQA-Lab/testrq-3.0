@@ -31,8 +31,8 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -111,7 +111,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             <div>
               <div className="flex items-center mb-4">
                 {React.createElement(iconMap[cityData.servicesContent.services[activeService].icon as keyof typeof iconMap], {
-                  className: "h-12 w-12 text-blue-600 mr-4"
+                  className: "h-12 w-12 text-brand-blue mr-4"
                 })}
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
@@ -142,7 +142,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
 
               {/* CTA Button */}
               <div className="mt-8">
-                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center">
+                <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center">
                   Get Started with {cityData.servicesContent.services[activeService].name.split(' ')[0]} Testing
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
@@ -192,7 +192,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
-                  <div className="text-2xl font-bold text-blue-600">50+</div>
+                  <div className="text-2xl font-bold text-brand-blue">50+</div>
                   <div className="text-sm text-gray-600">Projects Completed</div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
@@ -213,10 +213,10 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             Our experts can design a tailored testing strategy that meets your specific requirements and industry standards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
+            <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
               Schedule Free Consultation
             </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
+            <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
               View All Services
             </button>
           </div>
