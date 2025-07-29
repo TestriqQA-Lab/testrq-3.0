@@ -142,7 +142,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-green-600 text-white rounded-lg p-4 shadow-lg z-20">
+            <div className="absolute -bottom-10 -left-6 bg-green-600 text-white rounded-lg p-4 shadow-lg z-20">
               <div className="flex items-center">
                 <Clock className="h-6 w-6 mr-2" />
                 <div>

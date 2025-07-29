@@ -1,33 +1,36 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { CityData } from "@/app/lib/CityData";
-import { 
-  TestTube, 
-  Bot, 
-  Zap, 
-  Shield, 
-  Smartphone, 
-  Link,
+import Link from "next/link";
+import {
+  TestTube,
+  Bot,
+  Zap,
+  Shield,
+  Link as LinkIcon,
+  Smartphone,
   CheckCircle,
   TrendingUp,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 interface CityTestingServicesSectionProps {
   cityData: CityData;
 }
 
 const iconMap = {
-  TestTube,
-  Bot,
-  Zap,
-  Shield,
-  Smartphone,
-  Link
+  TestTube: TestTube,
+  Bot: Bot,
+  Zap: Zap,
+  Shield: Shield,
+  Smartphone: Smartphone,
+  Link: LinkIcon, // ← ADD THIS
 };
 
-const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({ cityData }) => {
+const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
+  cityData,
+}) => {
   const [activeService, setActiveService] = useState(0);
 
   return (
@@ -47,12 +50,14 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
           {cityData.servicesContent.services.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap];
-            
+
             return (
-              <div 
+              <div
                 key={index}
                 className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 cursor-pointer ${
-                  activeService === index ? 'border-blue-500 bg-blue-50' : 'border-gray-100 hover:border-blue-200'
+                  activeService === index
+                    ? "border-blue-500 bg-blue-50"
+                    : "border-gray-100 hover:border-blue-200"
                 }`}
                 onClick={() => setActiveService(index)}
               >
@@ -93,12 +98,14 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                 </div>
 
                 {/* CTA */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <button className="text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors duration-200 flex items-center">
-                    Learn More
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </button>
-                </div>
+                <Link href={service.link}>
+                  <div className="mt-6 pt-6 border-t border-gray-100 ">
+                    <button className="cursor-pointer text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors duration-200 flex items-center">
+                      Learn More
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </button>
+                  </div>
+                </Link>
               </div>
             );
           })}
@@ -110,14 +117,21 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             {/* Left Column - Service Details */}
             <div>
               <div className="flex items-center mb-4">
-                {React.createElement(iconMap[cityData.servicesContent.services[activeService].icon as keyof typeof iconMap], {
-                  className: "h-12 w-12 text-brand-blue mr-4"
-                })}
+                {React.createElement(
+                  iconMap[
+                    cityData.servicesContent.services[activeService]
+                      .icon as keyof typeof iconMap
+                  ],
+                  {
+                    className: "h-12 w-12 text-brand-blue mr-4",
+                  }
+                )}
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
                     {cityData.servicesContent.services[activeService].name}
                   </h3>
-                  {cityData.servicesContent.services[activeService].trending && (
+                  {cityData.servicesContent.services[activeService]
+                    .trending && (
                     <div className="flex items-center text-orange-600 text-sm font-medium mt-1">
                       <TrendingUp className="h-4 w-4 mr-1" />
                       High Demand in {cityData.name}
@@ -132,18 +146,26 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
 
               {/* All Features */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {cityData.servicesContent.services[activeService].features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
+                {cityData.servicesContent.services[activeService].features.map(
+                  (feature, idx) => (
+                    <div key={idx} className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  )
+                )}
               </div>
 
               {/* CTA Button */}
               <div className="mt-8">
                 <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center">
-                  Get Started with {cityData.servicesContent.services[activeService].name.split(' ')[0]} Testing
+                  Get Started with{" "}
+                  {
+                    cityData.servicesContent.services[activeService].name.split(
+                      " "
+                    )[0]
+                  }{" "}
+                  Testing
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               </div>
@@ -163,27 +185,38 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                       <span className="text-gray-900 font-medium">98%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-green-500 h-2 rounded-full" style={{width: '98%'}}></div>
+                      <div
+                        className="bg-green-500 h-2 rounded-full"
+                        style={{ width: "98%" }}
+                      ></div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Project Success Rate</span>
+                      <span className="text-gray-600">
+                        Project Success Rate
+                      </span>
                       <span className="text-gray-900 font-medium">96%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full" style={{width: '96%'}}></div>
+                      <div
+                        className="bg-blue-500 h-2 rounded-full"
+                        style={{ width: "96%" }}
+                      ></div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-gray-600">On-time Delivery</span>
                       <span className="text-gray-900 font-medium">94%</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full" style={{width: '94%'}}></div>
+                      <div
+                        className="bg-purple-500 h-2 rounded-full"
+                        style={{ width: "94%" }}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -193,11 +226,15 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
                   <div className="text-2xl font-bold text-brand-blue">50+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
+                  <div className="text-sm text-gray-600">
+                    Projects Completed
+                  </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
                   <div className="text-2xl font-bold text-green-600">99%</div>
-                  <div className="text-sm text-gray-600">Bug Detection Rate</div>
+                  <div className="text-sm text-gray-600">
+                    Bug Detection Rate
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,7 +247,8 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             Need Custom Testing Solutions for Your {cityData.name} Business?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Our experts can design a tailored testing strategy that meets your specific requirements and industry standards.
+            Our experts can design a tailored testing strategy that meets your
+            specific requirements and industry standards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
@@ -227,4 +265,3 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
 };
 
 export default CityTestingServicesSection;
-
