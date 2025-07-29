@@ -2360,4 +2360,3 @@ export const createFAQSchema = (faqs: Array<{question: string, answer: string}>)
     }
   }))
 });
-
