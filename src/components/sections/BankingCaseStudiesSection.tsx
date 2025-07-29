@@ -91,8 +91,8 @@ const BankingCaseStudiesSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how leading financial institutions have transformed their operations and achieved 
-            regulatory compliance with our comprehensive banking testing solutions.
+            Discover how leading financial institutions have transformed their operations and achieved full regulatory compliance with our comprehensive banking and finance testing solutions, including compliance testing, security validation, and performance assurance for financial applications.
+
           </p>
         </div>
 
@@ -180,7 +180,8 @@ const BankingCaseStudiesSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Industry Recognition</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our banking testing expertise has been recognized by leading industry organizations and publications.
+              Our banking and financial application testing expertise has been recognized by leading industry organizations and fintech publications for excellence in regulatory compliance testing, security assurance, and performance validation across banking platforms.
+
             </p>
           </div>
 

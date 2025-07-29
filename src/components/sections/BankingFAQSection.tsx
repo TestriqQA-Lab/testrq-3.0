@@ -21,7 +21,7 @@ const BankingFAQSection: React.FC = () => {
       questions: [
         {
           question: "What types of security testing do you perform for banking applications?",
-          answer: "We conduct comprehensive security testing including penetration testing, vulnerability assessments, security code reviews, authentication testing, authorization testing, data encryption validation, and compliance testing for standards like PCI DSS, SOX, and GDPR. Our security testing covers web applications, mobile apps, APIs, and core banking systems."
+          answer: "We conduct comprehensive security testing for banking and financial applications, including penetration testing, vulnerability assessments, secure code reviews, authentication and authorization testing, data encryption validation, and compliance testing aligned with regulatory standards such as PCI DSS, SOX, and GDPR. Our financial application security testing covers web applications, mobile banking apps, APIs, and core banking systems, ensuring end-to-end protection across all digital channels."
         },
         {
           question: "How do you ensure the security of our sensitive financial data during testing?",
