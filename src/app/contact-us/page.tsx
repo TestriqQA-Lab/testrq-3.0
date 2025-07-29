@@ -4,7 +4,7 @@ import ContactMethodsSection from "@/components/sections/ContactMethodsSection";
 import ContactFAQSection from "@/components/sections/ContactFAQSection";
 import ContactOfficeSection from "@/components/sections/ContactOfficeSection";
 import { Metadata } from "next";
-import StructuredData, { contactUsPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, {contactUsPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Contact Us Testriq QA Lab | Software Testing Services",
@@ -61,6 +61,10 @@ export const metadata: Metadata = {
     ],
   },
 };
+
+
+
+
 
 
 const ContactUsPage: React.FC = () => {
