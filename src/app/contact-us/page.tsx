@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
-  alternates: {
-    canonical: 'https://testriq.com/contact-us',
-  },
+  // metadataBase: new URL('https://testriq.com/'),
+  // alternates: {
+  //   canonical: 'https://testriq.com/contact-us',
+  // },
   openGraph: {
     title: "Contact Us | Get in Touch with Testriq QA Experts",
     description: "Reach out to Testriq for your QA and software testing needs.",
