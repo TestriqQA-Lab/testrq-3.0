@@ -19,7 +19,7 @@ const ctaSection = {
     "With 14+ years of QA excellence, Testriq has earned the trust of 50+ companies by delivering expert-led software testing and free QA consultations that help teams build reliable, high-performing products.",
   primaryButton: {
     label: "Start Free Consultation",
-    href: "#",
+    href: "/contact-us",
   },
   secondaryButton: {
     label: "View Our Work",

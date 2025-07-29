@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-
+    metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/iot-appliances-and-apps-testing-services',
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: 'Ensure your IoT devices deliver seamless connectivity and robust security. Get expert testing across WiFi, Bluetooth, Zigbee, sensors, and cloud integrations.',
     images: [
       {
-        url: '/OG/IoT-Testing-OG.webp',
+        url: '/OG/IoT-Testing-Services-og.webp',
         width: 1200,
         height: 630,
         alt: 'IoT Device Testing Services - Testriq',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'IoT Device Testing Services - Secure & Reliable QA for Connected Devices | Testriq',
     description: 'Ensure your IoT devices deliver seamless connectivity and robust security. Get expert testing across WiFi, Bluetooth, Zigbee, sensors, and cloud integrations.',
-    images: ['/OG/IoT-Testing-Twitter.webp'],
+    images: ['/OG/Iot-Testing_services-twitter.webp'],
   },
   robots: {
     index: true,

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -105,15 +106,20 @@ const LaunchFastFAQs: React.FC = () => {
             plan the perfect rapid testing strategy for your product launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Schedule Consultation
-            </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
-              Contact LaunchFast Team
-            </button>
+            <Link href={"/contact-us"}>
+              <button className="bg-white cursor-pointer text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Schedule Consultation
+              </button>
+            </Link>
+            <Link href={"/contact-us"}>
+              <button className="border-2 cursor-pointer border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
+                Contact LaunchFast Team
+              </button>
+            </Link>
           </div>
           <div className="mt-6 text-blue-100 text-sm">
-            📞 Call us: +1 (555) 123-4567 | ✉️ Email: launchfast@testriq.com
+            📞 Call us: (+91) 915-2929-343 | ✉️ Email: contact@testriq.com
+
           </div>
         </div>
 

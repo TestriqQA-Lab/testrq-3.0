@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
@@ -47,10 +48,12 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                <span>Start Your Testing Project</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <Link href="/contact-us">
+                <button className="flex cursor-pointer items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+                  <span>Start Your Testing Project</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
               <button className="px-8 py-4 border-2 border-blue-300 text-blue-100 font-semibold rounded-lg hover:bg-blue-700 transition-colors">
                 Schedule Consultation
               </button>

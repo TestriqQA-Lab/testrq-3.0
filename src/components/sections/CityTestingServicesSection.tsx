@@ -157,7 +157,8 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
               </div>
 
               {/* CTA Button */}
-              <div className="mt-8">
+              <Link href={cityData.servicesContent.services[activeService].link}>
+                <div className="mt-8">
                 <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center">
                   Get Started with{" "}
                   {
@@ -169,6 +170,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </button>
               </div>
+              </Link>
             </div>
 
             {/* Right Column - Visual Elements */}

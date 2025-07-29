@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/desktop-application-testing-services',
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: 'Desktop app QA experts. Ensure bug-free releases with security, performance, regression, and cross-platform compatibility testing for Windows, macOS, and Linux.',
     images: [
       {
-        url: '/OG/DesktopApplication-Service-OG.webp',
+        url: '/OG/Desktop-Application-Service-OG.webp',
         width: 1200,
         height: 630,
         alt: 'Desktop Application Testing Services - Testriq',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Desktop Application Testing Services - Secure & Reliable QA | Testriq',
     description: 'Desktop app QA experts. Ensure bug-free releases with security, performance, regression, and cross-platform compatibility testing for Windows, macOS, and Linux.',
-    images: ['/OG/Desktop-Application-service-Twitter.webp'],
+    images: ['/OG/Desktop-Application-Service-Twitter.webp'],
   },
   robots: {
     index: true,
@@ -157,17 +157,6 @@ const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
   ),
 });
 
-const DesktopAnyQuestions = dynamic(
-  () => import("@/components/sections/DesktopAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const DesktopComprehensiveSlider = dynamic(
   () => import("@/components/sections/DesktopComprehensiveSlider"),
@@ -214,7 +203,6 @@ export default function DesktopAppTesting() {
         <DesktopROISection />
         <DesktopCaseStudies />
         <DesktopFAQs />
-        <DesktopAnyQuestions />
       </MainLayout>
     </div>
   );

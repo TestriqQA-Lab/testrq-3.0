@@ -7,7 +7,6 @@ import ExploratoryToolsFramework from "@/components/sections/ExploratoryToolsFra
 import ExploratoryROISection from "@/components/sections/ExploratoryROISection";
 import ExploratoryCaseStudies from "@/components/sections/ExploratoryCaseStudies";
 import ExploratoryFAQs from "@/components/sections/ExploratoryFAQs";
-import ExploratoryAnyQuestions from "@/components/sections/ExploratoryAnyQuestions";
 import { Metadata } from "next";
 import StructuredData, {
   exploratoryTestingSchema,
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Exploratory Testing Services - Discover Hidden Issues | Testriq',
     description: 'Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.',
-    images: ['/OG/Exploratory-Testing-Twitter.webpp'],
+    images: ['/OG/Exploratory-Testing-Twitter.webp'],
   },
   robots: {
     index: true,
@@ -102,7 +101,6 @@ export default function ExploratoryTestingPage() {
       <ExploratoryROISection />
       <ExploratoryCaseStudies />
       <ExploratoryFAQs />
-      <ExploratoryAnyQuestions />
     </div>
   );
 }
