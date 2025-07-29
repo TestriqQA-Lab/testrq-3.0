@@ -136,8 +136,8 @@ const ContactMethodsSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We understand that every client has different preferences. That&apos;s
-            why we offer multiple ways to connect with our QA experts.
+            We understand that every client has different preferences. That’s why we offer multiple ways to connect with our QA experts—whether for a software testing consultation, project discussion, or quality assurance support across automation, manual, or performance testing services.
+
           </p>
         </div>
 
@@ -199,8 +199,8 @@ const ContactMethodsSection: React.FC = () => {
               Schedule Your Meeting
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose a time that works best for you. Our experts are ready to
-              discuss your QA needs and provide personalized recommendations.
+              Choose a time that works best for you—our QA experts are ready to discuss your software testing needs and provide personalized QA recommendations across automation, manual, API, and performance testing services.
+
             </p>
           </div>
 
