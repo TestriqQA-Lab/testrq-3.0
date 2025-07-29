@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    title: "Web Application Testing Services Company ",
     description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
