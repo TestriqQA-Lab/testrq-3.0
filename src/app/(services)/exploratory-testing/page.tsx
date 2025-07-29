@@ -15,10 +15,7 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: {
-    default: " ",
-    template: "Exploratory Testing Services | Testriq QA Lab"
-  },
+  title: "Exploratory Testing Services | Testriq QA Lab",
   description: "Empower your company with exploratory testing, our key to delivering flawless applications from day one. Gain a competitive edge with quality assurance.",
   keywords: [
     "exploratory testing",

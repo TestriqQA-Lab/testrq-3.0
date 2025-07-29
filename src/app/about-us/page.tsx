@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import StructuredData, { aboutPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "About Us - Best Software Testing Company in Mumbai India",
+  title: "About Us - Best Software Testing Company in India",
 
   description: "Discover Testriq QA Lab LLP – 10+ years of expert software testing & QA. Explore our mission, core values, and commitment to testing excellence.",
   keywords: [

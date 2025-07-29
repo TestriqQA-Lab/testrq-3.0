@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, ourTeamPageSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "estriq QA Leadership Team | Meet Our Software Testing Experts",
+  title: "Testriq QA Leadership Team |Software Testing Experts",
   description: "Meet the leadership team at Testriq QA Lab—visionaries driving excellence in software testing, automation, security, and innovation across global projects.",
   keywords: [
     "Testriq team",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/our-team',
   },
