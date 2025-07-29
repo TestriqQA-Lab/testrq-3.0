@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Testriq - Professional Software Testing Services | QA Solutions",
+    default: "Best Software Testing Company in Mumbai India | Testriq",
     template: "%s | Testriq"
   },
   description: "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/',
+    url: 'https://testrq-3-0.vercel.app/',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Testriq - Professional Software Testing Services | QA Solutions',
     description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
