@@ -24,7 +24,7 @@ const CareersTestimonialsSection: React.FC = () => {
       avatar: "SJ",
       rating: 5,
       quote:
-        "Working at Testriq has been transformative for my career. The learning opportunities, collaborative culture, and cutting-edge projects make every day exciting. I've grown more in two years here than in my previous five years elsewhere. The mentorship program and $5K learning budget have allowed me to become an expert in multiple testing frameworks.",
+        "Working at Testriq QA Lab has been transformative for my career in software testing. The learning opportunities, collaborative QA culture, and cutting-edge automation testing projects make every day exciting. I've grown more in two years here than in my previous five years elsewhere. The mentorship program, exposure to tools like Selenium, Cypress, and Postman, and the $5K learning and development budget have helped me become an expert in multiple testing frameworks and domains like performance testing and API validation.",
       highlights: ["Career Growth", "Learning Budget", "Mentorship"],
       social: {
         linkedin: "https://linkedin.com/in/sarah-johnson",
@@ -156,8 +156,8 @@ const CareersTestimonialsSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real stories from real people about their journey, growth, and
-            experiences working at Testriq.
+            Real stories from QA professionals about their career growth, learning experiences, and professional journey at Testriq.
+
           </p>
         </div>
 

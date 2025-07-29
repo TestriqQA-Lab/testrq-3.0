@@ -71,7 +71,7 @@ const CareersOpenPositions: React.FC = () => {
       experience: "2-4 years",
       salary: "$70,000 - $95,000",
       description:
-        "Execute comprehensive manual testing across web and mobile applications. Collaborate with development teams to ensure quality deliverables and user satisfaction.",
+        "Execute comprehensive manual testing across web applications and mobile apps, including UI/UX validation and functional test cases. Collaborate with development teams to ensure quality deliverables, reduce defects, and enhance user satisfaction through effective software quality assurance.",
       skills: [
         "Manual Testing",
         "Test Case Design",
@@ -92,7 +92,7 @@ const CareersOpenPositions: React.FC = () => {
       experience: "4+ years",
       salary: "$85,000 - $120,000",
       description:
-        "Design and execute performance testing strategies using JMeter, LoadRunner, and cloud-based testing tools. Analyze system performance and provide optimization recommendations.",
+        "Design and execute performance testing strategies using tools like JMeter, LoadRunner, and cloud-based load testing platforms such as BlazeMeter and Loader.io. Analyze system scalability, response times, and resource utilization to provide actionable performance optimization recommendations for high-traffic web and mobile applications.",
       skills: [
         "JMeter",
         "LoadRunner",
@@ -113,7 +113,7 @@ const CareersOpenPositions: React.FC = () => {
       experience: "3+ years",
       salary: "£55,000 - £75,000",
       description:
-        "Specialize in mobile application testing across iOS and Android platforms. Ensure optimal user experience on mobile devices with comprehensive testing strategies.",
+        "Specialize in mobile application testing across iOS and Android platforms, performing functional, UI/UX, compatibility, and performance testing on real devices and emulators. Ensure optimal user experience through comprehensive mobile testing strategies using tools like Appium, Firebase Test Lab, and BrowserStack.",
       skills: [
         "iOS Testing",
         "Android Testing",
@@ -155,7 +155,7 @@ const CareersOpenPositions: React.FC = () => {
       experience: "0-2 years",
       salary: "$50,000 - $65,000",
       description:
-        "Entry-level position for new graduates. Learn testing fundamentals while contributing to real projects with mentorship support from senior team members.",
+        "Entry-level QA position for new graduates looking to start a career in software testing. Learn testing fundamentals including manual testing, test case execution, and defect reporting while contributing to real-world QA projects under the guidance of senior QA professionals and mentorship programs.",
       skills: [
         "Basic Testing",
         "Attention to Detail",
@@ -262,9 +262,8 @@ const CareersOpenPositions: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore exciting opportunities to grow your career in software
-            testing. We&apos;re looking for passionate professionals to join our
-            world-class QA team.
+            Explore exciting opportunities to grow your career in software testing. We&apos;re hiring passionate QA professionals in automation testing, manual testing, performance testing, and security testing to join our world-class quality assurance team.
+
           </p>
         </div>
 
