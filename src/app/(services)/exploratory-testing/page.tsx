@@ -15,10 +15,7 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: {
-    default: " ",
-    template: "Exploratory Testing Services | Testriq QA Lab"
-  },
+  title: "Exploratory Testing Services | Testriq QA Lab",
   description: "Empower your company with exploratory testing, our key to delivering flawless applications from day one. Gain a competitive edge with quality assurance.",
   keywords: [
     "exploratory testing",
@@ -40,7 +37,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/exploratory-testing',
   },
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     description: 'Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.',
     images: [
       {
-        url: '/OG/Exploratory-Testing-Services-OG.webp',
+        url: '/OG/Exploratory-Testing-OG.webp',
         width: 1200,
         height: 630,
         alt: 'Exploratory Testing Services - Testriq',
@@ -66,7 +63,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Exploratory Testing Services - Discover Hidden Issues | Testriq',
     description: 'Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.',
-    images: ['/OG/Exploratory-Testing-Twitter.webp'],
+    images: ['/OG/Exploratory-Testing-Twitter.webpp'],
   },
   robots: {
     index: true,

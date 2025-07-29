@@ -38,9 +38,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/launchfast-qa',
   },
+
+
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -50,7 +53,7 @@ export const metadata: Metadata = {
     description: 'Fast-track your product launch with LaunchFast QA. Rapid testing cycles, agile integration, and 24/7 support designed for startups and high-velocity dev teams.',
     images: [
       {
-        url: '/OG/LaunchFast-QA-OG.webp',
+        url: '/OG/Launch-Fast-QA-OG.webp',
         width: 1200,
         height: 630,
         alt: 'LaunchFast QA Services - Testriq',
@@ -63,7 +66,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'LaunchFast QA Services - Rapid Product Testing for Startups | Testriq',
     description: 'Fast-track your product launch with LaunchFast QA. Rapid testing cycles, agile integration, and 24/7 support designed for startups and high-velocity dev teams.',
-    images: ['/OG/LaunchFast-QA-Twitter.webp'],
+    images: ['/OG/Launch_Fast_QA-Twitter.webp'],
   },
   robots: {
     index: true,
