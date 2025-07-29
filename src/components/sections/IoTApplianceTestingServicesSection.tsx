@@ -143,8 +143,8 @@ const IoTTestingServicesSection: React.FC = () => {
               Complete IoT Ecosystem Coverage
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We test your IoT solutions across the entire ecosystem, from edge devices 
-              to cloud platforms, ensuring seamless integration and optimal performance.
+              We test your IoT solutions across the entire ecosystem—from edge devices to cloud platforms—ensuring seamless integration, cross-device compatibility, and optimized IoT performance through our end-to-end IoT testing services.
+
             </p>
           </div>
 

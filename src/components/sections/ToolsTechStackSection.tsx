@@ -59,8 +59,8 @@ const ToolsTechStackSection = () => {
             <span className="text-[theme(color.brand.blue)]">Testing Ecosystem</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive technology stack encompasses every aspect of modern software testing, 
-            from programming languages and frameworks to cloud platforms and specialized tools.
+            Our comprehensive software testing technology stack encompasses every aspect of modern QA practices—from programming languages and automation frameworks like Selenium, Cypress, and Playwright, to cloud testing platforms, CI/CD tools, and specialized QA tools for performance, security, and API testing.
+
           </p>
         </div>
 

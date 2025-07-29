@@ -115,8 +115,8 @@ const IoTTestingProcessSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic, security-first approach designed specifically for IoT ecosystems, 
-            ensuring reliable connectivity, robust security, and seamless integration.
+            A systematic, security-first IoT testing approach designed specifically for IoT ecosystems, ensuring reliable device connectivity, robust IoT security, and seamless integration across edge-to-cloud architecture and diverse IoT platforms.
+
           </p>
         </div>
 
@@ -162,8 +162,8 @@ const IoTTestingProcessSection: React.FC = () => {
               IoT-Focused Methodologies
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our specialized approach ensures that every aspect of IoT system testing 
-              meets the highest standards of reliability, security, and performance.
+              Our specialized IoT testing approach ensures that every aspect of IoT system testing meets the highest standards of reliability, IoT security, and optimized performance across diverse connected devices and edge-to-cloud environments.
+
             </p>
           </div>
 

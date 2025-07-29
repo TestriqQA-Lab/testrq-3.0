@@ -103,8 +103,8 @@ const GamingToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage cutting-edge tools and frameworks specifically designed for gaming 
-            applications, ensuring optimal performance, engaging gameplay, and flawless user experiences.
+            Leverage cutting-edge game testing tools and frameworks specifically designed for gaming applications, ensuring optimized game performance, immersive gameplay, and flawless gaming experiences across all platforms.
+
           </p>
         </div>
 
@@ -145,8 +145,8 @@ const GamingToolsFrameworkSection: React.FC = () => {
               Cross-Platform Gaming Validation
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive testing frameworks ensuring your games perform flawlessly 
-              across all gaming platforms and devices.
+              Comprehensive game testing frameworks ensuring your games deliver flawless performance across all gaming platforms and devices, including mobile, console, PC, and browser-based environments.
+
             </p>
           </div>
 

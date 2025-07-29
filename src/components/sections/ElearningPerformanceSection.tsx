@@ -131,8 +131,8 @@ const ElearningPerformanceSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ensure your e-learning platform delivers exceptional performance under all conditions. 
-            From individual learners to thousands of concurrent users, we optimize for speed, reliability, and scalability.
+            Ensure your e-learning platform delivers exceptional performance testing results under all conditions. From individual learners to thousands of concurrent users, we optimize for load handling, reliability, and scalability testing.
+
           </p>
         </div>
 

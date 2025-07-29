@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { 
-  FaGavel, 
-  FaShieldAlt, 
-  FaCheckCircle, 
+import {
+  FaGavel,
+  FaShieldAlt,
+  FaCheckCircle,
   FaExclamationTriangle,
   FaGlobe,
   FaLock,
@@ -122,15 +122,15 @@ const BankingComplianceSection: React.FC = () => {
             <FaGavel className="w-4 h-4" />
             <span className="text-sm">Regulatory Compliance</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive <span className="text-[theme(color.brand.blue)]">Compliance Testing</span>
             <span className="block">for Banking & Finance</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Navigate the complex regulatory landscape with confidence. Our compliance testing services 
-            ensure your financial institution meets all regulatory requirements and avoids costly penalties.
+            Navigate the complex regulatory landscape with confidence. Our financial compliance testing services ensure your banking and financial institution meets all regulatory requirements—including PCI DSS, SOX, and GDPR—and avoids costly non-compliance penalties, legal risks, and reputational damage..
+
           </p>
         </div>
 
@@ -157,11 +157,11 @@ const BankingComplianceSection: React.FC = () => {
               <div className={`w-16 h-16 bg-gradient-to-r ${standard.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 <standard.icon className="w-8 h-8 text-white" />
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-900 mb-2">{standard.title}</h3>
               <h4 className="text-sm font-medium text-gray-600 mb-4">{standard.fullName}</h4>
               <p className="text-gray-600 leading-relaxed mb-6">{standard.description}</p>
-              
+
               <div className="space-y-3 mb-6">
                 <h5 className="font-semibold text-gray-800 text-sm">KEY REQUIREMENTS:</h5>
                 <div className="grid grid-cols-1 gap-2">
@@ -173,7 +173,7 @@ const BankingComplianceSection: React.FC = () => {
                   ))}
                 </div>
               </div>
-              
+
               <div className="bg-red-100 rounded-xl p-4 mb-6">
                 <div className="flex items-center gap-2 mb-2">
                   <FaExclamationTriangle className="w-4 h-4 text-red-600" />
@@ -181,7 +181,7 @@ const BankingComplianceSection: React.FC = () => {
                 </div>
                 <p className="text-sm text-red-600">{standard.penalty}</p>
               </div>
-              
+
               <div className="pt-4 border-t border-gray-200">
                 <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
@@ -197,7 +197,7 @@ const BankingComplianceSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Compliance Testing Process</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A systematic approach to ensure comprehensive compliance coverage and audit readiness.
+              A systematic compliance testing approach to ensure comprehensive regulatory coverage and audit readiness for banking and financial institutions, aligned with standards like PCI DSS, SOX, and GDPR.
             </p>
           </div>
 
@@ -223,10 +223,10 @@ const BankingComplianceSection: React.FC = () => {
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Compliance Testing Matters</h3>
               <p className="text-lg text-gray-600 mb-8">
-                Regulatory compliance isn&apos;t just about avoiding penalties—it&apos;s about building trust, 
-                protecting customers, and ensuring long-term business sustainability.
+                Regulatory compliance isn’t just about avoiding non-compliance penalties—it’s about building customer trust, protecting sensitive financial data, and ensuring long-term business sustainability for your banking and financial applications through robust compliance testing services.
+
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <FaShieldAlt className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
@@ -251,7 +251,7 @@ const BankingComplianceSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl p-8 text-white">
               <h4 className="text-2xl font-bold mb-6">Compliance Success Metrics</h4>
               <div className="space-y-6">
@@ -280,10 +280,10 @@ const BankingComplianceSection: React.FC = () => {
         <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
           <h3 className="text-3xl font-bold mb-4">Ensure Your Compliance Today</h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Don&apos;t wait for a regulatory audit to discover compliance gaps. Let our experts help you 
+            Don&apos;t wait for a regulatory audit to discover compliance gaps. Let our experts help you
             achieve and maintain full regulatory compliance.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
             <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
               Start Compliance Assessment

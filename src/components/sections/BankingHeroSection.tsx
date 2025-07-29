@@ -55,10 +55,8 @@ import {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure bulletproof security, regulatory compliance, and flawless performance 
-              across all your banking and financial platforms. Our comprehensive BFSI testing 
-              solutions help you build customer trust, meet regulatory requirements, and stay 
-              ahead of evolving financial threats.
+              Ensure bulletproof security, regulatory compliance, and flawless performance across all your banking and financial platforms. Our comprehensive banking and finance testing services help you build customer trust, meet GDPR, PCI DSS, and SOX compliance requirements, and stay ahead of evolving financial threats through robust BFSI testing solutions.
+
             </p>
 
             {/* Key Benefits */}

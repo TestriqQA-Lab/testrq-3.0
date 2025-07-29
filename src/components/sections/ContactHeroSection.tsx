@@ -95,9 +95,8 @@ const ContactHeroSection: React.FC = () => {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Reach out to our QA experts for consultation, support, or
-                partnership opportunities. We&apos;re here to help you achieve
-                software excellence.
+                Connect with our QA experts for software testing consultation, support, or partnerships. Achieve quality excellence with our automation, manual, and performance testing services.
+
               </p>
             </div>
 

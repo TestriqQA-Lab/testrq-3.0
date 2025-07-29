@@ -100,8 +100,8 @@ const IoTContactSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Connect with our IoT testing experts to discuss your project needs, 
-            get a custom quote, and start your journey to a successful IoT deployment.
+            Connect with our IoT testing experts to discuss your IoT project requirements, get a custom IoT testing quote, and start your journey toward a successful IoT deployment with secure connectivity, regulatory compliance, and optimized device performance across your entire IoT ecosystem.
+
           </p>
         </div>
 

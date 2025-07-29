@@ -100,8 +100,7 @@ const HealthcareContactSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Connect with our healthcare testing experts to discuss your compliance needs, 
-            get a custom quote, and start your journey to regulatory approval.
+            Connect with our healthcare testing experts to discuss your regulatory compliance needs, get a custom quote, and start your journey toward HIPAA and FDA approval with trusted healthcare QA services.
           </p>
         </div>
 

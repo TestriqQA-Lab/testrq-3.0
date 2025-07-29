@@ -86,8 +86,8 @@ const TelecomContactSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Connect with our telecommunications testing experts to discuss your network requirements,
-            performance challenges, and how we can help deliver superior connectivity experiences.
+            Connect with our telecommunications testing experts to discuss your network requirements, performance challenges, and how our telecom testing solutions can help deliver superior connectivity experiences, improve network reliability, and ensure 5G readiness, VoIP quality, and real-time communication performance.
+
           </p>
         </div>
 

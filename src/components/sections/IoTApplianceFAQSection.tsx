@@ -24,7 +24,7 @@ const IoTFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What types of IoT devices do you test?",
-          answer: "We test a wide range of IoT devices including smart home devices (thermostats, lighting, security cameras), industrial IoT sensors and actuators, wearables, connected vehicles, medical devices, and smart city infrastructure. Our expertise covers various communication protocols and hardware platforms."
+          answer: "We test a wide range of IoT devices including smart home devices (thermostats, lighting, security cameras), industrial IoT sensors and actuators, wearables, connected vehicles, medical IoT devices, and smart city infrastructure. Our IoT testing expertise spans communication protocols like MQTT, Zigbee, BLE, and LoRaWAN, as well as diverse hardware platforms and edge-to-cloud environments."
         },
         {
           question: "How long does IoT testing typically take?",

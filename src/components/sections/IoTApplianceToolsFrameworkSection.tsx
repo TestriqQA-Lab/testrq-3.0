@@ -103,8 +103,8 @@ const IoTToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Leverage specialized tools and frameworks designed for IoT ecosystems, 
-            ensuring seamless connectivity, robust security, and optimal performance across edge-to-cloud architectures.
+            Leverage specialized IoT testing tools and frameworks designed for IoT ecosystems, ensuring seamless device connectivity, robust IoT security, and optimized performance across edge-to-cloud architectures and diverse connected environments.
+
           </p>
         </div>
 
@@ -145,8 +145,8 @@ const IoTToolsFrameworkSection: React.FC = () => {
               IoT Protocol &amp; Standards Validation
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive testing frameworks ensuring your IoT devices and applications 
-              comply with industry standards and communication protocols.
+              Comprehensive IoT testing frameworks ensuring your IoT devices and applications comply with industry-specific standards, regulatory requirements, and IoT communication protocols like MQTT, Zigbee, Bluetooth Low Energy (BLE), and LoRaWAN.
+
             </p>
           </div>
 

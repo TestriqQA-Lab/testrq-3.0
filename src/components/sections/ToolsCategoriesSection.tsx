@@ -72,8 +72,8 @@ const ToolsCategoriesSection = () => {
             <span className="text-[theme(color.brand.blue)]">Tool Arsenal</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our extensive collection of testing tools and frameworks covers every aspect of software quality assurance,
-            from functional testing to performance optimization and security validation.
+            Our extensive collection of testing tools and frameworks covers every aspect of software quality assurance—from functional testing, UI/UX validation, and API testing to performance optimization, load and stress testing, and security validation using tools like Selenium, JMeter, Postman, and OWASP ZAP.
+
           </p>
         </div>
 

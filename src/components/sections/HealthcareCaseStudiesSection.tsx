@@ -145,8 +145,7 @@ const HealthcareCaseStudiesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real-world examples of how our specialized healthcare testing services have helped 
-            organizations achieve compliance, improve patient safety, and accelerate time to market.
+            Real-world examples of how our specialized healthcare testing services have helped organizations achieve regulatory compliance, improve patient data security, enhance patient safety, and accelerate time to market for their healthcare applications.
           </p>
         </div>
 
@@ -230,7 +229,7 @@ const HealthcareCaseStudiesSection: React.FC = () => {
               Our Healthcare Testing Impact
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Measurable results that demonstrate our commitment to healthcare excellence and patient safety.
+              Measurable QA results that demonstrate our commitment to healthcare software quality, regulatory compliance, and patient safety.
             </p>
           </div>
 

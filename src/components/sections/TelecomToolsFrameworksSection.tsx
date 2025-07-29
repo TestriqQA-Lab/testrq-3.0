@@ -135,8 +135,8 @@ const TelecomToolsFrameworksSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We leverage the most advanced testing tools and frameworks specifically designed for 
-            telecommunications, ensuring comprehensive coverage, accuracy, and industry compliance.
+            We leverage the most advanced telecom testing tools and frameworks specifically designed for the telecommunications industry, ensuring comprehensive test coverage, protocol-level accuracy, and full compliance with industry standards such as 3GPP, ETSI, and ITU-T.
+
           </p>
         </div>
 
@@ -181,8 +181,8 @@ const TelecomToolsFrameworksSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Our Tool Selection Matters</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our carefully curated toolkit ensures comprehensive testing coverage while meeting 
-              the stringent requirements of the telecommunications industry.
+              Our carefully curated telecom QA toolkit ensures comprehensive testing coverage while meeting the stringent performance, security, and compliance requirements of the telecommunications industry, including validation for 5G networks, VoIP systems, and real-time data processing.
+
             </p>
           </div>
 
@@ -203,8 +203,8 @@ const TelecomToolsFrameworksSection: React.FC = () => {
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Custom Telecom Test Framework</h3>
               <p className="text-lg text-gray-600 mb-8">
-                We&apos;ve developed a proprietary testing framework specifically designed for telecommunications, 
-                incorporating industry best practices and emerging technology requirements.
+                We&apos;ve developed a proprietary telecom testing framework specifically designed for the telecommunications industry, incorporating industry best practices, telecom protocol validation, and emerging technology requirements for 5G networks, IoT integration, and real-time data processing.
+
               </p>
               
               <div className="space-y-4">

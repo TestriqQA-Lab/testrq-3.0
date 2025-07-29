@@ -146,8 +146,8 @@ const IoTCaseStudiesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Real-world examples of how our comprehensive IoT testing services have enabled 
-            successful deployments across industries, delivering measurable business value.
+            Real-world examples of how our comprehensive IoT testing services have enabled successful IoT deployments across diverse industries, delivering measurable business value through secure connectivity, regulatory compliance, and optimized performance of connected IoT solutions.
+
           </p>
         </div>
 
@@ -231,8 +231,8 @@ const IoTCaseStudiesSection: React.FC = () => {
               Our IoT Testing Impact
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Measurable results that demonstrate our commitment to IoT excellence and 
-              successful deployments across diverse industries and use cases.
+              Measurable results that demonstrate our commitment to IoT testing excellence and successful IoT deployments across diverse industries, use cases, and connected device ecosystems, ensuring performance optimization, regulatory compliance, and business impact.
+
             </p>
           </div>
 

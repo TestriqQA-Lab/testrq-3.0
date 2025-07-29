@@ -85,8 +85,7 @@ const BankingContactSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Connect with our banking testing experts to discuss your specific requirements,
-            compliance needs, and how we can help strengthen your financial institution&apos;s security posture.
+            Connect with our banking and finance testing experts to discuss your specific QA requirements, regulatory compliance needs (including PCI DSS, SOX, and GDPR), and how our security-focused testing solutions can help strengthen your financial institution’s security posture, reduce operational risks, and ensure application reliability.
           </p>
         </div>
 

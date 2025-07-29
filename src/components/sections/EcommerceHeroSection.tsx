@@ -56,9 +56,7 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure flawless shopping experiences, secure transactions, and optimal performance 
-              across all devices. Our comprehensive e-commerce testing solutions help you increase 
-              conversions, reduce cart abandonment, and build customer trust.
+              Ensure flawless online shopping experiences, secure payment gateway transactions, and optimal performance across all browsers, devices, and operating systems. Our end-to-end e-commerce testing services include functional testing, security testing, and cross-platform validation — helping you reduce cart abandonment, boost conversion rates, and build trust in your e-commerce platform.
             </p>
 
             {/* Key Benefits */}

@@ -119,8 +119,7 @@ const HealthcareROISection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the significant financial benefits and risk mitigation that professional 
-            healthcare testing brings to your organization.
+            Discover the significant financial benefits and risk mitigation that professional healthcare testing services bring to your organization through regulatory compliance, data security, and performance assurance.
           </p>
         </div>
 
@@ -213,8 +212,7 @@ const HealthcareROISection: React.FC = () => {
               Average ROI: 1,500% - 20,000%
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Based on our client data, healthcare organizations see exceptional returns 
-              on their testing investment through risk mitigation and operational improvements.
+              Based on our client data, healthcare organizations see exceptional returns on their healthcare testing investment through regulatory risk mitigation, data protection, and operational improvements in their medical software systems.
             </p>
           </div>
 

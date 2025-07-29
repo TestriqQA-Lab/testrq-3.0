@@ -135,8 +135,8 @@ const BankingToolsFrameworksSection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We leverage industry-leading tools and frameworks specifically chosen for banking and financial 
-            services testing, ensuring comprehensive coverage, security, and compliance.
+            We leverage industry-leading testing tools and frameworks specifically chosen for banking and financial services testing, ensuring comprehensive test coverage, application security, and strict regulatory compliance with standards like PCI DSS, SOX, and GDPR.
+
           </p>
         </div>
 
@@ -181,8 +181,8 @@ const BankingToolsFrameworksSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Our Tool Selection Matters</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our carefully curated toolkit ensures comprehensive testing coverage while meeting 
-              the stringent requirements of the banking industry.
+              Our carefully curated banking QA toolkit ensures comprehensive testing coverage while meeting the stringent security, performance, and regulatory compliance requirements of the banking and financial services industry.
+
             </p>
           </div>
 
@@ -203,8 +203,8 @@ const BankingToolsFrameworksSection: React.FC = () => {
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Custom Banking Test Framework</h3>
               <p className="text-lg text-gray-600 mb-8">
-                We&apos;ve developed a proprietary testing framework specifically designed for banking and 
-                financial services, incorporating industry best practices and regulatory requirements.
+                We&apos;ve developed a proprietary banking QA framework specifically designed for the banking and financial services industry, incorporating industry best practices, regulatory compliance standards like PCI DSS, SOX, and GDPR, and supporting secure, high-performance financial application testing.
+
               </p>
               
               <div className="space-y-4">

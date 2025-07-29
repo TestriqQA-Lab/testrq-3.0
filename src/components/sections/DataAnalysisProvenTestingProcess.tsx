@@ -124,7 +124,7 @@ const DataAnalysisProvenTestingProcess = () => {
             <span className='text-brand-blue'>Proven</span> Data Analysis Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our systematic approach to data analysis ensures reliable insights and actionable recommendations through rigorous methodology and quality assurance at every step.
+            Our systematic approach to professional data analysis ensures reliable data insights and data-driven recommendations through rigorous analytical methodologies, statistical modeling, and quality assurance at every step of the data analytics process.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ const DataAnalysisProvenTestingProcess = () => {
         <div className="relative mb-16">
           {/* Connection Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-200 to-teal-200 hidden lg:block"></div>
-          
+
           <div className="space-y-12">
             {analysisSteps.map((step, index) => (
               <div key={index} className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
@@ -148,11 +148,11 @@ const DataAnalysisProvenTestingProcess = () => {
                         <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6 leading-relaxed">
                       {step.description}
                     </p>
-                    
+
                     <div className="space-y-2 mb-6">
                       {step.details.map((detail, detailIndex) => (
                         <div key={detailIndex} className="flex items-center">
@@ -161,7 +161,7 @@ const DataAnalysisProvenTestingProcess = () => {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                       <div className="flex items-center text-sm text-gray-500">
                         <FaClock className="h-4 w-4 mr-1" />
@@ -173,12 +173,12 @@ const DataAnalysisProvenTestingProcess = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Step Number Circle */}
                 <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg my-8 lg:my-0 relative z-10">
                   {step.step}
                 </div>
-                
+
                 {/* Spacer for opposite side */}
                 <div className="w-full lg:w-5/12"></div>
               </div>
@@ -191,7 +191,7 @@ const DataAnalysisProvenTestingProcess = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Quality Assurance & Validation
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {qualityAssurance.map((qa, index) => (
               <div key={index} className="bg-gray-50 rounded-lg p-4 flex items-center">
@@ -207,7 +207,7 @@ const DataAnalysisProvenTestingProcess = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Process Success Metrics
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processMetrics.map((metric, index) => (
               <div key={index} className="text-center">

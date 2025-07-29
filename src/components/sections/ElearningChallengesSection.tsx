@@ -137,9 +137,8 @@ const ElearningChallengesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
-            E-learning platforms face unique challenges that can significantly impact educational outcomes
-            and learner satisfaction. Our testing solutions address these critical issues to ensure
-            effective and accessible learning experiences.
+            E-learning platforms face unique challenges that can significantly impact educational outcomes, platform performance, and learner satisfaction. Our e-learning testing solutions address these critical issues through accessibility compliance, functional validation, and usability testing to ensure effective and inclusive learning experiences.
+
           </p>
         </div>
 
@@ -209,7 +208,7 @@ const ElearningChallengesSection: React.FC = () => {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">How Technical Issues Impact Learning</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Technical problems in e-learning platforms have direct consequences on educational effectiveness and learner satisfaction.
+              Technical issues in e-learning platforms, such as accessibility failures, performance bottlenecks, or usability flaws, have direct consequences on educational effectiveness and learner satisfaction.
             </p>
           </div>
 

@@ -171,7 +171,7 @@ const DataAnalysisComprehensiveSlider = () => {
             Complete <span className='text-brand-blue'>Analytics Methodology Suite</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our comprehensive range of analytics services designed to extract maximum value from your data at every stage of the analytics maturity journey.
+            Explore our comprehensive range of data analysis services designed to extract maximum business value from your data at every stage of the analytics maturity journey—from data discovery and exploratory data analysis to predictive analytics, prescriptive insights, and strategic decision-making.
           </p>
         </div>
 
@@ -182,11 +182,10 @@ const DataAnalysisComprehensiveSlider = () => {
               <button
                 key={type.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeTab === index
+                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeTab === index
                     ? 'bg-blue-600 text-white shadow-lg'
                     : 'bg-white text-gray-600 hover:bg-gray-100'
-                }`}
+                  }`}
               >
                 {type.icon}
                 <span className="ml-2 hidden sm:inline">{type.title}</span>
@@ -204,7 +203,7 @@ const DataAnalysisComprehensiveSlider = () => {
                     {analyticsTypes[activeTab].title}
                   </h3>
                 </div>
-                
+
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {analyticsTypes[activeTab].content.overview}
                 </p>
@@ -262,7 +261,7 @@ const DataAnalysisComprehensiveSlider = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Analytics Maturity Journey
           </h3>
-          
+
           <div className="flex flex-col lg:flex-row  items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
             {['Descriptive', 'Diagnostic', 'Predictive', 'Prescriptive', 'Cognitive'].map((stage, index) => (
               <div key={stage} className="flex items-center">

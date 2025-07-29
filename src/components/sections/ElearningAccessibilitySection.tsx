@@ -119,8 +119,8 @@ const ElearningAccessibilitySection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ensure your e-learning platform is inclusive and accessible to all learners, including those with disabilities. 
-            Our comprehensive accessibility testing helps you reach every student and meet compliance requirements.
+            Ensure your e-learning platform is WCAG-compliant, inclusive, and accessible to all learners, including those with disabilities. Our comprehensive accessibility testing services help you reach every student and meet global compliance standards.
+
           </p>
         </div>
 

@@ -148,8 +148,8 @@ const BankingROISection: React.FC = () => {
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our banking testing solutions deliver quantifiable returns through cost savings, risk reduction, 
-            and operational efficiency improvements that directly impact your bottom line.
+            Our banking and finance testing solutions deliver quantifiable ROI through cost savings, risk reduction, and operational efficiency improvements, directly impacting your bottom line by enhancing regulatory compliance, financial application stability, and platform performance.
+
           </p>
         </div>
 

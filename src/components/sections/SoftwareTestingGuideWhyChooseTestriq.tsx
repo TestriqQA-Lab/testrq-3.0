@@ -45,19 +45,19 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
     {
       name: 'Sarah Chen',
       role: 'Senior QA Engineer at Microsoft',
-      content: 'The comprehensive testing guide helped me transition from manual to automation testing. The structured approach and practical examples were invaluable.',
+      content: 'The comprehensive software testing guide helped me transition from manual testing to automation testing. The structured approach, test automation frameworks, and practical examples were invaluable for skill development.',
       rating: 5
     },
     {
       name: 'Michael Rodriguez',
       role: 'Test Manager at Amazon',
-      content: 'Excellent resource for building testing expertise. The learning path is well-structured and covers all essential testing domains.',
+      content: 'Excellent QA resource for building software testing expertise. The learning path is well-structured and covers all essential testing types, including performance testing, exploratory testing, and API testing.',
       rating: 5
     },
     {
       name: 'Emily Johnson',
       role: 'QA Lead at Google',
-      content: 'The security testing section was particularly helpful for our compliance requirements. Highly recommend for professional development.',
+      content: 'The security testing section was particularly helpful for meeting our compliance requirements like OWASP and GDPR. Highly recommend for professional QA development.',
       rating: 5
     }
   ];
@@ -67,10 +67,10 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-           <span className='text-brand-blue'>Why Choose Testriq</span> for Testing Education?
+            <span className='text-brand-blue'>Why Choose Testriq</span> for Testing Education?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of testing professionals who have advanced their careers through our comprehensive, industry-proven testing education platform.
+            Join thousands of software testing professionals who have advanced their careers through our comprehensive, industry-proven QA training platform, offering expert-led learning in manual testing, automation testing, performance testing, security testing, and more.
           </p>
         </div>
 
@@ -82,11 +82,11 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
                 {advantage.icon}
                 <h3 className="text-xl font-semibold text-gray-900 ml-3">{advantage.title}</h3>
               </div>
-              
+
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {advantage.description}
               </p>
-              
+
               <div className="bg-white rounded-lg p-3 border-l-4 border-blue-500">
                 <span className="text-sm font-semibold text-blue-600">{advantage.metrics}</span>
               </div>
@@ -102,7 +102,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
               Our testing education platform has helped thousands of professionals achieve their career goals.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
             <div>
               <div className="text-3xl font-bold mb-2">15,000+</div>
@@ -128,7 +128,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             What Our Students Say
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6">
@@ -137,11 +137,11 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-                
+
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">{testimonial.role}</div>
@@ -156,7 +156,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Complete Learning Experience
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               'Comprehensive curriculum covering all testing domains',
