@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React from "react";
 
 const ExploratoryToolsFramework: React.FC = () => {
@@ -187,9 +187,11 @@ const ExploratoryToolsFramework: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Explore Our Toolkit
-          </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                Explore Our Toolkit
+              </button>
+            </Link>
         </div>
       </div>
     </section>

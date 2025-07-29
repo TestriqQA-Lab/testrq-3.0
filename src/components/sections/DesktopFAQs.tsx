@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -118,9 +119,11 @@ const DesktopFAQs: React.FC = () => {
               to your specific testing requirements and challenges.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                Schedule Consultation
-              </button>
+              <Link href="/contact-us">
+                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+                  Schedule Consultation
+                </button>
+              </Link>
               <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
                 Contact Support
               </button>
@@ -137,7 +140,7 @@ const DesktopFAQs: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">Email Support</h4>
             <p className="text-gray-600 text-sm">Get detailed answers via email</p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-              support@testriq.com
+              contact@testriq.com
             </p>
           </div>
           
@@ -148,7 +151,7 @@ const DesktopFAQs: React.FC = () => {
             <h4 className="font-semibold text-gray-900 mb-2">Phone Support</h4>
             <p className="text-gray-600 text-sm">Speak with our experts directly</p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-              +1 (555) 123-4567
+              (+91) 915-2929-343
             </p>
           </div>
           

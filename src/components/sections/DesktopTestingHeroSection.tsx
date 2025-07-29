@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
+import Link from "next/link";
 
 const DesktopTestingHeroSection: React.FC = () => {
   return (
@@ -31,12 +32,14 @@ const DesktopTestingHeroSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
-            <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
-              <span className="text-base">Get Started Today</span>
-              <FaArrowRight className="w-4 h-5" />
-            </button>
-            <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
-              <FaPlay className="w-4 h-4" />
+            <Link href={"/contact-us"}>
+              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
+                Get Started Today
+                <FaArrowRight className="inline ml-2" />
+              </button>
+            </Link>
+            <button className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+              <FaPlay className="w-4 h-4 mr-2" />
               Watch Demo
             </button>
           </div>

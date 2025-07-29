@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaSearch,
@@ -37,12 +38,14 @@ const ExploratoryTestingHeroSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
-                Get Started Today
-                <FaArrowRight className="ml-2" />
-              </button>
-              <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors duration-300 flex items-center justify-center">
-                <FaPlay className="mr-2" />
+              <Link href={"/contact-us"}>
+                <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
+                  Get Started Today
+                  <FaArrowRight className="inline ml-2" />
+                </button>
+              </Link>
+              <button className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+                <FaPlay className="w-4 h-4 mr-2" />
                 Watch Demo
               </button>
             </div>

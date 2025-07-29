@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaAward, FaUsers, FaClock, FaShieldAlt, FaChartLine, FaHeadset } from "react-icons/fa";
 
@@ -208,9 +209,11 @@ const DesktopWhyChooseTestriq: React.FC = () => {
             Join hundreds of satisfied clients who trust Testriq for their desktop application testing needs.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-              Start Your Project Today
-            </button>
+            <Link href="/contact-us">
+                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+                  Start Your Project Today
+                </button>
+            </Link>
             <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
               Schedule Free Consultation
             </button>

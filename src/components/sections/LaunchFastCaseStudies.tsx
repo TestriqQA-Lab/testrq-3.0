@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaRocket, FaMobile, FaCloud } from "react-icons/fa";
 
@@ -221,9 +222,11 @@ const LaunchFastCaseStudies: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Let LaunchFast QA help you achieve rapid, successful product launches that drive business growth.
           </p>
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Start Your Success Story
-          </button>
+          <Link href={"/contact-us"}>
+              <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                Start Your Success Story
+              </button>
+          </Link>
         </div>
       </div>
     </section>

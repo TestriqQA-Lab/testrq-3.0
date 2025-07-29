@@ -157,17 +157,6 @@ const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
   ),
 });
 
-const DesktopAnyQuestions = dynamic(
-  () => import("@/components/sections/DesktopAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const DesktopComprehensiveSlider = dynamic(
   () => import("@/components/sections/DesktopComprehensiveSlider"),
@@ -214,7 +203,6 @@ export default function DesktopAppTesting() {
         <DesktopROISection />
         <DesktopCaseStudies />
         <DesktopFAQs />
-        <DesktopAnyQuestions />
       </MainLayout>
     </div>
   );
