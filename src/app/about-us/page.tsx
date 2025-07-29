@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
-    canonical: 'https://testriq.com/about-us',
+    canonical: 'https://testrq-3-0.vercel.app/about-us',
   },
   openGraph: {
     type: 'website',
