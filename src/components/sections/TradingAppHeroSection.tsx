@@ -112,7 +112,7 @@ const TradingAppHeroSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+              className="text-center backdrop-blur-sm transition-all duration-300"
             >
               <div className={`${metric.color} mb-2 flex justify-center`}>
                 {metric.icon}

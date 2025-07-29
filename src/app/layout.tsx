@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/',
+    url: 'https://testriq.com/',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Testriq - Professional Software Testing Services | QA Solutions',
     description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',

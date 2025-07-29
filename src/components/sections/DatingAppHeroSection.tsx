@@ -56,7 +56,7 @@ const DatingAppHeroSection = () => {
               Trusted by 500+ Dating Apps Worldwide
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Build Trust.
               <br />
               <span className="text-brand-blue">Boost Downloads.</span>
