@@ -4,7 +4,6 @@
 import React from 'react';
 import {
   MapPin,
-  Building2,
   CheckCircle,
   Star,
   ArrowRight,
@@ -29,11 +28,11 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Content */}
           <div>
             {/* Location Badge */}
-            <div className="inline-flex items-center bg-blue-100 text-brand-blue px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex bg-blue-100 text-brand-blue px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="h-4 w-4 mr-2" />
               {cityData.name}, {cityData.state}
             </div>
@@ -199,30 +198,6 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Bottom Section - Industry Focus */}
-        <div className="mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Serving Key Industries in {cityData.name}
-            </h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our specialized testing expertise covers the major industries driving growth in {cityData.state}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {cityData.industries.map((industry, index) => (
-              <div 
-                key={index}
-                className="bg-white rounded-lg p-4 text-center shadow-sm hover:shadow-md transition-shadow duration-200"
-              >
-                <Building2 className="h-8 w-8 text-brand-blue mx-auto mb-2" />
-                <div className="text-sm font-medium text-gray-900">{industry}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
