@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -103,15 +104,17 @@ const ExploratoryFAQs: React.FC = () => {
             Our exploratory testing experts are ready to discuss your specific requirements and help you plan the perfect investigation strategy for your application.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Schedule Consultation
-            </button>
-            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors duration-300">
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Schedule Consultation
+              </button>
+            </Link>
+            <button className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
               Contact Exploration Team
             </button>
           </div>
           <div className="mt-6 text-green-100 text-sm">
-            📞 Call us: +1 (555) 123-4567 | ✉️ Email: exploratory@testriq.com
+            📞 Call us: (+91) 915-2929-343 | ✉️ Email: contact@testriq.com
           </div>
         </div>
 

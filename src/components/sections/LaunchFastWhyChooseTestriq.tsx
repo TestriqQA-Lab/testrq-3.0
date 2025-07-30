@@ -9,6 +9,7 @@ import {
   FaChartLine,
   FaClock,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const LaunchFastWhyChooseTestriq: React.FC = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -305,9 +306,11 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Join 300+ startups that trust our LaunchFast QA expertise. Start your journey with rapid testing sprints, pre-launch testing, and go-to-market QA to ensure on-time, successful launches.
           </p>
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Get Started with LaunchFast QA
-          </button>
+          <Link href={"/contact-us"}>
+            <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+              Get Started with LaunchFast QA
+            </button>
+          </Link>
         </div>
       </div>
     </section>

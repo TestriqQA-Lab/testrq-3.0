@@ -7,7 +7,6 @@ import ExploratoryToolsFramework from "@/components/sections/ExploratoryToolsFra
 import ExploratoryROISection from "@/components/sections/ExploratoryROISection";
 import ExploratoryCaseStudies from "@/components/sections/ExploratoryCaseStudies";
 import ExploratoryFAQs from "@/components/sections/ExploratoryFAQs";
-import ExploratoryAnyQuestions from "@/components/sections/ExploratoryAnyQuestions";
 import { Metadata } from "next";
 import StructuredData, {
   exploratoryTestingSchema,
@@ -102,7 +101,6 @@ export default function ExploratoryTestingPage() {
       <ExploratoryROISection />
       <ExploratoryCaseStudies />
       <ExploratoryFAQs />
-      <ExploratoryAnyQuestions />
     </div>
   );
 }

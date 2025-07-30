@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight, FaDesktop, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
 
@@ -229,9 +230,11 @@ const DesktopCaseStudies: React.FC = () => {
               desktop applications with our comprehensive testing services.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                Start Your Project
-              </button>
+              <Link href="/contact-us">
+                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+                  Start Your Project
+                </button>
+              </Link>
               <button className="px-8 py-3 border-2 border-gray-400 text-gray-300 font-semibold rounded-lg hover:bg-gray-700 transition-colors">
                 Download Case Studies
               </button>
