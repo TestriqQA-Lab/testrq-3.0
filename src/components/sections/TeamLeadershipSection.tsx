@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaUserTie } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -168,16 +168,20 @@ const TeamLeadershipSection = () => {
         className="object-cover rounded-full"
       />
     }
-    ]
+  ]
 
   return (
     <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Leadership Team
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaUserTie />
+            <span className="text-sm">
+              Leadership Team
+            </span>
+          </div>
+
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Meet Our{" "}
             <span className="text-[theme(color.brand.blue)]">Leaders</span>
@@ -194,14 +198,12 @@ const TeamLeadershipSection = () => {
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                index % 2 === 0 ? "" : ""
-              }`}
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+                }`}
             >
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
               >
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -222,9 +224,8 @@ const TeamLeadershipSection = () => {
 
                   {/* Leader Visual */}
                   <div
-                    className={`flex lg:hidden justify-center px-0 ${
-                      index % 2 === 1 ? "lg:col-start-1" : ""
-                    }`}
+                    className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""
+                      }`}
                   >
                     <div className="relative">
                       <div className="text-center text-black">
@@ -280,9 +281,8 @@ const TeamLeadershipSection = () => {
 
                 {/* Leader Visual */}
                 <div
-                  className={`hidden lg:flex justify-center px-0 ${
-                    index % 2 === 1 ? "lg:col-start-1" : ""
-                  }`}
+                  className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
                 >
                   <div className="relative">
                     <div className="text-center text-black py-0">
@@ -325,14 +325,12 @@ const TeamLeadershipSection = () => {
           {cdplLeaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                index % 2 === 0 ? "" : ""
-              }`}
+              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+                }`}
             >
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${
-                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-                }`}
+                className={`grid grid-cols-1 lg:grid-cols-2 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                  }`}
               >
                 {/* Leader Info */}
                 <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
@@ -353,9 +351,8 @@ const TeamLeadershipSection = () => {
 
                   {/* Leader Visual */}
                   <div
-                    className={`flex lg:hidden justify-center px-0 ${
-                      index % 2 === 1 ? "lg:col-start-1" : ""
-                    }`}
+                    className={`flex lg:hidden justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""
+                      }`}
                   >
                     <div className="relative">
                       <div className="text-center text-black">
@@ -411,9 +408,8 @@ const TeamLeadershipSection = () => {
 
                 {/* Leader Visual */}
                 <div
-                  className={`hidden lg:flex justify-center px-0 ${
-                    index % 2 === 1 ? "lg:col-start-1" : ""
-                  }`}
+                  className={`hidden lg:flex justify-center px-0 ${index % 2 === 1 ? "lg:col-start-1" : ""
+                    }`}
                 >
                   <div className="relative">
                     <div className="text-center text-black py-0">

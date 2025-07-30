@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Code, Database, BarChart3, Brain, Cloud, Zap, CheckCircle, ExternalLink } from 'lucide-react';
+import { FaTools } from 'react-icons/fa';
 
 const DataAnalysisToolsFramework = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -97,6 +98,12 @@ const DataAnalysisToolsFramework = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTools />
+            <span className="text-sm">
+              Tools & Frameworks
+            </span>
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Advanced Analytics <span className='text-brand-blue'>Tools & Technologies</span>
           </h2>

@@ -96,7 +96,7 @@ const ElearningTestingPage: React.FC = () => {
     { name: "E-Learning Testing", url: "https://testriq.com/e-learning-testing-services" }
   ];
   return (
-    <div> \
+    <div>
       <StructuredData data={ elearningTestingServiceSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
     <main className="min-h-screen bg-white">

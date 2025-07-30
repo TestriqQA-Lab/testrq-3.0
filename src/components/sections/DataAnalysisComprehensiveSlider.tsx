@@ -9,7 +9,8 @@ import {
   FaDatabase,
   FaBullseye,
   FaCheckCircle,
-  FaArrowRight
+  FaArrowRight,
+  FaFlask
 } from 'react-icons/fa';
 
 
@@ -167,6 +168,12 @@ const DataAnalysisComprehensiveSlider = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Complete <span className='text-brand-blue'>Analytics Methodology Suite</span>
           </h2>

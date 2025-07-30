@@ -6,6 +6,7 @@ import {
   FaRocket,
   FaUsers,
   FaGem,
+  FaHandsHelping,
 } from "react-icons/fa";
 
 const AboutValuesSection = () => {
@@ -59,10 +60,13 @@ const AboutValuesSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full">
+            <FaHandsHelping/>
+            <span className="text-sm">
             Core Values
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          </div>
+          <h2 className="text-3xl md:text-5xl mt-5 font-bold text-gray-900 mb-6">
             What We{" "}
             <span className="text-[theme(color.brand.blue)]">Stand For</span>
           </h2>

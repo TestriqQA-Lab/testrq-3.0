@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaMobile, FaShieldAlt, FaCogs, FaUsers, FaChartLine, FaSync, FaApple } from "react-icons/fa";
+import { FaMobile, FaShieldAlt, FaCogs, FaUsers, FaChartLine, FaSync, FaApple, FaFlask } from "react-icons/fa";
 
 const MobileComprehensive: React.FC = () => {
   const testingServices = [
@@ -48,15 +48,18 @@ const MobileComprehensive: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Comprehensive Testing Solutions
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Complete Mobile Application{" "}
             <span className="text-[theme(color.brand.blue)]">Testing Services</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            From functional validation to performance optimization, our comprehensive mobile testing services 
+            From functional validation to performance optimization, our comprehensive mobile testing services
             ensure your applications deliver exceptional user experiences across all devices and platforms.
           </p>
         </div>
@@ -99,17 +102,17 @@ const MobileComprehensive: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Platform & Device Coverage
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* iOS Testing */}
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-lg"><FaApple width={4} height={4}/></span>
+                  <span className="text-white text-lg"><FaApple width={4} height={4} /></span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">iOS Testing</h4>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
                 <div>
                   <strong>Devices:</strong>
@@ -140,7 +143,7 @@ const MobileComprehensive: React.FC = () => {
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">Android Testing</h4>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
                 <div>
                   <strong>Devices:</strong>

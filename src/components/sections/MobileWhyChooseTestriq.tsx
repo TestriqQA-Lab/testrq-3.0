@@ -48,9 +48,12 @@ const MobileWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Why Choose Us
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaAward />
+            <span className="text-sm">
+              Why Choose Us
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">Mobile Testing?</span>
@@ -96,7 +99,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Testriq vs Traditional Mobile Testing
               </h3>
-              
+
               <div className="space-y-6">
                 {[
                   {
@@ -130,7 +133,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
                         {comparison.feature}
                       </div>
                       <div className="text-sm text-gray-600">
-                        Testriq: <span className="text-[theme(color.brand.blue)] font-semibold">{comparison.testriq}</span> vs 
+                        Testriq: <span className="text-[theme(color.brand.blue)] font-semibold">{comparison.testriq}</span> vs
                         Traditional: <span className="text-gray-500">{comparison.traditional}</span>
                       </div>
                     </div>
@@ -169,7 +172,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
                         <span>{rating.percentage}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
+                        <div
                           className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-400 h-2 rounded-full transition-all duration-1000"
                           style={{ width: `${rating.percentage}%` }}
                         ></div>
@@ -181,7 +184,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
                 {/* Mobile Testimonial */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-gray-700 italic mb-2">
-                    &quot;Testriq&apos;s mobile testing helped us achieve a 5-star rating on both app stores. 
+                    &quot;Testriq&apos;s mobile testing helped us achieve a 5-star rating on both app stores.
                     Their thorough approach caught issues we never would have found.&quote;
                   </p>
                   <div className="text-xs text-gray-600">
@@ -203,7 +206,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Our Mobile Device Testing Lab
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div className="p-6 bg-gray-50 rounded-xl">
               <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">50+</div>

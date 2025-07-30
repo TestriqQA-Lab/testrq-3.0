@@ -9,6 +9,7 @@ import {
   FaCheckCircle,
   FaWifi,
   FaRocket,
+  FaTrophy,
 } from "react-icons/fa";
 
 const IoTCaseStudies: React.FC = () => {
@@ -147,6 +148,12 @@ const IoTCaseStudies: React.FC = () => {
     <section className="bg-gradient-to-br from-white to-teal-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTrophy />
+            <span className="text-sm">
+              Success Stories
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             IoT Testing{" "}
             <span className="text-[theme(color.brand.blue)]">
@@ -166,20 +173,18 @@ const IoTCaseStudies: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${
-                activeCase === index
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${activeCase === index
                   ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-              }`}
+                }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{study.icon}</span>
                 <div className="text-left">
                   <div className="text-sm font-bold">{study.company}</div>
                   <div
-                    className={`text-xs ${
-                      activeCase === index ? "text-white/80" : "text-gray-500"
-                    }`}
+                    className={`text-xs ${activeCase === index ? "text-white/80" : "text-gray-500"
+                      }`}
                   >
                     {study.industry}
                   </div>
@@ -188,11 +193,10 @@ const IoTCaseStudies: React.FC = () => {
 
               {/* IoT Connection Indicator */}
               <div
-                className={`absolute top-2 right-2 w-2 h-2 rounded-full ${
-                  activeCase === index
+                className={`absolute top-2 right-2 w-2 h-2 rounded-full ${activeCase === index
                     ? "bg-white animate-pulse"
                     : `bg-${study.color}-500`
-                }`}
+                  }`}
               ></div>
             </button>
           ))}

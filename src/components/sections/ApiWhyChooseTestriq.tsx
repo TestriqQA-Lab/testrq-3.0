@@ -9,6 +9,7 @@ import {
   FaUsers,
   FaClock,
   FaArrowRight,
+  FaAward,
 } from "react-icons/fa";
 
 const ApiWhyChooseTestriq: React.FC = () => {
@@ -117,6 +118,12 @@ const ApiWhyChooseTestriq: React.FC = () => {
     <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaAward />
+            <span className="text-sm">
+              Why Choose Us
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">API Testing</span>?
