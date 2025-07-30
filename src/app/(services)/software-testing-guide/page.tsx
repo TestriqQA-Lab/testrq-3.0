@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://www.testriq.com/'),
+ metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/software-testing-guide',
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Master software testing with our complete guide. Learn manual, automation, performance, and security testing best practices, tools, and methodologies.',
     images: [
       {
-        url: '/OG/complete-software-testing-og.webp',
+        url: '/OG/Software-Testing-Guid-OG.webp',
         width: 1200,
         height: 630,
         alt: 'Complete Software Testing Guide | Testriq',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Complete Software Testing Guide - Best Practices, Types & Methodologies | Testriq',
     description: 'Master software testing with our complete guide. Learn manual, automation, performance, and security testing best practices, tools, and methodologies.',
-    images: ['/OG/complete-software-testing-twitter.webp'],
+    images: ['/OG/Software-Testing-Guild-Twitter.webp'],
   },
   robots: {
     index: true,

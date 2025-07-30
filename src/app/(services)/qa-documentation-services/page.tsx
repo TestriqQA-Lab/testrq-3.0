@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/qa-documentation-services',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Professional QA documentation services including test plans, test cases, requirements docs, and compliance-ready deliverables. Ensure quality, streamline processes, and accelerate testing.',
     images: [
       {
-        url: '/OG/qa-documentation-og.webp',
+        url: '/OG/QA-Documentation-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'QA Documentation Services by Testriq',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'QA Documentation Services - Professional QA Docs | Testriq',
     description: 'Professional QA documentation services including test plans, test cases, requirements docs, and compliance-ready deliverables. Ensure quality, streamline processes, and accelerate testing.',
-    images: ['/OG/qa-documentation-twitter.webp'],
+    images: ['/OG/QA-Documentation-service-Twitter.webp'],
   },
   robots: {
     index: true,

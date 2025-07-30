@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/automation-testing-services',
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
     images: [
       {
-        url: '/OG/automation-testing-og.webp',
+        url: '/OG/Automation-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Automation Testing Services - Testriq',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Automation Testing Services - Advanced Test Automation Solutions | Testriq',
     description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
-    images: ['/OG/automation-testing-twitter.webp'],
+    images: ['/OG/Automation-testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

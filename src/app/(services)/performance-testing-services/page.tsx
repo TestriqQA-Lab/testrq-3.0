@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    url: "/OG/performance-testing-og.webp",
+    url: "/OG/Performance-Testing-Service-Og.webp",
     type: "website",
     images: [
       {
@@ -46,8 +46,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    images: ["/OG/performance-testing-twitter.webp"],
+    images: ["/OG/Performance-Testing-Service-Twitter.webp"],
   },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: "https://testriq.com/performance-testing-services",
   },

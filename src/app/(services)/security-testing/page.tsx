@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OG/security-testing_og-.webp",
+        url: "/OG/Security-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Security Testing Services by Testriq",
@@ -46,8 +46,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
-    images: ["/OG/security-testing-twitter.webp"],
+    images: ["/OG/Security-Testing-Service-Twitter.webp"],
   },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: "https://testriq.com/security-testing",
   },

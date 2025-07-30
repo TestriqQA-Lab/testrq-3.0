@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/regression-testing',
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
     images: [
       {
-        url: '/OG/regression-testing-og.webp',
+        url: '/OG/Regression-Testing-Services-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Regression Testing Services - Testriq',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
     description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
-    images: ['/OG/regression-testing-twitter.webp'],
+    images: ['/OG/Regression-Testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

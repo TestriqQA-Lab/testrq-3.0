@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/data-analysis-services',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Transform your raw data into actionable business insights with Testriq\'s professional data analysis services. We deliver descriptive, predictive, and prescriptive analytics using advanced tools and expert data scientists.',
     images: [
       {
-        url: '/OG/data-analysis-og.webp',
+        url: '/OG/Data-Analysis-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq - Professional Data Analysis Services',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Professional Data Analysis Services - Analytics, Insights & Reporting | Testriq',
     description: 'Transform your raw data into actionable business insights with Testriq\'s professional data analysis services. We deliver descriptive, predictive, and prescriptive analytics using advanced tools and expert data scientists.',
-    images: ['/OG/data-analysis-twitter.webp'],
+    images: ['/OG/Data-Analysis-Service-Twitter.webp'],
   },
   robots: {
     index: true,
