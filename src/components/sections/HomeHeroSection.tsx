@@ -10,15 +10,8 @@ const Hero = () => {
         <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
           ISTQB Certified Experts
         </span>
-
-        <h1 className="text-3xl hidden md:block sm:text-4xl  md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-          Independent{" "}
-          <span className="text-[theme(color.brand.blue)]">
-            Software <br />  Testing&nbsp;
-          </span>
-          Services
-        </h1>
-        <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Independent{" "}
           <span className="text-[theme(color.brand.blue)]">
             Software Testing
