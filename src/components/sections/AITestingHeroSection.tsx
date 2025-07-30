@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaArrowRight, FaPlay, FaRobot, FaVial } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaRobot } from "react-icons/fa";
 
 const AITestingHeroSection: React.FC = () => {
   return (

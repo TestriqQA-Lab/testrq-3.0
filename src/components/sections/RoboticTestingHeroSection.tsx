@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaRobot, FaCog, FaShieldAlt, FaChartLine, FaNetworkWired } from "react-icons/fa";
+import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
 
 const RoboticTestingHeroSection: React.FC = () => {

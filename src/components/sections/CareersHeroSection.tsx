@@ -8,7 +8,6 @@ import {
   FaGlobe,
   FaTrophy,
   FaArrowRight,
-  FaPlay,
   FaStar,
   FaCode,
   FaShieldAlt,

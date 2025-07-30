@@ -6,7 +6,6 @@ import {
   FaSearch,
   FaMapMarkerAlt,
   FaClock,
-  FaDollarSign,
   FaUsers,
   FaCode,
   FaShieldAlt,
@@ -14,7 +13,6 @@ import {
   FaRocket,
   FaFilter,
   FaExternalLinkAlt,
-  FaHeart,
   FaFire,
   FaStar,
 } from "react-icons/fa";

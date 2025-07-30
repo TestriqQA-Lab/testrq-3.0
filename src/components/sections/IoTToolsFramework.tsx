@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt, FaAward } from "react-icons/fa";
+import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
 import { MdDevices, MdCloud } from "react-icons/md";
 
 const IoTToolsFramework: React.FC = () => {
