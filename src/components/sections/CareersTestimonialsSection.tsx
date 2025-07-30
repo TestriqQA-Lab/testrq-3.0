@@ -320,24 +320,7 @@ const CareersTestimonialsSection: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-3xl p-12 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">
-            Ready to Write Your Own Success Story?
-          </h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Join our team of passionate QA professionals and become part of a
-            company culture that values growth, collaboration, and innovation.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors">
-              View Open Positions
-            </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
-              Meet Our Team
-            </button>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

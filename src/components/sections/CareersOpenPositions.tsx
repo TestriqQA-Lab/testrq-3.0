@@ -48,7 +48,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "Remote",
       type: "Full-time",
       experience: "5+ years",
-      salary: "$90,000 - $130,000",
       description:
         "Lead automation testing initiatives using Selenium, Cypress, and modern testing frameworks. Design and implement comprehensive test automation strategies for web and mobile applications.",
       skills: [
@@ -69,7 +68,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "New York, NY",
       type: "Full-time",
       experience: "2-4 years",
-      salary: "$70,000 - $95,000",
       description:
         "Execute comprehensive manual testing across web applications and mobile apps, including UI/UX validation and functional test cases. Collaborate with development teams to ensure quality deliverables, reduce defects, and enhance user satisfaction through effective software quality assurance.",
       skills: [
@@ -90,7 +88,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "Remote",
       type: "Full-time",
       experience: "4+ years",
-      salary: "$85,000 - $120,000",
       description:
         "Design and execute performance testing strategies using tools like JMeter, LoadRunner, and cloud-based load testing platforms such as BlazeMeter and Loader.io. Analyze system scalability, response times, and resource utilization to provide actionable performance optimization recommendations for high-traffic web and mobile applications.",
       skills: [
@@ -111,7 +108,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "London, UK",
       type: "Full-time",
       experience: "3+ years",
-      salary: "£55,000 - £75,000",
       description:
         "Specialize in mobile application testing across iOS and Android platforms, performing functional, UI/UX, compatibility, and performance testing on real devices and emulators. Ensure optimal user experience through comprehensive mobile testing strategies using tools like Appium, Firebase Test Lab, and BrowserStack.",
       skills: [
@@ -132,7 +128,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "Remote",
       type: "Full-time",
       experience: "4+ years",
-      salary: "$95,000 - $140,000",
       description:
         "Conduct security assessments and penetration testing. Identify vulnerabilities and ensure application security compliance with industry standards.",
       skills: [
@@ -153,7 +148,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "Remote",
       type: "Full-time",
       experience: "0-2 years",
-      salary: "$50,000 - $65,000",
       description:
         "Entry-level QA position for new graduates looking to start a career in software testing. Learn testing fundamentals including manual testing, test case execution, and defect reporting while contributing to real-world QA projects under the guidance of senior QA professionals and mentorship programs.",
       skills: [
@@ -174,7 +168,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "New York, NY",
       type: "Full-time",
       experience: "7+ years",
-      salary: "$120,000 - $160,000",
       description:
         "Lead a team of QA engineers and drive quality initiatives across multiple projects. Mentor junior team members and establish testing best practices.",
       skills: [
@@ -195,7 +188,6 @@ const CareersOpenPositions: React.FC = () => {
       location: "Remote",
       type: "Full-time",
       experience: "3+ years",
-      salary: "$75,000 - $105,000",
       description:
         "Focus on API testing and backend service validation. Develop automated API test suites and ensure service reliability and performance.",
       skills: [
@@ -243,7 +235,7 @@ const CareersOpenPositions: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
+    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24" id="view-open-position">
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -397,10 +389,6 @@ const CareersOpenPositions: React.FC = () => {
                             <FaUsers className="w-3 h-3" />
                             <span>{position.experience}</span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <FaDollarSign className="w-3 h-3" />
-                            <span>{position.salary}</span>
-                          </div>
                         </div>
 
                         <p className="text-gray-600 mb-4 leading-relaxed">
@@ -436,10 +424,6 @@ const CareersOpenPositions: React.FC = () => {
                     </button>
                     <button className="border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
                       View Details
-                    </button>
-                    <button className="text-gray-500 hover:text-red-500 transition-colors flex items-center justify-center gap-2 py-2">
-                      <FaHeart className="w-4 h-4" />
-                      <span className="text-sm">Save</span>
                     </button>
                   </div>
                 </div>
@@ -489,9 +473,6 @@ const CareersOpenPositions: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Submit General Application
-            </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 transition-all border border-white border-opacity-30">
-              Set Job Alerts
             </button>
           </div>
         </div>
