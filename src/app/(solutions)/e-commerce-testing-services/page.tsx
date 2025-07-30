@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/e-commerce-testing-services',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Ensure flawless shopping experiences, secure transactions, and high performance with Testriq\'s e-commerce testing services. Improve conversions, reduce cart abandonment, and meet compliance standards across all major platforms.',
     images: [
       {
-        url: '/OG/ecommerce-testing-og.webp',
+        url: '/OG/E-commerce-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'E-Commerce Testing Services - Testriq',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'E-Commerce Testing Services - Boost Conversions & Security | Testriq',
     description: 'Ensure flawless shopping experiences, secure transactions, and high performance with Testriq\'s e-commerce testing services. Improve conversions, reduce cart abandonment, and meet compliance standards across all major platforms.',
-    images: ['/OG/ecommerce-testing-twitter.webp'],
+    images: ['/OG/E-commerce-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,
