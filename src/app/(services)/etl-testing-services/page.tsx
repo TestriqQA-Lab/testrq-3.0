@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/etl-testing-services',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'End-to-end ETL testing services covering extraction, transformation, and loading. Ensure pipeline performance, data accuracy, and regulatory compliance with Testriq.',
     images: [
       {
-        url: '/OG/ETL-Testing-OG.webp',
+        url: '/OG/ETL-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'ETL Testing Services - Testriq',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'ETL Testing Services - Data Pipeline Validation & Quality Assurance | Testriq',
     description: 'End-to-end ETL testing services covering extraction, transformation, and loading. Ensure pipeline performance, data accuracy, and regulatory compliance with Testriq.',
-    images: ['/OG/ETL-Testing-Twitter.webp'],
+    images: ['/OG/ETL-TesTing-Service-Twitter.webp'],
   },
   robots: {
     index: true,
