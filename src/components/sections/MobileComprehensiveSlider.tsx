@@ -8,6 +8,7 @@ import {
   FaApple,
   FaAndroid,
   FaTabletAlt,
+  FaTools,
 } from "react-icons/fa";
 
 const MobileComprehensiveSlider: React.FC = () => {
@@ -89,9 +90,12 @@ const MobileComprehensiveSlider: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Platform Expertise
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTools />
+            <span className="text-sm">
+              Platform Expertise
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing Across{" "}
             <span className="text-[theme(color.brand.blue)]">
@@ -211,8 +215,8 @@ const MobileComprehensiveSlider: React.FC = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide
-                  ? "bg-[theme(color.brand.blue)] scale-125"
-                  : "bg-gray-300 hover:bg-gray-400"
+                ? "bg-[theme(color.brand.blue)] scale-125"
+                : "bg-gray-300 hover:bg-gray-400"
                 }`}
             />
           ))}

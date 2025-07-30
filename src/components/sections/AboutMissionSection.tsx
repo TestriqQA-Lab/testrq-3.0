@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEye, FaBullseye, FaHeart } from "react-icons/fa";
+import { FaEye, FaBullseye, FaHeart, FaLightbulb } from "react-icons/fa";
 
 const AboutMissionSection = () => {
   const values = [
@@ -31,10 +31,13 @@ const AboutMissionSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-3 py-2 rounded-full">
+            <FaLightbulb/>
+            <span className="text-sm">
             What Drives Us
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          </div>
+          <h2 className="text-3xl md:text-5xl mt-5 font-bold text-gray-900 mb-6">
             Our{" "}
             <span className="text-[theme(color.brand.blue)]">
               Purpose & Values

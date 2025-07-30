@@ -20,8 +20,11 @@ const LaunchFastQAHeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
-              LaunchFast QA Service
+            <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+              <FaBolt />
+              <span className="text-sm">
+                LaunchFast QA Service
+              </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">

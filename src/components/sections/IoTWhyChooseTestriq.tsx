@@ -9,6 +9,7 @@ import {
   FaUsers,
   FaClock,
   FaArrowRight,
+  FaAward,
 } from "react-icons/fa";
 
 const IoTWhyChooseTestriq: React.FC = () => {
@@ -117,6 +118,12 @@ const IoTWhyChooseTestriq: React.FC = () => {
     <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaAward />
+            <span className="text-sm">
+              Why Choose Us
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">IoT Testing</span>?
@@ -131,17 +138,15 @@ const IoTWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
-                hoveredCard === index ? "z-10" : ""
-              }`}
+              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* IoT Device Card */}
               <div
-                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
-                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                }`}
+                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                  }`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -246,9 +251,8 @@ const IoTWhyChooseTestriq: React.FC = () => {
 
                 {/* Connection Indicator */}
                 <div
-                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${
-                    hoveredCard === index ? "bg-white animate-pulse" : ""
-                  }`}
+                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${hoveredCard === index ? "bg-white animate-pulse" : ""
+                    }`}
                   style={{
                     backgroundColor:
                       hoveredCard === index ? "" : benefit.color || "#06b6d4", // default cyan-500

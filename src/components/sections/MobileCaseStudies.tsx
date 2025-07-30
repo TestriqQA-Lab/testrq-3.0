@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaMobile, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
+import { FaArrowRight, FaMobile, FaChartLine, FaClock, FaCheckCircle, FaTrophy } from "react-icons/fa";
 
 const MobileCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -62,9 +62,12 @@ const MobileCaseStudies: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Success Stories
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTrophy />
+            <span className="text-sm">
+              Success Stories
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing{" "}
             <span className="text-[theme(color.brand.blue)]">Case Studies</span>
@@ -80,11 +83,10 @@ const MobileCaseStudies: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
-                activeCase === index
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${activeCase === index
                   ? 'bg-[theme(color.brand.blue)] text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {study.industry}
             </button>
@@ -102,11 +104,11 @@ const MobileCaseStudies: React.FC = () => {
                   {caseStudies[activeCase].industry}
                 </span>
               </div>
-              
+
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {caseStudies[activeCase].title}
               </h3>
-              
+
               <p className="text-gray-600 mb-6">
                 <strong>Client:</strong> {caseStudies[activeCase].client}
               </p>
@@ -146,7 +148,7 @@ const MobileCaseStudies: React.FC = () => {
             {/* Right Content - Results */}
             <div>
               <h4 className="text-lg font-semibold text-gray-900 mb-6">Results Achieved</h4>
-              
+
               {/* Results Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {caseStudies[activeCase].results.map((result, index) => (
@@ -225,7 +227,7 @@ const MobileCaseStudies: React.FC = () => {
               Our mobile testing has helped apps achieve top rankings and millions of downloads across both iOS App Store and Google Play Store.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-400 mb-2">#1</div>
@@ -252,7 +254,7 @@ const MobileCaseStudies: React.FC = () => {
               Ready to Create Your Mobile Success Story?
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join our growing list of successful mobile apps who have achieved app store success 
+              Join our growing list of successful mobile apps who have achieved app store success
               with our comprehensive mobile testing services.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

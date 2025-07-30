@@ -41,10 +41,12 @@ export default function WebappFAQs() {
     <section className="bg-[#f9fafb] py-16 px-8 md:px-12 lg:px-24">
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-14">
-        <span className="inline-flex items-center gap-2 px-4 py-1 text-sm font-medium rounded-full bg-blue-100 text-[theme(color.brand.blue)]">
-          <span className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full" />
-          Frequently Asked Questions
-        </span>
+        <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+          <span className="text-sm">
+            ● Frequently Asked Questions
+          </span>
+        </div>
+
         <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
           Common Questions About{" "}
           <span className="text-[theme(color.brand.blue)]">
@@ -76,9 +78,8 @@ export default function WebappFAQs() {
               )}
             </button>
             <div
-              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${
-                activeIndex === index ? "block" : "hidden"
-              }`}
+              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${activeIndex === index ? "block" : "hidden"
+                }`}
             >
               {item.answer}
             </div>

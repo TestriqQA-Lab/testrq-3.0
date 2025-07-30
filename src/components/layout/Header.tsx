@@ -219,14 +219,14 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
         <Link href="/" onClick={handleLinkClick}>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
             <Image
               src={Testriq_Logo}
               alt="Testriq_Logo"
               height={100}
               width={120}
             />
-          </h2>
+          </div>
         </Link>
 
         {/* Desktop Menu */}

@@ -64,7 +64,7 @@ const ElearningFAQSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue rounded-full px-6 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white rounded-full px-6 py-2 mb-6">
             <FaQuestionCircle className="w-4 h-4" />
             <span className="text-sm font-medium">Frequently Asked Questions</span>
           </div>

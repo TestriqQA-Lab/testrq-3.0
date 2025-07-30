@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaFileAlt,
@@ -320,9 +321,9 @@ const CareersApplicationProcessSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <Link href="#view-open-position" className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
               Browse Open Positions
-            </button>
+            </Link>
             <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
               Submit General Application
             </button>
@@ -331,7 +332,7 @@ const CareersApplicationProcessSection: React.FC = () => {
           <div className="mt-8 text-blue-100 text-sm">
             <p>
               Questions about the process? Email us at{" "}
-              <span className="font-semibold">careers@testriq.com</span>
+              <Link href="mailto:hr@testriq.com" className="font-semibold">hr@testriq.com</Link>
             </p>
           </div>
         </div>

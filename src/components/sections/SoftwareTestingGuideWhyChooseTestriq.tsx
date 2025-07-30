@@ -1,5 +1,6 @@
 import React from 'react';
 import { Award, Users, BookOpen, TrendingUp, Shield, Zap, CheckCircle, Star } from 'lucide-react';
+import { FaAward } from 'react-icons/fa';
 
 const SoftwareTestingGuideWhyChooseTestriq = () => {
   const advantages = [
@@ -66,6 +67,13 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaAward />
+            <span className="text-sm">
+              Why Choose Us
+            </span>
+          </div>
+
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             <span className='text-brand-blue'>Why Choose Testriq</span> for Testing Education?
           </h2>

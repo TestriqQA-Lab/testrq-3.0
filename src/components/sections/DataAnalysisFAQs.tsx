@@ -112,6 +112,11 @@ const DataAnalysisFAQs = () => {
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <span className="text-sm">
+              ● Frequently Asked Questions
+            </span>
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             <span className='text-brand-blue'>Frequently</span> Asked Questions
           </h2>
