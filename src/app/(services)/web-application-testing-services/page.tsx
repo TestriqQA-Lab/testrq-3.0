@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OG/Web-Application_Testing_OG.webp",
+        url: "/OG/Web-Application-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Web Application Testing Services by Testriq",

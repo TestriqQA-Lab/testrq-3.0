@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: 'Ensure your IoT devices deliver seamless connectivity and robust security. Get expert testing across WiFi, Bluetooth, Zigbee, sensors, and cloud integrations.',
     images: [
       {
-        url: '/OG/IoT-Testing-Services-og.webp',
+        url: '/OG/IoT-Testing-Services-og.webpp',
         width: 1200,
         height: 630,
         alt: 'IoT Device Testing Services - Testriq',

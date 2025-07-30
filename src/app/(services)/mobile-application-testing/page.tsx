@@ -8,7 +8,7 @@ import StructuredData, {
 
 
 export const metadata: Metadata = {
-  title:  "Mobile Automation Application Testing Services Company | Testriq ",
+  title:  "Mobile Automation Application Testing Services Company",
   description: "A thorough guide on mobile app testing strategies, tools, platforms, and best practices. Learn how to ensure quality across Android and iOS devices.",
   keywords: [
     "mobile app testing",

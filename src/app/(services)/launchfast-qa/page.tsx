@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: 'Fast-track your product launch with LaunchFast QA. Rapid testing cycles, agile integration, and 24/7 support designed for startups and high-velocity dev teams.',
     images: [
       {
-        url: '/OG/Launch-Fast-QA-OG.webp',
+        url: '/OG/Launch-Fast-QA-Service-og.webp',
         width: 1200,
         height: 630,
         alt: 'LaunchFast QA Services - Testriq',
