@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/mobile-application-testing-services',
   },
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     description: 'Get expert-led mobile app testing for iOS and Android. Validate your app’s performance, usability, and security before launch. Trusted by 500+ clients worldwide.',
     images: [
       {
-        url: '/OG/Mobile-App-Testing-OG.webp',
+        url: '/OG/Mobile_Application-Services-og.webp',
         width: 1200,
         height: 630,
         alt: 'Mobile App Testing Services - Testriq',
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Mobile Application Testing Services - iOS & Android QA | Testriq',
     description: 'Get expert-led mobile app testing for iOS and Android. Validate your app’s performance, usability, and security before launch. Trusted by 500+ clients worldwide.',
-    images: ['/OG/Mobile-App-Testing-Twitter.webpp'],
+    images: ['/OG/Mobile_Application-Services-Twitter.webp'],
   },
   robots: {
     index: true,

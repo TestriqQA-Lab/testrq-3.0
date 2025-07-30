@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/manual-testing',
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
     images: [
       {
-        url: '/OG/testriq-manual-testing-og.webp',
+        url: '/OG/Manual-Testing-Service-og.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq Manual Testing Services by QA Experts',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Manual Testing Services - Expert QA Testing Solutions | Testriq',
     description: "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
-    images: ['/OG/testriq-manual-testing-twitter.webp'],
+    images: ['/OG/Manual-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,
