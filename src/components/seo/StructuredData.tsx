@@ -2335,6 +2335,85 @@ export const contactUsPageSchema = {
 };
 
 
+export const smartDeviceTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Smart Device Testing Services",
+  "description": "Smart device and IoT testing services for wearables, smart home appliances, and connected ecosystems. Includes connectivity, performance, security, and cloud integration testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "IoT & Smart Device Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Smart Device Testing Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Connectivity Testing",
+          "description": "WiFi, Bluetooth, NFC, and cellular connectivity validation for seamless device communication."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Testing",
+          "description": "Penetration testing, vulnerability scanning, and data protection validation for smart devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Testing",
+          "description": "Evaluation of responsiveness, throughput, and power consumption of smart devices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Battery & Power Testing",
+          "description": "Monitoring and analysis of battery life, charging cycles, and energy consumption."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Experience Testing",
+          "description": "Functional and usability testing under real-world scenarios and user conditions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Integration Testing",
+          "description": "Validation of cloud connectivity, synchronization, and backend communication for smart devices."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
+
 // Breadcrumb Schema
 export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
   "@context": "https://schema.org",

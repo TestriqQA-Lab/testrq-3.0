@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/healthcare-testing-services',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Secure your healthcare software with Testriq’s expert QA testing services. Ensure HIPAA compliance, FDA validation, EHR integration, and patient data security.',
     images: [
       {
-        url: '/OG/healthcare-testing-og.webp',
+        url: '/OG/Healthcare-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq - Healthcare Software Testing Services',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Healthcare Testing Solutions | Medical Software QA & HIPAA Compliance | Testriq',
     description: 'Secure your healthcare software with Testriq’s expert QA testing services. Ensure HIPAA compliance, FDA validation, EHR integration, and patient data security.',
-    images: ['/OG/healthcare-testing-twitter.webp'],
+    images: ['/OG/Healthcare-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,

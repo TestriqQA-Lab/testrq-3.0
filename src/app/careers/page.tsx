@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/careers',
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: 'Explore QA career opportunities at Testriq. Join a global team of software testing professionals. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.',
     images: [
       {
-        url: '/OG/testriq-careers-og-img.webp',
+        url: '/OG/Careers-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Careers at Testriq - QA Testing Jobs',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Careers | Join Our QA Testing Team at Testriq | Testriq',
     description: 'Explore QA career opportunities at Testriq. Join a global team of software testing professionals. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.',
-    images: ['/OG/testriq-careers-twitter-img.webp'],
+    images: ['/OG/Careers-Twitter.webp'],
   },
   robots: {
     index: true,

@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  // metadataBase: new URL('https://testriq.com/'),
-  // alternates: {
-  //   canonical: 'https://testriq.com/contact-us',
-  // },
+ metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+ alternates: {
+  canonical: 'https://testriq.com/contact-us',
+  },
   openGraph: {
     title: "Contact Us | Get in Touch with Testriq QA Experts",
     description: "Reach out to Testriq for your QA and software testing needs.",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: "https://testriq.com/contact-us",
     images: [
       {
-        url: "/OG/og_image_final.png",
+        url: "/OG/Contact-Us-Og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Contact Us OG Image",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     description: "Reach out to Testriq for your QA and software testing needs.",
     images: [
       {
-        url: "/OG/twitter_image_final.png",
+        url: "/OG/Contact-Us-Twitter.webp",
         width: 1200,
         height: 675,
         alt: "Testriq Contact Us Twitter Image",

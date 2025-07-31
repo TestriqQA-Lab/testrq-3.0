@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/banking-finance-industry-testing-services',
   },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: 'Ensure secure, compliant, and high-performance banking platforms with Testriq’s comprehensive BFSI testing solutions. PCI DSS, SOX, GDPR compliant QA services.',
     images: [
       {
-        url: '/OG/Banking-Finance-testing-og.webp',
+        url: '/OG/Banking-App-Testing-Services-og.webp',
         width: 1200,
         height: 630,
         alt: 'Banking & Finance Testing Solutions | Testriq',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Banking & Finance Testing Solutions | BFSI QA Services | Testriq',
     description: 'Secure your financial applications with Testriq’s expert BFSI testing services. Compliance, performance, and security all-in-one.',
-    images: ['/OG/Banking-Finance-testing-twitter.webp'],
+    images: ['/OG/Banking-App-Testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

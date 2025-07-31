@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
     canonical: 'https://testriq.com/telecommunications-testing-services',
   },
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
     images: [
       {
-        url: '/OG/telecom-testing-og.webp',
+        url: '/OG/Telecommunication-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Telecommunication Testing Solutions by Testriq',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Telecommunication Testing Solutions | 5G & Network QA Services | Testriq',
     description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
-    images: ['/OG/telecom-testing-twitter.webp'],
+    images: ['/OG/Telecommunication-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,
