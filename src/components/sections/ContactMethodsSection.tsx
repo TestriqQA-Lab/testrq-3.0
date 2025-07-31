@@ -125,9 +125,16 @@ const ContactMethodsSection: React.FC = () => {
     { day: "Sunday", hours: "Emergency Support Only", available: false },
   ];
 
+  const scrollToCalendly = () => {
+    document.querySelector("#calendly-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <section className="py-20 bg-gray-50 px-8 md:px-12 lg:px-24 scroll-smooth">
-      <div className="max-w-7xl mx-auto scroll-smooth">
+    <section className="py-20 bg-gray-50 px-8 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -179,7 +186,13 @@ const ContactMethodsSection: React.FC = () => {
 
                 <a
                   href={method.action}
-                  className={`block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
+                  onClick={(e) => {
+                    if (method.title === "Schedule a Meeting") {
+                      e.preventDefault(); // Prevent default link behavior
+                      scrollToCalendly(); // Trigger smooth scroll
+                    }
+                  }}
+                  className={`cursor-pointer block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
                 </a>

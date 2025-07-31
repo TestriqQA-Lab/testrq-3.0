@@ -73,7 +73,7 @@ const ContactUsPage: React.FC = () => {
     { name: "Contact Us", url: "https://testriq.com/contact-uss" },
   ];
   return (
-    <div>
+    <div className="scroll-smooth">
       <StructuredData data={contactUsPageSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <main className="min-h-screen bg-gray-50">
