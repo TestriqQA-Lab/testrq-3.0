@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
+import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
   const featuredCaseStudies = [
     {
       id: 1,
@@ -84,9 +84,10 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine } from "react-icons/fa";const 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Featured Success Stories
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-4 py-2 rounded-full mb-5">
+            <FaStar  />
+            <span className="text-sm">Featured Success Stories</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Real Results from{" "}
             <span className="text-[theme(color.brand.blue)]">Real Clients</span>

@@ -10,14 +10,14 @@ const ApiAnyQuestions: React.FC = () => {
       title: "Phone Consultation",
       description: "Speak directly with our API testing experts",
       action: "Call Now",
-      contact: "+1 (555) 123-4567",
+      contact: "+(+91) 915-2929-343",
     },
     {
       icon: <FaEnvelope className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Email Support",
       description: "Get detailed responses to your questions",
       action: "Send Email",
-      contact: "api-testing@testriq.com",
+      contact: "contact@testriq.com",
     },
     {
       icon: <FaComments className="w-6 h-6 text-[theme(color.brand.blue)]" />,

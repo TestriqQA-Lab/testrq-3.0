@@ -47,7 +47,7 @@ const IoTROISection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">

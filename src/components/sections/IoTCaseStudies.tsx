@@ -390,7 +390,7 @@ const IoTCaseStudies: React.FC = () => {
         </div>
 
         {/* IoT Navigation */}
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-4">
           <button
             onClick={() =>
               setActiveCase(
@@ -415,42 +415,6 @@ const IoTCaseStudies: React.FC = () => {
           </button>
         </div>
 
-        {/* Bottom IoT CTA */}
-        <div className="text-center">
-          <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white relative overflow-hidden">
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4 flex items-center justify-center">
-                <FaWifi className="w-6 h-6 mr-2" />
-                Ready to Connect Your IoT Success?
-              </h3>
-              <p className="text-teal-100 mb-6 max-w-2xl mx-auto">
-                Let our IoT testing experts help you achieve the same level of connectivity and reliability. Get started with a comprehensive IoT device assessment today.
-
-
-              </p>
-              <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                Start Your IoT Success Story
-              </button>
-            </div>
-
-            {/* IoT Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 left-4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-              <div
-                className="absolute top-8 right-8 w-3 h-3 bg-white rounded-full animate-ping"
-                style={{ animationDelay: "0.5s" }}
-              ></div>
-              <div
-                className="absolute bottom-8 left-12 w-2 h-2 bg-white rounded-full animate-ping"
-                style={{ animationDelay: "1s" }}
-              ></div>
-              <div
-                className="absolute bottom-4 right-4 w-1 h-1 bg-white rounded-full animate-ping"
-                style={{ animationDelay: "1.5s" }}
-              ></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -126,9 +126,6 @@ const DesktopFAQs: React.FC = () => {
                   Schedule Consultation
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                Contact Support
-              </button>
             </div>
           </div>
         </div>

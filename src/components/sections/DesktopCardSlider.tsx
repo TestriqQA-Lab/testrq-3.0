@@ -150,10 +150,10 @@ export default function CardSlider() {
   };
 
   return (
-    <section className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
-      <div className="text-center leading-16">
+    <section id="desktop-process-section" className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
+      <div className="text-center">
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
-        <p className="text-gray-500">{headings.info}</p>
+        <p className="text-gray-500 text-center max-w-4xl m-auto py-5">{headings.info}</p>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
         <div className="hidden md:block w-full md:w-1/2 space-y-4 relative">

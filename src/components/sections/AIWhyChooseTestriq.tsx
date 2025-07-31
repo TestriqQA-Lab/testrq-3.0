@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
@@ -121,16 +122,16 @@ const AIWhyChooseTestriq: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
-            <span className="text-sm">
-              Why Choose Us
-            </span>
+            <span className="text-sm">Why Choose Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">AI Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine certified AI QA expertise with testing excellence to deliver AI testing services that ensure accurate, fair, and reliable intelligent systems for your applications.
+            We combine certified AI QA expertise with testing excellence to
+            deliver AI testing services that ensure accurate, fair, and reliable
+            intelligent systems for your applications.
           </p>
         </div>
 
@@ -139,15 +140,17 @@ const AIWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
-                }`}
+              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                hoveredCard === index ? "z-10" : ""
+              }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* AI Neural Node Card */}
               <div
-                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                  }`}
+                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
+                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                }`}
               >
                 {/* Neural Node Header */}
                 <div
@@ -215,8 +218,9 @@ const AIWhyChooseTestriq: React.FC = () => {
                 {/* AI Interactive Hover State */}
                 {/* AI Interactive Hover State */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient
-                    } 
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
+                    benefit.gradient
+                  } 
      transition-opacity duration-500 ease-in-out flex items-center justify-center
      ${hoveredCard === index ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
@@ -253,23 +257,26 @@ const AIWhyChooseTestriq: React.FC = () => {
                   className={`absolute top-4 left-4 flex items-center space-x-1`}
                 >
                   <div
-                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${hoveredCard === index
+                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${
+                      hoveredCard === index
                         ? "bg-white animate-pulse"
                         : `bg-${benefit.color}-500`
-                      }`}
+                    }`}
                   ></div>
                   <div
-                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${hoveredCard === index
+                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${
+                      hoveredCard === index
                         ? "bg-white/80 animate-pulse"
                         : `bg-${benefit.color}-400`
-                      }`}
+                    }`}
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${hoveredCard === index
+                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${
+                      hoveredCard === index
                         ? "bg-white/60 animate-pulse"
                         : `bg-${benefit.color}-300`
-                      }`}
+                    }`}
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>
@@ -331,9 +338,11 @@ const AIWhyChooseTestriq: React.FC = () => {
                 started with a comprehensive AI model assessment and ensure your
                 intelligent systems are accurate, fair, and reliable.
               </p>
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                Get Started with AI Testing
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+                  Get Started with AI Testing
+                </button>
+              </Link>
             </div>
 
             {/* AI Neural Network Background Pattern */}

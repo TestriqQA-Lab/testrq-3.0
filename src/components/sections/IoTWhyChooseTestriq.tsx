@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
@@ -120,16 +121,17 @@ const IoTWhyChooseTestriq: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
-            <span className="text-sm">
-              Why Choose Us
-            </span>
+            <span className="text-sm">Why Choose Us</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">IoT Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine certified IoT QA expertise, real-world simulation, and advanced tools to deliver IoT testing services that ensure reliable performance, secure connectivity, and protocol-compliant IoT device ecosystems.
+            We combine certified IoT QA expertise, real-world simulation, and
+            advanced tools to deliver IoT testing services that ensure reliable
+            performance, secure connectivity, and protocol-compliant IoT device
+            ecosystems.
           </p>
         </div>
 
@@ -138,15 +140,17 @@ const IoTWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
-                }`}
+              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+                hoveredCard === index ? "z-10" : ""
+              }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* IoT Device Card */}
               <div
-                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                  }`}
+                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
+                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                }`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -251,8 +255,9 @@ const IoTWhyChooseTestriq: React.FC = () => {
 
                 {/* Connection Indicator */}
                 <div
-                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${hoveredCard === index ? "bg-white animate-pulse" : ""
-                    }`}
+                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${
+                    hoveredCard === index ? "bg-white animate-pulse" : ""
+                  }`}
                   style={{
                     backgroundColor:
                       hoveredCard === index ? "" : benefit.color || "#06b6d4", // default cyan-500
@@ -311,9 +316,11 @@ const IoTWhyChooseTestriq: React.FC = () => {
                 started with a comprehensive IoT device assessment and ensure
                 your connected ecosystem is reliable and secure.
               </p>
-              <button className="bg-white text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                Get Started with IoT Testing
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+                  Get Started with IoT Testing
+                </button>
+              </Link>
             </div>
 
             {/* IoT Network Background Pattern */}

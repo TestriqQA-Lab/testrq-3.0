@@ -93,11 +93,11 @@ export default function CardSlider() {
 
 
     return (
-        <section className="bg-gray-100 py-16 px-8 2xl:px-64 md:px-12 lg:px-24">
+        <section id="mobile-process-section" className="bg-gray-100 py-16 px-8 md:px-12 lg:px-24">
 
-            <div className="text-center xl:leading-16">
+            <div className="text-center">
                 <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
-                <p className="text-gray-500 mt-5">{headings.info}</p>
+                <p className="text-gray-500 max-w-4xl m-auto py-5">{headings.info}</p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
 
