@@ -62,9 +62,11 @@ const MobileFAQs: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Frequently Asked Questions
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <span className="text-sm">
+              ● Frequently Asked Questions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing{" "}
             <span className="text-[theme(color.brand.blue)]">FAQs</span>
@@ -96,7 +98,7 @@ const MobileFAQs: React.FC = () => {
                   )}
                 </div>
               </button>
-              
+
               {openFAQ === index && (
                 <div className="px-8 pb-6">
                   <div className="border-t border-gray-100 pt-6">
@@ -117,7 +119,7 @@ const MobileFAQs: React.FC = () => {
               Still Have Questions About Mobile Testing?
             </h3>
             <p className="text-gray-600 mb-6">
-              Our mobile testing experts are here to help. Get personalized answers 
+              Our mobile testing experts are here to help. Get personalized answers
               to your specific mobile app testing requirements and challenges.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -143,7 +145,7 @@ const MobileFAQs: React.FC = () => {
               +1 (555) 123-MOBILE
             </p>
           </div>
-          
+
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <span className="text-[theme(color.brand.blue)] font-bold">📧</span>
@@ -154,7 +156,7 @@ const MobileFAQs: React.FC = () => {
               mobile@testriq.com
             </p>
           </div>
-          
+
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
               <span className="text-[theme(color.brand.blue)] font-bold">🚀</span>

@@ -57,9 +57,12 @@ const MobileROISection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Return on Investment
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaChartLine />
+            <span className="text-sm">
+              Return on Investment
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Maximize Your{" "}
             <span className="text-[theme(color.brand.blue)]">Mobile Testing ROI</span>
@@ -79,19 +82,19 @@ const MobileROISection: React.FC = () => {
               <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-xl mb-6 text-[theme(color.brand.blue)] mx-auto">
                 {metric.icon}
               </div>
-              
+
               <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {metric.value}
               </div>
-              
+
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 {metric.title}
               </h3>
-              
+
               <p className="text-gray-600 text-sm mb-4">
                 {metric.description}
               </p>
-              
+
               <div className="text-xs text-gray-500 bg-gray-50 rounded-lg p-3">
                 {metric.details}
               </div>
@@ -104,21 +107,19 @@ const MobileROISection: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Cost Comparison: In-House vs Testriq Mobile Testing
           </h3>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {costComparison.map((option, index) => (
               <div
                 key={index}
-                className={`rounded-xl p-8 border-2 ${
-                  index === 1 
-                    ? 'border-[theme(color.brand.blue)] bg-blue-50' 
+                className={`rounded-xl p-8 border-2 ${index === 1
+                    ? 'border-[theme(color.brand.blue)] bg-blue-50'
                     : 'border-gray-200 bg-gray-50'
-                }`}
+                  }`}
               >
                 <div className="text-center mb-6">
-                  <h4 className={`text-xl font-bold mb-2 ${
-                    index === 1 ? 'text-[theme(color.brand.blue)]' : 'text-gray-900'
-                  }`}>
+                  <h4 className={`text-xl font-bold mb-2 ${index === 1 ? 'text-[theme(color.brand.blue)]' : 'text-gray-900'
+                    }`}>
                     {option.category}
                   </h4>
                   {index === 1 && (
@@ -139,9 +140,8 @@ const MobileROISection: React.FC = () => {
                   </div>
                   <div className="flex justify-between items-center border-t pt-4">
                     <span className="text-gray-900 font-semibold">Annual Total:</span>
-                    <span className={`font-bold text-xl ${
-                      index === 1 ? 'text-[theme(color.brand.blue)]' : 'text-gray-900'
-                    }`}>
+                    <span className={`font-bold text-xl ${index === 1 ? 'text-[theme(color.brand.blue)]' : 'text-gray-900'
+                      }`}>
                       {option.annual}
                     </span>
                   </div>
@@ -150,9 +150,8 @@ const MobileROISection: React.FC = () => {
                 <div className="space-y-2">
                   {option.limitations.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${
-                        index === 1 ? 'bg-green-500' : 'bg-red-500'
-                      }`}></div>
+                      <div className={`w-2 h-2 rounded-full ${index === 1 ? 'bg-green-500' : 'bg-red-500'
+                        }`}></div>
                       <span className="text-sm text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -178,7 +177,7 @@ const MobileROISection: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Mobile App Success Beyond Cost Savings
             </h3>
-            
+
             <div className="space-y-6">
               {[
                 {
@@ -220,7 +219,7 @@ const MobileROISection: React.FC = () => {
             <h4 className="text-xl font-bold text-gray-900 mb-6 text-center">
               Mobile Testing ROI Calculator
             </h4>
-            
+
             <div className="space-y-4 mb-6">
               <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
                 <span className="text-gray-700">Current Testing Cost (Annual)</span>
@@ -273,7 +272,7 @@ const MobileROISection: React.FC = () => {
               Start Maximizing Your Mobile Testing ROI Today
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join hundreds of successful mobile app companies that have transformed their testing approach 
+              Join hundreds of successful mobile app companies that have transformed their testing approach
               and achieved significant cost savings with Testriq.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -120,7 +120,7 @@ const ElearningPerformanceSection: React.FC = () => {
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-brand-blue bg-sky-100 rounded-full px-6 py-2 mb-6">
+          <div className="inline-flex items-center gap-2 text-white bg-brand-blue rounded-full px-6 py-2 mb-6">
             <FaRocket className="w-4 h-4" />
             <span className="text-sm font-medium">Performance Optimization</span>
           </div>

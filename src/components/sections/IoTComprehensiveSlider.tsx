@@ -9,6 +9,7 @@ import {
   FaNetworkWired,
   FaCloud,
   FaArrowRight,
+  FaFlask,
 } from "react-icons/fa";
 
 const IoTComprehensiveSlider: React.FC = () => {
@@ -105,6 +106,12 @@ const IoTComprehensiveSlider: React.FC = () => {
     <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Complete IoT Testing{" "}
             <span className="text-[theme(color.brand.blue)]">Coverage</span>
@@ -120,19 +127,17 @@ const IoTComprehensiveSlider: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
-                activeTab === index
+              className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${activeTab === index
                   ? `bg-${type.color}-500 text-white shadow-lg`
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
-              }`}
+                }`}
             >
               <div className="flex items-center gap-2">
                 <div
-                  className={`${
-                    activeTab === index
+                  className={`${activeTab === index
                       ? "text-white"
                       : `text-${type.color}-500`
-                  }`}
+                    }`}
                 >
                   {React.cloneElement(type.icon, { className: "w-4 h-4" })}
                 </div>

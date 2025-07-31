@@ -39,11 +39,17 @@ const RoboticROISection: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaChartLine />
+            <span className="text-sm">
+              Return on Investment
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             <span className="text-brand-blue">Measurable ROI</span> from Robotic Testing
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive robotic testing services deliver quantifiable business value through improved 
+            Our comprehensive robotic testing services deliver quantifiable business value through improved
             safety, reduced costs, and faster time-to-market for your robotic systems.
           </p>
         </div>
@@ -73,7 +79,7 @@ const RoboticROISection: React.FC = () => {
             Calculate Your Robotic Testing ROI
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Discover how much you can save and gain with our comprehensive robotic testing services. 
+            Discover how much you can save and gain with our comprehensive robotic testing services.
             Get a personalized ROI analysis for your robotic project.
           </p>
           <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">

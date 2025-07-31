@@ -11,9 +11,13 @@ const RoboticTestingHeroSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
           <div className="space-y-6">
-            <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
-              Robotic Testing Specialists
-            </span>
+            <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+              <FaRobot />
+              <span className="text-sm">
+                Robotic Testing Specialists
+              </span>
+            </div>
+
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Comprehensive{" "}
               <span className="text-brand-blue">Robotic Testing</span> Services

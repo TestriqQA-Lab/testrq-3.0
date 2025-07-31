@@ -1,16 +1,20 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import ImageSlider from "../ImageSlider";
+import { FaCertificate } from "react-icons/fa6";
 
 const Hero = () => {
   return (
     <section className="bg-white px-8 md:py-14 xl:py-0 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-        <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
+        <div className="inline-flex items-center bg-brand-blue px-5 py-2 rounded-full gap-2">
+          <FaCertificate className="text-white" />
+        <span className="  text-white text-base md:text-sm  ">
           ISTQB Certified Experts
         </span>
-        
+        </div>
+
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Independent{" "}
           <span className="text-[theme(color.brand.blue)]">
@@ -38,7 +42,7 @@ const Hero = () => {
         {/* Stats */}
         <div className="flex flex-wrap justify-center md:justify-center xl:justify-start gap-6 lg:mx-0">
           {[
-            ["14+", "Years of Experience"],
+            ["15+", "Years of Experience"],
             ["500K", "Test Cases Executed"],
             ["180", "Certified Experts"],
             ["100%", "Client Satisfaction"],

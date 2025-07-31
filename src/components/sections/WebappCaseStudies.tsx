@@ -1,4 +1,4 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaTrophy } from "react-icons/fa";
 import { MdCastForEducation } from "react-icons/md";
 
 const caseStudies = [
@@ -67,9 +67,13 @@ export default function CaseStudies() {
     <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center mb-16">
-        <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] font-medium text-sm px-4 py-1 rounded-full mb-4">
-          Success Stories
-        </span>
+        <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+          <FaTrophy/>
+          <span className="text-sm">
+            Success Stories
+          </span>
+        </div>
+        
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
           Real Results from <br className="hidden sm:block" />
           <span className="text-[theme(color.brand.blue)]">

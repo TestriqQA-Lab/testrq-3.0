@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Building2, CheckCircle, ArrowRight, Users, Clock, Target } from 'lucide-react';
+import { FaTrophy } from 'react-icons/fa';
 
 const SoftwareTestingGuideCaseStudies = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -80,6 +81,12 @@ const SoftwareTestingGuideCaseStudies = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTrophy />
+            <span className="text-sm">
+              Success Stories
+            </span>
+          </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Real-World <span className='text-brand-blue'>Success Stories</span>
           </h2>

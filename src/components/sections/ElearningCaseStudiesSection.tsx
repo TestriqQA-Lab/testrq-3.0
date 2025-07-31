@@ -81,7 +81,7 @@ const ElearningCaseStudiesSection: React.FC = () => {
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center text-brand-blue gap-2 bg-sky-100 rounded-full px-6 py-2 mb-6">
+          <div className="inline-flex items-center text-white gap-2 bg-brand-blue rounded-full px-6 py-2 mb-6">
             <FaStar className="w-4 h-4" />
             <span className="text-sm font-medium">Success Stories</span>
           </div>

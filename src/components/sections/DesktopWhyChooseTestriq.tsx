@@ -49,15 +49,18 @@ const DesktopWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Why Choose Us
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaAward />
+            <span className="text-sm">
+              Why Choose Us
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Why Choose Testriq for{" "}
             <span className="text-[theme(color.brand.blue)]">Desktop Testing?</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We combine industry expertise, cutting-edge tools, and proven methodologies 
+            We combine industry expertise, cutting-edge tools, and proven methodologies
             to deliver exceptional desktop application testing services that exceed expectations.Whether you&apos;re a startup or an enterprise, our QA testing for desktop software ensures speed, coverage, and quality.
           </p>
         </div>
@@ -98,7 +101,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Testriq vs Traditional Testing
               </h3>
-              
+
               <div className="space-y-6">
                 {[
                   {
@@ -132,7 +135,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
                         {comparison.feature}
                       </div>
                       <div className="text-sm text-gray-600">
-                        Testriq: <span className="text-[theme(color.brand.blue)] font-semibold">{comparison.testriq}</span> vs 
+                        Testriq: <span className="text-[theme(color.brand.blue)] font-semibold">{comparison.testriq}</span> vs
                         Traditional: <span className="text-gray-500">{comparison.traditional}</span>
                       </div>
                     </div>
@@ -171,7 +174,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
                         <span>{rating.percentage}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
+                        <div
                           className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-400 h-2 rounded-full transition-all duration-1000"
                           style={{ width: `${rating.percentage}%` }}
                         ></div>
@@ -183,7 +186,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
                 {/* Testimonial */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-gray-700 italic mb-2">
-                    &quot;Testriq&apos;s desktop testing services exceeded our expectations. 
+                    &quot;Testriq&apos;s desktop testing services exceeded our expectations.
                     Their thorough approach and quick turnaround helped us launch on time.&quot;
                   </p>
                   <div className="text-xs text-gray-600">
@@ -210,9 +213,9 @@ const DesktopWhyChooseTestriq: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                  Start Your Project Today
-                </button>
+              <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+                Start Your Project Today
+              </button>
             </Link>
             <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
               Schedule Free Consultation

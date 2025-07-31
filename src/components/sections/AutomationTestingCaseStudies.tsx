@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaCheckCircle, FaChartLine, FaClock } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle, FaChartLine, FaClock, FaTrophy } from "react-icons/fa";
 
 const AutomationTestingCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -70,6 +70,12 @@ const AutomationTestingCaseStudies: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTrophy />
+            <span className="text-sm">
+              Success Stories
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Automation Testing <span className="text-brand-blue">Success Stories</span>
           </h2>

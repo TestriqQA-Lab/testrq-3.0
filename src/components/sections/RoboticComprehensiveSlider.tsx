@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaRobot, FaShieldAlt, FaCog, FaChartLine, FaNetworkWired, FaCode } from "react-icons/fa";
+import { FaRobot, FaShieldAlt, FaCog, FaChartLine, FaNetworkWired, FaCode, FaFlask } from "react-icons/fa";
 
 const RoboticComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -121,11 +121,17 @@ const RoboticComprehensiveSlider: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Complete Robotic Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive robotic testing services cover every aspect of your robotic ecosystem, 
+            Our comprehensive robotic testing services cover every aspect of your robotic ecosystem,
             ensuring reliability, safety, and optimal performance across all robotic systems and applications.
           </p>
         </div>
@@ -153,14 +159,14 @@ const RoboticComprehensiveSlider: React.FC = () => {
               <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 ${getColorClasses(testingTypes[activeTab].color, false)}`}>
                 {testingTypes[activeTab].coverage}
               </div>
-              
+
               <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <span className={`mr-3 p-2 rounded-lg ${getColorClasses(testingTypes[activeTab].color, false)}`}>
                   {testingTypes[activeTab].icon}
                 </span>
                 {testingTypes[activeTab].title}
               </h3>
-              
+
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {testingTypes[activeTab].description}
               </p>
@@ -191,11 +197,11 @@ const RoboticComprehensiveSlider: React.FC = () => {
                       {testingTypes[activeTab].icon}
                     </div>
                   </div>
-                  
+
                   <h4 className="font-bold text-gray-900 mb-2">
                     {testingTypes[activeTab].title}
                   </h4>
-                  
+
                   <div className="text-sm font-semibold text-gray-700">
                     {testingTypes[activeTab].coverage}
                   </div>
@@ -211,7 +217,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
                           </span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div 
+                          <div
                             className={`h-2 rounded-full ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[0]}`}
                             style={{ width: `${95 + index * 2}%` }}
                           ></div>

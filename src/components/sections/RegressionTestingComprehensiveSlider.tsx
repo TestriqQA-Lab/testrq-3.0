@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaSyncAlt, FaBug, FaCheckCircle, FaCodeBranch, FaChartLine, FaCloud } from "react-icons/fa";
+import { FaSyncAlt, FaBug, FaCheckCircle, FaCodeBranch, FaChartLine, FaCloud, FaFlask } from "react-icons/fa";
 
 const RegressionTestingComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -121,6 +121,12 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Regression Testing <span className="text-brand-blue">Expertise</span>
           </h2>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaRocket,
@@ -7,7 +8,6 @@ import {
   FaGlobe,
   FaTrophy,
   FaArrowRight,
-  FaPlay,
   FaStar,
   FaCode,
   FaShieldAlt,
@@ -18,7 +18,7 @@ const CareersHeroSection: React.FC = () => {
   const companyStats = [
     {
       icon: FaUsers,
-      value: "70+",
+      value: "180+",
       label: "Team Members",
       description: "QA experts worldwide",
     },
@@ -98,16 +98,11 @@ const CareersHeroSection: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <button className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+            <Link href="#view-open-position" className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
               <FaUsers className="w-5 h-5" />
               View Open Positions
               <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-
-            <button className="group bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg border-2 border-[theme(color.brand.blue)] hover:bg-[theme(color.brand.blue)] hover:text-white transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:-translate-y-1">
-              <FaPlay className="w-4 h-4" />
-              Watch Our Culture Video
-            </button>
+            </Link>
           </div>
 
           {/* Company Stats */}

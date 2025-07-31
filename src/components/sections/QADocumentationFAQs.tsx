@@ -79,7 +79,7 @@ const QADocumentationFAQs = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-medium mb-4">
             <FaQuestionCircle className="mr-2" />
             Frequently Asked Questions
           </div>

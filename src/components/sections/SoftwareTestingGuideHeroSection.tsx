@@ -10,7 +10,7 @@ const SoftwareTestingGuideHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 ">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
+            <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-base md:text-sm">
               <FaBook className="mr-2" />
               Complete Software Testing Guide
             </div>

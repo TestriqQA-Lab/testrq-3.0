@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaShieldAlt, FaBug, FaCode, FaCloud, FaMobile, FaNetworkWired } from "react-icons/fa";
+import { FaShieldAlt, FaBug, FaCode, FaCloud, FaMobile, FaNetworkWired, FaTools } from "react-icons/fa";
 
 const SecurityTestingToolsFramework: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("vulnerability-scanning");
@@ -201,6 +201,12 @@ const SecurityTestingToolsFramework: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTools />
+            <span className="text-sm">
+              Tools & Frameworks
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Security Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>

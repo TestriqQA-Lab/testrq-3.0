@@ -7,6 +7,7 @@ interface FAQ {
 
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { MdHelpOutline } from "react-icons/md";
 
 const AboutFAQ: React.FC = () => {
     const [openFAQ, setOpenFAQ] = useState<number | null>(null);
@@ -77,9 +78,13 @@ const AboutFAQ: React.FC = () => {
             <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-                        Frequently Asked Questions
-                    </span>
+                    <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+                        <MdHelpOutline />
+                        <span className="text-sm">
+                            Frequently Asked Questions
+                        </span>
+                    </div>
+
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                         <span className="text-[theme(color.brand.blue)]">FAQs</span>
                     </h2>

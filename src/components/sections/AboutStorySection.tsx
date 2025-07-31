@@ -6,6 +6,7 @@ import {
   FaBuilding,
   FaLock,
   FaPlane,
+  FaRoute,
 } from "react-icons/fa";
 
 const AboutStorySection = () => {
@@ -65,10 +66,13 @@ const AboutStorySection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center px-4 py-1 gap-2 bg-brand-blue text-white rounded-full">
+            <FaRoute/>
+            <p className="text-sm">
             Our Journey
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          </p>
+          </div>
+          <h2 className="text-3xl md:text-5xl mt-5 font-bold text-gray-900 mb-6">
             The{" "}
             <span className="text-[theme(color.brand.blue)]">
               Testriq Story
@@ -135,7 +139,7 @@ const AboutStorySection = () => {
         {/* Bottom Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { number: "14+", label: "Years of  Experience" },
+            { number: "15+", label: "Years of  Experience" },
             { number: "500K+", label: "Test Cases Executed" },
             { number: "100+", label: "Happy Client" },
             { number: "15+", label: "Countries Served" },

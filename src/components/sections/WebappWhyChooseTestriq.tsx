@@ -58,8 +58,10 @@ export default function WebappWhyChooseTestriq() {
   return (
     <section className="px-8 md:px-12 lg:px-24 py-16 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <div className="inline-block px-4 py-1 text-sm font-medium bg-blue-100 text-[theme(color.brand.blue)] rounded-full mb-3">
-          ● Benefits & Results
+        <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+          <span className="text-sm">
+            ● Benefits & Results
+          </span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Why Choose Our{" "}
