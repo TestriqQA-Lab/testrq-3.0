@@ -51,7 +51,7 @@ const DatingAppHeroSection = () => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <div className="inline-flex items-center bg-blue-100 text-brand-blue rounded-full text-base md:text-sm px-6 py-3 mb-6">
+            <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
               <Shield className="w-4 h-4 mr-2" />
               Trusted by 500+ Dating Apps Worldwide
             </div>

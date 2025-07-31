@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaTrophy } from "react-icons/fa";
 
 const DatingAppCaseStudies = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -60,6 +61,12 @@ const DatingAppCaseStudies = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaTrophy />
+            <span className="text-sm">
+              Success Stories
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Success <span className="text-brand-blue">Stories</span>
           </h2>

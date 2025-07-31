@@ -56,7 +56,7 @@ const TradingAppHeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-brand-blue px-4 py-2 rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium">
             <Shield className="w-4 h-4" />
             Trusted Trading Platform Certification
           </div>
