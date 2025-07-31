@@ -7,26 +7,27 @@ import {
   FaEnvelope,
   FaComments,
   FaLinkedin,
-  FaTwitter,
-  FaSlack,
   FaWhatsapp,
   FaClock,
+  FaInstagram,
   FaMapMarkerAlt,
   FaVideo,
   FaHeadset,
   FaFacebook,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
 
 const ContactMethodsSection: React.FC = () => {
-
   const [selectedMeetingUrl, setSelectedMeetingUrl] = useState<string>(
-    'https://calendly.com/jayeshmistry-testriq/30-minute-meeting',
-  )
+    "https://calendly.com/jayeshmistry-testriq/30-minute-meeting"
+  );
 
   const handleMeetings = (duration: string) => {
-    setSelectedMeetingUrl(`https://calendly.com/jayeshmistry-testriq/${duration}`)
-  }
+    setSelectedMeetingUrl(
+      `https://calendly.com/jayeshmistry-testriq/${duration}`
+    );
+  };
 
   const contactMethods = [
     {
@@ -43,9 +44,9 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaPhone,
       title: "Phone Support",
       description: "Speak directly with our team for immediate assistance",
-      details: "+1 (555) 012-3456 • Mon-Fri, 9 AM - 6 PM EST",
+      details: "(+91) 915-2929-343 • Mon-Fri, 9 AM - 6 PM EST",
       value: "Call Now",
-      action: "tel:+919454885467",
+      action: "tel:+919152929343",
       color: "from-green-500 to-green-700",
       highlight: false,
     },
@@ -53,9 +54,9 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaEnvelope,
       title: "Email Support",
       description: "Send detailed questions and get comprehensive responses",
-      details: "hello@testriq.com • Response within 2 hours",
+      details: "contact@testriq.com • Response within 2 hours",
       value: "Send Email",
-      action: "mailto:hello@testriq.com",
+      action: "mailto:contact@testriq.com",
       color: "from-blue-500 to-blue-700",
       highlight: false,
     },
@@ -83,7 +84,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaWhatsapp,
       title: "WhatsApp Business",
       description: "Quick questions and updates via WhatsApp",
-      details: "+1 (555) 012-3456 • Business hours only",
+      details: "(+91) 915-2929-343 • Business hours only",
       value: "Message Us",
       action: "#",
       color: "from-green-400 to-green-600",
@@ -95,26 +96,26 @@ const ContactMethodsSection: React.FC = () => {
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://linkedin.com/company/testriq",
+      url: "https://www.linkedin.com/company/testriq-qa-lab",
       color: "bg-brand-blue hover:sky-700",
     },
     {
-      icon: FaTwitter,
+      icon: FaXTwitter,
       name: "Twitter",
-      url: "https://twitter.com/testriq",
-      color: "bg-blue-400 hover:bg-blue-500",
-    },
-    {
-      icon: FaSlack,
-      name: "Slack Community",
-      url: "https://testriq-community.slack.com",
-      color: "bg-purple-600 hover:bg-purple-700",
+      url: "https://x.com/testriq",
+      color: "bg-black hover:bg-blue-500",
     },
     {
       icon: FaFacebook,
       name: "Facebook",
       url: "https://www.facebook.com/testriq.lab/",
       color: "bg-blue-600 hover:bg-blue-700",
+    },
+    {
+      icon: FaInstagram,
+      name: "Instagram",
+      url: "https://instagram.com/testriq",
+      color: "bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-pink-600",
     },
   ];
 
@@ -125,19 +126,22 @@ const ContactMethodsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 bg-gray-50 px-8 md:px-12 lg:px-24 scroll-smooth">
+      <div className="max-w-7xl mx-auto scroll-smooth">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Choose Your Preferred
-            <span className="block text-[theme(color.brand.blue)]">
+            <span className="block text-[theme(color.brand.blue)] py-3">
               Communication Method
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We understand that every client has different preferences. That’s why we offer multiple ways to connect with our QA experts—whether for a software testing consultation, project discussion, or quality assurance support across automation, manual, or performance testing services.
-
+            We understand that every client has different preferences. That’s
+            why we offer multiple ways to connect with our QA experts—whether
+            for a software testing consultation, project discussion, or quality
+            assurance support across automation, manual, or performance testing
+            services.
           </p>
         </div>
 
@@ -146,10 +150,11 @@ const ContactMethodsSection: React.FC = () => {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
-                ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
-                : ""
-                }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${
+                method.highlight
+                  ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
+                  : ""
+              }`}
             >
               {method.highlight && (
                 <div className="absolute top-0 right-0 bg-[theme(color.brand.blue)] text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
@@ -172,11 +177,12 @@ const ContactMethodsSection: React.FC = () => {
                 </p>
                 <p className="text-sm text-gray-500 mb-6">{method.details}</p>
 
-                <button
-                  className={`w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
+                <a
+                  href={method.action}
+                  className={`block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
-                </button>
+                </a>
               </div>
             </div>
           ))}
@@ -188,25 +194,23 @@ const ContactMethodsSection: React.FC = () => {
           className="bg-white rounded-2xl shadow-lg p-8 mb-16 border border-gray-100"
         >
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-purple-100 rounded-full px-6 py-2 mb-4">
-              <FaCalendarAlt className="w-4 h-4 text-purple-600" />
-              <span className="text-sm font-medium text-purple-600">
-                Calendly Integration
-              </span>
-            </div>
-
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Schedule Your Meeting
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose a time that works best for you—our QA experts are ready to discuss your software testing needs and provide personalized QA recommendations across automation, manual, API, and performance testing services.
-
+              Choose a time that works best for you—our QA experts are ready to
+              discuss your software testing needs and provide personalized QA
+              recommendations across automation, manual, API, and performance
+              testing services.
             </p>
           </div>
 
           {/* Meeting Types */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out" onClick={() => handleMeetings('15-minute-meeting')}>
+            <div
+              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
+              onClick={() => handleMeetings("15-minute-meeting")}
+            >
               <FaComments className="w-8 h-8 text-purple-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">
                 Quick Consultation
@@ -217,7 +221,10 @@ const ContactMethodsSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out" onClick={() => handleMeetings('30-minute-meeting')}>
+            <div
+              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
+              onClick={() => handleMeetings("30-minute-meeting")}
+            >
               <FaVideo className="w-8 h-8 text-purple-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">
                 Deep Dive Session
@@ -228,7 +235,10 @@ const ContactMethodsSection: React.FC = () => {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out" onClick={() => handleMeetings('45-minute-meeting')}>
+            <div
+              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
+              onClick={() => handleMeetings("45-minute-meeting")}
+            >
               <FaHeadset className="w-8 h-8 text-purple-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">
                 Team Workshop
@@ -238,27 +248,22 @@ const ContactMethodsSection: React.FC = () => {
             </div>
           </div>
 
-          {
-            selectedMeetingUrl && (
+          {selectedMeetingUrl && (
+            // <div>
+            //   <div className="calendly-inline-widget min-w-[320px] h-[700px]" data-url={selectedMeetingUrl} ></div>
+            //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            // </div>
 
-              // <div>
-              //   <div className="calendly-inline-widget min-w-[320px] h-[700px]" data-url={selectedMeetingUrl} ></div>
-              //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              // </div>
-
-              <div className="calendly-container min-w-[320px] h-[700px]">
-                <InlineWidget
-                  url={selectedMeetingUrl}
-                  styles={{
-                    height: '700px',
-                    minWidth: '320px',
-                  }}
-                />
-              </div>
-            )
-          }
-
-
+            <div className="calendly-container min-w-[320px] h-[700px]">
+              <InlineWidget
+                url={selectedMeetingUrl}
+                styles={{
+                  height: "700px",
+                  minWidth: "320px",
+                }}
+              />
+            </div>
+          )}
         </div>
 
         {/* Office Hours & Social Links */}
@@ -285,10 +290,11 @@ const ContactMethodsSection: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
-                      ? "bg-green-100 text-green-700"
-                      : "bg-yellow-100 text-yellow-700"
-                      }`}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      schedule.available
+                        ? "bg-green-100 text-green-700"
+                        : "bg-yellow-100 text-yellow-700"
+                    }`}
                   >
                     {schedule.available ? "Available" : "Limited"}
                   </div>
@@ -356,7 +362,11 @@ const ContactMethodsSection: React.FC = () => {
                   Mailing Address
                 </h4>
                 <div className="text-gray-600">
-                  <p>Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107</p>
+                  <p>
+                    Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
+                    Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
+                    Maharashtra 401107
+                  </p>
                 </div>
               </div>
             </div>

@@ -4,11 +4,15 @@ import ContactMethodsSection from "@/components/sections/ContactMethodsSection";
 import ContactFAQSection from "@/components/sections/ContactFAQSection";
 import ContactOfficeSection from "@/components/sections/ContactOfficeSection";
 import { Metadata } from "next";
-import StructuredData, {contactUsPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, {
+  contactUsPageSchema,
+  createBreadcrumbSchema,
+} from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Contact Us Testriq QA Lab | Software Testing Services",
-  description: "Get in touch with Testriq QA Lab for expert software testing services. Reach out for project inquiries, careers, or collaborations. We respond quickly & securely.",
+  description:
+    "Get in touch with Testriq QA Lab for expert software testing services. Reach out for project inquiries, careers, or collaborations. We respond quickly & securely.",
   keywords: [
     "contact Testriq",
     "QA consultation",
@@ -19,7 +23,7 @@ export const metadata: Metadata = {
     "software QA consultation",
     "test automation support",
     "contact software testers",
-    "software testing company contact"
+    "software testing company contact",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -62,30 +66,24 @@ export const metadata: Metadata = {
   },
 };
 
-
-
-
-
-
 const ContactUsPage: React.FC = () => {
-    const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
     { name: "Services", url: "https://testriq.com/contact-us" },
-    { name: "Contact Us", url: "https://testriq.com/contact-uss" }
+    { name: "Contact Us", url: "https://testriq.com/contact-uss" },
   ];
   return (
     <div>
-         <StructuredData data={contactUsPageSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-    <main className="min-h-screen bg-gray-50">
-      <ContactHeroSection />
-      <ContactMethodsSection />
-      <ContactFAQSection />
-      <ContactOfficeSection />
-    </main>
+      <StructuredData data={contactUsPageSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <main className="min-h-screen bg-gray-50">
+        <ContactHeroSection />
+        <ContactMethodsSection />
+        <ContactFAQSection />
+        <ContactOfficeSection />
+      </main>
     </div>
   );
 };
 
 export default ContactUsPage;
-
