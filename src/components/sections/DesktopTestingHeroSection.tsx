@@ -107,28 +107,6 @@ const DesktopTestingHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200">
-        <div className="flex flex-col items-center gap-6 opacity-80 text-center">
-          <span className="text-sm text-black font-medium uppercase tracking-wide">
-            Certified & Recognized by Industry Standards
-          </span>
-          <div className="flex flex-wrap justify-center items-center gap-4 text-gray-800 text-sm">
-            <div className="bg-gray-100 px-4 py-2 rounded-full">
-              ISTQB Certified Testers
-            </div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full">
-              ISO 9001:2015 (QMS)
-            </div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full">
-              ISO 27001:2013 (ISMS)
-            </div>
-            <div className="bg-gray-100 px-4 py-2 rounded-full">
-              Microsoft Partner
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

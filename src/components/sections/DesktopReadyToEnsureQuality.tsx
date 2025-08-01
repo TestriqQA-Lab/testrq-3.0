@@ -54,9 +54,6 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
                   <FaArrowRight className="w-4 h-4" />
                 </button>
               </Link>
-              <button className="px-8 py-4 border-2 border-blue-300 text-blue-100 font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-                Schedule Consultation
-              </button>
             </div>
           </div>
 

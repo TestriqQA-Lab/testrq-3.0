@@ -237,9 +237,6 @@ const DesktopCaseStudies: React.FC = () => {
                   Start Your Project
                 </button>
               </Link>
-              <button className="px-8 py-3 border-2 border-gray-400 text-gray-300 font-semibold rounded-lg hover:bg-gray-700 transition-colors">
-                Download Case Studies
-              </button>
             </div>
           </div>
         </div>
