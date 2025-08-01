@@ -2439,3 +2439,339 @@ export const createFAQSchema = (faqs: Array<{question: string, answer: string}>)
     }
   }))
 });
+
+
+export const matrimonialAppCertificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Matrimonial App Certification Services",
+  "description": "Comprehensive certification services for matrimonial apps covering security, privacy, compliance, user safety, and algorithm fairness. Ensures GDPR, ISO 27001, and CCPA compliance with high standards of trust and quality.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Application Security & Compliance Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Matrimonial App Certification Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Data Protection",
+          "description": "Includes ISO 27001 compliance, data encryption, vulnerability assessment, and secure authentication mechanisms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Privacy Compliance",
+          "description": "Covers GDPR, CCPA compliance, privacy by design, consent management, and data minimization practices."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Quality Assurance Testing",
+          "description": "Includes functional testing, performance testing, usability testing, and ISTQB-aligned test coverage."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Safety & Trust",
+          "description": "Identity verification, anti-scam protection, user reporting, and fake profile detection to ensure platform safety."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Algorithm Fairness & Transparency",
+          "description": "Auditing of matching logic for fairness, bias detection, explainability, and ethical AI adherence."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Regulatory Compliance",
+          "description": "Full-spectrum compliance checks with ISO 27701, SOC 2, OWASP, and region-specific privacy laws."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Structured data for dating app certification service
+export const datingAppCertificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Dating App Trust Certification",
+  description:
+    "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
+  provider: {
+    "@type": "Organization",
+    name: "TESTRIQ QA Lab",
+    url: "https://testriq.com",
+    logo: "https://testriq.com/logo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9004988859",
+      contactType: "customer service",
+    },
+  },
+  serviceType: "Quality Assurance and Certification",
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Dating App Certification Tiers",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Basic Certification",
+        description:
+          "Platform Functionality + Privacy + Content Moderation Checklist",
+        category: "New dating apps in MVP/early-launch phase",
+      },
+      {
+        "@type": "Offer",
+        name: "Advanced Certification",
+        description: "Basic + Identity Verification + Messaging Audit",
+        category: "Growth-stage or regionally scaling apps",
+      },
+      {
+        "@type": "Offer",
+        name: "Enterprise Certification",
+        description:
+          "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
+        category: "Established or global dating platforms",
+      },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "127",
+    bestRating: "5",
+  },
+};
+
+
+
+
+// Structured data for fantasy sports app certification service
+export const fantasyAppCertificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fantasy Sports App Certification",
+  "description": "Get your fantasy sports platform certified for fair play, data privacy, security, and regulatory compliance. Testriq's certification builds user trust, prevents fraud, and improves engagement across fantasy gaming apps.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Fantasy Sports Platform Security & Compliance Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Fantasy App Certification Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Privacy",
+          "description": "End-to-end encryption, PCI DSS compliance, secure authentication, and GDPR/CCPA privacy compliance."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fair Play & Compliance",
+          "description": "Fair gaming verification, regulatory compliance checks, anti-fraud detection, and algorithm transparency."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Reliability",
+          "description": "Load testing, uptime assurance, real-time data validation, and infrastructure scaling validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Experience Testing",
+          "description": "UI/UX, accessibility (WCAG 2.1), mobile-first experience, and multi-device compatibility validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Integrity & Audit",
+          "description": "Data validation, backup strategies, role-based access control, and audit trails for fantasy data."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Quality Assurance & Testing",
+          "description": "Functional testing, API testing, security audits, regression testing, and cheat detection systems."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+
+
+export const tradingAppCertificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Trading App Certification Services",
+  "description": "Professional certification and QA services for trading applications, covering security testing, low-latency performance, regulatory compliance (FINRA, SEC, MiFID II), algorithm validation, and data integrity audits.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://testriq.com"
+  },
+  "serviceType": "Trading Platform Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Trading App Certification Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Fraud Prevention Testing",
+          "description": "Vulnerability scanning, end-to-end encryption, and multi-factor authentication for trading platforms."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Regulatory Compliance Validation",
+          "description": "Verification of compliance with FINRA, SEC, MiFID II, GDPR, and PCI DSS standards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Low Latency Testing",
+          "description": "Real-time performance benchmarking, order execution speed testing, and stress testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Algorithmic Trading Validation",
+          "description": "Validation of trading algorithms, risk controls, and automated execution safeguards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "User Experience & Accessibility Testing",
+          "description": "Cross-device testing, error handling validation, and accessibility compliance (WCAG)."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "Contact for pricing"
+    }
+  }
+};
+
+// Structured data for shopping apps certification service
+export const shoppingAppCertificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Shopping Apps Certification",
+  description:
+    "Comprehensive certification program for e-commerce and shopping apps covering security, payment processing, performance optimization, user experience, and compliance standards.",
+  provider: {
+    "@type": "Organization",
+    name: "TESTRIQ QA Lab",
+    url: "https://testriq.com",
+    logo: "https://testriq.com/logo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9004988859",
+      contactType: "customer service",
+    },
+  },
+  serviceType: "Quality Assurance and Certification",
+  areaServed: "Worldwide",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Shopping App Certification Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        name: "Security & Privacy Certification",
+        description: "PCI DSS compliance, SSL/TLS encryption, data anonymization, GDPR compliance",
+        category: "Security and Privacy",
+      },
+      {
+        "@type": "Offer",
+        name: "Payment Security Certification",
+        description: "Payment tokenization, fraud detection, multi-gateway support, 3D Secure authentication",
+        category: "Payment Security",
+      },
+      {
+        "@type": "Offer",
+        name: "Performance & Speed Certification",
+        description: "Sub-3s load times, CDN optimization, auto-scaling, performance monitoring",
+        category: "Performance and Speed",
+      },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "203",
+    bestRating: "5",
+  },
+};

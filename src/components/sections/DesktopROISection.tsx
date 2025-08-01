@@ -47,8 +47,8 @@ const DesktopROISection: React.FC = () => {
     {
       category: "Testriq Testing",
       setup: "$0",
-      monthly: "$8,000",
-      annual: "$96,000",
+      monthly: "$1200",
+      annual: "$14,400",
       limitations: ["Full platform coverage", "No infrastructure costs", "Expert resources included"]
     }
   ];
@@ -174,7 +174,7 @@ const DesktopROISection: React.FC = () => {
 
           <div className="text-center mt-8 p-6 bg-green-50 rounded-xl border border-green-200">
             <div className="text-2xl font-bold text-green-600 mb-2">
-              Save $134,000 Annually
+              Save $215,600 Annually
             </div>
             <div className="text-green-700">
               Choose Testriq and reduce your testing costs by 58% while improving quality
@@ -239,11 +239,11 @@ const DesktopROISection: React.FC = () => {
               </div>
               <div className="flex justify-between items-center p-4 bg-blue-50 rounded-lg">
                 <span className="text-gray-700">Testriq Cost (Annual)</span>
-                <span className="font-semibold text-[theme(color.brand.blue)]">$96,000</span>
+                <span className="font-semibold text-[theme(color.brand.blue)]">$14,400</span>
               </div>
               <div className="flex justify-between items-center p-4 bg-green-50 rounded-lg border border-green-200">
                 <span className="text-gray-700 font-semibold">Annual Savings</span>
-                <span className="font-bold text-green-600 text-xl">$134,000</span>
+                <span className="font-bold text-green-600 text-xl">$215,600</span>
               </div>
             </div>
 

@@ -82,7 +82,7 @@ const ExploratoryFAQs: React.FC = () => {
                   {openFAQ === index ? <FaChevronUp /> : <FaChevronDown />}
                 </div>
               </button>
-              
+
               {openFAQ === index && (
                 <div className="px-6 pb-4">
                   <div className="border-t border-gray-100 pt-4">
@@ -108,7 +108,8 @@ const ExploratoryFAQs: React.FC = () => {
             </button>
           </div>
           <div className="mt-6 text-green-100 text-sm">
-            📞 Call us: (+91) 915-2929-343 | ✉️ Email: contact@testriq.com
+            📞 Call us: (+91) 982-068-0665
+            | ✉️ Email: contact@testriq.com
           </div>
         </div>
 
