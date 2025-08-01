@@ -253,6 +253,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                 <Image
                   src={post.image}
                   alt={post.title}
+                  width={400}
+                  height={250}
                   className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
@@ -308,6 +310,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                       <Image
                         src={post.authorImage}
                         alt={post.author}
+                        width={400}
+                        height={250}
                         className="w-5 h-5 rounded-full"
                       />
                       <span>{post.author}</span>

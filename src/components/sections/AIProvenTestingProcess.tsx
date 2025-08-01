@@ -7,7 +7,6 @@ import {
   FaChartLine,
   FaCheckCircle,
   FaArrowRight,
-  FaPlay,
 } from "react-icons/fa";
 
 const AIProvenTestingProcess: React.FC = () => {
