@@ -1,5 +1,7 @@
 "use client";
 
+import { Url } from "next/dist/shared/lib/router/router";
+import Link from "next/link";
 import { JSX, useState } from "react";
 import {
   FaChevronLeft,
@@ -23,6 +25,7 @@ type FeatureSet = {
   elColor?: string;
   theme?: string;
   btnText?: string;
+  action: Url;
   learnMoreLabel?: string;
 };
 
@@ -52,6 +55,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-blue-100/80",
     elColor: "bg-blue-400",
     btnText: "Learn More About Security Testing",
+    action:"/security-testing"
   },
   {
     title: "Performance Testing",
@@ -78,6 +82,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-green-100/80",
     elColor: "bg-green-400",
     btnText: "Learn More About Performance Testing",
+    action:"/performance-testing-services"
   },
   {
     title: "Usability Testing",
@@ -104,6 +109,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-yellow-100/80",
     elColor: "bg-yellow-400",
     btnText: "Learn More About Usability Testing",
+    action:"#"
   },
   {
     title: "Responsive Testing",
@@ -130,6 +136,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-purple-100/80",
     elColor: "bg-purple-400",
     btnText: "Learn More About Responsive Testing",
+    action:"#"
   },
   {
     title: "Integration Testing",
@@ -156,6 +163,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-red-100/80",
     elColor: "bg-red-400",
     btnText: "Learn More About Integration Testing",
+    action:"#"
   },
 ];
 
@@ -197,7 +205,7 @@ export default function ComprehensiveTestingSlider() {
 
           <button
             onClick={next}
-            className="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30"
+            className="w-10 h-10 flex items-center justify-center bg-black/20 rounded-full hover:bg-white/30"
           >
             <FaChevronRight className="w-5 h-5" />
           </button>
@@ -219,15 +227,15 @@ export default function ComprehensiveTestingSlider() {
 
             <p className="mb-6 text-black/90">{current.description}</p>
 
-            <ul className="grid grid-cols-2 gap-2 text-sm list-disc list-inside">
+            <ul className="grid grid-cols-2 gap-2 text-sm list-disc list-inside mb-8">
               {current.features.map((feat, i) => (
                 <li key={i}>{feat}</li>
               ))}
             </ul>
 
-            <button className="mt-6 bg-white text-black font-semibold px-6 py-3 rounded-xl">
+            <Link href={current.action} className="mt-14 bg-white text-black font-semibold px-6 py-3 rounded-xl">
               {current.btnText || current.learnMoreLabel}
-            </button>
+            </Link>
           </div>
 
           {/* Right Column */}
