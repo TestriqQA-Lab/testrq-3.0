@@ -1,9 +1,82 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  fantasyAppCertificationSchema,
   organizationSchema,
   websiteSchema,
 } from "@/components/seo/StructuredData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:  "Fantasy Sports App Certification",
+  description: "Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.",
+  keywords: [
+    "Fantasy Sports App Certification",
+    "fantasy app security",
+    "fantasy app compliance testing",
+    "fair play verification fantasy app",
+    "GDPR CCPA fantasy platform",
+    "ISO 27001 fantasy certification",
+    "fantasy app testing services",
+    "secure fantasy sports apps",
+    "regulatory compliance for fantasy apps",
+    "fantasy sports QA services"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  alternates: {
+    canonical: 'https://testrq-3-0.vercel.app/fantasy-sports-app-certification',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testrq-3-0.vercel.app/fantasy-sports-app-certification',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq',
+    description: 'Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.',
+    images: [
+      {
+        url: '/OG/Fantacy-Sport-certification-Og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Fantasy App Certification - Testriq QA Lab',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq',
+    description: 'Fantasy app certification for fair play, fraud prevention, security, GDPR/CCPA compliance, and ISO 27001. Trusted by 200+ fantasy apps globally.',
+    images: ['/OG/Fantacy-Sport-certification-Twitter.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+};
+
+
 
 const FantasyAppHeroSection = dynamic(
   () => import("@/components/sections/FantasyAppHeroSection"),
@@ -113,57 +186,6 @@ const FantasyAppCTA = dynamic(
   }
 );
 
-// Structured data for fantasy sports app certification service
-const fantasyAppCertificationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Fantasy Sports Apps Certification",
-  description:
-    "Comprehensive certification program for fantasy sports apps covering security, fair play, regulatory compliance, performance optimization, and user experience standards.",
-  provider: {
-    "@type": "Organization",
-    name: "TESTRIQ QA Lab",
-    url: "https://testriq.com",
-    logo: "https://testriq.com/logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9004988859",
-      contactType: "customer service",
-    },
-  },
-  serviceType: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Fantasy Sports App Certification Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Security & Privacy Certification",
-        description: "End-to-end encryption, multi-factor authentication, PCI DSS and GDPR compliance",
-        category: "Security and Privacy",
-      },
-      {
-        "@type": "Offer",
-        name: "Fair Play & Compliance Certification",
-        description: "Regulatory compliance, anti-fraud detection, algorithm transparency, age verification",
-        category: "Compliance and Fair Play",
-      },
-      {
-        "@type": "Offer",
-        name: "Performance & Reliability Certification",
-        description: "Real-time data sync, 99.9% uptime SLA, load balancing, auto-scaling",
-        category: "Performance and Reliability",
-      },
-    ],
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "156",
-    bestRating: "5",
-  },
-};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -197,6 +219,11 @@ const faqSchema = {
 };
 
 export default function FantasySportsAppCertification() {
+   const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification" },
+    { name: "Fantasy Sports App Certification", url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification" }
+  ];
   return (
     <div>
       <StructuredData data={organizationSchema} />
