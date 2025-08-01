@@ -143,10 +143,6 @@ const DesktopComprehensiveSlider: React.FC = () => {
                             </div>
                           ))}
                         </div>
-
-                        <button className="bg-white text-gray-800 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors w-fit">
-                          Learn More
-                        </button>
                       </div>
 
                       <div className="flex items-center justify-center">
