@@ -9,20 +9,20 @@ interface CaseStudyHeroSectionProps {
 
 const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }) => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
+    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
         <div className="mb-8">
           <Link 
             href="/case-studies" 
-            className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors"
+            className="inline-flex gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors"
           >
             <FaArrowLeft className="w-4 h-4" />
             <span>Back to Case Studies</span>
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Content */}
           <div>
             {/* Meta Information */}
