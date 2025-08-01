@@ -417,13 +417,6 @@ const AIComprehensiveSlider: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300 shadow-lg transform hover:scale-105">
-            Explore All AI Testing Services
-          </button>
-        </div>
       </div>
     </section>
   );

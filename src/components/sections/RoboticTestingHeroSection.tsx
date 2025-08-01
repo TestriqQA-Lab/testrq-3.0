@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
@@ -13,9 +14,7 @@ const RoboticTestingHeroSection: React.FC = () => {
           <div className="space-y-6">
             <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
               <FaRobot />
-              <span className="text-sm">
-                Robotic Testing Specialists
-              </span>
+              <span className="text-sm">Robotic Testing Specialists</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -24,14 +23,19 @@ const RoboticTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your robotic systems deliver precise, reliable, and safe performance with our comprehensive robotics testing services. From industrial automation to service robots - we validate every aspect of your robotic ecosystem.
+              Ensure your robotic systems deliver precise, reliable, and safe
+              performance with our comprehensive robotics testing services. From
+              industrial automation to service robots - we validate every aspect
+              of your robotic ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
-                Get Started Today
-                <FaArrowRight className="inline ml-2" />
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
+                  Get Started Today
+                  <FaArrowRight className="inline ml-2" />
+                </button>
+              </Link>
               <button className="border border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center gap-2">
                 <FaPlay className="w-4 h-4" />
                 Watch Demo

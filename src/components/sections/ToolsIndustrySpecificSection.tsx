@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHeartbeat, FaShoppingCart, FaGraduationCap, FaGamepad, FaBitcoin, FaIndustry } from "react-icons/fa";
+import { FaHeartbeat, FaShoppingCart, FaGraduationCap, FaGamepad, FaBitcoin, FaIndustry, FaChalkboardTeacher } from "react-icons/fa";
 
 const ToolsIndustrySpecificSection = () => {
   const industries = [
@@ -106,9 +106,10 @@ const ToolsIndustrySpecificSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Industry Expertise
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
+            <FaChalkboardTeacher  />
+            <span className="text-sm">Industry Expertise</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Industry-Specific{" "}
             <span className="text-[theme(color.brand.blue)]">Testing Solutions</span>

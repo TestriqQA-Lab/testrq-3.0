@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaMobile, FaShieldAlt, FaWifi, FaChartLine, FaUsers, FaClock, FaAward } from "react-icons/fa";
 
@@ -239,9 +240,11 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
             <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to Connect with Excellence?</h3>
             <p className="text-gray-600">Join 500+ companies who trust our smart device testing expertise. Get started with a comprehensive smart device assessment and ensure your connected devices are reliable and secure.</p>
           </div>
-          <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
+          <Link href="/contact-us">
+            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
             Get Started with Smart Device Testing
           </button>
+          </Link>
         </div>
       </div>
     </section>

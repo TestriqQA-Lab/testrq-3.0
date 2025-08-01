@@ -1,14 +1,22 @@
 import React from "react";
-import { FaArrowRight, FaPlay, FaChartLine, FaUsers, FaAward } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaPlay,
+  FaChartLine,
+  FaUsers,
+  FaAward,
+  FaTrophy,
+} from "react-icons/fa";
 
 const CaseStudiesHeroSection = () => {
   return (
     <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-        <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
-          Proven Success Stories
-        </span>
+        <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-4 py-2 rounded-full mb-5">
+          <FaTrophy />
+          <span className="text-sm">Proven Success Stories</span>
+        </div>
 
         <h1 className="text-4xl hidden md:block md:text-5xl font-bold text-gray-900 leading-tight mb-4">
           Client{" "}
@@ -24,7 +32,11 @@ const CaseStudiesHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Discover how our comprehensive software testing services have transformed businesses across industries. From startups to Fortune 500 companies, explore real results, measurable improvements, and success stories that showcase our expertise in delivering exceptional QA solutions.
+          Discover how our comprehensive software testing services have
+          transformed businesses across industries. From startups to Fortune 500
+          companies, explore real results, measurable improvements, and success
+          stories that showcase our expertise in delivering exceptional QA
+          solutions.
         </p>
 
         {/* CTAs */}
@@ -80,4 +92,3 @@ const CaseStudiesHeroSection = () => {
 };
 
 export default CaseStudiesHeroSection;
-

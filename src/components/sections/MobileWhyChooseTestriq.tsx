@@ -231,23 +231,6 @@ const MobileWhyChooseTestriq: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Experience Mobile Testing Excellence?
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join hundreds of successful mobile app companies who trust Testriq for their mobile application testing needs.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-              Start Your Mobile Testing
-            </button>
-            <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-              Schedule Free Demo
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

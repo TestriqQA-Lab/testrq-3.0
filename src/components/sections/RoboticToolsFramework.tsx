@@ -143,9 +143,6 @@ const RoboticToolsFramework: React.FC = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               We support full-cycle testing for robotics software and can integrate with your tools or recommend best-fit frameworks, or recommend the best combination for your specific robotic testing requirements.
             </p>
-            <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              Discuss Your Requirements
-            </button>
           </div>
         </div>
       </div>

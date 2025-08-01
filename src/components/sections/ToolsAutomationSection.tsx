@@ -121,9 +121,10 @@ const ToolsAutomationSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Test Automation
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
+            <FaRobot  />
+            <span className="text-sm">Test Automation</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Advanced{" "}
             <span className="text-[theme(color.brand.blue)]">Automation Solutions</span>

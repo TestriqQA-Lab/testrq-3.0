@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaDatabase,
@@ -21,14 +22,10 @@ const ETLTestingHeroSection: React.FC = () => {
           {/* Left Side - Content */}
           <div className="space-y-4">
             <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <FaExchangeAlt  />
-            <span className="text-sm">
-              ETL Testing Specialists
-            </span>
-          </div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm">
-              
+              <FaExchangeAlt />
+              <span className="text-sm">ETL Testing Specialists</span>
             </div>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm"></div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Comprehensive <span className="text-brand-blue">ETL Testing</span>{" "}
@@ -36,13 +33,19 @@ const ETLTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Ensure your data pipelines deliver accurate, complete, and reliable data with our comprehensive ETL testing services. From data extraction, transformation, and loading, we validate every layer of your ETL process to ensure seamless data integration, quality assurance, and regulatory compliance.
+              Ensure your data pipelines deliver accurate, complete, and
+              reliable data with our comprehensive ETL testing services. From
+              data extraction, transformation, and loading, we validate every
+              layer of your ETL process to ensure seamless data integration,
+              quality assurance, and regulatory compliance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-                Get Started Today
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
+                  Get Started Today
+                </button>
+              </Link>
               <button className="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
                 <span className="mr-2">▶</span>
                 Watch Demo

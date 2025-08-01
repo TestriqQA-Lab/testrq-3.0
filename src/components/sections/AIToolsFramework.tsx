@@ -179,15 +179,12 @@ const AIToolsFramework: React.FC = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Custom AI Testing Solutions
           </h3>
-          <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
+          <p className="text-gray-700 text-lg mb-3 max-w-3xl mx-auto">
             We can adapt our testing approach to work with your specific AI
             models, frameworks, and deployment environments, ensuring
             comprehensive coverage for your unique AI applications and use
             cases.
           </p>
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Discuss Your AI Testing Requirements
-          </button>
         </div>
       </div>
     </section>

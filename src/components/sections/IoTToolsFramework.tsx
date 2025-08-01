@@ -161,9 +161,6 @@ const IoTToolsFramework: React.FC = () => {
           <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
             We tailor our IoT QA frameworks to your protocols, devices, and infrastructure, offering protocol-specific validation, end-to-end testing, and scalable coverage for enterprise-grade IoT ecosystems.
           </p>
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Discuss Your IoT Testing Needs
-          </button>
         </div>
       </div>
     </section>
