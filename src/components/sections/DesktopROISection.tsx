@@ -174,7 +174,7 @@ const DesktopROISection: React.FC = () => {
 
           <div className="text-center mt-8 p-6 bg-green-50 rounded-xl border border-green-200">
             <div className="text-2xl font-bold text-green-600 mb-2">
-              Save $134,000 Annually
+              Save $215,600 Annually
             </div>
             <div className="text-green-700">
               Choose Testriq and reduce your testing costs by 58% while improving quality
