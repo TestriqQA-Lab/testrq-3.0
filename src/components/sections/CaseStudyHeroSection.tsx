@@ -2,19 +2,22 @@ import React from "react";
 import { FaCalendarAlt, FaIndustry, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { CaseStudy } from "@/app/lib/caseStudies";
+import Image from "next/image";
 
 interface CaseStudyHeroSectionProps {
   caseStudy: CaseStudy;
 }
 
-const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }) => {
+const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
+  caseStudy,
+}) => {
   return (
     <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
         <div className="mb-8">
-          <Link 
-            href="/case-studies" 
+          <Link
+            href="/case-studies"
             className="inline-flex gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors"
           >
             <FaArrowLeft className="w-4 h-4" />
@@ -29,11 +32,15 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                 <FaIndustry className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                <span className="text-sm font-medium text-gray-700">{caseStudy.industry}</span>
+                <span className="text-sm font-medium text-gray-700">
+                  {caseStudy.industry}
+                </span>
               </div>
               <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
                 <FaCalendarAlt className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                <span className="text-sm font-medium text-gray-700">{caseStudy.duration}</span>
+                <span className="text-sm font-medium text-gray-700">
+                  {caseStudy.duration}
+                </span>
               </div>
             </div>
 
@@ -44,7 +51,10 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }
 
             {/* Client */}
             <p className="text-xl text-gray-600 mb-6">
-              Client: <span className="font-semibold text-gray-800">{caseStudy.client}</span>
+              Client:{" "}
+              <span className="font-semibold text-gray-800">
+                {caseStudy.client}
+              </span>
             </p>
 
             {/* Description */}
@@ -78,12 +88,17 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }
           {/* Image */}
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-24 h-24 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FaIndustry className="w-12 h-12 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{caseStudy.client}</h3>
-                <p className="text-gray-600">{caseStudy.industry} Success Story</p>
+              <div className="flex justify-center flex-col text-center">
+                <Image
+                  src={caseStudy.image}
+                  alt={caseStudy.client}
+                  width={400} // or appropriate dimensions
+                  height={300}
+                  className="object-contain"
+                />
+                <p className="text-gray-600 text-xl py-5">
+                  {caseStudy.industry} Success Story
+                </p>
               </div>
             </div>
           </div>
@@ -94,4 +109,3 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({ caseStudy }
 };
 
 export default CaseStudyHeroSection;
-
