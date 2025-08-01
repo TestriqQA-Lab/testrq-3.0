@@ -92,8 +92,8 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
                 <Image
                   src={caseStudy.image}
                   alt={caseStudy.client}
-                  width={400} // or appropriate dimensions
-                  height={300}
+                  width={300} // or appropriate dimensions
+                  height={200}
                   className="object-contain"
                 />
                 <p className="text-gray-600 text-xl py-5">
