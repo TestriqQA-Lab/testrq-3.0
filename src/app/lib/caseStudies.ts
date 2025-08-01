@@ -541,6 +541,371 @@ const caseStudiesData: CaseStudy[] = [
       "Explore opportunities for further test automation to enhance efficiency.",
       "Apply lessons learned to other mobile app testing projects."
     ]
+  },
+  {
+    id: 7,
+    slug: "home-facts-case-study",
+    title: "Real Estate Software Testing Case Study | Testriq QA Lab",
+    client: "Home Facts",
+    industry: "Real Estate Industry",
+    duration: "Undisclosed",
+    description: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more.",
+    image: "/Homefacts_Logo.png",
+    overview: {
+      clientBackground: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more. HomeFacts is owned and operated by ATTOM Data Solutions.",
+      projectScope: "Comprehensive QA and testing for Homefacts, focusing on data accuracy, mobile responsiveness, search functionality, and integration of new features like HomeAlerts and various map views. This included data migration from old systems and continuous support for new implementations.",
+      teamSize: "Dedicated QA team with expertise in real estate software testing",
+      timeline: "Ongoing, with continuous updates and feature implementations"
+    },
+    challenge: {
+      title: "Buggy Search and Data Accuracy in Legacy System",
+      description: "The old Homefacts website had a few confinements, a major one being the search functionality, which was not precise. Additionally, ensuring the accuracy of data across 30 different modules and integrating new functionalities like HomeAlerts and various map views presented significant challenges.",
+      keyIssues: [
+        "Imprecise search results in the old website.",
+        "Ensuring data accuracy across 30 different modules.",
+        "Integrating new functionalities like HomeAlerts, Google Maps, Bing Maps, Google Street View, Aerial Map View, and Birds Eye Map.",
+        "Maintaining mobile responsiveness across all features.",
+        "Testing API for neighborhood data correctness."
+      ],
+      businessImpact: "Inaccurate data and poor search functionality would lead to user dissatisfaction, loss of credibility, and reduced revenue from data sales and lead generation."
+    },
+    solution: {
+      title: "Comprehensive QA and Feature Enhancement for Homefacts",
+      description: "We implemented a comprehensive QA approach, focusing on improving search accuracy, ensuring data integrity, and rigorously testing new features. This involved a multi-faceted testing strategy from initial impact analysis to post-deployment testing.",
+      approach: [
+        "Understanding actual business requirement and QA’ing it as per requirement.",
+        "Performing Impact Analysis on the website to identify affected areas by functional/UI changes.",
+        "Creating Test Cases according to SRS.",
+        "Executing Test cases when the website is ready for QA.",
+        "Creating issues for Failed Test Cases.",
+        "Creating issues that are logged in Database (errorlog) and New Relic Tool.",
+        "Setting the Priority and Severity of issues and assigning to Dev Team.",
+        "Once issues are resolved performed regression testing.",
+        "Once Issues are resolved sending back for UAT.",
+        "Once UAT is completed and it was Ready to Deployment.",
+        "Post Deployment testing is done as soon as Code was released to Prod.",
+        "Testing PostMan Tool for Homefacts API.",
+        "Checking API that was used on Website.",
+        "Testing Widgets that were made for Third Party use.",
+        "Testing SiteMap.",
+        "Testing DB Migration.",
+        "Testing Migration of Data to Cloud."
+      ],
+      methodology: "Agile QA methodology with a strong emphasis on data accuracy, mobile responsiveness, and continuous testing throughout the development lifecycle. This included a detailed 10-point QA process.",
+      keyStrategies: [
+        "Redesigning search flow for precise results (Full address, Partial address, City, County, State, ZIP).",
+        "Implementing HomeAlerts functionality for free alert emails on neighborhood changes.",
+        "Adding Google Maps, Bing Maps, Google Street View, Aerial Map View, and Birds Eye Map for properties.",
+        "Ensuring mobile responsiveness of the entire site.",
+        "Continuous data and design evolution for 30 different modules.",
+        "API testing using POSTMAN for neighborhood data correctness."
+      ]
+    },
+    results: {
+      bugReduction: "Significant",
+      performanceImprovement: "Improved",
+      roi: "Increased",
+      additionalMetrics: [
+        { label: "Daily Visitors Increased", value: "Significant" },
+        { label: "Daily SignUp Count Increased", value: "Approximately 50%" },
+        { label: "Subscription Count Increased", value: "Significant" }
+      ]
+    },
+    technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "Compatibility Testing", "Cross Browser Testing", "UI Testing", "Regression Testing", "Retesting", "API Testing", "Postman"],
+    testimonial: {
+      quote: "",
+      author: "",
+      role: "",
+      company: "HomeFacts",
+      rating: 5
+    },
+    timeline: [
+      {
+        phase: "Search Flow Redesign & Implementation",
+        duration: "Undisclosed",
+        activities: [
+          "Planning and implementing new search flow for precise results (Full address, Partial address, City, County, State, ZIP)"
+        ]
+      },
+      {
+        phase: "HomeAlerts Functionality Integration",
+        duration: "Undisclosed",
+        activities: [
+          "Implementing HomeAlerts functionality for free alert emails on neighborhood changes"
+        ]
+      },
+      {
+        phase: "Map Views Integration",
+        duration: "Undisclosed",
+        activities: [
+          "Adding Google Maps, Bing Maps, Google Street View (Panorama and Static), Aerial Map View, and Birds Eye Map for all properties"
+        ]
+      },
+      {
+        phase: "Continuous Module Evolution & QA",
+        duration: "Ongoing",
+        activities: [
+          "Evolving data and design of 30 different modules based on client requirements",
+          "Performing Compatibility Testing, Cross browser testing, UI Testing, Regression Testing, Retesting",
+          "Conducting API testing using POSTMAN for neighborhood data correctness"
+        ]
+      },
+      {
+        phase: "Revenue Stream Integration & Monitoring",
+        duration: "Ongoing",
+        activities: [
+          "Integrating data sales through APIs, lead submission, and Google advertisements for revenue collection",
+          "Monitoring increase in daily visitors, daily sign-up count, and subscription count"
+        ]
+      }
+    ],
+    keyTakeaways: [
+      "Precise search functionality is crucial for data-driven real estate platforms.",
+      "Continuous data and design evolution is necessary to meet changing client requirements.",
+      "Comprehensive testing, including API testing, ensures data accuracy and system reliability.",
+      "Diversifying revenue streams through data sales and lead generation can significantly impact business growth."
+    ],
+    nextSteps: [
+      "Continue to enhance data accuracy and expand data sets.",
+      "Explore new features to further improve user experience and engagement.",
+      "Optimize revenue generation strategies."
+    ]
+  },
+  {
+    id: 8,
+    slug: "realtytrac-case-study",
+    title: "RealtyTrac Case Study – Real Estate QA Testing by Testriq",
+    client: "Realty Trac",
+    industry: "Real Estate Industry",
+    duration: "Undisclosed",
+    description: "RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations.",
+    image: "/RealtyTrac_Logo.png",
+    overview: {
+      clientBackground: "RealtyTrac is owned and operated by ATTOM Data Solutions. RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations. It is a Real Estate Online and Mobile real estate resource that provides comprehensive property info of properties in US Market.",
+      projectScope: "Comprehensive QA and testing for RealtyTrac, focusing on improving search accuracy, enhancing mobile responsiveness, and integrating new features like Advanced Search, various map views, and sister sites. This included data migration from old systems and continuous support for new implementations.",
+      teamSize: "Dedicated QA team with expertise in real estate software testing",
+      timeline: "Ongoing, with continuous updates and feature implementations"
+    },
+    challenge: {
+      title: "Inaccurate Search and Limited Functionality in Legacy Website",
+      description: "The old RealtyTrac website had limitations, particularly with its search functionality, which was not accurate and limited. The challenge was to implement an 'Advanced Search' feature, change landing pages for search results, and integrate various map views, all while ensuring data accuracy and mobile responsiveness.",
+      keyIssues: [
+        "Inaccurate and limited search results in the old website.",
+        "Need for 'Advanced Search' feature and improved search result landing pages (List View and Map View).",
+        "Integration of Google Maps, Bing Maps, Google Street View, Aerial Map View, and Birds Eye Map.",
+        "Ensuring mobile responsiveness across all features.",
+        "Data migration from MSSQL Server 2014 to MSSQL Server SQL.",
+        "Migration of data to Cloud."
+      ],
+      businessImpact: "Poor search functionality and limited features would lead to user dissatisfaction, loss of market share, and reduced revenue from property listings and data sales."
+    },
+    solution: {
+      title: "Robust Platform Enhancement with Comprehensive QA and Marketing Strategy",
+      description: "We implemented a comprehensive QA approach, focusing on improving search accuracy, enhancing mobile responsiveness, and integrating new features. This was coupled with a strong marketing strategy to showcase the new platform and re-engage customers.",
+      approach: [
+        "Understanding actual business requirement and QA’ing it as per requirement.",
+        "Performing Impact Analysis on the website to identify affected areas by functional/UI changes.",
+        "Creating Test Case according to SRS.",
+        "Executing Test cases when the website is ready for QA.",
+        "Creating issues for Failed Test Cases.",
+        "Creating issues that are logged in Database (errorlog) and New Relic Tool.",
+        "Setting the Priority and Severity of issues and assigning to Dev Team.",
+        "Once issues are resolved performed regression testing.",
+        "Once Issues are resolved sending back for UAT.",
+        "Once UAT is completed and it was Ready to Deployment.",
+        "Involvement in Deployment process with the IT Administration Team.",
+        "Post Deployment testing as soon as Code was released to Prod.",
+        "Testing PostMan Tool for RealtyTrac Api’s.",
+        "Checking API that was used by Third Party Website.",
+        "Testing Agent Leads on Agent Website.",
+        "Testing Widgets that were made for Third Party use.",
+        "Testing SiteMap generation and execution for rendering on google.",
+        "Testing Parcel Streams used on Google and Bing Maps.",
+        "Testing Using Session Ids in Bing Map.",
+        "Testing DB Migration (MSSQL Server 2014 to MSSQL Server SQL ).",
+        "Testing Migration of Data to Cloud."
+      ],
+      methodology: "Agile QA methodology with a strong emphasis on continuous testing, data integrity, and user experience. This included a detailed QA process and close collaboration with development and IT teams.",
+      keyStrategies: [
+        "Implementation of 'Advanced Search' feature and improved search result landing pages.",
+        "Integration of Google Maps, Bing Maps, Google Street View, Aerial Map View, and Birds Eye Map.",
+        "Development and launch of sister sites like HomeDisclosure, Bright, and Trends.",
+        "Comprehensive marketing strategy to showcase new features and re-engage customers.",
+        "24/7 support to customers from respective teams."
+      ]
+    },
+    results: {
+      bugReduction: "Significant",
+      performanceImprovement: "Improved",
+      roi: "Huge",
+      additionalMetrics: [
+        { label: "Successful Launch of Sister Sites", value: "HomeDisclosure, Bright, Trends" },
+        { label: "Customer Engagement", value: "Increased" },
+        { label: "Market Position", value: "Strengthened" }
+      ]
+    },
+    technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "Postman", "MSSQL Server", "Cloud Migration"],
+    testimonial: {
+      quote: "",
+      author: "",
+      role: "",
+      company: "RealtyTrac",
+      rating: 5
+    },
+    timeline: [
+      {
+        phase: "Search and UI/UX Enhancement",
+        duration: "Undisclosed",
+        activities: [
+          "Planning and implementing 'Advanced Search' feature.",
+          "Changing Landing Pages of Search Results response pages (List View and Map View).",
+          "Adding Google Maps, Bing Maps, Google Street View, Aerial Map View, and Birds Eye Map."
+        ]
+      },
+      {
+        phase: "Sister Site Development and Launch",
+        duration: "Undisclosed",
+        activities: [
+          "Developing and launching HomeDisclosure (December 2015).",
+          "Developing and launching Bright and Trends sister sites."
+        ]
+      },
+      {
+        phase: "QA and Testing",
+        duration: "Ongoing",
+        activities: [
+          "Performing Impact Analysis, Test Case Creation, Execution, and Issue Logging.",
+          "Conducting Regression Testing, UAT, and Post Deployment Testing.",
+          "Testing APIs, Agent Leads, Widgets, SiteMap, Parcel Streams, DB Migration, and Cloud Migration."
+        ]
+      },
+      {
+        phase: "Marketing Strategy Implementation",
+        duration: "Ongoing",
+        activities: [
+          "Showcasing new items and getting new leads.",
+          "Highlighting differentiation from competitors.",
+          "Re-approaching agents and customers who stopped using RealtyTrac.",
+          "Providing 24/7 customer support."
+        ]
+      }
+    ],
+    keyTakeaways: [
+      "Continuous improvement of search functionality and user interface is vital for real estate platforms.",
+      "Strategic development of sister sites can significantly expand market reach and revenue.",
+      "Comprehensive QA and testing, including API and data migration testing, ensures platform stability and data integrity.",
+      "A robust marketing strategy is essential to showcase new features and re-engage the user base."
+    ],
+    nextSteps: [
+      "Continue to enhance property data accuracy and expand coverage.",
+      "Explore new technologies for advanced property search and visualization.",
+      "Further optimize marketing and customer engagement strategies."
+    ]
+  },
+  {
+    id: 9,
+    slug: "brandify-case-study",
+    title: "Brandify Case Study | Testriq QA Lab | QA for Digital Marketing",
+    client: "Brandify",
+    industry: "Digital Marketing",
+    duration: "Undisclosed",
+    description: "Brandify (formerly known as Where2GetIt) powers more than 300 brands and serves more than 4.5 million brick and mortar locations. Brandify has channel strength that reaches millions of consumers around the world.",
+    image: "/Brandify_Logo.png",
+    overview: {
+      clientBackground: "Brandify (formerly known as Where2GetIt) is an industry-leading provider of digital marketing solutions focused on locations that help brands communicate with their clients. It gathers data and delivers strategy and tailored solutions to help brands optimise their online presence and drive consumers to their locations.",
+      projectScope: "Comprehensive QA and testing for Brandify's digital marketing solutions, including mobile devices and voice search integration, local SEO, local ads, mobile-local technology, and local-social marketing tools. This involved testing the Brandify Dashboard and its various analytical features.",
+      teamSize: "Dedicated QA team with expertise in digital marketing platforms",
+      timeline: "Ongoing, with continuous updates and feature implementations"
+    },
+    challenge: {
+      title: "Integrating Emerging Technologies and Ensuring Data Accuracy",
+      description: "Brandify faced the challenge of integrating rapidly growing technologies like mobile devices and voice search, which were underutilized by brands. Additionally, ensuring the accuracy of data across various digital marketing channels and providing precise insights for brand optimization presented significant challenges.",
+      keyIssues: [
+        "Integrating mobile devices and voice search technologies.",
+        "Optimizing online presence and driving consumers to physical locations.",
+        "Ensuring data accuracy across local SEO, local ads, mobile-local technology, and local-social marketing tools.",
+        "Providing precise insights for improving Brand Score."
+      ],
+      businessImpact: "Failure to adapt to new technologies and provide accurate marketing insights would lead to loss of competitive edge and reduced effectiveness of digital marketing efforts for clients."
+    },
+    solution: {
+      title: "Robust QA for Digital Marketing Solutions and Strategic Integration",
+      description: "We adopted traditional industry QA standards, focusing on understanding actual company requirements and QA’ing them as required. This included writing and executing test cases, tracking them in TestRail, and ensuring seamless integration of new technologies like voice assist.",
+      approach: [
+        "Writing and executing test cases and tracking them in TestRail.",
+        "Understanding requirements and Epics by going over them and contacting developers over complications to minimize time delays and facilitate efficiency.",
+        "Participating in Stand-up calls to make sure daily progress is tracked.",
+        "Detailed description of bugs reported which includes Summary, Description, Steps to reproduce, Actual, Expected, Screenshot / Video, Device Details, OS Details, Priority / severity status.",
+        "Automating test cases which falls under regression testing making sure the basic functionality works whenever there is a release or change in code.",
+        "Testing APIs using PostMan Tool.",
+        "Deployment of code into different environments through Circle CI.",
+        "Database testing via PostgreSQL tools."
+      ],
+      methodology: "Agile QA methodology with a strong emphasis on continuous testing, detailed bug reporting, and automation for regression testing. This ensured rapid integration of new features and technologies.",
+      keyStrategies: [
+        "Integration of mobile devices and voice search technologies.",
+        "Development of Brandify Dashboard for comprehensive digital marketing management.",
+        "Analysis of various channels and categories to generate Brand Score.",
+        "Providing suggestions for improving Brand Score using technology and team insights."
+      ]
+    },
+    results: {
+      bugReduction: "Significant",
+      performanceImprovement: "Improved",
+      roi: "Enhanced",
+      additionalMetrics: [
+        { label: "Industry Recognition", value: "Named ‘Leading Location Technology for Marketing’ in Corporate Vision’s 2020 Corporate Excellence Awards" },
+        { label: "Client Reach", value: "Powers more than 300 brands and serves more than 4.5 million brick and mortar locations" }
+      ]
+    },
+    technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "TestRail", "Postman", "Circle CI", "PostgreSQL"],
+    testimonial: {
+      quote: "",
+      author: "",
+      role: "",
+      company: "Brandify",
+      rating: 5
+    },
+    timeline: [
+      {
+        phase: "Technology Integration & QA",
+        duration: "Ongoing",
+        activities: [
+          "Integrating mobile devices and voice search technologies.",
+          "Writing and executing test cases, tracking in TestRail.",
+          "Automating regression test cases."
+        ]
+      },
+      {
+        phase: "Platform Development & Testing",
+        duration: "Ongoing",
+        activities: [
+          "Developing and testing Brandify Dashboard features (online business listings, online reviews, keyword performance).",
+          "Testing APIs using Postman and performing database testing via PostgreSQL."
+        ]
+      },
+      {
+        phase: "Marketing Strategy & Optimization",
+        duration: "Ongoing",
+        activities: [
+          "Showcasing new items and getting new leads.",
+          "Highlighting differentiation from competitors.",
+          "Re-approaching agents and customers who stopped using RealtyTrac.",
+          "Providing 24/7 customer support."
+        ]
+      }
+    ],
+    keyTakeaways: [
+      "Proactive integration of emerging technologies is crucial for digital marketing platforms.",
+      "Comprehensive QA, including detailed bug reporting and automation, ensures platform reliability.",
+      "A centralized dashboard for digital marketing needs enhances client experience and provides actionable insights.",
+      "Industry recognition and strategic marketing are vital for establishing leadership in the digital marketing space."
+    ],
+    nextSteps: [
+      "Continue to explore and integrate new technologies for digital marketing.",
+      "Further enhance the Brandify Dashboard with advanced analytics and reporting.",
+      "Strengthen partnerships and expand market reach globally."
+    ]
   }
 ];
 
