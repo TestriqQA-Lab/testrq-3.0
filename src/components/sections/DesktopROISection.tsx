@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaDollarSign, FaClock, FaUsers, FaChartLine, FaShieldAlt, FaRocket } from "react-icons/fa";
 
@@ -51,6 +52,13 @@ const DesktopROISection: React.FC = () => {
       limitations: ["Full platform coverage", "No infrastructure costs", "Expert resources included"]
     }
   ];
+
+  const scrollToROICalculator = () => {
+    document.querySelector("#calculate-ROI")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <section className="bg-gradient-to-br from-blue-50 to-white py-16 px-8 md:px-12 lg:px-24">
@@ -175,7 +183,7 @@ const DesktopROISection: React.FC = () => {
         </div>
 
         {/* Business Impact */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div id="calculate-ROI" className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
@@ -264,12 +272,12 @@ const DesktopROISection: React.FC = () => {
               and achieved significant cost savings with Testriq.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+              <button onClick={scrollToROICalculator} className="px-8 py-3 bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                 Get ROI Analysis
               </button>
-              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
+              <Link href="/contact-us" className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
                 Schedule Demo
-              </button>
+              </Link>
             </div>
           </div>
         </div>
