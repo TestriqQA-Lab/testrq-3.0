@@ -90,14 +90,6 @@ const RoboticFAQs: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Have more questions about our robotic testing services?
-          </p>
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300 shadow-lg">
-            Contact Our Experts
-          </button>
-        </div>
       </div>
     </section>
   );

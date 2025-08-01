@@ -374,7 +374,7 @@ export default async function BlogPostPage({ params }: Props) {
     <div>
       <MainLayout>
         <BlogPostHeader post={post} />
-        <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 py-12">
+        <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <BlogPostContent post={post} />

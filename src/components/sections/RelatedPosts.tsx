@@ -22,13 +22,14 @@ interface RelatedPostsProps {
   currentPost: BlogPost;
 }
 
-const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
+const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
   // In a real application, this would be fetched based on the current post's category and tags
   const relatedPosts = [
     {
       id: 2,
       title: "Performance Testing Best Practices: Load Testing with JMeter",
-      excerpt: "Learn how to conduct effective performance testing using Apache JMeter for optimal application performance.",
+      excerpt:
+        "Learn how to conduct effective performance testing using Apache JMeter for optimal application performance.",
       category: "Performance Testing",
       categoryColor: "from-green-500 to-green-600",
       author: "Mike Chen",
@@ -38,12 +39,14 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
       image: "/api/placeholder/400/250",
       views: "8.2K",
       trending: true,
-      featured: false
+      featured: false,
     },
     {
       id: 3,
-      title: "Mobile App Security Testing: Protecting iOS and Android Applications",
-      excerpt: "Comprehensive guide to mobile app security testing covering OWASP Mobile Top 10 and penetration testing.",
+      title:
+        "Mobile App Security Testing: Protecting iOS and Android Applications",
+      excerpt:
+        "Comprehensive guide to mobile app security testing covering OWASP Mobile Top 10 and penetration testing.",
       category: "Security Testing",
       categoryColor: "from-red-500 to-red-600",
       author: "Alex Rodriguez",
@@ -53,12 +56,13 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
       image: "/api/placeholder/400/250",
       views: "15.3K",
       trending: false,
-      featured: true
+      featured: true,
     },
     {
       id: 4,
       title: "API Testing with Postman: From Basics to Advanced Automation",
-      excerpt: "Master API testing with Postman including collection creation, environment variables, and automated testing.",
+      excerpt:
+        "Master API testing with Postman including collection creation, environment variables, and automated testing.",
       category: "API Testing",
       categoryColor: "from-purple-500 to-purple-600",
       author: "Emily Davis",
@@ -68,8 +72,8 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
       image: "/api/placeholder/400/250",
       views: "9.7K",
       trending: true,
-      featured: false
-    }
+      featured: false,
+    },
   ];
 
   const popularPosts = [
@@ -78,29 +82,29 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
       title: "Cross-Browser Testing Strategies for Modern Web Applications",
       category: "Web Testing",
       readTime: "5 min read",
-      views: "6.1K"
+      views: "6.1K",
     },
     {
       id: 6,
       title: "Cypress vs Playwright: Choosing the Right E2E Testing Framework",
       category: "Test Automation",
       readTime: "9 min read",
-      views: "11.4K"
+      views: "11.4K",
     },
     {
       id: 7,
       title: "Cloud Testing Strategies: Testing in AWS, Azure, and GCP",
       category: "Cloud Testing",
       readTime: "12 min read",
-      views: "7.8K"
+      views: "7.8K",
     },
     {
       id: 8,
       title: "Test Data Management: Best Practices for QA Teams",
       category: "QA Management",
       readTime: "6 min read",
-      views: "5.3K"
-    }
+      views: "5.3K",
+    },
   ];
 
   return (
@@ -110,10 +114,12 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <FaStar className="w-6 h-6 text-yellow-500" />
-            <h2 className="text-2xl font-bold text-gray-900">Related Articles</h2>
+            <h2 className="text-2xl font-bold text-gray-900">
+              Related Articles
+            </h2>
             <span className="text-gray-500">Based on your reading</span>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {relatedPosts.map((post) => (
               <article
@@ -124,10 +130,14 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
                   <Image
                     src={post.image}
                     alt={post.title}
+                    width={400}
+                    height={250}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}>
+                    <span
+                      className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}
+                    >
                       {post.category}
                     </span>
                   </div>
@@ -143,22 +153,24 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
                     </div>
                   )}
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
                     {post.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
-                  
+
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3 text-sm text-gray-500">
                       <div className="flex items-center gap-2">
                         <Image
                           src={post.authorImage}
                           alt={post.author}
+                          width={400}
+                          height={250}
                           className="w-5 h-5 rounded-full"
                         />
                         <span>{post.author}</span>
@@ -168,7 +180,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
                         <span>{post.readTime}</span>
                       </div>
                     </div>
-                    
+
                     <Link
                       href={`/blog/post-${post.id}`}
                       className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
@@ -188,9 +200,11 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-8">
               <FaFire className="w-6 h-6 text-red-500" />
-              <h2 className="text-2xl font-bold text-gray-900">Popular This Week</h2>
+              <h2 className="text-2xl font-bold text-gray-900">
+                Popular This Week
+              </h2>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {popularPosts.map((post, index) => (
                 <Link
@@ -222,9 +236,10 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
           <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-xl p-8 text-white h-fit">
             <h3 className="text-xl font-bold mb-4">Never Miss an Update</h3>
             <p className="text-blue-100 mb-6">
-              Get the latest testing insights and tutorials delivered directly to your inbox.
+              Get the latest testing insights and tutorials delivered directly
+              to your inbox.
             </p>
-            
+
             <div className="space-y-4">
               <input
                 type="email"
@@ -235,7 +250,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
                 Subscribe Now
               </button>
             </div>
-            
+
             <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white border-opacity-20">
               <div className="text-center">
                 <div className="text-2xl font-bold">10K+</div>
@@ -259,8 +274,9 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
             Want to explore more testing topics?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Browse our comprehensive collection of software testing articles, tutorials, and best practices 
-            to enhance your QA skills and stay updated with the latest industry trends.
+            Browse our comprehensive collection of software testing articles,
+            tutorials, and best practices to enhance your QA skills and stay
+            updated with the latest industry trends.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
@@ -283,4 +299,3 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ }) => {
 };
 
 export default RelatedPosts;
-

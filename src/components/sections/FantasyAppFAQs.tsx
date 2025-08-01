@@ -64,6 +64,11 @@ const FantasyAppFAQs = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <span className="text-sm">
+              ● Frequently Asked Questions
+            </span>
+          </div>
           <div className="flex items-center justify-center gap-3 mb-6">
             <HelpCircle className="w-8 h-8 text-brand-blue" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">

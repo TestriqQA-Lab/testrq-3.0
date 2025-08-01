@@ -1,14 +1,22 @@
 import React from "react";
-import { FaArrowRight, FaPlay, FaCogs, FaRocket, FaShieldAlt } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaPlay,
+  FaCogs,
+  FaRocket,
+  FaShieldAlt,
+  FaTools,
+} from "react-icons/fa";
 
 const ToolsHeroSection = () => {
   return (
     <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-        <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-base md:text-sm px-5 py-2 rounded-full mb-4">
-          Advanced Testing Arsenal
-        </span>
+        <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
+          <FaTools  />
+          <span className="text-sm">Advanced Testing Arsenal</span>
+        </div>
 
         <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Cutting-Edge{" "}
@@ -24,8 +32,12 @@ const ToolsHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Discover our comprehensive suite of industry-leading testing tools and frameworks. From Selenium, Cypress, and Playwright to specialized healthcare testing solutions, we leverage the most advanced QA automation technologies to ensure your software meets the highest quality standards, achieves regulatory compliance, and delivers reliable performance across platforms.
-
+          Discover our comprehensive suite of industry-leading testing tools and
+          frameworks. From Selenium, Cypress, and Playwright to specialized
+          healthcare testing solutions, we leverage the most advanced QA
+          automation technologies to ensure your software meets the highest
+          quality standards, achieves regulatory compliance, and delivers
+          reliable performance across platforms.
         </p>
 
         {/* CTAs */}
@@ -81,4 +93,3 @@ const ToolsHeroSection = () => {
 };
 
 export default ToolsHeroSection;
-

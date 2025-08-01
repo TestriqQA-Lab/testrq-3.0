@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 
@@ -98,9 +99,11 @@ const IoTCardSlider: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Get Comprehensive IoT Testing
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
+              Get Comprehensive IoT Testing
+            </button>
+          </Link>
         </div>
       </div>
     </section>

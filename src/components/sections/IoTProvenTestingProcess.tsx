@@ -7,7 +7,6 @@ import {
   FaChartLine,
   FaCheckCircle,
   FaArrowRight,
-  FaPlay,
 } from "react-icons/fa";
 
 const IoTProvenTestingProcess: React.FC = () => {
@@ -397,13 +396,6 @@ const IoTProvenTestingProcess: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <button className="flex items-center gap-2 mx-auto bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300 shadow-lg">
-            <FaPlay className="w-4 h-4" />
-            <span>Learn More About Our Process</span>
-          </button>
-        </div>
       </div>
     </section>
   );

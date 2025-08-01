@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaPhone,
@@ -48,15 +49,15 @@ const ContactHeroSection: React.FC = () => {
     {
       icon: FaPhone,
       label: "Call Now",
-      value: "+1 (555) 012-3456",
-      action: "tel:+15550123456",
+      value: "(+91) 915-2929-343",
+      action: "tel:(+91) 915-2929-343",
       color: "bg-green-500",
     },
     {
       icon: FaEnvelope,
       label: "Email Us",
-      value: "hello@testriq.com",
-      action: "mailto:hello@testriq.com",
+      value: "contact@testriq.com",
+      action: "mailto:contact@testriq.com",
       color: "bg-blue-500",
     },
     {
@@ -68,19 +69,29 @@ const ContactHeroSection: React.FC = () => {
     },
   ];
 
+   const scrollToCalendly = () => {
+    const element = document.getElementById("calendly-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <section className="relative bg-white py-8 lg:py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
+    <section
+      id="form-section"
+      className="relative bg-white py-8 lg:py-16 px-8 md:px-12 lg:px-24 overflow-hidden"
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-60"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[theme(color.brand.blue)] to-sky-600 opacity-10 rounded-full transform translate-x-48 -translate-y-48 animate-pulse"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-400 to-sky-600 opacity-10 rounded-full transform -translate-x-32 translate-y-32 animate-pulse"></div>
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Content */}
-          <div className="space-y-8">
+          <div>
             <div>
-              <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+              <div className="inline-flex gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
                 <FaComments className="w-4 h-4 text-white" />
                 <span className="text-sm font-medium text-white">
                   Get in Touch
@@ -95,8 +106,9 @@ const ContactHeroSection: React.FC = () => {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Connect with our QA experts for software testing consultation, support, or partnerships. Achieve quality excellence with our automation, manual, and performance testing services.
-
+                Connect with our QA experts for software testing consultation,
+                support, or partnerships. Achieve quality excellence with our
+                automation, manual, and performance testing services.
               </p>
             </div>
 
@@ -110,6 +122,12 @@ const ContactHeroSection: React.FC = () => {
                   <a
                     key={index}
                     href={method.action}
+                    onClick={(e) => {
+                      if (method.label === "Schedule Meeting") {
+                        e.preventDefault(); // Prevent default link behavior
+                        scrollToCalendly(); // Trigger smooth scroll
+                      }
+                    }}
                     className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                   >
                     <div
@@ -286,8 +304,11 @@ const ContactHeroSection: React.FC = () => {
                 </button>
 
                 <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our Privacy Policy.
-                  We&apos;ll never share your information.
+                  By submitting this form, you agree to our{" "}
+                  <Link href="/privacy-policy" className="text-brand-blue">
+                    Privacy Policy
+                  </Link>
+                  . We&apos;ll never share your information.
                 </p>
               </form>
             )}

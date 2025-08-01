@@ -64,11 +64,11 @@ const company = [
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gray-100 border-t border-gray-200 py-16 px-8 md:px-12 lg:px-24">
+      <div className="mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Information */}
-          <div className="space-y-4">
+          <div className="space-y-4 xl:mr-10">
             <div className="flex items-center space-x-2">
               <Image src={Logo} alt='Testriq_Logo' width={150} />
             </div>

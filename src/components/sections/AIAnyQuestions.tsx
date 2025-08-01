@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaPhone, FaEnvelope, FaComments, FaArrowRight } from "react-icons/fa";
 
@@ -9,21 +10,24 @@ const AIAnyQuestions: React.FC = () => {
       icon: <FaPhone className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "AI Expert Consultation",
       description: "Speak directly with our AI testing specialists",
-      action: "Call Now",
-      contact: "+1 (555) 123-4567",
+      text: "Call Now",
+      action: "tel:(+91) 915-2929-343",
+      contact: "(+91) 915-2929-343",
     },
     {
       icon: <FaEnvelope className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "AI Testing Support",
       description: "Get detailed responses about AI testing",
-      action: "Send Email",
-      contact: "ai-testing@testriq.com",
+      text: "Send Email",
+      action: "mailto:contact@testriq.com",
+      contact: "contact@testriq.com",
     },
     {
       icon: <FaComments className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Live AI Chat",
       description: "Instant support from our AI experts",
-      action: "Start Chat",
+      text: "Start Chat",
+      action: "#",
       contact: "Available 24/7",
     },
   ];
@@ -38,7 +42,9 @@ const AIAnyQuestions: React.FC = () => {
             About AI Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our AI testing specialists are here to help. Get in touch with us to discuss your specific AI requirements and learn how we can ensure your AI systems are accurate, fair, and reliable.
+            Our AI testing specialists are here to help. Get in touch with us to
+            discuss your specific AI requirements and learn how we can ensure
+            your AI systems are accurate, fair, and reliable.
           </p>
         </div>
 
@@ -60,10 +66,12 @@ const AIAnyQuestions: React.FC = () => {
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
-              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
-                <span>{method.action}</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <Link href={method.action}>
+                <button className="flex cursor-pointer items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
+                  <span>{method.text}</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -73,7 +81,9 @@ const AIAnyQuestions: React.FC = () => {
             Ready to Test Your AI?
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Join 150+ companies who trust our AI testing expertise. Schedule a free consultation to discuss your AI testing needs and get a customized solution for your AI project.
+            Join 150+ companies who trust our AI testing expertise. Schedule a
+            free consultation to discuss your AI testing needs and get a
+            customized solution for your AI project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <button className="flex items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:bg-blue-400 transition-colors duration-300">

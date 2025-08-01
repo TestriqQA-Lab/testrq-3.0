@@ -6,6 +6,7 @@ import { FaMobile, FaApple } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
+import Link from "next/link";
 
 const MobileTestingHeroSection: React.FC = () => {
   return (
@@ -15,9 +16,7 @@ const MobileTestingHeroSection: React.FC = () => {
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaMobile />
-            <span className="text-sm">
-              Mobile Application Testing Experts
-            </span>
+            <span className="text-sm">Mobile Application Testing Experts</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
@@ -29,14 +28,20 @@ const MobileTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your mobile applications deliver seamless user experiences and top performance across all platforms. From Android to iOS, our mobile app testing services include functionality testing, performance, usability, and mobile security testing — for every device and scenario.
+            Ensure your mobile applications deliver seamless user experiences
+            and top performance across all platforms. From Android to iOS, our
+            mobile app testing services include functionality testing,
+            performance, usability, and mobile security testing — for every
+            device and scenario.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
-            <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
-              <span className="text-base">Get Started Today</span>
-              <FaArrowRight className="w-4 h-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
+                <span className="text-base">Get Started Today</span>
+                <FaArrowRight className="w-4 h-5" />
+              </button>
+            </Link>
             <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
               <FaPlay className="w-4 h-4" />
               Watch Demo

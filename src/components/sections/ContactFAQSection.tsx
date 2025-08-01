@@ -15,7 +15,7 @@ const ContactFAQSection: React.FC = () => {
     {
       question: "What's the best way to contact Testriq for urgent issues?",
       answer:
-        "For urgent QA issues, we recommend calling our direct support line at +1 (555) 012-3456 during business hours (9 AM – 6 PM EST). For critical production issues, our 24/7 emergency QA support is available. You can also use our live chat for immediate QA assistance with software testing, bug resolution, or deployment-related incidents.",
+        "For urgent QA issues, we recommend calling our direct support line at (+91) 915-2929-343 during business hours (9 AM – 6 PM EST). For critical production issues, our 24/7 emergency QA support is available. You can also use our live chat for immediate QA assistance with software testing, bug resolution, or deployment-related incidents.",
     },
     {
       question: "How quickly can I expect a response to my inquiry?",
@@ -56,6 +56,20 @@ const ContactFAQSection: React.FC = () => {
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  const scrollToCalendly = () => {
+    document.querySelector("#calendly-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const scrollToForm = () => {
+    document.querySelector("#form-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
@@ -127,16 +141,23 @@ const ContactFAQSection: React.FC = () => {
           <FaLightbulb className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
           <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Can&apos;t find the answer youre looking for? Our team is here to help!
-            Reach out through any of our contact methods and we&apos;ll get back to
-            you promptly.
+            Can&apos;t find the answer youre looking for? Our team is here to
+            help! Reach out through any of our contact methods and we&apos;ll
+            get back to you promptly.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
+            <button
+              onClick={scrollToForm}
+              className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-98 transition-all"
+            >
               Contact Support
             </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+
+            <button
+              onClick={scrollToCalendly}
+              className="bg-white cursor-pointer bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30"
+            > 
               Schedule a Call
             </button>
           </div>

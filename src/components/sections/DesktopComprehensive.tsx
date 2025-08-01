@@ -87,6 +87,12 @@ const DesktopComprehensive: React.FC = () => {
       ],
     },
   ];
+  const scrollToProcess = () => {
+    document.querySelector("#desktop-process-section")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
     <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
@@ -95,9 +101,7 @@ const DesktopComprehensive: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Complete Desktop Application{" "}
@@ -165,7 +169,10 @@ const DesktopComprehensive: React.FC = () => {
                   Start Free Consultation
                 </button>
               </Link>
-              <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+              <button
+                onClick={scrollToProcess}
+                className="px-8 py-3 border cursor-pointer border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              >
                 View Testing Process
               </button>
             </div>

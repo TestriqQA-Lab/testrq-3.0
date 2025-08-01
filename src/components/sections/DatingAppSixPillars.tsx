@@ -11,6 +11,7 @@ import {
   BarChart3,
   CheckCircle,
 } from "lucide-react";
+import { FaFlask } from "react-icons/fa";
 
 const DatingAppSixPillars = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
@@ -106,6 +107,12 @@ const DatingAppSixPillars = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Six Pillars of{" "}
             <span className="text-brand-blue">Trust Certification</span>

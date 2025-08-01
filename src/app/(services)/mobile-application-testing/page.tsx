@@ -170,17 +170,6 @@ const MobileFAQs = dynamic(() => import("@/components/sections/MobileFAQs"), {
   ),
 });
 
-const MobileAnyQuestions = dynamic(
-  () => import("@/components/sections/MobileAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const MobileComprehensiveSlider = dynamic(
   () => import("@/components/sections/MobileComprehensiveSlider"),
@@ -227,7 +216,6 @@ export default function MobileAppTesting() {
         <MobileROISection />
         <MobileCaseStudies />
         <MobileFAQs />
-        <MobileAnyQuestions />
       </MainLayout>
     </div>
   );

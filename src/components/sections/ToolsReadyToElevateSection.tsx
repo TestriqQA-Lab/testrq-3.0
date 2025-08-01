@@ -53,7 +53,7 @@ const ToolsReadyToElevateSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main CTA Section */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-sky-700 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
+          <span className="inline-block bg-brand-blue text-white text-sm px-4 py-2 rounded-full mb-6">
             Ready to Get Started?
           </span>
           

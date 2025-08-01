@@ -1,12 +1,9 @@
 "use client";
 
 import React from "react";
-import {
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactOfficeSection: React.FC = () => {
-
   return (
     <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -21,9 +18,7 @@ const ContactOfficeSection: React.FC = () => {
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Find Us on the
-            <span className="block text-[theme(color.brand.blue)]">
-              Map
-            </span>
+            <span className="text-[theme(color.brand.blue)]"> Map</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -34,31 +29,14 @@ const ContactOfficeSection: React.FC = () => {
 
         {/* Map Section */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
-
-
           {/* Map Placeholder */}
           <div className="border border-gray-100 text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.7500774953623!2d72.86865987521085!3d19.29323168195653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7ece4b10029%3A0x8c6764bbc8ed8026!2sTESTRIQ%20Software%20Testing%20and%20Quality%20Assurance%20Services%20Company!5e0!3m2!1sen!2sin!4v1753344577666!5m2!1sen!2sin" width="1230" height="450" loading="lazy"></iframe>
-
-
-          </div>
-        </div>
-
-        {/* Contact CTA */}
-        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Ready to Connect?</h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            No matter where you&apos;re located, our global team is ready to support
-            your QA needs. Choose the contact method that works best for you.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
-              Schedule a Meeting
-            </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-              Send a Message
-            </button>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.7500774953623!2d72.86865987521085!3d19.29323168195653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7ece4b10029%3A0x8c6764bbc8ed8026!2sTESTRIQ%20Software%20Testing%20and%20Quality%20Assurance%20Services%20Company!5e0!3m2!1sen!2sin!4v1753344577666!5m2!1sen!2sin"
+              width="1230"
+              height="450"
+              loading="lazy"
+            ></iframe>
           </div>
         </div>
       </div>

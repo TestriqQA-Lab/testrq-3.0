@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -9,48 +10,59 @@ const MobileFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of mobile applications do you test?",
-      answer: "We test all types of mobile applications including native iOS and Android apps, cross-platform apps (React Native, Flutter, Xamarin), hybrid apps (Ionic, Cordova), mobile games, enterprise apps, e-commerce apps, and progressive web apps (PWAs). Our expertise covers consumer apps, business applications, and specialized industry solutions."
+      answer:
+        "We test all types of mobile applications including native iOS and Android apps, cross-platform apps (React Native, Flutter, Xamarin), hybrid apps (Ionic, Cordova), mobile games, enterprise apps, e-commerce apps, and progressive web apps (PWAs). Our expertise covers consumer apps, business applications, and specialized industry solutions.",
     },
     {
       question: "Which devices and operating systems do you support?",
-      answer: "We support over 50 real devices, including iPhone (6s to 15 Pro Max), iPad, Samsung Galaxy, Google Pixel, OnePlus, Xiaomi, Huawei, tablets, and foldables. OS versions include iOS 12.0-17.x, iPadOS 13.0-17.x, watchOS 6.0-10.x, tvOS 13.0-17.x, and Android 7.0-14.0, plus Wear OS and Android TV."
+      answer:
+        "We support over 50 real devices, including iPhone (6s to 15 Pro Max), iPad, Samsung Galaxy, Google Pixel, OnePlus, Xiaomi, Huawei, tablets, and foldables. OS versions include iOS 12.0-17.x, iPadOS 13.0-17.x, watchOS 6.0-10.x, tvOS 13.0-17.x, and Android 7.0-14.0, plus Wear OS and Android TV.",
     },
     {
       question: "How long does mobile application testing typically take?",
-      answer: "Testing typically takes 7-14 days, with test execution spanning 3-5 days. Rapid turnaround options deliver results in 12-24 hours for urgent projects, depending on app complexity."
+      answer:
+        "Testing typically takes 7-14 days, with test execution spanning 3-5 days. Rapid turnaround options deliver results in 12-24 hours for urgent projects, depending on app complexity.",
     },
     {
       question: "Do you provide automated testing for mobile applications?",
-      answer: "Yes, we implement automated testing using tools like Appium, integrating with CI/CD pipelines for regression testing, cross-platform automation, and continuous testing to accelerate release cycles."
+      answer:
+        "Yes, we implement automated testing using tools like Appium, integrating with CI/CD pipelines for regression testing, cross-platform automation, and continuous testing to accelerate release cycles.",
     },
     {
       question: "What security testing do you perform on mobile applications?",
-      answer: "We conduct penetration testing, data encryption validation, authentication testing, and OWASP compliance checks to protect apps from vulnerabilities and ensure data privacy."
+      answer:
+        "We conduct penetration testing, data encryption validation, authentication testing, and OWASP compliance checks to protect apps from vulnerabilities and ensure data privacy.",
     },
     {
       question: "Do you ensure app store compliance?",
-      answer: "Yes, we validate apps against App Store and Google Play guidelines, including TestFlight beta testing for iOS and Google Play Store compliance, achieving a 99.5% first-submission approval rate."
+      answer:
+        "Yes, we validate apps against App Store and Google Play guidelines, including TestFlight beta testing for iOS and Google Play Store compliance, achieving a 99.5% first-submission approval rate.",
     },
     {
       question: "Can you test mobile apps with backend integrations and APIs?",
-      answer: "Yes, we test mobile apps with backend integrations, validating APIs, data synchronization, payment gateways, push notifications, and connectivity with cloud or on-premise servers."
+      answer:
+        "Yes, we test mobile apps with backend integrations, validating APIs, data synchronization, payment gateways, push notifications, and connectivity with cloud or on-premise servers.",
     },
     {
       question: "Do you provide performance testing for mobile applications?",
-      answer: "Yes, we conduct comprehensive mobile performance testing including load testing, battery usage analysis, memory optimization, CPU performance, network performance testing, and app startup time optimization. We test under various device conditions and provide detailed performance reports with optimization recommendations."
+      answer:
+        "Yes, we conduct comprehensive mobile performance testing including load testing, battery usage analysis, memory optimization, CPU performance, network performance testing, and app startup time optimization. We test under various device conditions and provide detailed performance reports with optimization recommendations.",
     },
     {
       question: "What deliverables do you provide after mobile testing?",
-      answer: "We provide detailed test reports, including bug logs with reproduction steps, screenshots, performance metrics, security findings, compatibility results, and optimization recommendations."
+      answer:
+        "We provide detailed test reports, including bug logs with reproduction steps, screenshots, performance metrics, security findings, compatibility results, and optimization recommendations.",
     },
     {
       question: "Do you offer post-launch support and monitoring?",
-      answer: "Yes, we offer post-launch support, including maintenance testing, regression testing for updates, crash monitoring, and 24/7 support to ensure ongoing app performance."
+      answer:
+        "Yes, we offer post-launch support, including maintenance testing, regression testing for updates, crash monitoring, and 24/7 support to ensure ongoing app performance.",
     },
     {
       question: "How do you ensure app data confidentiality?",
-      answer: "We ensure confidentiality through NDAs, secure testing environments, encrypted data handling, and compliance with standards like OWASP and GDPR."
-    }
+      answer:
+        "We ensure confidentiality through NDAs, secure testing environments, encrypted data handling, and compliance with standards like OWASP and GDPR.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -63,16 +75,16 @@ const MobileFAQs: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <span className="text-sm">
-              ● Frequently Asked Questions
-            </span>
+            <span className="text-sm">● Frequently Asked Questions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing{" "}
             <span className="text-[theme(color.brand.blue)]">FAQs</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Get expert answers to common questions about mobile application testing services, QA processes, test automation, real device testing, and app store compliance for iOS and Android apps.
+            Get expert answers to common questions about mobile application
+            testing services, QA processes, test automation, real device
+            testing, and app store compliance for iOS and Android apps.
           </p>
         </div>
 
@@ -119,16 +131,16 @@ const MobileFAQs: React.FC = () => {
               Still Have Questions About Mobile Testing?
             </h3>
             <p className="text-gray-600 mb-6">
-              Our mobile testing experts are here to help. Get personalized answers
-              to your specific mobile app testing requirements and challenges.
+              Our mobile testing experts are here to help. Get personalized
+              answers to your specific mobile app testing requirements and
+              challenges.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
-                Schedule Mobile Consultation
-              </button>
-              <button className="px-8 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                Contact Mobile Experts
-              </button>
+              <Link href="/contact-us">
+                <button className="px-8 py-3 cursor-pointer border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors">
+                  Schedule Mobile Consultation
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -137,32 +149,48 @@ const MobileFAQs: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">📱</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                📱
+              </span>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Mobile Testing Hotline</h4>
-            <p className="text-gray-600 text-sm">Direct line to mobile experts</p>
+            <h4 className="font-semibold text-gray-900 mb-2">
+              Mobile Testing Hotline
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Direct line to mobile experts
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-              +1 (555) 123-MOBILE
+              (+91) 915-2929-343
             </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">📧</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                📧
+              </span>
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Mobile Testing Email</h4>
-            <p className="text-gray-600 text-sm">Detailed mobile testing inquiries</p>
+            <h4 className="font-semibold text-gray-900 mb-2">
+              Mobile Testing Email
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Detailed mobile testing inquiries
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
-              mobile@testriq.com
+              contact@testriq.com
             </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">🚀</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                🚀
+              </span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Quick Start</h4>
-            <p className="text-gray-600 text-sm">Get testing started in 24 hours</p>
+            <p className="text-gray-600 text-sm">
+              Get testing started in 24 hours
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
               Express Testing Available
             </p>
@@ -174,4 +202,3 @@ const MobileFAQs: React.FC = () => {
 };
 
 export default MobileFAQs;
-

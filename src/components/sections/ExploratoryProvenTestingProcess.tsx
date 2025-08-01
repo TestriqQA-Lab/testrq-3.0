@@ -193,7 +193,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
                     </div>
                     {step.id === activeStep && (
                       <div className="text-green-600 animate-pulse">
-                        <FaSearch />
+                        {steps[activeStep - 1].icon}
                       </div>
                     )}
                   </div>

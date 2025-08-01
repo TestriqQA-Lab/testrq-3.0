@@ -2,6 +2,7 @@
 import { FaNetworkWired, FaWifi } from "react-icons/fa";
 import React from "react";
 import { FaArrowRight, FaPlay, FaCertificate } from "react-icons/fa";
+import Link from "next/link";
 
 const IoTTestingHeroSection: React.FC = () => {
   return (
@@ -11,9 +12,7 @@ const IoTTestingHeroSection: React.FC = () => {
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaNetworkWired />
-            <span className="text-sm">
-              IoT Device Testing Experts
-            </span>
+            <span className="text-sm">IoT Device Testing Experts</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
@@ -25,14 +24,20 @@ const IoTTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your IoT devices deliver seamless connectivity, high performance, and secure communication with our systematic IoT testing services. From smart home devices to industrial IoT systems, we validate every layer, including hardware, protocols, and cloud integrations for end-to-end reliability and security.
+            Ensure your IoT devices deliver seamless connectivity, high
+            performance, and secure communication with our systematic IoT
+            testing services. From smart home devices to industrial IoT systems,
+            we validate every layer, including hardware, protocols, and cloud
+            integrations for end-to-end reliability and security.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
-            <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
-              <span className="text-base">Get Started Today</span>
-              <FaArrowRight className="w-4 h-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="flex items-center cursor-pointer gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
+                <span className="text-base">Get Started Today</span>
+                <FaArrowRight className="w-4 h-5" />
+              </button>
+            </Link>
             <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
               <FaPlay className="w-4 h-4" />
               Watch Demo

@@ -7,7 +7,6 @@ import {
   FaChartLine,
   FaCheckCircle,
   FaArrowRight,
-  FaPlay,
 } from "react-icons/fa";
 
 const AIProvenTestingProcess: React.FC = () => {
@@ -137,7 +136,7 @@ const AIProvenTestingProcess: React.FC = () => {
                     {/* Connection Lines (Synapses) */}
                     {index < steps.length - 1 && (
                       <div
-                        className="absolute top-10 left-20 flex items-center"
+                        className="pl-2 absolute top-10 left-20 flex items-center"
                         style={{ width: "calc(100vw / 4 - 5rem)" }}
                       >
                         {/* Multiple connection lines for neural network effect */}
@@ -178,19 +177,6 @@ const AIProvenTestingProcess: React.FC = () => {
                 ))}
               </div>
 
-              {/* AI Brain Visualization */}
-              <div className="flex justify-center">
-                <div className="relative">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white shadow-lg">
-                    <FaBrain className="w-8 h-8" />
-                  </div>
-                  <div className="absolute inset-0 rounded-full border-2 border-purple-300 animate-ping opacity-30"></div>
-                  <div
-                    className="absolute inset-0 rounded-full border-2 border-indigo-300 animate-ping opacity-20"
-                    style={{ animationDelay: "0.5s" }}
-                  ></div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -411,13 +397,6 @@ const AIProvenTestingProcess: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <button className="flex items-center gap-2 mx-auto bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300 shadow-lg">
-            <FaPlay className="w-4 h-4" />
-            <span>Learn More About Our Process</span>
-          </button>
-        </div>
       </div>
     </section>
   );

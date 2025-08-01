@@ -1,61 +1,128 @@
 import React from "react";
+import { FaCube } from "react-icons/fa";
 
 const ToolsFrameworksSection = () => {
   const frameworks = [
     {
       name: "Selenium WebDriver",
       category: "Web Automation",
-      description: "Industry-standard web application testing framework supporting multiple browsers and programming languages",
-      features: ["Cross-browser testing", "Multi-language support", "Grid execution", "Parallel testing"],
-      useCases: ["Regression testing", "Cross-browser validation", "E2E testing", "CI/CD integration"],
+      description:
+        "Industry-standard web application testing framework supporting multiple browsers and programming languages",
+      features: [
+        "Cross-browser testing",
+        "Multi-language support",
+        "Grid execution",
+        "Parallel testing",
+      ],
+      useCases: [
+        "Regression testing",
+        "Cross-browser validation",
+        "E2E testing",
+        "CI/CD integration",
+      ],
       logo: "🔧",
-      popularity: "Most Popular"
+      popularity: "Most Popular",
     },
     {
       name: "Cypress",
       category: "Modern Web Testing",
-      description: "Next-generation testing framework built for modern web applications with real-time browser testing",
-      features: ["Real-time reloads", "Time travel debugging", "Network traffic control", "Screenshot/video capture"],
-      useCases: ["Component testing", "E2E testing", "API testing", "Visual testing"],
+      description:
+        "Next-generation testing framework built for modern web applications with real-time browser testing",
+      features: [
+        "Real-time reloads",
+        "Time travel debugging",
+        "Network traffic control",
+        "Screenshot/video capture",
+      ],
+      useCases: [
+        "Component testing",
+        "E2E testing",
+        "API testing",
+        "Visual testing",
+      ],
       logo: "🌲",
-      popularity: "Developer Favorite"
+      popularity: "Developer Favorite",
     },
     {
       name: "Playwright",
       category: "Cross-Browser Automation",
-      description: "Microsoft's modern automation framework for reliable end-to-end testing across all browsers",
-      features: ["Auto-wait capabilities", "Mobile testing", "API testing", "Codegen tool"],
-      useCases: ["Multi-browser testing", "Mobile web testing", "API validation", "Performance testing"],
+      description:
+        "Microsoft's modern automation framework for reliable end-to-end testing across all browsers",
+      features: [
+        "Auto-wait capabilities",
+        "Mobile testing",
+        "API testing",
+        "Codegen tool",
+      ],
+      useCases: [
+        "Multi-browser testing",
+        "Mobile web testing",
+        "API validation",
+        "Performance testing",
+      ],
       logo: "🎭",
-      popularity: "Fastest Growing"
+      popularity: "Fastest Growing",
     },
     {
       name: "Appium",
       category: "Mobile Testing",
-      description: "Open-source mobile application testing framework for native, hybrid, and mobile web apps",
-      features: ["Cross-platform support", "Real device testing", "Cloud integration", "Parallel execution"],
-      useCases: ["Mobile app testing", "Cross-platform validation", "Device farm integration", "Continuous testing"],
+      description:
+        "Open-source mobile application testing framework for native, hybrid, and mobile web apps",
+      features: [
+        "Cross-platform support",
+        "Real device testing",
+        "Cloud integration",
+        "Parallel execution",
+      ],
+      useCases: [
+        "Mobile app testing",
+        "Cross-platform validation",
+        "Device farm integration",
+        "Continuous testing",
+      ],
       logo: "📱",
-      popularity: "Mobile Leader"
+      popularity: "Mobile Leader",
     },
     {
       name: "TestCafe",
       category: "Node.js Testing",
-      description: "Node.js-based testing framework that works without WebDriver and supports all browsers",
-      features: ["No WebDriver needed", "Concurrent testing", "Smart assertions", "Built-in wait mechanisms"],
-      useCases: ["JavaScript testing", "Concurrent execution", "CI/CD pipelines", "Headless testing"],
+      description:
+        "Node.js-based testing framework that works without WebDriver and supports all browsers",
+      features: [
+        "No WebDriver needed",
+        "Concurrent testing",
+        "Smart assertions",
+        "Built-in wait mechanisms",
+      ],
+      useCases: [
+        "JavaScript testing",
+        "Concurrent execution",
+        "CI/CD pipelines",
+        "Headless testing",
+      ],
       logo: "☕",
-      popularity: "Zero Config"
+      popularity: "Zero Config",
     },
     {
       name: "Robot Framework",
       category: "Keyword-Driven Testing",
-      description: "Generic automation framework using keyword-driven approach for acceptance testing",
-      features: ["Keyword-driven", "Extensible libraries", "Rich ecosystem", "Detailed reporting"],
-      useCases: ["Acceptance testing", "RPA automation", "API testing", "Database testing"],
+      description:
+        "Generic automation framework using keyword-driven approach for acceptance testing",
+      features: [
+        "Keyword-driven",
+        "Extensible libraries",
+        "Rich ecosystem",
+        "Detailed reporting",
+      ],
+      useCases: [
+        "Acceptance testing",
+        "RPA automation",
+        "API testing",
+        "Database testing",
+      ],
       logo: "🤖",
-      popularity: "Enterprise Choice"
-    }
+      popularity: "Enterprise Choice",
+    },
   ];
 
   return (
@@ -63,16 +130,22 @@ const ToolsFrameworksSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="inline-block bg-blue-100 text-[theme(color.brand.blue)] text-sm px-4 py-2 rounded-full mb-4">
-            Leading Frameworks
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
+            <FaCube  />
+            <span className="text-sm">Leading Frameworks</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Industry-Leading{" "}
-            <span className="text-[theme(color.brand.blue)]">Testing Frameworks</span>
+            <span className="text-[theme(color.brand.blue)]">
+              Testing Frameworks
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage the most advanced and reliable testing frameworks in the industry to deliver comprehensive software quality assurance solutions for your projects—covering functional testing, automation testing, API validation, performance benchmarking, and security assurance with tools like Selenium, Cypress, JMeter, and Postman.
-
+            We leverage the most advanced and reliable testing frameworks in the
+            industry to deliver comprehensive software quality assurance
+            solutions for your projects—covering functional testing, automation
+            testing, API validation, performance benchmarking, and security
+            assurance with tools like Selenium, Cypress, JMeter, and Postman.
           </p>
         </div>
 
@@ -88,8 +161,12 @@ const ToolsFrameworksSection = () => {
                 <div className="flex items-center gap-4">
                   <div className="text-4xl">{framework.logo}</div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{framework.name}</h3>
-                    <span className="text-sm text-gray-600">{framework.category}</span>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {framework.name}
+                    </h3>
+                    <span className="text-sm text-gray-600">
+                      {framework.category}
+                    </span>
                   </div>
                 </div>
                 <span className="bg-[theme(color.brand.blue)] text-white text-xs px-3 py-1 rounded-full">
@@ -104,7 +181,9 @@ const ToolsFrameworksSection = () => {
 
               {/* Features */}
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-800 mb-3">Key Features:</h4>
+                <h4 className="text-sm font-semibold text-gray-800 mb-3">
+                  Key Features:
+                </h4>
                 <div className="grid grid-cols-2 gap-2">
                   {framework.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
@@ -117,7 +196,9 @@ const ToolsFrameworksSection = () => {
 
               {/* Use Cases */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-800 mb-3">Use Cases:</h4>
+                <h4 className="text-sm font-semibold text-gray-800 mb-3">
+                  Use Cases:
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {framework.useCases.map((useCase, useCaseIndex) => (
                     <span
@@ -143,27 +224,36 @@ const ToolsFrameworksSection = () => {
               <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">🎯</span>
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">Right Tool Selection</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">
+                Right Tool Selection
+              </h4>
               <p className="text-gray-600 text-sm">
-                We analyze your project requirements to select the most suitable testing framework
+                We analyze your project requirements to select the most suitable
+                testing framework
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">⚡</span>
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">Optimal Performance</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">
+                Optimal Performance
+              </h4>
               <p className="text-gray-600 text-sm">
-                Our expertise ensures maximum efficiency and performance from each framework
+                Our expertise ensures maximum efficiency and performance from
+                each framework
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl">🔧</span>
               </div>
-              <h4 className="font-semibold text-gray-800 mb-2">Custom Integration</h4>
+              <h4 className="font-semibold text-gray-800 mb-2">
+                Custom Integration
+              </h4>
               <p className="text-gray-600 text-sm">
-                Seamless integration with your existing development and deployment pipelines
+                Seamless integration with your existing development and
+                deployment pipelines
               </p>
             </div>
           </div>
@@ -174,4 +264,3 @@ const ToolsFrameworksSection = () => {
 };
 
 export default ToolsFrameworksSection;
-

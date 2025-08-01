@@ -17,12 +17,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Best Software Testing Company in Mumbai India | Testriq",
-    template: "%s | Testriq"
+    template: "%s | Testriq",
   },
-  description: "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
+  description:
+    "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
   keywords: [
     "software testing",
-    "QA services", 
+    "QA services",
     "web application testing",
     "mobile app testing",
     "API testing",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     "quality assurance",
     "testing services",
     "software quality",
-    "test automation"
+    "test automation",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -40,36 +41,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Testriq - Professional Software Testing Services | QA Solutions',
-    description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/",
+    siteName: "Testriq - Professional Software Testing Services",
+    title: "Testriq - Professional Software Testing Services | QA Solutions",
+    description:
+      "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
     images: [
       {
-        url: '/OG/testriq-qa-lab-llp-og-img.webp',
+        url: "/OG/testriq-qa-lab-llp-og-img.webp",
         width: 1200,
         height: 630,
-        alt: 'Testriq - Professional Software Testing Services',
-        type: 'image/webp',
-      }
+        alt: "Testriq - Professional Software Testing Services",
+        type: "image/webp",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Testriq - Professional Software Testing Services | QA Solutions',
-    description: 'Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.',
-    images: ['/OG/testriq-qa-lab-llp-twitter-img.webp'],
-    
+    card: "summary_large_image",
+
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Testriq - Professional Software Testing Services | QA Solutions",
+    description:
+      "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
+    images: ["/OG/testriq-qa-lab-llp-twitter-img.webp"],
   },
   robots: {
     index: true,
@@ -77,15 +79,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'your-yandex-verification-code',
-    yahoo: 'your-yahoo-verification-code',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
   },
 };
 
