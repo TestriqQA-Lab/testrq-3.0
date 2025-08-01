@@ -51,7 +51,7 @@ const MatrimonialAppHeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-brand-blue px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Heart className="w-4 h-4" />
               Trusted Matrimonial Platform Certification
             </div>

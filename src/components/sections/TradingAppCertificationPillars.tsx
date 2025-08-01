@@ -11,6 +11,7 @@ import {
   Scale,
   CheckCircle,
 } from "lucide-react";
+import { FaFlask } from "react-icons/fa";
 
 const TradingAppCertificationPillars = () => {
   const pillars = [
@@ -110,6 +111,12 @@ const TradingAppCertificationPillars = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+            <FaFlask />
+            <span className="text-sm">
+              Comprehensive Testing Solutions
+            </span>
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Six Pillars of{" "}
             <span className="text-brand-blue">Trading App Certification</span>
