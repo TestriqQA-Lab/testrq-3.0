@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
    metadataBase: new URL('https://testrq-3-0.vercel.app/'),
   alternates: {
-    canonical: '/web-application-testing-services',
+    canonical: 'https://testriq.com/web-application-testing-servicess',
   },
   robots: {
     index: true,
