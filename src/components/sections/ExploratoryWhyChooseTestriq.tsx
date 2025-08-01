@@ -160,7 +160,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
-              className={`p-8 rounded-2xl border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 ${getColorClasses(
+              className={`p-8 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${getColorClasses(
                 advantage.color,
                 hoveredCard === advantage.id
               )}`}
@@ -246,9 +246,9 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               </div>
 
               {/* CTA */}
-              <div className="mt-6">
+              <Link href="/contact-us">
                 <button
-                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
+                  className={`w-full cursor-pointer mt-10 py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
                     hoveredCard === advantage.id
                       ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
                           advantage.color,
@@ -262,7 +262,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
                 >
                   Explore Testing
                 </button>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -280,7 +280,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">2,500+</div>
+                <div className="text-3xl font-bold text-green-600">60000+</div>
                 <div className="text-sm text-gray-600">Bugs Discovered</div>
               </div>
               <div className="text-center">

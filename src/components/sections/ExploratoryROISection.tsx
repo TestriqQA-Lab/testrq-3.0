@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaSearch, FaBug, FaClock, FaChartLine } from "react-icons/fa";
 
@@ -194,33 +195,6 @@ const ExploratoryROISection: React.FC = () => {
           </div>
         </div>
 
-        {/* Success Stories Preview */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Real ROI Results from Our Clients
-          </h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-green-50 rounded-xl">
-              <div className="text-3xl font-bold text-green-600 mb-2">$150K</div>
-              <div className="text-sm text-gray-600 mb-2">Saved in Bug Fixes</div>
-              <div className="text-xs text-gray-500">E-commerce Platform - 6 months</div>
-            </div>
-            
-            <div className="text-center p-6 bg-blue-50 rounded-xl">
-              <div className="text-3xl font-bold text-blue-600 mb-2">95%</div>
-              <div className="text-sm text-gray-600 mb-2">Issue Discovery</div>
-              <div className="text-xs text-gray-500">SaaS Application - Pre-launch</div>
-            </div>
-            
-            <div className="text-center p-6 bg-purple-50 rounded-xl">
-              <div className="text-3xl font-bold text-purple-600 mb-2">85%</div>
-              <div className="text-sm text-gray-600 mb-2">UX Improvement</div>
-              <div className="text-xs text-gray-500">Mobile App - User satisfaction</div>
-            </div>
-          </div>
-        </div>
-
         <div className="text-center mt-12">
           <h3 className="text-xl font-semibold text-gray-900 mb-4">
             Ready to Maximize Your Testing ROI?
@@ -228,9 +202,11 @@ const ExploratoryROISection: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Calculate your potential savings and see how exploratory testing can improve your product quality.
           </p>
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <Link href="/contact-us">
+          <button className="bg-brand-blue text-white cursor-pointer px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Calculate Your ROI
           </button>
+          </Link>
         </div>
       </div>
     </section>

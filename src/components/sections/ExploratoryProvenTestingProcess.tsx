@@ -162,9 +162,9 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
               {/* Timeline Visualization */}
               <div className="space-y-4">
                 {steps.map((step) => (
-                  <div
+                  <div onClick={() => setActiveStep(step.id)}
                     key={step.id}
-                    className={`flex items-center space-x-4 p-3 rounded-lg transition-all duration-300 ${
+                    className={`w-full flex items-center space-x-4 p-3 cursor-pointer rounded-lg transition-all duration-300 ${
                       step.id === activeStep
                         ? "bg-green-100 border-2 border-green-300"
                         : step.id < activeStep
