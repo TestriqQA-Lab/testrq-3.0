@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
   fantasyAppCertificationSchema,
   organizationSchema,
   websiteSchema,
@@ -229,6 +230,7 @@ export default function FantasySportsAppCertification() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={fantasyAppCertificationSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <FantasyAppHeroSection />

@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
   organizationSchema,
   shoppingAppCertificationSchema,
   websiteSchema,
@@ -222,7 +223,7 @@ const faqSchema = {
 };
 
 export default function ShoppingAppsCertification() {
-  [
+ const breadcrumbItems= [
    { name: "Home", url: "https://testriq.com/" },
     { name: "Services", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" },
     { name: "Shopping App Certification ", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" }
@@ -232,6 +233,7 @@ export default function ShoppingAppsCertification() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <ShoppingAppHeroSection />

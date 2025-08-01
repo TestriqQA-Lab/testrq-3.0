@@ -9,7 +9,7 @@ import TradingAppTestingServices from "@/components/sections/TradingAppTestingSe
 import TradingAppFAQs from "@/components/sections/TradingAppFAQs";
 import TradingAppCTA from "@/components/sections/TradingAppCTA";
 import { Metadata } from "next";
-import StructuredData, { organizationSchema, tradingAppCertificationSchema, websiteSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createBreadcrumbSchema, organizationSchema, tradingAppCertificationSchema, websiteSchema } from "@/components/seo/StructuredData";
 
 
 export const metadata: Metadata = {
@@ -99,6 +99,7 @@ export default function TradingAppsCertificationPage() {
         <StructuredData data={organizationSchema} />
         <StructuredData data={websiteSchema} />
         <StructuredData data={ tradingAppCertificationSchema} />
+        <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             
     <main className="min-h-screen bg-white">
       <TradingAppHeroSection />
