@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
   datingAppCertificationSchema,
   organizationSchema,
   websiteSchema,
@@ -255,6 +256,7 @@ export default function DatingAppCertification() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={datingAppCertificationSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <DatingAppHeroSection />

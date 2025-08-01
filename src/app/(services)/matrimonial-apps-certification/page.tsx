@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
   matrimonialAppCertificationSchema,
   organizationSchema,
   websiteSchema,
@@ -232,6 +233,7 @@ export default function MatrimonialAppsCertification() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={matrimonialAppCertificationSchema} />
+       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <MatrimonialAppHeroSection />
