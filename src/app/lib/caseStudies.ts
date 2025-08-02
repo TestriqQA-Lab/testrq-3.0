@@ -7,6 +7,62 @@ export interface CaseStudy {
   duration: string;
   description: string;
   image: string;
+  metadata: {
+    title: string;
+    description: string;
+    keywords?: string[];
+    authors?: { name: string }[];
+    creator?: string;
+    publisher?: string;
+    formatDetection?: {
+      email?: boolean;
+      address?: boolean;
+      telephone?: boolean;
+    };
+    metadataBase?: URL;
+    alternates?: {
+      canonical?: string;
+    };
+    openGraph?: {
+      type?: string;
+      locale?: string;
+      url?: string;
+      siteName?: string;
+      title?: string;
+      description?: string;
+      images?: {
+        url: string;
+        width?: number;
+        height?: number;
+        alt?: string;
+      }[];
+    };
+    twitter?: {
+      card?: 'summary' | 'summary_large_image' | 'app' | 'player';
+      site?: string;
+      creator?: string;
+      title?: string;
+      description?: string;
+      images?: string[];
+    };
+    robots?: {
+      index?: boolean;
+      follow?: boolean;
+      googleBot?: {
+        index?: boolean;
+        follow?: boolean;
+        'max-video-preview'?: number;
+        'max-image-preview'?: string;
+        'max-snippet'?: number;
+      };
+    };
+    verification?: {
+      google?: string;
+      yandex?: string;
+      yahoo?: string;
+      [key: string]: string | undefined;
+    };
+  };
   overview: {
     clientBackground: string;
     projectScope: string;
@@ -56,133 +112,6 @@ export interface CaseStudy {
 const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
-    slug: "ecommerce-platform-transformation",
-    title: "E-commerce Platform Transformation",
-    client: "Global Retail Leader",
-    industry: "E-commerce",
-    duration: "6 months",
-    description: "How we transformed a legacy e-commerce platform to handle 10x more traffic with 99.9% uptime during peak shopping seasons.",
-    image: "/case-study-ecommerce.jpg",
-    overview: {
-      clientBackground: "A leading global retail company with over 50 million customers worldwide, processing billions in annual revenue through their e-commerce platform.",
-      projectScope: "Complete testing overhaul of legacy e-commerce system including web application, mobile apps, payment processing, and inventory management systems.",
-      teamSize: "12 QA engineers, 3 automation specialists, 2 performance testing experts",
-      timeline: "6 months from initial assessment to full deployment"
-    },
-    challenge: {
-      title: "Legacy System Performance Crisis",
-      description: "The client's legacy e-commerce platform was experiencing frequent crashes during peak shopping seasons, resulting in significant revenue loss and poor customer experience.",
-      keyIssues: [
-        "System crashes during high traffic periods (Black Friday, Cyber Monday)",
-        "Slow page load times averaging 8-12 seconds",
-        "Payment processing failures affecting 15% of transactions",
-        "Mobile app crashes on iOS and Android platforms",
-        "Inventory synchronization issues causing overselling",
-        "Security vulnerabilities in user authentication system"
-      ],
-      businessImpact: "The performance issues were costing the company an estimated $2.3 million per month in lost sales and customer acquisition costs."
-    },
-    solution: {
-      title: "Comprehensive Testing & Optimization Strategy",
-      description: "We implemented a multi-layered testing approach focusing on performance optimization, automated regression testing, and continuous monitoring.",
-      approach: [
-        "Performance testing and load testing implementation",
-        "Automated regression testing suite development",
-        "Mobile application testing across multiple devices",
-        "API testing and microservices validation",
-        "Security testing and vulnerability assessment",
-        "Continuous integration and deployment testing"
-      ],
-      methodology: "Agile testing methodology with 2-week sprints, continuous integration, and automated testing pipelines.",
-      keyStrategies: [
-        "Implemented comprehensive load testing using JMeter and K6",
-        "Developed automated test suites using Selenium and Cypress",
-        "Created mobile testing framework using Appium",
-        "Established API testing protocols with Postman and REST Assured",
-        "Implemented security testing using OWASP ZAP and Burp Suite",
-        "Set up continuous monitoring and alerting systems"
-      ]
-    },
-    results: {
-      bugReduction: "95%",
-      performanceImprovement: "75%",
-      roi: "250%",
-      additionalMetrics: [
-        { label: "Uptime During Peak Season", value: "99.9%" },
-        { label: "Page Load Time Reduction", value: "75%" },
-        { label: "Conversion Rate Increase", value: "40%" },
-        { label: "Mobile App Crash Rate", value: "Reduced by 90%" },
-        { label: "Payment Success Rate", value: "99.8%" },
-        { label: "Customer Satisfaction Score", value: "4.8/5" }
-      ]
-    },
-    technologies: ["Selenium", "JMeter", "Cypress", "API Testing", "Appium", "OWASP ZAP", "K6", "Postman"],
-    testimonial: {
-      quote: "Testriq's testing expertise transformed our platform reliability. We now handle 10x more traffic without issues and our customers are happier than ever.",
-      author: "Sarah Johnson",
-      role: "CTO",
-      company: "Global Retail Leader",
-      rating: 5
-    },
-    timeline: [
-      {
-        phase: "Assessment & Planning",
-        duration: "2 weeks",
-        activities: [
-          "System architecture analysis",
-          "Performance bottleneck identification",
-          "Test strategy development",
-          "Team onboarding and tool setup"
-        ]
-      },
-      {
-        phase: "Test Framework Development",
-        duration: "4 weeks",
-        activities: [
-          "Automated test suite creation",
-          "Performance testing setup",
-          "Mobile testing framework implementation",
-          "API testing protocol establishment"
-        ]
-      },
-      {
-        phase: "Testing Execution",
-        duration: "12 weeks",
-        activities: [
-          "Comprehensive functional testing",
-          "Performance and load testing",
-          "Security vulnerability assessment",
-          "Mobile app testing across devices",
-          "User acceptance testing coordination"
-        ]
-      },
-      {
-        phase: "Optimization & Deployment",
-        duration: "6 weeks",
-        activities: [
-          "Performance optimization implementation",
-          "Bug fixes and retesting",
-          "Production deployment support",
-          "Monitoring setup and documentation"
-        ]
-      }
-    ],
-    keyTakeaways: [
-      "Early performance testing prevents costly production issues",
-      "Automated testing reduces manual effort by 80% and improves accuracy",
-      "Continuous monitoring is essential for maintaining system reliability",
-      "Mobile testing requires device-specific strategies for optimal results",
-      "Security testing should be integrated throughout the development lifecycle"
-    ],
-    nextSteps: [
-      "Implement AI-powered testing for predictive quality assurance",
-      "Expand automated testing coverage to include visual regression testing",
-      "Develop advanced performance monitoring and alerting systems",
-      "Create comprehensive disaster recovery testing procedures"
-    ]
-  },
-  {
-    id: 4,
     slug: "canva-case-study",
     title: "Comprehensive Testing for Canva – A Free Graphic Design Platform",
     client: "Canva",
@@ -190,6 +119,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Ongoing since 2018",
     description: "The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality. Testriq Lab ensured seamless implementation and defect-free releases for Canva's massive UI changes and new features across multiple platforms.",
     image: "/Canva_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Canva is a graphic design platform that allows users to create social media graphics, presentations, posters, documents and other visual content. Users can choose from many professional designed templates, and edit the designs and upload their own photos through a drag and drop interface. The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality.",
       projectScope: "Complete testing overhaul covering desktop browsers, mobile browsers and native apps for Android and Apple devices. We helped Canva in testing across all platforms/browsers on supported old and new versions of OS/Browsers covering 100s of test cases every day to support daily release on mentioned platforms.",
@@ -306,7 +306,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 5,
+    id: 2,
     slug: "ragnar-case-study",
     title: "Ragnar Case Study – Sports Platform QA by Testriq",
     client: "Ragnar",
@@ -314,6 +314,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Ongoing",
     description: "Ragnar is a Sports and Fitness Online and Mobile Platform that organizes Marathon Majorly in USA and in Some Parts of Europe, Canada, Australia, Mexico and South Africa. Ragnar Provides a Platform for Individual Users to run a Day Challenge, a Month Challenge, Elevation Challenge, Night Challenges. Ragnar is the only Provider that Provides Runner and their Team with Glamping Benefits. Glamping Benefit is for a team, that they could spend precious hours hunting down tents, canopies, chairs, coolers, and other Ragnar gear for Themselves and their teammates. Ragnar also provides a Platform for Users running the Races Virtually.",
     image: "/Ragnar_logo.webp",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Ragnar is a Sports and Fitness Online and Mobile Platform that organizes Marathon Majorly in USA and in Some Parts of Europe, Canada, Australia, Mexico and South Africa. Ragnar Provides a Platform for Individual Users to run a Day Challenge, a Month Challenge, Elevation Challenge, Night Challenges. Ragnar is the only Provider that Provides Runner and their Team with Glamping Benefits. Glamping Benefit is for a team, that they could spend precious hours hunting down tents, canopies, chairs, coolers, and other Ragnar gear for Themselves and their teammates. Ragnar also provides a Platform for Users running the Races Virtually.",
       projectScope: "Complete QA and testing for Ragnar's online and mobile platform, including web architecture, mobile application, and new features like Ragnar Challenges and Virtual Challenges. This involved data migration from old systems and continuous support for new implementations.",
@@ -436,7 +507,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 6,
+    id: 3,
     slug: "kanishka-software-case-study",
     title: "Mobile App Testing Case Study | Kanishka Software X Testriq",
     client: "Kanishka Software",
@@ -444,6 +515,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Undisclosed",
     description: "Delivering a high-performing mobile app through rigorous QA and seamless collaboration.",
     image: "/Kanishka_Software_Logo.webp",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Kanishka Software, a provider of advanced software solutions, partnered with Testriq QA Lab to ensure the successful release of a new mobile application. Their goal was to launch a high-performing app that exceeded quality benchmarks and customer expectations.",
       projectScope: "Comprehensive mobile app testing, including functional, usability, performance, compatibility, and security testing, to ensure flawless performance across a wide array of devices and operating systems within a tight timeline.",
@@ -543,7 +685,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 7,
+    id: 4,
     slug: "home-facts-case-study",
     title: "Real Estate Software Testing Case Study | Testriq QA Lab",
     client: "Home Facts",
@@ -551,6 +693,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Undisclosed",
     description: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more.",
     image: "/Homefacts_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more. HomeFacts is owned and operated by ATTOM Data Solutions.",
       projectScope: "Comprehensive QA and testing for Homefacts, focusing on data accuracy, mobile responsiveness, search functionality, and integration of new features like HomeAlerts and various map views. This included data migration from old systems and continuous support for new implementations.",
@@ -672,7 +885,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 8,
+    id: 5,
     slug: "realtytrac-case-study",
     title: "RealtyTrac Case Study – Real Estate QA Testing by Testriq",
     client: "Realty Trac",
@@ -680,6 +893,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Undisclosed",
     description: "RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations.",
     image: "/RealtyTrac_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "RealtyTrac is owned and operated by ATTOM Data Solutions. RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations. It is a Real Estate Online and Mobile real estate resource that provides comprehensive property info of properties in US Market.",
       projectScope: "Comprehensive QA and testing for RealtyTrac, focusing on improving search accuracy, enhancing mobile responsiveness, and integrating new features like Advanced Search, various map views, and sister sites. This included data migration from old systems and continuous support for new implementations.",
@@ -803,7 +1087,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 9,
+    id: 6,
     slug: "brandify-case-study",
     title: "Brandify Case Study | Testriq QA Lab | QA for Digital Marketing",
     client: "Brandify",
@@ -811,6 +1095,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Undisclosed",
     description: "Brandify (formerly known as Where2GetIt) powers more than 300 brands and serves more than 4.5 million brick and mortar locations. Brandify has channel strength that reaches millions of consumers around the world.",
     image: "/Brandify_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Brandify (formerly known as Where2GetIt) is an industry-leading provider of digital marketing solutions focused on locations that help brands communicate with their clients. It gathers data and delivers strategy and tailored solutions to help brands optimise their online presence and drive consumers to their locations.",
       projectScope: "Comprehensive QA and testing for Brandify's digital marketing solutions, including mobile devices and voice search integration, local SEO, local ads, mobile-local technology, and local-social marketing tools. This involved testing the Brandify Dashboard and its various analytical features.",
@@ -908,7 +1263,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 10,
+    id: 7,
     slug: "milton-case-study",
     title: "Milton Smart Stainless Steel Water Bottle Case Study",
     client: "Hamilton Housewares Pvt Ltd.",
@@ -916,6 +1271,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "3 months",
     description: "Enhancing the Quality of ‘MILTON Smart Stainless Steel Water Bottle’ with Comprehensive Testing.",
     image: "/Milton_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Hamilton Housewares Pvt Ltd. is a prominent player in the homewares industry, known for manufacturing and distributing houseware, cookware, and kitchenware under their leading brands, including Milton, Treo, Claro, and Spotzero.",
       projectScope: "Rigorous testing of the ‘MILTON Smart Stainless Steel Water Bottle’ and its companion iOS and Android applications to ensure functionality, measurement accuracy, and seamless integration across various mobile devices.",
@@ -1015,7 +1441,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 11,
+    id: 8,
     slug: "luep-case-study",
     title: "Cross-Platform QA Case Study | Luep x Testriq QA Lab",
     client: "Luep",
@@ -1023,6 +1449,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Undisclosed",
     description: "Luep, an innovative tech company, has created a comprehensive communication platform and work-sharing space in a single, collaborative hub. To ensure the reliability and excellence of their all-in-one solution, we embarked on a journey to provide quality assurance and testing services for Luep across Web, Android, and iOS applications.",
     image: "/Luep_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Luep is a trailblazing technology company, offering an integrated communication platform and work-sharing space that promotes efficient engagement and collaboration across organizations.",
       projectScope: "Comprehensive quality assurance and testing services for Luep across Web, Android, and iOS applications, focusing on cross-platform compatibility, optimizing time-to-market, and regression testing demands.",
@@ -1124,7 +1621,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 12,
+    id: 9,
     slug: "aalpha-information-systems",
     title: "Securing Aalpha Information Systems' HR Portal – A Testriq Penetration Testing Project",
     client: "Aalpha Information Systems",
@@ -1132,6 +1629,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses.",
     image: "/aalpha_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Aalpha Information Systems Pvt Ltd is an IT services company based in India. They provide a range of services, including software development, web development, mobile app development, and more. Aalpha Information Systems specializes in offering custom software solutions for businesses in various industries.",
       projectScope: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses. This included evaluating the portal's defence mechanisms, data protection protocols, and overall security posture.",
@@ -1242,7 +1810,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 13,
+    id: 10,
     slug: "digiboxx-case-study",
     title: "Digiboxx Case Study: Transforming Digital Storage with Comprehensive Testing Solutions",
     client: "Digiboxx",
@@ -1250,6 +1818,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "Discover How Digiboxx Leveraged Rigorous Testing Strategies to Redefine Digital Storage. From Enhanced Usability to Streamlined Automation, Uncover the Success Story Today!",
     image: "/digiboxx_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Digiboxx is a cutting-edge digital storage and file-sharing platform that empowers individuals and organizations to securely manage, share, and access their digital assets. Their platform serves as a robust solution for modern data management.",
       projectScope: "Enhance the quality and reliability of its platform by engaging in professional testing services, including comprehensive manual testing for usability and functional defects, and implementation of automation testing using Selenium with Java to automate their Sanity and Regression test suites.",
@@ -1329,7 +1968,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 14,
+    id: 11,
     slug: "rc-pets-case-study",
     title: "Optimizing Performance for RC Pets - A Scalability Testing Success Story",
     client: "ASC Creative",
@@ -1337,6 +1976,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "Empowering ASC Creative's RC Pets acquisition: Rigorous testing for seamless 10k user support & fast loads. Proactive testing for robust retail experience.",
     image: "/rc_pets_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "ASC Creative collaborated with RC Pets, a renowned e-commerce platform specializing in pet accessories. RC Pets caters to retailers, enabling them to purchase pet products in large quantities. They take pride in delivering innovative, high-quality products that strengthen the unique bond between pets and their guardians.",
       projectScope: "Evaluate the application's robustness to accommodate the expected surge in traffic and support 10,000 users with an average page load duration of less than 5 seconds.",
@@ -1461,7 +2171,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 15,
+    id: 12,
     slug: "worksocial-case-study",
     title: "Enhancing WorkSocial's Software Quality with Comprehensive Testing Services",
     client: "WorkSocial",
@@ -1469,6 +2179,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "Empowered by comprehensive testing, we elevated WorkSocial's software quality. From functionality to performance, we ensured a seamless user experience.",
     image: "/worksocial_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "WorkSocial is a community-driven hub in Jersey City and Manhattan that offers shared office spaces and virtual offices. Their mission is to foster small business endeavors, promote community outreach, offer mentoring opportunities, and support entrepreneurial needs, creating a vibrant and harmonious environment.",
       projectScope: "Address specific requirements for functional testing, performance testing (up to 1,000 concurrent users using Apache JMeter), and compatibility testing across web and mobile platforms (Android, iOS, Mac desktops).",
@@ -1556,7 +2337,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 16,
+    id: 13,
     slug: "leadoconnect-case-study",
     title: "Quality Assurance Partnership for LeadoConnect's B2B Lead Generation Automation Software",
     client: "LeadoConnect",
@@ -1564,6 +2345,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "TESTRIQ's QA partnership enhanced LeadoConnect's B2B lead gen software, ensuring top performance, security, and user satisfaction. Industry leadership solidified.",
     image: "/leadoconnect_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "LeadoConnect is a leading provider of B2B lead generation automation software focused on email campaigns to drive revenue growth. They help businesses accelerate revenue pipelines with strategy, data, technology, and a dedicated team to book qualified opportunities, specializing in outbound sales for sustainable growth, reduced HR burden, and lower customer acquisition costs.",
       projectScope: "Ensure the high performance, functionality, and reliability of LeadoConnect's B2B lead generation automation software through comprehensive testing to identify and address any issues or shortcomings.",
@@ -1678,7 +2530,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 17,
+    id: 14,
     slug: "pro-ficiency-case-study",
     title: "Pro-ficiency Soars with TESTRIQ: Precision QA Documentation and Rigorous Testing Redefine Software Development",
     client: "Pro-ficiency | ProPatient | ProCT",
@@ -1686,6 +2538,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "45 Months",
     description: "Precision QA Documentation and Rigorous Testing Redefine Software Development for Pro-ficiency's upgraded application.",
     image: "/pro_ficiency_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Pro-ficiency is a leading software development company specializing in productivity applications for businesses. They embarked on the development of an upgraded version of its flagship application to meet the evolving needs of its diverse user base.",
       projectScope: "Ensure the success of their upgraded application through rigorous testing and comprehensive project and QA documentation, facilitating compliance with industry standards.",
@@ -1773,7 +2696,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 8,
+    id: 15,
     slug: "phyllo-case-study",
     title: "Empowering Phyllo's API Infrastructure with Efficient API Testing",
     client: "Phyllo",
@@ -1781,6 +2704,77 @@ const caseStudiesData: CaseStudy[] = [
     duration: "Not specified",
     description: "Empowering Phyllo's API infra with Efficient API Testing.",
     image: "/phyllo_logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testriq.com/case-study/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Canva-Case-Study-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+        google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+        yandex: "ff703971283d110e",
+        yahoo: "0A67349B8CD11BF71173B38572028507",
+      },
+    },
     overview: {
       clientBackground: "Phyllo is a visionary tech company specializing in API infrastructure and providing universal API for creator data.",
       projectScope: "Optimize the testing process, reduce release testing time to no more than two days, and automate test suites to streamline testing and accelerate the release process, given over 5,000 test cases for Sanity and Regression tests.",

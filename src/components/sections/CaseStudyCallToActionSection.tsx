@@ -3,8 +3,8 @@ import { FaRocket, FaPhone, FaEnvelope, FaArrowRight } from "react-icons/fa";
 
 const CaseStudyCallToActionSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-600">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center text-white">
           {/* Main CTA */}
           <div className="mb-16">
@@ -12,14 +12,15 @@ const CaseStudyCallToActionSection: React.FC = () => {
               <FaRocket className="w-4 h-4" />
               <span>Ready to Get Started?</span>
             </div>
-            
+
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Transform Your Software Quality Today
             </h2>
-            
+
             <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-8">
-              Join hundreds of satisfied clients who have achieved exceptional results with our comprehensive 
-              testing solutions. Let&apos;s discuss how we can help you achieve similar success.
+              Join hundreds of satisfied clients who have achieved exceptional
+              results with our comprehensive testing solutions. Let&apos;s
+              discuss how we can help you achieve similar success.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -43,7 +44,10 @@ const CaseStudyCallToActionSection: React.FC = () => {
               <p className="text-blue-100 mb-4">
                 Speak directly with our testing experts
               </p>
-              <a href="tel:+1234567890" className="text-white font-semibold hover:text-blue-200 transition-colors">
+              <a
+                href="tel:+1234567890"
+                className="text-white font-semibold hover:text-blue-200 transition-colors"
+              >
                 +1 (234) 567-8900
               </a>
             </div>
@@ -56,7 +60,10 @@ const CaseStudyCallToActionSection: React.FC = () => {
               <p className="text-blue-100 mb-4">
                 Get detailed information about our services
               </p>
-              <a href="mailto:info@testriq.com" className="text-white font-semibold hover:text-blue-200 transition-colors">
+              <a
+                href="mailto:info@testriq.com"
+                className="text-white font-semibold hover:text-blue-200 transition-colors"
+              >
                 info@testriq.com
               </a>
             </div>
@@ -103,4 +110,3 @@ const CaseStudyCallToActionSection: React.FC = () => {
 };
 
 export default CaseStudyCallToActionSection;
-
