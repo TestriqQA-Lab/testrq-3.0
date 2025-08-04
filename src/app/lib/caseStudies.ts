@@ -339,7 +339,7 @@ const caseStudiesData: CaseStudy[] = [
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/ragnar-case-study",
+    canonical: "https://testrq-3-0.vercel.app/ragnar-case-study",
   },
   openGraph: {
     type: "article",
@@ -351,7 +351,7 @@ const caseStudiesData: CaseStudy[] = [
       "Explore how Testriq supports Ragnar’s global sports platform with end-to-end QA for mobile, web, and virtual races—ensuring reliable, seamless user experiences.",
     images: [
       {
-        url: "/OG/Ragnar-Case-Study-og.webp",
+        url: "/OG/Case-study-Ragnar-og.webp",
         width: 1200,
         height: 630,
         alt: "Ragnar QA Testing Case Study",
@@ -365,7 +365,7 @@ const caseStudiesData: CaseStudy[] = [
     title: "Ragnar QA Testing Case Study - Testriq QA Lab",
     description:
       "Testriq helps Ragnar deliver high-performance, multi-device experiences across real and virtual marathons. See how our QA experts support this global fitness platform.",
-    images: ["/OG/Ragnar-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Ragnar-Twitter.webp"],
   },
   robots: {
     index: true,
