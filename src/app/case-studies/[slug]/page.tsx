@@ -146,10 +146,14 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each case study
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const caseStudy = getCaseStudyBySlug(slug);
-  
+
   if (!caseStudy) {
     return {
       title: "Case Study Not Found | Testriq",
@@ -157,42 +161,53 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const metadata = caseStudy.metadata;
+
   return {
-    title: `${caseStudy.title} | Case Study | Testriq`,
-    description: caseStudy.description,
-    keywords: [
-      "case study",
-      "software testing",
-      "QA success story",
-      caseStudy.industry.toLowerCase(),
-      ...caseStudy.technologies.map(tech => tech.toLowerCase()),
-      "testing results",
-      "client testimonial",
-      "quality assurance",
-      "bug reduction",
-      "performance improvement",
-      "ROI improvement"
-    ],
-    openGraph: {
-      title: `${caseStudy.title} | Case Study | Testriq`,
-      description: caseStudy.description,
-      type: "article",
-      url: `/case-studies/${caseStudy.slug}`,
-      images: caseStudy.image ? [caseStudy.image] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${caseStudy.title} | Case Study | Testriq`,
-      description: caseStudy.description,
-      images: caseStudy.image ? [caseStudy.image] : undefined,
-    },
-    alternates: {
-      canonical: `/case-studies/${caseStudy.slug}`,
-    },
+    title: metadata?.title || `${caseStudy.title} | Case Study | Testriq`,
+    description: metadata?.description || caseStudy.description,
+    keywords: metadata?.keywords,
+    authors: metadata?.authors,
+    creator: metadata?.creator,
+    publisher: metadata?.publisher,
+    formatDetection: metadata?.formatDetection,
+    alternates: metadata?.alternates,
+    openGraph: metadata?.openGraph,
+    twitter: metadata?.twitter,
+    verification: metadata?.verification,
+
+    // ✅ Safely include robots with proper type for googleBot fields
+    robots: metadata?.robots
+      ? {
+          index: metadata.robots.index,
+          follow: metadata.robots.follow,
+          googleBot: metadata.robots.googleBot
+            ? {
+                index: metadata.robots.googleBot.index,
+                follow: metadata.robots.googleBot.follow,
+                "max-video-preview":
+                  metadata.robots.googleBot["max-video-preview"],
+                "max-image-preview": ["none", "standard", "large"].includes(
+                  metadata.robots.googleBot["max-image-preview"] as string
+                )
+                  ? (metadata.robots.googleBot["max-image-preview"] as
+                      | "none"
+                      | "standard"
+                      | "large")
+                  : "large",
+                "max-snippet": metadata.robots.googleBot["max-snippet"],
+              }
+            : undefined,
+        }
+      : undefined,
   };
 }
 
-export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function CaseStudyPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const caseStudy = getCaseStudyBySlug(slug);
 
@@ -218,4 +233,3 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     </div>
   );
 }
-

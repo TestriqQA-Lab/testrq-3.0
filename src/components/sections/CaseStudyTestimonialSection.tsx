@@ -6,21 +6,23 @@ interface CaseStudyTestimonialSectionProps {
   caseStudy: CaseStudy;
 }
 
-const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = ({ caseStudy }) => {
+const CaseStudyTestimonialSection: React.FC<
+  CaseStudyTestimonialSectionProps
+> = ({ caseStudy }) => {
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
         key={index}
         className={`w-5 h-5 ${
-          index < rating ? 'text-yellow-400' : 'text-gray-300'
+          index < rating ? "text-yellow-400" : "text-gray-300"
         }`}
       />
     ));
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
@@ -31,7 +33,8 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
             What Our Client Says
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hear directly from our client about their experience working with our team and the impact of our testing solutions.
+            Hear directly from our client about their experience working with
+            our team and the impact of our testing solutions.
           </p>
         </div>
 
@@ -66,7 +69,8 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
                     {caseStudy.testimonial.author}
                   </div>
                   <div className="text-gray-600 text-sm">
-                    {caseStudy.testimonial.role}, {caseStudy.testimonial.company}
+                    {caseStudy.testimonial.role},{" "}
+                    {caseStudy.testimonial.company}
                   </div>
                 </div>
               </div>
@@ -80,9 +84,12 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <FaStar className="w-8 h-8 text-green-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Exceptional Quality</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Exceptional Quality
+            </h3>
             <p className="text-gray-600">
-              Consistently delivering high-quality testing solutions that exceed expectations
+              Consistently delivering high-quality testing solutions that exceed
+              expectations
             </p>
           </div>
 
@@ -90,9 +97,12 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <FaUser className="w-8 h-8 text-blue-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Trusted Partnership</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Trusted Partnership
+            </h3>
             <p className="text-gray-600">
-              Building long-term relationships based on trust, reliability, and mutual success
+              Building long-term relationships based on trust, reliability, and
+              mutual success
             </p>
           </div>
 
@@ -100,9 +110,12 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
             <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <FaQuoteLeft className="w-8 h-8 text-purple-600" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Client Satisfaction</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Client Satisfaction
+            </h3>
             <p className="text-gray-600">
-              Maintaining 100% client satisfaction through dedicated service and expert solutions
+              Maintaining 100% client satisfaction through dedicated service and
+              expert solutions
             </p>
           </div>
         </div>
@@ -110,9 +123,12 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
         {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Achieve Similar Results?</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Achieve Similar Results?
+            </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Let us help you transform your software quality and achieve exceptional results like our satisfied clients.
+              Let us help you transform your software quality and achieve
+              exceptional results like our satisfied clients.
             </p>
             <button className="bg-white text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Start Your Success Story
@@ -125,4 +141,3 @@ const CaseStudyTestimonialSection: React.FC<CaseStudyTestimonialSectionProps> = 
 };
 
 export default CaseStudyTestimonialSection;
-
