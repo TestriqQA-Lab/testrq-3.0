@@ -25,7 +25,7 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
       testimonial: "Testriq's testing expertise transformed our platform reliability. We now handle 10x more traffic without issues.",
       clientRole: "CTO",
       image: "/case-study-ecommerce.jpg",
-      slug: "/case-studies/ecommerce-platform-transformation/"
+      slug: "/ecommerce-platform-transformation/"
     },
     {
       id: 2,
@@ -50,7 +50,7 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
       testimonial: "Their security testing expertise was crucial for our FDA approval and market launch success.",
       clientRole: "Head of Product",
       image: "/case-study-healthcare.jpg",
-      slug: "/case-studies/healthcare-app-security-compliance/"
+      slug: "/healthcare-app-security-compliance/"
     },
     {
       id: 3,
@@ -75,7 +75,7 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
       testimonial: "The mobile testing strategy delivered by Testriq exceeded our expectations and user satisfaction goals.",
       clientRole: "VP of Engineering",
       image: "/case-study-fintech.jpg",
-      slug: "/case-studies/fintech-mobile-app-optimization/"
+      slug: "/fintech-mobile-app-optimization/"
     }
   ];
 
