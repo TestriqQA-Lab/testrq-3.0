@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.',
     images: [
       {
-        url: '/OG/Shopping-App-Certification-og.webp',
+        url: '/OG/Shopping-App-Certification-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Shopping App Certification - Secure Testing & Compliance',
