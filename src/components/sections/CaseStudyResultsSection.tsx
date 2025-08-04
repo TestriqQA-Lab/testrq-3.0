@@ -14,7 +14,7 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <FaTrophy className="w-4 h-4" />
             <span>The Results</span>
           </div>
@@ -34,9 +34,6 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaArrowUp className="w-8 h-8 text-red-600 transform rotate-180" />
             </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.bugReduction}
-            </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Bug Reduction
             </h3>
@@ -49,9 +46,6 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaArrowUp className="w-8 h-8 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.performanceImprovement}
-            </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Performance Boost
             </h3>
@@ -63,9 +57,6 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
           <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
             <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaChartBar className="w-8 h-8 text-yellow-600" />
-            </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.roi}
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               ROI Achievement
@@ -85,14 +76,12 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
             {caseStudy.results.additionalMetrics.map((metric, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-700 font-medium">
+                  <span className="text-2xl font-bold text-[theme(color.brand.blue)]">
                     {metric.label}
                   </span>
                   <FaStar className="w-4 h-4 text-yellow-500" />
                 </div>
-                <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
-                  {metric.value}
-                </div>
+                <div className="text-md font-medium">{metric.value}</div>
               </div>
             ))}
           </div>

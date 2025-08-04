@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaRocket, FaPhone, FaEnvelope, FaArrowRight } from "react-icons/fa";
 
@@ -24,13 +25,11 @@ const CaseStudyCallToActionSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-                <span>Start Your Project</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
-                Schedule Consultation
-              </button>
+              <Link href="/contact-us">
+                <button className="border-2 cursor-pointer border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
+                  Schedule Consultation
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -48,7 +47,7 @@ const CaseStudyCallToActionSection: React.FC = () => {
                 href="tel:+1234567890"
                 className="text-white font-semibold hover:text-blue-200 transition-colors"
               >
-                +1 (234) 567-8900
+                (+91) 915-2929-343
               </a>
             </div>
 
@@ -64,7 +63,7 @@ const CaseStudyCallToActionSection: React.FC = () => {
                 href="mailto:info@testriq.com"
                 className="text-white font-semibold hover:text-blue-200 transition-colors"
               >
-                info@testriq.com
+                contact@testriq.com
               </a>
             </div>
 
@@ -86,11 +85,11 @@ const CaseStudyCallToActionSection: React.FC = () => {
           <div className="mt-16 pt-8 border-t border-white/20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-2xl font-bold mb-1">500+</div>
-                <div className="text-blue-200 text-sm">Projects Completed</div>
+                <div className="text-2xl font-bold mb-1">500k+</div>
+                <div className="text-blue-200 text-sm">Test Cases Executed</div>
               </div>
               <div>
-                <div className="text-2xl font-bold mb-1">200+</div>
+                <div className="text-2xl font-bold mb-1">100+</div>
                 <div className="text-blue-200 text-sm">Happy Clients</div>
               </div>
               <div>

@@ -40,12 +40,17 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
               {/* Image Placeholder */}
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <FaIndustry className="w-8 h-8 text-white" />
+                  <div className="w-48 h-48 flex items-center justify-center mx-auto mb-3">
+                    {caseStudy.image ? (
+                      <img
+                        src={caseStudy.image}
+                        alt={caseStudy.client}
+                        className="w-48 h-48 object-contain"
+                      />
+                    ) : (
+                      <FaIndustry className="w-8 h-8 text-white" />
+                    )}
                   </div>
-                  <p className="text-gray-600 font-medium">
-                    {caseStudy.client}
-                  </p>
                 </div>
               </div>
 
@@ -112,7 +117,7 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
         <div className="text-center mt-12">
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors"
           >
             <span>View All Case Studies</span>
             <FaArrowRight className="w-4 h-4" />
