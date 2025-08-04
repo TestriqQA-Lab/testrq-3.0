@@ -97,7 +97,7 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
 
                 {/* Read More Link */}
                 <Link
-                  href={`/case-studies/${caseStudy.slug}`}
+                  href={`/${caseStudy.slug}`}
                   className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors"
                 >
                   <span>Read Full Case Study</span>
