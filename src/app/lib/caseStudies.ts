@@ -145,7 +145,7 @@ const caseStudiesData: CaseStudy[] = [
       },
       metadataBase: new URL("https://testrq-3-0.vercel.app/"),
       alternates: {
-        canonical: "https://testriq.com/case-study/canva-case-study",
+        canonical: "https://testrq-3-0.vercel.app/canva-case-study",
       },
       openGraph: {
         type: "article",
@@ -157,7 +157,7 @@ const caseStudiesData: CaseStudy[] = [
           "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
         images: [
           {
-            url: "/OG/Canva-Case-Study-og.webp",
+            url: "/OG/Case-Study-Canva-og.webp",
             width: 1200,
             height: 630,
             alt: "Canva QA Testing Case Study",
@@ -171,7 +171,7 @@ const caseStudiesData: CaseStudy[] = [
         title: "Canva QA Testing Case Study - Testriq QA Lab",
         description:
           "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
-        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+        images: ["/OG/Case-Study-Canva-Twitter.webp"],
       },
       robots: {
         index: true,
