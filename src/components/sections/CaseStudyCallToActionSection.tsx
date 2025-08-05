@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { FaRocket, FaPhone, FaEnvelope, FaArrowRight } from "react-icons/fa";
+
+import { FaRocket, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const CaseStudyCallToActionSection: React.FC = () => {
   return (
