@@ -92,17 +92,18 @@ const IoTProvenTestingProcess: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Process</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures end-to-end IoT testing coverage, delivering reliable and secure connected device ecosystems.
+            Our systematic approach ensures end-to-end IoT testing coverage,
+            delivering reliable and secure connected device ecosystems.
           </p>
         </div>
 
         {/* Interactive IoT Network Timeline */}
         <div className="relative mb-12">
           {/* Desktop Timeline with IoT Network Visualization */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block mb-32 py-10">
             <div className="relative">
               {/* Central Hub */}
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center">
                 <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   IoT
                 </div>
@@ -266,7 +267,7 @@ const IoTProvenTestingProcess: React.FC = () => {
                 {activeStep < steps.length - 1 && (
                   <button
                     onClick={() => setActiveStep(activeStep + 1)}
-                    className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
+                    className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r cursor-pointer ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
                   >
                     <span>Next Step</span>
                     <FaArrowRight className="w-4 h-4" />
@@ -395,7 +396,6 @@ const IoTProvenTestingProcess: React.FC = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -100,7 +100,7 @@ const IoTCardSlider: React.FC = () => {
 
         <div className="mt-12 text-center">
           <Link href="/contact-us">
-            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
+            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue hover:shadow-lg transition-colors duration-300">
               Get Comprehensive IoT Testing
             </button>
           </Link>

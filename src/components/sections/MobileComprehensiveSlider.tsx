@@ -92,9 +92,7 @@ const MobileComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTools />
-            <span className="text-sm">
-              Platform Expertise
-            </span>
+            <span className="text-sm">Platform Expertise</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Mobile Testing Across{" "}
@@ -103,7 +101,9 @@ const MobileComprehensiveSlider: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Our comprehensive mobile app testing services cover all major platforms and devices, ensuring your application performs flawlessly across the iOS, Android, and cross-platform app mobile ecosystem.
+            Our comprehensive mobile app testing services cover all major
+            platforms and devices, ensuring your application performs flawlessly
+            across the iOS, Android, and cross-platform app mobile ecosystem.
           </p>
         </div>
 
@@ -161,14 +161,14 @@ const MobileComprehensiveSlider: React.FC = () => {
                           <div className="flex justify-center gap-4">
                             <div className="w-24 h-44 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm border border-white border-opacity-30 p-2">
                               <div className="w-full h-full bg-white bg-opacity-30 rounded-xl flex items-center justify-center">
-                                <div className="text-white opacity-60">
+                                <div className="text-black opacity-60">
                                   {slide.icon}
                                 </div>
                               </div>
                             </div>
                             <div className="w-24 h-44 bg-white bg-opacity-20 rounded-2xl backdrop-blur-sm border border-white border-opacity-30 p-2 mt-4">
                               <div className="w-full h-full bg-white bg-opacity-30 rounded-xl flex items-center justify-center">
-                                <div className="text-white opacity-60 text-sm">
+                                <div className="text-black font-bold opacity-60 text-sm">
                                   Testing
                                 </div>
                               </div>
@@ -177,11 +177,13 @@ const MobileComprehensiveSlider: React.FC = () => {
 
                           {/* Floating Elements */}
                           <div className="absolute -top-4 -right-4 w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                            <span className="text-white font-bold">QA</span>
+                            <span className="text-black font-bold">QA</span>
                           </div>
 
                           <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                            <span className="text-white text-xs">✓</span>
+                            <span className="text-black font-bold text-xs">
+                              ✓
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -214,10 +216,11 @@ const MobileComprehensiveSlider: React.FC = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${index === currentSlide
-                ? "bg-[theme(color.brand.blue)] scale-125"
-                : "bg-gray-300 hover:bg-gray-400"
-                }`}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                index === currentSlide
+                  ? "bg-[theme(color.brand.blue)] scale-125"
+                  : "bg-gray-300 hover:bg-gray-400"
+              }`}
             />
           ))}
         </div>

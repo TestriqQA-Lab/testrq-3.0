@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaSearch, FaMobile, FaDesktop } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaSearch,
+  FaMobile,
+  FaDesktop,
+} from "react-icons/fa";
 
 const ExploratoryCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -13,64 +19,121 @@ const ExploratoryCaseStudies: React.FC = () => {
       title: "E-commerce Platform UX Discovery",
       industry: "Retail & E-commerce",
       icon: <FaDesktop className="text-2xl" />,
-      challenge: "An e-commerce platform was experiencing high cart abandonment rates and poor user engagement despite passing all functional tests.",
-      solution: "We conducted comprehensive exploratory testing with a focus on user journey exploration, usability investigation, and checkout flow analysis to uncover hidden friction points and critical UX issues.",
+      challenge:
+        "An e-commerce platform was experiencing high cart abandonment rates and poor user engagement despite passing all functional tests.",
+      solution:
+        "We conducted comprehensive exploratory testing with a focus on user journey exploration, usability investigation, and checkout flow analysis to uncover hidden friction points and critical UX issues.",
       results: [
-        { metric: "Cart Abandonment", value: "45%", improvement: "Reduced from 78%" },
-        { metric: "UX Issues Found", value: "23", improvement: "Critical usability problems" },
-        { metric: "User Satisfaction", value: "85%", improvement: "Increased from 62%" },
-        { metric: "Revenue Impact", value: "$2.1M", improvement: "Annual revenue increase" }
+        {
+          metric: "Cart Abandonment",
+          value: "45%",
+          improvement: "Reduced from 78%",
+        },
+        {
+          metric: "UX Issues Found",
+          value: "23",
+          improvement: "Critical usability problems",
+        },
+        {
+          metric: "User Satisfaction",
+          value: "85%",
+          improvement: "Increased from 62%",
+        },
+        {
+          metric: "Revenue Impact",
+          value: "$2.1M",
+          improvement: "Annual revenue increase",
+        },
       ],
       testimonial: {
-        quote: "The exploratory testing revealed critical UX issues that our automated tests completely missed. The insights transformed our user experience.",
+        quote:
+          "The exploratory testing revealed critical UX issues that our automated tests completely missed. The insights transformed our user experience.",
         author: "Jennifer Martinez",
-        position: "Head of Product, ShopEasy"
+        position: "Head of Product, ShopEasy",
       },
       timeline: "4 weeks of systematic exploration and optimization",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"]
+      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     },
     {
       id: 2,
       title: "Banking App Security & Usability",
       industry: "Financial Services",
       icon: <FaMobile className="text-2xl" />,
-      challenge: "A mobile banking app needed comprehensive security and usability validation before launch to ensure regulatory compliance and user adoption.",
-      solution: "Implemented session-based exploratory testing with focus on security edge cases, accessibility evaluation, and persona-based testing.",
+      challenge:
+        "A mobile banking app needed comprehensive security and usability validation before launch to ensure regulatory compliance and user adoption.",
+      solution:
+        "Implemented session-based exploratory testing with focus on security edge cases, accessibility evaluation, and persona-based testing.",
       results: [
-        { metric: "Security Issues", value: "12", improvement: "Critical vulnerabilities found" },
-        { metric: "Accessibility Score", value: "98%", improvement: "WCAG 2.1 AA compliance" },
-        { metric: "User Flow Issues", value: "18", improvement: "Navigation problems resolved" },
-        { metric: "Launch Success", value: "100%", improvement: "Zero post-launch security issues" }
+        {
+          metric: "Security Issues",
+          value: "12",
+          improvement: "Critical vulnerabilities found",
+        },
+        {
+          metric: "Accessibility Score",
+          value: "98%",
+          improvement: "WCAG 2.1 AA compliance",
+        },
+        {
+          metric: "User Flow Issues",
+          value: "18",
+          improvement: "Navigation problems resolved",
+        },
+        {
+          metric: "Launch Success",
+          value: "100%",
+          improvement: "Zero post-launch security issues",
+        },
       ],
       testimonial: {
-        quote: "The exploratory testing approach uncovered security and usability issues that could have been catastrophic post-launch. Exceptional work.",
+        quote:
+          "The exploratory testing approach uncovered security and usability issues that could have been catastrophic post-launch. Exceptional work.",
         author: "Robert Chen",
-        position: "CTO, SecureBank Mobile"
+        position: "CTO, SecureBank Mobile",
       },
       timeline: "6 weeks from exploration to launch readiness",
-      technologies: ["React Native", "Node.js", "PostgreSQL", "AWS"]
+      technologies: ["React Native", "Node.js", "PostgreSQL", "AWS"],
     },
     {
       id: 3,
       title: "Healthcare SaaS Edge Case Discovery",
       industry: "Healthcare Technology",
       icon: <FaSearch className="text-2xl" />,
-      challenge: "A healthcare management SaaS platform needed thorough edge case testing to ensure reliability in critical healthcare workflows.",
-      solution: "Deployed heuristic evaluation and systematic bug hunting focusing on data integrity, workflow edge cases, and integration points.",
+      challenge:
+        "A healthcare management SaaS platform needed thorough edge case testing to ensure reliability in critical healthcare workflows.",
+      solution:
+        "Deployed heuristic evaluation and systematic bug hunting focusing on data integrity, workflow edge cases, and integration points.",
       results: [
-        { metric: "Edge Cases Found", value: "34", improvement: "Critical workflow issues" },
-        { metric: "Data Integrity Issues", value: "8", improvement: "Prevented data corruption" },
-        { metric: "Integration Bugs", value: "15", improvement: "Third-party API issues" },
-        { metric: "Compliance Score", value: "100%", improvement: "HIPAA compliance achieved" }
+        {
+          metric: "Edge Cases Found",
+          value: "34",
+          improvement: "Critical workflow issues",
+        },
+        {
+          metric: "Data Integrity Issues",
+          value: "8",
+          improvement: "Prevented data corruption",
+        },
+        {
+          metric: "Integration Bugs",
+          value: "15",
+          improvement: "Third-party API issues",
+        },
+        {
+          metric: "Compliance Score",
+          value: "100%",
+          improvement: "HIPAA compliance achieved",
+        },
       ],
       testimonial: {
-        quote: "The systematic exploration approach identified edge cases that could have compromised patient data. Their expertise was invaluable.",
+        quote:
+          "The systematic exploration approach identified edge cases that could have compromised patient data. Their expertise was invaluable.",
         author: "Dr. Sarah Williams",
-        position: "Chief Medical Officer, HealthTech Solutions"
+        position: "Chief Medical Officer, HealthTech Solutions",
       },
       timeline: "8 weeks of comprehensive exploration and validation",
-      technologies: ["Angular", "Python", "PostgreSQL", "Docker"]
-    }
+      technologies: ["Angular", "Python", "PostgreSQL", "Docker"],
+    },
   ];
 
   const nextCase = () => {
@@ -78,20 +141,26 @@ const ExploratoryCaseStudies: React.FC = () => {
   };
 
   const prevCase = () => {
-    setActiveCase((prev) => (prev - 1 + caseStudies.length) % caseStudies.length);
+    setActiveCase(
+      (prev) => (prev - 1 + caseStudies.length) % caseStudies.length
+    );
   };
 
   const currentCase = caseStudies[activeCase];
 
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Exploratory Testing <span className="text-brand-blue">Success Stories</span>
+            Exploratory Testing{" "}
+            <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our exploratory testing services help companies uncover critical issues, enhance user experiences, and prevent costly post-release bugs through systematic investigation and deep application insight.
+            Discover how our exploratory testing services help companies uncover
+            critical issues, enhance user experiences, and prevent costly
+            post-release bugs through systematic investigation and deep
+            application insight.
           </p>
         </div>
 
@@ -122,32 +191,53 @@ const ExploratoryCaseStudies: React.FC = () => {
                   {currentCase.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{currentCase.title}</h3>
-                  <p className="text-green-600 font-medium">{currentCase.industry}</p>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {currentCase.title}
+                  </h3>
+                  <p className="text-green-600 font-medium">
+                    {currentCase.industry}
+                  </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Challenge</h4>
-                  <p className="text-gray-600 leading-relaxed">{currentCase.challenge}</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                    Challenge
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    {currentCase.challenge}
+                  </p>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Exploratory Testing Solution</h4>
-                  <p className="text-gray-600 leading-relaxed">{currentCase.solution}</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                    Exploratory Testing Solution
+                  </h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    {currentCase.solution}
+                  </p>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Timeline</h4>
-                  <p className="text-green-600 font-medium">{currentCase.timeline}</p>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                    Timeline
+                  </h4>
+                  <p className="text-green-600 font-medium">
+                    {currentCase.timeline}
+                  </p>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3">Technologies</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                    Technologies
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {currentCase.technologies.map((tech, index) => (
-                      <span key={index} className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -158,21 +248,37 @@ const ExploratoryCaseStudies: React.FC = () => {
 
             {/* Right Content - Results */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h4 className="text-lg font-semibold text-gray-900 mb-6">Key Results Achieved</h4>
-              
+              <h4 className="text-lg font-semibold text-gray-900 mb-6">
+                Key Results Achieved
+              </h4>
+
               <div className="space-y-4 mb-6">
                 {currentCase.results.map((result, index) => (
-                  <div key={index} className="border-b border-gray-100 pb-4 last:border-b-0">
+                  <div
+                    key={index}
+                    className="border-b border-gray-100 pb-4 last:border-b-0"
+                  >
                     <div className="flex justify-between items-start mb-2">
-                      <span className="text-gray-700 font-medium">{result.metric}</span>
-                      <span className="text-2xl font-bold text-green-600">{result.value}</span>
+                      <span className="text-gray-700 font-medium">
+                        {result.metric}
+                      </span>
+                      <span className="text-2xl font-bold text-green-600">
+                        {result.value}
+                      </span>
                     </div>
-                    <div className="text-sm text-blue-600 font-medium">{result.improvement}</div>
+                    <div className="text-sm text-blue-600 font-medium">
+                      {result.improvement}
+                    </div>
                     {/* Progress bar for visual impact */}
                     <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-                      <div 
+                      <div
                         className="bg-gradient-to-r from-green-600 to-blue-600 h-2 rounded-full transition-all duration-1000"
-                        style={{width: `${Math.min(parseInt(result.value) || 90, 100)}%`}}
+                        style={{
+                          width: `${Math.min(
+                            parseInt(result.value) || 90,
+                            100
+                          )}%`,
+                        }}
                       ></div>
                     </div>
                   </div>
@@ -181,10 +287,16 @@ const ExploratoryCaseStudies: React.FC = () => {
 
               {/* Testimonial */}
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 italic mb-4">&quot;{currentCase.testimonial.quote}&quot;</p>
+                <p className="text-gray-700 italic mb-4">
+                  &quot;{currentCase.testimonial.quote}&quot;
+                </p>
                 <div className="text-sm">
-                  <div className="font-semibold text-gray-900">{currentCase.testimonial.author}</div>
-                  <div className="text-gray-600">{currentCase.testimonial.position}</div>
+                  <div className="font-semibold text-gray-900">
+                    {currentCase.testimonial.author}
+                  </div>
+                  <div className="text-gray-600">
+                    {currentCase.testimonial.position}
+                  </div>
                 </div>
               </div>
             </div>
@@ -199,14 +311,14 @@ const ExploratoryCaseStudies: React.FC = () => {
           >
             <FaChevronLeft />
           </button>
-          
+
           <div className="text-center">
             <div className="text-sm text-gray-600 mb-1">Case Study</div>
             <div className="text-lg font-semibold text-gray-900">
               {activeCase + 1} of {caseStudies.length}
             </div>
           </div>
-          
+
           <button
             onClick={nextCase}
             className="bg-white border-2 border-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-all duration-300"
@@ -217,7 +329,9 @@ const ExploratoryCaseStudies: React.FC = () => {
 
         {/* Summary Stats */}
         <div className="mt-16 bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-8">Exploratory Testing Impact Summary</h3>
+          <h3 className="text-2xl font-bold mb-8">
+            Exploratory Testing Impact Summary
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="text-3xl font-bold mb-2">2,500+</div>
@@ -243,12 +357,13 @@ const ExploratoryCaseStudies: React.FC = () => {
             Ready to Join Our Success Stories?
           </h3>
           <p className="text-gray-600 mb-6">
-            Let exploratory testing help you uncover critical issues and improve your product quality through systematic investigation.
+            Let exploratory testing help you uncover critical issues and improve
+            your product quality through systematic investigation.
           </p>
           <Link href="/contact-us">
-              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                Start Your Exploration
-              </button>
+            <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+              Start Your Exploration
+            </button>
           </Link>
         </div>
       </div>
@@ -257,4 +372,3 @@ const ExploratoryCaseStudies: React.FC = () => {
 };
 
 export default ExploratoryCaseStudies;
-

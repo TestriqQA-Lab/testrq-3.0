@@ -66,11 +66,9 @@ const AboutStorySection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-1 gap-2 bg-brand-blue text-white rounded-full">
-            <FaRoute/>
-            <p className="text-sm">
-            Our Journey
-          </p>
+          <div className="inline-flex items-center px-5 py-2 gap-2 bg-brand-blue text-white rounded-full">
+            <FaRoute />
+            <p className="text-sm">Our Journey</p>
           </div>
           <h2 className="text-3xl md:text-5xl mt-5 font-bold text-gray-900 mb-6">
             The{" "}

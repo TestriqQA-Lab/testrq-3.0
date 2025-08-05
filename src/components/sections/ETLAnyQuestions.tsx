@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const ETLAnyQuestions: React.FC = () => {
@@ -10,19 +11,21 @@ const ETLAnyQuestions: React.FC = () => {
           Ready to Optimize Your ETL Processes?
         </h2>
         <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-          Get expert ETL testing services that guarantee data accuracy, pipeline performance, and long-term reliability. Connect with our ETL specialists today for a comprehensive data pipeline assessment and unlock trusted, production-ready data.
+          Get expert ETL testing services that guarantee data accuracy, pipeline
+          performance, and long-term reliability. Connect with our ETL
+          specialists today for a comprehensive data pipeline assessment and
+          unlock trusted, production-ready data.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
-            Start ETL Assessment
-          </button>
-          <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
-            Schedule Consultation
-          </button>
+          <Link href="/contact-us">
+            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors duration-300 cursor-pointer">
+              Schedule Consultation
+            </button>
+          </Link>
         </div>
         <div className="mt-8 text-blue-100">
           <p className="text-sm">
-            📞 Call us: +1 (555) 123-4567 | ✉️ Email: etl@testriq.com
+            📞 Call us: (+91) 915-2929-343 | ✉️ Email: contact@testriq.com
           </p>
         </div>
       </div>
@@ -31,4 +34,3 @@ const ETLAnyQuestions: React.FC = () => {
 };
 
 export default ETLAnyQuestions;
-

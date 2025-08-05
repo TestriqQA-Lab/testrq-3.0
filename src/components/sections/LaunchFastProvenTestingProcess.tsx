@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaSearch, FaCog, FaBolt, FaRocket, FaCheckCircle } from "react-icons/fa";
+import {
+  FaSearch,
+  FaCog,
+  FaBolt,
+  FaRocket,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const LaunchFastProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -12,71 +18,76 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
       title: "Rapid Assessment & Planning",
       duration: "4-6 hours",
       icon: <FaSearch className="text-2xl" />,
-      description: "Quick analysis of requirements, features, and launch timeline to create an optimized testing strategy.",
+      description:
+        "Quick analysis of requirements, features, and launch timeline to create an optimized testing strategy.",
       activities: [
         "Feature prioritization analysis",
         "Risk assessment",
         "Testing scope definition",
-        "Resource allocation planning"
+        "Resource allocation planning",
       ],
-      nextStep: "Environment Setup"
+      nextStep: "Environment Setup",
     },
     {
       id: 2,
       title: "Agile Environment Setup",
       duration: "2-4 hours",
       icon: <FaCog className="text-2xl" />,
-      description: "Rapid test environment configuration and CI/CD integration for continuous testing.",
+      description:
+        "Rapid test environment configuration and CI/CD integration for continuous testing.",
       activities: [
         "Test environment provisioning",
         "CI/CD pipeline integration",
         "Automation framework setup",
-        "Monitoring tools configuration"
+        "Monitoring tools configuration",
       ],
-      nextStep: "Sprint Testing"
+      nextStep: "Sprint Testing",
     },
     {
       id: 3,
       title: "Sprint-Based Testing",
       duration: "1-2 days",
       icon: <FaBolt className="text-2xl" />,
-      description: "Intensive testing cycles aligned with development sprints for rapid feedback and iteration.",
+      description:
+        "Intensive testing cycles aligned with development sprints for rapid feedback and iteration.",
       activities: [
         "Functional testing execution",
         "Performance validation",
         "Security testing",
-        "Cross-platform compatibility"
+        "Cross-platform compatibility",
       ],
-      nextStep: "Launch Validation"
+      nextStep: "Launch Validation",
     },
     {
       id: 4,
       title: "Launch Readiness Validation",
       duration: "4-8 hours",
       icon: <FaRocket className="text-2xl" />,
-      description: "Final validation and launch readiness assessment to ensure successful product deployment.",
+      description:
+        "Final validation and launch readiness assessment to ensure successful product deployment.",
       activities: [
         "Production environment testing",
         "Load testing validation",
         "Security final check",
-        "Launch checklist verification"
+        "Launch checklist verification",
       ],
-      nextStep: "Continuous Support"
+      nextStep: "Continuous Support",
     },
     {
       id: 5,
       title: "Post-Launch Support",
       duration: "Ongoing",
       icon: <FaCheckCircle className="text-2xl" />,
-      description: "Continuous monitoring and rapid issue resolution to ensure sustained product success.",
+      description:
+        "Continuous monitoring and rapid issue resolution to ensure sustained product success.",
       activities: [
         "Real-time monitoring",
         "Issue triage and resolution",
         "Performance optimization",
-        "User feedback integration"
+        "User feedback integration",
       ],
-      nextStep: "Complete"
-    }
+      nextStep: "Complete",
+    },
   ];
 
   return (
@@ -84,10 +95,13 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Proven <span className="text-brand-blue">LaunchFast QA Process</span>
+            Our Proven{" "}
+            <span className="text-brand-blue">LaunchFast QA Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our streamlined approach enables rapid testing sprints and quality delivery, seamlessly aligned with agile QA testing and iterative development for a faster go-to-market.
+            Our streamlined approach enables rapid testing sprints and quality
+            delivery, seamlessly aligned with agile QA testing and iterative
+            development for a faster go-to-market.
           </p>
         </div>
 
@@ -133,7 +147,9 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
               </p>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Activities:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                  Key Activities:
+                </h4>
                 <div className="space-y-3">
                   {steps[activeStep - 1].activities.map((activity, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -164,7 +180,8 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
                 {steps.map((step) => (
                   <div
                     key={step.id}
-                    className={`flex items-center space-x-4 p-3 rounded-lg transition-all duration-300 ${
+                    onClick={() => setActiveStep(step.id)}
+                    className={`flex items-center cursor-pointer space-x-4 p-3 rounded-lg transition-all duration-300 ${
                       step.id === activeStep
                         ? "bg-blue-100 border-2 border-blue-300"
                         : step.id < activeStep
@@ -193,7 +210,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
                     </div>
                     {step.id === activeStep && (
                       <div className="text-blue-600 animate-pulse">
-                        <FaBolt />
+                        {steps[activeStep - 1].icon}
                       </div>
                     )}
                   </div>
@@ -224,4 +241,3 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
 };
 
 export default LaunchFastProvenTestingProcess;
-
