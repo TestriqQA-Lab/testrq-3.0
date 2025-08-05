@@ -343,8 +343,8 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden xl:flex items-center gap-3 2xl:gap-4">
-          <Link href="/contact">
-            <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
+          <Link href="/contact-us"> 
+            <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-[#057db0] cursor-pointer flex items-center gap-2">
               <span className="text-sm xl:text-base">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3 xl:w-4 xl:h-5" />
             </button>
@@ -563,7 +563,7 @@ const Navbar = () => {
           </ul>
 
           <div className="mt-6 flex flex-col gap-4 pt-4 border-t">
-            <Link href="/contact" onClick={handleLinkClick}>
+            <Link href="/contact-us" onClick={handleLinkClick}>
               <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
                 <span className="text-sm">Talk to Expert</span>
                 <FaArrowRight className="w-3 h-3" />

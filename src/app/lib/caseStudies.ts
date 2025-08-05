@@ -1632,7 +1632,7 @@ overview: {
   {
     id: 9,
     slug: "aalpha-information-systems",
-    title: "Penetration Testing for Aalpha’s HR Portal",
+    title: "Securing Aalpha Information Systems' HR Portal",
     client: "Aalpha Information Systems",
     industry: "IT company",
     duration: "Not specified",
