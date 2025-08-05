@@ -540,7 +540,7 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/kanishka-software-case-study",
+    canonical: "https://testrq-3-0.vercel.app/kanishka-software-case-study",
   },
   openGraph: {
     type: "article",
@@ -552,7 +552,7 @@ overview: {
       "Testriq partnered with Kanishka Software to execute end-to-end testing for their mobile app, ensuring seamless performance, usability, and zero-defect releases.",
     images: [
       {
-        url: "/OG/Kanishka-Case-Study-og.webp",
+        url: "/OG/case-study-kanishka-software-og.webp",
         width: 1200,
         height: 630,
         alt: "Kanishka Software QA Testing Case Study",
@@ -566,7 +566,7 @@ overview: {
     title: "Mobile App Testing Case Study – Kanishka Software x Testriq",
     description:
       "From performance testing to real-device QA, see how Testriq ensured flawless delivery for Kanishka Software’s mobile app.",
-    images: ["/OG/Kanishka-Case-Study-Twitter.webp"],
+    images: ["/OG/case-study-kanishka-software-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -718,7 +718,7 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/home-facts-case-study",
+    canonical: "https://testrq-3-0.vercel.app/realtytrac-case-study",
   },
   openGraph: {
     type: "article",
@@ -730,7 +730,7 @@ overview: {
       "Discover how Testriq helped Home Facts maintain data accuracy, cross-browser compatibility, and performance across 130M+ listings in the U.S. real estate market.",
     images: [
       {
-        url: "/OG/HomeFacts-Case-Study-og.webp",
+        url: "/OG/case-study-Real-Estate-og.webp",
         width: 1200,
         height: 630,
         alt: "Home Facts Real Estate Software Testing Case Study",
@@ -744,7 +744,7 @@ overview: {
     title: "Real Estate Software QA Case Study – Home Facts x Testriq",
     description:
       "From verifying massive property data to ensuring platform stability, Testriq’s QA team supported Home Facts in delivering a flawless user experience.",
-    images: ["/OG/HomeFacts-Case-Study-Twitter.webp"],
+    images: ["/OG/case-study-Real-Estate-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -918,12 +918,12 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/realtytrac-case-study",
+    canonical: "https://testrq-3-0.vercel.app/realtytrac-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/realtytrac-case-study",
+    url: "https://testrq-3-0.vercel.app/realtytrac-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RealtyTrac QA Case Study – Testriq's QA for Real Estate Platforms",
     description:
