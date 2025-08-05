@@ -12,13 +12,13 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
   caseStudy,
 }) => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb Navigation */}
-        <div className="mb-8">
+        <div className="mb-6">
           <Link
             href="/case-studies"
-            className="inline-flex gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors"
+            className="inline-flex gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors items-center"
           >
             <FaArrowLeft className="w-4 h-4" />
             <span>Back to Case Studies</span>
@@ -30,15 +30,15 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
           <div>
             {/* Meta Information */}
             <div className="flex flex-wrap gap-4 mb-6">
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                <FaIndustry className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                <span className="text-sm font-medium text-gray-700">
+              <div className="flex items-center gap-2 bg-[theme(color.brand.blue)] px-4 py-2 rounded-full shadow-sm">
+                <FaIndustry className="w-4 h-4 text-white" />
+                <span className="text-sm font-medium text-white">
                   {caseStudy.industry}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-                <FaCalendarAlt className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                <span className="text-sm font-medium text-gray-700">
+              <div className="flex items-center gap-2 bg-[theme(color.brand.blue)] px-4 py-2 rounded-full shadow-sm">
+                <FaCalendarAlt className="w-4 h-4 text-white" />
+                <span className="text-sm font-medium text-white">
                   {caseStudy.duration}
                 </span>
               </div>
@@ -65,19 +65,19 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
             {/* Key Results Preview */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                   {caseStudy.results.bugReduction}
                 </div>
                 <div className="text-sm text-gray-600">Bug Reduction</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                   {caseStudy.results.performanceImprovement}
                 </div>
                 <div className="text-sm text-gray-600">Performance Boost</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                   {caseStudy.results.roi}
                 </div>
                 <div className="text-sm text-gray-600">ROI</div>

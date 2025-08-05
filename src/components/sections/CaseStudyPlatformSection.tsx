@@ -68,7 +68,7 @@ const CaseStudyPlatformSection: React.FC<CaseStudyPlatformSectionProps> = ({
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <FaDesktop className="w-4 h-4" />
             <span>Platform Overview</span>
           </div>
@@ -76,12 +76,9 @@ const CaseStudyPlatformSection: React.FC<CaseStudyPlatformSectionProps> = ({
             What is Canva
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Canva is completely free to use graphic design platform. Canva
-            offers an easy to use drag-and-drop interface and access to over a
-            million photographs, graphics and fonts, aimed at the mainstream
-            user who doesn&apos;t consider themselves a designer, as well as
-            professionals who want to collaborate with clients around their
-            work.
+            Canva is a free graphic design platform with an easy drag-and-drop
+            interface and rich creative assets for both casual users and
+            professionals.
           </p>
         </div>
 
