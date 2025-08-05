@@ -1639,7 +1639,7 @@ overview: {
     description: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses.",
     image: "/Aalpha_Information_System_Logo.webp",
    metadata: {
-  title: "Securing Aalpha Information Systems' HR Portal – A Testriq Penetration Testing Project",
+  title: "Securing Aalpha Information Systems' HR Portal",
   description:
     "Learn how Testriq conducted an in-depth penetration testing engagement to secure Aalpha’s HR portal, identifying vulnerabilities and strengthening cyber defense.",
   keywords: [
@@ -1829,7 +1829,7 @@ overview: {
     description: "Implemented end-to-end testing strategies to boost usability, ensure stability, and improve automation. Enabled a reliable and scalable experience across Digiboxx’s digital ecosystem.",
     image: "/DigiboxxLogo.png",
     metadata: {
-  title: "Transforming Digital Storage with Comprehensive Testing Solutions",
+  title: "Optimizing Digiboxx with Robust Testing",
   description:
     "Discover how Testriq helped Digiboxx elevate cloud storage usability, security, and performance through strategic QA, automation, and cross-platform testing.",
   keywords: [
@@ -1988,7 +1988,7 @@ overview: {
     description: "Implemented proactive testing to ensure fast load times, high reliability, and smooth support for 10k+ users. Enabled a scalable, seamless retail experience post-acquisition.",
     image: "/RC_Pets_Logo.webp",
    metadata: {
-  title: "Optimizing Performance for RC Pets - A Scalability Testing Success Story",
+  title: "Optimizing Performance for RC Pets ",
   description:
     "See how Testriq enabled RC Pets to scale for 10k+ users with lightning-fast load times and reliable performance through robust scalability and load testing strategies.",
   keywords: [
@@ -2192,7 +2192,7 @@ overview: {
     description: "Implemented a thorough testing approach to boost quality, ensure reliability, and minimize defects. Enabled seamless performance and smoother user experiences across the platform.",
     image: "/Worksocial_logo.webp",
     metadata: {
-  title: "Enhancing WorkSocial's Software Quality with Comprehensive Testing Services",
+  title: "WorkSocial Software Optimized Through Testing",
   description:
     "Testriq partnered with WorkSocial to elevate software quality through rigorous QA practices—covering functionality, usability, and performance for a seamless real estate experience.",
   keywords: [
@@ -2358,7 +2358,7 @@ overview: {
     description: "Established a strategic QA approach to ensure performance, security, and reliability. Accelerated delivery cycles while boosting confidence in LeadoConnect’s automation software.",
     image: "/LeadoConnect_Logo.webp",
     metadata: {
-  title: "Quality Assurance Partnership for LeadoConnect's B2B Lead Generation Automation Software",
+  title: "Refining LeadoConnect’s B2B Software with QA",
   description:
     "Testriq ensured peak performance, security, and user experience for LeadoConnect’s B2B lead generation automation platform—strengthening its market leadership.",
   keywords: [
@@ -2395,7 +2395,7 @@ overview: {
       "Explore how Testriq's QA team optimized performance, improved security, and refined usability for LeadoConnect’s B2B lead gen automation platform.",
     images: [
       {
-        url: "/OG/LeadoConnect-Case-Study-og.webp",
+        url: "/OG/Case-study-LeadoConnect-og.webp",
         width: 1200,
         height: 630,
         alt: "LeadoConnect B2B Lead Generation Software QA Case Study",
@@ -2409,7 +2409,7 @@ overview: {
     title: "LeadoConnect Case Study – QA for B2B Lead Gen Software | Testriq",
     description:
       "Testriq partnered with LeadoConnect to test and enhance their B2B marketing automation tool—delivering quality, speed, and security for global teams.",
-    images: ["/OG/LeadoConnect-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-LeadoConnect-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -2551,7 +2551,7 @@ overview: {
     description: "Implemented structured QA documentation and rigorous testing to enhance reliability, accelerate development, and streamline Pro-ficiency’s software upgrade process.",
     image: "/Pro-ficiency_Logo.webp",
     metadata: {
-  title: "Pro-ficiency Soars with TESTRIQ: Precision QA Documentation and Rigorous Testing Redefine Software Development",
+  title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
   description:
     "Testriq delivered 45 months of precision QA documentation and rigorous testing for Pro-ficiency’s upgraded healthcare platform—elevating software quality, reliability, and compliance.",
   keywords: [
@@ -2717,7 +2717,7 @@ overview: {
     description: "Implemented a robust testing strategy to improve reliability, reduce debugging time, and accelerate development cycles. Enabled seamless integration and faster iteration across Phyllo's evolving API ecosystem.",
     image: "/Phyllo_logo.webp",
     metadata: {
-  title: "Empowering Phyllo's API Infrastructure with Efficient API Testing",
+  title: "Phyllo's API Infrastructure with Efficient API Testing",
   description:
     "Explore how Testriq enhanced Phyllo’s API infrastructure with scalable, efficient, and secure API testing—ensuring stability across its developer-first ecosystem.",
   keywords: [
