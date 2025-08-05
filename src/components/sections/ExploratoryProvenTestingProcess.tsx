@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaSearch, FaRoute, FaLightbulb, FaBug, FaFileAlt } from "react-icons/fa";
+import {
+  FaSearch,
+  FaRoute,
+  FaLightbulb,
+  FaBug,
+  FaFileAlt,
+} from "react-icons/fa";
 
 const ExploratoryProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -12,71 +18,76 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       title: "Charter Definition & Planning",
       duration: "30-60 minutes",
       icon: <FaSearch className="text-2xl" />,
-      description: "Define exploration objectives, scope, and testing charters to guide systematic investigation.",
+      description:
+        "Define exploration objectives, scope, and testing charters to guide systematic investigation.",
       activities: [
         "Charter creation and refinement",
         "Risk area identification",
         "Testing persona selection",
-        "Session time allocation"
+        "Session time allocation",
       ],
-      nextStep: "Session Execution"
+      nextStep: "Session Execution",
     },
     {
       id: 2,
       title: "Exploratory Session Execution",
       duration: "2-4 hours",
       icon: <FaRoute className="text-2xl" />,
-      description: "Conduct structured exploration sessions using defined charters and systematic investigation techniques.",
+      description:
+        "Conduct structured exploration sessions using defined charters and systematic investigation techniques.",
       activities: [
         "Charter-guided exploration",
         "Real-time note taking",
         "Bug discovery and documentation",
-        "User journey mapping"
+        "User journey mapping",
       ],
-      nextStep: "Analysis & Insights"
+      nextStep: "Analysis & Insights",
     },
     {
       id: 3,
       title: "Analysis & Insights Generation",
       duration: "1-2 hours",
       icon: <FaLightbulb className="text-2xl" />,
-      description: "Analyze findings, identify patterns, and generate actionable insights from exploration sessions.",
+      description:
+        "Analyze findings, identify patterns, and generate actionable insights from exploration sessions.",
       activities: [
         "Session data analysis",
         "Pattern identification",
         "Risk assessment",
-        "Insight generation"
+        "Insight generation",
       ],
-      nextStep: "Bug Reporting"
+      nextStep: "Bug Reporting",
     },
     {
       id: 4,
       title: "Bug Reporting & Documentation",
       duration: "1-2 hours",
       icon: <FaBug className="text-2xl" />,
-      description: "Document discovered issues with detailed reproduction steps and impact assessment.",
+      description:
+        "Document discovered issues with detailed reproduction steps and impact assessment.",
       activities: [
         "Bug report creation",
         "Reproduction step documentation",
         "Impact and severity assessment",
-        "Evidence collection"
+        "Evidence collection",
       ],
-      nextStep: "Recommendations"
+      nextStep: "Recommendations",
     },
     {
       id: 5,
       title: "Recommendations & Follow-up",
       duration: "30-60 minutes",
       icon: <FaFileAlt className="text-2xl" />,
-      description: "Provide actionable recommendations and plan follow-up exploration sessions if needed.",
+      description:
+        "Provide actionable recommendations and plan follow-up exploration sessions if needed.",
       activities: [
         "Improvement recommendations",
         "Priority assessment",
         "Follow-up planning",
-        "Knowledge sharing"
+        "Knowledge sharing",
       ],
-      nextStep: "Complete"
-    }
+      nextStep: "Complete",
+    },
   ];
 
   return (
@@ -84,10 +95,13 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our Proven Exploratory Testing <span className="text-brand-blue">Process</span>
+            Our Proven Exploratory Testing{" "}
+            <span className="text-brand-blue">Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our investigation-driven QA approach blends structured exploration with creative investigation techniques to ensure comprehensive coverage and maximum issue discovery across all application areas.
+            Our investigation-driven QA approach blends structured exploration
+            with creative investigation techniques to ensure comprehensive
+            coverage and maximum issue discovery across all application areas.
           </p>
         </div>
 
@@ -133,7 +147,9 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
               </p>
 
               <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Activities:</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                  Key Activities:
+                </h4>
                 <div className="space-y-3">
                   {steps[activeStep - 1].activities.map((activity, index) => (
                     <div key={index} className="flex items-center space-x-3">
@@ -162,7 +178,8 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
               {/* Timeline Visualization */}
               <div className="space-y-4">
                 {steps.map((step) => (
-                  <div onClick={() => setActiveStep(step.id)}
+                  <div
+                    onClick={() => setActiveStep(step.id)}
                     key={step.id}
                     className={`w-full flex items-center space-x-4 p-3 cursor-pointer rounded-lg transition-all duration-300 ${
                       step.id === activeStep
@@ -236,4 +253,3 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
 };
 
 export default ExploratoryProvenTestingProcess;
-

@@ -60,11 +60,9 @@ const AboutValuesSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full">
-            <FaHandsHelping/>
-            <span className="text-sm">
-            Core Values
-          </span>
+          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full">
+            <FaHandsHelping />
+            <span className="text-sm">Core Values</span>
           </div>
           <h2 className="text-3xl md:text-5xl mt-5 font-bold text-gray-900 mb-6">
             What We{" "}

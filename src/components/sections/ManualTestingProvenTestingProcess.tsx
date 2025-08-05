@@ -1,7 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
-import { FaClipboardList, FaPlay, FaBug, FaFileAlt, FaCheckCircle } from "react-icons/fa";
+import {
+  FaClipboardList,
+  FaPlay,
+  FaBug,
+  FaFileAlt,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const ManualTestingProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -12,71 +19,76 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       title: "Test Planning & Strategy",
       duration: "1-2 days",
       icon: <FaClipboardList className="text-2xl" />,
-      description: "Comprehensive test planning including requirement analysis, test strategy definition, and resource allocation.",
+      description:
+        "Comprehensive test planning including requirement analysis, test strategy definition, and resource allocation.",
       activities: [
         "Requirement analysis and understanding to align test objectives with business needs",
         "Test strategy and approach definition for structured manual testing execution",
         "Test environment setup planning to mirror real-world conditions",
-        "Resource allocation and timeline planning to ensure efficient delivery and faster time-to-market"
+        "Resource allocation and timeline planning to ensure efficient delivery and faster time-to-market",
       ],
-      nextStep: "Test Case Design"
+      nextStep: "Test Case Design",
     },
     {
       id: 2,
       title: "Test Case Design & Preparation",
       duration: "2-3 days",
       icon: <FaFileAlt className="text-2xl" />,
-      description: "Detailed test case creation covering functional, usability, and edge case scenarios.",
+      description:
+        "Detailed test case creation covering functional, usability, and edge case scenarios.",
       activities: [
         "Test case design and documentation to ensure clear, repeatable manual test coverage",
         "Test data preparation for accurate and context-aware scenario execution",
         "Test scenario prioritization based on risk and business impact",
-        "Traceability matrix creation to link test cases with requirements and ensure complete validation"
+        "Traceability matrix creation to link test cases with requirements and ensure complete validation",
       ],
-      nextStep: "Test Execution"
+      nextStep: "Test Execution",
     },
     {
       id: 3,
       title: "Manual Test Execution",
       duration: "3-5 days",
       icon: <FaPlay className="text-2xl" />,
-      description: "Systematic execution of test cases with real-time defect identification and documentation.",
+      description:
+        "Systematic execution of test cases with real-time defect identification and documentation.",
       activities: [
         "Test case execution",
         "Real-time defect logging",
         "Exploratory testing sessions",
-        "User experience evaluation"
+        "User experience evaluation",
       ],
-      nextStep: "Defect Management"
+      nextStep: "Defect Management",
     },
     {
       id: 4,
       title: "Defect Management & Tracking",
       duration: "Ongoing",
       icon: <FaBug className="text-2xl" />,
-      description: "Comprehensive defect lifecycle management from discovery to resolution verification.",
+      description:
+        "Comprehensive defect lifecycle management from discovery to resolution verification.",
       activities: [
         "Defect classification and prioritization",
         "Defect lifecycle tracking",
         "Retest execution",
-        "Regression impact analysis"
+        "Regression impact analysis",
       ],
-      nextStep: "Reporting & Sign-off"
+      nextStep: "Reporting & Sign-off",
     },
     {
       id: 5,
       title: "Test Reporting & Sign-off",
       duration: "1 day",
       icon: <FaCheckCircle className="text-2xl" />,
-      description: "Comprehensive test reporting with quality metrics, recommendations, and formal sign-off.",
+      description:
+        "Comprehensive test reporting with quality metrics, recommendations, and formal sign-off.",
       activities: [
         "Test execution summary",
         "Quality metrics analysis",
         "Risk assessment and recommendations",
-        "Formal test sign-off"
+        "Formal test sign-off",
       ],
-      nextStep: "Process Complete"
-    }
+      nextStep: "Process Complete",
+    },
   ];
 
   return (
@@ -84,17 +96,21 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-blue">Proven</span> Manual Testing Process
+            Our <span className="text-brand-blue">Proven</span> Manual Testing
+            Process
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic manual testing process ensures comprehensive test coverage, efficient execution, and reliable results by combining structured testing methodologies with expert human insight and ISTQB-certified practices.
+            Our systematic manual testing process ensures comprehensive test
+            coverage, efficient execution, and reliable results by combining
+            structured testing methodologies with expert human insight and
+            ISTQB-certified practices.
           </p>
         </div>
 
         <div className="relative">
           {/* Process Timeline */}
           <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
-          
+
           {/* Process Steps */}
           <div className="space-y-12">
             {steps.map((step, index) => (
@@ -107,7 +123,9 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
               >
                 {/* Step Number Circle */}
                 <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white border-4 border-brand-blue rounded-full items-center justify-center z-10">
-                  <span className="text-brand-blue font-bold text-lg flex justify-center pt-1">{step.id}</span>
+                  <span className="text-brand-blue font-bold text-lg flex justify-center pt-1">
+                    {step.id}
+                  </span>
                 </div>
 
                 {/* Step Content */}
@@ -122,22 +140,33 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
                         <span className="text-white">{step.icon}</span>
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
-                        <span className="text-sm text-brand-blue font-medium">{step.duration}</span>
+                        <h3 className="text-xl font-bold text-gray-900">
+                          {step.title}
+                        </h3>
+                        <span className="text-sm text-brand-blue font-medium">
+                          {step.duration}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6 leading-relaxed flex justify-items-start">
                       {step.description}
                     </p>
 
                     {/* Activities */}
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-900 mb-3">Key Activities:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">
+                        Key Activities:
+                      </h4>
                       {step.activities.map((activity, activityIndex) => (
-                        <div key={activityIndex} className="flex items-center space-x-2">
+                        <div
+                          key={activityIndex}
+                          className="flex items-center space-x-2"
+                        >
                           <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
-                          <span className="text-sm text-gray-600">{activity}</span>
+                          <span className="text-sm text-gray-600">
+                            {activity}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -146,7 +175,9 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
                     {step.nextStep !== "Process Complete" && (
                       <div className="mt-6 pt-4 border-t border-gray-200">
                         <span className="text-sm text-gray-500">Next: </span>
-                        <span className="text-sm font-medium text-brand-blue">{step.nextStep}</span>
+                        <span className="text-sm font-medium text-brand-blue">
+                          {step.nextStep}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -154,7 +185,9 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
 
                 {/* Mobile Step Number */}
                 <div className="lg:hidden w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white font-bold text-lg">{step.id}</span>
+                  <span className="text-white font-bold text-lg">
+                    {step.id}
+                  </span>
                 </div>
               </div>
             ))}
@@ -163,13 +196,18 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
 
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Manual Testing Journey?</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Ready to Start Your Manual Testing Journey?
+            </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Our proven process ensures comprehensive testing coverage and reliable results for your software projects.
+              Our proven process ensures comprehensive testing coverage and
+              reliable results for your software projects.
             </p>
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Start Your Project
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                Start Your Project
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -178,4 +216,3 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
 };
 
 export default ManualTestingProvenTestingProcess;
-

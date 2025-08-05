@@ -6,11 +6,11 @@ const AboutHeroSection = () => {
     <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-        <div className="inline-flex items-center bg-brand-blue px-3 gap-2 rounded-full py-1">
-          <FaInfoCircle className="text-white"/>
-        <span className=" text-white text-base md:text-sm">
-          About Testriq
-        </span>
+        <div className="inline-flex items-center bg-brand-blue px-5 gap-2 rounded-full py-2">
+          <FaInfoCircle className="text-white" />
+          <span className=" text-white text-base md:text-sm">
+            About Testriq
+          </span>
         </div>
 
         <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">

@@ -64,16 +64,14 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
       {/* Intro Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center mb-16">
         <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-          <FaTrophy/>
-          <span className="text-sm">
-            Success Stories
-          </span>
+          <FaTrophy />
+          <span className="text-sm">Success Stories</span>
         </div>
-        
+
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
           Real Results from <br className="hidden sm:block" />
           <span className="text-[theme(color.brand.blue)]">
@@ -81,7 +79,9 @@ export default function CaseStudies() {
           </span>
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-          Discover how our comprehensive web application testing services have helped businesses across diverse industries achieve their quality assurance, performance optimization, and user experience goals.
+          Discover how our comprehensive web application testing services have
+          helped businesses across diverse industries achieve their quality
+          assurance, performance optimization, and user experience goals.
         </p>
       </div>
 
