@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getPosts } from '@/lib/wordpress';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://testrq-3-0.vercel.app';
   const currentDate = new Date();
 
@@ -75,6 +76,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...solutionPages];
+  // Get all blog posts
+  const { posts } = await getPosts(1, 1000); // Fetch all posts, adjust perPage if you have more than 1000
+
+  const blogPosts = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...servicePages, ...solutionPages, ...blogPosts];
 }
+
 

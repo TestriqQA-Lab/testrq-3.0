@@ -1,85 +1,103 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
-import { Metadata } from "next";
-
-const BlogHeroSection = dynamic(
-  () => import("@/components/sections/BlogHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const BlogPostsGrid = dynamic(
-  () => import("@/components/sections/BlogPostsGrid"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const BlogCategories = dynamic(
-  () => import("@/components/sections/BlogCategories"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const BlogNewsletter = dynamic(
-  () => import("@/components/sections/BlogNewsletter"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// src/app/blog/page.tsx
+import { Suspense } from 'react';
+import { getPosts, getCategories } from '@/lib/wordpress';
+import BlogGrid from '@/components/blog/BlogGrid';
+import BlogGridSkeleton from '@/components/blog/BlogGridSkeleton';
+import Pagination from '@/components/blog/Pagination';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
-  description: "Discover expert insights on software testing, QA automation, performance testing, security testing, and mobile app testing. Stay updated with latest testing trends and best practices.",
-  keywords: "software testing blog, QA insights, testing best practices, automation testing, performance testing, security testing, mobile testing, test automation",
+  title: 'Blog | Testriq',
+  description: 'Latest insights, tutorials, and updates from the Testriq team.',
   openGraph: {
-    title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
-    description: "Discover expert insights on software testing, QA automation, performance testing, security testing, and mobile app testing.",
-    type: "website",
-    url: "https://testriq.com/blog",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
-    description: "Discover expert insights on software testing, QA automation, performance testing, security testing, and mobile app testing.",
-  },
-  alternates: {
-    canonical: "https://testriq.com/blog",
+    title: 'Blog | Testriq',
+    description: 'Latest insights, tutorials, and updates from the Testriq team.',
+    type: 'website',
   },
 };
 
-export default function BlogPage() {
+interface BlogPageProps {
+  searchParams: {
+    page?: string;
+  };
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const currentPage = parseInt(searchParams.page || '1');
+  const postsPerPage = 9;
+
+  // Fetch posts and categories in parallel
+  const [postsData, categories] = await Promise.all([
+    getPosts(currentPage, postsPerPage),
+    getCategories(),
+  ]);
+
+  const { posts, totalPages, totalPosts } = postsData;
+
   return (
-    <div>
-      <MainLayout>
-        <BlogHeroSection />
-        <BlogCategories />
-        <BlogPostsGrid />
-        <BlogNewsletter />
-      </MainLayout>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Testriq Blog
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90">
+              Insights, tutorials, and updates from our team
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm">
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                {totalPosts} Articles
+              </span>
+              <span className="bg-white/20 px-3 py-1 rounded-full">
+                {categories.length} Categories
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Categories Filter */}
+      {categories.length > 0 && (
+        <section className="bg-white border-b">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-wrap gap-2 justify-center">
+              <a
+                href="/blog"
+                className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200 transition-colors duration-200"
+              >
+                All Posts
+              </a>
+              {categories.slice(0, 8).map((category) => (
+                <a
+                  key={category.id}
+                  href={`/blog/category/${category.slug}`}
+                  className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors duration-200"
+                >
+                  {category.name} ({category.count})
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Blog Posts */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <Suspense fallback={<BlogGridSkeleton count={postsPerPage} />}>
+            <BlogGrid posts={posts} />
+          </Suspense>
+
+          {/* Pagination */}
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            basePath="/blog"
+          />
+        </div>
+      </section>
     </div>
   );
 }
-
