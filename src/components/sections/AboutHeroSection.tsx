@@ -13,7 +13,7 @@ const AboutHeroSection = () => {
           </span>
         </div>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight py-4">
           Pioneering{" "}
           <span className="text-[theme(color.brand.blue)]">
             Quality <br /> Assurance&nbsp;

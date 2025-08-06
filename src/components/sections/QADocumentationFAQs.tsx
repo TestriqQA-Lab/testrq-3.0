@@ -4,6 +4,7 @@ import { FaQuestionCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const QADocumentationFAQs = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const faqs = [
     {
@@ -72,11 +73,16 @@ const QADocumentationFAQs = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const categories = [...new Set(faqs.map(faq => faq.category))];
+  const categories = ['All', ...new Set(faqs.map(faq => faq.category))];
+
+  const filteredFaqs = selectedCategory === 'All'
+    ? faqs
+    : faqs.filter(faq => faq.category === selectedCategory);
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-medium mb-4">
@@ -94,13 +100,18 @@ const QADocumentationFAQs = () => {
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium">
-            All Questions
-          </button>
           {categories.map((category, index) => (
-            <button 
+            <button
               key={index}
-              className="px-4 py-2 bg-white text-gray-600 hover:bg-gray-50 rounded-lg text-sm font-medium border border-gray-200"
+              onClick={() => {
+                setSelectedCategory(category);
+                setOpenFAQ(null); // close any open FAQ when switching category
+              }}
+              className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${
+                selectedCategory === category
+                  ? 'bg-blue-600 text-white border-blue-600'
+                  : 'bg-white text-gray-600 hover:bg-gray-100 border-gray-200'
+              }`}
             >
               {category}
             </button>
@@ -109,8 +120,8 @@ const QADocumentationFAQs = () => {
 
         {/* FAQ List */}
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div 
+          {filteredFaqs.map((faq, index) => (
+            <div
               key={index}
               className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
             >
@@ -134,7 +145,7 @@ const QADocumentationFAQs = () => {
                   )}
                 </div>
               </button>
-              
+
               {openFAQ === index && (
                 <div className="px-6 pb-6">
                   <div className="pl-20">
@@ -146,58 +157,10 @@ const QADocumentationFAQs = () => {
               )}
             </div>
           ))}
-        </div>
 
-        {/* Additional Help Section */}
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 lg:p-12 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Still Have Questions?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8">
-              Our QA documentation experts are here to help. Get personalized answers to your specific 
-              questions and learn how our services can benefit your organization.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                Schedule Consultation
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-              </button>
-              
-              <button className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg border-2 border-blue-600 hover:bg-blue-50 transition-colors duration-200">
-                Contact Our Experts
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.959 8.959 0 01-4.906-1.456L3 21l2.456-5.094A8.959 8.959 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600">
-                <div className="flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span>Phone Support Available</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span>Email Response in 24hrs</span>
-                </div>
-                <div className="flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span>Free Initial Consultation</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          {filteredFaqs.length === 0 && (
+            <p className="text-center text-gray-500 mt-8">No FAQs available for this category.</p>
+          )}
         </div>
       </div>
     </section>
@@ -205,4 +168,3 @@ const QADocumentationFAQs = () => {
 };
 
 export default QADocumentationFAQs;
-

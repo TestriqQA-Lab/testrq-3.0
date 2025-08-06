@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaSearch, FaEdit, FaCheckCircle, FaRocket, FaUsers, FaChartLine } from 'react-icons/fa';
 
@@ -291,12 +292,11 @@ const QADocumentationProvenTestingProcess = () => {
               Our proven process ensures comprehensive, high-quality documentation that enhances your team&apos;s productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                Start Your Project
-              </button>
-              <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200">
+              <Link href="/contact-us">
+                <button className="px-8 py-4 cursor-pointer border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200">
                 Schedule Consultation
               </button>
+              </Link>
             </div>
           </div>
         </div>

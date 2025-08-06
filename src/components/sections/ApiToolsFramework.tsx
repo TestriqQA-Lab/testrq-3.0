@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
 
@@ -70,9 +71,7 @@ const ApiToolsFramework: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTools />
-            <span className="text-sm">
-              Tools & Frameworks
-            </span>
+            <span className="text-sm">Tools & Frameworks</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             <span className="text-[theme(color.brand.blue)]">
@@ -81,7 +80,9 @@ const ApiToolsFramework: React.FC = () => {
             We Use
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage industry-leading tools and frameworks to deliver comprehensive API testing solutions that ensure reliability, performance, and security.
+            We leverage industry-leading tools and frameworks to deliver
+            comprehensive API testing solutions that ensure reliability,
+            performance, and security.
           </p>
         </div>
 
@@ -124,9 +125,11 @@ const ApiToolsFramework: React.FC = () => {
             recommend the best combination for your specific API testing
             requirements.
           </p>
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Discuss Your Requirements
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300">
+              Discuss Your Requirements
+            </button>
+          </Link>
         </div>
       </div>
     </section>

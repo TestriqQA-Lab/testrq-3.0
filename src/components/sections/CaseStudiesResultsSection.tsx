@@ -223,45 +223,6 @@ const CaseStudiesResultsSection = () => {
           </div>
         </div>
 
-        {/* ROI Calculator */}
-        <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">
-              Average Return on Investment
-            </h3>
-            <p className="text-blue-100 max-w-2xl mx-auto">
-              Our clients typically see significant ROI within the first 6
-              months of engagement. Here&apos;s how our testing services deliver
-              measurable business value.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">300%</div>
-              <p className="text-blue-100 text-sm mb-2">Average ROI</p>
-              <p className="text-blue-200 text-xs">Within 6 months</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">$2.5M</div>
-              <p className="text-blue-100 text-sm mb-2">Average Cost Savings</p>
-              <p className="text-blue-200 text-xs">Per project annually</p>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">6 Months</div>
-              <p className="text-blue-100 text-sm mb-2">Payback Period</p>
-              <p className="text-blue-200 text-xs">
-                Typical investment recovery
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <button className="bg-white text-brand-blue px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:text-sky-600 hover:scale-98 transition-all">
-              Calculate Your ROI
-            </button>
-          </div>
-        </div>
 
         {/* Bottom Achievement Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

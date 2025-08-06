@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaExclamationTriangle,
@@ -13,7 +14,7 @@ import {
   FaGraduationCap,
   FaArrowRight,
   FaBook,
-  FaGlobe
+  FaGlobe,
 } from "react-icons/fa";
 
 const ElearningChallengesSection: React.FC = () => {
@@ -21,42 +22,50 @@ const ElearningChallengesSection: React.FC = () => {
     {
       icon: FaAccessibleIcon,
       title: "Accessibility Compliance Gaps",
-      problem: "70% of e-learning platforms fail WCAG 2.1 accessibility standards",
-      impact: "Excludes millions of learners with disabilities, legal compliance risks",
-      solution: "Comprehensive accessibility testing and WCAG 2.1 AA compliance validation",
+      problem:
+        "70% of e-learning platforms fail WCAG 2.1 accessibility standards",
+      impact:
+        "Excludes millions of learners with disabilities, legal compliance risks",
+      solution:
+        "Comprehensive accessibility testing and WCAG 2.1 AA compliance validation",
       color: "from-blue-500 to-indigo-600",
       bgColor: "bg-blue-50",
-      urgency: "Critical"
+      urgency: "Critical",
     },
     {
       icon: FaMobile,
       title: "Mobile Learning Barriers",
-      problem: "60% of learning happens on mobile, but many platforms aren't optimized",
+      problem:
+        "60% of learning happens on mobile, but many platforms aren't optimized",
       impact: "Poor user experience leads to 45% higher dropout rates",
-      solution: "Mobile-first testing approach with device-specific optimization",
+      solution:
+        "Mobile-first testing approach with device-specific optimization",
       color: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50",
-      urgency: "High"
+      urgency: "High",
     },
     {
       icon: FaPlay,
       title: "Video Content Issues",
-      problem: "Video streaming problems affect 40% of online learning sessions",
+      problem:
+        "Video streaming problems affect 40% of online learning sessions",
       impact: "Disrupted learning experiences and reduced engagement",
-      solution: "Comprehensive video testing across devices and network conditions",
+      solution:
+        "Comprehensive video testing across devices and network conditions",
       color: "from-red-500 to-orange-500",
       bgColor: "bg-red-50",
-      urgency: "High"
+      urgency: "High",
     },
     {
       icon: FaUsers,
       title: "Scalability Limitations",
       problem: "LMS platforms crash during peak enrollment periods",
       impact: "Lost revenue, frustrated learners, damaged reputation",
-      solution: "Load testing and performance optimization for concurrent users",
+      solution:
+        "Load testing and performance optimization for concurrent users",
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
-      urgency: "Critical"
+      urgency: "Critical",
     },
     {
       icon: FaShieldAlt,
@@ -66,46 +75,70 @@ const ElearningChallengesSection: React.FC = () => {
       solution: "Security testing and privacy compliance validation",
       color: "from-orange-500 to-red-600",
       bgColor: "bg-orange-50",
-      urgency: "Critical"
+      urgency: "Critical",
     },
     {
       icon: FaChartLine,
       title: "Poor Learning Analytics",
-      problem: "Inaccurate tracking leads to 35% of progress data being unreliable",
+      problem:
+        "Inaccurate tracking leads to 35% of progress data being unreliable",
       impact: "Ineffective learning paths and reduced educational outcomes",
       solution: "Learning analytics validation and SCORM/xAPI testing",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
-      urgency: "Medium"
-    }
+      urgency: "Medium",
+    },
   ];
 
   const industryStats = [
-    { value: "70%", label: "Platforms Fail Accessibility Tests", trend: "up", color: "text-red-600" },
-    { value: "45%", label: "Higher Mobile Dropout Rates", trend: "up", color: "text-red-600" },
-    { value: "58%", label: "Increase in Data Breaches", trend: "up", color: "text-red-600" },
-    { value: "35%", label: "Unreliable Progress Tracking", trend: "up", color: "text-red-600" }
+    {
+      value: "70%",
+      label: "Platforms Fail Accessibility Tests",
+      trend: "up",
+      color: "text-red-600",
+    },
+    {
+      value: "45%",
+      label: "Higher Mobile Dropout Rates",
+      trend: "up",
+      color: "text-red-600",
+    },
+    {
+      value: "58%",
+      label: "Increase in Data Breaches",
+      trend: "up",
+      color: "text-red-600",
+    },
+    {
+      value: "35%",
+      label: "Unreliable Progress Tracking",
+      trend: "up",
+      color: "text-red-600",
+    },
   ];
 
   const learningImpact = [
     {
       icon: FaGraduationCap,
       title: "Reduced Learning Outcomes",
-      description: "Technical issues directly impact educational effectiveness and student success rates.",
-      impact: "25% decrease in course completion"
+      description:
+        "Technical issues directly impact educational effectiveness and student success rates.",
+      impact: "25% decrease in course completion",
     },
     {
       icon: FaUsers,
       title: "Learner Frustration",
-      description: "Poor platform performance leads to increased support requests and negative reviews.",
-      impact: "40% increase in support tickets"
+      description:
+        "Poor platform performance leads to increased support requests and negative reviews.",
+      impact: "40% increase in support tickets",
     },
     {
       icon: FaBook,
       title: "Content Delivery Issues",
-      description: "Broken multimedia, slow loading, and compatibility problems disrupt learning flow.",
-      impact: "60% of learners report technical difficulties"
-    }
+      description:
+        "Broken multimedia, slow loading, and compatibility problems disrupt learning flow.",
+      impact: "60% of learners report technical difficulties",
+    },
   ];
 
   const getUrgencyColor = (urgency: string) => {
@@ -128,33 +161,47 @@ const ElearningChallengesSection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-6 py-2 mb-6">
             <FaExclamationTriangle className="w-4 h-4 text-red-600" />
-            <span className="text-sm font-medium text-red-600">E-Learning Challenges</span>
+            <span className="text-sm font-medium text-red-600">
+              E-Learning Challenges
+            </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Critical E-Learning Issues
-            <span className="block text-brand-blue">Blocking Educational Success</span>
+            <span className="block text-brand-blue">
+              Blocking Educational Success
+            </span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
-            E-learning platforms face unique challenges that can significantly impact educational outcomes, platform performance, and learner satisfaction. Our e-learning testing solutions address these critical issues through accessibility compliance, functional validation, and usability testing to ensure effective and inclusive learning experiences.
-
+            E-learning platforms face unique challenges that can significantly
+            impact educational outcomes, platform performance, and learner
+            satisfaction. Our e-learning testing solutions address these
+            critical issues through accessibility compliance, functional
+            validation, and usability testing to ensure effective and inclusive
+            learning experiences.
           </p>
         </div>
 
         {/* Industry Statistics */}
         <div className="bg-white rounded-3xl p-8 mb-16 shadow-lg border border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">E-Learning Industry Reality</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            E-Learning Industry Reality
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {industryStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className={`text-3xl font-bold ${stat.color} mb-2`}>{stat.value}</div>
+                <div className={`text-3xl font-bold ${stat.color} mb-2`}>
+                  {stat.value}
+                </div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
           <div className="text-center mt-6">
-            <p className="text-gray-500 text-sm">Source: EdTech Industry Reports 2024</p>
+            <p className="text-gray-500 text-sm">
+              Source: EdTech Industry Reports 2024
+            </p>
           </div>
         </div>
 
@@ -166,30 +213,50 @@ const ElearningChallengesSection: React.FC = () => {
               className={`${challenge.bgColor} rounded-3xl p-8 hover:shadow-2xl hover:ring-3 transition-all duration-300 hover:-translate-y-2 ring-1 ring-brand-blue border-opacity-20 group`}
             >
               <div className="flex items-center justify-between mb-4">
-                <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                <div
+                  className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                >
                   <challenge.icon className="w-8 h-8 text-white" />
                 </div>
-                <span className={`px-3 py-1 text-xs font-semibold rounded-full border ${getUrgencyColor(challenge.urgency)}`}>
+                <span
+                  className={`px-3 py-1 text-xs font-semibold rounded-full border ${getUrgencyColor(
+                    challenge.urgency
+                  )}`}
+                >
                   {challenge.urgency}
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{challenge.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {challenge.title}
+              </h3>
 
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-red-700 text-sm mb-2">THE PROBLEM:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.problem}</p>
+                  <h4 className="font-semibold text-red-700 text-sm mb-2">
+                    THE PROBLEM:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.problem}
+                  </p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-orange-700 text-sm mb-2">EDUCATIONAL IMPACT:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.impact}</p>
+                  <h4 className="font-semibold text-orange-700 text-sm mb-2">
+                    EDUCATIONAL IMPACT:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.impact}
+                  </p>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold text-green-700 text-sm mb-2">OUR SOLUTION:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.solution}</p>
+                  <h4 className="font-semibold text-green-700 text-sm mb-2">
+                    OUR SOLUTION:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.solution}
+                  </p>
                 </div>
               </div>
 
@@ -206,21 +273,35 @@ const ElearningChallengesSection: React.FC = () => {
         {/* Learning Impact Analysis */}
         <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">How Technical Issues Impact Learning</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              How Technical Issues Impact Learning
+            </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Technical issues in e-learning platforms, such as accessibility failures, performance bottlenecks, or usability flaws, have direct consequences on educational effectiveness and learner satisfaction.
+              Technical issues in e-learning platforms, such as accessibility
+              failures, performance bottlenecks, or usability flaws, have direct
+              consequences on educational effectiveness and learner
+              satisfaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {learningImpact.map((impact, index) => (
-              <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl ring-1 ring-brand-blue hover:ring-3 hover:bg-gray-100 transition-all duration-300">
+              <div
+                key={index}
+                className="text-center p-6 bg-gray-50 rounded-2xl ring-1 ring-brand-blue hover:ring-3 hover:bg-gray-100 transition-all duration-300"
+              >
                 <div className="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <impact.icon className="w-8 h-8 text-sky-600" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-4">{impact.title}</h4>
-                <p className="text-gray-600 mb-4 leading-relaxed">{impact.description}</p>
-                <div className="text-lg font-bold text-red-600">{impact.impact}</div>
+                <h4 className="text-xl font-bold text-gray-900 mb-4">
+                  {impact.title}
+                </h4>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {impact.description}
+                </p>
+                <div className="text-lg font-bold text-red-600">
+                  {impact.impact}
+                </div>
               </div>
             ))}
           </div>
@@ -230,10 +311,13 @@ const ElearningChallengesSection: React.FC = () => {
         <div className="bg-gradient-to-tr from-red-700 to-red-300 rounded-3xl p-12 text-white mb-16">
           <div className="text-center mb-12">
             <FaExclamationTriangle className="w-16 h-16 mx-auto mb-6 opacity-80" />
-            <h3 className="text-3xl font-bold mb-4">The True Cost of Poor E-Learning Quality</h3>
+            <h3 className="text-3xl font-bold mb-4">
+              The True Cost of Poor E-Learning Quality
+            </h3>
             <p className="text-lg max-w-3xl mx-auto">
-              Technical issues in e-learning platforms don&apos;t just affect user experience—they directly impact
-              educational outcomes, institutional reputation, and long-term success.
+              Technical issues in e-learning platforms don&apos;t just affect
+              user experience—they directly impact educational outcomes,
+              institutional reputation, and long-term success.
             </p>
           </div>
 
@@ -242,7 +326,8 @@ const ElearningChallengesSection: React.FC = () => {
               <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Educational Outcomes</h4>
               <p className="text-sm">
-                Poor platform quality leads to 25% lower course completion rates and reduced learning effectiveness.
+                Poor platform quality leads to 25% lower course completion rates
+                and reduced learning effectiveness.
               </p>
             </div>
 
@@ -250,46 +335,62 @@ const ElearningChallengesSection: React.FC = () => {
               <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Student Retention</h4>
               <p className="text-sm">
-                Technical difficulties cause 40% of students to abandon courses, leading to significant revenue loss.
+                Technical difficulties cause 40% of students to abandon courses,
+                leading to significant revenue loss.
               </p>
             </div>
 
             <div className="text-center text-red-500 p-6 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
               <FaGlobe className="w-12 h-12 mx-auto mb-4 opacity-80" />
-              <h4 className="text-xl font-bold mb-2">Institutional Reputation</h4>
+              <h4 className="text-xl font-bold mb-2">
+                Institutional Reputation
+              </h4>
               <p className="text-sm">
-                Accessibility violations and security breaches can result in legal action and permanent reputation damage.
+                Accessibility violations and security breaches can result in
+                legal action and permanent reputation damage.
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-              Prevent These Issues Now
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
+                Prevent These Issues Now
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* Solution Preview */}
         <div className="bg-gradient-to-br from-brand-blue to-sky-600 rounded-3xl p-12 text-white text-center">
           <FaGraduationCap className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
-          <h3 className="text-3xl font-bold mb-4">Transform Your E-Learning Platform</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            Transform Your E-Learning Platform
+          </h3>
           <p className="text-indigo-100 text-lg mb-8 max-w-2xl mx-auto">
-            Our comprehensive e-learning testing solutions address every challenge mentioned above,
-            ensuring accessible, engaging, and effective learning experiences for all students.
+            Our comprehensive e-learning testing solutions address every
+            challenge mentioned above, ensuring accessible, engaging, and
+            effective learning experiences for all students.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-              See Our Solutions
-            </button>
-            <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Get Free Assessment
-            </button>
+            <Link href="/case-studies">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+                See Our Solutions
+              </button>
+            </Link>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+                Get Free Assessment
+              </button>
+            </Link>
           </div>
 
           <div className="mt-8 text-indigo-100 text-sm">
-            <p>✓ WCAG 2.1 Compliance • ✓ Mobile Optimization • ✓ Security Testing • ✓ Performance Enhancement</p>
+            <p>
+              ✓ WCAG 2.1 Compliance • ✓ Mobile Optimization • ✓ Security Testing
+              • ✓ Performance Enhancement
+            </p>
           </div>
         </div>
       </div>
@@ -298,4 +399,3 @@ const ElearningChallengesSection: React.FC = () => {
 };
 
 export default ElearningChallengesSection;
-

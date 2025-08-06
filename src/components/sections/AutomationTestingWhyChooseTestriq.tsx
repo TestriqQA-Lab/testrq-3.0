@@ -42,7 +42,7 @@ const AutomationTestingWhyChooseTestriq: React.FC = () => {
       title: "Expert Automation Engineers",
       description:
         "Certified automation specialists with deep expertise in multiple tools and frameworks, ensuring optimal automation strategy for your needs.",
-      stats: "50+ Certified Engineers",
+      stats: "180+ Certified Engineers",
       color: "orange",
     },
     {

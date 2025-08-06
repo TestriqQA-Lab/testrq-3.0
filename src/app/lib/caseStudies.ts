@@ -109,7 +109,7 @@ export interface CaseStudy {
 }
 
 // Case studies data
-const caseStudiesData: CaseStudy[] = [
+export const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
     slug: "canva-case-study",

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaArrowRight,
@@ -145,7 +146,7 @@ const ApiCaseStudies: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-white to-gray-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
@@ -381,9 +382,11 @@ const ApiCaseStudies: React.FC = () => {
               Let our API testing experts help you achieve the same level of
               success. Get started with a comprehensive API assessment today.
             </p>
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+            <Link href="/contact-us">
+              <button className="bg-white text-[theme(color.brand.blue)] cursor-pointer px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
               Start Your Success Story
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ const AutomationTestingHeroSection: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-600">
-                  1,200+
+                  300+
                 </div>
                 <div className="text-sm text-gray-600">Projects Automated</div>
               </div>

@@ -180,18 +180,6 @@ const RegressionTestingFAQs = dynamic(() => import("@/components/sections/Regres
   ),
 });
 
-const RegressionTestingAnyQuestions = dynamic(
-  () => import("@/components/sections/RegressionTestingAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 export default function RegressionTestingPage() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
@@ -213,7 +201,6 @@ export default function RegressionTestingPage() {
         <RegressionTestingCaseStudies/>
         <RegressionTestingReadyToEnsureQuality />
         <RegressionTestingFAQs/>
-        <RegressionTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

@@ -44,20 +44,14 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Chen',
-      role: 'Senior QA Engineer at Microsoft',
       content: 'The comprehensive software testing guide helped me transition from manual testing to automation testing. The structured approach, test automation frameworks, and practical examples were invaluable for skill development.',
       rating: 5
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Test Manager at Amazon',
       content: 'Excellent QA resource for building software testing expertise. The learning path is well-structured and covers all essential testing types, including performance testing, exploratory testing, and API testing.',
       rating: 5
     },
     {
-      name: 'Emily Johnson',
-      role: 'QA Lead at Google',
       content: 'The security testing section was particularly helpful for meeting our compliance requirements like OWASP and GDPR. Highly recommend for professional QA development.',
       rating: 5
     }
@@ -149,11 +143,6 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.role}</div>
-                </div>
               </div>
             ))}
           </div>
