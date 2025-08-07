@@ -1,69 +1,119 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaCog, FaShieldAlt, FaRocket, FaMobile, FaDesktop, FaCloud, FaCode, FaChartLine } from "react-icons/fa";
+import Link from "next/link";
+import { getCategories } from "@/lib/wordpress-graphql";
+import { adaptWordPressCategory, Category } from "@/lib/wordpress-data-adapter";
 
 const BlogCategories: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const categories = [
-    {
-      id: "all",
-      name: "All Posts",
-      icon: <FaCog className="w-5 h-5" />,
-      count: 156,
-      color: "from-gray-500 to-gray-600"
-    },
-    {
-      id: "automation",
-      name: "Test Automation",
-      icon: <FaCode className="w-5 h-5" />,
-      count: 42,
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      id: "performance",
-      name: "Performance Testing",
-      icon: <FaRocket className="w-5 h-5" />,
-      count: 28,
-      color: "from-green-500 to-green-600"
-    },
-    {
-      id: "security",
-      name: "Security Testing",
-      icon: <FaShieldAlt className="w-5 h-5" />,
-      count: 24,
-      color: "from-red-500 to-red-600"
-    },
-    {
-      id: "mobile",
-      name: "Mobile Testing",
-      icon: <FaMobile className="w-5 h-5" />,
-      count: 31,
-      color: "from-purple-500 to-purple-600"
-    },
-    {
-      id: "web",
-      name: "Web Testing",
-      icon: <FaDesktop className="w-5 h-5" />,
-      count: 19,
-      color: "from-indigo-500 to-indigo-600"
-    },
-    {
-      id: "cloud",
-      name: "Cloud Testing",
-      icon: <FaCloud className="w-5 h-5" />,
-      count: 15,
-      color: "from-cyan-500 to-cyan-600"
-    },
-    {
-      id: "analytics",
-      name: "QA Analytics",
-      icon: <FaChartLine className="w-5 h-5" />,
-      count: 12,
-      color: "from-orange-500 to-orange-600"
+  // Icon mapping for categories
+  const categoryIcons: Record<string, React.ReactElement> = {
+    'test automation': <FaCode className="w-5 h-5" />,
+    'automation': <FaCode className="w-5 h-5" />,
+    'performance testing': <FaRocket className="w-5 h-5" />,
+    'performance': <FaRocket className="w-5 h-5" />,
+    'security testing': <FaShieldAlt className="w-5 h-5" />,
+    'security': <FaShieldAlt className="w-5 h-5" />,
+    'mobile testing': <FaMobile className="w-5 h-5" />,
+    'mobile': <FaMobile className="w-5 h-5" />,
+    'web testing': <FaDesktop className="w-5 h-5" />,
+    'web': <FaDesktop className="w-5 h-5" />,
+    'cloud testing': <FaCloud className="w-5 h-5" />,
+    'cloud': <FaCloud className="w-5 h-5" />,
+    'qa analytics': <FaChartLine className="w-5 h-5" />,
+    'analytics': <FaChartLine className="w-5 h-5" />,
+    'api testing': <FaCode className="w-5 h-5" />,
+    'api': <FaCode className="w-5 h-5" />,
+    'default': <FaCog className="w-5 h-5" />
+  };
+
+  const getCategoryIcon = (categoryName: string): React.ReactElement => {
+    const lowerName = categoryName.toLowerCase();
+    for (const [key, icon] of Object.entries(categoryIcons)) {
+      if (lowerName.includes(key)) {
+        return icon;
+      }
     }
-  ];
+    return categoryIcons.default;
+  };
+
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        setLoading(true);
+        const wpCategories = await getCategories();
+        const adaptedCategories = wpCategories.map(adaptWordPressCategory);
+        
+        // Calculate total posts for "All Posts" category
+        const totalPosts = adaptedCategories.reduce((sum, cat) => sum + cat.postCount, 0);
+        
+        // Add "All Posts" category at the beginning
+        const allCategory: Category = {
+          id: "all",
+          name: "All Posts",
+          description: "Browse all our testing articles",
+          color: "from-gray-500 to-gray-600",
+          icon: "🏷️",
+          postCount: totalPosts,
+          subscribers: Math.floor(totalPosts * 25), // Estimate subscribers
+          tags: ["All", "Testing", "QA"],
+          featuredTools: ["All Testing Tools"],
+          seo: {
+            title: "All Testing Articles | Testriq Blog",
+            description: "Browse all our comprehensive testing articles and tutorials",
+            keywords: "testing, qa, software testing, all articles"
+          }
+        };
+
+        setCategories([allCategory, ...adaptedCategories]);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+        // Fallback to static categories if WordPress is not available
+        setCategories([
+          {
+            id: "all",
+            name: "All Posts",
+            description: "Browse all our testing articles",
+            color: "from-gray-500 to-gray-600",
+            icon: "🏷️",
+            postCount: 156,
+            subscribers: 3900,
+            tags: ["All", "Testing", "QA"],
+            featuredTools: ["All Testing Tools"],
+            seo: {
+              title: "All Testing Articles | Testriq Blog",
+              description: "Browse all our comprehensive testing articles and tutorials",
+              keywords: "testing, qa, software testing, all articles"
+            }
+          }
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchCategories();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-center justify-center h-64">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading categories...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
@@ -82,11 +132,12 @@ const BlogCategories: React.FC = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-12">
-          {categories.map((category) => (
-            <button
+          {categories.slice(0, 8).map((category) => (
+            <Link
               key={category.id}
+              href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
               onClick={() => setActiveCategory(category.id)}
-              className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 ${
+              className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${
                 activeCategory === category.id
                   ? 'shadow-xl ring-2 ring-[theme(color.brand.blue)] ring-opacity-50'
                   : 'shadow-lg hover:shadow-xl'
@@ -99,7 +150,7 @@ const BlogCategories: React.FC = () => {
               <div className="relative z-10 text-center">
                 {/* Icon */}
                 <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
-                  {category.icon}
+                  {getCategoryIcon(category.name)}
                 </div>
                 
                 {/* Category Name */}
@@ -109,7 +160,7 @@ const BlogCategories: React.FC = () => {
                 
                 {/* Post Count */}
                 <div className="text-sm text-gray-500">
-                  {category.count} articles
+                  {category.postCount} articles
                 </div>
               </div>
 
@@ -119,7 +170,7 @@ const BlogCategories: React.FC = () => {
                   <span className="text-white text-xs">✓</span>
                 </div>
               )}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -161,10 +212,26 @@ const BlogCategories: React.FC = () => {
         {/* Quick Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-gray-200">
           {[
-            { number: "200+", label: "Total Articles", icon: "📚" },
-            { number: "15", label: "Categories", icon: "🏷️" },
-            { number: "50K+", label: "Monthly Readers", icon: "👥" },
-            { number: "Weekly", label: "New Content", icon: "🚀" }
+            { 
+              number: categories.reduce((sum, cat) => sum + cat.postCount, 0).toString() + "+", 
+              label: "Total Articles", 
+              icon: "📚" 
+            },
+            { 
+              number: categories.length.toString(), 
+              label: "Categories", 
+              icon: "🏷️" 
+            },
+            { 
+              number: Math.floor(categories.reduce((sum, cat) => sum + cat.subscribers, 0) / 1000) + "K+", 
+              label: "Monthly Readers", 
+              icon: "👥" 
+            },
+            { 
+              number: "Weekly", 
+              label: "New Content", 
+              icon: "🚀" 
+            }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-2xl mb-2">{stat.icon}</div>
@@ -183,4 +250,3 @@ const BlogCategories: React.FC = () => {
 };
 
 export default BlogCategories;
-
