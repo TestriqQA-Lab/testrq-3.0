@@ -47,7 +47,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-500">
-                  800+
+                  10+
                 </div>
                 <div className="text-gray-600 text-sm">
                   Smart Devices Tested

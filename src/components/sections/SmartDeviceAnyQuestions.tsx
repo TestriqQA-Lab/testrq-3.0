@@ -21,6 +21,7 @@ const SmartDeviceAnyQuestions: React.FC = () => {
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 text-brand-blue">
             <FaPhone className="w-8 h-8 mx-auto mb-4 text-brand-blue" />
             <h3 className="font-semibold mb-2">Call Us</h3>
+            <h3 className="font-semibold mb-2">(+91) 915-2929-343</h3>
             <p className="text-brand-blue text-sm">
               Speak directly with our smart device testing experts
             </p>
@@ -29,6 +30,7 @@ const SmartDeviceAnyQuestions: React.FC = () => {
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 text-brand-blue">
             <FaEnvelope className="w-8 h-8 mx-auto mb-4 text-brand-blue" />
             <h3 className="font-semibold mb-2">Email Us</h3>
+            <h3 className="font-semibold mb-2">contact@testriq.com</h3>
             <p className="text-brand-blue text-sm">
               Get detailed information about our services
             </p>

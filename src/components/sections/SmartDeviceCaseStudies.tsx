@@ -35,7 +35,6 @@ const SmartDeviceCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's smart device testing helped us achieve medical-grade accuracy and reliability. The battery optimization exceeded our expectations.",
-      author: "Dr. Emily Chen, Product Director",
       timeline: [
         "Device Requirements Analysis",
         "Connectivity & Sensor Testing",
@@ -64,7 +63,6 @@ const SmartDeviceCaseStudies: React.FC = () => {
       ],
       testimonial:
         "The comprehensive testing approach ensured our smart home devices work seamlessly together. Security validation was particularly thorough.",
-      author: "Mark Johnson, Engineering Manager",
       timeline: [
         "Ecosystem Analysis",
         "Interoperability Testing",
@@ -89,7 +87,6 @@ const SmartDeviceCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's audio testing expertise helped us achieve audiophile-grade quality. The latency optimization was crucial for our gaming market.",
-      author: "Sarah Williams, Chief Technology Officer",
       timeline: [
         "Audio Requirements Analysis",
         "Quality & Latency Testing",
@@ -211,9 +208,6 @@ const SmartDeviceCaseStudies: React.FC = () => {
               <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-l-green-500">
                 <p className="text-gray-700 italic mb-3">
                   &quot;{currentCase.testimonial}&quot;
-                </p>
-                <p className={`font-semibold ${colorClasses.text}`}>
-                  — {currentCase.author}
                 </p>
               </div>
             </div>
