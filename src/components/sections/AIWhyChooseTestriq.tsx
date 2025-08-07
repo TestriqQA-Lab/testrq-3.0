@@ -24,7 +24,7 @@ const AIWhyChooseTestriq: React.FC = () => {
       shortTitle: "AI Experts",
       description:
         "Our team consists of ISTQB-certified AI testing professionals with extensive experience in machine learning and AI technologies.",
-      stats: "150+ AI Models Tested",
+      stats: "10+ AI Models Tested",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       features: [
@@ -300,7 +300,7 @@ const AIWhyChooseTestriq: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="relative">
               <div className="text-3xl font-bold text-purple-600 mb-2">
-                150+
+                10+
               </div>
               <div className="text-gray-700 text-sm">AI Models</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>

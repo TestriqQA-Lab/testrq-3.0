@@ -227,11 +227,13 @@ const RoboticWhyChooseTestriq: React.FC = () => {
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  <button
-                    className={`w-full py-3 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r ${reason.bgGradient} text-white hover:shadow-lg transform hover:scale-105`}
+                  <Link href="/contact-us">
+                    <button
+                    className={`w-full py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r ${reason.bgGradient} text-white hover:shadow-lg transform hover:scale-105`}
                   >
                     Explore Robotic Testing
                   </button>
+                  </Link>
                 </div>
               </div>
 
@@ -261,17 +263,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-blue-500 mb-2">300+</div>
-              <div className="text-gray-600">Robots Tested</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-500 mb-2">
-                99.2%
-              </div>
-              <div className="text-gray-600">Safety Rate</div>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-8 text-center">
             <div className="text-center">
               <div className="text-3xl font-bold text-purple-500 mb-2">
                 ±0.1mm

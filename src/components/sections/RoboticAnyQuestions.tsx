@@ -21,6 +21,7 @@ const RoboticAnyQuestions: React.FC = () => {
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 text-blue-500">
             <FaPhone className="w-8 h-8 mx-auto mb-4 text-blue-500" />
             <h3 className="font-semibold mb-2">Call Us</h3>
+            <h3 className="font-semibold mb-2">(+91) 915-2929-343</h3>
             <p className="text-blue-500 text-sm">
               Speak directly with our robotic testing experts
             </p>
@@ -29,6 +30,7 @@ const RoboticAnyQuestions: React.FC = () => {
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-6 text-blue-500">
             <FaEnvelope className="w-8 h-8 mx-auto mb-4 text-blue-500" />
             <h3 className="font-semibold mb-2">Email Us</h3>
+            <h3 className="font-semibold mb-2">contact@testriq.com</h3>
             <p className="text-blue-500 text-sm">
               Get detailed information about our services
             </p>

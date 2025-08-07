@@ -53,7 +53,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's AI bias testing transformed our hiring platform into a truly fair and compliant system. Their expertise in ethical AI is exceptional.",
-      author: "Alex Thompson, Chief AI Officer",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       icon: "👥",
@@ -95,7 +94,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "The comprehensive AI testing provided by Testriq gave us the confidence to deploy our autonomous systems safely. Outstanding technical expertise!",
-      author: "Dr. Sarah Chen, Head of AI Safety",
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       icon: "🚗",
@@ -137,7 +135,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's medical AI testing ensured our diagnostic systems meet the highest medical standards. Their regulatory expertise is unmatched in healthcare AI.",
-      author: "Dr. Michael Rodriguez, Chief Medical Officer",
       color: "red",
       gradient: "from-red-500 to-red-600",
       icon: "🏥",
@@ -318,8 +315,6 @@ const AICaseStudies: React.FC = () => {
                 <cite
                   className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm flex items-center`}
                 >
-                  <FaBrain className="w-4 h-4 mr-2" />—{" "}
-                  {caseStudies[activeCase].author}
                 </cite>
               </div>
             </div>
