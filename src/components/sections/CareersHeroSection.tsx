@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import {
   FaRocket,
@@ -48,6 +47,14 @@ const CareersHeroSection: React.FC = () => {
     { icon: FaMobile, position: "bottom-40 left-16", delay: "2s" },
     { icon: FaStar, position: "bottom-20 right-20", delay: "0.5s" },
   ];
+  
+  const scrollToOpenPostions = () => {
+    const element = document.getElementById("open-positions-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
 
   return (
     <section className="relative bg-white py-8 lg:py-16 overflow-hidden px-8 md:px-12 lg:px-24">
@@ -98,11 +105,14 @@ const CareersHeroSection: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Link href="#view-open-position" className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+            <button
+              onClick={scrollToOpenPostions}
+              className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            >
               <FaUsers className="w-5 h-5" />
               View Open Positions
               <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
           </div>
 
           {/* Company Stats */}
