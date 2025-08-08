@@ -50,7 +50,7 @@ const BlogHeroSection: React.FC = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+        {/* <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
           <button className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
             <FaRss className="w-4 h-4" />
             Subscribe to RSS
@@ -59,10 +59,10 @@ const BlogHeroSection: React.FC = () => {
             <FaBell className="w-4 h-4" />
             Get Notifications
           </button>
-        </div>
+        </div> */}
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
           {[
             { number: "200+", label: "Expert Articles" },
             { number: "50K+", label: "Monthly Readers" },
@@ -92,7 +92,7 @@ const BlogHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block absolute bottom-1/4 left-1/4">
+      <div className="hidden lg:block absolute bottom-1/3 left-1/5">
         <div className="w-14 h-14 bg-purple-500/20 rounded-lg border border-purple-400/30 backdrop-blur-sm flex items-center justify-center">
           <span className="text-purple-300 text-xl">🔧</span>
         </div>

@@ -132,7 +132,7 @@ const BlogCategories: React.FC = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-12">
-          {categories.slice(0, 8).map((category) => (
+          {categories.slice(0, 16).map((category) => (
             <Link
               key={category.id}
               href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
@@ -174,76 +174,8 @@ const BlogCategories: React.FC = () => {
           ))}
         </div>
 
-        {/* Featured Categories Highlight */}
-        <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <FaCode className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Test Automation</h4>
-              <p className="text-gray-600 text-sm">
-                Learn about Selenium, Cypress, Playwright, and other automation frameworks
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <FaRocket className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Performance Testing</h4>
-              <p className="text-gray-600 text-sm">
-                Master load testing, stress testing, and performance optimization techniques
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <FaShieldAlt className="w-8 h-8 text-white" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Security Testing</h4>
-              <p className="text-gray-600 text-sm">
-                Discover security testing methodologies and vulnerability assessment
-              </p>
-            </div>
-          </div>
-        </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-gray-200">
-          {[
-            { 
-              number: categories.reduce((sum, cat) => sum + cat.postCount, 0).toString() + "+", 
-              label: "Total Articles", 
-              icon: "📚" 
-            },
-            { 
-              number: categories.length.toString(), 
-              label: "Categories", 
-              icon: "🏷️" 
-            },
-            { 
-              number: Math.floor(categories.reduce((sum, cat) => sum + cat.subscribers, 0) / 1000) + "K+", 
-              label: "Monthly Readers", 
-              icon: "👥" 
-            },
-            { 
-              number: "Weekly", 
-              label: "New Content", 
-              icon: "🚀" 
-            }
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl mb-2">{stat.icon}</div>
-              <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-1">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 text-sm">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );
