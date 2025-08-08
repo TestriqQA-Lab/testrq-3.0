@@ -180,13 +180,6 @@ const CareersValuesSection: React.FC = () => {
               </div>
             ))}
           </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-12">
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg">
-              Join Our Team Today
-            </button>
-          </div>
         </div>
 
         {/* Culture Highlights */}
@@ -263,7 +256,7 @@ const CareersValuesSection: React.FC = () => {
                 <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-1">
                   15+
                 </div>
-                <div className="text-sm text-gray-600">Countries</div>
+                <div className="text-sm text-gray-600">Global Service Delivery</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-1">

@@ -46,7 +46,7 @@ const SmartDeviceAnyQuestions: React.FC = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact-us">
+          <Link href="/contact-us#calendly-section">
             <button className="border-2 border-white cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors duration-300">
               Schedule Consultation
             </button>

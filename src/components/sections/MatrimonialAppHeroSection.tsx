@@ -8,13 +8,13 @@ import {
   Heart,
   Verified,
   TrendingUp,
-  Users,
 } from "lucide-react";
+import Link from "next/link";
 
 const MatrimonialAppHeroSection = () => {
   const trustMetrics = [
     {
-      number: "300+",
+      number: "30+",
       label: "Apps Certified",
       icon: <Verified className="w-8 h-8" />,
       color: "text-blue-600",
@@ -31,13 +31,14 @@ const MatrimonialAppHeroSection = () => {
       icon: <TrendingUp className="w-8 h-8" />,
       color: "text-purple-600",
     },
-    {
-      number: "50M+",
-      label: "Users Protected",
-      icon: <Users className="w-8 h-8" />,
-      color: "text-orange-600",
-    },
   ];
+
+  const scrollToMatrimonialProcess = () => {
+    const element = document.getElementById("matrimonial-process-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
@@ -64,9 +65,7 @@ const MatrimonialAppHeroSection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Matrimonial Apps{" "}
-            <span className="text-brand-blue relative">
-              Certification
-            </span>
+            <span className="text-brand-blue relative">Certification</span>
           </motion.h1>
 
           <motion.p
@@ -75,8 +74,9 @@ const MatrimonialAppHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Ensure your matrimonial platform meets the highest standards of security, privacy, and quality. 
-            Get certified with comprehensive testing that builds user trust and protects sensitive data.
+            Ensure your matrimonial platform meets the highest standards of
+            security, privacy, and quality. Get certified with comprehensive
+            testing that builds user trust and protects sensitive data.
           </motion.p>
 
           <motion.div
@@ -85,11 +85,16 @@ const MatrimonialAppHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <button className="bg-[#25A8E0] hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Get Certified Now
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="border-2 border-brand-blue text-brand-blue hover:brand-blue px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300">
+            <Link href="/contact-us">
+              <button className="bg-[#25A8E0] cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Get Certified Now
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
+            <button
+              onClick={scrollToMatrimonialProcess} // Trigger smooth scroll
+              className="border-2 cursor-pointer border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 transform hover:-translate-y-1"
+            >
               View Certification Process
               <Shield className="w-5 h-5" />
             </button>
@@ -99,7 +104,7 @@ const MatrimonialAppHeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
           >
             {trustMetrics.map((metric, index) => (
               <motion.div
@@ -112,7 +117,9 @@ const MatrimonialAppHeroSection = () => {
                 <div className={`${metric.color} mb-2 flex justify-center`}>
                   {metric.icon}
                 </div>
-                <div className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}>
+                <div
+                  className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}
+                >
                   {metric.number}
                 </div>
                 <div className="text-sm text-gray-600">{metric.label}</div>
@@ -131,4 +138,3 @@ const MatrimonialAppHeroSection = () => {
 };
 
 export default MatrimonialAppHeroSection;
-

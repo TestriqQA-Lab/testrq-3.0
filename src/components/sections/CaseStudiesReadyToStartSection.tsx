@@ -38,20 +38,17 @@ const CaseStudiesReadyToStartSection = () => {
       title: "Schedule Consultation",
       description:
         "Book a free 30-minute consultation to discuss your testing needs",
-      action: "Book Now",
     },
     {
       step: 2,
       title: "Receive Custom Proposal",
       description:
         "Get a tailored testing strategy and proposal within 24 hours",
-      action: "Get Proposal",
     },
     {
       step: 3,
       title: "Start Your Project",
       description: "Begin your testing journey with our expert team",
-      action: "Get Started",
     },
   ];
 
@@ -60,7 +57,7 @@ const CaseStudiesReadyToStartSection = () => {
       icon: FaCalendarAlt,
       title: "Schedule a Call",
       description: "Book a free consultation at your convenience",
-      action: "#",
+      action: "/contact-us#calendly-section",
       text: "Schedule Now",
       primary: true,
     },
@@ -142,9 +139,6 @@ const CaseStudiesReadyToStartSection = () => {
                   {step.title}
                 </h4>
                 <p className="text-blue-100 mb-4">{step.description}</p>
-                <button className="text-white p-3 bg-brand-blue rounded-xl font-semibold hover:scale-95 transition-all">
-                  {step.action} →
-                </button>
               </div>
             ))}
           </div>

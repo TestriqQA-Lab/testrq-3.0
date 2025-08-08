@@ -47,7 +47,7 @@ const GamingContactSection: React.FC = () => {
         "Get a detailed proposal and quote for your Gaming testing needs",
       detail: "contact@testriq.com",
       text: "Get Quote",
-      action: "/contact-us",
+      action: "mailto:contact@testriq.com",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
     },
@@ -115,7 +115,6 @@ const GamingContactSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Contact Options */}
         {/* Contact Options */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {contactOptions.map((option, index) => (

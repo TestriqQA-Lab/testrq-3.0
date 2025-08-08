@@ -1,29 +1,42 @@
+import Link from "next/link";
 import React from "react";
-import { FaArrowRight, FaPhone, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaPhone,
+  FaEnvelope,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
 const ToolsReadyToElevateSection = () => {
   const ctaOptions = [
     {
       icon: FaCalendarAlt,
       title: "Schedule Consultation",
-      description: "Book a free 30-minute consultation to discuss your testing needs",
-      action: "Book Now",
-      highlight: true
+      description:
+        "Book a free 30-minute consultation to discuss your testing needs",
+      text: "Book Now",
+      action: "/contact-us#calendly-section",
+      detail: "",
+      highlight: true,
     },
     {
       icon: FaPhone,
       title: "Speak with Expert",
       description: "Talk directly with our testing specialists",
-      action: "Call Now",
-      highlight: false
+      text: "Call Now",
+      action: "tel:(+91) 915-2929-343",
+      detail: "(+91) 915-2929-343",
+      highlight: false,
     },
     {
       icon: FaEnvelope,
       title: "Get Custom Quote",
       description: "Receive a tailored proposal for your project",
-      action: "Request Quote",
-      highlight: false
-    }
+      text: "Request Quote",
+      action: "mailto:contact@testriq.com",
+      detail: "mailto:contact@testriq.com",
+      highlight: false,
+    },
   ];
 
   const benefits = [
@@ -32,14 +45,14 @@ const ToolsReadyToElevateSection = () => {
     "Custom framework development",
     "24/7 technical support",
     "Training and knowledge transfer",
-    "Continuous tool optimization"
+    "Continuous tool optimization",
   ];
 
   const successMetrics = [
     { value: "500+", label: "Projects Delivered" },
     { value: "99.9%", label: "Client Satisfaction" },
     { value: "75%", label: "Faster Testing" },
-    { value: "60%", label: "Cost Reduction" }
+    { value: "60%", label: "Cost Reduction" },
   ];
 
   return (
@@ -56,21 +69,24 @@ const ToolsReadyToElevateSection = () => {
           <span className="inline-block bg-brand-blue text-white text-sm px-4 py-2 rounded-full mb-6">
             Ready to Get Started?
           </span>
-          
+
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Elevate Your Testing with Advanced Tools
           </h2>
-          
+
           <p className="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto mb-8">
-            Transform your software quality assurance with our comprehensive suite of testing tools and frameworks. 
-            Join hundreds of companies that trust us with their critical testing needs.
+            Transform your software quality assurance with our comprehensive
+            suite of testing tools and frameworks. Join hundreds of companies
+            that trust us with their critical testing needs.
           </p>
 
           {/* Primary CTA Button */}
-          <button className="bg-white text-sky-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center gap-3 mb-12">
-            Start Your Testing Journey
-            <FaArrowRight className="w-5 h-5" />
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-white cursor-pointer text-sky-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center gap-3 mb-12">
+              Start Your Testing Journey
+              <FaArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
         </div>
 
         {/* CTA Options */}
@@ -86,33 +102,44 @@ const ToolsReadyToElevateSection = () => {
                     : "bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 bg-opacity-50 backdrop-blur-sm"
                 }`}
               >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
-                  option.highlight 
-                    ? "bg-brand-blue text-white" 
-                    : "bg-brand-blue text-white"
-                }`}>
+                <div
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
+                    option.highlight
+                      ? "bg-brand-blue text-white"
+                      : "bg-brand-blue text-white"
+                  }`}
+                >
                   <IconComponent className="w-8 h-8" />
                 </div>
-                
-                <h3 className={`text-xl font-bold mb-4 ${
-                  option.highlight ? "text-gray-900" : "text-white"
-                }`}>
+
+                <h3
+                  className={`text-xl font-bold mb-4 ${
+                    option.highlight ? "text-gray-900" : "text-white"
+                  }`}
+                >
                   {option.title}
                 </h3>
-                
-                <p className={`mb-6 ${
-                  option.highlight ? "text-gray-600" : "text-blue-100"
-                }`}>
+
+                <p
+                  className={`mb-3 ${
+                    option.highlight ? "text-gray-600" : "text-blue-100"
+                  }`}
+                >
                   {option.description}
                 </p>
-                
-                <button className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                  option.highlight
-                    ? "bg-brand-blue text-white hover:bg-sky-700"
-                    : "bg-white text-sky-700 hover:bg-blue-50"
-                }`}>
-                  {option.action}
-                </button>
+                <h3 className="py-2">{option.detail}</h3>
+
+                <Link href={option.action}>
+                  <button
+                    className={`px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors ${
+                      option.highlight
+                        ? "bg-brand-blue text-white hover:bg-sky-700"
+                        : "bg-white text-sky-700 hover:bg-blue-50"
+                    }`}
+                  >
+                    {option.text}
+                  </button>
+                </Link>
               </div>
             );
           })}
@@ -125,11 +152,11 @@ const ToolsReadyToElevateSection = () => {
               What You Get with Our Testing Tools
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Comprehensive testing solutions designed to accelerate your development 
-              and ensure the highest quality standards.
+              Comprehensive testing solutions designed to accelerate your
+              development and ensure the highest quality standards.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-center gap-3">
@@ -144,10 +171,8 @@ const ToolsReadyToElevateSection = () => {
 
         {/* Success Metrics */}
         <div className="text-center mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8">
-            Proven Results
-          </h3>
-          
+          <h3 className="text-2xl font-bold text-white mb-8">Proven Results</h3>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {successMetrics.map((metric, index) => (
               <div key={index} className="text-center">
@@ -167,15 +192,15 @@ const ToolsReadyToElevateSection = () => {
               Ready to Transform Your Testing?
             </h4>
             <p className="text-blue-100 mb-6 max-w-md">
-              Join the ranks of successful companies using our advanced testing tools and frameworks.
+              Join the ranks of successful companies using our advanced testing
+              tools and frameworks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:scale-98 transition-all">
-                Get Started Today
-              </button>
-              <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors">
-                View Pricing
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:scale-98 transition-all">
+                  Get Started Today
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -185,4 +210,3 @@ const ToolsReadyToElevateSection = () => {
 };
 
 export default ToolsReadyToElevateSection;
-

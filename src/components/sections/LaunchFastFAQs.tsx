@@ -121,7 +121,7 @@ const LaunchFastFAQs: React.FC = () => {
             for your product launch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={"/contact-us"}>
+            <Link href={"/contact-us#calendly-section"}>
               <button className="border-2 cursor-pointer border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
                 Schedule Consultation
               </button>

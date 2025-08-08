@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -10,11 +10,14 @@ import {
   TrendingUp,
   Eye,
 } from "lucide-react";
+import Link from "next/link";
 
 const DatingAppHeroSection = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false); // State for lightbox visibility
+
   const trustMetrics = [
     {
-      number: "500+",
+      number: "50+",
       label: "Apps Certified",
       icon: <Verified className="w-8 h-8" />,
       color: "text-blue-600",
@@ -39,6 +42,15 @@ const DatingAppHeroSection = () => {
     },
   ];
 
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(37,168,224,0.05)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
@@ -53,7 +65,7 @@ const DatingAppHeroSection = () => {
           >
             <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
               <Shield className="w-4 h-4 mr-2" />
-              Trusted by 500+ Dating Apps Worldwide
+              Trusted by 50+ Dating Apps Worldwide
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -101,19 +113,22 @@ const DatingAppHeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <motion.button
-              className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Get Certified Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </motion.button>
+            <Link href="/contact-us">
+              <motion.button
+                className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get Certified Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </motion.button>
+            </Link>
 
             <motion.button
-              className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-brand-blue cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={openLightbox} // Open lightbox on click
             >
               <Play className="mr-2 w-5 h-5 text-brand-blue" />
               Watch Demo
@@ -121,6 +136,26 @@ const DatingAppHeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {isLightboxOpen && (
+        <div className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-xl flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg max-w-md w-full">
+            <div className="text-center">
+              <h3 className="text-2xl font-semibold mb-4">Coming Soon</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                The demo video is coming soon. Stay tuned!
+              </p>
+              <button
+                onClick={closeLightbox} // Close the lightbox
+                className="bg-blue-500 cursor-pointer text-white px-6 py-3 rounded-lg font-semibold"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

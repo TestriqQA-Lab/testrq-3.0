@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaHeart,
@@ -358,9 +359,11 @@ const CareersBenefitsSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
+            <Link href="#view-open-position">
+              <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
               Join Our Team
             </button>
+            </Link>
           </div>
         </div>
       </div>

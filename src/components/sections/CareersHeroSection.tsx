@@ -26,7 +26,7 @@ const CareersHeroSection: React.FC = () => {
       icon: FaGlobe,
       value: "25+",
       label: "Countries",
-      description: "Global presence",
+      description: "Global Service Delivery",
     },
     {
       icon: FaRocket,

@@ -7,7 +7,6 @@ import {
   FaCog,
   FaCloud,
   FaRocket,
-  FaUsers,
   FaChartLine,
   FaCheckCircle,
   FaNetworkWired,

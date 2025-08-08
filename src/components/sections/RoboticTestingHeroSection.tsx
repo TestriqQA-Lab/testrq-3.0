@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 
 const RoboticTestingHeroSection: React.FC = () => {
   return (

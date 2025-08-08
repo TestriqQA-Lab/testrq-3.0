@@ -47,7 +47,7 @@ const HealthcareContactSection: React.FC = () => {
         "Get a detailed proposal and quote for your healthcare testing needs",
       detail:"contact@testriq.com",  
       text: "Get Quote",
-      action: "/contact-us",
+      action: "mailto:contact@testriq.com",
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
     },
