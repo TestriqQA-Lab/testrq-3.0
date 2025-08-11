@@ -1,9 +1,85 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
+  matrimonialAppCertificationSchema,
   organizationSchema,
   websiteSchema,
 } from "@/components/seo/StructuredData";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title:  "Matrimonial App Certification  ",
+   
+  description: "Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.",
+  keywords: [
+    "Matrimonial App Certification",
+    "matrimonial platform security",
+    "privacy compliance",
+    "GDPR for matrimonial apps",
+    "ISO 27001 certification",
+    "secure matrimonial apps",
+    "CCPA compliance",
+    "app certification for matchmaking",
+    "user trust for dating apps",
+    "QA for matrimonial apps"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  alternates: {
+    canonical: 'https://testrq-3-0.vercel.app/matrimonial-apps-certification',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testrq-3-0.vercel.app/matrimonial-apps-certification',
+    siteName: 'Testriq - Professional Software Testing Services',
+    title: 'Matrimonial App Certification | Security, Privacy & Quality Compliance - Testriq',
+    description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
+    images: [
+      {
+        url: '/OG/Matrimonial-App-Certification-OG.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Matrimonial App Certification - Testriq QA Lab',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Matrimonial App Certification | Security, Privacy & Quality Compliance - Testriq',
+    description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
+    images: ['/OG/Matrimonial-App-Certification-Twitter.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+};
+
+
 
 const MatrimonialAppHeroSection = dynamic(
   () => import("@/components/sections/MatrimonialAppHeroSection"),
@@ -113,57 +189,7 @@ const MatrimonialAppCTA = dynamic(
   }
 );
 
-// Structured data for matrimonial app certification service
-const matrimonialAppCertificationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Matrimonial Apps Certification",
-  description:
-    "Comprehensive certification program for matrimonial apps covering security, privacy, quality assurance, user safety, and compliance with international standards.",
-  provider: {
-    "@type": "Organization",
-    name: "TESTRIQ QA Lab",
-    url: "https://testriq.com",
-    logo: "https://testriq.com/logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9004988859",
-      contactType: "customer service",
-    },
-  },
-  serviceType: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Matrimonial App Certification Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Security Certification",
-        description: "ISO 27001 compliance, data encryption, secure authentication",
-        category: "Security and Privacy",
-      },
-      {
-        "@type": "Offer",
-        name: "Quality Assurance Certification",
-        description: "ISTQB standards, comprehensive testing, performance optimization",
-        category: "Quality Assurance",
-      },
-      {
-        "@type": "Offer",
-        name: "Privacy Compliance Certification",
-        description: "GDPR compliance, data protection, privacy by design",
-        category: "Privacy and Compliance",
-      },
-    ],
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "89",
-    bestRating: "5",
-  },
-};
+
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -197,11 +223,17 @@ const faqSchema = {
 };
 
 export default function MatrimonialAppsCertification() {
+    const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testrq-3-0.vercel.app/matrimonial-apps-certification" },
+    { name: "Matrimonial App Certification", url: "https://testrq-3-0.vercel.app/matrimonial-apps-certification" }
+  ];
   return (
     <div>
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={matrimonialAppCertificationSchema} />
+       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <MatrimonialAppHeroSection />

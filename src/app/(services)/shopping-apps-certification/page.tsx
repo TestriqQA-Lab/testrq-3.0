@@ -1,9 +1,85 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
+  createBreadcrumbSchema,
   organizationSchema,
+  shoppingAppCertificationSchema,
   websiteSchema,
 } from "@/components/seo/StructuredData";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title:  "Shopping App Certification",
+   
+  description: "Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.",
+  keywords: [
+    "shopping app certification",
+    "e-commerce app testing",
+    "secure payment gateway testing",
+    "PCI DSS compliance",
+    "GDPR e-commerce compliance",
+    "data protection testing",
+    "checkout optimization",
+    "mobile app compliance testing",
+    "fraud detection",
+    "certified shopping apps",
+    "e-commerce platform security"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  alternates: {
+    canonical: 'https://testrq-3-0.vercel.app/shopping-apps-certification',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://testrq-3-0.vercel.app/shopping-apps-certification',
+    siteName: 'Testriq - Shopping App Certification Services',
+    title: 'Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq',
+    description: 'Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.',
+    images: [
+      {
+        url: '/OG/shopping-app-certification-og-img.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Shopping App Certification - Secure Testing & Compliance',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@testriq',
+    creator: '@testriq',
+    title: 'Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq',
+    description: 'Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.',
+    images: ['/OG/shopping-app-certification-twitter-img.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+     google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+};
+
 
 const ShoppingAppHeroSection = dynamic(
   () => import("@/components/sections/ShoppingAppHeroSection"),
@@ -113,57 +189,7 @@ const ShoppingAppCTA = dynamic(
   }
 );
 
-// Structured data for shopping apps certification service
-const shoppingAppCertificationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Shopping Apps Certification",
-  description:
-    "Comprehensive certification program for e-commerce and shopping apps covering security, payment processing, performance optimization, user experience, and compliance standards.",
-  provider: {
-    "@type": "Organization",
-    name: "TESTRIQ QA Lab",
-    url: "https://testriq.com",
-    logo: "https://testriq.com/logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9004988859",
-      contactType: "customer service",
-    },
-  },
-  serviceType: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Shopping App Certification Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        name: "Security & Privacy Certification",
-        description: "PCI DSS compliance, SSL/TLS encryption, data anonymization, GDPR compliance",
-        category: "Security and Privacy",
-      },
-      {
-        "@type": "Offer",
-        name: "Payment Security Certification",
-        description: "Payment tokenization, fraud detection, multi-gateway support, 3D Secure authentication",
-        category: "Payment Security",
-      },
-      {
-        "@type": "Offer",
-        name: "Performance & Speed Certification",
-        description: "Sub-3s load times, CDN optimization, auto-scaling, performance monitoring",
-        category: "Performance and Speed",
-      },
-    ],
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "203",
-    bestRating: "5",
-  },
-};
+
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -197,11 +223,17 @@ const faqSchema = {
 };
 
 export default function ShoppingAppsCertification() {
+ const breadcrumbItems= [
+   { name: "Home", url: "https://testriq.com/" },
+    { name: "Services", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" },
+    { name: "Shopping App Certification ", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" }
+   ];
   return (
     <div>
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <ShoppingAppHeroSection />

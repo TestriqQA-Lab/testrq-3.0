@@ -80,6 +80,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                 <Image
                   src={post.authorImage}
                   alt={post.author}
+                  width={400}
+                  height={250}
                   className="w-12 h-12 rounded-full border-2 border-blue-400"
                 />
                 <div>
@@ -127,6 +129,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               <Image
                 src={post.image}
                 alt={post.title}
+                width={400}
+                height={250}
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

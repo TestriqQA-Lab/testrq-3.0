@@ -194,6 +194,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
           <Image
             src={post.authorImage}
             alt={post.author}
+            width={400}
+            height={250}
             className="w-20 h-20 rounded-full border-4 border-white shadow-md"
           />
           <div className="flex-1">

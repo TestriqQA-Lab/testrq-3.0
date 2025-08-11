@@ -182,280 +182,142 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 2,
-    slug: "healthcare-app-security-compliance",
-    title: "Healthcare App Security & Compliance",
-    client: "MedTech Startup",
-    industry: "Healthcare",
-    duration: "4 months",
-    description: "Comprehensive security testing and HIPAA compliance validation for a patient data management system, achieving FDA approval.",
-    image: "/case-study-healthcare.jpg",
+    id: 4,
+    slug: "canva-case-study",
+    title: "Comprehensive Testing for Canva – A Free Graphic Design Platform",
+    client: "Canva",
+    industry: "Graphic design",
+    duration: "Ongoing since 2018",
+    description: "The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality. Testriq Lab ensured seamless implementation and defect-free releases for Canva's massive UI changes and new features across multiple platforms.",
+    image: "/case-study-canva.jpg",
     overview: {
-      clientBackground: "An innovative MedTech startup developing a revolutionary patient data management system for healthcare providers, serving over 100 hospitals nationwide.",
-      projectScope: "Complete security testing, HIPAA compliance validation, and FDA approval preparation for a cloud-based healthcare application.",
-      teamSize: "8 security testing specialists, 4 compliance experts, 2 healthcare domain experts",
-      timeline: "4 months from security assessment to FDA approval"
+      clientBackground: "Canva is a graphic design platform that allows users to create social media graphics, presentations, posters, documents and other visual content. Users can choose from many professional designed templates, and edit the designs and upload their own photos through a drag and drop interface. The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality.",
+      projectScope: "Complete testing overhaul covering desktop browsers, mobile browsers and native apps for Android and Apple devices. We helped Canva in testing across all platforms/browsers on supported old and new versions of OS/Browsers covering 100s of test cases every day to support daily release on mentioned platforms.",
+      teamSize: "Dedicated QA team with expertise in cross-platform testing",
+      timeline: "Ongoing since 2018, supporting daily releases across multiple platforms"
     },
     challenge: {
-      title: "Critical Security & Compliance Requirements",
-      description: "The healthcare application needed to meet stringent HIPAA compliance requirements and pass FDA approval while maintaining high performance and user experience.",
+      title: "Massive UI Changes and Multi-Platform Testing Complexity",
+      description: "Canva has been going on massive change since 2018 where the UI has been changed completely with the introduction of many new features which were not supported earlier. As a testing partner, we were responsible to make sure these changes are implemented and released without defects and document all QA documents for any references.",
       keyIssues: [
-        "HIPAA compliance gaps in data handling and storage",
-        "Security vulnerabilities in patient data transmission",
-        "Insufficient access controls and user authentication",
-        "Lack of audit trails for regulatory compliance",
-        "Data encryption weaknesses in database and API layers",
-        "Missing disaster recovery and data backup procedures"
+        "Complete UI overhaul since 2018 with introduction of many new features",
+        "Supporting daily releases across desktop browsers, mobile browsers and native apps",
+        "Testing across 100s of test cases daily for multiple platforms",
+        "Ensuring drag-and-drop interface functionality across all platforms",
+        "Cross-platform compatibility issues (PC, Mobile, iPad, Tablet)",
+        "Maintaining comprehensive QA documentation for references"
       ],
-      businessImpact: "Non-compliance would prevent market entry and FDA approval, potentially costing millions in development investment and market opportunity."
+      businessImpact: "Failure to ensure quality would lead to poor user experience across millions of users, negative brand perception, and potential loss of market position as a leading graphic design platform."
     },
     solution: {
-      title: "Comprehensive Security & Compliance Testing",
-      description: "We implemented a thorough security testing framework with HIPAA compliance validation and FDA approval preparation.",
+      title: "Comprehensive Multi-Platform QA and Testing Strategy",
+      description: "We implemented a comprehensive testing approach covering all aspects of Canva's platform evolution, from UI changes to new feature integration, ensuring seamless user experience across all supported platforms and devices.",
       approach: [
-        "Security vulnerability assessment and penetration testing",
-        "HIPAA compliance gap analysis and remediation",
-        "Data encryption and transmission security testing",
-        "Access control and authentication system validation",
-        "Audit trail implementation and testing",
-        "Disaster recovery and backup system testing"
+        "Understanding requirement through requirement documents and client communication",
+        "Drafting requirement documents, mind maps, etc for references",
+        "Creating test cases based on requirement",
+        "Creating different test sets for Sanity, Regression etc",
+        "Executing test runs after release",
+        "Posting issues for found bugs",
+        "Maintaining test data, records",
+        "Help development team to reproduce issues, if required",
+        "Create status reports of test runs and share with team",
+        "Perform fixed defect verification"
       ],
-      methodology: "Risk-based security testing approach with continuous compliance monitoring and regulatory requirement validation.",
+      methodology: "Agile testing methodology with continuous testing to support daily releases and rapid feature integration across multiple platforms and browsers.",
       keyStrategies: [
-        "Conducted comprehensive penetration testing using OWASP methodology",
-        "Implemented automated security scanning with Burp Suite and Nessus",
-        "Developed HIPAA compliance testing framework",
-        "Created comprehensive audit trail and logging systems",
-        "Established data encryption protocols for all sensitive information",
-        "Implemented multi-factor authentication and role-based access controls"
+        "Comprehensive testing across desktop browsers, mobile browsers and native apps for Android and Apple devices",
+        "Daily execution of 100s of test cases covering all supported platforms",
+        "Focus on functional testing, GUI testing, usability testing, accessibility testing, and performance testing",
+        "Extensive drag-and-drop interface testing across all platforms",
+        "Cross-platform compatibility testing (PC, Mobile, iPad, Tablet)",
+        "Close collaboration with development team for defect reproduction and verification"
       ]
     },
     results: {
-      bugReduction: "100%",
-      performanceImprovement: "60%",
-      roi: "400%",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
-        { label: "HIPAA Compliance Score", value: "100%" },
-        { label: "Security Vulnerabilities", value: "Zero Critical" },
-        { label: "FDA Approval", value: "Achieved" },
-        { label: "Patient Onboarding Speed", value: "50% Faster" },
-        { label: "Data Encryption Coverage", value: "100%" },
-        { label: "Audit Trail Completeness", value: "100%" }
+        { label: "Defect-Free Daily Releases", value: "Consistent" },
+        { label: "Cross-Platform Stability", value: "High" },
+        { label: "User Experience", value: "Seamless" },
+        { label: "Feature Integration", value: "Smooth" },
+        { label: "Platform Coverage", value: "100%" }
       ]
     },
-    technologies: ["OWASP ZAP", "Burp Suite", "Security Testing", "Compliance Testing", "Nessus", "Veracode", "Penetration Testing"],
+    technologies: ["Manual Testing", "Automation Testing", "Cross-Browser Testing", "Mobile App Testing", "Performance Testing", "Usability Testing", "Accessibility Testing", "GUI Testing", "Functional Testing"],
     testimonial: {
-      quote: "Their security testing expertise was crucial for our FDA approval and market launch success. The team's deep understanding of healthcare compliance requirements made all the difference.",
-      author: "Dr. Michael Chen",
-      role: "Head of Product",
-      company: "MedTech Startup",
+      quote: "I highly recommend Testriq for their outstanding QA testing services provided to Canva over the past few years.",
+      author: "Loren De Camas",
+      role: "QA Lead at Canva",
+      company: "Canva",
       rating: 5
     },
     timeline: [
       {
-        phase: "Security Assessment",
-        duration: "2 weeks",
+        phase: "Requirement Analysis & Documentation",
+        duration: "Ongoing",
         activities: [
-          "Comprehensive security audit",
-          "HIPAA compliance gap analysis",
-          "Threat modeling and risk assessment",
-          "Security testing strategy development"
+          "Understanding requirements through requirement documents and client communication",
+          "Drafting requirement documents, mind maps, etc for references"
         ]
       },
       {
-        phase: "Vulnerability Testing",
-        duration: "6 weeks",
+        phase: "Test Case Design & Management",
+        duration: "Ongoing",
         activities: [
-          "Penetration testing execution",
-          "Automated security scanning",
-          "Data encryption validation",
-          "Access control testing",
-          "API security assessment"
+          "Creating test cases based on requirement",
+          "Creating different test sets for Sanity, Regression etc"
         ]
       },
       {
-        phase: "Compliance Validation",
-        duration: "4 weeks",
+        phase: "Daily Test Execution & Quality Assurance",
+        duration: "Ongoing",
         activities: [
-          "HIPAA compliance testing",
-          "Audit trail validation",
-          "Data backup and recovery testing",
-          "User access management verification",
-          "Documentation and reporting"
+          "Executing test runs after release",
+          "Posting issues for found bugs",
+          "Maintaining test data, records",
+          "Perform fixed defect verification"
         ]
       },
       {
-        phase: "FDA Preparation",
-        duration: "4 weeks",
+        phase: "Collaboration & Reporting",
+        duration: "Ongoing",
         activities: [
-          "Regulatory documentation preparation",
-          "Final security validation",
-          "Compliance certification",
-          "FDA submission support"
+          "Help development team to reproduce issues, if required",
+          "Create status reports of test runs and share with team",
+          "Maintaining comprehensive QA documentation"
         ]
       }
     ],
     keyTakeaways: [
-      "Healthcare applications require specialized security testing expertise",
-      "HIPAA compliance must be built into the testing process from day one",
-      "Automated security scanning should complement manual penetration testing",
-      "Comprehensive audit trails are essential for regulatory compliance",
-      "Regular security assessments prevent costly compliance failures"
+      "Comprehensive cross-platform testing is essential for graphic design platforms with diverse user bases",
+      "Daily testing execution supports rapid feature development and release cycles",
+      "Strong collaboration between QA and development teams ensures quick issue resolution",
+      "Detailed QA documentation is vital for long-term project success and reference",
+      "Drag-and-drop interface testing requires specialized attention across all platforms"
     ],
     nextSteps: [
-      "Implement continuous security monitoring and threat detection",
-      "Develop advanced encryption protocols for emerging threats",
-      "Create automated compliance testing for ongoing validation",
-      "Establish security incident response and recovery procedures"
-    ]
-  },
-  {
-    id: 3,
-    slug: "fintech-mobile-app-optimization",
-    title: "Fintech Mobile App Optimization",
-    client: "Digital Banking Platform",
-    industry: "Financial Services",
-    duration: "8 months",
-    description: "Mobile app performance optimization and regulatory compliance for a digital banking platform, achieving 99.99% transaction success rate.",
-    image: "/case-study-fintech.jpg",
-    overview: {
-      clientBackground: "A leading digital banking platform serving over 2 million customers with mobile-first banking services, processing $50 billion in annual transactions.",
-      projectScope: "Complete mobile application testing overhaul including performance optimization, security testing, and regulatory compliance validation.",
-      teamSize: "15 mobile testing specialists, 5 performance engineers, 3 compliance experts",
-      timeline: "8 months from initial assessment to full optimization deployment"
-    },
-    challenge: {
-      title: "Mobile Performance & Compliance Crisis",
-      description: "The digital banking app was experiencing performance issues, transaction failures, and regulatory compliance concerns that threatened customer trust and regulatory standing.",
-      keyIssues: [
-        "Mobile app performance degradation during peak usage",
-        "Transaction failures affecting customer confidence",
-        "SOX compliance gaps in financial reporting systems",
-        "Security vulnerabilities in mobile authentication",
-        "Cross-platform compatibility issues (iOS/Android)",
-        "Real-time transaction processing delays"
-      ],
-      businessImpact: "Performance issues were causing customer churn and potential regulatory penalties, with estimated losses of $5 million annually."
-    },
-    solution: {
-      title: "Comprehensive Mobile Testing & Optimization",
-      description: "We implemented a comprehensive mobile testing strategy with real device testing, API validation, and security protocols to ensure optimal performance and compliance.",
-      approach: [
-        "Real device mobile testing across multiple platforms",
-        "Performance optimization and load testing",
-        "API testing and microservices validation",
-        "Security testing for mobile authentication",
-        "SOX compliance testing and validation",
-        "Continuous integration and deployment testing"
-      ],
-      methodology: "Device-centric testing approach with continuous performance monitoring and automated regression testing.",
-      keyStrategies: [
-        "Implemented comprehensive mobile testing using Appium and real devices",
-        "Developed API testing framework using REST Assured and Postman",
-        "Created performance testing protocols for mobile applications",
-        "Established security testing for mobile authentication systems",
-        "Implemented SOX compliance testing procedures",
-        "Set up continuous monitoring for transaction processing"
-      ]
-    },
-    results: {
-      bugReduction: "98%",
-      performanceImprovement: "80%",
-      roi: "350%",
-      additionalMetrics: [
-        { label: "Transaction Success Rate", value: "99.99%" },
-        { label: "App Performance Improvement", value: "80%" },
-        { label: "SOX Compliance", value: "Achieved" },
-        { label: "App Store Rating", value: "4.8/5" },
-        { label: "Customer Satisfaction", value: "95%" },
-        { label: "Processing Speed", value: "3x Faster" }
-      ]
-    },
-    technologies: ["Appium", "REST Assured", "Mobile Testing", "API Testing", "Performance Testing", "Security Testing", "Compliance Testing"],
-    testimonial: {
-      quote: "The mobile testing strategy delivered by Testriq exceeded our expectations and user satisfaction goals. Our app now performs flawlessly under any load condition.",
-      author: "Jennifer Martinez",
-      role: "VP of Engineering",
-      company: "Digital Banking Platform",
-      rating: 5
-    },
-    timeline: [
-      {
-        phase: "Mobile Assessment",
-        duration: "3 weeks",
-        activities: [
-          "Mobile app performance analysis",
-          "Device compatibility assessment",
-          "API performance evaluation",
-          "Security vulnerability assessment"
-        ]
-      },
-      {
-        phase: "Testing Framework Development",
-        duration: "8 weeks",
-        activities: [
-          "Mobile testing automation setup",
-          "API testing framework creation",
-          "Performance testing implementation",
-          "Security testing protocol establishment"
-        ]
-      },
-      {
-        phase: "Comprehensive Testing",
-        duration: "16 weeks",
-        activities: [
-          "Real device testing execution",
-          "Performance and load testing",
-          "API and microservices testing",
-          "Security and compliance validation",
-          "User experience testing"
-        ]
-      },
-      {
-        phase: "Optimization & Deployment",
-        duration: "5 weeks",
-        activities: [
-          "Performance optimization implementation",
-          "Bug fixes and retesting",
-          "Production deployment support",
-          "Monitoring and documentation"
-        ]
-      }
-    ],
-    keyTakeaways: [
-      "Real device testing is essential for mobile banking applications",
-      "API performance directly impacts mobile app user experience",
-      "Continuous monitoring prevents transaction processing issues",
-      "Security testing must cover all mobile authentication methods",
-      "Compliance testing should be integrated into the development lifecycle"
-    ],
-    nextSteps: [
-      "Implement AI-powered fraud detection testing",
-      "Develop advanced mobile security testing protocols",
-      "Create predictive performance monitoring systems",
-      "Establish comprehensive disaster recovery testing"
+      "Continue supporting Canva's evolution with new features and platform expansions",
+      "Implement advanced automation techniques for even more efficient daily testing",
+      "Explore AI-driven testing approaches for predictive quality assurance",
+      "Enhance cross-platform testing capabilities for emerging devices and browsers"
     ]
   }
 ];
-
-// Helper functions
-export function getAllCaseStudies(): CaseStudy[] {
-  return caseStudiesData;
-}
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
   return caseStudiesData.find(caseStudy => caseStudy.slug === slug);
 }
 
-export function getRelatedCaseStudies(currentSlug: string, limit: number = 2): CaseStudy[] {
+export function getAllCaseStudies(): CaseStudy[] {
+  return caseStudiesData;
+}
+
+export function getRelatedCaseStudies(currentSlug: string, limit: number = 3): CaseStudy[] {
   return caseStudiesData
     .filter(caseStudy => caseStudy.slug !== currentSlug)
     .slice(0, limit);
-}
-
-export function getCaseStudiesByIndustry(industry: string): CaseStudy[] {
-  return caseStudiesData.filter(caseStudy => 
-    caseStudy.industry.toLowerCase() === industry.toLowerCase()
-  );
 }
 

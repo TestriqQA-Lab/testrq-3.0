@@ -113,6 +113,30 @@ const CaseStudyCallToActionSection = dynamic(
   }
 );
 
+const CaseStudyPlatformSection = dynamic(
+  () => import("@/components/sections/CaseStudyPlatformSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const CaseStudyJourneySection = dynamic(
+  () => import("@/components/sections/CaseStudyJourneySection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 // Generate static params for all case studies
 export async function generateStaticParams() {
   const caseStudies = getAllCaseStudies();
@@ -181,9 +205,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <MainLayout>
         <CaseStudyHeroSection caseStudy={caseStudy} />
         <CaseStudyOverviewSection caseStudy={caseStudy} />
+        <CaseStudyPlatformSection caseStudy={caseStudy} />
         <CaseStudyChallengeSection caseStudy={caseStudy} />
         <CaseStudySolutionSection caseStudy={caseStudy} />
         <CaseStudyResultsSection caseStudy={caseStudy} />
+        <CaseStudyJourneySection caseStudy={caseStudy} />
         <CaseStudyTestimonialSection caseStudy={caseStudy} />
         <CaseStudyTechnologiesSection caseStudy={caseStudy} />
         <CaseStudyRelatedSection currentSlug={caseStudy.slug} />

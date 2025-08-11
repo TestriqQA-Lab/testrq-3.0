@@ -207,6 +207,8 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
               <Image
                 src={relatedPost.image}
                 alt={relatedPost.title}
+                width={400}
+                height={250}
                 className="w-16 h-12 object-cover rounded-lg"
               />
               <div className="flex-1">
