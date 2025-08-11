@@ -20,7 +20,8 @@ export interface Category {
 }
 
 export interface Post {
-  id: number;
+  id: string; // Changed to string to match WordPress slug
+  slug: string; // Add explicit slug property for URL generation
   title: string;
   excerpt: string;
   content: string;
@@ -142,10 +143,10 @@ function estimateReadTime(content: string): string {
 }
 
 // Function to generate random but consistent values based on post ID
-function generateConsistentValue(postId: number, max: number): number {
+function generateConsistentValue(seed: number, max: number): number {
   // Simple hash function to generate consistent pseudo-random values
-  let hash = postId;
-  hash = ((hash << 5) - hash + postId) & 0xffffffff;
+  let hash = seed;
+  hash = ((hash << 5) - hash + seed) & 0xffffffff;
   hash = Math.abs(hash);
   return hash % max;
 }
@@ -191,7 +192,8 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
   const shares = generateConsistentValue(wpPost.databaseId * 3, 100) + 10;
   
   return {
-    id: wpPost.databaseId,
+    id: wpPost.slug, // Use slug for ID to match Next.js dynamic routes
+    slug: wpPost.slug, // Explicit slug property for URL generation
     title: wpPost.title,
     excerpt: wpPost.excerpt || '',
     content: wpPost.content,
