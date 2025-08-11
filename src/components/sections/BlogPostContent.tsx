@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 
 interface BlogPost {
-  id: number;
+  id: string; // Changed from number to string
   title: string;
   content: string;
   author: string;
@@ -199,7 +199,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
             className="w-20 h-20 rounded-full border-4 border-white shadow-md"
           />
           <div className="flex-1">
-            <h4 className="text-xl font-bold text-gray-900 mb-2">
+            <h4 className="text-xl font-bold text-gray-900 mb-3">
               About {post.author}
             </h4>
             <p className="text-gray-700 mb-4 leading-relaxed">
@@ -246,7 +246,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
           <p className="text-gray-700 mb-4">Share it with your team!</p>
           <div className="flex justify-center gap-3 flex-wrap">
             {[
-              { name: "Twitter", color: "bg-blue-500", icon: "🐦" },
+              { name: "Twitter", icon: "🐦", color: "bg-blue-500", icon: "🐦" },
               { name: "LinkedIn", color: "bg-blue-700", icon: "💼" },
               { name: "Facebook", color: "bg-blue-800", icon: "📘" },
               { name: "Reddit", color: "bg-orange-600", icon: "🔗" },
