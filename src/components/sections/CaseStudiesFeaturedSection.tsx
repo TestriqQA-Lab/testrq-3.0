@@ -113,7 +113,7 @@ const CaseStudiesFeaturedSection = () => {
                 </div>
 
                 {/* CTA */}
-                <Link href={`/case-study/${caseStudy.slug}`} className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
+                <Link href={caseStudy.slug} className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
                   Read Full Case Study
                   <FaArrowRight className="w-4 h-4" />
                 </Link>
