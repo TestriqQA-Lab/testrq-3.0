@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
@@ -274,9 +275,11 @@ const ApiWhyChooseTestriq: React.FC = () => {
               started with a comprehensive API assessment and see why we&apos;re the
               preferred choice.
             </p>
-            <button className="bg-white text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+            <Link href="/contact-us">
+              <button className="bg-white text-[theme(color.brand.blue)] cursor-pointer px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
               Get Started with API Testing
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -6,40 +6,44 @@ interface CaseStudyOverviewSectionProps {
   caseStudy: CaseStudy;
 }
 
-const CaseStudyOverviewSection: React.FC<CaseStudyOverviewSectionProps> = ({ caseStudy }) => {
+const CaseStudyOverviewSection: React.FC<CaseStudyOverviewSectionProps> = ({
+  caseStudy,
+}) => {
   const overviewItems = [
     {
       icon: FaBuilding,
       title: "Client Background",
-      content: caseStudy.overview.clientBackground
+      content: caseStudy.overview.clientBackground,
     },
     {
       icon: FaProjectDiagram,
       title: "Project Scope",
-      content: caseStudy.overview.projectScope
+      content: caseStudy.overview.projectScope,
     },
     {
       icon: FaUsers,
       title: "Team Size",
-      content: caseStudy.overview.teamSize
+      content: caseStudy.overview.teamSize,
     },
     {
       icon: FaClock,
       title: "Timeline",
-      content: caseStudy.overview.timeline
-    }
+      content: caseStudy.overview.timeline,
+    },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            Project Overview
+            Project{" "}
+            <span className="text-[theme(color.brand.blue)]">Overview</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Understanding the client, scope, and objectives that shaped our comprehensive testing strategy.
+            Understanding the client, scope, and objectives that shaped our
+            comprehensive testing strategy.
           </p>
         </div>
 
@@ -72,35 +76,37 @@ const CaseStudyOverviewSection: React.FC<CaseStudyOverviewSectionProps> = ({ cas
         {/* Key Statistics */}
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+            <h3 className="text-3xl font-bold text-gray-900 mb-2">
               Project at a Glance
             </h3>
             <p className="text-gray-600">
               Key metrics and achievements from this engagement
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+              <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {caseStudy.results.bugReduction}
               </div>
               <div className="text-sm text-gray-600">Bug Reduction</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+              <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {caseStudy.results.performanceImprovement}
               </div>
-              <div className="text-sm text-gray-600">Performance Improvement</div>
+              <div className="text-sm text-gray-600">
+                Performance Improvement
+              </div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+              <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {caseStudy.results.roi}
               </div>
               <div className="text-sm text-gray-600">Return on Investment</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+              <div className="text-2xl font-bold text-[theme(color.brand.blue)] mb-2">
                 {caseStudy.duration}
               </div>
               <div className="text-sm text-gray-600">Project Duration</div>
@@ -113,4 +119,3 @@ const CaseStudyOverviewSection: React.FC<CaseStudyOverviewSectionProps> = ({ cas
 };
 
 export default CaseStudyOverviewSection;
-

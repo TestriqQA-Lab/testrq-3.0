@@ -1,7 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
-import { FaArrowRight, FaCheckCircle, FaChartLine, FaClock, FaTrophy } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaChartLine,
+  FaClock,
+  FaTrophy,
+} from "react-icons/fa";
 
 const AutomationTestingCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -12,56 +19,123 @@ const AutomationTestingCaseStudies: React.FC = () => {
       title: "Enterprise Application Quality Enhancement",
       client: "Fortune 500 Technology Company",
       industry: "Technology",
-      challenge: "Complex enterprise application required comprehensive Automation testing to ensure optimal performance and reliability.",
-      solution: "Our expert team implemented advanced Automation testing strategies with cutting-edge tools and methodologies.",
+      challenge:
+        "Complex enterprise application required comprehensive Automation testing to ensure optimal performance and reliability.",
+      solution:
+        "Our expert team implemented advanced Automation testing strategies with cutting-edge tools and methodologies.",
       results: [
-        { metric: "Quality Improvement", improvement: "85% Enhancement", icon: <FaChartLine /> },
-        { metric: "Issues Resolved", improvement: "156 Critical Fixes", icon: <FaCheckCircle /> },
-        { metric: "Project Timeline", improvement: "4 Weeks Completion", icon: <FaClock /> }
+        {
+          metric: "Quality Improvement",
+          improvement: "85% Enhancement",
+          icon: <FaChartLine />,
+        },
+        {
+          metric: "Issues Resolved",
+          improvement: "156 Critical Fixes",
+          icon: <FaCheckCircle />,
+        },
+        {
+          metric: "Project Timeline",
+          improvement: "4 Weeks Completion",
+          icon: <FaClock />,
+        },
       ],
-      testimonial: "Testriq's Automation testing expertise delivered exceptional results, significantly improving our application quality and user satisfaction.",
+      testimonial:
+        "Testriq's Automation testing expertise delivered exceptional results, significantly improving our application quality and user satisfaction.",
       clientRole: "Head of Quality Engineering",
-      color: "blue"
+      color: "blue",
     },
     {
       id: 2,
       title: "Financial Services Platform Optimization",
       client: "Leading Financial Institution",
       industry: "Financial Services",
-      challenge: "Mission-critical financial platform needed rigorous Automation testing to ensure security and compliance.",
-      solution: "Comprehensive Automation testing approach with industry-specific compliance validation and security protocols.",
+      challenge:
+        "Mission-critical financial platform needed rigorous Automation testing to ensure security and compliance.",
+      solution:
+        "Comprehensive Automation testing approach with industry-specific compliance validation and security protocols.",
       results: [
-        { metric: "Compliance Achievement", improvement: "100% Success Rate", icon: <FaCheckCircle /> },
-        { metric: "Performance Gain", improvement: "75% Improvement", icon: <FaChartLine /> },
-        { metric: "User Satisfaction", improvement: "4.9/5 Rating", icon: <FaClock /> }
+        {
+          metric: "Compliance Achievement",
+          improvement: "100% Success Rate",
+          icon: <FaCheckCircle />,
+        },
+        {
+          metric: "Performance Gain",
+          improvement: "75% Improvement",
+          icon: <FaChartLine />,
+        },
+        {
+          metric: "User Satisfaction",
+          improvement: "4.9/5 Rating",
+          icon: <FaClock />,
+        },
       ],
-      testimonial: "The Automation testing services provided by Testriq exceeded our expectations and ensured our platform met all regulatory requirements.",
+      testimonial:
+        "The Automation testing services provided by Testriq exceeded our expectations and ensured our platform met all regulatory requirements.",
       clientRole: "Chief Technology Officer",
-      color: "green"
+      color: "green",
     },
     {
       id: 3,
       title: "Healthcare System Quality Assurance",
       client: "Healthcare Technology Provider",
       industry: "Healthcare",
-      challenge: "Healthcare management system required extensive Automation testing to ensure patient data security and system reliability.",
-      solution: "Specialized Automation testing with healthcare compliance focus and comprehensive validation protocols.",
+      challenge:
+        "Healthcare management system required extensive Automation testing to ensure patient data security and system reliability.",
+      solution:
+        "Specialized Automation testing with healthcare compliance focus and comprehensive validation protocols.",
       results: [
-        { metric: "Security Validation", improvement: "Zero Vulnerabilities", icon: <FaCheckCircle /> },
-        { metric: "System Reliability", improvement: "99.9% Uptime", icon: <FaChartLine /> },
-        { metric: "Compliance Score", improvement: "100% HIPAA Compliant", icon: <FaClock /> }
+        {
+          metric: "Security Validation",
+          improvement: "Zero Vulnerabilities",
+          icon: <FaCheckCircle />,
+        },
+        {
+          metric: "System Reliability",
+          improvement: "99.9% Uptime",
+          icon: <FaChartLine />,
+        },
+        {
+          metric: "Compliance Score",
+          improvement: "100% HIPAA Compliant",
+          icon: <FaClock />,
+        },
       ],
-      testimonial: "Testriq's Automation testing approach was instrumental in achieving our healthcare compliance goals while maintaining excellent system performance.",
+      testimonial:
+        "Testriq's Automation testing approach was instrumental in achieving our healthcare compliance goals while maintaining excellent system performance.",
       clientRole: "Director of Product Engineering",
-      color: "purple"
-    }
+      color: "purple",
+    },
   ];
 
   const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: { bg: string; text: string; border: string; accent: string } } = {
-      blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200", accent: "bg-blue-600" },
-      green: { bg: "bg-green-50", text: "text-green-600", border: "border-green-200", accent: "bg-green-600" },
-      purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200", accent: "bg-purple-600" }
+    const colorMap: {
+      [key: string]: {
+        bg: string;
+        text: string;
+        border: string;
+        accent: string;
+      };
+    } = {
+      blue: {
+        bg: "bg-blue-50",
+        text: "text-blue-600",
+        border: "border-blue-200",
+        accent: "bg-blue-600",
+      },
+      green: {
+        bg: "bg-green-50",
+        text: "text-green-600",
+        border: "border-green-200",
+        accent: "bg-green-600",
+      },
+      purple: {
+        bg: "bg-purple-50",
+        text: "text-purple-600",
+        border: "border-purple-200",
+        accent: "bg-purple-600",
+      },
     };
     return colorMap[color] || colorMap.blue;
   };
@@ -72,15 +146,16 @@ const AutomationTestingCaseStudies: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTrophy />
-            <span className="text-sm">
-              Success Stories
-            </span>
+            <span className="text-sm">Success Stories</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Automation Testing <span className="text-brand-blue">Success Stories</span>
+            Automation Testing{" "}
+            <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Discover how our automation testing services drive software quality, faster releases, and real-world business outcomes across industries through intelligent frameworks and expert implementation.
+            Discover how our automation testing services drive software quality,
+            faster releases, and real-world business outcomes across industries
+            through intelligent frameworks and expert implementation.
           </p>
         </div>
 
@@ -109,46 +184,75 @@ const AutomationTestingCaseStudies: React.FC = () => {
             return (
               <div
                 key={study.id}
-                className={`${activeCase === index ? "block" : "hidden"} p-8 md:p-12`}
+                className={`${
+                  activeCase === index ? "block" : "hidden"
+                } p-8 md:p-12`}
               >
                 <div className="grid lg:grid-cols-2 gap-12">
                   <div>
                     <div className="flex items-center space-x-4 mb-6">
-                      <div className={`${colors.accent} w-12 h-12 rounded-xl flex items-center justify-center`}>
-                        <span className="text-white font-bold text-lg">{study.id}</span>
+                      <div
+                        className={`${colors.accent} w-12 h-12 rounded-xl flex items-center justify-center`}
+                      >
+                        <span className="text-white font-bold text-lg">
+                          {study.id}
+                        </span>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-gray-900">{study.title}</h3>
-                        <p className={`${colors.text} font-medium`}>{study.client} • {study.industry}</p>
+                        <h3 className="text-2xl font-bold text-gray-900">
+                          {study.title}
+                        </h3>
+                        <p className={`${colors.text} font-medium`}>
+                          {study.client} • {study.industry}
+                        </p>
                       </div>
                     </div>
 
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Challenge</h4>
-                        <p className="text-gray-600 leading-relaxed">{study.challenge}</p>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                          Challenge
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          {study.challenge}
+                        </p>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-semibold text-gray-900 mb-3">Solution</h4>
-                        <p className="text-gray-600 leading-relaxed">{study.solution}</p>
+                        <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                          Solution
+                        </h4>
+                        <p className="text-gray-600 leading-relaxed">
+                          {study.solution}
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-6">Results Achieved</h4>
-                    
+                    <h4 className="text-lg font-semibold text-gray-900 mb-6">
+                      Results Achieved
+                    </h4>
+
                     <div className="space-y-4 mb-8">
                       {study.results.map((result, resultIndex) => (
-                        <div key={resultIndex} className={`${colors.bg} p-4 rounded-xl`}>
+                        <div
+                          key={resultIndex}
+                          className={`${colors.bg} p-4 rounded-xl`}
+                        >
                           <div className="flex items-center space-x-4">
                             <div className={`${colors.text}`}>
                               {result.icon}
                             </div>
                             <div>
-                              <div className="font-semibold text-gray-900">{result.metric}</div>
-                              <div className={`${colors.text} font-bold text-lg`}>{result.improvement}</div>
+                              <div className="font-semibold text-gray-900">
+                                {result.metric}
+                              </div>
+                              <div
+                                className={`${colors.text} font-bold text-lg`}
+                              >
+                                {result.improvement}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -162,12 +266,20 @@ const AutomationTestingCaseStudies: React.FC = () => {
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center">
                           <span className="text-white font-bold text-sm">
-                            {study.client.split(' ').map(word => word[0]).join('').substring(0, 2)}
+                            {study.client
+                              .split(" ")
+                              .map((word) => word[0])
+                              .join("")
+                              .substring(0, 2)}
                           </span>
                         </div>
                         <div>
-                          <div className="font-semibold text-gray-900">{study.clientRole}</div>
-                          <div className="text-sm text-gray-600">{study.client}</div>
+                          <div className="font-semibold text-gray-900">
+                            {study.clientRole}
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            {study.client}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -184,12 +296,15 @@ const AutomationTestingCaseStudies: React.FC = () => {
               Ready to Achieve Similar Results?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join these successful organizations and experience the difference comprehensive Automation testing can make.
+              Join these successful organizations and experience the difference
+              comprehensive Automation testing can make.
             </p>
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center space-x-2 mx-auto group">
-              <span>Start Your Success Story</span>
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center space-x-2 mx-auto group">
+                <span>Start Your Success Story</span>
+                <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

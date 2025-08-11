@@ -164,17 +164,6 @@ const SecurityTestingFAQs = dynamic(() => import("@/components/sections/Security
   ),
 });
 
-const SecurityTestingAnyQuestions = dynamic(
-  () => import("@/components/sections/SecurityTestingAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 export default function SecurityTestingPage() {
   const breadcrumbItems = [
@@ -199,7 +188,6 @@ export default function SecurityTestingPage() {
         <SecurityTestingCaseStudies />
         <SecurityTestingFAQs />
         <SecurityTestingReadyToEnsureQuality />
-        <SecurityTestingAnyQuestions/>
       </MainLayout>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaPhone, FaEnvelope, FaComments, FaArrowRight } from "react-icons/fa";
 
@@ -9,21 +10,24 @@ const ApiAnyQuestions: React.FC = () => {
       icon: <FaPhone className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Phone Consultation",
       description: "Speak directly with our API testing experts",
-      action: "Call Now",
+      text: "Call Now",
+      action: "tel:(+91) 915-2929-343",
       contact: "+(+91) 915-2929-343",
     },
     {
       icon: <FaEnvelope className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Email Support",
       description: "Get detailed responses to your questions",
-      action: "Send Email",
+      text: "Send Email",
+      action: "mailto:contact@testriq.com",
       contact: "contact@testriq.com",
     },
     {
       icon: <FaComments className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       title: "Live Chat",
       description: "Instant support from our team",
-      action: "Start Chat",
+      text: "Start Chat",
+      action: "#",
       contact: "Available 24/7",
     },
   ];
@@ -62,10 +66,12 @@ const ApiAnyQuestions: React.FC = () => {
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
-              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
-                <span>{method.action}</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <Link href={method.action}>
+                <button className="cursor-pointer flex items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
+                  <span>{method.text}</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -80,13 +86,12 @@ const ApiAnyQuestions: React.FC = () => {
             customized solution for your project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button className="flex items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:bg-blue-400 transition-colors duration-300">
-              <span>Schedule Free Consultation</span>
-              <FaArrowRight className="w-4 h-4" />
-            </button>
-            <button className="py-3 px-8 border-2 border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-lg rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
-              View Pricing
-            </button>
+            <Link href="/contact-us">
+              <button className="flex cursor-pointer items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg transition-colors duration-300">
+                <span>Schedule Free Consultation</span>
+                <FaArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

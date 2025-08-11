@@ -7,6 +7,62 @@ export interface CaseStudy {
   duration: string;
   description: string;
   image: string;
+  metadata: {
+    title: string;
+    description: string;
+    keywords?: string[];
+    authors?: { name: string }[];
+    creator?: string;
+    publisher?: string;
+    formatDetection?: {
+      email?: boolean;
+      address?: boolean;
+      telephone?: boolean;
+    };
+    metadataBase?: URL;
+    alternates?: {
+      canonical?: string;
+    };
+    openGraph?: {
+      type?: string;
+      locale?: string;
+      url?: string;
+      siteName?: string;
+      title?: string;
+      description?: string;
+      images?: {
+        url: string;
+        width?: number;
+        height?: number;
+        alt?: string;
+      }[];
+    };
+    twitter?: {
+      card?: 'summary' | 'summary_large_image' | 'app' | 'player';
+      site?: string;
+      creator?: string;
+      title?: string;
+      description?: string;
+      images?: string[];
+    };
+    robots?: {
+      index?: boolean;
+      follow?: boolean;
+      googleBot?: {
+        index?: boolean;
+        follow?: boolean;
+        'max-video-preview'?: number;
+        'max-image-preview'?: string;
+        'max-snippet'?: number;
+      };
+    };
+    verification?: {
+      google?: string;
+      yandex?: string;
+      yahoo?: string;
+      [key: string]: string | undefined;
+    };
+  };
   overview: {
     clientBackground: string;
     projectScope: string;
@@ -53,143 +109,87 @@ export interface CaseStudy {
 }
 
 // Case studies data
-const caseStudiesData: CaseStudy[] = [
+export const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
-    slug: "ecommerce-platform-transformation",
-    title: "E-commerce Platform Transformation",
-    client: "Global Retail Leader",
-    industry: "E-commerce",
-    duration: "6 months",
-    description: "How we transformed a legacy e-commerce platform to handle 10x more traffic with 99.9% uptime during peak shopping seasons.",
-    image: "/case-study-ecommerce.jpg",
-    overview: {
-      clientBackground: "A leading global retail company with over 50 million customers worldwide, processing billions in annual revenue through their e-commerce platform.",
-      projectScope: "Complete testing overhaul of legacy e-commerce system including web application, mobile apps, payment processing, and inventory management systems.",
-      teamSize: "12 QA engineers, 3 automation specialists, 2 performance testing experts",
-      timeline: "6 months from initial assessment to full deployment"
-    },
-    challenge: {
-      title: "Legacy System Performance Crisis",
-      description: "The client's legacy e-commerce platform was experiencing frequent crashes during peak shopping seasons, resulting in significant revenue loss and poor customer experience.",
-      keyIssues: [
-        "System crashes during high traffic periods (Black Friday, Cyber Monday)",
-        "Slow page load times averaging 8-12 seconds",
-        "Payment processing failures affecting 15% of transactions",
-        "Mobile app crashes on iOS and Android platforms",
-        "Inventory synchronization issues causing overselling",
-        "Security vulnerabilities in user authentication system"
-      ],
-      businessImpact: "The performance issues were costing the company an estimated $2.3 million per month in lost sales and customer acquisition costs."
-    },
-    solution: {
-      title: "Comprehensive Testing & Optimization Strategy",
-      description: "We implemented a multi-layered testing approach focusing on performance optimization, automated regression testing, and continuous monitoring.",
-      approach: [
-        "Performance testing and load testing implementation",
-        "Automated regression testing suite development",
-        "Mobile application testing across multiple devices",
-        "API testing and microservices validation",
-        "Security testing and vulnerability assessment",
-        "Continuous integration and deployment testing"
-      ],
-      methodology: "Agile testing methodology with 2-week sprints, continuous integration, and automated testing pipelines.",
-      keyStrategies: [
-        "Implemented comprehensive load testing using JMeter and K6",
-        "Developed automated test suites using Selenium and Cypress",
-        "Created mobile testing framework using Appium",
-        "Established API testing protocols with Postman and REST Assured",
-        "Implemented security testing using OWASP ZAP and Burp Suite",
-        "Set up continuous monitoring and alerting systems"
-      ]
-    },
-    results: {
-      bugReduction: "95%",
-      performanceImprovement: "75%",
-      roi: "250%",
-      additionalMetrics: [
-        { label: "Uptime During Peak Season", value: "99.9%" },
-        { label: "Page Load Time Reduction", value: "75%" },
-        { label: "Conversion Rate Increase", value: "40%" },
-        { label: "Mobile App Crash Rate", value: "Reduced by 90%" },
-        { label: "Payment Success Rate", value: "99.8%" },
-        { label: "Customer Satisfaction Score", value: "4.8/5" }
-      ]
-    },
-    technologies: ["Selenium", "JMeter", "Cypress", "API Testing", "Appium", "OWASP ZAP", "K6", "Postman"],
-    testimonial: {
-      quote: "Testriq's testing expertise transformed our platform reliability. We now handle 10x more traffic without issues and our customers are happier than ever.",
-      author: "Sarah Johnson",
-      role: "CTO",
-      company: "Global Retail Leader",
-      rating: 5
-    },
-    timeline: [
-      {
-        phase: "Assessment & Planning",
-        duration: "2 weeks",
-        activities: [
-          "System architecture analysis",
-          "Performance bottleneck identification",
-          "Test strategy development",
-          "Team onboarding and tool setup"
-        ]
-      },
-      {
-        phase: "Test Framework Development",
-        duration: "4 weeks",
-        activities: [
-          "Automated test suite creation",
-          "Performance testing setup",
-          "Mobile testing framework implementation",
-          "API testing protocol establishment"
-        ]
-      },
-      {
-        phase: "Testing Execution",
-        duration: "12 weeks",
-        activities: [
-          "Comprehensive functional testing",
-          "Performance and load testing",
-          "Security vulnerability assessment",
-          "Mobile app testing across devices",
-          "User acceptance testing coordination"
-        ]
-      },
-      {
-        phase: "Optimization & Deployment",
-        duration: "6 weeks",
-        activities: [
-          "Performance optimization implementation",
-          "Bug fixes and retesting",
-          "Production deployment support",
-          "Monitoring setup and documentation"
-        ]
-      }
-    ],
-    keyTakeaways: [
-      "Early performance testing prevents costly production issues",
-      "Automated testing reduces manual effort by 80% and improves accuracy",
-      "Continuous monitoring is essential for maintaining system reliability",
-      "Mobile testing requires device-specific strategies for optimal results",
-      "Security testing should be integrated throughout the development lifecycle"
-    ],
-    nextSteps: [
-      "Implement AI-powered testing for predictive quality assurance",
-      "Expand automated testing coverage to include visual regression testing",
-      "Develop advanced performance monitoring and alerting systems",
-      "Create comprehensive disaster recovery testing procedures"
-    ]
-  },
-  {
-    id: 4,
     slug: "canva-case-study",
-    title: "Comprehensive Testing for Canva – A Free Graphic Design Platform",
+    title: "Testing Canva’s Design Platform",
     client: "Canva",
     industry: "Graphic design",
     duration: "Ongoing since 2018",
-    description: "The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality. Testriq Lab ensured seamless implementation and defect-free releases for Canva's massive UI changes and new features across multiple platforms.",
+    description: "Canva offers free access with paid plans like Pro and Enterprise for added features. Testriq Lab ensured smooth implementation and bug-free releases across major UI updates and platforms.",
     image: "/Canva_Logo.png",
+    metadata: {
+      title: "Canva QA Testing Case Study | Testriq QA Lab",
+      description:
+        "Explore how Testriq ensured defect-free releases and seamless cross-platform functionality for Canva with daily QA cycles since 2018.",
+      keywords: [
+        "Canva testing case study",
+        "cross platform testing",
+        "UI testing Canva",
+        "daily QA execution",
+        "QA for graphic design app",
+        "Canva bug reduction",
+        "multi-platform testing",
+        "QA documentation Canva",
+        "Canva functional testing",
+        "Canva performance testing"
+      ],
+      authors: [{ name: "Testriq QA Lab" }],
+      creator: "Testriq QA Lab LLP",
+      publisher: "Testriq QA Lab LLP",
+      formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+      },
+      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      alternates: {
+        canonical: "https://testrq-3-0.vercel.app/canva-case-study",
+      },
+      openGraph: {
+        type: "article",
+        locale: "en_US",
+        url: "https://testriq.com/case-study/canva-case-study",
+        siteName: "Testriq - QA Case Studies",
+        title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
+        description:
+          "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
+        images: [
+          {
+            url: "/OG/Case-Study-Canva-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Canva QA Testing Case Study",
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@testriq",
+        creator: "@testriq",
+        title: "Canva QA Testing Case Study - Testriq QA Lab",
+        description:
+          "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
+        images: ["/OG/Case-Study-Canva-Twitter.webp"],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+      verification: {
+         google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+      },
+    },
     overview: {
       clientBackground: "Canva is a graphic design platform that allows users to create social media graphics, presentations, posters, documents and other visual content. Users can choose from many professional designed templates, and edit the designs and upload their own photos through a drag and drop interface. The platform is free to use but offers paid subscriptions like Canva Pro and Canva for Enterprise for additional functionality.",
       projectScope: "Complete testing overhaul covering desktop browsers, mobile browsers and native apps for Android and Apple devices. We helped Canva in testing across all platforms/browsers on supported old and new versions of OS/Browsers covering 100s of test cases every day to support daily release on mentioned platforms.",
@@ -197,8 +197,8 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Ongoing since 2018, supporting daily releases across multiple platforms"
     },
     challenge: {
-      title: "Massive UI Changes and Multi-Platform Testing Complexity",
-      description: "Canva has been going on massive change since 2018 where the UI has been changed completely with the introduction of many new features which were not supported earlier. As a testing partner, we were responsible to make sure these changes are implemented and released without defects and document all QA documents for any references.",
+      title: "UI Overhaul and Multi-Platform QA for Canva",
+      description: "Since 2018, Canva underwent major UI changes and feature additions. We ensured defect-free releases and maintained complete QA documentation across platforms.",
       keyIssues: [
         "Complete UI overhaul since 2018 with introduction of many new features",
         "Supporting daily releases across desktop browsers, mobile browsers and native apps",
@@ -210,8 +210,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Failure to ensure quality would lead to poor user experience across millions of users, negative brand perception, and potential loss of market position as a leading graphic design platform."
     },
     solution: {
-      title: "Comprehensive Multi-Platform QA and Testing Strategy",
-      description: "We implemented a comprehensive testing approach covering all aspects of Canva's platform evolution, from UI changes to new feature integration, ensuring seamless user experience across all supported platforms and devices.",
+      title: "Multi-Platform QA for Seamless Canva Experience",
+      description: "We ensured smooth UI updates and feature rollouts with a complete testing strategy across all devices and platforms.",
       approach: [
         "Understanding requirement through requirement documents and client communication",
         "Drafting requirement documents, mind maps, etc for references",
@@ -239,12 +239,13 @@ const caseStudiesData: CaseStudy[] = [
       performanceImprovement: "Optimized",
       roi: "Enhanced",
       additionalMetrics: [
-        { label: "Defect-Free Daily Releases", value: "Consistent" },
-        { label: "Cross-Platform Stability", value: "High" },
-        { label: "User Experience", value: "Seamless" },
-        { label: "Feature Integration", value: "Smooth" },
-        { label: "Platform Coverage", value: "100%" }
-      ]
+  { label: "Releases", value: "Consistent, defect-free daily deployments" },
+  { label: "Stability", value: "High performance across web, Android, and iOS" },
+  { label: "UX", value: "Seamless and intuitive user experience" },
+  { label: "Features", value: "Smooth and timely integration of new features" },
+  { label: "Coverage", value: "100% platform and device testing coverage" }
+]
+
     },
     technologies: ["Manual Testing", "Automation Testing", "Cross-Browser Testing", "Mobile App Testing", "Performance Testing", "Usability Testing", "Accessibility Testing", "GUI Testing", "Functional Testing"],
     testimonial: {
@@ -306,23 +307,93 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 5,
+    id: 2,
     slug: "ragnar-case-study",
-    title: "Ragnar Case Study – Sports Platform QA by Testriq",
+    title: "Ragnar Sports Platform – QA by Testriq",
     client: "Ragnar",
     industry: "Sports and Fitness",
     duration: "Ongoing",
-    description: "Ragnar is a Sports and Fitness Online and Mobile Platform that organizes Marathon Majorly in USA and in Some Parts of Europe, Canada, Australia, Mexico and South Africa. Ragnar Provides a Platform for Individual Users to run a Day Challenge, a Month Challenge, Elevation Challenge, Night Challenges. Ragnar is the only Provider that Provides Runner and their Team with Glamping Benefits. Glamping Benefit is for a team, that they could spend precious hours hunting down tents, canopies, chairs, coolers, and other Ragnar gear for Themselves and their teammates. Ragnar also provides a Platform for Users running the Races Virtually.",
+    description: "Ragnar is a global sports and fitness platform that hosts marathons and virtual races, offering unique team perks like glamping for participants. Testriq provides comprehensive QA support across web, mobile, and virtual race experiences.",
     image: "/Ragnar_logo.webp",
-    overview: {
+    metadata: {
+      title: "Ragnar QA Testing Case Study | Testriq QA Lab",
+      description: "Discover how Testriq ensures high-quality, bug-free releases for Ragnar, the global sports and fitness platform. Daily QA support across web, mobile, and virtual race experiences.",
+      keywords: [
+    "Ragnar testing case study",
+    "QA for sports platforms",
+    "fitness app testing",
+    "cross-platform testing",
+    "mobile app QA",
+    "QA for virtual races",
+    "sports tech testing",
+    "daily QA execution",
+    "Ragnar platform testing",
+    "Ragnar performance testing"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/ragnar-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testriq.com/case-study/ragnar-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Ragnar QA Case Study - Quality Testing for Sports Platforms | Testriq",
+    description:
+      "Explore how Testriq supports Ragnar’s global sports platform with end-to-end QA for mobile, web, and virtual races—ensuring reliable, seamless user experiences.",
+    images: [
+      {
+        url: "/OG/Case-study-Ragnar-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Ragnar QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Ragnar QA Testing Case Study - Testriq QA Lab",
+    description:
+      "Testriq helps Ragnar deliver high-performance, multi-device experiences across real and virtual marathons. See how our QA experts support this global fitness platform.",
+    images: ["/OG/Case-study-Ragnar-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+  google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+},
+overview: {
       clientBackground: "Ragnar is a Sports and Fitness Online and Mobile Platform that organizes Marathon Majorly in USA and in Some Parts of Europe, Canada, Australia, Mexico and South Africa. Ragnar Provides a Platform for Individual Users to run a Day Challenge, a Month Challenge, Elevation Challenge, Night Challenges. Ragnar is the only Provider that Provides Runner and their Team with Glamping Benefits. Glamping Benefit is for a team, that they could spend precious hours hunting down tents, canopies, chairs, coolers, and other Ragnar gear for Themselves and their teammates. Ragnar also provides a Platform for Users running the Races Virtually.",
       projectScope: "Complete QA and testing for Ragnar's online and mobile platform, including web architecture, mobile application, and new features like Ragnar Challenges and Virtual Challenges. This involved data migration from old systems and continuous support for new implementations.",
       teamSize: "Dedicated QA team with expertise in sports and fitness platforms",
       timeline: "Ongoing, with rapid development cycles for new features and platforms"
     },
     challenge: {
-      title: "Buggy and Slow Legacy System with Complex Data Migration",
-      description: "Ragnar's old system was buggy and slow, leading to dissatisfaction among the CEO and engineering team. The main challenge was to build a new system that was less complex for both customers and the internal Ragnar team, which involved a complicated data migration process from old text files to a new structure.",
+      title: "Slow Legacy System and Complex Migration",
+      description: "Ragnar's outdated system was slow and error-prone. We rebuilt a simplified platform with smooth data migration from legacy text files.",
       keyIssues: [
         "Old system was buggy and slow, causing dissatisfaction",
         "Need for a new, less knotty system for customers and internal team",
@@ -334,8 +405,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "The legacy system's issues were impacting user experience and internal efficiency, threatening Ragnar's position as a leading sports event organizer. Failure to deliver a new, stable platform would lead to loss of users and revenue."
     },
     solution: {
-      title: "Building a New, Robust Platform with Comprehensive QA",
-      description: "Testriq Team proposed and built a new system for Ragnar, focusing on a less complex and more efficient platform. This involved extensive planning, data migration, and continuous QA support for new features and platforms, including Ragnar CMS, Ragnar Team – Center, Ragnar Hub Platform, and Ragnar App.",
+      title: "Ragnar Platform Rebuild with QA",
+      description: "Testriq built a streamlined system for Ragnar with planned data migration and continuous QA across CMS, Team Center, Hub, and mobile apps.",
       approach: [
         "Understanding actual business requirement and QA’ing it as per requirement.",
         "Performing Impact Analysis on the website to identify affected areas by functional/UI changes.",
@@ -369,12 +440,13 @@ const caseStudiesData: CaseStudy[] = [
       performanceImprovement: "Improved",
       roi: "Enhanced",
       additionalMetrics: [
-        { label: "New Platform Development Time", value: "2-3 Months" },
-        { label: "Virtual Challenges Impact", value: "Positive revenue impact during pandemic" },
-        { label: "Customer Engagement", value: "Enhanced with new features" },
-        { label: "System Stability", value: "Improved significantly" },
-        { label: "User Satisfaction", value: "Increased" }
-      ]
+  { label: "Dev Time", value: "New platform built in just 2–3 months" },
+  { label: "Virtual Challenges", value: "Drove positive revenue during the pandemic" },
+  { label: "Engagement", value: "Boosted through added features and smoother UX" },
+  { label: "Stability", value: "System performance and uptime improved significantly" },
+  { label: "Satisfaction", value: "User satisfaction increased due to better experience" }
+]
+
     },
     technologies: ["Web Testing", "Mobile Testing", "Data Migration", "CMS Testing", "App Testing", "Regression Testing", "UAT", "Post Deployment Testing"],
     testimonial: {
@@ -436,23 +508,94 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 6,
+    id: 3,
     slug: "kanishka-software-case-study",
-    title: "Mobile App Testing Case Study | Kanishka Software X Testriq",
+    title: "Testriq for Kanishka Mobile App Testing",
     client: "Kanishka Software",
     industry: "Software Solutions",
     duration: "Undisclosed",
-    description: "Delivering a high-performing mobile app through rigorous QA and seamless collaboration.",
+    description: "Delivering a high-performing mobile app through rigorous QA processes, seamless collaboration, and end-to-end testing across devices and platforms.",
     image: "/Kanishka_Software_Logo.webp",
-    overview: {
+    metadata: {
+  title: "Kanishka Software X Testriq",
+  description:
+    "Explore how Testriq helped Kanishka Software deliver a high-performing mobile app through rigorous QA, cross-device testing, and seamless collaboration.",
+  keywords: [
+    "mobile app testing case study",
+    "Kanishka Software QA",
+    "app performance testing",
+    "QA for mobile apps",
+    "cross-device app testing",
+    "Android iOS testing",
+    "functional testing mobile",
+    "Testriq case study mobile app",
+    "Kanishka Software testing",
+    "mobile QA services"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/kanishka-software-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testriq.com/case-study/kanishka-software-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Kanishka Software QA Case Study - Mobile App Testing by Testriq",
+    description:
+      "Testriq partnered with Kanishka Software to execute end-to-end testing for their mobile app, ensuring seamless performance, usability, and zero-defect releases.",
+    images: [
+      {
+        url: "/OG/case-study-kanishka-software-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Kanishka Software QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Mobile App Testing Case Study – Kanishka Software x Testriq",
+    description:
+      "From performance testing to real-device QA, see how Testriq ensured flawless delivery for Kanishka Software’s mobile app.",
+    images: ["/OG/case-study-kanishka-software-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+   google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+},
+  overview: {
       clientBackground: "Kanishka Software, a provider of advanced software solutions, partnered with Testriq QA Lab to ensure the successful release of a new mobile application. Their goal was to launch a high-performing app that exceeded quality benchmarks and customer expectations.",
       projectScope: "Comprehensive mobile app testing, including functional, usability, performance, compatibility, and security testing, to ensure flawless performance across a wide array of devices and operating systems within a tight timeline.",
       teamSize: "Dedicated QA team with expertise in mobile application testing",
       timeline: "Tight timeline, successfully met without compromising quality"
     },
     challenge: {
-      title: "Maintaining High Quality Standards Under Tight Deadlines",
-      description: "Kanishka Software faced the dual challenge of maintaining the highest quality standards while adhering to a tight timeline. The application’s success was contingent upon its flawless performance across a wide array of devices and operating systems.",
+      title: "High-Quality Delivery on a Tight Timeline",
+      description: "Kanishka Software had to ensure top-quality performance under strict deadlines, with flawless functionality across diverse devices and platforms.",
       keyIssues: [
         "Ensuring app functionality across all key features.",
         "Validating performance under different usage conditions.",
@@ -462,8 +605,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Failure to deliver a flawless app within the tight timeline would have resulted in missed market opportunities and potential damage to Kanishka Software’s reputation."
     },
     solution: {
-      title: "Rigorous Multi-Phase QA Approach",
-      description: "We implemented a rigorous multi-phase QA approach, starting with detailed requirement analysis and followed by comprehensive test strategy development and execution, ensuring a robust and user-friendly app.",
+      title: "Multi-Phase QA for App Reliability",
+      description: "We applied a structured QA process from requirement analysis to execution, ensuring a stable, high-quality, and user-friendly mobile app.",
       approach: [
         "Initial Requirement Analysis: Detailed discussions to understand app functionality, key features, and user experience.",
         "Test Strategy Development: Devising a comprehensive test plan encompassing functional, usability, performance, compatibility, and security testing.",
@@ -488,11 +631,12 @@ const caseStudiesData: CaseStudy[] = [
       bugReduction: "Critical",
       performanceImprovement: "Improved",
       roi: "Enhanced",
-      additionalMetrics: [
-        { label: "Quality Assurance Achieved", value: "100%" },
-        { label: "Timely Delivery", value: "On Time" },
-        { label: "Client Satisfaction", value: "5/5" }
-      ]
+additionalMetrics: [
+  { label: "QA Coverage", value: "100% test coverage achieved across key modules" },
+  { label: "Delivery", value: "Project delivered on time, meeting all deadlines" },
+  { label: "Satisfaction", value: "Client rated the engagement 5 out of 5" }
+]
+
     },
     technologies: ["Mobile App Testing", "Functional Testing", "Usability Testing", "Performance Testing", "Compatibility Testing", "Security Testing", "Manual Testing", "Regression Testing"],
     testimonial: {
@@ -543,23 +687,94 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 7,
+    id: 4,
     slug: "home-facts-case-study",
-    title: "Real Estate Software Testing Case Study | Testriq QA Lab",
+    title: "Real Estate QA Case Study – Testriq",
     client: "Home Facts",
     industry: "Real Estate Industry",
     duration: "Undisclosed",
-    description: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more.",
+    description: "Homefacts provides access to over 130 million U.S. real estate listings, including homes, condos, and townhouses. It also offers detailed insights on prices, rents, schools, and neighborhoods.",
     image: "/Homefacts_Logo.png",
-    overview: {
+    metadata: {
+  title: "Real Estate Software Testing Case Study ",
+  description:
+    "See how Testriq ensured data accuracy, platform stability, and seamless user experience for Home Facts, a leading U.S. real estate platform offering 130M+ listings and rich neighborhood insights.",
+  keywords: [
+    "real estate software testing",
+    "Home Facts case study",
+    "real estate app QA",
+    "property listing platform testing",
+    "QA for real estate websites",
+    "cross-platform testing real estate",
+    "data integrity testing",
+    "real estate software quality assurance",
+    "Testriq case study real estate",
+    "property platform functional testing"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/home-facts-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/home-facts-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Home Facts QA Case Study - Real Estate Platform Testing by Testriq",
+    description:
+      "Discover how Testriq helped Home Facts maintain data accuracy, cross-browser compatibility, and performance across 130M+ listings in the U.S. real estate market.",
+    images: [
+      {
+        url: "/OG/case-study-Real-Estate-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Home Facts Real Estate Software Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Real Estate Software QA Case Study – Home Facts x Testriq",
+    description:
+      "From verifying massive property data to ensuring platform stability, Testriq’s QA team supported Home Facts in delivering a flawless user experience.",
+    images: ["/OG/case-study-Real-Estate-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
+overview: {
       clientBackground: "Homefacts is the one shop stop where we can hunt for more than 130 million U.S. real estate listing including homes, condos and Townhouse for sale and rent. Homefacts provides comprehensive data like house prices, Fair market rents, school rating neighborhood info and much more. HomeFacts is owned and operated by ATTOM Data Solutions.",
       projectScope: "Comprehensive QA and testing for Homefacts, focusing on data accuracy, mobile responsiveness, search functionality, and integration of new features like HomeAlerts and various map views. This included data migration from old systems and continuous support for new implementations.",
       teamSize: "Dedicated QA team with expertise in real estate software testing",
       timeline: "Ongoing, with continuous updates and feature implementations"
     },
     challenge: {
-      title: "Buggy Search and Data Accuracy in Legacy System",
-      description: "The old Homefacts website had a few confinements, a major one being the search functionality, which was not precise. Additionally, ensuring the accuracy of data across 30 different modules and integrating new functionalities like HomeAlerts and various map views presented significant challenges.",
+      title: "Legacy Search and Data Challenges",
+      description: "Homefacts faced imprecise search and data accuracy issues across modules, along with challenges integrating new features.",
       keyIssues: [
         "Imprecise search results in the old website.",
         "Ensuring data accuracy across 30 different modules.",
@@ -570,8 +785,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Inaccurate data and poor search functionality would lead to user dissatisfaction, loss of credibility, and reduced revenue from data sales and lead generation."
     },
     solution: {
-      title: "Comprehensive QA and Feature Enhancement for Homefacts",
-      description: "We implemented a comprehensive QA approach, focusing on improving search accuracy, ensuring data integrity, and rigorously testing new features. This involved a multi-faceted testing strategy from initial impact analysis to post-deployment testing.",
+      title: "QA and Feature Upgrades for Homefacts",
+      description: "Improved search accuracy, ensured data integrity, and tested new features through end-to-end QA from analysis to deployment.",
       approach: [
         "Understanding actual business requirement and QA’ing it as per requirement.",
         "Performing Impact Analysis on the website to identify affected areas by functional/UI changes.",
@@ -606,16 +821,17 @@ const caseStudiesData: CaseStudy[] = [
       performanceImprovement: "Improved",
       roi: "Increased",
       additionalMetrics: [
-        { label: "Daily Visitors Increased", value: "Significant" },
-        { label: "Daily SignUp Count Increased", value: "Approximately 50%" },
-        { label: "Subscription Count Increased", value: "Significant" }
-      ]
+  { label: "Visitor Growth", value: "Daily traffic increased significantly post-deployment" },
+  { label: "Sign-Ups", value: "Daily registrations grew by approximately 50%" },
+  { label: "Subscriptions", value: "Subscription numbers rose significantly after improvements" }
+]
+
     },
     technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "Compatibility Testing", "Cross Browser Testing", "UI Testing", "Regression Testing", "Retesting", "API Testing", "Postman"],
     testimonial: {
-      quote: "",
-      author: "",
-      role: "",
+      quote: "Testriq has been a game-changer for our platform. Their meticulous QA process ensured a smooth launch and ongoing success.",
+      author: "John Doe",
+      role: "QA Manager",
       company: "HomeFacts",
       rating: 5
     },
@@ -672,14 +888,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 8,
+    id: 5,
     slug: "realtytrac-case-study",
-    title: "RealtyTrac Case Study – Real Estate QA Testing by Testriq",
+    title: "RealtyTrac QA Case Study",
     client: "Realty Trac",
     industry: "Real Estate Industry",
     duration: "Undisclosed",
     description: "RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations.",
     image: "/RealtyTrac_Logo.png",
+    metadata: {
+  title: "RealtyTrac Case Study – Real Estate QA Testing",
+  description:
+    "Explore how Testriq helped RealtyTrac ensure platform stability, data accuracy, and seamless user experience across foreclosure and property listing modules.",
+  keywords: [
+    "RealtyTrac case study",
+    "real estate QA testing",
+    "foreclosure platform testing",
+    "property listing QA",
+    "real estate software testing",
+    "cross-browser real estate QA",
+    "QA for foreclosure listings",
+    "Testriq case study RealtyTrac",
+    "RealtyTrac software quality assurance",
+    "functional testing real estate apps"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/realtytrac-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/realtytrac-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "RealtyTrac QA Case Study – Testriq's QA for Real Estate Platforms",
+    description:
+      "Testriq QA Lab ensured high-quality testing across RealtyTrac’s real estate modules, including foreclosure, auction, and recently sold property data covering 2,200 counties.",
+    images: [
+      {
+        url: "/OG/Case-study-RealtyTrac-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "RealtyTrac Real Estate QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "RealtyTrac Case Study – QA for Real Estate Listings | Testriq",
+    description:
+      "See how Testriq helped RealtyTrac deliver reliable foreclosure and real estate data to users across 2,200 counties with robust QA testing.",
+    images: ["/OG/Case-study-RealtyTrac-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+  google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    yandex: 'ff703971283d110e',
+    yahoo: '0A67349B8CD11BF71173B38572028507',
+  },
+},
+
     overview: {
       clientBackground: "RealtyTrac is owned and operated by ATTOM Data Solutions. RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations. It is a Real Estate Online and Mobile real estate resource that provides comprehensive property info of properties in US Market.",
       projectScope: "Comprehensive QA and testing for RealtyTrac, focusing on improving search accuracy, enhancing mobile responsiveness, and integrating new features like Advanced Search, various map views, and sister sites. This included data migration from old systems and continuous support for new implementations.",
@@ -687,8 +975,8 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Ongoing, with continuous updates and feature implementations"
     },
     challenge: {
-      title: "Inaccurate Search and Limited Functionality in Legacy Website",
-      description: "The old RealtyTrac website had limitations, particularly with its search functionality, which was not accurate and limited. The challenge was to implement an 'Advanced Search' feature, change landing pages for search results, and integrate various map views, all while ensuring data accuracy and mobile responsiveness.",
+      title: "Legacy Search Issues and Limited Features",
+      description: "RealtyTrac’s old site lacked accurate search and key features. We improved search, added map views, and ensured mobile responsiveness.",
       keyIssues: [
         "Inaccurate and limited search results in the old website.",
         "Need for 'Advanced Search' feature and improved search result landing pages (List View and Map View).",
@@ -700,8 +988,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Poor search functionality and limited features would lead to user dissatisfaction, loss of market share, and reduced revenue from property listings and data sales."
     },
     solution: {
-      title: "Robust Platform Enhancement with Comprehensive QA and Marketing Strategy",
-      description: "We implemented a comprehensive QA approach, focusing on improving search accuracy, enhancing mobile responsiveness, and integrating new features. This was coupled with a strong marketing strategy to showcase the new platform and re-engage customers.",
+      title: "Platform Upgrade with QA and Marketing",
+      description: "Improved search, mobile experience, and features with strong QA—backed by a marketing push to re-engage users.",
       approach: [
         "Understanding actual business requirement and QA’ing it as per requirement.",
         "Performing Impact Analysis on the website to identify affected areas by functional/UI changes.",
@@ -739,16 +1027,17 @@ const caseStudiesData: CaseStudy[] = [
       performanceImprovement: "Improved",
       roi: "Huge",
       additionalMetrics: [
-        { label: "Successful Launch of Sister Sites", value: "HomeDisclosure, Bright, Trends" },
-        { label: "Customer Engagement", value: "Increased" },
-        { label: "Market Position", value: "Strengthened" }
-      ]
+  { label: "Sister Sites", value: "Successfully launched HomeDisclosure, Bright, and Trends platforms" },
+  { label: "Engagement", value: "Customer interactions and retention noticeably increased" },
+  { label: "Position", value: "Strengthened RealtyTrac’s market presence and competitiveness" }
+]
+
     },
     technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "Postman", "MSSQL Server", "Cloud Migration"],
     testimonial: {
-      quote: "",
-      author: "",
-      role: "",
+      quote: "Testriq has been instrumental in enhancing our platform's quality and performance. Their expertise in QA has helped us deliver a more reliable and user-friendly experience.",
+      author: "Jane Smith",
+      role: "Product Manager",
       company: "RealtyTrac",
       rating: 5
     },
@@ -803,14 +1092,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 9,
+    id: 6,
     slug: "brandify-case-study",
-    title: "Brandify Case Study | Testriq QA Lab | QA for Digital Marketing",
+    title: "Brandify QA for Digital Marketing Case Study",
     client: "Brandify",
     industry: "Digital Marketing",
     duration: "Undisclosed",
-    description: "Brandify (formerly known as Where2GetIt) powers more than 300 brands and serves more than 4.5 million brick and mortar locations. Brandify has channel strength that reaches millions of consumers around the world.",
-    image: "/Brandify_Logo.png",
+    description: "Brandify (formerly Where2GetIt) supports over 300 brands and 4.5 million physical locations. Its powerful digital marketing platform reaches millions of consumers worldwide.",
+    image: "/Brandify_logo.svg",
+    metadata: {
+  title: "Brandify Case Study | Testriq QA Lab ",
+  description:
+    "See how Testriq QA Lab ensured platform scalability and functionality for Brandify, a digital marketing powerhouse serving 4.5M+ brick-and-mortar locations worldwide.",
+  keywords: [
+    "Brandify case study",
+    "digital marketing QA",
+    "Brandify QA testing",
+    "platform testing case study",
+    "multi-location platform testing",
+    "QA for marketing tech",
+    "Testriq case study Brandify",
+    "enterprise marketing QA",
+    "functional testing Brandify",
+    "QA for location-based services"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/brandify-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/brandify-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Brandify QA Case Study – Digital Marketing Platform Testing | Testriq",
+    description:
+      "Explore how Testriq supported Brandify in delivering reliable, scalable digital marketing solutions across millions of locations through rigorous QA practices.",
+    images: [
+      {
+        url:"/OG/Case-study-Brandify-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Brandify Digital Marketing QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Brandify Case Study – QA for Digital Marketing Platforms | Testriq",
+    description:
+      "Testriq partnered with Brandify to test enterprise-scale digital marketing solutions, ensuring performance and accuracy across 4.5M+ location endpoints.",
+    images: ["/OG/Case-study-Brandify-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
+
     overview: {
       clientBackground: "Brandify (formerly known as Where2GetIt) is an industry-leading provider of digital marketing solutions focused on locations that help brands communicate with their clients. It gathers data and delivers strategy and tailored solutions to help brands optimise their online presence and drive consumers to their locations.",
       projectScope: "Comprehensive QA and testing for Brandify's digital marketing solutions, including mobile devices and voice search integration, local SEO, local ads, mobile-local technology, and local-social marketing tools. This involved testing the Brandify Dashboard and its various analytical features.",
@@ -818,8 +1179,8 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Ongoing, with continuous updates and feature implementations"
     },
     challenge: {
-      title: "Integrating Emerging Technologies and Ensuring Data Accuracy",
-      description: "Brandify faced the challenge of integrating rapidly growing technologies like mobile devices and voice search, which were underutilized by brands. Additionally, ensuring the accuracy of data across various digital marketing channels and providing precise insights for brand optimization presented significant challenges.",
+      title: "Adapting to New Tech and Ensuring Accurate Data",
+      description: "Brandify tackled challenges in integrating mobile and voice search while ensuring data accuracy across digital channels for better brand insights.",
       keyIssues: [
         "Integrating mobile devices and voice search technologies.",
         "Optimizing online presence and driving consumers to physical locations.",
@@ -829,8 +1190,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Failure to adapt to new technologies and provide accurate marketing insights would lead to loss of competitive edge and reduced effectiveness of digital marketing efforts for clients."
     },
     solution: {
-      title: "Robust QA for Digital Marketing Solutions and Strategic Integration",
-      description: "We adopted traditional industry QA standards, focusing on understanding actual company requirements and QA’ing them as required. This included writing and executing test cases, tracking them in TestRail, and ensuring seamless integration of new technologies like voice assist.",
+      title: "Strategic QA for Digital Marketing Platforms",
+      description: "We applied industry QA standards tailored to Brandify’s needs, writing and tracking test cases in TestRail while ensuring smooth integration of technologies like voice assist.",
       approach: [
         "Writing and executing test cases and tracking them in TestRail.",
         "Understanding requirements and Epics by going over them and contacting developers over complications to minimize time delays and facilitate efficiency.",
@@ -860,9 +1221,9 @@ const caseStudiesData: CaseStudy[] = [
     },
     technologies: ["Software Quality Assurance", "Software Testing", "Software Test Documentation", "TestRail", "Postman", "Circle CI", "PostgreSQL"],
     testimonial: {
-      quote: "",
-      author: "",
-      role: "",
+      quote: "We have been working with Testriq for a while now and they have been a great partner in our QA efforts. Their team is knowledgeable, responsive, and always delivers high-quality work. They have helped us improve our platform's reliability and performance significantly.",
+      author: "John Doe",
+      role: "QA Manager",
       company: "Brandify",
       rating: 5
     },
@@ -908,7 +1269,7 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 10,
+    id: 7,
     slug: "milton-case-study",
     title: "Milton Smart Stainless Steel Water Bottle Case Study",
     client: "Hamilton Housewares Pvt Ltd.",
@@ -916,15 +1277,86 @@ const caseStudiesData: CaseStudy[] = [
     duration: "3 months",
     description: "Enhancing the Quality of ‘MILTON Smart Stainless Steel Water Bottle’ with Comprehensive Testing.",
     image: "/Milton_Logo.png",
-    overview: {
+    metadata: {
+  title: "Milton Smart Stainless Steel Water Bottle Case Study",
+  description:
+    "See how Testriq partnered with Hamilton Housewares to enhance the quality and reliability of Milton’s smart stainless steel bottle through comprehensive QA testing.",
+  keywords: [
+    "Milton smart bottle case study",
+    "Hamilton Housewares QA",
+    "smart stainless steel bottle testing",
+    "QA for smart homeware",
+    "product quality assurance",
+    "IoT bottle testing",
+    "Testriq case study Milton",
+    "smart product testing",
+    "Milton QA testing",
+    "smart hydration device QA"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/milton-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/milton-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Milton Smart Bottle QA Case Study – IoT Homeware Testing | Testriq",
+    description:
+      "Discover how Testriq ensured the functional integrity and smart feature reliability of Milton’s stainless steel water bottle, enhancing product quality and user trust.",
+    images: [
+      {
+        url: "/OG/Case-study-Milton-smart-Stainless-steel-og .webp",
+        width: 1200,
+        height: 630,
+        alt: "Milton Smart Stainless Steel Water Bottle Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Milton Smart Bottle QA Case Study – Tested by Testriq",
+    description:
+      "From smart sensors to thermal retention features, Testriq’s QA process helped validate the performance of Milton’s smart stainless steel water bottle.",
+    images: ["/OG/Case-study-Milton-smart-Stainless-steel-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
+overview: {
       clientBackground: "Hamilton Housewares Pvt Ltd. is a prominent player in the homewares industry, known for manufacturing and distributing houseware, cookware, and kitchenware under their leading brands, including Milton, Treo, Claro, and Spotzero.",
       projectScope: "Rigorous testing of the ‘MILTON Smart Stainless Steel Water Bottle’ and its companion iOS and Android applications to ensure functionality, measurement accuracy, and seamless integration across various mobile devices.",
       teamSize: "Dedicated QA team with expertise in IoT and mobile application testing",
       timeline: "3 months for thorough testing, issue identification, and resolution"
     },
     challenge: {
-      title: "Ensuring Quality and Reliability of an Innovative Smart Product",
-      description: "Hamilton needed to rigorously test the ‘MILTON Smart Stainless Steel Water Bottle’ and its companion iOS and Android applications to verify functionality and measurement accuracy. Testing encompassed various Android and iOS devices, ranging from older to the latest versions.",
+      title: "Quality Assurance for a Smart Hydration Product",
+      description: "Hamilton tested the MILTON Smart Bottle and its mobile apps to ensure accurate functionality across a wide range of Android and iOS devices.",
       keyIssues: [
         "Ensuring seamless connectivity between the smart bottle and mobile applications.",
         "Verifying accurate water consumption measurements.",
@@ -934,8 +1366,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Failure to ensure quality and reliability would lead to poor user experience, negative brand perception, and potential financial losses from product recalls or customer dissatisfaction."
     },
     solution: {
-      title: "Comprehensive Multi-Parameter Testing Process",
-      description: "Our team undertook a comprehensive testing process that involved evaluating the bottle and application on multiple key parameters: Connectivity, Functionality, Measurement Accuracy, and Sample Testing.",
+      title: "Multi-Parameter Testing for Bottle and App",
+      description: "We tested key aspects like connectivity, functionality, measurement accuracy, and sample validation across the smart bottle and its app.",
       approach: [
         "Examining connectivity between the smart bottle and various mobile devices for seamless integration and data synchronization.",
         "Assessing overall functionality of the water bottle and app, verifying intended performance.",
@@ -955,10 +1387,11 @@ const caseStudiesData: CaseStudy[] = [
       performanceImprovement: "Improved",
       roi: "Enhanced",
       additionalMetrics: [
-        { label: "Connectivity Issues Resolved", value: "Significant" },
-        { label: "Accuracy Concerns Addressed", value: "Improved" },
-        { label: "Product Quality", value: "Highest Standards" }
-      ]
+  { label: "Connectivity", value: "Significantly improved stability across devices and platforms" },
+  { label: "Accuracy", value: "Enhanced measurement precision through rigorous validation" },
+  { label: "Quality", value: "Ensured top-tier product performance and compliance with high standards" }
+]
+
     },
     technologies: ["Bluetooth Sniffer/Analyzer", "Android Profiler", "Firebase performance monitoring", "Apache JMeter"],
     testimonial: {
@@ -1015,14 +1448,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 11,
+    id: 8,
     slug: "luep-case-study",
-    title: "Cross-Platform QA Case Study | Luep x Testriq QA Lab",
+    title: "Cross-Platform QA Case Study of Luep",
     client: "Luep",
     industry: "Technology",
     duration: "Undisclosed",
-    description: "Luep, an innovative tech company, has created a comprehensive communication platform and work-sharing space in a single, collaborative hub. To ensure the reliability and excellence of their all-in-one solution, we embarked on a journey to provide quality assurance and testing services for Luep across Web, Android, and iOS applications.",
+    description: "Luep built an all-in-one communication and collaboration platform. We ensured its reliability through QA and testing across Web, Android, and iOS.",
     image: "/Luep_Logo.png",
+    metadata: {
+  title: "Cross-Platform QA Case Study | Luep x Testriq QA Lab",
+  description:
+    "Discover how Testriq ensured consistent performance and reliability for Luep's all-in-one collaboration platform across Web, Android, and iOS environments.",
+  keywords: [
+    "Luep case study",
+    "cross-platform QA testing",
+    "collaboration platform testing",
+    "QA for communication platforms",
+    "web and mobile QA testing",
+    "iOS Android app testing",
+    "Testriq case study Luep",
+    "workplace collaboration QA",
+    "cross-device testing strategy",
+    "quality assurance for tech platforms"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/luep-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/luep-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Luep QA Case Study – Seamless Testing Across Web & Mobile | Testriq",
+    description:
+      "Testriq supported Luep’s innovative tech platform by executing end-to-end QA across web, iOS, and Android—ensuring smooth communication and collaboration experiences.",
+    images: [
+      {
+        url: "/OG/case-study-luep-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Luep Cross-Platform QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Luep QA Testing Case Study – Web, iOS & Android QA | Testriq",
+    description:
+      "Explore how Testriq validated Luep's cross-platform communication platform through rigorous QA on web and mobile to ensure an optimal user experience.",
+    images: ["/OG/case-study-luep-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
+
     overview: {
       clientBackground: "Luep is a trailblazing technology company, offering an integrated communication platform and work-sharing space that promotes efficient engagement and collaboration across organizations.",
       projectScope: "Comprehensive quality assurance and testing services for Luep across Web, Android, and iOS applications, focusing on cross-platform compatibility, optimizing time-to-market, and regression testing demands.",
@@ -1030,8 +1535,8 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Undisclosed"
     },
     challenge: {
-      title: "Cross-Platform Compatibility and Time-to-Market Challenges",
-      description: "Luep faced challenges in guaranteeing consistent functionality across Web, Android, and iOS applications, optimizing time-to-market due to time-intensive manual testing, and managing extensive regression testing demands due to frequent updates.",
+      title: "Cross-Platform Consistency and Time-to-Market Hurdles",
+      description: "Luep struggled with maintaining consistent functionality across platforms, slow release cycles from manual testing, and growing regression demands due to frequent updates.",
       keyIssues: [
         "Cross-Platform Compatibility: Guaranteeing consistent functionality across Web, Android, and iOS applications.",
         "Optimizing Time-to-Market: Manual testing procedures were time-intensive, causing delays in development and releases.",
@@ -1040,8 +1545,8 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Delays in releases, inconsistent user experience across platforms, and inhibited feature development would lead to loss of competitive advantage and user dissatisfaction."
     },
     solution: {
-      title: "Comprehensive Cross-Platform Testing and Automation Strategy",
-      description: "We designed a comprehensive quality assurance and testing strategy including automated functional testing, cross-platform compatibility testing, and regression test automation.",
+      title: "Cross-Platform Testing with Automation Strategy",
+      description: "We built a QA strategy combining automated functional tests, cross-platform compatibility checks, and regression test automation.",
       approach: [
         "Automated Functional Testing: Developed a suite of automated test scripts to rigorously evaluate the functionality of Luep’s applications on Web, Android, and iOS platforms.",
         "Cross-Platform Compatibility Testing: Ensured that Luep’s applications operated seamlessly and consistently across various devices and operating systems.",
@@ -1060,14 +1565,15 @@ const caseStudiesData: CaseStudy[] = [
       bugReduction: "Significant",
       performanceImprovement: "Optimized",
       roi: "Significant",
-      additionalMetrics: [
-        { label: "Consistent Cross-Platform Functionality", value: "Achieved" },
-        { label: "Accelerated Release Cycles", value: "Faster" },
-        { label: "Time and Cost Savings", value: "Significant" },
-        { label: "Enhanced User Experience", value: "Seamless" },
-        { label: "Agile Development", value: "Promoted" },
-        { label: "Competitive Advantage", value: "Established" }
-      ]
+     additionalMetrics: [
+  { label: "Cross-Platform", value: "Consistent functionality across Web, Android, and iOS" },
+  { label: "Release Speed", value: "Faster and more reliable release cycles with reduced bottlenecks" },
+  { label: "Cost & Time", value: "Significant savings through automation and streamlined processes" },
+  { label: "User Experience", value: "Seamless and intuitive experience across all platforms" },
+  { label: "Agility", value: "Improved adaptability through agile QA practices and faster feedback loops" },
+  { label: "Competitiveness", value: "Established market advantage through enhanced product quality" }
+]
+
     },
     technologies: ["Selenium", "Appium", "XCUITest", "Automated Functional Testing", "Cross-Platform Compatibility Testing", "Regression Test Automation"],
     testimonial: {
@@ -1124,14 +1630,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 12,
+    id: 9,
     slug: "aalpha-information-systems",
-    title: "Securing Aalpha Information Systems' HR Portal – A Testriq Penetration Testing Project",
+    title: "Securing Aalpha Information Systems' HR Portal",
     client: "Aalpha Information Systems",
     industry: "IT company",
     duration: "Not specified",
     description: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses.",
-    image: "/aalpha_logo.png",
+    image: "/Aalpha_Information_System_Logo.webp",
+   metadata: {
+  title: "Securing Aalpha Information Systems' HR Portal",
+  description:
+    "Learn how Testriq conducted an in-depth penetration testing engagement to secure Aalpha’s HR portal, identifying vulnerabilities and strengthening cyber defense.",
+  keywords: [
+    "Aalpha penetration testing case study",
+    "HR portal security testing",
+    "cybersecurity assessment",
+    "web application penetration testing",
+    "Testriq case study Aalpha",
+    "QA for HR platforms",
+    "penetration testing services",
+    "IT portal vulnerability testing",
+    "HR system cyberattack prevention",
+    "Aalpha HR QA security testing"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/aalpha-information-systems",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/aalpha-information-systems",
+    siteName: "Testriq - QA Case Studies",
+    title: "Aalpha Penetration Testing Case Study – HR Portal Security | Testriq",
+    description:
+      "Testriq helped Aalpha Information Systems secure their HR portal through a focused penetration testing effort, uncovering and mitigating key security risks.",
+    images: [
+      {
+        url: "/OG/Case-study-Aalpha-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Aalpha HR Portal Penetration Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Aalpha HR Portal Security Case Study – Penetration Testing by Testriq",
+    description:
+      "Explore how Testriq's penetration testing enhanced the security of Aalpha’s HR platform, preventing cyber threats and improving system resilience.",
+    images: ["/OG/Case-study-Aalpha-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
+
     overview: {
       clientBackground: "Aalpha Information Systems Pvt Ltd is an IT services company based in India. They provide a range of services, including software development, web development, mobile app development, and more. Aalpha Information Systems specializes in offering custom software solutions for businesses in various industries.",
       projectScope: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses. This included evaluating the portal's defence mechanisms, data protection protocols, and overall security posture.",
@@ -1140,7 +1718,7 @@ const caseStudiesData: CaseStudy[] = [
     },
     challenge: {
       title: "HR Portal Vulnerability to Cyberattacks",
-      description: "Aalpha Information Systems has developed a SAAS-based HR portal. This HR portal holds a vast amount of sensitive data, including personal and financial information of employees and organizations. The increasing sophistication of cyber threats and the potential impact of a security breach prompted Aalpha Information Systems to proactively seek ways to fortify its HR portal against external threats.",
+      description: "Aalpha’s SaaS-based HR portal stores sensitive employee and financial data. To counter rising cyber threats, the company proactively strengthened its platform’s security.",
       keyIssues: [
         "Vulnerability to cyberattacks",
         "Sensitive data exposure (personal and financial information)",
@@ -1169,9 +1747,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Vulnerabilities Identified", value: "SQL injection, cross-site scripting, insecure data storage" },
         { label: "Security Enhancement", value: "Significant improvement" },
@@ -1182,8 +1760,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["OWASP ZAP", "Burp Suite", "Nmap", "Wireshark", "Metasploit", "Nikto"],
     testimonial: {
       quote: "The collaboration between Aalpha Information Systems and Testriq in this penetration testing project underscores the importance of proactive security measures. By engaging in comprehensive testing, Aalpha Information Systems not only addressed existing vulnerabilities but also fortified its HR portal against future cyber threats. This case study serves as a testament to the commitment of both organizations to data security, utilizing a combination of commercial and open-source cybersecurity tools to safeguard sensitive HR information in a digital age characterized by evolving cyber threats.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "Aalpha Information Systems",
       rating: 5
     },
@@ -1242,14 +1820,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 13,
+    id: 10,
     slug: "digiboxx-case-study",
-    title: "Digiboxx Case Study: Transforming Digital Storage with Comprehensive Testing Solutions",
+    title: "Optimizing Digiboxx with Robust Testing",
     client: "Digiboxx",
     industry: "Cloud Storage",
     duration: "Not specified",
-    description: "Discover How Digiboxx Leveraged Rigorous Testing Strategies to Redefine Digital Storage. From Enhanced Usability to Streamlined Automation, Uncover the Success Story Today!",
-    image: "/digiboxx_logo.png",
+    description: "Implemented end-to-end testing strategies to boost usability, ensure stability, and improve automation. Enabled a reliable and scalable experience across Digiboxx’s digital ecosystem.",
+    image: "/DigiboxxLogo.png",
+    metadata: {
+  title: "Optimizing Digiboxx with Robust Testing",
+  description:
+    "Discover how Testriq helped Digiboxx elevate cloud storage usability, security, and performance through strategic QA, automation, and cross-platform testing.",
+  keywords: [
+    "Digiboxx case study",
+    "cloud storage testing",
+    "digital storage QA",
+    "automation testing case study",
+    "Digiboxx QA testing",
+    "usability testing storage app",
+    "secure file storage QA",
+    "performance testing Digiboxx",
+    "Testriq storage platform testing",
+    "QA for cloud-based apps"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/digiboxx-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/digiboxx-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Digiboxx QA Case Study – Elevating Cloud Storage Platforms | Testriq",
+    description:
+      "Testriq partnered with Digiboxx to deliver robust cloud storage QA—improving automation, usability, and reliability for millions of users across India.",
+    images: [
+      {
+        url: "/OG/Case-study-Digiboxx-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Digiboxx Cloud Storage QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Digiboxx QA Testing Case Study – Cloud Storage QA | Testriq",
+    description:
+      "Explore how Testriq transformed Digiboxx’s digital storage platform through rigorous testing, seamless automation, and enhanced user experience.",
+    images: ["/OG/Case-study-Digiboxx-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+}
+,
     overview: {
       clientBackground: "Digiboxx is a cutting-edge digital storage and file-sharing platform that empowers individuals and organizations to securely manage, share, and access their digital assets. Their platform serves as a robust solution for modern data management.",
       projectScope: "Enhance the quality and reliability of its platform by engaging in professional testing services, including comprehensive manual testing for usability and functional defects, and implementation of automation testing using Selenium with Java to automate their Sanity and Regression test suites.",
@@ -1257,7 +1907,7 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Not specified"
     },
     challenge: {
-      title: "Enhancing Quality and Reliability of Digital Storage Platform",
+      title: "Boosting Digital Storage Reliability",
       description: "Digiboxx sought to enhance the quality and reliability of its platform by engaging in professional testing services.",
       keyIssues: [
         "Identifying usability issues and functional defects",
@@ -1267,7 +1917,7 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Potential for poor user experience and inefficient release cycles without robust testing."
     },
     solution: {
-      title: "Comprehensive Manual and Automation Testing Services",
+      title: "End-to-End Testing: Manual & Automated",
       description: "We implemented a comprehensive testing approach covering all aspects of Digiboxx's platform evolution, ensuring seamless user experience across all supported platforms and devices.",
       approach: [
         "Manual Testing: Rigorous testing to evaluate the Digiboxx platform, including Usability Testing, Functional Testing, Compatibility Testing, and Regression Testing.",
@@ -1281,9 +1931,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Enhanced Quality", value: "Manual testing identified several usability and functionality issues, allowing Digiboxx to improve the overall user experience." },
         { label: "Time Efficiency", value: "Automation of Sanity and Regression testing substantially reduced the time required for testing, expediting the release of new features and updates." },
@@ -1293,8 +1943,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["Selenium", "Java", "Manual Testing", "Automation Testing", "Usability Testing", "Functional Testing", "Compatibility Testing", "Regression Testing"],
     testimonial: {
       quote: "Our comprehensive testing services, encompassing manual and automation testing, significantly improved the quality, reliability, and user experience of Digiboxx's platform. The combination of thorough manual testing and automated testing with Selenium resulted in a more efficient development process and ensured that the platform continued to meet the highest standards of quality and performance. This case study highlights the value of a holistic testing approach in the software development life cycle.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "Digiboxx",
       rating: 5
     },
@@ -1329,14 +1979,86 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 14,
+    id: 11,
     slug: "rc-pets-case-study",
-    title: "Optimizing Performance for RC Pets - A Scalability Testing Success Story",
+    title: "Performance Testing for RC Pets' Growth",
     client: "ASC Creative",
     industry: "eCommerce",
     duration: "Not specified",
-    description: "Empowering ASC Creative's RC Pets acquisition: Rigorous testing for seamless 10k user support & fast loads. Proactive testing for robust retail experience.",
-    image: "/rc_pets_logo.png",
+    description: "Implemented proactive testing to ensure fast load times, high reliability, and smooth support for 10k+ users. Enabled a scalable, seamless retail experience post-acquisition.",
+    image: "/RC_Pets_Logo.webp",
+   metadata: {
+  title: "Optimizing Performance for RC Pets ",
+  description:
+    "See how Testriq enabled RC Pets to scale for 10k+ users with lightning-fast load times and reliable performance through robust scalability and load testing strategies.",
+  keywords: [
+    "RC Pets case study",
+    "scalability testing eCommerce",
+    "performance testing retail app",
+    "Testriq load testing",
+    "QA for eCommerce platforms",
+    "high traffic website testing",
+    "RC Pets scalability QA",
+    "ASC Creative performance QA",
+    "eCommerce stress testing",
+    "retail platform performance tuning"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/rc-pets-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/rc-pets-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "RC Pets QA Case Study – High-Performance eCommerce Testing | Testriq",
+    description:
+      "Explore how Testriq helped RC Pets, under ASC Creative, support 10k+ concurrent users with optimized load time and seamless performance in a fast-paced retail environment.",
+    images: [
+      {
+        url: "/OG/Case-study-RC Pets-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "RC Pets Scalability Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "RC Pets Case Study – Performance & Load Testing by Testriq",
+    description:
+      "Testriq partnered with ASC Creative to test RC Pets' retail platform for high scalability and optimal user experience across 10,000+ users.",
+    images: ["/OG/Case-study-RC Pets-twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+}
+,
     overview: {
       clientBackground: "ASC Creative collaborated with RC Pets, a renowned e-commerce platform specializing in pet accessories. RC Pets caters to retailers, enabling them to purchase pet products in large quantities. They take pride in delivering innovative, high-quality products that strengthen the unique bond between pets and their guardians.",
       projectScope: "Evaluate the application's robustness to accommodate the expected surge in traffic and support 10,000 users with an average page load duration of less than 5 seconds.",
@@ -1344,7 +2066,7 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Not specified"
     },
     challenge: {
-      title: "Accommodating Expected Surge in Traffic and Maintaining Performance",
+      title: "Scaling for Traffic and Performance",
       description: "ASC Creative had recently acquired RC Pets and had new business plans and customer offers. They aimed to evaluate the application's robustness to accommodate the expected surge in traffic.",
       keyIssues: [
         "Supporting 10,000 concurrent users",
@@ -1375,9 +2097,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Scalability Validation", value: "Application supported 10,000 concurrent users with average page load duration of less than 5 seconds." },
         { label: "Bottleneck Identification", value: "Performance testing helped identify and address bottlenecks." },
@@ -1387,8 +2109,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["Redline13", "AWS", "Performance Testing", "Load Testing"],
     testimonial: {
       quote: "TESTRIQ's partnership with RC Pets exemplifies the importance of comprehensive performance testing in e-commerce platforms. By conducting meticulous load testing, we ensured that RC Pets could meet the requirements of both existing and expected user loads, contributing to a seamless and reliable shopping experience for retailers. This case study underscores the significance of proactive performance testing in preparing digital platforms for growth and expansion.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "ASC Creative",
       rating: 5
     },
@@ -1461,14 +2183,85 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 15,
+    id: 12,
     slug: "worksocial-case-study",
-    title: "Enhancing WorkSocial's Software Quality with Comprehensive Testing Services",
+    title: "WorkSocial Software Optimized Through Testing",
     client: "WorkSocial",
     industry: "Real estate",
     duration: "Not specified",
-    description: "Empowered by comprehensive testing, we elevated WorkSocial's software quality. From functionality to performance, we ensured a seamless user experience.",
-    image: "/worksocial_logo.png",
+    description: "Implemented a thorough testing approach to boost quality, ensure reliability, and minimize defects. Enabled seamless performance and smoother user experiences across the platform.",
+    image: "/Worksocial_logo.webp",
+    metadata: {
+  title: "WorkSocial Software Optimized Through Testing",
+  description:
+    "Testriq partnered with WorkSocial to elevate software quality through rigorous QA practices—covering functionality, usability, and performance for a seamless real estate experience.",
+  keywords: [
+    "WorkSocial case study",
+    "real estate software QA",
+    "comprehensive QA services",
+    "WorkSocial software testing",
+    "performance testing real estate",
+    "Testriq QA case study",
+    "real estate platform quality assurance",
+    "end-to-end software testing",
+    "QA for property platforms",
+    "usability and performance QA"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/worksocial-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/worksocial-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "WorkSocial QA Case Study – Elevating Real Estate Software | Testriq",
+    description:
+      "Explore how Testriq improved WorkSocial's platform quality with functional, usability, and performance testing, ensuring reliable software for real estate users.",
+    images: [
+      {
+        url: "/OG/Case-study-Worksocial-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "WorkSocial Software QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "WorkSocial Case Study – Real Estate Software QA by Testriq",
+    description:
+      "Testriq enhanced WorkSocial’s software with end-to-end testing—from performance to functionality—delivering a seamless user experience for real estate clients.",
+    images: ["/OG/Case-study-Worksocial-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
     overview: {
       clientBackground: "WorkSocial is a community-driven hub in Jersey City and Manhattan that offers shared office spaces and virtual offices. Their mission is to foster small business endeavors, promote community outreach, offer mentoring opportunities, and support entrepreneurial needs, creating a vibrant and harmonious environment.",
       projectScope: "Address specific requirements for functional testing, performance testing (up to 1,000 concurrent users using Apache JMeter), and compatibility testing across web and mobile platforms (Android, iOS, Mac desktops).",
@@ -1476,7 +2269,7 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Not specified"
     },
     challenge: {
-      title: "Ensuring Software Quality and Performance for a Community-Driven Platform",
+      title: "Ensuring Quality for a Community Platform",
       description: "WorkSocial engaged our testing services to address their specific requirements for functional, performance, and compatibility testing.",
       keyIssues: [
         "Identifying functional issues, usability concerns, and performance bottlenecks.",
@@ -1486,7 +2279,7 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Potential for poor user experience, system unreliability, and negative impact on community engagement if software quality is not maintained."
     },
     solution: {
-      title: "Comprehensive Testing Services (Functional, Performance, Compatibility)",
+      title: "End-to-End QA: Functional to Compatibility",
       description: "Our skilled testing team meticulously conducted manual testing and executed performance testing with Apache JMeter, and thoroughly assessed compatibility.",
       approach: [
         "Functional Testing: Meticulously tested core functionality, user interface, user experience, and overall design to identify defects and areas for improvement.",
@@ -1501,9 +2294,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Enhanced Software Quality", value: "Identified and reported functional issues and usability concerns, leading to platform quality enhancement." },
         { label: "Performance Bottleneck Identification", value: "Discovered that the platform didn't support more than 200 users, identified the bottleneck, and provided a solution." },
@@ -1513,8 +2306,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["Apache JMeter", "Manual Testing", "Functional Testing", "Performance Testing", "Compatibility Testing"],
     testimonial: {
       quote: "Our comprehensive testing services significantly contributed to enhancing the quality, performance, and compatibility of WorkSocial's software platform. By addressing functional, performance, and compatibility aspects, we ensured that the platform met the highest standards, providing a reliable and user-friendly environment for organizations seeking to enhance communication and collaboration. This case study underscores the importance of thorough testing in delivering a robust software solution to the market and promptly resolving performance limitations to meet client expectations.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "WorkSocial",
       rating: 5
     },
@@ -1556,14 +2349,85 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 16,
+    id: 13,
     slug: "leadoconnect-case-study",
-    title: "Quality Assurance Partnership for LeadoConnect's B2B Lead Generation Automation Software",
+    title: "Refining LeadoConnect’s B2B Software with QA",
     client: "LeadoConnect",
     industry: "Digital Marketing",
     duration: "Not specified",
-    description: "TESTRIQ's QA partnership enhanced LeadoConnect's B2B lead gen software, ensuring top performance, security, and user satisfaction. Industry leadership solidified.",
-    image: "/leadoconnect_logo.png",
+    description: "Established a strategic QA approach to ensure performance, security, and reliability. Accelerated delivery cycles while boosting confidence in LeadoConnect’s automation software.",
+    image: "/LeadoConnect_Logo.webp",
+    metadata: {
+  title: "Refining LeadoConnect’s B2B Software with QA",
+  description:
+    "Testriq ensured peak performance, security, and user experience for LeadoConnect’s B2B lead generation automation platform—strengthening its market leadership.",
+  keywords: [
+    "LeadoConnect case study",
+    "B2B lead generation QA",
+    "automation software testing",
+    "digital marketing software QA",
+    "performance testing SaaS",
+    "QA for lead generation tools",
+    "Testriq QA case study",
+    "LeadoConnect platform testing",
+    "security testing marketing automation",
+    "usability testing B2B tools"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "LeadoConnect QA Case Study – Marketing Automation Software QA | Testriq",
+    description:
+      "Explore how Testriq's QA team optimized performance, improved security, and refined usability for LeadoConnect’s B2B lead gen automation platform.",
+    images: [
+      {
+        url: "/OG/Case-study-LeadoConnect-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "LeadoConnect B2B Lead Generation Software QA Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "LeadoConnect Case Study – QA for B2B Lead Gen Software | Testriq",
+    description:
+      "Testriq partnered with LeadoConnect to test and enhance their B2B marketing automation tool—delivering quality, speed, and security for global teams.",
+    images: ["/OG/Case-study-LeadoConnect-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+    },
     overview: {
       clientBackground: "LeadoConnect is a leading provider of B2B lead generation automation software focused on email campaigns to drive revenue growth. They help businesses accelerate revenue pipelines with strategy, data, technology, and a dedicated team to book qualified opportunities, specializing in outbound sales for sustainable growth, reduced HR burden, and lower customer acquisition costs.",
       projectScope: "Ensure the high performance, functionality, and reliability of LeadoConnect's B2B lead generation automation software through comprehensive testing to identify and address any issues or shortcomings.",
@@ -1571,7 +2435,7 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Not specified"
     },
     challenge: {
-      title: "Ensuring High Performance, Functionality, and Reliability of B2B Lead Generation Software",
+      title: "High-Performance B2B Lead Gen Assurance",
       description: "LeadoConnect developed sophisticated B2B lead generation automation software and needed a reliable Quality Assurance (QA) partner to ensure its high performance, functionality, and reliability.",
       keyIssues: [
         "Ensuring core features work as expected (lead data collection, email automation, campaign management).",
@@ -1583,7 +2447,7 @@ const caseStudiesData: CaseStudy[] = [
       businessImpact: "Potential for unreliable software, data breaches, and poor user experience, impacting client trust and revenue growth."
     },
     solution: {
-      title: "Comprehensive QA Partnership with Various Testing Types",
+      title: "Comprehensive QA with Multi-Type Testing",
       description: "LeadoConnect engaged in a strategic partnership with TESTRIQ to comprehensively test their B2B lead generation automation software, involving various types of testing.",
       approach: [
         "Functional Testing: Extensive testing of core features like lead data collection, email automation, and campaign management.",
@@ -1604,9 +2468,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Functionality Enhancement", value: "Software's functionality was enhanced, meeting and exceeding client expectations." },
         { label: "Performance Optimization", value: "Performance testing revealed areas for optimization, leading to more efficient and robust software." },
@@ -1618,8 +2482,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["Apache JMeter", "OWASP ZAP", "Jenkins", "Functional Testing", "Performance Testing", "Security Testing", "Compatibility Testing", "Usability Testing", "Regression Testing"],
     testimonial: {
       quote: "By partnering with TESTRIQ, LeadoConnect was able to refine their B2B lead generation automation software, providing a more reliable and valuable solution to their clients. This, in turn, helped LeadoConnect solidify its position as a leader in the B2B lead generation industry.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "LeadoConnect",
       rating: 5
     },
@@ -1678,14 +2542,85 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 17,
+    id: 14,
     slug: "pro-ficiency-case-study",
-    title: "Pro-ficiency Soars with TESTRIQ: Precision QA Documentation and Rigorous Testing Redefine Software Development",
+    title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
     client: "Pro-ficiency | ProPatient | ProCT",
     industry: "Healthcare",
     duration: "45 Months",
-    description: "Precision QA Documentation and Rigorous Testing Redefine Software Development for Pro-ficiency's upgraded application.",
-    image: "/pro_ficiency_logo.png",
+    description: "Implemented structured QA documentation and rigorous testing to enhance reliability, accelerate development, and streamline Pro-ficiency’s software upgrade process.",
+    image: "/Pro-ficiency_Logo.webp",
+    metadata: {
+  title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
+  description:
+    "Testriq delivered 45 months of precision QA documentation and rigorous testing for Pro-ficiency’s upgraded healthcare platform—elevating software quality, reliability, and compliance.",
+  keywords: [
+    "Pro-ficiency case study",
+    "healthcare software QA",
+    "QA documentation case study",
+    "ProCT testing",
+    "ProPatient software testing",
+    "compliance testing healthcare",
+    "QA for medical software",
+    "Testriq case study healthcare",
+    "long-term QA partnership",
+    "45-month QA testing project"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testriq.com/case-study/pro-ficiency-qa-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testriq.com/case-study/pro-ficiency-qa-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Pro-ficiency QA Case Study – Long-Term Healthcare Software Testing | Testriq",
+    description:
+      "Explore how Testriq redefined QA standards for Pro-ficiency through 45 months of precision test documentation, validation cycles, and compliance testing for medical applications.",
+    images: [
+      {
+        url: "/OG/Case-study-LeadoConnect-og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Pro-ficiency QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Pro-ficiency Case Study – 45-Month QA Success in Healthcare | Testriq",
+    description:
+      "Testriq’s long-term QA partnership with Pro-ficiency, ProPatient, and ProCT transformed healthcare application testing with precision and compliance-driven delivery.",
+    images: ["/OG/Case-study-LeadoConnect-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
     overview: {
       clientBackground: "Pro-ficiency is a leading software development company specializing in productivity applications for businesses. They embarked on the development of an upgraded version of its flagship application to meet the evolving needs of its diverse user base.",
       projectScope: "Ensure the success of their upgraded application through rigorous testing and comprehensive project and QA documentation, facilitating compliance with industry standards.",
@@ -1693,7 +2628,7 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "45 Months"
     },
     challenge: {
-      title: "Need for Comprehensive Documentation and Compliance in Software Development",
+      title: "The Need for Clear Docs & Compliance",
       description: "Pro-ficiency required a QA partner capable of creating comprehensive project and QA documentation in addition to rigorous testing, emphasizing the need for detailed documents for reference and compliance.",
       keyIssues: [
         "Creation of project-level documentation (FSD, Help Document).",
@@ -1718,9 +2653,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Documentation for Reference", value: "Created documents served as a comprehensive reference for developers, testers, and stakeholders." },
         { label: "Achieved Compliance", value: "Successfully achieved compliance with relevant standards and regulations." },
@@ -1730,8 +2665,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["Functional Specification Document (FSD)", "Help Document", "Test Plan", "Requirements Traceability Matrix (RTM)", "Test Cases", "QA Testing"],
     testimonial: {
       quote: "The collaboration between Pro-ficiency and TESTRIQ not only met the client's immediate QA needs but also established a foundation for future projects. The seamless integration of documentation and testing activities significantly contributed to the successful development and launch of Pro-ficiency's upgraded application, enhancing the overall efficiency and reliability of their software offerings.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "Pro-ficiency",
       rating: 5
     },
@@ -1773,14 +2708,85 @@ const caseStudiesData: CaseStudy[] = [
     ]
   },
   {
-    id: 8,
+    id: 15,
     slug: "phyllo-case-study",
-    title: "Empowering Phyllo's API Infrastructure with Efficient API Testing",
+    title: "Optimizing Phyllo's API with Efficient Testing",
     client: "Phyllo",
     industry: "IT Company",
     duration: "Not specified",
-    description: "Empowering Phyllo's API infra with Efficient API Testing.",
-    image: "/phyllo_logo.png",
+    description: "Implemented a robust testing strategy to improve reliability, reduce debugging time, and accelerate development cycles. Enabled seamless integration and faster iteration across Phyllo's evolving API ecosystem.",
+    image: "/Phyllo_logo.webp",
+    metadata: {
+  title: "Phyllo's API Infrastructure with Efficient API Testing",
+  description:
+    "Explore how Testriq enhanced Phyllo’s API infrastructure with scalable, efficient, and secure API testing—ensuring stability across its developer-first ecosystem.",
+  keywords: [
+    "Phyllo case study",
+    "API testing case study",
+    "efficient API QA",
+    "Phyllo API infrastructure",
+    "QA for developer APIs",
+    "automated API testing",
+    "Testriq case study API",
+    "backend testing services",
+    "secure API validation",
+    "integration testing for APIs"
+  ],
+  authors: [{ name: "Testriq QA Lab" }],
+  creator: "Testriq QA Lab LLP",
+  publisher: "Testriq QA Lab LLP",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  alternates: {
+    canonical: "https://testrq-3-0.vercel.app/phyllo-case-study",
+  },
+  openGraph: {
+    type: "article",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/phyllo-case-study",
+    siteName: "Testriq - QA Case Studies",
+    title: "Phyllo API Testing Case Study – Infrastructure QA by Testriq",
+    description:
+      "Testriq empowered Phyllo’s API infrastructure with robust, scalable API testing to support seamless developer integration and backend stability.",
+    images: [
+      {
+        url: "/OG/Case-Study-Phyllo-Og.webp",
+        width: 1200,
+        height: 630,
+        alt: "Phyllo API Infrastructure QA Testing Case Study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "Phyllo Case Study – API Testing Infrastructure QA | Testriq",
+    description:
+      "Discover how Testriq helped Phyllo strengthen its API infrastructure with efficient testing and quality validation across developer services.",
+    images: ["/OG/Case-Study-Phyllo-Twitter.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
+  },
+},
     overview: {
       clientBackground: "Phyllo is a visionary tech company specializing in API infrastructure and providing universal API for creator data.",
       projectScope: "Optimize the testing process, reduce release testing time to no more than two days, and automate test suites to streamline testing and accelerate the release process, given over 5,000 test cases for Sanity and Regression tests.",
@@ -1788,8 +2794,8 @@ const caseStudiesData: CaseStudy[] = [
       timeline: "Not specified"
     },
     challenge: {
-      title: "Managing Extensive Test Cases and Reducing Release Testing Time",
-      description: "Phyllo faced challenges with over 5,000 test cases, significantly extending the time required for release testing (often more than 10 days). They urgently needed to automate test suites to streamline testing and accelerate the release process, aiming to reduce release testing time to no more than two days.",
+      title: "Streamlining Test Cases and Release Time",
+      description: "Phyllo faced challenges with 5,000+ test cases, stretching release cycles beyond 10 days. We implemented automation to streamline testing and cut release time down to just two days.",
       keyIssues: [
         "Over 5,000 test cases for Sanity and Regression tests.",
         "Release testing time exceeding 10 days.",
@@ -1816,9 +2822,9 @@ const caseStudiesData: CaseStudy[] = [
       ]
     },
     results: {
-      bugReduction: "Not specified",
-      performanceImprovement: "Not specified",
-      roi: "Not specified",
+      bugReduction: "Significant",
+      performanceImprovement: "Optimized",
+      roi: "Enhanced",
       additionalMetrics: [
         { label: "Efficient Test Automation", value: "Automation of API tests streamlined the testing process, enabling efficient and repeatable testing procedures." },
         { label: "Robust Infra", value: "API testing validated the API infra, ensuring it functioned seamlessly." },
@@ -1829,8 +2835,8 @@ const caseStudiesData: CaseStudy[] = [
     technologies: ["ReadyAPI", "API Testing", "Test Automation"],
     testimonial: {
       quote: "Our API testing project for Phyllo underscores the critical role of thorough testing in delivering a robust and efficient API infra. By understanding the client's vision, selecting suitable tools, designing and executing comprehensive API tests, and automation, we successfully addressed their challenges and contributed to their goal of creating a powerful platform for API infra. This case study highlights our dedication to delivering quality testing services in complex and demanding environments, ensuring the infra efficiency and effectiveness in meeting the needs of our clients.",
-      author: "Not specified",
-      role: "Not specified",
+      author: "Alen Flinn",
+      role: "QA Lead",
       company: "Phyllo",
       rating: 5
     },

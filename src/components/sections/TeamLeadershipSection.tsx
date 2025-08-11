@@ -52,7 +52,7 @@ const TeamLeadershipSection = () => {
       ),
     },
     {
-      name: "Goutam_Mishra",
+      name: "Goutam Mishra",
       position: "Head of QA and BD",
       experience: "20+ Years",
       specialization: "Software Testing & Business Development",

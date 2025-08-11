@@ -1,7 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { FaBug, FaClock, FaDollarSign, FaCheckCircle, FaChartLine } from "react-icons/fa";
+import {
+  FaBug,
+  FaClock,
+  FaDollarSign,
+  FaCheckCircle,
+  FaChartLine,
+} from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
   return (
@@ -10,16 +17,17 @@ const RegressionTestingROISection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaChartLine />
-            <span className="text-sm">
-              Return on Investment
-            </span>
+            <span className="text-sm">Return on Investment</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Realizing the <span className="text-brand-blue">ROI of Regression</span> Testing
+            Realizing the{" "}
+            <span className="text-brand-blue">ROI of Regression</span> Testing
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Regression testing is a critical investment that ensures software stability and quality with every release. By preventing defects and reducing risks, it delivers significant returns and maintains user satisfaction.
-
+            Regression testing is a critical investment that ensures software
+            stability and quality with every release. By preventing defects and
+            reducing risks, it delivers significant returns and maintains user
+            satisfaction.
           </p>
         </div>
 
@@ -29,11 +37,16 @@ const RegressionTestingROISection: React.FC = () => {
             <div className="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <FaCheckCircle className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Enhanced Software Quality</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Enhanced Software Quality
+            </h3>
             <p className="text-gray-600 leading-relaxed">
-              Ensure that new changes do not introduce defects or break existing functionalities, leading to a more stable product.
+              Ensure that new changes do not introduce defects or break existing
+              functionalities, leading to a more stable product.
             </p>
-            <div className="mt-4 text-brand-blue font-bold text-lg">99.8% Stability Rate</div>
+            <div className="mt-4 text-brand-blue font-bold text-lg">
+              99.8% Stability Rate
+            </div>
           </div>
 
           {/* Reduced Production Defects */}
@@ -41,11 +54,16 @@ const RegressionTestingROISection: React.FC = () => {
             <div className="bg-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <FaBug className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Reduced Production Defects</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Reduced Production Defects
+            </h3>
             <p className="text-gray-600 leading-relaxed">
-              Catch defects early in the development cycle, significantly reducing the cost and effort of fixing them in production.
+              Catch defects early in the development cycle, significantly
+              reducing the cost and effort of fixing them in production.
             </p>
-            <div className="mt-4 text-green-600 font-bold text-lg">Up to 70% Fewer Defects</div>
+            <div className="mt-4 text-green-600 font-bold text-lg">
+              Up to 70% Fewer Defects
+            </div>
           </div>
 
           {/* Faster Release Cycles */}
@@ -53,11 +71,17 @@ const RegressionTestingROISection: React.FC = () => {
             <div className="bg-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <FaClock className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Faster & Confident Release Cycles</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Faster & Confident Release Cycles
+            </h3>
             <p className="text-gray-600 leading-relaxed">
-              Automated and optimized regression testing enables quicker validation, leading to faster and more confident software releases.
+              Automated and optimized regression testing enables quicker
+              validation, leading to faster and more confident software
+              releases.
             </p>
-            <div className="mt-4 text-purple-600 font-bold text-lg">30% Faster Releases</div>
+            <div className="mt-4 text-purple-600 font-bold text-lg">
+              30% Faster Releases
+            </div>
           </div>
 
           {/* Cost Savings */}
@@ -65,18 +89,25 @@ const RegressionTestingROISection: React.FC = () => {
             <div className="bg-orange-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <FaDollarSign className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Significant Cost Savings</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Significant Cost Savings
+            </h3>
             <p className="text-gray-600 leading-relaxed">
-              Minimize the costs associated with post-release defects, rework, and emergency fixes.
+              Minimize the costs associated with post-release defects, rework,
+              and emergency fixes.
             </p>
-            <div className="mt-4 text-orange-600 font-bold text-lg">Up to 40% Cost Reduction</div>
+            <div className="mt-4 text-orange-600 font-bold text-lg">
+              Up to 40% Cost Reduction
+            </div>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Assess Your Regression Needs
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+              Assess Your Regression Needs
+            </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -84,4 +115,3 @@ const RegressionTestingROISection: React.FC = () => {
 };
 
 export default RegressionTestingROISection;
-

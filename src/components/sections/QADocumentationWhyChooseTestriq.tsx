@@ -7,7 +7,7 @@ const QADocumentationWhyChooseTestriq = () => {
       icon: FaAward,
       title: "Industry Expertise",
       description: "15+ years of experience in QA documentation across diverse industries including healthcare, fintech, e-commerce, and enterprise software.",
-      metrics: "500+ Projects Documented",
+      metrics: "150+ Projects Documented",
       color: "blue"
     },
     {
@@ -88,7 +88,7 @@ const QADocumentationWhyChooseTestriq = () => {
             Your Trusted Partner for Professional QA Documentation
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            With over 15 years of experience and 500+ successful projects, we deliver comprehensive QA documentation solutions that enhance team productivity through documentation clarity, ensure compliance with QA standards documentation, and accelerate project delivery with structured test plans and requirements analysis.
+            With over 15 years of experience and 150+ successful projects, we deliver comprehensive QA documentation solutions that enhance team productivity through documentation clarity, ensure compliance with QA standards documentation, and accelerate project delivery with structured test plans and requirements analysis.
 
           </p>
         </div>
@@ -137,7 +137,7 @@ const QADocumentationWhyChooseTestriq = () => {
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">500+</div>
+              <div className="text-4xl font-bold mb-2">150+</div>
               <div className="text-lg opacity-90">Projects Documented</div>
               <div className="text-sm opacity-75 mt-1">Across 25+ industries</div>
             </div>

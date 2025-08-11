@@ -1,11 +1,20 @@
-import React from 'react';
-import { FaBook, FaCode, FaChartLine, FaCog, FaShieldAlt } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import {
+  FaBook,
+  FaCode,
+  FaChartLine,
+  FaCog,
+  FaShieldAlt,
+  FaArrowRight,
+  FaPlay,
+} from "react-icons/fa";
 
 const SoftwareTestingGuideHeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-white/60"></div>
-      
+
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 ">
           {/* Left Content */}
@@ -14,34 +23,41 @@ const SoftwareTestingGuideHeroSection = () => {
               <FaBook className="mr-2" />
               Complete Software Testing Guide
             </div>
-            
+
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Master <span className="text-brand-blue">Software Testing</span> with Our Comprehensive Guide
+                Master <span className="text-brand-blue">Software Testing</span>{" "}
+                with Our Comprehensive Guide
               </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Everything you need to know about software testing services – from fundamental QA concepts to advanced testing methodologies. Learn various testing types, QA best practices, testing tools, and automation frameworks used by leading quality assurance companies and industry professionals.
-              </p>
-              
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Whether you&apos;re a beginner starting your QA journey or an experienced QA professional looking to enhance your skills, this comprehensive software testing guide covers manual testing, automation testing, performance testing, security testing, API testing, and more to help you deliver bug-free, scalable software.
 
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Everything you need to know about software testing services –
+                from fundamental QA concepts to advanced testing methodologies.
+                Learn various testing types, QA best practices, testing tools,
+                and automation frameworks used by leading quality assurance
+                companies and industry professionals.
+              </p>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Whether you&apos;re a beginner starting your QA journey or an
+                experienced QA professional looking to enhance your skills, this
+                comprehensive software testing guide covers manual testing,
+                automation testing, performance testing, security testing, API
+                testing, and more to help you deliver bug-free, scalable
+                software.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors duration-200 shadow-lg">
-                Start Learning Now
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-              
+              <Link href="/contact-us">
+                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200 shadow-lg">
+                  Start Learning Now
+                  <FaArrowRight className="ml-2" />
+                </button>
+              </Link>
+
               <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
-                <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                </svg>
+                <FaPlay className="mr-2" />
                 Download PDF Guide
               </button>
             </div>
@@ -94,17 +110,23 @@ const SoftwareTestingGuideHeroSection = () => {
                 <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-green-50 rounded-lg">
                     <FaCode className="mx-auto text-2xl text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-green-800">Fundamentals</div>
+                    <div className="text-sm font-medium text-green-800">
+                      Fundamentals
+                    </div>
                     <div className="text-xs text-green-600">12 Modules</div>
                   </div>
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
                     <FaCog className="mx-auto text-2xl text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-blue-800">Advanced</div>
+                    <div className="text-sm font-medium text-blue-800">
+                      Advanced
+                    </div>
                     <div className="text-xs text-blue-600">8 Modules</div>
                   </div>
                   <div className="text-center p-3 bg-purple-50 rounded-lg">
                     <FaShieldAlt className="mx-auto text-2xl text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-purple-800">Specialized</div>
+                    <div className="text-sm font-medium text-purple-800">
+                      Specialized
+                    </div>
                     <div className="text-xs text-purple-600">6 Modules</div>
                   </div>
                 </div>
@@ -112,8 +134,12 @@ const SoftwareTestingGuideHeroSection = () => {
                 {/* Progress Metrics */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <div className="text-sm text-gray-600">Modules Completed</div>
-                    <div className="text-2xl font-bold text-green-600">18 / 26</div>
+                    <div className="text-sm text-gray-600">
+                      Modules Completed
+                    </div>
+                    <div className="text-2xl font-bold text-green-600">
+                      18 / 26
+                    </div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-600">Knowledge Score</div>
@@ -124,11 +150,15 @@ const SoftwareTestingGuideHeroSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
                     <div className="text-sm text-gray-600">Time Invested</div>
-                    <div className="text-2xl font-bold text-purple-600">24 Hours</div>
+                    <div className="text-2xl font-bold text-purple-600">
+                      24 Hours
+                    </div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-600">Certification</div>
-                    <div className="text-2xl font-bold text-orange-600">Ready</div>
+                    <div className="text-2xl font-bold text-orange-600">
+                      Ready
+                    </div>
                   </div>
                 </div>
 
@@ -139,7 +169,10 @@ const SoftwareTestingGuideHeroSection = () => {
                     <span>69% Complete</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-green-500 to-blue-600 h-3 rounded-full" style={{width: '69%'}}></div>
+                    <div
+                      className="bg-gradient-to-r from-green-500 to-blue-600 h-3 rounded-full"
+                      style={{ width: "69%" }}
+                    ></div>
                   </div>
                 </div>
 
@@ -147,11 +180,15 @@ const SoftwareTestingGuideHeroSection = () => {
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-sm">
                     <span>Manual Testing</span>
-                    <span className="text-green-600 font-medium">Completed</span>
+                    <span className="text-green-600 font-medium">
+                      Completed
+                    </span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
                     <span>Automation Testing</span>
-                    <span className="text-blue-600 font-medium">In Progress</span>
+                    <span className="text-blue-600 font-medium">
+                      In Progress
+                    </span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
                     <span>Performance Testing</span>
@@ -184,4 +221,3 @@ const SoftwareTestingGuideHeroSection = () => {
 };
 
 export default SoftwareTestingGuideHeroSection;
-

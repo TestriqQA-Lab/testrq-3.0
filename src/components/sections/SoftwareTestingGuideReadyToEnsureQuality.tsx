@@ -1,36 +1,41 @@
-import React from 'react';
-import { ArrowRight, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react';
+import React from "react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Award,
+  TrendingUp,
+} from "lucide-react";
+import Link from "next/link";
 
 const SoftwareTestingGuideReadyToEnsureQuality = () => {
   const benefits = [
-    'Comprehensive testing methodology training',
-    'Hands-on experience with industry-standard tools',
-    'Expert guidance from certified professionals',
-    'Real-world project-based learning',
-    'Industry-recognized certifications',
-    'Career advancement opportunities'
+    "Comprehensive testing methodology training",
+    "Hands-on experience with industry-standard tools",
+    "Expert guidance from certified professionals",
+    "Real-world project-based learning",
+    "Industry-recognized certifications",
+    "Career advancement opportunities",
   ];
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Senior QA Engineer at Google',
-      content: 'The comprehensive testing guide transformed my career. The structured approach and practical examples helped me master automation testing.',
-      rating: 5
+      content:
+        "The comprehensive testing guide transformed my career. The structured approach and practical examples helped me master automation testing.",
+      rating: 5,
     },
     {
-      name: 'Michael Chen',
-      role: 'Test Manager at Microsoft',
-      content: 'Excellent resource for building testing expertise. The learning path is well-structured and covers all essential testing domains.',
-      rating: 5
-    }
+      content:
+        "Excellent resource for building testing expertise. The learning path is well-structured and covers all essential testing domains.",
+      rating: 5,
+    },
   ];
 
   const stats = [
-    { number: '15,000+', label: 'Students Trained' },
-    { number: '95%', label: 'Success Rate' },
-    { number: '4.9/5', label: 'Average Rating' },
-    { number: '50+', label: 'Countries Reached' }
+    { number: "15,000+", label: "Students Trained" },
+    { number: "95%", label: "Success Rate" },
+    { number: "4.9/5", label: "Average Rating" },
+    { number: "50+", label: "Countries Reached" },
   ];
 
   return (
@@ -38,10 +43,16 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            <span className='text-brand-blue'>Ready to Master</span> Software Testing?
+            <span className="text-brand-blue">Ready to Master</span> Software
+            Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of QA professionals who have advanced their careers through our comprehensive software testing education program. Start your journey to becoming a certified testing expert in manual testing, automation testing, performance testing, security testing, and more—guided by industry-recognized QA best practices and hands-on learning.
+            Join thousands of QA professionals who have advanced their careers
+            through our comprehensive software testing education program. Start
+            your journey to becoming a certified testing expert in manual
+            testing, automation testing, performance testing, security testing,
+            and more—guided by industry-recognized QA best practices and
+            hands-on learning.
           </p>
         </div>
 
@@ -64,10 +75,13 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
             <div className="bg-white rounded-xl p-6 shadow-lg">
               <div className="flex items-center mb-4">
                 <Award className="h-6 w-6 text-blue-600 mr-2" />
-                <h4 className="text-lg font-semibold text-gray-900">Professional Certification</h4>
+                <h4 className="text-lg font-semibold text-gray-900">
+                  Professional Certification
+                </h4>
               </div>
               <p className="text-gray-600 text-sm">
-                Earn industry-recognized certifications that validate your testing expertise and enhance your career prospects.
+                Earn industry-recognized certifications that validate your
+                testing expertise and enhance your career prospects.
               </p>
             </div>
           </div>
@@ -105,10 +119,12 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
               </div>
             </div>
 
-            <button className="w-full bg-gradient-to-r from-brand-blue to-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center">
-              Begin Learning Journey
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="w-full bg-gradient-to-r from-brand-blue to-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-lg cursor-pointer transition-all duration-200 flex items-center justify-center">
+                Begin Learning Journey
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </Link>
 
             <p className="text-center text-gray-500 text-sm mt-4">
               30-day money-back guarantee
@@ -125,7 +141,9 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
               <div key={index}>
-                <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -143,23 +161,16 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                    <Star
+                      key={i}
+                      className="h-5 w-5 text-yellow-400 fill-current"
+                    />
                   ))}
                 </div>
 
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-
-                <div className="flex items-center">
-                  <div className="bg-blue-100 rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                    <Users className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role}</div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
@@ -172,15 +183,16 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
               Don&apos;t Wait - Start Learning Today!
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              The demand for skilled testing professionals is growing rapidly. Secure your future in software quality assurance with our comprehensive training program.
+              The demand for skilled testing professionals is growing rapidly.
+              Secure your future in software quality assurance with our
+              comprehensive training program.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Start Free Trial
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                View Curriculum
-              </button>
+              <Link href="/contact-us">
+                <button className="border-2 border-white cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                  Schedule a Demo
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -190,4 +202,3 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
 };
 
 export default SoftwareTestingGuideReadyToEnsureQuality;
-

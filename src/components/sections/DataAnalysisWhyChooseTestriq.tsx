@@ -44,20 +44,14 @@ const DataAnalysisWhyChooseTestriq = () => {
 
   const testimonials = [
     {
-      name: 'David Thompson',
-      role: 'Chief Data Officer at JPMorgan Chase',
       content: 'Testriq\'s data analytics team transformed our risk assessment models, resulting in a 35% improvement in fraud detection accuracy through advanced predictive analytics and machine learning model building.',
       rating: 5
     },
     {
-      name: 'Lisa Wang',
-      role: 'VP Analytics at Amazon',
       content: 'The predictive analytics models developed by Testriq helped us optimize our supply chain operations, enabling data-driven decisions and reducing costs by $2.3M annually.',
       rating: 5
     },
     {
-      name: 'Carlos Rodriguez',
-      role: 'Head of Business Intelligence at Microsoft',
       content: 'Outstanding data visualization and dashboard development using cutting-edge data analysis tools. The insights have been crucial for our strategic decisions and business performance improvement.',
       rating: 5
     }
@@ -173,11 +167,6 @@ const DataAnalysisWhyChooseTestriq = () => {
                 <p className="text-gray-600 mb-4 italic leading-relaxed">
                   &quot;{testimonial.content}&quot;
                 </p>
-
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.role}</div>
-                </div>
               </div>
             ))}
           </div>

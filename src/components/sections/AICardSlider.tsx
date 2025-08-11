@@ -100,7 +100,7 @@ const AICardSlider: React.FC = () => {
 
         <Link href="/contact-us">
           <div className="mt-12 text-center">
-            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
+            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300">
               Get Comprehensive AI Testing
             </button>
           </div>

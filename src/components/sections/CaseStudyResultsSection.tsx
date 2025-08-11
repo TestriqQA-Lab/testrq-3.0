@@ -6,13 +6,15 @@ interface CaseStudyResultsSectionProps {
   caseStudy: CaseStudy;
 }
 
-const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseStudy }) => {
+const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({
+  caseStudy,
+}) => {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
             <FaTrophy className="w-4 h-4" />
             <span>The Results</span>
           </div>
@@ -20,8 +22,9 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
             Measurable Success & Impact
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our comprehensive testing approach delivered exceptional results that exceeded client expectations 
-            and established new benchmarks for system performance and reliability.
+            Our comprehensive testing approach delivered exceptional results
+            that exceeded client expectations and established new benchmarks for
+            system performance and reliability.
           </p>
         </div>
 
@@ -31,10 +34,9 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaArrowUp className="w-8 h-8 text-red-600 transform rotate-180" />
             </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.bugReduction}
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Bug Reduction</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Bug Reduction
+            </h3>
             <p className="text-gray-600">
               Significant reduction in production bugs and system failures
             </p>
@@ -44,10 +46,9 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaArrowUp className="w-8 h-8 text-green-600" />
             </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.performanceImprovement}
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Performance Boost</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Performance Boost
+            </h3>
             <p className="text-gray-600">
               Dramatic improvement in system performance and response times
             </p>
@@ -57,10 +58,9 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
             <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <FaChartBar className="w-8 h-8 text-yellow-600" />
             </div>
-            <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-              {caseStudy.results.roi}
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">ROI Achievement</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              ROI Achievement
+            </h3>
             <p className="text-gray-600">
               Exceptional return on investment through improved efficiency
             </p>
@@ -69,17 +69,19 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
 
         {/* Additional Metrics */}
         <div className="bg-white rounded-2xl p-8 shadow-sm mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Additional Success Metrics</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            Additional Success Metrics
+          </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudy.results.additionalMetrics.map((metric, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-700 font-medium">{metric.label}</span>
+                  <span className="text-2xl font-bold text-[theme(color.brand.blue)]">
+                    {metric.label}
+                  </span>
                   <FaStar className="w-4 h-4 text-yellow-500" />
                 </div>
-                <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
-                  {metric.value}
-                </div>
+                <div className="text-md font-medium">{metric.value}</div>
               </div>
             ))}
           </div>
@@ -90,11 +92,13 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4">Results Summary</h3>
             <p className="text-blue-100 text-lg max-w-4xl mx-auto leading-relaxed mb-8">
-              The comprehensive testing strategy not only resolved immediate challenges but also established 
-              a robust foundation for future growth and scalability. The client now enjoys improved system 
-              reliability, enhanced user experience, and significant cost savings.
+              The comprehensive testing strategy not only resolved immediate
+              challenges but also established a robust foundation for future
+              growth and scalability. The client now enjoys improved system
+              reliability, enhanced user experience, and significant cost
+              savings.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-2xl font-bold mb-1">100%</div>
@@ -121,4 +125,3 @@ const CaseStudyResultsSection: React.FC<CaseStudyResultsSectionProps> = ({ caseS
 };
 
 export default CaseStudyResultsSection;
-

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getPosts } from '@/lib/wordpress-graphql';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://testrq-3-0.vercel.app';
   const currentDate = new Date();
 
@@ -75,6 +76,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...solutionPages];
-}
+  // Get all blog posts using GraphQL pagination
+  let allPosts: any[] = [];
+  let hasNextPage = true;
+  let endCursor: string | undefined = undefined;
 
+  while (hasNextPage) {
+    const { posts, pageInfo } = await getPosts(100, endCursor); // Fetch 100 posts at a time
+    allPosts = allPosts.concat(posts);
+    hasNextPage = pageInfo.hasNextPage;
+    endCursor = pageInfo.endCursor;
+  }
+
+  const blogPosts = allPosts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.modified || post.date),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...servicePages, ...solutionPages, ...blogPosts];
+}

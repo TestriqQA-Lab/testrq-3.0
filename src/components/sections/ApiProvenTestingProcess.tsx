@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaSearch,
@@ -93,7 +94,8 @@ const ApiProvenTestingProcess: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Process</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures comprehensive API testing coverage, delivering reliable and secure integrations for your applications.
+            Our systematic approach ensures comprehensive API testing coverage,
+            delivering reliable and secure integrations for your applications.
           </p>
         </div>
 
@@ -372,10 +374,12 @@ const ApiProvenTestingProcess: React.FC = () => {
 
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
-          <button className="flex items-center gap-2 mx-auto bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300 shadow-lg">
-            <FaPlay className="w-4 h-4" />
-            <span>Learn More About Our Process</span>
-          </button>
+          <Link href="/contact-us">
+            <button className="flex items-center cursor-pointer gap-2 mx-auto bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300 shadow-lg">
+              <FaPlay className="w-4 h-4" />
+              <span>Learn More About Our Process</span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>

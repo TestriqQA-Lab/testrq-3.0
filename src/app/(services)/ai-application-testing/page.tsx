@@ -7,10 +7,10 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:
-"AI Application Testing Services |(10+ Yrs)",
+  title: "AI Application Testing Services |(10+ Yrs)",
 
-  description: "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and AI security testing. Ensure your intelligent systems are accurate, fair, and reliable.",
+  description:
+    "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and AI security testing. Ensure your intelligent systems are accurate, fair, and reliable.",
   keywords: [
     "AI application testing",
     "AI testing services",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "AI performance testing",
     "generative AI testing",
     "AI explainability",
-    "ethical AI testing"
+    "ethical AI testing",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -31,33 +31,35 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testriq.com/ai-application-testing',
+    canonical: "https://testriq.com/ai-application-testing",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testriq.com/ai-application-testing',
-    siteName: 'Testriq - AI Testing Services',
-    title: 'AI Application Testing Services - Accurate, Fair, and Reliable ',
-    description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testriq.com/ai-application-testing",
+    siteName: "Testriq - AI Testing Services",
+    title: "AI Application Testing Services - Accurate, Fair, and Reliable ",
+    description:
+      "Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.",
     images: [
       {
-        url: '/OG/AI-Aplication-Tesing-Service-og.webp',
+        url: "/OG/AI-Aplication-Tesing-Service-og.webp",
         width: 1200,
         height: 630,
-        alt: 'AI Application Testing Services - Testriq',
-      }
+        alt: "AI Application Testing Services - Testriq",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'AI Application Testing Services - Accurate, Fair, and Reliable',
-    description: 'Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.',
-    images: ['/OG/AI-Application-Testing-service-Twitter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title: "AI Application Testing Services - Accurate, Fair, and Reliable",
+    description:
+      "Ensure your AI models are accurate, unbiased, explainable, and secure with our expert AI testing services. Trusted by 150+ companies.",
+    images: ["/OG/AI-Application-Testing-service-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -65,18 +67,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
-
 
 const AITestingHeroSection = dynamic(
   () => import("@/components/sections/AITestingHeroSection"),
@@ -104,18 +105,6 @@ const AIProvenTestingProcess = dynamic(
 
 const AIWhyChooseTestriq = dynamic(
   () => import("@/components/sections/AIWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const AIROISection = dynamic(
-  () => import("@/components/sections/AIROISection"),
   {
     ssr: true,
     loading: () => (
@@ -199,12 +188,15 @@ export default function AIApplicationTesting() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
     { name: "Services", url: "https://testriq.com/ai-application-testing" },
-    { name: "AI Application Testing", url: "https://testriq.com/ai-application-testing" }
+    {
+      name: "AI Application Testing",
+      url: "https://testriq.com/ai-application-testing",
+    },
   ];
   return (
     <div>
-       <StructuredData data={aiTestingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData data={aiTestingServiceSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AITestingHeroSection />
         <AIComprehensiveSlider />
@@ -212,7 +204,6 @@ export default function AIApplicationTesting() {
         <AIProvenTestingProcess />
         <AIWhyChooseTestriq />
         <AIToolsFramework />
-        <AIROISection />
         <AICaseStudies />
         <AIFAQs />
         <AIAnyQuestions />

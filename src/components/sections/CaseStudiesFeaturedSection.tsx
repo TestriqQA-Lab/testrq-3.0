@@ -1,91 +1,24 @@
+'use client';
+
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
-import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa";const CaseStudiesFeaturedSection = () => {
-  const featuredCaseStudies = [
-    {
-      id: 1,
-      title: "E-commerce Platform Transformation",
-      client: "Global Retail Leader",
-      industry: "E-commerce",
-      duration: "6 months",
-      challenge: "Legacy system with frequent crashes during peak shopping seasons, causing revenue loss and poor user experience.",
-      solution: "Implemented comprehensive performance testing, automated regression testing, and load testing protocols.",
-      results: [
-        "99.9% uptime during Black Friday",
-        "75% reduction in page load times",
-        "40% increase in conversion rates",
-        "Zero critical bugs in production"
-      ],
-      metrics: {
-        bugReduction: "95%",
-        performanceImprovement: "75%",
-        roi: "250%"
-      },
-      technologies: ["Selenium", "JMeter", "Cypress", "API Testing"],
-      testimonial: "Testriq's testing expertise transformed our platform reliability. We now handle 10x more traffic without issues.",
-      clientRole: "CTO",
-      image: "/case-study-ecommerce.jpg",
-      slug: "/case-studies/ecommerce-platform-transformation/"
-    },
-    {
-      id: 2,
-      title: "Healthcare App Security & Compliance",
-      client: "MedTech Startup",
-      industry: "Healthcare",
-      duration: "4 months",
-      challenge: "HIPAA compliance requirements and security vulnerabilities in patient data management system.",
-      solution: "Conducted thorough security testing, penetration testing, and compliance validation with automated monitoring.",
-      results: [
-        "100% HIPAA compliance achieved",
-        "Zero security vulnerabilities",
-        "FDA approval obtained",
-        "50% faster patient onboarding"
-      ],
-      metrics: {
-        bugReduction: "100%",
-        performanceImprovement: "60%",
-        roi: "400%"
-      },
-      technologies: ["OWASP ZAP", "Burp Suite", "Security Testing", "Compliance Testing"],
-      testimonial: "Their security testing expertise was crucial for our FDA approval and market launch success.",
-      clientRole: "Head of Product",
-      image: "/case-study-healthcare.jpg",
-      slug: "/case-studies/healthcare-app-security-compliance/"
-    },
-    {
-      id: 3,
-      title: "Fintech Mobile App Optimization",
-      client: "Digital Banking Platform",
-      industry: "Financial Services",
-      duration: "8 months",
-      challenge: "Mobile app performance issues, transaction failures, and regulatory compliance concerns.",
-      solution: "Comprehensive mobile testing strategy with real device testing, API validation, and security protocols.",
-      results: [
-        "99.99% transaction success rate",
-        "80% improvement in app performance",
-        "SOX compliance achieved",
-        "4.8/5 app store rating"
-      ],
-      metrics: {
-        bugReduction: "98%",
-        performanceImprovement: "80%",
-        roi: "350%"
-      },
-      technologies: ["Appium", "REST Assured", "Mobile Testing", "API Testing"],
-      testimonial: "The mobile testing strategy delivered by Testriq exceeded our expectations and user satisfaction goals.",
-      clientRole: "VP of Engineering",
-      image: "/case-study-fintech.jpg",
-      slug: "/case-studies/fintech-mobile-app-optimization/"
-    }
-  ];
+import { FaCalendarAlt, FaArrowRight, FaStar } from "react-icons/fa";
+import { caseStudiesData } from "@/app/lib/caseStudies";
+import Image from "next/image";
+
+const CaseStudiesFeaturedSection = () => {
+  const INITIAL_VISIBLE_COUNT = 4;
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCaseStudies = showAll ? caseStudiesData : caseStudiesData.slice(0, INITIAL_VISIBLE_COUNT);
 
   return (
-    <section className="bg-white px-8 py-16 xl:px-24">
+    <section id="case-studies-section" className="bg-white px-8 py-16 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-4 py-2 rounded-full mb-5">
-            <FaStar  />
+            <FaStar />
             <span className="text-sm">Featured Success Stories</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -98,9 +31,9 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
           </p>
         </div>
 
-        {/* Featured Case Studies */}
+        {/* Case Studies List */}
         <div className="space-y-16">
-          {featuredCaseStudies.map((caseStudy, index) => (
+          {visibleCaseStudies.map((caseStudy, index) => (
             <div
               key={caseStudy.id}
               className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center ring-1 ring-gray-200 rounded-xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300`}
@@ -122,21 +55,21 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
                 </h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  <strong>Challenge:</strong> {caseStudy.challenge}
+                  <strong>Challenge:</strong> {caseStudy.challenge?.description || 'Challenge summary not available.'}
                 </p>
 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  <strong>Solution:</strong> {caseStudy.solution}
+                  <strong>Solution:</strong> {caseStudy.solution?.description || 'Solution summary not available.'}
                 </p>
 
                 {/* Results */}
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-800 mb-3">Key Results:</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {caseStudy.results.map((result, resultIndex) => (
+                    {caseStudy.results?.additionalMetrics?.map((result, resultIndex) => (
                       <div key={resultIndex} className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm">{result}</span>
+                        <span className="text-gray-700 text-sm">{result.label}: {result.value}</span>
                       </div>
                     ))}
                   </div>
@@ -146,19 +79,19 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-4 bg-blue-50 rounded-lg">
                     <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
-                      {caseStudy.metrics.bugReduction}
+                      {caseStudy.results.bugReduction}
                     </div>
                     <div className="text-xs text-gray-600">Bug Reduction</div>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-lg">
                     <div className="text-2xl font-bold text-green-600">
-                      {caseStudy.metrics.performanceImprovement}
+                      {caseStudy.results.performanceImprovement}
                     </div>
                     <div className="text-xs text-gray-600">Performance Boost</div>
                   </div>
                   <div className="text-center p-4 bg-purple-50 rounded-lg">
                     <div className="text-2xl font-bold text-purple-600">
-                      {caseStudy.metrics.roi}
+                      {caseStudy.results.roi}
                     </div>
                     <div className="text-xs text-gray-600">ROI</div>
                   </div>
@@ -179,29 +112,24 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
                   </div>
                 </div>
 
-                {/* Testimonial */}
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg mb-6">
-                  <blockquote className="text-gray-700 italic mb-3">
-                    &quot;{caseStudy.testimonial}&quot;
-                  </blockquote>
-                  <div className="text-sm text-gray-600">
-                    — {caseStudy.clientRole}, {caseStudy.client}
-                  </div>
-                </div>
-
                 {/* CTA */}
-                <button  className="flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
-                  <Link href={`${caseStudy.slug}`}>Read Full Case Study</Link>
+                <Link href={`/case-study/${caseStudy.slug}`} className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
+                  Read Full Case Study
                   <FaArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
 
-              {/* Visual/Placeholder */}
+              {/* Visual Placeholder */}
               <div className="flex-1 max-w-md">
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 h-80 flex items-center justify-center">
                   <div className="text-center">
-                    <FaChartLine className="w-16 h-16 text-[theme(color.brand.blue)] mx-auto mb-4" />
-                    <h4 className="font-semibold text-gray-800 mb-2">{caseStudy.client}</h4>
+                    <Image
+                      src={caseStudy.image || "/placeholder.png"}
+                      alt={caseStudy.client + " logo"}
+                      width={240}
+                      height={240}
+                      className="mx-auto mb-4 rounded-lg object-contain"
+                    />
                     <p className="text-gray-600 text-sm">{caseStudy.industry} Success Story</p>
                   </div>
                 </div>
@@ -210,16 +138,20 @@ import { FaCalendarAlt, FaArrowRight, FaChartLine, FaStar } from "react-icons/fa
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 hover:scale-98 transition-all">
-            View All Case Studies
-          </button>
-        </div>
+        {/* Toggle Button */}
+        {caseStudiesData.length > INITIAL_VISIBLE_COUNT && (
+          <div className="text-center mt-16">
+            <button
+              onClick={() => setShowAll(prev => !prev)}
+              className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-lg font-semibold text-lg hover:scale-98 transition-all"
+            >
+              {showAll ? 'View Less' : 'View More Case Studies'}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
 export default CaseStudiesFeaturedSection;
-

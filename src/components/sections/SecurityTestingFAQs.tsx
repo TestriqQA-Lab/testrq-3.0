@@ -42,6 +42,10 @@ const SecurityTestingFAQs: React.FC = () => {
         {
           question: "What deliverables do you provide after penetration testing?",
           answer: "We provide comprehensive reports including an executive summary for leadership, detailed technical findings with proof-of-concept exploits, risk ratings using industry-standard frameworks (CVSS), prioritized remediation recommendations, and a remediation roadmap. We also offer post-testing support including remediation validation, security improvement recommendations, and ongoing security consultation to help you address identified issues."
+        },
+        {
+          question: "What is required from my side to get started?",
+          answer: "It's completely hassle-free. Just share your app URL and APIs — we'll handle the rest while you sit back and relax."
         }
       ]
     },
@@ -171,51 +175,6 @@ const SecurityTestingFAQs: React.FC = () => {
           })}
         </div>
 
-        {/* Additional Resources */}
-        <div className="mt-16 bg-white rounded-2xl p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Still Have Questions?</h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our security experts are here to help you understand how our comprehensive security testing services 
-              can protect your organization and ensure compliance with industry standards.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-white w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-2xl">📞</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Schedule a Consultation</h4>
-              <p className="text-sm text-gray-600 mb-4">Speak with our security experts about your specific needs</p>
-              <button className="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
-                Book Call
-              </button>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-white w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-2xl">📧</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Email Our Experts</h4>
-              <p className="text-sm text-gray-600 mb-4">Get detailed answers to your security testing questions</p>
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
-                Send Email
-              </button>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-white w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-2xl">📋</span>
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Request Assessment</h4>
-              <p className="text-sm text-gray-600 mb-4">Get a customized security testing proposal</p>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300">
-                Get Quote
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Security Resources */}
         <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">

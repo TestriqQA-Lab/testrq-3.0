@@ -240,7 +240,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
                 <span className="text-2xl">📜</span>
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Security Certifications</h4>
-              <p className="text-sm text-gray-600">ISO 27001 certified and SOC 2 Type II compliant security practices</p>
+              <p className="text-sm text-gray-600">ISO 27001 certified</p>
             </div>
           </div>
         </div>

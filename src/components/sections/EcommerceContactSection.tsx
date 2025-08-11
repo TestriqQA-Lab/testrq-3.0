@@ -1,14 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaRocket, 
-  FaPhone, 
-  FaEnvelope, 
+import {
+  FaRocket,
+  FaPhone,
+  FaEnvelope,
   FaCalendarAlt,
   FaCheckCircle,
   FaShoppingCart,
-  FaArrowRight
 } from "react-icons/fa";
 
 const EcommerceContactSection: React.FC = () => {
@@ -17,23 +17,23 @@ const EcommerceContactSection: React.FC = () => {
       icon: FaPhone,
       title: "Call Our E-Commerce Experts",
       description: "Speak directly with our e-commerce testing specialists",
-      action: "Call Now: +1 (555) 123-4567",
-      color: "from-green-500 to-emerald-600"
+      action: "Call Now: (+91) 915-2929-343",
+      color: "from-green-500 to-emerald-600",
     },
     {
       icon: FaEnvelope,
       title: "Email for Detailed Inquiry",
       description: "Send us your requirements for a comprehensive proposal",
-      action: "ecommerce@testriq.com",
-      color: "from-blue-500 to-cyan-600"
+      action: "contact@testriq.com",
+      color: "from-blue-500 to-cyan-600",
     },
     {
       icon: FaCalendarAlt,
       title: "Schedule Strategy Session",
       description: "Book a free consultation to discuss your testing needs",
       action: "Schedule Free Consultation",
-      color: "from-purple-500 to-indigo-600"
-    }
+      color: "from-purple-500 to-indigo-600",
+    },
   ];
 
   const benefits = [
@@ -42,7 +42,7 @@ const EcommerceContactSection: React.FC = () => {
     "ROI projections and timeline",
     "Platform-specific recommendations",
     "Dedicated project manager",
-    "24/7 support during critical periods"
+    "24/7 support during critical periods",
   ];
 
   return (
@@ -54,35 +54,47 @@ const EcommerceContactSection: React.FC = () => {
             <FaShoppingCart className="w-4 h-4" />
             <span className="text-sm font-medium">Get Started Today</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:leading-14">
             Ready to Optimize Your
             <span className="block">E-Commerce Platform?</span>
           </h2>
-          
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards higher conversion rates, enhanced e-commerce user experience, and increased revenue. Our e-commerce testing experts are ready to ensure your platform is secure, scalable, and successful.
 
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Take the first step towards higher conversion rates, enhanced
+            e-commerce user experience, and increased revenue. Our e-commerce
+            testing experts are ready to ensure your platform is secure,
+            scalable, and successful.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Column - Contact Methods */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-white mb-8">Choose Your Preferred Contact Method</h3>
-            
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Choose Your Preferred Contact Method
+            </h3>
+
             {contactMethods.map((method, index) => (
-              <div key={index} className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20">
+              <div
+                key={index}
+                className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20"
+              >
                 <div className="flex items-start gap-4">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                  >
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-brand-blue mb-2">{method.title}</h4>
-                    <p className="text-sky-600 text-sm mb-4 leading-relaxed">{method.description}</p>
-                    <button className="text-sky-600 font-semibold hover:underline flex items-center gap-2 group">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">
+                      {method.title}
+                    </h4>
+                    <p className="text-sky-600 text-sm mb-4 leading-relaxed">
+                      {method.description}
+                    </p>
+                    <button className="text-sky-600 font-semibold flex items-center gap-2 group">
                       {method.action}
-                      <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                     </button>
                   </div>
                 </div>
@@ -93,19 +105,24 @@ const EcommerceContactSection: React.FC = () => {
             <div className="bg-orange-500 bg-opacity-20 rounded-2xl p-6 border border-orange-400 border-opacity-30">
               <div className="flex items-center gap-3 mb-3">
                 <FaRocket className="w-5 h-5 text-orange-300" />
-                <h4 className="font-semibold text-white">Peak Season Coming?</h4>
+                <h4 className="font-semibold text-white">
+                  Peak Season Coming?
+                </h4>
               </div>
               <p className="text-orange-100 text-sm leading-relaxed">
-                Planning for Black Friday, holiday sales, or major product launches? 
-                Contact us at least 6-8 weeks in advance to ensure your platform is ready.
+                Planning for Black Friday, holiday sales, or major product
+                launches? Contact us at least 6-8 weeks in advance to ensure
+                your platform is ready.
               </p>
             </div>
           </div>
 
           {/* Right Column - What You Get */}
           <div className="bg-white rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">What You Get When You Contact Us</h3>
-            
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              What You Get When You Contact Us
+            </h3>
+
             <div className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -117,7 +134,9 @@ const EcommerceContactSection: React.FC = () => {
 
             {/* Contact Form */}
             <div className="bg-gray-50 rounded-2xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">Quick Contact Form</h4>
+              <h4 className="font-semibold text-gray-900 mb-4">
+                Quick Contact Form
+              </h4>
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
@@ -169,17 +188,24 @@ const EcommerceContactSection: React.FC = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-brand-blue mb-4">Join 500+ Successful E-Commerce Businesses</h3>
+            <h3 className="text-2xl font-bold text-brand-blue mb-4">
+              Join 500+ Successful E-Commerce Businesses
+            </h3>
             <p className="text-brand-blue mb-6">
-              Don&apos;t let technical issues hold back your e-commerce success. Start optimizing today.
+              Don&apos;t let technical issues hold back your e-commerce success.
+              Start optimizing today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-br from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all shadow-lg">
-                Start Free Assessment
-              </button>
-              <button className="bg-white bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 transition-all ring-2 ring-brand-blue border-opacity-30">
-                View Success Stories
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-gradient-to-br from-brand-blue to-sky-600 cursor-pointer text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all shadow-lg">
+                  Start Free Assessment
+                </button>
+              </Link>
+              <Link href="/case-studies">
+                <button className="bg-white cursor-pointer bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 transition-all ring-2 ring-brand-blue border-opacity-30">
+                  View Success Stories
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -189,4 +215,3 @@ const EcommerceContactSection: React.FC = () => {
 };
 
 export default EcommerceContactSection;
-

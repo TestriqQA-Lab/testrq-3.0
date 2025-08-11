@@ -1,13 +1,16 @@
 import React from "react";
 import { FaArrowRight, FaCalendarAlt, FaIndustry } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import { getRelatedCaseStudies } from "@/app/lib/caseStudies";
 
 interface CaseStudyRelatedSectionProps {
   currentSlug: string;
 }
 
-const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ currentSlug }) => {
+const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
+  currentSlug,
+}) => {
   const relatedCaseStudies = getRelatedCaseStudies(currentSlug, 2);
 
   if (relatedCaseStudies.length === 0) {
@@ -15,29 +18,40 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ curre
   }
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
             Related Case Studies
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore more success stories and discover how we&apos;ve helped other clients achieve their quality assurance goals.
+            Explore more success stories and discover how we&apos;ve helped
+            other clients achieve their quality assurance goals.
           </p>
         </div>
 
         {/* Related Case Studies Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {relatedCaseStudies.map((caseStudy) => (
-            <div key={caseStudy.id} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <div
+              key={caseStudy.id}
+              className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
+            >
               {/* Image Placeholder */}
               <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-48 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-3">
-                    <FaIndustry className="w-8 h-8 text-white" />
+                  <div className="w-48 h-48 flex items-center justify-center mx-auto mb-3">
+                    {caseStudy.image ? (
+                      <Image
+                        src={caseStudy.image}
+                        alt={caseStudy.client}
+                        className="w-48 h-48 object-contain"
+                      />
+                    ) : (
+                      <FaIndustry className="w-8 h-8 text-white" />
+                    )}
                   </div>
-                  <p className="text-gray-600 font-medium">{caseStudy.client}</p>
                 </div>
               </div>
 
@@ -88,8 +102,8 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ curre
                 </div>
 
                 {/* Read More Link */}
-                <Link 
-                  href={`/case-studies/${caseStudy.slug}`}
+                <Link
+                  href={`/${caseStudy.slug}`}
                   className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors"
                 >
                   <span>Read Full Case Study</span>
@@ -102,9 +116,9 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ curre
 
         {/* View All Link */}
         <div className="text-center mt-12">
-          <Link 
+          <Link
             href="/case-studies"
-            className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors"
           >
             <span>View All Case Studies</span>
             <FaArrowRight className="w-4 h-4" />
@@ -116,4 +130,3 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({ curre
 };
 
 export default CaseStudyRelatedSection;
-
