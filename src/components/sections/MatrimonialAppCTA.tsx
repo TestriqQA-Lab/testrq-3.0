@@ -11,6 +11,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 const MatrimonialAppCTA = () => {
   const ctaFeatures = [
@@ -61,11 +62,14 @@ const MatrimonialAppCTA = () => {
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Ready to{" "}
-            <span className="text-brand-blue">Certify Your Matrimonial App?</span>
+            <span className="text-brand-blue">
+              Certify Your Matrimonial App?
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join 300+ matrimonial platforms that trust Testriq for comprehensive certification. 
-            Secure your user&apos;s trust and protect your platform today.
+            Join 30+ matrimonial platforms that trust Testriq for comprehensive
+            certification. Secure your user&apos;s trust and protect your
+            platform today.
           </p>
         </motion.div>
 
@@ -82,7 +86,7 @@ const MatrimonialAppCTA = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Get Started with Free Assessment
               </h3>
-              
+
               <div className="space-y-4 mb-8">
                 {ctaFeatures.map((feature, index) => (
                   <motion.div
@@ -93,21 +97,21 @@ const MatrimonialAppCTA = () => {
                     viewport={{ once: true }}
                     className="flex items-center gap-3"
                   >
-                    <div className="text-brand-blue">
-                      {feature.icon}
-                    </div>
+                    <div className="text-brand-blue">{feature.icon}</div>
                     <span className="text-gray-700">{feature.text}</span>
                   </motion.div>
                 ))}
               </div>
 
               <div className="space-y-4">
-                <button className="w-full bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Start Free Assessment
-                  <ArrowRight className="w-5 h-5" />
-                </button>
-                
-                <button className="w-full border-2 border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                <Link href="/contact-us">
+                  <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4">
+                    Start Free Assessment
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
+
+                <button className="w-full border-2 cursor-pointer border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Download Certification Guide
                 </button>
               </div>
@@ -118,7 +122,7 @@ const MatrimonialAppCTA = () => {
               <h4 className="font-semibold text-gray-900 mb-4 text-center">
                 Prefer to Talk? Contact Us Directly
               </h4>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {contactMethods.map((method, index) => (
                   <motion.a
@@ -157,11 +161,11 @@ const MatrimonialAppCTA = () => {
               <h3 className="text-2xl font-bold mb-6">
                 Why Choose Testriq for Certification?
               </h3>
-              
+
               <div className="space-y-4">
                 {[
                   "14+ years of QA and security testing experience",
-                  "300+ matrimonial apps successfully certified",
+                  "30+ matrimonial apps successfully certified",
                   "ISTQB certified experts and security specialists",
                   "99.8% client satisfaction rate",
                   "24/7 ongoing support and monitoring",
@@ -194,22 +198,24 @@ const MatrimonialAppCTA = () => {
                 <h4 className="font-bold text-gray-900 mb-4">
                   Trusted by Leading Platforms
                 </h4>
-                
-                <div className="grid grid-cols-2 gap-4 text-center">
+
+                <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">300+</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      30+
+                    </div>
                     <div className="text-sm text-gray-600">Apps Certified</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">50M+</div>
-                    <div className="text-sm text-gray-600">Users Protected</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">99.8%</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      99.8%
+                    </div>
                     <div className="text-sm text-gray-600">Security Score</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">24/7</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      24/7
+                    </div>
                     <div className="text-sm text-gray-600">Support</div>
                   </div>
                 </div>
@@ -231,13 +237,16 @@ const MatrimonialAppCTA = () => {
               Don&apos;t Wait - Secure Your Platform Today
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Every day without proper certification puts your user&apos; data at risk. 
-              Start your certification process today and join the ranks of trusted matrimonial platforms.
+              Every day without proper certification puts your user&apos; data
+              at risk. Start your certification process today and join the ranks
+              of trusted matrimonial platforms.
             </p>
-            <button className="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Get Certified Now - Free Assessment
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Get Certified Now - Free Assessment
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -246,4 +255,3 @@ const MatrimonialAppCTA = () => {
 };
 
 export default MatrimonialAppCTA;
-

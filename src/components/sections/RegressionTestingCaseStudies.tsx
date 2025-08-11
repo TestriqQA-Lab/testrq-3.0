@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowRight, FaCheckCircle, FaChartLine, FaClock, FaTrophy } from "react-icons/fa";
 
@@ -186,10 +187,12 @@ const RegressionTestingCaseStudies: React.FC = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Join these successful organizations and experience the difference comprehensive Regression testing can make.
             </p>
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center space-x-2 mx-auto group">
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center space-x-2 mx-auto group">
               <span>Start Your Success Story</span>
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
                   <FaArrowRight className="inline ml-2" />
                 </button>
               </Link>
-              <button className="border border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center gap-2">
+              <button className="border border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
                 <FaPlay className="w-4 h-4" />
                 Watch Demo
               </button>
@@ -47,7 +47,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-500">
-                  800+
+                  10+
                 </div>
                 <div className="text-gray-600 text-sm">
                   Smart Devices Tested

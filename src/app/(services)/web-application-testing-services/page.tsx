@@ -25,8 +25,10 @@ export const metadata: Metadata = {
     "web testing automation",
   ],
   openGraph: {
-    title: "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
-    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    title:
+      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    description:
+      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     url: "https://testriq.com/web-application-testing-services",
     type: "website",
     images: [
@@ -41,12 +43,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Web Application Testing Services Company ",
-    description: "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    description:
+      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
-   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testriq.com/web-application-testing-servicess',
+    canonical: "https://testriq.com/web-application-testing-servicess",
   },
   robots: {
     index: true,
@@ -54,15 +57,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
@@ -92,18 +95,6 @@ const WebappProvenTestingProcess = dynamic(
 
 const WebappWhyChooseTestriq = dynamic(
   () => import("@/components/sections/WebappWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const WebappROISection = dynamic(
-  () => import("@/components/sections/WebappROISection"),
   {
     ssr: true,
     loading: () => (
@@ -174,8 +165,14 @@ const CardSlider = dynamic(
 export default function WebAppTesting() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/web-application-testing-services" },
-    { name: "Web Application Testing", url: "https://testriq.com/web-application-testing-services" }
+    {
+      name: "Services",
+      url: "https://testriq.com/web-application-testing-services",
+    },
+    {
+      name: "Web Application Testing",
+      url: "https://testriq.com/web-application-testing-services",
+    },
   ];
 
   return (
@@ -188,7 +185,6 @@ export default function WebAppTesting() {
         <CardSlider />
         <WebappProvenTestingProcess />
         <WebappWhyChooseTestriq />
-        <WebappROISection />
         <WebappCaseStudies />
         <WebappFAQs />
         <WebappAnyQuestions />

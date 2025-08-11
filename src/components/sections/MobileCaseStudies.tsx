@@ -141,7 +141,7 @@ const MobileCaseStudies: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -179,7 +179,7 @@ const MobileCaseStudies: React.FC = () => {
         </div>
 
         {/* Active Case Study */}
-        <div className="bg-gray-50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-white rounded-2xl p-8 lg:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Content */}
             <div>
@@ -281,7 +281,7 @@ const MobileCaseStudies: React.FC = () => {
 
               {/* CTA */}
               <div className="mt-8">
-                <button className="flex items-center gap-2 px-6 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+                <button className="flex items-center gap-2 px-6 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue cursor-pointer hover:shadow-lg transition-colors">
                   <span>View Full Case Study</span>
                   <FaArrowRight className="w-4 h-4" />
                 </button>
@@ -378,7 +378,7 @@ const MobileCaseStudies: React.FC = () => {
                   Start Your Mobile Project
                 </button>
               </Link>
-              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-blue transition-colors">
                 Download Case Studies
               </button>
             </div>

@@ -1,5 +1,11 @@
-import React from 'react';
-import { FaFileAlt, FaRocket, FaCheckCircle, FaCalendarAlt } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import {
+  FaFileAlt,
+  FaRocket,
+  FaCheckCircle,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
 const QADocumentationReadyToEnsureQuality = () => {
   return (
@@ -20,21 +26,26 @@ const QADocumentationReadyToEnsureQuality = () => {
 
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Ensure Quality with Professional
-            <span className="block text-yellow-300">QA Documentation Services</span>
+            <span className="block text-yellow-300">
+              QA Documentation Services
+            </span>
           </h2>
 
           <p className="text-xl lg:text-2xl mb-8 text-white max-w-3xl mx-auto leading-relaxed">
-            Join 500+ organizations that have transformed their testing processes with our comprehensive
-            QA documentation solutions. Start your journey to better quality today.
+            Join 500+ organizations that have transformed their testing
+            processes with our comprehensive QA documentation solutions. Start
+            your journey to better quality today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <button className="inline-flex items-center px-8 py-4 bg-yellow-300 text-blue-900 font-semibold rounded-lg hover:bg-yellow-200 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              <FaCalendarAlt className="mr-3" />
-              Schedule Free Consultation
-            </button>
+            <Link href="/contact-us">
+              <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-yellow-300 text-blue-900 font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <FaCalendarAlt className="mr-3" />
+                Schedule Free Consultation
+              </button>
+            </Link>
 
-            <button className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
+            <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
               <FaFileAlt className="mr-3" />
               Download Documentation Guide
             </button>
@@ -43,13 +54,15 @@ const QADocumentationReadyToEnsureQuality = () => {
           {/* Trust Indicators */}
           <div className="grid md:grid-cols-4 gap-8 mb-16">
             {[
-              { label: "Projects Completed", value: "500+" },
+              { label: "Projects Completed", value: "150+" },
               { label: "Client Satisfaction", value: "99%" },
               { label: "Years Experience", value: "15+" },
-              { label: "Support Available", value: "24/7" }
+              { label: "Support Available", value: "24/7" },
             ].map((item, index) => (
               <div className="text-center" key={index}>
-                <div className="text-3xl lg:text-4xl font-bold mb-2 text-yellow-300">{item.value}</div>
+                <div className="text-3xl lg:text-4xl font-bold mb-2 text-yellow-300">
+                  {item.value}
+                </div>
                 <div className="text-lg text-white/90">{item.label}</div>
               </div>
             ))}
@@ -60,7 +73,9 @@ const QADocumentationReadyToEnsureQuality = () => {
         <div className="text-center mt-10">
           <div className="inline-flex items-center space-x-4 bg-white/20 rounded-full px-8 py-4">
             <FaCheckCircle className="text-green-300 text-xl" />
-            <span className="text-lg font-medium">Free consultation • No commitment • Expert guidance</span>
+            <span className="text-lg font-medium">
+              Free consultation • No commitment • Expert guidance
+            </span>
           </div>
         </div>
 

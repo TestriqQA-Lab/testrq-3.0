@@ -38,13 +38,11 @@ export default function WebappFAQs() {
   };
 
   return (
-    <section className="bg-[#f9fafb] py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-14">
         <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-          <span className="text-sm">
-            ● Frequently Asked Questions
-          </span>
+          <span className="text-sm">● Frequently Asked Questions</span>
         </div>
 
         <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
@@ -78,8 +76,9 @@ export default function WebappFAQs() {
               )}
             </button>
             <div
-              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${activeIndex === index ? "block" : "hidden"
-                }`}
+              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${
+                activeIndex === index ? "block" : "hidden"
+              }`}
             >
               {item.answer}
             </div>

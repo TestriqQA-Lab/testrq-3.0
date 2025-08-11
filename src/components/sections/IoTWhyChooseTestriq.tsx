@@ -280,7 +280,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="relative">
-              <div className="text-3xl font-bold text-teal-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">30+</div>
               <div className="text-gray-700 text-sm">IoT Devices</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
             </div>
@@ -317,7 +317,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
                 your connected ecosystem is reliable and secure.
               </p>
               <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
                   Get Started with IoT Testing
                 </button>
               </Link>

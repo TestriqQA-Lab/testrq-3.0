@@ -113,7 +113,7 @@ const IoTFAQs: React.FC = () => {
                 IoT device assessment today.
               </p>
               <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-teal-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
                   Start Your IoT Success Story
                 </button>
               </Link>

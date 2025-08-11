@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
@@ -10,7 +11,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
     "Automated regression testing suites",
     "Performance testing & battery optimization",
     "App store compliance validation",
-    "24/7 testing environment support"
+    "24/7 testing environment support",
   ];
 
   return (
@@ -22,16 +23,17 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             <span className="inline-block bg-blue-500 bg-opacity-30 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
               Mobile Quality Assurance Excellence
             </span>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               Ready to Ensure Your Mobile Application&apos;s{" "}
               <span className="text-blue-200">Quality & Performance?</span>
             </h2>
-            
+
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-              Transform your mobile application with our comprehensive testing approach. 
-              We ensure your app delivers exceptional performance, security, and user 
-              experience across all devices and platforms, from iOS to Android.
+              Transform your mobile application with our comprehensive testing
+              approach. We ensure your app delivers exceptional performance,
+              security, and user experience across all devices and platforms,
+              from iOS to Android.
             </p>
 
             {/* Benefits List */}
@@ -46,13 +48,12 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                <span>Start Your Testing Project</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
-              <button className="px-8 py-4 border-2 border-blue-300 text-blue-100 font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-                Schedule Consultation
-              </button>
+              <Link href="/contact-us">
+                <button className="flex items-center cursor-pointer justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
+                  <span>Start Your Testing Project</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -61,7 +62,9 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             {/* Main Card */}
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-blue-500 mb-2">Mobile Testing Excellence</h3>
+                <h3 className="text-2xl font-bold text-blue-500 mb-2">
+                  Mobile Testing Excellence
+                </h3>
                 <p className="text-blue-500">Comprehensive Quality Assurance</p>
               </div>
 
@@ -104,7 +107,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
                 {[
                   { label: "Functional Testing", percentage: 99 },
                   { label: "Performance Testing", percentage: 96 },
-                  { label: "Security Testing", percentage: 98 }
+                  { label: "Security Testing", percentage: 98 },
                 ].map((item, index) => (
                   <div key={index}>
                     <div className="flex justify-between text-sm text-blue-700 mb-1">
@@ -112,7 +115,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
                       <span>{item.percentage}%</span>
                     </div>
                     <div className="w-full border border-blue-800 bg-opacity-50 rounded-full h-2.5">
-                      <div 
+                      <div
                         className="bg-blue-800 h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${item.percentage}%` }}
                       ></div>
@@ -126,7 +129,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
               <span className="text-yellow-900 font-bold text-lg">QA</span>
             </div>
-            
+
             <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center">
               <FaCheckCircle className="w-6 h-6 text-green-900" />
             </div>
@@ -144,4 +147,3 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 };
 
 export default MobileReadyToEnsureQuality;
-

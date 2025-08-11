@@ -1,16 +1,24 @@
 "use client";
 
 import React from "react";
-import { 
-  FaWifi, 
-  FaShieldAlt, 
-  FaCloud, 
+import {
+  FaWifi,
+  FaShieldAlt,
+  FaCloud,
   FaMicrochip,
   FaTools,
-  FaCheckCircle,
+  FaLock,
   FaCog,
-  FaNetworkWired
+  FaRocket,
+  FaNetworkWired,
+  FaLaptopCode,
 } from "react-icons/fa";
+
+import {
+  SiPostman,
+  SiJest,
+  SiGrafana,
+} from "react-icons/si";
 
 const IoTToolsFrameworkSection: React.FC = () => {
   const testingTools = [
@@ -20,11 +28,27 @@ const IoTToolsFrameworkSection: React.FC = () => {
       color: "text-blue-500",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Wireshark", description: "Network protocol analyzer" },
-        { name: "iperf3", description: "Network bandwidth testing" },
-        { name: "MQTT.fx", description: "MQTT client testing tool" },
-        { name: "CoAP Client", description: "Constrained Application Protocol testing" }
-      ]
+        {
+          name: "Wireshark",
+          description: "Network protocol analyzer",
+          icon: <FaNetworkWired className="w-5 h-5 text-blue-500" />, // Network-related icon
+        },
+        {
+          name: "iperf3",
+          description: "Network bandwidth testing",
+          icon: <FaNetworkWired className="w-5 h-5 text-blue-500" />, // Suitable network testing icon
+        },
+        {
+          name: "MQTT.fx",
+          description: "MQTT client testing tool",
+          icon: <FaWifi className="w-5 h-5 text-blue-500" />, // WiFi-related tool
+        },
+        {
+          name: "CoAP Client",
+          description: "Constrained Application Protocol testing",
+          icon: <FaWifi className="w-5 h-5 text-blue-500" />, // WiFi-related icon
+        },
+      ],
     },
     {
       category: "Security Testing",
@@ -32,11 +56,27 @@ const IoTToolsFrameworkSection: React.FC = () => {
       color: "text-red-500",
       bgColor: "bg-red-50",
       tools: [
-        { name: "Nmap", description: "Network discovery and security auditing" },
-        { name: "Metasploit", description: "Penetration testing framework" },
-        { name: "OWASP ZAP", description: "Web application security scanner" },
-        { name: "IoT Inspector", description: "IoT device security analysis" }
-      ]
+        {
+          name: "Nmap",
+          description: "Network discovery and security auditing",
+          icon: <FaNetworkWired className="w-5 h-5 text-red-500" />, // Network security icon
+        },
+        {
+          name: "Metasploit",
+          description: "Penetration testing framework",
+          icon: <FaTools className="w-5 h-5 text-red-500" />, // General tool icon
+        },
+        {
+          name: "OWASP ZAP",
+          description: "Web application security scanner",
+          icon: <FaLock className="w-5 h-5 text-red-500" />, // Security icon
+        },
+        {
+          name: "IoT Inspector",
+          description: "IoT device security analysis",
+          icon: <FaLock className="w-5 h-5 text-red-500" />, // Security-related icon
+        },
+      ],
     },
     {
       category: "Performance Testing",
@@ -44,11 +84,27 @@ const IoTToolsFrameworkSection: React.FC = () => {
       color: "text-green-500",
       bgColor: "bg-green-50",
       tools: [
-        { name: "JMeter", description: "Load testing for IoT APIs" },
-        { name: "Gatling", description: "High-performance load testing" },
-        { name: "InfluxDB", description: "Time-series data monitoring" },
-        { name: "Grafana", description: "Performance visualization" }
-      ]
+        {
+          name: "JMeter",
+          description: "Load testing for IoT APIs",
+          icon: <SiJest className="w-5 h-5 text-green-500" />, // Load testing-related logo
+        },
+        {
+          name: "Gatling",
+          description: "High-performance load testing",
+          icon: <FaRocket className="w-5 h-5 text-green-500" />, // Performance testing icon
+        },
+        {
+          name: "InfluxDB",
+          description: "Time-series data monitoring",
+          icon: <SiPostman className="w-5 h-5 text-green-500" />, // Use Postman logo here as related
+        },
+        {
+          name: "Grafana",
+          description: "Performance visualization",
+          icon: <SiGrafana className="w-5 h-5 text-green-500" />, // Grafana logo
+        },
+      ],
     },
     {
       category: "Device Testing",
@@ -56,35 +112,65 @@ const IoTToolsFrameworkSection: React.FC = () => {
       color: "text-purple-500",
       bgColor: "bg-purple-50",
       tools: [
-        { name: "TestGrid", description: "IoT automation platform" },
-        { name: "Spirent", description: "Network testing solutions" },
-        { name: "Keysight", description: "IoT device validation" },
-        { name: "Anritsu", description: "Wireless testing equipment" }
-      ]
-    }
+        {
+          name: "TestGrid",
+          description: "IoT automation platform",
+          icon: <FaLaptopCode className="w-5 h-5 text-purple-500" />, // Automation-related tool
+        },
+        {
+          name: "Spirent",
+          description: "Network testing solutions",
+          icon: <FaNetworkWired className="w-5 h-5 text-purple-500" />, // Network testing
+        },
+        {
+          name: "Keysight",
+          description: "IoT device validation",
+          icon: <FaMicrochip className="w-5 h-5 text-purple-500" />, // IoT device testing
+        },
+        {
+          name: "Anritsu",
+          description: "Wireless testing equipment",
+          icon: <FaWifi className="w-5 h-5 text-purple-500" />, // Wireless testing icon
+        },
+      ],
+    },
   ];
 
   const protocolFrameworks = [
     {
       name: "Communication Protocols",
       description: "Testing frameworks for IoT communication standards",
-      features: ["MQTT", "CoAP", "HTTP/HTTPS", "WebSocket"]
+      features: ["MQTT", "CoAP", "HTTP/HTTPS", "WebSocket"],
+      icon: <FaNetworkWired className="w-8 h-8 text-blue-500" />, // Network-related icon
     },
     {
       name: "Wireless Standards",
       description: "Validation of wireless connectivity protocols",
-      features: ["WiFi 6/6E", "Bluetooth 5.0", "Zigbee 3.0", "LoRaWAN"]
+      features: ["WiFi 6/6E", "Bluetooth 5.0", "Zigbee 3.0", "LoRaWAN"],
+      icon: <FaWifi className="w-8 h-8 text-blue-500" />, // WiFi icon for wireless standards
     },
     {
       name: "Edge Computing",
       description: "Edge device and gateway testing frameworks",
-      features: ["Local Processing", "Data Filtering", "Real-time Analytics", "Offline Mode"]
+      features: [
+        "Local Processing",
+        "Data Filtering",
+        "Real-time Analytics",
+        "Offline Mode",
+      ],
+      icon: <FaMicrochip className="w-8 h-8 text-blue-500" />, // Edge device-related
     },
     {
       name: "Cloud Integration",
       description: "Cloud platform and service validation",
-      features: ["AWS IoT Core", "Azure IoT Hub", "Google Cloud IoT", "IBM Watson"]
-    }
+      features: [
+        "AWS IoT Core",
+        "Azure IoT Hub",
+        "Google Cloud IoT",
+        "IBM Watson",
+      ],
+      icon: <FaCloud className="w-8 h-8 text-blue-500" />, // Cloud-related icon
+    },
   ];
 
   return (
@@ -103,29 +189,45 @@ const IoTToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Leverage specialized IoT testing tools and frameworks designed for IoT ecosystems, ensuring seamless device connectivity, robust IoT security, and optimized performance across edge-to-cloud architectures and diverse connected environments.
-
+            Leverage specialized IoT testing tools and frameworks designed for
+            IoT ecosystems, ensuring seamless device connectivity, robust IoT
+            security, and optimized performance across edge-to-cloud
+            architectures and diverse connected environments.
           </p>
         </div>
 
         {/* Testing Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {testingTools.map((category, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl hover:ring-2 transition-all duration-300">
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl hover:ring-2 transition-all duration-300"
+            >
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-12 h-12 ${category.bgColor} rounded-xl flex items-center justify-center`}>
+                <div
+                  className={`w-12 h-12 ${category.bgColor} rounded-xl flex items-center justify-center`}
+                >
                   <category.icon className={`w-6 h-6 ${category.color}`} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {category.category}
+                </h3>
               </div>
-              
+
               <div className="space-y-4">
                 {category.tools.map((tool, toolIndex) => (
-                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-sky-100 transition-colors">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div
+                    key={toolIndex}
+                    className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-sky-100 transition-colors"
+                  >
+                     {tool.icon}
                     <div>
-                      <h4 className="font-semibold text-gray-900">{tool.name}</h4>
-                      <p className="text-sm text-gray-600">{tool.description}</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {tool.name}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {tool.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -145,17 +247,24 @@ const IoTToolsFrameworkSection: React.FC = () => {
               IoT Protocol &amp; Standards Validation
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive IoT testing frameworks ensuring your IoT devices and applications comply with industry-specific standards, regulatory requirements, and IoT communication protocols like MQTT, Zigbee, Bluetooth Low Energy (BLE), and LoRaWAN.
-
+              Comprehensive IoT testing frameworks ensuring your IoT devices and
+              applications comply with industry-specific standards, regulatory
+              requirements, and IoT communication protocols like MQTT, Zigbee,
+              Bluetooth Low Energy (BLE), and LoRaWAN.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {protocolFrameworks.map((framework, index) => (
-              <div key={index} className="border border-gray-200 rounded-2xl p-6 hover:border-[theme(color.brand.blue)] transition-colors">
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{framework.name}</h4>
+              <div
+                key={index}
+                className="border border-gray-200 rounded-2xl p-6 hover:border-[theme(color.brand.blue)] transition-colors"
+              >
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {framework.name}
+                </h4>
                 <p className="text-gray-600 mb-4">{framework.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-2">
                   {framework.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
@@ -172,9 +281,12 @@ const IoTToolsFrameworkSection: React.FC = () => {
         {/* Technology Stack */}
         <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 md:p-12 text-white">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Our IoT Testing Stack</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Our IoT Testing Stack
+            </h3>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Cutting-edge technologies and methodologies for comprehensive IoT ecosystem validation
+              Cutting-edge technologies and methodologies for comprehensive IoT
+              ecosystem validation
             </p>
           </div>
 
@@ -210,4 +322,3 @@ const IoTToolsFrameworkSection: React.FC = () => {
 };
 
 export default IoTToolsFrameworkSection;
-

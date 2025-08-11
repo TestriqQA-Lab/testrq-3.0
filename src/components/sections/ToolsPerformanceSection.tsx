@@ -1,5 +1,12 @@
 import React from "react";
-import { FaTachometerAlt, FaUsers, FaServer, FaChartBar, FaCloud, FaMobile } from "react-icons/fa";
+import {
+  FaTachometerAlt,
+  FaUsers,
+  FaServer,
+  FaChartBar,
+  FaCloud,
+  FaMobile,
+} from "react-icons/fa";
 
 const ToolsPerformanceSection = () => {
   const performanceTools = [
@@ -7,56 +14,116 @@ const ToolsPerformanceSection = () => {
       icon: FaTachometerAlt,
       category: "Load Testing",
       title: "Apache JMeter",
-      description: "Industry-standard load testing tool for web applications and services",
-      features: ["GUI and command-line modes", "Distributed testing", "Protocol support", "Real-time monitoring"],
-      useCases: ["Web application load testing", "API performance testing", "Database stress testing"],
-      metrics: "Up to 10,000 concurrent users"
+      description:
+        "Industry-standard load testing tool for web applications and services",
+      features: [
+        "GUI and command-line modes",
+        "Distributed testing",
+        "Protocol support",
+        "Real-time monitoring",
+      ],
+      useCases: [
+        "Web application load testing",
+        "API performance testing",
+        "Database stress testing",
+      ],
+      metrics: "Up to 10,000 concurrent users",
     },
     {
       icon: FaUsers,
       category: "User Load Simulation",
       title: "LoadRunner",
-      description: "Enterprise-grade performance testing platform for complex applications",
-      features: ["Protocol recording", "Cloud integration", "Advanced analytics", "Enterprise reporting"],
-      useCases: ["Enterprise application testing", "SAP performance testing", "Legacy system testing"],
-      metrics: "Millions of virtual users"
+      description:
+        "Enterprise-grade performance testing platform for complex applications",
+      features: [
+        "Protocol recording",
+        "Cloud integration",
+        "Advanced analytics",
+        "Enterprise reporting",
+      ],
+      useCases: [
+        "Enterprise application testing",
+        "SAP performance testing",
+        "Legacy system testing",
+      ],
+      metrics: "Millions of virtual users",
     },
     {
       icon: FaServer,
       category: "API Performance",
       title: "K6",
-      description: "Modern load testing tool built for developers and DevOps teams",
-      features: ["JavaScript scripting", "CI/CD integration", "Cloud execution", "Threshold validation"],
-      useCases: ["API load testing", "Microservices testing", "DevOps integration"],
-      metrics: "Developer-friendly scripting"
+      description:
+        "Modern load testing tool built for developers and DevOps teams",
+      features: [
+        "JavaScript scripting",
+        "CI/CD integration",
+        "Cloud execution",
+        "Threshold validation",
+      ],
+      useCases: [
+        "API load testing",
+        "Microservices testing",
+        "DevOps integration",
+      ],
+      metrics: "Developer-friendly scripting",
     },
     {
       icon: FaChartBar,
       category: "Performance Monitoring",
       title: "Gatling",
-      description: "High-performance load testing framework with detailed reporting",
-      features: ["Scala-based DSL", "Real-time monitoring", "Detailed reports", "CI integration"],
-      useCases: ["High-performance testing", "Continuous performance testing", "Detailed analysis"],
-      metrics: "High throughput testing"
+      description:
+        "High-performance load testing framework with detailed reporting",
+      features: [
+        "Scala-based DSL",
+        "Real-time monitoring",
+        "Detailed reports",
+        "CI integration",
+      ],
+      useCases: [
+        "High-performance testing",
+        "Continuous performance testing",
+        "Detailed analysis",
+      ],
+      metrics: "High throughput testing",
     },
     {
       icon: FaCloud,
       category: "Cloud Testing",
       title: "BlazeMeter",
-      description: "Cloud-based performance testing platform with global infrastructure",
-      features: ["Global test execution", "Auto-scaling", "Real-time monitoring", "Team collaboration"],
-      useCases: ["Global performance testing", "Scalable load testing", "Team collaboration"],
-      metrics: "Global test execution"
+      description:
+        "Cloud-based performance testing platform with global infrastructure",
+      features: [
+        "Global test execution",
+        "Auto-scaling",
+        "Real-time monitoring",
+        "Team collaboration",
+      ],
+      useCases: [
+        "Global performance testing",
+        "Scalable load testing",
+        "Team collaboration",
+      ],
+      metrics: "Global test execution",
     },
     {
       icon: FaMobile,
       category: "Mobile Performance",
       title: "Mobile Performance Suite",
-      description: "Specialized tools for mobile application performance testing",
-      features: ["Device-specific testing", "Network simulation", "Battery usage analysis", "Memory profiling"],
-      useCases: ["Mobile app performance", "Network condition testing", "Device compatibility"],
-      metrics: "Real device testing"
-    }
+      description:
+        "Specialized tools for mobile application performance testing",
+      features: [
+        "Device-specific testing",
+        "Network simulation",
+        "Battery usage analysis",
+        "Memory profiling",
+      ],
+      useCases: [
+        "Mobile app performance",
+        "Network condition testing",
+        "Device compatibility",
+      ],
+      metrics: "Real device testing",
+    },
   ];
 
   const performanceMetrics = [
@@ -64,38 +131,38 @@ const ToolsPerformanceSection = () => {
       metric: "Response Time",
       description: "Time taken to process and respond to requests",
       target: "< 2 seconds",
-      tools: ["JMeter", "LoadRunner", "K6"]
+      tools: ["JMeter", "LoadRunner", "K6"],
     },
     {
       metric: "Throughput",
       description: "Number of requests processed per unit time",
       target: "> 1000 RPS",
-      tools: ["Gatling", "JMeter", "K6"]
+      tools: ["Gatling", "JMeter", "K6"],
     },
     {
       metric: "Concurrent Users",
       description: "Maximum number of simultaneous active users",
       target: "10,000+ users",
-      tools: ["LoadRunner", "BlazeMeter", "JMeter"]
+      tools: ["LoadRunner", "BlazeMeter", "JMeter"],
     },
     {
       metric: "Resource Utilization",
       description: "CPU, memory, and network resource consumption",
       target: "< 80% usage",
-      tools: ["New Relic", "AppDynamics", "Dynatrace"]
+      tools: ["New Relic", "AppDynamics", "Dynatrace"],
     },
     {
       metric: "Error Rate",
       description: "Percentage of failed requests under load",
       target: "< 1% errors",
-      tools: ["All testing tools", "Monitoring platforms"]
+      tools: ["All testing tools", "Monitoring platforms"],
     },
     {
       metric: "Scalability",
       description: "System's ability to handle increased load",
       target: "Linear scaling",
-      tools: ["Cloud platforms", "Container orchestration"]
-    }
+      tools: ["Cloud platforms", "Container orchestration"],
+    },
   ];
 
   const testingScenarios = [
@@ -104,36 +171,36 @@ const ToolsPerformanceSection = () => {
       description: "Normal expected load conditions",
       purpose: "Validate system performance under typical usage",
       duration: "30-60 minutes",
-      users: "Expected peak users"
+      users: "Expected peak users",
     },
     {
       type: "Stress Testing",
       description: "Beyond normal capacity limits",
       purpose: "Find breaking point and failure modes",
       duration: "Until failure",
-      users: "Gradually increasing"
+      users: "Gradually increasing",
     },
     {
       type: "Spike Testing",
       description: "Sudden load increases",
       purpose: "Test system resilience to traffic spikes",
       duration: "Short bursts",
-      users: "Rapid increase/decrease"
+      users: "Rapid increase/decrease",
     },
     {
       type: "Volume Testing",
       description: "Large amounts of data processing",
       purpose: "Validate data handling capabilities",
       duration: "Extended periods",
-      users: "Data-intensive operations"
+      users: "Data-intensive operations",
     },
     {
       type: "Endurance Testing",
       description: "Extended period under normal load",
       purpose: "Identify memory leaks and degradation",
       duration: "8-24 hours",
-      users: "Sustained load"
-    }
+      users: "Sustained load",
+    },
   ];
 
   return (
@@ -142,16 +209,22 @@ const ToolsPerformanceSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-            <FaTachometerAlt  />
+            <FaTachometerAlt />
             <span className="text-sm">Performance Testing</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Advanced{" "}
-            <span className="text-[theme(color.brand.blue)]">Performance Testing</span>
+            <span className="text-[theme(color.brand.blue)]">
+              Performance Testing
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Comprehensive performance testing solutions to ensure your applications can handle real-world user traffic, scale efficiently, and deliver optimal user experiences—leveraging tools like JMeter, BlazeMeter, Loader.io, and Neustar for load testing, stress testing, and scalability validation.
-
+            Comprehensive performance testing solutions to ensure your
+            applications can handle real-world user traffic, scale efficiently,
+            and deliver optimal user experiences—leveraging tools like JMeter,
+            BlazeMeter, Loader.io, and Neustar for load testing, stress testing,
+            and scalability validation, with commercial tool licenses provided
+            by the client.
           </p>
         </div>
 
@@ -169,7 +242,9 @@ const ToolsPerformanceSection = () => {
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <span className="text-xs text-gray-500 uppercase tracking-wide">{tool.category}</span>
+                    <span className="text-xs text-gray-500 uppercase tracking-wide">
+                      {tool.category}
+                    </span>
                     <h3 className="font-bold text-gray-900">{tool.title}</h3>
                   </div>
                 </div>
@@ -179,10 +254,15 @@ const ToolsPerformanceSection = () => {
                 </p>
 
                 <div className="mb-4">
-                  <h4 className="text-xs font-semibold text-gray-800 mb-2">Features:</h4>
+                  <h4 className="text-xs font-semibold text-gray-800 mb-2">
+                    Features:
+                  </h4>
                   <div className="grid grid-cols-2 gap-1">
                     {tool.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start gap-1">
+                      <div
+                        key={featureIndex}
+                        className="flex items-start gap-1"
+                      >
                         <div className="w-1 h-1 bg-[theme(color.brand.blue)] rounded-full mt-1.5 flex-shrink-0"></div>
                         <span className="text-xs text-gray-600">{feature}</span>
                       </div>
@@ -191,7 +271,9 @@ const ToolsPerformanceSection = () => {
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-xs font-semibold text-gray-800 mb-2">Use Cases:</h4>
+                  <h4 className="text-xs font-semibold text-gray-800 mb-2">
+                    Use Cases:
+                  </h4>
                   <div className="space-y-1">
                     {tool.useCases.map((useCase, useCaseIndex) => (
                       <span
@@ -217,18 +299,29 @@ const ToolsPerformanceSection = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Key Performance Metrics
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {performanceMetrics.map((metric, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 ring-1 ring-brand-blue hover:shadow-lg transition-all duration-300">
-                <h4 className="font-bold text-gray-900 mb-2">{metric.metric}</h4>
-                <p className="text-gray-600 text-sm mb-3">{metric.description}</p>
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-lg p-6 ring-1 ring-brand-blue hover:shadow-lg transition-all duration-300"
+              >
+                <h4 className="font-bold text-gray-900 mb-2">
+                  {metric.metric}
+                </h4>
+                <p className="text-gray-600 text-sm mb-3">
+                  {metric.description}
+                </p>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs text-gray-500">Target:</span>
-                  <span className="text-sm font-semibold text-[theme(color.brand.blue)]">{metric.target}</span>
+                  <span className="text-sm font-semibold text-[theme(color.brand.blue)]">
+                    {metric.target}
+                  </span>
                 </div>
                 <div>
-                  <span className="text-xs text-gray-500 mb-2 block">Tools:</span>
+                  <span className="text-xs text-gray-500 mb-2 block">
+                    Tools:
+                  </span>
                   <div className="flex flex-wrap gap-1">
                     {metric.tools.map((tool, toolIndex) => (
                       <span
@@ -250,47 +343,67 @@ const ToolsPerformanceSection = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Performance Testing Scenarios
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testingScenarios.slice(0, 3).map((scenario, index) => (
               <div key={index} className="bg-white rounded-lg p-6">
-                <h4 className="font-bold text-gray-900 mb-3">{scenario.type}</h4>
-                <p className="text-gray-600 text-sm mb-4">{scenario.description}</p>
+                <h4 className="font-bold text-gray-900 mb-3">
+                  {scenario.type}
+                </h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  {scenario.description}
+                </p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Purpose:</span>
-                    <span className="text-gray-700 text-right flex-1 ml-2">{scenario.purpose}</span>
+                    <span className="text-gray-700 text-right flex-1 ml-2">
+                      {scenario.purpose}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Duration:</span>
-                    <span className="text-[theme(color.brand.blue)] font-medium">{scenario.duration}</span>
+                    <span className="text-[theme(color.brand.blue)] font-medium">
+                      {scenario.duration}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Users:</span>
-                    <span className="text-[theme(color.brand.blue)] font-medium">{scenario.users}</span>
+                    <span className="text-[theme(color.brand.blue)] font-medium">
+                      {scenario.users}
+                    </span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {testingScenarios.slice(3).map((scenario, index) => (
               <div key={index + 3} className="bg-white rounded-lg p-6">
-                <h4 className="font-bold text-gray-900 mb-3">{scenario.type}</h4>
-                <p className="text-gray-600 text-sm mb-4">{scenario.description}</p>
+                <h4 className="font-bold text-gray-900 mb-3">
+                  {scenario.type}
+                </h4>
+                <p className="text-gray-600 text-sm mb-4">
+                  {scenario.description}
+                </p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Purpose:</span>
-                    <span className="text-gray-700 text-right flex-1 ml-2">{scenario.purpose}</span>
+                    <span className="text-gray-700 text-right flex-1 ml-2">
+                      {scenario.purpose}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Duration:</span>
-                    <span className="text-[theme(color.brand.blue)] font-medium">{scenario.duration}</span>
+                    <span className="text-[theme(color.brand.blue)] font-medium">
+                      {scenario.duration}
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-500">Users:</span>
-                    <span className="text-[theme(color.brand.blue)] font-medium">{scenario.users}</span>
+                    <span className="text-[theme(color.brand.blue)] font-medium">
+                      {scenario.users}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -301,13 +414,15 @@ const ToolsPerformanceSection = () => {
         {/* Performance Testing Benefits */}
         <div className="bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Performance Testing Impact</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Performance Testing Impact
+            </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Our comprehensive performance testing ensures your applications deliver exceptional 
-              user experiences under any load condition.
+              Our comprehensive performance testing ensures your applications
+              deliver exceptional user experiences under any load condition.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">99.9%</div>
@@ -333,4 +448,3 @@ const ToolsPerformanceSection = () => {
 };
 
 export default ToolsPerformanceSection;
-

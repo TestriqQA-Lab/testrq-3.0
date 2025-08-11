@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const EcommercePlatformsSection: React.FC = () => {
@@ -9,10 +10,19 @@ const EcommercePlatformsSection: React.FC = () => {
     { title: "WooCommerce", img: "/E-commerce_Testing_Img/woo_commerce.png" },
     { title: "Magento", img: "/E-commerce_Testing_Img/Magento.png" },
     { title: "BigCommerce", img: "/E-commerce_Testing_Img/Big_Commerce.png" },
-    { title: "Salesforce Commerce", img: "/E-commerce_Testing_Img/Salesforce_Commerce.svg" },
-    { title: "Adobe Commerce", img: "/E-commerce_Testing_Img/Adobe_Commerce.png" },
-    { title: "Squarespace", img: "/E-commerce_Testing_Img/Squarespace_Commerce.png" },
-    { title: "Wix", img: "/E-commerce_Testing_Img/Wix_Commerce.png" }
+    {
+      title: "Salesforce Commerce",
+      img: "/E-commerce_Testing_Img/Salesforce_Commerce.svg",
+    },
+    {
+      title: "Adobe Commerce",
+      img: "/E-commerce_Testing_Img/Adobe_Commerce.png",
+    },
+    {
+      title: "Squarespace",
+      img: "/E-commerce_Testing_Img/Squarespace_Commerce.png",
+    },
+    { title: "Wix", img: "/E-commerce_Testing_Img/Wix_Commerce.png" },
   ];
 
   return (
@@ -20,10 +30,14 @@ const EcommercePlatformsSection: React.FC = () => {
       <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            E-Commerce <span className="bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">Platform Expertise</span>
+            E-Commerce{" "}
+            <span className="bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">
+              Platform Expertise
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We test all major e-commerce platforms with specialized knowledge of their framework-specific risks and requirements.
+            We test all major e-commerce platforms with specialized knowledge of
+            their framework-specific risks and requirements.
           </p>
         </div>
 
@@ -48,9 +62,11 @@ const EcommercePlatformsSection: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-xl font-semibold hover:scale-95 transition-all duration-300 ease-in-out">
-            Get Platform Assessment
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-gradient-to-r cursor-pointer from-brand-blue to-sky-600 text-white px-8 py-4 rounded-xl font-semibold hover:scale-95 transition-all duration-300 ease-in-out">
+              Get Platform Assessment
+            </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -58,4 +74,3 @@ const EcommercePlatformsSection: React.FC = () => {
 };
 
 export default EcommercePlatformsSection;
-

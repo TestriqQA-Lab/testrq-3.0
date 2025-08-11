@@ -1,12 +1,57 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { FaGraduationCap } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaChalkboardTeacher,
+  FaGoogle,
+  FaSchool,
+  FaBuilding,
+  FaBookOpen,
+  FaLaptopCode,
+} from "react-icons/fa";
+
+import { SiMoodle } from "react-icons/si";
 
 const ElearningPlatformsSection: React.FC = () => {
   const platforms = [
-    "Moodle", "Canvas", "Blackboard", "Google Classroom", 
-    "Schoology", "D2L Brightspace", "Custom LMS", "Corporate Training Platforms"
+    {
+      name: "Moodle",
+      icon: <SiMoodle className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Canvas",
+      icon: (
+        <FaChalkboardTeacher className="w-8 h-8 text-brand-blue mx-auto mb-3" />
+      ),
+    },
+    {
+      name: "Blackboard",
+      icon: <FaSchool className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Google Classroom",
+      icon: <FaGoogle className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Schoology",
+      icon: (
+        <FaGraduationCap className="w-8 h-8 text-brand-blue mx-auto mb-3" />
+      ),
+    },
+    {
+      name: "D2L Brightspace",
+      icon: <FaBookOpen className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Custom LMS",
+      icon: <FaLaptopCode className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Corporate Training Platforms",
+      icon: <FaBuilding className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
   ];
 
   return (
@@ -14,26 +59,33 @@ const ElearningPlatformsSection: React.FC = () => {
       <div className="mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            E-Learning <span className="text-brand-blue">Platform Expertise</span>
+            E-Learning{" "}
+            <span className="text-brand-blue">Platform Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We test all major e-learning platforms with specialized knowledge of educational technology requirements.
+            We test all major e-learning platforms with specialized knowledge of
+            educational technology requirements.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {platforms.map((platform, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-6 text-center ring-1 ring-brand-blue hover:ring-3 hover:shadow-lg transition-shadow">
-              <FaGraduationCap className="w-8 h-8 text-brand-blue mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900">{platform}</h3>
+            <div
+              key={index}
+              className="bg-gray-50 rounded-xl p-6 text-center ring-1 ring-brand-blue hover:ring-3 hover:shadow-lg transition-shadow"
+            >
+              {platform.icon}
+              <h3 className="font-semibold text-gray-900">{platform.name}</h3>
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <button className="bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out">
-            Get Platform Assessment
-          </button>
+          <Link href="/contact-us">
+            <button className="bg-gradient-to-r from-brand-blue to-sky-600 cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out">
+              Get Platform Assessment
+            </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -41,4 +93,3 @@ const ElearningPlatformsSection: React.FC = () => {
 };
 
 export default ElearningPlatformsSection;
-

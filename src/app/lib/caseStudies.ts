@@ -109,7 +109,7 @@ export interface CaseStudy {
 }
 
 // Case studies data
-const caseStudiesData: CaseStudy[] = [
+export const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
     slug: "canva-case-study",
@@ -145,7 +145,7 @@ const caseStudiesData: CaseStudy[] = [
       },
       metadataBase: new URL("https://testrq-3-0.vercel.app/"),
       alternates: {
-        canonical: "https://testriq.com/case-study/canva-case-study",
+        canonical: "https://testrq-3-0.vercel.app/canva-case-study",
       },
       openGraph: {
         type: "article",
@@ -157,7 +157,7 @@ const caseStudiesData: CaseStudy[] = [
           "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
         images: [
           {
-            url: "/OG/Canva-Case-Study-og.webp",
+            url: "/OG/Case-Study-Canva-og.webp",
             width: 1200,
             height: 630,
             alt: "Canva QA Testing Case Study",
@@ -171,7 +171,7 @@ const caseStudiesData: CaseStudy[] = [
         title: "Canva QA Testing Case Study - Testriq QA Lab",
         description:
           "Testriq helped Canva streamline testing across platforms with zero-defect releases and smooth UI transitions. Read the full case study.",
-        images: ["/OG/Canva-Case-Study-Twitter.webp"],
+        images: ["/OG/Case-Study-Canva-Twitter.webp"],
       },
       robots: {
         index: true,
@@ -340,7 +340,7 @@ const caseStudiesData: CaseStudy[] = [
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/ragnar-case-study",
+    canonical: "https://testrq-3-0.vercel.app/ragnar-case-study",
   },
   openGraph: {
     type: "article",
@@ -352,7 +352,7 @@ const caseStudiesData: CaseStudy[] = [
       "Explore how Testriq supports Ragnar’s global sports platform with end-to-end QA for mobile, web, and virtual races—ensuring reliable, seamless user experiences.",
     images: [
       {
-        url: "/OG/Ragnar-Case-Study-og.webp",
+        url: "/OG/Case-study-Ragnar-og.webp",
         width: 1200,
         height: 630,
         alt: "Ragnar QA Testing Case Study",
@@ -366,7 +366,7 @@ const caseStudiesData: CaseStudy[] = [
     title: "Ragnar QA Testing Case Study - Testriq QA Lab",
     description:
       "Testriq helps Ragnar deliver high-performance, multi-device experiences across real and virtual marathons. See how our QA experts support this global fitness platform.",
-    images: ["/OG/Ragnar-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Ragnar-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -517,7 +517,7 @@ overview: {
     description: "Delivering a high-performing mobile app through rigorous QA processes, seamless collaboration, and end-to-end testing across devices and platforms.",
     image: "/Kanishka_Software_Logo.webp",
     metadata: {
-  title: "Mobile App Testing Case Study | Kanishka Software X Testriq",
+  title: "Kanishka Software X Testriq",
   description:
     "Explore how Testriq helped Kanishka Software deliver a high-performing mobile app through rigorous QA, cross-device testing, and seamless collaboration.",
   keywords: [
@@ -542,7 +542,7 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/kanishka-software-case-study",
+    canonical: "https://testrq-3-0.vercel.app/kanishka-software-case-study",
   },
   openGraph: {
     type: "article",
@@ -554,7 +554,7 @@ overview: {
       "Testriq partnered with Kanishka Software to execute end-to-end testing for their mobile app, ensuring seamless performance, usability, and zero-defect releases.",
     images: [
       {
-        url: "/OG/Kanishka-Case-Study-og.webp",
+        url: "/OG/case-study-kanishka-software-og.webp",
         width: 1200,
         height: 630,
         alt: "Kanishka Software QA Testing Case Study",
@@ -568,7 +568,7 @@ overview: {
     title: "Mobile App Testing Case Study – Kanishka Software x Testriq",
     description:
       "From performance testing to real-device QA, see how Testriq ensured flawless delivery for Kanishka Software’s mobile app.",
-    images: ["/OG/Kanishka-Case-Study-Twitter.webp"],
+    images: ["/OG/case-study-kanishka-software-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -696,7 +696,7 @@ additionalMetrics: [
     description: "Homefacts provides access to over 130 million U.S. real estate listings, including homes, condos, and townhouses. It also offers detailed insights on prices, rents, schools, and neighborhoods.",
     image: "/Homefacts_Logo.png",
     metadata: {
-  title: "Real Estate Software Testing Case Study | Testriq QA Lab",
+  title: "Real Estate Software Testing Case Study ",
   description:
     "See how Testriq ensured data accuracy, platform stability, and seamless user experience for Home Facts, a leading U.S. real estate platform offering 130M+ listings and rich neighborhood insights.",
   keywords: [
@@ -721,19 +721,19 @@ additionalMetrics: [
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/home-facts-case-study",
+    canonical: "https://testrq-3-0.vercel.app/home-facts-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/home-facts-case-study",
+    url: "https://testrq-3-0.vercel.app/home-facts-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Home Facts QA Case Study - Real Estate Platform Testing by Testriq",
     description:
       "Discover how Testriq helped Home Facts maintain data accuracy, cross-browser compatibility, and performance across 130M+ listings in the U.S. real estate market.",
     images: [
       {
-        url: "/OG/HomeFacts-Case-Study-og.webp",
+        url: "/OG/case-study-Real-Estate-og.webp",
         width: 1200,
         height: 630,
         alt: "Home Facts Real Estate Software Testing Case Study",
@@ -747,7 +747,7 @@ additionalMetrics: [
     title: "Real Estate Software QA Case Study – Home Facts x Testriq",
     description:
       "From verifying massive property data to ensuring platform stability, Testriq’s QA team supported Home Facts in delivering a flawless user experience.",
-    images: ["/OG/HomeFacts-Case-Study-Twitter.webp"],
+    images: ["/OG/case-study-Real-Estate-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -897,7 +897,7 @@ overview: {
     description: "RealtyTrac provides all types of foreclosure listings (pre-foreclosure, auction, bank-owned) as well as current for sale and recently sold properties in 2,200 counties across the United Nations.",
     image: "/RealtyTrac_Logo.png",
     metadata: {
-  title: "RealtyTrac Case Study – Real Estate QA Testing by Testriq",
+  title: "RealtyTrac Case Study – Real Estate QA Testing",
   description:
     "Explore how Testriq helped RealtyTrac ensure platform stability, data accuracy, and seamless user experience across foreclosure and property listing modules.",
   keywords: [
@@ -922,19 +922,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/realtytrac-case-study",
+    canonical: "https://testrq-3-0.vercel.app/realtytrac-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/realtytrac-case-study",
+    url: "https://testrq-3-0.vercel.app/realtytrac-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RealtyTrac QA Case Study – Testriq's QA for Real Estate Platforms",
     description:
       "Testriq QA Lab ensured high-quality testing across RealtyTrac’s real estate modules, including foreclosure, auction, and recently sold property data covering 2,200 counties.",
     images: [
       {
-        url: "/OG/RealtyTrac-Case-Study-og.webp",
+        url: "/OG/Case-study-RealtyTrac-og.webp",
         width: 1200,
         height: 630,
         alt: "RealtyTrac Real Estate QA Testing Case Study",
@@ -948,7 +948,7 @@ overview: {
     title: "RealtyTrac Case Study – QA for Real Estate Listings | Testriq",
     description:
       "See how Testriq helped RealtyTrac deliver reliable foreclosure and real estate data to users across 2,200 counties with robust QA testing.",
-    images: ["/OG/RealtyTrac-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-RealtyTrac-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1101,7 +1101,7 @@ overview: {
     description: "Brandify (formerly Where2GetIt) supports over 300 brands and 4.5 million physical locations. Its powerful digital marketing platform reaches millions of consumers worldwide.",
     image: "/Brandify_logo.svg",
     metadata: {
-  title: "Brandify Case Study | Testriq QA Lab | QA for Digital Marketing",
+  title: "Brandify Case Study | Testriq QA Lab ",
   description:
     "See how Testriq QA Lab ensured platform scalability and functionality for Brandify, a digital marketing powerhouse serving 4.5M+ brick-and-mortar locations worldwide.",
   keywords: [
@@ -1126,19 +1126,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/brandify-case-study",
+    canonical: "https://testrq-3-0.vercel.app/brandify-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/brandify-case-study",
+    url: "https://testrq-3-0.vercel.app/brandify-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Brandify QA Case Study – Digital Marketing Platform Testing | Testriq",
     description:
       "Explore how Testriq supported Brandify in delivering reliable, scalable digital marketing solutions across millions of locations through rigorous QA practices.",
     images: [
       {
-        url: "/OG/Brandify-Case-Study-og.webp",
+        url:"/OG/Case-study-Brandify-og.webp",
         width: 1200,
         height: 630,
         alt: "Brandify Digital Marketing QA Testing Case Study",
@@ -1152,7 +1152,7 @@ overview: {
     title: "Brandify Case Study – QA for Digital Marketing Platforms | Testriq",
     description:
       "Testriq partnered with Brandify to test enterprise-scale digital marketing solutions, ensuring performance and accuracy across 4.5M+ location endpoints.",
-    images: ["/OG/Brandify-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Brandify-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1303,19 +1303,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/milton-smart-bottle-case-study",
+    canonical: "https://testrq-3-0.vercel.app/milton-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/milton-smart-bottle-case-study",
+    url: "https://testrq-3-0.vercel.app/milton-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Milton Smart Bottle QA Case Study – IoT Homeware Testing | Testriq",
     description:
       "Discover how Testriq ensured the functional integrity and smart feature reliability of Milton’s stainless steel water bottle, enhancing product quality and user trust.",
     images: [
       {
-        url: "/OG/Milton-Case-Study-og.webp",
+        url: "/OG/Case-study-Milton-smart-Stainless-steel-og .webp",
         width: 1200,
         height: 630,
         alt: "Milton Smart Stainless Steel Water Bottle Case Study",
@@ -1329,7 +1329,7 @@ overview: {
     title: "Milton Smart Bottle QA Case Study – Tested by Testriq",
     description:
       "From smart sensors to thermal retention features, Testriq’s QA process helped validate the performance of Milton’s smart stainless steel water bottle.",
-    images: ["/OG/Milton-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Milton-smart-Stainless-steel-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1482,19 +1482,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/luep-case-study",
+    canonical: "https://testrq-3-0.vercel.app/luep-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/luep-case-study",
+    url: "https://testrq-3-0.vercel.app/luep-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Luep QA Case Study – Seamless Testing Across Web & Mobile | Testriq",
     description:
       "Testriq supported Luep’s innovative tech platform by executing end-to-end QA across web, iOS, and Android—ensuring smooth communication and collaboration experiences.",
     images: [
       {
-        url: "/OG/Luep-Case-Study-og.webp",
+        url: "/OG/case-study-luep-og.webp",
         width: 1200,
         height: 630,
         alt: "Luep Cross-Platform QA Testing Case Study",
@@ -1508,7 +1508,7 @@ overview: {
     title: "Luep QA Testing Case Study – Web, iOS & Android QA | Testriq",
     description:
       "Explore how Testriq validated Luep's cross-platform communication platform through rigorous QA on web and mobile to ensure an optimal user experience.",
-    images: ["/OG/Luep-Case-Study-Twitter.webp"],
+    images: ["/OG/case-study-luep-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1632,14 +1632,14 @@ overview: {
   {
     id: 9,
     slug: "aalpha-information-systems",
-    title: "Penetration Testing for Aalpha’s HR Portal",
+    title: "Securing Aalpha Information Systems' HR Portal",
     client: "Aalpha Information Systems",
     industry: "IT company",
     duration: "Not specified",
     description: "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses.",
     image: "/Aalpha_Information_System_Logo.webp",
    metadata: {
-  title: "Securing Aalpha Information Systems' HR Portal – A Testriq Penetration Testing Project",
+  title: "Securing Aalpha Information Systems' HR Portal",
   description:
     "Learn how Testriq conducted an in-depth penetration testing engagement to secure Aalpha’s HR portal, identifying vulnerabilities and strengthening cyber defense.",
   keywords: [
@@ -1664,19 +1664,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/aalpha-penetration-testing-case-study",
+    canonical: "https://testrq-3-0.vercel.app/aalpha-information-systems",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/aalpha-penetration-testing-case-study",
+    url: "https://testrq-3-0.vercel.app/aalpha-information-systems",
     siteName: "Testriq - QA Case Studies",
     title: "Aalpha Penetration Testing Case Study – HR Portal Security | Testriq",
     description:
       "Testriq helped Aalpha Information Systems secure their HR portal through a focused penetration testing effort, uncovering and mitigating key security risks.",
     images: [
       {
-        url: "/OG/Aalpha-Case-Study-og.webp",
+        url: "/OG/Case-study-Aalpha-og.webp",
         width: 1200,
         height: 630,
         alt: "Aalpha HR Portal Penetration Testing Case Study",
@@ -1690,7 +1690,7 @@ overview: {
     title: "Aalpha HR Portal Security Case Study – Penetration Testing by Testriq",
     description:
       "Explore how Testriq's penetration testing enhanced the security of Aalpha’s HR platform, preventing cyber threats and improving system resilience.",
-    images: ["/OG/Aalpha-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Aalpha-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1829,7 +1829,7 @@ overview: {
     description: "Implemented end-to-end testing strategies to boost usability, ensure stability, and improve automation. Enabled a reliable and scalable experience across Digiboxx’s digital ecosystem.",
     image: "/DigiboxxLogo.png",
     metadata: {
-  title: "Digiboxx Case Study: Transforming Digital Storage with Comprehensive Testing Solutions",
+  title: "Optimizing Digiboxx with Robust Testing",
   description:
     "Discover how Testriq helped Digiboxx elevate cloud storage usability, security, and performance through strategic QA, automation, and cross-platform testing.",
   keywords: [
@@ -1854,19 +1854,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/digiboxx-case-study",
+    canonical: "https://testrq-3-0.vercel.app/digiboxx-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/digiboxx-case-study",
+    url: "https://testrq-3-0.vercel.app/digiboxx-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Digiboxx QA Case Study – Elevating Cloud Storage Platforms | Testriq",
     description:
       "Testriq partnered with Digiboxx to deliver robust cloud storage QA—improving automation, usability, and reliability for millions of users across India.",
     images: [
       {
-        url: "/OG/Digiboxx-Case-Study-og.webp",
+        url: "/OG/Case-study-Digiboxx-og.webp",
         width: 1200,
         height: 630,
         alt: "Digiboxx Cloud Storage QA Testing Case Study",
@@ -1880,7 +1880,7 @@ overview: {
     title: "Digiboxx QA Testing Case Study – Cloud Storage QA | Testriq",
     description:
       "Explore how Testriq transformed Digiboxx’s digital storage platform through rigorous testing, seamless automation, and enhanced user experience.",
-    images: ["/OG/Digiboxx-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Digiboxx-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -1988,7 +1988,7 @@ overview: {
     description: "Implemented proactive testing to ensure fast load times, high reliability, and smooth support for 10k+ users. Enabled a scalable, seamless retail experience post-acquisition.",
     image: "/RC_Pets_Logo.webp",
    metadata: {
-  title: "Optimizing Performance for RC Pets - A Scalability Testing Success Story",
+  title: "Optimizing Performance for RC Pets ",
   description:
     "See how Testriq enabled RC Pets to scale for 10k+ users with lightning-fast load times and reliable performance through robust scalability and load testing strategies.",
   keywords: [
@@ -2013,19 +2013,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/rc-pets-performance-case-study",
+    canonical: "https://testrq-3-0.vercel.app/rc-pets-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/rc-pets-performance-case-study",
+    url: "https://testrq-3-0.vercel.app/rc-pets-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RC Pets QA Case Study – High-Performance eCommerce Testing | Testriq",
     description:
       "Explore how Testriq helped RC Pets, under ASC Creative, support 10k+ concurrent users with optimized load time and seamless performance in a fast-paced retail environment.",
     images: [
       {
-        url: "/OG/RCPets-Case-Study-og.webp",
+        url: "/OG/Case-study-RC Pets-og.webp",
         width: 1200,
         height: 630,
         alt: "RC Pets Scalability Testing Case Study",
@@ -2039,7 +2039,7 @@ overview: {
     title: "RC Pets Case Study – Performance & Load Testing by Testriq",
     description:
       "Testriq partnered with ASC Creative to test RC Pets' retail platform for high scalability and optimal user experience across 10,000+ users.",
-    images: ["/OG/RCPets-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-RC Pets-twitter.webp"],
   },
   robots: {
     index: true,
@@ -2192,7 +2192,7 @@ overview: {
     description: "Implemented a thorough testing approach to boost quality, ensure reliability, and minimize defects. Enabled seamless performance and smoother user experiences across the platform.",
     image: "/Worksocial_logo.webp",
     metadata: {
-  title: "Enhancing WorkSocial's Software Quality with Comprehensive Testing Services",
+  title: "WorkSocial Software Optimized Through Testing",
   description:
     "Testriq partnered with WorkSocial to elevate software quality through rigorous QA practices—covering functionality, usability, and performance for a seamless real estate experience.",
   keywords: [
@@ -2217,19 +2217,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/worksocial-software-testing-case-study",
+    canonical: "https://testrq-3-0.vercel.app/worksocial-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/worksocial-software-testing-case-study",
+    url: "https://testrq-3-0.vercel.app/worksocial-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "WorkSocial QA Case Study – Elevating Real Estate Software | Testriq",
     description:
       "Explore how Testriq improved WorkSocial's platform quality with functional, usability, and performance testing, ensuring reliable software for real estate users.",
     images: [
       {
-        url: "/OG/WorkSocial-Case-Study-og.webp",
+        url: "/OG/Case-study-Worksocial-og.webp",
         width: 1200,
         height: 630,
         alt: "WorkSocial Software QA Testing Case Study",
@@ -2243,7 +2243,7 @@ overview: {
     title: "WorkSocial Case Study – Real Estate Software QA by Testriq",
     description:
       "Testriq enhanced WorkSocial’s software with end-to-end testing—from performance to functionality—delivering a seamless user experience for real estate clients.",
-    images: ["/OG/WorkSocial-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-Worksocial-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -2358,7 +2358,7 @@ overview: {
     description: "Established a strategic QA approach to ensure performance, security, and reliability. Accelerated delivery cycles while boosting confidence in LeadoConnect’s automation software.",
     image: "/LeadoConnect_Logo.webp",
     metadata: {
-  title: "Quality Assurance Partnership for LeadoConnect's B2B Lead Generation Automation Software",
+  title: "Refining LeadoConnect’s B2B Software with QA",
   description:
     "Testriq ensured peak performance, security, and user experience for LeadoConnect’s B2B lead generation automation platform—strengthening its market leadership.",
   keywords: [
@@ -2383,19 +2383,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/leadoconnect-qa-case-study",
+    canonical: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/leadoconnect-qa-case-study",
+    url: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "LeadoConnect QA Case Study – Marketing Automation Software QA | Testriq",
     description:
       "Explore how Testriq's QA team optimized performance, improved security, and refined usability for LeadoConnect’s B2B lead gen automation platform.",
     images: [
       {
-        url: "/OG/LeadoConnect-Case-Study-og.webp",
+        url: "/OG/Case-study-LeadoConnect-og.webp",
         width: 1200,
         height: 630,
         alt: "LeadoConnect B2B Lead Generation Software QA Case Study",
@@ -2409,7 +2409,7 @@ overview: {
     title: "LeadoConnect Case Study – QA for B2B Lead Gen Software | Testriq",
     description:
       "Testriq partnered with LeadoConnect to test and enhance their B2B marketing automation tool—delivering quality, speed, and security for global teams.",
-    images: ["/OG/LeadoConnect-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-LeadoConnect-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -2551,7 +2551,7 @@ overview: {
     description: "Implemented structured QA documentation and rigorous testing to enhance reliability, accelerate development, and streamline Pro-ficiency’s software upgrade process.",
     image: "/Pro-ficiency_Logo.webp",
     metadata: {
-  title: "Pro-ficiency Soars with TESTRIQ: Precision QA Documentation and Rigorous Testing Redefine Software Development",
+  title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
   description:
     "Testriq delivered 45 months of precision QA documentation and rigorous testing for Pro-ficiency’s upgraded healthcare platform—elevating software quality, reliability, and compliance.",
   keywords: [
@@ -2588,7 +2588,7 @@ overview: {
       "Explore how Testriq redefined QA standards for Pro-ficiency through 45 months of precision test documentation, validation cycles, and compliance testing for medical applications.",
     images: [
       {
-        url: "/OG/Proficiency-Case-Study-og.webp",
+        url: "/OG/Case-study-LeadoConnect-og.webp",
         width: 1200,
         height: 630,
         alt: "Pro-ficiency QA Testing Case Study",
@@ -2602,7 +2602,7 @@ overview: {
     title: "Pro-ficiency Case Study – 45-Month QA Success in Healthcare | Testriq",
     description:
       "Testriq’s long-term QA partnership with Pro-ficiency, ProPatient, and ProCT transformed healthcare application testing with precision and compliance-driven delivery.",
-    images: ["/OG/Proficiency-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-study-LeadoConnect-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -2717,7 +2717,7 @@ overview: {
     description: "Implemented a robust testing strategy to improve reliability, reduce debugging time, and accelerate development cycles. Enabled seamless integration and faster iteration across Phyllo's evolving API ecosystem.",
     image: "/Phyllo_logo.webp",
     metadata: {
-  title: "Empowering Phyllo's API Infrastructure with Efficient API Testing",
+  title: "Phyllo's API Infrastructure with Efficient API Testing",
   description:
     "Explore how Testriq enhanced Phyllo’s API infrastructure with scalable, efficient, and secure API testing—ensuring stability across its developer-first ecosystem.",
   keywords: [
@@ -2742,19 +2742,19 @@ overview: {
   },
   metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/phyllo-api-testing-case-study",
+    canonical: "https://testrq-3-0.vercel.app/phyllo-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/phyllo-api-testing-case-study",
+    url: "https://testrq-3-0.vercel.app/phyllo-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Phyllo API Testing Case Study – Infrastructure QA by Testriq",
     description:
       "Testriq empowered Phyllo’s API infrastructure with robust, scalable API testing to support seamless developer integration and backend stability.",
     images: [
       {
-        url: "/OG/Phyllo-Case-Study-og.webp",
+        url: "/OG/Case-Study-Phyllo-Og.webp",
         width: 1200,
         height: 630,
         alt: "Phyllo API Infrastructure QA Testing Case Study",
@@ -2768,7 +2768,7 @@ overview: {
     title: "Phyllo Case Study – API Testing Infrastructure QA | Testriq",
     description:
       "Discover how Testriq helped Phyllo strengthen its API infrastructure with efficient testing and quality validation across developer services.",
-    images: ["/OG/Phyllo-Case-Study-Twitter.webp"],
+    images: ["/OG/Case-Study-Phyllo-Twitter.webp"],
   },
   robots: {
     index: true,

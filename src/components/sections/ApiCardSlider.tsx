@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 
@@ -54,7 +55,8 @@ const ApiCardSlider: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized testing approaches ensure your APIs meet the highest standards of functionality, performance, and security.
+            Our specialized testing approaches ensure your APIs meet the highest
+            standards of functionality, performance, and security.
           </p>
         </div>
 
@@ -97,9 +99,11 @@ const ApiCardSlider: React.FC = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
+          <Link href="/contact-us">
+            <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg cursor-pointer transition-colors duration-300">
             Get Comprehensive API Testing
           </button>
+          </Link>
         </div>
       </div>
     </section>

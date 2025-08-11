@@ -10,44 +10,56 @@ const DesktopFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of desktop applications do you test?",
-      answer: "We test all types of desktop applications including enterprise software, productivity tools, games, utilities, and specialized industry applications. Our expertise covers Windows (.NET, WPF, WinForms), macOS (Cocoa, Swift), and Linux (Qt, GTK) applications across various frameworks and technologies."
+      answer:
+        "We test all types of desktop applications including enterprise software, productivity tools, games, utilities, and specialized industry applications. Our expertise covers Windows (.NET, WPF, WinForms), macOS (Cocoa, Swift), and Linux (Qt, GTK) applications across various frameworks and technologies.",
     },
     {
       question: "Which platforms and operating systems do you support?",
-      answer: "We support Windows (10/11, legacy systems), macOS (all recent versions), and Linux (multiple distributions like Ubuntu, Fedora, Debian). Our cross-platform testing ensures compatibility across 15+ platform configurations."
+      answer:
+        "We support Windows (10/11, legacy systems), macOS (all recent versions), and Linux (multiple distributions like Ubuntu, Fedora, Debian). Our cross-platform testing ensures compatibility across 15+ platform configurations.",
     },
     {
       question: "How long does desktop application testing typically take?",
-      answer: "Testing duration varies by project complexity, but our typical timeline is 7-14 days, with functional and regression testing taking 3-5 days, and rapid turnaround options available within 24-48 hours for urgent needs."
+      answer:
+        "Testing duration varies by project complexity, but our typical timeline is 7-14 days, with functional and regression testing taking 3-5 days, and rapid turnaround options available within 24-48 hours for urgent needs.",
     },
     {
       question: "Do you provide automated testing for desktop applications?",
-      answer: "Yes, we offer automated testing, including automated regression suites, to accelerate testing cycles and ensure consistency. We also combine automation with manual and exploratory testing for comprehensive coverage."
+      answer:
+        "Yes, we offer automated testing, including automated regression suites, to accelerate testing cycles and ensure consistency. We also combine automation with manual and exploratory testing for comprehensive coverage.",
     },
     {
       question: "What security testing do you perform on desktop applications?",
-      answer: "We conduct vulnerability scanning, data encryption testing, access control validation, and security compliance checks to protect your desktop applications from threats and ensure adherence to standards like ISO 27001:2013."
+      answer:
+        "We conduct vulnerability scanning, data encryption testing, access control validation, and security compliance checks to protect your desktop applications from threats and ensure adherence to standards like ISO 27001:2013.",
     },
     {
-      question: "Can you test desktop applications that integrate with web services or databases?",
-      answer: "Yes, we test desktop applications with web service and database integrations, validating APIs, data flows, and connectivity across platforms like SQL Server, Oracle, and cloud-based services."
+      question:
+        "Can you test desktop applications that integrate with web services or databases?",
+      answer:
+        "Yes, we test desktop applications with web service and database integrations, validating APIs, data flows, and connectivity across platforms like SQL Server, Oracle, and cloud-based services.",
     },
     {
       question: "Do you provide performance testing for desktop applications?",
-      answer: "Yes, our performance testing includes load testing, stress testing, memory usage analysis, and CPU optimization to ensure your application performs optimally under various conditions."
+      answer:
+        "Yes, our performance testing includes load testing, stress testing, memory usage analysis, and CPU optimization to ensure your application performs optimally under various conditions.",
     },
     {
       question: "What deliverables do you provide after testing?",
-      answer: "We provide detailed test reports, including bug logs with reproducible steps, screenshots, logs, system context, test coverage metrics, and recommendations for improvements."
+      answer:
+        "We provide detailed test reports, including bug logs with reproducible steps, screenshots, logs, system context, test coverage metrics, and recommendations for improvements.",
     },
     {
       question: "Do you offer post-deployment support and maintenance testing?",
-      answer: "Yes, we offer post-deployment support, including maintenance testing, regression testing for updates, and 24/7 monitoring to ensure ongoing application stability."
+      answer:
+        "Yes, we offer post-deployment support, including maintenance testing, regression testing for updates, and 24/7 monitoring to ensure ongoing application stability.",
     },
     {
-      question: "How do you ensure the confidentiality of our application and data?",
-      answer: "We adhere to ISO 27001:2013 standards, implement strict NDAs, use secure testing environments, and encrypt all data to ensure the confidentiality of your application and data."
-    }
+      question:
+        "How do you ensure the confidentiality of our application and data?",
+      answer:
+        "We adhere to ISO 27001:2013 standards, implement strict NDAs, use secure testing environments, and encrypt all data to ensure the confidentiality of your application and data.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -55,22 +67,20 @@ const DesktopFAQs: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <span className="text-sm">
-              ● Frequently Asked Questions
-            </span>
+            <span className="text-sm">● Frequently Asked Questions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Desktop Testing{" "}
             <span className="text-[theme(color.brand.blue)]">FAQs</span>
           </h2>
           <p className="text-gray-600 text-lg">
-            Get answers to common questions about our desktop application testing services,
-            processes, and deliverables.
+            Get answers to common questions about our desktop application
+            testing services, processes, and deliverables.
           </p>
         </div>
 
@@ -117,12 +127,12 @@ const DesktopFAQs: React.FC = () => {
               Still Have Questions?
             </h3>
             <p className="text-gray-600 mb-6">
-              Our desktop testing experts are here to help. Get personalized answers
-              to your specific testing requirements and challenges.
+              Our desktop testing experts are here to help. Get personalized
+              answers to your specific testing requirements and challenges.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors">
+              <Link href="/contact-us#calendly-section">
+                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors">
                   Schedule Consultation
                 </button>
               </Link>
@@ -134,10 +144,14 @@ const DesktopFAQs: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">📧</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                📧
+              </span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Email Support</h4>
-            <p className="text-gray-600 text-sm">Get detailed answers via email</p>
+            <p className="text-gray-600 text-sm">
+              Get detailed answers via email
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
               contact@testriq.com
             </p>
@@ -145,10 +159,14 @@ const DesktopFAQs: React.FC = () => {
 
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">📞</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                📞
+              </span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Phone Support</h4>
-            <p className="text-gray-600 text-sm">Speak with our experts directly</p>
+            <p className="text-gray-600 text-sm">
+              Speak with our experts directly
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
               (+91) 915-2929-343
             </p>
@@ -156,10 +174,14 @@ const DesktopFAQs: React.FC = () => {
 
           <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <span className="text-[theme(color.brand.blue)] font-bold">💬</span>
+              <span className="text-[theme(color.brand.blue)] font-bold">
+                💬
+              </span>
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">Live Chat</h4>
-            <p className="text-gray-600 text-sm">Instant answers to quick questions</p>
+            <p className="text-gray-600 text-sm">
+              Instant answers to quick questions
+            </p>
             <p className="text-[theme(color.brand.blue)] text-sm font-semibold mt-2">
               Available 24/7
             </p>
@@ -171,4 +193,3 @@ const DesktopFAQs: React.FC = () => {
 };
 
 export default DesktopFAQs;
-

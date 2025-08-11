@@ -99,15 +99,6 @@ const ApiFAQs: React.FC = () => {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-700 mb-4">
-            Have more questions about our API testing services?
-          </p>
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300">
-            Contact Our Experts
-          </button>
-        </div>
       </div>
     </section>
   );

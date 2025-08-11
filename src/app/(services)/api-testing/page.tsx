@@ -111,18 +111,6 @@ const ApiWhyChooseTestriq = dynamic(
   }
 );
 
-const ApiROISection = dynamic(
-  () => import("@/components/sections/ApiROISection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const ApiCaseStudies = dynamic(
   () => import("@/components/sections/ApiCaseStudies"),
   {
@@ -209,7 +197,6 @@ export default function ApiTesting() {
         <ApiProvenTestingProcess />
         <ApiWhyChooseTestriq />
         <ApiToolsFramework />
-        <ApiROISection />
         <ApiCaseStudies />
         <ApiFAQs />
         <ApiAnyQuestions />

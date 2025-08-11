@@ -1,12 +1,16 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { automationTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, {
+  automationTestingServiceSchema,
+  createBreadcrumbSchema,
+} from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:  "Automation Testing Services | Automated QA Testing",
+  title: "Automation Testing Services | Automated QA Testing",
 
-  description: "We are one of the best Automation Testing Services and Automated QA Company services companies in Mumbai. We ensure faster releases with fewer bugs.",
+  description:
+    "We are one of the best Automation Testing Services and Automated QA Company services companies in Mumbai. We ensure faster releases with fewer bugs.",
   keywords: [
     "automation testing",
     "test automation",
@@ -17,7 +21,7 @@ export const metadata: Metadata = {
     "CI/CD testing integration",
     "automated testing solutions",
     "software quality assurance",
-    "continuous testing"
+    "continuous testing",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -27,34 +31,38 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testriq.com/automation-testing-services',
+    canonical: "https://testriq.com/automation-testing-services",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testriq.com/automation-testing-services',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Automation Testing Services - Advanced Test Automation Solutions | Testriq',
-    description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testriq.com/automation-testing-services",
+    siteName: "Testriq - Professional Software Testing Services",
+    title:
+      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+    description:
+      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
     images: [
       {
-        url: '/OG/Automation-Testing-Service-Og.webp',
+        url: "/OG/Automation-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
-        alt: 'Automation Testing Services - Testriq',
-        type: 'image/webp',
-      }
+        alt: "Automation Testing Services - Testriq",
+        type: "image/webp",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Automation Testing Services - Advanced Test Automation Solutions | Testriq',
-    description: 'Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.',
-    images: ['/OG/Automation-testing-Services-Twitter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title:
+      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+    description:
+      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
+    images: ["/OG/Automation-testing-Services-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -62,15 +70,15 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
@@ -85,7 +93,6 @@ const AutomationTestingHeroSection = dynamic(
     ),
   }
 );
-
 
 const AutomationTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
@@ -147,18 +154,6 @@ const AutomationTestingToolsFramework = dynamic(
   }
 );
 
-const AutomationTestingROISection = dynamic(
-  () => import("@/components/sections/AutomationTestingROISection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const AutomationTestingCaseStudies = dynamic(
   () => import("@/components/sections/AutomationTestingCaseStudies"),
   {
@@ -171,17 +166,8 @@ const AutomationTestingCaseStudies = dynamic(
   }
 );
 
-const AutomationTestingFAQs = dynamic(() => import("@/components/sections/AutomationTestingFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
-const AutomationTestingAnyQuestions = dynamic(
-  () => import("@/components/sections/AutomationTestingAnyQuestions"),
+const AutomationTestingFAQs = dynamic(
+  () => import("@/components/sections/AutomationTestingFAQs"),
   {
     ssr: true,
     loading: () => (
@@ -195,10 +181,15 @@ const AutomationTestingAnyQuestions = dynamic(
 export default function AutomationTestingPage() {
   const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com" },
-    { name: "Services", url: "https://testriq.com/automation-testing-services" },
-    { name: "Automation Testing", url: "https://testriq.com/automation-testing-services" }
+    {
+      name: "Services",
+      url: "https://testriq.com/automation-testing-services",
+    },
+    {
+      name: "Automation Testing",
+      url: "https://testriq.com/automation-testing-services",
+    },
   ];
-
 
   return (
     <div>
@@ -208,15 +199,12 @@ export default function AutomationTestingPage() {
         <AutomationTestingHeroSection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
-        <AutomationTestingROISection/>
         <AutomationTestingWhyChooseTestriq />
         <AutomationTestingToolsFramework />
-        <AutomationTestingCaseStudies/>
-        <AutomationTestingFAQs/>
+        <AutomationTestingCaseStudies />
+        <AutomationTestingFAQs />
         <AutomationTestingReadyToEnsureQuality />
-        <AutomationTestingAnyQuestions/>
       </MainLayout>
     </div>
   );
 }
-

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaClipboardList, FaCogs, FaPlay, FaChartLine, FaCheckCircle } from "react-icons/fa";
 
@@ -165,9 +166,11 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Our proven performance testing process ensures your applications deliver exceptional speed, scalability, and reliability.
             </p>
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
               Start Performance Testing
             </button>
+            </Link>
           </div>
         </div>
       </div>

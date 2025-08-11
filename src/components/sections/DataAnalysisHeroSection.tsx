@@ -1,11 +1,20 @@
-import React from 'react';
-import { FaChartLine, FaDatabase, FaBrain, FaCog, FaEye } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import {
+  FaChartLine,
+  FaDatabase,
+  FaBrain,
+  FaCog,
+  FaEye,
+  FaArrowRight,
+  FaPlay,
+} from "react-icons/fa";
 
 const DataAnalysisHeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 py-16 overflow-hidden px-8 md:px-12 lg:px-24">
       <div className="absolute inset-0 bg-white/60"></div>
-      
+
       <div className="relative max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
@@ -14,35 +23,41 @@ const DataAnalysisHeroSection = () => {
               <FaChartLine className="mr-2" />
               Professional Data Analysis Services
             </div>
-            
+
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Transform Data into <span className="text-brand-blue">Actionable Insights</span>
+                Transform Data into{" "}
+                <span className="text-brand-blue">Actionable Insights</span>
               </h1>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed">
-                Professional data analysis services that transform your raw data into powerful business insights. From descriptive analytics to predictive modeling, we empower you to make data-driven decisions that steer your business ahead and drive measurable growth.
-
+                Professional data analysis services that transform your raw data
+                into powerful business insights. From descriptive analytics to
+                predictive modeling, we empower you to make data-driven
+                decisions that steer your business ahead and drive measurable
+                growth.
               </p>
-              
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Our dedicated data team of expert data scientists and analysts leverages advanced statistical modeling, machine learning model building, and cutting-edge data analysis tools to uncover hidden patterns, trends, and strategic opportunities within your data—turning complex information into realistic, actionable insights.
 
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our dedicated data team of expert data scientists and analysts
+                leverages advanced statistical modeling, machine learning model
+                building, and cutting-edge data analysis tools to uncover hidden
+                patterns, trends, and strategic opportunities within your
+                data—turning complex information into realistic, actionable
+                insights.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-brand-blue transition-colors duration-200 shadow-lg">
-                Start Data Analysis
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-              
+              <Link href="/contact-us">
+                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg transition-colors duration-200 hover:shadow-lg">
+                  Start Data Analysis
+                  <FaArrowRight className="ml-2" />
+                </button>
+              </Link>
+
               <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
-                <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                </svg>
+                <FaPlay className="mr-2" />
                 View Demo Dashboard
               </button>
             </div>
@@ -51,10 +66,12 @@ const DataAnalysisHeroSection = () => {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-600">1M+</div>
-                <div className="text-sm text-gray-600">Data Points Analyzed</div>
+                <div className="text-sm text-gray-600">
+                  Data Points Analyzed
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">95%</div>
+                <div className="text-3xl font-bold text-blue-600">99.5%</div>
                 <div className="text-sm text-gray-600">Accuracy Rate</div>
               </div>
               <div className="text-center">
@@ -95,18 +112,30 @@ const DataAnalysisHeroSection = () => {
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-purple-50 rounded-lg">
                     <FaDatabase className="mx-auto text-2xl text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-purple-800">Descriptive</div>
-                    <div className="text-xs text-purple-600">What happened?</div>
+                    <div className="text-sm font-medium text-purple-800">
+                      Descriptive
+                    </div>
+                    <div className="text-xs text-purple-600">
+                      What happened?
+                    </div>
                   </div>
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
                     <FaBrain className="mx-auto text-2xl text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-blue-800">Predictive</div>
-                    <div className="text-xs text-blue-600">What will happen?</div>
+                    <div className="text-sm font-medium text-blue-800">
+                      Predictive
+                    </div>
+                    <div className="text-xs text-blue-600">
+                      What will happen?
+                    </div>
                   </div>
                   <div className="text-center p-3 bg-teal-50 rounded-lg">
                     <FaEye className="mx-auto text-2xl text-teal-600 mb-2" />
-                    <div className="text-sm font-medium text-teal-800">Prescriptive</div>
-                    <div className="text-xs text-teal-600">What should we do?</div>
+                    <div className="text-sm font-medium text-teal-800">
+                      Prescriptive
+                    </div>
+                    <div className="text-xs text-teal-600">
+                      What should we do?
+                    </div>
                   </div>
                 </div>
 
@@ -114,10 +143,14 @@ const DataAnalysisHeroSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <div className="text-sm text-gray-600">Data Sources</div>
-                    <div className="text-2xl font-bold text-purple-600">12 Connected</div>
+                    <div className="text-2xl font-bold text-purple-600">
+                      12 Connected
+                    </div>
                   </div>
                   <div>
-                    <div className="text-sm text-gray-600">Insights Generated</div>
+                    <div className="text-sm text-gray-600">
+                      Insights Generated
+                    </div>
                     <div className="text-2xl font-bold text-blue-600">847</div>
                   </div>
                 </div>
@@ -125,11 +158,17 @@ const DataAnalysisHeroSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
                     <div className="text-sm text-gray-600">Model Accuracy</div>
-                    <div className="text-2xl font-bold text-teal-600">94.7%</div>
+                    <div className="text-2xl font-bold text-teal-600">
+                      94.7%
+                    </div>
                   </div>
                   <div>
-                    <div className="text-sm text-gray-600">Processing Speed</div>
-                    <div className="text-2xl font-bold text-orange-600">Real-time</div>
+                    <div className="text-sm text-gray-600">
+                      Processing Speed
+                    </div>
+                    <div className="text-2xl font-bold text-orange-600">
+                      Real-time
+                    </div>
                   </div>
                 </div>
 
@@ -140,7 +179,10 @@ const DataAnalysisHeroSection = () => {
                     <span>78% Complete</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-purple-500 to-teal-600 h-3 rounded-full" style={{width: '78%'}}></div>
+                    <div
+                      className="bg-gradient-to-r from-purple-500 to-teal-600 h-3 rounded-full"
+                      style={{ width: "78%" }}
+                    ></div>
                   </div>
                 </div>
 
@@ -152,11 +194,15 @@ const DataAnalysisHeroSection = () => {
                   </div>
                   <div className="flex justify-between items-center text-sm">
                     <span>Trend Analysis</span>
-                    <span className="text-blue-600 font-medium">Processing</span>
+                    <span className="text-blue-600 font-medium">
+                      Processing
+                    </span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
                     <span>Predictive Modeling</span>
-                    <span className="text-purple-600 font-medium">In Queue</span>
+                    <span className="text-purple-600 font-medium">
+                      In Queue
+                    </span>
                   </div>
                 </div>
 
@@ -185,4 +231,3 @@ const DataAnalysisHeroSection = () => {
 };
 
 export default DataAnalysisHeroSection;
-

@@ -19,9 +19,6 @@ const DatingAppCaseStudies = () => {
     {
       quote:
         "TESTRIQ's certification transformed our dating app. User complaints dropped by 70% and our app store rating improved from 3.2 to 4.7 stars within 3 months.",
-      author: "Sarah Chen",
-      role: "CTO",
-      company: "LoveConnect",
       image: "👩‍💼",
       metrics: {
         userRetention: "+45%",
@@ -32,9 +29,6 @@ const DatingAppCaseStudies = () => {
     {
       quote:
         "The comprehensive audit revealed critical vulnerabilities we never knew existed. Post-certification, our user base grew by 300% and investor confidence soared.",
-      author: "Michael Rodriguez",
-      role: "Founder",
-      company: "DateSafe",
       image: "👨‍💻",
       metrics: {
         userGrowth: "+300%",
@@ -45,9 +39,6 @@ const DatingAppCaseStudies = () => {
     {
       quote:
         "TESTRIQ helped us achieve international compliance and scale globally. We're now operating in 15+ countries with complete confidence in our security.",
-      author: "Priya Sharma",
-      role: "Product Manager",
-      company: "MatchMaker Pro",
       image: "👩‍🔬",
       metrics: {
         markets: "15+",
@@ -96,15 +87,6 @@ const DatingAppCaseStudies = () => {
               <blockquote className="text-lg text-gray-700 mb-6 leading-relaxed">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
-
-              <div className="mb-6">
-                <div className="font-bold text-gray-900 text-lg">
-                  {testimonial.author}
-                </div>
-                <div className="text-gray-600">
-                  {testimonial.role}, {testimonial.company}
-                </div>
-              </div>
 
               <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
                 {Object.entries(testimonial.metrics).map(

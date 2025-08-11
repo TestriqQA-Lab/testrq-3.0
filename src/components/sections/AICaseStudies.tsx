@@ -53,7 +53,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's AI bias testing transformed our hiring platform into a truly fair and compliant system. Their expertise in ethical AI is exceptional.",
-      author: "Alex Thompson, Chief AI Officer",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       icon: "👥",
@@ -95,7 +94,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "The comprehensive AI testing provided by Testriq gave us the confidence to deploy our autonomous systems safely. Outstanding technical expertise!",
-      author: "Dr. Sarah Chen, Head of AI Safety",
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       icon: "🚗",
@@ -137,7 +135,6 @@ const AICaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's medical AI testing ensured our diagnostic systems meet the highest medical standards. Their regulatory expertise is unmatched in healthcare AI.",
-      author: "Dr. Michael Rodriguez, Chief Medical Officer",
       color: "red",
       gradient: "from-red-500 to-red-600",
       icon: "🏥",
@@ -145,14 +142,12 @@ const AICaseStudies: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-white to-purple-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTrophy />
-            <span className="text-sm">
-              Success Stories
-            </span>
+            <span className="text-sm">Success Stories</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             AI Testing{" "}
@@ -320,8 +315,6 @@ const AICaseStudies: React.FC = () => {
                 <cite
                   className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm flex items-center`}
                 >
-                  <FaBrain className="w-4 h-4 mr-2" />—{" "}
-                  {caseStudies[activeCase].author}
                 </cite>
               </div>
             </div>
@@ -451,7 +444,7 @@ const AICaseStudies: React.FC = () => {
                 activeCase > 0 ? activeCase - 1 : caseStudies.length - 1
               )
             }
-            className="flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-300"
+            className="flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 cursor-pointer transition-colors duration-300"
           >
             <FaArrowRight className="w-4 h-4 transform rotate-180" />
             <span>Previous AI Case</span>
@@ -462,13 +455,12 @@ const AICaseStudies: React.FC = () => {
                 activeCase < caseStudies.length - 1 ? activeCase + 1 : 0
               )
             }
-            className="flex items-center gap-2 px-6 py-3 bg-[theme(color.brand.blue)] text-white rounded-lg font-semibold hover:bg-blue-400 transition-colors duration-300"
+            className="flex items-center gap-2 px-6 py-3 bg-[theme(color.brand.blue)] text-white rounded-lg font-semibold hover:shadow-lg cursor-pointer transition-colors duration-300"
           >
             <span>Next AI Case</span>
             <FaArrowRight className="w-4 h-4" />
           </button>
         </div>
-
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import CareersHeroSection from "@/components/sections/CareersHeroSection";
 import CareersValuesSection from "@/components/sections/CareersValuesSection";
 import CareersOpenPositions from "@/components/sections/CareersOpenPositions";
 import CareersBenefitsSection from "@/components/sections/CareersBenefitsSection";
-import CareersTestimonialsSection from "@/components/sections/CareersTestimonialsSection";
 import CareersApplicationProcessSection from "@/components/sections/CareersApplicationProcessSection";
 import CareersCultureSection from "@/components/sections/CareersCultureSection";
 import { Metadata } from "next";
@@ -98,7 +97,6 @@ const CareersPage: React.FC = () => {
       <CareersOpenPositions />
       <CareersBenefitsSection />
       <CareersCultureSection />
-      <CareersTestimonialsSection />
       <CareersApplicationProcessSection />
     </main>
     </div>

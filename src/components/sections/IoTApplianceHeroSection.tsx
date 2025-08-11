@@ -1,31 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaWifi, 
-  FaCog, 
+import {
+  FaWifi,
+  FaCog,
   FaCloud,
   FaRocket,
-  FaUsers,
   FaChartLine,
   FaCheckCircle,
   FaNetworkWired,
-  FaMicrochip
+  FaMicrochip,
 } from "react-icons/fa";
 
 const IoTHeroSection: React.FC = () => {
   const keyStats = [
     { value: "99.9%", label: "Device Connectivity", icon: FaWifi },
-    { value: "1000+", label: "IoT Devices Tested", icon: FaCog },
+    { value: "30+", label: "IoT Devices Tested", icon: FaCog },
     { value: "50M+", label: "Connected Endpoints", icon: FaNetworkWired },
-    { value: "24/7", label: "Edge Monitoring", icon: FaCloud }
+    { value: "24/7", label: "Edge Monitoring", icon: FaCloud },
   ];
 
   const trustBadges = [
     "Edge-to-Cloud Testing",
     "IoT Security Validation",
     "Protocol Compliance",
-    "Industrial IoT Expertise"
+    "Industrial IoT Expertise",
   ];
 
   return (
@@ -74,53 +74,61 @@ const IoTHeroSection: React.FC = () => {
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
               Connect Your
-              <span className="block text-brand-blue">
-                Smart Ecosystem
-              </span>
+              <span className="block text-brand-blue">Smart Ecosystem</span>
               with Expert IoT Testing
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure seamless connectivity, robust IoT security, and optimized performance across your entire IoT ecosystem. From smart devices to industrial IoT systems, we validate every connection in your edge-to-cloud architecture through advanced IoT testing services.
-
+              Ensure seamless connectivity, robust IoT security, and optimized
+              performance across your entire IoT ecosystem. From smart devices
+              to industrial IoT systems, we validate every connection in your
+              edge-to-cloud architecture through advanced IoT testing services.
             </p>
 
             {/* Key Benefits */}
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">Device Connectivity Testing</span>
+                <span className="text-gray-700 font-medium">
+                  Device Connectivity Testing
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">IoT Security Validation</span>
+                <span className="text-gray-700 font-medium">
+                  IoT Security Validation
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">Edge Computing Testing</span>
+                <span className="text-gray-700 font-medium">
+                  Edge Computing Testing
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">Protocol Interoperability</span>
+                <span className="text-gray-700 font-medium">
+                  Protocol Interoperability
+                </span>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-                <FaRocket className="w-5 h-5" />
-                Start IoT Assessment
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-[theme(color.brand.blue)] transition-all duration-300 flex items-center justify-center gap-2">
-                <FaUsers className="w-5 h-5" />
-                Schedule Consultation
-              </button>
+              <Link href="/contact-us">
+                <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
+                  <FaRocket className="w-5 h-5" />
+                  Start IoT Assessment
+                </button>
+              </Link>
             </div>
 
             {/* Trust Badges */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4 text-center">Trusted by IoT innovators worldwide</p>
+              <p className="text-sm text-gray-500 mb-4 text-center">
+                Trusted by IoT innovators worldwide
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-2 text-center gap-3 items-center">
                 {trustBadges.map((badge, index) => (
                   <span
@@ -139,17 +147,26 @@ const IoTHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Proven IoT Expertise</h3>
-                <p className="text-gray-600">Results that power connected innovation</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Proven IoT Expertise
+                </h3>
+                <p className="text-gray-600">
+                  Results that power connected innovation
+                </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 {keyStats.map((stat, index) => (
-                  <div key={index} className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
+                  <div
+                    key={index}
+                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
+                  >
                     <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                    <div className="text-2xl font-bold text-gray-900 mb-1">
+                      {stat.value}
+                    </div>
                     <div className="text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}
@@ -160,20 +177,28 @@ const IoTHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl p-8 border border-cyan-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-cyan-600" />
-                <h4 className="text-xl font-bold text-gray-900">Average Client Results</h4>
+                <h4 className="text-xl font-bold text-gray-900">
+                  Average Client Results
+                </h4>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Device Reliability Increase</span>
+                  <span className="text-gray-700">
+                    Device Reliability Increase
+                  </span>
                   <span className="font-bold text-cyan-600">+55%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Security Vulnerability Reduction</span>
+                  <span className="text-gray-700">
+                    Security Vulnerability Reduction
+                  </span>
                   <span className="font-bold text-cyan-600">-90%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Network Latency Improvement</span>
+                  <span className="text-gray-700">
+                    Network Latency Improvement
+                  </span>
                   <span className="font-bold text-cyan-600">-35%</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -188,17 +213,24 @@ const IoTHeroSection: React.FC = () => {
         {/* Bottom CTA Strip */}
         <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-3xl p-8 text-white text-center">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Scale Your IoT Ecosystem?</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Scale Your IoT Ecosystem?
+            </h3>
             <p className="text-blue-100 mb-6 text-lg">
-              Join 1000+ IoT companies that trust Testriq for comprehensive connected device testing solutions.
+              Join 30+ IoT companies that trust Testriq for comprehensive
+              connected device testing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <button className="bg-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                Get Free IoT Audit
-              </button>
-              <button className="bg-white bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
-                View IoT Case Studies
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
+                  Get Free IoT Audit
+                </button>
+              </Link>
+              <Link href="/case-studies">
+                <button className="bg-white cursor-pointer bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
+                  View IoT Case Studies
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -206,8 +238,13 @@ const IoTHeroSection: React.FC = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
         }
         .animate-float {
           animation: float 6s ease-in-out infinite;
@@ -227,4 +264,3 @@ const IoTHeroSection: React.FC = () => {
 };
 
 export default IoTHeroSection;
-

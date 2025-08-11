@@ -5,7 +5,6 @@ import {
   FaQuestionCircle,
   FaChevronDown,
   FaChevronUp,
-  FaShoppingCart,
 } from "react-icons/fa";
 
 const EcommerceFAQSection: React.FC = () => {
@@ -115,29 +114,6 @@ const EcommerceFAQSection: React.FC = () => {
                     </div>
                   ))}
                 </div>
-
-        {/* Additional Help Section */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] via-sky-600 to-blue-500 rounded-3xl p-12 shadow-lg border border-gray-100 text-center">
-          <FaShoppingCart className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
-          <h3 className="text-2xl font-bold text-white mb-4">Still Have Questions?</h3>
-          <p className="text-white mb-8 max-w-2xl mx-auto">
-            Our e-commerce testing experts are here to help. Get personalized answers to your specific
-            questions and learn how we can optimize your online store.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-colors shadow-lg">
-              Schedule Free Consultation
-            </button>
-            <button className="border-2 bg-gray-100 border-gray-300 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] transition-all duration-300">
-              Contact Our Experts
-            </button>
-          </div>
-
-          <div className="mt-8 text-white text-sm">
-            <p>✓ Free consultation • ✓ Custom recommendations • ✓ No obligation</p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight, FaCalendarAlt, FaIndustry } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 import { getRelatedCaseStudies } from "@/app/lib/caseStudies";
 
 interface CaseStudyRelatedSectionProps {
@@ -42,7 +43,7 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
                 <div className="text-center">
                   <div className="w-48 h-48 flex items-center justify-center mx-auto mb-3">
                     {caseStudy.image ? (
-                      <img
+                      <Image
                         src={caseStudy.image}
                         alt={caseStudy.client}
                         className="w-48 h-48 object-contain"

@@ -6,7 +6,6 @@ import ElearningPlatformsSection from "@/components/sections/ElearningPlatformsS
 import ElearningAccessibilitySection from "@/components/sections/ElearningAccessibilitySection";
 import ElearningPerformanceSection from "@/components/sections/ElearningPerformanceSection";
 import ElearningCaseStudiesSection from "@/components/sections/ElearningCaseStudiesSection";
-import ElearningROISection from "@/components/sections/ElearningROISection";
 import ElearningFAQSection from "@/components/sections/ElearningFAQSection";
 import ElearningContactSection from "@/components/sections/ElearningContactSection";
 import { Metadata } from "next";
@@ -107,7 +106,6 @@ const ElearningTestingPage: React.FC = () => {
       <ElearningAccessibilitySection />
       <ElearningPerformanceSection />
       <ElearningCaseStudiesSection />
-      <ElearningROISection />
       <ElearningFAQSection />
       <ElearningContactSection />
     </main>

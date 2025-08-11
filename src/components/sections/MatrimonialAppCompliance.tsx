@@ -11,13 +11,15 @@ import {
   Users,
   Scale,
 } from "lucide-react";
+import Link from "next/link";
 
 const MatrimonialAppCompliance = () => {
   const complianceAreas = [
     {
       icon: <Globe className="w-10 h-10" />,
       title: "GDPR Compliance",
-      description: "European General Data Protection Regulation compliance for global matrimonial platforms.",
+      description:
+        "European General Data Protection Regulation compliance for global matrimonial platforms.",
       requirements: [
         "Data Subject Rights Implementation",
         "Privacy by Design Architecture",
@@ -32,7 +34,8 @@ const MatrimonialAppCompliance = () => {
     {
       icon: <FileText className="w-10 h-10" />,
       title: "CCPA Compliance",
-      description: "California Consumer Privacy Act requirements for US-based matrimonial services.",
+      description:
+        "California Consumer Privacy Act requirements for US-based matrimonial services.",
       requirements: [
         "Consumer Rights Portal",
         "Data Sale Opt-out Mechanisms",
@@ -47,7 +50,8 @@ const MatrimonialAppCompliance = () => {
     {
       icon: <Shield className="w-10 h-10" />,
       title: "ISO 27001 Certification",
-      description: "International standard for information security management systems.",
+      description:
+        "International standard for information security management systems.",
       requirements: [
         "Information Security Policy",
         "Risk Assessment Framework",
@@ -62,7 +66,8 @@ const MatrimonialAppCompliance = () => {
     {
       icon: <Users className="w-10 h-10" />,
       title: "Data Localization",
-      description: "Regional data residency requirements for matrimonial platforms.",
+      description:
+        "Regional data residency requirements for matrimonial platforms.",
       requirements: [
         "Local Data Storage",
         "Cross-border Transfer Controls",
@@ -117,12 +122,12 @@ const MatrimonialAppCompliance = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Global{" "}
-            <span className="text-brand-blue">Compliance Standards</span>
+            Global <span className="text-brand-blue">Compliance Standards</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ensure your matrimonial app meets international regulatory requirements and 
-            industry standards across different jurisdictions and markets.
+            Ensure your matrimonial app meets international regulatory
+            requirements and industry standards across different jurisdictions
+            and markets.
           </p>
         </motion.div>
 
@@ -138,9 +143,7 @@ const MatrimonialAppCompliance = () => {
               className={`${area.bgColor} ${area.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300`}
             >
               <div className="flex items-start gap-4 mb-4">
-                <div className={`${area.color}`}>
-                  {area.icon}
-                </div>
+                <div className={`${area.color}`}>{area.icon}</div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {area.title}
@@ -152,19 +155,25 @@ const MatrimonialAppCompliance = () => {
               </div>
 
               <div className="mb-4">
-                <h4 className="font-semibold text-gray-900 mb-3">Key Requirements:</h4>
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  Key Requirements:
+                </h4>
                 <div className="space-y-2">
                   {area.requirements.map((requirement, reqIndex) => (
                     <div key={reqIndex} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{requirement}</span>
+                      <span className="text-sm text-gray-700">
+                        {requirement}
+                      </span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Applicable Regions:</h4>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  Applicable Regions:
+                </h4>
                 <div className="flex flex-wrap gap-2">
                   {area.regions.map((region, regionIndex) => (
                     <span
@@ -191,7 +200,7 @@ const MatrimonialAppCompliance = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Comprehensive Compliance Checklist
           </h3>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {complianceChecklist.map((category, index) => (
               <motion.div
@@ -206,14 +215,18 @@ const MatrimonialAppCompliance = () => {
                   <div className="w-8 h-8 bg-brand-blue text-white rounded-lg flex items-center justify-center">
                     <Scale className="w-4 h-4" />
                   </div>
-                  <h4 className="font-bold text-gray-900">{category.category}</h4>
+                  <h4 className="font-bold text-gray-900">
+                    {category.category}
+                  </h4>
                 </div>
-                
+
                 <div className="space-y-3">
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 leading-relaxed">{item}</span>
+                      <span className="text-sm text-gray-700 leading-relaxed">
+                        {item}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -233,19 +246,20 @@ const MatrimonialAppCompliance = () => {
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <AlertCircle className="w-8 h-8" />
-              <h3 className="text-2xl font-bold">
-                Compliance Gap Assessment
-              </h3>
+              <h3 className="text-2xl font-bold">Compliance Gap Assessment</h3>
             </div>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Not sure if your matrimonial app meets all compliance requirements? 
-              Get a free compliance gap assessment to identify areas that need attention.
+              Not sure if your matrimonial app meets all compliance
+              requirements? Get a free compliance gap assessment to identify
+              areas that need attention.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                Free Compliance Assessment
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                  Free Compliance Assessment
+                </button>
+              </Link>
+              <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
                 Download Compliance Guide
               </button>
             </div>
@@ -257,4 +271,3 @@ const MatrimonialAppCompliance = () => {
 };
 
 export default MatrimonialAppCompliance;
-

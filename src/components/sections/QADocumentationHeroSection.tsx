@@ -1,5 +1,14 @@
-import React from 'react';
-import { FaFileAlt, FaClipboardList, FaChartLine, FaCog, FaShieldAlt } from 'react-icons/fa';
+import Link from "next/link";
+import React from "react";
+import {
+  FaFileAlt,
+  FaClipboardList,
+  FaChartLine,
+  FaCog,
+  FaShieldAlt,
+  FaArrowRight,
+  FaPlay,
+} from "react-icons/fa";
 
 const QADocumentationHeroSection = () => {
   return (
@@ -17,30 +26,35 @@ const QADocumentationHeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Professional <span className="text-brand-blue">QA Documentation</span> Services
+                Professional{" "}
+                <span className="text-brand-blue">QA Documentation</span>{" "}
+                Services
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Comprehensive quality assurance documentation services to streamline your QA process documentation, ensure requirements traceability, and maintain consistent QA standards documentation across all software development projects.
+                Comprehensive quality assurance documentation services to
+                streamline your QA process documentation, ensure requirements
+                traceability, and maintain consistent QA standards documentation
+                across all software development projects.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert technical writers and QA professionals create detailed test plans, test cases, requirements documentation, and QA deliverables that enhance client collaboration, reduce errors, and accelerate project delivery.
+                Our expert technical writers and QA professionals create
+                detailed test plans, test cases, requirements documentation, and
+                QA deliverables that enhance client collaboration, reduce
+                errors, and accelerate project delivery.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-lg">
-                Get Started Today
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
-
+              <Link href="/contact-us">
+                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200">
+                  Get Started Today
+                  <FaArrowRight className="ml-2" />
+                </button>
+              </Link>
               <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200">
-                <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                </svg>
+                <FaPlay className="mr-2" />
                 Watch Demo
               </button>
             </div>
@@ -93,17 +107,23 @@ const QADocumentationHeroSection = () => {
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
                     <FaClipboardList className="mx-auto text-2xl text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-blue-800">Create</div>
+                    <div className="text-sm font-medium text-blue-800">
+                      Create
+                    </div>
                     <div className="text-xs text-blue-600">Active</div>
                   </div>
                   <div className="text-center p-3 bg-purple-50 rounded-lg">
                     <FaChartLine className="mx-auto text-2xl text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-purple-800">Review</div>
+                    <div className="text-sm font-medium text-purple-800">
+                      Review
+                    </div>
                     <div className="text-xs text-purple-600">In Progress</div>
                   </div>
                   <div className="text-center p-3 bg-green-50 rounded-lg">
                     <FaShieldAlt className="mx-auto text-2xl text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-green-800">Approve</div>
+                    <div className="text-sm font-medium text-green-800">
+                      Approve
+                    </div>
                     <div className="text-xs text-green-600">Queued</div>
                   </div>
                 </div>
@@ -111,8 +131,12 @@ const QADocumentationHeroSection = () => {
                 {/* Metrics */}
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
-                    <div className="text-sm text-gray-600">Documents Created</div>
-                    <div className="text-2xl font-bold text-blue-600">47 Completed</div>
+                    <div className="text-sm text-gray-600">
+                      Documents Created
+                    </div>
+                    <div className="text-2xl font-bold text-blue-600">
+                      47 Completed
+                    </div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-600">Quality Score</div>
@@ -123,11 +147,15 @@ const QADocumentationHeroSection = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div>
                     <div className="text-sm text-gray-600">Templates Used</div>
-                    <div className="text-2xl font-bold text-purple-600">12 Active</div>
+                    <div className="text-2xl font-bold text-purple-600">
+                      12 Active
+                    </div>
                   </div>
                   <div>
                     <div className="text-sm text-gray-600">Coverage</div>
-                    <div className="text-2xl font-bold text-orange-600">95%</div>
+                    <div className="text-2xl font-bold text-orange-600">
+                      95%
+                    </div>
                   </div>
                 </div>
 
@@ -138,7 +166,10 @@ const QADocumentationHeroSection = () => {
                     <span>87% Complete</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style={{ width: '87%' }}></div>
+                    <div
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
+                      style={{ width: "87%" }}
+                    ></div>
                   </div>
                 </div>
 
@@ -183,4 +214,3 @@ const QADocumentationHeroSection = () => {
 };
 
 export default QADocumentationHeroSection;
-

@@ -37,7 +37,7 @@ const MobileTestingHeroSection: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
             <Link href="/contact-us">
-              <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-blue-400 cursor-pointer w-full sm:w-auto">
+              <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-brand-blue hover:shadow-lg cursor-pointer w-full sm:w-auto">
                 <span className="text-base">Get Started Today</span>
                 <FaArrowRight className="w-4 h-5" />
               </button>

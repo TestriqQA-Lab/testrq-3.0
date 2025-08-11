@@ -211,9 +211,6 @@ const MatrimonialAppBenefits = () => {
               <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
                 Calculate ROI
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                View Case Studies
-              </button>
             </div>
           </div>
         </motion.div>
