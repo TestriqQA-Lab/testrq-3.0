@@ -38,16 +38,16 @@ const MobileROISection: React.FC = () => {
   const costComparison = [
     {
       category: "In-House Mobile Testing",
-      setup: "$75,000",
-      monthly: "$20,000",
-      annual: "$315,000",
+      setup: "$50,000",
+      monthly: "$15,000",
+      annual: "$230,000",
       limitations: ["Limited device coverage", "High device procurement costs", "Maintenance overhead"]
     },
     {
       category: "Testriq Mobile Testing",
       setup: "$0",
-      monthly: "$10,000",
-      annual: "$120,000",
+      monthly: "$1,200",
+      annual: "$14,400",
       limitations: ["50+ real devices included", "No procurement costs", "Expert mobile QA team"]
     }
   ];
@@ -162,7 +162,7 @@ const MobileROISection: React.FC = () => {
 
           <div className="text-center mt-8 p-6 bg-green-50 rounded-xl border border-green-200">
             <div className="text-2xl font-bold text-green-600 mb-2">
-              Save $195,000 Annually
+              Save $215,600 Annually
             </div>
             <div className="text-green-700">
               Choose Testriq and reduce your mobile testing costs by 62% while improving quality
