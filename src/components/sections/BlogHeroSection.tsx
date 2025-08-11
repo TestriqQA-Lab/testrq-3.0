@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaSearch, FaRss, FaBell } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 const BlogHeroSection: React.FC = () => {
   return (

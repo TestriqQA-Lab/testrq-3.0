@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 
 interface BlogPost {
-  id: string; // Changed from number to string
+  id: string;
   title: string;
   content: string;
   author: string;
@@ -246,7 +246,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
           <p className="text-gray-700 mb-4">Share it with your team!</p>
           <div className="flex justify-center gap-3 flex-wrap">
             {[
-              { name: "Twitter", icon: "🐦", color: "bg-blue-500", icon: "🐦" },
+              { name: "Twitter", icon: "🐦", color: "bg-blue-500" },
               { name: "LinkedIn", color: "bg-blue-700", icon: "💼" },
               { name: "Facebook", color: "bg-blue-800", icon: "📘" },
               { name: "Reddit", color: "bg-orange-600", icon: "🔗" },

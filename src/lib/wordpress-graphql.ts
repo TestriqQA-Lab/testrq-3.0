@@ -270,7 +270,7 @@ const GET_CATEGORIES_QUERY = `
 `;
 
 // Helper function to make GraphQL requests
-async function graphqlRequest<T>(query: string, variables: Record<string, any> = {}): Promise<T> {
+async function graphqlRequest<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
   try {
     // Use a non-null assertion or type guard if TypeScript still complains
     // However, the check above should be sufficient.

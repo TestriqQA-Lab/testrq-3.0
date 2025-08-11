@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 
 interface Comment {
-  id: number;
+  id: string;
   author: string;
   authorImage: string;
   content: string;
@@ -22,12 +22,12 @@ interface Comment {
 }
 
 interface BlogPostCommentsProps {
-  postId: number;
+  postId: string;
 }
 
 const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
   const [newComment, setNewComment] = useState("");
-  const [replyTo, setReplyTo] = useState<number | null>(null);
+  const [replyTo, setReplyTo] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState("");
 
   const [comments, setComments] = useState<Comment[]>([
@@ -38,7 +38,7 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
     e.preventDefault();
     if (newComment.trim()) {
       const comment: Comment = {
-        id: Date.now(),
+        id: Date.now().toString(),
         author: "You",
         authorImage: "/api/placeholder/40/40",
         content: newComment,
@@ -52,11 +52,11 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
     }
   };
 
-  const handleSubmitReply = (e: React.FormEvent, parentId: number) => {
+  const handleSubmitReply = (e: React.FormEvent, parentId: string) => {
     e.preventDefault();
     if (replyContent.trim()) {
       const reply: Comment = {
-        id: Date.now(),
+        id: Date.now().toString(),
         author: "You",
         authorImage: "/api/placeholder/40/40",
         content: replyContent,
@@ -123,10 +123,7 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
 
             {!isReply && (
               <button
-                onClick={() =>
-                  setReplyTo(replyTo === comment.id ? null : comment.id)
-                }
-                className="flex items-center gap-2 text-gray-500 hover:text-blue-600 transition-colors"
+                onClick={() => setReplyTo(replyTo === comment.id ? null : comment.id)}
               >
                 <FaReply className="w-4 h-4" />
                 <span>Reply</span>
