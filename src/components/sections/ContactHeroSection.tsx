@@ -43,6 +43,16 @@ const ContactHeroSection: React.FC = () => {
     console.log("Form submitted:", formData);
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
+
+    // Reset state
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      message: "",
+      urgency: "normal",
+    });
   };
 
   const quickContactMethods = [
@@ -69,7 +79,7 @@ const ContactHeroSection: React.FC = () => {
     },
   ];
 
-   const scrollToCalendly = () => {
+  const scrollToCalendly = () => {
     const element = document.getElementById("calendly-section");
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
