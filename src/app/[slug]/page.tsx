@@ -162,7 +162,7 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
     "author": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
-      "url": "https://testrq-3-0.vercel.app"
+      "url": `https://testrq-3-0.vercel.app/${caseStudy.slug}`
     },
     "publisher": {
       "@type": "Organization",
