@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   category: string;
   categoryColor: string;
@@ -26,7 +26,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
   // In a real application, this would be fetched based on the current post's category and tags
   const relatedPosts = [
     {
-      id: 2,
+      id: "2",
       title: "Performance Testing Best Practices: Load Testing with JMeter",
       excerpt:
         "Learn how to conduct effective performance testing using Apache JMeter for optimal application performance.",
@@ -42,7 +42,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
       featured: false,
     },
     {
-      id: 3,
+      id: "3",
       title:
         "Mobile App Security Testing: Protecting iOS and Android Applications",
       excerpt:
@@ -59,7 +59,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
       featured: true,
     },
     {
-      id: 4,
+      id: "4",
       title: "API Testing with Postman: From Basics to Advanced Automation",
       excerpt:
         "Master API testing with Postman including collection creation, environment variables, and automated testing.",
@@ -78,28 +78,28 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
 
   const popularPosts = [
     {
-      id: 5,
+      id: "5",
       title: "Cross-Browser Testing Strategies for Modern Web Applications",
       category: "Web Testing",
       readTime: "5 min read",
       views: "6.1K",
     },
     {
-      id: 6,
+      id: "6",
       title: "Cypress vs Playwright: Choosing the Right E2E Testing Framework",
       category: "Test Automation",
       readTime: "9 min read",
       views: "11.4K",
     },
     {
-      id: 7,
+      id: "7",
       title: "Cloud Testing Strategies: Testing in AWS, Azure, and GCP",
       category: "Cloud Testing",
       readTime: "12 min read",
       views: "7.8K",
     },
     {
-      id: 8,
+      id: "8",
       title: "Test Data Management: Best Practices for QA Teams",
       category: "QA Management",
       readTime: "6 min read",

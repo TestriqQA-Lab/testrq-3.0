@@ -1,16 +1,28 @@
 "use client";
 
 import React from "react";
-import { 
-  FaGamepad, 
-  FaMobile, 
-  FaDesktop, 
+import {
+  FaGamepad,
+  FaMobile,
+  FaDesktop,
   FaVrCardboard,
   FaTools,
   FaCheckCircle,
   FaCog,
-  FaRocket
+  FaRocket,
+  FaLaptopCode,
+  FaBoxOpen,
+  FaApple,
+  FaAndroid,
 } from "react-icons/fa";
+
+import {
+  SiUnity,
+  SiUnrealengine,
+  SiAppium,
+  SiSelenium,
+  SiFirebase,
+} from "react-icons/si";
 
 const GamingToolsFrameworkSection: React.FC = () => {
   const testingTools = [
@@ -20,11 +32,27 @@ const GamingToolsFrameworkSection: React.FC = () => {
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Unity Test Framework", description: "Native Unity testing solution" },
-        { name: "Unreal Automation", description: "Unreal Engine testing framework" },
-        { name: "GameDriver", description: "Cross-platform game automation" },
-        { name: "AltTester", description: "Unity UI test automation" }
-      ]
+        {
+          name: "Unity Test Framework",
+          description: "Native Unity testing solution",
+          icon: <SiUnity className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Unreal Automation",
+          description: "Unreal Engine testing framework",
+          icon: <SiUnrealengine className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "GameDriver",
+          description: "Cross-platform game automation",
+          icon: <FaLaptopCode className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "AltTester",
+          description: "Unity UI test automation",
+          icon: <FaBoxOpen className="w-5 h-5 text-blue-500" />,
+        },
+      ],
     },
     {
       category: "Mobile Game Testing",
@@ -32,11 +60,27 @@ const GamingToolsFrameworkSection: React.FC = () => {
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Appium", description: "Mobile app automation framework" },
-        { name: "TestFlight", description: "iOS beta testing platform" },
-        { name: "Firebase Test Lab", description: "Android testing infrastructure" },
-        { name: "GameBench", description: "Mobile game performance testing" }
-      ]
+        {
+          name: "Appium",
+          description: "Mobile app automation framework",
+          icon: <SiAppium className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "TestFlight",
+          description: "iOS beta testing platform",
+          icon: <FaApple className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Firebase Test Lab",
+          description: "Android testing infrastructure",
+          icon: <SiFirebase className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "GameBench",
+          description: "Mobile game performance testing",
+          icon: <FaMobile className="w-5 h-5 text-blue-500" />,
+        },
+      ],
     },
     {
       category: "Performance Testing",
@@ -44,11 +88,27 @@ const GamingToolsFrameworkSection: React.FC = () => {
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Unity Profiler", description: "Unity performance analysis" },
-        { name: "Unreal Insights", description: "Unreal Engine profiling" },
-        { name: "Xcode Instruments", description: "iOS performance monitoring" },
-        { name: "Android Studio Profiler", description: "Android performance analysis" }
-      ]
+        {
+          name: "Unity Profiler",
+          description: "Unity performance analysis",
+          icon: <SiUnity className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Unreal Insights",
+          description: "Unreal Engine profiling",
+          icon: <SiUnrealengine className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Xcode Instruments",
+          description: "iOS performance monitoring",
+          icon: <FaApple className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Android Studio Profiler",
+          description: "Android performance analysis",
+          icon: <FaAndroid className="w-5 h-5 text-blue-500" />,
+        },
+      ],
     },
     {
       category: "Automation Testing",
@@ -56,35 +116,75 @@ const GamingToolsFrameworkSection: React.FC = () => {
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Selenium", description: "Web-based game automation" },
-        { name: "TestComplete", description: "Desktop game testing" },
-        { name: "Ranorex", description: "GUI test automation" },
-        { name: "Squish", description: "Cross-platform GUI testing" }
-      ]
-    }
+        {
+          name: "Selenium",
+          description: "Web-based game automation",
+          icon: <SiSelenium className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "TestComplete",
+          description: "Desktop game testing",
+          icon: <FaCheckCircle className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Ranorex",
+          description: "GUI test automation",
+          icon: <FaCog className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Squish",
+          description: "Cross-platform GUI testing",
+          icon: <FaTools className="w-5 h-5 text-blue-500" />,
+        },
+      ],
+    },
   ];
 
   const platformFrameworks = [
     {
       name: "Mobile Platforms",
       description: "iOS and Android game testing frameworks",
-      features: ["Touch Controls", "Device Compatibility", "App Store Compliance", "Performance"]
+      features: [
+        "Touch Controls",
+        "Device Compatibility",
+        "App Store Compliance",
+        "Performance",
+      ],
+      icon: <FaMobile className="w-8 h-8 text-blue-500" />,
     },
     {
       name: "PC Gaming",
       description: "Windows, Mac, and Linux game validation",
-      features: ["Hardware Configs", "Graphics Settings", "Input Devices", "Steam Integration"]
+      features: [
+        "Hardware Configs",
+        "Graphics Settings",
+        "Input Devices",
+        "Steam Integration",
+      ],
+      icon: <FaDesktop className="w-8 h-8 text-blue-500" />,
     },
     {
       name: "Console Gaming",
       description: "PlayStation, Xbox, and Nintendo testing",
-      features: ["Certification", "Platform Features", "Controllers", "Online Services"]
+      features: [
+        "Certification",
+        "Platform Features",
+        "Controllers",
+        "Online Services",
+      ],
+      icon: <FaGamepad className="w-8 h-8 text-blue-500" />,
     },
     {
       name: "AR/VR Gaming",
       description: "Immersive gaming experience validation",
-      features: ["Motion Tracking", "Spatial Audio", "Comfort Testing", "Hand Tracking"]
-    }
+      features: [
+        "Motion Tracking",
+        "Spatial Audio",
+        "Comfort Testing",
+        "Hand Tracking",
+      ],
+      icon: <FaVrCardboard className="w-8 h-8 text-blue-500" />,
+    },
   ];
 
   return (
@@ -98,34 +198,46 @@ const GamingToolsFrameworkSection: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Advanced Gaming Testing
-            <span className="block text-brand-blue">
-              Tools & Technologies
-            </span>
+            <span className="block text-brand-blue">Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage cutting-edge game testing tools and frameworks specifically designed for gaming applications, ensuring optimized game performance, immersive gameplay, and flawless gaming experiences across all platforms.
-
+            Leverage cutting-edge game testing tools and frameworks specifically
+            designed for gaming applications, ensuring optimized game
+            performance, immersive gameplay, and flawless gaming experiences
+            across all platforms.
           </p>
         </div>
 
         {/* Testing Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {testingTools.map((category, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ring-1 ring-brand-blue hover:ring-2">
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group ring-1 ring-brand-blue hover:ring-2"
+            >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <category.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">{category.category}</h3>
+                <h3 className="text-xl font-bold text-gray-900">
+                  {category.category}
+                </h3>
               </div>
-              
+
               <div className="space-y-4">
                 {category.tools.map((tool, toolIndex) => (
-                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div
+                    key={toolIndex}
+                    className="flex items-center gap-3 p-3 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors"
+                  >
+                    {tool.icon}
                     <div>
-                      <h4 className="font-semibold text-gray-900">{tool.name}</h4>
-                      <p className="text-sm text-gray-600">{tool.description}</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {tool.name}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {tool.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -139,23 +251,31 @@ const GamingToolsFrameworkSection: React.FC = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-green-100 rounded-full px-6 py-2 mb-6">
               <FaGamepad className="w-4 h-4 text-green-600" />
-              <span className="text-sm font-semibold text-green-600">Platform Frameworks</span>
+              <span className="text-sm font-semibold text-green-600">
+                Platform Frameworks
+              </span>
             </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Cross-Platform Gaming Validation
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive game testing frameworks ensuring your games deliver flawless performance across all gaming platforms and devices, including mobile, console, PC, and browser-based environments.
-
+              Comprehensive game testing frameworks ensuring your games deliver
+              flawless performance across all gaming platforms and devices,
+              including mobile, console, PC, and browser-based environments.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {platformFrameworks.map((framework, index) => (
-              <div key={index} className="border border-gray-200 rounded-2xl p-6 hover:ring-2 hover:ring-brand-blue transition-all duration-300">
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{framework.name}</h4>
+              <div
+                key={index}
+                className="border border-gray-200 rounded-2xl p-6 hover:ring-2 hover:ring-brand-blue transition-all duration-300"
+              >
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {framework.name}
+                </h4>
                 <p className="text-gray-600 mb-4">{framework.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-2">
                   {framework.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
@@ -172,9 +292,12 @@ const GamingToolsFrameworkSection: React.FC = () => {
         {/* Technology Stack */}
         <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Our Gaming Testing Stack</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Gaming Testing Stack
+            </h3>
             <p className=" text-lg max-w-2xl mx-auto">
-              Advanced technologies and methodologies for comprehensive gaming application validation
+              Advanced technologies and methodologies for comprehensive gaming
+              application validation
             </p>
           </div>
 

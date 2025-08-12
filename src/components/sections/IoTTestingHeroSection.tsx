@@ -47,7 +47,7 @@ const IoTTestingHeroSection: React.FC = () => {
           {/* Stats */}
           <div className="flex flex-wrap justify-center xl:justify-start gap-6">
             {[
-              ["500+", "IoT Devices Tested"],
+              ["30+", "IoT Devices Tested"],
               ["99.7%", "Issue Detection Rate"],
               ["36 hr", "Average Turnaround"],
               ["24/7", "Support Available"],

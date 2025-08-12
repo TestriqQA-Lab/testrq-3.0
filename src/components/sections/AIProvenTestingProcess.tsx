@@ -267,9 +267,9 @@ const AIProvenTestingProcess: React.FC = () => {
                   Duration: {steps[activeStep].duration}
                 </div>
 
-                {activeStep < steps.length - 1 && (
+                {(
                   <button
-                    onClick={() => setActiveStep(activeStep + 1)}
+                    onClick={() => setActiveStep((activeStep + 1)%steps.length)}
                     className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                   >
                     <span>Next Step</span>

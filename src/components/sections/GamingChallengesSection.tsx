@@ -196,7 +196,7 @@ const GamingChallengesSection: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center p-4 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
-                <div className="text-2xl font-bold mb-2">500+</div>
+                <div className="text-2xl font-bold mb-2">50+</div>
                 <div className=" text-sm">Games Tested</div>
               </div>
               <div className="text-center p-4 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
@@ -209,14 +209,6 @@ const GamingChallengesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
-                Get Gaming Testing Quote
-              </button>
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
-                View Gaming Case Studies
-              </button>
-            </div>
           </div>
         </div>
       </div>

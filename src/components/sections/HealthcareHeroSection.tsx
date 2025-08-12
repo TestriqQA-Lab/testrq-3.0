@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaHeartbeat,
@@ -11,7 +12,7 @@ import {
   FaChartLine,
   FaCheckCircle,
   FaLock,
-  FaClipboardCheck
+  FaClipboardCheck,
 } from "react-icons/fa";
 
 const HealthcareHeroSection: React.FC = () => {
@@ -19,14 +20,14 @@ const HealthcareHeroSection: React.FC = () => {
     { value: "100%", label: "HIPAA Compliance", icon: FaShieldAlt },
     { value: "200+", label: "Healthcare Apps Tested", icon: FaHeartbeat },
     { value: "50M+", label: "Patient Records Secured", icon: FaLock },
-    { value: "24/7", label: "Security Monitoring", icon: FaClipboardCheck }
+    { value: "24/7", label: "Security Monitoring", icon: FaClipboardCheck },
   ];
 
   const trustBadges = [
     "HIPAA Compliant Testing",
     "FDA Validation Support",
     "SOC 2 Type II Certified",
-    "ISO 27001 Security Standards"
+    "ISO 27001 Security Standards",
   ];
 
   return (
@@ -75,52 +76,68 @@ const HealthcareHeroSection: React.FC = () => {
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Secure Your
-              <span className="block text-brand-blue">
-                Healthcare Software
-              </span>
+              <span className="block text-brand-blue">Healthcare Software</span>
               with Expert Medical QA
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure patient safety, regulatory compliance, and healthcare data security with our specialized healthcare testing services. From EHR system testing to medical software QA, we validate your healthcare solutions meet HIPAA compliance, FDA regulations, and other industry standards.
+              Ensure patient safety, regulatory compliance, and healthcare data
+              security with our specialized healthcare testing services. From
+              EHR system testing to medical software QA, we validate your
+              healthcare solutions meet HIPAA compliance, FDA regulations, and
+              other industry standards.
             </p>
 
             {/* Key Benefits */}
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">HIPAA Compliance Testing</span>
+                <span className="text-gray-700 font-medium">
+                  HIPAA Compliance Testing
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">FDA Validation Support</span>
+                <span className="text-gray-700 font-medium">
+                  FDA Validation Support
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">Medical Device Testing</span>
+                <span className="text-gray-700 font-medium">
+                  Medical Device Testing
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">EHR Integration Testing</span>
+                <span className="text-gray-700 font-medium">
+                  EHR Integration Testing
+                </span>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <button className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-98 transition-all duration-300 flex items-center justify-center gap-2">
-                <FaRocket className="w-5 h-5" />
-                Start Healthcare Audit
-              </button>
-              <button className="ring-2 ring-brand-blue text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:ring-3 hover:text-sky-600 transition-all duration-300 flex items-center justify-center gap-2">
-                <FaUsers className="w-5 h-5" />
-                Schedule Consultation
-              </button>
+              <Link href="/contact-us">
+                <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-98 transition-all duration-300 flex items-center justify-center gap-2">
+                  <FaRocket className="w-5 h-5" />
+                  Start Healthcare Audit
+                </button>
+              </Link>
+              <Link href="/contact-us">
+                <button className="ring-2 cursor-pointer ring-brand-blue text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:ring-3 hover:text-sky-600 transition-all duration-300 flex items-center justify-center gap-2">
+                  <FaUsers className="w-5 h-5" />
+                  Schedule Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Trust Badges */}
             <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-4 text-center">Trusted by healthcare organizations worldwide</p>
+              <p className="text-sm text-gray-500 mb-4 text-center">
+                Trusted by healthcare organizations worldwide
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-2 text-center gap-3 items-center">
                 {trustBadges.map((badge, index) => (
                   <span
@@ -139,14 +156,23 @@ const HealthcareHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Proven Healthcare Expertise</h3>
-                <p className="text-gray-600">Results that ensure patient safety and compliance</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Proven Healthcare Expertise
+                </h3>
+                <p className="text-gray-600">
+                  Results that ensure patient safety and compliance
+                </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 {keyStats.map((stat, index) => (
-                  <div key={index} className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                    <div className="text-2xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                  <div
+                    key={index}
+                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
+                  >
+                    <div className="text-2xl font-bold text-gray-900 mb-1">
+                      {stat.value}
+                    </div>
                     <div className="text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}
@@ -157,20 +183,28 @@ const HealthcareHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl p-8 border border-green-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-green-600" />
-                <h4 className="text-xl font-bold text-gray-900">Average Client Results</h4>
+                <h4 className="text-xl font-bold text-gray-900">
+                  Average Client Results
+                </h4>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Compliance Achievement Rate</span>
+                  <span className="text-gray-700">
+                    Compliance Achievement Rate
+                  </span>
                   <span className="font-bold text-green-600">100%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Security Vulnerability Reduction</span>
+                  <span className="text-gray-700">
+                    Security Vulnerability Reduction
+                  </span>
                   <span className="font-bold text-green-600">-95%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Time to Market Acceleration</span>
+                  <span className="text-gray-700">
+                    Time to Market Acceleration
+                  </span>
                   <span className="font-bold text-green-600">-40%</span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -185,17 +219,24 @@ const HealthcareHeroSection: React.FC = () => {
         {/* Bottom CTA Strip */}
         <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white text-center">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Ready to Secure Your Healthcare Software?</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Ready to Secure Your Healthcare Software?
+            </h3>
             <p className="text-blue-100 mb-6 text-lg">
-              Join 200+ healthcare organizations that trust Testriq for comprehensive medical software testing.
+              Join 200+ healthcare organizations that trust Testriq for
+              comprehensive medical software testing.
             </p>
             <div className="flex flex-col text-[theme(color.brand.blue)] sm:flex-row gap-4 justify-center">
-              <button className="bg-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
-                Get Free Security Assessment
-              </button>
-              <button className="bg-white bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                View Healthcare Case Studies
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
+                  Get Free Security Assessment
+                </button>
+              </Link>
+              <Link href="/case-studies">
+                <button className="bg-white cursor-pointer bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+                  View Healthcare Case Studies
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -203,8 +244,13 @@ const HealthcareHeroSection: React.FC = () => {
 
       <style jsx>{`
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
         }
         .animate-float {
           animation: float 6s ease-in-out infinite;
@@ -224,4 +270,3 @@ const HealthcareHeroSection: React.FC = () => {
 };
 
 export default HealthcareHeroSection;
-

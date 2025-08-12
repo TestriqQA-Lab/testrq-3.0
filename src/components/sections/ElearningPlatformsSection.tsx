@@ -2,18 +2,56 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaGraduationCap } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaChalkboardTeacher,
+  FaGoogle,
+  FaSchool,
+  FaBuilding,
+  FaBookOpen,
+  FaLaptopCode,
+} from "react-icons/fa";
+
+import { SiMoodle } from "react-icons/si";
 
 const ElearningPlatformsSection: React.FC = () => {
   const platforms = [
-    "Moodle",
-    "Canvas",
-    "Blackboard",
-    "Google Classroom",
-    "Schoology",
-    "D2L Brightspace",
-    "Custom LMS",
-    "Corporate Training Platforms",
+    {
+      name: "Moodle",
+      icon: <SiMoodle className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Canvas",
+      icon: (
+        <FaChalkboardTeacher className="w-8 h-8 text-brand-blue mx-auto mb-3" />
+      ),
+    },
+    {
+      name: "Blackboard",
+      icon: <FaSchool className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Google Classroom",
+      icon: <FaGoogle className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Schoology",
+      icon: (
+        <FaGraduationCap className="w-8 h-8 text-brand-blue mx-auto mb-3" />
+      ),
+    },
+    {
+      name: "D2L Brightspace",
+      icon: <FaBookOpen className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Custom LMS",
+      icon: <FaLaptopCode className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
+    {
+      name: "Corporate Training Platforms",
+      icon: <FaBuilding className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
+    },
   ];
 
   return (
@@ -36,8 +74,8 @@ const ElearningPlatformsSection: React.FC = () => {
               key={index}
               className="bg-gray-50 rounded-xl p-6 text-center ring-1 ring-brand-blue hover:ring-3 hover:shadow-lg transition-shadow"
             >
-              <FaGraduationCap className="w-8 h-8 text-brand-blue mx-auto mb-3" />
-              <h3 className="font-semibold text-gray-900">{platform}</h3>
+              {platform.icon}
+              <h3 className="font-semibold text-gray-900">{platform.name}</h3>
             </div>
           ))}
         </div>

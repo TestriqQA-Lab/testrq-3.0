@@ -34,7 +34,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaCalendarAlt,
       title: "Schedule a Meeting",
       description: "Book a personalized consultation with our QA experts",
-      details: "Available slots: Mon-Fri, 9 AM - 6 PM EST",
+      details: "Available slots: Mon-Fri, 9 AM - 6 PM IST",
       value: "Book Now",
       action: "#calendly-section",
       color: "from-purple-500 to-purple-700",
@@ -44,7 +44,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaPhone,
       title: "Phone Support",
       description: "Speak directly with our team for immediate assistance",
-      details: "(+91) 915-2929-343 • Mon-Fri, 9 AM - 6 PM EST",
+      details: "(+91) 915-2929-343 • Mon-Fri, 9 AM - 6 PM IST",
       value: "Call Now",
       action: "tel:+919152929343",
       color: "from-green-500 to-green-700",
@@ -74,7 +74,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaComments,
       title: "Live Chat",
       description: "Get instant answers to your testing questions",
-      details: "Available Mon-Fri, 8 AM - 8 PM EST",
+      details: "Available Mon-Fri, 8 AM - 8 PM IST",
       value: "Start Chat",
       action: "#",
       color: "from-teal-500 to-teal-700",
@@ -120,8 +120,8 @@ const ContactMethodsSection: React.FC = () => {
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM EST", available: true },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM EST", available: true },
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM IST", available: true },
+    { day: "Saturday", hours: "10:00 AM - 4:00 PM IST", available: true },
     { day: "Sunday", hours: "Emergency Support Only", available: false },
   ];
 

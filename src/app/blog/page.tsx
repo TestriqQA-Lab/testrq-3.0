@@ -58,28 +58,17 @@ export const metadata: Metadata = {
     title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
     description: "Discover expert insights on software testing, QA automation, performance testing, security testing, and mobile app testing.",
     type: "website",
-    url: "https://testriq.com/blog",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
-    description: "Discover expert insights on software testing, QA automation, performance testing, security testing, and mobile app testing.",
-  },
-  alternates: {
-    canonical: "https://testriq.com/blog",
   },
 };
 
 export default function BlogPage() {
   return (
-    <div>
-      <MainLayout>
-        <BlogHeroSection />
-        <BlogCategories />
-        <BlogPostsGrid />
-        <BlogNewsletter />
-      </MainLayout>
-    </div>
+    <MainLayout>
+      <BlogHeroSection />
+      <BlogCategories />
+      <BlogPostsGrid />
+      <BlogNewsletter />
+    </MainLayout>
   );
 }
 

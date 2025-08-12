@@ -160,7 +160,7 @@ const CareersApplicationProcessSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
+    <section className="py-16 bg-white px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -332,7 +332,7 @@ const CareersApplicationProcessSection: React.FC = () => {
           <div className="mt-8 text-blue-100 text-sm">
             <p>
               Questions about the process? Email us at{" "}
-              <Link href="mailto:hr@testriq.com" className="font-semibold">hr@testriq.com</Link>
+              <Link href="mailto:hr@testriq.com" className="font-semibold">contact@testriq.com</Link>
             </p>
           </div>
         </div>

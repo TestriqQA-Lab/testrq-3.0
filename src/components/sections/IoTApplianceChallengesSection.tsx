@@ -216,7 +216,7 @@ const IoTChallengesSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 text-brand-blue gap-6 mb-8">
               <div className="text-center p-4 bg-white bg-opacity-10 rounded-2xl">
-                <div className="text-2xl font-bold mb-2">1000+</div>
+                <div className="text-2xl font-bold mb-2">30+</div>
                 <div className=" text-sm">IoT Devices Tested</div>
               </div>
               <div className="text-center p-4 bg-white text-brand-blue bg-opacity-10 rounded-2xl">
@@ -227,15 +227,6 @@ const IoTChallengesSection: React.FC = () => {
                 <div className="text-2xl font-bold mb-2">90%</div>
                 <div className="text-sm">Security Issue Reduction</div>
               </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
-              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
-                Get IoT Testing Quote
-              </button>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                View IoT Case Studies
-              </button>
             </div>
           </div>
         </div>

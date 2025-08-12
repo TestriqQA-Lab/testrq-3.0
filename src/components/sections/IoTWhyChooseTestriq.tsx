@@ -280,7 +280,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="relative">
-              <div className="text-3xl font-bold text-teal-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">30+</div>
               <div className="text-gray-700 text-sm">IoT Devices</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
             </div>

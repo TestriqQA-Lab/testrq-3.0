@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getPosts } from '@/lib/wordpress-graphql';
+import { getPosts, WordPressPost } from '@/lib/wordpress-graphql';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://testrq-3-0.vercel.app';
@@ -77,7 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Get all blog posts using GraphQL pagination
-  let allPosts: any[] = [];
+  let allPosts: WordPressPost[] = [];
   let hasNextPage = true;
   let endCursor: string | undefined = undefined;
 

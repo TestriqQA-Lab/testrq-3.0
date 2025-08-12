@@ -1,16 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
-import { 
-  FaQuestionCircle, 
-  FaChevronDown, 
+import {
+  FaQuestionCircle,
+  FaChevronDown,
   FaChevronUp,
   FaGamepad,
   FaMobile,
   FaDesktop,
   FaDollarSign,
   FaClock,
-  FaUsers
+  FaUsers,
 } from "react-icons/fa";
 
 const GamingFAQSection: React.FC = () => {
@@ -24,17 +25,21 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What types of games do you test?",
-          answer: "We test all types of games including mobile games (iOS/Android), PC games (Windows/Mac/Linux), console games (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based games. Our game testing services cover all genres—from casual puzzle games to complex AAA titles, MMORPGs, and battle royale games, ensuring cross-platform game compatibility, immersive gameplay, and flawless gaming experiences."
+          answer:
+            "We test all types of games including mobile games (iOS/Android), PC games (Windows/Mac/Linux), console games (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based games. Our game testing services cover all genres—from casual puzzle games to complex AAA titles, MMORPGs, and battle royale games, ensuring cross-platform game compatibility, immersive gameplay, and flawless gaming experiences.",
         },
         {
           question: "How long does game testing typically take?",
-          answer: "Testing duration varies based on game complexity and scope. Mobile games typically take 2-6 weeks, PC games 4-8 weeks, console games 6-12 weeks, and AAA titles can take 12-24 weeks. We provide detailed timelines during project planning and can work with your development schedule."
+          answer:
+            "Testing duration varies based on game complexity and scope. Mobile games typically take 2-6 weeks, PC games 4-8 weeks, console games 6-12 weeks, and AAA titles can take 12-24 weeks. We provide detailed timelines during project planning and can work with your development schedule.",
         },
         {
-          question: "Do you test games during development or only after completion?",
-          answer: "We offer both approaches. We can integrate with your development process for continuous testing throughout development (recommended) or conduct comprehensive testing on completed builds. Early testing integration helps identify and fix issues sooner, reducing overall costs and time to market."
-        }
-      ]
+          question:
+            "Do you test games during development or only after completion?",
+          answer:
+            "We offer both approaches. We can integrate with your development process for continuous testing throughout development (recommended) or conduct comprehensive testing on completed builds. Early testing integration helps identify and fix issues sooner, reducing overall costs and time to market.",
+        },
+      ],
     },
     {
       icon: FaMobile,
@@ -43,17 +48,20 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "How many devices do you test mobile games on?",
-          answer: "We test on 500+ real devices covering iOS (iPhone/iPad) and Android phones/tablets. Our device lab includes popular models, different OS versions, various screen sizes, and different hardware configurations to ensure comprehensive compatibility testing."
+          answer:
+            "We test on 500+ real devices covering iOS (iPhone/iPad) and Android phones/tablets. Our device lab includes popular models, different OS versions, various screen sizes, and different hardware configurations to ensure comprehensive compatibility testing.",
         },
         {
           question: "Do you help with app store approval?",
-          answer: "Yes, we ensure your mobile game meets all App Store and Google Play requirements. Our testing includes app store compliance validation, content rating guidelines, in-app purchase testing, and submission preparation to maximize approval chances."
+          answer:
+            "Yes, we ensure your mobile game meets all App Store and Google Play requirements. Our testing includes app store compliance validation, content rating guidelines, in-app purchase testing, and submission preparation to maximize approval chances.",
         },
         {
           question: "Can you test mobile game performance and battery usage?",
-          answer: "Absolutely. We conduct comprehensive performance testing including frame rate analysis, loading time optimization, memory usage monitoring, battery consumption testing, and thermal performance evaluation across different device configurations."
-        }
-      ]
+          answer:
+            "Absolutely. We conduct comprehensive performance testing including frame rate analysis, loading time optimization, memory usage monitoring, battery consumption testing, and thermal performance evaluation across different device configurations.",
+        },
+      ],
     },
     {
       icon: FaDesktop,
@@ -62,17 +70,21 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What PC configurations do you test on?",
-          answer: "We test on 200+ PC configurations including different hardware combinations (CPU, GPU, RAM), operating systems (Windows 10/11, macOS, Linux), and various driver versions. We also test minimum, recommended, and high-end system requirements."
+          answer:
+            "We test on 200+ PC configurations including different hardware combinations (CPU, GPU, RAM), operating systems (Windows 10/11, macOS, Linux), and various driver versions. We also test minimum, recommended, and high-end system requirements.",
         },
         {
           question: "Do you handle console certification testing?",
-          answer: "Yes, we provide console certification support for PlayStation, Xbox, and Nintendo Switch. Our team is familiar with platform-specific requirements, technical certification criteria, and submission processes to help you achieve platform approval."
+          answer:
+            "Yes, we provide console certification support for PlayStation, Xbox, and Nintendo Switch. Our team is familiar with platform-specific requirements, technical certification criteria, and submission processes to help you achieve platform approval.",
         },
         {
-          question: "Can you test controller compatibility and accessibility features?",
-          answer: "We test all types of controllers including standard gamepads, specialized controllers, keyboard/mouse combinations, and accessibility devices. We also validate accessibility features to ensure your game is inclusive and meets accessibility standards."
-        }
-      ]
+          question:
+            "Can you test controller compatibility and accessibility features?",
+          answer:
+            "We test all types of controllers including standard gamepads, specialized controllers, keyboard/mouse combinations, and accessibility devices. We also validate accessibility features to ensure your game is inclusive and meets accessibility standards.",
+        },
+      ],
     },
     {
       icon: FaUsers,
@@ -81,17 +93,20 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "How do you test multiplayer games?",
-          answer: "We conduct comprehensive multiplayer testing including network synchronization, matchmaking systems, chat/voice communication, social features, and server load testing. We simulate various network conditions and test with different player counts to ensure stable multiplayer experiences."
+          answer:
+            "We conduct comprehensive multiplayer testing including network synchronization, matchmaking systems, chat/voice communication, social features, and server load testing. We simulate various network conditions and test with different player counts to ensure stable multiplayer experiences.",
         },
         {
           question: "Can you test games with large player counts?",
-          answer: "Yes, we can simulate and test games supporting thousands of concurrent players. We use automated testing tools and real player testing to validate server performance, database optimization, and network architecture under high load conditions."
+          answer:
+            "Yes, we can simulate and test games supporting thousands of concurrent players. We use automated testing tools and real player testing to validate server performance, database optimization, and network architecture under high load conditions.",
         },
         {
           question: "Do you test anti-cheat and security features?",
-          answer: "We provide comprehensive security testing including anti-cheat system validation, exploit detection, data protection testing, and server security assessment. Our security experts help protect your game from cheating, hacking, and data breaches."
-        }
-      ]
+          answer:
+            "We provide comprehensive security testing including anti-cheat system validation, exploit detection, data protection testing, and server security assessment. Our security experts help protect your game from cheating, hacking, and data breaches.",
+        },
+      ],
     },
     {
       icon: FaDollarSign,
@@ -100,17 +115,20 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "How much does game testing cost?",
-          answer: "Costs vary based on game complexity, platforms, and testing scope. Mobile game testing typically ranges from $50K-$300K, PC games $100K-$600K, and console games $200K-$800K. We provide detailed quotes after understanding your specific requirements and can work with various budget ranges."
+          answer:
+            "Costs vary based on game complexity, platforms, and testing scope. Mobile game testing typically ranges from $50K-$300K, PC games $100K-$600K, and console games $200K-$800K. We provide detailed quotes after understanding your specific requirements and can work with various budget ranges.",
         },
         {
           question: "Do you offer different pricing models?",
-          answer: "Yes, we offer flexible pricing including fixed-price projects, time-and-materials, milestone-based payments, and ongoing testing retainers. We can also provide risk-sharing partnerships for indie developers and revenue-sharing models for certain projects."
+          answer:
+            "Yes, we offer flexible pricing including fixed-price projects, time-and-materials, milestone-based payments, and ongoing testing retainers. We can also provide risk-sharing partnerships for indie developers and revenue-sharing models for certain projects.",
         },
         {
           question: "What ROI can I expect from professional game testing?",
-          answer: "Our clients typically see 1,000%-6,250% ROI through successful launches, reduced post-launch costs, higher player retention, and increased revenue. The investment in quality testing pays for itself many times over through better reviews, word-of-mouth marketing, and player satisfaction."
-        }
-      ]
+          answer:
+            "Our clients typically see 1,000%-6,250% ROI through successful launches, reduced post-launch costs, higher player retention, and increased revenue. The investment in quality testing pays for itself many times over through better reviews, word-of-mouth marketing, and player satisfaction.",
+        },
+      ],
     },
     {
       icon: FaClock,
@@ -119,18 +137,21 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "Can you work with tight launch deadlines?",
-          answer: "Yes, we can scale our team and resources to meet tight deadlines. We offer expedited testing services, parallel testing streams, and 24/7 testing capabilities when needed. However, we always recommend allowing adequate time for thorough testing to ensure quality."
+          answer:
+            "Yes, we can scale our team and resources to meet tight deadlines. We offer expedited testing services, parallel testing streams, and 24/7 testing capabilities when needed. However, we always recommend allowing adequate time for thorough testing to ensure quality.",
         },
         {
           question: "How do you handle game updates and patches?",
-          answer: "We provide ongoing testing support for game updates, patches, and new content releases. Our regression testing ensures updates don't break existing functionality, and we can set up automated testing pipelines for continuous integration and deployment."
+          answer:
+            "We provide ongoing testing support for game updates, patches, and new content releases. Our regression testing ensures updates don't break existing functionality, and we can set up automated testing pipelines for continuous integration and deployment.",
         },
         {
           question: "What happens if critical bugs are found close to launch?",
-          answer: "We provide rapid response for critical issues with dedicated teams working around the clock. We help prioritize bugs, provide detailed reproduction steps, work closely with your development team, and conduct expedited retesting to minimize launch delays."
-        }
-      ]
-    }
+          answer:
+            "We provide rapid response for critical issues with dedicated teams working around the clock. We help prioritize bugs, provide detailed reproduction steps, work closely with your development team, and conduct expedited retesting to minimize launch delays.",
+        },
+      ],
+    },
   ];
 
   const toggleFAQ = (categoryIndex: number, faqIndex: number) => {
@@ -149,27 +170,31 @@ const GamingFAQSection: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Gaming Testing
-            <span className="block text-brand-blue">
-              Questions & Answers
-            </span>
+            <span className="block text-brand-blue">Questions & Answers</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get answers to the most common questions about gaming software testing, 
-            platform requirements, and our comprehensive testing services.
+            Get answers to the most common questions about gaming software
+            testing, platform requirements, and our comprehensive testing
+            services.
           </p>
         </div>
 
         {/* FAQ Categories */}
         <div className="space-y-8">
           {faqCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div
+              key={categoryIndex}
+              className="bg-white rounded-3xl shadow-lg overflow-hidden"
+            >
               {/* Category Header */}
               <div className={`bg-gradient-to-r ${category.color} p-6`}>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
                     <category.icon className="w-6 h-6 text-brand-blue" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
+                  <h3 className="text-2xl font-bold text-white">
+                    {category.title}
+                  </h3>
                 </div>
               </div>
 
@@ -179,14 +204,19 @@ const GamingFAQSection: React.FC = () => {
                   {category.faqs.map((faq, faqIndex) => {
                     const globalIndex = categoryIndex * 100 + faqIndex;
                     const isOpen = openFAQ === globalIndex;
-                    
+
                     return (
-                      <div key={faqIndex} className="border border-gray-200 rounded-2xl overflow-hidden">
+                      <div
+                        key={faqIndex}
+                        className="border border-gray-200 rounded-2xl overflow-hidden"
+                      >
                         <button
                           onClick={() => toggleFAQ(categoryIndex, faqIndex)}
                           className="w-full p-6 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
                         >
-                          <h4 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h4>
+                          <h4 className="text-lg font-semibold text-gray-900 pr-4">
+                            {faq.question}
+                          </h4>
                           <div className="flex-shrink-0">
                             {isOpen ? (
                               <FaChevronUp className="w-5 h-5 text-[theme(color.brand.blue)]" />
@@ -195,11 +225,13 @@ const GamingFAQSection: React.FC = () => {
                             )}
                           </div>
                         </button>
-                        
+
                         {isOpen && (
                           <div className="px-6 pb-6">
                             <div className="pt-4 border-t border-gray-100">
-                              <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                              <p className="text-gray-600 leading-relaxed">
+                                {faq.answer}
+                              </p>
                             </div>
                           </div>
                         )}
@@ -220,16 +252,16 @@ const GamingFAQSection: React.FC = () => {
             </div>
             <h3 className="text-3xl font-bold mb-4">Still Have Questions?</h3>
             <p className="text-blue-100 mb-8 text-lg">
-              Our gaming testing experts are here to help. Get personalized answers 
-              to your specific game testing questions and project requirements.
+              Our gaming testing experts are here to help. Get personalized
+              answers to your specific game testing questions and project
+              requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                Schedule Gaming Consultation
-              </button>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
-                Contact Gaming Team
-              </button>
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
+                  Schedule Gaming Consultation
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -240,24 +272,36 @@ const GamingFAQSection: React.FC = () => {
             <div className="w-12 h-12 bg-[theme(color.brand.blue)] rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaQuestionCircle className="w-6 h-6 text-white" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Technical Questions</h4>
-            <p className="text-gray-600 text-sm">Get detailed technical answers from our gaming testing specialists</p>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">
+              Technical Questions
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Get detailed technical answers from our gaming testing specialists
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
             <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaGamepad className="w-6 h-6 text-white" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Platform Guidance</h4>
-            <p className="text-gray-600 text-sm">Expert advice on platform-specific requirements and certification</p>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">
+              Platform Guidance
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Expert advice on platform-specific requirements and certification
+            </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
             <div className="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaDollarSign className="w-6 h-6 text-white" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">Pricing & Proposals</h4>
-            <p className="text-gray-600 text-sm">Custom quotes and project proposals tailored to your game</p>
+            <h4 className="text-lg font-bold text-gray-900 mb-2">
+              Pricing & Proposals
+            </h4>
+            <p className="text-gray-600 text-sm">
+              Custom quotes and project proposals tailored to your game
+            </p>
           </div>
         </div>
       </div>

@@ -233,7 +233,7 @@ const CareersOpenPositions: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24" id="view-open-position">
+    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24" id="open-positions-section">
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16">

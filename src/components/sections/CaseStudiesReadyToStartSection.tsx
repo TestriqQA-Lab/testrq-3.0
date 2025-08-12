@@ -38,20 +38,17 @@ const CaseStudiesReadyToStartSection = () => {
       title: "Schedule Consultation",
       description:
         "Book a free 30-minute consultation to discuss your testing needs",
-      action: "Book Now",
     },
     {
       step: 2,
       title: "Receive Custom Proposal",
       description:
         "Get a tailored testing strategy and proposal within 24 hours",
-      action: "Get Proposal",
     },
     {
       step: 3,
       title: "Start Your Project",
       description: "Begin your testing journey with our expert team",
-      action: "Get Started",
     },
   ];
 
@@ -60,7 +57,7 @@ const CaseStudiesReadyToStartSection = () => {
       icon: FaCalendarAlt,
       title: "Schedule a Call",
       description: "Book a free consultation at your convenience",
-      action: "/contact-us",
+      action: "/contact-us#calendly-section",
       text: "Schedule Now",
       primary: true,
     },
@@ -132,6 +129,27 @@ const CaseStudiesReadyToStartSection = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Next Steps */}
+        <div className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 rounded-xl p-8 mb-16">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
+            How to Get Started
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {nextSteps.map((step) => (
+              <div key={step.step} className="text-center">
+                <div className="w-12 h-12 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                  {step.step}
+                </div>
+                <h4 className="text-lg font-semibold text-white mb-3">
+                  {step.title}
+                </h4>
+                <p className="text-blue-100 mb-4">{step.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Contact Options */}

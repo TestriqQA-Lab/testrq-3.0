@@ -13,7 +13,7 @@ import {
 import Link from "next/link";
 
 interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   category: string;
   author: string;

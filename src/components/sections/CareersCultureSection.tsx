@@ -275,7 +275,7 @@ const CareersCultureSection: React.FC = () => {
                     <FaGlobe className="w-4 h-4 text-[theme(color.brand.blue)]" />
                   </div>
                   <span className="text-blue-100">
-                    15+ countries represented in our team
+                    15+ Global Service Delivery
                   </span>
                 </div>
 

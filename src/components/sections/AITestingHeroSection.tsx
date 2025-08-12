@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaArrowRight, FaPlay, FaRobot } from "react-icons/fa";
+import { FaArrowRight, FaRobot } from "react-icons/fa";
 
 const AITestingHeroSection: React.FC = () => {
   return (
@@ -38,10 +38,6 @@ const AITestingHeroSection: React.FC = () => {
                 <FaArrowRight className="w-4 h-5" />
               </button>
             </Link>
-            <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
-              <FaPlay className="w-4 h-4" />
-              Watch Demo
-            </button>
           </div>
 
           {/* Stats */}

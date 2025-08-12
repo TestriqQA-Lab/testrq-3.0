@@ -289,7 +289,7 @@ const CaseStudiesIndustrySection = () => {
               <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
                 15+
               </div>
-              <p className="text-gray-700 text-sm">Industries Served</p>
+              <p className="text-gray-700 text-sm">Global Service Delivery</p>
             </div>
             <div>
               <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">

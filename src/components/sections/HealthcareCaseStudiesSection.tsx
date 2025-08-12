@@ -1,17 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaHospital, 
-  FaMobile, 
-  FaHeartbeat, 
+import {
+  FaHospital,
+  FaMobile,
+  FaHeartbeat,
   FaUserMd,
   FaArrowRight,
   FaCheckCircle,
   FaShieldAlt,
   FaChartLine,
   FaClock,
-  FaAward
+  FaAward,
 } from "react-icons/fa";
 
 const HealthcareCaseStudiesSection: React.FC = () => {
@@ -19,87 +20,91 @@ const HealthcareCaseStudiesSection: React.FC = () => {
     {
       icon: FaHospital,
       title: "Regional Hospital EHR System",
-      client: "Metro Health Network",
-      challenge: "Legacy EHR system failing HIPAA compliance audits with critical security vulnerabilities and poor interoperability.",
-      solution: "Comprehensive security testing, HIPAA compliance validation, and HL7 FHIR integration testing across 15 hospital locations.",
+      challenge:
+        "Legacy EHR system failing HIPAA compliance audits with critical security vulnerabilities and poor interoperability.",
+      solution:
+        "Comprehensive security testing, HIPAA compliance validation, and HL7 FHIR integration testing across 15 hospital locations.",
       results: [
         "100% HIPAA compliance achievement",
         "Zero security vulnerabilities post-deployment",
         "40% improvement in clinical workflow efficiency",
-        "Successful integration with 25+ medical devices"
+        "Successful integration with 25+ medical devices",
       ],
       metrics: {
         compliance: "100%",
         security: "Zero Breaches",
         efficiency: "+40%",
-        integration: "25+ Devices"
+        integration: "25+ Devices",
       },
       color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50"
+      bgColor: "bg-blue-50",
     },
     {
       icon: FaMobile,
       title: "Telemedicine Mobile App",
-      client: "TeleHealth Solutions Inc.",
-      challenge: "Mobile telehealth app needed FDA approval and HIPAA compliance for nationwide deployment across multiple states.",
-      solution: "End-to-end mobile testing, FDA 21 CFR Part 820 validation, real-time video quality testing, and multi-state compliance verification.",
+      challenge:
+        "Mobile telehealth app needed FDA approval and HIPAA compliance for nationwide deployment across multiple states.",
+      solution:
+        "End-to-end mobile testing, FDA 21 CFR Part 820 validation, real-time video quality testing, and multi-state compliance verification.",
       results: [
         "FDA approval obtained in 6 months",
         "HIPAA compliance across all 50 states",
         "99.9% video call success rate",
-        "5-star app store rating maintained"
+        "5-star app store rating maintained",
       ],
       metrics: {
         approval: "6 Months",
         compliance: "50 States",
         uptime: "99.9%",
-        rating: "5 Stars"
+        rating: "5 Stars",
       },
       color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50"
+      bgColor: "bg-green-50",
     },
     {
       icon: FaHeartbeat,
       title: "Cardiac Monitoring IoT System",
-      client: "CardioTech Medical",
-      challenge: "IoT-based cardiac monitoring system required real-time data validation and FDA Class II medical device certification.",
-      solution: "IoT device testing, real-time data integrity validation, FDA IEC 62304 compliance testing, and cybersecurity assessment.",
+      challenge:
+        "IoT-based cardiac monitoring system required real-time data validation and FDA Class II medical device certification.",
+      solution:
+        "IoT device testing, real-time data integrity validation, FDA IEC 62304 compliance testing, and cybersecurity assessment.",
       results: [
         "FDA Class II certification achieved",
         "Real-time monitoring with <1ms latency",
         "100% data accuracy validation",
-        "Zero false alarms in 6-month trial"
+        "Zero false alarms in 6-month trial",
       ],
       metrics: {
         certification: "Class II FDA",
         latency: "<1ms",
         accuracy: "100%",
-        reliability: "Zero False Alarms"
+        reliability: "Zero False Alarms",
       },
       color: "from-red-500 to-red-600",
-      bgColor: "bg-red-50"
+      bgColor: "bg-red-50",
     },
     {
       icon: FaUserMd,
       title: "Clinical Decision Support AI",
-      client: "MedAI Diagnostics",
-      challenge: "AI-powered diagnostic system needed clinical validation and regulatory approval for radiology departments.",
-      solution: "AI algorithm testing, clinical accuracy validation, radiologist workflow integration testing, and FDA software validation.",
+      challenge:
+        "AI-powered diagnostic system needed clinical validation and regulatory approval for radiology departments.",
+      solution:
+        "AI algorithm testing, clinical accuracy validation, radiologist workflow integration testing, and FDA software validation.",
       results: [
         "95% diagnostic accuracy achieved",
         "FDA breakthrough device designation",
         "30% reduction in diagnosis time",
-        "Integration with 100+ PACS systems"
+        "Integration with 100+ PACS systems",
       ],
       metrics: {
         accuracy: "95%",
         designation: "FDA Breakthrough",
         efficiency: "+30%",
-        integration: "100+ PACS"
+        integration: "100+ PACS",
       },
       color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50"
-    }
+      bgColor: "bg-purple-50",
+    },
   ];
 
   const successMetrics = [
@@ -107,26 +112,26 @@ const HealthcareCaseStudiesSection: React.FC = () => {
       icon: FaShieldAlt,
       value: "100%",
       label: "HIPAA Compliance Rate",
-      description: "Perfect compliance record across all healthcare projects"
+      description: "Perfect compliance record across all healthcare projects",
     },
     {
       icon: FaChartLine,
       value: "95%",
       label: "Average Performance Improvement",
-      description: "Significant efficiency gains in clinical workflows"
+      description: "Significant efficiency gains in clinical workflows",
     },
     {
       icon: FaClock,
       value: "50%",
       label: "Faster Time to Market",
-      description: "Accelerated regulatory approval processes"
+      description: "Accelerated regulatory approval processes",
     },
     {
       icon: FaAward,
       value: "200+",
       label: "Healthcare Projects Delivered",
-      description: "Extensive experience across healthcare domains"
-    }
+      description: "Extensive experience across healthcare domains",
+    },
   ];
 
   return (
@@ -140,28 +145,35 @@ const HealthcareCaseStudiesSection: React.FC = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Healthcare Testing
-            <span className="block text-brand-blue">
-              Success Stories
-            </span>
+            <span className="block text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real-world examples of how our specialized healthcare testing services have helped organizations achieve regulatory compliance, improve patient data security, enhance patient safety, and accelerate time to market for their healthcare applications.
+            Real-world examples of how our specialized healthcare testing
+            services have helped organizations achieve regulatory compliance,
+            improve patient data security, enhance patient safety, and
+            accelerate time to market for their healthcare applications.
           </p>
         </div>
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {caseStudies.map((study, index) => (
-            <div key={index} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30">
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30"
+            >
               {/* Header */}
               <div className={`${study.bgColor} p-8 pb-6`}>
-                <div className="flex items-start gap-4">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${study.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                <div className="flex items-center gap-4">
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${study.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <study.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                    <p className="text-gray-600 font-medium">{study.client}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      {study.title}
+                    </h3>
                   </div>
                 </div>
               </div>
@@ -174,7 +186,9 @@ const HealthcareCaseStudiesSection: React.FC = () => {
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                     Challenge
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">{study.challenge}</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {study.challenge}
+                  </p>
                 </div>
 
                 {/* Solution */}
@@ -183,7 +197,9 @@ const HealthcareCaseStudiesSection: React.FC = () => {
                     <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
                     Solution
                   </h4>
-                  <p className="text-gray-600 leading-relaxed">{study.solution}</p>
+                  <p className="text-gray-600 leading-relaxed">
+                    {study.solution}
+                  </p>
                 </div>
 
                 {/* Results */}
@@ -194,7 +210,10 @@ const HealthcareCaseStudiesSection: React.FC = () => {
                   </h4>
                   <div className="space-y-2">
                     {study.results.map((result, resultIndex) => (
-                      <div key={resultIndex} className="flex items-center gap-2">
+                      <div
+                        key={resultIndex}
+                        className="flex items-center gap-2"
+                      >
                         <FaCheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         <span className="text-gray-700 text-sm">{result}</span>
                       </div>
@@ -204,12 +223,21 @@ const HealthcareCaseStudiesSection: React.FC = () => {
 
                 {/* Metrics */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  {Object.entries(study.metrics).map(([key, value], metricIndex) => (
-                    <div key={metricIndex} className="text-center p-3 bg-gray-50 rounded-xl">
-                      <div className="text-lg font-bold text-gray-900">{value}</div>
-                      <div className="text-xs text-gray-600 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
-                    </div>
-                  ))}
+                  {Object.entries(study.metrics).map(
+                    ([key, value], metricIndex) => (
+                      <div
+                        key={metricIndex}
+                        className="text-center p-3 bg-gray-50 rounded-xl"
+                      >
+                        <div className="text-lg font-bold text-gray-900">
+                          {value}
+                        </div>
+                        <div className="text-xs text-gray-600 capitalize">
+                          {key.replace(/([A-Z])/g, " $1").trim()}
+                        </div>
+                      </div>
+                    )
+                  )}
                 </div>
 
                 {/* CTA */}
@@ -229,7 +257,9 @@ const HealthcareCaseStudiesSection: React.FC = () => {
               Our Healthcare Testing Impact
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Measurable QA results that demonstrate our commitment to healthcare software quality, regulatory compliance, and patient safety.
+              Measurable QA results that demonstrate our commitment to
+              healthcare software quality, regulatory compliance, and patient
+              safety.
             </p>
           </div>
 
@@ -239,9 +269,15 @@ const HealthcareCaseStudiesSection: React.FC = () => {
                 <div className="w-20 h-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <metric.icon className="w-10 h-10 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{metric.value}</div>
-                <div className="text-lg font-semibold text-gray-800 mb-2">{metric.label}</div>
-                <div className="text-sm text-gray-600">{metric.description}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">
+                  {metric.value}
+                </div>
+                <div className="text-lg font-semibold text-gray-800 mb-2">
+                  {metric.label}
+                </div>
+                <div className="text-sm text-gray-600">
+                  {metric.description}
+                </div>
               </div>
             ))}
           </div>
@@ -250,16 +286,20 @@ const HealthcareCaseStudiesSection: React.FC = () => {
         {/* Bottom CTA */}
         <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
+            <h3 className="text-3xl font-bold mb-4">
+              Ready to Join Our Success Stories?
+            </h3>
             <p className="mb-8 text-lg">
-              Let us help you achieve similar results with our proven healthcare testing methodologies 
-              and deep industry expertise.
+              Let us help you achieve similar results with our proven healthcare
+              testing methodologies and deep industry expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <button className="bg-white  px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
-                Start Your Success Story
-              </button>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
+                  Start Your Success Story
+                </button>
+              </Link>
+              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 Download Case Studies
               </button>
             </div>
@@ -271,4 +311,3 @@ const HealthcareCaseStudiesSection: React.FC = () => {
 };
 
 export default HealthcareCaseStudiesSection;
-

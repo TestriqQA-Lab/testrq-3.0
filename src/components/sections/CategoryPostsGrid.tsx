@@ -4,128 +4,18 @@ import React, { useState } from "react";
 import { FaCalendarAlt, FaClock, FaEye, FaHeart, FaShare, FaArrowRight, FaFilter, FaSort } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-
-interface Category {
-  id: string;
-  name: string;
-  color: string;
-}
+import { Category, Post } from "@/lib/wordpress-data-adapter";
 
 interface CategoryPostsGridProps {
   category: Category;
+  posts: Post[]; // Add posts prop
 }
 
-const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
+const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }) => {
   const [sortBy, setSortBy] = useState("latest");
   const [filterBy, setFilterBy] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
-
-  // Sample posts data for the category (in a real app, this would be fetched from API)
-  const categoryPosts = [
-    {
-      id: 1,
-      title: "Complete Guide to Test Automation with Selenium WebDriver in 2025",
-      excerpt: "Master Selenium WebDriver with our comprehensive guide covering setup, best practices, advanced techniques, and real-world examples for web application testing.",
-      author: "Sarah Johnson",
-      authorImage: "/api/placeholder/40/40",
-      date: "Jan 15, 2025",
-      readTime: "8 min read",
-      image: "/api/placeholder/400/250",
-      views: "12.5K",
-      likes: 245,
-      shares: 89,
-      difficulty: "Intermediate",
-      featured: true,
-      trending: true,
-      tags: ["Selenium", "WebDriver", "Java", "Automation"]
-    },
-    {
-      id: 2,
-      title: "Cypress vs Playwright: Choosing the Right E2E Testing Framework",
-      excerpt: "Detailed comparison of Cypress and Playwright for end-to-end testing, covering features, performance, ecosystem, and use case recommendations.",
-      author: "Lisa Wang",
-      authorImage: "/api/placeholder/40/40",
-      date: "Jan 3, 2025",
-      readTime: "9 min read",
-      image: "/api/placeholder/400/250",
-      views: "11.4K",
-      likes: 198,
-      shares: 67,
-      difficulty: "Advanced",
-      featured: false,
-      trending: true,
-      tags: ["Cypress", "Playwright", "E2E Testing", "Comparison"]
-    },
-    {
-      id: 3,
-      title: "Building Robust Test Automation Frameworks: Best Practices",
-      excerpt: "Learn how to design and implement scalable test automation frameworks that are maintainable, reliable, and efficient for long-term success.",
-      author: "Michael Chen",
-      authorImage: "/api/placeholder/40/40",
-      date: "Dec 28, 2024",
-      readTime: "12 min read",
-      image: "/api/placeholder/400/250",
-      views: "9.8K",
-      likes: 156,
-      shares: 45,
-      difficulty: "Advanced",
-      featured: true,
-      trending: false,
-      tags: ["Framework", "Architecture", "Best Practices", "Scalability"]
-    },
-    {
-      id: 4,
-      title: "Getting Started with TestComplete: A Beginner's Guide",
-      excerpt: "Step-by-step guide to getting started with TestComplete for desktop, web, and mobile application testing automation.",
-      author: "Emma Rodriguez",
-      authorImage: "/api/placeholder/40/40",
-      date: "Dec 20, 2024",
-      readTime: "6 min read",
-      image: "/api/placeholder/400/250",
-      views: "7.2K",
-      likes: 89,
-      shares: 23,
-      difficulty: "Beginner",
-      featured: false,
-      trending: false,
-      tags: ["TestComplete", "Beginner", "Desktop Testing", "Mobile Testing"]
-    },
-    {
-      id: 5,
-      title: "Advanced Selenium Techniques: Handling Complex Web Elements",
-      excerpt: "Master advanced Selenium techniques for handling dynamic content, shadow DOM, iframes, and complex user interactions.",
-      author: "David Kim",
-      authorImage: "/api/placeholder/40/40",
-      date: "Dec 15, 2024",
-      readTime: "10 min read",
-      image: "/api/placeholder/400/250",
-      views: "8.9K",
-      likes: 134,
-      shares: 56,
-      difficulty: "Advanced",
-      featured: false,
-      trending: true,
-      tags: ["Selenium", "Advanced", "Dynamic Content", "Shadow DOM"]
-    },
-    {
-      id: 6,
-      title: "Robot Framework Tutorial: Keyword-Driven Testing Made Easy",
-      excerpt: "Comprehensive tutorial on Robot Framework for keyword-driven test automation with practical examples and best practices.",
-      author: "Anna Petrov",
-      authorImage: "/api/placeholder/40/40",
-      date: "Dec 10, 2024",
-      readTime: "7 min read",
-      image: "/api/placeholder/400/250",
-      views: "6.5K",
-      likes: 78,
-      shares: 34,
-      difficulty: "Intermediate",
-      featured: false,
-      trending: false,
-      tags: ["Robot Framework", "Keyword-Driven", "Python", "BDD"]
-    }
-  ];
 
   const sortOptions = [
     { value: "latest", label: "Latest First" },
@@ -144,17 +34,19 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
   ];
 
   // Filter and sort posts
-  let filteredPosts = categoryPosts;
+  let filteredPosts = posts;
   
   if (filterBy !== "all") {
-    filteredPosts = categoryPosts.filter(post => {
+    filteredPosts = posts.filter(post => {
       switch (filterBy) {
         case "featured":
           return post.featured;
         case "trending":
           return post.trending;
         default:
-          return post.difficulty.toLowerCase() === filterBy;
+          // Assuming 'difficulty' is a property in your Post interface if you want to filter by it
+          // If not, you might need to adapt your WordPress data to include this or remove this filter option
+          return false; // Or handle based on your actual Post structure
       }
     });
   }
@@ -163,7 +55,10 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
   filteredPosts.sort((a, b) => {
     switch (sortBy) {
       case "popular":
-        return b.views.localeCompare(a.views);
+        // Assuming 'views' is a string like '12.5K', convert to number for comparison
+        const viewsA = parseFloat(a.views.replace("K", "")) * (a.views.includes("K") ? 1000 : 1);
+        const viewsB = parseFloat(b.views.replace("K", "")) * (b.views.includes("K") ? 1000 : 1);
+        return viewsB - viewsA;
       case "trending":
         return (b.trending ? 1 : 0) - (a.trending ? 1 : 0);
       case "oldest":
@@ -179,18 +74,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
     currentPage * postsPerPage
   );
 
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty.toLowerCase()) {
-      case "beginner":
-        return "bg-green-100 text-green-800";
-      case "intermediate":
-        return "bg-yellow-100 text-yellow-800";
-      case "advanced":
-        return "bg-red-100 text-red-800";
-      default:
-        return "bg-gray-100 text-gray-800";
-    }
-  };
+
 
   return (
     <div>
@@ -272,17 +156,18 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                     </span>
                   )}
                 </div>
-                <div className="absolute top-4 right-4">
+                {/* Assuming 'difficulty' is part of your adapted Post interface if you want to display it */}
+                {/* <div className="absolute top-4 right-4">
                   <span className={`px-2 py-1 text-xs font-semibold rounded-full ${getDifficultyColor(post.difficulty)}`}>
                     {post.difficulty}
                   </span>
-                </div>
+                </div> */}
               </div>
 
               {/* Content */}
               <div className="md:w-2/3 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                  <Link href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+                  <Link href={`/blog/${post.id}`}>
                     {post.title}
                   </Link>
                 </h3>
@@ -310,8 +195,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                       <Image
                         src={post.authorImage}
                         alt={post.author}
-                        width={400}
-                        height={250}
+                        width={20}
+                        height={20}
                         className="w-5 h-5 rounded-full"
                       />
                       <span>{post.author}</span>
@@ -327,7 +212,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                   </div>
                   
                   <Link
-                    href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                    href={`/blog/${post.id}`}
                     className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                   >
                     Read More
@@ -374,8 +259,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
                   currentPage === index + 1
-                    ? 'bg-[theme(color.brand.blue)] text-white'
-                    : 'text-gray-600 hover:bg-gray-50'
+                    ? "bg-[theme(color.brand.blue)] text-white"
+                    : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
                 {index + 1}
@@ -417,4 +302,3 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category }) => {
 };
 
 export default CategoryPostsGrid;
-

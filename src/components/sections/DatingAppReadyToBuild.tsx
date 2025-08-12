@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, ArrowUp } from "lucide-react";
+import Link from "next/link";
 
 const DatingAppReadyToBuild = () => {
   return (
@@ -20,19 +21,21 @@ const DatingAppReadyToBuild = () => {
             </h2>
 
             <p className="text-xl mb-12 opacity-90">
-              Join 500+ dating apps that have earned user trust and boosted
-              their success with our certification
+              Join 50+ dating apps that have earned user trust and boosted their
+              success with our certification
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <motion.button
-                className="bg-white text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Start Certification
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </motion.button>
+              <Link href="/contact-us">
+                <motion.button
+                  className="bg-white cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Start Certification
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </motion.button>
+              </Link>
 
               <motion.a
                 href="tel:+919004988859"
@@ -41,7 +44,7 @@ const DatingAppReadyToBuild = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Phone className="mr-2 w-5 h-5" />
-                Call +91-9004988859
+                Call +91-900-49-888-59
               </motion.a>
             </div>
 
