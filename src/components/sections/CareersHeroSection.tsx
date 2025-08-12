@@ -72,7 +72,7 @@ const CareersHeroSection: React.FC = () => {
       {floatingIcons.map((item, index) => (
         <div
           key={index}
-          className={`absolute ${item.position} w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg flex items-center justify-center animate-bounce lg:flex`}
+          className={`absolute ${item.position} hidden w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg xl:flex items-center justify-center animate-bounce lg:flex`}
           style={{ animationDelay: item.delay, animationDuration: "3s" }}
         >
           <item.icon className="w-6 h-6 text-[theme(color.brand.blue)]" />

@@ -157,11 +157,10 @@ const ContactMethodsSection: React.FC = () => {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${
-                method.highlight
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
                   ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
                   : ""
-              }`}
+                }`}
             >
               {method.highlight && (
                 <div className="absolute top-0 right-0 bg-[theme(color.brand.blue)] text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
@@ -267,13 +266,14 @@ const ContactMethodsSection: React.FC = () => {
             //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
             // </div>
 
-            <div className="calendly-container min-w-[320px] h-[700px]">
+            <div className="calendly-container w-full h-[500px] sm:h-[600px] md:h-[700px] max-w-[1000px] mx-auto">
               <InlineWidget
                 url={selectedMeetingUrl}
                 styles={{
-                  height: "700px",
-                  minWidth: "320px",
+                  height: "100%",
+                  width: "100%",
                 }}
+                className="w-full h-full"
               />
             </div>
           )}
@@ -303,11 +303,10 @@ const ContactMethodsSection: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      schedule.available
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
                         ? "bg-green-100 text-green-700"
                         : "bg-yellow-100 text-yellow-700"
-                    }`}
+                      }`}
                   >
                     {schedule.available ? "Available" : "Limited"}
                   </div>

@@ -30,12 +30,12 @@ const HomeComprehensiveSoftwareTesting = () => {
     };
 
     const cardData = [
-        { icon: TbWorld, title: 'Mobile Testing', href: '#', detail: 'Experience end-to-end testing for mobile applications (iOS & Android), covering functional, usability, performance and security testing aspects.' },
-        { icon: IoServerOutline, title: 'API Testing', href: '#', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
-        { icon: FaMicrochip, title: 'Data Analysis', href: '#', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
-        { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
-        { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
-        { icon: AiOutlineThunderbolt, title: 'Performance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
+        { icon: TbWorld, title: 'Mobile Testing', href: '/mobile-application-testing', detail: 'Experience end-to-end testing for mobile applications (iOS & Android), covering functional, usability, performance and security testing aspects.' },
+        { icon: IoServerOutline, title: 'API Testing', href: '/api-testing', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
+        { icon: FaMicrochip, title: 'Data Analysis', href: '/data-analysis-services', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
+        { icon: LuSmartphone, title: 'IoT Testing', href: '/iot-device-testing-services', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
+        { icon: GoLock, title: 'Security Testing', href: '/security-testing', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
+        { icon: AiOutlineThunderbolt, title: 'Performance Testing', href: '/performance-testing-services', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
     ]
     return (
         // Main section container

@@ -94,7 +94,7 @@ const TeamHeroSection = () => {
             <div className="absolute top-12 right-12 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">
               <div className="w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full"></div>
             </div>
-            <div className="absolute bottom-12 left-16 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
+            <div className="absolute bottom-4 left-16 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
               <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-green-500 rounded-full"></div>
             </div>
             <div className="absolute bottom-8 right-8 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center">

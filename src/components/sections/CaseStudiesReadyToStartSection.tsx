@@ -163,7 +163,7 @@ const CaseStudiesReadyToStartSection = () => {
               const IconComponent = option.icon;
               return (
                 
-                  <div
+                  <div key={index}
                     className={`bg-white/20 text-white rounded-lg p-6 text-center transition-transform`}
                   >
                     <IconComponent
