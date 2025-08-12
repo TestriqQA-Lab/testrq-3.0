@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { 
   FaDollarSign, 
@@ -283,9 +284,11 @@ const HealthcareROISection: React.FC = () => {
               <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
                 Get ROI Analysis
               </button>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                Download ROI Calculator
+              <Link href="/roi-calculator">
+                <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+                Calculate ROI
               </button>
+              </Link>
             </div>
           </div>
         </div>

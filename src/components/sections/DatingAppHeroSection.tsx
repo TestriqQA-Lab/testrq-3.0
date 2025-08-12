@@ -2,15 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Shield,
-  ArrowRight,
-  Play,
-  Verified,
-  TrendingUp,
-  Eye,
-} from "lucide-react";
+import { Shield, ArrowRight, Play, Verified, TrendingUp, Eye } from "lucide-react";
 import Link from "next/link";
+import Lightbox from "../VideoLightBox"; // Import the Lightbox component
 
 const DatingAppHeroSection = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false); // State for lightbox visibility
@@ -138,24 +132,7 @@ const DatingAppHeroSection = () => {
       </div>
 
       {/* Lightbox Modal */}
-      {isLightboxOpen && (
-        <div className="fixed inset-0 bg-transparent bg-opacity-50 backdrop-blur-xl flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg max-w-md w-full">
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold mb-4">Coming Soon</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                The demo video is coming soon. Stay tuned!
-              </p>
-              <button
-                onClick={closeLightbox} // Close the lightbox
-                className="bg-blue-500 cursor-pointer text-white px-6 py-3 rounded-lg font-semibold"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

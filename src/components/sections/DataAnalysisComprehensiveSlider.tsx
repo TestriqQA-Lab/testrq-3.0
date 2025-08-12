@@ -281,7 +281,6 @@ const DataAnalysisComprehensiveSlider = () => {
                         <span className="text-gray-700 font-medium">
                           {capability}
                         </span>
-                        <FaChevronRight className="h-4 w-4 text-gray-400" />
                       </div>
                     )
                   )}
