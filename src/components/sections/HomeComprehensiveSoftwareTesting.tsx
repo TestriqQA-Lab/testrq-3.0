@@ -35,7 +35,7 @@ const HomeComprehensiveSoftwareTesting = () => {
         { icon: FaMicrochip, title: 'Data Analysis', href: '#', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
         { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
         { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
-        { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
+        { icon: AiOutlineThunderbolt, title: 'Performance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
     ]
     return (
         // Main section container

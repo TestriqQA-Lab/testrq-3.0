@@ -17,7 +17,7 @@ const TeamLeadershipSection = () => {
         "ISTQB Advanced Level Certified",
         "Speaker at 20+ industry conferences",
       ],
-      linkedin: "https://www.linkedin.com/in/sandeep-maske-qa/",
+      linkedin: "https://www.linkedin.com/in/sandeepmaske",
       img: (
         <Image
           src="/sandeep-maske-img.webp"
