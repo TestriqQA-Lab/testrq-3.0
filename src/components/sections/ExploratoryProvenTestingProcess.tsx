@@ -124,8 +124,8 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
         </div>
 
         {/* Active Step Content */}
-        <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 mb-12">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-4 md:p-8 mb-12">
+          <div className="grid justify-center lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div>
               <div className="flex items-center space-x-4 mb-6">
@@ -142,7 +142,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
                 {steps[activeStep - 1].description}
               </p>
 

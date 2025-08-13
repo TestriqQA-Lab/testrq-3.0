@@ -82,7 +82,7 @@ const QADocumentationHeroSection = () => {
 
           {/* Right Content - Documentation Dashboard */}
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -90,8 +90,8 @@ const QADocumentationHeroSection = () => {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <FaFileAlt className="text-brand-blue" />
-                  <span>QA Documentation Hub</span>
+                  <FaFileAlt className="hidden md:block text-brand-blue" />
+                  <span className="ml-3 md:ml-0">QA Documentation Hub</span>
                   <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
                     Active Session
                   </div>

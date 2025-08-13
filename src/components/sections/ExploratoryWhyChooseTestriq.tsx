@@ -160,7 +160,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
-              className={`p-8 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${getColorClasses(
+              className={`p-4 lg:p-8 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${getColorClasses(
                 advantage.color,
                 hoveredCard === advantage.id
               )}`}
@@ -168,44 +168,38 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-4 mb-6">
                 <div
-                  className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${
-                    hoveredCard === advantage.id
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${hoveredCard === advantage.id
                       ? getColorClasses(advantage.color, true)
                       : getIconBgColor(advantage.color)
-                  }`}
+                    }`}
                 >
                   {advantage.icon}
                 </div>
-                <div className="text-right">
-                  <div
-                    className={`text-lg font-bold ${
-                      hoveredCard === advantage.id
-                        ? "text-white"
-                        : "text-gray-900"
+                <div
+                  className={`text-lg font-bold ${hoveredCard === advantage.id
+                      ? "text-white"
+                      : "text-gray-900"
                     }`}
-                  >
-                    {advantage.metric}
-                  </div>
+                >
+                  {advantage.metric}
                 </div>
               </div>
 
               {/* Content */}
               <h3
-                className={`text-xl font-bold mb-4 ${
-                  hoveredCard === advantage.id ? "text-white" : "text-gray-900"
-                }`}
+                className={`text-xl font-bold mb-4 ${hoveredCard === advantage.id ? "text-white" : "text-gray-900"
+                  }`}
               >
                 {advantage.title}
               </h3>
 
               <p
-                className={`mb-6 leading-relaxed ${
-                  hoveredCard === advantage.id
+                className={`mb-6 leading-relaxed ${hoveredCard === advantage.id
                     ? "text-white text-opacity-90"
                     : "text-gray-600"
-                }`}
+                  }`}
               >
                 {advantage.description}
               </p>
@@ -213,11 +207,10 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               {/* Capabilities */}
               <div className="space-y-3">
                 <h4
-                  className={`font-semibold ${
-                    hoveredCard === advantage.id
+                  className={`font-semibold ${hoveredCard === advantage.id
                       ? "text-white"
                       : "text-gray-900"
-                  }`}
+                    }`}
                 >
                   Key Capabilities:
                 </h4>
@@ -225,18 +218,16 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
                   {advantage.capabilities.map((capability, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div
-                        className={`w-2 h-2 rounded-full ${
-                          hoveredCard === advantage.id
+                        className={`w-2 h-2 rounded-full ${hoveredCard === advantage.id
                             ? "bg-white bg-opacity-70"
                             : getIconBgColor(advantage.color)
-                        }`}
+                          }`}
                       ></div>
                       <span
-                        className={`text-sm ${
-                          hoveredCard === advantage.id
+                        className={`text-sm ${hoveredCard === advantage.id
                             ? "text-white text-opacity-90"
                             : "text-gray-700"
-                        }`}
+                          }`}
                       >
                         {capability}
                       </span>
@@ -248,17 +239,16 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               {/* CTA */}
               <Link href="/contact-us">
                 <button
-                  className={`w-full cursor-pointer mt-10 py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
-                    hoveredCard === advantage.id
+                  className={`w-full cursor-pointer mt-10 py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${hoveredCard === advantage.id
                       ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
-                          advantage.color,
-                          false
-                        )} border-white border-opacity-30`
+                        advantage.color,
+                        false
+                      )} border-white border-opacity-30`
                       : `${getColorClasses(
-                          advantage.color,
-                          false
-                        )} hover:shadow-lg`
-                  }`}
+                        advantage.color,
+                        false
+                      )} hover:shadow-lg`
+                    }`}
                 >
                   Explore Testing
                 </button>

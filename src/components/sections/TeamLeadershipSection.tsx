@@ -55,7 +55,7 @@ const TeamLeadershipSection = () => {
       name: "Goutam Mishra",
       position: "Head of QA and BD",
       experience: "20+ Years",
-      specialization: "Software Testing & Business Development",
+      specialization: "Software Testing & BD ",
       bio: "Goutam Mishra, With 20+ years in tech, excel in QA, testing, and project management, mentoring QA professionals while ensuring top-tier software quality across platforms.",
       achievements: [
         "Designed QA processes for 200+ projects",
@@ -198,7 +198,7 @@ const TeamLeadershipSection = () => {
           {leaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+              className={`lg bg-white rounded-2xl p-4 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
                 }`}
             >
               <div
@@ -214,11 +214,11 @@ const TeamLeadershipSection = () => {
                     <div className="text-xl text-[theme(color.brand.blue)] font-semibold mb-2">
                       {leader.position}
                     </div>
-                    <div className="flex items-center gap-4 text-gray-600">
-                      <span className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    <div className="flex flex-row items-center gap-3 text-gray-600">
+                      <p className="bg-gray-100 px-3 py-1 rounded-full text-xs">
                         {leader.experience}
-                      </span>
-                      <span className="text-sm">{leader.specialization}</span>
+                      </p>
+                      <p className="text-sm">{leader.specialization}</p>
                     </div>
                   </div>
 
@@ -325,7 +325,7 @@ const TeamLeadershipSection = () => {
           {cdplLeaders.map((leader, index) => (
             <div
               key={index}
-              className={`lg bg-white rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
+              className={`lg bg-white rounded-2xl p-4 md:p-12 shadow-lg hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "" : ""
                 }`}
             >
               <div
