@@ -96,34 +96,22 @@ const ToolsReadyToElevateSection = () => {
             return (
               <div
                 key={index}
-                className={`rounded-xl p-8 text-center transition-all duration-300 hover:scale-105 ${
-                  option.highlight
-                    ? "bg-white text-gray-900 shadow-2xl"
-                    : "bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 bg-opacity-50 backdrop-blur-sm"
-                }`}
+                className={`rounded-xl p-8 text-center transition-all duration-300 hover:scale-105 bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 bg-opacity-50 backdrop-blur-sm`}
               >
                 <div
-                  className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 ${
-                    option.highlight
-                      ? "bg-brand-blue text-white"
-                      : "bg-brand-blue text-white"
-                  }`}
+                  className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 bg-brand-blue text-white`}
                 >
                   <IconComponent className="w-8 h-8" />
                 </div>
 
                 <h3
-                  className={`text-xl font-bold mb-4 ${
-                    option.highlight ? "text-gray-900" : "text-white"
-                  }`}
+                  className={`text-xl text-white font-bold mb-4`}
                 >
                   {option.title}
                 </h3>
 
                 <p
-                  className={`mb-3 ${
-                    option.highlight ? "text-gray-600" : "text-blue-100"
-                  }`}
+                  className={`mb-3 text-white`}
                 >
                   {option.description}
                 </p>
@@ -131,11 +119,7 @@ const ToolsReadyToElevateSection = () => {
 
                 <Link href={option.action}>
                   <button
-                    className={`px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors ${
-                      option.highlight
-                        ? "bg-brand-blue text-white hover:bg-sky-700"
-                        : "bg-white text-sky-700 hover:bg-blue-50"
-                    }`}
+                    className={`px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors bg-brand-blue text-white hover:bg-sky-700`}
                   >
                     {option.text}
                   </button>
