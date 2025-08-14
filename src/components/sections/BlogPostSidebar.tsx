@@ -3,11 +3,12 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
   FaClock,
+  FaEye,
+  FaHeart,
+  FaShare,
   FaArrowRight,
+  FaDownload,
   FaBell,
-  FaList,
-  FaTags,
-  FaBookOpen,
 } from "react-icons/fa";
 import Link from "next/link";
 import { getPosts, getCategories } from "@/lib/wordpress-graphql";
@@ -105,7 +106,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         setCategories(adaptedCategories);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching sidebar data:', error);
+        console.error("Error fetching sidebar data:", error);
         setLoading(false);
       }
     };
@@ -131,92 +132,74 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 
   return (
     <aside className="space-y-8">
-      {/* Table of Contents */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <FaList className="w-5 h-5 text-blue-600" />
-          <h3 className="text-lg font-bold text-gray-900">Table of Contents</h3>
+      {/* Article Stats */}
+      <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+        <h3 className="text-lg font-bold text-gray-800 mb-4">Article Stats</h3>
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-gray-600">
+              <FaEye className="w-4 h-4" />
+              <span>Views</span>
+            </div>
+            <span className="font-semibold text-gray-800">{post.views}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-gray-600">
+              <FaHeart className="w-4 h-4" />
+              <span>Likes</span>
+            </div>
+            <span className="font-semibold text-gray-800">{post.likes}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-gray-600">
+              <FaShare className="w-4 h-4" />
+              <span>Shares</span>
+            </div>
+            <span className="font-semibold text-gray-800">{post.shares}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-gray-600">
+              <FaClock className="w-4 h-4" />
+              <span>Read Time</span>
+            </div>
+            <span className="font-semibold text-gray-800">{post.readTime}</span>
+          </div>
         </div>
-        <nav className="space-y-2">
-          {tableOfContents.map((item, index) => (
-            <a
-              key={index}
-              href={`#${item.id}`}
-              className={`block text-sm hover:text-blue-600 transition-colors py-1 ${
-                item.level === 1 
-                  ? "font-medium text-gray-900" 
-                  : "text-gray-600 ml-4"
-              }`}
-            >
-              {item.title}
-            </a>
-          ))}
-        </nav>
       </div>
 
       {/* Newsletter Signup */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 text-white">
         <div className="text-center">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
             <FaBell className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
           <p className="text-blue-100 text-sm mb-4">
-            Get the latest testing insights and best practices delivered weekly.
+            Get the latest testing insights delivered to your inbox weekly.
           </p>
-          
-          {!isSubscribed ? (
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-2 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                Subscribe Now
-              </button>
-            </form>
-          ) : (
-            <div className="bg-white/20 rounded-lg p-4">
-              <p className="text-sm">✅ Thank you for subscribing!</p>
-            </div>
-          )}
-          
+          <div className="space-y-3">
+            <input
+              type="email"
+              placeholder="your.email@company.com"
+              className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button className="w-full px-4 py-2 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-100 transition-colors">
+              Subscribe Now
+            </button>
+          </div>
           <p className="text-xs text-blue-200 mt-3">
             Join 10,000+ QA professionals
           </p>
         </div>
       </div>
 
-      {/* Table of Contents */}
+      {/* Table of Contents - Placeholder for dynamic content */}
       <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
         <h3 className="text-lg font-bold text-gray-800 mb-4">
           Table of Contents
         </h3>
         <nav className="space-y-2">
-          {[
-            "Introduction",
-            "Getting Started",
-            "Best Practices",
-            "Advanced Techniques",
-            "Integration Tips",
-            "Common Challenges",
-            "Conclusion",
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={`#section-${index + 1}`}
-              className="block text-gray-700 hover:text-blue-600 transition-colors py-1 text-sm"
-            >
-              {index + 1}. {item}
-            </a>
-          ))}
+          <p className="text-gray-500 text-sm">Table of contents will be generated here based on post content.</p>
         </nav>
       </div>
 
@@ -288,7 +271,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         </div>
         <Link
           href="/blog"
-          className="flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+          className="flex items-center justify-center gap-2 mt-4 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm"
         >
           <span>View All Articles</span>
           <FaArrowRight className="w-3 h-3" />
@@ -303,7 +286,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             popularTags.map((tag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-colors"
               >
                 #{tag}
@@ -338,20 +321,14 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         </div>
       </div>
 
-      {/* Reading Progress (Optional - would need JavaScript to work) */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <h3 className="text-lg font-bold text-gray-900 mb-4">Reading Progress</h3>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-600">Progress</span>
-            <span className="font-medium text-gray-900">25%</span>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div className="bg-blue-600 h-2 rounded-full" style={{ width: '25%' }}></div>
-          </div>
-          <div className="flex items-center justify-between text-xs text-gray-500">
-            <span>~6 min remaining</span>
-            <span>{post.readTime}</span>
+      {/* Advertisement Space */}
+      <div className="bg-gray-100 rounded-xl p-6 text-center">
+        <div className="text-gray-500 text-sm mb-2">Advertisement</div>
+        <div className="bg-white rounded-lg p-8 border-2 border-dashed border-gray-300">
+          <div className="text-gray-400 text-sm">
+            Your Ad Here
+            <br />
+            300x250
           </div>
         </div>
       </div>
@@ -360,4 +337,3 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 };
 
 export default BlogPostSidebar;
-

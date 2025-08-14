@@ -4,17 +4,17 @@ import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
+  FaEye,
+  FaHeart,
+  FaShare,
+  FaBookmark,
   FaArrowLeft,
-  FaLinkedin,
-  FaTwitter,
-  FaFacebook,
-  FaLink,
 } from "react-icons/fa";
 import Link from "next/link";
 import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
 
 interface BlogPost {
-  id: string;
+  id: string; // Changed from number to string
   title: string;
   excerpt: string;
   category: string;
@@ -46,43 +46,30 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
         <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400 bg-opacity-15 rounded-full blur-xl"></div>
       </div>
 
-  const handleShare = (url: string, name: string) => {
-    if (name === "Copy Link") {
-      navigator.clipboard.writeText(shareUrl);
-      // You could add a toast notification here
-      return;
-    }
-    window.open(url, '_blank', 'width=600,height=400');
-  };
-
-  return (
-    <header className="bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-sm text-gray-600 py-4 border-b border-gray-100">
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-blue-200 mb-8 text-sm">
           <Link
             href="/blog"
-            className="flex items-center gap-2 hover:text-blue-600 transition-colors"
+            className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <FaArrowLeft className="w-3 h-3" />
+            <FaArrowLeft className="w-4 h-4" />
             <span>Back to Blog</span>
           </Link>
-          <span className="text-gray-400">/</span>
-          <span className="text-blue-600">{post.category}</span>
-        </nav>
+          <span>/</span>
+          <span className="text-white/60">{post.category}</span>
+        </div>
 
-        {/* Main Header Content */}
-        <div className="py-8 lg:py-12">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Category Badge */}
-            <div className="mb-6">
-              <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800`}>
-                {post.category}
-              </span>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left */}
+          <div>
+            <span
+              className={`inline-block px-4 py-2 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full mb-6`}
+            >
+              {post.category}
+            </span>
 
-            {/* Title */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
               {post.title}
             </h1>
 
@@ -90,32 +77,15 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               {cleanExcerpt}
             </p>
 
-            {/* Meta Information */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-gray-600">
-              <div className="flex items-center gap-2">
-                <FaCalendarAlt className="w-4 h-4" />
-                <time dateTime={post.date}>{post.date}</time>
-              </div>
-              <div className="hidden sm:block w-1 h-1 bg-gray-400 rounded-full"></div>
-              <div className="flex items-center gap-2">
-                <FaClock className="w-4 h-4" />
-                <span>{post.readTime}</span>
-              </div>
-              <div className="hidden sm:block w-1 h-1 bg-gray-400 rounded-full"></div>
-              <div className="text-sm">
-                <span>{post.views} views</span>
-              </div>
-            </div>
-
-            {/* Author Information */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* Author + Meta */}
+            <div className="flex flex-wrap items-center gap-6 mb-8">
               <div className="flex items-center gap-3">
                 <Image
                   src={post.authorImage}
                   alt={post.author}
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full border-2 border-gray-200"
+                  width={400}
+                  height={250}
+                  className="w-12 h-12 rounded-full border-2 border-blue-400"
                 />
                 <div>
                   <div className="font-semibold text-white">{post.author}</div>
@@ -132,41 +102,106 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   <FaClock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
-                
+                <div className="flex items-center gap-2">
+                  <FaEye className="w-4 h-4" />
+                  <span>{post.views} views</span>
+                </div>
               </div>
             </div>
 
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button className="flex items-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition">
+                <FaHeart className="w-4 h-4" />
+                <span>{post.likes}</span>
+              </button>
+              <button className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition">
+                <FaShare className="w-4 h-4" />
+                <span>{post.shares}</span>
+              </button>
+              <button className="flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition">
+                <FaBookmark className="w-4 h-4" />
+                <span>Save</span>
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* Featured Image */}
-        {post.image && (
-          <div className="pb-8">
-            <div className="relative rounded-xl overflow-hidden shadow-lg max-w-5xl mx-auto">
+          {/* Right - Image */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={post.image}
                 alt={post.title}
-                width={1200}
-                height={600}
-                className="w-full h-64 md:h-96 lg:h-[500px] object-cover"
-                priority
+                width={400}
+                height={250}
+                className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition">
+                  <span className="text-2xl">▶</span>
+                </button>
+              </div>
             </div>
 
- 
-            
+            {/* Floating Stats */}
+            <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-4 rounded-xl shadow-lg">
+              <div className="text-2xl font-bold text-blue-600">
+                {post.views}
+              </div>
+              <div className="text-sm text-gray-700">Total Views</div>
+            </div>
+
+            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl shadow-lg">
+              <div className="text-2xl font-bold">{post.likes}</div>
+              <div className="text-sm">Likes</div>
+            </div>
           </div>
-        )}
+        </div>
 
-        
+        {/* Tags */}
+        <div className="mt-12 pt-8 border-t border-white/20">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="text-blue-200 font-medium">Tags:</span>
+            {post.tags.map((tag: string, index: number) => (
+              <Link
+                key={index}
+                href={`/blog/tag/${tag.toLowerCase()}`}
+                className="px-3 py-1 bg-white/10 text-blue-200 text-sm rounded-full hover:bg-white/20 transition"
+              >
+                #{tag}
+              </Link>
+            ))}
+          </div>
+        </div>
 
-       
+        {/* Share Section */}
+        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <span className="text-blue-200">Share this article:</span>
+            <div className="flex gap-3">
+              {[
+                { name: "Twitter", icon: "🐦", color: "bg-blue-400" },
+                { name: "LinkedIn", icon: "💼", color: "bg-blue-600" },
+                { name: "Facebook", icon: "📘", color: "bg-blue-700" },
+                { name: "Copy Link", icon: "🔗", color: "bg-gray-600" },
+              ].map((social) => (
+                <button
+                  key={social.name}
+                  className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center text-white hover:scale-110 transition`}
+                  title={`Share on ${social.name}`}
+                >
+                  <span className="text-sm">{social.icon}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-blue-200 text-sm">Published on {post.date}</div>
+        </div>
       </div>
-    </header>
+    </section>
   );
 };
 
 export default BlogPostHeader;
-

@@ -8,13 +8,12 @@ import {
   FaPrint,
   FaFont,
   FaEye,
+  FaTwitter,
   FaLinkedin,
   FaFacebook,
   FaReddit,
   FaCopy,
 } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-
 
 interface BlogPost {
   id: string;
@@ -33,31 +32,16 @@ interface BlogPostContentProps {
 }
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
+  const [fontSize, setFontSize] = useState("text-base");
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  
-  const shareLinks = [
-    {
-      name: "Twitter",
-      icon: FaTwitter,
-      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`,
-      color: "bg-blue-500 hover:bg-blue-600"
-    },
-    {
-      name: "LinkedIn", 
-      icon: FaLinkedin,
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-      color: "bg-blue-700 hover:bg-blue-800"
-    },
-    {
-      name: "Facebook",
-      icon: FaFacebook, 
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-      color: "bg-blue-600 hover:bg-blue-700"
-    }
+  const fontSizes = [
+    { label: "Small", value: "text-sm" },
+    { label: "Medium", value: "text-base" },
+    { label: "Large", value: "text-lg" },
+    { label: "Extra Large", value: "text-xl" },
   ];
 
   // Function to clean and render HTML content properly
@@ -108,7 +92,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const shareOnTwitter = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
     const text = `Check out this article: ${post.title}`;
-    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
   const shareOnLinkedIn = () => {
@@ -143,49 +127,42 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
   return (
     <article className="bg-white">
-      {/* Main Content */}
-      <div className="prose prose-lg prose-gray max-w-none">
-        <div className="text-lg leading-relaxed text-gray-700 space-y-6">
-          {formatContent(post.content)}
-        </div>
-
-        {/* Code Block Example */}
-        <div className="my-8">
-          <div className="bg-gray-900 rounded-lg overflow-hidden">
-            <div className="flex items-center justify-between px-4 py-3 bg-gray-800 border-b border-gray-700">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="ml-3 text-sm text-gray-400">Java</span>
-              </div>
-              <button className="text-sm text-gray-400 hover:text-white transition-colors">
-                Copy
-              </button>
+      {/* Reading Controls */}
+      <div className="sticky top-20 z-10 bg-white border-b border-gray-200 p-4 mb-8 rounded-lg shadow-sm">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <FaFont className="w-4 h-4 text-gray-600" />
+              <select
+                value={fontSize}
+                onChange={(e) => setFontSize(e.target.value)}
+                className="text-sm border border-gray-300 rounded px-2 py-1 text-gray-800"
+              >
+                {fontSizes.map((size) => (
+                  <option key={size.value} value={size.value}>
+                    {size.label}
+                  </option>
+                ))}
+              </select>
             </div>
-            <pre className="p-4 text-sm text-gray-300 overflow-x-auto">
-              <code>{`import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-public class SeleniumExample {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://example.com");
-        
-        WebElement element = driver.findElement(By.id("submit"));
-        element.click();
-        
-        driver.quit();
-    }
-}`}</code>
-            </pre>
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <FaEye className="w-4 h-4" />
+              <span>Reading time: 8 min</span>
+            </div>
           </div>
-        </div>
 
           <div className="flex items-center gap-3">
-            
+            <button
+              onClick={() => setIsLiked(!isLiked)}
+              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
+                isLiked
+                  ? "bg-red-100 text-red-600"
+                  : "bg-gray-100 text-gray-700 hover:bg-red-50"
+              }`}
+            >
+              <FaHeart className="w-4 h-4" />
+              <span>{post.likes + (isLiked ? 1 : 0)}</span>
+            </button>
 
             <div className="relative">
               <button 
@@ -202,8 +179,8 @@ public class SeleniumExample {
                     onClick={shareOnTwitter}
                     className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
                   >
-                    <FaSquareXTwitter className="w-4 h-4 text-black" />
-                    X(Twitter)
+                    <FaTwitter className="w-4 h-4 text-blue-400" />
+                    Twitter
                   </button>
                   <button
                     onClick={shareOnLinkedIn}
@@ -237,9 +214,25 @@ public class SeleniumExample {
               )}
             </div>
 
-            
+            <button
+              onClick={() => setIsSaved(!isSaved)}
+              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
+                isSaved
+                  ? "bg-blue-100 text-blue-600"
+                  : "bg-gray-100 text-gray-700 hover:bg-blue-50"
+              }`}
+            >
+              <FaBookmark className="w-4 h-4" />
+              <span>{isSaved ? "Saved" : "Save"}</span>
+            </button>
 
-           
+            <button 
+              onClick={handlePrint}
+              className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+            >
+              <FaPrint className="w-4 h-4" />
+              <span>Print</span>
+            </button>
           </div>
         </div>
       </div>
@@ -258,7 +251,7 @@ public class SeleniumExample {
 
       {/* Author Bio */}
       <div className="bg-gray-50 rounded-xl p-8 my-12">
-        <div className="flex flex-col sm:flex-row items-start gap-6">
+        <div className="flex items-start gap-6">
           <Image
             src={post.authorImage}
             alt={post.author}
@@ -273,12 +266,37 @@ public class SeleniumExample {
             <p className="text-gray-700 mb-4 leading-relaxed">
               {post.authorBio}
             </p>
-           
+            <div className="flex items-center gap-4">
+              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                Follow Author
+              </button>
+              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
+                View All Posts
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      
+      {/* Article Navigation */}
+      <div className="flex items-center justify-between py-8 border-t border-gray-200">
+        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
+          <span className="text-2xl">←</span>
+          <div className="text-left">
+            <div className="text-sm text-gray-500">Previous Article</div>
+            <div className="font-semibold">API Testing with Postman</div>
+          </div>
+        </button>
+        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
+          <div className="text-right">
+            <div className="text-sm text-gray-500">Next Article</div>
+            <div className="font-semibold">
+              Cross-Browser Testing Strategies
+            </div>
+          </div>
+          <span className="text-2xl">→</span>
+        </button>
+      </div>
 
       {/* Social Share */}
       <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-6 my-8">
@@ -290,10 +308,10 @@ public class SeleniumExample {
           <div className="flex justify-center gap-3 flex-wrap">
             <button
               onClick={shareOnTwitter}
-              className="bg-black text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
             >
-              <FaSquareXTwitter />
-              <span>X (Twitter)</span>
+              <FaTwitter />
+              <span>Twitter</span>
             </button>
             <button
               onClick={shareOnLinkedIn}
