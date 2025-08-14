@@ -159,6 +159,13 @@ const CareersApplicationProcessSection: React.FC = () => {
     },
   ];
 
+  const scrollToOpenPostions = () => {
+    const element = document.getElementById("open-positions-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="py-16 bg-white px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto ">
@@ -321,9 +328,9 @@ const CareersApplicationProcessSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#view-open-position" className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button onClick={scrollToOpenPostions} className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
               Browse Open Positions
-            </Link>
+            </button>
             <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
               Submit General Application
             </button>

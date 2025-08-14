@@ -25,7 +25,7 @@ const HealthcareContactSection: React.FC = () => {
         "Book a free 30-minute consultation with our healthcare testing experts",
       detail:"",
       text: "Schedule Now",
-      action: "/contact-us",
+      action: "/contact-us#calendly-section",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
     },

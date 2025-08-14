@@ -350,9 +350,9 @@ const CareersOpenPositions: React.FC = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                   {/* Left Side - Job Info */}
                   <div className="flex-1">
-                    <div className="flex items-start gap-4 mb-4">
+                    <div className="md:flex items-start gap-4 mb-4">
                       <div
-                        className={`w-12 h-12 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                        className={`w-12 h-12 my-2 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
                       >
                         <position.icon className="w-6 h-6 text-white" />
                       </div>

@@ -187,26 +187,26 @@ const AITestingHeroSection: React.FC = () => {
           </div>
 
           {/* Floating AI Test Badges */}
-          <div className="absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -top-8 -left-6 lg:-top-6 lg:-left-12 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">ML Model</div>
             <div className="text-lg font-bold text-green-600">🧠</div>
           </div>
 
-          <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -top-8 -right-6 lg:-top-6 lg:-right-14 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">
               Neural Net
             </div>
             <div className="text-lg font-bold text-purple-600">🔗</div>
           </div>
 
-          <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -bottom-12 lg:-bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">
               Deep Learning
             </div>
             <div className="text-lg font-bold text-blue-600">⚡</div>
           </div>
 
-          <div className="absolute -bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -bottom-12 lg:-bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">AI Ethics</div>
             <div className="text-lg font-bold text-orange-600">⚖️</div>
           </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaRocket,
   FaPhone,
@@ -12,26 +12,71 @@ import {
 } from "react-icons/fa";
 
 const EcommerceContactSection: React.FC = () => {
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    compName: "",
+    platform: "Select Your Platform",
+    description: "",
+  })
+
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate form submission
+    console.log("Form submitted:", formData);
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+
+    // Reset state
+    setFormData({
+      fullName: "",
+      email: "",
+      compName: "",
+      platform: "Select Your Platform",
+      description: ""
+    });
+  };
+
+
   const contactMethods = [
     {
       icon: FaPhone,
       title: "Call Our E-Commerce Experts",
       description: "Speak directly with our e-commerce testing specialists",
-      action: "Call Now: (+91) 915-2929-343",
+      text: "(+91) 915-2929-343",
+      action: "tel: (+91) 915-2929-343",
       color: "from-green-500 to-emerald-600",
     },
     {
       icon: FaEnvelope,
       title: "Email for Detailed Inquiry",
       description: "Send us your requirements for a comprehensive proposal",
-      action: "contact@testriq.com",
+      text: "contact@testriq.com",
+      action: "mailto:contact@testriq.com",
       color: "from-blue-500 to-cyan-600",
     },
     {
       icon: FaCalendarAlt,
       title: "Schedule Strategy Session",
       description: "Book a free consultation to discuss your testing needs",
-      action: "Schedule Free Consultation",
+      text: "Schedule Free Consultation",
+      action: "/contact-us#calendly-section",
       color: "from-purple-500 to-indigo-600",
     },
   ];
@@ -93,9 +138,9 @@ const EcommerceContactSection: React.FC = () => {
                     <p className="text-sky-600 text-sm mb-4 leading-relaxed">
                       {method.description}
                     </p>
-                    <button className="text-sky-600 font-semibold flex items-center gap-2 group">
-                      {method.action}
-                    </button>
+                    <Link href={method.action} className="text-sky-600 font-semibold flex items-center gap-2 group">
+                      {method.text}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -137,46 +182,78 @@ const EcommerceContactSection: React.FC = () => {
               <h4 className="font-semibold text-gray-900 mb-4">
                 Quick Contact Form
               </h4>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
+                      required
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
                   <input
                     type="text"
-                    placeholder="Your Name"
+                    placeholder="Company Name"
+                    name="compName"
+                    value={formData.compName}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
+                    required
                   />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
-                  />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
-                />
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors">
-                  <option value="">Select Your Platform</option>
-                  <option value="shopify">Shopify</option>
-                  <option value="woocommerce">WooCommerce</option>
-                  <option value="magento">Magento</option>
-                  <option value="bigcommerce">BigCommerce</option>
-                  <option value="custom">Custom Platform</option>
-                  <option value="other">Other</option>
-                </select>
-                <textarea
-                  placeholder="Tell us about your testing needs..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors resize-none"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-xl font-semibold hover:bg-opacity-90 hover:scale-97 transition-all flex items-center justify-center gap-2"
-                >
-                  <FaRocket className="w-4 h-4" />
-                  Get Free E-Commerce Assessment
-                </button>
-              </form>
+                  <select
+                    name="platform"
+                    value={formData.platform}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors">
+                    <option value="">Select Your Platform</option>
+                    <option value="shopify">Shopify</option>
+                    <option value="woocommerce">WooCommerce</option>
+                    <option value="magento">Magento</option>
+                    <option value="bigcommerce">BigCommerce</option>
+                    <option value="custom">Custom Platform</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                    placeholder="Tell us about your testing needs..."
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors resize-none"
+                  ></textarea>
+                  <button
+                    type="submit"
+                    className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 cursor-pointer rounded-xl font-semibold hover:bg-opacity-90 hover:scale-97 transition-all flex items-center justify-center gap-2"
+                  >
+                    <FaRocket className="w-4 h-4" />
+                    Get Free E-Commerce Assessment
+                  </button>
+                </form>
+              )}
             </div>
 
             <div className="mt-6 text-center text-gray-500 text-sm">

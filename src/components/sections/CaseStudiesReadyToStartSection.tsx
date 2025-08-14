@@ -32,26 +32,6 @@ const CaseStudiesReadyToStartSection = () => {
     },
   ];
 
-  const nextSteps = [
-    {
-      step: 1,
-      title: "Schedule Consultation",
-      description:
-        "Book a free 30-minute consultation to discuss your testing needs",
-    },
-    {
-      step: 2,
-      title: "Receive Custom Proposal",
-      description:
-        "Get a tailored testing strategy and proposal within 24 hours",
-    },
-    {
-      step: 3,
-      title: "Start Your Project",
-      description: "Begin your testing journey with our expert team",
-    },
-  ];
-
   const contactOptions = [
     {
       icon: FaCalendarAlt,
@@ -64,16 +44,8 @@ const CaseStudiesReadyToStartSection = () => {
     {
       icon: FaPhone,
       title: "Call Us Directly",
-      description: [
-        "(+91) 915-2929-343",
-        // "(+91) 900-4988-859",
-        // "(+91) 982-0680-665"
-      ],
-      // action: [
-      //   "tel:(+91) 915-2929-343",
-      //   "tel:(+91) 900-4988-859",
-      //   "tel:(+91) 982-0680-665"
-      // ],
+      description: "(+91) 915-2929-343",
+      action: "tel:(+91) 915-2929-343",
       text: "Call Now",
       primary: false,
     },
@@ -142,7 +114,7 @@ const CaseStudiesReadyToStartSection = () => {
               const IconComponent = option.icon;
               return (
                 
-                  <div
+                  <div key={index}
                     className={`bg-white/20 text-white rounded-lg p-6 text-center transition-transform`}
                   >
                     <IconComponent

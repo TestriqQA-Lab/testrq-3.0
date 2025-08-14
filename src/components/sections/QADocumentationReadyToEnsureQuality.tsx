@@ -83,7 +83,7 @@ const QADocumentationReadyToEnsureQuality = () => {
           <p className="text-lg opacity-75 mb-6">
             Trusted by leading organizations worldwide
           </p>
-          <div className="flex justify-center items-center flex-col md:flex-row space-x-8 opacity-60 text-white">
+          <div className="flex justify-center text-center items-center flex-col md:flex-row gap-4 opacity-60 text-white">
             <div className="text-sm ">ISO 9001 Certified</div>
             <div className="w-1 h-1 bg-white  rounded-full"></div>
             <div className="text-sm">ISTQB Professionals</div>
