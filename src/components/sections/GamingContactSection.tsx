@@ -403,9 +403,9 @@ const GamingContactSection: React.FC = () => {
                   Schedule Free Consultation
                 </button>
               </Link>
-              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+              {/* <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 Download Gaming Testing Guide
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

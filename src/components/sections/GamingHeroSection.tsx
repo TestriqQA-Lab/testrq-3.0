@@ -39,8 +39,8 @@ const GamingHeroSection: React.FC = () => {
       </div>
 
       {/* Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 2xl:left-1/2 animate-float">
+      <div className="absolute inset-0 hidden xl:block overflow-hidden">
+        <div className="absolute top-32 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 2xl:left-1/3 animate-float">
           <div className="w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center">
             <FaGamepad className="w-8 h-8 text-[theme(color.brand.blue)]" />
           </div>

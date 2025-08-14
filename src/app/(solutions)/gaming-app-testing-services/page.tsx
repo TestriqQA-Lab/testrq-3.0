@@ -100,7 +100,7 @@ const GamingTestingPage: React.FC = () => {
       <GamingTestingProcessSection />
       <GamingPlatformsSection />
       <GamingToolsFrameworkSection />
-      <GamingCaseStudiesSection />
+      {/* <GamingCaseStudiesSection /> */}
       <GamingROISection />
       <GamingFAQSection />
       <GamingContactSection />
