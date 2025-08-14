@@ -17,7 +17,7 @@ const EcommerceHeroSection: React.FC = () => {
   const keyStats = [
     { value: "99.9%", label: "Uptime Guarantee", icon: FaRocket },
     { value: "50+", label: "E-commerce Platforms", icon: FaShoppingCart },
-    { value: "500M+", label: "Transactions Tested", icon: FaCreditCard },
+    { value: "98%", label: "Page Load Speed Optimization", icon: FaCreditCard },
     { value: "24/7", label: "Monitoring Support", icon: FaShieldAlt },
   ];
 

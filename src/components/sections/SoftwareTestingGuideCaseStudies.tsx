@@ -98,11 +98,6 @@ const SoftwareTestingGuideCaseStudies = () => {
       description: "Average satisfaction rating",
     },
     {
-      metric: "$50M+",
-      label: "Cost Savings",
-      description: "Total client savings achieved",
-    },
-    {
       metric: "99.9%",
       label: "Success Rate",
       description: "Project completion rate",
@@ -224,7 +219,7 @@ const SoftwareTestingGuideCaseStudies = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-white">
             {successMetrics.map((item, index) => (
               <div key={index}>
                 <div className="text-3xl font-bold mb-2">{item.metric}</div>

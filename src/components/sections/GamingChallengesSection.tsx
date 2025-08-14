@@ -78,32 +78,6 @@ const GamingChallengesSection: React.FC = () => {
     }
   ];
 
-  const challengeStats = [
-    {
-      icon: FaExclamationTriangle,
-      value: "73%",
-      label: "Player Uninstall Rate",
-      description: "Due to game-breaking bugs"
-    },
-    {
-      icon: FaChartLine,
-      value: "$2.1B",
-      label: "Annual Revenue Loss",
-      description: "From poor game quality"
-    },
-    {
-      icon: FaClock,
-      value: "40%",
-      label: "Higher Dropout Rate",
-      description: "In games with multiplayer issues"
-    },
-    {
-      icon: FaShieldAlt,
-      value: "167%",
-      label: "More Cyberattacks",
-      description: "Than other industries"
-    }
-  ];
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
@@ -124,20 +98,6 @@ const GamingChallengesSection: React.FC = () => {
             Gaming applications face unique challenges like performance and scalability, cross-platform compatibility, and security risks that can make or break the player experience. Our specialized game testing services address these critical issues—from gameplay mechanics testing to vulnerability scanning—before they impact your players.
 
           </p>
-        </div>
-
-        {/* Challenge Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {challengeStats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">{stat.label}</div>
-              <div className="text-sm text-gray-600">{stat.description}</div>
-            </div>
-          ))}
         </div>
 
         {/* Challenges Grid */}
