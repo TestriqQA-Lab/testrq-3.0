@@ -115,13 +115,6 @@ const BankingComplianceSection: React.FC = () => {
     },
   ];
 
-  const complianceStats = [
-    { value: "100%", label: "Compliance Success Rate" },
-    { value: "$150B", label: "Annual Compliance Fines Globally" },
-    { value: "200+", label: "Regulations We Cover" },
-    { value: "24/7", label: "Compliance Monitoring" },
-  ];
-
   const complianceProcess = [
     {
       step: "1",
@@ -181,22 +174,6 @@ const BankingComplianceSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Compliance Statistics */}
-        <div className="bg-white rounded-3xl p-8 mb-16 shadow-lg border border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Compliance Landscape
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {complianceStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Compliance Standards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">

@@ -45,7 +45,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
       ],
       testimonial:
         "The testing revealed critical usability issues we never noticed. Student satisfaction scores have never been higher.",
-      author: "Dr. Sarah Mitchell, Dean of Online Learning",
       bgColor: "from-blue-50 to-indigo-50",
       accentColor: "blue-600",
     },
@@ -76,7 +75,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
       ],
       testimonial:
         "Our training platform now handles 10,000+ concurrent users without any issues. The ROI has been phenomenal.",
-      author: "Mark Johnson, Chief Learning Officer",
       bgColor: "from-green-50 to-emerald-50",
       accentColor: "green-600",
     },
@@ -108,7 +106,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
       ],
       testimonial:
         "Every student can now access our platform regardless of their device or abilities. True educational equity achieved.",
-      author: "Lisa Chen, Technology Director",
       bgColor: "from-purple-50 to-pink-50",
       accentColor: "purple-600",
     },
@@ -116,9 +113,9 @@ const ElearningCaseStudiesSection: React.FC = () => {
 
   const successMetrics = [
     {
-      value: "250+",
-      label: "Educational Institutions",
-      description: "Successfully optimized",
+      value: "98%",
+      label: "Completion Rate",
+      description: "For Interactive Content",
     },
     {
       value: "2M+",
@@ -163,7 +160,7 @@ const ElearningCaseStudiesSection: React.FC = () => {
         </div>
 
         {/* Success Metrics */}
-        <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
+        {/* <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Our Impact in Numbers
@@ -189,25 +186,19 @@ const ElearningCaseStudiesSection: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Case Studies */}
         <div className="space-y-16">
-          <h2 className="text-3xl md:text-4xl text-center lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
-            E-Learning -
-            <span className=" text-brand-blue">
-              {" "}Case Studies
-            </span>
-          </h2>
           {caseStudies.map((study, index) => (
             <div
               key={index}
               className={`bg-gradient-to-br ${study.bgColor} rounded-3xl p-12 shadow-lg border border-gray-100`}
             >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Left Column - Company Info & Challenge */}
                 <div>
-                  <div className="flex items-center gap-4 mb-8">
+                  <div className="flex gap-4 mb-8">
                     <div
                       className={`w-16 h-16 bg-${study.accentColor} rounded-2xl flex items-center justify-center shadow-lg`}
                     >
@@ -253,9 +244,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
                   <div className="bg-white bg-opacity-70 rounded-2xl p-6 border-l-4 border-gray-300">
                     <p className="text-gray-700 italic mb-4">
                       &quot;{study.testimonial}&quot;
-                    </p>
-                    <p className="font-semibold text-gray-900">
-                      — {study.author}
                     </p>
                   </div>
                 </div>

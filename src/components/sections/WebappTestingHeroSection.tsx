@@ -1,14 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight, FaLaptopCode, FaPlay } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
+import Lightbox from "../VideoLightBox"; 
 
 const WebappTestingHeroSection: React.FC = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
   return (
     <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16">
@@ -44,7 +55,7 @@ const WebappTestingHeroSection: React.FC = () => {
                 <FaArrowRight className="inline ml-2" />
               </button>
             </Link>
-            <button className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+            <button onClick={openLightbox} className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
               <FaPlay className="w-4 h-4 mr-2" />
               Watch Demo
             </button>
@@ -114,6 +125,8 @@ const WebappTestingHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://youtu.be/wAPCSnAhhC8?si=6yNo43V82w91LiPt" onClose={closeLightbox} />
     </section>
   );
 };

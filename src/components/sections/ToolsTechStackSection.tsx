@@ -1,50 +1,222 @@
+"use client";
+
 import React from "react";
-import { FaLayerGroup } from "react-icons/fa";
+import {
+  FaLayerGroup,
+  FaJava,
+  FaPython,
+  FaJsSquare,
+  FaCogs,
+  FaDocker,
+  FaAws,
+  FaDatabase,
+  FaCloud,
+  FaRegFileAlt,
+  FaTrello,
+  FaGithub,
+  FaGitlab,
+  FaJira,
+  FaShieldAlt,
+  FaPlayCircle,
+  FaTerminal,
+  FaSearchPlus,
+  FaBox,
+} from "react-icons/fa";
 
 const ToolsTechStackSection = () => {
   const techStack = {
     "Programming Languages": [
-      { name: "Java", description: "Enterprise-grade automation with robust frameworks", usage: "95%" },
-      { name: "Python", description: "Rapid development and AI-powered testing", usage: "90%" },
-      { name: "JavaScript/TypeScript", description: "Modern web testing and Node.js automation", usage: "85%" },
-      { name: "C#", description: "Microsoft ecosystem and .NET applications", usage: "80%" },
-      { name: "Go", description: "High-performance testing and microservices", usage: "70%" }
+      {
+        name: "Java",
+        description: "Enterprise-grade automation with robust frameworks",
+        usage: "95%",
+        icon: <FaJava className="w-8 h-8" />,
+      },
+      {
+        name: "Python",
+        description: "Rapid development and AI-powered testing",
+        usage: "90%",
+        icon: <FaPython className="w-8 h-8" />,
+      },
+      {
+        name: "JavaScript/TypeScript",
+        description: "Modern web testing and Node.js automation",
+        usage: "85%",
+        icon: <FaJsSquare className="w-8 h-8" />,
+      },
+      {
+        name: "C#",
+        description: "Microsoft ecosystem and .NET applications",
+        usage: "80%",
+        icon: <FaCogs className="w-8 h-8" />,
+      },
+      {
+        name: "Go",
+        description: "High-performance testing and microservices",
+        usage: "70%",
+        icon: <FaTerminal className="w-8 h-8" />,
+      },
     ],
     "Test Management": [
-      { name: "TestRail", description: "Comprehensive test case management", usage: "95%" },
-      { name: "Jira", description: "Issue tracking and project management", usage: "100%" },
-      { name: "Azure DevOps", description: "End-to-end DevOps lifecycle", usage: "85%" },
-      { name: "Zephyr", description: "Advanced test management in Jira", usage: "80%" },
-      { name: "qTest", description: "Agile test management platform", usage: "75%" }
+      {
+        name: "TestRail",
+        description: "Comprehensive test case management",
+        usage: "95%",
+        icon: <FaRegFileAlt className="w-8 h-8" />,
+      },
+      {
+        name: "Jira",
+        description: "Issue tracking and project management",
+        usage: "100%",
+        icon: <FaJira className="w-8 h-8" />,
+      },
+      {
+        name: "Azure DevOps",
+        description: "End-to-end DevOps lifecycle",
+        usage: "85%",
+        icon: <FaGithub className="w-8 h-8" />,
+      },
+      {
+        name: "Zephyr",
+        description: "Advanced test management in Jira",
+        usage: "80%",
+        icon: <FaTrello className="w-8 h-8" />,
+      },
+      {
+        name: "qTest",
+        description: "Agile test management platform",
+        usage: "75%",
+        icon: <FaBox className="w-8 h-8" />,
+      },
     ],
     "CI/CD Integration": [
-      { name: "Jenkins", description: "Continuous integration and deployment", usage: "95%" },
-      { name: "GitHub Actions", description: "Native GitHub workflow automation", usage: "90%" },
-      { name: "GitLab CI", description: "Integrated DevOps platform", usage: "85%" },
-      { name: "Azure Pipelines", description: "Cloud-native CI/CD", usage: "80%" },
-      { name: "Docker", description: "Containerized testing environments", usage: "90%" }
+      {
+        name: "Jenkins",
+        description: "Continuous integration and deployment",
+        usage: "95%",
+        icon: <FaPlayCircle className="w-8 h-8" />,
+      },
+      {
+        name: "GitHub Actions",
+        description: "Native GitHub workflow automation",
+        usage: "90%",
+        icon: <FaGithub className="w-8 h-8" />,
+      },
+      {
+        name: "GitLab CI",
+        description: "Integrated DevOps platform",
+        usage: "85%",
+        icon: <FaGitlab className="w-8 h-8" />,
+      },
+      {
+        name: "Azure Pipelines",
+        description: "Cloud-native CI/CD",
+        usage: "80%",
+        icon: <FaCloud className="w-8 h-8" />,
+      },
+      {
+        name: "Docker",
+        description: "Containerized testing environments",
+        usage: "90%",
+        icon: <FaDocker className="w-8 h-8" />,
+      },
     ],
     "Cloud Platforms": [
-      { name: "AWS", description: "Scalable cloud testing infrastructure", usage: "95%" },
-      { name: "Azure", description: "Microsoft cloud services", usage: "85%" },
-      { name: "Google Cloud", description: "Advanced AI and ML capabilities", usage: "75%" },
-      { name: "BrowserStack", description: "Cross-browser testing platform", usage: "90%" },
-      { name: "Sauce Labs", description: "Comprehensive testing cloud", usage: "85%" }
+      {
+        name: "AWS",
+        description: "Scalable cloud testing infrastructure",
+        usage: "95%",
+        icon: <FaAws className="w-8 h-8" />,
+      },
+      {
+        name: "Azure",
+        description: "Microsoft cloud services",
+        usage: "85%",
+        icon: <FaCloud className="w-8 h-8" />,
+      },
+      {
+        name: "Google Cloud",
+        description: "Advanced AI and ML capabilities",
+        usage: "75%",
+        icon: <FaCloud className="w-8 h-8" />,
+      },
+      {
+        name: "BrowserStack",
+        description: "Cross-browser testing platform",
+        usage: "90%",
+        icon: <FaSearchPlus className="w-8 h-8" />,
+      },
+      {
+        name: "Sauce Labs",
+        description: "Comprehensive testing cloud",
+        usage: "85%",
+        icon: <FaCloud className="w-8 h-8" />,
+      },
     ],
     "Monitoring & Analytics": [
-      { name: "Grafana", description: "Advanced metrics visualization", usage: "85%" },
-      { name: "Prometheus", description: "Monitoring and alerting toolkit", usage: "80%" },
-      { name: "ELK Stack", description: "Elasticsearch, Logstash, and Kibana", usage: "75%" },
-      { name: "New Relic", description: "Application performance monitoring", usage: "70%" },
-      { name: "Datadog", description: "Cloud monitoring and analytics", usage: "65%" }
+      {
+        name: "Grafana",
+        description: "Advanced metrics visualization",
+        usage: "85%",
+        icon: <FaSearchPlus className="w-8 h-8" />,
+      },
+      {
+        name: "Prometheus",
+        description: "Monitoring and alerting toolkit",
+        usage: "80%",
+        icon: <FaSearchPlus className="w-8 h-8" />,
+      },
+      {
+        name: "ELK Stack",
+        description: "Elasticsearch, Logstash, and Kibana",
+        usage: "75%",
+        icon: <FaDatabase className="w-8 h-8" />,
+      },
+      {
+        name: "New Relic",
+        description: "Application performance monitoring",
+        usage: "70%",
+        icon: <FaDatabase className="w-8 h-8" />,
+      },
+      {
+        name: "Datadog",
+        description: "Cloud monitoring and analytics",
+        usage: "65%",
+        icon: <FaDatabase className="w-8 h-8" />,
+      },
     ],
     "Specialized Tools": [
-      { name: "OWASP ZAP", description: "Security testing and vulnerability scanning", usage: "90%" },
-      { name: "JMeter", description: "Performance and load testing", usage: "95%" },
-      { name: "Postman", description: "API development and testing", usage: "100%" },
-      { name: "Wireshark", description: "Network protocol analysis", usage: "70%" },
-      { name: "SonarQube", description: "Code quality and security analysis", usage: "85%" }
-    ]
+      {
+        name: "OWASP ZAP",
+        description: "Security testing and vulnerability scanning",
+        usage: "90%",
+        icon: <FaShieldAlt className="w-8 h-8" />,
+      },
+      {
+        name: "JMeter",
+        description: "Performance and load testing",
+        usage: "95%",
+        icon: <FaPlayCircle className="w-8 h-8" />,
+      },
+      {
+        name: "Postman",
+        description: "API development and testing",
+        usage: "100%",
+        icon: <FaPlayCircle className="w-8 h-8" />,
+      },
+      {
+        name: "Wireshark",
+        description: "Network protocol analysis",
+        usage: "70%",
+        icon: <FaDatabase className="w-8 h-8" />,
+      },
+      {
+        name: "SonarQube",
+        description: "Code quality and security analysis",
+        usage: "85%",
+        icon: <FaDatabase className="w-8 h-8" />,
+      },
+    ],
   };
 
   return (
@@ -53,54 +225,57 @@ const ToolsTechStackSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-            <FaLayerGroup  />
+            <FaLayerGroup />
             <span className="text-sm">Technology Stack</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Complete{" "}
-            <span className="text-[theme(color.brand.blue)]">Testing Ecosystem</span>
+            <span className="text-[theme(color.brand.blue)]">
+              Testing Ecosystem
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive software testing technology stack encompasses every aspect of modern QA practices—from programming languages and automation frameworks like Selenium, Cypress, and Playwright, to cloud testing platforms, CI/CD tools, and specialized QA tools for performance, security, and API testing.
-
+            Our comprehensive software testing technology stack encompasses
+            every aspect of modern QA practices—from programming languages and
+            automation frameworks like Selenium, Cypress, and Playwright, to
+            cloud testing platforms, CI/CD tools, and specialized QA tools for
+            performance, security, and API testing.
           </p>
         </div>
 
         {/* Tech Stack Categories */}
         <div className="space-y-12">
           {Object.entries(techStack).map(([category, tools], categoryIndex) => (
-            <div key={categoryIndex} className="bg-white rounded-xl p-8 shadow-lg">
+            <div
+              key={categoryIndex}
+              className="bg-white rounded-xl p-8 shadow-lg"
+            >
               <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
                 <div className="w-8 h-8 bg-[theme(color.brand.blue)] rounded-lg flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">{categoryIndex + 1}</span>
+                  <span className="text-white text-sm font-bold">
+                    {categoryIndex + 1}
+                  </span>
                 </div>
                 {category}
               </h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {tools.map((tool, toolIndex) => (
                   <div
                     key={toolIndex}
                     className="border border-gray-200 rounded-lg p-6 hover:border-[theme(color.brand.blue)] transition-colors"
                   >
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold text-gray-900">{tool.name}</h4>
-                      <span className="text-sm text-[theme(color.brand.blue)] font-medium">
-                        {tool.usage}
-                      </span>
+                    <div className="flex items-start mb-3 gap-3">
+                      <div className="flex text-brand-blue items-center mb-4">
+                        {tool.icon}
+                      </div>
+                      <h4 className="font-semibold text-gray-900">
+                        {tool.name}
+                      </h4>
                     </div>
-                    
                     <p className="text-gray-600 text-sm mb-4">
                       {tool.description}
                     </p>
-                    
-                    {/* Usage Bar */}
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div
-                        className="bg-[theme(color.brand.blue)] h-2 rounded-full transition-all duration-300"
-                        style={{ width: tool.usage }}
-                      ></div>
-                    </div>
                   </div>
                 ))}
               </div>
@@ -111,33 +286,44 @@ const ToolsTechStackSection = () => {
         {/* Integration Benefits */}
         <div className="mt-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl p-8 text-white">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Integrated Testing Excellence</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Integrated Testing Excellence
+            </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Our technology stack is carefully curated and integrated to provide seamless testing workflows, 
-              maximum efficiency, and comprehensive coverage across all testing domains.
+              Our technology stack is carefully curated and integrated to
+              provide seamless testing workflows, maximum efficiency, and
+              comprehensive coverage across all testing domains.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl mb-2">🔄</div>
               <h4 className="font-semibold mb-2">Seamless Integration</h4>
-              <p className="text-blue-100 text-sm">All tools work together harmoniously</p>
+              <p className="text-blue-100 text-sm">
+                All tools work together harmoniously
+              </p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-2">⚡</div>
               <h4 className="font-semibold mb-2">High Performance</h4>
-              <p className="text-blue-100 text-sm">Optimized for speed and efficiency</p>
+              <p className="text-blue-100 text-sm">
+                Optimized for speed and efficiency
+              </p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-2">🛡️</div>
               <h4 className="font-semibold mb-2">Enterprise Security</h4>
-              <p className="text-blue-100 text-sm">Bank-grade security and compliance</p>
+              <p className="text-blue-100 text-sm">
+                Bank-grade security and compliance
+              </p>
             </div>
             <div className="text-center">
               <div className="text-3xl mb-2">📊</div>
               <h4 className="font-semibold mb-2">Advanced Analytics</h4>
-              <p className="text-blue-100 text-sm">Comprehensive reporting and insights</p>
+              <p className="text-blue-100 text-sm">
+                Comprehensive reporting and insights
+              </p>
             </div>
           </div>
         </div>
@@ -147,4 +333,3 @@ const ToolsTechStackSection = () => {
 };
 
 export default ToolsTechStackSection;
-

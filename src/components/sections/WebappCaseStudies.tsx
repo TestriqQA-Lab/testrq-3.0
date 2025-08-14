@@ -14,7 +14,6 @@ const caseStudies = [
       "70% improvement in page load times, enhancing performance and user experience",
       "200% increase in concurrent user capacity, boosting scalability",
       "45% reduction in cart abandonment, improving conversion rates",
-      "$2M additional revenue generated during Black Friday, showcasing measurable ROI",
     ],
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
     duration: "8 weeks",

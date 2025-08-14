@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaRobot,
   FaCogs,
@@ -13,8 +13,19 @@ import {
   FaCode,
 } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
+import Lightbox from "../VideoLightBox"; 
 
 const AutomationTestingHeroSection: React.FC = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
   return (
     <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -50,7 +61,7 @@ const AutomationTestingHeroSection: React.FC = () => {
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-              <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
+              <button onClick={openLightbox} className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
                 <FaPlay className="mr-2" />
                 Watch Demo
               </button>
@@ -214,6 +225,8 @@ const AutomationTestingHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

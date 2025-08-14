@@ -71,7 +71,6 @@ const DataAnalysisCaseStudies = () => {
         "60% reduction in fraudulent transactions",
         "40% decrease in false positives",
         "99.9% system uptime achieved",
-        "$500M annual fraud prevention",
       ],
       technologies: ["Python", "Apache Spark", "Kafka", "Elasticsearch"],
       duration: "12 months",
@@ -116,11 +115,6 @@ const DataAnalysisCaseStudies = () => {
       metric: "98%",
       label: "Client Satisfaction",
       description: "Average satisfaction rating",
-    },
-    {
-      metric: "$100M+",
-      label: "Value Generated",
-      description: "Total client value created",
     },
     {
       metric: "99.5%",
@@ -306,7 +300,7 @@ const DataAnalysisCaseStudies = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-white">
             {successMetrics.map((item, index) => (
               <div key={index}>
                 <div className="text-3xl font-bold mb-2">{item.metric}</div>
