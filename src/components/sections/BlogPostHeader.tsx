@@ -1,4 +1,4 @@
-"use client";
+// /home/ubuntu/updated_BlogPostHeader.tsx
 import Image from "next/image";
 import React from "react";
 import {
@@ -11,6 +11,7 @@ import {
   FaLink,
 } from "react-icons/fa";
 import Link from "next/link";
+import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
 
 interface BlogPost {
   id: string;
@@ -27,7 +28,7 @@ interface BlogPost {
   views: string;
   likes: number;
   shares: number;
-  tags: string[];
+  tags: string[]; // Added missing tags property
 }
 
 interface BlogPostHeaderProps {
@@ -35,34 +36,15 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
-  
-  const shareLinks = [
-    {
-      name: "Twitter",
-      icon: FaTwitter,
-      url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`,
-      color: "hover:bg-blue-500 hover:text-white"
-    },
-    {
-      name: "LinkedIn", 
-      icon: FaLinkedin,
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-      color: "hover:bg-blue-700 hover:text-white"
-    },
-    {
-      name: "Facebook",
-      icon: FaFacebook, 
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-      color: "hover:bg-blue-600 hover:text-white"
-    },
-    {
-      name: "Copy Link",
-      icon: FaLink,
-      url: "#",
-      color: "hover:bg-gray-600 hover:text-white"
-    }
-  ];
+  const cleanExcerpt = stripHtmlTags(post.excerpt); // Strip HTML tags from the excerpt
+
+  return (
+    <section className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-800 text-white py-16 px-8 md:px-12 lg:px-24 relative overflow-hidden">
+      {/* Background Blurs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 bg-opacity-20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-400 bg-opacity-15 rounded-full blur-xl"></div>
+      </div>
 
   const handleShare = (url: string, name: string) => {
     if (name === "Copy Link") {
@@ -104,9 +86,8 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               {post.title}
             </h1>
 
-            {/* Excerpt */}
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              {post.excerpt}
+            <p className="text-lg text-white/80 mb-8 leading-relaxed">
+              {cleanExcerpt}
             </p>
 
             {/* Meta Information */}
@@ -136,30 +117,25 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   height={48}
                   className="w-12 h-12 rounded-full border-2 border-gray-200"
                 />
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900">{post.author}</div>
-                  <div className="text-sm text-gray-600">Author</div>
+                <div>
+                  <div className="font-semibold text-white">{post.author}</div>
+                  <div className="text-sm text-blue-200">Author</div>
                 </div>
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-white/70">
+                <div className="flex items-center gap-2">
+                  <FaCalendarAlt className="w-4 h-4" />
+                  <span>{post.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <FaClock className="w-4 h-4" />
+                  <span>{post.readTime}</span>
+                </div>
+                
               </div>
             </div>
 
-            {/* Social Share */}
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <span className="text-sm text-gray-600 mr-2">Share:</span>
-              {shareLinks.map((social) => {
-                const IconComponent = social.icon;
-                return (
-                  <button
-                    key={social.name}
-                    onClick={() => handleShare(social.url, social.name)}
-                    className={`w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 transition-all duration-200 ${social.color}`}
-                    title={`Share on ${social.name}`}
-                  >
-                    <IconComponent className="w-4 h-4" />
-                  </button>
-                );
-              })}
-            </div>
           </div>
         </div>
 
@@ -175,29 +151,18 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                 className="w-full h-64 md:h-96 lg:h-[500px] object-cover"
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              
             </div>
+
+ 
+            
           </div>
         )}
 
-        {/* Tags */}
-        {post.tags && post.tags.length > 0 && (
-          <div className="pb-8 border-b border-gray-200">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm font-medium text-gray-700">Tags:</span>
-                {post.tags.map((tag, index) => (
-                  <Link
-                    key={index}
-                    href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-800 transition-colors"
-                  >
-                    #{tag}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+        
+
+       
       </div>
     </header>
   );

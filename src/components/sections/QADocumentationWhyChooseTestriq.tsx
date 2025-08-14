@@ -224,8 +224,6 @@ const QADocumentationWhyChooseTestriq = () => {
                 &quot;Testriq&apos;s QA documentation services transformed our testing processes. Their comprehensive quality assurance documentation and well-structured test case documentation reduced our onboarding time by 50% and significantly improved our overall QA deliverables and quality delivery.
                 &quot;
               </blockquote>
-              <div className="text-lg font-semibold text-gray-900">Sarah Johnson</div>
-              <div className="text-gray-600">VP of Quality Assurance, TechCorp Solutions</div>
             </div>
           </div>
         </div>

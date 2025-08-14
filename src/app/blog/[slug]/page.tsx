@@ -144,20 +144,11 @@ export default async function BlogPostPage({ params }: Props) {
       <MainLayout>
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
-        
-        {/* Main Content Area */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 lg:p-8 mb-8">
-                <BlogPostContent post={post} />
-              </div>
-              
-              {/* Comments Section */}
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 lg:p-8">
-                <BlogPostComments postId={post.id} />
-              </div>
+        <div className="max-w-7xl mx-auto py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2">
+              <BlogPostContent post={post} />
+              {/* <BlogPostComments postId={post.id} /> */}
             </div>
             
             {/* Sidebar */}

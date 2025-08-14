@@ -210,8 +210,10 @@ const Navbar = () => {
               label: "Trading Apps Certification",
               link: "/trading-apps-certification",
             },
-            { label: "Shopping Apps Certification", 
-              link: "/shopping-apps-certification" },
+            {
+              label: "Shopping Apps Certification",
+              link: "/shopping-apps-certification",
+            },
           ],
         },
       ],
@@ -271,7 +273,7 @@ const Navbar = () => {
               {item.label === "Services" &&
                 item.submenu &&
                 activeDesktopSubmenu === idx && (
-                  <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
+                  <div className="absolute top-full mt-0 left-10 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
                     <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
                       {item.submenu.map((column, colIdx) => {
                         // Check if the column is of type { heading: string, services: SubmenuItem[] }
@@ -369,7 +371,7 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden xl:flex items-center gap-3 2xl:gap-4">
-          <Link href="/contact-us" onClick={() => handleLinkClick("/contact-us", "")}>
+          <Link href="/contact-us">
             <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-[#057db0] cursor-pointer flex items-center gap-2">
               <span className="text-sm xl:text-base">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3 xl:w-4 xl:h-5" />

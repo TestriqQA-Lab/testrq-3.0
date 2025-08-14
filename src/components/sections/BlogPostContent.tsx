@@ -6,14 +6,15 @@ import {
   FaShare,
   FaBookmark,
   FaPrint,
+  FaFont,
+  FaEye,
   FaLinkedin,
-  FaTwitter,
   FaFacebook,
-  FaLink,
-  FaChevronLeft,
-  FaChevronRight,
+  FaReddit,
+  FaCopy,
 } from "react-icons/fa";
-import Link from "next/link";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
 
 interface BlogPost {
   id: string;
@@ -24,6 +25,7 @@ interface BlogPost {
   authorBio: string;
   likes: number;
   shares: number;
+  slug: string;
 }
 
 interface BlogPostContentProps {
@@ -33,6 +35,7 @@ interface BlogPostContentProps {
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [showShareMenu, setShowShareMenu] = useState(false);
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
   
@@ -57,58 +60,85 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
     }
   ];
 
-  const handleShare = (url: string, name: string) => {
-    if (name === "Copy Link") {
-      navigator.clipboard.writeText(shareUrl);
-      return;
+  // Function to clean and render HTML content properly
+  const renderContent = (content: string) => {
+    // Clean up the content and fix common WordPress issues
+    let cleanContent = content
+      // Remove excessive line breaks and normalize spacing
+      .replace(/\n\s*\n\s*\n/g, '\n\n')
+      // Fix image tags to ensure proper src attributes
+      .replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/gi, (match, before, src, after) => {
+        // Ensure the image has proper attributes
+        const altMatch = match.match(/alt=["']([^"']*?)["']/i);
+        const alt = altMatch ? altMatch[1] : '';
+        return `<img${before}src="${src}"${after} alt="${alt}" style="max-width: 100%; height: auto; margin: 1rem 0; border-radius: 8px;">`;
+      })
+      // Fix paragraph spacing
+      .replace(/<p>/g, '<p style="margin-bottom: 1rem; line-height: 1.7;">')
+      // Fix heading spacing
+      .replace(/<h1>/g, '<h1 style="font-size: 2rem; font-weight: bold; margin: 2rem 0 1rem 0; color: #1f2937;">')
+      .replace(/<h2>/g, '<h2 style="font-size: 1.75rem; font-weight: bold; margin: 1.75rem 0 1rem 0; color: #1f2937;">')
+      .replace(/<h3>/g, '<h3 style="font-size: 1.5rem; font-weight: bold; margin: 1.5rem 0 0.75rem 0; color: #1f2937;">')
+      .replace(/<h4>/g, '<h4 style="font-size: 1.25rem; font-weight: bold; margin: 1.25rem 0 0.75rem 0; color: #1f2937;">')
+      .replace(/<h5>/g, '<h5 style="font-size: 1.125rem; font-weight: bold; margin: 1.125rem 0 0.5rem 0; color: #1f2937;">')
+      .replace(/<h6>/g, '<h6 style="font-size: 1rem; font-weight: bold; margin: 1rem 0 0.5rem 0; color: #1f2937;">')
+      // Fix list spacing
+      .replace(/<ul>/g, '<ul style="margin: 1rem 0; padding-left: 1.5rem;">')
+      .replace(/<ol>/g, '<ol style="margin: 1rem 0; padding-left: 1.5rem;">')
+      .replace(/<li>/g, '<li style="margin-bottom: 0.5rem; line-height: 1.6;">')
+      // Fix blockquote styling
+      .replace(/<blockquote>/g, '<blockquote style="border-left: 4px solid #3b82f6; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #4b5563;">')
+      // Fix figure and figcaption
+      .replace(/<figure>/g, '<figure style="margin: 1.5rem 0; text-align: center;">')
+      .replace(/<figcaption>/g, '<figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280; font-style: italic;">')
+      // Fix code blocks
+      .replace(/<pre>/g, '<pre style="background-color: #1f2937; color: #f9fafb; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0;">')
+      .replace(/<code>/g, '<code style="background-color: #f3f4f6; color: #1f2937; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace; font-size: 0.875rem;">')
+      // Fix table styling
+      .replace(/<table>/g, '<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; border: 1px solid #e5e7eb;">')
+      .replace(/<th>/g, '<th style="padding: 0.75rem; background-color: #f9fafb; border: 1px solid #e5e7eb; font-weight: bold; text-align: left;">')
+      .replace(/<td>/g, '<td style="padding: 0.75rem; border: 1px solid #e5e7eb;">')
+      // Fix links
+      .replace(/<a([^>]*?)>/g, '<a$1 style="color: #3b82f6; text-decoration: underline; hover:color: #2563eb;">');
+
+    return cleanContent;
+  };
+
+  // Social sharing functions
+  const shareOnTwitter = () => {
+    const url = `${window.location.origin}/blog/${post.slug}`;
+    const text = `Check out this article: ${post.title}`;
+    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+  };
+
+  const shareOnLinkedIn = () => {
+    const url = `${window.location.origin}/blog/${post.slug}`;
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+  };
+
+  const shareOnFacebook = () => {
+    const url = `${window.location.origin}/blog/${post.slug}`;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+  };
+
+  const shareOnReddit = () => {
+    const url = `${window.location.origin}/blog/${post.slug}`;
+    const title = post.title;
+    window.open(`https://reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`, '_blank');
+  };
+
+  const copyToClipboard = async () => {
+    const url = `${window.location.origin}/blog/${post.slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      alert('Link copied to clipboard!');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
     }
-    window.open(url, '_blank', 'width=600,height=400');
   };
 
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(shareUrl);
-    // You could add a toast notification here
-  };
-
-  const formatContent = (content: string) => {
-    return content.split("\n").map((line, index) => {
-      if (line.startsWith("# ")) {
-        return (
-          <h1
-            key={index}
-            className="text-3xl font-bold text-gray-900 mb-6 mt-12 first:mt-0"
-          >
-            {line.substring(2)}
-          </h1>
-        );
-      } else if (line.startsWith("## ")) {
-        return (
-          <h2
-            key={index}
-            className="text-2xl font-bold text-gray-900 mb-4 mt-10"
-          >
-            {line.substring(3)}
-          </h2>
-        );
-      } else if (line.startsWith("### ")) {
-        return (
-          <h3 key={index} className="text-xl font-bold text-gray-900 mb-3 mt-8">
-            {line.substring(4)}
-          </h3>
-        );
-      } else if (line.trim() === "") {
-        return <div key={index} className="h-4" />;
-      } else {
-        return (
-          <p
-            key={index}
-            className="text-lg text-gray-700 mb-6 leading-relaxed"
-          >
-            {line}
-          </p>
-        );
-      }
-    });
+  const handlePrint = () => {
+    window.print();
   };
 
   return (
@@ -154,105 +184,77 @@ public class SeleniumExample {
           </div>
         </div>
 
-        {/* Key Takeaways */}
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
-          <h4 className="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
-            <span className="text-xl">💡</span>
-            Key Takeaways
-          </h4>
-          <ul className="space-y-2 text-blue-900">
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">•</span>
-              <span>Selenium WebDriver is essential for web automation testing</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">•</span>
-              <span>Page Object Model (POM) improves test maintainability</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">•</span>
-              <span>Use explicit waits for handling dynamic content</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">•</span>
-              <span>Integrate with CI/CD pipelines for continuous quality assurance</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-blue-500 mt-1">•</span>
-              <span>Follow best practices to maintain robust test suites</span>
-            </li>
-          </ul>
-        </div>
+          <div className="flex items-center gap-3">
+            
 
-        {/* Important Note */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">
-          <h4 className="text-lg font-bold text-amber-900 mb-3 flex items-center gap-2">
-            <span className="text-xl">⚠️</span>
-            Important Note
-          </h4>
-          <p className="text-amber-900">
-            Always use <code className="bg-amber-200 px-2 py-1 rounded text-sm">driver.quit()</code> to properly close your WebDriver instance and prevent memory leaks, especially in CI/CD environments.
-          </p>
-        </div>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="flex flex-wrap items-center justify-between gap-4 py-8 border-t border-gray-200 mt-12">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsLiked(!isLiked)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-              isLiked
-                ? "bg-red-100 text-red-600 border border-red-200"
-                : "bg-gray-100 text-gray-700 hover:bg-red-50 hover:text-red-600 border border-gray-200"
-            }`}
-          >
-            <FaHeart className="w-4 h-4" />
-            <span>{post.likes + (isLiked ? 1 : 0)}</span>
-          </button>
-
-          <button
-            onClick={() => setIsSaved(!isSaved)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-              isSaved
-                ? "bg-blue-100 text-blue-600 border border-blue-200"
-                : "bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200"
-            }`}
-          >
-            <FaBookmark className="w-4 h-4" />
-            <span>{isSaved ? "Saved" : "Save"}</span>
-          </button>
-
-          <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors border border-gray-200">
-            <FaPrint className="w-4 h-4" />
-            <span>Print</span>
-          </button>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">Share:</span>
-          {shareLinks.map((social) => {
-            const IconComponent = social.icon;
-            return (
-              <button
-                key={social.name}
-                onClick={() => handleShare(social.url, social.name)}
-                className={`w-9 h-9 rounded-lg ${social.color} text-white flex items-center justify-center transition-colors`}
-                title={`Share on ${social.name}`}
+            <div className="relative">
+              <button 
+                onClick={() => setShowShareMenu(!showShareMenu)}
+                className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-blue-50 transition-colors"
               >
-                <IconComponent className="w-4 h-4" />
+                <FaShare className="w-4 h-4" />
+                <span>{post.shares}</span>
               </button>
-            );
-          })}
-          <button
-            onClick={handleCopyLink}
-            className="w-9 h-9 rounded-lg bg-gray-600 hover:bg-gray-700 text-white flex items-center justify-center transition-colors"
-            title="Copy Link"
-          >
-            <FaLink className="w-4 h-4" />
-          </button>
+              
+              {showShareMenu && (
+                <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-20">
+                  <button
+                    onClick={shareOnTwitter}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
+                  >
+                    <FaSquareXTwitter className="w-4 h-4 text-black" />
+                    X(Twitter)
+                  </button>
+                  <button
+                    onClick={shareOnLinkedIn}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
+                  >
+                    <FaLinkedin className="w-4 h-4 text-blue-600" />
+                    LinkedIn
+                  </button>
+                  <button
+                    onClick={shareOnFacebook}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
+                  >
+                    <FaFacebook className="w-4 h-4 text-blue-800" />
+                    Facebook
+                  </button>
+                  <button
+                    onClick={shareOnReddit}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
+                  >
+                    <FaReddit className="w-4 h-4 text-orange-600" />
+                    Reddit
+                  </button>
+                  <button
+                    onClick={copyToClipboard}
+                    className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
+                  >
+                    <FaCopy className="w-4 h-4 text-gray-600" />
+                    Copy Link
+                  </button>
+                </div>
+              )}
+            </div>
+
+            
+
+           
+          </div>
         </div>
       </div>
+
+      {/* Content */}
+      <div 
+        className={`prose prose-lg max-w-none text-gray-800 ${fontSize}`}
+        dangerouslySetInnerHTML={{ __html: renderContent(post.content) }}
+        style={{
+          lineHeight: '1.7',
+          fontSize: fontSize === 'text-sm' ? '14px' : 
+                   fontSize === 'text-base' ? '16px' : 
+                   fontSize === 'text-lg' ? '18px' : '20px'
+        }}
+      />
 
       {/* Author Bio */}
       <div className="bg-gray-50 rounded-xl p-8 my-12">
@@ -271,69 +273,50 @@ public class SeleniumExample {
             <p className="text-gray-700 mb-4 leading-relaxed">
               {post.authorBio}
             </p>
-            <div className="flex flex-wrap items-center gap-3">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
-                Follow Author
-              </button>
-              <Link
-                href="/blog"
-                className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors font-medium"
-              >
-                View All Posts
-              </Link>
-            </div>
+           
           </div>
         </div>
       </div>
 
-      {/* Article Navigation */}
-      <div className="flex flex-col sm:flex-row items-stretch justify-between gap-4 py-8 border-t border-gray-200">
-        <Link
-          href="#"
-          className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group flex-1"
-        >
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-            <FaChevronLeft className="w-4 h-4 text-gray-600" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="text-sm text-gray-500 mb-1">Previous Article</div>
-            <div className="font-semibold text-gray-900 truncate">API Testing with Postman: Complete Guide</div>
-          </div>
-        </Link>
+      
 
-        <Link
-          href="#"
-          className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group flex-1"
-        >
-          <div className="flex-1 min-w-0 text-right">
-            <div className="text-sm text-gray-500 mb-1">Next Article</div>
-            <div className="font-semibold text-gray-900 truncate">Cross-Browser Testing Strategies</div>
+      {/* Social Share */}
+      <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-6 my-8">
+        <div className="text-center">
+          <h4 className="text-lg font-bold text-gray-900 mb-3">
+            Found this article helpful?
+          </h4>
+          <p className="text-gray-700 mb-4">Share it with your team!</p>
+          <div className="flex justify-center gap-3 flex-wrap">
+            <button
+              onClick={shareOnTwitter}
+              className="bg-black text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+            >
+              <FaSquareXTwitter />
+              <span>X (Twitter)</span>
+            </button>
+            <button
+              onClick={shareOnLinkedIn}
+              className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+            >
+              <FaLinkedin />
+              <span>LinkedIn</span>
+            </button>
+            <button
+              onClick={shareOnFacebook}
+              className="bg-blue-800 text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+            >
+              <FaFacebook />
+              <span>Facebook</span>
+            </button>
+            <button
+              onClick={shareOnReddit}
+              className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+            >
+              <FaReddit />
+              <span>Reddit</span>
+            </button>
           </div>
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
-            <FaChevronRight className="w-4 h-4 text-gray-600" />
-          </div>
-        </Link>
-      </div>
-
-      {/* Call to Action */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-8 my-12 text-white text-center">
-        <h4 className="text-2xl font-bold mb-3">Ready to Improve Your Testing?</h4>
-        <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-          Get expert testing services from Testriq. We help companies deliver high-quality software with comprehensive QA solutions.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact-us"
-            className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            Get Free Consultation
-          </Link>
-          <Link
-            href="/services"
-            className="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-700 transition-colors"
-          >
-            View Our Services
-          </Link>
         </div>
       </div>
     </article>

@@ -365,11 +365,6 @@ const GamingPlatformsSection: React.FC = () => {
                   Get Platform Testing Quote
                 </button>
               </Link>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                  View Platform Coverage
-                </button>
-              </Link>
             </div>
           </div>
         </div>

@@ -267,7 +267,10 @@ const HealthcareComplianceSection: React.FC = () => {
                   $10.93M
                 </div>
                 <div className="text-sm text-gray-600">
-                  Average cost of healthcare data breach
+                  Average cost of healthcare data breach,{" "}
+                  <Link href="https://www.quodorbis.com/critical-condition-ransomware-is-hitting-healthcare-hard-ccm-is-the-antidote/#:~:text=IBM's%202023%20Cost%20of%20a,and%20long%2Dtail%20reputational%20damage." className="text-brand-blue underline">
+                    View More
+                  </Link>
                 </div>
               </div>
               <div className="text-center p-4 bg-green-50 rounded-2xl">

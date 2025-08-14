@@ -323,9 +323,6 @@ const GamingTestingProcessSection: React.FC = () => {
                     Start Your Gaming Project
                   </button>
                 </Link>
-                <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
-                  Learn More About Our Process
-                </button>
               </div>
             </div>
           </div>

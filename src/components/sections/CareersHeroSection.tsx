@@ -136,16 +136,6 @@ const CareersHeroSection: React.FC = () => {
               </div>
             ))}
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="mt-16 flex flex-col items-center">
-            <p className="text-sm text-gray-500 mb-4">
-              Discover more about working with us
-            </p>
-            <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-[theme(color.brand.blue)] rounded-full mt-2 animate-bounce"></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

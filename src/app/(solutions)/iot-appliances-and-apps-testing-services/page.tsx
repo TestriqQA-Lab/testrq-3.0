@@ -5,7 +5,7 @@ import IoTTestingServicesSection from "@/components/sections/IoTApplianceTesting
 import IoTTestingProcessSection from "@/components/sections/IoTApplianceTestingProcessSection";
 import IoTEcosystemSection from "@/components/sections/IoTApplianceEcosystemSection";
 import IoTToolsFrameworkSection from "@/components/sections/IoTApplianceToolsFrameworkSection";
-import IoTCaseStudiesSection from "@/components/sections/IoTApplianceCaseStudiesSection";
+import IoTCaseStudies from "@/components/sections/IoTCaseStudies";
 import IoTFAQSection from "@/components/sections/IoTApplianceFAQSection";
 import IoTContactSection from "@/components/sections/IoTApplianceContactSection";
 import { Metadata } from "next";
@@ -99,7 +99,7 @@ const IoTTestingPage: React.FC = () => {
       <IoTTestingProcessSection />
       <IoTEcosystemSection />
       <IoTToolsFrameworkSection />
-      <IoTCaseStudiesSection />
+      <IoTCaseStudies />
       <IoTFAQSection />
       <IoTContactSection />
     </main>

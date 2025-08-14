@@ -54,6 +54,13 @@ export interface WordPressCategory {
   count: number;
 }
 
+export interface WordPressTag {
+  id: string;
+  name: string;
+  slug: string;
+  count: number;
+}
+
 export interface WordPressPageInfo {
   hasNextPage: boolean;
   hasPreviousPage: boolean;
@@ -75,6 +82,12 @@ export interface PostResponse {
 export interface CategoriesResponse {
   categories: {
     nodes: WordPressCategory[];
+  };
+}
+
+export interface TagsResponse {
+  tags: {
+    nodes: WordPressTag[];
   };
 }
 
@@ -254,16 +267,149 @@ const GET_POSTS_BY_CATEGORY_QUERY = `
   }
 `;
 
+// GraphQL query for fetching posts by tag
+const GET_POSTS_BY_TAG_QUERY = `
+  query GetPostsByTag($tagSlug: String!, $first: Int, $after: String) {
+    posts(first: $first, after: $after, where: { status: PUBLISH, tag: $tagSlug }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        excerpt
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        author {
+          node {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          nodes {
+            id
+            name
+            slug
+            count
+          }
+        }
+        tags {
+          nodes {
+            id
+            name
+            slug
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+`;
+
 // GraphQL query for fetching categories
 const GET_CATEGORIES_QUERY = `
   query GetCategories {
-    categories(first: 100) {
+    categories(first: 100, where: { hideEmpty: true }) {
       nodes {
         id
         name
         slug
         description
         count
+      }
+    }
+  }
+`;
+
+// GraphQL query for fetching tags
+const GET_TAGS_QUERY = `
+  query GetTags {
+    tags(first: 100, where: { hideEmpty: true }) {
+      nodes {
+        id
+        name
+        slug
+        count
+      }
+    }
+  }
+`;
+
+// GraphQL query for fetching related posts based on category and tags
+const GET_RELATED_POSTS_QUERY = `
+  query GetRelatedPosts($categorySlug: String!, $tagSlugs: [String!], $excludeId: ID!, $first: Int) {
+    posts(
+      first: $first, 
+      where: { 
+        status: PUBLISH, 
+        categoryName: $categorySlug,
+        notIn: [$excludeId]
+      }
+    ) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        excerpt
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        author {
+          node {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          nodes {
+            id
+            name
+            slug
+            count
+          }
+        }
+        tags {
+          nodes {
+            id
+            name
+            slug
+          }
+        }
       }
     }
   }
@@ -388,6 +534,77 @@ export async function getPostsByCategory(
   }
 }
 
+// Fetch posts by tag
+export async function getPostsByTag(
+  tagSlug: string,
+  first: number = 10,
+  after?: string
+): Promise<{
+  posts: WordPressPost[];
+  pageInfo: WordPressPageInfo;
+  tag: WordPressTag | null;
+}> {
+  try {
+    // First, get the tag information
+    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    const tag = tagsData.tags.nodes.find(t => t.slug === tagSlug) || null;
+
+    // Then fetch posts for this tag
+    const data = await graphqlRequest<PostsResponse>(GET_POSTS_BY_TAG_QUERY, {
+      tagSlug,
+      first,
+      after,
+    });
+
+    return {
+      posts: data.posts.nodes,
+      pageInfo: data.posts.pageInfo,
+      tag,
+    };
+  } catch (error) {
+    console.error('Error fetching posts by tag:', error);
+    return {
+      posts: [],
+      pageInfo: {
+        hasNextPage: false,
+        hasPreviousPage: false,
+        startCursor: '',
+        endCursor: '',
+      },
+      tag: null,
+    };
+  }
+}
+
+// Fetch related posts based on category and tags
+export async function getRelatedPosts(
+  currentPost: WordPressPost,
+  first: number = 6
+): Promise<WordPressPost[]> {
+  try {
+    const primaryCategory = currentPost.categories?.nodes?.[0];
+    const tagSlugs = currentPost.tags?.nodes?.map(tag => tag.slug) || [];
+
+    if (!primaryCategory) {
+      // If no category, just get recent posts
+      const data = await getPosts(first);
+      return data.posts.filter(post => post.id !== currentPost.id);
+    }
+
+    const data = await graphqlRequest<PostsResponse>(GET_RELATED_POSTS_QUERY, {
+      categorySlug: primaryCategory.slug,
+      tagSlugs,
+      excludeId: currentPost.id,
+      first,
+    });
+
+    return data.posts.nodes;
+  } catch (error) {
+    console.error('Error fetching related posts:', error);
+    return [];
+  }
+}
+
 // Fetch all categories
 export async function getCategories(): Promise<WordPressCategory[]> {
   try {
@@ -395,6 +612,17 @@ export async function getCategories(): Promise<WordPressCategory[]> {
     return data.categories.nodes;
   } catch (error) {
     console.error('Error fetching categories:', error);
+    return [];
+  }
+}
+
+// Fetch all tags
+export async function getTags(): Promise<WordPressTag[]> {
+  try {
+    const data = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    return data.tags.nodes;
+  } catch (error) {
+    console.error('Error fetching tags:', error);
     return [];
   }
 }
@@ -437,5 +665,16 @@ export function formatDate(dateString: string): string {
     month: 'long',
     day: 'numeric',
   });
+}
+
+// Helper function to extract excerpt from content if excerpt is empty
+export function getPostExcerpt(post: WordPressPost, maxLength: number = 160): string {
+  if (post.excerpt && post.excerpt.trim()) {
+    return stripHtmlTags(post.excerpt);
+  }
+  
+  // If no excerpt, create one from content
+  const cleanContent = stripHtmlTags(post.content);
+  return truncateText(cleanContent, maxLength);
 }
 

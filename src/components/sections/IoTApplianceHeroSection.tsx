@@ -17,7 +17,7 @@ const IoTHeroSection: React.FC = () => {
   const keyStats = [
     { value: "99.9%", label: "Device Connectivity", icon: FaWifi },
     { value: "30+", label: "IoT Devices Tested", icon: FaCog },
-    { value: "50M+", label: "Connected Endpoints", icon: FaNetworkWired },
+    { value: "150+", label: "Connected Endpoints", icon: FaNetworkWired },
     { value: "24/7", label: "Edge Monitoring", icon: FaCloud },
   ];
 

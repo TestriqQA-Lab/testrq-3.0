@@ -1,4 +1,6 @@
+'use client';
 import React from "react";
+import { useState } from "react";
 import {
   FaArrowRight,
   FaPlay,
@@ -7,8 +9,27 @@ import {
   FaShieldAlt,
   FaTools,
 } from "react-icons/fa";
+import Lightbox from "../VideoLightBox"; 
+
 
 const ToolsHeroSection = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+const scrollToTools = () => {
+    const element = document.getElementById("tools-and-frameworks");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
@@ -42,11 +63,11 @@ const ToolsHeroSection = () => {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center items-center xl:justify-start gap-4 mb-8">
-          <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-sky-400 transition-all cursor-pointer w-full sm:w-auto">
+          <button onClick={scrollToTools} className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-sky-400 transition-all cursor-pointer w-full sm:w-auto">
             <span className="text-base">Explore Our Tools</span>
             <FaArrowRight className="w-4 h-5" />
           </button>
-          <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer hover:text-sky-700 hover:border-sky-700 transition-all w-full sm:w-auto">
+          <button onClick={openLightbox} className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer hover:text-sky-700 hover:border-sky-700 transition-all w-full sm:w-auto">
             <FaPlay className="w-4 h-4" />
             Watch Demo
           </button>
@@ -88,6 +109,8 @@ const ToolsHeroSection = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

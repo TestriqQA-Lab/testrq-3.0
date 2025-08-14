@@ -193,6 +193,12 @@ const ElearningCaseStudiesSection: React.FC = () => {
 
         {/* Case Studies */}
         <div className="space-y-16">
+          <h2 className="text-3xl md:text-4xl text-center lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
+            E-Learning -
+            <span className=" text-brand-blue">
+              {" "}Case Studies
+            </span>
+          </h2>
           {caseStudies.map((study, index) => (
             <div
               key={index}
