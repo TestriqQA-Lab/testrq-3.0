@@ -39,17 +39,10 @@ const LaunchFastCaseStudies: React.FC = () => {
           value: "0",
           improvement: "Zero vulnerabilities found",
         },
-        {
-          metric: "Funding Success",
-          value: "$5M",
-          improvement: "Series A secured on time",
-        },
       ],
       testimonial: {
         quote:
           "LaunchFast QA was instrumental in our successful Series A raise. The rapid testing cycles allowed us to launch confidently and on schedule.",
-        author: "Sarah Chen",
-        position: "CTO, PayFlow Technologies",
       },
       timeline: "6 weeks project completed in 4 weeks",
       technologies: ["React Native", "Node.js", "PostgreSQL", "AWS"],
@@ -79,17 +72,10 @@ const LaunchFastCaseStudies: React.FC = () => {
           value: "150+",
           improvement: "Devices tested",
         },
-        {
-          metric: "Revenue Impact",
-          value: "$1.2M",
-          improvement: "Black Friday weekend sales",
-        },
       ],
       testimonial: {
         quote:
           "The rapid testing approach ensured our app performed flawlessly during our biggest sales event. LaunchFast QA delivered exactly what we needed.",
-        author: "Michael Rodriguez",
-        position: "Head of Engineering, ShopSmart",
       },
       timeline: "3 weeks from development to Black Friday launch",
       technologies: ["Flutter", "Firebase", "Stripe", "Google Cloud"],
@@ -128,8 +114,6 @@ const LaunchFastCaseStudies: React.FC = () => {
       testimonial: {
         quote:
           "LaunchFast QA helped us achieve enterprise-grade quality in startup timeframes. Our first major client was impressed with the platform stability.",
-        author: "David Kim",
-        position: "Founder & CEO, CloudSync Pro",
       },
       timeline: "5 weeks from MVP to enterprise-ready platform",
       technologies: ["React", "Python", "Docker", "Kubernetes", "AWS"],
@@ -290,14 +274,6 @@ const LaunchFastCaseStudies: React.FC = () => {
                 <p className="text-gray-700 italic mb-4">
                   &quot;{currentCase.testimonial.quote}&quot;
                 </p>
-                <div className="text-sm">
-                  <div className="font-semibold text-gray-900">
-                    {currentCase.testimonial.author}
-                  </div>
-                  <div className="text-gray-600">
-                    {currentCase.testimonial.position}
-                  </div>
-                </div>
               </div>
             </div>
           </div>

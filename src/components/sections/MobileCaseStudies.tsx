@@ -295,7 +295,7 @@ const MobileCaseStudies: React.FC = () => {
           {[
             {
               icon: <FaMobile className="w-6 h-6" />,
-              number: "1000+",
+              number: "100+",
               label: "Mobile Apps Tested",
             },
             {
@@ -339,18 +339,13 @@ const MobileCaseStudies: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-400 mb-2">#1</div>
               <div className="text-gray-300 text-sm">App Store Ranking</div>
               <div className="text-xs text-gray-400 mt-1">
                 E-commerce Category
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-green-400 mb-2">10M+</div>
-              <div className="text-gray-300 text-sm">Downloads</div>
-              <div className="text-xs text-gray-400 mt-1">Healthcare App</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-yellow-400 mb-2">

@@ -54,7 +54,7 @@ const ApiCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's API testing expertise helped us achieve bank-grade security and performance. Their thorough testing approach identified critical vulnerabilities we missed.",
-      author: "Sarah Johnson, CTO",
+
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       icon: "💳",
@@ -96,7 +96,7 @@ const ApiCaseStudies: React.FC = () => {
       ],
       testimonial:
         "The comprehensive microservices testing approach transformed our deployment process. We now ship features with confidence knowing our APIs are rock-solid.",
-      author: "Michael Chen, Lead Developer",
+
       color: "green",
       gradient: "from-green-500 to-green-600",
       icon: "🛒",
@@ -138,7 +138,6 @@ const ApiCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's healthcare-focused API testing ensured our patient data APIs meet the highest security and compliance standards. Exceptional expertise!",
-      author: "Dr. Emily Rodriguez, Chief Medical Officer",
       color: "red",
       gradient: "from-red-500 to-red-600",
       icon: "🏥",
@@ -265,11 +264,6 @@ const ApiCaseStudies: React.FC = () => {
                 <blockquote className="text-gray-700 italic mb-3">
                   &quot;{caseStudies[activeCase].testimonial}&quot;
                 </blockquote>
-                <cite
-                  className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm`}
-                >
-                  — {caseStudies[activeCase].author}
-                </cite>
               </div>
             </div>
 

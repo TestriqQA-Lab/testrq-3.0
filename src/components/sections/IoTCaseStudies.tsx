@@ -53,7 +53,6 @@ const IoTCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's IoT testing expertise helped us create a truly seamless smart home ecosystem. Their multi-protocol testing approach was exactly what we needed.",
-      author: "David Kim, Product Manager",
       color: "teal",
       gradient: "from-teal-500 to-teal-600",
       icon: "🏠",
@@ -95,7 +94,6 @@ const IoTCaseStudies: React.FC = () => {
       ],
       testimonial:
         "The industrial IoT security testing provided by Testriq gave us confidence in our factory automation systems. Outstanding security expertise!",
-      author: "Maria Santos, Operations Director",
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       icon: "🏭",
@@ -137,7 +135,6 @@ const IoTCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's healthcare IoT testing ensured our wearable devices meet the highest medical standards. Their expertise in regulatory compliance is unmatched.",
-      author: "Dr. Jennifer Walsh, Chief Technology Officer",
       color: "red",
       gradient: "from-red-500 to-red-600",
       icon: "🏥",
@@ -289,12 +286,6 @@ const IoTCaseStudies: React.FC = () => {
                 <blockquote className="text-gray-700 italic mb-3">
                   &quot;{caseStudies[activeCase].testimonial}&quot;
                 </blockquote>
-                <cite
-                  className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm flex items-center`}
-                >
-                  <FaCheckCircle className="w-4 h-4 mr-2" />—{" "}
-                  {caseStudies[activeCase].author}
-                </cite>
               </div>
             </div>
 

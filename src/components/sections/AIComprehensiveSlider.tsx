@@ -106,6 +106,10 @@ const AIComprehensiveSlider: React.FC = () => {
       metric: "100% Security Coverage",
     },
   ];
+  // Function to move to the next tab
+  const nextTab = () => {
+    setActiveTab((prevTab) => (prevTab + 1) % testingTypes.length); // Loop back to the first tab when reaching the last one
+  };
 
   return (
     <section className="bg-gradient-to-br from-gray-50 to-purple-50 py-16 px-8 md:px-12 lg:px-24">
@@ -113,9 +117,7 @@ const AIComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Complete{" "}
@@ -128,50 +130,6 @@ const AIComprehensiveSlider: React.FC = () => {
             ecosystem, ensuring accuracy, fairness, and reliability across all
             machine learning models and intelligent systems.
           </p>
-        </div>
-
-        {/* Interactive Neural Network Style Navigation */}
-        <div className="relative mb-12">
-          <div className="flex flex-wrap justify-center gap-4">
-            {testingTypes.map((type, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`relative px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === index
-                    ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg`
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`${
-                      activeTab === index
-                        ? "text-white"
-                        : `text-${type.color}-500`
-                    }`}
-                  >
-                    {React.cloneElement(type.icon, { className: "w-5 h-5" })}
-                  </div>
-                  <div className="text-left">
-                    <div>{type.title}</div>
-                    <div
-                      className={`text-xs ${
-                        activeTab === index ? "text-white/80" : "text-gray-500"
-                      }`}
-                    >
-                      {type.metric}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Neural Connection Lines */}
-                {activeTab === index && (
-                  <div className="absolute inset-0 rounded-xl border-2 border-white/30 animate-pulse"></div>
-                )}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Active Tab Content with AI-themed Design */}
@@ -217,12 +175,21 @@ const AIComprehensiveSlider: React.FC = () => {
                 ))}
               </div>
 
-              <button
-                className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
-              >
-                <span>Learn More</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <div className="mt-6 flex justify-between items-center">
+                <button
+                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                >
+                  <span>Learn More</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </button>
+                {/* Next Button */}
+                <button
+                  className="px-6 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={nextTab}
+                >
+                  Next
+                </button>
+              </div>
             </div>
 
             {/* Right Side - AI Model Visualization */}
