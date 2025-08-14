@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaDatabase, FaExchangeAlt, FaCloudUploadAlt, FaCheckCircle, FaChartLine, FaShieldAlt, FaFlask } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaExchangeAlt,
+  FaCloudUploadAlt,
+  FaCheckCircle,
+  FaChartLine,
+  FaShieldAlt,
+  FaFlask,
+} from "react-icons/fa";
 
 const ETLComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -12,123 +20,133 @@ const ETLComprehensiveSlider: React.FC = () => {
       title: "Data Extraction Testing",
       icon: <FaDatabase className="w-6 h-6" />,
       coverage: "99.8% data accuracy",
-      description: "Comprehensive validation of data extraction processes from diverse source systems and file formats, ensuring data completeness, accuracy, and seamless integration into your ETL pipeline.",
+      description:
+        "Comprehensive validation of data extraction processes from diverse source systems and file formats, ensuring data completeness, accuracy, and seamless integration into your ETL pipeline.",
       features: [
         "Source system connectivity validation",
         "Data completeness verification",
         "Extraction accuracy testing",
         "Source data profiling",
         "Data type validation",
-        "Incremental extraction testing"
+        "Incremental extraction testing",
       ],
       metrics: [
         { label: "Source connectivity", value: "100%" },
         { label: "Data completeness", value: "99.8%" },
-        { label: "Extraction accuracy", value: "99.9%" }
-      ]
+        { label: "Extraction accuracy", value: "99.9%" },
+      ],
     },
     {
       id: "transformation",
       title: "Data Transformation Testing",
       icon: <FaExchangeAlt className="w-6 h-6" />,
       coverage: "100% business rule validation",
-      description: "Thorough testing of data transformation logic, business rules, and data mapping accuracy.",
+      description:
+        "Thorough testing of data transformation logic, business rules, and data mapping accuracy.",
       features: [
         "Business rule validation",
         "Data mapping verification",
         "Transformation logic testing",
         "Data type conversion testing",
         "Aggregation and calculation validation",
-        "Data cleansing verification"
+        "Data cleansing verification",
       ],
       metrics: [
         { label: "Business rules", value: "100%" },
         { label: "Data mapping", value: "99.7%" },
-        { label: "Transformation accuracy", value: "99.9%" }
-      ]
+        { label: "Transformation accuracy", value: "99.9%" },
+      ],
     },
     {
       id: "loading",
       title: "Data Loading Testing",
       icon: <FaCloudUploadAlt className="w-6 h-6" />,
       coverage: "99.9% loading success",
-      description: "End-to-end validation of data loading processes into target systems and data warehouses.",
+      description:
+        "End-to-end validation of data loading processes into target systems and data warehouses.",
       features: [
         "Target system integration testing",
         "Data integrity verification",
         "Loading performance testing",
         "Duplicate data detection",
         "Referential integrity validation",
-        "Load failure recovery testing"
+        "Load failure recovery testing",
       ],
       metrics: [
         { label: "Loading success", value: "99.9%" },
         { label: "Data integrity", value: "100%" },
-        { label: "Performance", value: "98.5%" }
-      ]
+        { label: "Performance", value: "98.5%" },
+      ],
     },
     {
       id: "quality",
       title: "Data Quality Testing",
       icon: <FaCheckCircle className="w-6 h-6" />,
       coverage: "100% quality assurance",
-      description: "Comprehensive data quality assessment across all dimensions of data quality and governance.",
+      description:
+        "Comprehensive data quality assessment across all dimensions of data quality and governance.",
       features: [
         "Data completeness testing",
         "Data accuracy validation",
         "Data consistency verification",
         "Data validity testing",
         "Data uniqueness validation",
-        "Data timeliness assessment"
+        "Data timeliness assessment",
       ],
       metrics: [
         { label: "Data completeness", value: "99.8%" },
         { label: "Data accuracy", value: "99.9%" },
-        { label: "Data consistency", value: "100%" }
-      ]
+        { label: "Data consistency", value: "100%" },
+      ],
     },
     {
       id: "performance",
       title: "Performance Testing",
       icon: <FaChartLine className="w-6 h-6" />,
       coverage: "98% performance optimization",
-      description: "ETL pipeline performance testing including throughput, latency, and scalability validation.",
+      description:
+        "ETL pipeline performance testing including throughput, latency, and scalability validation.",
       features: [
         "Throughput testing",
         "Latency analysis",
         "Scalability validation",
         "Resource utilization testing",
         "Bottleneck identification",
-        "Performance optimization"
+        "Performance optimization",
       ],
       metrics: [
         { label: "Throughput", value: "98%" },
         { label: "Latency", value: "95%" },
-        { label: "Scalability", value: "97%" }
-      ]
+        { label: "Scalability", value: "97%" },
+      ],
     },
     {
       id: "security",
       title: "Data Security Testing",
       icon: <FaShieldAlt className="w-6 h-6" />,
       coverage: "100% security compliance",
-      description: "Advanced security testing including encryption, access control, and compliance verification.",
+      description:
+        "Advanced security testing including encryption, access control, and compliance verification.",
       features: [
         "Data encryption validation",
         "Access control testing",
         "Compliance verification",
         "Data masking validation",
         "Audit trail testing",
-        "Security vulnerability assessment"
+        "Security vulnerability assessment",
       ],
       metrics: [
         { label: "Encryption", value: "100%" },
         { label: "Access control", value: "100%" },
-        { label: "Compliance", value: "100%" }
-      ]
-    }
+        { label: "Compliance", value: "100%" },
+      ],
+    },
   ];
 
+  // Function to move to the next tab
+  const nextTab = () => {
+    setActiveTab((prevTab) => (prevTab + 1) % testingTypes.length); // Loop back to the first tab when reaching the last one
+  };
   const activeTestingType = testingTypes[activeTab];
 
   return (
@@ -137,37 +155,18 @@ const ETLComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete ETL Testing <span className="text-brand-blue">Coverage</span>
+            Complete ETL Testing{" "}
+            <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Our comprehensive ETL testing services cover every aspect of your data pipeline ecosystem, ensuring data reliability, accuracy, and optimal performance across all ETL processes and data workflows, including extraction, transformation, and loading.
+            Our comprehensive ETL testing services cover every aspect of your
+            data pipeline ecosystem, ensuring data reliability, accuracy, and
+            optimal performance across all ETL processes and data workflows,
+            including extraction, transformation, and loading.
           </p>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {testingTypes.map((type, index) => (
-            <button
-              key={type.id}
-              onClick={() => setActiveTab(index)}
-              className={`flex items-center px-4 py-3 rounded-xl border-2 transition-all duration-300 ${
-                activeTab === index
-                  ? "bg-blue-500 text-white border-blue-500 shadow-lg"
-                  : "bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-600"
-              }`}
-            >
-              <div className="mr-3">{type.icon}</div>
-              <div className="text-left">
-                <div className="font-semibold text-sm">{type.title}</div>
-                <div className="text-xs opacity-80">{type.coverage}</div>
-              </div>
-            </button>
-          ))}
         </div>
 
         {/* Active Tab Content */}
@@ -180,15 +179,23 @@ const ETLComprehensiveSlider: React.FC = () => {
                   {activeTestingType.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{activeTestingType.title}</h3>
-                  <p className="text-blue-600 font-semibold">{activeTestingType.coverage}</p>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    {activeTestingType.title}
+                  </h3>
+                  <p className="text-blue-600 font-semibold">
+                    {activeTestingType.coverage}
+                  </p>
                 </div>
               </div>
-              
-              <p className="text-gray-600 mb-6 leading-relaxed">{activeTestingType.description}</p>
+
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {activeTestingType.description}
+              </p>
 
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
+                <h4 className="font-semibold text-gray-900 mb-3">
+                  Key Features:
+                </h4>
                 <div className="grid grid-cols-1 gap-2">
                   {activeTestingType.features.map((feature, index) => (
                     <div key={index} className="flex items-center">
@@ -199,25 +206,39 @@ const ETLComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
-                Learn More
-              </button>
+              <div className="flex justify-between items-center">
+                <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
+                  Learn More
+                </button>
+                <button
+                  className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={nextTab}
+                >
+                  Next
+                </button>
+              </div>
             </div>
 
             {/* Right Side - Metrics and Visualization */}
             <div>
               <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-4">{activeTestingType.title}</h4>
-                <div className="text-3xl font-bold text-blue-600 mb-2">{activeTestingType.coverage}</div>
+                <h4 className="font-semibold text-gray-900 mb-4">
+                  {activeTestingType.title}
+                </h4>
+                <div className="text-3xl font-bold text-blue-600 mb-2">
+                  {activeTestingType.coverage}
+                </div>
                 <div className="space-y-4">
                   {activeTestingType.metrics.map((metric, index) => (
                     <div key={index}>
                       <div className="flex justify-between text-sm mb-2">
                         <span className="text-gray-600">{metric.label}</span>
-                        <span className="font-semibold text-blue-600">{metric.value}</span>
+                        <span className="font-semibold text-blue-600">
+                          {metric.value}
+                        </span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3">
-                        <div 
+                        <div
                           className="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-1000 ease-out"
                           style={{ width: metric.value }}
                         ></div>
@@ -229,7 +250,9 @@ const ETLComprehensiveSlider: React.FC = () => {
 
               {/* Visual Representation */}
               <div className="bg-gray-50 rounded-xl p-6">
-                <h5 className="font-semibold text-gray-900 mb-4">Testing Coverage Visualization</h5>
+                <h5 className="font-semibold text-gray-900 mb-4">
+                  Testing Coverage Visualization
+                </h5>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -239,7 +262,9 @@ const ETLComprehensiveSlider: React.FC = () => {
                   </div>
                   <div className="text-center">
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-green-600 font-bold text-lg">⚡</span>
+                      <span className="text-green-600 font-bold text-lg">
+                        ⚡
+                      </span>
                     </div>
                     <div className="text-sm text-gray-600">Optimized</div>
                   </div>
@@ -248,11 +273,9 @@ const ETLComprehensiveSlider: React.FC = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
 };
 
 export default ETLComprehensiveSlider;
-

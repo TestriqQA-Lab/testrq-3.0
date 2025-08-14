@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Code, Smartphone, Shield, Zap, Database, Globe, CheckCircle, ExternalLink } from 'lucide-react';
-import { FaTools } from 'react-icons/fa';
+import { FaTools, FaPython, FaJava, FaNodeJs, FaGithub, FaAndroid, FaApple, FaLinux, FaDocker,FaShieldAlt, FaCloud, FaDatabase, FaChrome } from 'react-icons/fa';
 
 const SoftwareTestingGuideToolsFramework = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -11,15 +11,15 @@ const SoftwareTestingGuideToolsFramework = () => {
     {
       id: 'automation',
       title: 'Test Automation',
-      icon: <Code className="h-6 w-6" />,
+      icon: <FaTools className="h-6 w-6" />,
       description: 'Comprehensive automation testing tools and frameworks',
       tools: [
-        { name: 'Selenium WebDriver', description: 'Web application automation', level: 'Beginner to Advanced', popularity: '95%' },
-        { name: 'Cypress', description: 'Modern web testing framework', level: 'Intermediate', popularity: '88%' },
-        { name: 'Playwright', description: 'Cross-browser automation', level: 'Intermediate', popularity: '82%' },
-        { name: 'TestComplete', description: 'Commercial automation tool', level: 'Beginner', popularity: '75%' },
-        { name: 'Katalon Studio', description: 'All-in-one automation solution', level: 'Beginner', popularity: '78%' },
-        { name: 'Robot Framework', description: 'Keyword-driven automation', level: 'Intermediate', popularity: '70%' }
+        { name: 'Selenium WebDriver', description: 'Web application automation', level: 'Beginner to Advanced', popularity: '95%', icon: <FaJava className="h-6 w-6" /> },
+        { name: 'Cypress', description: 'Modern web testing framework', level: 'Intermediate', popularity: '88%', icon: <FaNodeJs className="h-6 w-6" /> },
+        { name: 'Playwright', description: 'Cross-browser automation', level: 'Intermediate', popularity: '82%', icon: <FaGithub className="h-6 w-6" /> },
+        { name: 'TestComplete', description: 'Commercial automation tool', level: 'Beginner', popularity: '75%', icon: <FaDocker className="h-6 w-6" /> },
+        { name: 'Katalon Studio', description: 'All-in-one automation solution', level: 'Beginner', popularity: '78%', icon: <FaLinux className="h-6 w-6" /> },
+        { name: 'Robot Framework', description: 'Keyword-driven automation', level: 'Intermediate', popularity: '70%', icon: <FaPython className="h-6 w-6" /> }
       ]
     },
     {
@@ -28,12 +28,12 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Smartphone className="h-6 w-6" />,
       description: 'Mobile application testing tools and frameworks',
       tools: [
-        { name: 'Appium', description: 'Cross-platform mobile automation', level: 'Intermediate', popularity: '90%' },
-        { name: 'Espresso', description: 'Android UI testing framework', level: 'Intermediate', popularity: '85%' },
-        { name: 'XCUITest', description: 'iOS native testing framework', level: 'Intermediate', popularity: '80%' },
-        { name: 'Detox', description: 'React Native testing framework', level: 'Advanced', popularity: '72%' },
-        { name: 'Firebase Test Lab', description: 'Cloud-based mobile testing', level: 'Beginner', popularity: '75%' },
-        { name: 'BrowserStack', description: 'Real device cloud testing', level: 'Beginner', popularity: '88%' }
+        { name: 'Appium', description: 'Cross-platform mobile automation', level: 'Intermediate', popularity: '90%', icon: <FaAndroid className="h-6 w-6" /> },
+        { name: 'Espresso', description: 'Android UI testing framework', level: 'Intermediate', popularity: '85%', icon: <FaAndroid className="h-6 w-6" /> },
+        { name: 'XCUITest', description: 'iOS native testing framework', level: 'Intermediate', popularity: '80%', icon: <FaApple className="h-6 w-6" /> },
+        { name: 'Detox', description: 'React Native testing framework', level: 'Advanced', popularity: '72%', icon: <FaApple className="h-6 w-6" /> },
+        { name: 'Firebase Test Lab', description: 'Cloud-based mobile testing', level: 'Beginner', popularity: '75%', icon: <FaCloud className="h-6 w-6" /> },
+        { name: 'BrowserStack', description: 'Real device cloud testing', level: 'Beginner', popularity: '88%', icon: <FaCloud className="h-6 w-6" /> }
       ]
     },
     {
@@ -42,12 +42,12 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Zap className="h-6 w-6" />,
       description: 'Load testing and performance monitoring tools',
       tools: [
-        { name: 'JMeter', description: 'Open-source load testing tool', level: 'Intermediate', popularity: '92%' },
-        { name: 'LoadRunner', description: 'Enterprise performance testing', level: 'Advanced', popularity: '85%' },
-        { name: 'Gatling', description: 'High-performance load testing', level: 'Advanced', popularity: '78%' },
-        { name: 'K6', description: 'Developer-centric load testing', level: 'Intermediate', popularity: '75%' },
-        { name: 'BlazeMeter', description: 'Cloud-based performance testing', level: 'Beginner', popularity: '80%' },
-        { name: 'WebPageTest', description: 'Web performance analysis', level: 'Beginner', popularity: '70%' }
+        { name: 'JMeter', description: 'Open-source load testing tool', level: 'Intermediate', popularity: '92%', icon: <FaJava className="h-6 w-6" /> },
+        { name: 'LoadRunner', description: 'Enterprise performance testing', level: 'Advanced', popularity: '85%', icon: <FaDocker className="h-6 w-6" /> },
+        { name: 'Gatling', description: 'High-performance load testing', level: 'Advanced', popularity: '78%', icon: <FaJava className="h-6 w-6" /> },
+        { name: 'K6', description: 'Developer-centric load testing', level: 'Intermediate', popularity: '75%', icon: <FaNodeJs className="h-6 w-6" /> },
+        { name: 'BlazeMeter', description: 'Cloud-based performance testing', level: 'Beginner', popularity: '80%', icon: <FaCloud className="h-6 w-6" /> },
+        { name: 'WebPageTest', description: 'Web performance analysis', level: 'Beginner', popularity: '70%', icon: <FaCloud className="h-6 w-6" /> }
       ]
     },
     {
@@ -56,12 +56,12 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Shield className="h-6 w-6" />,
       description: 'Security testing and vulnerability assessment tools',
       tools: [
-        { name: 'OWASP ZAP', description: 'Web application security scanner', level: 'Intermediate', popularity: '88%' },
-        { name: 'Burp Suite', description: 'Web vulnerability scanner', level: 'Advanced', popularity: '92%' },
-        { name: 'Nessus', description: 'Vulnerability assessment tool', level: 'Intermediate', popularity: '85%' },
-        { name: 'SonarQube', description: 'Code quality and security analysis', level: 'Intermediate', popularity: '80%' },
-        { name: 'Checkmarx', description: 'Static application security testing', level: 'Advanced', popularity: '75%' },
-        { name: 'Veracode', description: 'Application security platform', level: 'Intermediate', popularity: '78%' }
+        { name: 'OWASP ZAP', description: 'Web application security scanner', level: 'Intermediate', popularity: '88%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: 'Burp Suite', description: 'Web vulnerability scanner', level: 'Advanced', popularity: '92%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: 'Nessus', description: 'Vulnerability assessment tool', level: 'Intermediate', popularity: '85%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: 'SonarQube', description: 'Code quality and security analysis', level: 'Intermediate', popularity: '80%', icon: <FaGithub className="h-6 w-6" /> },
+        { name: 'Checkmarx', description: 'Static application security testing', level: 'Advanced', popularity: '75%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: 'Veracode', description: 'Application security platform', level: 'Intermediate', popularity: '78%', icon: <FaShieldAlt className="h-6 w-6" /> }
       ]
     },
     {
@@ -70,12 +70,12 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Database className="h-6 w-6" />,
       description: 'API testing and service validation tools',
       tools: [
-        { name: 'Postman', description: 'API development and testing', level: 'Beginner', popularity: '95%' },
-        { name: 'REST Assured', description: 'Java-based API testing', level: 'Intermediate', popularity: '85%' },
-        { name: 'SoapUI', description: 'API testing platform', level: 'Intermediate', popularity: '80%' },
-        { name: 'Insomnia', description: 'API client and testing tool', level: 'Beginner', popularity: '75%' },
-        { name: 'Newman', description: 'Postman command-line runner', level: 'Intermediate', popularity: '70%' },
-        { name: 'Karate DSL', description: 'API test automation framework', level: 'Advanced', popularity: '68%' }
+        { name: 'Postman', description: 'API development and testing', level: 'Beginner', popularity: '95%', icon: <FaDatabase className="h-6 w-6" /> },
+        { name: 'REST Assured', description: 'Java-based API testing', level: 'Intermediate', popularity: '85%', icon: <FaJava className="h-6 w-6" /> },
+        { name: 'SoapUI', description: 'API testing platform', level: 'Intermediate', popularity: '80%', icon: <FaDatabase className="h-6 w-6" /> },
+        { name: 'Insomnia', description: 'API client and testing tool', level: 'Beginner', popularity: '75%', icon: <FaDatabase className="h-6 w-6" /> },
+        { name: 'Newman', description: 'Postman command-line runner', level: 'Intermediate', popularity: '70%', icon: <FaNodeJs className="h-6 w-6" /> },
+        { name: 'Karate DSL', description: 'API test automation framework', level: 'Advanced', popularity: '68%', icon: <FaJava className="h-6 w-6" /> }
       ]
     },
     {
@@ -84,12 +84,12 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Globe className="h-6 w-6" />,
       description: 'Cross-browser and web application testing tools',
       tools: [
-        { name: 'Chrome DevTools', description: 'Browser developer tools', level: 'Beginner', popularity: '98%' },
-        { name: 'Sauce Labs', description: 'Cloud testing platform', level: 'Intermediate', popularity: '85%' },
-        { name: 'CrossBrowserTesting', description: 'Cross-browser testing service', level: 'Beginner', popularity: '80%' },
-        { name: 'LambdaTest', description: 'Cross-browser testing platform', level: 'Beginner', popularity: '82%' },
-        { name: 'Browserling', description: 'Live interactive cross-browser testing', level: 'Beginner', popularity: '75%' },
-        { name: 'TestingBot', description: 'Automated cross-browser testing', level: 'Intermediate', popularity: '70%' }
+        { name: 'Chrome DevTools', description: 'Browser developer tools', level: 'Beginner', popularity: '98%', icon: <FaChrome className="h-6 w-6" /> },
+        { name: 'Sauce Labs', description: 'Cloud testing platform', level: 'Intermediate', popularity: '85%', icon: <FaCloud className="h-6 w-6" /> },
+        { name: 'CrossBrowserTesting', description: 'Cross-browser testing service', level: 'Beginner', popularity: '80%', icon: <FaChrome className="h-6 w-6" /> },
+        { name: 'LambdaTest', description: 'Cross-browser testing platform', level: 'Beginner', popularity: '82%', icon: <FaCloud className="h-6 w-6" /> },
+        { name: 'Browserling', description: 'Live interactive cross-browser testing', level: 'Beginner', popularity: '75%', icon: <FaChrome className="h-6 w-6" /> },
+        { name: 'TestingBot', description: 'Automated cross-browser testing', level: 'Intermediate', popularity: '70%', icon: <FaCloud className="h-6 w-6" /> }
       ]
     }
   ];
@@ -145,8 +145,8 @@ const SoftwareTestingGuideToolsFramework = () => {
               {toolCategories[activeCategory].tools.map((tool, index) => (
                 <div key={index} className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200">
                   <div className="flex items-start justify-between mb-3">
+                    <div className="text-blue-600 font-extrabold">{tool.icon}</div>
                     <h4 className="text-lg font-semibold text-gray-900">{tool.name}</h4>
-                    <ExternalLink className="h-4 w-4 text-gray-400 hover:text-blue-600 cursor-pointer" />
                   </div>
 
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">
@@ -185,12 +185,7 @@ const SoftwareTestingGuideToolsFramework = () => {
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                'Video Tutorials',
-                'Hands-on Labs',
-                'Practice Projects',
-                'Certification Prep'
-              ].map((resource, index) => (
+              {[ 'Video Tutorials', 'Hands-on Labs', 'Practice Projects', 'Certification Prep' ].map((resource, index) => (
                 <div key={index} className="flex items-center bg-white rounded-lg p-3">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                   <span className="text-sm text-gray-700">{resource}</span>
@@ -244,4 +239,3 @@ const SoftwareTestingGuideToolsFramework = () => {
 };
 
 export default SoftwareTestingGuideToolsFramework;
-

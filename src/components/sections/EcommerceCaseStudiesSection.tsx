@@ -7,7 +7,7 @@ import { FaRocket, FaArrowRight, FaStar } from "react-icons/fa";
 const EcommerceCaseStudiesSection: React.FC = () => {
   const caseStudies = [
     {
-      industry: "Fashion Retail",
+      industry: "Leading Fashion Retail Brand",
       challenge: "High cart abandonment rate and mobile conversion issues",
       solution: "Comprehensive checkout optimization and mobile testing",
       results: [
@@ -20,18 +20,13 @@ const EcommerceCaseStudiesSection: React.FC = () => {
           metric: "Mobile Conversions",
           improvement: "+52%",
           color: "text-green-600",
-        },
-        {
-          metric: "Revenue Increase",
-          improvement: "+$2.3M",
-          color: "text-green-600",
-        },
+        }
       ],
       testimonial:
         "Testriq's testing helped us identify critical issues in our checkout flow. The results exceeded our expectations.",
     },
     {
-      industry: "Electronics",
+      industry: "Prominent Electronics Brand",
       challenge: "Payment gateway failures and security vulnerabilities",
       solution: "Payment integration testing and security assessment",
       results: [
@@ -55,7 +50,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
         "The security testing revealed vulnerabilities we didn't know existed. Now our customers shop with confidence.",
     },
     {
-      industry: "Home & Garden",
+      industry: "Renowned Home & Garden Brand",
       challenge: "Poor site performance during peak sales periods",
       solution: "Performance optimization and load testing",
       results: [

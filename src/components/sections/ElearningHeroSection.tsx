@@ -20,7 +20,7 @@ import {
 
 const ElearningHeroSection: React.FC = () => {
   const keyStats = [
-    { value: "500M+", label: "Learners Reached", icon: FaUsers },
+    { value: "4.5/5", label: "Average User Satisfaction Score", icon: FaUsers },
     { value: "50+", label: "LMS Platforms", icon: FaLaptop },
     { value: "99.9%", label: "Uptime Achieved", icon: FaRocket },
     {

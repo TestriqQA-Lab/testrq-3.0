@@ -23,6 +23,7 @@ const ToolsHeroSection = () => {
   const closeLightbox = () => {
     setIsLightboxOpen(false);
   };
+  
 const scrollToTools = () => {
     const element = document.getElementById("tools-and-frameworks");
     if (element) {

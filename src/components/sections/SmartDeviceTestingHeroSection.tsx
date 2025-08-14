@@ -1,12 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaWifi, FaBluetooth, FaMobile, FaShieldAlt } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
 import { MdDevicesOther } from "react-icons/md";
+import Lightbox from "../VideoLightBox"; 
 
 const SmartDeviceTestingHeroSection: React.FC = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
   return (
     <section className="bg-gradient-to-br from-gray-50 to-green-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -37,7 +48,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
                   <FaArrowRight className="inline ml-2" />
                 </button>
               </Link>
-              <button className="border border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
+              <button onClick={openLightbox} className="border cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
                 <FaPlay className="w-4 h-4" />
                 Watch Demo
               </button>
@@ -222,6 +233,8 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

@@ -1,5 +1,6 @@
+'use client';
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaFileAlt,
   FaClipboardList,
@@ -9,8 +10,19 @@ import {
   FaArrowRight,
   FaPlay,
 } from "react-icons/fa";
+import Lightbox from "../VideoLightBox"; 
 
 const QADocumentationHeroSection = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 py-16  px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-white/60"></div>
@@ -53,7 +65,7 @@ const QADocumentationHeroSection = () => {
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200">
+              <button onClick={openLightbox} className="inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200">
                 <FaPlay className="mr-2" />
                 Watch Demo
               </button>
@@ -209,6 +221,8 @@ const QADocumentationHeroSection = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };
