@@ -131,7 +131,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <BlogPostContent post={post} />
-              <BlogPostComments postId={post.id} />
+              {/* <BlogPostComments postId={post.id} /> */}
             </div>
             <div className="lg:col-span-1">
               <BlogPostSidebar post={post} />

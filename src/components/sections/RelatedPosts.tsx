@@ -108,7 +108,7 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gray-50 py-8 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Related Articles */}
         <div className="mb-16">
@@ -195,104 +195,6 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({}) => {
           </div>
         </div>
 
-        {/* Popular This Week */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-8">
-              <FaFire className="w-6 h-6 text-red-500" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                Popular This Week
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {popularPosts.map((post, index) => (
-                <Link
-                  key={post.id}
-                  href={`/blog/post-${post.id}`}
-                  className="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow group"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      {post.title}
-                    </h4>
-                    <div className="flex items-center gap-3 text-sm text-gray-500">
-                      <span>{post.category}</span>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
-                      <span>•</span>
-                      <span>{post.views} views</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-xl p-8 text-white h-fit">
-            <h3 className="text-xl font-bold mb-4">Never Miss an Update</h3>
-            <p className="text-blue-100 mb-6">
-              Get the latest testing insights and tutorials delivered directly
-              to your inbox.
-            </p>
-
-            <div className="space-y-4">
-              <input
-                type="email"
-                placeholder="your.email@company.com"
-                className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-              />
-              <button className="w-full px-4 py-3 bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                Subscribe Now
-              </button>
-            </div>
-
-            <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white border-opacity-20">
-              <div className="text-center">
-                <div className="text-2xl font-bold">10K+</div>
-                <div className="text-xs text-blue-200">Subscribers</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">Weekly</div>
-                <div className="text-xs text-blue-200">Updates</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold">4.9★</div>
-                <div className="text-xs text-blue-200">Rating</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Browse More */}
-        <div className="text-center mt-16 pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">
-            Want to explore more testing topics?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Browse our comprehensive collection of software testing articles,
-            tutorials, and best practices to enhance your QA skills and stay
-            updated with the latest industry trends.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/blog"
-              className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors"
-            >
-              Browse All Articles
-            </Link>
-            <Link
-              href="/blog/categories"
-              className="px-8 py-3 border-2 border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              View Categories
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );

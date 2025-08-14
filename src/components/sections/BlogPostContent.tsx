@@ -105,39 +105,16 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
-                isLiked
-                  ? "bg-red-100 text-red-600"
-                  : "bg-gray-100 text-gray-700 hover:bg-red-50"
-              }`}
-            >
-              <FaHeart className="w-4 h-4" />
-              <span>{post.likes + (isLiked ? 1 : 0)}</span>
-            </button>
+            
 
             <button className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-blue-50 transition-colors">
               <FaShare className="w-4 h-4" />
               <span>{post.shares}</span>
             </button>
 
-            <button
-              onClick={() => setIsSaved(!isSaved)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
-                isSaved
-                  ? "bg-blue-100 text-blue-600"
-                  : "bg-gray-100 text-gray-700 hover:bg-blue-50"
-              }`}
-            >
-              <FaBookmark className="w-4 h-4" />
-              <span>{isSaved ? "Saved" : "Save"}</span>
-            </button>
+            
 
-            <button className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-              <FaPrint className="w-4 h-4" />
-              <span>Print</span>
-            </button>
+            
           </div>
         </div>
       </div>
@@ -147,46 +124,11 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
         {formatContent(post.content)}
       </div>
 
-      {/* Code Block */}
-      <div className="bg-gray-900 text-green-400 p-6 rounded-lg my-8 overflow-x-auto">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-sm text-gray-400">Java</span>
-          <button className="text-sm text-blue-400 hover:text-blue-300">
-            Copy Code
-          </button>
-        </div>
-        <pre className="text-sm">
-          {`import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-// ... rest of code
-`}
-        </pre>
-      </div>
+      
 
-      {/* Key Takeaways */}
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8 rounded-r-lg">
-        <h4 className="text-lg font-bold text-blue-900 mb-3">
-          🔑 Key Takeaways
-        </h4>
-        <ul className="space-y-2 text-blue-900 font-medium">
-          <li>• Selenium WebDriver is essential for automation</li>
-          <li>• POM improves maintainability</li>
-          <li>• Use explicit waits for dynamic content</li>
-          <li>• Integrate with CI/CD for quality</li>
-          <li>• Follow best practices to stay robust</li>
-        </ul>
-      </div>
+     
 
-      {/* Warning Note */}
-      <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8 rounded-r-lg">
-        <h4 className="text-lg font-bold text-yellow-900 mb-3">
-          ⚠️ Important Note
-        </h4>
-        <p className="text-yellow-900 font-medium">
-          Always use <code>driver.quit()</code> to close your WebDriver to
-          prevent memory leaks, especially in CI/CD.
-        </p>
-      </div>
+   
 
       {/* Author Bio */}
       <div className="bg-gray-50 rounded-xl p-8 my-12">
@@ -205,37 +147,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
             <p className="text-gray-700 mb-4 leading-relaxed">
               {post.authorBio}
             </p>
-            <div className="flex items-center gap-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Follow Author
-              </button>
-              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
-                View All Posts
-              </button>
-            </div>
+            
           </div>
         </div>
       </div>
 
-      {/* Article Navigation */}
-      <div className="flex items-center justify-between py-8 border-t border-gray-200">
-        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
-          <span className="text-2xl">←</span>
-          <div className="text-left">
-            <div className="text-sm text-gray-500">Previous Article</div>
-            <div className="font-semibold">API Testing with Postman</div>
-          </div>
-        </button>
-        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
-          <div className="text-right">
-            <div className="text-sm text-gray-500">Next Article</div>
-            <div className="font-semibold">
-              Cross-Browser Testing Strategies
-            </div>
-          </div>
-          <span className="text-2xl">→</span>
-        </button>
-      </div>
+      
 
       {/* Social Share */}
       <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-6 my-8">

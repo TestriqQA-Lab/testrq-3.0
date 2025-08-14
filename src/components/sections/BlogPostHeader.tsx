@@ -99,28 +99,9 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   <FaClock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <FaEye className="w-4 h-4" />
-                  <span>{post.views} views</span>
-                </div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="flex items-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition">
-                <FaHeart className="w-4 h-4" />
-                <span>{post.likes}</span>
-              </button>
-              <button className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition">
-                <FaShare className="w-4 h-4" />
-                <span>{post.shares}</span>
-              </button>
-              <button className="flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition">
-                <FaBookmark className="w-4 h-4" />
-                <span>Save</span>
-              </button>
-            </div>
           </div>
 
           {/* Right - Image */}
@@ -135,23 +116,10 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition">
+                {/* <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition">
                   <span className="text-2xl">▶</span>
-                </button>
+                </button> */}
               </div>
-            </div>
-
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-4 rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-blue-600">
-                {post.views}
-              </div>
-              <div className="text-sm text-gray-700">Total Views</div>
-            </div>
-
-            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl shadow-lg">
-              <div className="text-2xl font-bold">{post.likes}</div>
-              <div className="text-sm">Likes</div>
             </div>
           </div>
         </div>
@@ -173,29 +141,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
         </div>
 
         {/* Share Section */}
-        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="text-blue-200">Share this article:</span>
-            <div className="flex gap-3">
-              {[
-                { name: "Twitter", icon: "🐦", color: "bg-blue-400" },
-                { name: "LinkedIn", icon: "💼", color: "bg-blue-600" },
-                { name: "Facebook", icon: "📘", color: "bg-blue-700" },
-                { name: "Copy Link", icon: "🔗", color: "bg-gray-600" },
-              ].map((social) => (
-                <button
-                  key={social.name}
-                  className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center text-white hover:scale-110 transition`}
-                  title={`Share on ${social.name}`}
-                >
-                  <span className="text-sm">{social.icon}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-blue-200 text-sm">Published on {post.date}</div>
-        </div>
+       
       </div>
     </section>
   );
