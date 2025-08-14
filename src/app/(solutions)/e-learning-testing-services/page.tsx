@@ -105,7 +105,7 @@ const ElearningTestingPage: React.FC = () => {
       <ElearningPlatformsSection />
       <ElearningAccessibilitySection />
       <ElearningPerformanceSection />
-      <ElearningCaseStudiesSection />
+      {/* <ElearningCaseStudiesSection /> */}
       <ElearningFAQSection />
       <ElearningContactSection />
     </main>

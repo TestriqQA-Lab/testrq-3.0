@@ -26,9 +26,9 @@ const MobileProvenTestingProcess: React.FC = () => {
                   Start Your Project
                 </button>
               </Link>
-              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
+              {/* <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[theme(color.brand.blue)] transition-colors">
                 Download Process Guide
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

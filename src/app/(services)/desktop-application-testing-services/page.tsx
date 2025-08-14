@@ -198,7 +198,7 @@ export default function DesktopAppTesting() {
         <DesktopComprehensiveSlider />
         <DesktopCardSlider />
         <DesktopWhyChooseTestriq />
-        <DesktopCaseStudies />
+        {/* <DesktopCaseStudies /> */}
         <DesktopFAQs />
       </MainLayout>
     </div>

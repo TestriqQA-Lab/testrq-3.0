@@ -45,10 +45,10 @@ const QADocumentationReadyToEnsureQuality = () => {
               </button>
             </Link>
 
-            <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
+            {/* <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
               <FaFileAlt className="mr-3" />
               Download Documentation Guide
-            </button>
+            </button> */}
           </div>
 
           {/* Trust Indicators */}
