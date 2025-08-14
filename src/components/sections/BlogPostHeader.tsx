@@ -1,4 +1,4 @@
-"use client";
+// /home/ubuntu/updated_BlogPostHeader.tsx
 import Image from "next/image";
 import React from "react";
 import {
@@ -11,6 +11,7 @@ import {
   FaArrowLeft,
 } from "react-icons/fa";
 import Link from "next/link";
+import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
 
 interface BlogPost {
   id: string; // Changed from number to string
@@ -27,7 +28,7 @@ interface BlogPost {
   views: string;
   likes: number;
   shares: number;
-  tags: string[];
+  tags: string[]; // Added missing tags property
 }
 
 interface BlogPostHeaderProps {
@@ -35,6 +36,8 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
+  const cleanExcerpt = stripHtmlTags(post.excerpt); // Strip HTML tags from the excerpt
+
   return (
     <section className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-800 text-white py-16 px-8 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blurs */}
@@ -71,7 +74,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
             </h1>
 
             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-              {post.excerpt}
+              {cleanExcerpt}
             </p>
 
             {/* Author + Meta */}
@@ -99,6 +102,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   <FaClock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
+                
               </div>
             </div>
 
@@ -115,32 +119,16 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition">
-                  <span className="text-2xl">▶</span>
-                </button> */}
-              </div>
+              
             </div>
+
+ 
+            
           </div>
         </div>
 
-        {/* Tags */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-blue-200 font-medium">Tags:</span>
-            {post.tags.map((tag, index) => (
-              <Link
-                key={index}
-                href={`/blog/tag/${tag.toLowerCase()}`}
-                className="px-3 py-1 bg-white/10 text-blue-200 text-sm rounded-full hover:bg-white/20 transition"
-              >
-                #{tag}
-              </Link>
-            ))}
-          </div>
-        </div>
+        
 
-        {/* Share Section */}
        
       </div>
     </section>
