@@ -1,14 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import {
-  Code,
   Database,
   BarChart3,
   Brain,
   Cloud,
   Zap,
   CheckCircle,
-  ExternalLink,
 } from "lucide-react";
 import {
   FaTools,
