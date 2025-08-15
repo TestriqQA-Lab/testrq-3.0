@@ -1,16 +1,17 @@
 "use client";
+import Link from 'next/link'
 
 import React, { useState } from "react";
 import {
   FaEnvelope,
   FaArrowRight,
   FaBell,
-  FaRss,
-  FaTwitter,
+  FaInstagram,
   FaLinkedin,
-  FaGithub,
+  FaFacebook,
   FaSpinner,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const BlogNewsletter: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -129,10 +130,10 @@ const handleSubscribe = async (e: React.FormEvent) => {
               <span className="text-gray-300 text-sm">Follow us:</span>
               <div className="flex gap-3">
                 {[
-                  { icon: <FaTwitter />, href: "#" },
-                  { icon: <FaLinkedin />, href: "#" },
-                  { icon: <FaGithub />, href: "#" },
-                  { icon: <FaRss />, href: "#" },
+                  { icon: <FaXTwitter />, href: "https://x.com/testriq" },
+                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/testriq-qa-lab" },
+                  { icon: <FaFacebook />, href: "https://www.facebook.com/testriq.lab/" },
+                  { icon: <FaInstagram />, href: "https://instagram.com/testriq" },
                 ].map((s, i) => (
                   <a
                     key={i}
@@ -225,13 +226,16 @@ const handleSubscribe = async (e: React.FormEvent) => {
 
                   <p className="text-gray-300 text-xs text-center">
                     By subscribing, you agree to our{" "}
-                    <a href="#" className="text-white underline">
+                    <Link 
+                    href="/privacy-policy" className="text-white underline"
+                    >
                       Privacy Policy
-                    </a>{" "}
+                    </Link>{" "}
                     and{" "}
-                    <a href="#" className="text-white underline">
+                    <Link href="/terms-of-service" className="text-white underline"
+                    >
                       Terms of Service
-                    </a>
+                    </Link>
                   </p>
                 </form>
               ) : (
@@ -289,9 +293,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
             <button className="px-8 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors">
               Browse All Articles
             </button>
-            <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-colors">
-              Download Free Guide
-            </button>
+           
           </div>
         </div>
       </div>

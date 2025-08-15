@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose();
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const { v4: uuidv4 } = require('uuid');
-const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -13,24 +12,41 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Database setup
-const dbPath = path.join(__dirname, 'newsletter.db');
-const db = new sqlite3.Database(dbPath);
+// MongoDB connection
+let db;
+let client;
 
-// Initialize database
-db.serialize(() => {
-  db.run(`
-    CREATE TABLE IF NOT EXISTS newsletter_subscriptions (
-      id TEXT PRIMARY KEY,
-      email TEXT UNIQUE NOT NULL,
-      interests TEXT,
-      subscribed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-      is_active BOOLEAN DEFAULT 1,
-      confirmation_token TEXT,
-      confirmed BOOLEAN DEFAULT 1
-    )
-  `);
-});
+const connectToMongoDB = async () => {
+  try {
+    const uri = process.env.MONGODB_URI;
+    
+    if (!uri) {
+      throw new Error('MONGODB_URI environment variable is not set');
+    }
+
+    client = new MongoClient(uri, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      }
+    });
+
+    await client.connect();
+    db = client.db('newsletter_db'); // Database name
+    console.log('Connected to MongoDB Atlas successfully!');
+    
+    // Create indexes for better performance
+    await db.collection('subscriptions').createIndex({ email: 1 }, { unique: true });
+    
+  } catch (error) {
+    console.error('MongoDB connection error:', error);
+    process.exit(1);
+  }
+};
+
+// Initialize MongoDB connection
+connectToMongoDB();
 
 // Utility functions
 const isValidEmail = (email) => {
@@ -42,208 +58,226 @@ const isValidEmail = (email) => {
 
 // Health check
 app.get('/health', (req, res) => {
-  res.json({ status: 'healthy', service: 'newsletter-api' });
+  res.json({ 
+    status: 'healthy', 
+    service: 'newsletter-api',
+    database: db ? 'connected' : 'disconnected'
+  });
 });
 
 // Subscribe to newsletter
-app.post('/api/newsletter/subscribe', (req, res) => {
-  const { email, interests = [] } = req.body;
+app.post('/api/newsletter/subscribe', async (req, res) => {
+  try {
+    const { email, interests = [] } = req.body;
 
-  // Validation
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' });
-  }
+    // Validation
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
+    }
 
-  if (!isValidEmail(email)) {
-    return res.status(400).json({ error: 'Invalid email format' });
-  }
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
 
-  const normalizedEmail = email.toLowerCase().trim();
-  const interestsJson = JSON.stringify(interests);
-  const subscriptionId = uuidv4();
-  const confirmationToken = uuidv4();
+    const normalizedEmail = email.toLowerCase().trim();
+    const subscriptionId = uuidv4();
+    const confirmationToken = uuidv4();
 
-  // Check if email already exists
-  db.get(
-    'SELECT * FROM newsletter_subscriptions WHERE email = ?',
-    [normalizedEmail],
-    (err, row) => {
-      if (err) {
-        console.error('Database error:', err);
-        return res.status(500).json({ error: 'Internal server error' });
-      }
+    // Check if email already exists
+    const existingSubscription = await db.collection('subscriptions').findOne({ 
+      email: normalizedEmail 
+    });
 
-      if (row) {
-        if (row.is_active) {
-          return res.status(409).json({ error: 'Email already subscribed' });
-        } else {
-          // Reactivate subscription
-          db.run(
-            `UPDATE newsletter_subscriptions 
-             SET is_active = 1, interests = ?, confirmation_token = ?, subscribed_at = CURRENT_TIMESTAMP
-             WHERE email = ?`,
-            [interestsJson, confirmationToken, normalizedEmail],
-            function(err) {
-              if (err) {
-                console.error('Database error:', err);
-                return res.status(500).json({ error: 'Internal server error' });
-              }
-
-              res.json({
-                message: 'Successfully resubscribed to newsletter!',
-                subscription: {
-                  id: row.id,
-                  email: normalizedEmail,
-                  interests: interests,
-                  subscribed_at: new Date().toISOString(),
-                  is_active: true,
-                  confirmed: true
-                }
-              });
-            }
-          );
-        }
+    if (existingSubscription) {
+      if (existingSubscription.is_active) {
+        return res.status(409).json({ error: 'Email already subscribed' });
       } else {
-        // Create new subscription
-        db.run(
-          `INSERT INTO newsletter_subscriptions 
-           (id, email, interests, confirmation_token, confirmed, is_active)
-           VALUES (?, ?, ?, ?, 1, 1)`,
-          [subscriptionId, normalizedEmail, interestsJson, confirmationToken],
-          function(err) {
-            if (err) {
-              console.error('Database error:', err);
-              return res.status(500).json({ error: 'Internal server error' });
+        // Reactivate subscription
+        const updateResult = await db.collection('subscriptions').updateOne(
+          { email: normalizedEmail },
+          {
+            $set: {
+              is_active: true,
+              interests: interests,
+              confirmation_token: confirmationToken,
+              subscribed_at: new Date(),
+              updated_at: new Date()
             }
-
-            res.status(201).json({
-              message: 'Successfully subscribed to newsletter!',
-              subscription: {
-                id: subscriptionId,
-                email: normalizedEmail,
-                interests: interests,
-                subscribed_at: new Date().toISOString(),
-                is_active: true,
-                confirmed: true
-              }
-            });
           }
         );
+
+        if (updateResult.modifiedCount > 0) {
+          return res.json({
+            message: 'Successfully resubscribed to newsletter!',
+            subscription: {
+              id: existingSubscription._id,
+              email: normalizedEmail,
+              interests: interests,
+              subscribed_at: new Date().toISOString(),
+              is_active: true,
+              confirmed: true
+            }
+          });
+        }
+      }
+    } else {
+      // Create new subscription
+      const newSubscription = {
+        _id: subscriptionId,
+        email: normalizedEmail,
+        interests: interests,
+        subscribed_at: new Date(),
+        is_active: true,
+        confirmation_token: confirmationToken,
+        confirmed: true,
+        created_at: new Date(),
+        updated_at: new Date()
+      };
+
+      const insertResult = await db.collection('subscriptions').insertOne(newSubscription);
+
+      if (insertResult.acknowledged) {
+        return res.status(201).json({
+          message: 'Successfully subscribed to newsletter!',
+          subscription: {
+            id: subscriptionId,
+            email: normalizedEmail,
+            interests: interests,
+            subscribed_at: new Date().toISOString(),
+            is_active: true,
+            confirmed: true
+          }
+        });
       }
     }
-  );
+
+    res.status(500).json({ error: 'Failed to process subscription' });
+
+  } catch (error) {
+    console.error('Subscription error:', error);
+    
+    // Handle duplicate key error (email already exists)
+    if (error.code === 11000) {
+      return res.status(409).json({ error: 'Email already subscribed' });
+    }
+    
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Unsubscribe from newsletter
-app.post('/api/newsletter/unsubscribe', (req, res) => {
-  const { email } = req.body;
+app.post('/api/newsletter/unsubscribe', async (req, res) => {
+  try {
+    const { email } = req.body;
 
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' });
-  }
-
-  const normalizedEmail = email.toLowerCase().trim();
-
-  db.run(
-    'UPDATE newsletter_subscriptions SET is_active = 0 WHERE email = ?',
-    [normalizedEmail],
-    function(err) {
-      if (err) {
-        console.error('Database error:', err);
-        return res.status(500).json({ error: 'Internal server error' });
-      }
-
-      if (this.changes === 0) {
-        return res.status(404).json({ error: 'Email not found' });
-      }
-
-      res.json({ message: 'Successfully unsubscribed from newsletter' });
+    if (!email) {
+      return res.status(400).json({ error: 'Email is required' });
     }
-  );
+
+    const normalizedEmail = email.toLowerCase().trim();
+
+    const updateResult = await db.collection('subscriptions').updateOne(
+      { email: normalizedEmail },
+      { 
+        $set: { 
+          is_active: false,
+          updated_at: new Date()
+        } 
+      }
+    );
+
+    if (updateResult.matchedCount === 0) {
+      return res.status(404).json({ error: 'Email not found' });
+    }
+
+    res.json({ message: 'Successfully unsubscribed from newsletter' });
+
+  } catch (error) {
+    console.error('Unsubscribe error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Get newsletter statistics
-app.get('/api/newsletter/stats', (req, res) => {
-  db.get(
-    'SELECT COUNT(*) as total_subscribers FROM newsletter_subscriptions WHERE is_active = 1',
-    (err, totalRow) => {
-      if (err) {
-        console.error('Database error:', err);
-        return res.status(500).json({ error: 'Internal server error' });
-      }
+app.get('/api/newsletter/stats', async (req, res) => {
+  try {
+    // Get total active subscribers
+    const totalSubscribers = await db.collection('subscriptions').countDocuments({ 
+      is_active: true 
+    });
 
-      db.get(
-        'SELECT COUNT(*) as confirmed_subscribers FROM newsletter_subscriptions WHERE is_active = 1 AND confirmed = 1',
-        (err, confirmedRow) => {
-          if (err) {
-            console.error('Database error:', err);
-            return res.status(500).json({ error: 'Internal server error' });
-          }
+    // Get confirmed subscribers
+    const confirmedSubscribers = await db.collection('subscriptions').countDocuments({ 
+      is_active: true, 
+      confirmed: true 
+    });
 
-          // Get interest breakdown
-          db.all(
-            'SELECT interests FROM newsletter_subscriptions WHERE is_active = 1 AND interests IS NOT NULL',
-            (err, rows) => {
-              if (err) {
-                console.error('Database error:', err);
-                return res.status(500).json({ error: 'Internal server error' });
-              }
+    // Get interest breakdown
+    const interestPipeline = [
+      { $match: { is_active: true } },
+      { $unwind: '$interests' },
+      { $group: { _id: '$interests', count: { $sum: 1 } } },
+      { $sort: { count: -1 } }
+    ];
 
-              const interestCounts = {};
-              rows.forEach(row => {
-                try {
-                  const interests = JSON.parse(row.interests);
-                  interests.forEach(interest => {
-                    interestCounts[interest] = (interestCounts[interest] || 0) + 1;
-                  });
-                } catch (e) {
-                  // Skip invalid JSON
-                }
-              });
+    const interestResults = await db.collection('subscriptions').aggregate(interestPipeline).toArray();
+    
+    const interestBreakdown = {};
+    interestResults.forEach(result => {
+      interestBreakdown[result._id] = result.count;
+    });
 
-              res.json({
-                total_subscribers: totalRow.total_subscribers,
-                confirmed_subscribers: confirmedRow.confirmed_subscribers,
-                interest_breakdown: interestCounts
-              });
-            }
-          );
-        }
-      );
-    }
-  );
+    res.json({
+      total_subscribers: totalSubscribers,
+      confirmed_subscribers: confirmedSubscribers,
+      interest_breakdown: interestBreakdown
+    });
+
+  } catch (error) {
+    console.error('Stats error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Get all subscribers (admin endpoint)
-app.get('/api/newsletter/subscribers', (req, res) => {
-  db.all(
-    'SELECT id, email, interests, subscribed_at, confirmed FROM newsletter_subscriptions WHERE is_active = 1',
-    (err, rows) => {
-      if (err) {
-        console.error('Database error:', err);
-        return res.status(500).json({ error: 'Internal server error' });
+app.get('/api/newsletter/subscribers', async (req, res) => {
+  try {
+    const subscribers = await db.collection('subscriptions').find(
+      { is_active: true },
+      { 
+        projection: { 
+          _id: 1, 
+          email: 1, 
+          interests: 1, 
+          subscribed_at: 1, 
+          confirmed: 1 
+        } 
       }
+    ).toArray();
 
-      const subscribers = rows.map(row => ({
-        id: row.id,
-        email: row.email,
-        interests: row.interests ? JSON.parse(row.interests) : [],
-        subscribed_at: row.subscribed_at,
-        confirmed: row.confirmed === 1
-      }));
+    const formattedSubscribers = subscribers.map(sub => ({
+      id: sub._id,
+      email: sub.email,
+      interests: sub.interests || [],
+      subscribed_at: sub.subscribed_at,
+      confirmed: sub.confirmed
+    }));
 
-      res.json({
-        count: subscribers.length,
-        subscribers: subscribers
-      });
-    }
-  );
+    res.json({
+      count: formattedSubscribers.length,
+      subscribers: formattedSubscribers
+    });
+
+  } catch (error) {
+    console.error('Subscribers error:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Default route
 app.get('/', (req, res) => {
   res.json({
-    message: 'Newsletter API Server is running!',
+    message: 'Newsletter API Server is running with MongoDB Atlas!',
     endpoints: {
       'POST /api/newsletter/subscribe': 'Subscribe to newsletter',
       'POST /api/newsletter/unsubscribe': 'Unsubscribe from newsletter',
@@ -268,15 +302,12 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 // Graceful shutdown
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
   console.log('Shutting down gracefully...');
-  db.close((err) => {
-    if (err) {
-      console.error('Error closing database:', err);
-    } else {
-      console.log('Database connection closed.');
-    }
-    process.exit(0);
-  });
+  if (client) {
+    await client.close();
+    console.log('MongoDB connection closed.');
+  }
+  process.exit(0);
 });
 
