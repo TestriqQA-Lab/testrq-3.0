@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppFAQs = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
@@ -65,18 +66,18 @@ const FantasyAppFAQs = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <span className="text-sm">
-              ● Frequently Asked Questions
-            </span>
+            <span className="text-sm">● Frequently Asked Questions</span>
           </div>
           <div className="flex items-center justify-center gap-3 mb-6">
             <HelpCircle className="w-8 h-8 text-brand-blue" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Frequently Asked <span className="text-brand-blue">Questions</span>
+              Frequently Asked{" "}
+              <span className="text-brand-blue">Questions</span>
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about fantasy app certification, testing process, security, and compliance.
+            Find answers to common questions about fantasy app certification,
+            testing process, security, and compliance.
           </p>
         </motion.div>
 
@@ -94,7 +95,9 @@ const FantasyAppFAQs = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-[#25A8E0] focus:ring-opacity-50 rounded-xl"
               >
-                <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
+                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  {faq.question}
+                </h3>
                 <div className="flex-shrink-0 text-brand-blue">
                   {openFAQ === index ? (
                     <ChevronUp className="w-5 h-5" />
@@ -114,7 +117,9 @@ const FantasyAppFAQs = () => {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-4">
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
                     </div>
                   </motion.div>
                 )}
@@ -133,15 +138,20 @@ const FantasyAppFAQs = () => {
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Our QA and compliance specialists are ready to help you. Book a free session to discuss your fantasy app’s certification needs.
+              Our QA and compliance specialists are ready to help you. Book a
+              free session to discuss your fantasy app’s certification needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                Schedule Free Consultation
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                Contact Our Experts
-              </button>
+              <Link href="/contact-us#calendly-section">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                  Schedule Free Consultation
+                </button>
+              </Link>
+              <Link href="/contact-us">
+                <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+                  Contact Our Experts
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>

@@ -13,13 +13,15 @@ import {
   ArrowRight,
   Clock,
 } from "lucide-react";
+import Link from "next/link";
 
 const TradingAppTestingServices = () => {
   const testingServices = [
     {
       icon: <Smartphone className="w-10 h-10" />,
       title: "Mobile Trading App Testing",
-      description: "Comprehensive testing across iOS and Android platforms for optimal trading experience.",
+      description:
+        "Comprehensive testing across iOS and Android platforms for optimal trading experience.",
       features: [
         "Cross-platform compatibility testing",
         "Real-time data synchronization",
@@ -33,7 +35,8 @@ const TradingAppTestingServices = () => {
     {
       icon: <Globe className="w-10 h-10" />,
       title: "Web Trading Platform Testing",
-      description: "Full-stack web application testing for trading platforms and admin panels.",
+      description:
+        "Full-stack web application testing for trading platforms and admin panels.",
       features: [
         "Cross-browser compatibility testing",
         "Responsive design validation",
@@ -47,7 +50,8 @@ const TradingAppTestingServices = () => {
     {
       icon: <Zap className="w-10 h-10" />,
       title: "Performance & Latency Testing",
-      description: "Low latency and high-frequency trading performance optimization.",
+      description:
+        "Low latency and high-frequency trading performance optimization.",
       features: [
         "Ultra-low latency testing",
         "High-frequency trading validation",
@@ -61,7 +65,8 @@ const TradingAppTestingServices = () => {
     {
       icon: <Shield className="w-10 h-10" />,
       title: "Security & Penetration Testing",
-      description: "Comprehensive security assessment and penetration testing for financial platforms.",
+      description:
+        "Comprehensive security assessment and penetration testing for financial platforms.",
       features: [
         "Financial data security testing",
         "API security and endpoint protection",
@@ -75,7 +80,8 @@ const TradingAppTestingServices = () => {
     {
       icon: <TrendingUp className="w-10 h-10" />,
       title: "Algorithmic Trading Testing",
-      description: "Specialized testing for algorithmic and automated trading systems.",
+      description:
+        "Specialized testing for algorithmic and automated trading systems.",
       features: [
         "Algorithm validation and verification",
         "Risk management system testing",
@@ -106,22 +112,26 @@ const TradingAppTestingServices = () => {
     {
       step: "01",
       title: "Trading Requirements Analysis",
-      description: "Comprehensive analysis of trading workflows, regulatory requirements, and performance benchmarks.",
+      description:
+        "Comprehensive analysis of trading workflows, regulatory requirements, and performance benchmarks.",
     },
     {
       step: "02",
       title: "Test Strategy Development",
-      description: "Creation of detailed test strategy covering functional, performance, and security aspects.",
+      description:
+        "Creation of detailed test strategy covering functional, performance, and security aspects.",
     },
     {
       step: "03",
       title: "Automated Test Execution",
-      description: "Systematic execution of automated and manual tests with real-time monitoring.",
+      description:
+        "Systematic execution of automated and manual tests with real-time monitoring.",
     },
     {
       step: "04",
       title: "Performance Optimization",
-      description: "Performance tuning and optimization based on test results and industry benchmarks.",
+      description:
+        "Performance tuning and optimization based on test results and industry benchmarks.",
     },
   ];
 
@@ -140,8 +150,9 @@ const TradingAppTestingServices = () => {
             <span className="text-brand-blue">Testing Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end testing services specifically designed for trading platforms, 
-            covering every aspect from ultra-low latency to regulatory compliance.
+            End-to-end testing services specifically designed for trading
+            platforms, covering every aspect from ultra-low latency to
+            regulatory compliance.
           </p>
         </motion.div>
 
@@ -156,18 +167,16 @@ const TradingAppTestingServices = () => {
               viewport={{ once: true }}
               className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
             >
-              <div className={`${service.color} mb-4`}>
-                {service.icon}
-              </div>
-              
+              <div className={`${service.color} mb-4`}>{service.icon}</div>
+
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              
+
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {service.description}
               </p>
-              
+
               <div className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start gap-2">
@@ -191,7 +200,7 @@ const TradingAppTestingServices = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Our Trading App Testing Process
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testingProcess.map((step, index) => (
               <motion.div
@@ -205,11 +214,9 @@ const TradingAppTestingServices = () => {
                 <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
                   {step.step}
                 </div>
-                
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {step.title}
-                </h4>
-                
+
+                <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
+
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {step.description}
                 </p>
@@ -237,17 +244,34 @@ const TradingAppTestingServices = () => {
               Performance Metrics We Deliver
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Our testing services ensure your trading app meets the highest performance standards 
-              with measurable improvements in speed, reliability, and user satisfaction.
+              Our testing services ensure your trading app meets the highest
+              performance standards with measurable improvements in speed,
+              reliability, and user satisfaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
-              { metric: "< 1ms", label: "Order Execution Latency", icon: <Clock className="w-6 h-6" /> },
-              { metric: "99.99%", label: "Uptime Guarantee", icon: <Shield className="w-6 h-6" /> },
-              { metric: "10,000+", label: "Orders/Second", icon: <TrendingUp className="w-6 h-6" /> },
-              { metric: "Zero", label: "Critical Bugs", icon: <CheckCircle className="w-6 h-6" /> },
+              {
+                metric: "< 1ms",
+                label: "Order Execution Latency",
+                icon: <Clock className="w-6 h-6" />,
+              },
+              {
+                metric: "99.99%",
+                label: "Uptime Guarantee",
+                icon: <Shield className="w-6 h-6" />,
+              },
+              {
+                metric: "10,000+",
+                label: "Orders/Second",
+                icon: <TrendingUp className="w-6 h-6" />,
+              },
+              {
+                metric: "Zero",
+                label: "Critical Bugs",
+                icon: <CheckCircle className="w-6 h-6" />,
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -257,7 +281,9 @@ const TradingAppTestingServices = () => {
                 viewport={{ once: true }}
                 className="text-center bg-white/10 rounded-lg p-4"
               >
-                <div className="text-white mb-2 flex justify-center">{item.icon}</div>
+                <div className="text-white mb-2 flex justify-center">
+                  {item.icon}
+                </div>
                 <div className="text-2xl font-bold mb-1">{item.metric}</div>
                 <div className="text-blue-100 text-sm">{item.label}</div>
               </motion.div>
@@ -265,10 +291,12 @@ const TradingAppTestingServices = () => {
           </div>
 
           <div className="text-center mt-8">
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2 mx-auto">
-              Start Performance Assessment
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2 mx-auto">
+                Start Performance Assessment
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -277,4 +305,3 @@ const TradingAppTestingServices = () => {
 };
 
 export default TradingAppTestingServices;
-

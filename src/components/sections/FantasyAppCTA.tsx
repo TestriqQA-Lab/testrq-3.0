@@ -11,6 +11,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppCTA = () => {
   const ctaFeatures = [
@@ -64,8 +65,9 @@ const FantasyAppCTA = () => {
             <span className="text-brand-blue">Certify Your Fantasy App?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join 200+ fantasy platforms that trust Testriq for real-time, secure, and compliant certification. 
-            Stand out in the competitive fantasy gaming market.
+            Join 200+ fantasy platforms that trust Testriq for real-time,
+            secure, and compliant certification. Stand out in the competitive
+            fantasy gaming market.
           </p>
         </motion.div>
 
@@ -100,10 +102,12 @@ const FantasyAppCTA = () => {
               </div>
 
               <div className="space-y-4">
-                <button className="w-full bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Start Free Assessment
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link href="/contact-us">
+                  <button className="w-full mb-5 cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Start Free Assessment
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
 
                 <button className="w-full border-2 border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Download Certification Guide
@@ -159,7 +163,6 @@ const FantasyAppCTA = () => {
               <div className="space-y-4">
                 {[
                   "14+ years of experience in real-time app testing",
-                  "200+ fantasy sports apps certified globally",
                   "Fair play & anti-fraud certification experts",
                   "24/7 uptime, data integrity, and scoring validation",
                   "Compliance with ISO 27001, GDPR, CCPA, OWASP",
@@ -193,21 +196,19 @@ const FantasyAppCTA = () => {
                   Trusted by Industry Leaders
                 </h4>
 
-                <div className="grid grid-cols-2 gap-4 text-center">
+                <div className="grid grid-cols-2 gap-2 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">200+</div>
-                    <div className="text-sm text-gray-600">Apps Certified</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      100%
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Match Integrity Score
+                    </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">30M+</div>
-                    <div className="text-sm text-gray-600">Players Protected</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">100%</div>
-                    <div className="text-sm text-gray-600">Match Integrity Score</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">24/7</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      24/7
+                    </div>
                     <div className="text-sm text-gray-600">Support</div>
                   </div>
                 </div>
@@ -229,12 +230,16 @@ const FantasyAppCTA = () => {
               Don&apos;t Delay – Certify Your Fantasy App Today
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              The competition never sleeps. Secure your app, gain user trust, and win in the fantasy arena. Start your free certification assessment now.
+              The competition never sleeps. Secure your app, gain user trust,
+              and win in the fantasy arena. Start your free certification
+              assessment now.
             </p>
-            <button className="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Get Certified Now - Free Assessment
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href={"/contact-us"}>
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Get Certified Now - Free Assessment
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

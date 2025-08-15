@@ -18,7 +18,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Security & Privacy",
-      description: "Advanced encryption, secure payment processing, and comprehensive data protection to safeguard customer information and financial transactions.",
+      description:
+        "We verify your app’s encryption, payment security, and data protection measures to ensure compliance with global security standards.",
       features: [
         "PCI DSS compliance",
         "SSL/TLS encryption",
@@ -32,7 +33,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <CreditCard className="w-12 h-12" />,
       title: "Payment Security",
-      description: "Secure payment gateway integration with fraud detection, tokenization, and compliance with international payment standards.",
+      description:
+        "We confirm that your payment gateway meets the highest fraud detection and secure transaction requirements.",
       features: [
         "Payment tokenization",
         "Fraud detection",
@@ -46,7 +48,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Zap className="w-12 h-12" />,
       title: "Performance & Speed",
-      description: "Optimized loading times, efficient caching, and scalable architecture to handle high traffic volumes and ensure smooth shopping experience.",
+      description:
+        "We evaluate your app’s speed, scalability, and uptime to ensure it delivers a fast and reliable shopping experience.",
       features: [
         "Sub-3s load times",
         "CDN optimization",
@@ -60,7 +63,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Users className="w-12 h-12" />,
       title: "User Experience",
-      description: "Intuitive navigation, mobile-responsive design, and accessibility compliance ensuring exceptional shopping experience across all devices.",
+      description:
+        "We assess navigation, responsiveness, and accessibility to confirm your app offers an exceptional user journey.",
       features: [
         "Mobile-first design",
         "Accessibility (WCAG 2.1)",
@@ -74,7 +78,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Lock className="w-12 h-12" />,
       title: "Data Protection",
-      description: "Robust data handling practices, secure storage, and privacy controls to protect customer data and maintain regulatory compliance.",
+      description:
+        "We verify secure data handling practices to ensure compliance and safeguard customer privacy.",
       features: [
         "Data encryption at rest",
         "Privacy controls",
@@ -88,7 +93,8 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <ShoppingCart className="w-12 h-12" />,
       title: "E-commerce Standards",
-      description: "Compliance with e-commerce best practices, inventory management, order processing, and customer service standards.",
+      description:
+        "We check that your operations, from inventory to support, meet recognized e-commerce best practices.",
       features: [
         "Inventory tracking",
         "Order management",
@@ -102,7 +108,10 @@ const ShoppingAppCertificationPillars = () => {
   ];
 
   return (
-    <section className="py-20 px-8 md:px-12 lg:px-24 bg-white">
+    <section
+      className="py-20 px-8 md:px-12 lg:px-24 bg-white"
+      id="certification-pillars"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -117,12 +126,13 @@ const ShoppingAppCertificationPillars = () => {
             Certification Standards
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Six Pillars of Shopping Apps{" "}
-            <span className="text-brand-blue">Certification</span>
+            Six Pillars We <span className="text-brand-blue">Certify</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive certification framework covers every aspect of e-commerce app development, 
-            ensuring your platform meets the highest industry standards and provides secure, seamless shopping experiences.
+            We don’t build your shopping app — we independently verify that it
+            meets these six critical pillars of security, performance, and
+            usability. Our certification assures your customers that these
+            standards are in place.
           </p>
         </motion.div>
 
@@ -137,22 +147,13 @@ const ShoppingAppCertificationPillars = () => {
               viewport={{ once: true }}
               className={`${pillar.bgColor} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100`}
             >
-              {/* Icon */}
-              <div className={`${pillar.textColor} mb-6`}>
-                {pillar.icon}
-              </div>
-
-              {/* Title */}
+              <div className={`${pillar.textColor} mb-6`}>{pillar.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {pillar.title}
               </h3>
-
-              {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {pillar.description}
               </p>
-
-              {/* Features */}
               <div className="space-y-3">
                 {pillar.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-3">
@@ -161,9 +162,9 @@ const ShoppingAppCertificationPillars = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Gradient Border */}
-              <div className={`h-1 bg-gradient-to-r ${pillar.color} rounded-full mt-6`}></div>
+              <div
+                className={`h-1 bg-gradient-to-r ${pillar.color} rounded-full mt-6`}
+              ></div>
             </motion.div>
           ))}
         </div>
@@ -178,15 +179,12 @@ const ShoppingAppCertificationPillars = () => {
         >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Ready to Get Your Shopping App Certified?
+              Want Independent Certification for Your Shopping App?
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join the ranks of certified e-commerce platforms and build trust with your customers 
-              through our comprehensive certification program.
+              Our role is to audit and confirm that your app meets these six
+              pillars — so your customers know they can shop with confidence.
             </p>
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Start Certification Process
-            </button>
           </div>
         </motion.div>
       </div>
@@ -195,4 +193,3 @@ const ShoppingAppCertificationPillars = () => {
 };
 
 export default ShoppingAppCertificationPillars;
-

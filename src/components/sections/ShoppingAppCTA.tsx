@@ -11,6 +11,7 @@ import {
   Mail,
   MessageCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 const ShoppingAppCTA = () => {
   const ctaFeatures = [
@@ -60,10 +61,13 @@ const ShoppingAppCTA = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Ready to <span className="text-brand-blue">Certify Your Shopping App?</span>
+            Ready to{" "}
+            <span className="text-brand-blue">Certify Your Shopping App?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Trusted by 500+ eCommerce platforms, Testriq helps your app meet global compliance standards, build trust, and enhance digital security.
+            Trusted by 500+ eCommerce platforms, Testriq helps your app meet
+            global compliance standards, build trust, and enhance digital
+            security.
           </p>
         </motion.div>
 
@@ -97,10 +101,12 @@ const ShoppingAppCTA = () => {
               </div>
 
               <div className="space-y-4">
-                <button className="w-full bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  Start Free Audit
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link href="/contact-us">
+                  <button className="w-full cursor-pointer bg-brand-blue mb-5 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Start Free Audit
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
                 <button className="w-full border-2 border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Download Compliance Guide
                 </button>
@@ -149,7 +155,13 @@ const ShoppingAppCTA = () => {
                 Why Testriq for eCommerce Certification?
               </h3>
               <div className="space-y-4">
-                {["15+ years of compliance and testing experience", "500+ shopping apps audited", "Certified experts in PCI DSS, GDPR, CCPA", "99.9% uptime compliance rate", "Global scalability and support", "Ongoing regulatory tracking & re-certification"].map((item, index) => (
+                {[
+                  "15+ years of compliance and testing experience",
+                  "Certified experts in PCI DSS, GDPR, CCPA",
+                  "99.9% uptime compliance rate",
+                  "Global scalability and support",
+                  "Ongoing regulatory tracking & re-certification",
+                ].map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
@@ -173,22 +185,22 @@ const ShoppingAppCTA = () => {
               className="bg-white rounded-xl p-6 shadow-lg border border-gray-200"
             >
               <div className="text-center">
-                <h4 className="font-bold text-gray-900 mb-4">Trusted by Top eCommerce Brands</h4>
+                <h4 className="font-bold text-gray-900 mb-4">
+                  Trusted by Top eCommerce Brands
+                </h4>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">500+</div>
-                    <div className="text-sm text-gray-600">Apps Audited</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      99.9%
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Compliance Uptime
+                    </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-brand-blue">100M+</div>
-                    <div className="text-sm text-gray-600">Users Secured</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">99.9%</div>
-                    <div className="text-sm text-gray-600">Compliance Uptime</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">24/7</div>
+                    <div className="text-2xl font-bold text-brand-blue">
+                      24/7
+                    </div>
                     <div className="text-sm text-gray-600">Support</div>
                   </div>
                 </div>
@@ -209,12 +221,15 @@ const ShoppingAppCTA = () => {
               Let’s Secure Your Shopping App Today
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Avoid compliance gaps that can cost you customers. Start your security and standards certification with Testriq today.
+              Avoid compliance gaps that can cost you customers. Start your
+              security and standards certification with Testriq today.
             </p>
-            <button className="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-              Start Now - Free Audit
-              <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 mx-auto transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                Start Now - Free Audit
+                <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

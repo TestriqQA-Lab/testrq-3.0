@@ -9,8 +9,9 @@ import StructuredData, {
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:  "Fantasy Sports App Certification",
-  description: "Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.",
+  title: "Fantasy Sports App Certification",
+  description:
+    "Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.",
   keywords: [
     "Fantasy Sports App Certification",
     "fantasy app security",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "fantasy app testing services",
     "secure fantasy sports apps",
     "regulatory compliance for fantasy apps",
-    "fantasy sports QA services"
+    "fantasy sports QA services",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -31,33 +32,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/fantasy-sports-app-certification',
+    canonical: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/fantasy-sports-app-certification',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq',
-    description: 'Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification",
+    siteName: "Testriq - Professional Software Testing Services",
+    title:
+      "Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq",
+    description:
+      "Get your fantasy sports app certified for fair play, GDPR/CCPA compliance, ISO 27001, and real-time performance. Trusted by 200+ platforms to prevent fraud, increase user retention, and meet global standards.",
     images: [
       {
-        url: '/OG/Fantacy-Sport-certification-Og.webp',
+        url: "/OG/Fantacy-Sport-certification-Og.webp",
         width: 1200,
         height: 630,
-        alt: 'Fantasy App Certification - Testriq QA Lab',
-      }
+        alt: "Fantasy App Certification - Testriq QA Lab",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq',
-    description: 'Fantasy app certification for fair play, fraud prevention, security, GDPR/CCPA compliance, and ISO 27001. Trusted by 200+ fantasy apps globally.',
-    images: ['/OG/Fantacy-Sport-certification-Twitter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title:
+      "Fantasy Sports App Certification | Secure & Compliant Fantasy Platforms - Testriq",
+    description:
+      "Fantasy app certification for fair play, fraud prevention, security, GDPR/CCPA compliance, and ISO 27001. Trusted by 200+ fantasy apps globally.",
+    images: ["/OG/Fantacy-Sport-certification-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -65,19 +70,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
-
-
 
 const FantasyAppHeroSection = dynamic(
   () => import("@/components/sections/FantasyAppHeroSection"),
@@ -138,19 +141,6 @@ const FantasyAppBenefits = dynamic(
     ),
   }
 );
-
-const FantasyAppCompliance = dynamic(
-  () => import("@/components/sections/FantasyAppCompliance"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const FantasyAppTestingServices = dynamic(
   () => import("@/components/sections/FantasyAppTestingServices"),
   {
@@ -187,7 +177,6 @@ const FantasyAppCTA = dynamic(
   }
 );
 
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -220,10 +209,16 @@ const faqSchema = {
 };
 
 export default function FantasySportsAppCertification() {
-   const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification" },
-    { name: "Fantasy Sports App Certification", url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification" }
+    {
+      name: "Services",
+      url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification",
+    },
+    {
+      name: "Fantasy Sports App Certification",
+      url: "https://testrq-3-0.vercel.app/fantasy-sports-app-certification",
+    },
   ];
   return (
     <div>
@@ -238,7 +233,6 @@ export default function FantasySportsAppCertification() {
         <FantasyAppCertificationProcess />
         <FantasyAppSecurityFeatures />
         <FantasyAppBenefits />
-        <FantasyAppCompliance />
         <FantasyAppTestingServices />
         <FantasyAppFAQs />
         <FantasyAppCTA />
@@ -246,4 +240,3 @@ export default function FantasySportsAppCertification() {
     </div>
   );
 }
-

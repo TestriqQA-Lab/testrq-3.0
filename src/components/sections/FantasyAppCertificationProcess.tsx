@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Clock,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppCertificationProcess = () => {
   const processSteps = [
@@ -76,7 +77,10 @@ const FantasyAppCertificationProcess = () => {
   ];
 
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
+    <section
+      id="certification-process"
+      className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -90,7 +94,8 @@ const FantasyAppCertificationProcess = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A 4-phase process to certify your fantasy sports application for
-            fairness, security, and performance — executed within 12-18 working days.
+            fairness, security, and performance — executed within 12-18 working
+            days.
           </p>
         </motion.div>
 
@@ -181,9 +186,11 @@ const FantasyAppCertificationProcess = () => {
               We offer a streamlined path to certification that ensures your
               fantasy app stands out for reliability, security, and fair play.
             </p>
-            <button className="bg-brand-blue hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
-              Start Certification Now
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
+                Start Certification Now
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

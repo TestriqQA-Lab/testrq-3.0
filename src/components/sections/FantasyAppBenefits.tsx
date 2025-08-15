@@ -12,6 +12,7 @@ import {
   ArrowUp,
   CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppBenefits = () => {
   const benefits = [
@@ -126,7 +127,8 @@ const FantasyAppBenefits = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Unlock greater user retention, platform growth, and trust with a
-            certification process tailored for competitive fantasy sports applications.
+            certification process tailored for competitive fantasy sports
+            applications.
           </p>
         </motion.div>
 
@@ -212,16 +214,16 @@ const FantasyAppBenefits = () => {
               Measure Your Certification ROI
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Curious how much impact certification could bring to your fantasy platform?
-              Use our ROI calculator or explore case studies to find out.
+              Curious how much impact certification could bring to your fantasy
+              platform? Use our ROI calculator or explore case studies to find
+              out.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                Calculate ROI
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                View Case Studies
-              </button>
+              <Link href="/roi-calculator">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                  Calculate ROI
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>

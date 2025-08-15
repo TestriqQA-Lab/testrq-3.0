@@ -7,7 +7,6 @@ import {
   FaSignal,
   FaNetworkWired,
   FaRocket,
-  FaUsers,
   FaChartLine,
   FaCheckCircle,
 } from "react-icons/fa";
