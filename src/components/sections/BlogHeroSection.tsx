@@ -140,3 +140,4 @@ const BlogHeroSection: React.FC = () => {
 };
 
 export default BlogHeroSection;
+
