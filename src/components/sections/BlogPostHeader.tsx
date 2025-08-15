@@ -4,10 +4,6 @@ import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
-  FaEye,
-  FaHeart,
-  FaShare,
-  FaBookmark,
   FaArrowLeft,
 } from "react-icons/fa";
 import Link from "next/link";
@@ -106,6 +102,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               </div>
             </div>
 
+           
           </div>
 
           {/* Right - Image */}
@@ -119,17 +116,18 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              
+              <div className="absolute inset-0 flex items-center justify-center">
+                
+              </div>
             </div>
 
- 
-            
           </div>
         </div>
 
         
 
        
+        
       </div>
     </section>
   );

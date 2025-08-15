@@ -8,7 +8,7 @@ interface LightboxProps {
   onClose: () => void;
 }
 
-const Lightbox: React.FC<LightboxProps> = ({ isOpen, videoLink, onClose }) => {
+const Lightbox: React.FC<LightboxProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (

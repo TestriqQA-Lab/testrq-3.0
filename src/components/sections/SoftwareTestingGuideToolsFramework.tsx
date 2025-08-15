@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Code, Smartphone, Shield, Zap, Database, Globe, CheckCircle, ExternalLink } from 'lucide-react';
+import { Smartphone, Shield, Zap, Database, Globe, CheckCircle } from 'lucide-react';
 import { FaTools, FaPython, FaJava, FaNodeJs, FaGithub, FaAndroid, FaApple, FaLinux, FaDocker,FaShieldAlt, FaCloud, FaDatabase, FaChrome } from 'react-icons/fa';
 
 const SoftwareTestingGuideToolsFramework = () => {

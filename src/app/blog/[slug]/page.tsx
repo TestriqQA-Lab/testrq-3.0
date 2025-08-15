@@ -10,8 +10,11 @@ const BlogPostHeader = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
+      <div className="flex items-center justify-center h-64 bg-gray-50">
+        <div className="animate-pulse">
+          <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
+          <div className="h-8 bg-gray-200 rounded w-64"></div>
+        </div>
       </div>
     ),
   }
@@ -22,8 +25,12 @@ const BlogPostContent = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
+      <div className="flex items-center justify-center h-64 bg-gray-50">
+        <div className="animate-pulse space-y-4 w-full">
+          <div className="h-4 bg-gray-200 rounded w-full"></div>
+          <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+        </div>
       </div>
     ),
   }
@@ -34,32 +41,11 @@ const BlogPostSidebar = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const BlogPostComments = dynamic(
-  () => import("@/components/sections/BlogPostComments"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RelatedPosts = dynamic(
-  () => import("@/components/sections/RelatedPosts"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
+      <div className="flex items-center justify-center h-64 bg-gray-50">
+        <div className="animate-pulse space-y-4 w-full">
+          <div className="h-32 bg-gray-200 rounded"></div>
+          <div className="h-24 bg-gray-200 rounded"></div>
+        </div>
       </div>
     ),
   }
@@ -97,8 +83,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: post.image ? [
         {
           url: post.image,
-          width: 800,
-          height: 400,
+          width: 1200,
+          height: 630,
           alt: post.title,
         },
       ] : [],
@@ -124,8 +110,9 @@ export default async function BlogPostPage({ params }: Props) {
   const post = adaptWordPressPost(wpPost);
 
   return (
-    <div>
+    <div className="min-h-screen bg-gray-50">
       <MainLayout>
+        {/* Blog Post Header */}
         <BlogPostHeader post={post} />
         <div className="max-w-7xl mx-auto py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -133,12 +120,15 @@ export default async function BlogPostPage({ params }: Props) {
               <BlogPostContent post={post} />
               {/* <BlogPostComments postId={post.id} /> */}
             </div>
+            
+            {/* Sidebar */}
             <div className="lg:col-span-1">
-              <BlogPostSidebar post={post} />
+              <div className="sticky top-8">
+                <BlogPostSidebar post={post} />
+              </div>
             </div>
           </div>
         </div>
-        <RelatedPosts currentPost={post} />
       </MainLayout>
     </div>
   );

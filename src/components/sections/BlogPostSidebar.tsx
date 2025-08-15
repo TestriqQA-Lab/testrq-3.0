@@ -2,17 +2,12 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
-  FaClock,
-  FaEye,
-  FaHeart,
-  FaShare,
   FaArrowRight,
-  FaDownload,
   FaBell,
 } from "react-icons/fa";
 import Link from "next/link";
 import { getPosts, getCategories } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost, adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
+import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 
 interface BlogPost {
   id: string;
@@ -106,7 +101,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         setCategories(adaptedCategories);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching sidebar data:', error);
+        console.error("Error fetching sidebar data:", error);
         setLoading(false);
       }
     };
@@ -132,40 +127,6 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 
   return (
     <aside className="space-y-8">
-      {/* Article Stats */}
-      <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-        <h3 className="text-lg font-bold text-gray-800 mb-4">Article Stats</h3>
-        <div className="space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-gray-600">
-              <FaEye className="w-4 h-4" />
-              <span>Views</span>
-            </div>
-            <span className="font-semibold text-gray-800">{post.views}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-gray-600">
-              <FaHeart className="w-4 h-4" />
-              <span>Likes</span>
-            </div>
-            <span className="font-semibold text-gray-800">{post.likes}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-gray-600">
-              <FaShare className="w-4 h-4" />
-              <span>Shares</span>
-            </div>
-            <span className="font-semibold text-gray-800">{post.shares}</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-gray-600">
-              <FaClock className="w-4 h-4" />
-              <span>Read Time</span>
-            </div>
-            <span className="font-semibold text-gray-800">{post.readTime}</span>
-          </div>
-        </div>
-      </div>
 
       {/* Newsletter Signup */}
       <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 text-white">
@@ -190,62 +151,6 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
           <p className="text-xs text-blue-200 mt-3">
             Join 10,000+ QA professionals
           </p>
-        </div>
-      </div>
-
-      {/* Table of Contents */}
-      <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-        <h3 className="text-lg font-bold text-gray-800 mb-4">
-          Table of Contents
-        </h3>
-        <nav className="space-y-2">
-          {[
-            "Introduction",
-            "Getting Started",
-            "Best Practices",
-            "Advanced Techniques",
-            "Integration Tips",
-            "Common Challenges",
-            "Conclusion",
-          ].map((item, index) => (
-            <a
-              key={index}
-              href={`#section-${index + 1}`}
-              className="block text-gray-700 hover:text-blue-600 transition-colors py-1 text-sm"
-            >
-              {index + 1}. {item}
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      {/* Download Resources */}
-      <div className="bg-green-50 rounded-xl p-6 border border-green-200">
-        <h3 className="text-lg font-bold text-green-900 mb-4">
-          Free Resources
-        </h3>
-        <div className="space-y-3">
-          {["Testing Cheat Sheet", "Best Practices Guide"].map(
-            (label, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-3 p-3 bg-white rounded-lg border border-green-200"
-              >
-                <FaDownload className="w-4 h-4 text-green-600" />
-                <div className="flex-1">
-                  <div className="font-semibold text-green-900 text-sm">
-                    {label}
-                  </div>
-                  <div className="text-xs text-green-700">
-                    {idx === 0 ? "PDF • 2.3 MB" : "ZIP • 1.8 MB"}
-                  </div>
-                </div>
-              </div>
-            )
-          )}
-          <button className="w-full px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors text-sm">
-            Download All Resources
-          </button>
         </div>
       </div>
 
@@ -302,7 +207,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             popularTags.map((tag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-colors"
               >
                 #{tag}
@@ -337,20 +242,8 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         </div>
       </div>
 
-      {/* Advertisement Space */}
-      <div className="bg-gray-100 rounded-xl p-6 text-center">
-        <div className="text-gray-500 text-sm mb-2">Advertisement</div>
-        <div className="bg-white rounded-lg p-8 border-2 border-dashed border-gray-300">
-          <div className="text-gray-400 text-sm">
-            Your Ad Here
-            <br />
-            300x250
-          </div>
-        </div>
-      </div>
     </aside>
   );
 };
 
 export default BlogPostSidebar;
-

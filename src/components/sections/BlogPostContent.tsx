@@ -2,10 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import {
-  FaHeart,
   FaShare,
-  FaBookmark,
-  FaPrint,
   FaFont,
   FaEye,
   FaLinkedin,
@@ -14,7 +11,6 @@ import {
   FaCopy,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-
 
 interface BlogPost {
   id: string;
@@ -34,8 +30,6 @@ interface BlogPostContentProps {
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const [fontSize, setFontSize] = useState("text-base");
-  const [isLiked, setIsLiked] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
   const fontSizes = [
@@ -48,7 +42,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   // Function to clean and render HTML content properly
   const renderContent = (content: string) => {
     // Clean up the content and fix common WordPress issues
-    let cleanContent = content
+    const cleanContent = content
       // Remove excessive line breaks and normalize spacing
       .replace(/\n\s*\n\s*\n/g, '\n\n')
       // Fix image tags to ensure proper src attributes
@@ -90,10 +84,10 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   };
 
   // Social sharing functions
-  const shareOnTwitter = () => {
+  const shareOnX = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
     const text = `Check out this article: ${post.title}`;
-    window.open(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+    window.open(`https://X.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
   const shareOnLinkedIn = () => {
@@ -120,10 +114,6 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (
@@ -153,8 +143,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            
-
+          
             <div className="relative">
               <button 
                 onClick={() => setShowShareMenu(!showShareMenu)}
@@ -167,7 +156,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
               {showShareMenu && (
                 <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-20">
                   <button
-                    onClick={shareOnTwitter}
+                    onClick={shareOnX}
                     className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
                   >
                     <FaSquareXTwitter className="w-4 h-4 text-black" />
@@ -199,15 +188,12 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
                     className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
                   >
                     <FaCopy className="w-4 h-4 text-gray-600" />
-                    Copy Link
+                    Copy
                   </button>
                 </div>
               )}
             </div>
 
-            
-
-           
           </div>
         </div>
       </div>
@@ -241,12 +227,9 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
             <p className="text-gray-700 mb-4 leading-relaxed">
               {post.authorBio}
             </p>
-           
           </div>
         </div>
       </div>
-
-      
 
       {/* Social Share */}
       <div className="bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl p-6 my-8">
@@ -257,7 +240,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           <p className="text-gray-700 mb-4">Share it with your team!</p>
           <div className="flex justify-center gap-3 flex-wrap">
             <button
-              onClick={shareOnTwitter}
+              onClick={shareOnX}
               className="bg-black text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
             >
               <FaSquareXTwitter />

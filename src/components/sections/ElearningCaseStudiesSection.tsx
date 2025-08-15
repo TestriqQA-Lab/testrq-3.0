@@ -111,28 +111,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
     },
   ];
 
-  const successMetrics = [
-    {
-      value: "98%",
-      label: "Completion Rate",
-      description: "For Interactive Content",
-    },
-    {
-      value: "2M+",
-      label: "Students Impacted",
-      description: "Better learning experiences",
-    },
-    {
-      value: "87%",
-      label: "Average Improvement",
-      description: "In learning outcomes",
-    },
-    {
-      value: "99.9%",
-      label: "Platform Uptime",
-      description: "Achieved consistently",
-    },
-  ];
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
