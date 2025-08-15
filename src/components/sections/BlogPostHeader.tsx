@@ -4,10 +4,6 @@ import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
-  FaEye,
-  FaHeart,
-  FaShare,
-  FaBookmark,
   FaArrowLeft,
 } from "react-icons/fa";
 import Link from "next/link";

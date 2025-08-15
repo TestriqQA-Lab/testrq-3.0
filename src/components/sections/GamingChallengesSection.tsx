@@ -9,7 +9,6 @@ import {
   FaRocket,
   FaShieldAlt,
   FaClock,
-  FaChartLine,
   FaExclamationTriangle,
   FaArrowRight
 } from "react-icons/fa";

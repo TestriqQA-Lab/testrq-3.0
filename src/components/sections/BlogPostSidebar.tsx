@@ -2,17 +2,12 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import {
-  FaClock,
-  FaEye,
-  FaHeart,
-  FaShare,
   FaArrowRight,
-  FaDownload,
   FaBell,
 } from "react-icons/fa";
 import Link from "next/link";
 import { getPosts, getCategories } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost, adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
+import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 
 interface BlogPost {
   id: string;

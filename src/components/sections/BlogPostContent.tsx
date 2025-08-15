@@ -2,10 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import {
-  FaHeart,
   FaShare,
-  FaBookmark,
-  FaPrint,
   FaFont,
   FaEye,
   FaLinkedin,
@@ -33,8 +30,6 @@ interface BlogPostContentProps {
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const [fontSize, setFontSize] = useState("text-base");
-  const [isLiked, setIsLiked] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
   const [showShareMenu, setShowShareMenu] = useState(false);
 
   const fontSizes = [
@@ -47,7 +42,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   // Function to clean and render HTML content properly
   const renderContent = (content: string) => {
     // Clean up the content and fix common WordPress issues
-    let cleanContent = content
+    const cleanContent = content
       // Remove excessive line breaks and normalize spacing
       .replace(/\n\s*\n\s*\n/g, '\n\n')
       // Fix image tags to ensure proper src attributes
@@ -119,10 +114,6 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
     } catch (err) {
       console.error('Failed to copy: ', err);
     }
-  };
-
-  const handlePrint = () => {
-    window.print();
   };
 
   return (

@@ -7,7 +7,6 @@ import {
   FaCog,
   FaEye,
   FaArrowRight,
-  FaPlay,
 } from "react-icons/fa";
 
 const DataAnalysisHeroSection = () => {

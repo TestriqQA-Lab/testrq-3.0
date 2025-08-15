@@ -51,36 +51,6 @@ const BlogPostSidebar = dynamic(
   }
 );
 
-const BlogPostComments = dynamic(
-  () => import("@/components/sections/BlogPostComments"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-32 bg-gray-50">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded w-48"></div>
-        </div>
-      </div>
-    ),
-  }
-);
-
-const RelatedPosts = dynamic(
-  () => import("@/components/sections/RelatedPosts"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-50">
-        <div className="animate-pulse grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="h-48 bg-gray-200 rounded"></div>
-          ))}
-        </div>
-      </div>
-    ),
-  }
-);
-
 type Props = {
   params: Promise<{ slug: string }>;
 };
