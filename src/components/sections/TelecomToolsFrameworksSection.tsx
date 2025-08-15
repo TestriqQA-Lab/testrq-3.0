@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaWifi, 
-  FaSignal, 
+import {
+  FaWifi,
+  FaSignal,
   FaNetworkWired,
   FaShieldAlt,
   FaMobile,
@@ -11,112 +12,143 @@ import {
   FaCheckCircle,
   FaArrowRight,
   FaTools,
-  FaLaptopCode
+  FaLaptopCode,
 } from "react-icons/fa";
 
 const TelecomToolsFrameworksSection: React.FC = () => {
   const toolCategories = [
     {
       icon: FaWifi,
-      title: "5G Testing Tools",
-      description: "Advanced tools for comprehensive 5G network testing, protocol validation, and performance optimization.",
+      title: "Functional Testing Tools",
+      description:
+        "Advanced platforms for validating core telecom software features, workflows, and integrations across systems.",
       tools: [
-        { name: "Keysight 5G Test Suite", description: "End-to-end 5G network testing" },
-        { name: "Rohde & Schwarz CMX500", description: "5G protocol testing platform" },
-        { name: "Anritsu MT8000A", description: "5G network analyzer" },
-        { name: "Spirent Landslide", description: "5G core network testing" }
+        {
+          name: "Selenium",
+          description: "Automated web UI testing for portals and dashboards",
+        },
+        { name: "Postman", description: "API testing and validation" },
+        {
+          name: "TestComplete",
+          description: "Functional test automation for desktop and web apps",
+        },
+        {
+          name: "Katalon Studio",
+          description: "Cross-platform functional testing",
+        },
       ],
       color: "from-red-500 to-pink-600",
-      bgColor: "bg-red-50"
+      bgColor: "bg-red-50",
     },
     {
       icon: FaSignal,
-      title: "Network Performance Tools",
-      description: "Comprehensive network performance testing and monitoring tools for optimal network operation.",
+      title: "Performance & Load Testing",
+      description:
+        "Tools to ensure telecom software scales under heavy load and delivers consistent performance.",
       tools: [
-        { name: "EXFO FTB-1", description: "Network performance testing" },
-        { name: "Ixia IxLoad", description: "Network load testing platform" },
-        { name: "SolarWinds NPM", description: "Network performance monitoring" },
-        { name: "ThousandEyes", description: "Network intelligence platform" }
+        {
+          name: "JMeter",
+          description: "Load testing for APIs, apps, and services",
+        },
+        {
+          name: "LoadRunner",
+          description: "Enterprise-grade performance testing",
+        },
+        { name: "Gatling", description: "High-performance load testing tool" },
+        { name: "BlazeMeter", description: "Cloud-based performance testing" },
       ],
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50"
+      bgColor: "bg-blue-50",
     },
     {
       icon: FaShieldAlt,
-      title: "Security Testing Tools",
-      description: "Specialized security testing tools for telecom infrastructure and network protection.",
+      title: "Security Testing",
+      description:
+        "Solutions for identifying vulnerabilities and securing telecom applications against threats.",
       tools: [
-        { name: "Nessus Professional", description: "Vulnerability assessment" },
-        { name: "Metasploit Pro", description: "Penetration testing framework" },
-        { name: "Wireshark", description: "Network protocol analyzer" },
-        { name: "Nmap", description: "Network discovery and security auditing" }
+        { name: "OWASP ZAP", description: "Web application security scanning" },
+        {
+          name: "Burp Suite",
+          description: "Security testing for APIs and apps",
+        },
+        {
+          name: "SonarQube",
+          description: "Code quality and security analysis",
+        },
+        { name: "Fortify", description: "Static and dynamic security testing" },
       ],
       color: "from-green-500 to-teal-600",
-      bgColor: "bg-green-50"
+      bgColor: "bg-green-50",
     },
     {
       icon: FaMobile,
-      title: "Mobile Testing Tools",
-      description: "Comprehensive mobile network testing tools for device compatibility and performance validation.",
+      title: "Mobile App Testing",
+      description:
+        "Comprehensive validation of mobile apps for customer portals, self-care, and field operations.",
       tools: [
-        { name: "Rohde & Schwarz TSME", description: "Mobile network drive testing" },
-        { name: "Anritsu MS2690A", description: "Signal analyzer for mobile" },
-        { name: "JDSU CellAdvisor", description: "Base station analyzer" },
-        { name: "Actix Analyzer", description: "Mobile network optimization" }
+        { name: "Appium", description: "Cross-platform mobile app automation" },
+        { name: "Espresso", description: "Android UI testing" },
+        { name: "XCUITest", description: "iOS automation testing" },
+        { name: "BrowserStack", description: "Real device cloud testing" },
       ],
       color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50"
+      bgColor: "bg-purple-50",
     },
     {
       icon: FaNetworkWired,
-      title: "Protocol Testing Tools",
-      description: "Advanced protocol testing and validation tools for telecom standards compliance.",
+      title: "Integration & API Testing",
+      description:
+        "Ensuring seamless interoperability between OSS, BSS, billing, and other telecom platforms.",
       tools: [
-        { name: "Ixia BreakingPoint", description: "Protocol fuzzing and testing" },
-        { name: "Spirent TestCenter", description: "Network protocol testing" },
-        { name: "GL Communications", description: "Protocol analyzers and simulators" },
-        { name: "Empirix Hammer", description: "VoIP protocol testing" }
+        { name: "ReadyAPI", description: "Comprehensive API testing suite" },
+        { name: "REST Assured", description: "Java-based API automation" },
+        { name: "Karate", description: "API testing with BDD" },
+        {
+          name: "SoapUI",
+          description: "Functional testing for SOAP and REST APIs",
+        },
       ],
       color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50"
+      bgColor: "bg-orange-50",
     },
     {
       icon: FaCloud,
-      title: "NFV/SDN Testing Tools",
-      description: "Specialized tools for testing Network Function Virtualization and Software-Defined Networks.",
+      title: "Automation & CI/CD",
+      description:
+        "Streamlined test automation integrated with telecom software development pipelines.",
       tools: [
-        { name: "Ixia CloudStorm", description: "NFV testing platform" },
-        { name: "Spirent Velocity", description: "SDN testing and validation" },
-        { name: "EANTC Test Tools", description: "SDN/NFV validation" },
-        { name: "Cisco VIRL", description: "Virtual network simulation" }
+        { name: "Jenkins", description: "Continuous integration and delivery" },
+        { name: "GitLab CI", description: "CI/CD with integrated testing" },
+        { name: "Azure DevOps", description: "Testing in DevOps workflows" },
+        { name: "CircleCI", description: "Cloud-based CI/CD pipelines" },
       ],
       color: "from-indigo-500 to-purple-600",
-      bgColor: "bg-indigo-50"
-    }
+      bgColor: "bg-indigo-50",
+    },
   ];
 
   const frameworkBenefits = [
     {
       icon: FaCheckCircle,
-      title: "Standards Compliance",
-      description: "Tools certified for 3GPP, ITU-T, and other telecom standards"
+      title: "End-to-End Validation",
+      description:
+        "Covers the entire software lifecycle from development to production",
     },
     {
       icon: FaCheckCircle,
-      title: "Real-time Testing",
-      description: "Live network testing capabilities without service disruption"
+      title: "High Scalability",
+      description: "Supports testing for enterprise-scale telecom platforms",
     },
     {
       icon: FaCheckCircle,
-      title: "Scalable Architecture",
-      description: "Tools that scale from lab testing to production networks"
+      title: "Automation First",
+      description: "Accelerates delivery cycles with automated testing",
     },
     {
       icon: FaCheckCircle,
-      title: "Automated Reporting",
-      description: "Comprehensive test reports and analytics for network optimization"
-    }
+      title: "Actionable Insights",
+      description: "Generates detailed reports to drive quality improvements",
+    },
   ];
 
   return (
@@ -128,15 +160,20 @@ const TelecomToolsFrameworksSection: React.FC = () => {
             <FaTools className="w-4 h-4" />
             <span className="text-sm">Tools & Frameworks</span>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Industry-Leading <span className="text-[theme(color.brand.blue)]">Tools & Frameworks</span>
-            <span className="block">for Telecom Testing</span>
-          </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We leverage the most advanced telecom testing tools and frameworks specifically designed for the telecommunications industry, ensuring comprehensive test coverage, protocol-level accuracy, and full compliance with industry standards such as 3GPP, ETSI, and ITU-T.
 
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Advanced{" "}
+            <span className="text-[theme(color.brand.blue)]">
+              Software Testing Tools
+            </span>
+            <span className="block">for Telecom Applications</span>
+          </h2>
+
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We use industry-leading testing tools and frameworks to validate
+            every aspect of telecom software, from mobile apps and portals to
+            OSS/BSS platforms, ensuring performance, reliability, and security
+            at scale.
           </p>
         </div>
 
@@ -147,25 +184,38 @@ const TelecomToolsFrameworksSection: React.FC = () => {
               key={index}
               className={`${category.bgColor} rounded-3xl p-8 shadow-lg ring-1 hover:ring-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group`}
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+              >
                 <category.icon className="w-8 h-8 text-white" />
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{category.title}</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">{category.description}</p>
-              
+
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {category.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {category.description}
+              </p>
+
               <div className="space-y-3">
                 {category.tools.map((tool, toolIndex) => (
-                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-white bg-opacity-60 rounded-xl">
+                  <div
+                    key={toolIndex}
+                    className="flex items-start gap-3 p-3 bg-white bg-opacity-60 rounded-xl"
+                  >
                     <FaLaptopCode className="w-4 h-4 text-[theme(color.brand.blue)] mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-800 text-sm">{tool.name}</h4>
-                      <p className="text-xs text-gray-600">{tool.description}</p>
+                      <h4 className="font-semibold text-gray-800 text-sm">
+                        {tool.name}
+                      </h4>
+                      <p className="text-xs text-gray-600">
+                        {tool.description}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Explore Tools
@@ -179,18 +229,27 @@ const TelecomToolsFrameworksSection: React.FC = () => {
         {/* Framework Benefits */}
         <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-12 mb-16">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Why Our Tool Selection Matters</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Our Toolset Delivers Results
+            </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our carefully curated telecom QA toolkit ensures comprehensive testing coverage while meeting the stringent performance, security, and compliance requirements of the telecommunications industry, including validation for 5G networks, VoIP systems, and real-time data processing.
-
+              Our curated software QA toolkit enables us to validate telecom
+              platforms with precision, covering scalability, security,
+              performance, and integration in complex, multi-system
+              environments.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {frameworkBenefits.map((benefit, index) => (
-              <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-lg">
+              <div
+                key={index}
+                className="text-center p-6 bg-white rounded-2xl shadow-lg"
+              >
                 <benefit.icon className="w-12 h-12 mx-auto mb-4 text-green-500" />
-                <h4 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h4>
+                <h4 className="text-lg font-bold mb-2 text-gray-900">
+                  {benefit.title}
+                </h4>
                 <p className="text-sm text-gray-600">{benefit.description}</p>
               </div>
             ))}
@@ -201,50 +260,62 @@ const TelecomToolsFrameworksSection: React.FC = () => {
         <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Custom Telecom Test Framework</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                Our Custom Telecom QA Framework
+              </h3>
               <p className="text-lg text-gray-600 mb-8">
-                We&apos;ve developed a proprietary telecom testing framework specifically designed for the telecommunications industry, incorporating industry best practices, telecom protocol validation, and emerging technology requirements for 5G networks, IoT integration, and real-time data processing.
-
+                We have built a proprietary QA framework for telecom software,
+                integrating functional, performance, security, and automation
+                testing to ensure every application meets industry standards and
+                delivers a flawless user experience.
               </p>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Built-in 5G protocol validation and network slicing tests</span>
+                  <span className="text-gray-700">
+                    Automated functional and regression testing
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Automated IoT device compatibility and connectivity testing</span>
+                  <span className="text-gray-700">
+                    API and integration validation across OSS/BSS
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Real-time network performance monitoring and alerting</span>
+                  <span className="text-gray-700">
+                    Scalable load and performance testing
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                  <span className="text-gray-700">Comprehensive reporting for network optimization and compliance</span>
+                  <span className="text-gray-700">
+                    Detailed reporting with actionable insights
+                  </span>
                 </div>
               </div>
             </div>
-            
+
             <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-2xl p-8 text-white">
-              <h4 className="text-2xl font-bold mb-6">Framework Capabilities</h4>
+              <h4 className="text-2xl font-bold mb-6">Framework Highlights</h4>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">1000+</div>
-                  <div className="text-sm">Pre-built Test Cases</div>
+                  <div className="text-sm">Automated Test Cases</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">100+</div>
-                  <div className="text-sm">Network Scenarios</div>
+                  <div className="text-3xl font-bold mb-2">500+</div>
+                  <div className="text-sm">API Scenarios</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold mb-2">99.9%</div>
-                  <div className="text-sm">Test Automation</div>
+                  <div className="text-3xl font-bold mb-2">99%</div>
+                  <div className="text-sm">Automation Coverage</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold mb-2">24/7</div>
-                  <div className="text-sm">Network Monitoring</div>
+                  <div className="text-sm">Monitoring & Reporting</div>
                 </div>
               </div>
             </div>
@@ -253,18 +324,23 @@ const TelecomToolsFrameworksSection: React.FC = () => {
 
         {/* CTA Section */}
         <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">Ready to Leverage Our Advanced Testing Tools?</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            Ready to Transform Your Telecom QA?
+          </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Let our experts demonstrate how our comprehensive toolkit can enhance your telecom 
-            testing capabilities and ensure superior network performance.
+            Discover how our advanced software testing toolkit and custom
+            framework can improve the quality, performance, and reliability of
+            your telecom applications.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-              Request Tool Demo
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
+                Request Demo
+              </button>
+            </Link>
             <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Download Framework Guide
+              Download QA Framework Guide
             </button>
           </div>
         </div>
@@ -274,4 +350,3 @@ const TelecomToolsFrameworksSection: React.FC = () => {
 };
 
 export default TelecomToolsFrameworksSection;
-
