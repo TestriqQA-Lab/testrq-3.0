@@ -44,7 +44,7 @@ const BlogHeroSection: React.FC = () => {
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSearch(e as any);
+      handleSearch(e); // Fixed: Removed 'as any' and passed the event directly
     }
   };
 
@@ -140,4 +140,3 @@ const BlogHeroSection: React.FC = () => {
 };
 
 export default BlogHeroSection;
-

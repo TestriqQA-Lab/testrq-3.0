@@ -82,7 +82,7 @@ const BlogSearchPage: React.FC = () => {
               Search Results
               {query && (
                 <span className="block text-xl md:text-2xl text-blue-300 mt-2">
-                  for "{query}"
+                  for &quot{query}&quot
                 </span>
               )}
             </h1>

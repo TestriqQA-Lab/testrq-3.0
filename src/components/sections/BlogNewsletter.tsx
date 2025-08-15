@@ -247,7 +247,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
                     Successfully Subscribed!
                   </h3>
                   <p className="text-gray-100">
-                    Thank you for joining our newsletter! You'll receive our latest testing insights.
+                    Thank you for joining our newsletter! You&aposll receive our latest testing insights.
                   </p>
                 </div>
               )}
