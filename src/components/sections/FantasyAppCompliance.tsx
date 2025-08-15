@@ -246,9 +246,9 @@ const FantasyAppCompliance = () => {
               <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
                 Free Compliance Assessment
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+              {/* <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
                 Download Compliance Guide
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>

@@ -246,9 +246,9 @@ const ShoppingAppCompliance = () => {
               <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
                 Get My Compliance Report
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+              {/* <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
                 Download Compliance Checklist
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>

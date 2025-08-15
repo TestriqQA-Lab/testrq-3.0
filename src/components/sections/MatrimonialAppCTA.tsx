@@ -111,9 +111,9 @@ const MatrimonialAppCTA = () => {
                   </button>
                 </Link>
 
-                <button className="w-full border-2 cursor-pointer border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                {/* <button className="w-full border-2 cursor-pointer border-brand-blue text-brand-blue hover:bg-[#25A8E0] hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Download Certification Guide
-                </button>
+                </button> */}
               </div>
             </div>
 
