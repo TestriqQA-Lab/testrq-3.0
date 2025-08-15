@@ -8,12 +8,12 @@ import {
   FaPrint,
   FaFont,
   FaEye,
-  FaTwitter,
   FaLinkedin,
   FaFacebook,
   FaReddit,
   FaCopy,
 } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 interface BlogPost {
   id: string;
@@ -89,10 +89,10 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   };
 
   // Social sharing functions
-  const shareOnTwitter = () => {
+  const shareOnX = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
     const text = `Check out this article: ${post.title}`;
-    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+    window.open(`https://X.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
   };
 
   const shareOnLinkedIn = () => {
@@ -152,18 +152,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => setIsLiked(!isLiked)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
-                isLiked
-                  ? "bg-red-100 text-red-600"
-                  : "bg-gray-100 text-gray-700 hover:bg-red-50"
-              }`}
-            >
-              <FaHeart className="w-4 h-4" />
-              <span>{post.likes + (isLiked ? 1 : 0)}</span>
-            </button>
-
+          
             <div className="relative">
               <button 
                 onClick={() => setShowShareMenu(!showShareMenu)}
@@ -176,11 +165,11 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
               {showShareMenu && (
                 <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-20">
                   <button
-                    onClick={shareOnTwitter}
+                    onClick={shareOnX}
                     className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
                   >
-                    <FaTwitter className="w-4 h-4 text-blue-400" />
-                    Twitter
+                    <FaSquareXTwitter className="w-4 h-4 text-black" />
+                    X(Twitter)
                   </button>
                   <button
                     onClick={shareOnLinkedIn}
@@ -208,31 +197,12 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
                     className="flex items-center gap-2 w-full px-3 py-2 text-left hover:bg-gray-50 rounded"
                   >
                     <FaCopy className="w-4 h-4 text-gray-600" />
-                    Copy Link
+                    Copy
                   </button>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => setIsSaved(!isSaved)}
-              className={`flex items-center gap-2 px-3 py-1 rounded-lg transition-colors ${
-                isSaved
-                  ? "bg-blue-100 text-blue-600"
-                  : "bg-gray-100 text-gray-700 hover:bg-blue-50"
-              }`}
-            >
-              <FaBookmark className="w-4 h-4" />
-              <span>{isSaved ? "Saved" : "Save"}</span>
-            </button>
-
-            <button 
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-            >
-              <FaPrint className="w-4 h-4" />
-              <span>Print</span>
-            </button>
           </div>
         </div>
       </div>
@@ -266,36 +236,8 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
             <p className="text-gray-700 mb-4 leading-relaxed">
               {post.authorBio}
             </p>
-            <div className="flex items-center gap-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Follow Author
-              </button>
-              <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
-                View All Posts
-              </button>
-            </div>
           </div>
         </div>
-      </div>
-
-      {/* Article Navigation */}
-      <div className="flex items-center justify-between py-8 border-t border-gray-200">
-        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
-          <span className="text-2xl">←</span>
-          <div className="text-left">
-            <div className="text-sm text-gray-500">Previous Article</div>
-            <div className="font-semibold">API Testing with Postman</div>
-          </div>
-        </button>
-        <button className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition-colors">
-          <div className="text-right">
-            <div className="text-sm text-gray-500">Next Article</div>
-            <div className="font-semibold">
-              Cross-Browser Testing Strategies
-            </div>
-          </div>
-          <span className="text-2xl">→</span>
-        </button>
       </div>
 
       {/* Social Share */}
@@ -307,11 +249,11 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           <p className="text-gray-700 mb-4">Share it with your team!</p>
           <div className="flex justify-center gap-3 flex-wrap">
             <button
-              onClick={shareOnTwitter}
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
+              onClick={shareOnX}
+              className="bg-black text-white px-4 py-2 rounded-lg hover:brightness-110 transition-transform flex items-center gap-2"
             >
-              <FaTwitter />
-              <span>Twitter</span>
+              <FaSquareXTwitter />
+              <span>X (Twitter)</span>
             </button>
             <button
               onClick={shareOnLinkedIn}
