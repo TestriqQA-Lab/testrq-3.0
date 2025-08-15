@@ -159,13 +159,6 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         </div>
-        
-        {/* Related Posts */}
-        <div className="bg-white border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <RelatedPosts currentPost={post} />
-          </div>
-        </div>
       </MainLayout>
     </div>
   );
