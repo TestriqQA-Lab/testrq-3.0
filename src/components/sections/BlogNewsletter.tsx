@@ -9,18 +9,78 @@ import {
   FaTwitter,
   FaLinkedin,
   FaGithub,
+  FaSpinner,
 } from "react-icons/fa";
 
 const BlogNewsletter: React.FC = () => {
   const [email, setEmail] = useState("");
+  const [interests, setInterests] = useState<string[]>([]);
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const availableInterests = [
+    "Test Automation",
+    "Performance Testing", 
+    "Security Testing",
+    "Mobile Testing",
+  ];
+
+  const handleInterestChange = (interest: string) => {
+    setInterests(prev => 
+      prev.includes(interest) 
+        ? prev.filter(i => i !== interest)
+        : [...prev, interest]
+    );
+  };
+
+const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
+    
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      // Use relative URL for API call - Vercel will route this correctly
+      const apiUrl = 
+        process.env.NODE_ENV === 'production'
+          ? '/api/newsletter/subscribe' // On Vercel, this will route to your Node.js API
+          : 'http://localhost:3001/api/newsletter/subscribe'; // For local Node.js API server
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email.trim( ),
+          interests: interests
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribed(true);
+        setEmail("");
+        setInterests([]);
+        
+        setTimeout(() => {
+          setSubscribed(false);
+        }, 5000);
+      } else {
+        setError(data.error || 'Subscription failed');
+      }
+    } catch (err) {
+      console.error('Subscription error:', err);
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -101,9 +161,15 @@ const BlogNewsletter: React.FC = () => {
 
               {!subscribed ? (
                 <form onSubmit={handleSubscribe} className="space-y-6">
+                  {error && (
+                    <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 text-red-200 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <div>
                     <label className="block text-gray-100 text-sm font-medium mb-2">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -112,6 +178,7 @@ const BlogNewsletter: React.FC = () => {
                       placeholder="you@example.com"
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                       required
+                      disabled={loading}
                     />
                   </div>
 
@@ -120,19 +187,17 @@ const BlogNewsletter: React.FC = () => {
                       Interests (Optional)
                     </label>
                     <div className="grid grid-cols-2 gap-3">
-                      {[
-                        "Test Automation",
-                        "Performance Testing",
-                        "Security Testing",
-                        "Mobile Testing",
-                      ].map((interest) => (
+                      {availableInterests.map((interest) => (
                         <label
                           key={interest}
-                          className="flex items-center gap-2 text-sm text-gray-200"
+                          className="flex items-center gap-2 text-sm text-gray-200 cursor-pointer"
                         >
                           <input
                             type="checkbox"
+                            checked={interests.includes(interest)}
+                            onChange={() => handleInterestChange(interest)}
                             className="rounded border-white bg-white/20 text-cyan-500 focus:ring-cyan-300"
+                            disabled={loading}
                           />
                           {interest}
                         </label>
@@ -142,10 +207,20 @@ const BlogNewsletter: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>Subscribe Now</span>
-                    <FaArrowRight className="w-4 h-4" />
+                    {loading ? (
+                      <>
+                        <FaSpinner className="w-4 h-4 animate-spin" />
+                        <span>Subscribing...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Subscribe Now</span>
+                        <FaArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
 
                   <p className="text-gray-300 text-xs text-center">
@@ -168,7 +243,7 @@ const BlogNewsletter: React.FC = () => {
                     Successfully Subscribed!
                   </h3>
                   <p className="text-gray-100">
-                    Thank you for joining! Check your inbox for confirmation.
+                    Thank you for joining our newsletter! You'll receive our latest testing insights.
                   </p>
                 </div>
               )}
@@ -225,3 +300,4 @@ const BlogNewsletter: React.FC = () => {
 };
 
 export default BlogNewsletter;
+

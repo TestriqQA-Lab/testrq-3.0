@@ -7,11 +7,11 @@ import {
   FaArrowRight,
   FaFire,
   FaStar,
-  FaEye,
 } from "react-icons/fa";
 import Link from "next/link";
 import { getPosts } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
+import { stripHtmlTags } from "@/lib/wordpress-graphql";
 
 const BlogPostsGrid: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,6 +37,11 @@ const BlogPostsGrid: React.FC = () => {
 
     fetchPosts();
   }, []);
+
+  // Helper function to clean excerpt
+  const cleanExcerpt = (excerpt: string) => {
+    return stripHtmlTags(excerpt);
+  };
 
   if (loading) {
     return (
@@ -109,7 +114,7 @@ const BlogPostsGrid: React.FC = () => {
                     </h3>
 
                     <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
+                      {cleanExcerpt(post.excerpt)}
                     </p>
 
                     <div className="flex items-center justify-between">
@@ -192,11 +197,15 @@ const BlogPostsGrid: React.FC = () => {
                       </Link>
                     </h3>
 
+                    <p className="text-gray-600 mb-3 line-clamp-2 text-sm">
+                      {cleanExcerpt(post.excerpt)}
+                    </p>
+
                     <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
                       <span>{post.date}</span>
                       <div className="flex items-center gap-1">
-                        <FaEye className="w-3 h-3" />
-                        <span>{post.views}</span>
+                        <FaClock className="w-3 h-3" />
+                        <span>{post.readTime}</span>
                       </div>
                     </div>
 
@@ -266,7 +275,7 @@ const BlogPostsGrid: React.FC = () => {
                       </h3>
 
                       <p className="text-gray-600 mb-4 line-clamp-3">
-                        {post.excerpt}
+                        {cleanExcerpt(post.excerpt)}
                       </p>
 
                       <div className="flex items-center justify-between">
@@ -346,3 +355,4 @@ const BlogPostsGrid: React.FC = () => {
 };
 
 export default BlogPostsGrid;
+
