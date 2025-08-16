@@ -22,6 +22,8 @@ const SearchResults: React.FC = () => {
   const [searchResults, setSearchResults] = useState<WordPressPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(query);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 20; // Display 20 results per page
 
   useEffect(() => {
     const performSearch = async () => {
@@ -33,8 +35,10 @@ const SearchResults: React.FC = () => {
 
       setLoading(true);
       try {
+        // Fetch all results by not passing the 'first' parameter
         const results = await searchPosts(query.trim());
         setSearchResults(results);
+        setCurrentPage(1); // Reset to first page on new search
       } catch (error) {
         console.error("Search error:", error);
         setSearchResults([]);
@@ -62,13 +66,22 @@ const SearchResults: React.FC = () => {
   };
 
   const stripHtml = (html: string) => {
-    return html.replace(/<[^>]*>/g, "");
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = html;
+    return textarea.textContent || "";
   };
 
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) return text;
     return text.substring(0, maxLength).trim() + "...";
   };
+
+  const totalResults = searchResults.length;
+  const totalPages = Math.ceil(totalResults / postsPerPage);
+  const currentPosts = searchResults.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
 
   return (
     <MainLayout>
@@ -102,7 +115,7 @@ const SearchResults: React.FC = () => {
 
             {query && (
               <p className="text-center text-gray-300">
-                {loading ? "Searching..." : `${searchResults.length} results found for "${query}"`}
+                {loading ? "Searching..." : `${totalResults} results found for "${query}"`}
               </p>
             )}
           </div>
@@ -112,111 +125,153 @@ const SearchResults: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-12">
           {loading ? (
             <SearchResultsLoading />
-          ) : searchResults.length > 0 ? (
-            <div className="grid gap-8">
-              {searchResults.map((post) => (
-                <article
-                  key={post.id}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
-                >
-                  <div className="p-6">
-                    {/* Categories */}
-                    {post.categories?.nodes && post.categories.nodes.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {post.categories.nodes.slice(0, 2).map((category) => (
-                          <Link
-                            key={category.id}
-                            href={`/blog/category/${category.slug}`}
-                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors"
-                          >
-                            <FaTag className="w-3 h-3 mr-1" />
-                            {category.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Title */}
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        {stripHtml(post.title)}
-                      </Link>
-                    </h2>
-
-                    {/* Meta Information */}
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
-                      <div className="flex items-center">
-                        <FaCalendar className="w-4 h-4 mr-2" />
-                        {formatDate(post.date)}
-                      </div>
-                      <div className="flex items-center">
-                        <FaUser className="w-4 h-4 mr-2" />
-                        {post.author?.node?.name || "Unknown Author"}
-                      </div>
-                    </div>
-
-                    {/* Excerpt */}
-                    <p className="text-gray-700 mb-4 leading-relaxed">
-                      {post.excerpt 
-                        ? truncateText(stripHtml(post.excerpt), 200)
-                        : truncateText(stripHtml(post.content), 200)
-                      }
-                    </p>
-
-                    {/* Read More Link */}
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+          ) : (
+            <>
+              {currentPosts.length > 0 ? (
+                <div className="grid gap-8">
+                  {currentPosts.map((post) => (
+                    <article
+                      key={post.id}
+                      className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                     >
-                      Read More
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      <div className="p-6">
+                        {/* Categories */}
+                        {post.categories?.nodes && post.categories.nodes.length > 0 && (
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            {post.categories.nodes.slice(0, 2).map((category) => (
+                              <Link
+                                key={category.id}
+                                href={`/blog/category/${category.slug}`}
+                                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors"
+                              >
+                                <FaTag className="w-3 h-3 mr-1" />
+                                {category.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Title */}
+                        <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+                          <Link href={`/blog/${post.slug}`}>
+                            {stripHtml(post.title)}
+                          </Link>
+                        </h2>
+
+                        {/* Meta Information */}
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
+                          <div className="flex items-center">
+                            <FaCalendar className="w-4 h-4 mr-2" />
+                            {formatDate(post.date)}
+                          </div>
+                          <div className="flex items-center">
+                            <FaUser className="w-4 h-4 mr-2" />
+                            {post.author?.node?.name || "Unknown Author"}
+                          </div>
+                        </div>
+
+                        {/* Excerpt */}
+                        <p className="text-gray-700 mb-4 leading-relaxed">
+                          {post.excerpt 
+                            ? truncateText(stripHtml(post.excerpt), 200)
+                            : truncateText(stripHtml(post.content), 200)
+                          }
+                        </p>
+
+                        {/* Read More Link */}
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
+                        >
+                          Read More
+                          <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : query ? (
+                <div className="text-center py-20">
+                  <div className="max-w-md mx-auto">
+                    <FaSearch className="w-16 h-16 text-gray-400 mx-auto mb-6" />
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      No results found
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      We couldn&apos;t find any articles matching &quot;{query}&quot;. Try different keywords or browse our categories.
+                    </p>
+                    <Link
+                      href="/blog"
+                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Browse All Articles
                     </Link>
                   </div>
-                </article>
-              ))}
-            </div>
-          ) : query ? (
-            <div className="text-center py-20">
-              <div className="max-w-md mx-auto">
-                <FaSearch className="w-16 h-16 text-gray-400 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  No results found
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  We couldn&apos;t find any articles matching &quot;{query}&quot;. Try different keywords or browse our categories.
-                </p>
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Browse All Articles
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <div className="max-w-md mx-auto">
-                <FaSearch className="w-16 h-16 text-gray-400 mx-auto mb-6" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Start your search
-                </h3>
-                <p className="text-gray-600">
-                  Enter keywords above to search our blog articles.
-                </p>
-              </div>
-            </div>
+                </div>
+              ) : (
+                <div className="text-center py-20">
+                  <div className="max-w-md mx-auto">
+                    <FaSearch className="w-16 h-16 text-gray-400 mx-auto mb-6" />
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      Start your search
+                    </h3>
+                    <p className="text-gray-600">
+                      Enter keywords above to search our blog articles.
+                    </p>
+                  </div>
+                </div>
+              )}
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-12">
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                      disabled={currentPage === 1}
+                      className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Previous
+                    </button>
+
+                    {[...Array(totalPages)].map((_, index) => (
+                      <button
+                        key={index + 1}
+                        onClick={() => setCurrentPage(index + 1)}
+                        className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                          currentPage === index + 1
+                            ? "bg-blue-600 text-white"
+                            : "text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {index + 1}
+                      </button>
+                    ))}
+
+                    <button
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                      }
+                      disabled={currentPage === totalPages}
+                      className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

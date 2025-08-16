@@ -27,7 +27,7 @@ const BlogPostsGrid: React.FC = () => {
         const adaptedPosts = postsData.posts.map(adaptWordPressPost);
         setBlogPosts(adaptedPosts);
       } catch (error) {
-        console.error('Error fetching posts:', error);
+        console.error("Error fetching posts:", error);
         // Fallback to empty array if WordPress is not available
         setBlogPosts([]);
       } finally {
@@ -38,9 +38,16 @@ const BlogPostsGrid: React.FC = () => {
     fetchPosts();
   }, []);
 
-  // Helper function to clean excerpt
+  // Function to decode HTML entities
+  const decodeHtmlEntities = (html: string) => {
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = html;
+    return textarea.textContent;
+  };
+
+  // Helper function to clean excerpt and decode entities
   const cleanExcerpt = (excerpt: string) => {
-    return stripHtmlTags(excerpt);
+    return decodeHtmlEntities(stripHtmlTags(excerpt));
   };
 
   if (loading) {
@@ -355,4 +362,3 @@ const BlogPostsGrid: React.FC = () => {
 };
 
 export default BlogPostsGrid;
-

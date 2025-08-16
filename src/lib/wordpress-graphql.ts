@@ -305,7 +305,6 @@ const GET_POSTS_BY_TAG_QUERY = `
             id
             name
             slug
-            count
           }
         }
         tags {
@@ -681,12 +680,14 @@ export async function getTags(): Promise<WordPressTag[]> {
 }
 
 // Search posts by query
-export async function searchPosts(searchQuery: string, first: number = 20): Promise<WordPressPost[]> {
+export async function searchPosts(searchQuery: string, first: number | null = 100): Promise<WordPressPost[]> {
   try {
-    const data = await graphqlRequest<PostsResponse>(SEARCH_POSTS_QUERY, {
-      search: searchQuery,
-      first,
-    });
+    const variables: { search: string; first?: number } = { search: searchQuery };
+    if (first !== null) {
+      variables.first = first;
+    }
+
+    const data = await graphqlRequest<PostsResponse>(SEARCH_POSTS_QUERY, variables);
 
     return data.posts.nodes;
   } catch (error) {
@@ -745,4 +746,3 @@ export function getPostExcerpt(post: WordPressPost, maxLength: number = 160): st
   const cleanContent = stripHtmlTags(post.content);
   return truncateText(cleanContent, maxLength);
 }
-
