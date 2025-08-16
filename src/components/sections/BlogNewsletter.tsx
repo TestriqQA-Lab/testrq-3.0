@@ -47,19 +47,14 @@ const handleSubscribe = async (e: React.FormEvent) => {
     setError("");
 
     try {
-      // Use relative URL for API call - Vercel will route this correctly
-      const apiUrl = 
-        process.env.NODE_ENV === 'production'
-          ? '/api/newsletter/subscribe' // On Vercel, this will route to your Node.js API
-          : 'http://localhost:3001/api/newsletter/subscribe'; // For local Node.js API server
-
-      const response = await fetch(apiUrl, {
+      // Always use the Next.js API route - this will work both locally and on Vercel
+      const response = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: email.trim( ),
+          email: email.trim(),
           interests: interests
         }),
       });
