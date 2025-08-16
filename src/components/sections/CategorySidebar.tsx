@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { FaRss, FaBell, FaDownload, FaArrowRight, FaTags, FaFire, FaStar } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaRss, FaBell, FaDownload, FaArrowRight, FaTags, FaFire, FaStar, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
 
 interface Category {
@@ -95,6 +95,54 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       downloads: "7.1K"
     }
   ];
+
+  // Newsletter state
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    setNewsletterLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribed(true);
+        setEmail("");
+        
+        setTimeout(() => {
+          setSubscribed(false);
+        }, 5000);
+      } else {
+        setError(data.error || "Subscription failed");
+      }
+    } catch (err) {
+      console.error("Subscription error:", err);
+      setError("Network error. Please try again.");
+    } finally {
+      setNewsletterLoading(false);
+    }
+  };
 
   return (
     <aside className="space-y-8">
@@ -252,22 +300,55 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
         <div className="text-center">
           <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6" />
+            <FaBell className={`w-6 h-6 text-${category.color.split('-')[1]}-700`} />
           </div>
           <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
           <p className="text-white text-opacity-90 text-sm mb-4">
             Get the latest {category.name.toLowerCase()} insights delivered weekly.
           </p>
-          <div className="space-y-3">
-            <input
-              type="email"
-              placeholder="your.email@company.com"
-              className="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-            />
-            <button className="w-full px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-              Subscribe Now
-            </button>
-          </div>
+          {!subscribed ? (
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              {error && (
+                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-2 text-red-200 text-xs">
+                  {error}
+                </div>
+              )}
+              <input
+                type="email"
+                placeholder="your.email@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 bg-white/90 border border-white/90 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                disabled={newsletterLoading}
+              />
+              <button
+                type="submit"
+                disabled={newsletterLoading}
+                className="w-full px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {newsletterLoading ? (
+                  <>
+                    <FaSpinner className="w-4 h-4 animate-spin" />
+                    <span>Subscribing...</span>
+                  </>
+                ) : (
+                  <span>Subscribe Now</span>
+                )}
+              </button>
+            </form>
+          ) : (
+            <div className="text-center py-2">
+              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-lg">✓</span>
+              </div>
+              <h3 className="text-md font-bold text-white mb-1">
+                Subscribed!
+              </h3>
+              <p className="text-gray-100 text-sm">
+                Thank you for joining!
+              </p>
+            </div>
+          )}
           <p className="text-xs text-white text-opacity-70 mt-3">
             Join {(category.subscribers / 1000).toFixed(1)}K+ subscribers
           </p>
@@ -284,7 +365,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
           {category.tags.map((tag, index) => (
             <Link
               key={index}
-              href={`/blog/tag/${tag.toLowerCase().replace(' ', '-')}`}
+              href={`/blog/tag/${tag.toLowerCase().replace(" ", "-")}`}
               className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors"
             >
               #{tag}
@@ -309,4 +390,3 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
 };
 
 export default CategorySidebar;
-

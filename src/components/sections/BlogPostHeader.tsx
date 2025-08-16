@@ -1,3 +1,4 @@
+"use client";
 // /home/ubuntu/updated_BlogPostHeader.tsx
 import Image from "next/image";
 import React from "react";
@@ -32,7 +33,15 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
-  const cleanExcerpt = stripHtmlTags(post.excerpt); // Strip HTML tags from the excerpt
+  // Function to decode HTML entities
+  const decodeHtmlEntities = (html: string) => {
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = html;
+    return textarea.textContent;
+  };
+
+  const cleanExcerpt = decodeHtmlEntities(stripHtmlTags(post.excerpt)); // Strip HTML tags and decode entities from the excerpt
+  const decodedTitle = decodeHtmlEntities(post.title); // Decode HTML entities from the title
 
   return (
     <section className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-800 text-white py-16 px-8 md:px-12 lg:px-24 relative overflow-hidden">
@@ -66,7 +75,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
-              {post.title}
+              {decodedTitle}
             </h1>
 
             <p className="text-lg text-white/80 mb-8 leading-relaxed">
