@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaArrowLeft, FaTags, FaRss, FaBell } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 
 interface Category {

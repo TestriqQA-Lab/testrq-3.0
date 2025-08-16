@@ -7,7 +7,7 @@ import {
   FaSpinner,
 } from "react-icons/fa";
 import Link from "next/link";
-import { getPosts, getCategories } from "@/lib/wordpress-graphql";
+import { getPosts, getCategories, getTags } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 
 interface BlogPost {
@@ -42,9 +42,15 @@ interface Category {
   slug: string;
 }
 
+interface PopularTag {
+  name: string;
+  slug: string;
+  count: number;
+}
+
 const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
   const [relatedPosts, setRelatedPosts] = useState<RelatedPost[]>([]);
-  const [popularTags, setPopularTags] = useState<string[]>([]);
+  const [popularTags, setPopularTags] = useState<PopularTag[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -80,17 +86,16 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 
         setRelatedPosts(related);
 
-        // Extract popular tags from all posts
-        const allTags = allPosts.flatMap(p => p.tags);
-        const tagCounts = allTags.reduce((acc, tag) => {
-          acc[tag] = (acc[tag] || 0) + 1;
-          return acc;
-        }, {} as Record<string, number>);
-
-        const sortedTags = Object.entries(tagCounts)
-          .sort(([,a], [,b]) => b - a)
-          .slice(0, 10)
-          .map(([tag]) => tag);
+        // Fetch all tags from WordPress GraphQL
+        const wpTags = await getTags();
+        const sortedTags = wpTags
+          .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
+          .slice(0, 10) // Take top 10 popular tags
+          .map(tag => ({
+            name: tag.name,
+            slug: tag.slug,
+            count: tag.count
+          }));
 
         setPopularTags(sortedTags);
 
@@ -289,10 +294,10 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             popularTags.map((tag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/blog/tag/${tag.slug}`}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-colors"
               >
-                #{tag}
+                #{tag.name}
               </Link>
             ))
           ) : (
@@ -329,3 +334,4 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 };
 
 export default BlogPostSidebar;
+

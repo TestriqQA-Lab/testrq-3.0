@@ -357,7 +357,7 @@ const GET_TAGS_QUERY = `
 // GraphQL query for searching posts
 const SEARCH_POSTS_QUERY = `
   query SearchPosts($search: String!, $first: Int) {
-    posts(first: $first, where: { status: PUBLISH, search: $search }) {
+    posts(first: $first, where: { status: PUBLISH, title: $search, content: $search }) {
       nodes {
         id
         databaseId

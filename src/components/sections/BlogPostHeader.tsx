@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
+import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
 
 interface BlogPost {
   id: string; // Changed from number to string
@@ -33,13 +34,6 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
-  // Function to decode HTML entities
-  const decodeHtmlEntities = (html: string) => {
-    const textarea = document.createElement("textarea");
-    textarea.innerHTML = html;
-    return textarea.textContent;
-  };
-
   const cleanExcerpt = decodeHtmlEntities(stripHtmlTags(post.excerpt)); // Strip HTML tags and decode entities from the excerpt
   const decodedTitle = decodeHtmlEntities(post.title); // Decode HTML entities from the title
 
@@ -143,3 +137,4 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
 };
 
 export default BlogPostHeader;
+

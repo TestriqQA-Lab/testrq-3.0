@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import { FaRss, FaBell, FaDownload, FaArrowRight, FaTags, FaFire, FaStar, FaSpinner } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaBell, FaArrowRight, FaTags, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
+import { getCategories, getTags } from "@/lib/wordpress-graphql"; // Import getTags
+import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
 
 interface Category {
   id: string;
@@ -20,87 +22,74 @@ interface CategorySidebarProps {
   category: Category;
 }
 
+interface RelatedCategory {
+  name: string;
+  slug: string;
+  icon: string;
+  color: string;
+  postCount: number;
+}
+
+interface PopularTag {
+  name: string;
+  slug: string;
+  count: number;
+}
+
 const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
-  const relatedCategories = [
-    {
-      name: "Performance Testing",
-      slug: "performance-testing",
-      icon: "⚡",
-      color: "from-green-500 to-green-600",
-      postCount: 28
-    },
-    {
-      name: "Security Testing",
-      slug: "security-testing",
-      icon: "🛡️",
-      color: "from-red-500 to-red-600",
-      postCount: 24
-    },
-    {
-      name: "Mobile Testing",
-      slug: "mobile-testing",
-      icon: "📱",
-      color: "from-purple-500 to-purple-600",
-      postCount: 31
-    },
-    {
-      name: "API Testing",
-      slug: "api-testing",
-      icon: "🔗",
-      color: "from-indigo-500 to-indigo-600",
-      postCount: 19
-    }
-  ].filter(cat => cat.slug !== category.id);
-
-  const popularPosts = [
-    {
-      title: "Complete Guide to Test Automation with Selenium WebDriver",
-      readTime: "8 min read",
-      views: "12.5K"
-    },
-    {
-      title: "Cypress vs Playwright: Framework Comparison",
-      readTime: "9 min read",
-      views: "11.4K"
-    },
-    {
-      title: "Building Robust Test Automation Frameworks",
-      readTime: "12 min read",
-      views: "9.8K"
-    },
-    {
-      title: "Advanced Selenium Techniques for Complex Elements",
-      readTime: "10 min read",
-      views: "8.9K"
-    }
-  ];
-
-  const learningResources = [
-    {
-      title: `${category.name} Cheat Sheet`,
-      type: "PDF",
-      size: "2.3 MB",
-      downloads: "5.2K"
-    },
-    {
-      title: "Framework Templates",
-      type: "ZIP",
-      size: "4.1 MB",
-      downloads: "3.8K"
-    },
-    {
-      title: "Best Practices Guide",
-      type: "PDF",
-      size: "1.9 MB",
-      downloads: "7.1K"
-    }
-  ];
+  const [relatedCategories, setRelatedCategories] = useState<RelatedCategory[]>([]);
+  const [popularTags, setPopularTags] = useState<PopularTag[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Newsletter state
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [newsletterLoading, setNewsletterLoading] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchSidebarData = async () => {
+      try {
+        // Fetch all categories
+        const wpCategories = await getCategories();
+        const adaptedCategories = wpCategories
+          .filter(cat => cat.count > 0 && cat.slug !== category.id) // Exclude current category
+          .map(adaptWordPressCategory);
+
+        // Sort by post count and take top 4 for related categories
+        const sortedRelatedCategories = adaptedCategories
+          .sort((a, b) => b.postCount - a.postCount)
+          .slice(0, 4)
+          .map(cat => ({
+            name: cat.name,
+            slug: cat.id, // Use the id which is the slug from adaptWordPressCategory
+            icon: cat.icon,
+            color: cat.color,
+            postCount: cat.postCount
+          }));
+        setRelatedCategories(sortedRelatedCategories);
+
+        // Fetch all tags from WordPress GraphQL
+        const wpTags = await getTags();
+        const sortedPopularTags = wpTags
+          .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
+          .slice(0, 10) // Take top 10 popular tags
+          .map(tag => ({
+            name: tag.name,
+            slug: tag.slug,
+            count: tag.count
+          }));
+
+        setPopularTags(sortedPopularTags);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching sidebar data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchSidebarData();
+  }, [category.id]);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -144,6 +133,22 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
     }
   };
 
+  if (loading) {
+    return (
+      <aside className="space-y-8">
+        <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+          <div className="animate-pulse">
+            <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+            <div className="space-y-3">
+              <div className="h-3 bg-gray-200 rounded"></div>
+              <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    );
+  }
+
   return (
     <aside className="space-y-8">
 
@@ -151,7 +156,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
         <div className="text-center">
           <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className={`w-6 h-6 text-${category.color.split('-')[1]}-700`} />
+            <FaBell className="w-6 h-6 text-white" />
           </div>
           <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
           <p className="text-white text-opacity-90 text-sm mb-4">
@@ -210,27 +215,31 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Categories</h3>
         <div className="space-y-3">
-          {relatedCategories.slice(0, 3).map((relatedCategory, index) => (
-            <Link
-              key={index}
-              href={`/blog/category/${relatedCategory.slug}`}
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
-            >
-              <div className={`w-10 h-10 bg-gradient-to-r ${relatedCategory.color} rounded-lg flex items-center justify-center text-white`}>
-                <span className="text-lg">{relatedCategory.icon}</span>
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-gray-900 group-hover:text-[theme(color.brand.blue)] transition-colors">
-                  {relatedCategory.name}
+          {relatedCategories.length > 0 ? (
+            relatedCategories.map((relatedCategory, index) => (
+              <Link
+                key={index}
+                href={`/blog/category/${relatedCategory.slug}`}
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+              >
+                <div className={`w-10 h-10 bg-gradient-to-r ${relatedCategory.color} rounded-lg flex items-center justify-center text-white`}>
+                  <span className="text-lg">{relatedCategory.icon}</span>
                 </div>
-                <div className="text-sm text-gray-500">{relatedCategory.postCount} articles</div>
-              </div>
-              <FaArrowRight className="w-3 h-3 text-gray-400 group-hover:text-[theme(color.brand.blue)] transition-colors" />
-            </Link>
-          ))}
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-900 group-hover:text-[theme(color.brand.blue)] transition-colors">
+                    {relatedCategory.name}
+                  </div>
+                  <div className="text-sm text-gray-500">{relatedCategory.postCount} articles</div>
+                </div>
+                <FaArrowRight className="w-3 h-3 text-gray-400 group-hover:text-[theme(color.brand.blue)] transition-colors" />
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500 text-sm">No related categories found.</p>
+          )}
         </div>
         <Link
-          href="/blog"
+          href="/blog/categories"
           className="block mt-4 text-center px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm"
         >
           View All Categories
@@ -239,22 +248,26 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
 
      
 
-      {/* Category Tags */}
+      {/* Popular Tags */}
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
           <FaTags className="w-5 h-5 text-gray-500" />
           Popular Tags
         </h3>
         <div className="flex flex-wrap gap-2">
-          {category.tags.map((tag, index) => (
-            <Link
-              key={index}
-              href={`/blog/tag/${tag.toLowerCase().replace(" ", "-")}`}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors"
-            >
-              #{tag}
-            </Link>
-          ))}
+          {popularTags.length > 0 ? (
+            popularTags.map((tag, index) => (
+              <Link
+                key={index}
+                href={`/blog/tag/${tag.slug}`}
+                className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors"
+              >
+                #{tag.name}
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500 text-sm">No popular tags available.</p>
+          )}
         </div>
       </div>
 
@@ -263,3 +276,4 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
 };
 
 export default CategorySidebar;
+

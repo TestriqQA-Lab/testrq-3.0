@@ -275,22 +275,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-12">
-          <h3 className="text-xl font-bold text-white mb-4">
-            Ready to Level Up Your Testing Skills?
-          </h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Join thousands of QA professionals who rely on us to stay ahead in
-            the world of software testing.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="px-8 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors">
-              Browse All Articles
-            </button>
-           
-          </div>
-        </div>
+        
       </div>
     </section>
   );

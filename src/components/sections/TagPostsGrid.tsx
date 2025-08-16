@@ -1,31 +1,30 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarAlt, FaClock, FaArrowRight, FaSort } from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaArrowRight, FaSort,} from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { Category, Post } from "@/lib/wordpress-data-adapter";
-import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
+import { Post } from "@/lib/wordpress-data-adapter";
+import { WordPressTag } from "@/lib/wordpress-graphql";
 
-interface CategoryPostsGridProps {
-  category: Category;
-  posts: Post[]; // Add posts prop
+interface TagPostsGridProps {
+  tag: WordPressTag;
+  posts: Post[];
 }
 
 // Utility function to strip HTML tags from text
 const stripHtmlTags = (html: string): string => {
-  return html.replace(/<[^>]*>/g, "").trim();
+  return html.replace(/<[^>]*>/g, '').trim();
 };
 
 // Utility function to truncate text
 const truncateText = (text: string, maxLength: number): string => {
   if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength).trim() + "...";
+  return text.substring(0, maxLength).trim() + '...';
 };
 
-const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }) => {
+const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
   const [sortBy, setSortBy] = useState("latest");
-  const [filterBy, setFilterBy] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 9;
 
@@ -36,30 +35,10 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
     { value: "trending", label: "Trending" }
   ];
 
-
-  // Filter and sort posts
-  let filteredPosts = posts;
-  
-  if (filterBy !== "all") {
-    filteredPosts = posts.filter(post => {
-      switch (filterBy) {
-        case "featured":
-          return post.featured;
-        case "trending":
-          return post.trending;
-        default:
-          // Assuming 'difficulty' is a property in your Post interface if you want to filter by it
-          // If not, you might need to adapt your WordPress data to include this or remove this filter option
-          return false; // Or handle based on your actual Post structure
-      }
-    });
-  }
-
   // Sort posts
-  filteredPosts.sort((a, b) => {
+  const sortedPosts = [...posts].sort((a, b) => {
     switch (sortBy) {
       case "popular":
-        // Assuming 'views' is a string like '12.5K', convert to number for comparison
         const viewsA = parseFloat(a.views.replace("K", "")) * (a.views.includes("K") ? 1000 : 1);
         const viewsB = parseFloat(b.views.replace("K", "")) * (b.views.includes("K") ? 1000 : 1);
         return viewsB - viewsA;
@@ -72,37 +51,32 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
     }
   });
 
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const currentPosts = filteredPosts.slice(
+  const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
+  const currentPosts = sortedPosts.slice(
     (currentPage - 1) * postsPerPage,
     currentPage * postsPerPage
   );
 
-
-
   return (
     <div>
-      {/* Header with Filters */}
+      {/* Header with Sort */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            {category.name} Articles ({filteredPosts.length})
+            Articles tagged with #{tag.name} ({posts.length})
           </h2>
           <p className="text-gray-600">
-            Discover expert insights and tutorials on {category.name.toLowerCase()}
+            Discover expert insights and tutorials related to {tag.name}
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3">
-          {/* Filter Dropdown */}
-        
-
+        <div className="flex items-center gap-3">
           {/* Sort Dropdown */}
           <div className="relative">
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent"
+              className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
             >
               {sortOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -133,8 +107,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
-                  <span className={`px-3 py-1 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}>
-                    {category.name}
+                  <span className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}>
+                    {post.category}
                   </span>
                   {post.featured && (
                     <span className="px-2 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full">
@@ -147,30 +121,34 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                     </span>
                   )}
                 </div>
-                
               </div>
 
               {/* Content */}
               <div className="md:w-2/3 p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
                   <Link href={`/blog/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
                 
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  {truncateText(decodeHtmlEntities(stripHtmlTags(post.excerpt)), 160)}
+                  {truncateText(stripHtmlTags(post.excerpt), 160)}
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.slice(0, 3).map((tag, index) => (
-                    <span
+                  {post.tags.slice(0, 4).map((postTag, index) => (
+                    <Link
                       key={index}
-                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                      href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, "-")}`}
+                      className={`px-2 py-1 text-xs rounded-full transition-colors ${
+                        postTag.toLowerCase() === tag.name.toLowerCase()
+                          ? 'bg-purple-100 text-purple-700 font-semibold'
+                          : 'bg-gray-100 text-gray-600 hover:bg-purple-50 hover:text-purple-600'
+                      }`}
                     >
-                      #{tag}
-                    </span>
+                      #{postTag}
+                    </Link>
                   ))}
                 </div>
                 
@@ -199,7 +177,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
+                    className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-sm transition-colors"
                   >
                     Read More
                     <FaArrowRight className="w-3 h-3" />
@@ -229,7 +207,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
                   currentPage === index + 1
-                    ? "bg-[theme(color.brand.blue)] text-white"
+                    ? "bg-purple-600 text-white"
                     : "text-gray-600 hover:bg-gray-50"
                 }`}
               >
@@ -249,27 +227,61 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
       )}
 
       {/* No Results */}
-      {filteredPosts.length === 0 && (
+      {posts.length === 0 && (
         <div className="text-center py-12">
-          <div className="text-gray-400 text-6xl mb-4">📝</div>
+          <div className="text-gray-400 text-6xl mb-4">🏷️</div>
           <h3 className="text-xl font-bold text-gray-900 mb-2">No articles found</h3>
           <p className="text-gray-600 mb-6">
-            Try adjusting your filters or check back later for new content.
+            There are no articles tagged with #{tag.name} at the moment.
           </p>
-          <button
-            onClick={() => {
-              setFilterBy("all");
-              setSortBy("latest");
-            }}
-            className="px-6 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors"
+          <Link
+            href="/blog"
+            className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
           >
-            Reset Filters
-          </button>
+            Browse All Articles
+          </Link>
         </div>
       )}
+
+      {/* Related Tags Section */}
+      <div className="mt-16 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl p-8">
+        <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+          Explore Related Topics
+        </h3>
+        <p className="text-gray-600 text-center mb-6">
+          Discover more articles on related testing topics
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {/* You can add related tags here based on your logic */}
+          <Link
+            href="/blog/tag/automation"
+            className="px-4 py-2 bg-white text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition-colors border border-purple-200"
+          >
+            #automation
+          </Link>
+          <Link
+            href="/blog/tag/testing"
+            className="px-4 py-2 bg-white text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition-colors border border-purple-200"
+          >
+            #testing
+          </Link>
+          <Link
+            href="/blog/tag/qa"
+            className="px-4 py-2 bg-white text-purple-600 rounded-full hover:bg-purple-600 hover:text-white transition-colors border border-purple-200"
+          >
+            #qa
+          </Link>
+          <Link
+            href="/blog/categories"
+            className="px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors"
+          >
+            View All Categories
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default CategoryPostsGrid;
+export default TagPostsGrid;
 

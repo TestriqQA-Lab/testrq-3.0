@@ -200,7 +200,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
       {/* Content */}
       <div 
-        className={`prose prose-lg max-w-none text-gray-800 ${fontSize}`}
+        className={`prose prose-lg px-6 max-w-none text-gray-800 ${fontSize}`}
         dangerouslySetInnerHTML={{ __html: renderContent(post.content) }}
         style={{
           lineHeight: '1.7',
