@@ -171,12 +171,7 @@ const SearchResults: React.FC = () => {
                         </div>
 
                         {/* Excerpt */}
-                        <p className="text-gray-700 mb-4 leading-relaxed">
-                          {post.excerpt 
-                            ? truncateText(stripHtml(post.excerpt), 200)
-                            : truncateText(stripHtml(post.content), 200)
-                          }
-                        </p>
+                        <div className="text-gray-700 mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: post.excerpt ? truncateText(stripHtml(post.excerpt), 200) : truncateText(stripHtml(post.content), 200) }} />
 
                         {/* Read More Link */}
                         <Link
