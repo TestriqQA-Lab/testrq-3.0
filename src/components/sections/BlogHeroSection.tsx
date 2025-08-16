@@ -1,9 +1,53 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
+import { useRouter } from "next/navigation";
+import { getPosts } from "@/lib/wordpress-graphql";
 
 const BlogHeroSection: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [articleCount, setArticleCount] = useState("200+");
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchArticleCount = async () => {
+      try {
+        const postsData = await getPosts(1000); // Fetch a large number to get total count
+        const totalPosts = postsData.posts.length;
+        
+        // Format the count nicely
+        if (totalPosts >= 1000) {
+          setArticleCount(`${Math.floor(totalPosts / 1000)}K+`);
+        } else if (totalPosts >= 100) {
+          setArticleCount(`${Math.floor(totalPosts / 100)}00+`);
+        } else {
+          setArticleCount(`${totalPosts}`);
+        }
+      } catch (error) {
+        console.error("Error fetching article count:", error);
+        // Keep default value on error
+        setArticleCount("200+");
+      }
+    };
+
+    fetchArticleCount();
+  }, []);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Navigate to search results page with query parameter
+      router.push(`/blog/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch(e); // Fixed: Removed 'as any' and passed the event directly
+    }
+  };
+
   return (
     <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blur Circles */}
@@ -35,36 +79,30 @@ const BlogHeroSection: React.FC = () => {
         </p>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-10">
-          <div className="relative">
+        <div className="max-w-2xl mx-auto mb-16">
+          <form onSubmit={handleSearch} className="relative">
             <input
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={handleKeyPress}
               placeholder="Search testing topics, tools, or best practices..."
               className="w-full pl-12 pr-32 py-4 rounded-xl bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
             />
             <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-medium transition">
+            <button 
+              type="submit"
+              className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-medium transition"
+            >
               Search
             </button>
-          </div>
+          </form>
         </div>
-
-        {/* Buttons */}
-        {/* <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <button className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition">
-            <FaRss className="w-4 h-4" />
-            Subscribe to RSS
-          </button>
-          <button className="flex items-center justify-center gap-2 px-6 py-3 border border-cyan-400 text-cyan-300 hover:bg-cyan-600 hover:text-white font-semibold rounded-lg transition">
-            <FaBell className="w-4 h-4" />
-            Get Notifications
-          </button>
-        </div> */}
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
           {[
-            { number: "200+", label: "Expert Articles" },
+            { number: articleCount, label: "Expert Articles" },
             { number: "50K+", label: "Monthly Readers" },
             { number: "15+", label: "Testing Categories" },
             { number: "Weekly", label: "New Content" },
@@ -102,3 +140,4 @@ const BlogHeroSection: React.FC = () => {
 };
 
 export default BlogHeroSection;
+

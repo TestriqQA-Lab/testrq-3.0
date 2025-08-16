@@ -1,26 +1,82 @@
 "use client";
+import Link from 'next/link'
 
 import React, { useState } from "react";
 import {
   FaEnvelope,
   FaArrowRight,
   FaBell,
-  FaRss,
-  FaTwitter,
+  FaInstagram,
   FaLinkedin,
-  FaGithub,
+  FaFacebook,
+  FaSpinner,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const BlogNewsletter: React.FC = () => {
   const [email, setEmail] = useState("");
+  const [interests, setInterests] = useState<string[]>([]);
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const availableInterests = [
+    "Test Automation",
+    "Performance Testing", 
+    "Security Testing",
+    "Mobile Testing",
+  ];
+
+  const handleInterestChange = (interest: string) => {
+    setInterests(prev => 
+      prev.includes(interest) 
+        ? prev.filter(i => i !== interest)
+        : [...prev, interest]
+    );
+  };
+
+const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
+    
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      // Always use the Next.js API route - this will work both locally and on Vercel
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          interests: interests
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribed(true);
+        setEmail("");
+        setInterests([]);
+        
+        setTimeout(() => {
+          setSubscribed(false);
+        }, 5000);
+      } else {
+        setError(data.error || 'Subscription failed');
+      }
+    } catch (err) {
+      console.error('Subscription error:', err);
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -69,10 +125,10 @@ const BlogNewsletter: React.FC = () => {
               <span className="text-gray-300 text-sm">Follow us:</span>
               <div className="flex gap-3">
                 {[
-                  { icon: <FaTwitter />, href: "#" },
-                  { icon: <FaLinkedin />, href: "#" },
-                  { icon: <FaGithub />, href: "#" },
-                  { icon: <FaRss />, href: "#" },
+                  { icon: <FaXTwitter />, href: "https://x.com/testriq" },
+                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/testriq-qa-lab" },
+                  { icon: <FaFacebook />, href: "https://www.facebook.com/testriq.lab/" },
+                  { icon: <FaInstagram />, href: "https://instagram.com/testriq" },
                 ].map((s, i) => (
                   <a
                     key={i}
@@ -101,9 +157,15 @@ const BlogNewsletter: React.FC = () => {
 
               {!subscribed ? (
                 <form onSubmit={handleSubscribe} className="space-y-6">
+                  {error && (
+                    <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 text-red-200 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <div>
                     <label className="block text-gray-100 text-sm font-medium mb-2">
-                      Email Address
+                      Email Address *
                     </label>
                     <input
                       type="email"
@@ -112,6 +174,7 @@ const BlogNewsletter: React.FC = () => {
                       placeholder="you@example.com"
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                       required
+                      disabled={loading}
                     />
                   </div>
 
@@ -120,19 +183,17 @@ const BlogNewsletter: React.FC = () => {
                       Interests (Optional)
                     </label>
                     <div className="grid grid-cols-2 gap-3">
-                      {[
-                        "Test Automation",
-                        "Performance Testing",
-                        "Security Testing",
-                        "Mobile Testing",
-                      ].map((interest) => (
+                      {availableInterests.map((interest) => (
                         <label
                           key={interest}
-                          className="flex items-center gap-2 text-sm text-gray-200"
+                          className="flex items-center gap-2 text-sm text-gray-200 cursor-pointer"
                         >
                           <input
                             type="checkbox"
+                            checked={interests.includes(interest)}
+                            onChange={() => handleInterestChange(interest)}
                             className="rounded border-white bg-white/20 text-cyan-500 focus:ring-cyan-300"
+                            disabled={loading}
                           />
                           {interest}
                         </label>
@@ -142,21 +203,34 @@ const BlogNewsletter: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors"
+                    disabled={loading}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>Subscribe Now</span>
-                    <FaArrowRight className="w-4 h-4" />
+                    {loading ? (
+                      <>
+                        <FaSpinner className="w-4 h-4 animate-spin" />
+                        <span>Subscribing...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Subscribe Now</span>
+                        <FaArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
 
                   <p className="text-gray-300 text-xs text-center">
                     By subscribing, you agree to our{" "}
-                    <a href="#" className="text-white underline">
+                    <Link 
+                    href="/privacy-policy" className="text-white underline"
+                    >
                       Privacy Policy
-                    </a>{" "}
+                    </Link>{" "}
                     and{" "}
-                    <a href="#" className="text-white underline">
+                    <Link href="/terms-of-service" className="text-white underline"
+                    >
                       Terms of Service
-                    </a>
+                    </Link>
                   </p>
                 </form>
               ) : (
@@ -168,7 +242,7 @@ const BlogNewsletter: React.FC = () => {
                     Successfully Subscribed!
                   </h3>
                   <p className="text-gray-100">
-                    Thank you for joining! Check your inbox for confirmation.
+                    Thank you for joining our newsletter! You&aposll receive our latest testing insights.
                   </p>
                 </div>
               )}
@@ -214,9 +288,7 @@ const BlogNewsletter: React.FC = () => {
             <button className="px-8 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors">
               Browse All Articles
             </button>
-            <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-colors">
-              Download Free Guide
-            </button>
+           
           </div>
         </div>
       </div>
@@ -225,3 +297,4 @@ const BlogNewsletter: React.FC = () => {
 };
 
 export default BlogNewsletter;
+
