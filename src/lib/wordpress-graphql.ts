@@ -355,6 +355,59 @@ const GET_TAGS_QUERY = `
   }
 `;
 
+// GraphQL query for searching posts
+const SEARCH_POSTS_QUERY = `
+  query SearchPosts($search: String!, $first: Int) {
+    posts(first: $first, where: { status: PUBLISH, search: $search }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        excerpt
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        author {
+          node {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          nodes {
+            id
+            name
+            slug
+            count
+          }
+        }
+        tags {
+          nodes {
+            id
+            name
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
+
 // GraphQL query for fetching related posts based on category and tags
 const GET_RELATED_POSTS_QUERY = `
   query GetRelatedPosts($categorySlug: String!, $tagSlugs: [String!], $excludeId: ID!, $first: Int) {
@@ -623,6 +676,21 @@ export async function getTags(): Promise<WordPressTag[]> {
     return data.tags.nodes;
   } catch (error) {
     console.error('Error fetching tags:', error);
+    return [];
+  }
+}
+
+// Search posts by query
+export async function searchPosts(searchQuery: string, first: number = 20): Promise<WordPressPost[]> {
+  try {
+    const data = await graphqlRequest<PostsResponse>(SEARCH_POSTS_QUERY, {
+      search: searchQuery,
+      first,
+    });
+
+    return data.posts.nodes;
+  } catch (error) {
+    console.error('Error searching posts:', error);
     return [];
   }
 }
