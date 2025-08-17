@@ -219,7 +219,7 @@ const BlogCategories: React.FC = () => {
 
         {/* Categories Grid with Staggered Animation */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-12">
-          {categories.slice(0, 16).map((category, index) => (
+          {categories.slice(0, 100).map((category, index) => (
             <AnimatedCategoryCard
               key={category.id}
               category={category}

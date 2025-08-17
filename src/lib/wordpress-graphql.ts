@@ -773,3 +773,30 @@ export async function getTotalCategoryCount(): Promise<number> {
   }
 }
 
+// New function to get all posts without pagination limit
+export async function getAllPosts(): Promise<WordPressPost[]> {
+  let allPosts: WordPressPost[] = [];
+  let hasNextPage = true;
+  let after: string | undefined = undefined;
+
+  try {
+    while (hasNextPage) {
+      const data = await getPosts(100, after); // Fetch 100 posts at a time
+      allPosts = allPosts.concat(data.posts);
+      hasNextPage = data.pageInfo.hasNextPage;
+      after = data.pageInfo.endCursor;
+
+      // Safety break to avoid infinite loops or excessive memory usage
+      if (allPosts.length > 10000) {
+        console.warn('Reached 10000 posts, breaking to prevent infinite loop.');
+        break;
+      }
+    }
+    return allPosts;
+  } catch (error) {
+    console.error('Error fetching all posts:', error);
+    return [];
+  }
+}
+
+

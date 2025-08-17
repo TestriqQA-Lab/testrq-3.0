@@ -9,7 +9,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 import Link from "next/link";
-import { getPosts } from "@/lib/wordpress-graphql";
+import { getAllPosts } from "@/lib/wordpress-graphql"; // Changed to getAllPosts
 import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
 import { stripHtmlTags } from "@/lib/wordpress-graphql";
 
@@ -23,8 +23,8 @@ const BlogPostsGrid: React.FC = () => {
     async function fetchPosts() {
       try {
         setLoading(true);
-        const postsData = await getPosts(50); // Fetch enough posts for pagination
-        const adaptedPosts = postsData.posts.map(adaptWordPressPost);
+        const postsData = await getAllPosts(); // Fetch all posts
+        const adaptedPosts = postsData.map(adaptWordPressPost);
         setBlogPosts(adaptedPosts);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -362,3 +362,4 @@ const BlogPostsGrid: React.FC = () => {
 };
 
 export default BlogPostsGrid;
+
