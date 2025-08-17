@@ -107,3 +107,62 @@ body {
   animation: spin-reverse-slow 25s linear infinite;
 }
 
+
+
+/* Phone Input Styles */
+.PhoneInput {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  padding: 0.75rem 0.5rem; /* Equivalent to py-3 px-4 */
+  transition: all 0.3s ease-in-out;
+}
+
+.PhoneInput:focus-within {
+  border-color: theme('colors.brand.blue'); /* Focus ring color */
+  box-shadow: 0 0 0 2px theme('colors.brand.blue'); /* Focus ring */
+  outline: none;
+}
+
+.PhoneInputInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-left: 0.5rem; /* Space between country select and input */
+}
+
+.PhoneInputCountrySelect {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-right: 0.5rem;
+}
+
+.PhoneInputCountrySelectArrow {
+  display: none; /* Hide default arrow if you want to use a custom one */
+}
+
+.PhoneInputCountryIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+/* Adjust padding for the icon inside the phone input if needed */
+.PhoneInput .PhoneInputCountrySelect + .PhoneInputInput {
+  padding-left: 0.5rem; /* Adjust as needed */
+}
+
+/* Ensure the dropdown for country selection is styled */
+.PhoneInputCountrySelect {
+  /* Add any specific styles for the dropdown here */
+}
+
+/* For the search input within the dropdown (if applicable) */
+.PhoneInputCountrySelectInput {
+  /* Add styles for the search input */
+}
+
+
