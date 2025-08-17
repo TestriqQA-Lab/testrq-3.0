@@ -171,13 +171,6 @@ const GET_POSTS_QUERY = `
             count
           }
         }
-        tags {
-          nodes {
-            id
-            name
-            slug
-          }
-        }
       }
       pageInfo {
         hasNextPage
@@ -745,42 +738,38 @@ export function getPostExcerpt(post: WordPressPost, maxLength: number = 160): st
   return truncateText(cleanContent, maxLength);
 }
 
-// Fetch total post count
+// Fetch total post count by fetching all posts and counting them
 export async function getTotalPostCount(): Promise<number> {
   try {
-    const data = await graphqlRequest<{ posts: { pageInfo: { total: number } } }>(`
-      query GetTotalPosts {
-        posts(first: 1, where: { status: PUBLISH }) {
-          pageInfo {
-            total
-          }
-        }
-      }
-    `);
-    return data.posts.pageInfo.total;
+    let totalCount = 0;
+    let hasNextPage = true;
+    let after: string | undefined = undefined;
+
+    while (hasNextPage) {
+      const data = await getPosts(100, after); // Fetch 100 posts at a time
+      totalCount += data.posts.length;
+      hasNextPage = data.pageInfo.hasNextPage;
+      after = data.pageInfo.endCursor;
+      
+      // Safety break to avoid infinite loops
+      if (totalCount > 10000) break;
+    }
+
+    return totalCount;
   } catch (error) {
     console.error('Error fetching total post count:', error);
     return 0;
   }
 }
 
-// Fetch total category count
+// Fetch total category count by fetching all categories and counting them
 export async function getTotalCategoryCount(): Promise<number> {
   try {
-    const data = await graphqlRequest<CategoriesResponse>(`
-      query GetTotalCategories {
-        categories(first: 100, where: { hideEmpty: true }) {
-          nodes {
-            id
-          }
-        }
-      }
-    `);
-    return data.categories.nodes.length;
+    const categories = await getCategories();
+    return categories.length;
   } catch (error) {
     console.error('Error fetching total category count:', error);
     return 0;
   }
 }
-
 

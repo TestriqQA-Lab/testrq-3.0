@@ -1,15 +1,76 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch, FaBookOpen, FaUsers, FaRocket } from "react-icons/fa";
+import { getTotalPostCount, getTotalCategoryCount } from "@/lib/wordpress-graphql";
+
+// Custom hook for incrementing animation
+const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
+  const [count, setCount] = useState(start);
+
+  useEffect(() => {
+    if (end === start) return;
+
+    const increment = (end - start) / (duration / 16); // 60fps
+    let current = start;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [end, duration, start]);
+
+  return count;
+};
 
 const CategoriesHeroSection: React.FC = () => {
+  const [totalArticles, setTotalArticles] = useState(0);
+  const [totalCategories, setTotalCategories] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Animated counters
+  const animatedArticles = useCountUp(totalArticles, 2000);
+  const animatedCategories = useCountUp(totalCategories, 2000);
+
+  useEffect(() => {
+    const fetchCounts = async () => {
+      try {
+        const articlesCount = await getTotalPostCount();
+        const categoriesCount = await getTotalCategoryCount();
+        
+        setTotalArticles(articlesCount);
+        setTotalCategories(categoriesCount);
+        setIsLoaded(true);
+      } catch (error) {
+        console.error("Error fetching counts:", error);
+        // Set fallback values
+        setTotalArticles(500);
+        setTotalCategories(15);
+        setIsLoaded(true);
+      }
+    };
+
+    fetchCounts();
+  }, []);
+
+  // Format number for display (removed unnecessary rounding and K for exact numbers)
+  const formatNumber = (num: number) => {
+    return `${num}`;
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width=\'60\%’ height=\'60\%’ viewBox=\'0 0 60 60\%’ xmlns=\'http://www.w3.org/2000/svg\%\u2019%3E%3Cg fill=\'none\%’ fill-rule=\'evenodd\%’%3E%3Cg fill=\'\%23ffffff\%’ fill-opacity=\'0.1\%’%3E%3Ccircle cx=\'30\%’ cy=\'30\%’ r=\'2\%’%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg\%\u2019%3E")`,
         }} />
       </div>
 
@@ -34,7 +95,11 @@ const CategoriesHeroSection: React.FC = () => {
               <div className="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-lg mx-auto mb-3">
                 <FaBookOpen className="w-6 h-6 text-white" />
               </div>
-              <div className="text-2xl font-bold text-white mb-1">500+</div>
+              <div className={`text-2xl font-bold text-white mb-1 ${
+                isLoaded ? '' : 'animate-pulse'
+              }`}>
+                {isLoaded ? formatNumber(animatedArticles) : "Loading..."}
+              </div>
               <div className="text-blue-200 text-sm">Articles</div>
             </div>
             
@@ -50,7 +115,11 @@ const CategoriesHeroSection: React.FC = () => {
               <div className="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-lg mx-auto mb-3">
                 <FaRocket className="w-6 h-6 text-white" />
               </div>
-              <div className="text-2xl font-bold text-white mb-1">15+</div>
+              <div className={`text-2xl font-bold text-white mb-1 ${
+                isLoaded ? '' : 'animate-pulse'
+              }`}>
+                {isLoaded ? formatNumber(animatedCategories) : "Loading..."}
+              </div>
               <div className="text-blue-200 text-sm">Categories</div>
             </div>
             

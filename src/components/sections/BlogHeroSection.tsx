@@ -1,52 +1,82 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { getPosts } from "@/lib/wordpress-graphql";
+import { getTotalPostCount, getTotalCategoryCount } from "@/lib/wordpress-graphql";
+
+// Custom hook for smooth incrementing animation
+const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
+  const [count, setCount] = useState(start);
+
+  useEffect(() => {
+    if (end === start) return;
+
+    const increment = (end - start) / (duration / 16); // Aim for 60fps
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [end, duration, start]);
+
+  return count;
+};
 
 const BlogHeroSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [articleCount, setArticleCount] = useState("200+");
+  const [totalArticles, setTotalArticles] = useState(0);
+  const [totalCategories, setTotalCategories] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   const router = useRouter();
 
+  // Animated counters
+  const animatedArticles = useCountUp(totalArticles, 2000);
+  const animatedCategories = useCountUp(totalCategories, 2000);
+
   useEffect(() => {
-    const fetchArticleCount = async () => {
+    const fetchCounts = async () => {
       try {
-        const postsData = await getPosts(1000); // Fetch a large number to get total count
-        const totalPosts = postsData.posts.length;
+        const articlesCount = await getTotalPostCount();
+        const categoriesCount = await getTotalCategoryCount();
         
-        // Format the count nicely
-        if (totalPosts >= 1000) {
-          setArticleCount(`${Math.floor(totalPosts / 1000)}K+`);
-        } else if (totalPosts >= 100) {
-          setArticleCount(`${Math.floor(totalPosts / 100)}00+`);
-        } else {
-          setArticleCount(`${totalPosts}`);
-        }
+        setTotalArticles(articlesCount);
+        setTotalCategories(categoriesCount);
+        setIsLoaded(true);
       } catch (error) {
-        console.error("Error fetching article count:", error);
-        // Keep default value on error
-        setArticleCount("200+");
+        console.error("Failed to fetch counts:", error);
+        // Set fallback values
+        setTotalArticles(0);
+        setTotalCategories(0);
+      } finally {
+        setIsLoaded(true);
       }
     };
 
-    fetchArticleCount();
+    fetchCounts();
   }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       // Navigate to search results page with query parameter
       router.push(`/blog/search?q=${encodeURIComponent(searchQuery.trim())}`);
     }
-  };
+  }, [searchQuery, router]);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSearch(e); // Fixed: Removed 'as any' and passed the event directly
+      handleSearch(e);
     }
-  };
+  }, [handleSearch]);
 
   return (
     <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
@@ -99,16 +129,26 @@ const BlogHeroSection: React.FC = () => {
           </form>
         </div>
 
-        {/* Stats */}
+        {/* Stats with Animation */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
           {[
-            { number: articleCount, label: "Expert Articles" },
+            { 
+              number: isLoaded ? animatedArticles : "Loading...", 
+              label: "Expert Articles",
+              isAnimated: true
+            },
             { number: "50K+", label: "Monthly Readers" },
-            { number: "15+", label: "Testing Categories" },
+            { 
+              number: isLoaded ? animatedCategories : "Loading...", 
+              label: "Testing Categories",
+              isAnimated: true
+            },
             { number: "Weekly", label: "New Content" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-cyan-300 mb-1">
+              <div className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${
+                stat.isAnimated && isLoaded ? '' : ''
+              }`}>
                 {stat.number}
               </div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -140,4 +180,5 @@ const BlogHeroSection: React.FC = () => {
 };
 
 export default BlogHeroSection;
+
 
