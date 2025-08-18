@@ -40,7 +40,7 @@ const AboutHeroSection = () => {
           {[
             "ISTQB Certified Testing Professionals",
             "500K+ Test Cases Successfully Executed",
-            "14+ Years of  Testing Industry Experience",
+            "15+ Years of  Testing Industry Experience",
             "Trusted by Startups to Enterprise Leaders",
           ].map((point, index) => (
             <div key={index} className="flex items-center gap-3 text-left">
@@ -73,7 +73,7 @@ const AboutHeroSection = () => {
           <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border">
             <div className="text-center">
               <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
-                14+
+                15+
               </div>
               <div className="text-sm text-gray-600">Years</div>
             </div>

@@ -19,15 +19,9 @@ import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
 
 const ContactMethodsSection: React.FC = () => {
-  const [selectedMeetingUrl, setSelectedMeetingUrl] = useState<string>(
-    "https://calendly.com/jayeshmistry-testriq/30-minute-meeting"
-  );
+  
 
-  const handleMeetings = (duration: string) => {
-    setSelectedMeetingUrl(
-      `https://calendly.com/jayeshmistry-testriq/${duration}`
-    );
-  };
+ const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min"
 
   const contactMethods = [
     {
@@ -218,24 +212,10 @@ const ContactMethodsSection: React.FC = () => {
           </div>
 
           {/* Meeting Types */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="flex justify-center gap-6 mb-8">
             <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("15-minute-meeting")}
-            >
-              <FaComments className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Quick Consultation
-              </h4>
-              <p className="text-sm text-gray-600 mb-2">15 minutes</p>
-              <p className="text-xs text-gray-500">
-                Perfect for initial questions
-              </p>
-            </div>
-
-            <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("30-minute-meeting")}
+              className="text-center md:w-lg p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
+              
             >
               <FaVideo className="w-8 h-8 text-purple-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">
@@ -245,18 +225,6 @@ const ContactMethodsSection: React.FC = () => {
               <p className="text-xs text-gray-500">
                 Detailed project discussion
               </p>
-            </div>
-
-            <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("45-minute-meeting")}
-            >
-              <FaHeadset className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Team Workshop
-              </h4>
-              <p className="text-sm text-gray-600 mb-2">45 minutes</p>
-              <p className="text-xs text-gray-500">Interactive team session</p>
             </div>
           </div>
 
