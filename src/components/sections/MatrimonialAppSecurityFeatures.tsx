@@ -19,7 +19,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <Lock className="w-8 h-8" />,
       title: "End-to-End Encryption",
       description:
-        "All user communications and sensitive data are protected with military-grade encryption.",
+        "We verify if your platform implements robust encryption standards to protect communication and sensitive data.",
       benefits: ["Message Privacy", "Data Protection", "Secure File Sharing"],
       color: "text-blue-600",
       bgColor: "bg-blue-50",
@@ -28,7 +28,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <Fingerprint className="w-8 h-8" />,
       title: "Identity Verification",
       description:
-        "Multi-layer identity verification to ensure authentic user profiles and prevent fake accounts.",
+        "We ensure your user onboarding includes strong identity checks to eliminate fake or fraudulent profiles.",
       benefits: [
         "Document Verification",
         "Biometric Checks",
@@ -41,7 +41,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <Shield className="w-8 h-8" />,
       title: "Advanced Authentication",
       description:
-        "Multi-factor authentication and secure login mechanisms to protect user accounts.",
+        "We assess if your authentication methods meet modern security standards for account protection.",
       benefits: ["2FA/MFA Support", "OAuth Integration", "Session Management"],
       color: "text-purple-600",
       bgColor: "bg-purple-50",
@@ -50,7 +50,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <Database className="w-8 h-8" />,
       title: "Secure Data Storage",
       description:
-        "Encrypted data storage with regular backups and secure access controls.",
+        "We check if your data storage is encrypted, backed up, and access-controlled to prevent breaches.",
       benefits: ["Data Encryption", "Secure Backups", "Access Controls"],
       color: "text-orange-600",
       bgColor: "bg-orange-50",
@@ -59,7 +59,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <Eye className="w-8 h-8" />,
       title: "Privacy Controls",
       description:
-        "Granular privacy settings allowing users to control their information visibility.",
+        "We evaluate how effectively your privacy settings allow users to control their information visibility.",
       benefits: ["Profile Privacy", "Photo Protection", "Contact Controls"],
       color: "text-pink-600",
       bgColor: "bg-pink-50",
@@ -68,7 +68,7 @@ const MatrimonialAppSecurityFeatures = () => {
       icon: <AlertTriangle className="w-8 h-8" />,
       title: "Threat Detection",
       description:
-        "AI-powered threat detection to identify and prevent suspicious activities and scams.",
+        "We verify whether your platform detects and blocks suspicious activities in real-time.",
       benefits: ["Scam Detection", "Behavior Analysis", "Real-time Monitoring"],
       color: "text-red-600",
       bgColor: "bg-red-50",
@@ -86,12 +86,13 @@ const MatrimonialAppSecurityFeatures = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Advanced <span className="text-brand-blue">Security Features</span>
+            The Six Pillars of{" "}
+            <span className="text-brand-blue">Matrimonial App Security</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive security measures designed specifically for
-            matrimonial platforms to protect sensitive personal information and
-            ensure user safety.
+            We don’t build your security — we verify it. Our certification
+            process ensures your platform meets these six essential security
+            pillars, giving your users confidence and trust.
           </p>
         </motion.div>
 
@@ -138,22 +139,22 @@ const MatrimonialAppSecurityFeatures = () => {
         >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Secure Your Matrimonial Platform Today
+              Get Your Security Certification
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Don&apos;t leave your user&apos;s sensitive information
-              vulnerable. Get comprehensive security certification that builds
-              trust and protects your platform.
+              Once we confirm your platform satisfies all six pillars, we
+              provide an official certification to showcase your commitment to
+              user safety and data protection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
                 <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                  Start Security Assessment
+                  Start Verification
                 </button>
               </Link>
-              {/* <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                Download Security Checklist
-              </button> */}
+              <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+                View Certification Process
+              </button>
             </div>
           </div>
         </motion.div>

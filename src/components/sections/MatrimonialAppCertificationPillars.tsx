@@ -18,7 +18,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <Shield className="w-12 h-12" />,
       title: "Security & Data Protection",
       description:
-        "ISO 27001 compliance, end-to-end encryption, secure authentication, and data breach prevention.",
+        "We verify that your platform follows industry-leading security practices like encryption, secure authentication, and regular security audits.",
       features: [
         "Data Encryption",
         "Secure Authentication",
@@ -32,7 +32,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <Lock className="w-12 h-12" />,
       title: "Privacy Compliance",
       description:
-        "GDPR compliance, privacy by design, consent management, and data minimization principles.",
+        "We ensure that your platform meets privacy laws and best practices, including GDPR, data minimization, and consent management.",
       features: [
         "GDPR Compliance",
         "Privacy Controls",
@@ -46,7 +46,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <CheckCircle className="w-12 h-12" />,
       title: "Quality Assurance",
       description:
-        "ISTQB standards, comprehensive testing, performance optimization, and bug prevention.",
+        "We assess the quality of your app through functional, usability, performance, and compatibility testing before approval.",
       features: [
         "Functional Testing",
         "Performance Testing",
@@ -60,7 +60,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <Users className="w-12 h-12" />,
       title: "User Safety & Trust",
       description:
-        "Identity verification, profile authenticity, anti-scam measures, and user reporting systems.",
+        "We verify systems that protect users from scams, ensure profile authenticity, and provide safety reporting tools.",
       features: [
         "Identity Verification",
         "Profile Validation",
@@ -74,7 +74,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <Search className="w-12 h-12" />,
       title: "Algorithm Fairness",
       description:
-        "Unbiased matching algorithms, transparent recommendations, and ethical AI practices.",
+        "We evaluate your matchmaking algorithms for transparency, fairness, and absence of bias.",
       features: [
         "Algorithm Auditing",
         "Bias Detection",
@@ -88,7 +88,7 @@ const MatrimonialAppCertificationPillars = () => {
       icon: <FileCheck className="w-12 h-12" />,
       title: "Regulatory Compliance",
       description:
-        "Industry standards compliance, legal requirements, and international regulations adherence.",
+        "We confirm that your platform meets legal and industry standards required for certification.",
       features: [
         "Legal Compliance",
         "Industry Standards",
@@ -111,16 +111,14 @@ const MatrimonialAppCertificationPillars = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Six Pillars of{" "}
-            <span className="text-[#25A8E0]">
-              Matrimonial App Certification
-            </span>
+            Six Pillars We{" "}
+            <span className="text-[#25A8E0]">Verify Before Certifying</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive certification program covers all critical aspects
-            of matrimonial platform security, privacy, and quality to ensure
-            your users can trust your platform with their most personal
-            information.
+            Our certification isn’t just a badge — it’s proof that your
+            matrimonial app has been thoroughly evaluated against six critical
+            pillars. Only platforms that meet every requirement earn our
+            certification.
           </p>
         </motion.div>
 
@@ -165,15 +163,16 @@ const MatrimonialAppCertificationPillars = () => {
         >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
             <h3 className="text-2xl font-bold mb-4">
-              Ready to Get Your Matrimonial App Certified?
+              We Only Certify What Passes Our Six-Pillar Check
             </h3>
-            <p className="text-blue-100 mb-6">
-              Join 30+ matrimonial platforms that trust Testriq for
-              comprehensive certification services.
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              If your app meets every requirement across security, privacy,
+              quality, fairness, and compliance, you’ll receive our official
+              certification — a mark of trust for your users.
             </p>
             <Link href="/contact-us">
               <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                Start Certification Process
+                Begin the Verification Process
               </button>
             </Link>
           </div>

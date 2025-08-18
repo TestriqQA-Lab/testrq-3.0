@@ -8,11 +8,11 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
-  title:  "Shopping App Certification",
-   
-  description: "Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.",
+  title: "Shopping App Certification",
+
+  description:
+    "Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.",
   keywords: [
     "shopping app certification",
     "e-commerce app testing",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "mobile app compliance testing",
     "fraud detection",
     "certified shopping apps",
-    "e-commerce platform security"
+    "e-commerce platform security",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -34,33 +34,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/shopping-apps-certification',
+    canonical: "https://testrq-3-0.vercel.app/shopping-apps-certification",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/shopping-apps-certification',
-    siteName: 'Testriq - Shopping App Certification Services',
-    title: 'Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq',
-    description: 'Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+    siteName: "Testriq - Shopping App Certification Services",
+    title:
+      "Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq",
+    description:
+      "Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.",
     images: [
       {
-        url: '/OG/Shopping-App-Certification-Og.webp',
+        url: "/OG/Shopping-App-Certification-Og.webp",
         width: 1200,
         height: 630,
-        alt: 'Shopping App Certification - Secure Testing & Compliance',
-      }
+        alt: "Shopping App Certification - Secure Testing & Compliance",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq',
-    description: 'Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.',
-    images: ['/OG/Shopping-App-Certification-Twitter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title:
+      "Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq",
+    description:
+      "Get your shopping and e-commerce apps certified for security, performance, and global compliance. Testriq’s PCI DSS, GDPR, and CCPA-aligned testing ensures trust, data safety, and conversion optimization.",
+    images: ["/OG/Shopping-App-Certification-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -68,18 +72,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-     google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
-
 
 const ShoppingAppHeroSection = dynamic(
   () => import("@/components/sections/ShoppingAppHeroSection"),
@@ -140,19 +143,6 @@ const ShoppingAppBenefits = dynamic(
     ),
   }
 );
-
-const ShoppingAppCompliance = dynamic(
-  () => import("@/components/sections/ShoppingAppCompliance"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const ShoppingAppTestingServices = dynamic(
   () => import("@/components/sections/ShoppingAppTestingServices"),
   {
@@ -189,8 +179,6 @@ const ShoppingAppCTA = dynamic(
   }
 );
 
-
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -223,11 +211,17 @@ const faqSchema = {
 };
 
 export default function ShoppingAppsCertification() {
- const breadcrumbItems= [
-   { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" },
-    { name: "Shopping App Certification ", url: "https://testrq-3-0.vercel.app/shopping-apps-certification" }
-   ];
+  const breadcrumbItems = [
+    { name: "Home", url: "https://testriq.com/" },
+    {
+      name: "Services",
+      url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+    },
+    {
+      name: "Shopping App Certification ",
+      url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+    },
+  ];
   return (
     <div>
       <StructuredData data={organizationSchema} />
@@ -236,12 +230,11 @@ export default function ShoppingAppsCertification() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
-        <ShoppingAppHeroSection />
+        <ShoppingAppHeroSection scrollToId="shopping-app-certification-process" />
         <ShoppingAppCertificationPillars />
         <ShoppingAppCertificationProcess />
         <ShoppingAppSecurityFeatures />
         <ShoppingAppBenefits />
-        <ShoppingAppCompliance />
         <ShoppingAppTestingServices />
         <ShoppingAppFAQs />
         <ShoppingAppCTA />
@@ -249,4 +242,3 @@ export default function ShoppingAppsCertification() {
     </div>
   );
 }
-

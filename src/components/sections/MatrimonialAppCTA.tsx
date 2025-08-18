@@ -165,7 +165,6 @@ const MatrimonialAppCTA = () => {
               <div className="space-y-4">
                 {[
                   "14+ years of QA and security testing experience",
-                  "30+ matrimonial apps successfully certified",
                   "ISTQB certified experts and security specialists",
                   "99.8% client satisfaction rate",
                   "24/7 ongoing support and monitoring",
@@ -199,13 +198,7 @@ const MatrimonialAppCTA = () => {
                   Trusted by Leading Platforms
                 </h4>
 
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-brand-blue">
-                      30+
-                    </div>
-                    <div className="text-sm text-gray-600">Apps Certified</div>
-                  </div>
+                <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-brand-blue">
                       99.8%

@@ -2,37 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Shield,
-  ArrowRight,
-  Heart,
-  Verified,
-  TrendingUp,
-} from "lucide-react";
+import { Shield, ArrowRight, Heart } from "lucide-react";
 import Link from "next/link";
 
 const MatrimonialAppHeroSection = () => {
-  const trustMetrics = [
-    {
-      number: "30+",
-      label: "Apps Certified",
-      icon: <Verified className="w-8 h-8" />,
-      color: "text-blue-600",
-    },
-    {
-      number: "99.8%",
-      label: "Security Score",
-      icon: <Shield className="w-8 h-8" />,
-      color: "text-green-600",
-    },
-    {
-      number: "3x",
-      label: "User Trust Increase",
-      icon: <TrendingUp className="w-8 h-8" />,
-      color: "text-purple-600",
-    },
-  ];
-
   const scrollToMatrimonialProcess = () => {
     const element = document.getElementById("matrimonial-process-section");
     if (element) {
@@ -99,32 +72,53 @@ const MatrimonialAppHeroSection = () => {
               <Shield className="w-5 h-5" />
             </button>
           </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-5xl mx-auto"
           >
-            {trustMetrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className={`${metric.color} mb-2 flex justify-center`}>
-                  {metric.icon}
-                </div>
-                <div
-                  className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}
-                >
-                  {metric.number}
-                </div>
-                <div className="text-sm text-gray-600">{metric.label}</div>
-              </motion.div>
-            ))}
+            {/* Card 1 */}
+            <div className="group bg-gradient-to-br from-white to-blue-50 border border-blue-100 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-brand-blue mb-4 group-hover:scale-110 transition-transform">
+                <Shield className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Security First
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Built on industry-leading security testing methods to safeguard
+                sensitive user data and ensure platform safety.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group bg-gradient-to-br from-white to-pink-50 border border-pink-100 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 text-pink-500 mb-4 group-hover:scale-110 transition-transform">
+                <Heart className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                User Trust Focused
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Certification designed to build credibility, strengthen trust,
+                and improve user satisfaction for matrimonial platforms.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="group bg-gradient-to-br from-white to-green-50 border border-green-100 rounded-2xl p-6 text-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+              <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-500 mb-4 group-hover:scale-110 transition-transform">
+                <ArrowRight className="w-7 h-7" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                Future-Ready
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Continuous updates to match evolving matrimonial app regulations
+                and standards, keeping you ahead in compliance.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

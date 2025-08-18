@@ -11,34 +11,15 @@ import {
   ArrowRight,
   Gamepad2,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppHeroSection = () => {
-  const trustMetrics = [
-    {
-      icon: <CheckCircle className="w-8 h-8" />,
-      value: "200+",
-      label: "Apps Certified",
-      color: "text-blue-600",
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      value: "99.7%",
-      label: "Security Score",
-      color: "text-green-600",
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      value: "5x",
-      label: "User Engagement",
-      color: "text-purple-600",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      value: "25M+",
-      label: "Players Protected",
-      color: "text-orange-600",
-    },
-  ];
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
@@ -74,11 +55,12 @@ const FantasyAppHeroSection = () => {
             Fantasy Sports Apps{" "}
             <span className="text-brand-blue">Certification</span>
           </h1>
-          
+
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Ensure your fantasy sports platform meets the highest standards of security, fair play, 
-            and regulatory compliance. Get certified with comprehensive testing that builds player trust 
-            and protects sensitive gaming data.
+            Ensure your fantasy sports platform meets the highest standards of
+            security, fair play, and regulatory compliance. Get certified with
+            comprehensive testing that builds player trust and protects
+            sensitive gaming data.
           </p>
         </motion.div>
 
@@ -89,57 +71,73 @@ const FantasyAppHeroSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
-          <button className="bg-brand-blue hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Get Certified Now
-            <ArrowRight className="w-5 h-5" />
-          </button>
-          
-          <button className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300">
+          <Link href="/contact-us">
+            <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              Get Certified Now
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </Link>
+
+          <button
+            onClick={() => scrollToSection("certification-process")}
+            className="border-2 cursor-pointer border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300"
+          >
             <Gamepad2 className="w-5 h-5" />
             View Certification Process
           </button>
         </motion.div>
 
-        {/* Trust Metrics */}
+        {/* Certification Benefits */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto"
         >
-          {trustMetrics.map((metric, index) => (
+          {[
+            {
+              icon: <Shield className="w-8 h-8" />,
+              title: "Enhanced Security",
+              desc: "We safeguard user data with industry-leading protection measures.",
+              color: "text-green-600",
+            },
+            {
+              icon: <CheckCircle className="w-8 h-8" />,
+              title: "Regulatory Compliance",
+              desc: "Meet all legal standards for fantasy sports in multiple regions.",
+              color: "text-blue-600",
+            },
+            {
+              icon: <TrendingUp className="w-8 h-8" />,
+              title: "Player Confidence",
+              desc: "Boost user trust through transparency and fair play guarantees.",
+              color: "text-purple-600",
+            },
+            {
+              icon: <Users className="w-8 h-8" />,
+              title: "Brand Credibility",
+              desc: "Stand out in the market with a recognized certification badge.",
+              color: "text-orange-600",
+            },
+          ].map((benefit, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              className="text-center backdrop-blur-sm transition-all duration-300"
+              className="text-center bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className={`${metric.color} mb-2 flex justify-center`}>
-                {metric.icon}
+              <div className={`${benefit.color} mb-4 flex justify-center`}>
+                {benefit.icon}
               </div>
-              <div className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}>
-                {metric.value}
-              </div>
-              <div className="text-sm text-gray-600">
-                {metric.label}
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {benefit.desc}
+              </p>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-center mt-16"
-        >
-          <p className="text-gray-600 max-w-2xl mx-auto text-md">
-            Join 200+ fantasy sports platforms that trust Testriq for comprehensive certification services. 
-            From daily fantasy sports to season-long leagues, we ensure your platform meets 
-            regulatory standards and delivers exceptional gaming experiences.
-          </p>
         </motion.div>
       </div>
 
@@ -187,4 +185,3 @@ const FantasyAppHeroSection = () => {
 };
 
 export default FantasyAppHeroSection;
-

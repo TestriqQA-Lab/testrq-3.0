@@ -21,8 +21,8 @@ const DatingAppReadyToBuild = () => {
             </h2>
 
             <p className="text-xl mb-12 opacity-90">
-              Join 50+ dating apps that have earned user trust and boosted their
-              success with our certification
+              We certify dating apps that meet all six pillars of trust, helping
+              them showcase safety, reliability, and user protection.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
@@ -38,13 +38,13 @@ const DatingAppReadyToBuild = () => {
               </Link>
 
               <motion.a
-                href="tel:+919004988859"
+                href="tel:(+91) 915-2929-343"
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Phone className="mr-2 w-5 h-5" />
-                Call +91-900-49-888-59
+                Call (+91) 915-2929-343
               </motion.a>
             </div>
 

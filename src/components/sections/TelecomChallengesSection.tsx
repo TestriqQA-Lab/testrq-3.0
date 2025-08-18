@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaExclamationTriangle, 
-  FaWifi, 
-  FaSignal, 
+import {
+  FaExclamationTriangle,
+  FaWifi,
+  FaSignal,
   FaMobile,
   FaUsers,
   FaChartLine,
@@ -12,72 +13,94 @@ import {
   FaClock,
   FaArrowRight,
   FaNetworkWired,
-  FaCloud
+  FaCloud,
 } from "react-icons/fa";
 
 const TelecomChallengesSection: React.FC = () => {
   const challenges = [
     {
       icon: FaWifi,
-      title: "5G Network Complexity",
-      problem: "5G networks are 10x more complex than 4G with new protocols, edge computing, and network slicing",
-      impact: "Network failures can cost telecom operators $100K+ per hour in lost revenue",
-      solution: "Comprehensive 5G testing including protocol validation, edge computing tests, and network slice verification",
+      title: "5G Software Ecosystem Complexity",
+      problem:
+        "With 5G adoption, telecom software—from OSS/BSS platforms to customer-facing apps—must handle complex protocols, APIs, and service orchestration.",
+      impact:
+        "Misconfigured or poorly integrated software can disrupt service delivery, causing revenue loss and customer dissatisfaction.",
+      solution:
+        "End-to-end testing of 5G-ready platforms, including API validation, protocol handling, and service orchestration verification.",
       color: "from-red-500 to-pink-600",
-      bgColor: "bg-red-50"
+      bgColor: "bg-red-50",
     },
     {
       icon: FaSignal,
-      title: "IoT Device Proliferation",
-      problem: "50 billion IoT devices expected by 2030, each with unique connectivity requirements",
-      impact: "Poor IoT connectivity leads to 30% device abandonment and customer churn",
-      solution: "Specialized IoT testing frameworks for device compatibility, connectivity, and performance validation",
+      title: "Massive IoT Software Integration",
+      problem:
+        "Billions of IoT devices rely on telecom platforms for provisioning, data processing, and management—each with unique requirements.",
+      impact:
+        "Inadequate IoT platform validation can lead to data mismatches, device deactivation, and reduced customer trust.",
+      solution:
+        "Specialized IoT application testing for device onboarding, data accuracy, and seamless integration with backend systems.",
       color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50"
+      bgColor: "bg-orange-50",
     },
     {
       icon: FaMobile,
-      title: "Voice Quality Issues",
-      problem: "VoIP and VoLTE call quality problems affect 25% of mobile calls globally",
-      impact: "Poor voice quality results in 40% customer satisfaction drop and service cancellations",
-      solution: "Advanced voice quality testing with MOS scoring, jitter analysis, and codec optimization",
+      title: "Digital Experience Performance",
+      problem:
+        "Customer portals, mobile apps, and self-service tools must perform flawlessly under high traffic and diverse device conditions.",
+      impact:
+        "Slow load times or broken workflows can cause significant drops in adoption and increase customer support costs.",
+      solution:
+        "UX-focused performance testing across devices, browsers, and operating systems to ensure smooth, consistent user experiences.",
       color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50"
+      bgColor: "bg-purple-50",
     },
     {
       icon: FaClock,
-      title: "Network Latency",
-      problem: "Ultra-low latency requirements for autonomous vehicles and AR/VR applications",
-      impact: "High latency can cause safety issues in critical applications and poor user experience",
-      solution: "Real-time latency testing and optimization for mission-critical applications",
+      title: "Real-Time Processing Demands",
+      problem:
+        "Telecom billing, order management, and service activation systems must process data in near real-time without errors.",
+      impact:
+        "Processing delays can lead to incorrect billing, failed activations, and missed SLAs.",
+      solution:
+        "Load and stress testing for real-time transaction systems to validate speed, accuracy, and stability under peak demand.",
       color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50"
+      bgColor: "bg-blue-50",
     },
     {
       icon: FaShieldAlt,
-      title: "Network Security Threats",
-      problem: "Telecom networks face 2.5x more cyber attacks than other industries",
-      impact: "Security breaches can expose millions of customer records and cost $200M+ in damages",
-      solution: "Comprehensive security testing including penetration testing and vulnerability assessments",
+      title: "Software Security Vulnerabilities",
+      problem:
+        "Customer data in telecom applications is a prime target for cyber attacks, especially in billing, CRM, and self-service systems.",
+      impact:
+        "Breaches can expose millions of records, trigger regulatory fines, and damage brand reputation.",
+      solution:
+        "Comprehensive application security testing, including vulnerability scanning, penetration testing, and compliance validation.",
       color: "from-green-500 to-teal-600",
-      bgColor: "bg-green-50"
+      bgColor: "bg-green-50",
     },
     {
       icon: FaCloud,
-      title: "Network Function Virtualization",
-      problem: "Migration from hardware to software-based network functions creates new testing challenges",
-      impact: "NFV implementation failures can cause 50% performance degradation",
-      solution: "Specialized NFV testing for virtual network functions and cloud-native architectures",
+      title: "Cloud-Native Telecom Platforms",
+      problem:
+        "Migration to cloud-based OSS/BSS and service delivery platforms introduces new scalability and integration challenges.",
+      impact:
+        "Unoptimized cloud deployments can cause service instability and increased operational costs.",
+      solution:
+        "Cloud-native testing strategies covering scalability, failover, API performance, and multi-environment compatibility.",
       color: "from-indigo-500 to-purple-600",
-      bgColor: "bg-indigo-50"
-    }
+      bgColor: "bg-indigo-50",
+    },
   ];
 
   const industryStats = [
-    { value: "10x", label: "5G Complexity vs 4G", trend: "up" },
+    { value: "10x", label: "More APIs in 5G Software", trend: "up" },
     { value: "50B", label: "IoT Devices by 2030", trend: "up" },
-    { value: "25%", label: "VoIP Call Quality Issues", trend: "up" },
-    { value: "2.5x", label: "More Cyber Attacks vs Other Industries", trend: "up" }
+    { value: "40%", label: "Users Abandon Slow Apps", trend: "up" },
+    {
+      value: "2.5x",
+      label: "Higher Cyber Attack Risk in Telecom Apps",
+      trend: "up",
+    },
   ];
 
   return (
@@ -87,27 +110,38 @@ const TelecomChallengesSection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-6 py-2 mb-6">
             <FaExclamationTriangle className="w-4 h-4 text-red-600" />
-            <span className="text-sm font-medium text-red-600">Telecom Challenges</span>
+            <span className="text-sm font-medium text-red-600">
+              Telecom Software Challenges
+            </span>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Critical Network Issues
-            <span className="block text-[theme(color.brand.blue)]">That Impact Your Operations</span>
-          </h2>
-          
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Telecommunications networks face unprecedented complexity and challenges in today’s hyper-connected world. Our specialized telecom testing solutions proactively address these critical network issues—including interoperability, protocol compatibility, 5G performance, and real-time data processing—before they impact your network performance and service reliability.
 
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Critical Software Issues
+            <span className="block text-[theme(color.brand.blue)]">
+              That Impact Your Operations
+            </span>
+          </h2>
+
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            In today’s hyper-connected telecom industry, software platforms are
+            at the heart of service delivery. From customer-facing apps to
+            mission-critical OSS/BSS systems, our testing solutions ensure
+            flawless performance, security, and reliability before issues affect
+            your customers and revenue.
           </p>
         </div>
 
         {/* Industry Statistics */}
         <div className="bg-white rounded-3xl p-8 mb-16 shadow-lg border border-gray-100">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Telecom Industry Reality</h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+            Telecom Software Reality
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {industryStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-red-600 mb-2">{stat.value}</div>
+                <div className="text-3xl font-bold text-red-600 mb-2">
+                  {stat.value}
+                </div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
@@ -121,29 +155,45 @@ const TelecomChallengesSection: React.FC = () => {
               key={index}
               className={`${challenge.bgColor} rounded-3xl p-8 shadow-lg ring-1 hover:ring-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group`}
             >
-              <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+              >
                 <challenge.icon className="w-8 h-8 text-white" />
               </div>
-              
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{challenge.title}</h3>
-              
+
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {challenge.title}
+              </h3>
+
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-red-700 text-sm mb-2">THE PROBLEM:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.problem}</p>
+                  <h4 className="font-semibold text-red-700 text-sm mb-2">
+                    THE PROBLEM:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.problem}
+                  </p>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-orange-700 text-sm mb-2">BUSINESS IMPACT:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.impact}</p>
+                  <h4 className="font-semibold text-orange-700 text-sm mb-2">
+                    BUSINESS IMPACT:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.impact}
+                  </p>
                 </div>
-                
+
                 <div>
-                  <h4 className="font-semibold text-green-700 text-sm mb-2">OUR SOLUTION:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">{challenge.solution}</p>
+                  <h4 className="font-semibold text-green-700 text-sm mb-2">
+                    OUR SOLUTION:
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {challenge.solution}
+                  </p>
                 </div>
               </div>
-              
+
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
@@ -158,10 +208,13 @@ const TelecomChallengesSection: React.FC = () => {
         <div className="bg-gradient-to-tr from-red-700 to-red-300 rounded-3xl p-12 mb-16">
           <div className="text-center mb-12 text-white">
             <FaExclamationTriangle className="w-16 h-16 mx-auto mb-6 opacity-80" />
-            <h3 className="text-3xl font-bold mb-4">The Cost of Ignoring These Network Issues</h3>
+            <h3 className="text-3xl font-bold mb-4">
+              The Cost of Ignoring These Software Issues
+            </h3>
             <p className="text-lg max-w-3xl mx-auto">
-              Every day these network problems persist, your telecom operation faces increased risk of 
-              service outages, customer churn, and competitive disadvantage.
+              Every day software problems persist, your telecom operation risks
+              service interruptions, customer dissatisfaction, and lost market
+              share.
             </p>
           </div>
 
@@ -170,52 +223,57 @@ const TelecomChallengesSection: React.FC = () => {
               <FaChartLine className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Revenue Loss</h4>
               <p className="text-sm">
-                Network outages cost telecom operators an average of $100,000 per hour, with major 
-                incidents reaching millions in lost revenue and compensation.
+                Software downtime or errors in billing and provisioning can
+                cause substantial revenue leakage and costly remediation.
               </p>
             </div>
-            
+
             <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
               <FaUsers className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Customer Churn</h4>
               <p className="text-sm">
-                Poor network quality leads to 30% customer churn rate, with customers switching to 
-                competitors offering better service reliability and performance.
+                Broken workflows and poor digital experiences drive customers to
+                competitors offering smoother, more reliable platforms.
               </p>
             </div>
-            
+
             <div className="text-center p-6 text-red-500 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm">
               <FaNetworkWired className="w-12 h-12 mx-auto mb-4 opacity-80" />
-              <h4 className="text-xl font-bold mb-2">Network Degradation</h4>
+              <h4 className="text-xl font-bold mb-2">Operational Slowdown</h4>
               <p className="text-sm">
-                Unaddressed network issues compound over time, leading to 50% performance degradation 
-                and requiring costly infrastructure overhauls.
+                Inefficient or unstable systems slow down service delivery,
+                inflate costs, and hinder scalability.
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-white text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-              Prevent These Issues Now
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
+                Prevent These Issues Now
+              </button>
+            </Link>
           </div>
         </div>
 
         {/* Solution Preview */}
         <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">Don&apos;t Let These Challenges Compromise Your Network</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            Don&apos;t Let Software Challenges Hold You Back
+          </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Our comprehensive telecommunication testing solutions address every challenge mentioned above, 
-            helping you deliver superior network performance, enhance customer satisfaction, and stay ahead of the competition.
+            Our comprehensive telecom software testing services ensure your
+            applications, platforms, and digital experiences perform flawlessly,
+            enabling you to enhance customer satisfaction, maintain compliance,
+            and lead the market.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-              Explore Our Solutions
-            </button>
-            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Get Network Assessment
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+                Get Software Assessment
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -224,4 +282,3 @@ const TelecomChallengesSection: React.FC = () => {
 };
 
 export default TelecomChallengesSection;
-
