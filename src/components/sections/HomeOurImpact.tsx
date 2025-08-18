@@ -1,6 +1,5 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { caseStudiesData } from "@/app/lib/caseStudies";
 import Link from "next/link";
 
 const renderTitle = () => {
