@@ -185,7 +185,7 @@ export default function WebAppTesting() {
         <CardSlider />
         <WebappProvenTestingProcess />
         <WebappWhyChooseTestriq />
-        <WebappCaseStudies />
+        {/* <WebappCaseStudies /> */}
         <WebappFAQs />
         <WebappAnyQuestions />
       </MainLayout>

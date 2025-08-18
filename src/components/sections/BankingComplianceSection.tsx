@@ -363,9 +363,9 @@ const BankingComplianceSection: React.FC = () => {
                 Start Compliance Assessment
               </button>
             </Link>
-            <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+            {/* <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
               Download Compliance Guide
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

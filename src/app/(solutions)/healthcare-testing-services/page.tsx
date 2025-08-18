@@ -99,7 +99,7 @@ const HealthcareTestingPage: React.FC = () => {
       <HealthcareTestingProcessSection />
       <HealthcareComplianceSection />
       <HealthcareToolsFrameworkSection />
-      <HealthcareCaseStudiesSection />
+      {/* <HealthcareCaseStudiesSection /> */}
       <HealthcareROISection />
       <HealthcareFAQSection />
       <HealthcareContactSection />

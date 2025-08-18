@@ -207,7 +207,7 @@ export default function MobileAppTesting() {
         <MobileCardSlider />
         <MobileProvenTestingProcess />
         <MobileWhyChooseTestriq />
-        <MobileCaseStudies />
+        {/* <MobileCaseStudies /> */}
         <MobileFAQs />
       </MainLayout>
     </div>

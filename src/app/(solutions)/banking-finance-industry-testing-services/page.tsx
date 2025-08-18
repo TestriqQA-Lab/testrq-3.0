@@ -99,7 +99,7 @@ const BankingFinanceTestingPage: React.FC = () => {
       <BankingTestingServicesSection />
       <BankingToolsFrameworksSection />
       <BankingComplianceSection />
-      <BankingCaseStudiesSection />
+      {/* <BankingCaseStudiesSection /> */}
       <BankingROISection />
       <BankingFAQSection />
       <BankingContactSection />

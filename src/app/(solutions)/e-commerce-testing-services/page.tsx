@@ -96,7 +96,7 @@ const EcommerceTestingPage: React.FC = () => {
       <EcommerceTestingServicesSection />
       <EcommerceTestingProcessSection />
       <EcommercePlatformsSection />
-      <EcommerceCaseStudiesSection />
+      {/* <EcommerceCaseStudiesSection /> */}
       <EcommerceFAQSection />
       <EcommerceContactSection />
     </main>

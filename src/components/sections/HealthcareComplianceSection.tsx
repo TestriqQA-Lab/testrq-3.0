@@ -310,9 +310,9 @@ const HealthcareComplianceSection: React.FC = () => {
                   Start Compliance Assessment
                 </button>
               </Link>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg  hover:scale-98 transition-all border border-white border-opacity-30">
+              {/* <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg  hover:scale-98 transition-all border border-white border-opacity-30">
                 Download Compliance Checklist
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

@@ -151,9 +151,9 @@ const MatrimonialAppSecurityFeatures = () => {
                   Start Security Assessment
                 </button>
               </Link>
-              <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+              {/* <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
                 Download Security Checklist
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>

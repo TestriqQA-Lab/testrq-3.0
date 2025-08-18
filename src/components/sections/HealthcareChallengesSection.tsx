@@ -165,9 +165,9 @@ const HealthcareChallengesSection: React.FC = () => {
                   Get Healthcare Testing Audit
                 </button>
               </Link>
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-sky-700 hover:shadow-xl hover:scale-98 transition-all duration-300">
+              {/* <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-sky-700 hover:shadow-xl hover:scale-98 transition-all duration-300">
                 Download Compliance Checklist
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

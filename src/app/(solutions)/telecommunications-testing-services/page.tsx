@@ -98,7 +98,7 @@ const TelecommunicationTestingPage: React.FC = () => {
       <TelecomTestingServicesSection />
       <TelecomToolsFrameworksSection />
       <TelecomNetworkTestingSection />
-      <TelecomCaseStudiesSection />
+      {/* <TelecomCaseStudiesSection /> */}
       <TelecomROISection />
       <TelecomFAQSection />
       <TelecomContactSection />
