@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -167,7 +166,7 @@ const ContactHeroSection: React.FC = () => {
     validatePhoneNumber(phone);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const isPhoneValid = validatePhoneNumber(formData.businessPhone);
@@ -185,18 +184,40 @@ const ContactHeroSection: React.FC = () => {
       isHowDidYouHearValid &&
       isMessageValid
     ) {
-      console.log("Form submitted:", formData);
-      setIsSubmitted(true);
-      setTimeout(() => setIsSubmitted(false), 3000);
+      try {
+        // Show loading state (you can add a loading state if needed)
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-      setFormData({
-        fullName: "",
-        businessEmail: "",
-        businessPhone: "",
-        companyStage: "",
-        howDidYouHear: "",
-        message: "",
-      });
+        if (response.ok) {
+          console.log("Form submitted successfully");
+          setIsSubmitted(true);
+          setTimeout(() => setIsSubmitted(false), 5000);
+
+          // Reset form
+          setFormData({
+            fullName: "",
+            businessEmail: "",
+            businessPhone: "",
+            companyStage: "",
+            howDidYouHear: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Form submission failed:", errorData.error);
+          // You can add error handling UI here
+          alert("Form submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please check your connection and try again.");
+      }
     } else {
       console.log("Form has errors.");
     }
@@ -392,13 +413,12 @@ const ContactHeroSection: React.FC = () => {
                   <div className="relative">
                     <PhoneInput
                       international
-                      defaultCountry="US"
                       value={formData.businessPhone}
                       onChange={handlePhoneChange}
                       onBlur={() => validatePhoneNumber(formData.businessPhone)}
                       className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-300'}`}
-                      inputClassName="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       placeholder="Enter phone number"
+                      inputprops={{ className: "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300" }}
                     />
                   </div>
                   {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
@@ -440,10 +460,10 @@ const ContactHeroSection: React.FC = () => {
                       value={formData.howDidYouHear}
                       onChange={handleInputChange}
                       onBlur={() => validateHowDidYouHear(formData.howDidYouHear)}
-                      maxLength={50}
                       required
+                      maxLength={50}
                       className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError ? 'border-red-500' : 'border-gray-300'}`}
-                      placeholder="e.g., Google, Social Media, Referral"
+                      placeholder="Google, LinkedIn, Referral, etc."
                     />
                   </div>
                   {howDidYouHearError && <p className="text-red-500 text-xs mt-1">{howDidYouHearError}</p>}
@@ -461,14 +481,14 @@ const ContactHeroSection: React.FC = () => {
                     required
                     rows={4}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-300'}`}
-                    placeholder="Tell us about your project or how we can help you..."
+                    placeholder="Tell us about your project, testing needs, or any questions you have..."
                   />
                   {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                 >
                   <FaPaperPlane className="w-4 h-4" />
                   Send Message
@@ -476,10 +496,20 @@ const ContactHeroSection: React.FC = () => {
 
                 <p className="text-xs text-gray-500 text-center">
                   By submitting this form, you agree to our{" "}
-                  <Link href="/privacy-policy" className="text-brand-blue">
+                  <Link
+                    href="/privacy-policy"
+                    className="text-[theme(color.brand.blue)] hover:underline"
+                  >
                     Privacy Policy
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="/terms-of-service"
+                    className="text-[theme(color.brand.blue)] hover:underline"
+                  >
+                    Terms of Service
                   </Link>
-                  . We&apos;ll never share your information.
+                  .
                 </p>
               </form>
             )}
@@ -491,5 +521,4 @@ const ContactHeroSection: React.FC = () => {
 };
 
 export default ContactHeroSection;
-
 
