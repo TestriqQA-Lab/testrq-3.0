@@ -115,7 +115,7 @@ const BlogPostsGrid: React.FC = () => {
 
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/${post.id}`}>
+                      <Link href={`/blog/post/${post.id}`}>
                         {post.title}
                       </Link>
                     </h3>
@@ -147,7 +147,7 @@ const BlogPostsGrid: React.FC = () => {
                       </div>
 
                       <Link
-                        href={`/blog/${post.id}`}
+                        href={`/blog/post/${post.id}`}
                         className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
                       >
                         Read More
@@ -199,7 +199,7 @@ const BlogPostsGrid: React.FC = () => {
 
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/${post.id}`}>
+                      <Link href={`/blog/post/${post.id}`}>
                         {post.title}
                       </Link>
                     </h3>
@@ -217,7 +217,7 @@ const BlogPostsGrid: React.FC = () => {
                     </div>
 
                     <Link
-                      href={`/blog/${post.id}`}
+                      href={`/blog/post/${post.id}`}
                       className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                     >
                       Read Article →
@@ -276,7 +276,7 @@ const BlogPostsGrid: React.FC = () => {
 
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                        <Link href={`/blog/${post.id}`}>
+                        <Link href={`/blog/post/${post.id}`}>
                           {post.title}
                         </Link>
                       </h3>
@@ -304,7 +304,7 @@ const BlogPostsGrid: React.FC = () => {
                         </div>
 
                         <Link
-                          href={`/blog/${post.id}`}
+                          href={`/blog/post/${post.id}`}
                           className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                         >
                           Read More →

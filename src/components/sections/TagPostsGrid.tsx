@@ -126,7 +126,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
               {/* Content */}
               <div className="md:w-2/3 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors line-clamp-2">
-                  <Link href={`/blog/${post.slug}`}>
+                  <Link href={`/blog/post/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
@@ -176,7 +176,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                   </div>
                   
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-sm transition-colors"
                   >
                     Read More

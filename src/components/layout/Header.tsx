@@ -4,7 +4,7 @@ import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
-import Testriq_Logo from "../../../public/Testriq_Logo.png";
+import Testriq_Logo from "../../../public/images/Testriq_Logo.png";
 
 // Define the type for submenu items with links
 type SubmenuItem = {
