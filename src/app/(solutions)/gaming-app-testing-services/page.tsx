@@ -5,7 +5,6 @@ import GamingTestingServicesSection from "@/components/sections/GamingTestingSer
 import GamingTestingProcessSection from "@/components/sections/GamingTestingProcessSection";
 import GamingPlatformsSection from "@/components/sections/GamingPlatformsSection";
 import GamingToolsFrameworkSection from "@/components/sections/GamingToolsFrameworkSection";
-import GamingCaseStudiesSection from "@/components/sections/GamingCaseStudiesSection";
 import GamingROISection from "@/components/sections/GamingROISection";
 import GamingFAQSection from "@/components/sections/GamingFAQSection";
 import GamingContactSection from "@/components/sections/GamingContactSection";

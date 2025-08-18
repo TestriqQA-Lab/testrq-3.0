@@ -4,7 +4,6 @@ import TelecomChallengesSection from "@/components/sections/TelecomChallengesSec
 import TelecomTestingServicesSection from "@/components/sections/TelecomTestingServicesSection";
 import TelecomToolsFrameworksSection from "@/components/sections/TelecomToolsFrameworksSection";
 import TelecomNetworkTestingSection from "@/components/sections/TelecomNetworkTestingSection";
-import TelecomCaseStudiesSection from "@/components/sections/TelecomCaseStudiesSection";
 import TelecomROISection from "@/components/sections/TelecomROISection";
 import TelecomFAQSection from "@/components/sections/TelecomFAQSection";
 import TelecomContactSection from "@/components/sections/TelecomContactSection";

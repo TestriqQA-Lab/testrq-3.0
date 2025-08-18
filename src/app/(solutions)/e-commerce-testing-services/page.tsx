@@ -4,7 +4,6 @@ import EcommerceChallengesSection from "@/components/sections/EcommerceChallenge
 import EcommerceTestingServicesSection from "@/components/sections/EcommerceTestingServicesSection";
 import EcommerceTestingProcessSection from "@/components/sections/EcommerceTestingProcessSection";
 import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsSection";
-import EcommerceCaseStudiesSection from "@/components/sections/EcommerceCaseStudiesSection";
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
 import { Metadata } from "next";

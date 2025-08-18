@@ -5,7 +5,6 @@ import ElearningTestingServicesSection from "@/components/sections/ElearningTest
 import ElearningPlatformsSection from "@/components/sections/ElearningPlatformsSection";
 import ElearningAccessibilitySection from "@/components/sections/ElearningAccessibilitySection";
 import ElearningPerformanceSection from "@/components/sections/ElearningPerformanceSection";
-import ElearningCaseStudiesSection from "@/components/sections/ElearningCaseStudiesSection";
 import ElearningFAQSection from "@/components/sections/ElearningFAQSection";
 import ElearningContactSection from "@/components/sections/ElearningContactSection";
 import { Metadata } from "next";

@@ -129,17 +129,17 @@ const DesktopWhyChooseTestriq = dynamic(
   }
 );
 
-const DesktopCaseStudies = dynamic(
-  () => import("@/components/sections/DesktopCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const DesktopCaseStudies = dynamic(
+//   () => import("@/components/sections/DesktopCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
   ssr: true,
