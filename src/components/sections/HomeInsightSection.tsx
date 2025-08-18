@@ -64,7 +64,7 @@ const HomeInsightSection = () => {
           return (
             <div
               key={post.id}
-              className="flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
+              className="flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-auto gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
             >
               <p className="text-xs text-blue-400 p-1.5 py-1 rounded-2xl bg-sky-100">
                 {post.categories.nodes[0]?.name || 'Uncategorized'}
