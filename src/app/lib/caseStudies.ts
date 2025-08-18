@@ -3009,9 +3009,9 @@ overview: {
     ]
   },
   results: {
-    bugReduction: "Minimal security vulnerabilities identified",
-    performanceImprovement: "Stable with no latency issues",
-    roi: "Enhanced market credibility",
+    bugReduction: "Minimal",
+    performanceImprovement: "Stable",
+    roi: "Enhanced",
     additionalMetrics: [
       { label: "Security", value: "100% secure communication protocols implemented" },
       { label: "APK Resilience", value: "Strong resistance to tampering and intrusion" },
@@ -3195,8 +3195,8 @@ overview: {
   },
   results: {
     bugReduction: "Significant",
-    performanceImprovement: "Optimized streaming and notifications",
-    roi: "Accelerated market launch",
+    performanceImprovement: "Optimized",
+    roi: "Accelerated",
     additionalMetrics: [
       { label: "Streaming", value: "Stable with minimal delay and smooth reconnection" },
       { label: "Notifications", value: "100% success rate for motion and doorbell alerts" },
