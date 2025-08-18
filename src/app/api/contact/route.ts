@@ -10,6 +10,46 @@ interface ContactFormData {
   companyStage: string;
   howDidYouHear: string;
   message: string;
+  source?: string; // Hidden field for source tracking
+}
+
+// Helper function to format company stage
+function formatCompanyStage(stage: string): string {
+  const stageMap: { [key: string]: string } = {
+    'startup': 'Startup',
+    'early_stage_startup': 'Early stage startup',
+    'mid_stage_startup': 'Mid stage startup',
+    'late_stage_startup': 'Late stage startup',
+    'enterprise': 'Enterprise',
+    'small_business': 'Small business',
+    'medium_business': 'Medium business',
+    'large_business': 'Large business',
+    'government': 'Government',
+    'non_profit': 'Non-profit',
+    'other': 'Other'
+  };
+  
+  return stageMap[stage] || stage;
+}
+
+// Helper function to format how did you hear
+function formatHowDidYouHear(source: string): string {
+  const sourceMap: { [key: string]: string } = {
+    'google_search': 'Google search',
+    'social_media': 'Social media',
+    'referral': 'Referral',
+    'linkedin': 'LinkedIn',
+    'facebook': 'Facebook',
+    'twitter': 'Twitter',
+    'instagram': 'Instagram',
+    'word_of_mouth': 'Word of mouth',
+    'conference': 'Conference',
+    'blog': 'Blog',
+    'advertisement': 'Advertisement',
+    'other': 'Other'
+  };
+  
+  return sourceMap[source] || source;
 }
 
 export async function POST(request: NextRequest) {
@@ -25,6 +65,7 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+    
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(businessEmail)) {
       return NextResponse.json(
@@ -33,29 +74,35 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    try {
-      // Store data in Google Sheets
-      await storeInGoogleSheets(body);
-    } catch (error) {
-      console.error('Google Sheets error:', error);
-      // Continue even if Google Sheets fails
+    // Add source field if not provided
+    if (!body.source) {
+      body.source = 'Website Contact Us Page';
     }
 
-    try {
-      // Send professional notification email
-      await sendProfessionalNotification(body);
-    } catch (error) {
-      console.error('Professional notification error:', error);
-      // Continue even if email fails
-    }
+    // Format the data for better readability
+    const formattedData = {
+      ...body,
+      companyStage: formatCompanyStage(body.companyStage),
+      howDidYouHear: formatHowDidYouHear(body.howDidYouHear)
+    };
 
-    try {
-      // Send client confirmation email
-      await sendClientConfirmation(body);
-    } catch (error) {
-      console.error('Client confirmation error:', error);
-      // Continue even if email fails
-    }
+    // Run all operations in parallel for better performance
+    const operations = [
+      storeInGoogleSheets(formattedData),
+      sendProfessionalNotification(formattedData),
+      sendClientConfirmation(formattedData)
+    ];
+
+    // Execute all operations concurrently
+    const results = await Promise.allSettled(operations);
+    
+    // Log any failures but don't fail the entire request
+    results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
+        console.error(`${operationNames[index]} error:`, result.reason);
+      }
+    });
 
     return NextResponse.json(
       { message: 'Form submitted successfully' },
@@ -93,7 +140,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // Prepare row data
+    // Prepare row data with source field
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
     const rowData = [
       timestamp,
@@ -102,11 +149,12 @@ async function storeInGoogleSheets(data: ContactFormData) {
       data.businessPhone,
       data.companyStage,
       data.howDidYouHear,
-      data.message
+      data.message,
+      data.source || 'Website Contact Us Page'
     ];
 
     // Check if sheet has headers, if not add them
-    const headerRange = 'A1:G1';
+    const headerRange = 'A1:H1';
     const headerResponse = await sheets.spreadsheets.values.get({
       spreadsheetId: GOOGLE_SHEET_ID,
       range: headerRange,
@@ -114,7 +162,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
 
     if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
       // Add headers if sheet is empty
-      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Stage', 'How Did You Hear', 'Message'];
+      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Stage', 'How Did You Hear', 'Message', 'Source'];
       await sheets.spreadsheets.values.update({
         spreadsheetId: GOOGLE_SHEET_ID,
         range: headerRange,
@@ -128,7 +176,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
     // Append the new row
     await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: 'A:G',
+      range: 'A:H',
       valueInputOption: 'RAW',
       requestBody: {
         values: [rowData],
@@ -149,12 +197,17 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
-    const PROFESSIONAL_EMAIL = process.env.PROFESSIONAL_EMAIL;
+    
+    // Support multiple admin emails - comma separated
+    const PROFESSIONAL_EMAILS = process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
 
-    if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAIL) {
+    if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAILS) {
       console.log('Email configuration missing for professional notification');
       return;
     }
+
+    // Split emails by comma and trim whitespace
+    const emailList = PROFESSIONAL_EMAILS.split(',').map(email => email.trim());
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -170,13 +223,14 @@ async function sendProfessionalNotification(data: ContactFormData) {
     // Email content
     const mailOptions = {
       from: `"Testriq Contact Form" <${SMTP_USER}>`,
-      to: PROFESSIONAL_EMAIL,
+      to: emailList.join(', '), // Send to all admin emails
       subject: `New Contact Form Submission from ${data.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">
-            New Contact Form Submission
-          </h2>
+          <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%); color: white; border-radius: 8px 8px 0 0;">
+            <img src="https://testriq.com/testriq-logo-white.png" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
+            <h2 style="margin: 0; font-size: 24px;">New Contact Form Submission</h2>
+          </div>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #1e40af; margin-top: 0;">Contact Details:</h3>
@@ -185,6 +239,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
             <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
             <p><strong>Company Stage:</strong> ${data.companyStage}</p>
             <p><strong>How Did You Hear:</strong> ${data.howDidYouHear}</p>
+            <p><strong>Source:</strong> ${data.source || 'Website Contact Us Page'}</p>
           </div>
           
           <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -199,7 +254,8 @@ async function sendProfessionalNotification(data: ContactFormData) {
           </div>
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-            <p style="color: #6b7280; font-size: 14px;">
+            <img src="https://testriq.com/testriq-logo.png" alt="Testriq QA Lab" style="height: 30px; margin-bottom: 10px;" />
+            <p style="color: #6b7280; font-size: 14px; margin: 0;">
               This email was sent from the Testriq QA Lab contact form.
             </p>
           </div>
@@ -209,7 +265,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Professional notification sent successfully');
+    console.log('Professional notification sent successfully to:', emailList.join(', '));
 
   } catch (error) {
     console.error('Professional notification failed:', error);
@@ -241,7 +297,7 @@ async function sendClientConfirmation(data: ContactFormData) {
       },
     } as nodemailer.TransportOptions);
 
-    // Email content
+    // Email content with logo
     const mailOptions = {
       from: `"Testriq QA Lab" <${SMTP_USER}>`,
       to: data.businessEmail,
@@ -249,7 +305,7 @@ async function sendClientConfirmation(data: ContactFormData) {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
           <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%); color: white; border-radius: 8px 8px 0 0;">
-            <h1 style="margin: 0; font-size: 28px;">Testriq QA Lab</h1>
+            <img src="https://testriq.com/testriq-logo-white.png" alt="Testriq QA Lab" style="height: 50px; margin-bottom: 15px;" />
             <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Quality Excellence Through Expert Testing</p>
           </div>
           
@@ -304,6 +360,7 @@ async function sendClientConfirmation(data: ContactFormData) {
           
           <div style="background-color: #f8fafc; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
+              <img src="https://testriq.com/testriq-logo.png" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
               <p style="margin: 0 0 10px 0; font-weight: bold; color: #374151;">Testriq QA Lab LLP</p>
               <p style="margin: 0 0 5px 0;">Office Number 2 & 3, 2nd Floor, Ashley Towers</p>
               <p style="margin: 0 0 5px 0;">Kanakia Rd, Vagad Nagar, Beverly Park</p>
@@ -333,8 +390,3 @@ async function sendClientConfirmation(data: ContactFormData) {
     throw error;
   }
 }
-
-
-
-
-
