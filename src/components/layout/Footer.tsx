@@ -11,7 +11,7 @@ import { BsTwitterX } from 'react-icons/bs';
 import { Url } from 'next/dist/shared/lib/router/router';
 import Image from 'next/image';
 import Link from 'next/link'
-import Logo from '../../../public/Testriq_Logo.png'
+import Logo from "../../../public/images/Testriq_Logo.png";
 
 interface coreService {
   title: string;

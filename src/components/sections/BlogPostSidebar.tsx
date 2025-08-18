@@ -251,7 +251,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             relatedPosts.map((relatedPost, index) => (
               <Link
                 key={index}
-                href={`/blog/${relatedPost.slug}`}
+                href={`/blog/post/${relatedPost.slug}`}
                 className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
               >
                 <Image
