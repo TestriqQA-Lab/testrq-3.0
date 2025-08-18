@@ -5,7 +5,6 @@ import HealthcareTestingServicesSection from "@/components/sections/HealthcareTe
 import HealthcareTestingProcessSection from "@/components/sections/HealthcareTestingProcessSection";
 import HealthcareComplianceSection from "@/components/sections/HealthcareComplianceSection";
 import HealthcareToolsFrameworkSection from "@/components/sections/HealthcareToolsFrameworkSection";
-import HealthcareCaseStudiesSection from "@/components/sections/HealthcareCaseStudiesSection";
 import HealthcareROISection from "@/components/sections/HealthcareROISection";
 import HealthcareFAQSection from "@/components/sections/HealthcareFAQSection";
 import HealthcareContactSection from "@/components/sections/HealthcareContactSection";

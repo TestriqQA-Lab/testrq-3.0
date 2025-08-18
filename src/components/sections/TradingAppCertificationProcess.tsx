@@ -11,6 +11,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
+import Link from "next/link";
 
 const TradingAppCertificationProcess = () => {
   const processSteps = [
@@ -19,7 +20,8 @@ const TradingAppCertificationProcess = () => {
       icon: <Search className="w-8 h-8" />,
       title: "Initial Assessment",
       duration: "3-5 days",
-      description: "Comprehensive analysis of your trading app's architecture, security measures, regulatory compliance status, and performance benchmarks.",
+      description:
+        "Comprehensive analysis of your trading app's architecture, security measures, regulatory compliance status, and performance benchmarks.",
       deliverables: [
         "Security Assessment Report",
         "Compliance Gap Analysis",
@@ -34,7 +36,8 @@ const TradingAppCertificationProcess = () => {
       icon: <TestTube className="w-8 h-8" />,
       title: "Comprehensive Testing",
       duration: "10-14 days",
-      description: "In-depth testing across security, functionality, performance, compliance, and user experience dimensions with real-world trading scenarios.",
+      description:
+        "In-depth testing across security, functionality, performance, compliance, and user experience dimensions with real-world trading scenarios.",
       deliverables: [
         "Test Execution Reports",
         "Vulnerability Assessment",
@@ -49,7 +52,8 @@ const TradingAppCertificationProcess = () => {
       icon: <Shield className="w-8 h-8" />,
       title: "Security & Compliance Audit",
       duration: "5-7 days",
-      description: "Detailed security audit including penetration testing, regulatory compliance review, and financial data protection validation.",
+      description:
+        "Detailed security audit including penetration testing, regulatory compliance review, and financial data protection validation.",
       deliverables: [
         "Security Audit Report",
         "Penetration Test Results",
@@ -64,7 +68,8 @@ const TradingAppCertificationProcess = () => {
       icon: <Award className="w-8 h-8" />,
       title: "Certification & Support",
       duration: "2-3 days",
-      description: "Final certification issuance with ongoing support, monitoring, and maintenance for continuous compliance and performance optimization.",
+      description:
+        "Final certification issuance with ongoing support, monitoring, and maintenance for continuous compliance and performance optimization.",
       deliverables: [
         "Certification Certificate",
         "Compliance Badge",
@@ -77,7 +82,10 @@ const TradingAppCertificationProcess = () => {
   ];
 
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
+    <section
+      id="trading-app-certification-process"
+      className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -87,12 +95,12 @@ const TradingAppCertificationProcess = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our{" "}
-            <span className="text-brand-blue">Certification Process</span>
+            Our <span className="text-brand-blue">Certification Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A systematic 4-step approach to ensure your trading app meets the highest standards 
-            of security, compliance, and performance. Typically completed in 20-29 working days.
+            A systematic 4-step approach to ensure your trading app meets the
+            highest standards of security, compliance, and performance.
+            Typically completed in 20-29 working days.
           </p>
         </motion.div>
 
@@ -114,9 +122,7 @@ const TradingAppCertificationProcess = () => {
                   <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-xl">
                     {step.step}
                   </div>
-                  <div className={`${step.color}`}>
-                    {step.icon}
-                  </div>
+                  <div className={`${step.color}`}>{step.icon}</div>
                   <div className="flex items-center gap-2 text-sm text-gray-600">
                     <Clock className="w-4 h-4" />
                     {step.duration}
@@ -137,9 +143,14 @@ const TradingAppCertificationProcess = () => {
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {step.deliverables.map((deliverable, deliverableIndex) => (
-                      <div key={deliverableIndex} className="flex items-center gap-2">
+                      <div
+                        key={deliverableIndex}
+                        className="flex items-center gap-2"
+                      >
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{deliverable}</span>
+                        <span className="text-sm text-gray-700">
+                          {deliverable}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -148,7 +159,9 @@ const TradingAppCertificationProcess = () => {
 
               {/* Step Visual */}
               <div className="flex-shrink-0">
-                <div className={`w-32 h-32 ${step.bgColor} rounded-full flex items-center justify-center ${step.color} shadow-lg`}>
+                <div
+                  className={`w-32 h-32 ${step.bgColor} rounded-full flex items-center justify-center ${step.color} shadow-lg`}
+                >
                   {step.icon}
                 </div>
               </div>
@@ -176,12 +189,15 @@ const TradingAppCertificationProcess = () => {
               Total Timeline: 20-29 Working Days
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              From initial assessment to final certification, we ensure a thorough and efficient 
-              process that doesn&apos;t disrupt your trading operations or development timeline.
+              From initial assessment to final certification, we ensure a
+              thorough and efficient process that doesn&apos;t disrupt your
+              trading operations or development timeline.
             </p>
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Get Started Today
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Get Started Today
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -190,4 +206,3 @@ const TradingAppCertificationProcess = () => {
 };
 
 export default TradingAppCertificationProcess;
-

@@ -105,17 +105,17 @@ const WebappWhyChooseTestriq = dynamic(
   }
 );
 
-const WebappCaseStudies = dynamic(
-  () => import("@/components/sections/WebappCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const WebappCaseStudies = dynamic(
+//   () => import("@/components/sections/WebappCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const WebappFAQs = dynamic(() => import("@/components/sections/WebappFAQs"), {
   ssr: true,

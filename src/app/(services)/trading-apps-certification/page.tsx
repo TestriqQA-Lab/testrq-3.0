@@ -4,18 +4,22 @@ import TradingAppCertificationPillars from "@/components/sections/TradingAppCert
 import TradingAppCertificationProcess from "@/components/sections/TradingAppCertificationProcess";
 import TradingAppSecurityFeatures from "@/components/sections/TradingAppSecurityFeatures";
 import TradingAppBenefits from "@/components/sections/TradingAppBenefits";
-import TradingAppCompliance from "@/components/sections/TradingAppCompliance";
 import TradingAppTestingServices from "@/components/sections/TradingAppTestingServices";
 import TradingAppFAQs from "@/components/sections/TradingAppFAQs";
 import TradingAppCTA from "@/components/sections/TradingAppCTA";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, organizationSchema, tradingAppCertificationSchema, websiteSchema } from "@/components/seo/StructuredData";
-
+import StructuredData, {
+  createBreadcrumbSchema,
+  organizationSchema,
+  tradingAppCertificationSchema,
+  websiteSchema,
+} from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:  "Trading App Certification",
-   
-  description: "Get your trading app certified with Testriq's comprehensive QA services. Ensure regulatory compliance (FINRA, SEC, MiFID II), algorithm validation, low-latency performance, and data security. Trusted by 500+ trading platforms.",
+  title: "Trading App Certification",
+
+  description:
+    "Get your trading app certified with Testriq's comprehensive QA services. Ensure regulatory compliance (FINRA, SEC, MiFID II), algorithm validation, low-latency performance, and data security. Trusted by 500+ trading platforms.",
   keywords: [
     "Trading App Certification",
     "Trading platform compliance testing",
@@ -31,7 +35,7 @@ export const metadata: Metadata = {
     "trading API testing",
     "regulatory reporting testing",
     "PCI DSS trading compliance",
-    "Testriq trading app certification"
+    "Testriq trading app certification",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -41,33 +45,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/trading-apps-certification',
+    canonical: "https://testrq-3-0.vercel.app/trading-apps-certification",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/trading-apps-certification',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq',
-    description: 'Certify your trading platform for security, performance, and global regulatory compliance. Trusted by 500+ apps for FINRA, SEC, MiFID II, and PCI DSS standards.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+    siteName: "Testriq - Professional Software Testing Services",
+    title:
+      "Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq",
+    description:
+      "Certify your trading platform for security, performance, and global regulatory compliance. Trusted by 500+ apps for FINRA, SEC, MiFID II, and PCI DSS standards.",
     images: [
       {
-        url: '/OG/Trading-App-Certification-Og.webp',
+        url: "/OG/Trading-App-Certification-Og.webp",
         width: 1200,
         height: 630,
-        alt: 'Trading App Certification by Testriq',
-      }
+        alt: "Trading App Certification by Testriq",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq',
-    description: 'Get your trading app certified for security, compliance, and performance. FINRA, MiFID II, SEC, GDPR compliant QA for fintech leaders.',
-    images: ['/OG/Trading-App-Certification-Twitter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title:
+      "Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq",
+    description:
+      "Get your trading app certified for security, compliance, and performance. FINRA, MiFID II, SEC, GDPR compliant QA for fintech leaders.",
+    images: ["/OG/Trading-App-Certification-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -75,47 +83,47 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-     google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
-
 export default function TradingAppsCertificationPage() {
-    const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/trading-apps-certification"},
-    { name: "Trading App Certification ", url: "https://testrq-3-0.vercel.app/trading-apps-certification" }
-   ];
+    {
+      name: "Services",
+      url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+    },
+    {
+      name: "Trading App Certification ",
+      url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+    },
+  ];
   return (
     <div>
-        <StructuredData data={organizationSchema} />
-        <StructuredData data={websiteSchema} />
-        <StructuredData data={ tradingAppCertificationSchema} />
-        <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-            
-    <main className="min-h-screen bg-white">
-      <TradingAppHeroSection />
-      <TradingAppCertificationPillars />
-      <TradingAppCertificationProcess />
-      <TradingAppSecurityFeatures />
-      <TradingAppBenefits />
-      <TradingAppCompliance />
-      <TradingAppTestingServices />
-      <TradingAppFAQs />
-      <TradingAppCTA />
-    </main>
+      <StructuredData data={organizationSchema} />
+      <StructuredData data={websiteSchema} />
+      <StructuredData data={tradingAppCertificationSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+
+      <main className="min-h-screen bg-white">
+        <TradingAppHeroSection />
+        <TradingAppCertificationPillars />
+        <TradingAppCertificationProcess />
+        <TradingAppSecurityFeatures />
+        <TradingAppBenefits />
+        <TradingAppTestingServices />
+        <TradingAppFAQs />
+        <TradingAppCTA />
+      </main>
     </div>
   );
 }
-
-
-
-

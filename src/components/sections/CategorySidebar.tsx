@@ -1,8 +1,10 @@
 "use client";
 
-import React from "react";
-import { FaRss, FaBell, FaDownload, FaArrowRight, FaTags, FaFire, FaStar } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaBell, FaArrowRight, FaTags, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
+import { getCategories, getTags } from "@/lib/wordpress-graphql"; // Import getTags
+import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
 
 interface Category {
   id: string;
@@ -20,200 +22,192 @@ interface CategorySidebarProps {
   category: Category;
 }
 
+interface RelatedCategory {
+  name: string;
+  slug: string;
+  icon: string;
+  color: string;
+  postCount: number;
+}
+
+interface PopularTag {
+  name: string;
+  slug: string;
+  count: number;
+}
+
 const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
-  const relatedCategories = [
-    {
-      name: "Performance Testing",
-      slug: "performance-testing",
-      icon: "⚡",
-      color: "from-green-500 to-green-600",
-      postCount: 28
-    },
-    {
-      name: "Security Testing",
-      slug: "security-testing",
-      icon: "🛡️",
-      color: "from-red-500 to-red-600",
-      postCount: 24
-    },
-    {
-      name: "Mobile Testing",
-      slug: "mobile-testing",
-      icon: "📱",
-      color: "from-purple-500 to-purple-600",
-      postCount: 31
-    },
-    {
-      name: "API Testing",
-      slug: "api-testing",
-      icon: "🔗",
-      color: "from-indigo-500 to-indigo-600",
-      postCount: 19
-    }
-  ].filter(cat => cat.slug !== category.id);
+  const [relatedCategories, setRelatedCategories] = useState<RelatedCategory[]>([]);
+  const [popularTags, setPopularTags] = useState<PopularTag[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const popularPosts = [
-    {
-      title: "Complete Guide to Test Automation with Selenium WebDriver",
-      readTime: "8 min read",
-      views: "12.5K"
-    },
-    {
-      title: "Cypress vs Playwright: Framework Comparison",
-      readTime: "9 min read",
-      views: "11.4K"
-    },
-    {
-      title: "Building Robust Test Automation Frameworks",
-      readTime: "12 min read",
-      views: "9.8K"
-    },
-    {
-      title: "Advanced Selenium Techniques for Complex Elements",
-      readTime: "10 min read",
-      views: "8.9K"
-    }
-  ];
+  // Newsletter state
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [newsletterLoading, setNewsletterLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const learningResources = [
-    {
-      title: `${category.name} Cheat Sheet`,
-      type: "PDF",
-      size: "2.3 MB",
-      downloads: "5.2K"
-    },
-    {
-      title: "Framework Templates",
-      type: "ZIP",
-      size: "4.1 MB",
-      downloads: "3.8K"
-    },
-    {
-      title: "Best Practices Guide",
-      type: "PDF",
-      size: "1.9 MB",
-      downloads: "7.1K"
+  useEffect(() => {
+    const fetchSidebarData = async () => {
+      try {
+        // Fetch all categories
+        const wpCategories = await getCategories();
+        const adaptedCategories = wpCategories
+          .filter(cat => cat.count > 0 && cat.slug !== category.id) // Exclude current category
+          .map(adaptWordPressCategory);
+
+        // Sort by post count and take top 4 for related categories
+        const sortedRelatedCategories = adaptedCategories
+          .sort((a, b) => b.postCount - a.postCount)
+          .slice(0, 4)
+          .map(cat => ({
+            name: cat.name,
+            slug: cat.id, // Use the id which is the slug from adaptWordPressCategory
+            icon: cat.icon,
+            color: cat.color,
+            postCount: cat.postCount
+          }));
+        setRelatedCategories(sortedRelatedCategories);
+
+        // Fetch all tags from WordPress GraphQL
+        const wpTags = await getTags();
+        const sortedPopularTags = wpTags
+          .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
+          .slice(0, 10) // Take top 10 popular tags
+          .map(tag => ({
+            name: tag.name,
+            slug: tag.slug,
+            count: tag.count
+          }));
+
+        setPopularTags(sortedPopularTags);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching sidebar data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchSidebarData();
+  }, [category.id]);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setError("Email is required");
+      return;
     }
-  ];
+
+    setNewsletterLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribed(true);
+        setEmail("");
+        
+        setTimeout(() => {
+          setSubscribed(false);
+        }, 5000);
+      } else {
+        setError(data.error || "Subscription failed");
+      }
+    } catch (err) {
+      console.error("Subscription error:", err);
+      setError("Network error. Please try again.");
+    } finally {
+      setNewsletterLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <aside className="space-y-8">
+        <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+          <div className="animate-pulse">
+            <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+            <div className="space-y-3">
+              <div className="h-3 bg-gray-200 rounded"></div>
+              <div className="h-3 bg-gray-200 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    );
+  }
 
   return (
     <aside className="space-y-8">
-      {/* Category Stats */}
-      <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+
+ {/* Newsletter Signup */}
+      <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
         <div className="text-center">
-          <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4`}>
-            {category.icon}
+          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <FaBell className="w-6 h-6 text-white" />
           </div>
-          <h3 className="text-lg font-bold text-gray-900 mb-2">{category.name}</h3>
-          <p className="text-gray-600 text-sm mb-6">{category.description}</p>
-          
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-1">{category.postCount}</div>
-              <div className="text-gray-500 text-sm">Articles</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 mb-1">{(category.subscribers / 1000).toFixed(1)}K</div>
-              <div className="text-gray-500 text-sm">Followers</div>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <button className={`w-full flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r ${category.color} text-white font-semibold rounded-lg hover:opacity-90 transition-opacity`}>
-              <FaRss className="w-4 h-4" />
-              Follow Category
-            </button>
-            <button className="w-full flex items-center justify-center gap-3 px-4 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
-              <FaBell className="w-4 h-4" />
-              Get Notifications
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Featured Tools */}
-      <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <FaStar className="w-5 h-5 text-yellow-500" />
-          Featured Tools
-        </h3>
-        <div className="space-y-3">
-          {category.featuredTools.map((tool, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                <div className={`w-8 h-8 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center text-white text-sm font-bold`}>
-                  {tool.charAt(0)}
+          <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
+          <p className="text-white text-opacity-90 text-sm mb-4">
+            Get the latest {category.name.toLowerCase()} insights delivered weekly.
+          </p>
+          {!subscribed ? (
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              {error && (
+                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-2 text-red-200 text-xs">
+                  {error}
                 </div>
-                <span className="font-medium text-gray-900">{tool}</span>
+              )}
+              <input
+                type="email"
+                placeholder="your.email@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 bg-white/90 border border-white/90 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+                disabled={newsletterLoading}
+              />
+              <button
+                type="submit"
+                disabled={newsletterLoading}
+                className="w-full px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {newsletterLoading ? (
+                  <>
+                    <FaSpinner className="w-4 h-4 animate-spin" />
+                    <span>Subscribing...</span>
+                  </>
+                ) : (
+                  <span>Subscribe Now</span>
+                )}
+              </button>
+            </form>
+          ) : (
+            <div className="text-center py-2">
+              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                <span className="text-white text-lg">✓</span>
               </div>
-              <FaArrowRight className="w-3 h-3 text-gray-400" />
+              <h3 className="text-md font-bold text-white mb-1">
+                Subscribed!
+              </h3>
+              <p className="text-gray-100 text-sm">
+                Thank you for joining!
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Learning Resources */}
-      <div className="bg-green-50 rounded-xl p-6 border border-green-200">
-        <h3 className="text-lg font-bold text-green-900 mb-4 flex items-center gap-2">
-          <FaDownload className="w-5 h-5" />
-          Free Resources
-        </h3>
-        <div className="space-y-3">
-          {learningResources.map((resource, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3 p-3 bg-white rounded-lg border border-green-200 hover:shadow-md transition-shadow cursor-pointer"
-            >
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                <FaDownload className="w-4 h-4 text-green-600" />
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-green-900 text-sm">{resource.title}</div>
-                <div className="text-xs text-green-700">
-                  {resource.type} • {resource.size} • {resource.downloads} downloads
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button className="w-full mt-4 px-4 py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors text-sm">
-          Download All Resources
-        </button>
-      </div>
-
-      {/* Popular in Category */}
-      <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-        <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <FaFire className="w-5 h-5 text-red-500" />
-          Popular in {category.name}
-        </h3>
-        <div className="space-y-4">
-          {popularPosts.map((post, index) => (
-            <Link
-              key={index}
-              href="#"
-              className="block p-3 rounded-lg hover:bg-gray-50 transition-colors group"
-            >
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                  {index + 1}
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-semibold text-gray-900 text-sm group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2 mb-2">
-                    {post.title}
-                  </h4>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <span>{post.readTime}</span>
-                    <span>•</span>
-                    <span>{post.views} views</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+          )}
+          <p className="text-xs text-white text-opacity-70 mt-3">
+            Join {(category.subscribers / 1000).toFixed(1)}K+ subscribers
+          </p>
         </div>
       </div>
 
@@ -221,89 +215,62 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
         <h3 className="text-lg font-bold text-gray-900 mb-4">Related Categories</h3>
         <div className="space-y-3">
-          {relatedCategories.slice(0, 3).map((relatedCategory, index) => (
-            <Link
-              key={index}
-              href={`/blog/category/${relatedCategory.slug}`}
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
-            >
-              <div className={`w-10 h-10 bg-gradient-to-r ${relatedCategory.color} rounded-lg flex items-center justify-center text-white`}>
-                <span className="text-lg">{relatedCategory.icon}</span>
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold text-gray-900 group-hover:text-[theme(color.brand.blue)] transition-colors">
-                  {relatedCategory.name}
+          {relatedCategories.length > 0 ? (
+            relatedCategories.map((relatedCategory, index) => (
+              <Link
+                key={index}
+                href={`/blog/category/${relatedCategory.slug}`}
+                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+              >
+                <div className={`w-10 h-10 bg-gradient-to-r ${relatedCategory.color} rounded-lg flex items-center justify-center text-white`}>
+                  <span className="text-lg">{relatedCategory.icon}</span>
                 </div>
-                <div className="text-sm text-gray-500">{relatedCategory.postCount} articles</div>
-              </div>
-              <FaArrowRight className="w-3 h-3 text-gray-400 group-hover:text-[theme(color.brand.blue)] transition-colors" />
-            </Link>
-          ))}
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-900 group-hover:text-[theme(color.brand.blue)] transition-colors">
+                    {relatedCategory.name}
+                  </div>
+                  <div className="text-sm text-gray-500">{relatedCategory.postCount} articles</div>
+                </div>
+                <FaArrowRight className="w-3 h-3 text-gray-400 group-hover:text-[theme(color.brand.blue)] transition-colors" />
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500 text-sm">No related categories found.</p>
+          )}
         </div>
         <Link
-          href="/blog"
+          href="/blog/categories"
           className="block mt-4 text-center px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm"
         >
           View All Categories
         </Link>
       </div>
 
-      {/* Newsletter Signup */}
-      <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
-        <div className="text-center">
-          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6" />
-          </div>
-          <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
-          <p className="text-white text-opacity-90 text-sm mb-4">
-            Get the latest {category.name.toLowerCase()} insights delivered weekly.
-          </p>
-          <div className="space-y-3">
-            <input
-              type="email"
-              placeholder="your.email@company.com"
-              className="w-full px-4 py-2 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-            />
-            <button className="w-full px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-              Subscribe Now
-            </button>
-          </div>
-          <p className="text-xs text-white text-opacity-70 mt-3">
-            Join {(category.subscribers / 1000).toFixed(1)}K+ subscribers
-          </p>
-        </div>
-      </div>
+     
 
-      {/* Category Tags */}
+      {/* Popular Tags */}
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
           <FaTags className="w-5 h-5 text-gray-500" />
           Popular Tags
         </h3>
         <div className="flex flex-wrap gap-2">
-          {category.tags.map((tag, index) => (
-            <Link
-              key={index}
-              href={`/blog/tag/${tag.toLowerCase().replace(' ', '-')}`}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors"
-            >
-              #{tag}
-            </Link>
-          ))}
+          {popularTags.length > 0 ? (
+            popularTags.map((tag, index) => (
+              <Link
+                key={index}
+                href={`/blog/tag/${tag.slug}`}
+                className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors"
+              >
+                #{tag.name}
+              </Link>
+            ))
+          ) : (
+            <p className="text-gray-500 text-sm">No popular tags available.</p>
+          )}
         </div>
       </div>
 
-      {/* Advertisement Space */}
-      <div className="bg-gray-100 rounded-xl p-6 text-center">
-        <div className="text-gray-500 text-sm mb-2">Advertisement</div>
-        <div className="bg-white rounded-lg p-8 border-2 border-dashed border-gray-300">
-          <div className="text-gray-400 text-sm">
-            Your Ad Here
-            <br />
-            300x250
-          </div>
-        </div>
-      </div>
     </aside>
   );
 };

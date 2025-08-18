@@ -12,6 +12,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppTestingServices = () => {
   const testingServices = [
@@ -145,11 +146,13 @@ const FantasyAppTestingServices = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Comprehensive <span className="text-brand-blue">Testing Services</span>
+            Comprehensive{" "}
+            <span className="text-brand-blue">Testing Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end testing services designed to validate and scale your fantasy sports application 
-            with confidence, compliance, and performance at peak times.
+            End-to-end testing services designed to validate and scale your
+            fantasy sports application with confidence, compliance, and
+            performance at peak times.
           </p>
         </motion.div>
 
@@ -237,9 +240,12 @@ const FantasyAppTestingServices = () => {
           className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Fantasy QA Metrics We Deliver</h3>
+            <h3 className="text-2xl font-bold mb-4">
+              Fantasy QA Metrics We Deliver
+            </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Get measurable quality outcomes in every critical area — from uptime to gameplay fairness and user trust.
+              Get measurable quality outcomes in every critical area — from
+              uptime to gameplay fairness and user trust.
             </p>
           </div>
 
@@ -265,9 +271,11 @@ const FantasyAppTestingServices = () => {
           </div>
 
           <div className="text-center mt-8">
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Start Testing Assessment
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Start Testing Assessment
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

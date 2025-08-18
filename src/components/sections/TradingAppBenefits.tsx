@@ -15,6 +15,7 @@ import {
   Scale,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const TradingAppBenefits = () => {
   const metrics = [
@@ -23,7 +24,8 @@ const TradingAppBenefits = () => {
       value: "400%",
       label: "Trust Increase",
       description: "4x Increase in Trader Trust",
-      detail: "Certified trading apps see a significant boost in trader confidence and platform adoption.",
+      detail:
+        "Certified trading apps see a significant boost in trader confidence and platform adoption.",
       color: "text-blue-600",
     },
     {
@@ -31,7 +33,8 @@ const TradingAppBenefits = () => {
       value: "60%",
       label: "Better Retention",
       description: "Higher Trader Retention",
-      detail: "Security-certified platforms retain 60% more active traders compared to non-certified competitors.",
+      detail:
+        "Security-certified platforms retain 60% more active traders compared to non-certified competitors.",
       color: "text-green-600",
     },
     {
@@ -39,7 +42,8 @@ const TradingAppBenefits = () => {
       value: "95%",
       label: "Fewer Incidents",
       description: "Reduced Security Incidents",
-      detail: "Comprehensive certification reduces security breaches and fraud incidents by 95%.",
+      detail:
+        "Comprehensive certification reduces security breaches and fraud incidents by 95%.",
       color: "text-purple-600",
     },
     {
@@ -47,7 +51,8 @@ const TradingAppBenefits = () => {
       value: "Top 5%",
       label: "Market Position",
       description: "Premium Market Position",
-      detail: "Certification establishes your platform as a premium, trustworthy trading service.",
+      detail:
+        "Certification establishes your platform as a premium, trustworthy trading service.",
       color: "text-orange-600",
     },
     {
@@ -55,7 +60,8 @@ const TradingAppBenefits = () => {
       value: "35%",
       label: "Revenue Boost",
       description: "Revenue Growth",
-      detail: "Certified platforms experience 35% higher revenue due to increased trader confidence.",
+      detail:
+        "Certified platforms experience 35% higher revenue due to increased trader confidence.",
       color: "text-red-600",
     },
     {
@@ -63,7 +69,8 @@ const TradingAppBenefits = () => {
       value: "4.9/5",
       label: "Average Rating",
       description: "Better App Store Ratings",
-      detail: "Security and quality certification leads to improved app store ratings and reviews.",
+      detail:
+        "Security and quality certification leads to improved app store ratings and reviews.",
       color: "text-pink-600",
     },
   ];
@@ -72,22 +79,26 @@ const TradingAppBenefits = () => {
     {
       icon: <Target className="w-6 h-6" />,
       title: "Competitive Advantage",
-      description: "Stand out in the crowded fintech market with verified security and compliance credentials.",
+      description:
+        "Stand out in the crowded fintech market with verified security and compliance credentials.",
     },
     {
       icon: <Scale className="w-6 h-6" />,
       title: "Regulatory Compliance",
-      description: "Meet international financial regulations without worrying about compliance gaps.",
+      description:
+        "Meet international financial regulations without worrying about compliance gaps.",
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Investor Confidence",
-      description: "Demonstrate commitment to security and quality, making your platform more attractive to investors.",
+      description:
+        "Demonstrate commitment to security and quality, making your platform more attractive to investors.",
     },
     {
       icon: <Eye className="w-6 h-6" />,
       title: "Risk Mitigation",
-      description: "Reduce legal and financial risks associated with data breaches and security incidents.",
+      description:
+        "Reduce legal and financial risks associated with data breaches and security incidents.",
     },
   ];
 
@@ -106,8 +117,9 @@ const TradingAppBenefits = () => {
             <span className="text-brand-blue">Trading App Certification</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how certification transforms your trading platform into a trusted, secure, 
-            and high-performing service that traders prefer and regulators approve.
+            Discover how certification transforms your trading platform into a
+            trusted, secure, and high-performing service that traders prefer and
+            regulators approve.
           </p>
         </motion.div>
 
@@ -125,14 +137,14 @@ const TradingAppBenefits = () => {
               <div className={`${metric.color} mb-4 flex justify-center`}>
                 {metric.icon}
               </div>
-              
+
               <div className="text-center">
-                <div className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}>
+                <div
+                  className={`text-2xl md:text-3xl font-bold ${metric.color} mb-1`}
+                >
                   {metric.value}
                 </div>
-                <div className="text-sm text-gray-500 mb-3">
-                  {metric.label}
-                </div>
+                <div className="text-sm text-gray-500 mb-3">{metric.label}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-3">
                   {metric.description}
                 </h3>
@@ -155,7 +167,7 @@ const TradingAppBenefits = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Business Impact Beyond Numbers
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {businessImpacts.map((impact, index) => (
               <motion.div
@@ -195,46 +207,17 @@ const TradingAppBenefits = () => {
               Calculate Your ROI from Certification
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              See how trading app certification can impact your business metrics and revenue growth. 
-              Most platforms see positive ROI within 2-4 months through increased trader trust and reduced risks.
+              See how trading app certification can impact your business metrics
+              and revenue growth. Most platforms see positive ROI within 2-4
+              months through increased trader trust and reduced risks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2">
-                Calculate ROI
-                <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                View Case Studies
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Success Stories Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Success Stories from Certified Platforms
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-blue mb-2">500+</div>
-                <div className="text-sm text-gray-600">Trading Apps Certified</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-blue mb-2">$2B+</div>
-                <div className="text-sm text-gray-600">Trading Volume Protected</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-brand-blue mb-2">99.9%</div>
-                <div className="text-sm text-gray-600">Uptime Achieved</div>
-              </div>
+              <Link href="/roi-calculator">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2">
+                  Calculate ROI
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>
@@ -244,4 +227,3 @@ const TradingAppBenefits = () => {
 };
 
 export default TradingAppBenefits;
-

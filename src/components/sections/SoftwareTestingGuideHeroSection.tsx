@@ -6,8 +6,7 @@ import {
   FaChartLine,
   FaCog,
   FaShieldAlt,
-  FaArrowRight,
-  FaPlay,
+  FaArrowRight
 } from "react-icons/fa";
 
 const SoftwareTestingGuideHeroSection = () => {

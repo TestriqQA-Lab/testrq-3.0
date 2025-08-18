@@ -1,15 +1,27 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarAlt, FaClock, FaEye, FaHeart, FaShare, FaArrowRight, FaFilter, FaSort } from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaArrowRight, FaSort } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/wordpress-data-adapter";
+import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
 
 interface CategoryPostsGridProps {
   category: Category;
   posts: Post[]; // Add posts prop
 }
+
+// Utility function to strip HTML tags from text
+const stripHtmlTags = (html: string): string => {
+  return html.replace(/<[^>]*>/g, "").trim();
+};
+
+// Utility function to truncate text
+const truncateText = (text: string, maxLength: number): string => {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + "...";
+};
 
 const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }) => {
   const [sortBy, setSortBy] = useState("latest");
@@ -24,14 +36,6 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
     { value: "trending", label: "Trending" }
   ];
 
-  const filterOptions = [
-    { value: "all", label: "All Posts" },
-    { value: "beginner", label: "Beginner" },
-    { value: "intermediate", label: "Intermediate" },
-    { value: "advanced", label: "Advanced" },
-    { value: "featured", label: "Featured" },
-    { value: "trending", label: "Trending" }
-  ];
 
   // Filter and sort posts
   let filteredPosts = posts;
@@ -91,20 +95,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
 
         <div className="flex flex-col sm:flex-row gap-3">
           {/* Filter Dropdown */}
-          <div className="relative">
-            <select
-              value={filterBy}
-              onChange={(e) => setFilterBy(e.target.value)}
-              className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent"
-            >
-              {filterOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-            <FaFilter className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-3 h-3 pointer-events-none" />
-          </div>
+        
 
           {/* Sort Dropdown */}
           <div className="relative">
@@ -156,24 +147,19 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                     </span>
                   )}
                 </div>
-                {/* Assuming 'difficulty' is part of your adapted Post interface if you want to display it */}
-                {/* <div className="absolute top-4 right-4">
-                  <span className={`px-2 py-1 text-xs font-semibold rounded-full ${getDifficultyColor(post.difficulty)}`}>
-                    {post.difficulty}
-                  </span>
-                </div> */}
+                
               </div>
 
               {/* Content */}
               <div className="md:w-2/3 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                  <Link href={`/blog/${post.id}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
                 
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  {post.excerpt}
+                  {truncateText(decodeHtmlEntities(stripHtmlTags(post.excerpt)), 160)}
                 </p>
 
                 {/* Tags */}
@@ -212,28 +198,12 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   </div>
                   
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                   >
                     Read More
                     <FaArrowRight className="w-3 h-3" />
                   </Link>
-                </div>
-
-                {/* Engagement Stats */}
-                <div className="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-1 text-sm text-gray-500">
-                    <FaEye className="w-3 h-3" />
-                    <span>{post.views}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-sm text-gray-500">
-                    <FaHeart className="w-3 h-3" />
-                    <span>{post.likes}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-sm text-gray-500">
-                    <FaShare className="w-3 h-3" />
-                    <span>{post.shares}</span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -302,3 +272,4 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
 };
 
 export default CategoryPostsGrid;
+

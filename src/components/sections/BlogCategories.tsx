@@ -6,10 +6,49 @@ import Link from "next/link";
 import { getCategories } from "@/lib/wordpress-graphql";
 import { adaptWordPressCategory, Category } from "@/lib/wordpress-data-adapter";
 
-const BlogCategories: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState(true);
+// Custom hook for incrementing animation
+const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
+  const [count, setCount] = useState(start);
+
+  useEffect(() => {
+    if (end === start) return;
+
+    const increment = (end - start) / (duration / 16); // 60fps
+    let current = start;
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [end, duration, start]);
+
+  return count;
+};
+
+// Component for animated category card
+const AnimatedCategoryCard: React.FC<{
+  category: Category;
+  activeCategory: string;
+  setActiveCategory: (id: string) => void;
+  delay?: number;
+}> = ({ category, activeCategory, setActiveCategory, delay = 0 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const animatedCount = useCountUp(isVisible ? category.postCount : 0, 1500, 0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [delay]);
 
   // Icon mapping for categories
   const categoryIcons: Record<string, React.ReactElement> = {
@@ -41,6 +80,54 @@ const BlogCategories: React.FC = () => {
     }
     return categoryIcons.default;
   };
+
+  return (
+    <Link
+      href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
+      onClick={() => setActiveCategory(category.id)}
+      className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${
+        activeCategory === category.id
+          ? 'shadow-xl ring-2 ring-[theme(color.brand.blue)] ring-opacity-50'
+          : 'shadow-lg hover:shadow-xl'
+      }`}
+    >
+      {/* Background Gradient */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`}></div>
+      
+      {/* Content */}
+      <div className="relative z-10 text-center">
+        {/* Icon */}
+        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
+          {getCategoryIcon(category.name)}
+        </div>
+        
+        {/* Category Name */}
+        <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors">
+          {category.name}
+        </h3>
+        
+        {/* Animated Post Count */}
+        <div className="text-sm text-gray-500">
+          <span className={`${isVisible ? 'animate-pulse' : ''}`}>
+            {isVisible ? animatedCount : 0}
+          </span> articles
+        </div>
+      </div>
+
+      {/* Active Indicator */}
+      {activeCategory === category.id && (
+        <div className="absolute -top-2 -right-2 w-6 h-6 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
+          <span className="text-white text-xs">✓</span>
+        </div>
+      )}
+    </Link>
+  );
+};
+
+const BlogCategories: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCategories() {
@@ -130,55 +217,30 @@ const BlogCategories: React.FC = () => {
           </p>
         </div>
 
-        {/* Categories Grid */}
+        {/* Categories Grid with Staggered Animation */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-12">
-          {categories.slice(0, 16).map((category) => (
-            <Link
+          {categories.slice(0, 100).map((category, index) => (
+            <AnimatedCategoryCard
               key={category.id}
-              href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
-              onClick={() => setActiveCategory(category.id)}
-              className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${
-                activeCategory === category.id
-                  ? 'shadow-xl ring-2 ring-[theme(color.brand.blue)] ring-opacity-50'
-                  : 'shadow-lg hover:shadow-xl'
-              }`}
-            >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`}></div>
-              
-              {/* Content */}
-              <div className="relative z-10 text-center">
-                {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
-                  {getCategoryIcon(category.name)}
-                </div>
-                
-                {/* Category Name */}
-                <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors">
-                  {category.name}
-                </h3>
-                
-                {/* Post Count */}
-                <div className="text-sm text-gray-500">
-                  {category.postCount} articles
-                </div>
-              </div>
-
-              {/* Active Indicator */}
-              {activeCategory === category.id && (
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs">✓</span>
-                </div>
-              )}
-            </Link>
+              category={category}
+              activeCategory={activeCategory}
+              setActiveCategory={setActiveCategory}
+              delay={index * 100} // Stagger animation by 100ms for each card
+            />
           ))}
         </div>
-
-
-        
+        <div className="text-center mt-8">
+          <Link
+            href="/blog/categories" // Assuming this is the categories landing page
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[theme(color.brand.blue)] hover:bg-[theme(color.brand.blue)]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[theme(color.brand.blue)]"
+          >
+            View All Categories
+          </Link>
+        </div>
       </div>
     </section>
   );
 };
 
 export default BlogCategories;
+

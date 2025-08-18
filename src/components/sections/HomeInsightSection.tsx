@@ -1,5 +1,9 @@
+
+'use client';
+
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getPosts, WordPressPost } from "../../lib/wordpress-graphql";
 
 const HomeInsightSection = () => {
   const heading = {
@@ -7,10 +11,7 @@ const HomeInsightSection = () => {
     info: "Stay updated with the latest trends, best practices, and insights from our testing experts.",
   };
 
-  // Split the title into parts to style "Software Testing" in blue
-  // Split the title to style "Insights" and "Practices" in blue
   const renderTitle = () => {
-    // Replace "Insights" and "Practices" with spans that have blue styling
     const formattedTitle = heading.title
       .replace(
         "Insights",
@@ -20,44 +21,31 @@ const HomeInsightSection = () => {
         "Practices",
         '<span class="text-[theme(color.brand.blue)]">Practices</span>'
       );
-
-    // Use dangerouslySetInnerHTML to render the HTML string
     return <span dangerouslySetInnerHTML={{ __html: formattedTitle }} />;
   };
 
-  const cardData = [
-    {
-      about: "AI Testing",
-      title: "AI-Powered Testing: The Future is Here",
-      date: "Dec 15, 2024",
-      readTime: "5 min read",
-      detail:
-        "Discover how artificial intelligence is revolutionizing software testing and quality assurance processes.",
-      href: "#",
-    },
-    {
-      about: "Security",
-      title: "Security Testing Best Practices for 2024",
-      date: "Dec 10, 2024",
-      readTime: "6 min read",
-      detail:
-        "Essential security testing strategies to protect your applications from evolving cyber threats.",
-      href: "#",
-    },
-    {
-      about: "Performance",
-      title: "Performance Testing for Modern Web Apps",
-      date: "Dec 5, 2024",
-      readTime: "7 min read",
-      detail:
-        "Comprehensive guide to performance testing strategies for today's complex web applications.",
-      href: "#",
-    },
-  ];
+  const [blogPosts, setBlogPosts] = useState<WordPressPost[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const data = await getPosts(3); // Fetch the latest 3 posts
+        setBlogPosts(data.posts);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+      }
+    };
+    fetchPosts();
+  }, []);
+
+  // Function to decode HTML entities
+  const decodeHtmlEntities = (html: string) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.documentElement.textContent;
+  };
+
   return (
-    // Main section container
     <section className="flex flex-col w-full mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15">
-      {/* Heading section */}
       <div className="flex flex-col gap-y-5 text-center">
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="text-lg text-gray-500 mx-auto max-w-2xl">
@@ -65,25 +53,29 @@ const HomeInsightSection = () => {
         </p>
       </div>
 
-      {/* Card grid layout */}
-      {/* Each card contains an icon, title, and detail text */}
       <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
-        {cardData.map((card) => {
+        {blogPosts.map((post) => {
+          const date = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+          // Decode HTML entities and remove HTML tags from excerpt
+          const decodedExcerpt = decodeHtmlEntities(post.excerpt || '') || '';
+          const cleanExcerpt = decodedExcerpt.replace(/<[^>]*>/g, '');
+          const readTime = Math.ceil(post.content.split(' ').length / 200); // Estimate read time based on 200 words per minute
+
           return (
             <div
-              key={card.title}
+              key={post.id}
               className="flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-72 lg:h-68 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
             >
               <p className="text-xs text-blue-400 p-1.5 py-1 rounded-2xl bg-sky-100">
-                {card.about}
+                {post.categories.nodes[0]?.name || 'Uncategorized'}
               </p>
               <div className="flex text-sm text-gray-500 space-x-3">
-                <p>{card.date}</p> <span>.</span> <p>{card.readTime}</p>
+                <p>{date}</p> <span>.</span> <p>{readTime} min read</p>
               </div>
-              <h2 className="text-xl">{card.title}</h2>
-              <p className="text-gray-500 text-sm">{card.detail}</p>
+              <h2 className="text-xl">{post.title}</h2>
+              <p className="text-gray-500 text-sm">{cleanExcerpt.substring(0, 100)}...</p>
               <Link
-                href={card.href}
+                href={`/blog/${post.slug}`}
                 className="text-sm text-[theme(color.brand.blue)]"
               >
                 Read More <span>&#8594;</span>
@@ -94,7 +86,7 @@ const HomeInsightSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <Link href="/blogs">
+        <Link href="/blog">
           <button className="flex justify-center items-center p-2 ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white w-50 rounded-lg">
             View All Articles &nbsp;<span className="text-2xl">&#8594;</span>
           </button>
@@ -105,3 +97,5 @@ const HomeInsightSection = () => {
 };
 
 export default HomeInsightSection;
+
+

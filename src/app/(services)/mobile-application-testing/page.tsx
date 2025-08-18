@@ -138,17 +138,17 @@ const MobileWhyChooseTestriq = dynamic(
   }
 );
 
-const MobileCaseStudies = dynamic(
-  () => import("@/components/sections/MobileCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const MobileCaseStudies = dynamic(
+//   () => import("@/components/sections/MobileCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const MobileFAQs = dynamic(() => import("@/components/sections/MobileFAQs"), {
   ssr: true,

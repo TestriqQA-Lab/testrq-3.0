@@ -98,6 +98,38 @@ if (!GRAPHQL_URL) {
   throw new Error("WordPress GraphQL URL is not defined in environment variables");
 }
 
+// Helper function to make GraphQL requests
+async function graphqlRequest<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
+  try {
+    const response = await fetch(GRAPHQL_URL as string, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+      next: { revalidate: 300 }, // Revalidate every 5 minutes
+    });
+
+    if (!response.ok) {
+      throw new Error(`GraphQL request failed: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    if (result.errors) {
+      throw new Error(`GraphQL errors: ${JSON.stringify(result.errors)}`);
+    }
+
+    return result.data;
+  } catch (error) {
+    console.error('GraphQL request error:', error);
+    throw error;
+  }
+}
+
 // GraphQL query for fetching posts
 const GET_POSTS_QUERY = `
   query GetPosts($first: Int, $after: String) {
@@ -137,13 +169,6 @@ const GET_POSTS_QUERY = `
             name
             slug
             count
-          }
-        }
-        tags {
-          nodes {
-            id
-            name
-            slug
           }
         }
       }
@@ -305,7 +330,6 @@ const GET_POSTS_BY_TAG_QUERY = `
             id
             name
             slug
-            count
           }
         }
         tags {
@@ -350,6 +374,59 @@ const GET_TAGS_QUERY = `
         name
         slug
         count
+      }
+    }
+  }
+`;
+
+// GraphQL query for searching posts
+const SEARCH_POSTS_QUERY = `
+  query SearchPosts($search: String!, $first: Int) {
+    posts(first: $first, where: { status: PUBLISH, search: $search }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        excerpt
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        author {
+          node {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          nodes {
+            id
+            name
+            slug
+            count
+          }
+        }
+        tags {
+          nodes {
+            id
+            name
+            slug
+          }
+        }
       }
     }
   }
@@ -414,40 +491,6 @@ const GET_RELATED_POSTS_QUERY = `
     }
   }
 `;
-
-// Helper function to make GraphQL requests
-async function graphqlRequest<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
-  try {
-    // Use a non-null assertion or type guard if TypeScript still complains
-    // However, the check above should be sufficient.
-    const response = await fetch(GRAPHQL_URL as string, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query,
-        variables,
-      }),
-      next: { revalidate: 300 }, // Revalidate every 5 minutes
-    });
-
-    if (!response.ok) {
-      throw new Error(`GraphQL request failed: ${response.status}`);
-    }
-
-    const result = await response.json();
-
-    if (result.errors) {
-      throw new Error(`GraphQL errors: ${JSON.stringify(result.errors)}`);
-    }
-
-    return result.data;
-  } catch (error) {
-    console.error('GraphQL request error:', error);
-    throw error;
-  }
-}
 
 // Fetch all posts with pagination support
 export async function getPosts(first: number = 10, after?: string): Promise<{
@@ -627,6 +670,23 @@ export async function getTags(): Promise<WordPressTag[]> {
   }
 }
 
+// Search posts by query
+export async function searchPosts(searchQuery: string, first: number | null = 100): Promise<WordPressPost[]> {
+  try {
+    const variables: { search: string; first?: number } = { search: searchQuery };
+    if (first !== null) {
+      variables.first = first;
+    }
+
+    const data = await graphqlRequest<PostsResponse>(SEARCH_POSTS_QUERY, variables);
+
+    return data.posts.nodes;
+  } catch (error) {
+    console.error('Error searching posts:', error);
+    return [];
+  }
+}
+
 // Helper function to extract featured image URL
 export function getFeaturedImageUrl(post: WordPressPost): string | null {
   return post.featuredImage?.node?.sourceUrl || null;
@@ -677,4 +737,66 @@ export function getPostExcerpt(post: WordPressPost, maxLength: number = 160): st
   const cleanContent = stripHtmlTags(post.content);
   return truncateText(cleanContent, maxLength);
 }
+
+// Fetch total post count by fetching all posts and counting them
+export async function getTotalPostCount(): Promise<number> {
+  try {
+    let totalCount = 0;
+    let hasNextPage = true;
+    let after: string | undefined = undefined;
+
+    while (hasNextPage) {
+      const data = await getPosts(100, after); // Fetch 100 posts at a time
+      totalCount += data.posts.length;
+      hasNextPage = data.pageInfo.hasNextPage;
+      after = data.pageInfo.endCursor;
+      
+      // Safety break to avoid infinite loops
+      if (totalCount > 10000) break;
+    }
+
+    return totalCount;
+  } catch (error) {
+    console.error('Error fetching total post count:', error);
+    return 0;
+  }
+}
+
+// Fetch total category count by fetching all categories and counting them
+export async function getTotalCategoryCount(): Promise<number> {
+  try {
+    const categories = await getCategories();
+    return categories.length;
+  } catch (error) {
+    console.error('Error fetching total category count:', error);
+    return 0;
+  }
+}
+
+// New function to get all posts without pagination limit
+export async function getAllPosts(): Promise<WordPressPost[]> {
+  let allPosts: WordPressPost[] = [];
+  let hasNextPage = true;
+  let after: string | undefined = undefined;
+
+  try {
+    while (hasNextPage) {
+      const data = await getPosts(100, after); // Fetch 100 posts at a time
+      allPosts = allPosts.concat(data.posts);
+      hasNextPage = data.pageInfo.hasNextPage;
+      after = data.pageInfo.endCursor;
+
+      // Safety break to avoid infinite loops or excessive memory usage
+      if (allPosts.length > 10000) {
+        console.warn('Reached 10000 posts, breaking to prevent infinite loop.');
+        break;
+      }
+    }
+    return allPosts;
+  } catch (error) {
+    console.error('Error fetching all posts:', error);
+    return [];
+  }
+}
+
 
