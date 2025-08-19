@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   FaCalendarAlt,
   FaPhone,
@@ -12,7 +12,6 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
   FaVideo,
-  FaHeadset,
   FaFacebook,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

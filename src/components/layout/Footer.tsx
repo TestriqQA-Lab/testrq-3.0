@@ -72,23 +72,23 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <Image src={Logo} alt='Testriq_Logo' width={150} />
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-800 text-sm leading-relaxed">
               Premium software testing services with over a decade of experience. ISTQB certified experts providing comprehensive QA solutions.
             </p>
 
             {/* Contact Information */}
             <div className="space-y-2">
-              <div className="flex space-x-2 text-sm text-gray-600">
+              <div className="flex space-x-2 text-sm text-gray-800">
                 <MapPin className="h-15 w-15 text-brand-blue" />
                 <p>Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vaquat Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107</p>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm text-gray-800">
                 <Phone className="h-4 w-4 text-brand-blue" />
                 <Link href="tel:+919152929343" className="hover:text-brand-blue transition-colors">
                   (+91) 915-2929-343
                 </Link>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <div className="flex items-center space-x-2 text-sm text-gray-800">
                 <Mail className="h-4 w-4 text-brand-blue" />
                 <Link href="mailto:contact@testriq.com" className="hover:text-brand-blue transition-colors">
                   contact@testriq.com
@@ -115,7 +115,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
               >
-                <Linkedin className="h-5 w-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
+                <Linkedin className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://www.facebook.com/testriq.lab/"
@@ -123,7 +123,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
               >
-                <Facebook className="h-5 w-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
+                <Facebook className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://instagram.com/testriq"
@@ -131,7 +131,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
               >
-                <Instagram className="h-5 w-5 text-gray-600 group-hover:text-pink-600 transition-colors" />
+                <Instagram className="h-5 w-5 text-gray-800 group-hover:text-pink-600 transition-colors" />
               </Link>
               <Link
                 href="https://x.com/testriq"
@@ -139,7 +139,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
               >
-                <BsTwitterX className="h-5 w-5 text-gray-600 group-hover:text-blue-400 transition-colors" />
+                <BsTwitterX className="h-5 w-5 text-gray-800 group-hover:text-blue-400 transition-colors" />
               </Link>
             </div>
           </div>
@@ -154,7 +154,7 @@ const Footer = () => {
                 <li key={service.title}>
                   <Link
                     href={service.path}
-                    className="text-sm text-gray-600 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {service.title}
                   </Link>
@@ -173,7 +173,7 @@ const Footer = () => {
                 <li key={service.title}>
                   <Link
                     href={service.path}
-                    className="text-sm text-gray-600 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {service.title}
                   </Link>
@@ -192,7 +192,7 @@ const Footer = () => {
                 <li key={link.title}>
                   <Link
                     href={link.path}
-                    className="text-sm text-gray-600 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.title}
                   </Link>
@@ -205,31 +205,31 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-800">
               © 2025 Testriq QA LAB LLP. All Rights Reserved
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               <Link
                 href="/privacy-policy"
-                className="text-sm text-gray-600 hover:text-brand-blue transition-colors"
+                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >  
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-of-service"
-                className="text-sm text-gray-600 hover:text-brand-blue transition-colors"
+                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Terms Of Service
               </Link>
               <Link
                 href="/cookies-policy"
-                className="text-sm text-gray-600 hover:text-brand-blue transition-colors"
+                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Cookies Policy
               </Link>
               <Link
                 href="#"
-                className="text-sm text-gray-600 hover:text-brand-blue transition-colors"
+                className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap
               </Link>

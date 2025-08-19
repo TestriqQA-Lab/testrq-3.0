@@ -20,7 +20,7 @@ const renderTitle = () => {
 
 const HomeTrustedCompanies = () => {
   return (
-    <section className="bg-white w-full py-6 px-4 sm:px-8 md:px-12 lg:px-10 text-center">
+    <section className="bg-white w-full pt-6 px-4 sm:px-8 md:px-12 lg:px-10 text-center">
       <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
       <p className="mt-4 text-gray-500 text-base sm:text-lg">
         Join 50+ companies who trust us with their critical testing needs and

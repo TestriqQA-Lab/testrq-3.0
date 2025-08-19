@@ -14,7 +14,7 @@ const images = [
 
 const ImageMarquee = () => {
   return (
-    <section className="relative w-full flex overflow-x-hidden">
+    <section className="relative w-full flex overflow-x-hidden py-4">
       <div className="animate-marquee whitespace-nowrap">
         <span className=" text-4xl">
           {images.map((src, index) => (
