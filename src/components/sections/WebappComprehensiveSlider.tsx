@@ -55,7 +55,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-blue-100/80",
     elColor: "bg-blue-400",
     btnText: "Learn More About Security Testing",
-    action:"/security-testing"
+    action:"/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities"
   },
   {
     title: "Performance Testing",
@@ -82,7 +82,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-green-100/80",
     elColor: "bg-green-400",
     btnText: "Learn More About Performance Testing",
-    action:"/performance-testing-services"
+    action:"/advanced-web-app-performance-testing-techniques-for-load-stress-scalability"
   },
   {
     title: "Usability Testing",
@@ -109,7 +109,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-yellow-100/80",
     elColor: "bg-yellow-400",
     btnText: "Learn More About Usability Testing",
-    action:"#"
+    action:"/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates"
   },
   {
     title: "Responsive Testing",
@@ -136,7 +136,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-purple-100/80",
     elColor: "bg-purple-400",
     btnText: "Learn More About Responsive Testing",
-    action:"#"
+    action:"/responsive-web-application-testing-ensuring-seamless-multi-device-compatibilityx`"
   },
   {
     title: "Integration Testing",
@@ -163,7 +163,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-red-100/80",
     elColor: "bg-red-400",
     btnText: "Learn More About Integration Testing",
-    action:"#"
+    action:"/integration-testing-for-web-application-ensuring-seamless-system-interactions"
   },
 ];
 
@@ -233,7 +233,7 @@ export default function ComprehensiveTestingSlider() {
               ))}
             </ul>
 
-            <Link href={current.action} className="mt-14 bg-white text-center text-sm lg:text-md xl:text-lg text-black font-semibold py-3 rounded-xl">
+            <Link href={`blog/post${current.action}`} className="mt-14 bg-white text-center text-sm lg:text-md xl:text-lg text-black font-semibold py-3 rounded-xl">
               {current.btnText || current.learnMoreLabel}
             </Link>
           </div>
