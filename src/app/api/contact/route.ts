@@ -254,9 +254,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
             </p>
           </div>
           
-          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #f3f4f6;">
+          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid background: #f3f4f6; color: #000000;">
             <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 30px; margin-bottom: 10px;" />
-            <p style="color: #0000; font-size: 14px; margin: 0;">
+            <p style="color: #000000; font-size: 14px; margin: 0;">
               This email was sent from the Testriq QA Lab contact form.
             </p>
           </div>
