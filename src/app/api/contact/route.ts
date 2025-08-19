@@ -228,9 +228,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
       subject: `New Contact Form Submission from ${data.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%); color: white; border-radius: 8px 8px 0 0;">
-            <img src="https://testrq-3-0.vercel.app/images/Testriq_Logo.png" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
-            <h2 style="margin: 0; font-size: 24px;">New Contact Form Submission</h2>
+          <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
+            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
+            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New Contact Form Submission</h2>
           </div>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -254,9 +254,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
             </p>
           </div>
           
-          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
-            <img src="https://testrq-3-0.vercel.app/images/Testriq_Logo.png" alt="Testriq QA Lab" style="height: 30px; margin-bottom: 10px;" />
-            <p style="color: #6b7280; font-size: 14px; margin: 0;">
+          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #f3f4f6;">
+            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 30px; margin-bottom: 10px;" />
+            <p style="color: #0000; font-size: 14px; margin: 0;">
               This email was sent from the Testriq QA Lab contact form.
             </p>
           </div>
