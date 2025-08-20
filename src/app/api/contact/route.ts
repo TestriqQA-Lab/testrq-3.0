@@ -253,13 +253,15 @@ async function sendProfessionalNotification(data: ContactFormData) {
               <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
-          
-          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid background: #f3f4f6; color: #000000;">
-            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 30px; margin-bottom: 10px;" />
-            <p style="color: #000000; font-size: 14px; margin: 0;">
-              This email was sent from the Testriq QA Lab contact form.
-            </p>
+
+         <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
+              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
+              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab contact form.</p>
+              
+            </div>
           </div>
+
         </div>
       `,
     };
@@ -305,9 +307,9 @@ async function sendClientConfirmation(data: ContactFormData) {
       subject: 'Thank you for contacting Testriq QA Lab',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
-          <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%); color: white; border-radius: 8px 8px 0 0;">
-            <img src="https://testriq.com/testriq-logo-white.png" alt="Testriq QA Lab" style="height: 50px; margin-bottom: 15px;" />
-            <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.9;">Quality Excellence Through Expert Testing</p>
+          <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
+            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 50px; margin-bottom: 15px;" />
+            <p style="margin: 10px 0 0 0; font-size: 16px; color: #25a8e0; opacity: 0.9;">Quality Excellence Through Expert Testing</p>
           </div>
           
           <div style="padding: 30px; background-color: #ffffff; border: 1px solid #e5e7eb; border-top: none;">
@@ -361,7 +363,7 @@ async function sendClientConfirmation(data: ContactFormData) {
           
           <div style="background-color: #f8fafc; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
-              <img src="https://testriq.com/testriq-logo.png" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
+              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
               <p style="margin: 0 0 10px 0; font-weight: bold; color: #374151;">Testriq QA Lab LLP</p>
               <p style="margin: 0 0 5px 0;">Office Number 2 & 3, 2nd Floor, Ashley Towers</p>
               <p style="margin: 0 0 5px 0;">Kanakia Rd, Vagad Nagar, Beverly Park</p>
