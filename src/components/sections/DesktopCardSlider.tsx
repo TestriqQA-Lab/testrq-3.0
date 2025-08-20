@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CardSlider() {
@@ -269,15 +270,17 @@ export default function CardSlider() {
                 ></div>
               </div>
             </div>
-            <button
-              className={`mt-4 w-full bg-${
+            <div className="flex justify-center text-center">
+              <Link href={`blog/post${cards[activeCard].action}`}
+              className={`mt-4 w-md bg-${
                 cards[activeCard].colordark
               } text-white py-2 rounded-lg hover:bg-${cards[
                 activeCard
               ].colordark.replace("500", "600")}`}
             >
               Learn More About {cards[activeCard].title}
-            </button>
+            </Link>
+            </div>
           </div>
         </div>
 

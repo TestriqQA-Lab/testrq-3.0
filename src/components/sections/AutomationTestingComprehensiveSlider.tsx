@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRobot, FaCogs, FaMobileAlt, FaCloud, FaCode, FaChartLine, FaFlask } from "react-icons/fa";
 
@@ -21,7 +22,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Form validation testing",
         "Navigation flow automation",
         "Data-driven test execution"
-      ]
+      ],
+      action: "/mobile-automation-testing-guide-android-ios-frameworks"
     },
     {
       id: "api-automation",
@@ -37,7 +39,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Authentication testing",
         "Data validation",
         "Performance benchmarking"
-      ]
+      ],
+      action: "/api-test-automation-strategy-faster-releases-reliable-integrations"
     },
     {
       id: "mobile-automation",
@@ -53,7 +56,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Device compatibility testing",
         "Gesture automation",
         "Performance monitoring"
-      ]
+      ],
+      action: "/mobile-automation-testing-guide-android-ios-frameworks"
     },
     {
       id: "cloud-automation",
@@ -69,7 +73,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Resource optimization",
         "Cost-effective scaling",
         "Global test distribution"
-      ]
+      ],
+      action: "/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud"
     },
     {
       id: "cicd-integration",
@@ -85,7 +90,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Deployment testing",
         "Rollback automation",
         "Quality gates"
-      ]
+      ],
+      action: "/ci-cd-test-automation-integration-deliver-faster-with-confidence"
     },
     {
       id: "performance-automation",
@@ -101,7 +107,8 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Volume testing",
         "Endurance testing",
         "Real-time monitoring"
-      ]
+      ],
+      action: "/automation-performance-testing-load-speed-and-continuous-validation"
     }
   ];
 
@@ -187,9 +194,9 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link href={`blog/post${automationTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features & Capabilities</h4>
