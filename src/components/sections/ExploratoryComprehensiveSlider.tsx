@@ -91,7 +91,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "User preference validation",
         "Context-specific scenarios"
       ],
-      action: "#"
+      action: "/persona-based-testing-enhancing-qa-with-real-user-simulation"
     },
     {
       id: "heuristic-evaluation",
@@ -108,7 +108,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "User control analysis",
         "Help and documentation review"
       ],
-      action: "#"
+      action: "/heuristic-evaluation-in-testing-applying-ux-principles-to-find-flaws"
     }
   ];
 

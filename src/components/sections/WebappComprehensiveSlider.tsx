@@ -136,7 +136,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-purple-100/80",
     elColor: "bg-purple-400",
     btnText: "Learn More About Responsive Testing",
-    action:"/responsive-web-application-testing-ensuring-seamless-multi-device-compatibilityx`"
+    action:"/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility"
   },
   {
     title: "Integration Testing",
