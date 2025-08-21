@@ -37,7 +37,7 @@ export default function CardSlider() {
             colorlight: "green-50",
             progress: "30%",
             keyTitle: 'Key Activities',
-            action: "#",
+            action: "/mobile-testing-environment-setup",
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
         {
