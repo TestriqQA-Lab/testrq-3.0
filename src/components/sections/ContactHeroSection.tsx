@@ -26,6 +26,7 @@ const ContactHeroSection: React.FC = () => {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New loading state
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
@@ -184,12 +185,12 @@ const ContactHeroSection: React.FC = () => {
       isHowDidYouHearValid &&
       isMessageValid
     ) {
+      setIsLoading(true); // Set loading to true when submission starts
       try {
-        // Show loading state (you can add a loading state if needed)
-        const response = await fetch('/api/contact', {
-          method: 'POST',
+        const response = await fetch("/api/contact", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
         });
@@ -197,6 +198,8 @@ const ContactHeroSection: React.FC = () => {
         if (response.ok) {
           console.log("Form submitted successfully");
           setIsSubmitted(true);
+          // Scroll to the top of the form section to show the success message
+          document.getElementById("form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
           setTimeout(() => setIsSubmitted(false), 5000);
 
           // Reset form
@@ -211,12 +214,13 @@ const ContactHeroSection: React.FC = () => {
         } else {
           const errorData = await response.json();
           console.error("Form submission failed:", errorData.error);
-          // You can add error handling UI here
           alert("Form submission failed. Please try again.");
         }
       } catch (error) {
         console.error("Network error:", error);
         alert("Network error. Please check your connection and try again.");
+      } finally {
+        setIsLoading(false); // Set loading to false when submission ends
       }
     } else {
       console.log("Form has errors.");
@@ -488,10 +492,18 @@ const ContactHeroSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-sky-600 hover:to-sky-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center"
+                  disabled={isLoading}
                 >
-                  <FaPaperPlane className="w-4 h-4" />
-                  Send Message
+                  {isLoading ? (
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  ) : (
+                    <FaPaperPlane className="mr-2" />
+                  )}
+                  {isLoading ? "Sending..." : "Send Message"}
                 </button>
 
                 <p className="text-xs text-gray-500 text-center">
@@ -521,4 +533,3 @@ const ContactHeroSection: React.FC = () => {
 };
 
 export default ContactHeroSection;
-
