@@ -81,7 +81,7 @@ const ContactMethodsSection: React.FC = () => {
       description: "Quick questions and updates via WhatsApp",
       details: "(+91) 915-2929-343 • Business hours only",
       value: "Message Us",
-      action: "#",
+      action: "https://wa.me/9152929343",
       color: "from-green-400 to-green-600",
       highlight: false,
     },
