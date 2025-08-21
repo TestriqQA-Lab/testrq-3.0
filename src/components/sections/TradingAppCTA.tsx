@@ -111,9 +111,9 @@ const TradingAppCTA = () => {
                   </button>
                 </Link>
 
-                <button className="w-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                {/* <button className="w-full border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                   Download Trading Certification Guide
-                </button>
+                </button> */}
               </div>
             </div>
 

@@ -65,9 +65,9 @@ const ToolsCategoriesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-          <FaTools />
-          <span className="text-sm">Tool Categories</span>
-        </div>
+            <FaTools />
+            <span className="text-sm">Tool Categories</span>
+          </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive Testing{" "}
             <span className="text-[theme(color.brand.blue)]">Tool Arsenal</span>
@@ -117,13 +117,6 @@ const ToolsCategoriesSection = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-sky-600 hover:scale-98 transition-all">
-            Explore All Testing Tools
-          </button>
         </div>
       </div>
     </section>

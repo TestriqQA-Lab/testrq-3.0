@@ -184,9 +184,9 @@ const TradingAppSecurityFeatures = () => {
                 View Certification Process
                 <ArrowRight className="w-5 h-5" />
               </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors duration-300">
+              {/* <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors duration-300">
                 Download Requirements
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>

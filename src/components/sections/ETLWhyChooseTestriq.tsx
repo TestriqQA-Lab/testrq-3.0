@@ -174,7 +174,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 key={index}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative bg-white rounded-2xl p-6 border-2 transition-all duration-300 cursor-pointer ${
+                className={`relative bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${
                   isHovered
                     ? `${colorClasses.border} shadow-2xl transform -translate-y-2`
                     : "border-gray-200 shadow-lg hover:shadow-xl"
@@ -234,15 +234,15 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
+                <Link href="/contact-us"
+                  className={`flex justify-center w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
                     isHovered
                       ? `${colorClasses.bg} text-white shadow-lg`
                       : `${colorClasses.light} ${colorClasses.text} hover:${colorClasses.bg} hover:text-white`
                   }`}
                 >
                   Explore ETL Testing
-                </button>
+                </Link>
 
                 {/* Hover Effect Indicator */}
                 {isHovered && (

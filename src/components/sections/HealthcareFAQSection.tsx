@@ -262,9 +262,9 @@ const HealthcareFAQSection: React.FC = () => {
                   Schedule Expert Consultation
                 </button>
               </Link>
-              <button className="bg-white bg-opacity-20 cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+              <Link href="/contact-us" className="bg-white bg-opacity-20 cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
                 Contact Healthcare Team
-              </button>
+              </Link>
             </div>
           </div>
         </div>

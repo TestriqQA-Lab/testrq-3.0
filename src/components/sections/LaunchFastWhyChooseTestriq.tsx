@@ -160,7 +160,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
           {advantages.map((advantage) => (
             <div
               key={advantage.id}
-              className={`p-8 rounded-2xl border-2 transition-all duration-300 cursor-pointer transform hover:scale-105 ${getColorClasses(
+              className={`p-8 rounded-2xl border-2 transition-all duration-300 transform hover:scale-105 ${getColorClasses(
                 advantage.color,
                 hoveredCard === advantage.id
               )}`}
@@ -246,8 +246,8 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
               </div>
 
               {/* CTA */}
-              <div className="mt-6">
-                <button
+              <div className="flex justify-center text-center mt-6">
+                <Link href="/contact-us"
                   className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
                     hoveredCard === advantage.id
                       ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
@@ -261,7 +261,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
                   }`}
                 >
                   Explore LaunchFast QA
-                </button>
+                </Link>
               </div>
             </div>
           ))}
