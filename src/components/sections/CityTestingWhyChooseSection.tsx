@@ -12,6 +12,7 @@ import {
   CheckCircle,
   Quote
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface CityTestingWhyChooseSectionProps {
   cityData: CityData;
@@ -184,9 +185,6 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                     <div className="font-bold text-gray-900">
                       {cityData.whyChooseContent.testimonial.author}
                     </div>
-                    <div className="text-gray-600">
-                      {cityData.whyChooseContent.testimonial.company}
-                    </div>
                     <div className="flex items-center mt-1">
                       {[...Array(cityData.whyChooseContent.testimonial.rating)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 text-yellow-500 fill-current" />
@@ -233,12 +231,12 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               Join 200+ satisfied clients in {cityData.name} who trust us with their software quality
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200">
+              <Link href="/contact-us" className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200">
                 Start Your Project Today
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-all duration-200">
+              </Link>
+              <Link href="/contact-us#calendly-section" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-all duration-200">
                 Schedule Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>

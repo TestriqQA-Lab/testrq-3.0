@@ -1,6 +1,7 @@
 import React from 'react';
 import { CityData } from "@/app/lib/CityData";
 import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
+import Link from 'next/link';
 
 interface CityTestingCTASectionProps {
   cityData: CityData;
@@ -65,15 +66,15 @@ const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData 
             <h3 className="text-3xl font-bold text-white mb-8">
               Ready to Get Started?
             </h3>
-            <div className="space-y-4">
-              <button className="w-full lg:w-auto bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center shadow-lg">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start space-y-4">
+              <Link href="/contact-us" className="w-xs md:w-md bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center shadow-lg">
                 Schedule Free Consultation
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </button>
-              <button className="w-full lg:w-auto border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200 flex items-center justify-center">
+              </Link>
+              <Link href="tel: (+91) 982-068-0665" className="w-xs md:w-md border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200 flex items-center">
                 Get Instant Quote
                 <Phone className="ml-3 h-6 w-6" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
