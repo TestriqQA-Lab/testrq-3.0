@@ -32,7 +32,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Smoke testing",
         "Sanity testing",
       ],
-      action: "/rapid-functional-testing-why-speed-matters-in-agile-qa"
+      action: "blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
     },
     {
       id: "performance-optimization",
@@ -49,7 +49,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Scalability validation",
         "Resource utilization testing",
       ],
-      action: "/performance-optimization-for-pre-launch-software-testing#why-performance-optimization-matters-pre-launch"
+      action: "blog/post/performance-optimization-for-pre-launch-software-testing#why-performance-optimization-matters-pre-launch"
     },
     {
       id: "security-validation",
@@ -66,7 +66,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Session management testing",
         "Security compliance verification",
       ],
-      action: "/security-validation-in-mvp-startup-qa-best-practices"
+      action: "blog/post/security-validation-in-mvp-startup-qa-best-practices"
     },
     {
       id: "mobile-app-testing",
@@ -83,7 +83,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Battery performance testing",
         "Network connectivity testing",
       ],
-      action: "/security-validation-in-mvp-startup-qa-best-practices"
+      action: "/mobile-application-testing"
     },
     {
       id: "web-application-testing",
@@ -101,7 +101,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "SEO optimization testing",
         "Progressive web app testing",
       ],
-      action: "/security-validation-in-mvp-startup-qa-best-practices"
+      action: "/web-application-testing-services"
     },
     {
       id: "api-integration-testing",
@@ -118,7 +118,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Error handling testing",
         "Performance testing",
       ],
-      action: "/security-validation-in-mvp-startup-qa-best-practices"
+      action: "/api-testing"
     },
   ];
 
@@ -220,7 +220,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <Link href={`blog/post${testingTypes[activeTab].action}`}
+              <Link href={testingTypes[activeTab].action}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(
                   testingTypes[activeTab].color
                 )} hover:shadow-lg`}

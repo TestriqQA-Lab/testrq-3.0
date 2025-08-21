@@ -27,7 +27,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Model robustness validation",
       ],
       color: "purple",
-      gradient: "from-purple-500 to-purple-600",
+      gradientColor: "from-purple-500 to-purple-600",
       metric: "94% Accuracy",
     },
     {
@@ -42,7 +42,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Bias mitigation recommendations",
       ],
       color: "orange",
-      gradient: "from-orange-500 to-orange-600",
+      gradientColor: "from-orange-500 to-orange-600",
       metric: "Zero Bias Tolerance",
     },
     {
@@ -57,7 +57,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Explanation Quality",
       ],
       color: "blue",
-      gradient: "from-blue-500 to-blue-600",
+      gradientColor: "from-blue-500 to-blue-600",
       metric: "100% Transparency",
     },
     {
@@ -72,7 +72,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Resource Optimization",
       ],
       color: "green",
-      gradient: "from-green-500 to-green-600",
+      gradientColor: "from-green-500 to-green-600",
       metric: "Sub-second Response",
     },
     {
@@ -87,7 +87,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Validation Rules",
       ],
       color: "indigo",
-      gradient: "from-indigo-500 to-indigo-600",
+      gradientColor: "from-indigo-500 to-indigo-600",
       metric: "100% Data Quality",
     },
     {
@@ -102,7 +102,7 @@ const AIComprehensiveSlider: React.FC = () => {
         "Privacy protection validation",
       ],
       color: "red",
-      gradient: "from-red-500 to-red-600",
+      gradientColor: "from-red-500 to-red-600",
       metric: "100% Security Coverage",
     },
   ];
@@ -138,7 +138,7 @@ const AIComprehensiveSlider: React.FC = () => {
             {/* Left Side - Content */}
             <div className="space-y-6">
               <div
-                className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${testingTypes[activeTab].gradient} rounded-2xl text-white shadow-lg`}
+                className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} rounded-2xl text-white shadow-lg`}
               >
                 {testingTypes[activeTab].icon}
               </div>
@@ -177,11 +177,12 @@ const AIComprehensiveSlider: React.FC = () => {
 
               <div className="mt-6 flex justify-between items-center">
                 <button
-                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                 >
                   <span>Learn More</span>
                   <FaArrowRight className="w-4 h-4" />
                 </button>
+
                 {/* Next Button */}
                 <button
                   className="px-6 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
@@ -189,6 +190,7 @@ const AIComprehensiveSlider: React.FC = () => {
                 >
                   Next
                 </button>
+
               </div>
             </div>
 

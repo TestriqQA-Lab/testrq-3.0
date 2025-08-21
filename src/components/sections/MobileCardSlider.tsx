@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CardSlider() {
@@ -22,6 +23,7 @@ export default function CardSlider() {
             colorlight: "blue-50",
             progress: "15%",
             keyTitle: 'Key Activities',
+            action: "/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys",
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
 
         },
@@ -35,6 +37,7 @@ export default function CardSlider() {
             colorlight: "green-50",
             progress: "30%",
             keyTitle: 'Key Activities',
+            action: "#",
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
         {
@@ -47,6 +50,7 @@ export default function CardSlider() {
             colorlight: "purple-50",
             progress: "60%",
             keyTitle: 'Key Activities',
+            action: "/test-execution-in-mobile-qa-strategies-for-comprehensive-mobile-app-validation",
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
         {
@@ -59,6 +63,7 @@ export default function CardSlider() {
             colorlight: "red-50",
             progress: "80%",
             keyTitle: 'Key Activities',
+            action: "/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow",
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
     ];
@@ -185,9 +190,16 @@ export default function CardSlider() {
                             </div>
 
                         </div>
-                        <button className={`mt-4 w-full bg-${cards[activeCard].colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
-                            Learn More About {cards[activeCard].title}
-                        </button>
+                        <div className="flex justify-center text-center">
+                            <Link href={`blog/post${cards[activeCard].action}`}
+                                className={`mt-4 w-md bg-${cards[activeCard].colordark
+                                    } text-white py-2 rounded-lg hover:bg-${cards[
+                                        activeCard
+                                    ].colordark.replace("500", "600")}`}
+                            >
+                                Learn More About {cards[activeCard].title}
+                            </Link>
+                        </div>
                     </div>
                 </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaSyncAlt, FaBug, FaCheckCircle, FaCodeBranch, FaChartLine, FaCloud, FaFlask } from "react-icons/fa";
 
@@ -21,7 +22,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Self-healing test scripts",
         "Comprehensive reporting",
         "Cross-browser validation"
-      ]
+      ],
+      action: "/automated-regression-testing-faster-smarter-qa-cycles"
     },
     {
       id: "manual-regression",
@@ -37,7 +39,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Visual regression testing",
         "Usability impact assessment",
         "Business workflow validation"
-      ]
+      ],
+      action: "/manual-regression-testing-which-to-choose"
     },
     {
       id: "continuous-regression",
@@ -53,7 +56,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Build validation testing",
         "Deployment verification",
         "Quality gate enforcement"
-      ]
+      ],
+      action: "/continuous-regression-testing-ensuring-quality-in-agile-devops"
     },
     {
       id: "impact-analysis",
@@ -69,7 +73,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Code coverage analysis",
         "Dependency mapping",
         "Regression scope optimization"
-      ]
+      ],
+      action: "/regression-impact-analysis-optimizing-test-coverage"
     },
     {
       id: "risk-based-regression",
@@ -85,7 +90,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Failure probability scoring",
         "Resource optimization",
         "Strategic test planning"
-      ]
+      ],
+      action: "/risk-based-regression-testing-smarter-test-optimization"
     },
     {
       id: "cross-platform-regression",
@@ -101,7 +107,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Mobile platform testing",
         "Cloud-based execution",
         "Environment consistency"
-      ]
+      ],
+      action: "/cross-platform-regression-testing-ensuring-consistency-across-devices-os"
     }
   ];
 
@@ -186,9 +193,9 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link href={`blog/post${regressionTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features & Capabilities</h4>

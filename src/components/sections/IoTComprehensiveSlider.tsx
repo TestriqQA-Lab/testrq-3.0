@@ -30,7 +30,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
-      action: "/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
+      action: "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
@@ -45,7 +45,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "red",
       gradient: "from-red-500 to-red-600",
-      action: "#"
+      action: "/security-testing"
     },
     {
       icon: <FaNetworkWired className="w-8 h-8" />,
@@ -60,7 +60,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",
-      action: "#"
+      action: "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
@@ -75,7 +75,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
-      action: "#"
+      action: "/performance-testing-services"
     },
     {
       icon: <FaCogs className="w-8 h-8" />,
@@ -90,7 +90,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "orange",
       gradient: "from-orange-500 to-orange-600",
-      action: "/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction"
+      action: "blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction"
     },
     {
       icon: <FaCloud className="w-8 h-8" />,
@@ -105,7 +105,7 @@ const IoTComprehensiveSlider: React.FC = () => {
       ],
       color: "teal",
       gradient: "from-teal-500 to-teal-600",
-      action: "#"
+      action: "blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core-2"
     },
   ];
 
@@ -191,7 +191,7 @@ const IoTComprehensiveSlider: React.FC = () => {
                 ))}
               </div>
 
-              <Link href={`blog/post${testingTypes[activeTab].action}`}
+              <Link href={testingTypes[activeTab].action}
                 className={`flex w-40 items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
               >
                 <span>Learn More</span>

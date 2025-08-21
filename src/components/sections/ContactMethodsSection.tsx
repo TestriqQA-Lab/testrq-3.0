@@ -16,11 +16,13 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
+import Image from "next/image";
+import CalendlyImg from "../../../public/CalendlyIMG.png"
 
 const ContactMethodsSection: React.FC = () => {
-  
 
- const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min"
+
+  const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min"
 
   const contactMethods = [
     {
@@ -151,8 +153,8 @@ const ContactMethodsSection: React.FC = () => {
             <div
               key={index}
               className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
-                  ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
-                  : ""
+                ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
+                : ""
                 }`}
             >
               {method.highlight && (
@@ -214,7 +216,7 @@ const ContactMethodsSection: React.FC = () => {
           <div className="flex justify-center gap-6 mb-8">
             <div
               className="text-center md:w-lg p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              
+
             >
               <FaVideo className="w-8 h-8 text-purple-600 mx-auto mb-3" />
               <h4 className="font-semibold text-gray-900 mb-2">
@@ -227,23 +229,30 @@ const ContactMethodsSection: React.FC = () => {
             </div>
           </div>
 
-          {selectedMeetingUrl && (
-            // <div>
-            //   <div className="calendly-inline-widget min-w-[320px] h-[700px]" data-url={selectedMeetingUrl} ></div>
-            //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            // </div>
+          <div className="flex w-full flex-row-reverse">
+            <div className="w-1/2">
+              {selectedMeetingUrl && (
+                // <div>
+                //   <div className="calendly-inline-widget min-w-[320px] h-[700px]" data-url={selectedMeetingUrl} ></div>
+                //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                // </div>
 
-            <div className="calendly-container w-full h-[500px] sm:h-[600px] md:h-[700px] max-w-[1000px] mx-auto">
-              <InlineWidget
-                url={selectedMeetingUrl}
-                styles={{
-                  height: "100%",
-                  width: "100%",
-                }}
-                className="w-full h-full"
-              />
+                <div className="calendly-container w-full h-[500px] sm:h-[600px] md:h-[700px] max-w-[1000px] mx-auto">
+                  <InlineWidget
+                    url={selectedMeetingUrl}
+                    styles={{
+                      height: "100%",
+                      width: "100%",
+                    }}
+                    className="w-full h-full"
+                  />
+                </div>
+              )}
             </div>
-          )}
+            <div className="w-1/2">
+              <Image src={CalendlyImg} alt="CalendlyImg" width={600} height={700}/>
+            </div>
+          </div>
         </div>
 
         {/* Office Hours & Social Links */}
@@ -271,8 +280,8 @@ const ContactMethodsSection: React.FC = () => {
                   </div>
                   <div
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
                       }`}
                   >
                     {schedule.available ? "Available" : "Limited"}

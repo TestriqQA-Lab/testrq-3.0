@@ -19,7 +19,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Actuator response testing",
         "Control system verification"
       ],
-      color: "blue"
+      color: "blue",
+      action: "#",
     },
     {
       id: "safety",
@@ -33,7 +34,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Fail-safe mechanism testing",
         "Safety protocol verification"
       ],
-      color: "green"
+      color: "green",
+      action: "blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
     },
     {
       id: "performance",
@@ -47,7 +49,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Endurance testing",
         "Precision measurement"
       ],
-      color: "purple"
+      color: "purple",
+      action: "blog/post/performance-testing-for-robotics-load-handling-precision-uptime"
     },
     {
       id: "integration",
@@ -61,7 +64,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Software integration",
         "Communication protocol testing"
       ],
-      color: "orange"
+      color: "orange",
+      action: "#"
     },
     {
       id: "software",
@@ -75,7 +79,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Software reliability testing",
         "Code quality assessment"
       ],
-      color: "red"
+      color: "red",
+      action: "/software-testing-guide"
     },
     {
       id: "autonomous",
@@ -89,7 +94,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Obstacle avoidance testing",
         "Decision-making verification"
       ],
-      color: "indigo"
+      color: "indigo",
+      action: "#"
     }
   ];
 
