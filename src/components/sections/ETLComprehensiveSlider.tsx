@@ -36,7 +36,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data completeness", value: "99.8%" },
         { label: "Extraction accuracy", value: "99.9%" },
       ],
-      action: "#"
+      action: "/data-extraction-testing"
     },
     {
       id: "transformation",
@@ -58,7 +58,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data mapping", value: "99.7%" },
         { label: "Transformation accuracy", value: "99.9%" },
       ],
-      action: "#"
+      action: "/data-transformation-testing"
     },
     {
       id: "loading",
