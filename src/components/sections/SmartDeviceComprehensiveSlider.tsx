@@ -20,7 +20,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "NFC communication testing",
         "Cellular network testing"
       ],
-      color: "green"
+      color: "green",
+      action: "/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc"
     },
     {
       id: "security",
@@ -34,7 +35,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "Vulnerability assessment",
         "Privacy protection testing"
       ],
-      color: "red"
+      color: "red",
+      action: "/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc"
     },
     {
       id: "battery",
@@ -202,7 +204,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                     {testingTypes[activeTab].title}
                   </h4>
 
-                  <div className={`text-sm font-semibold ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[1]}`}>
+                  <div className={`text-sm font-semibold`}>
                     {testingTypes[activeTab].coverage}
                   </div>
 
