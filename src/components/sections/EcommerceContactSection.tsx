@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -21,20 +20,20 @@ import { isValidPhoneNumber } from "libphonenumber-js";
 const EcommerceContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    businessEmail: "", // Changed from 'email' to 'businessEmail' to match backend
-    businessPhone: "", // Added businessPhone
-    companyName: "", // Changed from 'compName' to 'companyName' to match backend
-    platform: "", // Initialized as empty string
-    message: "", // Changed from 'description' to 'message' to match backend
+    businessEmail: "",
+    businessPhone: "",
+    companyName: "",
+    platform: "",
+    message: "",
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // New loading state
+  const [isLoading, setIsLoading] = useState(false);
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
-  const [companyNameError, setCompanyNameError] = useState<string | null>(null); // New error state
-  const [platformError, setPlatformError] = useState<string | null>(null); // New error state
+  const [companyNameError, setCompanyNameError] = useState<string | null>(null);
+  const [platformError, setPlatformError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
 
   const validatePhoneNumber = (phone: string | undefined) => {
@@ -49,13 +48,11 @@ const EcommerceContactSection: React.FC = () => {
 
     const digits = phone.replace(/\D/g, "");
 
-    // Check for repeating digits (e.g., 1111111111)
     if (/^(\d)\1+$/.test(digits)) {
       setPhoneError("Phone number cannot consist of repeating digits.");
       return false;
     }
 
-    // Check for sequential digits (e.g., 1234567890)
     const isSequential = (num: string) => {
       for (let i = 0; i < num.length - 2; i++) {
         const n1 = parseInt(num[i]);
@@ -72,7 +69,6 @@ const EcommerceContactSection: React.FC = () => {
       return false;
     }
 
-    // Check for all zeros
     if (/^0+$/.test(digits)) {
       setPhoneError("Phone number cannot be all zeros.");
       return false;
@@ -150,7 +146,6 @@ const EcommerceContactSection: React.FC = () => {
       [name]: value,
     }));
 
-    // Real-time validation
     if (name === "fullName") validateFullName(value);
     if (name === "businessEmail") validateEmail(value);
     if (name === "companyName") validateCompanyName(value);
@@ -184,20 +179,21 @@ const EcommerceContactSection: React.FC = () => {
       isPlatformValid &&
       isMessageValid
     ) {
-      setIsLoading(true); // Set loading to true when submission starts
+      setIsLoading(true);
       try {
-        // Map formData to match the backend's expected structure for the contact API
         const dataToSend = {
           fullName: formData.fullName,
           businessEmail: formData.businessEmail,
           businessPhone: formData.businessPhone,
-          companyStage: "e-commerce", // Hardcode for this specific page
-          howDidYouHear: "e-commerce-testing-services", // Hardcode for this specific page
-          message: `Platform: ${formData.platform}\n\n${formData.message}`,
-          source: "E-commerce Testing Services Page", // Custom source for tracking
+          companyName: formData.companyName,
+          platform: formData.platform,
+          companyStage: "e-commerce",
+          howDidYouHear: "e-commerce-testing-services",
+          message: formData.message,
+          source: "E-commerce Testing Services Page",
         };
 
-        const response = await fetch("/api/contact", {
+        const response = await fetch("/api/eCommerceContact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -208,11 +204,9 @@ const EcommerceContactSection: React.FC = () => {
         if (response.ok) {
           console.log("Form submitted successfully");
           setIsSubmitted(true);
-          // Scroll to the top of the form section to show the success message
           document.getElementById("ecommerce-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
           setTimeout(() => setIsSubmitted(false), 5000);
 
-          // Reset form
           setFormData({
             fullName: "",
             businessEmail: "",
@@ -230,7 +224,7 @@ const EcommerceContactSection: React.FC = () => {
         console.error("Network error:", error);
         alert("Network error. Please check your connection and try again.");
       } finally {
-        setIsLoading(false); // Set loading to false when submission ends
+        setIsLoading(false);
       }
     } else {
       console.log("Form has errors.");
@@ -276,7 +270,6 @@ const EcommerceContactSection: React.FC = () => {
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-brand-blue to-sky-600 overflow-hidden">
       <div className="mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-brand-blue bg-white bg-opacity-20 rounded-full px-6 py-2 mb-6">
             <FaShoppingCart className="w-4 h-4" />
@@ -297,7 +290,6 @@ const EcommerceContactSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Contact Methods */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-white mb-8">
               Choose Your Preferred Contact Method
@@ -329,7 +321,23 @@ const EcommerceContactSection: React.FC = () => {
               </div>
             ))}
 
-            {/* Urgency Note */}
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20">
+              
+           <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              What You Get When You Contact Us
+            </h3>
+
+            <div className="space-y-4 mb-8">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <FaCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            </div>
+
             <div className="bg-orange-500 bg-opacity-20 rounded-2xl p-6 border border-orange-400 border-opacity-30">
               <div className="flex items-center gap-3 mb-3">
                 <FaRocket className="w-5 h-5 text-orange-300" />
@@ -345,22 +353,8 @@ const EcommerceContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - What You Get */}
-          <div id="ecommerce-form-section" className="bg-white rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              What You Get When You Contact Us
-            </h3>
-
-            <div className="space-y-4 mb-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Contact Form */}
+          <div id="ecommerce-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
+            
             <div className="bg-gray-50 rounded-2xl p-6">
               <h4 className="font-semibold text-gray-900 mb-4">
                 Quick Contact Form
@@ -428,9 +422,7 @@ const EcommerceContactSection: React.FC = () => {
                         onChange={handlePhoneChange}
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Enter phone number"
-                        inputProps={{ className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300" }}
-                      />
+                        placeholder="Enter phone number"                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"          />
                     </div>
                     {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
@@ -520,13 +512,12 @@ const EcommerceContactSection: React.FC = () => {
               )}
             </div>
 
-            <div className="mt-6 text-center text-gray-500 text-sm">
+            <div className="mt-6 mb-4 text-center text-gray-500 text-sm">
               <p>Response within 2 hours during business hours</p>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-brand-blue mb-4">

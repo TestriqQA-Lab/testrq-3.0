@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 
     // Add source field if not provided
     if (!body.source) {
-      body.source = 'Website Contact Us Page';
+      body.source = 'E-commerce Testing Services Page'; // Default for this specific route
     }
 
     const isEcommerce = (body.source || '').toLowerCase().includes('e-commerce testing services page');
@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
       platform: effectivePlatform,
       companyStage: isEcommerce ? effectivePlatform : formatCompanyStage(body.companyStage),
       howDidYouHear: isEcommerce ? '' : formatHowDidYouHear(body.howDidYouHear),
-      source: body.source || 'Website Contact Us Page',
+      source: body.source || 'E-commerce Testing Services Page',
     };
 
     // Run all operations in parallel for better performance
@@ -165,7 +165,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       isEcommerce ? data.platform : data.companyStage || '',
       isEcommerce ? '' : data.howDidYouHear || '',
       data.message,
-      data.source || 'Website Contact Us Page',
+      data.source || 'E-commerce Testing Services Page',
       data.companyName || ''
     ];
 
