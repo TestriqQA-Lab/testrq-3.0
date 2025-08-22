@@ -216,15 +216,14 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const FROM_EMAIL = process.env.FROM_EMAIL;
     
     // Support multiple admin emails - comma separated
-    const PROFESSIONAL_EMAILS = process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
+    const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
+    const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
+    const PROFESSIONAL_EMAIL_BCC = process.env.PROFESSIONAL_EMAIL_BCC;
 
-    if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAILS) {
+    if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAIL_TO) {
       console.log('Email configuration missing for professional notification');
       return;
     }
-
-    // Split emails by comma and trim whitespace
-    const emailList = PROFESSIONAL_EMAILS.split(',').map(email => email.trim());
 
     // Create transporter
     const transporter = nodemailer.createTransport({
@@ -250,9 +249,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
     `;
 
     // Email content
-    const mailOptions = {
+    const mailOptions: nodemailer.SendMailOptions = {
       from: `"Testriq Contact Form" <${FROM_EMAIL}>`,
-      to: emailList.join(', '),
+      to: PROFESSIONAL_EMAIL_TO.split(',').map(email => email.trim()).join(', '),
       subject: `New Contact Form Submission from ${data.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -293,9 +292,16 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
+    if (PROFESSIONAL_EMAIL_CC) {
+      mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
+    }
+    if (PROFESSIONAL_EMAIL_BCC) {
+      mailOptions.bcc = PROFESSIONAL_EMAIL_BCC.split(',').map(email => email.trim()).join(', ');
+    }
+
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Professional notification sent successfully to:', emailList.join(', '));
+    console.log('Professional notification sent successfully to:', mailOptions.to);
 
   } catch (error) {
     console.error('Professional notification failed:', error);
