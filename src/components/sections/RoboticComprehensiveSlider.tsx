@@ -21,7 +21,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Control system verification"
       ],
       color: "blue",
-      action: "#",
+      action: "blog/post/functional-testing-for-robotic-systems-precision-sensors-control",
     },
     {
       id: "safety",
@@ -66,7 +66,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Communication protocol testing"
       ],
       color: "orange",
-      action: "#"
+      action: "blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
     },
     {
       id: "software",

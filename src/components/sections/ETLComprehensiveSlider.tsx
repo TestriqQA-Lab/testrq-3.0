@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaDatabase,
@@ -35,6 +36,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data completeness", value: "99.8%" },
         { label: "Extraction accuracy", value: "99.9%" },
       ],
+      action: "#"
     },
     {
       id: "transformation",
@@ -56,6 +58,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data mapping", value: "99.7%" },
         { label: "Transformation accuracy", value: "99.9%" },
       ],
+      action: "#"
     },
     {
       id: "loading",
@@ -77,6 +80,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data integrity", value: "100%" },
         { label: "Performance", value: "98.5%" },
       ],
+      action: "/data-loading-testing-etl-performance-testing"
     },
     {
       id: "quality",
@@ -98,6 +102,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Data accuracy", value: "99.9%" },
         { label: "Data consistency", value: "100%" },
       ],
+      action: "/data-quality-testing-in-etl"
     },
     {
       id: "performance",
@@ -119,6 +124,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Latency", value: "95%" },
         { label: "Scalability", value: "97%" },
       ],
+      action: "/etl-performance-testing"
     },
     {
       id: "security",
@@ -140,6 +146,7 @@ const ETLComprehensiveSlider: React.FC = () => {
         { label: "Access control", value: "100%" },
         { label: "Compliance", value: "100%" },
       ],
+      action: "/etl-security-testing"
     },
   ];
 
@@ -207,9 +214,9 @@ const ETLComprehensiveSlider: React.FC = () => {
               </div>
 
               <div className="flex justify-between items-center">
-                <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
+                <Link href={`blog/post${activeTestingType.action}`} className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
                   Learn More
-                </button>
+                </Link>
                 <button
                   className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                   onClick={nextTab}
