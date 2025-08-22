@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
 
     // Add source field if not provided
     if (!body.source) {
-      body.source = 'Website Contact Us Page';
+      body.source = 'E-commerce Testing Services Page'; // Default for this specific route
     }
 
     const isEcommerce = (body.source || '').toLowerCase().includes('e-commerce testing services page');
@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
       platform: effectivePlatform,
       companyStage: isEcommerce ? effectivePlatform : formatCompanyStage(body.companyStage),
       howDidYouHear: isEcommerce ? '' : formatHowDidYouHear(body.howDidYouHear),
-      source: body.source || 'Website Contact Us Page',
+      source: body.source || 'E-commerce Testing Services Page',
     };
 
     // Run all operations in parallel for better performance
@@ -165,7 +165,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       isEcommerce ? data.platform : data.companyStage || '',
       isEcommerce ? '' : data.howDidYouHear || '',
       data.message,
-      data.source || 'Website Contact Us Page',
+      data.source || 'E-commerce Testing Services Page',
       data.companyName || ''
     ];
 
@@ -216,9 +216,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const FROM_EMAIL = process.env.FROM_EMAIL;
     
     // Support multiple admin emails - comma separated
-    const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
-    const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
-    const PROFESSIONAL_EMAIL_BCC = process.env.PROFESSIONAL_EMAIL_BCC;
+    const PROFESSIONAL_EMAIL_TO = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
+    const PROFESSIONAL_EMAIL_CC = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_CC;
+    const PROFESSIONAL_EMAIL_BCC = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_BCC;
 
     if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAIL_TO) {
       console.log('Email configuration missing for professional notification');
@@ -429,5 +429,3 @@ async function sendClientConfirmation(data: ContactFormData) {
     throw error;
   }
 }
-
-
