@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -9,20 +10,134 @@ import {
   FaCalendarAlt,
   FaCheckCircle,
   FaShoppingCart,
+  FaUser,
+  FaBuilding,
+  FaComments,
 } from "react-icons/fa";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const EcommerceContactSection: React.FC = () => {
-
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
-    compName: "",
-    platform: "Select Your Platform",
-    description: "",
-  })
+    businessEmail: "", // Changed from 'email' to 'businessEmail' to match backend
+    businessPhone: "", // Added businessPhone
+    companyName: "", // Changed from 'compName' to 'companyName' to match backend
+    platform: "", // Initialized as empty string
+    message: "", // Changed from 'description' to 'message' to match backend
+  });
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // New loading state
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [fullNameError, setFullNameError] = useState<string | null>(null);
+  const [companyNameError, setCompanyNameError] = useState<string | null>(null); // New error state
+  const [platformError, setPlatformError] = useState<string | null>(null); // New error state
+  const [messageError, setMessageError] = useState<string | null>(null);
 
+  const validatePhoneNumber = (phone: string | undefined) => {
+    if (!phone) {
+      setPhoneError("Business Phone is required.");
+      return false;
+    }
+    if (!isValidPhoneNumber(phone)) {
+      setPhoneError("Invalid phone number format.");
+      return false;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+
+    // Check for repeating digits (e.g., 1111111111)
+    if (/^(\d)\1+$/.test(digits)) {
+      setPhoneError("Phone number cannot consist of repeating digits.");
+      return false;
+    }
+
+    // Check for sequential digits (e.g., 1234567890)
+    const isSequential = (num: string) => {
+      for (let i = 0; i < num.length - 2; i++) {
+        const n1 = parseInt(num[i]);
+        const n2 = parseInt(num[i + 1]);
+        const n3 = parseInt(num[i + 2]);
+        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+          return true;
+        }
+      }
+      return false;
+    };
+    if (isSequential(digits)) {
+      setPhoneError("Phone number cannot consist of sequential digits.");
+      return false;
+    }
+
+    // Check for all zeros
+    if (/^0+$/.test(digits)) {
+      setPhoneError("Phone number cannot be all zeros.");
+      return false;
+    }
+
+    setPhoneError(null);
+    return true;
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) {
+      setEmailError("Business Email is required.");
+      return false;
+    }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError("Invalid email format.");
+      return false;
+    }
+    setEmailError(null);
+    return true;
+  };
+
+  const validateFullName = (name: string) => {
+    if (!name) {
+      setFullNameError("Full Name is required.");
+      return false;
+    }
+    if (name.trim().length < 3) {
+      setFullNameError("Full Name must be at least 3 characters.");
+      return false;
+    }
+    setFullNameError(null);
+    return true;
+  };
+
+  const validateCompanyName = (name: string) => {
+    if (!name) {
+      setCompanyNameError("Company Name is required.");
+      return false;
+    }
+    setCompanyNameError(null);
+    return true;
+  };
+
+  const validatePlatform = (platform: string) => {
+    if (!platform) {
+      setPlatformError("Please select your platform.");
+      return false;
+    }
+    setPlatformError(null);
+    return true;
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message) {
+      setMessageError("Message is required.");
+      return false;
+    }
+    if (message.trim().length < 10) {
+      setMessageError("Message must be at least 10 characters.");
+      return false;
+    }
+    setMessageError(null);
+    return true;
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -34,25 +149,93 @@ const EcommerceContactSection: React.FC = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Real-time validation
+    if (name === "fullName") validateFullName(value);
+    if (name === "businessEmail") validateEmail(value);
+    if (name === "companyName") validateCompanyName(value);
+    if (name === "platform") validatePlatform(value);
+    if (name === "message") validateMessage(value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handlePhoneChange = (phone: string | undefined) => {
+    setFormData((prev) => ({
+      ...prev,
+      businessPhone: phone || "",
+    }));
+    validatePhoneNumber(phone);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
 
-    // Reset state
-    setFormData({
-      fullName: "",
-      email: "",
-      compName: "",
-      platform: "Select Your Platform",
-      description: ""
-    });
+    const isPhoneValid = validatePhoneNumber(formData.businessPhone);
+    const isEmailValid = validateEmail(formData.businessEmail);
+    const isFullNameValid = validateFullName(formData.fullName);
+    const isCompanyNameValid = validateCompanyName(formData.companyName);
+    const isPlatformValid = validatePlatform(formData.platform);
+    const isMessageValid = validateMessage(formData.message);
+
+    if (
+      isPhoneValid &&
+      isEmailValid &&
+      isFullNameValid &&
+      isCompanyNameValid &&
+      isPlatformValid &&
+      isMessageValid
+    ) {
+      setIsLoading(true); // Set loading to true when submission starts
+      try {
+        // Map formData to match the backend's expected structure for the contact API
+        const dataToSend = {
+          fullName: formData.fullName,
+          businessEmail: formData.businessEmail,
+          businessPhone: formData.businessPhone,
+          companyStage: "e-commerce", // Hardcode for this specific page
+          howDidYouHear: "e-commerce-testing-services", // Hardcode for this specific page
+          message: `Platform: ${formData.platform}\n\n${formData.message}`,
+          source: "E-commerce Testing Services Page", // Custom source for tracking
+        };
+
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+
+        if (response.ok) {
+          console.log("Form submitted successfully");
+          setIsSubmitted(true);
+          // Scroll to the top of the form section to show the success message
+          document.getElementById("ecommerce-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+
+          // Reset form
+          setFormData({
+            fullName: "",
+            businessEmail: "",
+            businessPhone: "",
+            companyName: "",
+            platform: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Form submission failed:", errorData.error);
+          alert("Form submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please check your connection and try again.");
+      } finally {
+        setIsLoading(false); // Set loading to false when submission ends
+      }
+    } else {
+      console.log("Form has errors.");
+    }
   };
-
 
   const contactMethods = [
     {
@@ -163,7 +346,7 @@ const EcommerceContactSection: React.FC = () => {
           </div>
 
           {/* Right Column - What You Get */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
+          <div id="ecommerce-form-section" className="bg-white rounded-3xl p-8 shadow-2xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               What You Get When You Contact Us
             </h3>
@@ -194,63 +377,144 @@ const EcommerceContactSection: React.FC = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
-                      required
-                    />
-                    <input
-                      type="email"
-                      placeholder="Email Address"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
-                      required
-                    />
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateFullName(formData.fullName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
                   </div>
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    name="compName"
-                    value={formData.compName}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors"
-                    required
-                  />
-                  <select
-                    name="platform"
-                    value={formData.platform}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors">
-                    <option value="">Select Your Platform</option>
-                    <option value="shopify">Shopify</option>
-                    <option value="woocommerce">WooCommerce</option>
-                    <option value="magento">Magento</option>
-                    <option value="bigcommerce">BigCommerce</option>
-                    <option value="custom">Custom Platform</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleInputChange}
-                    placeholder="Tell us about your testing needs..."
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[theme(color.brand.blue)] focus:outline-none transition-colors resize-none"
-                  ></textarea>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
+                    </label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="email"
+                        name="businessEmail"
+                        value={formData.businessEmail}
+                        onChange={handleInputChange}
+                        onBlur={() => validateEmail(formData.businessEmail)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Email Address"
+                      />
+                    </div>
+                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Phone *
+                    </label>
+                    <div className="relative">
+                      <PhoneInput
+                        international
+                        value={formData.businessPhone}
+                        onChange={handlePhoneChange}
+                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
+                        className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Enter phone number"
+                        inputProps={{ className: "w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300" }}
+                      />
+                    </div>
+                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company Name *
+                    </label>
+                    <div className="relative">
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        placeholder="Company Name"
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateCompanyName(formData.companyName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyNameError ? 'border-red-500' : 'border-gray-200'}`}
+                      />
+                    </div>
+                    {companyNameError && <p className="text-red-500 text-xs mt-1">{companyNameError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Select Your Platform *
+                    </label>
+                    <div className="relative">
+                      <FaShoppingCart className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="platform"
+                        value={formData.platform}
+                        onChange={handleInputChange}
+                        onBlur={() => validatePlatform(formData.platform)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${platformError ? 'border-red-500' : 'border-gray-200'}`}
+                      >
+                        <option value="">Select Your Platform</option>
+                        <option value="shopify">Shopify</option>
+                        <option value="woocommerce">WooCommerce</option>
+                        <option value="magento">Magento</option>
+                        <option value="bigcommerce">BigCommerce</option>
+                        <option value="custom">Custom Platform</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    {platformError && <p className="text-red-500 text-xs mt-1">{platformError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Tell us about your testing needs... *
+                    </label>
+                    <div className="relative">
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onBlur={() => validateMessage(formData.message)}
+                        placeholder="Tell us about your testing needs..."
+                        rows={4}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
+                      ></textarea>
+                    </div>
+                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                  </div>
+
                   <button
                     type="submit"
+                    disabled={isLoading}
                     className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 cursor-pointer rounded-xl font-semibold hover:bg-opacity-90 hover:scale-97 transition-all flex items-center justify-center gap-2"
                   >
-                    <FaRocket className="w-4 h-4" />
-                    Get Free E-Commerce Assessment
+                    {isLoading ? (
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : (
+                      <FaRocket className="w-4 h-4" />
+                    )}
+                    {isLoading ? "Sending..." : "Get Free E-Commerce Assessment"}
                   </button>
                 </form>
               )}
@@ -292,3 +556,5 @@ const EcommerceContactSection: React.FC = () => {
 };
 
 export default EcommerceContactSection;
+
+

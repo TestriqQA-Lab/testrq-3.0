@@ -531,5 +531,4 @@ const ContactHeroSection: React.FC = () => {
     </section>
   );
 };
-
 export default ContactHeroSection;
