@@ -73,7 +73,7 @@ const CorporateQATrainingReadyToTransform: React.FC = () => {
             <div className="flex flex-wrap items-center gap-6 text-blue-100">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">500+ Professionals Trained</span>
+                <span className="text-sm">300+ Professionals Trained</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -81,7 +81,7 @@ const CorporateQATrainingReadyToTransform: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm">95% Success Rate</span>
+                <span className="text-sm">99.5% Success Rate</span>
               </div>
             </div>
           </div>

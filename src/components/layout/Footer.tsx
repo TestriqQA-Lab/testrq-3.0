@@ -69,12 +69,12 @@ const partners = [
   {
     src: "/GoodFirms_Logo.png",
     alt: "GoodFirms Logo",
-    href: "https://www.goodfirms.co",
+    href: "https://www.goodfirms.co/company/testriq-qa-lab",
   },
   {
     src: "/ClutchIO_Logo.png",
     alt: "Clutch.io Logo",
-    href: "https://clutch.co",
+    href: "https://clutch.co/profile/testriq-qa-lab",
   },
   {
     src: "/DesignRush_Logo.png",

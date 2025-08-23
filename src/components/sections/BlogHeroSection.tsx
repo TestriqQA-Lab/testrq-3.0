@@ -3,10 +3,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { getTotalPostCount, getTotalCategoryCount } from "@/lib/wordpress-graphql";
+import {
+  getTotalPostCount,
+  getTotalCategoryCount,
+} from "@/lib/wordpress-graphql";
 
 // Custom hook for smooth incrementing animation
-const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
+const useCountUp = (
+  end: number,
+  duration: number = 2000,
+  start: number = 0
+) => {
   const [count, setCount] = useState(start);
 
   useEffect(() => {
@@ -47,7 +54,7 @@ const BlogHeroSection: React.FC = () => {
       try {
         const articlesCount = await getTotalPostCount();
         const categoriesCount = await getTotalCategoryCount();
-        
+
         setTotalArticles(articlesCount);
         setTotalCategories(categoriesCount);
         setIsLoaded(true);
@@ -64,19 +71,25 @@ const BlogHeroSection: React.FC = () => {
     fetchCounts();
   }, []);
 
-  const handleSearch = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Navigate to search results page with query parameter
-      router.push(`/blog/search?q=${encodeURIComponent(searchQuery.trim())}`);
-    }
-  }, [searchQuery, router]);
+  const handleSearch = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (searchQuery.trim()) {
+        // Navigate to search results page with query parameter
+        router.push(`/blog/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      }
+    },
+    [searchQuery, router]
+  );
 
-  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch(e);
-    }
-  }, [handleSearch]);
+  const handleKeyPress = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter") {
+        handleSearch(e);
+      }
+    },
+    [handleSearch]
+  );
 
   return (
     <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
@@ -116,11 +129,15 @@ const BlogHeroSection: React.FC = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Search testing topics, tools, or best practices..."
+              placeholder={
+                window.innerWidth < 600
+                  ? "Search topics..."
+                  : "Search testing topics, tools, or best practices..."
+              }
               className="w-full pl-12 pr-32 py-4 rounded-xl bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
             />
             <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <button 
+            <button
               type="submit"
               className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-medium transition"
             >
@@ -132,23 +149,25 @@ const BlogHeroSection: React.FC = () => {
         {/* Stats with Animation */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10">
           {[
-            { 
-              number: isLoaded ? animatedArticles : "Loading...", 
+            {
+              number: isLoaded ? animatedArticles : "Loading...",
               label: "Expert Articles",
-              isAnimated: true
+              isAnimated: true,
             },
             { number: "50K+", label: "Monthly Readers" },
-            { 
-              number: isLoaded ? animatedCategories : "Loading...", 
+            {
+              number: isLoaded ? animatedCategories : "Loading...",
               label: "Testing Categories",
-              isAnimated: true
+              isAnimated: true,
             },
             { number: "Weekly", label: "New Content" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${
-                stat.isAnimated && isLoaded ? '' : ''
-              }`}>
+              <div
+                className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${
+                  stat.isAnimated && isLoaded ? "" : ""
+                }`}
+              >
                 {stat.number}
               </div>
               <div className="text-gray-400 text-sm">{stat.label}</div>
@@ -180,5 +199,3 @@ const BlogHeroSection: React.FC = () => {
 };
 
 export default BlogHeroSection;
-
-

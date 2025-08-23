@@ -108,16 +108,14 @@ const BlogPostsGrid: React.FC = () => {
                         {post.category}
                       </span>
                     </div>
-                    <div className="absolute top-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                    <div className="absolute bottom-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                       FEATURED
                     </div>
                   </div>
 
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/post/${post.id}`}>
-                        {post.title}
-                      </Link>
+                      <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -125,7 +123,7 @@ const BlogPostsGrid: React.FC = () => {
                     </p>
 
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
+                      <div className="grid grid-cols-2 items-center gap-4 text-sm text-gray-500">
                         <div className="flex items-center gap-2">
                           <Image
                             src={post.authorImage}
@@ -144,15 +142,14 @@ const BlogPostsGrid: React.FC = () => {
                           <FaClock className="w-3 h-3" />
                           <span>{post.readTime}</span>
                         </div>
+                        <Link
+                          href={`/blog/post/${post.id}`}
+                          className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
+                        >
+                          Read More
+                          <FaArrowRight className="w-3 h-3" />
+                        </Link>
                       </div>
-
-                      <Link
-                        href={`/blog/post/${post.id}`}
-                        className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
-                      >
-                        Read More
-                        <FaArrowRight className="w-3 h-3" />
-                      </Link>
                     </div>
                   </div>
                 </article>
@@ -191,7 +188,7 @@ const BlogPostsGrid: React.FC = () => {
                         {post.category}
                       </span>
                     </div>
-                    <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                    <div className="absolute bottom-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                       <FaFire className="w-2 h-2" />
                       HOT
                     </div>
@@ -199,9 +196,7 @@ const BlogPostsGrid: React.FC = () => {
 
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/post/${post.id}`}>
-                        {post.title}
-                      </Link>
+                      <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-gray-600 mb-3 line-clamp-2 text-sm">
@@ -238,9 +233,12 @@ const BlogPostsGrid: React.FC = () => {
           {blogPosts.length === 0 ? (
             <div className="text-center py-12">
               <div className="text-gray-400 text-6xl mb-4">📝</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">No articles found</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                No articles found
+              </h3>
               <p className="text-gray-600">
-                Please check back later for new content or ensure WordPress is properly configured.
+                Please check back later for new content or ensure WordPress is
+                properly configured.
               </p>
             </div>
           ) : (
@@ -268,7 +266,7 @@ const BlogPostsGrid: React.FC = () => {
                         </span>
                       </div>
                       {post.trending && (
-                        <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        <div className="absolute bottom-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                           TRENDING
                         </div>
                       )}
@@ -276,9 +274,7 @@ const BlogPostsGrid: React.FC = () => {
 
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                        <Link href={`/blog/post/${post.id}`}>
-                          {post.title}
-                        </Link>
+                        <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
                       </h3>
 
                       <p className="text-gray-600 mb-4 line-clamp-3">
@@ -320,7 +316,9 @@ const BlogPostsGrid: React.FC = () => {
                 <div className="flex justify-center mt-8 sm:mt-12">
                   <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center">
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.max(prev - 1, 1))
+                      }
                       disabled={currentPage === 1}
                       className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
@@ -331,17 +329,20 @@ const BlogPostsGrid: React.FC = () => {
                       <button
                         key={index + 1}
                         onClick={() => setCurrentPage(index + 1)}
-                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${currentPage === index + 1
+                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${
+                          currentPage === index + 1
                             ? "bg-[theme(color.brand.blue)] text-white"
                             : "text-gray-600 hover:bg-gray-50"
-                          }`}
+                        }`}
                       >
                         {index + 1}
                       </button>
                     ))}
 
                     <button
-                      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                      onClick={() =>
+                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+                      }
                       disabled={currentPage === totalPages}
                       className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
@@ -359,4 +360,3 @@ const BlogPostsGrid: React.FC = () => {
 };
 
 export default BlogPostsGrid;
-

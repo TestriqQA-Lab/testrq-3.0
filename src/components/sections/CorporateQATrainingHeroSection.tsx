@@ -55,7 +55,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-600">
-                  50+
+                  300+
                 </div>
                 <div className="text-sm text-gray-600">
                   Professionals Trained
@@ -63,7 +63,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-600">
-                  95%
+                  99.5%
                 </div>
                 <div className="text-sm text-gray-600">
                   Training Success Rate

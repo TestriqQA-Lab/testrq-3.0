@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState } from "react";
 import {
   FaSearch,
@@ -35,7 +34,7 @@ const CareersOpenPositions: React.FC = () => {
     { value: "select-mode", label: "Select-Mode", count: 15 },
     { value: "on-site", label: "On-Site", count: 5 },
     { value: "hybrid", label: "Hybrid", count: 5 },
-    { value: "remote", label: "Remote", count: 5 }
+    { value: "remote", label: "Remote", count: 5 },
   ];
 
   const positions = [
@@ -214,7 +213,7 @@ const CareersOpenPositions: React.FC = () => {
     const matchesLocation =
       selectedLocation === "all" ||
       position.location.toLowerCase().replace(/[^a-z]/g, "") ===
-      selectedLocation.replace("-", "");
+        selectedLocation.replace("-", "");
 
     return matchesSearch && matchesDepartment && matchesLocation;
   });
@@ -233,7 +232,10 @@ const CareersOpenPositions: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24" id="open-positions-section">
+    <section
+      className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24"
+      id="open-positions-section"
+    >
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -252,8 +254,10 @@ const CareersOpenPositions: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore exciting opportunities to grow your career in software testing. We&apos;re hiring passionate QA professionals in automation testing, manual testing, performance testing, and security testing to join our world-class quality assurance team.
-
+            Explore exciting opportunities to grow your career in software
+            testing. We&apos;re hiring passionate QA professionals in automation
+            testing, manual testing, performance testing, and security testing
+            to join our world-class quality assurance team.
           </p>
         </div>
 
@@ -358,14 +362,14 @@ const CareersOpenPositions: React.FC = () => {
                       </div>
 
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-col md:flex-row items-start gap-3 mb-2">
                           <h3 className="text-xl font-bold text-gray-900">
                             {position.title}
                           </h3>
                           {position.badges.map((badge, index) => (
                             <span
                               key={index}
-                              className={`px-2 py-1 text-xs font-semibold rounded-full border ${getBadgeStyle(
+                              className={`px-2 py-1 text-xs flex flex-row font-semibold rounded-full border ${getBadgeStyle(
                                 badge
                               )}`}
                             >
@@ -463,9 +467,9 @@ const CareersOpenPositions: React.FC = () => {
             Don&apos;t See Your Perfect Role?
           </h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            We&apos;re always looking for exceptional talent! Send us your resume and
-            tell us about your QA expertise. We&apos;ll reach out when a position
-            matches your skills.
+            We&apos;re always looking for exceptional talent! Send us your
+            resume and tell us about your QA expertise. We&apos;ll reach out
+            when a position matches your skills.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
