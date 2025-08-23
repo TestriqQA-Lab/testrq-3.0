@@ -96,7 +96,7 @@ async function storeInGoogleSheets(data: ElearningContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
+    } );
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -141,6 +141,7 @@ async function storeInGoogleSheets(data: ElearningContactFormData) {
         });
       }
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       // If sheet doesn't exist, create it
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId: GOOGLE_SHEET_ID,
@@ -246,7 +247,7 @@ async function sendProfessionalNotification(data: ElearningContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -262,7 +263,7 @@ async function sendProfessionalNotification(data: ElearningContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC) {
+    if (PROFESSIONAL_EMAIL_CC ) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -344,7 +345,7 @@ async function sendClientConfirmation(data: ElearningContactFormData) {
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our e-learning testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST) with a customized testing strategy for your educational platform.
+                Our e-learning testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ) with a customized testing strategy for your educational platform.
               </p>
             </div>
             
@@ -354,7 +355,7 @@ async function sendClientConfirmation(data: ElearningContactFormData) {
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
                 <li>Learn more about our e-learning testing services: <a href="https://testriq.com/e-learning-testing-services" style="color: #2563eb;">E-learning Testing</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
-                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
               </ul>
             </div>
             
@@ -372,7 +373,7 @@ async function sendClientConfirmation(data: ElearningContactFormData) {
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
               <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
               <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
-              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
+              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91 ) 915-2929-343</p>
               <p style="margin: 0; font-size: 12px; color: #9ca3af;">
                 This is an automated confirmation email. Please do not reply to this email.
               </p>
@@ -385,11 +386,9 @@ async function sendClientConfirmation(data: ElearningContactFormData) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation sent successfully to:', data.businessEmail);
-
+    console.log('Client confirmation email sent successfully to:', mailOptions.to);
   } catch (error) {
-    console.error('Client confirmation failed:', error);
+    console.error('Client confirmation email failed:', error);
     throw error;
   }
 }
-

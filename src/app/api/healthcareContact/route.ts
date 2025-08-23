@@ -7,10 +7,9 @@ interface HealthcareContactFormData {
   fullName: string;
   businessEmail: string;
   businessPhone: string;
-  healthcareOrganization: string;
-  healthcareSoftwareType: string;
-  testingRequirements: string;
-  projectDetails: string;
+  companyName: string;
+  industry: string;
+  message: string;
   source?: string;
 }
 
@@ -19,9 +18,9 @@ export async function POST(request: NextRequest) {
     const body: HealthcareContactFormData = await request.json();
     
     // Validate required fields
-    const { fullName, businessEmail, businessPhone, healthcareOrganization, healthcareSoftwareType, testingRequirements, projectDetails } = body;
+    const { fullName, businessEmail, businessPhone, companyName, industry, message } = body;
     
-    if (!fullName || !businessEmail || !businessPhone || !healthcareOrganization || !healthcareSoftwareType || !testingRequirements || !projectDetails) {
+    if (!fullName || !businessEmail || !businessPhone || !companyName || !industry || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -96,7 +95,7 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
+    } );
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -109,20 +108,19 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
       data.fullName,
       data.businessEmail,
       data.businessPhone,
-      data.healthcareOrganization,
-      data.healthcareSoftwareType,
-      data.testingRequirements,
-      data.projectDetails,
+      data.companyName,
+      data.industry,
+      data.message,
       data.source || 'Healthcare Testing Services Page'
     ];
 
     // Use Healthcare specific sheet tab
     const sheetName = 'Healthcare';
-    const range = `${sheetName}!A:I`;
+    const range = `${sheetName}!A:H`;
 
     // Check if Healthcare sheet exists and has headers
     try {
-      const headerRange = `${sheetName}!A1:I1`;
+      const headerRange = `${sheetName}!A1:H1`;
       const headerResponse = await sheets.spreadsheets.values.get({
         spreadsheetId: GOOGLE_SHEET_ID,
         range: headerRange,
@@ -130,7 +128,7 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
 
       if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
         // Add headers if sheet is empty
-        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Healthcare Organization', 'Healthcare Software Type', 'Testing Requirements', 'Project Details', 'Source'];
+        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Name', 'Industry', 'Testing Needs', 'Source'];
         await sheets.spreadsheets.values.update({
           spreadsheetId: GOOGLE_SHEET_ID,
           range: headerRange,
@@ -141,6 +139,7 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
         });
       }
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       // If sheet doesn't exist, create it
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId: GOOGLE_SHEET_ID,
@@ -158,10 +157,10 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
       });
 
       // Add headers to new sheet
-      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Healthcare Organization', 'Healthcare Software Type', 'Testing Requirements', 'Project Details', 'Source'];
+      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Name', 'Industry', 'Testing Needs', 'Source'];
       await sheets.spreadsheets.values.update({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: `${sheetName}!A1:I1`,
+        range: `${sheetName}!A1:H1`,
         valueInputOption: 'RAW',
         requestBody: {
           values: [headers],
@@ -233,20 +232,19 @@ async function sendProfessionalNotification(data: HealthcareContactFormData) {
             <p><strong>Full Name:</strong> ${data.fullName}</p>
             <p><strong>Business Email:</strong> ${data.businessEmail}</p>
             <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
-            <p><strong>Healthcare Organization:</strong> ${data.healthcareOrganization}</p>
-            <p><strong>Healthcare Software Type:</strong> ${data.healthcareSoftwareType}</p>
-            <p><strong>Testing Requirements:</strong> ${data.testingRequirements}</p>
+            <p><strong>Company Name:</strong> ${data.companyName}</p>
+            <p><strong>Industry:</strong> ${data.industry}</p>
             <p><strong>Source:</strong> ${data.source || 'Healthcare Testing Services Page'}</p>
           </div>
           
           <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #92400e; margin-top: 0;">Project Details:</h3>
-            <p style="white-space: pre-wrap;">${data.projectDetails}</p>
+            <h3 style="color: #92400e; margin-top: 0;">Testing Needs:</h3>
+            <p style="white-space: pre-wrap;">${data.message}</p>
           </div>
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -262,7 +260,7 @@ async function sendProfessionalNotification(data: HealthcareContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC) {
+    if (PROFESSIONAL_EMAIL_CC ) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -321,7 +319,7 @@ async function sendClientConfirmation(data: HealthcareContactFormData) {
             <h2 style="color: #2563eb; margin-top: 0;">Dear ${data.fullName},</h2>
             
             <p style="line-height: 1.6; margin-bottom: 20px;">
-              Thank you for reaching out to Testriq QA Lab regarding our healthcare testing services. We have received your inquiry and appreciate your interest in ensuring compliance and quality for your healthcare software.
+              Thank you for reaching out to Testriq QA Lab regarding our healthcare testing services. We have received your inquiry and appreciate your interest in optimizing your healthcare solutions.
             </p>
             
             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 25px 0;">
@@ -330,21 +328,20 @@ async function sendClientConfirmation(data: HealthcareContactFormData) {
                 <p style="margin: 0;"><strong>Full Name:</strong> ${data.fullName}</p>
                 <p style="margin: 0;"><strong>Business Email:</strong> ${data.businessEmail}</p>
                 <p style="margin: 0;"><strong>Business Phone:</strong> ${data.businessPhone}</p>
-                <p style="margin: 0;"><strong>Healthcare Organization:</strong> ${data.healthcareOrganization}</p>
-                <p style="margin: 0;"><strong>Healthcare Software Type:</strong> ${data.healthcareSoftwareType}</p>
-                <p style="margin: 0;"><strong>Testing Requirements:</strong> ${data.testingRequirements}</p>
+                <p style="margin: 0;"><strong>Company Name:</strong> ${data.companyName}</p>
+                <p style="margin: 0;"><strong>Industry:</strong> ${data.industry}</p>
               </div>
             </div>
             
             <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
-              <h4 style="color: #92400e; margin-top: 0;">Your Project Details:</h4>
-              <p style="margin: 0; white-space: pre-wrap;">"${data.projectDetails}"</p>
+              <h4 style="color: #92400e; margin-top: 0;">Your Testing Needs:</h4>
+              <p style="margin: 0; white-space: pre-wrap;">"${data.message}"</p>
             </div>
             
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our healthcare compliance specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST) with a customized compliance and testing strategy for your healthcare software.
+                Our healthcare testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ) with a customized testing strategy for your healthcare solutions.
               </p>
             </div>
             
@@ -354,12 +351,12 @@ async function sendClientConfirmation(data: HealthcareContactFormData) {
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
                 <li>Learn more about our healthcare testing services: <a href="https://testriq.com/healthcare-testing-services" style="color: #2563eb;">Healthcare Testing</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
-                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
               </ul>
             </div>
             
             <p style="line-height: 1.6; margin-bottom: 30px;">
-              We look forward to helping you achieve HIPAA compliance, FDA validation, and enhanced patient safety through comprehensive healthcare testing.
+              We look forward to helping you achieve robust and reliable healthcare solutions through comprehensive testing.
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
@@ -372,7 +369,7 @@ async function sendClientConfirmation(data: HealthcareContactFormData) {
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
               <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
               <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
-              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
+              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91 ) 915-2929-343</p>
               <p style="margin: 0; font-size: 12px; color: #9ca3af;">
                 This is an automated confirmation email. Please do not reply to this email.
               </p>
@@ -385,11 +382,9 @@ async function sendClientConfirmation(data: HealthcareContactFormData) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation sent successfully to:', data.businessEmail);
-
+    console.log('Client confirmation email sent successfully to:', mailOptions.to);
   } catch (error) {
-    console.error('Client confirmation failed:', error);
+    console.error('Client confirmation email failed:', error);
     throw error;
   }
 }
-
