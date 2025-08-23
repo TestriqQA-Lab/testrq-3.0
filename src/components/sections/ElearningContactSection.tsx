@@ -342,13 +342,13 @@ const ElearningContactSection: React.FC = () => {
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-white mb-2">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">
                       {method.title}
                     </h4>
-                    <p className="text-blue-100 text-sm mb-4 leading-relaxed">
+                    <p className="text-blue-500 text-sm mb-4 leading-relaxed">
                       {method.description}
                     </p>
-                    <span className="text-blue-100 font-semibold flex items-center gap-2 group">
+                    <span className="text-blue-500 font-semibold flex items-center gap-2 group">
                       {method.text}
                     </span>
                   </div>
@@ -358,7 +358,7 @@ const ElearningContactSection: React.FC = () => {
 
             {/* Benefits */}
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20">
-              <h3 className="text-2xl font-bold text-white mb-6">
+              <h3 className="text-2xl font-bold text-brand-blue mb-6">
                 What You Get When You Contact Us
               </h3>
 
@@ -366,7 +366,7 @@ const ElearningContactSection: React.FC = () => {
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <FaCheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span className="text-blue-100">{benefit}</span>
+                    <span className="text-blue-600">{benefit}</span>
                   </div>
                 ))}
               </div>
@@ -458,7 +458,7 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Enter phone number"
-                        inputClassName="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
+                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       />
                     </div>
                     {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
