@@ -413,7 +413,7 @@ const CareersOpenPositions: React.FC = () => {
                   </div>
 
                   {/* Right Side - Actions */}
-                  <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
+                  {/* <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
                     <button
                       className={`bg-gradient-to-r ${position.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2`}
                     >
@@ -423,7 +423,7 @@ const CareersOpenPositions: React.FC = () => {
                     <button className="border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
                       View Details
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -469,9 +469,9 @@ const CareersOpenPositions: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            {/* <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Submit General Application
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

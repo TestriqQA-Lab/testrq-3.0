@@ -4,7 +4,7 @@ import CareersValuesSection from "@/components/sections/CareersValuesSection";
 import CareersOpenPositions from "@/components/sections/CareersOpenPositions";
 import CareersBenefitsSection from "@/components/sections/CareersBenefitsSection";
 import CareersApplicationProcessSection from "@/components/sections/CareersApplicationProcessSection";
-import CareersCultureSection from "@/components/sections/CareersCultureSection";
+// import CareersCultureSection from "@/components/sections/CareersCultureSection";
 import { Metadata } from "next";
 import StructuredData, { careersPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
@@ -96,7 +96,7 @@ const CareersPage: React.FC = () => {
       <CareersValuesSection />
       <CareersOpenPositions />
       <CareersBenefitsSection />
-      <CareersCultureSection />
+      {/* <CareersCultureSection /> */}
       <CareersApplicationProcessSection />
     </main>
     </div>
