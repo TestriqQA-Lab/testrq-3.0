@@ -31,6 +31,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-blue-500 to-indigo-600",
       bgColor: "bg-blue-50",
       urgency: "Critical",
+      action: "/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment"
     },
     {
       icon: FaMobile,
@@ -43,6 +44,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50",
       urgency: "High",
+      action: "/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices"
     },
     {
       icon: FaPlay,
@@ -55,6 +57,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-red-500 to-orange-500",
       bgColor: "bg-red-50",
       urgency: "High",
+      action: "/video-content-testing-for-e-learning-ensuring-smooth-delivery-and-engagement"
     },
     {
       icon: FaUsers,
@@ -66,6 +69,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
       urgency: "Critical",
+      action: "/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users"
     },
     {
       icon: FaShieldAlt,
@@ -76,6 +80,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-orange-500 to-red-600",
       bgColor: "bg-orange-50",
       urgency: "Critical",
+      action: "/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users"
     },
     {
       icon: FaChartLine,
@@ -87,6 +92,7 @@ const ElearningChallengesSection: React.FC = () => {
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
       urgency: "Medium",
+      action: "/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress"
     },
   ];
 
@@ -261,10 +267,10 @@ const ElearningChallengesSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <button className="text-indigo-600 font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link href={`blog/post${challenge.action}`} className="text-indigo-600 font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
                   <FaArrowRight className="w-3 h-3" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

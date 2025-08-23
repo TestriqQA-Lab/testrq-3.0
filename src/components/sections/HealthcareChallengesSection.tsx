@@ -25,6 +25,7 @@ const HealthcareChallengesSection: React.FC = () => {
         "Comprehensive HIPAA compliance testing and security validation",
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
+      action: "/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps"
     },
     {
       icon: FaDatabase,
@@ -34,6 +35,7 @@ const HealthcareChallengesSection: React.FC = () => {
       solution: "Rigorous HL7 FHIR and DICOM integration testing",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
+      action: "/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic"
     },
     {
       icon: FaUserMd,
@@ -44,6 +46,7 @@ const HealthcareChallengesSection: React.FC = () => {
       solution: "End-to-end medical device testing and validation",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
+      action: "/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance"
     },
     {
       icon: FaClock,
@@ -54,6 +57,7 @@ const HealthcareChallengesSection: React.FC = () => {
       solution: "Performance testing and disaster recovery validation",
       color: "from-blue-500 to-cyan-600",
       bgColor: "bg-blue-50",
+      action: "/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability"
     },
     {
       icon: FaLock,
@@ -64,6 +68,7 @@ const HealthcareChallengesSection: React.FC = () => {
       solution: "Advanced security testing and penetration testing",
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
+      action: "/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats"
     },
     {
       icon: FaClipboardCheck,
@@ -74,6 +79,7 @@ const HealthcareChallengesSection: React.FC = () => {
       solution: "FDA-compliant testing documentation and validation processes",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
+      action: "/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval"
     },
   ];
 
@@ -140,9 +146,11 @@ const HealthcareChallengesSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors">
-                Learn More{" "}
-                <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <Link href={`blog/post${challenge.action}`} className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors">
+                  Learn More{" "}
+                  <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           ))}

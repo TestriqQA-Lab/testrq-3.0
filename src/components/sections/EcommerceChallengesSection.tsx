@@ -25,6 +25,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive checkout flow testing and UX optimization",
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
+      action: "/reduce-cart-abandonment-with-checkout-testing"
     },
     {
       icon: FaCreditCard,
@@ -34,6 +35,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Rigorous payment integration testing across all gateways",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
+      action: "/secure-payment-gateway-testing-for-e-commerce"
     },
     {
       icon: FaMobile,
@@ -44,6 +46,7 @@ const EcommerceChallengesSection: React.FC = () => {
         "Mobile-first testing approach with device-specific optimization",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
+      action: "/mobile-commerce-optimization-testing-services"
     },
     {
       icon: FaClock,
@@ -53,6 +56,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Load testing and performance optimization strategies",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
+      action: "/performance-load-testing-for-e-commerce-sites"
     },
     {
       icon: FaShieldAlt,
@@ -62,6 +66,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive security testing and compliance validation",
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
+      action: "/e-commerce-security-testing-compliance-services"
     },
     {
       icon: FaGlobe,
@@ -71,6 +76,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive cross-platform compatibility testing",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
+      action: "/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere"
     },
   ];
 
@@ -175,10 +181,10 @@ const EcommerceChallengesSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link href={`blog/post${challenge.action}`} className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
                   <FaArrowRight className="w-3 h-3" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
