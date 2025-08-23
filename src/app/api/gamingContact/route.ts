@@ -7,10 +7,10 @@ interface GamingContactFormData {
   fullName: string;
   businessEmail: string;
   businessPhone: string;
-  companyName: string;
+  companyStudioName: string;
   gameType: string;
-  platform: string;
-  message: string;
+  targetPlatforms: string;
+  projectDetails: string;
   source?: string;
 }
 
@@ -19,9 +19,9 @@ export async function POST(request: NextRequest) {
     const body: GamingContactFormData = await request.json();
     
     // Validate required fields
-    const { fullName, businessEmail, businessPhone, companyName, gameType, platform, message } = body;
+    const { fullName, businessEmail, businessPhone, companyStudioName, gameType, targetPlatforms, projectDetails } = body;
     
-    if (!fullName || !businessEmail || !businessPhone || !companyName || !gameType || !platform || !message) {
+    if (!fullName || !businessEmail || !businessPhone || !companyStudioName || !gameType || !targetPlatforms || !projectDetails) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -38,13 +38,13 @@ export async function POST(request: NextRequest) {
 
     // Add source field if not provided
     if (!body.source) {
-      body.source = 'Gaming Testing Services Page';
+      body.source = 'Gaming App Testing Services Page';
     }
 
     // Format the data for better readability
     const formattedData: GamingContactFormData = {
       ...body,
-      source: body.source || 'Gaming Testing Services Page',
+      source: body.source || 'Gaming App Testing Services Page',
     };
 
     // Run all operations in parallel for better performance
@@ -109,11 +109,11 @@ async function storeInGoogleSheets(data: GamingContactFormData) {
       data.fullName,
       data.businessEmail,
       data.businessPhone,
-      data.companyName,
+      data.companyStudioName,
       data.gameType,
-      data.platform,
-      data.message,
-      data.source || 'Gaming Testing Services Page'
+      data.targetPlatforms,
+      data.projectDetails,
+      data.source || 'Gaming App Testing Services Page'
     ];
 
     // Use Gaming specific sheet tab
@@ -130,7 +130,7 @@ async function storeInGoogleSheets(data: GamingContactFormData) {
 
       if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
         // Add headers if sheet is empty
-        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Name', 'Game Type', 'Platform', 'Testing Needs', 'Source'];
+        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Studio Name', 'Game Type', 'Target Platforms', 'Project Details', 'Source'];
         await sheets.spreadsheets.values.update({
           spreadsheetId: GOOGLE_SHEET_ID,
           range: headerRange,
@@ -140,8 +140,7 @@ async function storeInGoogleSheets(data: GamingContactFormData) {
           },
         });
       }
-    } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       // If sheet doesn't exist, create it
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId: GOOGLE_SHEET_ID,
@@ -159,7 +158,7 @@ async function storeInGoogleSheets(data: GamingContactFormData) {
       });
 
       // Add headers to new sheet
-      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Name', 'Game Type', 'Platform', 'Testing Needs', 'Source'];
+      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Studio Name', 'Game Type', 'Target Platforms', 'Project Details', 'Source'];
       await sheets.spreadsheets.values.update({
         spreadsheetId: GOOGLE_SHEET_ID,
         range: `${sheetName}!A1:I1`,
@@ -234,15 +233,15 @@ async function sendProfessionalNotification(data: GamingContactFormData) {
             <p><strong>Full Name:</strong> ${data.fullName}</p>
             <p><strong>Business Email:</strong> ${data.businessEmail}</p>
             <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
-            <p><strong>Company Name:</strong> ${data.companyName}</p>
+            <p><strong>Company/Studio Name:</strong> ${data.companyStudioName}</p>
             <p><strong>Game Type:</strong> ${data.gameType}</p>
-            <p><strong>Platform:</strong> ${data.platform}</p>
-            <p><strong>Source:</strong> ${data.source || 'Gaming Testing Services Page'}</p>
+            <p><strong>Target Platforms:</strong> ${data.targetPlatforms}</p>
+            <p><strong>Source:</strong> ${data.source || 'Gaming App Testing Services Page'}</p>
           </div>
           
           <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #92400e; margin-top: 0;">Testing Needs:</h3>
-            <p style="white-space: pre-wrap;">${data.message}</p>
+            <h3 style="color: #92400e; margin-top: 0;">Project Details:</h3>
+            <p style="white-space: pre-wrap;">${data.projectDetails}</p>
           </div>
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
@@ -322,7 +321,7 @@ async function sendClientConfirmation(data: GamingContactFormData) {
             <h2 style="color: #2563eb; margin-top: 0;">Dear ${data.fullName},</h2>
             
             <p style="line-height: 1.6; margin-bottom: 20px;">
-              Thank you for reaching out to Testriq QA Lab regarding our gaming testing services. We have received your inquiry and appreciate your interest in optimizing your game.
+              Thank you for reaching out to Testriq QA Lab regarding our gaming testing services. We have received your inquiry and appreciate your interest in ensuring a successful game launch.
             </p>
             
             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 25px 0;">
@@ -331,21 +330,21 @@ async function sendClientConfirmation(data: GamingContactFormData) {
                 <p style="margin: 0;"><strong>Full Name:</strong> ${data.fullName}</p>
                 <p style="margin: 0;"><strong>Business Email:</strong> ${data.businessEmail}</p>
                 <p style="margin: 0;"><strong>Business Phone:</strong> ${data.businessPhone}</p>
-                <p style="margin: 0;"><strong>Company Name:</strong> ${data.companyName}</p>
+                <p style="margin: 0;"><strong>Company/Studio Name:</strong> ${data.companyStudioName}</p>
                 <p style="margin: 0;"><strong>Game Type:</strong> ${data.gameType}</p>
-                <p style="margin: 0;"><strong>Platform:</strong> ${data.platform}</p>
+                <p style="margin: 0;"><strong>Target Platforms:</strong> ${data.targetPlatforms}</p>
               </div>
             </div>
             
             <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
-              <h4 style="color: #92400e; margin-top: 0;">Your Testing Needs:</h4>
-              <p style="margin: 0; white-space: pre-wrap;">"${data.message}"</p>
+              <h4 style="color: #92400e; margin-top: 0;">Your Project Details:</h4>
+              <p style="margin: 0; white-space: pre-wrap;">"${data.projectDetails}"</p>
             </div>
             
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our gaming testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ) with a customized testing strategy for your game.
+                Our gaming testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ) with a customized testing strategy for your game project.
               </p>
             </div>
             
@@ -353,14 +352,14 @@ async function sendClientConfirmation(data: GamingContactFormData) {
               <h3 style="color: #2563eb;">In the meantime, feel free to:</h3>
               <ul style="line-height: 1.8; padding-left: 20px;">
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
-                <li>Learn more about our gaming testing services: <a href="https://testriq.com/gaming-testing-services" style="color: #2563eb;">Gaming Testing</a></li>
+                <li>Learn more about our gaming testing services: <a href="https://testriq.com/gaming-app-testing-services" style="color: #2563eb;">Gaming Testing</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
                 <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
               </ul>
             </div>
             
             <p style="line-height: 1.6; margin-bottom: 30px;">
-              We look forward to helping you achieve a flawless and engaging gaming experience through comprehensive testing.
+              We look forward to helping you deliver exceptional player experiences and achieve a successful game launch through comprehensive testing across all platforms.
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
@@ -386,7 +385,7 @@ async function sendClientConfirmation(data: GamingContactFormData) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation email sent successfully to:', mailOptions.to);
+    console.log('Client confirmation sent successfully to:', mailOptions.to);
   } catch (error) {
     console.error('Client confirmation email failed:', error);
     throw error;

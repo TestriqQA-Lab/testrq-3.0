@@ -140,8 +140,7 @@ async function storeInGoogleSheets(data: ElearningContactFormData) {
           },
         });
       }
-    } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_error) {
       // If sheet doesn't exist, create it
       await sheets.spreadsheets.batchUpdate({
         spreadsheetId: GOOGLE_SHEET_ID,
