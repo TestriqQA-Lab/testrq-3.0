@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRobot, FaShieldAlt, FaCog, FaChartLine, FaNetworkWired, FaCode, FaFlask } from "react-icons/fa";
 
@@ -20,7 +21,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Control system verification"
       ],
       color: "blue",
-      action: "#",
+      action: "blog/post/functional-testing-for-robotic-systems-precision-sensors-control",
     },
     {
       id: "safety",
@@ -65,7 +66,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Communication protocol testing"
       ],
       color: "orange",
-      action: "#"
+      action: "blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
     },
     {
       id: "software",
@@ -80,7 +81,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Code quality assessment"
       ],
       color: "red",
-      action: "/software-testing-guide"
+      action: "/robotic-software-testing-ros2-gazebo-and-motion-planning-validation"
     },
     {
       id: "autonomous",
@@ -95,7 +96,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Decision-making verification"
       ],
       color: "indigo",
-      action: "#"
+      action: "/testing-autonomous-robots-navigation-perception-and-real-world-qa"
     }
   ];
 
@@ -177,7 +178,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
                 {testingTypes[activeTab].description}
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-3 mb-4">
                 <h4 className="font-semibold text-gray-900">Key Features:</h4>
                 <ul className="space-y-2">
                   {testingTypes[activeTab].features.map((feature, index) => (
@@ -189,9 +190,9 @@ const RoboticComprehensiveSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
+              <Link href={`blog/post${testingTypes[activeTab].action}`} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Visual Representation */}

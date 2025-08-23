@@ -198,7 +198,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   </div>
                   
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                   >
                     Read More

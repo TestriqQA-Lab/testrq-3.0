@@ -17,6 +17,7 @@ const AICardSlider: React.FC = () => {
         "Model robustness validation",
       ],
       highlight: "99.5% accuracy",
+      action: "/model-validation-for-ai-applications"
     },
     {
       title: "Bias & Fairness Testing",
@@ -29,6 +30,7 @@ const AICardSlider: React.FC = () => {
         "Bias mitigation recommendations",
       ],
       highlight: "Zero bias tolerance",
+      action: "/bias-fairness-testing-for-ai"
     },
     {
       title: "AI Security Testing",
@@ -41,6 +43,7 @@ const AICardSlider: React.FC = () => {
         "Privacy protection validation",
       ],
       highlight: "100% security coverage",
+      action: "/ai-security-testing"
     },
   ];
 
@@ -90,10 +93,10 @@ const AICardSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
+              <Link href={`blog/post${type.action}`} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4 ml-2" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>

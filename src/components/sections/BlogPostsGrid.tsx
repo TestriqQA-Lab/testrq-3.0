@@ -317,12 +317,12 @@ const BlogPostsGrid: React.FC = () => {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="flex justify-center mt-12">
-                  <div className="flex items-center gap-2">
+                <div className="flex justify-center mt-8 sm:mt-12">
+                  <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center">
                     <button
                       onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                       disabled={currentPage === 1}
-                      className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
                       Previous
                     </button>
@@ -331,22 +331,19 @@ const BlogPostsGrid: React.FC = () => {
                       <button
                         key={index + 1}
                         onClick={() => setCurrentPage(index + 1)}
-                        className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                          currentPage === index + 1
+                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${currentPage === index + 1
                             ? "bg-[theme(color.brand.blue)] text-white"
                             : "text-gray-600 hover:bg-gray-50"
-                        }`}
+                          }`}
                       >
                         {index + 1}
                       </button>
                     ))}
 
                     <button
-                      onClick={() =>
-                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                      }
+                      onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
                       disabled={currentPage === totalPages}
-                      className="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                     >
                       Next
                     </button>
