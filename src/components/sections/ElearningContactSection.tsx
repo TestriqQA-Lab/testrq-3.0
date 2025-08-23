@@ -458,7 +458,7 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
                         className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
                         placeholder="Enter phone number"
-                        inputClassName="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
+                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       />
                     </div>
                     {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
