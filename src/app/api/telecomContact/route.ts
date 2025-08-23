@@ -1,39 +1,393 @@
-  import { NextRequest, NextResponse } from 'next/server';
-  import { google } from 'googleapis';
-  
-  export async function POST(request: NextRequest) {
-    const body = await request.json();
+import { NextRequest, NextResponse } from 'next/server';
+import * as nodemailer from 'nodemailer';
+import { google } from 'googleapis';
+
+// Types for form data
+interface TelecomContactFormData {
+  fullName: string;
+  businessEmail: string;
+  businessPhone: string;
+  companyOrganization: string;
+  testingRequirements: string;
+  message: string;
+  source?: string;
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const body: TelecomContactFormData = await request.json();
     
     // Validate required fields
-    if (!body.fullName || !body.businessEmail || !body.businessPhone || !body.companyOrganization || !body.testingRequirements || !body.message) {
-      return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
+    const { fullName, businessEmail, businessPhone, companyOrganization, testingRequirements, message } = body;
+    
+    if (!fullName || !businessEmail || !businessPhone || !companyOrganization || !testingRequirements || !message) {
+      return NextResponse.json(
+        { error: 'All fields are required' },
+        { status: 400 }
+      );
     }
     
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if (!emailRegex.test(body.businessEmail)) {
-      return NextResponse.json({ error: 'Invalid email format' }, { status: 400 });
+    if (!emailRegex.test(businessEmail)) {
+      return NextResponse.json(
+        { error: 'Invalid email format' },
+        { status: 400 }
+      );
     }
 
-    // Send email notification
-    const mailOptions = {
-      from: 'contact@testriq.com',
-      to: 'recipient@example.com',
-      subject: 'New Telecom Contact Form Submission',
+    // Add source field if not provided
+    if (!body.source) {
+      body.source = 'Telecom Testing Services Page';
+    }
+
+    // Format the data for better readability
+    const formattedData: TelecomContactFormData = {
+      ...body,
+      source: body.source || 'Telecom Testing Services Page',
+    };
+
+    // Run all operations in parallel for better performance
+    const operations = [
+      storeInGoogleSheets(formattedData),
+      sendProfessionalNotification(formattedData),
+      sendClientConfirmation(formattedData)
+    ];
+
+    // Execute all operations concurrently
+    const results = await Promise.allSettled(operations);
+    
+    // Log any failures but don\'t fail the entire request
+    results.forEach((result, index) => {
+      if (result.status === 'rejected') {
+        const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
+        console.error(`${operationNames[index]} error:`, result.reason);
+      }
+    });
+
+    return NextResponse.json(
+      { message: 'Form submitted successfully' },
+      { status: 200 }
+    );
+
+  } catch (error) {
+    console.error('API error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+async function storeInGoogleSheets(data: TelecomContactFormData) {
+  try {
+    // Google Sheets configuration
+    const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+    const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
+    const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID;
+
+    if (!GOOGLE_PRIVATE_KEY || !GOOGLE_CLIENT_EMAIL || !GOOGLE_SHEET_ID) {
+      console.log('Google Sheets credentials not configured');
+      return;
+    }
+
+    // Create JWT auth client
+    const auth = new google.auth.JWT({
+      email: GOOGLE_CLIENT_EMAIL,
+      key: GOOGLE_PRIVATE_KEY,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
+
+    // Initialize Google Sheets API
+    const sheets = google.sheets({ version: 'v4', auth });
+
+    // Prepare row data for Telecom tab
+    const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+
+    const rowData = [
+      timestamp,
+      data.fullName,
+      data.businessEmail,
+      data.businessPhone,
+      data.companyOrganization,
+      data.testingRequirements,
+      data.message,
+      data.source || 'Telecom Testing Services Page'
+    ];
+
+    // Use Telecom specific sheet tab
+    const sheetName = 'Telecom';
+    const range = `${sheetName}!A:H`;
+
+    // Check if Telecom sheet exists and has headers
+    try {
+      const headerRange = `${sheetName}!A1:H1`;
+      const headerResponse = await sheets.spreadsheets.values.get({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: headerRange,
+      });
+
+      if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
+        // Add headers if sheet is empty
+        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Organization', 'Testing Requirements', 'Message', 'Source'];
+        await sheets.spreadsheets.values.update({
+          spreadsheetId: GOOGLE_SHEET_ID,
+          range: headerRange,
+          valueInputOption: 'RAW',
+          requestBody: {
+            values: [headers],
+          },
+        });
+      }
+    } catch (_error) {
+      // If sheet doesn\'t exist, create it
+      await sheets.spreadsheets.batchUpdate({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        requestBody: {
+          requests: [
+            {
+              addSheet: {
+                properties: {
+                  title: sheetName,
+                },
+              },
+            },
+          ],
+        },
+      });
+
+      // Add headers to new sheet
+      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Organization', 'Testing Requirements', 'Message', 'Source'];
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: `${sheetName}!A1:H1`,
+        valueInputOption: 'RAW',
+        requestBody: {
+          values: [headers],
+        },
+      });
+    }
+
+    // Append the new row
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: GOOGLE_SHEET_ID,
+      range: range,
+      valueInputOption: 'RAW',
+      requestBody: {
+        values: [rowData],
+      },
+    });
+
+    console.log('Telecom data stored in Google Sheets successfully');
+  } catch (error) {
+    console.error('Google Sheets storage failed:', error);
+    throw error;
+  }
+}
+
+async function sendProfessionalNotification(data: TelecomContactFormData) {
+  try {
+    // Email configuration from environment variables
+    const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
+    const SMTP_USER = process.env.SMTP_USER;
+    const SMTP_PASS = process.env.SMTP_PASS;
+    const FROM_EMAIL = process.env.FROM_EMAIL;
+    
+    // Use the same environment variables as the main contact form
+    const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
+    const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
+    const PROFESSIONAL_EMAIL_BCC = process.env.PROFESSIONAL_EMAIL_BCC;
+
+    if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAIL_TO) {
+      console.log('Email configuration missing for professional notification');
+      return;
+    }
+
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    } as nodemailer.TransportOptions);
+
+    // Email content
+    const mailOptions: nodemailer.SendMailOptions = {
+      from: `"Testriq Telecom Contact Form" <${FROM_EMAIL}>`,
+      to: PROFESSIONAL_EMAIL_TO.split(',').map(email => email.trim()).join(', '),
+      subject: `New Telecom Contact Form Submission from ${data.fullName}`,
       html: `
-        <p>Full Name: ${body.fullName}</p>
-        <p>Business Email: ${body.businessEmail}</p>
-        <p>Business Phone: ${body.businessPhone}</p>
-        <p>Company/Organization: ${body.companyOrganization}</p>
-        <p>Testing Requirements: ${body.testingRequirements}</p>
-        <p>Message: ${body.message}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
+            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
+            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New Telecom Contact Form Submission</h2>
+          </div>
+          
+          <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #1e40af; margin-top: 0;">Contact Details:</h3>
+            <p><strong>Full Name:</strong> ${data.fullName}</p>
+            <p><strong>Business Email:</strong> ${data.businessEmail}</p>
+            <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
+            <p><strong>Company/Organization:</strong> ${data.companyOrganization}</p>
+            <p><strong>Testing Requirements:</strong> ${data.testingRequirements}</p>
+            <p><strong>Source:</strong> ${data.source || 'Telecom Testing Services Page'}</p>
+          </div>
+          
+          <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3 style="color: #92400e; margin-top: 0;">Message:</h3>
+            <p style="white-space: pre-wrap;">${data.message}</p>
+          </div>
+          
+          <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <p style="margin: 0; color: #0369a1;">
+              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+            </p>
+          </div>
+
+         <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
+              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
+              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab telecom contact form.</p>
+              
+            </div>
+          </div>
+
+        </div>
       `,
     };
 
-    // Replace with your actual email sending logic
-    // For example, using Nodemailer or a similar library
-    // await nodemailer.sendMail(mailOptions);
+    if (PROFESSIONAL_EMAIL_CC) {
+      mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
+    }
+    if (PROFESSIONAL_EMAIL_BCC) {
+      mailOptions.bcc = PROFESSIONAL_EMAIL_BCC.split(',').map(email => email.trim()).join(', ');
+    }
 
-    return NextResponse.json({ message: 'Form submitted successfully' }, { status: 200 });
+    // Send email
+    await transporter.sendMail(mailOptions);
+    console.log('Professional notification sent successfully to:', mailOptions.to);
+    if (mailOptions.cc) console.log('CC:', mailOptions.cc);
+    if (mailOptions.bcc) console.log('BCC:', mailOptions.bcc);
+
+  } catch (error) {
+    console.error('Professional notification failed:', error);
+    throw error;
   }
-  
+}
+
+async function sendClientConfirmation(data: TelecomContactFormData) {
+  try {
+    // Email configuration from environment variables
+    const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
+    const SMTP_USER = process.env.SMTP_USER;
+    const SMTP_PASS = process.env.SMTP_PASS;
+    const FROM_EMAIL = process.env.FROM_EMAIL;
+
+    if (!SMTP_USER || !SMTP_PASS) {
+      console.log('Email configuration missing for client confirmation');
+      return;
+    }
+
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: false, // true for 465, false for other ports
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    } as nodemailer.TransportOptions);
+
+    // Email content with logo
+    const mailOptions = {
+      from: `"Testriq QA Lab" <${FROM_EMAIL}>`,
+      to: data.businessEmail,
+      subject: 'Thank you for contacting Testriq QA Lab - Telecom Testing Services',
+      html: `
+        <div style="font-family: Arial, max-width: 600px; margin: 0 auto; color: #333;">
+          <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
+            <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 50px; margin-bottom: 15px;" />
+            <p style="margin: 10px 0 0 0; font-size: 16px; color: #25a8e0; opacity: 0.9;">Quality Excellence Through Expert Testing</p>
+          </div>
+          
+          <div style="padding: 30px; background-color: #ffffff; border: 1px solid #e5e7eb; border-top: none;">
+            <h2 style="color: #2563eb; margin-top: 0;">Dear ${data.fullName},</h2>
+            
+            <p style="line-height: 1.6; margin-bottom: 20px;">
+              Thank you for reaching out to Testriq QA Lab regarding our telecom testing services. We have received your inquiry and appreciate your interest in our solutions.
+            </p>
+            
+            <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 25px 0;">
+              <h3 style="color: #1e40af; margin-top: 0; margin-bottom: 15px;">Your Submission Summary:</h3>
+              <div style="display: grid; gap: 8px;">
+                <p style="margin: 0;"><strong>Full Name:</strong> ${data.fullName}</p>
+                <p style="margin: 0;"><strong>Business Email:</strong> ${data.businessEmail}</p>
+                <p style="margin: 0;"><strong>Business Phone:</strong> ${data.businessPhone}</p>
+                <p style="margin: 0;"><strong>Company/Organization:</strong> ${data.companyOrganization}</p>
+                <p style="margin: 0;"><strong>Testing Requirements:</strong> ${data.testingRequirements}</p>
+              </div>
+            </div>
+            
+            <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
+              <h4 style="color: #92400e; margin-top: 0;">Your Message:</h4>
+              <p style="margin: 0; white-space: pre-wrap;">"${data.message}"</p>
+            </div>
+            
+            <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
+              <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
+              <p style="margin: 0; line-height: 1.6;">
+                Our telecom testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST) with a customized testing strategy for your telecom platform.
+              </p>
+            </div>
+            
+            <div style="margin: 30px 0;">
+              <h3 style="color: #2563eb;">In the meantime, feel free to:</h3>
+              <ul style="line-height: 1.8; padding-left: 20px;">
+                <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
+                <li>Learn more about our telecom testing services: <a href="https://testriq.com/telecom-testing-services" style="color: #2563eb;">Telecom Testing</a></li>
+                <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
+              </ul>
+            </div>
+            
+            <p style="line-height: 1.6; margin-bottom: 30px;">
+              We look forward to helping you achieve your quality assurance goals.
+            </p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: 600;">Best regards,</p>
+              <p style="margin: 5px 0 0 0; color: #4b5563;">The Testriq QA Lab Team</p>
+            </div>
+          </div>
+
+          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
+              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
+              <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
+              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
+              <p style="margin: 0; font-size: 12px; color: #9ca3af;">
+                This is an automated confirmation email. Please do not reply to this email.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      `,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+    console.log('Client confirmation sent successfully to:', data.businessEmail);
+
+  } catch (error) {
+    console.error('Client confirmation failed:', error);
+    throw error;
+  }
+}
+
 

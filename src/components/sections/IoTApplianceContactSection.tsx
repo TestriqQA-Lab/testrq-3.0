@@ -8,14 +8,10 @@ import {
   FaCalendarAlt,
   FaCheckCircle,
   FaWifi,
-  FaMicrochip,
-  FaCloud,
-  FaShieldAlt,
   FaUser,
   FaBuilding,
   FaComments,
   FaCog,
-  FaClipboardList,
 } from "react-icons/fa";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";

@@ -294,7 +294,7 @@ const BankingContactSection: React.FC = () => {
             Connect with our banking and finance testing experts to discuss your
             specific QA requirements, regulatory compliance needs (including PCI
             DSS, SOX, and GDPR), and how our security-focused testing solutions
-            can help strengthen your financial institution's security posture.
+            can help strengthen your financial institution&apos;s security posture.
           </p>
         </div>
 
