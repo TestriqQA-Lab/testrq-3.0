@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaBrain,
@@ -29,6 +30,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "purple",
       gradientColor: "from-purple-500 to-purple-600",
       metric: "94% Accuracy",
+      action: "/model-validation-for-ai-applications"
     },
     {
       icon: <FaEye className="w-8 h-8" />,
@@ -44,6 +46,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "orange",
       gradientColor: "from-orange-500 to-orange-600",
       metric: "Zero Bias Tolerance",
+      action: "/bias-fairness-testing-for-ai"
     },
     {
       icon: <FaEye className="w-8 h-8" />,
@@ -59,6 +62,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "blue",
       gradientColor: "from-blue-500 to-blue-600",
       metric: "100% Transparency",
+      action: "/explainability-testing-in-ai"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
@@ -74,6 +78,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "green",
       gradientColor: "from-green-500 to-green-600",
       metric: "Sub-second Response",
+      action: "/performance-testing-for-ai-applications"
     },
     {
       icon: <FaDatabase className="w-8 h-8" />,
@@ -89,6 +94,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "indigo",
       gradientColor: "from-indigo-500 to-indigo-600",
       metric: "100% Data Quality",
+      action: "/ai-testing-learning-guide"
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
@@ -104,6 +110,7 @@ const AIComprehensiveSlider: React.FC = () => {
       color: "red",
       gradientColor: "from-red-500 to-red-600",
       metric: "100% Security Coverage",
+      action: "/ai-security-testing"
     },
   ];
   // Function to move to the next tab
@@ -176,12 +183,12 @@ const AIComprehensiveSlider: React.FC = () => {
               </div>
 
               <div className="mt-6 flex justify-between items-center">
-                <button
+                <Link href={`blog/post${testingTypes[activeTab].action}`}
                   className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                 >
                   <span>Learn More</span>
                   <FaArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
 
                 {/* Next Button */}
                 <button
