@@ -1,7 +1,7 @@
+
 "use client";
 
-
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaSearch,
   FaMapMarkerAlt,
@@ -16,11 +16,283 @@ import {
   FaFire,
   FaStar,
 } from "react-icons/fa";
+import { positions, JobPosition } from "@/lib/openings"; // Import positions from the new file
+import Markdown from "react-markdown";
+
+// Modal for Job Details
+const JobDetailsModal: React.FC<{ job: JobPosition | null; onClose: () => void }> = ({ job, onClose }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
+  if (!job) return null;
+
+  return (
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div ref={modalRef} className="bg-white rounded-2xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+        >
+          &times;
+        </button>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">{job.title}</h2>
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
+          <div className="flex items-center gap-1">
+            <FaMapMarkerAlt className="w-3 h-3" />
+            <span>{job.location}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <FaClock className="w-3 h-3" />
+            <span>{job.type}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <FaUsers className="w-3 h-3" />
+            <span>{job.experience}</span>
+          </div>
+        </div>
+        <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          <Markdown>{job.fullDescription}</Markdown>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {job.skills.map((skill, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 bg-[theme(color.brand.blue)] bg-opacity-10 text-white text-xs rounded-full font-medium"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+        <div className="mt-8 text-right">
+          <button
+            onClick={onClose}
+            className="px-6 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Modal for Job Application Form
+const JobApplicationModal: React.FC<{ job: JobPosition | null; onClose: () => void }> = ({ job, onClose }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    mobileNumber: "",
+    emailAddress: "",
+    currentLocation: "",
+    noticePeriod: "",
+    role: job?.title || "", // Non-editable, pre-filled
+    totalYearsExperience: "",
+    currentCTC: "",
+    resume: null as File | null,
+  });
+
+  useEffect(() => {
+    if (job) {
+      setFormData((prev) => ({ ...prev, role: job.title }));
+    }
+  }, [job]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      if (file.type === "application/pdf" && file.size <= 2 * 1024 * 1024) {
+        setFormData((prev) => ({ ...prev, resume: file }));
+      } else {
+        alert("Please upload a PDF file less than 2MB.");
+        setFormData((prev) => ({ ...prev, resume: null }));
+        e.target.value = ""; // Clear the input
+      }
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send the formData to a backend API
+    console.log("Form Data Submitted:", formData);
+    alert("Application submitted successfully! (Check console for data)");
+    onClose();
+  };
+
+  if (!job) return null;
+
+  return (
+    <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div ref={modalRef} className="bg-white rounded-2xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl"
+        >
+          &times;
+        </button>
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">Apply for {job.title}</h2>
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700 mb-2">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobileNumber"
+              name="mobileNumber"
+              value={formData.mobileNumber}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="emailAddress" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+            <input
+              type="email"
+              id="emailAddress"
+              name="emailAddress"
+              value={formData.emailAddress}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="currentLocation" className="block text-sm font-medium text-gray-700 mb-2">Current Location (City)</label>
+            <input
+              type="text"
+              id="currentLocation"
+              name="currentLocation"
+              value={formData.currentLocation}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="noticePeriod" className="block text-sm font-medium text-gray-700 mb-2">Notice Period</label>
+            <input
+              type="text"
+              id="noticePeriod"
+              name="noticePeriod"
+              value={formData.noticePeriod}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="totalYearsExperience" className="block text-sm font-medium text-gray-700 mb-2">Total Years of Experience</label>
+            <input
+              type="number"
+              id="totalYearsExperience"
+              name="totalYearsExperience"
+              value={formData.totalYearsExperience}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="currentCTC" className="block text-sm font-medium text-gray-700 mb-2">Current CTC? (in LPA)</label>
+            <input
+              type="text"
+              id="currentCTC"
+              name="currentCTC"
+              value={formData.currentCTC}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">Applying Role</label>
+            <input
+              type="text"
+              id="role"
+              name="role"
+              value={formData.role}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed"
+              readOnly
+            />
+          </div>
+          <div className="md:col-span-2">
+            <label htmlFor="resume" className="block text-sm font-medium text-gray-700 mb-2">Upload Your Updated Resume (PDF only, max 2MB)</label>
+            <input
+              type="file"
+              id="resume"
+              name="resume"
+              accept=".pdf"
+              onChange={handleFileChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[theme(color.brand.blue)] file:text-white hover:file:bg-blue-700"
+              required
+            />
+            {formData.resume && (
+              <p className="text-sm text-gray-500 mt-2">Selected file: {formData.resume.name}</p>
+            )}
+          </div>
+          <div className="md:col-span-2 text-right">
+            <button
+              type="submit"
+              className="px-8 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300"
+            >
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDepartment, setSelectedDepartment] = useState("all");
   const [selectedLocation, setSelectedLocation] = useState("all");
+  const [showDetailsModal, setShowDetailsModal] = useState(false);
+  const [showApplyModal, setShowApplyModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null);
 
   const departments = [
     { value: "all", label: "All Departments", count: 8 },
@@ -36,169 +308,6 @@ const CareersOpenPositions: React.FC = () => {
     { value: "on-site", label: "On-Site", count: 5 },
     { value: "hybrid", label: "Hybrid", count: 5 },
     { value: "remote", label: "Remote", count: 5 }
-  ];
-
-  const positions = [
-    {
-      id: 1,
-      title: "Senior Test Automation Engineer",
-      department: "automation",
-      location: "Remote",
-      type: "Full-time",
-      experience: "5+ years",
-      description:
-        "Lead automation testing initiatives using Selenium, Cypress, and modern testing frameworks. Design and implement comprehensive test automation strategies for web and mobile applications.",
-      skills: [
-        "Selenium WebDriver",
-        "Cypress",
-        "JavaScript/TypeScript",
-        "CI/CD Pipelines",
-        "API Testing",
-      ],
-      badges: ["Urgent", "Featured"],
-      icon: FaCode,
-      color: "from-blue-500 to-blue-700",
-    },
-    {
-      id: 2,
-      title: "QA Test Engineer",
-      department: "manual",
-      location: "New York, NY",
-      type: "Full-time",
-      experience: "2-4 years",
-      description:
-        "Execute comprehensive manual testing across web applications and mobile apps, including UI/UX validation and functional test cases. Collaborate with development teams to ensure quality deliverables, reduce defects, and enhance user satisfaction through effective software quality assurance.",
-      skills: [
-        "Manual Testing",
-        "Test Case Design",
-        "Bug Tracking",
-        "Agile Methodology",
-        "User Experience",
-      ],
-      badges: [],
-      icon: FaUsers,
-      color: "from-green-500 to-green-700",
-    },
-    {
-      id: 3,
-      title: "Performance Testing Specialist",
-      department: "performance",
-      location: "Remote",
-      type: "Full-time",
-      experience: "4+ years",
-      description:
-        "Design and execute performance testing strategies using tools like JMeter, LoadRunner, and cloud-based load testing platforms such as BlazeMeter and Loader.io. Analyze system scalability, response times, and resource utilization to provide actionable performance optimization recommendations for high-traffic web and mobile applications.",
-      skills: [
-        "JMeter",
-        "LoadRunner",
-        "Performance Analysis",
-        "Cloud Platforms",
-        "Monitoring Tools",
-      ],
-      badges: ["Featured"],
-      icon: FaRocket,
-      color: "from-purple-500 to-purple-700",
-    },
-    {
-      id: 4,
-      title: "Mobile QA Engineer",
-      department: "mobile",
-      location: "London, UK",
-      type: "Full-time",
-      experience: "3+ years",
-      description:
-        "Specialize in mobile application testing across iOS and Android platforms, performing functional, UI/UX, compatibility, and performance testing on real devices and emulators. Ensure optimal user experience through comprehensive mobile testing strategies using tools like Appium, Firebase Test Lab, and BrowserStack.",
-      skills: [
-        "iOS Testing",
-        "Android Testing",
-        "Appium",
-        "Mobile Automation",
-        "Device Testing",
-      ],
-      badges: ["Urgent"],
-      icon: FaMobile,
-      color: "from-pink-500 to-pink-700",
-    },
-    {
-      id: 5,
-      title: "Security Testing Engineer",
-      department: "security",
-      location: "Remote",
-      type: "Full-time",
-      experience: "4+ years",
-      description:
-        "Conduct security assessments and penetration testing. Identify vulnerabilities and ensure application security compliance with industry standards.",
-      skills: [
-        "Penetration Testing",
-        "OWASP",
-        "Security Scanning",
-        "Vulnerability Assessment",
-        "Compliance",
-      ],
-      badges: ["Featured"],
-      icon: FaShieldAlt,
-      color: "from-red-500 to-red-700",
-    },
-    {
-      id: 6,
-      title: "Junior QA Analyst",
-      department: "manual",
-      location: "Remote",
-      type: "Full-time",
-      experience: "0-2 years",
-      description:
-        "Entry-level QA position for new graduates looking to start a career in software testing. Learn testing fundamentals including manual testing, test case execution, and defect reporting while contributing to real-world QA projects under the guidance of senior QA professionals and mentorship programs.",
-      skills: [
-        "Basic Testing",
-        "Attention to Detail",
-        "Learning Mindset",
-        "Communication",
-        "Problem Solving",
-      ],
-      badges: [],
-      icon: FaUsers,
-      color: "from-teal-500 to-teal-700",
-    },
-    {
-      id: 7,
-      title: "Lead QA Engineer",
-      department: "automation",
-      location: "New York, NY",
-      type: "Full-time",
-      experience: "7+ years",
-      description:
-        "Lead a team of QA engineers and drive quality initiatives across multiple projects. Mentor junior team members and establish testing best practices.",
-      skills: [
-        "Team Leadership",
-        "Test Strategy",
-        "Mentoring",
-        "Process Improvement",
-        "Stakeholder Management",
-      ],
-      badges: ["Featured", "Leadership"],
-      icon: FaStar,
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
-      id: 8,
-      title: "API Testing Specialist",
-      department: "automation",
-      location: "Remote",
-      type: "Full-time",
-      experience: "3+ years",
-      description:
-        "Focus on API testing and backend service validation. Develop automated API test suites and ensure service reliability and performance.",
-      skills: [
-        "API Testing",
-        "REST/GraphQL",
-        "Postman",
-        "Newman",
-        "Database Testing",
-      ],
-      badges: [],
-      icon: FaCode,
-      color: "from-indigo-500 to-indigo-700",
-    },
   ];
 
   const filteredPositions = positions.filter((position) => {
@@ -230,6 +339,18 @@ const CareersOpenPositions: React.FC = () => {
       default:
         return "bg-gray-100 text-gray-700 border-gray-200";
     }
+  };
+
+  const handleViewDetails = (job: JobPosition) => {
+    setSelectedJob(job);
+    setShowDetailsModal(true);
+    setShowApplyModal(false); // Ensure apply modal is closed
+  };
+
+  const handleApplyNow = (job: JobPosition) => {
+    setSelectedJob(job);
+    setShowApplyModal(true);
+    setShowDetailsModal(false); // Ensure details modal is closed
   };
 
   return (
@@ -415,68 +536,37 @@ const CareersOpenPositions: React.FC = () => {
                   {/* Right Side - Actions */}
                   <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
                     <button
-                      className={`bg-gradient-to-r ${position.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2`}
+                      onClick={() => handleViewDetails(position)}
+                      className="flex-1 px-6 py-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300"
+                    >
+                      View Details
+                    </button>
+                    <button
+                      onClick={() => handleApplyNow(position)}
+                      className="flex-1 px-6 py-3 bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-colors duration-300"
                     >
                       Apply Now
-                      <FaExternalLinkAlt className="w-3 h-3" />
-                    </button>
-                    <button className="border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
-                      View Details
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* No Results */}
-        {filteredPositions.length === 0 && (
-          <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaSearch className="w-8 h-8 text-gray-400" />
+          {filteredPositions.length === 0 && (
+            <div className="text-center py-10 text-gray-600 text-lg">
+              No positions found matching your criteria.
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              No positions found
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Try adjusting your search criteria or check back later for new
-              opportunities.
-            </p>
-            <button
-              onClick={() => {
-                setSearchTerm("");
-                setSelectedDepartment("all");
-                setSelectedLocation("all");
-              }}
-              className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-            >
-              Clear Filters
-            </button>
-          </div>
-        )}
-
-        {/* Don't See Your Role */}
-        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
-          <FaFire className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
-          <h3 className="text-2xl font-bold mb-4">
-            Don&apos;t See Your Perfect Role?
-          </h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            We&apos;re always looking for exceptional talent! Send us your resume and
-            tell us about your QA expertise. We&apos;ll reach out when a position
-            matches your skills.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Submit General Application
-            </button>
-          </div>
+          )}
         </div>
       </div>
+
+      {showDetailsModal && <JobDetailsModal job={selectedJob} onClose={() => setShowDetailsModal(false)} />}
+      {showApplyModal && <JobApplicationModal job={selectedJob} onClose={() => setShowApplyModal(false)} />}
     </section>
   );
 };
 
 export default CareersOpenPositions;
+
+
+

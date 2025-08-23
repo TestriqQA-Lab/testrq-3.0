@@ -1,297 +1,546 @@
 "use client";
 
-import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
+  FaRocket,
   FaPhone,
   FaEnvelope,
-  FaClock,
-  FaShieldAlt,
-  FaUsers,
-  FaCheckCircle,
-  FaArrowRight,
   FaCalendarAlt,
+  FaCheckCircle,
+  FaShieldAlt,
+  FaUser,
+  FaBuilding,
   FaComments,
+  FaClipboardList,
 } from "react-icons/fa";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const BankingContactSection: React.FC = () => {
-  const contactOptions = [
-    {
-      icon: FaCalendarAlt,
-      title: "Schedule Consultation",
-      description:
-        "Book a free 30-minute consultation with our Banking testing experts",
-      detail: "",
-      text: "Schedule Now",
-      action: "/contact-us",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-    },
+  const [formData, setFormData] = useState({
+    fullName: "",
+    businessEmail: "",
+    businessPhone: "",
+    companyInstitution: "",
+    testingRequirements: "",
+    message: "",
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [fullNameError, setFullNameError] = useState<string | null>(null);
+  const [companyInstitutionError, setCompanyInstitutionError] = useState<string | null>(null);
+  const [testingRequirementsError, setTestingRequirementsError] = useState<string | null>(null);
+  const [messageError, setMessageError] = useState<string | null>(null);
+
+  const validatePhoneNumber = (phone: string | undefined) => {
+    if (!phone) {
+      setPhoneError("Business Phone is required.");
+      return false;
+    }
+    if (!isValidPhoneNumber(phone)) {
+      setPhoneError("Invalid phone number format.");
+      return false;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+
+    if (/^(\d)\1+$/.test(digits)) {
+      setPhoneError("Phone number cannot consist of repeating digits.");
+      return false;
+    }
+
+    const isSequential = (num: string) => {
+      for (let i = 0; i < num.length - 2; i++) {
+        const n1 = parseInt(num[i]);
+        const n2 = parseInt(num[i + 1]);
+        const n3 = parseInt(num[i + 2]);
+        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+          return true;
+        }
+      }
+      return false;
+    };
+    if (isSequential(digits)) {
+      setPhoneError("Phone number cannot consist of sequential digits.");
+      return false;
+    }
+
+    if (/^0+$/.test(digits)) {
+      setPhoneError("Phone number cannot be all zeros.");
+      return false;
+    }
+
+    setPhoneError(null);
+    return true;
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) {
+      setEmailError("Business Email is required.");
+      return false;
+    }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError("Invalid email format.");
+      return false;
+    }
+    setEmailError(null);
+    return true;
+  };
+
+  const validateFullName = (name: string) => {
+    if (!name) {
+      setFullNameError("Full Name is required.");
+      return false;
+    }
+    if (name.trim().length < 3) {
+      setFullNameError("Full Name must be at least 3 characters.");
+      return false;
+    }
+    setFullNameError(null);
+    return true;
+  };
+
+  const validateCompanyInstitution = (companyInstitution: string) => {
+    if (!companyInstitution) {
+      setCompanyInstitutionError("Company/Institution is required.");
+      return false;
+    }
+    setCompanyInstitutionError(null);
+    return true;
+  };
+
+  const validateTestingRequirements = (testingRequirements: string) => {
+    if (!testingRequirements) {
+      setTestingRequirementsError("Please select your testing requirements.");
+      return false;
+    }
+    setTestingRequirementsError(null);
+    return true;
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message) {
+      setMessageError("Message is required.");
+      return false;
+    }
+    if (message.trim().length < 10) {
+      setMessageError("Message must be at least 10 characters.");
+      return false;
+    }
+    setMessageError(null);
+    return true;
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === "fullName") validateFullName(value);
+    if (name === "businessEmail") validateEmail(value);
+    if (name === "companyInstitution") validateCompanyInstitution(value);
+    if (name === "testingRequirements") validateTestingRequirements(value);
+    if (name === "message") validateMessage(value);
+  };
+
+  const handlePhoneChange = (phone: string | undefined) => {
+    setFormData((prev) => ({
+      ...prev,
+      businessPhone: phone || "",
+    }));
+    validatePhoneNumber(phone);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const isPhoneValid = validatePhoneNumber(formData.businessPhone);
+    const isEmailValid = validateEmail(formData.businessEmail);
+    const isFullNameValid = validateFullName(formData.fullName);
+    const isCompanyInstitutionValid = validateCompanyInstitution(formData.companyInstitution);
+    const isTestingRequirementsValid = validateTestingRequirements(formData.testingRequirements);
+    const isMessageValid = validateMessage(formData.message);
+
+    if (
+      isPhoneValid &&
+      isEmailValid &&
+      isFullNameValid &&
+      isCompanyInstitutionValid &&
+      isTestingRequirementsValid &&
+      isMessageValid
+    ) {
+      setIsLoading(true);
+      try {
+        const dataToSend = {
+          fullName: formData.fullName,
+          businessEmail: formData.businessEmail,
+          businessPhone: formData.businessPhone,
+          companyInstitution: formData.companyInstitution,
+          testingRequirements: formData.testingRequirements,
+          message: formData.message,
+          source: "Banking Testing Services Page",
+        };
+
+        const response = await fetch("/api/bankingContact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+
+        if (response.ok) {
+          console.log("Form submitted successfully");
+          setIsSubmitted(true);
+          document.getElementById("banking-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+
+          setFormData({
+            fullName: "",
+            businessEmail: "",
+            businessPhone: "",
+            companyInstitution: "",
+            testingRequirements: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Form submission failed:", errorData.error);
+          alert("Form submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please check your connection and try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      console.log("Form has errors.");
+    }
+  };
+
+  const contactMethods = [
     {
       icon: FaPhone,
-      title: "Speak with Expert",
+      title: "Speak with Banking Experts",
       description:
-        "Get immediate answers from our Banking compliance specialists",
-      detail: "(+91) 915-2929-343",
-      text: "Call Now",
+        "Direct consultation with our banking and finance testing specialists",
+      text: "(+91) 915-2929-343",
       action: "tel:(+91) 915-2929-343",
-      color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50",
+      color: "from-blue-500 to-cyan-600",
     },
     {
       icon: FaEnvelope,
-      title: "Request Proposal",
-      description:
-        "Get a detailed proposal and quote for your Banking testing needs",
-      detail: "contact@testriq.com",
-      text: "Get Quote",
+      title: "Detailed Banking Assessment",
+      description: "Send us your requirements for comprehensive analysis",
+      text: "contact@testriq.com",
       action: "mailto:contact@testriq.com",
-      color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50",
+      color: "from-green-500 to-emerald-600",
+    },
+    {
+      icon: FaCalendarAlt,
+      title: "Banking Strategy Session",
+      description: "Book a free consultation to discuss your testing needs",
+      text: "Schedule Free Consultation",
+      action: "/contact-us#calendly-section",
+      color: "from-purple-500 to-indigo-600",
     },
   ];
 
-  const supportFeatures = [
-    {
-      icon: FaShieldAlt,
-      title: "Secure Communication",
-      description: "All communications are encrypted and confidential",
-    },
-    {
-      icon: FaClock,
-      title: "Rapid Response",
-      description: "Emergency support available 24/7 for critical issues",
-    },
-    {
-      icon: FaUsers,
-      title: "Expert Team",
-      description: "Direct access to senior banking testing consultants",
-    },
-    {
-      icon: FaCheckCircle,
-      title: "Compliance Ready",
-      description: "All discussions maintain regulatory compliance standards",
-    },
+  const benefits = [
+    "Free banking platform assessment",
+    "Financial security expertise",
+    "Compliance guidance (PCI DSS, SOX, GDPR)",
+    "Performance optimization strategy",
+    "Risk mitigation recommendations",
+    "Regulatory compliance roadmap",
   ];
+
+  const scrollToCalendly = () => {
+    const element = document.getElementById("calendly-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-brand-blue to-sky-600 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaComments className="w-4 h-4" />
-            <span className="text-sm">Get In Touch</span>
+          <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue bg-opacity-20 rounded-full px-6 py-2 mb-6">
+            <FaShieldAlt className="w-4 h-4" />
+            <span className="text-sm font-medium">
+              Secure Your Banking Platform
+            </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:leading-14">
             Ready to Secure Your
-            <span className="block text-[theme(color.brand.blue)]">
-              Banking Platform?
-            </span>
+            <span className="block">Banking Platform?</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
             Connect with our banking and finance testing experts to discuss your
             specific QA requirements, regulatory compliance needs (including PCI
             DSS, SOX, and GDPR), and how our security-focused testing solutions
-            can help strengthen your financial institution’s security posture,
-            reduce operational risks, and ensure application reliability.
+            can help strengthen your financial institution's security posture.
           </p>
         </div>
 
-        {/* Contact Methods */}
-        {/* Contact Options */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {contactOptions.map((option, index) => (
-            <div
-              key={index}
-              className={`${option.bgColor} ring-1 ring-brand-blue rounded-3xl p-8 text-center hover:shadow-lg hover:ring-3 transition-all duration-300 group`}
-            >
-              <div
-                className={`w-16 h-16 bg-gradient-to-r ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Contact Methods */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Choose Your Preferred Contact Method
+            </h3>
+
+            {contactMethods.map((method, index) => (
+              <a
+                key={index}
+                href={method.action}
+                onClick={(e) => {
+                  if (method.title === "Banking Strategy Session") {
+                    e.preventDefault();
+                    scrollToCalendly();
+                  }
+                }}
+                className="block bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20"
               >
-                <option.icon className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                {option.title}
-              </h3>
-              <p className="text-gray-600 mb-3 leading-relaxed">
-                {option.description}
-              </p>
-              <h3 className="text-gray-900 mb-3">{option.detail}</h3>
-              <Link href={option.action}>
-                <button
-                  className={`bg-gradient-to-r ${option.color} cursor-pointer text-white px-8 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto group`}
-                >
-                  {option.text}
-                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Send Us a Message
-              </h3>
-              <p className="text-gray-600 mb-8">
-                Fill out the form below and our banking testing experts will get
-                back to you within 2 hours.
-              </p>
-
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-[theme(color.brand.blue)] focus:ring-2 focus:outline-none transition-all duration-300"
-                      placeholder="John"
-                    />
+                <div className="flex items-start gap-4">
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                  >
+                    <method.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                      placeholder="Doe"
-                    />
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">
+                      {method.title}
+                    </h4>
+                    <p className="text-blue-500 text-sm mb-4 leading-relaxed">
+                      {method.description}
+                    </p>
+                    <span className="text-blue-500 font-semibold flex items-center gap-2 group">
+                      {method.text}
+                    </span>
                   </div>
                 </div>
+              </a>
+            ))}
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="john.doe@bank.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Company/Institution *
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="Your Financial Institution"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Testing Requirements
-                  </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300">
-                    <option>Select your primary need</option>
-                    <option>Security Testing</option>
-                    <option>Compliance Testing</option>
-                    <option>Performance Testing</option>
-                    <option>Mobile Banking QA</option>
-                    <option>Core Banking Testing</option>
-                    <option>API Testing</option>
-                    <option>Comprehensive Testing Strategy</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="Please describe your testing requirements, compliance needs, and any specific challenges you're facing..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:scale-98 transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Support Features */}
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Why Choose Our Support?
+            {/* Benefits */}
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20">
+              <h3 className="text-2xl font-bold text-brand-blue mb-6">
+                What You Get When You Contact Us
               </h3>
-              <div className="space-y-6 mb-8">
-                {supportFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">
-                        {feature.title}
-                      </h4>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
+
+              <div className="space-y-4 mb-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <FaCheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-blue-600">{benefit}</span>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-green-100">
-                <h4 className="text-lg font-bold text-gray-900 mb-4">
-                  Emergency Support Available
+            {/* Urgency Note */}
+            <div className="bg-orange-500 bg-opacity-20 rounded-2xl p-6 border border-orange-400 border-opacity-30">
+              <div className="flex items-center gap-3 mb-3">
+                <FaRocket className="w-5 h-5 text-orange-300" />
+                <h4 className="font-semibold text-white">
+                  Compliance Deadline Approaching?
                 </h4>
-                <p className="text-gray-600 mb-4">
-                  For critical security incidents or urgent compliance issues,
-                  our emergency response team is available 24/7 to provide
-                  immediate assistance.
-                </p>
-                <Link href="tel:+91 90049 88859">
-                  <button className="bg-red-600 cursor-pointer text-white px-6 py-3 mb-5 rounded-xl font-semibold hover:bg-red-700 transition-colors duration-300">
-                    Emergency Hotline: +91 90049 88859
-                  </button>
-                </Link>
-                <Link href="tel:+91 98206 80665">
-                  <button className="bg-red-600 cursor-pointer text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors duration-300">
-                    Emergency Hotline: +91 98206 80665
-                  </button>
-                </Link>
               </div>
+              <p className="text-orange-100 text-sm leading-relaxed">
+                Facing regulatory compliance deadlines or security audit requirements? 
+                Contact us immediately to ensure your banking platform meets all 
+                necessary standards and passes compliance assessments.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Final CTA */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
-          <h3 className="text-3xl font-bold mb-4">
-            Start Your Banking Testing Journey Today
-          </h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Don&apos;t wait for a security breach or compliance failure. Contact
-            our experts now to discuss how we can help secure and optimize your
-            banking platform.
-          </p>
+          {/* Right Column - Contact Form */}
+          <div id="banking-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h4 className="font-semibold text-gray-900 mb-4">
+                Quick Banking Assessment Form
+              </h4>
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateFullName(formData.fullName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                  </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-            <Link href="/contact-us#calendly-section">
-              <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-                Get Free Consultation
-              </button>
-            </Link>
-            {/* <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Download Service Brochure
-            </button> */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
+                    </label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="email"
+                        name="businessEmail"
+                        value={formData.businessEmail}
+                        onChange={handleInputChange}
+                        onBlur={() => validateEmail(formData.businessEmail)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Email Address"
+                      />
+                    </div>
+                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Phone *
+                    </label>
+                    <div className="relative">
+                      <PhoneInput
+                        international
+                        countryCallingCodeEditable={false}
+                        defaultCountry="IN"
+                        value={formData.businessPhone}
+                        onChange={handlePhoneChange}
+                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
+                        className={`w-full border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Phone Number"
+                      />
+                    </div>
+                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company/Institution *
+                    </label>
+                    <div className="relative">
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="companyInstitution"
+                        value={formData.companyInstitution}
+                        onChange={handleInputChange}
+                        onBlur={() => validateCompanyInstitution(formData.companyInstitution)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyInstitutionError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Financial Institution"
+                      />
+                    </div>
+                    {companyInstitutionError && <p className="text-red-500 text-xs mt-1">{companyInstitutionError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Testing Requirements *
+                    </label>
+                    <div className="relative">
+                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="testingRequirements"
+                        value={formData.testingRequirements}
+                        onChange={handleInputChange}
+                        onBlur={() => validateTestingRequirements(formData.testingRequirements)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
+                      >
+                        <option value="">Select your primary need</option>
+                        <option value="security-testing">Security Testing</option>
+                        <option value="compliance-testing">Compliance Testing</option>
+                        <option value="performance-testing">Performance Testing</option>
+                        <option value="mobile-banking-qa">Mobile Banking QA</option>
+                        <option value="core-banking-testing">Core Banking Testing</option>
+                        <option value="api-testing">API Testing</option>
+                        <option value="comprehensive-testing">Comprehensive Testing Strategy</option>
+                      </select>
+                    </div>
+                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <div className="relative">
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onBlur={() => validateMessage(formData.message)}
+                        required
+                        rows={4}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Please describe your testing requirements, compliance needs, and any specific challenges you're facing..."
+                      />
+                    </div>
+                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <FaRocket className="w-4 h-4" />
+                        Get Free Banking Assessment
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+
+            <div className="mt-6 text-center text-gray-500 text-sm">
+              <p>
+                Banking testing experts • Response within 2 hours during
+                business hours
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -300,3 +549,4 @@ const BankingContactSection: React.FC = () => {
 };
 
 export default BankingContactSection;
+
