@@ -15,14 +15,16 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
       industry: "Financial Services",
       size: "500+ employees",
       challenge: "Legacy testing processes causing delays and quality issues",
-      solution: "Comprehensive QA transformation program with automation training",
+      solution:
+        "Comprehensive QA transformation program with automation training",
       results: [
         "60% reduction in testing time",
         "40% improvement in bug detection",
         "25 QA professionals certified",
         "ROI achieved within 6 months",
       ],
-      testimonial: "Testriq's training program transformed our entire QA approach. The results exceeded our expectations.",
+      testimonial:
+        "Testriq's training program transformed our entire QA approach. The results exceeded our expectations.",
       author: "Sarah Johnson, QA Director",
       icon: <FaBuilding className="text-2xl text-blue-600" />,
       color: "blue",
@@ -31,15 +33,18 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
       company: "InnovateTech Startup",
       industry: "E-commerce",
       size: "50-100 employees",
-      challenge: "Rapid growth requiring scalable QA processes and skilled team",
-      solution: "Agile testing methodology training and automation framework setup",
+      challenge:
+        "Rapid growth requiring scalable QA processes and skilled team",
+      solution:
+        "Agile testing methodology training and automation framework setup",
       results: [
         "3x faster release cycles",
         "90% test automation coverage",
         "15 team members upskilled",
         "Zero critical bugs in production",
       ],
-      testimonial: "The training gave our team the confidence and skills to scale our QA operations effectively.",
+      testimonial:
+        "The training gave our team the confidence and skills to scale our QA operations effectively.",
       author: "Michael Chen, CTO",
       icon: <FaRocket className="text-2xl text-green-600" />,
       color: "green",
@@ -56,7 +61,8 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
         "80 QA professionals trained",
         "Standardized processes across teams",
       ],
-      testimonial: "Testriq's expertise in healthcare compliance testing was exactly what we needed.",
+      testimonial:
+        "Testriq's expertise in healthcare compliance testing was exactly what we needed.",
       author: "Dr. Emily Rodriguez, Quality Director",
       icon: <FaAward className="text-2xl text-purple-600" />,
       color: "purple",
@@ -98,12 +104,14 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Real Results from
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              {" "}Real Companies
+              {" "}
+              Real Companies
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See how organizations across industries have transformed their QA capabilities 
-            and achieved measurable business outcomes with our training programs.
+            See how organizations across industries have transformed their QA
+            capabilities and achieved measurable business outcomes with our
+            training programs.
           </p>
         </div>
 
@@ -118,11 +126,15 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
                 {/* Company Info */}
                 <div className="lg:col-span-1">
                   <div className="flex items-center space-x-4 mb-6">
-                    <div className={`flex items-center justify-center w-12 h-12 bg-${study.color}-100 rounded-lg`}>
+                    <div
+                      className={`flex items-center justify-center w-12 h-12 bg-${study.color}-100 rounded-lg`}
+                    >
                       {study.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{study.company}</h3>
+                      <h3 className="text-xl font-bold text-gray-900">
+                        {study.company}
+                      </h3>
                       <p className="text-gray-600 text-sm">{study.industry}</p>
                       <p className="text-gray-500 text-xs">{study.size}</p>
                     </div>
@@ -130,26 +142,38 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
 
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Challenge</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{study.challenge}</p>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Challenge
+                      </h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {study.challenge}
+                      </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Solution</h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">{study.solution}</p>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Solution
+                      </h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {study.solution}
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Results */}
                 <div className="lg:col-span-1">
-                  <h4 className="font-semibold text-gray-900 mb-4">Key Results</h4>
+                  <h4 className="font-semibold text-gray-900 mb-4">
+                    Key Results
+                  </h4>
                   <div className="space-y-3">
                     {study.results.map((result, resultIndex) => (
                       <div
                         key={resultIndex}
                         className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200"
                       >
-                        <div className={`w-2 h-2 bg-${study.color}-500 rounded-full`}></div>
+                        <div
+                          className={`w-2 h-2 bg-${study.color}-500 rounded-full`}
+                        ></div>
                         <span className="text-gray-700 text-sm">{result}</span>
                       </div>
                     ))}
@@ -160,14 +184,18 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
                 <div className="lg:col-span-1">
                   <div className="bg-white rounded-xl p-6 border border-gray-200 h-full flex flex-col justify-between">
                     <div>
-                      <div className="text-4xl text-gray-300 mb-2">"</div>
+                      <div className="text-4xl text-gray-300 mb-2">&quot;</div>
                       <p className="text-gray-700 italic mb-4 leading-relaxed">
                         {study.testimonial}
                       </p>
                     </div>
                     <div className="border-t border-gray-200 pt-4">
-                      <div className="font-semibold text-gray-900">{study.author}</div>
-                      <div className="text-gray-600 text-sm">{study.company}</div>
+                      <div className="font-semibold text-gray-900">
+                        {study.author}
+                      </div>
+                      <div className="text-gray-600 text-sm">
+                        {study.company}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -183,7 +211,8 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
               Training Impact by the Numbers
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Our training programs deliver measurable results that drive business success.
+              Our training programs deliver measurable results that drive
+              business success.
             </p>
           </div>
 
@@ -193,7 +222,9 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
                 <div className="flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-lg mx-auto mb-4">
                   {metric.icon}
                 </div>
-                <div className="text-3xl md:text-4xl font-bold mb-2">{metric.value}</div>
+                <div className="text-3xl md:text-4xl font-bold mb-2">
+                  {metric.value}
+                </div>
                 <div className="text-blue-100 text-sm">{metric.label}</div>
               </div>
             ))}
@@ -207,8 +238,8 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
               Ready to Write Your Success Story?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join the growing list of companies that have transformed their QA capabilities 
-              with our proven training programs.
+              Join the growing list of companies that have transformed their QA
+              capabilities with our proven training programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
@@ -226,4 +257,3 @@ const CorporateQATrainingCaseStudies: React.FC = () => {
 };
 
 export default CorporateQATrainingCaseStudies;
-

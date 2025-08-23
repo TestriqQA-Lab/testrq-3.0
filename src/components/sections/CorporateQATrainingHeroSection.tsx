@@ -3,12 +3,9 @@ import React from "react";
 import {
   FaGraduationCap,
   FaUsers,
-  FaCheckCircle,
-  FaCertificate,
   FaLaptopCode,
   FaChartLine,
   FaTools,
-  FaClipboardCheck,
 } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -37,12 +34,12 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Elevate your organization's software quality with comprehensive QA
-              training programs. Our expert-led corporate training covers manual
-              testing, automation frameworks, performance testing, and quality
-              assurance best practices. Delivered by ISTQB-certified
-              professionals with hands-on experience and industry-proven
-              methodologies to upskill your entire QA team.
+              Elevate your organization&apos;s software quality with
+              comprehensive QA training programs. Our expert-led corporate
+              training covers manual testing, automation frameworks, performance
+              testing, and quality assurance best practices. Delivered by
+              ISTQB-certified professionals with hands-on experience and
+              industry-proven methodologies to upskill your entire QA team.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
