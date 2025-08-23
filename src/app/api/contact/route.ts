@@ -122,8 +122,8 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch (error) {
-    console.error('API error:', error);
+  } catch (_error) {
+    console.error("API error:", _error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -148,7 +148,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
+    } );
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -169,56 +169,19 @@ async function storeInGoogleSheets(data: ContactFormData) {
       data.companyName || ''
     ];
 
-    // Determine which sheet tab to use based on source
-    let sheetName = 'Contact Us'; // Default sheet name
-    if (isEcommerce) {
-      sheetName = 'E-commerce';
-    }
+    // Check if sheet has headers, if not add them
+    const headerRange = 'A1:I1';
+    const headerResponse = await sheets.spreadsheets.values.get({
+      spreadsheetId: GOOGLE_SHEET_ID,
+      range: headerRange,
+    });
 
-    const range = `${sheetName}!A:I`;
-
-    // Check if sheet exists and has headers
-    try {
-      const headerRange = `${sheetName}!A1:I1`;
-      const headerResponse = await sheets.spreadsheets.values.get({
-        spreadsheetId: GOOGLE_SHEET_ID,
-        range: headerRange,
-      });
-
-      if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
-        // Add headers if sheet is empty
-        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Stage/Platform', 'How Did You Hear', 'Message', 'Source', 'Company Name'];
-        await sheets.spreadsheets.values.update({
-          spreadsheetId: GOOGLE_SHEET_ID,
-          range: headerRange,
-          valueInputOption: 'RAW',
-          requestBody: {
-            values: [headers],
-          },
-        });
-      }
-    } catch (error) {
-      // If sheet doesn't exist, create it
-      await sheets.spreadsheets.batchUpdate({
-        spreadsheetId: GOOGLE_SHEET_ID,
-        requestBody: {
-          requests: [
-            {
-              addSheet: {
-                properties: {
-                  title: sheetName,
-                },
-              },
-            },
-          ],
-        },
-      });
-
-      // Add headers to new sheet
+    if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
+      // Add headers if sheet is empty
       const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Stage/Platform', 'How Did You Hear', 'Message', 'Source', 'Company Name'];
       await sheets.spreadsheets.values.update({
         spreadsheetId: GOOGLE_SHEET_ID,
-        range: `${sheetName}!A1:I1`,
+        range: headerRange,
         valueInputOption: 'RAW',
         requestBody: {
           values: [headers],
@@ -229,17 +192,17 @@ async function storeInGoogleSheets(data: ContactFormData) {
     // Append the new row
     await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: range,
+      range: 'A:I',
       valueInputOption: 'RAW',
       requestBody: {
         values: [rowData],
       },
     });
 
-    console.log(`Data stored in Google Sheets successfully in ${sheetName} tab`);
-  } catch (error) {
-    console.error('Google Sheets storage failed:', error);
-    throw error;
+    console.log('Data stored in Google Sheets successfully');
+  } catch (_error) {
+    console.error("Google Sheets storage failed:", _error);
+    throw _error;
   }
 }
 
@@ -266,15 +229,11 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: SMTP_PORT,
-      secure: false,
+      secure: false, // true for 465, false for other ports
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
-      from: {
-        name: "Testriq Contact Form",
-        address: FROM_EMAIL,
-      }
     } as nodemailer.TransportOptions);
 
     const isEcommerce = (data.source || '').toLowerCase().includes('e-commerce testing services page');
@@ -291,7 +250,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
 
     // Email content
     const mailOptions: nodemailer.SendMailOptions = {
-
+      from: `"Testriq Contact Form" <${FROM_EMAIL}>`,
       to: PROFESSIONAL_EMAIL_TO.split(',').map(email => email.trim()).join(', '),
       subject: `New Contact Form Submission from ${data.fullName}`,
       html: `
@@ -317,7 +276,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -333,7 +292,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC) {
+    if (PROFESSIONAL_EMAIL_CC ) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -344,9 +303,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
     await transporter.sendMail(mailOptions);
     console.log('Professional notification sent successfully to:', mailOptions.to);
 
-  } catch (error) {
-    console.error('Professional notification failed:', error);
-    throw error;
+  } catch (_error) {
+    console.error("Professional notification failed:", _error);
+    throw _error;
   }
 }
 
@@ -357,7 +316,6 @@ async function sendClientConfirmation(data: ContactFormData) {
     const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
-    const FROM_EMAIL = process.env.FROM_EMAIL;
 
     if (!SMTP_USER || !SMTP_PASS) {
       console.log('Email configuration missing for client confirmation');
@@ -368,15 +326,11 @@ async function sendClientConfirmation(data: ContactFormData) {
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: SMTP_PORT,
-      secure: false,
+      secure: false, // true for 465, false for other ports
       auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
       },
-      from: {
-        name: "Testriq Contact Form",
-        address: FROM_EMAIL,
-      }
     } as nodemailer.TransportOptions);
 
     const isEcommerce = (data.source || '').toLowerCase().includes('e-commerce testing services page');
@@ -393,7 +347,7 @@ async function sendClientConfirmation(data: ContactFormData) {
 
     // Email content with logo
     const mailOptions = {
-
+      from: `"Testriq QA Lab" <${SMTP_USER}>`,
       to: data.businessEmail,
       subject: 'Thank you for contacting Testriq QA Lab',
       html: `
@@ -428,7 +382,7 @@ async function sendClientConfirmation(data: ContactFormData) {
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our team will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST).
+                Our team will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ).
               </p>
             </div>
             
@@ -437,7 +391,7 @@ async function sendClientConfirmation(data: ContactFormData) {
               <ul style="line-height: 1.8; padding-left: 20px;">
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
-                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
               </ul>
             </div>
             
@@ -446,33 +400,26 @@ async function sendClientConfirmation(data: ContactFormData) {
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
-              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: 600;">Best regards,</p>
-              <p style="margin: 5px 0 0 0; color: #4b5563;">The Testriq QA Lab Team</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb;">Thank you,</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb;">The Testriq QA Lab Team</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
+              <p style="margin: 0;">Testriq QA Lab | <a href="https://testriq.com" style="color: #6b7280; text-decoration: none;">testriq.com</a></p>
+              <p style="margin: 5px 0;">123 QA Street, Testing City, State 12345</p>
+              <p style="margin: 0;">Email: <a href="mailto:info@testriq.com" style="color: #6b7280; text-decoration: none;">info@testriq.com</a> | Phone: (+91 ) 915-2929-343</p>
             </div>
           </div>
-
-          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
-            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
-              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
-              <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
-              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
-              <p style="margin: 0; font-size: 12px; color: #9ca3af;">
-                This is an automated confirmation email. Please do not reply to this email.
-              </p>
-            </div>
-          </div>
-
         </div>
       `,
     };
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation sent successfully to:', data.businessEmail);
+    console.log('Client confirmation sent successfully to:', mailOptions.to);
 
-  } catch (error) {
-    console.error('Client confirmation failed:', error);
-    throw error;
+  } catch (_error) {
+    console.error('Client confirmation failed:', _error);
+    throw _error;
   }
 }
-

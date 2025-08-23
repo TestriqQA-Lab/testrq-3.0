@@ -1,7 +1,7 @@
 "use client";
-
 import Link from "next/link";
-import React, { useState } from "react";
+
+import React from "react";
 import {
   FaPhone,
   FaEnvelope,
@@ -10,270 +10,46 @@ import {
   FaShieldAlt,
   FaGavel,
   FaHeartbeat,
+  FaArrowRight,
   FaCheckCircle,
   FaClock,
   FaAward,
-  FaUser,
-  FaBuilding,
-  FaComments,
-  FaRocket,
 } from "react-icons/fa";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
-import { isValidPhoneNumber } from "libphonenumber-js";
 
 const HealthcareContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    businessEmail: "",
-    businessPhone: "",
-    healthcareOrganization: "",
-    healthcareSoftwareType: "",
-    testingRequirements: "",
-    projectDetails: "",
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [phoneError, setPhoneError] = useState<string | null>(null);
-  const [emailError, setEmailError] = useState<string | null>(null);
-  const [fullNameError, setFullNameError] = useState<string | null>(null);
-  const [healthcareOrganizationError, setHealthcareOrganizationError] = useState<string | null>(null);
-  const [healthcareSoftwareTypeError, setHealthcareSoftwareTypeError] = useState<string | null>(null);
-  const [testingRequirementsError, setTestingRequirementsError] = useState<string | null>(null);
-  const [projectDetailsError, setProjectDetailsError] = useState<string | null>(null);
-
-  const validatePhoneNumber = (phone: string | undefined) => {
-    if (!phone) {
-      setPhoneError("Business Phone is required.");
-      return false;
-    }
-    if (!isValidPhoneNumber(phone)) {
-      setPhoneError("Invalid phone number format.");
-      return false;
-    }
-
-    const digits = phone.replace(/\D/g, "");
-
-    if (/^(\d)\1+$/.test(digits)) {
-      setPhoneError("Phone number cannot consist of repeating digits.");
-      return false;
-    }
-
-    const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
-        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
-          return true;
-        }
-      }
-      return false;
-    };
-    if (isSequential(digits)) {
-      setPhoneError("Phone number cannot consist of sequential digits.");
-      return false;
-    }
-
-    if (/^0+$/.test(digits)) {
-      setPhoneError("Phone number cannot be all zeros.");
-      return false;
-    }
-
-    setPhoneError(null);
-    return true;
-  };
-
-  const validateEmail = (email: string) => {
-    if (!email) {
-      setEmailError("Business Email is required.");
-      return false;
-    }
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
-      setEmailError("Invalid email format.");
-      return false;
-    }
-    setEmailError(null);
-    return true;
-  };
-
-  const validateFullName = (name: string) => {
-    if (!name) {
-      setFullNameError("Full Name is required.");
-      return false;
-    }
-    if (name.trim().length < 3) {
-      setFullNameError("Full Name must be at least 3 characters.");
-      return false;
-    }
-    setFullNameError(null);
-    return true;
-  };
-
-  const validateHealthcareOrganization = (organization: string) => {
-    if (!organization) {
-      setHealthcareOrganizationError("Healthcare Organization is required.");
-      return false;
-    }
-    setHealthcareOrganizationError(null);
-    return true;
-  };
-
-  const validateHealthcareSoftwareType = (softwareType: string) => {
-    if (!softwareType) {
-      setHealthcareSoftwareTypeError("Please select healthcare software type.");
-      return false;
-    }
-    setHealthcareSoftwareTypeError(null);
-    return true;
-  };
-
-  const validateTestingRequirements = (requirements: string) => {
-    if (!requirements) {
-      setTestingRequirementsError("Please select testing requirements.");
-      return false;
-    }
-    setTestingRequirementsError(null);
-    return true;
-  };
-
-  const validateProjectDetails = (details: string) => {
-    if (!details) {
-      setProjectDetailsError("Project details are required.");
-      return false;
-    }
-    if (details.trim().length < 10) {
-      setProjectDetailsError("Project details must be at least 10 characters.");
-      return false;
-    }
-    setProjectDetailsError(null);
-    return true;
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
-    if (name === "fullName") validateFullName(value);
-    if (name === "businessEmail") validateEmail(value);
-    if (name === "healthcareOrganization") validateHealthcareOrganization(value);
-    if (name === "healthcareSoftwareType") validateHealthcareSoftwareType(value);
-    if (name === "testingRequirements") validateTestingRequirements(value);
-    if (name === "projectDetails") validateProjectDetails(value);
-  };
-
-  const handlePhoneChange = (phone: string | undefined) => {
-    setFormData((prev) => ({
-      ...prev,
-      businessPhone: phone || "",
-    }));
-    validatePhoneNumber(phone);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const isPhoneValid = validatePhoneNumber(formData.businessPhone);
-    const isEmailValid = validateEmail(formData.businessEmail);
-    const isFullNameValid = validateFullName(formData.fullName);
-    const isHealthcareOrganizationValid = validateHealthcareOrganization(formData.healthcareOrganization);
-    const isHealthcareSoftwareTypeValid = validateHealthcareSoftwareType(formData.healthcareSoftwareType);
-    const isTestingRequirementsValid = validateTestingRequirements(formData.testingRequirements);
-    const isProjectDetailsValid = validateProjectDetails(formData.projectDetails);
-
-    if (
-      isPhoneValid &&
-      isEmailValid &&
-      isFullNameValid &&
-      isHealthcareOrganizationValid &&
-      isHealthcareSoftwareTypeValid &&
-      isTestingRequirementsValid &&
-      isProjectDetailsValid
-    ) {
-      setIsLoading(true);
-      try {
-        const dataToSend = {
-          fullName: formData.fullName,
-          businessEmail: formData.businessEmail,
-          businessPhone: formData.businessPhone,
-          healthcareOrganization: formData.healthcareOrganization,
-          healthcareSoftwareType: formData.healthcareSoftwareType,
-          testingRequirements: formData.testingRequirements,
-          projectDetails: formData.projectDetails,
-          source: "Healthcare Testing Services Page",
-        };
-
-        const response = await fetch("/api/healthcareContact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        });
-
-        if (response.ok) {
-          console.log("Form submitted successfully");
-          setIsSubmitted(true);
-          document.getElementById("healthcare-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
-          setTimeout(() => setIsSubmitted(false), 5000);
-
-          setFormData({
-            fullName: "",
-            businessEmail: "",
-            businessPhone: "",
-            healthcareOrganization: "",
-            healthcareSoftwareType: "",
-            testingRequirements: "",
-            projectDetails: "",
-          });
-        } else {
-          const errorData = await response.json();
-          console.error("Form submission failed:", errorData.error);
-          alert("Form submission failed. Please try again.");
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("Network error. Please check your connection and try again.");
-      } finally {
-        setIsLoading(false);
-      }
-    } else {
-      console.log("Form has errors.");
-    }
-  };
-
   const contactOptions = [
     {
+      icon: FaCalendarAlt,
+      title: "Schedule Consultation",
+      description:
+        "Book a free 30-minute consultation with our healthcare testing experts",
+      detail:"",
+      text: "Schedule Now",
+      action: "/contact-us#calendly-section",
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-50",
+    },
+    {
       icon: FaPhone,
-      title: "Speak with Healthcare Experts",
-      description: "Direct consultation with our healthcare compliance specialists",
-      text: "(+91) 915-2929-343",
+      title: "Speak with Expert",
+      description:
+        "Get immediate answers from our healthcare compliance specialists",
+      detail:"(+91) 915-2929-343",
+      text: "Call Now",
       action: "tel:(+91) 915-2929-343",
-      color: "from-green-500 to-emerald-600",
+      color: "from-green-500 to-green-600",
+      bgColor: "bg-green-50",
     },
     {
       icon: FaEnvelope,
-      title: "Request Detailed Proposal",
-      description: "Get a comprehensive proposal for your healthcare testing needs",
-      text: "contact@testriq.com",
+      title: "Request Proposal",
+      description:
+        "Get a detailed proposal and quote for your healthcare testing needs",
+      detail:"contact@testriq.com",  
+      text: "Get Quote",
       action: "mailto:contact@testriq.com",
-      color: "from-blue-500 to-cyan-600",
-    },
-    {
-      icon: FaCalendarAlt,
-      title: "Healthcare Strategy Session",
-      description: "Book a free consultation to discuss compliance requirements",
-      text: "Schedule Free Consultation",
-      action: "/contact-us#calendly-section",
-      color: "from-purple-500 to-indigo-600",
+      color: "from-purple-500 to-purple-600",
+      bgColor: "bg-purple-50",
     },
   ];
 
@@ -318,87 +94,223 @@ const HealthcareContactSection: React.FC = () => {
     },
   ];
 
-  const scrollToCalendly = () => {
-    const element = document.getElementById("calendly-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 rounded-full px-6 py-2 mb-6">
-            <FaHeartbeat className="w-4 h-4" />
-            <span className="text-sm font-medium">Healthcare Excellence</span>
+          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+            <FaUserMd className="w-4 h-4" />
+            <span className="text-sm">Get Started Today</span>
           </div>
-
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
-            Ready to Ensure Your
-            <span className="block text-blue-600">Healthcare Software Compliance?</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Ready to Secure Your
+            <span className="block text-brand-blue">Healthcare Software?</span>
           </h2>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards HIPAA compliance, FDA validation, and enhanced patient safety. 
-            Our healthcare testing experts are ready to help you navigate complex regulatory requirements.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Connect with our healthcare testing experts to discuss your
+            regulatory compliance needs, get a custom quote, and start your
+            journey toward HIPAA and FDA approval with trusted healthcare QA
+            services.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left Column - Contact Methods */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Choose Your Preferred Contact Method
-            </h3>
-
-            {contactOptions.map((option, index) => (
-              <a
-                key={index}
-                href={option.action}
-                onClick={(e) => {
-                  if (option.title === "Healthcare Strategy Session") {
-                    e.preventDefault();
-                    scrollToCalendly();
-                  }
-                }}
-                className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+        {/* Contact Options */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {contactOptions.map((option, index) => (
+            <div
+              key={index}
+              className={`${option.bgColor} ring-1 ring-brand-blue rounded-3xl p-8 text-center hover:shadow-lg hover:ring-3 transition-all duration-300 group`}
+            >
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
-                <div className="flex items-start gap-4">
-                  <div
-                    className={`w-12 h-12 bg-gradient-to-r ${option.color} rounded-xl flex items-center justify-center flex-shrink-0`}
-                  >
-                    <option.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">
-                      {option.title}
-                    </h4>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                      {option.description}
-                    </p>
-                    <span className="text-blue-600 font-semibold flex items-center gap-2 group">
-                      {option.text}
-                    </span>
-                  </div>
-                </div>
-              </a>
-            ))}
+                <option.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                {option.title}
+              </h3>
+              <p className="text-gray-600 mb-3 leading-relaxed">
+                {option.description}
+              </p>
+              <h3 className="text-gray-900 mb-3">{option.detail}</h3>
+              <Link href={option.action}>
+                <button
+                  className={`bg-gradient-to-r ${option.color} cursor-pointer text-white px-8 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 mx-auto group`}
+                >
+                  {option.text}
+                  <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+            </div>
+          ))}
+        </div>
 
+        {/* Main Contact Form */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* Contact Form */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl">
+            <div className="mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Get Your Free Healthcare Testing Assessment
+              </h3>
+              <p className="text-gray-600">
+                Fill out this form and our healthcare testing experts will
+                contact you within 12 hours.
+              </p>
+            </div>
+
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all"
+                  placeholder="john.doe@company.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Company Name *
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all"
+                  placeholder="Healthcare Organization"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Healthcare Software Type *
+                </label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all">
+                  <option value="">Select Software Type</option>
+                  <option value="ehr-emr">EHR/EMR System</option>
+                  <option value="telemedicine">Telemedicine Platform</option>
+                  <option value="medical-device">
+                    Medical Device Software
+                  </option>
+                  <option value="mobile-health">Mobile Health App</option>
+                  <option value="clinical-decision">
+                    Clinical Decision Support
+                  </option>
+                  <option value="laboratory">
+                    Laboratory Information System
+                  </option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Testing Requirements
+                </label>
+                <div className="space-y-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
+                    />
+                    <span className="ml-2 text-gray-700">
+                      HIPAA Compliance Testing
+                    </span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
+                    />
+                    <span className="ml-2 text-gray-700">
+                      FDA Validation Support
+                    </span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
+                    />
+                    <span className="ml-2 text-gray-700">Security Testing</span>
+                  </label>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      className="rounded border-gray-300 text-[theme(color.brand.blue)] focus:ring-[theme(color.brand.blue)]"
+                    />
+                    <span className="ml-2 text-gray-700">
+                      Interoperability Testing
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Project Details
+                </label>
+                <textarea
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent outline-none transition-all resize-none"
+                  placeholder="Tell us about your healthcare software testing needs, timeline, and any specific compliance requirements..."
+                ></textarea>
+              </div>
+
+              <button className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white py-4 px-8 rounded-2xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+                Get Free Assessment
+                <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Information */}
+          <div className="space-y-8">
             {/* Expertise Areas */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-3xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Our Healthcare Expertise
               </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-4">
                 {expertiseAreas.map((area, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <area.icon className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <area.icon className="w-5 h-5 text-white" />
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">{area.title}</h4>
-                      <p className="text-gray-600 text-xs">{area.description}</p>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">
+                        {area.title}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {area.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -406,223 +318,90 @@ const HealthcareContactSection: React.FC = () => {
             </div>
 
             {/* Why Choose Us */}
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Why Healthcare Organizations Choose Us
+            <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-6">
+                Why Choose Testriq for Healthcare Testing?
               </h3>
-
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {whyChooseUs.map((reason, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <reason.icon className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-8 h-8  bg-opacity-20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <reason.icon className="w-8 h-8" />
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm">{reason.title}</h4>
-                      <p className="text-gray-600 text-xs">{reason.description}</p>
+                      <h4 className="font-semibold mb-1">{reason.title}</h4>
+                      <p className="text-blue-100 text-sm">
+                        {reason.description}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Right Column - Contact Form */}
-          <div id="healthcare-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <h4 className="font-semibold text-gray-900 mb-4">
-                Healthcare Testing Assessment Form
-              </h4>
-              {isSubmitted ? (
-                <div className="text-center py-8">
-                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-gray-600">
-                    Thank you for reaching out. We&apos;ll get back to you soon.
-                  </p>
+            {/* Contact Info */}
+            <div className="bg-white rounded-3xl p-8 shadow-lg">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Direct Contact
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
+                    <FaPhone className="w-5 h-5 text-green-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">
+                      Healthcare Hotline
+                    </div>
+                    <div className="text-gray-600">(+91) 915-2929-343</div>
+                  </div>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <div className="relative">
-                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                      <input
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        onBlur={() => validateFullName(formData.fullName)}
-                        required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Your Name"
-                      />
-                    </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <FaEnvelope className="w-5 h-5 text-blue-600" />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Business Email *
-                    </label>
-                    <div className="relative">
-                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                      <input
-                        type="email"
-                        name="businessEmail"
-                        value={formData.businessEmail}
-                        onChange={handleInputChange}
-                        onBlur={() => validateEmail(formData.businessEmail)}
-                        required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Email Address"
-                      />
+                    <div className="font-semibold text-gray-900">
+                      Healthcare Team
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    <div className="text-gray-600">contact@testriq.com</div>
                   </div>
-
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <FaClock className="w-5 h-5 text-purple-600" />
+                  </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Business Phone *
-                    </label>
-                    <div className="relative">
-                      <PhoneInput
-                        international
-                        value={formData.businessPhone}
-                        onChange={handlePhoneChange}
-                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
-                        className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Enter phone number"
-                        inputClassName="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300"
-                      />
+                    <div className="font-semibold text-gray-900">
+                      Response Time
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    <div className="text-gray-600">Within 12 hours</div>
                   </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Healthcare Organization *
-                    </label>
-                    <div className="relative">
-                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                      <input
-                        type="text"
-                        name="healthcareOrganization"
-                        value={formData.healthcareOrganization}
-                        onChange={handleInputChange}
-                        onBlur={() => validateHealthcareOrganization(formData.healthcareOrganization)}
-                        required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 ${healthcareOrganizationError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Healthcare Organization Name"
-                      />
-                    </div>
-                    {healthcareOrganizationError && <p className="text-red-500 text-xs mt-1">{healthcareOrganizationError}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Healthcare Software Type *
-                    </label>
-                    <div className="relative">
-                      <FaHeartbeat className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                      <select
-                        name="healthcareSoftwareType"
-                        value={formData.healthcareSoftwareType}
-                        onChange={handleInputChange}
-                        onBlur={() => validateHealthcareSoftwareType(formData.healthcareSoftwareType)}
-                        required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 appearance-none ${healthcareSoftwareTypeError ? 'border-red-500' : 'border-gray-200'}`}
-                      >
-                        <option value="">Select Healthcare Software Type</option>
-                        <option value="ehr-emr">EHR/EMR Systems</option>
-                        <option value="telemedicine">Telemedicine Platform</option>
-                        <option value="medical-device">Medical Device Software</option>
-                        <option value="patient-portal">Patient Portal</option>
-                        <option value="clinical-trial">Clinical Trial Management</option>
-                        <option value="pharmacy">Pharmacy Management</option>
-                        <option value="laboratory">Laboratory Information System</option>
-                        <option value="radiology">Radiology Information System</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    {healthcareSoftwareTypeError && <p className="text-red-500 text-xs mt-1">{healthcareSoftwareTypeError}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Testing Requirements *
-                    </label>
-                    <div className="relative">
-                      <FaShieldAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                      <select
-                        name="testingRequirements"
-                        value={formData.testingRequirements}
-                        onChange={handleInputChange}
-                        onBlur={() => validateTestingRequirements(formData.testingRequirements)}
-                        required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
-                      >
-                        <option value="">Select Testing Requirements</option>
-                        <option value="hipaa-compliance">HIPAA Compliance Testing</option>
-                        <option value="fda-validation">FDA Validation</option>
-                        <option value="security-testing">Security Testing</option>
-                        <option value="performance-testing">Performance Testing</option>
-                        <option value="interoperability">Interoperability Testing</option>
-                        <option value="accessibility">Accessibility Testing</option>
-                        <option value="functional-testing">Functional Testing</option>
-                        <option value="comprehensive">Comprehensive Testing</option>
-                      </select>
-                    </div>
-                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Details *
-                    </label>
-                    <div className="relative">
-                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
-                      <textarea
-                        name="projectDetails"
-                        value={formData.projectDetails}
-                        onChange={handleInputChange}
-                        onBlur={() => validateProjectDetails(formData.projectDetails)}
-                        required
-                        rows={4}
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all duration-300 resize-none ${projectDetailsError ? 'border-red-500' : 'border-gray-200'}`}
-                        placeholder="Tell us about your healthcare testing project, compliance requirements, timeline, and any specific concerns..."
-                      />
-                    </div>
-                    {projectDetailsError && <p className="text-red-500 text-xs mt-1">{projectDetailsError}</p>}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                        Submitting...
-                      </>
-                    ) : (
-                      <>
-                        <FaRocket className="w-4 h-4" />
-                        Get Healthcare Testing Assessment
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <div className="mt-6 text-center text-gray-500 text-sm">
-              <p>
-                Healthcare compliance experts • Response within 2 hours during business hours
-              </p>
+        {/* Bottom CTA */}
+        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-3xl font-bold mb-4">
+              Start Your Healthcare Testing Journey Today
+            </h3>
+            <p className="mb-8 text-lg">
+              Join 200+ healthcare organizations that trust Testriq for
+              comprehensive medical software testing and regulatory compliance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
+              <Link href="/contact-us">
+                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
+                  Schedule Free Consultation
+                </button>
+              </Link>
+              {/* <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+                Download Healthcare Testing Guide
+              </button> */}
             </div>
           </div>
         </div>
