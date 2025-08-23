@@ -215,10 +215,11 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL = process.env.FROM_EMAIL;
     
-    // Support multiple admin emails - comma separated
-    const PROFESSIONAL_EMAIL_TO = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
-    const PROFESSIONAL_EMAIL_CC = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_CC;
-    const PROFESSIONAL_EMAIL_BCC = process.env.ECOMMERCE_PROFESSIONAL_EMAIL_BCC;
+    // FIXED: Use the same environment variables as the main contact form
+    // This ensures that the ecommerce form sends to the same recipients as the main contact form
+    const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
+    const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
+    const PROFESSIONAL_EMAIL_BCC = process.env.PROFESSIONAL_EMAIL_BCC;
 
     if (!SMTP_USER || !SMTP_PASS || !PROFESSIONAL_EMAIL_TO) {
       console.log('Email configuration missing for professional notification');
@@ -250,14 +251,14 @@ async function sendProfessionalNotification(data: ContactFormData) {
 
     // Email content
     const mailOptions: nodemailer.SendMailOptions = {
-      from: `"Testriq Contact Form" <${FROM_EMAIL}>`,
+      from: `"Testriq E-commerce Contact Form" <${FROM_EMAIL}>`,
       to: PROFESSIONAL_EMAIL_TO.split(',').map(email => email.trim()).join(', '),
-      subject: `New Contact Form Submission from ${data.fullName}`,
+      subject: `New E-commerce Contact Form Submission from ${data.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
             <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
-            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New Contact Form Submission</h2>
+            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New E-commerce Contact Form Submission</h2>
           </div>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -266,7 +267,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
             <p><strong>Business Email:</strong> ${data.businessEmail}</p>
             <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
             ${isEcommerce ? ecommerceFields : contactUsFields}
-            <p><strong>Source:</strong> ${data.source || 'Website Contact Us Page'}</p>
+            <p><strong>Source:</strong> ${data.source || 'E-commerce Testing Services Page'}</p>
           </div>
           
           <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -283,7 +284,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
               <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
-              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab contact form.</p>
+              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab e-commerce contact form.</p>
               
             </div>
           </div>
@@ -302,6 +303,8 @@ async function sendProfessionalNotification(data: ContactFormData) {
     // Send email
     await transporter.sendMail(mailOptions);
     console.log('Professional notification sent successfully to:', mailOptions.to);
+    if (mailOptions.cc) console.log('CC:', mailOptions.cc);
+    if (mailOptions.bcc) console.log('BCC:', mailOptions.bcc);
 
   } catch (error) {
     console.error('Professional notification failed:', error);
@@ -349,7 +352,7 @@ async function sendClientConfirmation(data: ContactFormData) {
     const mailOptions = {
       from: `"Testriq QA Lab" <${SMTP_USER}>`,
       to: data.businessEmail,
-      subject: 'Thank you for contacting Testriq QA Lab',
+      subject: 'Thank you for contacting Testriq QA Lab - E-commerce Testing Services',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
           <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
@@ -361,7 +364,7 @@ async function sendClientConfirmation(data: ContactFormData) {
             <h2 style="color: #2563eb; margin-top: 0;">Dear ${data.fullName},</h2>
             
             <p style="line-height: 1.6; margin-bottom: 20px;">
-              Thank you for reaching out to Testriq QA Lab. We have received your inquiry and appreciate your interest in our software testing services.
+              Thank you for reaching out to Testriq QA Lab regarding our e-commerce testing services. We have received your inquiry and appreciate your interest in optimizing your e-commerce platform.
             </p>
             
             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 25px 0;">
@@ -382,7 +385,7 @@ async function sendClientConfirmation(data: ContactFormData) {
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our team will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST).
+                Our e-commerce testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST) with a customized testing strategy for your platform.
               </p>
             </div>
             
@@ -390,32 +393,33 @@ async function sendClientConfirmation(data: ContactFormData) {
               <h3 style="color: #2563eb;">In the meantime, feel free to:</h3>
               <ul style="line-height: 1.8; padding-left: 20px;">
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
+                <li>Learn more about our e-commerce testing services: <a href="https://testriq.com/e-commerce-testing-services" style="color: #2563eb;">E-commerce Testing</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
                 <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
               </ul>
             </div>
             
             <p style="line-height: 1.6; margin-bottom: 30px;">
-              We look forward to discussing how we can help you achieve quality excellence with our automation, manual, and performance testing services.
+              We look forward to helping you achieve higher conversion rates, enhanced user experience, and increased revenue through comprehensive e-commerce testing.
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
-              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: bold;">Best regards,</p>
-              <p style="margin: 5px 0 0 0; font-size: 16px; color: #1e40af;">The Testriq QA Lab Team</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: 600;">Best regards,</p>
+              <p style="margin: 5px 0 0 0; color: #4b5563;">The Testriq QA Lab Team</p>
             </div>
           </div>
-          
-          <div style="background-color: #f8fafc; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
+
+          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
               <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
-              <p style="margin: 0 0 10px 0; font-weight: bold; color: #374151;">Testriq QA Lab LLP</p>
-              <p style="margin: 0 0 5px 0;">Office Number 2 & 3, 2nd Floor, Ashley Towers</p>
-              <p style="margin: 0;">Next to Pizza Hut, Near Axis Bank, Vile Parle (West), Mumbai - 400056</p>
-              <p style="margin: 10px 0 0 0;">
-                <a href="https://testriq.com" style="color: #2563eb; text-decoration: none;">testriq.com</a>
+              <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
+              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
+              <p style="margin: 0; font-size: 12px; color: #9ca3af;">
+                This is an automated confirmation email. Please do not reply to this email.
               </p>
             </div>
           </div>
+
         </div>
       `,
     };

@@ -203,10 +203,6 @@ const Navbar = () => {
               link: "/dating-app-certification",
             },
             {
-              label: "Fantasy Sports App Certification",
-              link: "/fantasy-sports-app-certification",
-            },
-            {
               label: "Trading Apps Certification",
               link: "/trading-apps-certification",
             },
