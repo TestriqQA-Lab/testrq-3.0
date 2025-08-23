@@ -415,9 +415,9 @@ const IoTContactSection: React.FC = () => {
                   Schedule Free Consultation
                 </button>
               </Link>
-              <button className="bg-white cursor-pointer bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all">
+              {/* <button className="bg-white cursor-pointer bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all">
                 Download IoT Testing Guide
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

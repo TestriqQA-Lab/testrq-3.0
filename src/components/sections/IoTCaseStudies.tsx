@@ -238,7 +238,7 @@ const IoTCaseStudies: React.FC = () => {
                 {caseStudies[activeCase].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`p-4 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
+                    className={`w-auto md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
                   >
                     <div className="flex items-center mb-2 ">
                       <div
@@ -256,7 +256,7 @@ const IoTCaseStudies: React.FC = () => {
                       {metric.label}
                     </div>
                     <div
-                      className={`absolute top-2 right-2 w-1.5 h-1.5 bg-${caseStudies[activeCase].color}-500 rounded-full animate-pulse`}
+                      className={`absolute hidden md:block top-2 right-2 w-1.5 h-1.5 bg-${caseStudies[activeCase].color}-500 rounded-full animate-pulse`}
                     ></div>
                   </div>
                 ))}

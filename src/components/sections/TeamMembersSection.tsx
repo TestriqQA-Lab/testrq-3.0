@@ -146,7 +146,7 @@ const TeamMembersSection = () => {
     },
     {
       name: "Pravin Kodag",
-      role: "IT Adminitrator",
+      role: "IT Administrator",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/pravin-kodag-83a717189/",
       src: "/Pravin Kodag.jpeg",
