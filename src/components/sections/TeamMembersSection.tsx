@@ -144,6 +144,41 @@ const TeamMembersSection = () => {
       linkedin: "https://www.linkedin.com/in/elvita07",
       src: "/elvita-gomes.png",
     },
+    {
+      name: "Pravin Kodag",
+      role: "IT Adminitrator",
+      department: "Testriq QA Lab",
+      linkedin: "https://www.linkedin.com/in/pravin-kodag-83a717189/",
+      src: "/Pravin Kodag.jpeg",
+    },
+    {
+      name: "Prakash Mishra",
+      role: "Lead Software Engineer",
+      department: "Testriq QA Lab",
+      linkedin: "https://www.linkedin.com/in/prakashmmishra/",
+      src: "/Prakash Mishra.jpeg",
+    },
+    {
+      name: "Pooja Katkar",
+      role: "Test Lead",
+      department: "Testriq QA Lab",
+      linkedin: "https://www.linkedin.com/in/pooja-katkar-737b3525a/",
+      src: "/",
+    },
+    {
+      name: "Sujay Ambelkar",
+      role: "HR Specialist",
+      department: "Testriq QA Lab",
+      linkedin: "https://www.linkedin.com/in/sujay-ambelkar-ab2770145/",
+      src: "/Sujay Ambelkar.jpeg",
+    },
+    {
+      name: "Ayushi Bansal",
+      role: "UI/UX Designer",
+      department: "Testriq QA Lab",
+      linkedin: "https://www.linkedin.com/in/elvita07",
+      src: "/Ayushi Bansal.jpeg",
+    },
   ];
 
   return (
