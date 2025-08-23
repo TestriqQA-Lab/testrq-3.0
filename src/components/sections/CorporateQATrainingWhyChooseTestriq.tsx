@@ -106,7 +106,8 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             With over a decade of experience in software testing and training,
-            we've helped hundreds of organizations build world-class QA teams.
+            we&apos;ve helped hundreds of organizations build world-class QA
+            teams.
           </p>
         </div>
 
@@ -140,8 +141,8 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
               What Our Clients Say
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what industry leaders say
-              about our training programs.
+              Don&apos;st just take our word for it. Here&apos;s what industry
+              leaders say about our training programs.
             </p>
           </div>
 
@@ -163,7 +164,7 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
                   ))}
                 </div>
                 <p className="text-blue-600 mb-4 italic">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
               </div>
             ))}

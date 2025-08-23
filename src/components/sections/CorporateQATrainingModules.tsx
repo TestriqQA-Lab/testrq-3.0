@@ -5,9 +5,6 @@ import {
   FaLaptopCode,
   FaChartLine,
   FaTools,
-  FaShieldAlt,
-  FaMobile,
-  FaDatabase,
   FaRocket,
   FaClock,
   FaUsers,
@@ -271,7 +268,8 @@ const CorporateQATrainingModules: React.FC = () => {
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Our training experts will work with you to create a customized
-              curriculum that meets your team's specific needs and skill levels.
+              curriculum that meets your team&apos;ss specific needs and skill
+              levels.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">

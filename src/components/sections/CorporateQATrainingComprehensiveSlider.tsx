@@ -9,11 +9,8 @@ import {
   FaCertificate,
   FaUsers,
   FaClipboardCheck,
-  FaBug,
   FaRocket,
   FaShieldAlt,
-  FaDatabase,
-  FaMobile,
 } from "react-icons/fa";
 
 const CorporateQATrainingComprehensiveSlider: React.FC = () => {
@@ -197,7 +194,7 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
 
               <div>
                 <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                  What You'll Learn
+                  What You&apos;ll Learn
                 </h4>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {trainingModules[activeTab].features.map((feature, index) => (
