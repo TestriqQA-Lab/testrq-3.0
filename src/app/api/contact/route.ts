@@ -122,8 +122,8 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch (error) {
-    console.error('API error:', error);
+  } catch (_error) {
+    console.error("API error:", _error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -148,7 +148,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
+    } );
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -200,9 +200,9 @@ async function storeInGoogleSheets(data: ContactFormData) {
     });
 
     console.log('Data stored in Google Sheets successfully');
-  } catch (error) {
-    console.error('Google Sheets storage failed:', error);
-    throw error;
+  } catch (_error) {
+    console.error("Google Sheets storage failed:", _error);
+    throw _error;
   }
 }
 
@@ -276,7 +276,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -292,7 +292,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC) {
+    if (PROFESSIONAL_EMAIL_CC ) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -303,9 +303,9 @@ async function sendProfessionalNotification(data: ContactFormData) {
     await transporter.sendMail(mailOptions);
     console.log('Professional notification sent successfully to:', mailOptions.to);
 
-  } catch (error) {
-    console.error('Professional notification failed:', error);
-    throw error;
+  } catch (_error) {
+    console.error("Professional notification failed:", _error);
+    throw _error;
   }
 }
 
@@ -382,7 +382,7 @@ async function sendClientConfirmation(data: ContactFormData) {
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our team will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST).
+                Our team will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ).
               </p>
             </div>
             
@@ -391,7 +391,7 @@ async function sendClientConfirmation(data: ContactFormData) {
               <ul style="line-height: 1.8; padding-left: 20px;">
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
-                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
               </ul>
             </div>
             
@@ -400,20 +400,14 @@ async function sendClientConfirmation(data: ContactFormData) {
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
-              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: bold;">Best regards,</p>
-              <p style="margin: 5px 0 0 0; font-size: 16px; color: #1e40af;">The Testriq QA Lab Team</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb;">Thank you,</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb;">The Testriq QA Lab Team</p>
             </div>
-          </div>
-          
-          <div style="background-color: #f8fafc; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
-            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
-              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
-              <p style="margin: 0 0 10px 0; font-weight: bold; color: #374151;">Testriq QA Lab LLP</p>
-              <p style="margin: 0 0 5px 0;">Office Number 2 & 3, 2nd Floor, Ashley Towers</p>
-              <p style="margin: 0;">Next to Pizza Hut, Near Axis Bank, Vile Parle (West), Mumbai - 400056</p>
-              <p style="margin: 10px 0 0 0;">
-                <a href="https://testriq.com" style="color: #2563eb; text-decoration: none;">testriq.com</a>
-              </p>
+            
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
+              <p style="margin: 0;">Testriq QA Lab | <a href="https://testriq.com" style="color: #6b7280; text-decoration: none;">testriq.com</a></p>
+              <p style="margin: 5px 0;">123 QA Street, Testing City, State 12345</p>
+              <p style="margin: 0;">Email: <a href="mailto:info@testriq.com" style="color: #6b7280; text-decoration: none;">info@testriq.com</a> | Phone: (+91 ) 915-2929-343</p>
             </div>
           </div>
         </div>
@@ -422,12 +416,10 @@ async function sendClientConfirmation(data: ContactFormData) {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation sent successfully to:', data.businessEmail);
+    console.log('Client confirmation sent successfully to:', mailOptions.to);
 
-  } catch (error) {
-    console.error('Client confirmation failed:', error);
-    throw error;
+  } catch (_error) {
+    console.error('Client confirmation failed:', _error);
+    throw _error;
   }
 }
-
-

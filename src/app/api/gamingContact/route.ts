@@ -3,67 +3,25 @@ import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
 
 // Types for form data
-interface ContactFormData {
+interface GamingContactFormData {
   fullName: string;
   businessEmail: string;
   businessPhone: string;
-  companyStage?: string; // Made optional
-  howDidYouHear?: string; // Made optional
-  message: string;
-  companyName?: string; // Optional field for E-commerce form
-  platform?: string; // Optional field for E-commerce form
-  source?: string; // Hidden field for source tracking
-}
-
-// Helper function to format company stage
-function formatCompanyStage(stage: string | undefined): string {
-  if (!stage) return ''; // Return empty string if undefined
-  const stageMap: { [key: string]: string } = {
-    'startup': 'Startup',
-    'early_stage_startup': 'Early stage startup',
-    'mid_stage_startup': 'Mid stage startup',
-    'late_stage_startup': 'Late stage startup',
-    'enterprise': 'Enterprise',
-    'small_business': 'Small business',
-    'medium_business': 'Medium business',
-    'large_business': 'Large business',
-    'government': 'Government',
-    'non_profit': 'Non-profit',
-    'other': 'Other'
-  };
-  
-  return stageMap[stage] || stage;
-}
-
-// Helper function to format how did you hear
-function formatHowDidYouHear(source: string | undefined): string {
-  if (!source) return ''; // Return empty string if undefined
-  const sourceMap: { [key: string]: string } = {
-    'google_search': 'Google search',
-    'social_media': 'Social media',
-    'referral': 'Referral',
-    'linkedin': 'LinkedIn',
-    'facebook': 'Facebook',
-    'twitter': 'Twitter',
-    'instagram': 'Instagram',
-    'word_of_mouth': 'Word of mouth',
-    'conference': 'Conference',
-    'blog': 'Blog',
-    'advertisement': 'Advertisement',
-    'other': 'Other'
-  };
-  
-  return sourceMap[source] || source;
+  companyStudioName: string;
+  gameType: string;
+  targetPlatforms: string;
+  projectDetails: string;
+  source?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const body: ContactFormData = await request.json();
+    const body: GamingContactFormData = await request.json();
     
     // Validate required fields
-    const { fullName, businessEmail, businessPhone, message } = body;
+    const { fullName, businessEmail, businessPhone, companyStudioName, gameType, targetPlatforms, projectDetails } = body;
     
-    if (!fullName || !businessEmail || !businessPhone || !message) {
+    if (!fullName || !businessEmail || !businessPhone || !companyStudioName || !gameType || !targetPlatforms || !projectDetails) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
@@ -80,23 +38,13 @@ export async function POST(request: NextRequest) {
 
     // Add source field if not provided
     if (!body.source) {
-      body.source = 'E-commerce Testing Services Page'; // Default for this specific route
+      body.source = 'Gaming App Testing Services Page';
     }
 
-    const isEcommerce = (body.source || '').toLowerCase().includes('e-commerce testing services page');
-
-    // Ensure companyName and platform are correctly captured, defaulting to N/A if not provided
-    const effectiveCompanyName = body.companyName || 'N/A';
-    const effectivePlatform = body.platform || 'N/A';
-
     // Format the data for better readability
-    const formattedData: ContactFormData = {
+    const formattedData: GamingContactFormData = {
       ...body,
-      companyName: effectiveCompanyName,
-      platform: effectivePlatform,
-      companyStage: isEcommerce ? effectivePlatform : formatCompanyStage(body.companyStage),
-      howDidYouHear: isEcommerce ? '' : formatHowDidYouHear(body.howDidYouHear),
-      source: body.source || 'E-commerce Testing Services Page',
+      source: body.source || 'Gaming App Testing Services Page',
     };
 
     // Run all operations in parallel for better performance
@@ -122,8 +70,8 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch (_error) {
-    console.error("API error:", _error);
+  } catch (error) {
+    console.error('API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -131,7 +79,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-async function storeInGoogleSheets(data: ContactFormData) {
+async function storeInGoogleSheets(data: GamingContactFormData) {
   try {
     // Google Sheets configuration
     const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
@@ -148,40 +96,72 @@ async function storeInGoogleSheets(data: ContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    } );
+    });
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // Prepare row data with source field
+    // Prepare row data for Gaming tab
     const timestamp = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    const isEcommerce = (data.source || '').toLowerCase().includes('e-commerce testing services page');
 
     const rowData = [
       timestamp,
       data.fullName,
       data.businessEmail,
       data.businessPhone,
-      isEcommerce ? data.platform : data.companyStage || '',
-      isEcommerce ? '' : data.howDidYouHear || '',
-      data.message,
-      data.source || 'E-commerce Testing Services Page',
-      data.companyName || ''
+      data.companyStudioName,
+      data.gameType,
+      data.targetPlatforms,
+      data.projectDetails,
+      data.source || 'Gaming App Testing Services Page'
     ];
 
-    // Check if sheet has headers, if not add them
-    const headerRange = 'A1:I1';
-    const headerResponse = await sheets.spreadsheets.values.get({
-      spreadsheetId: GOOGLE_SHEET_ID,
-      range: headerRange,
-    });
+    // Use Gaming specific sheet tab
+    const sheetName = 'Gaming';
+    const range = `${sheetName}!A:I`;
 
-    if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
-      // Add headers if sheet is empty
-      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company Stage/Platform', 'How Did You Hear', 'Message', 'Source', 'Company Name'];
-      await sheets.spreadsheets.values.update({
+    // Check if Gaming sheet exists and has headers
+    try {
+      const headerRange = `${sheetName}!A1:I1`;
+      const headerResponse = await sheets.spreadsheets.values.get({
         spreadsheetId: GOOGLE_SHEET_ID,
         range: headerRange,
+      });
+
+      if (!headerResponse.data.values || headerResponse.data.values.length === 0) {
+        // Add headers if sheet is empty
+        const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Studio Name', 'Game Type', 'Target Platforms', 'Project Details', 'Source'];
+        await sheets.spreadsheets.values.update({
+          spreadsheetId: GOOGLE_SHEET_ID,
+          range: headerRange,
+          valueInputOption: 'RAW',
+          requestBody: {
+            values: [headers],
+          },
+        });
+      }
+    } catch (error) {
+      // If sheet doesn't exist, create it
+      await sheets.spreadsheets.batchUpdate({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        requestBody: {
+          requests: [
+            {
+              addSheet: {
+                properties: {
+                  title: sheetName,
+                },
+              },
+            },
+          ],
+        },
+      });
+
+      // Add headers to new sheet
+      const headers = ['Timestamp', 'Full Name', 'Business Email', 'Business Phone', 'Company/Studio Name', 'Game Type', 'Target Platforms', 'Project Details', 'Source'];
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: GOOGLE_SHEET_ID,
+        range: `${sheetName}!A1:I1`,
         valueInputOption: 'RAW',
         requestBody: {
           values: [headers],
@@ -192,31 +172,30 @@ async function storeInGoogleSheets(data: ContactFormData) {
     // Append the new row
     await sheets.spreadsheets.values.append({
       spreadsheetId: GOOGLE_SHEET_ID,
-      range: 'A:I',
+      range: range,
       valueInputOption: 'RAW',
       requestBody: {
         values: [rowData],
       },
     });
 
-    console.log('Data stored in Google Sheets successfully');
-  } catch (_error) {
-    console.error("Google Sheets storage failed:", _error);
-    throw _error;
+    console.log('Gaming data stored in Google Sheets successfully');
+  } catch (error) {
+    console.error('Google Sheets storage failed:', error);
+    throw error;
   }
 }
 
-async function sendProfessionalNotification(data: ContactFormData) {
+async function sendProfessionalNotification(data: GamingContactFormData) {
   try {
     // Email configuration from environment variables
     const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
     const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
-    const FROM_EMAIL = process.env.FROM_EMAIL;
+    const FROM_EMAIL = 'contact@testriq.com';
     
-    // FIXED: Use the same environment variables as the main contact form
-    // This ensures that the ecommerce form sends to the same recipients as the main contact form
+    // Use the same environment variables as the main contact form
     const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
     const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
     const PROFESSIONAL_EMAIL_BCC = process.env.PROFESSIONAL_EMAIL_BCC;
@@ -237,28 +216,16 @@ async function sendProfessionalNotification(data: ContactFormData) {
       },
     } as nodemailer.TransportOptions);
 
-    const isEcommerce = (data.source || '').toLowerCase().includes('e-commerce testing services page');
-
-    const ecommerceFields = `
-      <p><strong>Company Name:</strong> ${data.companyName || 'N/A'}</p>
-      <p><strong>Platform:</strong> ${data.platform || 'N/A'}</p>
-    `;
-
-    const contactUsFields = `
-      <p><strong>Company Stage:</strong> ${data.companyStage || 'N/A'}</p>
-      <p><strong>How Did You Hear:</strong> ${data.howDidYouHear || 'N/A'}</p>
-    `;
-
     // Email content
     const mailOptions: nodemailer.SendMailOptions = {
-      from: `"Testriq E-commerce Contact Form" <${FROM_EMAIL}>`,
+      from: `"Testriq Gaming Contact Form" <${FROM_EMAIL}>`,
       to: PROFESSIONAL_EMAIL_TO.split(',').map(email => email.trim()).join(', '),
-      subject: `New E-commerce Contact Form Submission from ${data.fullName}`,
+      subject: `New Gaming Contact Form Submission from ${data.fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
             <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 40px; margin-bottom: 10px;" />
-            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New E-commerce Contact Form Submission</h2>
+            <h2 style="margin: 0; font-size: 24px; color: #25a8e0;">New Gaming Contact Form Submission</h2>
           </div>
           
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -266,25 +233,27 @@ async function sendProfessionalNotification(data: ContactFormData) {
             <p><strong>Full Name:</strong> ${data.fullName}</p>
             <p><strong>Business Email:</strong> ${data.businessEmail}</p>
             <p><strong>Business Phone:</strong> ${data.businessPhone}</p>
-            ${isEcommerce ? ecommerceFields : contactUsFields}
-            <p><strong>Source:</strong> ${data.source || 'E-commerce Testing Services Page'}</p>
+            <p><strong>Company/Studio Name:</strong> ${data.companyStudioName}</p>
+            <p><strong>Game Type:</strong> ${data.gameType}</p>
+            <p><strong>Target Platforms:</strong> ${data.targetPlatforms}</p>
+            <p><strong>Source:</strong> ${data.source || 'Gaming App Testing Services Page'}</p>
           </div>
           
           <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <h3 style="color: #92400e; margin-top: 0;">Message:</h3>
-            <p style="white-space: pre-wrap;">${data.message}</p>
+            <h3 style="color: #92400e; margin-top: 0;">Project Details:</h3>
+            <p style="white-space: pre-wrap;">${data.projectDetails}</p>
           </div>
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
             <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
               <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
-              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab e-commerce contact form.</p>
+              <p style="margin: 0 0 5px 0;">This email was sent from the Testriq QA Lab gaming contact form.</p>
               
             </div>
           </div>
@@ -293,7 +262,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC ) {
+    if (PROFESSIONAL_EMAIL_CC) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -306,13 +275,13 @@ async function sendProfessionalNotification(data: ContactFormData) {
     if (mailOptions.cc) console.log('CC:', mailOptions.cc);
     if (mailOptions.bcc) console.log('BCC:', mailOptions.bcc);
 
-  } catch (_error) {
-    console.error("Professional notification failed:", _error);
-    throw _error;
+  } catch (error) {
+    console.error('Professional notification failed:', error);
+    throw error;
   }
 }
 
-async function sendClientConfirmation(data: ContactFormData) {
+async function sendClientConfirmation(data: GamingContactFormData) {
   try {
     // Email configuration from environment variables
     const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
@@ -336,23 +305,11 @@ async function sendClientConfirmation(data: ContactFormData) {
       },
     } as nodemailer.TransportOptions);
 
-    const isEcommerce = (data.source || '').toLowerCase().includes('e-commerce testing services page');
-
-    const ecommerceFields = `
-      <p style="margin: 0;"><strong>Company Name:</strong> ${data.companyName || 'N/A'}</p>
-      <p style="margin: 0;"><strong>Platform:</strong> ${data.platform || 'N/A'}</p>
-    `;
-
-    const contactUsFields = `
-      <p style="margin: 0;"><strong>Company Stage:</strong> ${data.companyStage || 'N/A'}</p>
-      <p style="margin: 0;"><strong>How You Heard About Us:</strong> ${data.howDidYouHear || 'N/A'}</p>
-    `;
-
     // Email content with logo
     const mailOptions = {
       from: `"Testriq QA Lab" <${SMTP_USER}>`,
       to: data.businessEmail,
-      subject: 'Thank you for contacting Testriq QA Lab - E-commerce Testing Services',
+      subject: 'Thank you for contacting Testriq QA Lab - Gaming Testing Services',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
           <div style="text-align: center; padding: 20px; background: #f3f4f6; color: white; border-radius: 8px 8px 0 0;">
@@ -364,7 +321,7 @@ async function sendClientConfirmation(data: ContactFormData) {
             <h2 style="color: #2563eb; margin-top: 0;">Dear ${data.fullName},</h2>
             
             <p style="line-height: 1.6; margin-bottom: 20px;">
-              Thank you for reaching out to Testriq QA Lab regarding our e-commerce testing services. We have received your inquiry and appreciate your interest in optimizing your e-commerce platform.
+              Thank you for reaching out to Testriq QA Lab regarding our gaming testing services. We have received your inquiry and appreciate your interest in ensuring a successful game launch.
             </p>
             
             <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 4px solid #2563eb; margin: 25px 0;">
@@ -373,19 +330,21 @@ async function sendClientConfirmation(data: ContactFormData) {
                 <p style="margin: 0;"><strong>Full Name:</strong> ${data.fullName}</p>
                 <p style="margin: 0;"><strong>Business Email:</strong> ${data.businessEmail}</p>
                 <p style="margin: 0;"><strong>Business Phone:</strong> ${data.businessPhone}</p>
-                ${isEcommerce ? ecommerceFields : contactUsFields}
+                <p style="margin: 0;"><strong>Company/Studio Name:</strong> ${data.companyStudioName}</p>
+                <p style="margin: 0;"><strong>Game Type:</strong> ${data.gameType}</p>
+                <p style="margin: 0;"><strong>Target Platforms:</strong> ${data.targetPlatforms}</p>
               </div>
             </div>
             
             <div style="background-color: #fef3c7; padding: 20px; border-radius: 8px; margin: 25px 0;">
-              <h4 style="color: #92400e; margin-top: 0;">Your Message:</h4>
-              <p style="margin: 0; white-space: pre-wrap;">"${data.message}"</p>
+              <h4 style="color: #92400e; margin-top: 0;">Your Project Details:</h4>
+              <p style="margin: 0; white-space: pre-wrap;">"${data.projectDetails}"</p>
             </div>
             
             <div style="background-color: #dcfce7; padding: 20px; border-radius: 8px; margin: 25px 0;">
               <h3 style="color: #166534; margin-top: 0;">What Happens Next?</h3>
               <p style="margin: 0; line-height: 1.6;">
-                Our e-commerce testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST ) with a customized testing strategy for your platform.
+                Our gaming testing specialists will review your inquiry and get back to you <strong>within 2 hours</strong> during business hours (Monday-Friday, 9 AM - 6 PM IST) with a customized testing strategy for your game project.
               </p>
             </div>
             
@@ -393,36 +352,44 @@ async function sendClientConfirmation(data: ContactFormData) {
               <h3 style="color: #2563eb;">In the meantime, feel free to:</h3>
               <ul style="line-height: 1.8; padding-left: 20px;">
                 <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
-                <li>Learn more about our e-commerce testing services: <a href="https://testriq.com/e-commerce-testing-services" style="color: #2563eb;">E-commerce Testing</a></li>
-                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91 ) 915-2929-343</a></li>
+                <li>Learn more about our gaming testing services: <a href="https://testriq.com/gaming-app-testing-services" style="color: #2563eb;">Gaming Testing</a></li>
+                <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
+                <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
               </ul>
             </div>
             
             <p style="line-height: 1.6; margin-bottom: 30px;">
-              We look forward to discussing how we can help you achieve quality excellence with our automation, manual, and performance testing services.
+              We look forward to helping you deliver exceptional player experiences and achieve a successful game launch through comprehensive testing across all platforms.
             </p>
             
             <div style="text-align: center; margin: 30px 0;">
-              <p style="margin: 0; font-size: 18px; color: #2563eb;">Thank you,</p>
-              <p style="margin: 0; font-size: 18px; color: #2563eb;">The Testriq QA Lab Team</p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
-              <p style="margin: 0;">Testriq QA Lab | <a href="https://testriq.com" style="color: #6b7280; text-decoration: none;">testriq.com</a></p>
-              <p style="margin: 5px 0;">123 QA Street, Testing City, State 12345</p>
-              <p style="margin: 0;">Email: <a href="mailto:info@testriq.com" style="color: #6b7280; text-decoration: none;">info@testriq.com</a> | Phone: (+91 ) 915-2929-343</p>
+              <p style="margin: 0; font-size: 18px; color: #2563eb; font-weight: 600;">Best regards,</p>
+              <p style="margin: 5px 0 0 0; color: #4b5563;">The Testriq QA Lab Team</p>
             </div>
           </div>
+
+          <div style="background-color: #f3f4f6; padding: 25px; border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="text-align: center; color: #6b7280; font-size: 14px; line-height: 1.5;">
+              <img src="https://testrq-3-0.vercel.app/images/testriq-logo.jpg" alt="Testriq QA Lab" style="height: 35px; margin-bottom: 15px;" />
+              <p style="margin: 0 0 5px 0;">Testriq QA Lab LLP - Professional Software Testing Services</p>
+              <p style="margin: 0 0 10px 0;">📧 contact@testriq.com | 📞 (+91) 915-2929-343</p>
+              <p style="margin: 0; font-size: 12px; color: #9ca3af;">
+                This is an automated confirmation email. Please do not reply to this email.
+              </p>
+            </div>
+          </div>
+
         </div>
       `,
     };
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Client confirmation sent successfully to:', mailOptions.to);
+    console.log('Client confirmation sent successfully to:', data.businessEmail);
 
-  } catch (_error) {
-    console.error('Client confirmation failed:', _error);
-    throw _error;
+  } catch (error) {
+    console.error('Client confirmation failed:', error);
+    throw error;
   }
 }
+
