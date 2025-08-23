@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import {
   FaRocket,
   FaPhone,
@@ -12,34 +12,266 @@ import {
   FaUsers,
   FaBuilding,
   FaUniversity,
+  FaUser,
+  FaComments,
 } from "react-icons/fa";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const ElearningContactSection: React.FC = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    businessEmail: "",
+    businessPhone: "",
+    institution: "",
+    platformType: "",
+    numberOfUsers: "",
+    message: "",
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [fullNameError, setFullNameError] = useState<string | null>(null);
+  const [institutionError, setInstitutionError] = useState<string | null>(null);
+  const [platformTypeError, setPlatformTypeError] = useState<string | null>(null);
+  const [numberOfUsersError, setNumberOfUsersError] = useState<string | null>(null);
+  const [messageError, setMessageError] = useState<string | null>(null);
+
+  const validatePhoneNumber = (phone: string | undefined) => {
+    if (!phone) {
+      setPhoneError("Business Phone is required.");
+      return false;
+    }
+    if (!isValidPhoneNumber(phone)) {
+      setPhoneError("Invalid phone number format.");
+      return false;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+
+    if (/^(\d)\1+$/.test(digits)) {
+      setPhoneError("Phone number cannot consist of repeating digits.");
+      return false;
+    }
+
+    const isSequential = (num: string) => {
+      for (let i = 0; i < num.length - 2; i++) {
+        const n1 = parseInt(num[i]);
+        const n2 = parseInt(num[i + 1]);
+        const n3 = parseInt(num[i + 2]);
+        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+          return true;
+        }
+      }
+      return false;
+    };
+    if (isSequential(digits)) {
+      setPhoneError("Phone number cannot consist of sequential digits.");
+      return false;
+    }
+
+    if (/^0+$/.test(digits)) {
+      setPhoneError("Phone number cannot be all zeros.");
+      return false;
+    }
+
+    setPhoneError(null);
+    return true;
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) {
+      setEmailError("Business Email is required.");
+      return false;
+    }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError("Invalid email format.");
+      return false;
+    }
+    setEmailError(null);
+    return true;
+  };
+
+  const validateFullName = (name: string) => {
+    if (!name) {
+      setFullNameError("Full Name is required.");
+      return false;
+    }
+    if (name.trim().length < 3) {
+      setFullNameError("Full Name must be at least 3 characters.");
+      return false;
+    }
+    setFullNameError(null);
+    return true;
+  };
+
+  const validateInstitution = (institution: string) => {
+    if (!institution) {
+      setInstitutionError("Institution/Organization is required.");
+      return false;
+    }
+    setInstitutionError(null);
+    return true;
+  };
+
+  const validatePlatformType = (platformType: string) => {
+    if (!platformType) {
+      setPlatformTypeError("Please select your platform type.");
+      return false;
+    }
+    setPlatformTypeError(null);
+    return true;
+  };
+
+  const validateNumberOfUsers = (numberOfUsers: string) => {
+    if (!numberOfUsers) {
+      setNumberOfUsersError("Please select number of users.");
+      return false;
+    }
+    setNumberOfUsersError(null);
+    return true;
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message) {
+      setMessageError("Testing needs description is required.");
+      return false;
+    }
+    if (message.trim().length < 10) {
+      setMessageError("Message must be at least 10 characters.");
+      return false;
+    }
+    setMessageError(null);
+    return true;
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === "fullName") validateFullName(value);
+    if (name === "businessEmail") validateEmail(value);
+    if (name === "institution") validateInstitution(value);
+    if (name === "platformType") validatePlatformType(value);
+    if (name === "numberOfUsers") validateNumberOfUsers(value);
+    if (name === "message") validateMessage(value);
+  };
+
+  const handlePhoneChange = (phone: string | undefined) => {
+    setFormData((prev) => ({
+      ...prev,
+      businessPhone: phone || "",
+    }));
+    validatePhoneNumber(phone);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const isPhoneValid = validatePhoneNumber(formData.businessPhone);
+    const isEmailValid = validateEmail(formData.businessEmail);
+    const isFullNameValid = validateFullName(formData.fullName);
+    const isInstitutionValid = validateInstitution(formData.institution);
+    const isPlatformTypeValid = validatePlatformType(formData.platformType);
+    const isNumberOfUsersValid = validateNumberOfUsers(formData.numberOfUsers);
+    const isMessageValid = validateMessage(formData.message);
+
+    if (
+      isPhoneValid &&
+      isEmailValid &&
+      isFullNameValid &&
+      isInstitutionValid &&
+      isPlatformTypeValid &&
+      isNumberOfUsersValid &&
+      isMessageValid
+    ) {
+      setIsLoading(true);
+      try {
+        const dataToSend = {
+          fullName: formData.fullName,
+          businessEmail: formData.businessEmail,
+          businessPhone: formData.businessPhone,
+          institution: formData.institution,
+          platformType: formData.platformType,
+          numberOfUsers: formData.numberOfUsers,
+          message: formData.message,
+          source: "E-learning Testing Services Page",
+        };
+
+        const response = await fetch("/api/elearningContact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+
+        if (response.ok) {
+          console.log("Form submitted successfully");
+          setIsSubmitted(true);
+          document.getElementById("elearning-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+
+          setFormData({
+            fullName: "",
+            businessEmail: "",
+            businessPhone: "",
+            institution: "",
+            platformType: "",
+            numberOfUsers: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Form submission failed:", errorData.error);
+          alert("Form submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please check your connection and try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      console.log("Form has errors.");
+    }
+  };
+
   const contactMethods = [
     {
       icon: FaPhone,
       title: "Speak with E-Learning Experts",
       description:
         "Direct consultation with our educational technology specialists",
-      action: "Call Now: (+91) 915-2929-343",
+      text: "(+91) 915-2929-343",
+      action: "tel:(+91) 915-2929-343",
       color: "from-blue-500 to-cyan-600",
-      availability: "Mon-Fri 8AM-6PM EST",
     },
     {
       icon: FaEnvelope,
       title: "Detailed Platform Assessment",
       description: "Send us your requirements for comprehensive analysis",
-      action: "contact@testriq.com",
+      text: "contact@testriq.com",
+      action: "mailto:contact@testriq.com",
       color: "from-green-500 to-emerald-600",
-      availability: "Response within 4 hours",
     },
     {
       icon: FaCalendarAlt,
       title: "Educational Strategy Session",
       description: "Book a free consultation to discuss your testing needs",
-      action: "Schedule Free Consultation",
+      text: "Schedule Free Consultation",
+      action: "/contact-us#calendly-section",
       color: "from-purple-500 to-indigo-600",
-      availability: "30-60 minute sessions",
     },
   ];
 
@@ -52,38 +284,12 @@ const ElearningContactSection: React.FC = () => {
     "Scalability planning and roadmap",
   ];
 
-  const clientTypes = [
-    {
-      icon: FaUniversity,
-      title: "Higher Education",
-      description: "Universities, colleges, and online degree programs",
-      examples: [
-        "LMS optimization",
-        "Student portal testing",
-        "Research platform validation",
-      ],
-    },
-    {
-      icon: FaBuilding,
-      title: "Corporate Training",
-      description: "Employee development and skill enhancement",
-      examples: [
-        "Training platform testing",
-        "Compliance system validation",
-        "Performance tracking",
-      ],
-    },
-    {
-      icon: FaUsers,
-      title: "K-12 Education",
-      description: "School districts and educational institutions",
-      examples: [
-        "Student information systems",
-        "Parent portals",
-        "Classroom management tools",
-      ],
-    },
-  ];
+  const scrollToCalendly = () => {
+    const element = document.getElementById("calendly-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-brand-blue to-sky-600 overflow-hidden">
@@ -102,7 +308,7 @@ const ElearningContactSection: React.FC = () => {
             <span className="block">E-Learning Platform?</span>
           </h2>
 
-          <p className="text-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
             Take the first step towards better learning outcomes, higher
             engagement, and improved accessibility. Our e-learning testing
             experts are ready to help you create exceptional educational
@@ -118,9 +324,16 @@ const ElearningContactSection: React.FC = () => {
             </h3>
 
             {contactMethods.map((method, index) => (
-              <div
+              <a
                 key={index}
-                className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20"
+                href={method.action}
+                onClick={(e) => {
+                  if (method.title === "Educational Strategy Session") {
+                    e.preventDefault();
+                    scrollToCalendly();
+                  }
+                }}
+                className="block bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20"
               >
                 <div className="flex items-start gap-4">
                   <div
@@ -129,22 +342,35 @@ const ElearningContactSection: React.FC = () => {
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-lg font-semibold text-brand-blue mb-2">
+                    <h4 className="text-lg font-semibold text-white mb-2">
                       {method.title}
                     </h4>
-                    <p className="text-sky-700 text-sm mb-3 leading-relaxed">
+                    <p className="text-blue-100 text-sm mb-4 leading-relaxed">
                       {method.description}
                     </p>
-                    <button className="text-sky-700 font-semibold flex items-center gap-2 group mb-2">
-                      {method.action}
-                    </button>
-                    <p className="text-sky-400 text-xs">
-                      {method.availability}
-                    </p>
+                    <span className="text-blue-100 font-semibold flex items-center gap-2 group">
+                      {method.text}
+                    </span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
+
+            {/* Benefits */}
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20">
+              <h3 className="text-2xl font-bold text-white mb-6">
+                What You Get When You Contact Us
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <FaCheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-blue-100">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             {/* Urgency Note */}
             <div className="bg-orange-500 bg-opacity-20 rounded-2xl p-6 border border-orange-400 border-opacity-30">
@@ -162,74 +388,192 @@ const ElearningContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - What You Get */}
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              What You Get When You Contact Us
-            </h3>
-
-            <div className="space-y-4 mb-8">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Contact Form */}
+          {/* Right Column - Contact Form */}
+          <div id="elearning-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
             <div className="bg-gray-50 rounded-2xl p-6">
               <h4 className="font-semibold text-gray-900 mb-4">
                 Quick E-Learning Assessment Form
               </h4>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
-                  />
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
+                  </p>
                 </div>
-                <input
-                  type="text"
-                  placeholder="Institution/Organization"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors"
-                />
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors">
-                  <option value="">Select Your Platform Type</option>
-                  <option value="moodle">Moodle</option>
-                  <option value="canvas">Canvas</option>
-                  <option value="blackboard">Blackboard</option>
-                  <option value="google-classroom">Google Classroom</option>
-                  <option value="custom">Custom LMS</option>
-                  <option value="corporate">Corporate Training Platform</option>
-                  <option value="other">Other</option>
-                </select>
-                <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors">
-                  <option value="">Number of Users</option>
-                  <option value="small">Under 1,000 users</option>
-                  <option value="medium">1,000 - 10,000 users</option>
-                  <option value="large">10,000 - 50,000 users</option>
-                  <option value="enterprise">50,000+ users</option>
-                </select>
-                <textarea
-                  placeholder="Tell us about your e-learning testing needs..."
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:outline-none transition-colors resize-none"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2"
-                >
-                  <FaRocket className="w-4 h-4" />
-                  Get Free E-Learning Assessment
-                </button>
-              </form>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateFullName(formData.fullName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
+                    </label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="email"
+                        name="businessEmail"
+                        value={formData.businessEmail}
+                        onChange={handleInputChange}
+                        onBlur={() => validateEmail(formData.businessEmail)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Email Address"
+                      />
+                    </div>
+                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Phone *
+                    </label>
+                    <div className="relative">
+                      <PhoneInput
+                        international
+                        value={formData.businessPhone}
+                        onChange={handlePhoneChange}
+                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
+                        className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Enter phone number"
+                        inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
+                      />
+                    </div>
+                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Institution/Organization *
+                    </label>
+                    <div className="relative">
+                      <FaUniversity className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="institution"
+                        value={formData.institution}
+                        onChange={handleInputChange}
+                        onBlur={() => validateInstitution(formData.institution)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${institutionError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Institution/Organization Name"
+                      />
+                    </div>
+                    {institutionError && <p className="text-red-500 text-xs mt-1">{institutionError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Select Your Platform Type *
+                    </label>
+                    <div className="relative">
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="platformType"
+                        value={formData.platformType}
+                        onChange={handleInputChange}
+                        onBlur={() => validatePlatformType(formData.platformType)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${platformTypeError ? 'border-red-500' : 'border-gray-200'}`}
+                      >
+                        <option value="">Select Your Platform Type</option>
+                        <option value="moodle">Moodle</option>
+                        <option value="canvas">Canvas</option>
+                        <option value="blackboard">Blackboard</option>
+                        <option value="google-classroom">Google Classroom</option>
+                        <option value="custom">Custom LMS</option>
+                        <option value="corporate">Corporate Training Platform</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    {platformTypeError && <p className="text-red-500 text-xs mt-1">{platformTypeError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Number of Users *
+                    </label>
+                    <div className="relative">
+                      <FaUsers className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="numberOfUsers"
+                        value={formData.numberOfUsers}
+                        onChange={handleInputChange}
+                        onBlur={() => validateNumberOfUsers(formData.numberOfUsers)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${numberOfUsersError ? 'border-red-500' : 'border-gray-200'}`}
+                      >
+                        <option value="">Number of Users</option>
+                        <option value="small">Under 1,000 users</option>
+                        <option value="medium">1,000 - 10,000 users</option>
+                        <option value="large">10,000 - 50,000 users</option>
+                        <option value="enterprise">50,000+ users</option>
+                      </select>
+                    </div>
+                    {numberOfUsersError && <p className="text-red-500 text-xs mt-1">{numberOfUsersError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Tell us about Testing need *
+                    </label>
+                    <div className="relative">
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onBlur={() => validateMessage(formData.message)}
+                        required
+                        rows={4}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Tell us about your e-learning testing needs..."
+                      />
+                    </div>
+                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <FaRocket className="w-4 h-4" />
+                        Get Free E-Learning Assessment
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
 
             <div className="mt-6 text-center text-gray-500 text-sm">
@@ -237,71 +581,6 @@ const ElearningContactSection: React.FC = () => {
                 Educational technology experts • Response within 2 hours during
                 business hours
               </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Client Types */}
-        <div className="mt-16">
-          <div className="text-center mb-12 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              We Serve All Educational Sectors
-            </h3>
-            <p>
-              Specialized expertise for different types of educational
-              organizations
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {clientTypes.map((type, index) => (
-              <div
-                key={index}
-                className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <type.icon className="w-8 h-8 text-brand-blue" />
-                  <h4 className="text-lg font-bold text-sky-600">
-                    {type.title}
-                  </h4>
-                </div>
-                <p className="text-brand-blue text-sm mb-4 leading-relaxed">
-                  {type.description}
-                </p>
-                <div className="space-y-2">
-                  {type.examples.map((example, exampleIndex) => (
-                    <div key={exampleIndex} className="flex items-center gap-2">
-                      <FaCheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
-                      <span className="text-xs">{example}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <div className="bg-white bg-opacity-10 text-brand-blue backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
-            <h3 className="text-2xl font-bold mb-4">
-              Join 30+ Educational Institutions
-            </h3>
-            <p className="mb-6">
-              Don&apos;t let technical issues hinder learning outcomes. Start
-              optimizing your e-learning platform today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="cursor-pointer bg-gradient-to-r from-brand-blue to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-                  Start Free Assessment
-                </button>
-              </Link>
-              <Link href="/case-studies">
-                <button className="px-8 py-4 cursor-pointer rounded-2xl font-semibold text-lg ring-1 hover:ring-2 hover:text-sky-700 hover:scale-98 hover:bg-opacity-30 transition-all duration-200 ease-in-out">
-                  View Success Stories
-                </button>
-              </Link>
             </div>
           </div>
         </div>
