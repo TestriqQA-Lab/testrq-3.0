@@ -799,4 +799,189 @@ export async function getAllPosts(): Promise<WordPressPost[]> {
   }
 }
 
+// Extension to wordpress-graphql.ts to add WordPress pages support
+// Add these interfaces and functions to your existing wordpress-graphql.ts file
+
+export interface WordPressPage {
+  id: string;
+  databaseId: number;
+  title: string;
+  content: string;
+  slug: string;
+  date: string;
+  modified: string;
+  status: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+      mediaDetails: {
+        width: number;
+        height: number;
+      };
+    };
+  };
+}
+
+export interface WordPressPageInfo {
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
+  startCursor: string;
+  endCursor: string;
+}
+
+export interface PagesResponse {
+  pages: {
+    nodes: WordPressPage[];
+    pageInfo: WordPressPageInfo;
+  };
+}
+
+export interface PageResponse {
+  page: WordPressPage | null;
+}
+
+// GraphQL query for fetching WordPress pages
+const GET_PAGES_QUERY = `
+  query GetPages($first: Int, $after: String) {
+    pages(first: $first, after: $after, where: { status: PUBLISH }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+`;
+
+// GraphQL query for fetching a single page by slug
+const GET_PAGE_BY_SLUG_QUERY = `
+  query GetPageBySlug($slug: ID!) {
+    page(id: $slug, idType: URI) {
+      id
+      databaseId
+      title
+      content
+      slug
+      date
+      modified
+      status
+      featuredImage {
+        node {
+          sourceUrl
+          altText
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+`;
+
+// Fetch all WordPress pages with pagination support
+export async function getPages(first: number = 10, after?: string): Promise<{
+  pages: WordPressPage[];
+  pageInfo: WordPressPageInfo;
+}> {
+  try {
+    const data = await graphqlRequest<PagesResponse>(GET_PAGES_QUERY, {
+      first,
+      after,
+    });
+
+    return {
+      pages: data.pages.nodes,
+      pageInfo: data.pages.pageInfo,
+    };
+  } catch (error) {
+    console.error('Error fetching pages:', error);
+    return {
+      pages: [],
+      pageInfo: {
+        hasNextPage: false,
+        hasPreviousPage: false,
+        startCursor: '',
+        endCursor: '',
+      },
+    };
+  }
+}
+
+// Fetch a single WordPress page by slug
+export async function getPageBySlug(slug: string): Promise<WordPressPage | null> {
+  try {
+    const data = await graphqlRequest<PageResponse>(GET_PAGE_BY_SLUG_QUERY, {
+      slug,
+    });
+
+    return data.page;
+  } catch (error) {
+    console.error('Error fetching page by slug:', error);
+    return null;
+  }
+}
+
+// Fetch all WordPress pages without pagination limit
+export async function getAllPages(): Promise<WordPressPage[]> {
+  let allPages: WordPressPage[] = [];
+  let hasNextPage = true;
+  let after: string | undefined = undefined;
+
+  try {
+    while (hasNextPage) {
+      const data = await getPages(100, after); // Fetch 100 pages at a time
+      allPages = allPages.concat(data.pages);
+      hasNextPage = data.pageInfo.hasNextPage;
+      after = data.pageInfo.endCursor;
+
+      // Safety break to avoid infinite loops or excessive memory usage
+      if (allPages.length > 1000) {
+        console.warn('Reached 1000 pages, breaking to prevent infinite loop.');
+        break;
+      }
+    }
+    return allPages;
+  } catch (error) {
+    console.error('Error fetching all pages:', error);
+    return [];
+  }
+}
+
+// Helper function to get page excerpt
+export function getPageExcerpt(page: WordPressPage, maxLength: number = 160): string {
+  // Create excerpt from content since pages typically don't have excerpts
+  const cleanContent = stripHtmlTags(page.content);
+  return truncateText(cleanContent, maxLength);
+}
+
+// Helper function to extract featured image URL from page
+export function getPageFeaturedImageUrl(page: WordPressPage): string | null {
+  return page.featuredImage?.node?.sourceUrl || null;
+}
+
+
+
 
