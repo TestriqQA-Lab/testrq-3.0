@@ -153,11 +153,11 @@ const CaseStudiesOverviewSection = () => {
               <p className="text-blue-100 text-sm">Happy Clients</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2">15+</div>
+              <div className="text-3xl font-bold mb-2">25+</div>
               <p className="text-blue-100 text-sm">Global Service Delivery</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2">14+</div>
+              <div className="text-3xl font-bold mb-2">15+</div>
               <p className="text-blue-100 text-sm">Years Experience</p>
             </div>
           </div>

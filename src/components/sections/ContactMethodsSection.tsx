@@ -138,7 +138,7 @@ const ContactMethodsSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We understand that every client has different preferences. That’s
-            why we offer multiple ways to connect with our QA experts—whether
+            why we offer multiple ways to connect with our QA experts - whether
             for a software testing consultation, project discussion, or quality
             assurance support across automation, manual, or performance testing
             services.

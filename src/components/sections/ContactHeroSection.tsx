@@ -30,8 +30,12 @@ const ContactHeroSection: React.FC = () => {
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
-  const [companyStageError, setCompanyStageError] = useState<string | null>(null);
-  const [howDidYouHearError, setHowDidYouHearError] = useState<string | null>(null);
+  const [companyStageError, setCompanyStageError] = useState<string | null>(
+    null
+  );
+  const [howDidYouHearError, setHowDidYouHearError] = useState<string | null>(
+    null
+  );
   const [messageError, setMessageError] = useState<string | null>(null);
 
   const validatePhoneNumber = (phone: string | undefined) => {
@@ -58,7 +62,10 @@ const ContactHeroSection: React.FC = () => {
         const n1 = parseInt(num[i]);
         const n2 = parseInt(num[i + 1]);
         const n3 = parseInt(num[i + 2]);
-        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+        if (
+          (n2 === n1 + 1 && n3 === n2 + 1) ||
+          (n2 === n1 - 1 && n3 === n2 - 1)
+        ) {
           return true;
         }
       }
@@ -199,7 +206,9 @@ const ContactHeroSection: React.FC = () => {
           console.log("Form submitted successfully");
           setIsSubmitted(true);
           // Scroll to the top of the form section to show the success message
-          document.getElementById("form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          document
+            .getElementById("form-section")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
           setTimeout(() => setIsSubmitted(false), 5000);
 
           // Reset form
@@ -331,7 +340,7 @@ const ContactHeroSection: React.FC = () => {
             </div>
 
             {/* Response Time Indicator */}
-            <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+            <div className="bg-green-50 border border-green-200 rounded-xl p-4 mt-5">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <div>
@@ -383,11 +392,15 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateFullName(formData.fullName)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                        fullNameError ? "border-red-500" : "border-gray-300"
+                      }`}
                       placeholder="John Doe"
                     />
                   </div>
-                  {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                  {fullNameError && (
+                    <p className="text-red-500 text-xs mt-1">{fullNameError}</p>
+                  )}
                 </div>
 
                 <div>
@@ -403,11 +416,15 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateEmail(formData.businessEmail)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                        emailError ? "border-red-500" : "border-gray-300"
+                      }`}
                       placeholder="john@company.com"
                     />
                   </div>
-                  {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                  {emailError && (
+                    <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                  )}
                 </div>
 
                 <div>
@@ -420,12 +437,19 @@ const ContactHeroSection: React.FC = () => {
                       value={formData.businessPhone}
                       onChange={handlePhoneChange}
                       onBlur={() => validatePhoneNumber(formData.businessPhone)}
-                      className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full phone-input-container ${
+                        phoneError ? "border-red-500" : "border-gray-300"
+                      }`}
                       placeholder="Enter phone number"
-                      inputprops={{ className: "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300" }}
+                      inputprops={{
+                        className:
+                          "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
+                      }}
                     />
                   </div>
-                  {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                  {phoneError && (
+                    <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                  )}
                 </div>
 
                 <div>
@@ -440,16 +464,28 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateCompanyStage(formData.companyStage)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${companyStageError ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
+                        companyStageError ? "border-red-500" : "border-gray-300"
+                      }`}
                     >
                       <option value="">Select your company stage</option>
-                      <option value="early_stage_startup">Early stage startup</option>
-                      <option value="mid_stage_startup">Mid stage startup</option>
-                      <option value="late_stage_startup">Late stage startup</option>
+                      <option value="early_stage_startup">
+                        Early stage startup
+                      </option>
+                      <option value="mid_stage_startup">
+                        Mid stage startup
+                      </option>
+                      <option value="late_stage_startup">
+                        Late stage startup
+                      </option>
                       <option value="enterprise">Enterprise</option>
                     </select>
                   </div>
-                  {companyStageError && <p className="text-red-500 text-xs mt-1">{companyStageError}</p>}
+                  {companyStageError && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {companyStageError}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -463,14 +499,24 @@ const ContactHeroSection: React.FC = () => {
                       name="howDidYouHear"
                       value={formData.howDidYouHear}
                       onChange={handleInputChange}
-                      onBlur={() => validateHowDidYouHear(formData.howDidYouHear)}
+                      onBlur={() =>
+                        validateHowDidYouHear(formData.howDidYouHear)
+                      }
                       required
                       maxLength={50}
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError ? 'border-red-500' : 'border-gray-300'}`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                        howDidYouHearError
+                          ? "border-red-500"
+                          : "border-gray-300"
+                      }`}
                       placeholder="Google, LinkedIn, Referral, etc."
                     />
                   </div>
-                  {howDidYouHearError && <p className="text-red-500 text-xs mt-1">{howDidYouHearError}</p>}
+                  {howDidYouHearError && (
+                    <p className="text-red-500 text-xs mt-1">
+                      {howDidYouHearError}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -484,10 +530,14 @@ const ContactHeroSection: React.FC = () => {
                     onBlur={() => validateMessage(formData.message)}
                     required
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${
+                      messageError ? "border-red-500" : "border-gray-300"
+                    }`}
                     placeholder="Tell us about your project, testing needs, or any questions you have..."
                   />
-                  {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                  {messageError && (
+                    <p className="text-red-500 text-xs mt-1">{messageError}</p>
+                  )}
                 </div>
 
                 <button
@@ -496,9 +546,25 @@ const ContactHeroSection: React.FC = () => {
                   disabled={isLoading}
                 >
                   {isLoading ? (
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                   ) : (
                     <FaPaperPlane className="mr-2" />
