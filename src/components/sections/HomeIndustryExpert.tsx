@@ -15,7 +15,7 @@ const HomeIndustryExpert = () => {
 
     const heading = {
         title: 'Industry Expertise',
-        info: 'Testriq delivers specialized QA services for regulated and growth-focused industries—ensuring compliance, usability, and performance across e-commerce, fintech, healthcare, SaaS, EdTech, IoT, mobile apps, and gaming platforms.'
+        info: 'Testriq delivers specialized QA services for regulated and growth-focused industries-ensuring compliance, usability, and performance across e-commerce, fintech, healthcare, SaaS, EdTech, IoT, mobile apps, and gaming platforms.'
     }
 
     // Split the title into parts to style "Client" in blue
@@ -44,7 +44,7 @@ const HomeIndustryExpert = () => {
         <section className='flex flex-col w-full bg-white mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
+                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading.info}</p>
             </div>
 
 

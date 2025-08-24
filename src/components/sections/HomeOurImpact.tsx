@@ -18,7 +18,7 @@ const renderTitle = () => {
 const impactSection = {
   title: "Our Impact: Real-World Successes",
   subtitle:
-    "Testriq’s enterprise QA solutions deliver real-world success—accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
+    "Testriq’s enterprise QA solutions deliver real-world success-accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
   caseStudies: [
     {
       title: "Testing Canva’s Design Platform",

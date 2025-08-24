@@ -105,7 +105,7 @@ const Footer = () => {
                 <MapPin className="h-15 w-15 text-brand-blue" />
                 <p>
                   Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
-                  Vaquat Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
+                  Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
                   Maharashtra 401107
                 </p>
               </div>

@@ -39,7 +39,7 @@ const HomeChooseTestriq = () => {
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-2xl'>{heading.info}</p>
+                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading.info}</p>
             </div>
 
             {/* Card grid layout */}
@@ -49,7 +49,7 @@ const HomeChooseTestriq = () => {
                     cardData.map((card) => {
                         // const Icon = card.icon;
 
-                        return <div key={card.title} className='flex flex-col justify-start items-start bg-white ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2'>
+                        return <div key={card.title} className='flex flex-col justify-start items-start bg-white ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-58 md:h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2'>
                             <span className='text-3xl bg-sky-100 p-2 rounded-xl'>{card.icon}</span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}</p>

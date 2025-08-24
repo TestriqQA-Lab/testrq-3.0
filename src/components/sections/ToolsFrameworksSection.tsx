@@ -41,7 +41,7 @@ const ToolsFrameworksSection = () => {
         "Visual testing",
       ],
       logo: "🌲",
-      popularity: "Developer Favorite",
+      popularity: "Developer Favourite",
     },
     {
       name: "Playwright",
@@ -169,7 +169,7 @@ const ToolsFrameworksSection = () => {
                     </span>
                   </div>
                 </div>
-                <span className="bg-[theme(color.brand.blue)] text-white text-xs px-3 py-1 rounded-full">
+                <span className="bg-[theme(color.brand.blue)] text-white text-center text-xs px-1 py-1 rounded-full">
                   {framework.popularity}
                 </span>
               </div>

@@ -221,7 +221,7 @@ const ToolsPerformanceSection = () => {
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Comprehensive performance testing solutions to ensure your
             applications can handle real-world user traffic, scale efficiently,
-            and deliver optimal user experiences—leveraging tools like JMeter,
+            and deliver optimal user experiences leveraging tools like JMeter,
             BlazeMeter, Loader.io, and Neustar for load testing, stress testing,
             and scalability validation, with commercial tool licenses provided
             by the client.
