@@ -178,12 +178,7 @@ const CareersBenefitsSection: React.FC = () => {
     },
   ];
 
-  const scrollToOpenPostions = () => {
-    const element = document.getElementById("open-positions-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+
 
   return (
     <section className="py-16 bg-white px-8 md:px-12 lg:px-24">

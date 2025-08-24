@@ -11,7 +11,6 @@ import {
   FaMobile,
   FaRocket,
   FaFilter,
-  FaExternalLinkAlt,
   FaFire,
   FaStar,
 } from "react-icons/fa";
