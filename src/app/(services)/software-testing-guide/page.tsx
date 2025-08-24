@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
- metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+ metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/software-testing-guide',
   },

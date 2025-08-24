@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+    canonical: "https://testriq.com/shopping-apps-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+    url: "https://testriq.com/shopping-apps-certification",
     siteName: "Testriq - Shopping App Certification Services",
     title:
       "Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq",
@@ -215,11 +215,11 @@ export default function ShoppingAppsCertification() {
     { name: "Home", url: "https://testriq.com/" },
     {
       name: "Services",
-      url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+      url: "https://testriq.com/shopping-apps-certification",
     },
     {
       name: "Shopping App Certification ",
-      url: "https://testrq-3-0.vercel.app/shopping-apps-certification",
+      url: "https://testriq.com/shopping-apps-certification",
     },
   ];
   return (

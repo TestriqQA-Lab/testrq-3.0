@@ -158,26 +158,26 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
     "@type": "Article",
     "headline": caseStudy.title,
     "description": caseStudy.description,
-    "image": caseStudy.image ? `https://testrq-3-0.vercel.app${caseStudy.image}` : undefined,
+    "image": caseStudy.image ? `https://testriq.com${caseStudy.image}` : undefined,
     "author": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
-      "url": "https://testrq-3-0.vercel.app"
+      "url": "https://testriq.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
-      "url": "https://testrq-3-0.vercel.app",
+      "url": "https://testriq.com",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://testrq-3-0.vercel.app/logo.png"
+        "url": "https://testriq.com/logo.png"
       }
     },
     "datePublished": "2024-01-01",
     "dateModified": "2024-01-01",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://testrq-3-0.vercel.app/${caseStudy.slug}`
+      "@id": `https://testriq.com/${caseStudy.slug}`
     },
     "articleSection": "Case Studies",
     "keywords": caseStudy.metadata?.keywords || ["software testing", "QA", "case study"],
@@ -206,7 +206,7 @@ function generateCitySchema(cityData: CityData ) {
     "@type": "LocalBusiness",
     "name": `Testriq QA Testing Services in ${cityData.name}`,
     "description": `Professional software testing and QA services in ${cityData.name}, ${cityData.state}. Expert manual testing, automation testing, and quality assurance solutions.`,
-    "url": `https://testrq-3-0.vercel.app/${cityData.slug}`,
+    "url": `https://testriq.com/${cityData.slug}`,
     "telephone": "+91-XXXXXXXXXX",
     "email": "info@testriq.com",
     "address": {

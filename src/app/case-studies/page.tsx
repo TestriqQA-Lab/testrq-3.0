@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Client Case Studies & Success Stories | Testriq QA Testing Results",
     description: "Explore our client success stories and case studies showcasing real results from our software testing services.",
     type: "website",
-    url: "https://testrq-3-0.vercel.app/case-studies",
+    url: "https://testriq.com/case-studies",
   },
   twitter: {
     card: "summary_large_image",

@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/dating-app-certification",
+    canonical: "https://testriq.com/dating-app-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/dating-app-certification",
+    url: "https://testriq.com/dating-app-certification",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Dating App Certification | Security, Privacy, Trust Compliance - Testriq",
@@ -214,11 +214,11 @@ export default function DatingAppCertification() {
     { name: "Home", url: "https://testriq.com/" },
     {
       name: "Services",
-      url: "https://testrq-3-0.vercel.app/dating-app-certification",
+      url: "https://testriq.com/dating-app-certification",
     },
     {
       name: "Dating App Certification",
-      url: "https://testrq-3-0.vercel.app/dating-app-certification",
+      url: "https://testriq.com/dating-app-certification",
     },
   ];
   return (

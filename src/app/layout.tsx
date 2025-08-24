@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/",
+    url: "https://testriq.com/",
     siteName: "Testriq - Professional Software Testing Services",
     title: "Testriq - Professional Software Testing Services | QA Solutions",
     description:

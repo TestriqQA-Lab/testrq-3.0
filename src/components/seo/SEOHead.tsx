@@ -65,7 +65,7 @@ export default function SEOHead({
       <meta property="og:locale:alternate" content="en_CA" />
       
       {/* Twitter Card additional properties */}
-      <meta name="twitter:domain" content="testrq-3-0.vercel.app" />
+      <meta name="twitter:domain" content="testriq.com" />
       
       {/* Additional structured data hints */}
       <meta name="application-name" content="Testriq" />

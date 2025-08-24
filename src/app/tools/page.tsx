@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing.",
      images: ['/OG/Advance-Testing-tools-Twitter.webp'],
   },
-   metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+   metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: "https://testriq.com/tools",
   },
