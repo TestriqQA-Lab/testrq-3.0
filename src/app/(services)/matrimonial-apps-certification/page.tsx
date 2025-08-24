@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/matrimonial-apps-certification',
+    canonical: 'https://testriq.com/matrimonial-apps-certification',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/matrimonial-apps-certification',
+    url: 'https://testriq.com/matrimonial-apps-certification',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Matrimonial App Certification | Security, Privacy & Quality Compliance - Testriq',
     description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
@@ -225,8 +225,8 @@ const faqSchema = {
 export default function MatrimonialAppsCertification() {
     const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/matrimonial-apps-certification" },
-    { name: "Matrimonial App Certification", url: "https://testrq-3-0.vercel.app/matrimonial-apps-certification" }
+    { name: "Services", url: "https://testriq.com/matrimonial-apps-certification" },
+    { name: "Matrimonial App Certification", url: "https://testriq.com/matrimonial-apps-certification" }
   ];
   return (
     <div>

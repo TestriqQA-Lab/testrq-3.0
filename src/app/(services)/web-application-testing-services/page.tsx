@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/web-application-testing-servicess",
   },

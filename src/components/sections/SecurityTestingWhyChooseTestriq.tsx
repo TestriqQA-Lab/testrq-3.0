@@ -146,7 +146,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
             
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-red-600 rounded-full"></div>
+                <div className="w-2.5 h-2 bg-red-600 rounded-full"></div>
                 <span className="text-gray-700">CISSP (Certified Information Systems Security Professional)</span>
               </div>
               <div className="flex items-center space-x-3">

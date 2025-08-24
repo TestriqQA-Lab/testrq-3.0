@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
     images: ["/OG/Performance-Testing-Service-Twitter.webp"],
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: "https://testriq.com/performance-testing-services",
   },

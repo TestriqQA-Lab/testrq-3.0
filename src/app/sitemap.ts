@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { getPosts, WordPressPost } from '@/lib/wordpress-graphql';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://testrq-3-0.vercel.app';
+  const baseUrl = 'https://testriq.com';
   const currentDate = new Date();
 
   // Static pages
@@ -89,7 +89,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const blogPosts = allPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
+    url: `${baseUrl}/blog/post/${post.slug}`,
     lastModified: new Date(post.modified || post.date),
     changeFrequency: 'weekly' as const,
     priority: 0.7,

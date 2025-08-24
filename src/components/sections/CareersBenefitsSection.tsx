@@ -365,11 +365,11 @@ const CareersBenefitsSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button
+            {/* <button
               onClick={scrollToOpenPostions}
               className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
               Join Our Team
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

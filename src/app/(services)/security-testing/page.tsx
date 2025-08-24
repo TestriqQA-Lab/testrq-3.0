@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
     images: ["/OG/Security-Testing-Service-Twitter.webp"],
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: "https://testriq.com/security-testing",
   },

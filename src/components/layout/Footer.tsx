@@ -130,28 +130,13 @@ const Footer = () => {
             </div>
 
             {/* ISO-Certificate-Image */}
-            <div className="space-y-2">
-              <div className="flex">
-                <Image
-                  src="/Footer_Images/ISO-9001-100x40-1.webp"
-                  alt="ISO-9001-100x40-1"
-                  width={120}
-                  height={100}
-                />
-                <Image
-                  src="/Footer_Images/ISO-27001-100x40-1.webp"
-                  alt="ISO-9001-100x40-1"
-                  width={120}
-                  height={100}
-                />
+            <div className='space-y-2'>
+              <div className='flex gap-1'>
+                <Image src="/Footer_Images/ISO-9001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
+                <Image src="/Footer_Images/ISO-27001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
               </div>
               <div>
-                <Image
-                  src="/Footer_Images/msme-logo.webp"
-                  alt="ISO-9001-100x40-1"
-                  width={100}
-                  height={100}
-                />
+                <Image src="/Footer_Images/msme-logo.png" alt='ISO-9001-100x40-1' width={100} height={100} />
               </div>
             </div>
 

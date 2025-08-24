@@ -35,8 +35,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/',
       }
     ],
-    sitemap: 'https://testrq-3-0.vercel.app/sitemap.xml',
-    host: 'https://testrq-3-0.vercel.app',
+    sitemap: 'https://testriq.com/sitemap.xml',
+    host: 'https://testriq.com',
   };
 }
 

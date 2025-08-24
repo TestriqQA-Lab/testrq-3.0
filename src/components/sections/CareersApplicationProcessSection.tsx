@@ -331,9 +331,9 @@ const CareersApplicationProcessSection: React.FC = () => {
             <button onClick={scrollToOpenPostions} className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
               Browse Open Positions
             </button>
-            <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
+            {/* <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
               Submit General Application
-            </button>
+            </button> */}
           </div>
 
           <div className="mt-8 text-blue-100 text-sm">

@@ -34,7 +34,7 @@ const DatingAppFAQs = () => {
         "We work with both established platforms and startups, as long as they are committed to meeting all six pillars of trust and safety.",
     },
     {
-      question: "What exactly are the six pillars?",
+      question: "What exactly are the six pillars of dating apps?",
       answer:
         "The six pillars include: (1) Data Privacy & Security, (2) User Verification, (3) Content Moderation, (4) Fraud Prevention, (5) Compliance with Relevant Laws, and (6) Transparency & Accountability.",
     },

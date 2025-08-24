@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/trading-apps-certification",
+    canonical: "https://testriq.com/trading-apps-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+    url: "https://testriq.com/trading-apps-certification",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq",
@@ -100,11 +100,11 @@ export default function TradingAppsCertificationPage() {
     { name: "Home", url: "https://testriq.com/" },
     {
       name: "Services",
-      url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+      url: "https://testriq.com/trading-apps-certification",
     },
     {
       name: "Trading App Certification ",
-      url: "https://testrq-3-0.vercel.app/trading-apps-certification",
+      url: "https://testriq.com/trading-apps-certification",
     },
   ];
   return (
