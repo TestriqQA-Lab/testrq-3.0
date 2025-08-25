@@ -282,7 +282,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Dynamic City Pages - NEW ADDITION
-    let cityPages: any[] = [];
+    let cityPages: MetadataRoute.Sitemap = [];
     try {
       const allCities = getAllCities();
       console.log(`Found ${allCities.length} cities for sitemap`);
@@ -298,7 +298,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Dynamic Case Study Pages - NEW ADDITION
-    let caseStudyPages: any[] = [];
+    let caseStudyPages: MetadataRoute.Sitemap = [];
     try {
       const allCaseStudies = getAllCaseStudies();
       console.log(`Found ${allCaseStudies.length} case studies for sitemap`);
@@ -308,13 +308,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: currentDate,
         changeFrequency: getChangeFrequency('case-study'),
         priority: getPriority('case-study'),
-        // Include images if case study has an image
-        ...(caseStudy.image && {
-          images: [{
-            loc: caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`,
-            caption: caseStudy.title,
-          }]
-        }),
+        images: caseStudy.image ? [caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`] : undefined,
       }));
     } catch (error) {
       console.error('Error fetching case study data for sitemap:', error);
@@ -348,13 +342,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(page.modified || page.date),
       changeFrequency: getChangeFrequency('page', page.modified),
       priority: getPriority('page', page.slug),
-      // Include images if featured image exists
-      ...(page.featuredImage?.node?.sourceUrl && {
-        images: [{
-          loc: page.featuredImage.node.sourceUrl,
-          caption: page.featuredImage.node.altText || page.title,
-        }]
-      }),
+      images: page.featuredImage?.node?.sourceUrl ? [page.featuredImage.node.sourceUrl] : undefined,
     }));
 
     // Get all blog posts using GraphQL pagination
@@ -385,13 +373,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(post.modified || post.date),
       changeFrequency: getChangeFrequency('post', post.modified),
       priority: getPriority('post'),
-      // Include images if featured image exists
-      ...(post.featuredImage?.node?.sourceUrl && {
-        images: [{
-          loc: post.featuredImage.node.sourceUrl,
-          caption: post.featuredImage.node.altText || post.title,
-        }]
-      }),
+      images: post.featuredImage?.node?.sourceUrl ? [post.featuredImage.node.sourceUrl] : undefined,
     }));
 
     // Get all categories
@@ -439,10 +421,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Sort by priority (highest first) and then by lastModified (newest first)
     allSitemapEntries.sort((a, b) => {
-      if (b.priority !== a.priority) {
-        return b.priority - a.priority;
+      if (b.priority! !== a.priority!) {
+        return b.priority! - a.priority!;
       }
-      return new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime();
+      return new Date(b.lastModified!).getTime() - new Date(a.lastModified!).getTime();
     });
 
     console.log(`Generated sitemap with ${allSitemapEntries.length} URLs:`, {
@@ -473,4 +455,3 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ];
   }
 }
-
