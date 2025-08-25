@@ -8,7 +8,6 @@ import {
   Shield,
   Award,
   Clock,
-  ArrowRight,
   CheckCircle,
 } from "lucide-react";
 import Link from "next/link";

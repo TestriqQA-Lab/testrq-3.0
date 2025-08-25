@@ -2,16 +2,6 @@
 
 import React, { useState } from "react";
 import { FaTools, FaCalculator } from "react-icons/fa";
-import { Metadata } from 'next';
-
-const metadata: Metadata = {
-  title: 'ROI Calculator | Testriq QA Lab',
-  description: 'Learn about the ROI Calculator of the Testriq QA Lab website.',
-  alternates: {
-    canonical: 'https://www.testriq.com/roi-calculator',
-  },
-};
-
 
 const ROICalculatorPage: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(true); // Lightbox state to show the "Coming Soon" message
