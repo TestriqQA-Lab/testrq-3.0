@@ -33,7 +33,7 @@ export default function robots(): MetadataRoute.Robots {
       // Leave out disallow rules for: GPTBot, anthropic-ai, PerplexityBot, Google-Extended, Amazonbot, Applebot-Extended, etc.
       // These agents will fall under the global allow above.
     ],
-    sitemap: 'https://testriq.com/sitemap.xml',
+    sitemap: 'https://www.testriq.com/sitemap.xml',
     // host is non-standard and not needed
   };
 }
