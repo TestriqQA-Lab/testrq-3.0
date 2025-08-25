@@ -43,7 +43,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact-us">
-                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
+                <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
                   Get Started Today
                   <FaArrowRight className="inline ml-2" />
                 </button>

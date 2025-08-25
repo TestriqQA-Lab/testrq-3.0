@@ -260,7 +260,7 @@ const AIProvenTestingProcess: React.FC = () => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-4">
+              <div className="flex items-center justify-between gap-3 pt-4">
                 <div
                   className={`bg-${steps[activeStep].color}-100 text-${steps[activeStep].color}-800 px-4 py-2 rounded-full text-sm font-semibold`}
                 >

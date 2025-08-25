@@ -21,7 +21,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Control system verification"
       ],
       color: "blue",
-      action: "blog/post/functional-testing-for-robotic-systems-precision-sensors-control",
+      action: "/functional-testing-for-robotic-systems-precision-sensors-control",
     },
     {
       id: "safety",
@@ -36,7 +36,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Safety protocol verification"
       ],
       color: "green",
-      action: "blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
+      action: "/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
     },
     {
       id: "performance",
@@ -51,7 +51,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Precision measurement"
       ],
       color: "purple",
-      action: "blog/post/performance-testing-for-robotics-load-handling-precision-uptime"
+      action: "/performance-testing-for-robotics-load-handling-precision-uptime"
     },
     {
       id: "integration",
@@ -66,7 +66,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Communication protocol testing"
       ],
       color: "orange",
-      action: "blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
+      action: "/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
     },
     {
       id: "software",

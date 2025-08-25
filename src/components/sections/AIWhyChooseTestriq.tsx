@@ -140,17 +140,15 @@ const AIWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group transition-all duration-500 transform hover:scale-105 ${
-                hoveredCard === index ? "z-10" : ""
-              }`}
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* AI Neural Node Card */}
               <div
-                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
-                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                }`}
+                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                  }`}
               >
                 {/* Neural Node Header */}
                 <div
@@ -218,9 +216,8 @@ const AIWhyChooseTestriq: React.FC = () => {
                 {/* AI Interactive Hover State */}
                 {/* AI Interactive Hover State */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
-                    benefit.gradient
-                  } 
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient
+                    } 
      transition-opacity duration-500 ease-in-out flex items-center justify-center
      ${hoveredCard === index ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
@@ -257,26 +254,23 @@ const AIWhyChooseTestriq: React.FC = () => {
                   className={`absolute top-4 left-4 flex items-center space-x-1`}
                 >
                   <div
-                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white animate-pulse"
-                        : `bg-${benefit.color}-500`
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white animate-pulse"
+                      : `bg-${benefit.color}-500`
+                      }`}
                   ></div>
                   <div
-                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white/80 animate-pulse"
-                        : `bg-${benefit.color}-400`
-                    }`}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white/80 animate-pulse"
+                      : `bg-${benefit.color}-400`
+                      }`}
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white/60 animate-pulse"
-                        : `bg-${benefit.color}-300`
-                    }`}
+                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white/60 animate-pulse"
+                      : `bg-${benefit.color}-300`
+                      }`}
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>

@@ -51,7 +51,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
       title: "Connectivity Mastery",
       description:
         "Comprehensive connectivity testing across all protocols to ensure seamless device communication and integration.",
-      achievement: "99.4% Connectivity Success",
+      achievement: "99.4% Connectivity",
       capabilities: [
         "WiFi Testing",
         "Bluetooth Validation",

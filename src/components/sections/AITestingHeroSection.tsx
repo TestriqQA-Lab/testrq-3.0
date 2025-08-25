@@ -26,7 +26,7 @@ const AITestingHeroSection: React.FC = () => {
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Ensure your AI applications deliver accurate, fair, and reliable
             results with our systematic AI testing services. From machine
-            learning models to generative AI — our QA for AI applications covers
+            learning models to generative AI - our QA for AI applications covers
             everything from functionality to ethical compliance and end-to-end
             validation.
           </p>
@@ -199,14 +199,14 @@ const AITestingHeroSection: React.FC = () => {
             <div className="text-lg font-bold text-purple-600">🔗</div>
           </div>
 
-          <div className="absolute -bottom-12 lg:-bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -bottom-12 lg:-bottom-7 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">
               Deep Learning
             </div>
             <div className="text-lg font-bold text-blue-600">⚡</div>
           </div>
 
-          <div className="absolute -bottom-12 lg:-bottom-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+          <div className="absolute -bottom-12 lg:-bottom-7 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
             <div className="text-xs font-semibold text-gray-700">AI Ethics</div>
             <div className="text-lg font-bold text-orange-600">⚖️</div>
           </div>
