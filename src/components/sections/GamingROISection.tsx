@@ -257,7 +257,7 @@ const GamingROISection: React.FC = () => {
               {costComparison.withoutTesting.costs.map((cost, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-4 bg-red-50 rounded-xl"
+                  className="flex flex-col md:flex-row items-center justify-between p-4 bg-red-50 rounded-xl"
                 >
                   <div className="flex items-center gap-3">
                     <cost.icon className={`w-5 h-5 ${cost.color}`} />
@@ -298,7 +298,7 @@ const GamingROISection: React.FC = () => {
               {costComparison.withTesting.costs.map((cost, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-4 bg-green-50 rounded-xl"
+                  className="flex flex-col md:flex-row items-center justify-between p-4 bg-green-50 rounded-xl"
                 >
                   <div className="flex items-center gap-3">
                     <cost.icon className={`w-5 h-5 ${cost.color}`} />

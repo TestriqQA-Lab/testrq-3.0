@@ -21,10 +21,10 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
     },
     {
       icon: <FaUsers className="text-3xl text-green-600" />,
-      title: "500+ Professionals Trained",
+      title: "300+ Professionals Trained",
       description:
         "Join a community of QA professionals who have successfully transformed their careers with us.",
-      stats: "95% Success Rate",
+      stats: "99.5% Success Rate",
     },
     {
       icon: <FaGraduationCap className="text-3xl text-purple-600" />,
@@ -175,7 +175,7 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
         <div className="mt-16 grid md:grid-cols-4 gap-8 text-center">
           <div className="p-6">
             <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-              50+
+              300+
             </div>
             <div className="text-gray-600">Professionals Trained</div>
           </div>
@@ -187,7 +187,7 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
           </div>
           <div className="p-6">
             <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
-              95%
+              99.5%
             </div>
             <div className="text-gray-600">Success Rate</div>
           </div>

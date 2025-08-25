@@ -17,12 +17,10 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
 import Image from "next/image";
-import CalendlyImg from "../../../public/Testriq-Calendly.png"
+import CalendlyImg from "../../../public/Testriq-Calendly.png";
 
 const ContactMethodsSection: React.FC = () => {
-
-
-  const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min"
+  const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min";
 
   const contactMethods = [
     {
@@ -152,10 +150,11 @@ const ContactMethodsSection: React.FC = () => {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
-                ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
-                : ""
-                }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${
+                method.highlight
+                  ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
+                  : ""
+              }`}
             >
               {method.highlight && (
                 <div className="absolute top-0 right-0 bg-[theme(color.brand.blue)] text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
@@ -198,7 +197,7 @@ const ContactMethodsSection: React.FC = () => {
         {/* Calendly Integration Section */}
         <div
           id="calendly-section"
-          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-10 mb-20 border border-blue-100 max-w-7xl mx-auto"
+          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto"
         >
           {/* Header Section */}
           <div className="text-center mb-10">
@@ -206,7 +205,9 @@ const ContactMethodsSection: React.FC = () => {
               Book Your QA Consultation
             </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Connect with our QA experts to explore tailored solutions for your software testing needs, including automation, manual, API, and performance testing. Pick a time that suits you!
+              Connect with our QA experts to explore tailored solutions for your
+              software testing needs, including automation, manual, API, and
+              performance testing. Pick a time that suits you!
             </p>
           </div>
 
@@ -218,9 +219,15 @@ const ContactMethodsSection: React.FC = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300" />
               <FaVideo className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-              <h4 className="font-semibold text-lg text-gray-900 mb-2">Deep Dive Session</h4>
-              <p className="text-sm text-gray-600 mb-2 font-medium">30 minutes</p>
-              <p className="text-sm text-gray-500">In-depth discussion for your project needs</p>
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                Deep Dive Session
+              </h4>
+              <p className="text-sm text-gray-600 mb-2 font-medium">
+                30 minutes
+              </p>
+              <p className="text-sm text-gray-500">
+                In-depth discussion for your project needs
+              </p>
               <div className="mt-4">
                 <button className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
                   Schedule Now
@@ -237,8 +244,8 @@ const ContactMethodsSection: React.FC = () => {
                   <InlineWidget
                     url={selectedMeetingUrl}
                     styles={{
-                      height: '100%',
-                      width: '100%',
+                      height: "100%",
+                      width: "100%",
                     }}
                     className="w-full h-full"
                   />
@@ -281,10 +288,11 @@ const ContactMethodsSection: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
-                      ? "bg-green-100 text-green-700"
-                      : "bg-yellow-100 text-yellow-700"
-                      }`}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      schedule.available
+                        ? "bg-green-100 text-green-700"
+                        : "bg-yellow-100 text-yellow-700"
+                    }`}
                   >
                     {schedule.available ? "Available" : "Limited"}
                   </div>
