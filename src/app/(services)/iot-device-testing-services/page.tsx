@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://www.testriq.com/iot-appliances-and-apps-testing-services",
+    canonical: "https://www.testriq.com/iot-device-testing-services",
   },
   openGraph: {
     type: "website",

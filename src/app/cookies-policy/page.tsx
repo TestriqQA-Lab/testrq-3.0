@@ -1,5 +1,16 @@
 import React from 'react'
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cookies Policy | Testriq QA Lab',
+  description: 'Learn about the cookies used on the Testriq QA Lab website.',
+  alternates: {
+    canonical: 'https://www.testriq.com/cookies-policy',
+  },
+};
+
+
 const CookiesPolicy = () => {
   return (
     <div className=" w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-white">
