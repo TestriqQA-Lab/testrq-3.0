@@ -1,4 +1,13 @@
 import React from 'react'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Testriq QA Lab',
+  description: 'Learn about the privacy policy of the Testriq QA Lab website.',
+  alternates: {
+    canonical: 'https://www.testriq.com/privacy-policy',
+  },
+};
 
 const PrivacyPolicy = () => {
   return (

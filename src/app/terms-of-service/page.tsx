@@ -1,4 +1,13 @@
 import React from 'react'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of services | Testriq QA Lab',
+  description: 'Learn about the Terms of services of the Testriq QA Lab website.',
+  alternates: {
+    canonical: 'https://www.testriq.com/terms-of-service',
+  },
+};
 
 const TermsOfService = () => {
   return (
