@@ -44,6 +44,10 @@ export interface WordPressPost {
       slug: string;
     }>;
   };
+  seo: {
+    title: string;
+    metaDesc: string;
+  };
 }
 
 export interface WordPressCategory {
@@ -228,6 +232,10 @@ const GET_POST_BY_SLUG_QUERY = `
           name
           slug
         }
+      }
+      seo {
+        title
+        metaDesc
       }
     }
   }
