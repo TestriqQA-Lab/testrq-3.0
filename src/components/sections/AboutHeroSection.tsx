@@ -30,7 +30,7 @@ const AboutHeroSection = () => {
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Testriq QA Lab LLP is a globally trusted software testing company with
-          over 14 years of experience. We deliver expert-led QA solutions across
+          over 15 years of experience. We deliver expert-led QA solutions across
           the SDLC, combining ISTQB-certified talent, agile practices, and a
           commitment to innovation and software quality.
         </p>

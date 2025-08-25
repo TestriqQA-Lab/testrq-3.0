@@ -72,7 +72,7 @@ const ToolsTechStackSection = () => {
       },
       {
         name: "Azure DevOps",
-        description: "End-to-end DevOps lifecycle",
+        description: "End-to-End DevOps lifecycle",
         usage: "85%",
         icon: <FaGithub className="w-8 h-8" />,
       },
