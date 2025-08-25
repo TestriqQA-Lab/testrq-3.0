@@ -108,7 +108,7 @@ export default function TradingAppsCertificationPage() {
     },
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={tradingAppCertificationSchema} />

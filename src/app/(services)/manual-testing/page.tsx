@@ -207,7 +207,6 @@ export default function ManualTestingPage() {
         <ManualTestingCaseStudies />
         <ManualTestingFAQs />
         <ManualTestingReadyToEnsureQuality />
-        <ManualTestingAnyQuestions />
       </MainLayout>
     </div>
   );

@@ -130,7 +130,7 @@ const TradingAppCertificationPillars = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We certify only after verifying that your trading platform meets
-            every one of these pillars — ensuring security, compliance, and
+            every one of these pillars - ensuring security, compliance, and
             performance your users can trust.
           </p>
         </motion.div>

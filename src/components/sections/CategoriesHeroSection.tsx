@@ -80,7 +80,7 @@ const CategoriesHeroSection: React.FC = () => {
           <div className="mb-6">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Explore All
-              <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent py-3">
                 Testing Categories
               </span>
             </h1>

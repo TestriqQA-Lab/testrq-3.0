@@ -152,9 +152,6 @@ const MatrimonialAppSecurityFeatures = () => {
                   Start Verification
                 </button>
               </Link>
-              <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                View Certification Process
-              </button>
             </div>
           </div>
         </motion.div>

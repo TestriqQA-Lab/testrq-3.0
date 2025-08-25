@@ -98,7 +98,7 @@ const ShoppingAppCertificationProcess = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A structured 4-phase certification process designed to ensure your
             shopping app meets the highest standards of security, performance,
-            and regulatory compliance — completed in 12–18 working days.
+            and regulatory compliance - completed in 12–18 working days.
           </p>
         </motion.div>
 
@@ -186,7 +186,7 @@ const ShoppingAppCertificationProcess = () => {
               Total Timeline: 12–18 Working Days
             </h3>
             <p className="text-gray-600 mb-6">
-              We ensure full compliance, security, and trustworthiness — all
+              We ensure full compliance, security, and trustworthiness - all
               delivered within a tight, well-managed certification cycle.
             </p>
             <Link href="/contact-us">

@@ -116,7 +116,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
       </div>
 
       {/* Posts Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-12">
         {currentPosts.map((post) => (
           <article
             key={post.id}
@@ -175,8 +175,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                 </div>
                 
                 {/* Meta Info */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
                       <Image
                         src={post.authorImage}
@@ -199,7 +199,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   
                   <Link
                     href={`/blog/post/${post.slug}`}
-                    className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
+                    className="flex items-center gap-2 mt-3 md:mt-0 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                   >
                     Read More
                     <FaArrowRight className="w-3 h-3" />
@@ -214,7 +214,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-center">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}

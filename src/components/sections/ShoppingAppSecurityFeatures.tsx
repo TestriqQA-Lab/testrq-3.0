@@ -104,7 +104,7 @@ const ShoppingAppSecurityFeatures = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We certify shopping apps only after confirming they meet our
-            complete set of security requirements — ensuring trust, compliance,
+            complete set of security requirements - ensuring trust, compliance,
             and customer protection.
           </p>
         </motion.div>

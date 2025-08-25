@@ -55,7 +55,7 @@ const DatingAppHeroSection = () => {
             className="mb-8"
           >
             <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
-              <Shield className="w-4 h-4 mr-2" />
+              <Shield className="w-4 h-4 mr-2 hidden md:block" />
               The New Standard in Dating App Trust & Safety
             </div>
 
@@ -98,7 +98,7 @@ const DatingAppHeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}

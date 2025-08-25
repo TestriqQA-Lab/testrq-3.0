@@ -126,7 +126,7 @@ const TradingAppSecurityFeatures = () => {
             <span className="text-brand-blue">Trading App Security</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don’t just list features — we verify your platform meets all six
+            We don’t just list features - we verify your platform meets all six
             essential security pillars before awarding our certification.
           </p>
         </motion.div>
@@ -173,7 +173,7 @@ const TradingAppSecurityFeatures = () => {
             <h3 className="text-2xl font-bold mb-4">Ready to Get Certified?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               We’ll assess your trading platform against our six security
-              pillars and certify your compliance — giving your users complete
+              pillars and certify your compliance - giving your users complete
               confidence in your safety standards.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

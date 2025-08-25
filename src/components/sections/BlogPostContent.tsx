@@ -119,7 +119,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   return (
     <article className="bg-white">
       {/* Reading Controls */}
-      <div className="sticky top-20 z-10 bg-white border-b border-gray-200 p-4 mb-8 rounded-lg shadow-sm">
+      <div className="hidden md:block sticky top-20 z-10 bg-white border-b border-gray-200 p-4 mb-8 rounded-lg shadow-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">

@@ -20,7 +20,9 @@ interface CategoryHeroSectionProps {
   category: Category;
 }
 
-const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) => {
+const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
+  category,
+}) => {
   return (
     <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 text-white py-13 px-8 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -33,14 +35,19 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-blue-200 mb-8">
-          <Link href="/blog" className="flex items-center gap-2 hover:text-white transition-colors">
+          <Link
+            href="/blog"
+            className="flex items-center gap-2 hover:text-white transition-colors"
+          >
             <FaArrowLeft className="w-4 h-4" />
             <span>Back to Blog</span>
           </Link>
-          <span>/</span>
-          <span className="text-gray-400">Categories</span>
-          <span>/</span>
-          <span className="text-white">{category.name}</span>
+          <div className="hidden md:block">
+            <span> / </span>
+            <span className="text-gray-400">Categories</span>
+            <span> / </span>
+            <span className="text-white">{category.name}</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -48,10 +55,14 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
           <div>
             {/* Category Icon and Badge */}
             <div className="flex items-center gap-4 mb-6">
-              <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}
+              >
                 {category.icon}
               </div>
-              <span className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}>
+              <span
+                className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}
+              >
                 {category.name} Category
               </span>
             </div>
@@ -69,7 +80,6 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
               {category.description}
             </p>
           </div>
-
 
           {/* Right Content - Abstract Insight Visualization */}
           <div className="relative flex items-center justify-center p-2">
@@ -93,18 +103,17 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
 
               {/* Text overlay */}
               <div className="relative z-10 text-center">
-                <h3 className="text-3xl font-bold text-white mb-2">Deep Insights</h3>
+                <h3 className="text-3xl font-bold text-white mb-2">
+                  Deep Insights
+                </h3>
                 <p className="text-blue-200 text-lg">Unlocking Knowledge</p>
               </div>
             </div>
           </div>
         </div>
-    
-        
       </div>
     </section>
   );
 };
 
 export default CategoryHeroSection;
-

@@ -116,7 +116,7 @@ const DatingAppSixPillars = () => {
             <span className="text-brand-blue">App Trust Certification</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don’t build dating apps — we certify them. Our process ensures
+            We don’t build dating apps - we certify them. Our process ensures
             that any app meeting all six pillars earns our official{" "}
             <strong>Trust Certification</strong>.
           </p>

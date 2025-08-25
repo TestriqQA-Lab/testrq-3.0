@@ -138,7 +138,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive manual testing services built to ensure exceptional software quality through human-centered testing approaches, including functional testing, usability testing, exploratory testing, and UAT—executed by ISTQB-certified experts.
+            Explore our comprehensive manual testing services built to ensure exceptional software quality through human-centered testing approaches, including functional testing, usability testing, exploratory testing, and UAT-executed by ISTQB-certified experts.
           </p>
         </div>
 
@@ -157,7 +157,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
-                  <div className="flex items-center justify-center space-x-2">
+                  <div className="flex sm:flex-col flex-row items-center justify-center space-x-2">
                     <span className={activeTab === index ? colors.text : "text-gray-400"}>
                       {type.icon}
                     </span>
@@ -203,7 +203,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
                       <div className="grid grid-cols-1 gap-3">
                         {type.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-3">
-                            <div className={`w-2 h-2 ${colors.bg} rounded-full`}></div>
+                            <div className={`w-2 h-2 bg-gray-400 rounded-full`}></div>
                             <span className="text-gray-600">{feature}</span>
                           </div>
                         ))}

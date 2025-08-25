@@ -30,7 +30,7 @@ const ContactFAQSection: React.FC = () => {
     {
       question: "Can I schedule a meeting outside of regular business hours?",
       answer:
-        "Absolutely! While our standard hours are Monday-Friday, 9 AM - 6 PM EST, we understand that different time zones and schedules require flexibility. When booking through Calendly, you can request alternative times, and we'll do our best to accommodate your schedule.",
+        "Absolutely! While our standard hours are Monday-Friday, 9 AM - 6 PM IST, we understand that different time zones and schedules require flexibility. When booking through Calendly, you can request alternative times, and we'll do our best to accommodate your schedule.",
     },
     {
       question: "What information should I include when contacting you?",
@@ -40,7 +40,7 @@ const ContactFAQSection: React.FC = () => {
     {
       question: "Do you provide support for international clients?",
       answer:
-        "Yes, we work with clients globally! While our primary office hours are EST, we have team members across different time zones to provide support. We offer video consultations, email support, and can arrange calls at times convenient for international clients.",
+        "Yes, we work with clients globally! While our primary office hours are IST, we have team members across different time zones to provide support. We offer video consultations, email support, and can arrange calls at times convenient for international clients.",
     },
     {
       question: "Is there a cost for initial consultations or quotes?",

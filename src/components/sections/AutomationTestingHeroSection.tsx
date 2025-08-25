@@ -54,7 +54,7 @@ const AutomationTestingHeroSection: React.FC = () => {
               coverage, reliability, and overall software quality.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4 w-full sm:w-auto">
               <Link href="/contact-us">
                 <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
                   Get Started Today
