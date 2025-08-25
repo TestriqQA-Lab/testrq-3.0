@@ -140,7 +140,7 @@ const TeamCultureSection = () => {
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               We offer comprehensive benefits designed to support our team
-              members&apos; professional growth and personal well-being.
+              member&apos;s professional growth and personal well-being.
             </p>
           </div>
 

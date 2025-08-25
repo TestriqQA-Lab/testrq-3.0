@@ -8,6 +8,7 @@ import {
   FaFont,
 } from "react-icons/fa";
 import { CaseStudy } from "@/app/lib/caseStudies";
+import Link from "next/link";
 
 interface CaseStudyPlatformSectionProps {
   caseStudy: CaseStudy;
@@ -26,7 +27,13 @@ const CaseStudyPlatformSection: React.FC<CaseStudyPlatformSectionProps> = ({
       icon: FaMousePointer,
       title: "Drag-and-Drop Interface",
       description:
-        "Easy to use drag-and-drop interface with search functionality for finding specific images, or browsing through categories like lines, banners, shapes, frames, animals, food, travel, technology, and more.",
+        <>
+          Easy to use drag-and-drop interface with search functionality for finding specific images, or browsing through categories like lines,{" "}
+          <Link href="https://www.canva.com/create/banners/" className="text-blue-600 underline hover:text-blue-800">
+            banners
+          </Link>
+          , shapes, frames, animals, food, travel, technology, and more.
+        </>
     },
     {
       icon: FaImages,
@@ -150,7 +157,9 @@ const CaseStudyPlatformSection: React.FC<CaseStudyPlatformSectionProps> = ({
                 as easy to use, as described. On the left side of the screen,
                 you have a search box where you can type in keywords to find
                 specific images, or you can browse through the categories, like
-                lines, banners, shapes, frames, animals, food, travel,
+                lines, <Link href="https://www.canva.com/create/banners/" className="text-blue-600 underline hover:text-blue-800">
+                  banners
+                </Link>, shapes, frames, animals, food, travel,
                 technology, and more and just begin dragging and dropping things
                 onto the blank canvas to the right.
               </p>
