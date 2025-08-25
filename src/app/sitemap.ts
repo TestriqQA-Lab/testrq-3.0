@@ -1,5 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getPosts, getCategories, getTags, WordPressPost, WordPressCategory, WordPressTag } from '@/lib/wordpress-graphql';
+// Import the dynamic page data sources
+import { getAllCities, CityData } from '@/app/lib/CityData';
+import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
 
 // Define interface for WordPress pages (to be added to wordpress-graphql.ts)
 export interface WordPressPage {
@@ -138,7 +141,7 @@ async function getPages(first: number = 100, after?: string): Promise<{
 }
 
 // Function to determine change frequency based on content type and last modified date
-function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
+function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
   const now = new Date();
   const modifiedDate = lastModified ? new Date(lastModified) : now;
   const daysSinceModified = Math.floor((now.getTime() - modifiedDate.getTime()) / (1000 * 60 * 60 * 24));
@@ -154,6 +157,10 @@ function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' |
     case 'service':
     case 'solution':
       return 'monthly';
+    case 'city':
+      return 'monthly'; // City pages are relatively stable
+    case 'case-study':
+      return 'yearly'; // Case studies are rarely updated once published
     case 'page':
     default:
       return daysSinceModified < 90 ? 'monthly' : 'yearly';
@@ -161,7 +168,7 @@ function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' |
 }
 
 // Function to determine priority based on content type and importance
-function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution', slug?: string): number {
+function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', slug?: string): number {
   switch (contentType) {
     case 'home':
       return 1.0;
@@ -169,6 +176,10 @@ function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' 
       return 0.9;
     case 'solution':
       return 0.8;
+    case 'city':
+      return 0.7; // City pages are important for local SEO
+    case 'case-study':
+      return 0.6; // Case studies are valuable for showcasing expertise
     case 'page':
       // Higher priority for important pages
       if (slug && ['about-us', 'contact-us', 'careers'].includes(slug)) {
@@ -269,6 +280,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: getChangeFrequency('solution'),
       priority: getPriority('solution'),
     }));
+
+    // Dynamic City Pages - NEW ADDITION
+    let cityPages: any[] = [];
+    try {
+      const allCities = getAllCities();
+      console.log(`Found ${allCities.length} cities for sitemap`);
+      
+      cityPages = allCities.map((city: CityData) => ({
+        url: `${baseUrl}/${city.slug}`,
+        lastModified: currentDate,
+        changeFrequency: getChangeFrequency('city'),
+        priority: getPriority('city'),
+      }));
+    } catch (error) {
+      console.error('Error fetching city data for sitemap:', error);
+    }
+
+    // Dynamic Case Study Pages - NEW ADDITION
+    let caseStudyPages: any[] = [];
+    try {
+      const allCaseStudies = getAllCaseStudies();
+      console.log(`Found ${allCaseStudies.length} case studies for sitemap`);
+      
+      caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
+        url: `${baseUrl}/${caseStudy.slug}`,
+        lastModified: currentDate,
+        changeFrequency: getChangeFrequency('case-study'),
+        priority: getPriority('case-study'),
+        // Include images if case study has an image
+        ...(caseStudy.image && {
+          images: [{
+            loc: caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`,
+            caption: caseStudy.title,
+          }]
+        }),
+      }));
+    } catch (error) {
+      console.error('Error fetching case study data for sitemap:', error);
+    }
 
     // Fetch WordPress pages dynamically (if any exist)
     let allWordPressPages: WordPressPage[] = [];
@@ -374,11 +424,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getPriority('tag'),
     }));
 
-    // Combine all sitemap entries
+    // Combine all sitemap entries - INCLUDING THE NEW DYNAMIC PAGES
     const allSitemapEntries = [
       ...staticPages,
       ...servicePages,
       ...solutionPages,
+      ...cityPages,        // NEW: City pages from dynamic route
+      ...caseStudyPages,   // NEW: Case study pages from dynamic route
       ...wordpressPages,
       ...blogPosts,
       ...categoryPages,
@@ -397,6 +449,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       staticPages: staticPages.length,
       servicePages: servicePages.length,
       solutionPages: solutionPages.length,
+      cityPages: cityPages.length,           // NEW: Log city pages count
+      caseStudyPages: caseStudyPages.length, // NEW: Log case study pages count
       wordpressPages: wordpressPages.length,
       blogPosts: blogPosts.length,
       categoryPages: categoryPages.length,
