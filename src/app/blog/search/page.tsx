@@ -175,7 +175,7 @@ const SearchResults: React.FC = () => {
 
                         {/* Read More Link */}
                         <Link
-                          href={`/blog/${post.slug}`}
+                          href={`/blog/post/${post.slug}`}
                           className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors"
                         >
                           Read More
