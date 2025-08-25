@@ -319,7 +319,7 @@ export default function CardSlider() {
                 ></div>
               </div>
             </div>
-            <button
+            {/* <button
               className={`mt-4 w-full bg-${
                 cards[activeCard].colordark
               } text-white py-2 rounded-lg hover:bg-${cards[
@@ -327,7 +327,7 @@ export default function CardSlider() {
               ].colordark.replace("500", "600")}`}
             >
               Learn More About {cards[activeCard].title}
-            </button>
+            </button> */}
           </div>
         </div>
 

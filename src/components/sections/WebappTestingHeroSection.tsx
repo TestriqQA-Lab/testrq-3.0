@@ -44,7 +44,7 @@ const WebappTestingHeroSection: React.FC = () => {
             Ensure your web applications deliver exceptional user experiences
             with our systematic web application testing services. From
             functionality and performance to security, usability, and bug
-            detection — we test it all to ensure maximum quality, compliance,
+            detection - we test it all to ensure maximum quality, compliance,
             and cross-platform compatibility.
           </p>
 
