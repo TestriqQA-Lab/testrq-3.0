@@ -176,7 +176,7 @@ const TeamMembersSection = () => {
       name: "Ayushi Bansal",
       role: "UI/UX Designer",
       department: "Testriq QA Lab",
-      linkedin: "https://www.linkedin.com/in/elvita07",
+      linkedin: "https://www.linkedin.com/in/bansal-ayushi/",
       src: "/Ayushi Bansal.png",
     },
   ];
