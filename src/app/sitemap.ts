@@ -1,15 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getPosts, getCategories, getTags, WordPressPost, WordPressCategory, WordPressTag } from '@/lib/wordpress-graphql';
+// Import the dynamic page data sources
 import { getAllCities, CityData } from '@/app/lib/CityData';
 import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
-
-// Define a type for sitemap images that matches the expected structure
-interface SitemapImage {
-  loc: string;
-  caption?: string;
-  title?: string;
-  geoLocation?: string;
-}
 
 // Define interface for WordPress pages (to be added to wordpress-graphql.ts)
 export interface WordPressPage {
@@ -232,7 +225,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { slug: 'blog/search', title: 'Blog Search' },
     ];
 
-    const staticPages: MetadataRoute.Sitemap = staticNextJSPages.map(page => ({
+    const staticPages = staticNextJSPages.map(page => ({
       url: page.slug ? `${baseUrl}/${page.slug}` : baseUrl,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency(page.slug === '' ? 'home' : 'page'),
@@ -240,7 +233,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Service pages (Next.js routes)
-    const servicePages: MetadataRoute.Sitemap = [
+    const servicePages = [
       'web-application-testing-services',
       'mobile-application-testing',
       'api-testing',
@@ -273,7 +266,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Solution pages (Next.js routes)
-    const solutionPages: MetadataRoute.Sitemap = [
+    const solutionPages = [
       'e-commerce-testing-services',
       'e-learning-testing-services',
       'healthcare-testing-services',
@@ -289,7 +282,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Dynamic City Pages - NEW ADDITION
-    let cityPages: MetadataRoute.Sitemap = [];
+    let cityPages: any[] = [];
     try {
       const allCities = getAllCities();
       console.log(`Found ${allCities.length} cities for sitemap`);
@@ -305,28 +298,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // Dynamic Case Study Pages - NEW ADDITION
-    let caseStudyPages: MetadataRoute.Sitemap = [];
+    let caseStudyPages: any[] = [];
     try {
       const allCaseStudies = getAllCaseStudies();
       console.log(`Found ${allCaseStudies.length} case studies for sitemap`);
       
-      caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => {
-        const sitemapEntry: any = {
-          url: `${baseUrl}/${caseStudy.slug}`,
-          lastModified: currentDate,
-          changeFrequency: getChangeFrequency('case-study'),
-          priority: getPriority('case-study'),
-        };
-
-        if (caseStudy.image) {
-          sitemapEntry.images = [{
+      caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
+        url: `${baseUrl}/${caseStudy.slug}`,
+        lastModified: currentDate,
+        changeFrequency: getChangeFrequency('case-study'),
+        priority: getPriority('case-study'),
+        // Include images if case study has an image
+        ...(caseStudy.image && {
+          images: [{
             loc: caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`,
             caption: caseStudy.title,
-          }];
-        }
-
-        return sitemapEntry;
-      });
+          }]
+        }),
+      }));
     } catch (error) {
       console.error('Error fetching case study data for sitemap:', error);
     }
@@ -354,23 +343,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
 
-    const wordpressPages: MetadataRoute.Sitemap = allWordPressPages.map((page) => {
-      const sitemapEntry: any = {
-        url: `${baseUrl}/${page.slug}`,
-        lastModified: new Date(page.modified || page.date),
-        changeFrequency: getChangeFrequency('page', page.modified),
-        priority: getPriority('page', page.slug),
-      };
-
-      if (page.featuredImage?.node?.sourceUrl) {
-        sitemapEntry.images = [{
+    const wordpressPages = allWordPressPages.map((page) => ({
+      url: `${baseUrl}/${page.slug}`,
+      lastModified: new Date(page.modified || page.date),
+      changeFrequency: getChangeFrequency('page', page.modified),
+      priority: getPriority('page', page.slug),
+      // Include images if featured image exists
+      ...(page.featuredImage?.node?.sourceUrl && {
+        images: [{
           loc: page.featuredImage.node.sourceUrl,
           caption: page.featuredImage.node.altText || page.title,
-        }];
-      }
-
-      return sitemapEntry;
-    });
+        }]
+      }),
+    }));
 
     // Get all blog posts using GraphQL pagination
     let allPosts: WordPressPost[] = [];
@@ -395,23 +380,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
 
-    const blogPosts: MetadataRoute.Sitemap = allPosts.map((post) => {
-      const sitemapEntry: any = {
-        url: `${baseUrl}/blog/post/${post.slug}`,
-        lastModified: new Date(post.modified || post.date),
-        changeFrequency: getChangeFrequency('post', post.modified),
-        priority: getPriority('post'),
-      };
-
-      if (post.featuredImage?.node?.sourceUrl) {
-        sitemapEntry.images = [{
+    const blogPosts = allPosts.map((post) => ({
+      url: `${baseUrl}/blog/post/${post.slug}`,
+      lastModified: new Date(post.modified || post.date),
+      changeFrequency: getChangeFrequency('post', post.modified),
+      priority: getPriority('post'),
+      // Include images if featured image exists
+      ...(post.featuredImage?.node?.sourceUrl && {
+        images: [{
           loc: post.featuredImage.node.sourceUrl,
           caption: post.featuredImage.node.altText || post.title,
-        }];
-      }
-
-      return sitemapEntry;
-    });
+        }]
+      }),
+    }));
 
     // Get all categories
     let allCategories: WordPressCategory[] = [];
@@ -421,7 +402,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       console.error('Error fetching categories:', error);
     }
 
-    const categoryPages: MetadataRoute.Sitemap = allCategories.map((category) => ({
+    const categoryPages = allCategories.map((category) => ({
       url: `${baseUrl}/blog/category/${category.slug}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('category'),
@@ -436,7 +417,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       console.error('Error fetching tags:', error);
     }
 
-    const tagPages: MetadataRoute.Sitemap = allTags.map((tag) => ({
+    const tagPages = allTags.map((tag) => ({
       url: `${baseUrl}/blog/tag/${tag.slug}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('tag'),
@@ -444,7 +425,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Combine all sitemap entries - INCLUDING THE NEW DYNAMIC PAGES
-    const allSitemapEntries: MetadataRoute.Sitemap = [
+    const allSitemapEntries = [
       ...staticPages,
       ...servicePages,
       ...solutionPages,
@@ -458,14 +439,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Sort by priority (highest first) and then by lastModified (newest first)
     allSitemapEntries.sort((a, b) => {
-      const priorityA = a.priority ?? 0.5;
-      const priorityB = b.priority ?? 0.5;
-      if (priorityB !== priorityA) {
-        return priorityB - priorityA;
+      if (b.priority !== a.priority) {
+        return b.priority - a.priority;
       }
-      const dateA = a.lastModified ? new Date(a.lastModified).getTime() : 0;
-      const dateB = b.lastModified ? new Date(b.lastModified).getTime() : 0;
-      return dateB - dateA;
+      return new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime();
     });
 
     console.log(`Generated sitemap with ${allSitemapEntries.length} URLs:`, {
@@ -496,5 +473,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ];
   }
 }
-
 
