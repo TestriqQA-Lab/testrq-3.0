@@ -158,7 +158,7 @@ const CaseStudiesIndustrySection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-4 py-2 rounded-full mb-5">
-            <FaBriefcase  />
+            <FaBriefcase />
             <span className="text-sm">Industry Expertise</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -287,7 +287,7 @@ const CaseStudiesIndustrySection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
               <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
-                15+
+                25+
               </div>
               <p className="text-gray-700 text-sm">Global Service Delivery</p>
             </div>

@@ -186,8 +186,11 @@ const CareersApplicationProcessSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We&apos;ve designed our QA hiring process to be thorough, transparent, and respectful of your time. Here&apos;s what you can expect at each step of your application journey for software testing roles—from initial screening and technical assessments to interviews with QA leads and final onboarding at Testriq QA Lab.
-
+            We&apos;ve designed our QA hiring process to be thorough,
+            transparent, and respectful of your time. Here&apos;s what you can
+            expect at each step of your application journey for software testing
+            roles-from initial screening and technical assessments to interviews
+            with QA leads and final onboarding at Testriq QA Lab.
           </p>
         </div>
 
@@ -321,14 +324,17 @@ const CareersApplicationProcessSection: React.FC = () => {
             Ready to Start Your Application?
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Take the first step towards joining our world-class QA team. We&apos;re
-            excited to learn about your experience and discuss how you can
-            contribute to our mission of delivering exceptional software
+            Take the first step towards joining our world-class QA team.
+            We&apos;re excited to learn about your experience and discuss how
+            you can contribute to our mission of delivering exceptional software
             quality.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={scrollToOpenPostions} className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            <button
+              onClick={scrollToOpenPostions}
+              className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+            >
               Browse Open Positions
             </button>
             {/* <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
@@ -339,7 +345,9 @@ const CareersApplicationProcessSection: React.FC = () => {
           <div className="mt-8 text-blue-100 text-sm">
             <p>
               Questions about the process? Email us at{" "}
-              <Link href="mailto:hr@testriq.com" className="font-semibold">contact@testriq.com</Link>
+              <Link href="mailto:hr@testriq.com" className="font-semibold">
+                contact@testriq.com
+              </Link>
             </p>
           </div>
         </div>
