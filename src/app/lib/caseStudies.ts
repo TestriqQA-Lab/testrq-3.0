@@ -143,14 +143,14 @@ export const caseStudiesData: CaseStudy[] = [
         address: false,
         telephone: false,
       },
-      metadataBase: new URL("https://testriq.com/"),
+      metadataBase: new URL("https://www.testriq.com/"),
       alternates: {
-        canonical: "https://testriq.com/canva-case-study",
+        canonical: "https://www.testriq.com/canva-case-study",
       },
       openGraph: {
         type: "article",
         locale: "en_US",
-        url: "https://testriq.com/case-study/canva-case-study",
+        url: "https://www.testriq.com/case-study/canva-case-study",
         siteName: "Testriq - QA Case Studies",
         title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
         description:
@@ -338,14 +338,14 @@ export const caseStudiesData: CaseStudy[] = [
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/ragnar-case-study",
+    canonical: "https://www.testriq.com/ragnar-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/ragnar-case-study",
+    url: "https://www.testriq.com/case-study/ragnar-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Ragnar QA Case Study - Quality Testing for Sports Platforms | Testriq",
     description:
@@ -540,14 +540,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/kanishka-software-case-study",
+    canonical: "https://www.testriq.com/kanishka-software-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/kanishka-software-case-study",
+    url: "https://www.testriq.com/case-study/kanishka-software-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Kanishka Software QA Case Study - Mobile App Testing by Testriq",
     description:
@@ -719,14 +719,14 @@ additionalMetrics: [
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/home-facts-case-study",
+    canonical: "https://www.testriq.com/home-facts-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/home-facts-case-study",
+    url: "https://www.testriq.com/home-facts-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Home Facts QA Case Study - Real Estate Platform Testing by Testriq",
     description:
@@ -920,14 +920,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/realtytrac-case-study",
+    canonical: "https://www.testriq.com/realtytrac-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/realtytrac-case-study",
+    url: "https://www.testriq.com/realtytrac-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RealtyTrac QA Case Study – Testriq's QA for Real Estate Platforms",
     description:
@@ -1124,14 +1124,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/brandify-case-study",
+    canonical: "https://www.testriq.com/brandify-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/brandify-case-study",
+    url: "https://www.testriq.com/brandify-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Brandify QA Case Study – Digital Marketing Platform Testing | Testriq",
     description:
@@ -1301,14 +1301,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/milton-case-study",
+    canonical: "https://www.testriq.com/milton-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/milton-case-study",
+    url: "https://www.testriq.com/milton-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Milton Smart Bottle QA Case Study – IoT Homeware Testing | Testriq",
     description:
@@ -1480,14 +1480,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/luep-case-study",
+    canonical: "https://www.testriq.com/luep-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/luep-case-study",
+    url: "https://www.testriq.com/luep-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Luep QA Case Study – Seamless Testing Across Web & Mobile | Testriq",
     description:
@@ -1662,14 +1662,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/aalpha-information-systems",
+    canonical: "https://www.testriq.com/aalpha-information-systems",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/aalpha-information-systems",
+    url: "https://www.testriq.com/aalpha-information-systems",
     siteName: "Testriq - QA Case Studies",
     title: "Aalpha Penetration Testing Case Study – HR Portal Security | Testriq",
     description:
@@ -1852,14 +1852,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/digiboxx-case-study",
+    canonical: "https://www.testriq.com/digiboxx-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/digiboxx-case-study",
+    url: "https://www.testriq.com/digiboxx-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Digiboxx QA Case Study – Elevating Cloud Storage Platforms | Testriq",
     description:
@@ -2011,14 +2011,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/rc-pets-case-study",
+    canonical: "https://www.testriq.com/rc-pets-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/rc-pets-case-study",
+    url: "https://www.testriq.com/rc-pets-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RC Pets QA Case Study – High-Performance eCommerce Testing | Testriq",
     description:
@@ -2215,14 +2215,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/worksocial-case-study",
+    canonical: "https://www.testriq.com/worksocial-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/worksocial-case-study",
+    url: "https://www.testriq.com/worksocial-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "WorkSocial QA Case Study – Elevating Real Estate Software | Testriq",
     description:
@@ -2381,14 +2381,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/leadoconnect-case-study",
+    canonical: "https://www.testriq.com/leadoconnect-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/leadoconnect-case-study",
+    url: "https://www.testriq.com/leadoconnect-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "LeadoConnect QA Case Study – Marketing Automation Software QA | Testriq",
     description:
@@ -2574,14 +2574,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/case-study/pro-ficiency-qa-case-study",
+    canonical: "https://www.testriq.com/case-study/pro-ficiency-qa-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/case-study/pro-ficiency-qa-case-study",
+    url: "https://www.testriq.com/case-study/pro-ficiency-qa-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Pro-ficiency QA Case Study – Long-Term Healthcare Software Testing | Testriq",
     description:
@@ -2740,14 +2740,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/phyllo-case-study",
+    canonical: "https://www.testriq.com/phyllo-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testriq.com/phyllo-case-study",
+    url: "https://www.testriq.com/phyllo-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Phyllo API Testing Case Study – Infrastructure QA by Testriq",
     description:
@@ -2927,14 +2927,14 @@ overview: {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL("https://testriq.com/"),
+    metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
-      canonical: "https://testriq.com/indo-wings-case-study",
+      canonical: "https://www.testriq.com/indo-wings-case-study",
     },
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: "https://testriq.com/case-study/indo-wings-case-study",
+      url: "https://www.testriq.com/case-study/indo-wings-case-study",
       siteName: "Testriq - QA Case Studies",
       title: "Indo Wings QA Case Study - Secure Drone Communication | Testriq",
       description: "Testriq partnered with Audix Technologies to validate Indo Wings' secure drone communication system, ensuring robust encryption and market readiness.",
@@ -3108,14 +3108,14 @@ overview: {
       address: false,
       telephone: false,
     },
-    metadataBase: new URL("https://testriq.com/"),
+    metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
-      canonical: "https://testriq.com/smart-doorbell-case-study",
+      canonical: "https://www.testriq.com/smart-doorbell-case-study",
     },
     openGraph: {
       type: "article",
       locale: "en_US",
-      url: "https://testriq.com/case-study/smart-doorbell-case-study",
+      url: "https://www.testriq.com/case-study/smart-doorbell-case-study",
       siteName: "Testriq - QA Case Studies",
       title: "Smart Video Doorbell QA Case Study - Seamless IoT Testing | Testriq",
       description: "Testriq delivered comprehensive QA for a smart video doorbell app, ensuring reliable performance, security, and compatibility across devices.",

@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/qa-documentation-services',
+    canonical: 'https://www.testriq.com/qa-documentation-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/qa-documentation-services',
+    url: 'https://www.testriq.com/qa-documentation-services',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'QA Documentation Services - Professional QA Docs | Testriq',
     description: 'Professional QA documentation services including test plans, test cases, requirements docs, and compliance-ready deliverables. Ensure quality, streamline processes, and accelerate testing.',
@@ -85,9 +85,9 @@ export const metadata: Metadata = {
 
 const QADocumentationServicesPage = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/qa-documentation-services" },
-    { name: "QA Documentation Services", url: "https://testriq.com/qa-documentation-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/qa-documentation-services" },
+    { name: "QA Documentation Services", url: "https://www.testriq.com/qa-documentation-services" }
   ];
   return (
     <div className="min-h-screen bg-white">

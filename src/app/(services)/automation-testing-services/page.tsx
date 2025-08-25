@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/automation-testing-services",
+    canonical: "https://www.testriq.com/automation-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/automation-testing-services",
+    url: "https://www.testriq.com/automation-testing-services",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
@@ -180,14 +180,14 @@ const AutomationTestingFAQs = dynamic(
 
 export default function AutomationTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com" },
+    { name: "Home", url: "https://www.testriq.com" },
     {
       name: "Services",
-      url: "https://testriq.com/automation-testing-services",
+      url: "https://www.testriq.com/automation-testing-services",
     },
     {
       name: "Automation Testing",
-      url: "https://testriq.com/automation-testing-services",
+      url: "https://www.testriq.com/automation-testing-services",
     },
   ];
 

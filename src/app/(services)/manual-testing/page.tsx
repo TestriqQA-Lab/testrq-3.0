@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/manual-testing",
+    canonical: "https://www.testriq.com/manual-testing",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/manual-testing",
+    url: "https://www.testriq.com/manual-testing",
     siteName: "Testriq - Professional Software Testing Services",
     title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
     description:
@@ -189,9 +189,9 @@ const ManualTestingAnyQuestions = dynamic(
 
 export default function ManualTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com" },
-    { name: "Services", url: "https://testriq.com/manual-testing" },
-    { name: "Manual Testing", url: "https://testriq.com/manual-testing" },
+    { name: "Home", url: "https://www.testriq.com" },
+    { name: "Services", url: "https://www.testriq.com/manual-testing" },
+    { name: "Manual Testing", url: "https://www.testriq.com/manual-testing" },
   ];
 
   return (

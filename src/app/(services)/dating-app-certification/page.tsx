@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/dating-app-certification",
+    canonical: "https://www.testriq.com/dating-app-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/dating-app-certification",
+    url: "https://www.testriq.com/dating-app-certification",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Dating App Certification | Security, Privacy, Trust Compliance - Testriq",
@@ -211,14 +211,14 @@ const faqSchema = {
 
 export default function DatingAppCertification() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/dating-app-certification",
+      url: "https://www.testriq.com/dating-app-certification",
     },
     {
       name: "Dating App Certification",
-      url: "https://testriq.com/dating-app-certification",
+      url: "https://www.testriq.com/dating-app-certification",
     },
   ];
   return (

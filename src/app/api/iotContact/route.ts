@@ -351,8 +351,8 @@ async function sendClientConfirmation(data: IoTContactFormData) {
             <div style="margin: 30px 0;">
               <h3 style="color: #2563eb;">In the meantime, feel free to:</h3>
               <ul style="line-height: 1.8; padding-left: 20px;">
-                <li>Visit our website: <a href="https://testriq.com" style="color: #2563eb;">https://testriq.com</a></li>
-                <li>Learn more about our IoT testing services: <a href="https://testriq.com/iot-testing-services" style="color: #2563eb;">IoT Testing</a></li>
+                <li>Visit our website: <a href="https://www.testriq.com" style="color: #2563eb;">https://www.testriq.com</a></li>
+                <li>Learn more about our IoT testing services: <a href="https://www.testriq.com/iot-testing-services" style="color: #2563eb;">IoT Testing</a></li>
                 <li>Follow us on LinkedIn: <a href="https://www.linkedin.com/company/testriq-qa-lab" style="color: #2563eb;">Testriq QA Lab</a></li>
                 <li>Call us directly: <a href="tel:+919152929343" style="color: #2563eb;">(+91) 915-2929-343</a></li>
               </ul>

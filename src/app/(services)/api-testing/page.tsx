@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-metadataBase: new URL('https://testriq.com/'),
+metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/api-testing',
+    canonical: 'https://www.testriq.com/api-testing',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/api-testing',
+    url: 'https://www.testriq.com/api-testing',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'API Testing Services - Secure & Reliable Integrations | Testriq',
     description: 'Ensure your APIs deliver reliable, secure, and high-performance integrations with our comprehensive API testing services. From REST to GraphQL, SOAP to microservices – we test it all with precision.',
@@ -182,9 +182,9 @@ const ApiToolsFramework = dynamic(
 
 export default function ApiTesting() {
     const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/api-testing" },
-    { name: "API Testing", url: "https://testriq.com/api-testing" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/api-testing" },
+    { name: "API Testing", url: "https://www.testriq.com/api-testing" }
   ];
   return (
     <div>

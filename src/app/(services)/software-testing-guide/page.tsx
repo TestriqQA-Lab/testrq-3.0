@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
- metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/software-testing-guide',
+    canonical: 'https://www.testriq.com/software-testing-guide',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/software-testing-guide',
+    url: 'https://www.testriq.com/software-testing-guide',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Complete Software Testing Guide - Best Practices, Types & Methodologies | Testriq',
     description: 'Master software testing with our complete guide. Learn manual, automation, performance, and security testing best practices, tools, and methodologies.',
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
 
 const SoftwareTestingGuidePage = () => {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/software-testing-guide" },
-    { name: "Software Testing Guide", url: "https://testriq.com/software-testing-guide" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/software-testing-guide" },
+    { name: "Software Testing Guide", url: "https://www.testriq.com/software-testing-guide" }
   ];
 
   return (

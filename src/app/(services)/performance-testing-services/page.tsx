@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     description: "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
     images: ["/OG/Performance-Testing-Service-Twitter.webp"],
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: "https://testriq.com/performance-testing-services",
+    canonical: "https://www.testriq.com/performance-testing-services",
   },
   robots: {
     index: true,
@@ -154,9 +154,9 @@ const PerformanceTestingReadyToEnsureQuality = dynamic(
 
 export default function PerformanceTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/performance-testing-services" },
-    { name: "Performance Testing", url: "https://testriq.com/performance-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/performance-testing-services" },
+    { name: "Performance Testing", url: "https://www.testriq.com/performance-testing-services" }
   ];
 
   

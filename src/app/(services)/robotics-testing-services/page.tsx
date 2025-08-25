@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/robotics-testing-services",
+    canonical: "https://www.testriq.com/robotics-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/robotics-testing-services",
+    url: "https://www.testriq.com/robotics-testing-services",
     siteName: "Testriq - Robotic Testing Services",
     title:
       "Robotic Testing Services - Safety, Precision & Performance Validation | Testriq",
@@ -89,11 +89,11 @@ export const metadata: Metadata = {
 
 export default function RoboticTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/robotics-testing-services" },
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/robotics-testing-services" },
     {
       name: "Robotic Testing Services",
-      url: "https://testriq.com/robotics-testing-services",
+      url: "https://www.testriq.com/robotics-testing-services",
     },
   ];
   return (

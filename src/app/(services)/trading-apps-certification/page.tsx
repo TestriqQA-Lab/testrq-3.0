@@ -45,14 +45,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/trading-apps-certification",
+    canonical: "https://www.testriq.com/trading-apps-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/trading-apps-certification",
+    url: "https://www.testriq.com/trading-apps-certification",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq",
@@ -97,14 +97,14 @@ export const metadata: Metadata = {
 
 export default function TradingAppsCertificationPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/trading-apps-certification",
+      url: "https://www.testriq.com/trading-apps-certification",
     },
     {
       name: "Trading App Certification ",
-      url: "https://testriq.com/trading-apps-certification",
+      url: "https://www.testriq.com/trading-apps-certification",
     },
   ];
   return (

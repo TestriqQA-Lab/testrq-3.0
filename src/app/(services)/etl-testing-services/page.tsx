@@ -38,14 +38,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/etl-testing-services",
+    canonical: "https://www.testriq.com/etl-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/etl-testing-services",
+    url: "https://www.testriq.com/etl-testing-services",
     siteName: "Testriq - ETL Testing Services",
     title:
       "ETL Testing Services - Data Pipeline Validation & Quality Assurance | Testriq",
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
 
 export default function ETLTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/etl-testing-services" },
-    { name: "ETL Testing", url: "https://testriq.com/etl-testing-services" },
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/etl-testing-services" },
+    { name: "ETL Testing", url: "https://www.testriq.com/etl-testing-services" },
   ];
   return (
     <main className="min-h-screen bg-white">

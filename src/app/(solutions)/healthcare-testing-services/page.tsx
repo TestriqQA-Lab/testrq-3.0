@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/healthcare-testing-services',
+    canonical: 'https://www.testriq.com/healthcare-testing-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/healthcare-testing-services',
+    url: 'https://www.testriq.com/healthcare-testing-services',
     siteName: 'Testriq - Healthcare QA Services',
     title: 'Healthcare Testing Solutions | Medical Software QA & HIPAA Compliance | Testriq',
     description: 'Secure your healthcare software with Testriq’s expert QA testing services. Ensure HIPAA compliance, FDA validation, EHR integration, and patient data security.',
@@ -82,9 +82,9 @@ export const metadata: Metadata = {
 
 const HealthcareTestingPage: React.FC = () => {
     const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/healthcare-testing-services" },
-    { name: "Healthcare Testing Service", url: "https://testriq.com/healthcare-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/healthcare-testing-services" },
+    { name: "Healthcare Testing Service", url: "https://www.testriq.com/healthcare-testing-services" }
   ];
   return (
     <div>

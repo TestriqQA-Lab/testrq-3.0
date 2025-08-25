@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/telecommunications-testing-services',
+    canonical: 'https://www.testriq.com/telecommunications-testing-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/telecommunications-testing-services',
+    url: 'https://www.testriq.com/telecommunications-testing-services',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Telecommunication Testing Solutions | 5G & Network QA Services | Testriq',
     description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
@@ -83,9 +83,9 @@ export const metadata: Metadata = {
 
 const TelecommunicationTestingPage: React.FC = () => {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/telecommunications-testing-services" },
-    { name: "Telecommunication Testing ", url: "https://testriq.com/telecommunications-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/telecommunications-testing-services" },
+    { name: "Telecommunication Testing ", url: "https://www.testriq.com/telecommunications-testing-services" }
   ];
   return (
     <div>

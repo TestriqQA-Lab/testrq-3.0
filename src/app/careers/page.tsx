@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/careers',
+    canonical: 'https://www.testriq.com/careers',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/careers',
+    url: 'https://www.testriq.com/careers',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Careers | Join Our QA Testing Team at Testriq | Testriq',
     description: 'Explore QA career opportunities at Testriq. Join a global team of software testing professionals. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.',
@@ -84,8 +84,8 @@ export const metadata: Metadata = {
 
 const CareersPage: React.FC = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Careers Page", url: "https://testriq.com/careers" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Careers Page", url: "https://www.testriq.com/careers" }
   ];
   return (
     <div>

@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/iot-appliances-and-apps-testing-services",
+    canonical: "https://www.testriq.com/iot-appliances-and-apps-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/iot-device-testing-services",
+    url: "https://www.testriq.com/iot-device-testing-services",
     siteName: "Testriq - IoT Device Testing Services",
     title:
       "IoT Device Testing Services - Secure & Reliable QA for Connected Devices | Testriq",
@@ -188,14 +188,14 @@ const IoTToolsFramework = dynamic(
 
 export default function IoTDeviceTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/iot-device-testing-services",
+      url: "https://www.testriq.com/iot-device-testing-services",
     },
     {
       name: "IoT Testing Service",
-      url: "https://testriq.com/iot-device-testing-services",
+      url: "https://www.testriq.com/iot-device-testing-services",
     },
   ];
 

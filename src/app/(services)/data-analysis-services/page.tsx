@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-   metadataBase: new URL('https://testriq.com/'),
+   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/data-analysis-services',
+    canonical: 'https://www.testriq.com/data-analysis-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/data-analysis-services',
+    url: 'https://www.testriq.com/data-analysis-services',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Professional Data Analysis Services - Analytics, Insights & Reporting | Testriq',
     description: 'Transform your raw data into actionable business insights with Testriq\'s professional data analysis services. We deliver descriptive, predictive, and prescriptive analytics using advanced tools and expert data scientists.',
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
 
 const DataAnalysisPage = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/data-analysis-services" },
-    { name: "Data Analysis Services", url: "https://testriq.com/data-analysis-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/data-analysis-services" },
+    { name: "Data Analysis Services", url: "https://www.testriq.com/data-analysis-services" }
   ];
   return (
     <div className="min-h-screen bg-white">

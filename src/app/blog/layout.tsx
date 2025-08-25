@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com"),
+  metadataBase: new URL("https://www.testriq.com"),
   alternates: {
     canonical: "/blog",
     languages: {
@@ -103,18 +103,18 @@ export default function BlogLayout({
             name: "Testriq Software Testing Blog",
             description:
               "Expert insights on test automation, performance testing, security testing, mobile app testing, and quality assurance best practices.",
-            url: "https://testriq.com/blog",
+            url: "https://www.testriq.com/blog",
             publisher: {
               "@type": "Organization",
               name: "Testriq",
               logo: {
                 "@type": "ImageObject",
-                url: "https://testriq.com/logo.png",
+                url: "https://www.testriq.com/logo.png",
               },
             },
             mainEntityOfPage: {
               "@type": "WebPage",
-              "@id": "https://testriq.com/blog",
+              "@id": "https://www.testriq.com/blog",
             },
             blogPost: [
               {
@@ -129,7 +129,7 @@ export default function BlogLayout({
                 },
                 datePublished: "2025-01-15",
                 dateModified: "2025-01-15",
-                url: "https://testriq.com/blog/selenium-webdriver-guide-2025",
+                url: "https://www.testriq.com/blog/selenium-webdriver-guide-2025",
               },
               {
                 "@type": "BlogPosting",
@@ -143,7 +143,7 @@ export default function BlogLayout({
                 },
                 datePublished: "2025-01-12",
                 dateModified: "2025-01-12",
-                url: "https://testriq.com/blog/performance-testing-jmeter",
+                url: "https://www.testriq.com/blog/performance-testing-jmeter",
               },
             ],
           }),
@@ -158,8 +158,8 @@ export default function BlogLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Testriq",
-            url: "https://testriq.com",
-            logo: "https://testriq.com/logo.png",
+            url: "https://www.testriq.com",
+            logo: "https://www.testriq.com/logo.png",
             description:
               "Leading software testing and quality assurance services provider specializing in test automation, performance testing, and comprehensive QA solutions.",
             sameAs: [
@@ -185,7 +185,7 @@ export default function BlogLayout({
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Testriq Blog",
-            url: "https://testriq.com/blog",
+            url: "https://www.testriq.com/blog",
             description:
               "Expert insights on software testing, test automation, and quality assurance best practices.",
             publisher: {
@@ -197,7 +197,7 @@ export default function BlogLayout({
               target: {
                 "@type": "EntryPoint",
                 urlTemplate:
-                  "https://testriq.com/blog/search?q={search_term_string}",
+                  "https://www.testriq.com/blog/search?q={search_term_string}",
               },
               "query-input": "required name=search_term_string",
             },
@@ -217,13 +217,13 @@ export default function BlogLayout({
                 "@type": "ListItem",
                 position: 1,
                 name: "Home",
-                item: "https://testriq.com",
+                item: "https://www.testriq.com",
               },
               {
                 "@type": "ListItem",
                 position: 2,
                 name: "Blog",
-                item: "https://testriq.com/blog",
+                item: "https://www.testriq.com/blog",
               },
             ],
           }),

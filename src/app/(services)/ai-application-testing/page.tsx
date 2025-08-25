@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/ai-application-testing",
+    canonical: "https://www.testriq.com/ai-application-testing",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/ai-application-testing",
+    url: "https://www.testriq.com/ai-application-testing",
     siteName: "Testriq - AI Testing Services",
     title: "AI Application Testing Services - Accurate, Fair, and Reliable ",
     description:
@@ -186,11 +186,11 @@ const AIToolsFramework = dynamic(
 
 export default function AIApplicationTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/ai-application-testing" },
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/ai-application-testing" },
     {
       name: "AI Application Testing",
-      url: "https://testriq.com/ai-application-testing",
+      url: "https://www.testriq.com/ai-application-testing",
     },
   ];
   return (

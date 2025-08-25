@@ -193,7 +193,7 @@ const TermsOfService = () => {
                   <strong>Location:</strong> Mumbai – India
                 </p>
                 <p className="text-gray-700">
-                  <strong>Web:</strong> <a href="https://testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://testriq.com</a>
+                  <strong>Web:</strong> <a href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</a>
                 </p>
               </div>
             </div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
-    url: "https://testriq.com/security-testing",
+    url: "https://www.testriq.com/security-testing",
     type: "website",
     images: [
       {
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
     description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
     images: ["/OG/Security-Testing-Service-Twitter.webp"],
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: "https://testriq.com/security-testing",
+    canonical: "https://www.testriq.com/security-testing",
   },
   robots: {
     index: true,
@@ -167,9 +167,9 @@ const SecurityTestingFAQs = dynamic(() => import("@/components/sections/Security
 
 export default function SecurityTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/security-testing" },
-    { name: "Security Testing", url: "https://testriq.com/security-testing" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/security-testing" },
+    { name: "Security Testing", url: "https://www.testriq.com/security-testing" }
   ];
 
 

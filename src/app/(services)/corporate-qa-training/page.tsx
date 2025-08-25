@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/corporate-qa-training",
+    canonical: "https://www.testriq.com/corporate-qa-training",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/corporate-qa-training",
+    url: "https://www.testriq.com/corporate-qa-training",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Corporate QA Training Services - Professional Software Testing Training | Testriq",
@@ -174,7 +174,7 @@ const corporateQATrainingServiceSchema = {
   provider: {
     "@type": "Organization",
     name: "Testriq QA Lab",
-    url: "https://testriq.com",
+    url: "https://www.testriq.com",
   },
   serviceType: "Corporate Training",
   areaServed: "Worldwide",
@@ -214,11 +214,11 @@ const corporateQATrainingServiceSchema = {
 
 export default function CorporateQATrainingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com" },
-    { name: "Services", url: "https://testriq.com/corporate-qa-training" },
+    { name: "Home", url: "https://www.testriq.com" },
+    { name: "Services", url: "https://www.testriq.com/corporate-qa-training" },
     {
       name: "Corporate QA Training",
-      url: "https://testriq.com/corporate-qa-training",
+      url: "https://www.testriq.com/corporate-qa-training",
     },
   ];
 

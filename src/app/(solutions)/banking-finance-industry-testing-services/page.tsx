@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/banking-finance-industry-testing-services',
+    canonical: 'https://www.testriq.com/banking-finance-industry-testing-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/banking-finance-industry-testing-services',
+    url: 'https://www.testriq.com/banking-finance-industry-testing-services',
     siteName: 'Testriq - Banking & Finance QA Services',
     title: 'Banking & Finance Testing Solutions | BFSI QA Services | Testriq',
     description: 'Ensure secure, compliant, and high-performance banking platforms with Testriq’s comprehensive BFSI testing solutions. PCI DSS, SOX, GDPR compliant QA services.',
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
 
 const BankingFinanceTestingPage: React.FC = () => {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/banking-finance-industry-testing-services" },
-    { name: "Banking FinanceTesting Service", url: "https://testriq.com/banking-finance-industry-testing-servicess" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/banking-finance-industry-testing-services" },
+    { name: "Banking FinanceTesting Service", url: "https://www.testriq.com/banking-finance-industry-testing-servicess" }
   ];
   return (
     <div>

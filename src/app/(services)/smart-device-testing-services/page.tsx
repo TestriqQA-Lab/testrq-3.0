@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/smart-device-testing-services",
+    canonical: "https://www.testriq.com/smart-device-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/smart-device-testing-services",
+    url: "https://www.testriq.com/smart-device-testing-services",
     siteName: "Testriq - Professional Software Testing Services",
     title:
       "Smart Device Testing Services | IoT, Wearables, Smart Home QA - Testriq",
@@ -91,14 +91,14 @@ export const metadata: Metadata = {
 
 export default function SmartDeviceTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/smart-device-testing-services",
+      url: "https://www.testriq.com/smart-device-testing-services",
     },
     {
       name: "smart Device Testing Service",
-      url: "https://testriq.com/smart-device-testing-services",
+      url: "https://www.testriq.com/smart-device-testing-services",
     },
   ];
   return (
