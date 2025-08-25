@@ -87,12 +87,15 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
 
           {/* Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 h-96 flex items-center justify-center">
+            <div className={`rounded-2xl p-8 h-96 flex items-center justify-center ${caseStudy.id === 16
+                ? 'bg-gradient-to-br from-gray-800 to-gray-900'
+                : 'bg-gradient-to-br from-gray-100 to-gray-200'
+              }`}>
               <div className="flex justify-center flex-col text-center">
                 <Image
                   src={caseStudy.image}
                   alt={caseStudy.client}
-                  width={300} // or appropriate dimensions
+                  width={300}
                   height={200}
                   className="object-contain"
                 />

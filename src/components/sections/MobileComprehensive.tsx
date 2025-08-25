@@ -19,7 +19,7 @@ const MobileComprehensive: React.FC = () => {
       icon: <FaMobile className="w-8 h-8" />,
       title: "Functional Testing",
       description:
-        "Comprehensive functionality testing of all mobile app features, user flows, and interactions across iOS and Android devices — including software UI testing and API validation.",
+        "Comprehensive functionality testing of all mobile app features, user flows, and interactions across iOS and Android devices including software UI testing and API validation.",
       features: [
         "Feature validation",
         "User flow testing",
