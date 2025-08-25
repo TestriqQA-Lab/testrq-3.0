@@ -198,7 +198,7 @@ function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' 
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://testriq.com';
+  const baseUrl = 'https://www.testriq.com';
   const currentDate = new Date();
 
   try {
