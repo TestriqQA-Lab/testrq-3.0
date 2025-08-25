@@ -30,12 +30,12 @@ const HomeComprehensiveSoftwareTesting = () => {
     };
 
     const cardData = [
-        { icon: TbWorld, title: 'Mobile Testing', href: '#', detail: 'Experience end-to-end testing for mobile applications (iOS & Android), covering functional, usability, performance and security testing aspects.' },
-        { icon: IoServerOutline, title: 'API Testing', href: '#', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
-        { icon: FaMicrochip, title: 'Data Analysis', href: '#', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
-        { icon: LuSmartphone, title: 'IoT Testing', href: '#', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
-        { icon: GoLock, title: 'Security Testing', href: '#', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
-        { icon: AiOutlineThunderbolt, title: 'Perfomance Testing', href: '#', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
+        { icon: TbWorld, title: 'Mobile Testing', href: '/mobile-application-testing', detail: 'Experience end-to-end testing for mobile applications (iOS & Android), covering functional, usability, performance and security testing aspects.' },
+        { icon: IoServerOutline, title: 'API Testing', href: '/api-testing', detail: 'Validate functionality, reliability, performance and security of your APIs. Ensure seamless communication between software components.' },
+        { icon: FaMicrochip, title: 'Data Analysis', href: '/data-analysis-services', detail: 'Transforming your data into powerful insights with our data analysis services, providing predictive data analysis, business intelligence, and  visualization for superior software quality.' },
+        { icon: LuSmartphone, title: 'IoT Testing', href: '/iot-device-testing-services', detail: 'Comprehensive IoT testing for IoT devices and smart technologies, ensuring connectivity, security, and compatibility.' },
+        { icon: GoLock, title: 'Security Testing', href: '/security-testing', detail: 'Robust security testing including vulnerability assessments, penetration testing, and security audits for optimal software quality.' },
+        { icon: AiOutlineThunderbolt, title: 'Performance Testing', href: '/performance-testing-services', detail: 'Evaluate application speed, scalability, and stability with our performance testing services.' }
     ]
     return (
         // Main section container
@@ -54,7 +54,7 @@ const HomeComprehensiveSoftwareTesting = () => {
                         const Icon = card.icon;
 
                         return <Link href={card.href} key={card.title}>
-                            <div className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl  hover:-translate-y-2'>
+                            <div className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-60 md:h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl  hover:-translate-y-2'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>
                             <p className='text-gray-500 text-sm'>{card.detail}</p>

@@ -7,7 +7,6 @@ import {
   FaCog,
   FaEye,
   FaArrowRight,
-  FaPlay,
 } from "react-icons/fa";
 
 const DataAnalysisHeroSection = () => {
@@ -55,11 +54,6 @@ const DataAnalysisHeroSection = () => {
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-
-              <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
-                <FaPlay className="mr-2" />
-                View Demo Dashboard
-              </button>
             </div>
 
             {/* Analytics Stats */}

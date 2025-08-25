@@ -39,17 +39,10 @@ const ExploratoryCaseStudies: React.FC = () => {
           value: "85%",
           improvement: "Increased from 62%",
         },
-        {
-          metric: "Revenue Impact",
-          value: "$2.1M",
-          improvement: "Annual revenue increase",
-        },
       ],
       testimonial: {
         quote:
           "The exploratory testing revealed critical UX issues that our automated tests completely missed. The insights transformed our user experience.",
-        author: "Jennifer Martinez",
-        position: "Head of Product, ShopEasy",
       },
       timeline: "4 weeks of systematic exploration and optimization",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
@@ -88,8 +81,6 @@ const ExploratoryCaseStudies: React.FC = () => {
       testimonial: {
         quote:
           "The exploratory testing approach uncovered security and usability issues that could have been catastrophic post-launch. Exceptional work.",
-        author: "Robert Chen",
-        position: "CTO, SecureBank Mobile",
       },
       timeline: "6 weeks from exploration to launch readiness",
       technologies: ["React Native", "Node.js", "PostgreSQL", "AWS"],
@@ -128,8 +119,6 @@ const ExploratoryCaseStudies: React.FC = () => {
       testimonial: {
         quote:
           "The systematic exploration approach identified edge cases that could have compromised patient data. Their expertise was invaluable.",
-        author: "Dr. Sarah Williams",
-        position: "Chief Medical Officer, HealthTech Solutions",
       },
       timeline: "8 weeks of comprehensive exploration and validation",
       technologies: ["Angular", "Python", "PostgreSQL", "Docker"],
@@ -290,14 +279,6 @@ const ExploratoryCaseStudies: React.FC = () => {
                 <p className="text-gray-700 italic mb-4">
                   &quot;{currentCase.testimonial.quote}&quot;
                 </p>
-                <div className="text-sm">
-                  <div className="font-semibold text-gray-900">
-                    {currentCase.testimonial.author}
-                  </div>
-                  <div className="text-gray-600">
-                    {currentCase.testimonial.position}
-                  </div>
-                </div>
               </div>
             </div>
           </div>

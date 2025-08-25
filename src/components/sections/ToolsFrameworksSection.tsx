@@ -41,7 +41,7 @@ const ToolsFrameworksSection = () => {
         "Visual testing",
       ],
       logo: "🌲",
-      popularity: "Developer Favorite",
+      popularity: "Developer Favourite",
     },
     {
       name: "Playwright",
@@ -126,18 +126,18 @@ const ToolsFrameworksSection = () => {
   ];
 
   return (
-    <section className="bg-white px-8 py-16 xl:px-24">
+    <section id="tools-and-frameworks" className="bg-white px-8 py-16 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
             <FaCube  />
-            <span className="text-sm">Leading Frameworks</span>
+            <span className="text-sm">Leading Frameworks/Tools</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Industry-Leading{" "}
             <span className="text-[theme(color.brand.blue)]">
-              Testing Frameworks
+              Testing Frameworks/Tools
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
@@ -169,7 +169,7 @@ const ToolsFrameworksSection = () => {
                     </span>
                   </div>
                 </div>
-                <span className="bg-[theme(color.brand.blue)] text-white text-xs px-3 py-1 rounded-full">
+                <span className="bg-[theme(color.brand.blue)] text-white text-center text-xs px-1 py-1 rounded-full">
                   {framework.popularity}
                 </span>
               </div>

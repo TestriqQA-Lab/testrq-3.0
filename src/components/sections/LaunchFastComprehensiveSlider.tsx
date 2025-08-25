@@ -1,5 +1,7 @@
 "use client";
 
+
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaBolt,
@@ -30,6 +32,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Smoke testing",
         "Sanity testing",
       ],
+      action: "blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
     },
     {
       id: "performance-optimization",
@@ -46,6 +49,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Scalability validation",
         "Resource utilization testing",
       ],
+      action: "blog/post/performance-optimization-for-pre-launch-software-testing#why-performance-optimization-matters-pre-launch"
     },
     {
       id: "security-validation",
@@ -62,6 +66,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Session management testing",
         "Security compliance verification",
       ],
+      action: "blog/post/security-validation-in-mvp-startup-qa-best-practices"
     },
     {
       id: "mobile-app-testing",
@@ -78,6 +83,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Battery performance testing",
         "Network connectivity testing",
       ],
+      action: "/mobile-application-testing"
     },
     {
       id: "web-application-testing",
@@ -95,6 +101,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "SEO optimization testing",
         "Progressive web app testing",
       ],
+      action: "/web-application-testing-services"
     },
     {
       id: "api-integration-testing",
@@ -111,6 +118,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
         "Error handling testing",
         "Performance testing",
       ],
+      action: "/api-testing"
     },
   ];
 
@@ -157,11 +165,10 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
             <button
               key={type.id}
               onClick={() => setActiveTab(index)}
-              className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 ${
-                activeTab === index
-                  ? `${getColorClasses(type.color)} border-2`
-                  : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"
-              }`}
+              className={`px-4 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 ${activeTab === index
+                ? `${getColorClasses(type.color)} border-2`
+                : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"
+                }`}
             >
               <span className={activeTab === index ? "" : "text-gray-400"}>
                 {type.icon}
@@ -213,13 +220,13 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <button
+              <Link href={testingTypes[activeTab].action}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(
                   testingTypes[activeTab].color
                 )} hover:shadow-lg`}
               >
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Right Content - Visualization */}
@@ -240,19 +247,18 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                   <div className="flex justify-between text-sm mb-2">
                     <span className="text-gray-600">Test Coverage</span>
                     <span
-                      className={`font-medium ${
-                        testingTypes[activeTab].color === "blue"
-                          ? "text-blue-600"
-                          : testingTypes[activeTab].color === "green"
+                      className={`font-medium ${testingTypes[activeTab].color === "blue"
+                        ? "text-blue-600"
+                        : testingTypes[activeTab].color === "green"
                           ? "text-green-600"
                           : testingTypes[activeTab].color === "purple"
-                          ? "text-purple-600"
-                          : testingTypes[activeTab].color === "orange"
-                          ? "text-orange-600"
-                          : testingTypes[activeTab].color === "teal"
-                          ? "text-teal-600"
-                          : "text-indigo-600"
-                      }`}
+                            ? "text-purple-600"
+                            : testingTypes[activeTab].color === "orange"
+                              ? "text-orange-600"
+                              : testingTypes[activeTab].color === "teal"
+                                ? "text-teal-600"
+                                : "text-indigo-600"
+                        }`}
                     >
                       {testingTypes[activeTab].percentage}
                     </span>

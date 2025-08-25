@@ -1,148 +1,134 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
-import {
-  FaArrowRight,
-  FaChartLine,
-  FaShieldAlt,
-  FaClock,
-  FaCheckCircle,
-  FaWifi,
-  FaRocket,
-  FaTrophy,
-} from "react-icons/fa";
+import { FaBluetooth, FaMobileAlt, FaTachometerAlt, FaCheckCircle, FaShieldAlt, FaLock, FaBell, FaVideo, FaTrophy, FaWifi, FaArrowRight } from 'react-icons/fa';
 
 const IoTCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
 
   const caseStudies = [
-    {
-      id: 1,
-      company: "Smart Home Technologies",
-      industry: "Consumer IoT",
-      challenge: "Multi-Protocol Device Integration",
-      solution:
-        "Comprehensive IoT testing across WiFi, Zigbee, and Z-Wave protocols with seamless device interoperability validation.",
-      results: {
-        connectivity: "99.9% device connectivity",
-        interoperability: "100% protocol compatibility",
-        performance: "60% faster response times",
-        reliability: "95% reduction in connection drops",
-      },
-      metrics: [
-        {
-          label: "IoT Devices Tested",
-          value: "150+",
-          icon: <FaWifi className="w-4 h-4" />,
-        },
-        {
-          label: "Protocols Validated",
-          value: "8",
-          icon: <FaShieldAlt className="w-4 h-4" />,
-        },
-        {
-          label: "Response Improvement",
-          value: "60%",
-          icon: <FaRocket className="w-4 h-4" />,
-        },
-        {
-          label: "Uptime Achieved",
-          value: "99.9%",
-          icon: <FaClock className="w-4 h-4" />,
-        },
-      ],
-      testimonial:
-        "Testriq's IoT testing expertise helped us create a truly seamless smart home ecosystem. Their multi-protocol testing approach was exactly what we needed.",
-      author: "David Kim, Product Manager",
-      color: "teal",
-      gradient: "from-teal-500 to-teal-600",
-      icon: "🏠",
+  {
+    id: 1,
+    company: "Hamilton Housewares Pvt Ltd.",
+    industry: "Homewares",
+    challenge: "Ensuring Quality and Reliability of Smart Hydration Product",
+    solution: "Comprehensive testing of the MILTON Smart Stainless Steel Water Bottle and its iOS/Android apps, focusing on connectivity, functionality, and measurement accuracy.",
+    results: {
+      connectivity: "Significantly improved stability across devices",
+      accuracy: "Enhanced measurement precision",
+      quality: "Top-tier product performance",
     },
-    {
-      id: 2,
-      company: "Industrial Automation Corp",
-      industry: "Industrial IoT",
-      challenge: "Factory Floor IoT Security",
-      solution:
-        "End-to-end security testing of industrial IoT sensors and controllers with comprehensive vulnerability assessment.",
-      results: {
-        security: "100% vulnerability resolution",
-        compliance: "ISO 27001 certification",
-        efficiency: "40% improved operational efficiency",
-        downtime: "80% reduction in system downtime",
+    metrics: [
+      {
+        label: "Devices Tested",
+        value: "20+",
+        icon: <FaMobileAlt className="w-4 h-4" />,
       },
-      metrics: [
-        {
-          label: "Industrial Sensors",
-          value: "500+",
-          icon: <FaWifi className="w-4 h-4" />,
-        },
-        {
-          label: "Security Tests",
-          value: "300+",
-          icon: <FaShieldAlt className="w-4 h-4" />,
-        },
-        {
-          label: "Efficiency Gain",
-          value: "40%",
-          icon: <FaChartLine className="w-4 h-4" />,
-        },
-        {
-          label: "Downtime Reduction",
-          value: "80%",
-          icon: <FaCheckCircle className="w-4 h-4" />,
-        },
-      ],
-      testimonial:
-        "The industrial IoT security testing provided by Testriq gave us confidence in our factory automation systems. Outstanding security expertise!",
-      author: "Maria Santos, Operations Director",
-      color: "blue",
-      gradient: "from-blue-500 to-blue-600",
-      icon: "🏭",
-    },
-    {
-      id: 3,
-      company: "Healthcare Monitoring Systems",
-      industry: "Healthcare IoT",
-      challenge: "Medical Device Compliance & Reliability",
-      solution:
-        "Specialized healthcare IoT testing with FDA compliance validation and patient safety assessment for wearable medical devices.",
-      results: {
-        compliance: "100% FDA compliance",
-        accuracy: "99.8% sensor accuracy",
-        reliability: "24/7 continuous monitoring",
-        safety: "Zero safety incidents",
+      {
+        label: "Connectivity Protocols",
+        value: "Bluetooth",
+        icon: <FaBluetooth className="w-4 h-4" />,
       },
-      metrics: [
-        {
-          label: "Medical Devices",
-          value: "75+",
-          icon: <FaShieldAlt className="w-4 h-4" />,
-        },
-        {
-          label: "Compliance Tests",
-          value: "150+",
-          icon: <FaCheckCircle className="w-4 h-4" />,
-        },
-        {
-          label: "Sensor Accuracy",
-          value: "99.8%",
-          icon: <FaChartLine className="w-4 h-4" />,
-        },
-        {
-          label: "Monitoring Uptime",
-          value: "24/7",
-          icon: <FaClock className="w-4 h-4" />,
-        },
-      ],
-      testimonial:
-        "Testriq's healthcare IoT testing ensured our wearable devices meet the highest medical standards. Their expertise in regulatory compliance is unmatched.",
-      author: "Dr. Jennifer Walsh, Chief Technology Officer",
-      color: "red",
-      gradient: "from-red-500 to-red-600",
-      icon: "🏥",
+      {
+        label: "Measurement Accuracy",
+        value: "Improved precision",
+        icon: <FaTachometerAlt className="w-4 h-4" />,
+      },
+      {
+        label: "Quality Standards",
+        value: "Met high standards",
+        icon: <FaCheckCircle className="w-4 h-4" />,
+      },
+    ],
+    testimonial: "Testriq’s rigorous testing ensured our MILTON Smart Stainless Steel Water Bottle and app met the highest quality standards, enhancing user experience and reliability.",
+    color: "blue",
+    gradient: "from-blue-500 to-blue-600",
+    icon: "💧",
+    action: "/milton-case-study"
+  },
+  {
+    id: 2,
+    company: "Indo Wings Private Limited",
+    industry: "Aerospace and UAV Technology",
+    challenge: "Validating Secure Drone Communication System",
+    solution: "Comprehensive security and performance testing of encrypted drone-to-ground communication and Android-based ground control app, in collaboration with Audix Technologies.",
+    results: {
+      security: "100% secure communication protocols",
+      apkResilience: "Strong resistance to tampering",
+      performance: "Stable with no latency issues",
+      compliance: "Certified by Audix Technologies",
     },
-  ];
+    metrics: [
+      {
+        label: "Security Protocols Tested",
+        value: "Multiple",
+        icon: <FaShieldAlt className="w-4 h-4" />,
+      },
+      {
+        label: "APK Security",
+        value: "Tamper-resistant",
+        icon: <FaLock className="w-4 h-4" />,
+      },
+      {
+        label: "Performance Stability",
+        value: "No latency issues",
+        icon: <FaTachometerAlt className="w-4 h-4" />,
+      },
+      {
+        label: "Compliance",
+        value: "Certified",
+        icon: <FaCheckCircle className="w-4 h-4" />,
+      },
+    ],
+    testimonial: "Testriq's rigorous testing and partnership with Audix Technologies ensured our drone communication system was secure and market-ready.",
+    color: "green",
+    gradient: "from-green-500 to-green-600",
+    icon: "🚁",
+    action: "/indo-wings-case-study"
+  },
+  {
+    id: 3,
+    company: "Confidential",
+    industry: "Home Automation",
+    challenge: "Ensuring Seamless Smart Video Doorbell Performance",
+    solution: "End-to-end QA testing of mobile apps, APIs, cloud integration, and device communication for a smart video doorbell system.",
+    results: {
+      streaming: "Stable with minimal delay",
+      notifications: "100% success rate for alerts",
+      compatibility: "Consistent across Android and iOS",
+      security: "No vulnerabilities in data sync",
+    },
+    metrics: [
+      {
+        label: "Devices Tested",
+        value: "20+",
+        icon: <FaMobileAlt className="w-4 h-4" />,
+      },
+      {
+        label: "Notification Success",
+        value: "100%",
+        icon: <FaBell className="w-4 h-4" />,
+      },
+      {
+        label: "Streaming Stability",
+        value: "Minimal delay",
+        icon: <FaVideo className="w-4 h-4" />,
+      },
+      {
+        label: "Security",
+        value: "Secure data sync",
+        icon: <FaLock className="w-4 h-4" />,
+      },
+    ],
+    testimonial: "Testriq’s thorough QA process ensured our smart doorbell app was reliable, secure, and ready for market launch.",
+    color: "purple",
+    gradient: "from-purple-500 to-purple-600",
+    icon: "🔔",
+    action: "/smart-doorbell-case-study"
+  },
+];
+
 
   return (
     <section className="bg-gradient-to-br from-gray-50 to-teal-50 py-16 px-8 md:px-12 lg:px-24">
@@ -171,20 +157,18 @@ const IoTCaseStudies: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${
-                activeCase === index
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${activeCase === index
                   ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-              }`}
+                }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{study.icon}</span>
                 <div className="text-left">
                   <div className="text-sm font-bold">{study.company}</div>
                   <div
-                    className={`text-xs ${
-                      activeCase === index ? "text-white/80" : "text-gray-500"
-                    }`}
+                    className={`text-xs ${activeCase === index ? "text-white/80" : "text-gray-500"
+                      }`}
                   >
                     {study.industry}
                   </div>
@@ -193,11 +177,10 @@ const IoTCaseStudies: React.FC = () => {
 
               {/* IoT Connection Indicator */}
               <div
-                className={`absolute top-2 right-2 w-2 h-2 rounded-full ${
-                  activeCase === index
+                className={`absolute top-2 right-2 w-2 h-2 rounded-full ${activeCase === index
                     ? "bg-white animate-pulse"
                     : `bg-${study.color}-500`
-                }`}
+                  }`}
               ></div>
             </button>
           ))}
@@ -255,7 +238,7 @@ const IoTCaseStudies: React.FC = () => {
                 {caseStudies[activeCase].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`p-4 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
+                    className={`w-auto md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
                   >
                     <div className="flex items-center mb-2 ">
                       <div
@@ -273,7 +256,7 @@ const IoTCaseStudies: React.FC = () => {
                       {metric.label}
                     </div>
                     <div
-                      className={`absolute top-2 right-2 w-1.5 h-1.5 bg-${caseStudies[activeCase].color}-500 rounded-full animate-pulse`}
+                      className={`absolute hidden md:block top-2 right-2 w-1.5 h-1.5 bg-${caseStudies[activeCase].color}-500 rounded-full animate-pulse`}
                     ></div>
                   </div>
                 ))}
@@ -289,12 +272,12 @@ const IoTCaseStudies: React.FC = () => {
                 <blockquote className="text-gray-700 italic mb-3">
                   &quot;{caseStudies[activeCase].testimonial}&quot;
                 </blockquote>
-                <cite
-                  className={`text-${caseStudies[activeCase].color}-600 font-semibold text-sm flex items-center`}
-                >
-                  <FaCheckCircle className="w-4 h-4 mr-2" />—{" "}
-                  {caseStudies[activeCase].author}
-                </cite>
+              </div>
+              <div>
+                <Link href={caseStudies[activeCase].action} className="inline-flex items-center gap-2 text-[theme(color.brand.blue)] font-semibold hover:text-blue-600 transition-colors">
+                  Read Full Case Study
+                  <FaArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 

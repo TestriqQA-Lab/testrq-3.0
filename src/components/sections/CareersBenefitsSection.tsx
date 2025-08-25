@@ -178,6 +178,8 @@ const CareersBenefitsSection: React.FC = () => {
     },
   ];
 
+
+
   return (
     <section className="py-16 bg-white px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -358,9 +360,11 @@ const CareersBenefitsSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
+            {/* <button
+              onClick={scrollToOpenPostions}
+              className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
               Join Our Team
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

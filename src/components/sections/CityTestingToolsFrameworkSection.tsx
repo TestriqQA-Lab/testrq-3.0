@@ -1,7 +1,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CityData } from "@/app/lib/CityData";
 import {
   Settings,
@@ -12,22 +12,96 @@ import {
   Monitor,
   Database
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface CityTestingToolsFrameworkSectionProps {
   cityData: CityData;
 }
 
 const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectionProps> = ({ cityData }) => {
-  // const [activeCategory, setActiveCategory] = useState(0);
+  const [activeCard, setActiveCard] = useState(0);
 
-  // const categoryIcons = {
-  //   'Automation Testing Tools': Code,
-  //   'Performance Testing Tools': Zap,
-  //   'API Testing Tools': Database,
-  //   'Security Testing Tools': Shield,
-  //   'Mobile Testing Tools': Smartphone,
-  //   'Cloud Testing Tools': Cloud
-  // };
+  // Define the data for tools
+  const tools = [
+    {
+      id: "selenium-webDriver",
+      title: 'Selenium WebDriver',
+      shortName: "Selenium",
+      description: 'Industry-leading open-source tool for automating web application testing across multiple browsers and platforms.',
+      level: 'Expert Level',
+      color: "blue",
+      progress: '100%',
+    },
+    {
+      id: "cypress",
+      title: 'Cypress',
+      shortName: "Cypress",
+      description: 'Modern JavaScript-based end-to-end testing framework that runs directly in the browser for fast and reliable web application testing.',
+      level: 'Expert Level',
+      color: "green",
+      progress: '100%',
+    },
+    {
+      id: "apache-jmeter",
+      title: 'Apache JMeter',
+      shortName: "JMeter",
+      description: 'Open-source Java application designed for load testing, performance measurement, and functional testing of web applications and APIs.',
+      level: 'Expert Level',
+      color: "indigo",
+      progress: '100%',
+    },
+    {
+      id: "postman",
+      title: 'Postman',
+      shortName: "Postman",
+      description: 'Comprehensive API development and testing tool that simplifies creating, sharing, and automating API tests.',
+      level: 'Expert Level',
+      color: "orange",
+      progress: '100%',
+    },
+    {
+      id: "docker",
+      title: 'Docker',
+      shortName: "Docker",
+      description: 'Containerization platform that enables consistent development, testing, and deployment environments for QA processes.',
+      level: 'Expert Level',
+      color: "teal",
+      progress: '100%',
+    },
+    {
+      id: "jenkins",
+      title: 'Jenkins',
+      shortName: "Jenkins",
+      description: 'Open-source automation server for continuous integration and delivery, automating builds, tests, and deployments in QA pipelines.',
+      level: 'Expert Level',
+      color: "purple",
+      progress: '100%',
+    },
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colorMap = {
+      green: "text-green-600 bg-green-50 border-green-200",
+      blue: "text-blue-600 bg-blue-50 border-blue-200",
+      purple: "text-purple-600 bg-purple-50 border-purple-200",
+      orange: "text-orange-600 bg-orange-50 border-orange-200",
+      teal: "text-teal-600 bg-teal-50 border-teal-200",
+      indigo: "text-indigo-600 bg-indigo-50 border-indigo-200"
+    };
+    return colorMap[color as keyof typeof colorMap] || colorMap.green;
+  };
+
+  const getProgressColor = (color: string) => {
+    const colorMap = {
+      green: "green-600",
+      blue: "blue-600",
+      purple: "purple-600",
+      orange: "orange-600",
+      teal: "teal-600",
+      indigo: "indigo-600"
+    };
+    return colorMap[color as keyof typeof colorMap] || colorMap.green;
+  };
 
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -40,13 +114,15 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {cityData.toolsFrameworkContent.description}
           </p>
-          
+
           {/* Tech Stack Overview */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {['Selenium', 'Cypress', 'JMeter', 'Postman', 'Docker', 'Jenkins'].map((tech, index) => (
-              <div key={index} className="bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200">
-                <span className="text-sm font-medium text-gray-700">{tech}</span>
-              </div>
+            {tools.map((tool, index) => (
+              <button key={tool.id} onClick={() => setActiveCard(index)} className={`px-4 py-2 rounded-full shadow-sm 
+                  ${activeCard === index ? `${getColorClasses(tool.color)} border-2` : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"}
+              `}>
+                <span className={`text-sm font-medium ${activeCard === index ? "" : "text-black"}`}>{tool.shortName}</span>
+              </button>
             ))}
           </div>
         </div>
@@ -72,31 +148,32 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
           </div>
 
           {/* Tools Grid - Placeholder for now, as toolsFrameworkContent does not have a 'tools' array */}
-          <div className="p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex justify-center p-12">
+            <div className="w-2xl gap-6">
               {/* Example Tool Card (replace with actual data if available) */}
-              <div className="relative bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 group border border-gray-100 hover:border-blue-200">
+              <div className="relative bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 group border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <h4 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
-                    Selenium WebDriver
+                  <h4 className={`text-lg font-bold text-${getProgressColor(tools[activeCard].color)} transition-colors duration-200`}>
+                    {tools[activeCard].title}
                   </h4>
-                  <div className="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  <div className={`px-2 py-1 rounded-full text-xs font-medium ${getColorClasses(tools[activeCard].color)}`}>
                     Expert Level
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Industry-leading tool for web application automation testing.
+                  {tools[activeCard].description}
                 </p>
-                <div className="mb-4">
+                <div className="mb-10">
                   <div className="flex justify-between text-xs mb-1">
                     <span className="text-gray-500">Expertise Level</span>
-                    <span className="text-gray-700 font-medium">Expert Level</span>
+                    <span className={`text-gray-700 font-medium `}>Expert Level</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{width: '100%'}}></div>
+                    <div className={` ${tools[activeCard].color === 'green' ? 'bg-green-600' : tools[activeCard].color === 'blue' ? 'bg-blue-600' : tools[activeCard].color === 'purple' ? 'bg-purple-600' : tools[activeCard].color === 'orange' ? 'bg-orange-600' : tools[activeCard].color === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'} h-2 rounded-full`} style={{ width: '100%' }}></div>
+                    <span className='text-sm font-semibold text-gray-500'>{tools[activeCard].progress}</span>
                   </div>
                 </div>
-                <button className="w-full bg-blue-50 text-blue-600 py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white">
+                <button className={`w-full text-white py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center hover:scale-102 ${tools[activeCard].color === 'green' ? 'bg-green-600' : tools[activeCard].color === 'blue' ? 'bg-blue-600' : tools[activeCard].color === 'purple' ? 'bg-purple-600' : tools[activeCard].color === 'orange' ? 'bg-orange-600' : tools[activeCard].color === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'}`}>
                   Learn More
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </button>
@@ -237,9 +314,9 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
 
             {/* CTA */}
             <div className="text-center mt-8">
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg">
+              <Link href="/contact-us" className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg">
                 Discuss Your Tool Requirements
-              </button>
+              </Link>
             </div>
           </div>
         </div>

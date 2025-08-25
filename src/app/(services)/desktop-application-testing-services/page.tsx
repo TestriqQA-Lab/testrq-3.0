@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/desktop-application-testing-services",
   },
@@ -129,17 +129,17 @@ const DesktopWhyChooseTestriq = dynamic(
   }
 );
 
-const DesktopCaseStudies = dynamic(
-  () => import("@/components/sections/DesktopCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const DesktopCaseStudies = dynamic(
+//   () => import("@/components/sections/DesktopCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
   ssr: true,
@@ -198,7 +198,7 @@ export default function DesktopAppTesting() {
         <DesktopComprehensiveSlider />
         <DesktopCardSlider />
         <DesktopWhyChooseTestriq />
-        <DesktopCaseStudies />
+        {/* <DesktopCaseStudies /> */}
         <DesktopFAQs />
       </MainLayout>
     </div>

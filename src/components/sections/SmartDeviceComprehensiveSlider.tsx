@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaWifi, FaShieldAlt, FaChartLine, FaMobile, FaCloud, FaFlask } from "react-icons/fa";
 import { FaBatteryFull } from "react-icons/fa";
@@ -20,7 +21,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "NFC communication testing",
         "Cellular network testing"
       ],
-      color: "green"
+      color: "green",
+      action: "blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc"
     },
     {
       id: "security",
@@ -34,7 +36,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "Vulnerability assessment",
         "Privacy protection testing"
       ],
-      color: "red"
+      color: "red",
+      action: "/security-testing"
     },
     {
       id: "battery",
@@ -48,7 +51,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "Energy efficiency optimization",
         "Charging performance testing"
       ],
-      color: "orange"
+      color: "orange",
+      action: "blog/post/battery-power-testing-for-smart-devices-optimization-guide"
     },
     {
       id: "performance",
@@ -62,7 +66,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "Memory usage optimization",
         "Resource utilization testing"
       ],
-      color: "blue"
+      color: "blue",
+      action: "/performance-testing-services"
     },
     {
       id: "ux",
@@ -76,7 +81,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "User interaction testing",
         "Experience optimization"
       ],
-      color: "purple"
+      color: "purple",
+      action: "blog/post/user-experience-testing-for-smart-devices-usability-accessibility"
     },
     {
       id: "cloud",
@@ -90,7 +96,8 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         "Remote management testing",
         "API integration testing"
       ],
-      color: "indigo"
+      color: "indigo",
+      action: "blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation"
     }
   ];
 
@@ -171,7 +178,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                 {testingTypes[activeTab].description}
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-3 mb-6">
                 <h4 className="font-semibold text-gray-900">Key Features:</h4>
                 <ul className="space-y-2">
                   {testingTypes[activeTab].features.map((feature, index) => (
@@ -183,9 +190,9 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
+              <Link href={testingTypes[activeTab].action} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Visual Representation */}
@@ -202,7 +209,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                     {testingTypes[activeTab].title}
                   </h4>
 
-                  <div className={`text-sm font-semibold ${getColorClasses(testingTypes[activeTab].color, true).split(' ')[1]}`}>
+                  <div className={`text-sm font-semibold`}>
                     {testingTypes[activeTab].coverage}
                   </div>
 

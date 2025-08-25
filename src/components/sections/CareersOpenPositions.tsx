@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState } from "react";
 import {
   FaSearch,
@@ -12,7 +11,6 @@ import {
   FaMobile,
   FaRocket,
   FaFilter,
-  FaExternalLinkAlt,
   FaFire,
   FaStar,
 } from "react-icons/fa";
@@ -35,7 +33,7 @@ const CareersOpenPositions: React.FC = () => {
     { value: "select-mode", label: "Select-Mode", count: 15 },
     { value: "on-site", label: "On-Site", count: 5 },
     { value: "hybrid", label: "Hybrid", count: 5 },
-    { value: "remote", label: "Remote", count: 5 }
+    { value: "remote", label: "Remote", count: 5 },
   ];
 
   const positions = [
@@ -214,7 +212,7 @@ const CareersOpenPositions: React.FC = () => {
     const matchesLocation =
       selectedLocation === "all" ||
       position.location.toLowerCase().replace(/[^a-z]/g, "") ===
-      selectedLocation.replace("-", "");
+        selectedLocation.replace("-", "");
 
     return matchesSearch && matchesDepartment && matchesLocation;
   });
@@ -233,7 +231,10 @@ const CareersOpenPositions: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24" id="view-open-position">
+    <section
+      className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24"
+      id="open-positions-section"
+    >
       <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -252,8 +253,10 @@ const CareersOpenPositions: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore exciting opportunities to grow your career in software testing. We&apos;re hiring passionate QA professionals in automation testing, manual testing, performance testing, and security testing to join our world-class quality assurance team.
-
+            Explore exciting opportunities to grow your career in software
+            testing. We&apos;re hiring passionate QA professionals in automation
+            testing, manual testing, performance testing, and security testing
+            to join our world-class quality assurance team.
           </p>
         </div>
 
@@ -350,22 +353,22 @@ const CareersOpenPositions: React.FC = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                   {/* Left Side - Job Info */}
                   <div className="flex-1">
-                    <div className="flex items-start gap-4 mb-4">
+                    <div className="md:flex items-start gap-4 mb-4">
                       <div
-                        className={`w-12 h-12 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                        className={`w-12 h-12 my-2 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
                       >
                         <position.icon className="w-6 h-6 text-white" />
                       </div>
 
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
+                        <div className="flex flex-col md:flex-row items-start gap-3 mb-2">
                           <h3 className="text-xl font-bold text-gray-900">
                             {position.title}
                           </h3>
                           {position.badges.map((badge, index) => (
                             <span
                               key={index}
-                              className={`px-2 py-1 text-xs font-semibold rounded-full border ${getBadgeStyle(
+                              className={`px-2 py-1 text-xs flex flex-row font-semibold rounded-full border ${getBadgeStyle(
                                 badge
                               )}`}
                             >
@@ -413,7 +416,7 @@ const CareersOpenPositions: React.FC = () => {
                   </div>
 
                   {/* Right Side - Actions */}
-                  <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
+                  {/* <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:w-48">
                     <button
                       className={`bg-gradient-to-r ${position.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2`}
                     >
@@ -423,7 +426,7 @@ const CareersOpenPositions: React.FC = () => {
                     <button className="border border-gray-300 text-gray-700 py-3 px-6 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
                       View Details
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -463,15 +466,15 @@ const CareersOpenPositions: React.FC = () => {
             Don&apos;t See Your Perfect Role?
           </h3>
           <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            We&apos;re always looking for exceptional talent! Send us your resume and
-            tell us about your QA expertise. We&apos;ll reach out when a position
-            matches your skills.
+            We&apos;re always looking for exceptional talent! Send us your
+            resume and tell us about your QA expertise. We&apos;ll reach out
+            when a position matches your skills.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            {/* <button className="bg-white text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Submit General Application
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

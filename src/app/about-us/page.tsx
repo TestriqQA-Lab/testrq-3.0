@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/about-us',
+    canonical: 'https://testriq.com/about-us',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/about-us',
+    url: 'https://testriq.com/about-us',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'About Us - Testriq QA Lab | Trusted Software Testing Company',
     description: 'Learn about Testriq QA Lab – a globally trusted software testing company with 14+ years of experience. Discover our mission, values, journey, certifications, and why top companies trust our QA excellence.',

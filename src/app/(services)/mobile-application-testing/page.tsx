@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/mobile-application-testing-services",
   },
@@ -138,17 +138,17 @@ const MobileWhyChooseTestriq = dynamic(
   }
 );
 
-const MobileCaseStudies = dynamic(
-  () => import("@/components/sections/MobileCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const MobileCaseStudies = dynamic(
+//   () => import("@/components/sections/MobileCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const MobileFAQs = dynamic(() => import("@/components/sections/MobileFAQs"), {
   ssr: true,
@@ -207,7 +207,7 @@ export default function MobileAppTesting() {
         <MobileCardSlider />
         <MobileProvenTestingProcess />
         <MobileWhyChooseTestriq />
-        <MobileCaseStudies />
+        {/* <MobileCaseStudies /> */}
         <MobileFAQs />
       </MainLayout>
     </div>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import {
-  FaFileAlt,
   FaRocket,
   FaCheckCircle,
   FaCalendarAlt,
@@ -45,10 +44,10 @@ const QADocumentationReadyToEnsureQuality = () => {
               </button>
             </Link>
 
-            <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
+            {/* <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-800 transition-all duration-200">
               <FaFileAlt className="mr-3" />
               Download Documentation Guide
-            </button>
+            </button> */}
           </div>
 
           {/* Trust Indicators */}
@@ -83,7 +82,7 @@ const QADocumentationReadyToEnsureQuality = () => {
           <p className="text-lg opacity-75 mb-6">
             Trusted by leading organizations worldwide
           </p>
-          <div className="flex justify-center items-center flex-col md:flex-row space-x-8 opacity-60 text-white">
+          <div className="flex justify-center text-center items-center flex-col md:flex-row gap-4 opacity-60 text-white">
             <div className="text-sm ">ISO 9001 Certified</div>
             <div className="w-1 h-1 bg-white  rounded-full"></div>
             <div className="text-sm">ISTQB Professionals</div>

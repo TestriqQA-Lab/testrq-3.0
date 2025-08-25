@@ -21,8 +21,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "Testriq QA Lab",
   "alternateName": "Testriq",
-  "url": "https://testrq-3-0.vercel.app",
-  "logo": "https://testrq-3-0.vercel.app/logo.png",
+  "url": "https://testriq.com",
+  "logo": "https://testriq.com/logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2020",
   "contactPoint": {
@@ -85,7 +85,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Testriq - Professional Software Testing Services",
-  "url": "https://testrq-3-0.vercel.app",
+  "url": "https://testriq.com",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation.",
   "publisher": {
     "@type": "Organization",
@@ -95,7 +95,7 @@ export const websiteSchema = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://testrq-3-0.vercel.app/search?q={search_term_string}"
+      "urlTemplate": "https://testriq.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -110,7 +110,7 @@ export const webAppTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "https://testrq-3-0.vercel.app"
+    "url": "https://testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -813,7 +813,7 @@ export const manualTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "https://testrq-3-0.vercel.app"
+    "url": "https://testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -891,7 +891,7 @@ export const automationTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "https://testrq-3-0.vercel.app"
+    "url": "https://testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",

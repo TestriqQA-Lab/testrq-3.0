@@ -4,7 +4,6 @@ import BankingChallengesSection from "@/components/sections/BankingChallengesSec
 import BankingTestingServicesSection from "@/components/sections/BankingTestingServicesSection";
 import BankingToolsFrameworksSection from "@/components/sections/BankingToolsFrameworksSection";
 import BankingComplianceSection from "@/components/sections/BankingComplianceSection";
-import BankingCaseStudiesSection from "@/components/sections/BankingCaseStudiesSection";
 import BankingROISection from "@/components/sections/BankingROISection";
 import BankingFAQSection from "@/components/sections/BankingFAQSection";
 import BankingContactSection from "@/components/sections/BankingContactSection";
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/banking-finance-industry-testing-services',
   },
@@ -99,7 +98,7 @@ const BankingFinanceTestingPage: React.FC = () => {
       <BankingTestingServicesSection />
       <BankingToolsFrameworksSection />
       <BankingComplianceSection />
-      <BankingCaseStudiesSection />
+      {/* <BankingCaseStudiesSection /> */}
       <BankingROISection />
       <BankingFAQSection />
       <BankingContactSection />

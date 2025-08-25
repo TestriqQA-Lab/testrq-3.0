@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
+import { FaTools, FaCode, FaRocket, FaShieldAlt, FaGithub, FaDocker, FaPlayCircle,FaGitlab,FaDatabase, FaLock, FaJava, FaFileAlt, FaPython, FaJsSquare, FaNodeJs, FaRobot, FaMicrosoft, FaCircle, FaWifi, FaServer } from "react-icons/fa";
 
 const ApiToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -10,57 +10,48 @@ const ApiToolsFramework: React.FC = () => {
       category: "Testing Tools",
       icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        {
-          name: "Postman",
-          description: "API development and testing platform",
-        },
-        { name: "SoapUI", description: "Comprehensive API testing tool" },
-        { name: "JMeter", description: "Performance and load testing" },
-        { name: "Rest-Assured", description: "Java-based REST API testing" },
-        { name: "Karate", description: "Open-source API test automation" },
-        {
-          name: "Newman",
-          description: "Command-line Postman collection runner",
-        },
+        { name: "Postman", description: "API development and testing platform", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "SoapUI", description: "Comprehensive API testing tool", icon: <FaFileAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "JMeter", description: "Performance and load testing", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Rest-Assured", description: "Java-based REST API testing", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Karate", description: "Open-source API test automation", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Newman", description: "Command-line Postman collection runner", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
     {
       category: "Frameworks",
       icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "PyTest", description: "Python testing framework" },
-        { name: "Jest", description: "JavaScript testing framework" },
-        { name: "TestNG", description: "Java testing framework" },
-        { name: "Mocha", description: "Node.js testing framework" },
-        { name: "Cucumber", description: "BDD testing framework" },
-        {
-          name: "Robot Framework",
-          description: "Generic automation framework",
-        },
+        { name: "PyTest", description: "Python testing framework", icon: <FaPython className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Jest", description: "JavaScript testing framework", icon: <FaJsSquare className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "TestNG", description: "Java testing framework", icon: <FaJava className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Mocha", description: "Node.js testing framework", icon: <FaNodeJs className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Cucumber", description: "BDD testing framework", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Robot Framework", description: "Generic automation framework", icon: <FaRobot className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
     {
       category: "CI/CD Integration",
       icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Jenkins", description: "Continuous integration server" },
-        { name: "GitLab CI", description: "Built-in CI/CD platform" },
-        { name: "GitHub Actions", description: "Workflow automation" },
-        { name: "Azure DevOps", description: "Microsoft DevOps platform" },
-        { name: "CircleCI", description: "Cloud-based CI/CD platform" },
-        { name: "Docker", description: "Containerization platform" },
+        { name: "Jenkins", description: "Continuous integration server", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "GitLab CI", description: "Built-in CI/CD platform", icon: <FaGitlab className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "GitHub Actions", description: "Workflow automation", icon: <FaGithub className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Azure DevOps", description: "Microsoft DevOps platform", icon: <FaMicrosoft className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "CircleCI", description: "Cloud-based CI/CD platform", icon: <FaCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Docker", description: "Containerization platform", icon: <FaDocker className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
     {
       category: "Security Tools",
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "OWASP ZAP", description: "Security testing proxy" },
-        { name: "Burp Suite", description: "Web application security testing" },
-        { name: "Nessus", description: "Vulnerability scanner" },
-        { name: "Wireshark", description: "Network protocol analyzer" },
-        { name: "SQLMap", description: "SQL injection testing tool" },
-        { name: "Nikto", description: "Web server scanner" },
+        { name: "OWASP ZAP", description: "Security testing proxy", icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Burp Suite", description: "Web application security testing", icon: <FaLock className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Nessus", description: "Vulnerability scanner", icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Wireshark", description: "Network protocol analyzer", icon: <FaWifi className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "SQLMap", description: "SQL injection testing tool", icon: <FaDatabase className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Nikto", description: "Web server scanner", icon: <FaServer className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
   ];
@@ -105,9 +96,10 @@ const ApiToolsFramework: React.FC = () => {
                     key={toolIndex}
                     className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      {tool.name}
-                    </h4>
+                    <div className="flex items-center mb-4">
+                      {tool.icon}
+                      <h4 className="font-semibold text-gray-900 ml-3">{tool.name}</h4>
+                    </div>
                     <p className="text-gray-600 text-sm">{tool.description}</p>
                   </div>
                 ))}

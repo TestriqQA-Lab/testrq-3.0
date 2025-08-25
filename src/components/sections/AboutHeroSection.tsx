@@ -6,14 +6,14 @@ const AboutHeroSection = () => {
     <section className="bg-white px-8 md:py-14 flex flex-col xl:flex-row xl:px-24 items-center justify-between">
       {/* Left Section */}
       <div className="w-full md:w-full mt-10 md:mt-0 text-center md:content-center xl:text-left">
-        <div className="inline-flex items-center bg-brand-blue px-5 gap-2 rounded-full py-2">
+        <div className="inline-flex items-center bg-brand-blue px-5 gap-2 rounded-full py-2 mb-4">
           <FaInfoCircle className="text-white" />
           <span className=" text-white text-base md:text-sm">
             About Testriq
           </span>
         </div>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight py-4">
+        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight md:py-3">
           Pioneering{" "}
           <span className="text-[theme(color.brand.blue)]">
             Quality <br /> Assurance&nbsp;
@@ -40,7 +40,7 @@ const AboutHeroSection = () => {
           {[
             "ISTQB Certified Testing Professionals",
             "500K+ Test Cases Successfully Executed",
-            "14+ Years of  Testing Industry Experience",
+            "15+ Years of  Testing Industry Experience",
             "Trusted by Startups to Enterprise Leaders",
           ].map((point, index) => (
             <div key={index} className="flex items-center gap-3 text-left">
@@ -73,7 +73,7 @@ const AboutHeroSection = () => {
           <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 border">
             <div className="text-center">
               <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
-                14+
+                15+
               </div>
               <div className="text-sm text-gray-600">Years</div>
             </div>

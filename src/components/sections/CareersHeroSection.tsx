@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
 import {
   FaRocket,
@@ -26,7 +25,7 @@ const CareersHeroSection: React.FC = () => {
       icon: FaGlobe,
       value: "25+",
       label: "Countries",
-      description: "Global presence",
+      description: "Global Service Delivery",
     },
     {
       icon: FaRocket,
@@ -48,6 +47,14 @@ const CareersHeroSection: React.FC = () => {
     { icon: FaMobile, position: "bottom-40 left-16", delay: "2s" },
     { icon: FaStar, position: "bottom-20 right-20", delay: "0.5s" },
   ];
+  
+  const scrollToOpenPostions = () => {
+    const element = document.getElementById("open-positions-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
 
   return (
     <section className="relative bg-white py-8 lg:py-16 overflow-hidden px-8 md:px-12 lg:px-24">
@@ -65,7 +72,7 @@ const CareersHeroSection: React.FC = () => {
       {floatingIcons.map((item, index) => (
         <div
           key={index}
-          className={`absolute ${item.position} w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg flex items-center justify-center animate-bounce lg:flex`}
+          className={`absolute ${item.position} hidden w-12 h-12 bg-white bg-opacity-80 rounded-xl shadow-lg xl:flex items-center justify-center animate-bounce lg:flex`}
           style={{ animationDelay: item.delay, animationDuration: "3s" }}
         >
           <item.icon className="w-6 h-6 text-[theme(color.brand.blue)]" />
@@ -98,11 +105,14 @@ const CareersHeroSection: React.FC = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Link href="#view-open-position" className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+            <button
+              onClick={scrollToOpenPostions}
+              className="group bg-[theme(color.brand.blue)] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl hover:-translate-y-1"
+            >
               <FaUsers className="w-5 h-5" />
               View Open Positions
               <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </button>
           </div>
 
           {/* Company Stats */}
@@ -125,16 +135,6 @@ const CareersHeroSection: React.FC = () => {
                 <div className="text-xs text-gray-500">{stat.description}</div>
               </div>
             ))}
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="mt-16 flex flex-col items-center">
-            <p className="text-sm text-gray-500 mb-4">
-              Discover more about working with us
-            </p>
-            <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-[theme(color.brand.blue)] rounded-full mt-2 animate-bounce"></div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,250 +1,546 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
+  FaRocket,
   FaPhone,
   FaEnvelope,
-  FaClock,
-  FaWifi,
-  FaUsers,
-  FaCheckCircle,
-  FaArrowRight,
   FaCalendarAlt,
+  FaCheckCircle,
+  FaSignal,
+  FaUser,
+  FaBuilding,
   FaComments,
-  FaSignal
+  FaClipboardList,
 } from "react-icons/fa";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const TelecomContactSection: React.FC = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    businessEmail: "",
+    businessPhone: "",
+    companyOrganization: "",
+    testingRequirements: "",
+    message: "",
+  });
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [fullNameError, setFullNameError] = useState<string | null>(null);
+  const [companyOrganizationError, setCompanyOrganizationError] = useState<string | null>(null);
+  const [testingRequirementsError, setTestingRequirementsError] = useState<string | null>(null);
+  const [messageError, setMessageError] = useState<string | null>(null);
+
+  const validatePhoneNumber = (phone: string | undefined) => {
+    if (!phone) {
+      setPhoneError("Business Phone is required.");
+      return false;
+    }
+    if (!isValidPhoneNumber(phone)) {
+      setPhoneError("Invalid phone number format.");
+      return false;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+
+    if (/^(\d)\1+$/.test(digits)) {
+      setPhoneError("Phone number cannot consist of repeating digits.");
+      return false;
+    }
+
+    const isSequential = (num: string) => {
+      for (let i = 0; i < num.length - 2; i++) {
+        const n1 = parseInt(num[i]);
+        const n2 = parseInt(num[i + 1]);
+        const n3 = parseInt(num[i + 2]);
+        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+          return true;
+        }
+      }
+      return false;
+    };
+    if (isSequential(digits)) {
+      setPhoneError("Phone number cannot consist of sequential digits.");
+      return false;
+    }
+
+    if (/^0+$/.test(digits)) {
+      setPhoneError("Phone number cannot be all zeros.");
+      return false;
+    }
+
+    setPhoneError(null);
+    return true;
+  };
+
+  const validateEmail = (email: string) => {
+    if (!email) {
+      setEmailError("Business Email is required.");
+      return false;
+    }
+    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      setEmailError("Invalid email format.");
+      return false;
+    }
+    setEmailError(null);
+    return true;
+  };
+
+  const validateFullName = (name: string) => {
+    if (!name) {
+      setFullNameError("Full Name is required.");
+      return false;
+    }
+    if (name.trim().length < 3) {
+      setFullNameError("Full Name must be at least 3 characters.");
+      return false;
+    }
+    setFullNameError(null);
+    return true;
+  };
+
+  const validateCompanyOrganization = (companyOrganization: string) => {
+    if (!companyOrganization) {
+      setCompanyOrganizationError("Company/Organization is required.");
+      return false;
+    }
+    setCompanyOrganizationError(null);
+    return true;
+  };
+
+  const validateTestingRequirements = (testingRequirements: string) => {
+    if (!testingRequirements) {
+      setTestingRequirementsError("Please select your testing requirements.");
+      return false;
+    }
+    setTestingRequirementsError(null);
+    return true;
+  };
+
+  const validateMessage = (message: string) => {
+    if (!message) {
+      setMessageError("Message is required.");
+      return false;
+    }
+    if (message.trim().length < 10) {
+      setMessageError("Message must be at least 10 characters.");
+      return false;
+    }
+    setMessageError(null);
+    return true;
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (name === "fullName") validateFullName(value);
+    if (name === "businessEmail") validateEmail(value);
+    if (name === "companyOrganization") validateCompanyOrganization(value);
+    if (name === "testingRequirements") validateTestingRequirements(value);
+    if (name === "message") validateMessage(value);
+  };
+
+  const handlePhoneChange = (phone: string | undefined) => {
+    setFormData((prev) => ({
+      ...prev,
+      businessPhone: phone || "",
+    }));
+    validatePhoneNumber(phone);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const isPhoneValid = validatePhoneNumber(formData.businessPhone);
+    const isEmailValid = validateEmail(formData.businessEmail);
+    const isFullNameValid = validateFullName(formData.fullName);
+    const isCompanyOrganizationValid = validateCompanyOrganization(formData.companyOrganization);
+    const isTestingRequirementsValid = validateTestingRequirements(formData.testingRequirements);
+    const isMessageValid = validateMessage(formData.message);
+
+    if (
+      isPhoneValid &&
+      isEmailValid &&
+      isFullNameValid &&
+      isCompanyOrganizationValid &&
+      isTestingRequirementsValid &&
+      isMessageValid
+    ) {
+      setIsLoading(true);
+      try {
+        const dataToSend = {
+          fullName: formData.fullName,
+          businessEmail: formData.businessEmail,
+          businessPhone: formData.businessPhone,
+          companyOrganization: formData.companyOrganization,
+          testingRequirements: formData.testingRequirements,
+          message: formData.message,
+          source: "Telecom Testing Services Page",
+        };
+
+        const response = await fetch("/api/telecomContact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(dataToSend),
+        });
+
+        if (response.ok) {
+          console.log("Form submitted successfully");
+          setIsSubmitted(true);
+          document.getElementById("telecom-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          setTimeout(() => setIsSubmitted(false), 5000);
+
+          setFormData({
+            fullName: "",
+            businessEmail: "",
+            businessPhone: "",
+            companyOrganization: "",
+            testingRequirements: "",
+            message: "",
+          });
+        } else {
+          const errorData = await response.json();
+          console.error("Form submission failed:", errorData.error);
+          alert("Form submission failed. Please try again.");
+        }
+      } catch (error) {
+        console.error("Network error:", error);
+        alert("Network error. Please check your connection and try again.");
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      console.log("Form has errors.");
+    }
+  };
+
   const contactMethods = [
     {
       icon: FaPhone,
-      title: "Phone Consultation",
-      description: "Speak directly with our telecom testing experts",
-      contact: "+1 (555) 123-TELE",
-      availability: "24/7 Network Emergency Support",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50"
+      title: "Speak with Telecom Experts",
+      description:
+        "Speak directly with our telecom software QA specialists",
+      text: "(+91) 915-2929-343",
+      action: "tel:(+91) 915-2929-343",
+      color: "from-blue-500 to-cyan-600",
     },
     {
       icon: FaEnvelope,
-      title: "Email Support",
-      description: "Get detailed responses to your network testing requirements",
-      contact: "telecom@testriq.com",
-      availability: "Response within 1 hour",
-      color: "from-green-500 to-teal-600",
-      bgColor: "bg-green-50"
+      title: "Detailed Telecom Assessment",
+      description: "Get detailed responses to your telecom software testing needs",
+      text: "contact@testriq.com",
+      action: "mailto:contact@testriq.com",
+      color: "from-green-500 to-emerald-600",
     },
     {
       icon: FaCalendarAlt,
-      title: "Schedule Meeting",
-      description: "Book a personalized network assessment session",
-      contact: "calendly.com/testriq-telecom",
-      availability: "Flexible scheduling worldwide",
+      title: "Telecom Strategy Session",
+      description: "Book a tailored telecom software quality assessment",
+      text: "Schedule Free Consultation",
+      action: "/contact-us#calendly-section",
       color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50"
-    }
+    },
   ];
 
-  const supportFeatures = [
-    {
-      icon: FaWifi,
-      title: "Network Expertise",
-      description: "Direct access to 5G, IoT, and network testing specialists"
-    },
-    {
-      icon: FaClock,
-      title: "Rapid Response",
-      description: "Emergency support available 24/7 for critical network issues"
-    },
-    {
-      icon: FaUsers,
-      title: "Global Team",
-      description: "Local support teams in major telecom markets worldwide"
-    },
-    {
-      icon: FaCheckCircle,
-      title: "Proven Results",
-      description: "Track record of successful network optimizations and deployments"
-    }
+  const benefits = [
+    "Free telecom software assessment",
+    "Telecom software expertise",
+    "Network performance optimization",
+    "OSS/BSS testing recommendations",
+    "Customer portal & app testing",
+    "Regulatory compliance guidance",
   ];
 
-
+  const scrollToCalendly = () => {
+    const element = document.getElementById("calendly-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-brand-blue to-sky-600 overflow-hidden">
       <div className="mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaComments className="w-4 h-4" />
-            <span className="text-sm">Get In Touch</span>
+          <div className="inline-flex items-center gap-2 bg-sky-100 text-brand-blue bg-opacity-20 rounded-full px-6 py-2 mb-6">
+            <FaSignal className="w-4 h-4" />
+            <span className="text-sm font-medium">
+              Elevate Your Telecom Software Quality
+            </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Ready to Optimize Your
-            <span className="block text-[theme(color.brand.blue)]">Network Performance?</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:leading-14">
+            Ready to Elevate Your
+            <span className="block">Telecom Software Quality?</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Connect with our telecommunications testing experts to discuss your network requirements, performance challenges, and how our telecom testing solutions can help deliver superior connectivity experiences, improve network reliability, and ensure 5G readiness, VoIP quality, and real-time communication performance.
-
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Connect with our telecom software QA experts to address platform
+            performance, application reliability, integration challenges, and
+            ensure your OSS/BSS systems, customer portals, and billing platforms
+            deliver flawless user experiences.
           </p>
         </div>
 
-        {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {contactMethods.map((method, index) => (
-            <div
-              key={index}
-              className={`${method.bgColor} rounded-3xl p-8 shadow-lg ring-1 hover:ring-4 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group text-center`}
-            >
-              <div className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                <method.icon className="w-8 h-8 text-white" />
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Contact Methods */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-white mb-8">
+              Choose Your Preferred Contact Method
+            </h3>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{method.title}</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">{method.description}</p>
-
-              <div className="bg-white bg-opacity-60 rounded-xl p-4 mb-4">
-                <p className="font-semibold text-gray-800">{method.contact}</p>
-                <p className="text-sm text-gray-600">{method.availability}</p>
-              </div>
-
-              <button className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:scale-98 transition-all duration-300 flex items-center justify-center gap-2">
-                Contact Now
-                <FaArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-white rounded-3xl p-12 mb-16 shadow-lg border border-gray-100">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Form */}
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-              <p className="text-gray-600 mb-8">
-                Fill out the form below and our telecom testing experts will get back to you within 1 hour.
-              </p>
-
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                      placeholder="John"
-                    />
+            {contactMethods.map((method, index) => (
+              <a
+                key={index}
+                href={method.action}
+                onClick={(e) => {
+                  if (method.title === "Telecom Strategy Session") {
+                    e.preventDefault();
+                    scrollToCalendly();
+                  }
+                }}
+                className="block bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 hover:bg-opacity-20 transition-all duration-300 border border-white border-opacity-20"
+              >
+                <div className="flex items-start gap-4">
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                  >
+                    <method.icon className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                      placeholder="Doe"
-                    />
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-brand-blue mb-2">
+                      {method.title}
+                    </h4>
+                    <p className="text-blue-500 text-sm mb-4 leading-relaxed">
+                      {method.description}
+                    </p>
+                    <span className="text-blue-500 font-semibold flex items-center gap-2 group">
+                      {method.text}
+                    </span>
                   </div>
                 </div>
+              </a>
+            ))}
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="john.doe@telecom.com"
-                  />
-                </div>
+            {/* Benefits */}
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 border border-white border-opacity-20">
+              <h3 className="text-2xl font-bold text-brand-blue mb-6">
+                What You Get When You Contact Us
+              </h3>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Company/Organization *</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="Your Telecom Company"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Testing Requirements</label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300">
-                    <option>Select your primary need</option>
-                    <option>5G Network Testing</option>
-                    <option>IoT Connectivity Testing</option>
-                    <option>VoIP/VoLTE Testing</option>
-                    <option>Network Performance Testing</option>
-                    <option>Security Testing</option>
-                    <option>NFV/SDN Testing</option>
-                    <option>Comprehensive Network Assessment</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
-                    placeholder="Please describe your network testing requirements, performance challenges, and any specific technologies you're working with..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:scale-98 transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Support Features */}
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Our Support?</h3>
-              <div className="space-y-6 mb-8">
-                {supportFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h4>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
+              <div className="space-y-4 mb-8">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <FaCheckCircle className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-blue-600">{benefit}</span>
                   </div>
                 ))}
               </div>
+            </div>
 
-              <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-6 border border-green-100">
-                <h4 className="text-lg font-bold text-gray-900 mb-4">Emergency Network Support</h4>
-                <p className="text-gray-600 mb-4">
-                  For critical network outages or urgent performance issues, our emergency response team
-                  is available 24/7 to provide immediate assistance and rapid resolution.
-                </p>
-                <button className="bg-red-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-red-700 transition-colors duration-300">
-                  Emergency Hotline: +1 (555) 911-NET
-                </button>
+            {/* Urgency Note */}
+            <div className="bg-orange-500 bg-opacity-20 rounded-2xl p-6 border border-orange-400 border-opacity-30">
+              <div className="flex items-center gap-3 mb-3">
+                <FaRocket className="w-5 h-5 text-orange-300" />
+                <h4 className="font-semibold text-white">
+                  New Product Launch Imminent?
+                </h4>
               </div>
+              <p className="text-orange-100 text-sm leading-relaxed">
+                Planning for a new telecom product launch or system upgrade? 
+                Contact us at least 6-8 weeks in advance to ensure your software 
+                is thoroughly tested, stable, and ready for deployment.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* Final CTA */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-12 text-white text-center">
-          <FaSignal className="w-16 h-16 mx-auto mb-6 opacity-80" />
-          <h3 className="text-3xl font-bold mb-4">Start Your Network Optimization Journey Today</h3>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don&apos;t wait for network issues to impact your customers. Contact our experts now to
-            discuss how we can help optimize and secure your telecommunications infrastructure.
-          </p>
+          {/* Right Column - Contact Form */}
+          <div id="telecom-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
+            <div className="bg-gray-50 rounded-2xl p-6">
+              <h4 className="font-semibold text-gray-900 mb-4">
+                Quick Telecom Software Assessment Form
+              </h4>
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateFullName(formData.fullName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                  </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-            <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-              Get Free Network Assessment
-            </button>
-            <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Download Service Brochure
-            </button>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
+                    </label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="email"
+                        name="businessEmail"
+                        value={formData.businessEmail}
+                        onChange={handleInputChange}
+                        onBlur={() => validateEmail(formData.businessEmail)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Email Address"
+                      />
+                    </div>
+                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Phone *
+                    </label>
+                    <div className="relative">
+                      <PhoneInput
+                        international
+                        countryCallingCodeEditable={false}
+                        defaultCountry="IN"
+                        value={formData.businessPhone}
+                        onChange={handlePhoneChange}
+                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
+                        className={`w-full border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Phone Number"
+                      />
+                    </div>
+                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Company/Organization *
+                    </label>
+                    <div className="relative">
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="companyOrganization"
+                        value={formData.companyOrganization}
+                        onChange={handleInputChange}
+                        onBlur={() => validateCompanyOrganization(formData.companyOrganization)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyOrganizationError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Your Telecom Company"
+                      />
+                    </div>
+                    {companyOrganizationError && <p className="text-red-500 text-xs mt-1">{companyOrganizationError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Testing Requirements *
+                    </label>
+                    <div className="relative">
+                      <FaClipboardList className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="testingRequirements"
+                        value={formData.testingRequirements}
+                        onChange={handleInputChange}
+                        onBlur={() => validateTestingRequirements(formData.testingRequirements)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
+                      >
+                        <option value="">Select your primary need</option>
+                        <option value="oss-bss-testing">OSS/BSS Testing</option>
+                        <option value="billing-platform-validation">Billing Platform Validation</option>
+                        <option value="customer-portal-app-testing">Customer Portal & App Testing</option>
+                        <option value="api-integration-testing">API & Integration Testing</option>
+                        <option value="performance-load-testing">Performance & Load Testing</option>
+                        <option value="security-compliance-testing">Security & Compliance Testing</option>
+                        <option value="comprehensive-software-qa">Comprehensive Software QA</option>
+                      </select>
+                    </div>
+                    {testingRequirementsError && <p className="text-red-500 text-xs mt-1">{testingRequirementsError}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <div className="relative">
+                      <FaComments className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        onBlur={() => validateMessage(formData.message)}
+                        required
+                        rows={4}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
+                        placeholder="Please describe your telecom software testing requirements, performance goals, and any specific platforms you are working with..."
+                      />
+                    </div>
+                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <FaRocket className="w-4 h-4" />
+                        Get Free Telecom Assessment
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+
+            <div className="mt-6 text-center text-gray-500 text-sm">
+              <p>
+                Telecom testing experts • Response within 2 hours during
+                business hours
+              </p>
+            </div>
           </div>
         </div>
       </div>

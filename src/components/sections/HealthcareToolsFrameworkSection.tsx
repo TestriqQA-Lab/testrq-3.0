@@ -2,15 +2,29 @@
 
 import React from "react";
 import {
-  FaCode,
   FaShieldAlt,
+  FaCog,
+  FaCode,
   FaDatabase,
   FaCloud,
   FaTools,
-  FaCheckCircle,
-  FaCog,
-  FaLock
+  FaLock,
+  FaLaptopCode,
+  FaCloudDownloadAlt,
 } from "react-icons/fa";
+
+import {
+  SiOwasp,
+  SiBurpsuite,
+  SiMetasploit,
+  SiSelenium,
+  SiAppium,
+  SiCypress,
+  SiPostman,
+  SiJest,
+} from "react-icons/si";
+
+import{FaNetworkWired, FaBoxes, FaCogs } from "react-icons/fa";
 
 const HealthcareToolsFrameworkSection: React.FC = () => {
   const testingTools = [
@@ -20,11 +34,27 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       color: "text-red-500",
       bgColor: "bg-red-50",
       tools: [
-        { name: "OWASP ZAP", description: "Web application security scanner" },
-        { name: "Burp Suite", description: "Penetration testing platform" },
-        { name: "Nessus", description: "Vulnerability assessment" },
-        { name: "Metasploit", description: "Security testing framework" }
-      ]
+        {
+          name: "OWASP ZAP",
+          description: "Web application security scanner",
+          icon: <SiOwasp className="w-5 h-5 text-red-500" />,
+        },
+        {
+          name: "Burp Suite",
+          description: "Penetration testing platform",
+          icon: <SiBurpsuite className="w-5 h-5 text-red-500" />,
+        },
+        {
+          name: "Nessus",
+          description: "Vulnerability assessment",
+          icon: <FaNetworkWired className="w-5 h-5 text-red-500" />,
+        },
+        {
+          name: "Metasploit",
+          description: "Security testing framework",
+          icon: <SiMetasploit className="w-5 h-5 text-red-500" />,
+        },
+      ],
     },
     {
       category: "Automation Testing",
@@ -32,11 +62,27 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       color: "text-blue-500",
       bgColor: "bg-blue-50",
       tools: [
-        { name: "Selenium", description: "Web application automation" },
-        { name: "Appium", description: "Mobile app automation" },
-        { name: "Cypress", description: "End-to-end testing framework" },
-        { name: "TestComplete", description: "Comprehensive test automation" }
-      ]
+        {
+          name: "Selenium",
+          description: "Web application automation",
+          icon: <SiSelenium className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Appium",
+          description: "Mobile app automation",
+          icon: <SiAppium className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Cypress",
+          description: "End-to-end testing framework",
+          icon: <SiCypress className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "TestComplete",
+          description: "Comprehensive test automation",
+          icon: <FaLaptopCode className="w-5 h-5 text-blue-500" />,
+        },
+      ],
     },
     {
       category: "API Testing",
@@ -44,11 +90,27 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       color: "text-green-500",
       bgColor: "bg-green-50",
       tools: [
-        { name: "Postman", description: "API development and testing" },
-        { name: "REST Assured", description: "Java-based REST API testing" },
-        { name: "SoapUI", description: "SOAP and REST API testing" },
-        { name: "Newman", description: "Command-line Postman runner" }
-      ]
+        {
+          name: "Postman",
+          description: "API development and testing",
+          icon: <SiPostman className="w-5 h-5 text-green-500" />,
+        },
+        {
+          name: "REST Assured",
+          description: "Java-based REST API testing",
+          icon: <FaCloudDownloadAlt className="w-5 h-5 text-green-500" />,
+        },
+        {
+          name: "SoapUI",
+          description: "SOAP and REST API testing",
+          icon: <FaBoxes className="w-5 h-5 text-green-500" />,
+        },
+        {
+          name: "Newman",
+          description: "Command-line Postman runner",
+          icon: <FaCogs className="w-5 h-5 text-green-500" />,
+        },
+      ],
     },
     {
       category: "Performance Testing",
@@ -56,35 +118,72 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       color: "text-purple-500",
       bgColor: "bg-purple-50",
       tools: [
-        { name: "JMeter", description: "Load and performance testing" },
-        { name: "LoadRunner", description: "Enterprise performance testing" },
-        { name: "BlazeMeter", description: "Cloud-based load testing" },
-        { name: "K6", description: "Modern load testing tool" }
-      ]
-    }
+        {
+          name: "JMeter",
+          description: "Load and performance testing",
+          icon: <SiJest className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "LoadRunner",
+          description: "Enterprise performance testing",
+          icon: <FaCogs className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "BlazeMeter",
+          description: "Cloud-based load testing",
+          icon: <FaNetworkWired className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "K6",
+          description: "Modern load testing tool",
+          icon: <FaCloud className="w-5 h-5 text-purple-500" />,
+        },
+      ],
+    },
   ];
 
   const complianceFrameworks = [
     {
       name: "HIPAA Compliance",
-      description: "Health Insurance Portability and Accountability Act validation",
-      features: ["PHI Protection", "Access Controls", "Audit Trails", "Data Encryption"]
+      description:
+        "Health Insurance Portability and Accountability Act validation",
+      features: [
+        "PHI Protection",
+        "Access Controls",
+        "Audit Trails",
+        "Data Encryption",
+      ],
     },
     {
       name: "FDA Validation",
       description: "Food and Drug Administration software validation support",
-      features: ["21 CFR Part 820", "IEC 62304", "Risk Management", "Documentation"]
+      features: [
+        "21 CFR Part 820",
+        "IEC 62304",
+        "Risk Management",
+        "Documentation",
+      ],
     },
     {
       name: "HL7 FHIR",
       description: "Healthcare interoperability standards testing",
-      features: ["Data Exchange", "API Validation", "Resource Testing", "Conformance"]
+      features: [
+        "Data Exchange",
+        "API Validation",
+        "Resource Testing",
+        "Conformance",
+      ],
     },
     {
       name: "DICOM Testing",
       description: "Digital Imaging and Communications in Medicine validation",
-      features: ["Image Transfer", "PACS Integration", "Modality Testing", "Workflow"]
-    }
+      features: [
+        "Image Transfer",
+        "PACS Integration",
+        "Modality Testing",
+        "Workflow",
+      ],
+    },
   ];
 
   return (
@@ -103,28 +202,45 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage industry-leading tools and QA frameworks specifically designed for healthcare software testing, ensuring HIPAA compliance, data security, and optimal performance testing across all medical applications.
+            Leverage industry-leading tools and QA frameworks specifically
+            designed for healthcare software testing, ensuring HIPAA compliance,
+            data security, and optimal performance testing across all medical
+            applications.
           </p>
         </div>
 
         {/* Testing Tools Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           {testingTools.map((category, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-lg ring-1 ring-brand-blue hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="flex items-center gap-4 mb-6">
-                <div className={`w-12 h-12 ${category.bgColor} rounded-xl flex items-center justify-center`}>
+                <div
+                  className={`w-12 h-12 ${category.bgColor} rounded-xl flex items-center justify-center`}
+                >
                   <category.icon className={`w-6 h-6 ${category.color}`} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">{category.category}</h3>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {category.category}
+                </h3>
               </div>
 
               <div className="space-y-4">
                 {category.tools.map((tool, toolIndex) => (
-                  <div key={toolIndex} className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                    <FaCheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div
+                    key={toolIndex}
+                    className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
+                  >
                     <div>
-                      <h4 className="font-semibold text-gray-900">{tool.name}</h4>
-                      <p className="text-sm text-gray-600">{tool.description}</p>
+                      {tool.icon}
+                      <h4 className="font-semibold text-gray-900">
+                        {tool.name}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {tool.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -144,14 +260,22 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
               Healthcare Regulatory Compliance
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive healthcare testing frameworks ensuring your healthcare software meets all regulatory requirements, including HIPAA, FDA, and GDPR compliance, along with recognized industry standard.
+              Comprehensive healthcare testing frameworks ensuring your
+              healthcare software meets all regulatory requirements, including
+              HIPAA, FDA, and GDPR compliance, along with recognized industry
+              standard.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {complianceFrameworks.map((framework, index) => (
-              <div key={index} className="border border-gray-200 rounded-2xl p-6 hover:border-[theme(color.brand.blue)] transition-colors">
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{framework.name}</h4>
+              <div
+                key={index}
+                className="border border-gray-200 rounded-2xl p-6 hover:border-[theme(color.brand.blue)] transition-colors"
+              >
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {framework.name}
+                </h4>
                 <p className="text-gray-600 mb-4">{framework.description}</p>
 
                 <div className="grid grid-cols-2 gap-2">
@@ -170,9 +294,12 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
         {/* Technology Stack */}
         <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">Our Healthcare Testing Stack</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Healthcare Testing Stack
+            </h3>
             <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Cutting-edge technologies and methodologies for comprehensive healthcare software validation
+              Cutting-edge technologies and methodologies for comprehensive
+              healthcare software validation
             </p>
           </div>
 
@@ -182,7 +309,9 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
                 <FaCloud className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Cloud Testing</h4>
-              <p className="text-blue-100">AWS, Azure, GCP healthcare cloud validation</p>
+              <p className="text-blue-100">
+                AWS, Azure, GCP healthcare cloud validation
+              </p>
             </div>
 
             <div className="text-center">
@@ -190,7 +319,9 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
                 <FaDatabase className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Data Validation</h4>
-              <p className="text-blue-100">EHR, EMR, and clinical data integrity testing</p>
+              <p className="text-blue-100">
+                EHR, EMR, and clinical data integrity testing
+              </p>
             </div>
 
             <div className="text-center">
@@ -198,7 +329,9 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
                 <FaShieldAlt className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Security Testing</h4>
-              <p className="text-blue-100">Advanced cybersecurity and privacy protection</p>
+              <p className="text-blue-100">
+                Advanced cybersecurity and privacy protection
+              </p>
             </div>
           </div>
         </div>
@@ -208,4 +341,3 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
 };
 
 export default HealthcareToolsFrameworkSection;
-

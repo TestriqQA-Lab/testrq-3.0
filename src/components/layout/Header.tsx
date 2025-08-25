@@ -4,7 +4,7 @@ import { FaArrowRight, FaBars, FaTimes } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
-import Testriq_Logo from "../../../public/Testriq_Logo.png";
+import Testriq_Logo from "../../../public/images/Testriq_Logo.png";
 
 // Define the type for submenu items with links
 type SubmenuItem = {
@@ -30,6 +30,8 @@ const Navbar = () => {
   const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
     number | null
   >(null); // State to track active submenu in desktop
+  const [activeLink, setActiveLink] = useState<string>(""); // State to track the active link
+  const [activeParent, setActiveParent] = useState<string>(""); // State to track the active parent menu item
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -52,8 +54,15 @@ const Navbar = () => {
     setActiveDesktopSubmenu(null);
   };
 
-  // Close navbar when a link is clicked
-  const handleLinkClick = () => {
+  // Close navbar and set active link/parent when a link is clicked
+  const handleLinkClick = (link: string, parentLabel: string = "") => {
+    if (link) {
+      setActiveLink(link); // Set active link for submenu or top-level items with valid links
+      setActiveParent(parentLabel); // Set active parent for submenu items
+    } else {
+      setActiveLink(""); // Clear active link if no valid link
+      setActiveParent(parentLabel); // Set parent if provided (e.g., for top-level items without links)
+    }
     setMenuOpen(false);
     setActiveSubmenu(null);
     setActiveTabletSubmenu(null);
@@ -147,6 +156,10 @@ const Navbar = () => {
               label: "Software Testing Guide",
               link: "/software-testing-guide",
             },
+            {
+              label: "Corporate QA Training",
+              link: "/corporate-qa-training",
+            },
           ],
         },
         {
@@ -194,15 +207,13 @@ const Navbar = () => {
               link: "/dating-app-certification",
             },
             {
-              label: "Fantasy Sports App Certification",
-              link: "/fantasy-sports-app-certification",
-            },
-            {
               label: "Trading Apps Certification",
               link: "/trading-apps-certification",
             },
-            { label: "Shopping Apps Certification", 
-              link: "/shopping-apps-certification" },
+            {
+              label: "Shopping Apps Certification",
+              link: "/shopping-apps-certification",
+            },
           ],
         },
       ],
@@ -218,7 +229,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
       <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
-        <Link href="/" onClick={handleLinkClick}>
+        <Link href="/" onClick={() => handleLinkClick("/", "")}>
           <div className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
             <Image
               src={Testriq_Logo}
@@ -240,18 +251,40 @@ const Navbar = () => {
               }
               onMouseLeave={handleDesktopSubmenuLeave}
             >
-              <Link href={item.link}>
-                <div className="flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1">
+              {item.link ? (
+                <Link
+                  href={item.link}
+                  onClick={() => handleLinkClick(item.link, "")}
+                >
+                  <div
+                    className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${
+                      activeLink === item.link || activeParent === item.label
+                        ? "text-[theme(color.brand.blue)]"
+                        : ""
+                    }`}
+                  >
+                    {item.label}
+                    {item.submenu && <MdKeyboardArrowDown />}
+                  </div>
+                </Link>
+              ) : (
+                <div
+                  className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${
+                    activeParent === item.label
+                      ? "text-[theme(color.brand.blue)]"
+                      : ""
+                  }`}
+                >
                   {item.label}
                   {item.submenu && <MdKeyboardArrowDown />}
                 </div>
-              </Link>
+              )}
 
               {/* Mega Menu for 'Services' */}
               {item.label === "Services" &&
                 item.submenu &&
                 activeDesktopSubmenu === idx && (
-                  <div className="absolute top-full mt-0 left-0 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
+                  <div className="absolute top-full mt-0 left-10 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
                     <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
                       {item.submenu.map((column, colIdx) => {
                         // Check if the column is of type { heading: string, services: SubmenuItem[] }
@@ -263,9 +296,17 @@ const Navbar = () => {
                             >
                               <Link
                                 href={column.link}
-                                onClick={handleLinkClick}
+                                onClick={() =>
+                                  handleLinkClick(column.link, item.label)
+                                }
                               >
-                                <h2 className="text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer">
+                                <h2
+                                  className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${
+                                    activeLink === column.link
+                                      ? "text-[theme(color.brand.blue)]"
+                                      : ""
+                                  }`}
+                                >
                                   {column.label}
                                 </h2>
                               </Link>
@@ -288,9 +329,20 @@ const Navbar = () => {
                                   <li key={subIdx}>
                                     <Link
                                       href={service.link}
-                                      onClick={handleLinkClick}
+                                      onClick={() =>
+                                        handleLinkClick(
+                                          service.link,
+                                          item.label
+                                        )
+                                      }
                                     >
-                                      <span className=" text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer  hover:bg-blue-50 rounded-md p-2">
+                                      <span
+                                        className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${
+                                          activeLink === service.link
+                                            ? "text-[theme(color.brand.blue)]"
+                                            : ""
+                                        }`}
+                                      >
                                         {service.label}
                                       </span>
                                     </Link>
@@ -314,9 +366,21 @@ const Navbar = () => {
                       <li key={subIdx}>
                         <Link
                           href={"link" in subItem ? subItem.link : "#"}
-                          onClick={handleLinkClick}
+                          onClick={() =>
+                            handleLinkClick(
+                              "link" in subItem ? subItem.link : "#",
+                              item.label
+                            )
+                          }
                         >
-                          <span className="block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer">
+                          <span
+                            className={`block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer ${
+                              activeLink ===
+                              ("link" in subItem ? subItem.link : "#")
+                                ? "text-[theme(color.brand.blue)]"
+                                : ""
+                            }`}
+                          >
                             {"label" in subItem
                               ? subItem.label
                               : subItem.heading}
@@ -343,7 +407,7 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden xl:flex items-center gap-3 2xl:gap-4">
-          <Link href="/contact-us"> 
+          <Link href="/contact-us">
             <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-[#057db0] cursor-pointer flex items-center gap-2">
               <span className="text-sm xl:text-base">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3 xl:w-4 xl:h-5" />
@@ -370,15 +434,37 @@ const Navbar = () => {
                 <div
                   className="flex items-center gap-1 cursor-pointer text-gray-700 hover:text-[theme(color.brand.blue)] p-2 rounded-md hover:bg-gray-50"
                   onClick={() =>
-                    item.submenu ? toggleTabletSubmenu(idx) : null
+                    item.submenu
+                      ? toggleTabletSubmenu(idx)
+                      : handleLinkClick(item.link, "")
                   }
                 >
-                  {!item.submenu ? (
-                    <Link href={item.link} onClick={handleLinkClick}>
-                      <span className="text-md font-medium">{item.label}</span>
+                  {item.link ? (
+                    <Link
+                      href={item.link}
+                      onClick={() => handleLinkClick(item.link, "")}
+                    >
+                      <span
+                        className={`text-md font-medium ${
+                          activeLink === item.link ||
+                          activeParent === item.label
+                            ? "text-[theme(color.brand.blue)]"
+                            : ""
+                        }`}
+                      >
+                        {item.label}
+                      </span>
                     </Link>
                   ) : (
-                    <span className="text-md font-medium">{item.label}</span>
+                    <span
+                      className={`text-md font-medium ${
+                        activeParent === item.label
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
+                      }`}
+                    >
+                      {item.label}
+                    </span>
                   )}
                   {item.submenu && (
                     <MdKeyboardArrowDown
@@ -400,9 +486,17 @@ const Navbar = () => {
                               <div key={colIdx} className="mb-4">
                                 <Link
                                   href={column.link}
-                                  onClick={handleLinkClick}
+                                  onClick={() =>
+                                    handleLinkClick(column.link, item.label)
+                                  }
                                 >
-                                  <h3 className="text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50">
+                                  <h3
+                                    className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${
+                                      activeLink === column.link
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
+                                    }`}
+                                  >
                                     {column.label}
                                   </h3>
                                 </Link>
@@ -419,9 +513,17 @@ const Navbar = () => {
                                   <Link
                                     key={subIdx}
                                     href={service.link}
-                                    onClick={handleLinkClick}
+                                    onClick={() =>
+                                      handleLinkClick(service.link, item.label)
+                                    }
                                   >
-                                    <span className="block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50">
+                                    <span
+                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${
+                                        activeLink === service.link
+                                          ? "text-[theme(color.brand.blue)]"
+                                          : ""
+                                      }`}
+                                    >
                                       {service.label}
                                     </span>
                                   </Link>
@@ -437,9 +539,21 @@ const Navbar = () => {
                           <li key={subIdx}>
                             <Link
                               href={"link" in subItem ? subItem.link : "#"}
-                              onClick={handleLinkClick}
+                              onClick={() =>
+                                handleLinkClick(
+                                  "link" in subItem ? subItem.link : "#",
+                                  item.label
+                                )
+                              }
                             >
-                              <span className="block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md">
+                              <span
+                                className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${
+                                  activeLink ===
+                                  ("link" in subItem ? subItem.link : "#")
+                                    ? "text-[theme(color.brand.blue)]"
+                                    : ""
+                                }`}
+                              >
                                 {"label" in subItem
                                   ? subItem.label
                                   : subItem.heading}
@@ -456,7 +570,10 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t">
-            <Link href="/contact" onClick={handleLinkClick}>
+            <Link
+              href="/contact-us"
+              onClick={() => handleLinkClick("/contact-us", "")}
+            >
               <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
                 <span className="text-sm">Talk to Expert</span>
                 <FaArrowRight className="w-3 h-3" />
@@ -477,16 +594,38 @@ const Navbar = () => {
               >
                 <div
                   className="flex items-center justify-between p-2 rounded-md hover:bg-gray-50"
-                  onClick={() => item.submenu && toggleSubmenu(idx)}
+                  onClick={() =>
+                    item.submenu
+                      ? toggleSubmenu(idx)
+                      : handleLinkClick(item.link, "")
+                  }
                 >
-                  {!item.submenu ? (
-                    <Link href={item.link} onClick={handleLinkClick}>
-                      <span className="text-base font-medium">
+                  {item.link ? (
+                    <Link
+                      href={item.link}
+                      onClick={() => handleLinkClick(item.link, "")}
+                    >
+                      <span
+                        className={`text-base font-medium ${
+                          activeLink === item.link ||
+                          activeParent === item.label
+                            ? "text-[theme(color.brand.blue)]"
+                            : ""
+                        }`}
+                      >
                         {item.label}
                       </span>
                     </Link>
                   ) : (
-                    <span className="text-base font-medium">{item.label}</span>
+                    <span
+                      className={`text-base font-medium ${
+                        activeParent === item.label
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
+                      }`}
+                    >
+                      {item.label}
+                    </span>
                   )}
                   {item.submenu && (
                     <MdKeyboardArrowDown
@@ -508,9 +647,17 @@ const Navbar = () => {
                               <div key={colIdx}>
                                 <Link
                                   href={column.link}
-                                  onClick={handleLinkClick}
+                                  onClick={() =>
+                                    handleLinkClick(column.link, item.label)
+                                  }
                                 >
-                                  <h3 className="text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white">
+                                  <h3
+                                    className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${
+                                      activeLink === column.link
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
+                                    }`}
+                                  >
                                     {column.label}
                                   </h3>
                                 </Link>
@@ -527,9 +674,17 @@ const Navbar = () => {
                                   <Link
                                     key={subIdx}
                                     href={service.link}
-                                    onClick={handleLinkClick}
+                                    onClick={() =>
+                                      handleLinkClick(service.link, item.label)
+                                    }
                                   >
-                                    <span className="block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1">
+                                    <span
+                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${
+                                        activeLink === service.link
+                                          ? "text-[theme(color.brand.blue)]"
+                                          : ""
+                                      }`}
+                                    >
                                       {service.label}
                                     </span>
                                   </Link>
@@ -545,9 +700,21 @@ const Navbar = () => {
                           <Link
                             key={subIdx}
                             href={"link" in subItem ? subItem.link : "#"}
-                            onClick={handleLinkClick}
+                            onClick={() =>
+                              handleLinkClick(
+                                "link" in subItem ? subItem.link : "#",
+                                item.label
+                              )
+                            }
                           >
-                            <span className="block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md">
+                            <span
+                              className={`block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md ${
+                                activeLink ===
+                                ("link" in subItem ? subItem.link : "#")
+                                  ? "text-[theme(color.brand.blue)]"
+                                  : ""
+                              }`}
+                            >
                               {"label" in subItem
                                 ? subItem.label
                                 : subItem.heading}
@@ -563,7 +730,10 @@ const Navbar = () => {
           </ul>
 
           <div className="mt-6 flex flex-col gap-4 pt-4 border-t">
-            <Link href="/contact-us" onClick={handleLinkClick}>
+            <Link
+              href="/contact-us"
+              onClick={() => handleLinkClick("/contact-us", "")}
+            >
               <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
                 <span className="text-sm">Talk to Expert</span>
                 <FaArrowRight className="w-3 h-3" />

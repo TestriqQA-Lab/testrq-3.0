@@ -32,35 +32,12 @@ const CaseStudiesReadyToStartSection = () => {
     },
   ];
 
-  const nextSteps = [
-    {
-      step: 1,
-      title: "Schedule Consultation",
-      description:
-        "Book a free 30-minute consultation to discuss your testing needs",
-      action: "Book Now",
-    },
-    {
-      step: 2,
-      title: "Receive Custom Proposal",
-      description:
-        "Get a tailored testing strategy and proposal within 24 hours",
-      action: "Get Proposal",
-    },
-    {
-      step: 3,
-      title: "Start Your Project",
-      description: "Begin your testing journey with our expert team",
-      action: "Get Started",
-    },
-  ];
-
   const contactOptions = [
     {
       icon: FaCalendarAlt,
       title: "Schedule a Call",
       description: "Book a free consultation at your convenience",
-      action: "#",
+      action: "/contact-us#calendly-section",
       text: "Schedule Now",
       primary: true,
     },
@@ -126,30 +103,6 @@ const CaseStudiesReadyToStartSection = () => {
           })}
         </div>
 
-        {/* Next Steps */}
-        <div className="bg-gradient-to-br from-brand-blue via-sky-800 to-sky-700 rounded-xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            How to Get Started
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {nextSteps.map((step) => (
-              <div key={step.step} className="text-center">
-                <div className="w-12 h-12 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
-                  {step.step}
-                </div>
-                <h4 className="text-lg font-semibold text-white mb-3">
-                  {step.title}
-                </h4>
-                <p className="text-blue-100 mb-4">{step.description}</p>
-                <button className="text-white p-3 bg-brand-blue rounded-xl font-semibold hover:scale-95 transition-all">
-                  {step.action} →
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Contact Options */}
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">
@@ -160,9 +113,9 @@ const CaseStudiesReadyToStartSection = () => {
             {contactOptions.map((option, index) => {
               const IconComponent = option.icon;
               return (
-                <Link key={index} href={option.action}>
-                  <div
-                    className={`bg-white/20 text-white rounded-lg p-6 text-center hover:scale-105 transition-transform cursor-pointer`}
+                
+                  <div key={index}
+                    className={`bg-white/20 text-white rounded-lg p-6 text-center transition-transform`}
                   >
                     <IconComponent
                       className={`w-8 h-8 mx-auto mb-4 ${
@@ -174,13 +127,15 @@ const CaseStudiesReadyToStartSection = () => {
                       {option.description}
                     </p>
 
-                    <button
-                      className={`font-semibold text-white transition-colors`}
+                    <Link key={index} href={`${option.action}`}
+                      className="font-semibold bg-yellow-400 text-gray-900 p-2 rounded-xl hover:scale-105 cursor-pointer transition-colors"
                     >
                       {option.text}
-                    </button>
+                    </Link>
                   </div>
-                </Link>
+
+                  
+                
               );
             })}
           </div>

@@ -8,11 +8,11 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
-  title:  "Dating App Certification",
-   
-  description: "Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.",
+  title: "Dating App Certification",
+
+  description:
+    "Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.",
   keywords: [
     "Dating App Certification",
     "dating app security",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "user trust badge",
     "certification for dating apps",
     "secure dating platforms",
-    "algorithm fairness dating apps"
+    "algorithm fairness dating apps",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -33,33 +33,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: 'https://testrq-3-0.vercel.app/dating-app-certification',
+    canonical: "https://testriq.com/dating-app-certification",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://testrq-3-0.vercel.app/dating-app-certification',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Dating App Certification | Security, Privacy, Trust Compliance - Testriq',
-    description: 'Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.',
+    type: "website",
+    locale: "en_US",
+    url: "https://testriq.com/dating-app-certification",
+    siteName: "Testriq - Professional Software Testing Services",
+    title:
+      "Dating App Certification | Security, Privacy, Trust Compliance - Testriq",
+    description:
+      "Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.",
     images: [
       {
-        url:'/OG/Dating-App-Certification-Og.webp',
+        url: "/OG/Dating-App-Certification-Og.webp",
         width: 1200,
         height: 630,
-        alt: 'Dating App Certification - Testriq QA Lab',
-      }
+        alt: "Dating App Certification - Testriq QA Lab",
+      },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Dating App Certification | Security, Privacy, Trust Compliance - Testriq',
-    description: 'Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.',
-    images: ['/OG/Dating-App-Certification-Twiiter.webp'],
+    card: "summary_large_image",
+    site: "@testriq",
+    creator: "@testriq",
+    title:
+      "Dating App Certification | Security, Privacy, Trust Compliance - Testriq",
+    description:
+      "Get your dating app certified for security, privacy, algorithm fairness, and compliance. Testriq’s certification improves trust, boosts downloads, and meets GDPR, CCPA, and ISO 27001 standards.",
+    images: ["/OG/Dating-App-Certification-Twiiter.webp"],
   },
   robots: {
     index: true,
@@ -67,18 +71,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
+    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
-
 
 const DatingAppHeroSection = dynamic(
   () => import("@/components/sections/DatingAppHeroSection"),
@@ -91,33 +94,8 @@ const DatingAppHeroSection = dynamic(
     ),
   }
 );
-
-const DatingAppCaseStudies = dynamic(
-  () => import("@/components/sections/DatingAppCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
 const DatingAppSixPillars = dynamic(
   () => import("@/components/sections/DatingAppSixPillars"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DatingAppChooseYourPlan = dynamic(
-  () => import("@/components/sections/DatingAppChooseYourPlan"),
   {
     ssr: true,
     loading: () => (
@@ -142,18 +120,6 @@ const DatingAppSecurityChallenges = dynamic(
 
 const DatingAppOptimizationBenefits = dynamic(
   () => import("@/components/sections/DatingAppOptimizationBenefits"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DatingAppCompliance = dynamic(
-  () => import("@/components/sections/DatingAppCompliance"),
   {
     ssr: true,
     loading: () => (
@@ -212,8 +178,6 @@ const DatingAppReadyToBuild = dynamic(
   }
 );
 
-
-
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -246,11 +210,17 @@ const faqSchema = {
 };
 
 export default function DatingAppCertification() {
-   const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testrq-3-0.vercel.app/dating-app-certification" },
-    { name: "Dating App Certification", url: "https://testrq-3-0.vercel.app/dating-app-certification" }
-   ];
+    {
+      name: "Services",
+      url: "https://testriq.com/dating-app-certification",
+    },
+    {
+      name: "Dating App Certification",
+      url: "https://testriq.com/dating-app-certification",
+    },
+  ];
   return (
     <div>
       <StructuredData data={organizationSchema} />
@@ -261,10 +231,7 @@ export default function DatingAppCertification() {
       <MainLayout>
         <DatingAppHeroSection />
         <DatingAppSixPillars />
-        <DatingAppChooseYourPlan />
         <DatingAppCertificationProcess />
-        <DatingAppCaseStudies />
-        <DatingAppCompliance />
         <DatingAppSecurityChallenges />
         <DatingAppOptimizationBenefits />
         <DatingAppCompetitiveAdvantage />

@@ -5,8 +5,7 @@ import IoTTestingServicesSection from "@/components/sections/IoTApplianceTesting
 import IoTTestingProcessSection from "@/components/sections/IoTApplianceTestingProcessSection";
 import IoTEcosystemSection from "@/components/sections/IoTApplianceEcosystemSection";
 import IoTToolsFrameworkSection from "@/components/sections/IoTApplianceToolsFrameworkSection";
-import IoTCaseStudiesSection from "@/components/sections/IoTApplianceCaseStudiesSection";
-import IoTROISection from "@/components/sections/IoTApplianceROISection";
+import IoTCaseStudies from "@/components/sections/IoTCaseStudies";
 import IoTFAQSection from "@/components/sections/IoTApplianceFAQSection";
 import IoTContactSection from "@/components/sections/IoTApplianceContactSection";
 import { Metadata } from "next";
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/iot-appliances-and-apps-testing-services",
   },
@@ -100,8 +99,7 @@ const IoTTestingPage: React.FC = () => {
       <IoTTestingProcessSection />
       <IoTEcosystemSection />
       <IoTToolsFrameworkSection />
-      <IoTCaseStudiesSection />
-      <IoTROISection />
+      <IoTCaseStudies />
       <IoTFAQSection />
       <IoTContactSection />
     </main>

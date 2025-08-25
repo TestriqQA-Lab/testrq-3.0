@@ -6,7 +6,7 @@ const ToolsAutomationSection = () => {
     {
       icon: FaRobot,
       title: "AI-Powered Test Generation",
-      description: "Leverage artificial intelligence to automatically generate comprehensive test cases and scenarios",
+      description: "We prioritize client privacy by ensuring that AI models are only used with exclusive permission, safeguarding proprietary information and algorithms at all times.",
       features: [
         "Machine learning test case generation",
         "Natural language processing for requirements",

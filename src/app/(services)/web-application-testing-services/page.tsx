@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/web-application-testing-servicess",
   },
@@ -105,17 +105,17 @@ const WebappWhyChooseTestriq = dynamic(
   }
 );
 
-const WebappCaseStudies = dynamic(
-  () => import("@/components/sections/WebappCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const WebappCaseStudies = dynamic(
+//   () => import("@/components/sections/WebappCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const WebappFAQs = dynamic(() => import("@/components/sections/WebappFAQs"), {
   ssr: true,
@@ -185,7 +185,7 @@ export default function WebAppTesting() {
         <CardSlider />
         <WebappProvenTestingProcess />
         <WebappWhyChooseTestriq />
-        <WebappCaseStudies />
+        {/* <WebappCaseStudies /> */}
         <WebappFAQs />
         <WebappAnyQuestions />
       </MainLayout>

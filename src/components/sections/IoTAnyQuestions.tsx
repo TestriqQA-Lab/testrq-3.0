@@ -86,7 +86,7 @@ const IoTAnyQuestions: React.FC = () => {
             customized solution for your connected device project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/contact-us">
+            <Link href="/contact-us#calendly-section">
               <button className="flex items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg cursor-pointer transition-colors duration-300">
                 <span>Schedule IoT Consultation</span>
                 <FaArrowRight className="w-4 h-4" />

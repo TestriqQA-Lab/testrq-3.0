@@ -4,7 +4,6 @@ import RoboticComprehensiveSlider from "@/components/sections/RoboticComprehensi
 import RoboticProvenTestingProcess from "@/components/sections/RoboticProvenTestingProcess";
 import RoboticWhyChooseTestriq from "@/components/sections/RoboticWhyChooseTestriq";
 import RoboticToolsFramework from "@/components/sections/RoboticToolsFramework";
-import RoboticCaseStudies from "@/components/sections/RoboticCaseStudies";
 import RoboticFAQs from "@/components/sections/RoboticFAQs";
 import RoboticAnyQuestions from "@/components/sections/RoboticAnyQuestions";
 import { Metadata } from "next";
@@ -38,7 +37,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/robotics-testing-services",
   },
@@ -106,7 +105,6 @@ export default function RoboticTestingPage() {
       <RoboticProvenTestingProcess />
       <RoboticWhyChooseTestriq />
       <RoboticToolsFramework />
-      <RoboticCaseStudies />
       <RoboticFAQs />
       <RoboticAnyQuestions />
     </div>

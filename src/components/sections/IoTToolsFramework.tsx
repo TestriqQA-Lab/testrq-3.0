@@ -1,7 +1,53 @@
 "use client";
 
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt } from "react-icons/fa";
+
+import {
+  FaTools,
+  FaCode,
+  FaRocket,
+  FaShieldAlt,
+  FaAws,
+  FaMicrosoft,
+  FaBrain,
+  FaNetworkWired,
+  FaRunning,
+  FaCogs,
+  FaMicrochip,
+  FaSatelliteDish,
+  FaExchangeAlt,
+  FaBluetooth,
+  FaProjectDiagram,
+  FaBolt,
+  FaCrosshairs,
+  FaCodeBranch,
+  FaCheckCircle,
+  FaShieldAlt as FaShield, // for Nessus
+} from "react-icons/fa";
+
+import {
+  SiGooglecloud,
+  SiDocker,
+  SiKubernetes,
+  SiTerraform,
+  SiAnsible,
+  SiPrometheus,
+  SiGrafana,
+  SiApachejmeter,
+  SiSelenium,
+  SiAppium,
+  SiCucumber,
+  SiPython,
+  SiMetasploit,
+  SiWireshark,
+  SiBurpsuite,
+  SiOwasp,
+  SiOpenvpn,
+  SiBlazemeter,
+  SiRobotframework,
+  SiMozilla,
+} from "react-icons/si";
+
 import { MdDevices, MdCloud } from "react-icons/md";
 
 const IoTToolsFramework: React.FC = () => {
@@ -13,23 +59,32 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "AWS IoT Device Tester",
           description: "Automated testing for IoT devices",
+          icon: <FaAws className="w-5 h-5 text-brand-blue" />,
         },
         {
           name: "Azure IoT Hub",
           description: "Cloud-based IoT testing platform",
+          icon: <FaMicrosoft className="w-5 h-5 text-brand-blue" />,
         },
         {
           name: "Google Cloud IoT Core",
           description: "Secure device connection and management",
+          icon: <SiGooglecloud className="w-5 h-5 text-brand-blue" />,
         },
-        { name: "ThingWorx", description: "Industrial IoT platform testing" },
         {
-          name: "IBM Watson IoT",
-          description: "AI-powered IoT testing solutions",
+          name: "ThingWorx",
+          description: "Industrial IoT platform testing",
+          icon: <FaCogs className="w-5 h-5 text-brand-blue" />,
         },
         {
           name: "Particle Console",
           description: "IoT device fleet management",
+          icon: <FaMicrochip className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "IBM Watson IoT",
+          description: "AI-powered IoT testing solutions",
+          icon: <FaBrain className="w-5 h-5 text-brand-blue" />,
         },
       ],
     },
@@ -37,24 +92,72 @@ const IoTToolsFramework: React.FC = () => {
       category: "Network & Protocol Testing",
       icon: <MdDevices className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Wireshark", description: "Network protocol analyzer" },
-        { name: "MQTT.fx", description: "MQTT client testing tool" },
-        { name: "CoAP Client", description: "CoAP protocol testing" },
-        { name: "Bluetooth LE Explorer", description: "BLE device testing" },
-        { name: "WiFi Analyzer", description: "Wireless network testing" },
-        { name: "Zigbee Test Tool", description: "Zigbee protocol validation" },
+        {
+          name: "Wireshark",
+          description: "Network protocol analyzer",
+          icon: <SiWireshark className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "MQTT.fx",
+          description: "MQTT client testing tool",
+          icon: <FaSatelliteDish className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "CoAP Client",
+          description: "CoAP protocol testing",
+          icon: <FaExchangeAlt className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Bluetooth LE Explorer",
+          description: "BLE device testing",
+          icon: <FaBluetooth className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Zigbee Test Tool",
+          description: "Zigbee protocol validation",
+          icon: <FaProjectDiagram className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "WiFi Analyzer",
+          description: "Wireless network testing",
+          icon: <SiMozilla className="w-5 h-5 text-brand-blue" />,
+        },
       ],
     },
     {
       category: "Performance & Load Testing",
       icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "JMeter", description: "Load testing for IoT endpoints" },
-        { name: "Gatling", description: "High-performance load testing" },
-        { name: "Artillery", description: "Modern load testing toolkit" },
-        { name: "K6", description: "Developer-centric load testing" },
-        { name: "LoadRunner", description: "Enterprise load testing" },
-        { name: "BlazeMeter", description: "Cloud-based performance testing" },
+        {
+          name: "JMeter",
+          description: "Load testing for IoT endpoints",
+          icon: <SiApachejmeter className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Gatling",
+          description: "High-performance load testing",
+          icon: <FaBolt className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Artillery",
+          description: "Modern load testing toolkit",
+          icon: <FaCrosshairs className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "K6",
+          description: "Developer-centric load testing",
+          icon: <FaCodeBranch className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "LoadRunner",
+          description: "Enterprise load testing",
+          icon: <FaNetworkWired className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "BlazeMeter",
+          description: "Cloud-based performance testing",
+          icon: <SiBlazemeter className="w-5 h-5 text-brand-blue" />,
+        },
       ],
     },
     {
@@ -64,12 +167,33 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "Nmap",
           description: "Network discovery and security auditing",
+          icon: <FaRunning className="w-5 h-5 text-brand-blue" />,
         },
-        { name: "Metasploit", description: "Penetration testing framework" },
-        { name: "OWASP ZAP", description: "Web application security scanner" },
-        { name: "Burp Suite", description: "Web vulnerability scanner" },
-        { name: "Nessus", description: "Vulnerability assessment" },
-        { name: "OpenVAS", description: "Open-source vulnerability scanner" },
+        {
+          name: "Metasploit",
+          description: "Penetration testing framework",
+          icon: <SiMetasploit className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "OWASP ZAP",
+          description: "Web application security scanner",
+          icon: <SiOwasp className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Burp Suite",
+          description: "Web vulnerability scanner",
+          icon: <SiBurpsuite className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Nessus",
+          description: "Vulnerability assessment",
+          icon: <FaShield className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "OpenVAS",
+          description: "Open-source vulnerability scanner",
+          icon: <SiOpenvpn className="w-5 h-5 text-brand-blue" />,
+        },
       ],
     },
     {
@@ -79,24 +203,69 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "Robot Framework",
           description: "Generic automation framework",
+          icon: <SiRobotframework className="w-5 h-5 text-brand-blue" />,
         },
-        { name: "Selenium", description: "Web-based IoT interface testing" },
-        { name: "Appium", description: "Mobile IoT app testing" },
-        { name: "TestComplete", description: "Automated testing platform" },
-        { name: "Cucumber", description: "BDD testing framework" },
-        { name: "PyTest", description: "Python testing framework" },
+        {
+          name: "Selenium",
+          description: "Web-based IoT interface testing",
+          icon: <SiSelenium className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Appium",
+          description: "Mobile IoT app testing",
+          icon: <SiAppium className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "TestComplete",
+          description: "Automated testing platform",
+          icon: <FaCheckCircle className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Cucumber",
+          description: "BDD testing framework",
+          icon: <SiCucumber className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "PyTest",
+          description: "Python testing framework",
+          icon: <SiPython className="w-5 h-5 text-brand-blue" />,
+        },
       ],
     },
     {
       category: "Cloud & Edge Testing",
       icon: <MdCloud className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Docker", description: "Containerized testing environments" },
-        { name: "Kubernetes", description: "Container orchestration testing" },
-        { name: "Terraform", description: "Infrastructure as code testing" },
-        { name: "Ansible", description: "Configuration management testing" },
-        { name: "Prometheus", description: "Monitoring and alerting" },
-        { name: "Grafana", description: "Metrics visualization" },
+        {
+          name: "Docker",
+          description: "Containerized testing environments",
+          icon: <SiDocker className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Kubernetes",
+          description: "Container orchestration testing",
+          icon: <SiKubernetes className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Terraform",
+          description: "Infrastructure as code testing",
+          icon: <SiTerraform className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Ansible",
+          description: "Configuration management testing",
+          icon: <SiAnsible className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Prometheus",
+          description: "Monitoring and alerting",
+          icon: <SiPrometheus className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Grafana",
+          description: "Metrics visualization",
+          icon: <SiGrafana className="w-5 h-5 text-brand-blue" />,
+        },
       ],
     },
   ];
@@ -107,9 +276,7 @@ const IoTToolsFramework: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTools />
-            <span className="text-sm">
-              Tools & Frameworks
-            </span>
+            <span className="text-sm">Tools & Frameworks</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             IoT Testing{" "}
@@ -143,9 +310,12 @@ const IoTToolsFramework: React.FC = () => {
                     key={toolIndex}
                     className="bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                   >
-                    <h4 className="font-semibold text-gray-900 mb-2">
-                      {tool.name}
-                    </h4>
+                    <div className="flex items-center gap-2 mb-2">
+                      {tool.icon && <span>{tool.icon}</span>}
+                      <h4 className="font-semibold text-gray-900">
+                        {tool.name}
+                      </h4>
+                    </div>
                     <p className="text-gray-600 text-sm">{tool.description}</p>
                   </div>
                 ))}
@@ -159,7 +329,9 @@ const IoTToolsFramework: React.FC = () => {
             Custom IoT Testing Solutions
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
-            We tailor our IoT QA frameworks to your protocols, devices, and infrastructure, offering protocol-specific validation, end-to-end testing, and scalable coverage for enterprise-grade IoT ecosystems.
+            We tailor our IoT QA frameworks to your protocols, devices, and
+            infrastructure, offering protocol-specific validation, end-to-end
+            testing, and scalable coverage for enterprise-grade IoT ecosystems.
           </p>
         </div>
       </div>

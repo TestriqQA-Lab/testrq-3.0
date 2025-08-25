@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRobot, FaShieldAlt, FaCog, FaChartLine, FaNetworkWired, FaCode, FaFlask } from "react-icons/fa";
 
@@ -19,7 +20,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Actuator response testing",
         "Control system verification"
       ],
-      color: "blue"
+      color: "blue",
+      action: "blog/post/functional-testing-for-robotic-systems-precision-sensors-control",
     },
     {
       id: "safety",
@@ -33,7 +35,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Fail-safe mechanism testing",
         "Safety protocol verification"
       ],
-      color: "green"
+      color: "green",
+      action: "blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
     },
     {
       id: "performance",
@@ -47,7 +50,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Endurance testing",
         "Precision measurement"
       ],
-      color: "purple"
+      color: "purple",
+      action: "blog/post/performance-testing-for-robotics-load-handling-precision-uptime"
     },
     {
       id: "integration",
@@ -61,7 +65,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Software integration",
         "Communication protocol testing"
       ],
-      color: "orange"
+      color: "orange",
+      action: "blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
     },
     {
       id: "software",
@@ -75,7 +80,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Software reliability testing",
         "Code quality assessment"
       ],
-      color: "red"
+      color: "red",
+      action: "/robotic-software-testing-ros2-gazebo-and-motion-planning-validation"
     },
     {
       id: "autonomous",
@@ -89,7 +95,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
         "Obstacle avoidance testing",
         "Decision-making verification"
       ],
-      color: "indigo"
+      color: "indigo",
+      action: "/testing-autonomous-robots-navigation-perception-and-real-world-qa"
     }
   ];
 
@@ -171,7 +178,7 @@ const RoboticComprehensiveSlider: React.FC = () => {
                 {testingTypes[activeTab].description}
               </p>
 
-              <div className="space-y-3">
+              <div className="space-y-3 mb-4">
                 <h4 className="font-semibold text-gray-900">Key Features:</h4>
                 <ul className="space-y-2">
                   {testingTypes[activeTab].features.map((feature, index) => (
@@ -183,9 +190,9 @@ const RoboticComprehensiveSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
+              <Link href={`blog/post${testingTypes[activeTab].action}`} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Visual Representation */}

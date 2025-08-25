@@ -124,7 +124,7 @@ const ExploratoryFAQs: React.FC = () => {
             for your application.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
+            <Link href="/contact-us#calendly-section">
               <button className="bg-white cursor-pointer text-brand-blue font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors duration-200">
                 Schedule Consultation
               </button>

@@ -18,7 +18,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Security & Fraud Prevention",
-      description: "ISO 27001 compliance, end-to-end encryption, multi-factor authentication, and advanced fraud detection mechanisms.",
+      description:
+        "We verify the implementation of ISO 27001 compliance, end-to-end encryption, multi-factor authentication, and advanced fraud detection before certification.",
       features: [
         "Data Encryption",
         "Secure Authentication",
@@ -32,7 +33,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <FileCheck className="w-12 h-12" />,
       title: "Regulatory Compliance",
-      description: "FINRA, SEC, MiFID II compliance, KYC/AML verification, and data privacy regulations adherence.",
+      description:
+        "We ensure adherence to FINRA, SEC, MiFID II compliance, KYC/AML verification, and data privacy regulations before approving certification.",
       features: [
         "FINRA Compliance",
         "KYC/AML Verification",
@@ -46,7 +48,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <Zap className="w-12 h-12" />,
       title: "Performance & Reliability",
-      description: "Low latency testing, high throughput validation, scalability assessment, and disaster recovery planning.",
+      description:
+        "We validate low latency, high throughput, scalability, and disaster recovery plans to ensure reliable operations before issuing certification.",
       features: [
         "Low Latency Testing",
         "Scalability Assessment",
@@ -60,7 +63,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <Database className="w-12 h-12" />,
       title: "Data Accuracy & Integrity",
-      description: "Real-time market data validation, transaction integrity checks, order execution accuracy, and data reconciliation.",
+      description:
+        "We check real-time market data validation, transaction integrity, order execution accuracy, and data reconciliation before certification is granted.",
       features: [
         "Market Data Validation",
         "Transaction Integrity",
@@ -74,7 +78,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <TrendingUp className="w-12 h-12" />,
       title: "Algorithmic Trading Security",
-      description: "Algorithm validation, risk management controls, automated trading safeguards, and performance monitoring.",
+      description:
+        "We review algorithm validation, risk management controls, safeguards, and performance monitoring before approving your certification.",
       features: [
         "Algorithm Validation",
         "Risk Management",
@@ -88,7 +93,8 @@ const TradingAppCertificationPillars = () => {
     {
       icon: <Scale className="w-12 h-12" />,
       title: "User Experience & Usability",
-      description: "Intuitive interface design, cross-device compatibility, error handling, and accessibility compliance.",
+      description:
+        "We evaluate interface design, device compatibility, error handling, and accessibility compliance before granting certification.",
       features: [
         "Interface Design",
         "Cross-Device Testing",
@@ -102,7 +108,10 @@ const TradingAppCertificationPillars = () => {
   ];
 
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+    <section
+      className="py-16 px-8 md:px-12 lg:px-24 bg-white"
+      id="certification-pillars"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -113,18 +122,16 @@ const TradingAppCertificationPillars = () => {
         >
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Certification Verification Process</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Six Pillars of{" "}
+            Six Verified Pillars for{" "}
             <span className="text-brand-blue">Trading App Certification</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive certification program covers all critical aspects of trading platform 
-            security, compliance, and performance to ensure your users can trust your platform with 
-            their financial investments.
+            We certify only after verifying that your trading platform meets
+            every one of these pillars — ensuring security, compliance, and
+            performance your users can trust.
           </p>
         </motion.div>
 
@@ -138,18 +145,13 @@ const TradingAppCertificationPillars = () => {
               viewport={{ once: true }}
               className={`${pillar.bgColor} ${pillar.borderColor} border-2 rounded-xl p-8 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
             >
-              <div className={`${pillar.color} mb-6`}>
-                {pillar.icon}
-              </div>
-              
+              <div className={`${pillar.color} mb-6`}>{pillar.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {pillar.title}
               </h3>
-              
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {pillar.description}
               </p>
-              
               <div className="space-y-3">
                 {pillar.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-3">
@@ -168,23 +170,10 @@ const TradingAppCertificationPillars = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
           className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Get Your Trading App Certified?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join 500+ trading platforms that trust Testriq for comprehensive certification services.
-            </p>
-            <button className="bg-white text-[#25A8E0] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Start Certification Process
-            </button>
-          </div>
-        </motion.div>
+        ></motion.div>
       </div>
     </section>
   );
 };
 
 export default TradingAppCertificationPillars;
-

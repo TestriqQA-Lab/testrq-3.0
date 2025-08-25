@@ -252,14 +252,12 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             Our experts can design a tailored testing strategy that meets your
             specific requirements and industry standards.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
+          
+            <Link href="/contact-us" className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
               Schedule Free Consultation
-            </button>
-            <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
-              View All Services
-            </button>
-          </div>
+            </Link>
+            
+          
         </div>
       </div>
     </section>

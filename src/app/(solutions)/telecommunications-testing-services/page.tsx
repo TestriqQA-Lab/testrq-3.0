@@ -4,7 +4,6 @@ import TelecomChallengesSection from "@/components/sections/TelecomChallengesSec
 import TelecomTestingServicesSection from "@/components/sections/TelecomTestingServicesSection";
 import TelecomToolsFrameworksSection from "@/components/sections/TelecomToolsFrameworksSection";
 import TelecomNetworkTestingSection from "@/components/sections/TelecomNetworkTestingSection";
-import TelecomCaseStudiesSection from "@/components/sections/TelecomCaseStudiesSection";
 import TelecomROISection from "@/components/sections/TelecomROISection";
 import TelecomFAQSection from "@/components/sections/TelecomFAQSection";
 import TelecomContactSection from "@/components/sections/TelecomContactSection";
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/telecommunications-testing-services',
   },
@@ -98,7 +97,7 @@ const TelecommunicationTestingPage: React.FC = () => {
       <TelecomTestingServicesSection />
       <TelecomToolsFrameworksSection />
       <TelecomNetworkTestingSection />
-      <TelecomCaseStudiesSection />
+      {/* <TelecomCaseStudiesSection /> */}
       <TelecomROISection />
       <TelecomFAQSection />
       <TelecomContactSection />

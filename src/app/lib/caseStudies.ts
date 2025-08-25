@@ -143,9 +143,9 @@ export const caseStudiesData: CaseStudy[] = [
         address: false,
         telephone: false,
       },
-      metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+      metadataBase: new URL("https://testriq.com/"),
       alternates: {
-        canonical: "https://testrq-3-0.vercel.app/canva-case-study",
+        canonical: "https://testriq.com/canva-case-study",
       },
       openGraph: {
         type: "article",
@@ -338,9 +338,9 @@ export const caseStudiesData: CaseStudy[] = [
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/ragnar-case-study",
+    canonical: "https://testriq.com/ragnar-case-study",
   },
   openGraph: {
     type: "article",
@@ -540,9 +540,9 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/kanishka-software-case-study",
+    canonical: "https://testriq.com/kanishka-software-case-study",
   },
   openGraph: {
     type: "article",
@@ -719,14 +719,14 @@ additionalMetrics: [
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/home-facts-case-study",
+    canonical: "https://testriq.com/home-facts-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/home-facts-case-study",
+    url: "https://testriq.com/home-facts-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Home Facts QA Case Study - Real Estate Platform Testing by Testriq",
     description:
@@ -920,14 +920,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/realtytrac-case-study",
+    canonical: "https://testriq.com/realtytrac-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/realtytrac-case-study",
+    url: "https://testriq.com/realtytrac-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RealtyTrac QA Case Study – Testriq's QA for Real Estate Platforms",
     description:
@@ -1124,14 +1124,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/brandify-case-study",
+    canonical: "https://testriq.com/brandify-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/brandify-case-study",
+    url: "https://testriq.com/brandify-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Brandify QA Case Study – Digital Marketing Platform Testing | Testriq",
     description:
@@ -1301,14 +1301,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/milton-case-study",
+    canonical: "https://testriq.com/milton-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/milton-case-study",
+    url: "https://testriq.com/milton-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Milton Smart Bottle QA Case Study – IoT Homeware Testing | Testriq",
     description:
@@ -1480,14 +1480,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/luep-case-study",
+    canonical: "https://testriq.com/luep-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/luep-case-study",
+    url: "https://testriq.com/luep-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Luep QA Case Study – Seamless Testing Across Web & Mobile | Testriq",
     description:
@@ -1662,14 +1662,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/aalpha-information-systems",
+    canonical: "https://testriq.com/aalpha-information-systems",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/aalpha-information-systems",
+    url: "https://testriq.com/aalpha-information-systems",
     siteName: "Testriq - QA Case Studies",
     title: "Aalpha Penetration Testing Case Study – HR Portal Security | Testriq",
     description:
@@ -1852,14 +1852,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/digiboxx-case-study",
+    canonical: "https://testriq.com/digiboxx-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/digiboxx-case-study",
+    url: "https://testriq.com/digiboxx-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Digiboxx QA Case Study – Elevating Cloud Storage Platforms | Testriq",
     description:
@@ -2011,14 +2011,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/rc-pets-case-study",
+    canonical: "https://testriq.com/rc-pets-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/rc-pets-case-study",
+    url: "https://testriq.com/rc-pets-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "RC Pets QA Case Study – High-Performance eCommerce Testing | Testriq",
     description:
@@ -2215,14 +2215,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/worksocial-case-study",
+    canonical: "https://testriq.com/worksocial-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/worksocial-case-study",
+    url: "https://testriq.com/worksocial-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "WorkSocial QA Case Study – Elevating Real Estate Software | Testriq",
     description:
@@ -2381,14 +2381,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
+    canonical: "https://testriq.com/leadoconnect-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/leadoconnect-case-study",
+    url: "https://testriq.com/leadoconnect-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "LeadoConnect QA Case Study – Marketing Automation Software QA | Testriq",
     description:
@@ -2574,7 +2574,7 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
     canonical: "https://testriq.com/case-study/pro-ficiency-qa-case-study",
   },
@@ -2740,14 +2740,14 @@ overview: {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testrq-3-0.vercel.app/"),
+  metadataBase: new URL("https://testriq.com/"),
   alternates: {
-    canonical: "https://testrq-3-0.vercel.app/phyllo-case-study",
+    canonical: "https://testriq.com/phyllo-case-study",
   },
   openGraph: {
     type: "article",
     locale: "en_US",
-    url: "https://testrq-3-0.vercel.app/phyllo-case-study",
+    url: "https://testriq.com/phyllo-case-study",
     siteName: "Testriq - QA Case Studies",
     title: "Phyllo API Testing Case Study – Infrastructure QA by Testriq",
     description:
@@ -2893,7 +2893,376 @@ overview: {
       "Continuous API testing and monitoring.",
       "Further automation of testing processes for future scalability."
     ]
-  }
+  },
+  
+{
+  id: 16,
+  slug: "indo-wings-case-study",
+  title: "Security Testing for High-end Drone for Indo Wings",
+  client: "Indo Wings Private Limited",
+  industry: "Aerospace and UAV Technology",
+  duration: "Single-phase project, completed in 2025",
+  description: "Indo Wings implemented advanced encryption for secure drone-to-ground communication. Testriq Lab validated the security, stability, and market-readiness of the system through comprehensive testing.",
+  image: "/IndoWings_Logo.png",
+  metadata: {
+    title: "Indo Wings Security Testing Case Study | Testriq QA Lab",
+    description: "Discover how Testriq validated Indo Wings' encrypted drone communication system, ensuring security, stability, and compliance for market launch.",
+    keywords: [
+      "Indo Wings testing case study",
+      "drone security testing",
+      "encrypted communication testing",
+      "UAV system validation",
+      "APK security testing",
+      "drone performance testing",
+      "compliance testing",
+      "data privacy testing",
+      "tamper-resistant app testing",
+      "Audix Technologies certification"
+    ],
+    authors: [{ name: "Testriq QA Lab" }],
+    creator: "Testriq QA Lab LLP",
+    publisher: "Testriq QA Lab LLP",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL("https://testriq.com/"),
+    alternates: {
+      canonical: "https://testriq.com/indo-wings-case-study",
+    },
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: "https://testriq.com/case-study/indo-wings-case-study",
+      siteName: "Testriq - QA Case Studies",
+      title: "Indo Wings QA Case Study - Secure Drone Communication | Testriq",
+      description: "Testriq partnered with Audix Technologies to validate Indo Wings' secure drone communication system, ensuring robust encryption and market readiness.",
+      images: [
+        {
+          url: "/OG/Case-Study-IndoWings-og.webp",
+          width: 1200,
+          height: 630,
+          alt: "Indo Wings Security Testing Case Study",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@testriq",
+      creator: "@testriq",
+      title: "Indo Wings Security Testing Case Study - Testriq QA Lab",
+      description: "Testriq ensured Indo Wings' drone communication system was secure and market-ready with rigorous testing and certification. Read the full case study.",
+      images: ["/OG/Case-Study-IndoWings-Twitter.webp"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+      yandex: "ff703971283d110e",
+      yahoo: "0A67349B8CD11BF71173B38572028507",
+    },
+  },
+  overview: {
+    clientBackground: "Indo Wings Private Limited is one of India’s fastest-growing manufacturers of advanced Drones and Anti-Drone systems. A pioneer in the UAV space, Indo Wings provides cutting-edge drone solutions across multiple industries, backed by a strong, expert-led R&D team. Known for their focus on aerospace innovation and GIS technology, the company is proudly aligned with the Make in India initiative, driving forward AI-powered, homegrown solutions to empower sectors nationwide.",
+    projectScope: "Comprehensive security and performance testing of Indo Wings' encrypted drone communication system, including the Android-based ground control app, to ensure stability, security, and compliance with industry standards.",
+    teamSize: "Dedicated QA team with expertise in security and performance testing, in collaboration with Audix Technologies",
+    timeline: "Single-phase project, completed in 2025"
+  },
+  challenge: {
+    title: "Validating Secure Drone Communication for Indo Wings",
+    description: "Indo Wings required robust validation of their encrypted drone-to-ground communication system to ensure security, stability, and market readiness.",
+    keyIssues: [
+      "Verifying encrypted communication between drone and remote control",
+      "Ensuring the Android-based ground control app was secure and tamper-resistant",
+      "Confirming encrypted communication did not impact performance or stability",
+      "Obtaining third-party certification for market compliance"
+    ],
+    businessImpact: "Failure to validate security and performance could lead to compromised data, regulatory non-compliance, and loss of trust in Indo Wings' drone solutions."
+  },
+  solution: {
+    title: "Comprehensive Security and Performance Testing for Indo Wings",
+    description: "Testriq, in partnership with Audix Technologies, implemented a robust testing strategy to validate Indo Wings' encrypted communication system and ground control app.",
+    approach: [
+      "Reviewed data flow between drone and ground station for correct encryption",
+      "Verified encryption protected sensitive control and telemetry data",
+      "Evaluated APK for secure key management, tamper resistance, and data privacy",
+      "Simulated interception attempts to validate encryption strength",
+      "Collaborated with Audix Technologies for compliance and certification"
+    ],
+    methodology: "Structured testing methodology combining security analysis, performance evaluation, and compliance verification to ensure market readiness.",
+    keyStrategies: [
+      "Detailed communication analysis for encryption integrity",
+      "APK security evaluation for tamper resistance and privacy compliance",
+      "Simulated real-world security threats to test system resilience",
+      "Performance testing to ensure no latency or stability issues",
+      "Third-party validation for industry-standard certification"
+    ]
+  },
+  results: {
+    bugReduction: "Minimal",
+    performanceImprovement: "Stable",
+    roi: "Enhanced",
+    additionalMetrics: [
+      { label: "Security", value: "100% secure communication protocols implemented" },
+      { label: "APK Resilience", value: "Strong resistance to tampering and intrusion" },
+      { label: "Performance", value: "Stable system with no major latency" },
+      { label: "Compliance", value: "Certified by Audix Technologies" },
+      { label: "Market Readiness", value: "Full validation for industry deployment" }
+    ]
+  },
+  technologies: ["Security Testing", "Performance Testing", "Encryption Validation", "APK Security Analysis", "Compliance Testing"],
+  testimonial: {
+    quote: "Testriq's rigorous testing and partnership with Audix Technologies ensured our drone communication system was secure and ready for market.",
+    author: "Confidential",
+    role: "Project Lead",
+    company: "Indo Wings Private Limited",
+    rating: 5
+  },
+  timeline: [
+    {
+      phase: "Communication Analysis",
+      duration: "Initial phase",
+      activities: [
+        "Reviewing data flow between drone and ground station",
+        "Ensuring correct encryption application"
+      ]
+    },
+    {
+      phase: "Encryption and APK Testing",
+      duration: "Core testing phase",
+      activities: [
+        "Verifying encryption for control and telemetry data",
+        "Evaluating APK for security and tamper resistance"
+      ]
+    },
+    {
+      phase: "Security Simulation",
+      duration: "Validation phase",
+      activities: [
+        "Simulating interception attempts to test encryption strength",
+        "Validating system resilience"
+      ]
+    },
+    {
+      phase: "Compliance and Certification",
+      duration: "Final phase",
+      activities: [
+        "Collaborating with Audix Technologies for compliance checks",
+        "Obtaining validation certificate"
+      ]
+    }
+  ],
+  keyTakeaways: [
+    "Robust encryption ensures data protection without compromising performance",
+    "Third-party certification enhances product credibility",
+    "Security validation is critical for market-ready UAV solutions",
+    "Collaboration with trusted testing partners ensures compliance"
+  ],
+  nextSteps: [
+    "Support ongoing security enhancements for new drone features",
+    "Explore advanced encryption testing for future models",
+    "Expand compliance testing for additional industry standards",
+    "Integrate AI-driven testing for predictive security analysis"
+  ]
+},
+
+{
+  id: 17,
+  slug: "smart-doorbell-case-study",
+  title: "Comprehensive QA for Smart Video Doorbell App",
+  client: "Confidential",
+  industry: "Home Automation",
+  duration: "Single-phase project, completed in 2025",
+  description: "A home security startup developed a smart video doorbell system with mobile app integration. Testriq Lab performed end-to-end QA to ensure seamless functionality, security, and compatibility across platforms.",
+  image: "/SmartDoorbell_Logo.png",
+  metadata: {
+    title: "Smart Video Doorbell QA Case Study | Testriq QA Lab",
+    description: "Learn how Testriq ensured seamless performance, security, and compatibility for a smart video doorbell app through comprehensive QA testing.",
+    keywords: [
+      "smart doorbell testing case study",
+      "IoT app testing",
+      "mobile app QA",
+      "cloud integration testing",
+      "security testing IoT",
+      "cross-platform compatibility",
+      "functional testing doorbell",
+      "API testing",
+      "real-world simulation testing",
+      "UX testing smart doorbell"
+    ],
+    authors: [{ name: "Testriq QA Lab" }],
+    creator: "Testriq QA Lab LLP",
+    publisher: "Testriq QA Lab LLP",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL("https://testriq.com/"),
+    alternates: {
+      canonical: "https://testriq.com/smart-doorbell-case-study",
+    },
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: "https://testriq.com/case-study/smart-doorbell-case-study",
+      siteName: "Testriq - QA Case Studies",
+      title: "Smart Video Doorbell QA Case Study - Seamless IoT Testing | Testriq",
+      description: "Testriq delivered comprehensive QA for a smart video doorbell app, ensuring reliable performance, security, and compatibility across devices.",
+      images: [
+        {
+          url: "/OG/Case-Study-SmartDoorbell-og.webp",
+          width: 1200,
+          height: 630,
+          alt: "Smart Video Doorbell QA Case Study",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: "@testriq",
+      creator: "@testriq",
+      title: "Smart Video Doorbell QA Case Study - Testriq QA Lab",
+      description: "Testriq ensured a smart video doorbell app was production-ready with rigorous testing across mobile, APIs, and cloud. Read the full case study.",
+      images: ["/OG/Case-Study-SmartDoorbell-Twitter.webp"],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
+      yandex: "ff703971283d110e",
+      yahoo: "0A67349B8CD11BF71173B38572028507",
+    },
+  },
+  overview: {
+    clientBackground: "A home security startup developed a smart video doorbell system with features like motion detection, two-way audio, live video streaming, cloud recording, and app-based controls, aimed at providing real-time visibility and control for users.",
+    projectScope: "End-to-end QA testing of mobile apps, APIs, cloud integration, and device communication to ensure seamless functionality, security, and compatibility across Android and iOS platforms.",
+    teamSize: "Dedicated QA team with expertise in IoT, mobile, and cloud testing",
+    timeline: "Single-phase project, completed in 2025"
+  },
+  challenge: {
+    title: "Ensuring Seamless Performance for Smart Video Doorbell",
+    description: "The client required comprehensive QA to validate the smart video doorbell system’s performance, security, and compatibility across diverse devices and network conditions.",
+    keyIssues: [
+      "Ensuring seamless video and audio streaming",
+      "Delivering accurate and timely push notifications",
+      "Maintaining performance under varied network conditions",
+      "Securing communication across mobile, API, and cloud components",
+      "Achieving compatibility across a wide range of Android and iOS devices",
+      "Ensuring a stable and intuitive app experience"
+    ],
+    businessImpact: "Failure to deliver a reliable and secure system could result in poor user experience, compromised security, and delayed market launch."
+  },
+  solution: {
+    title: "End-to-End QA for Smart Video Doorbell System",
+    description: "Testriq implemented a comprehensive QA strategy covering mobile apps, APIs, cloud services, and hardware integration to ensure production readiness.",
+    approach: [
+      "Validated core user flows like device pairing, streaming, and event handling",
+      "Tested app behavior under various network conditions",
+      "Assessed UI consistency and notification behavior across devices",
+      "Validated API endpoints for performance and accuracy",
+      "Ensured secure communication with HTTPS/TLS",
+      "Conducted regression and compatibility testing"
+    ],
+    methodology: "Agile testing methodology with functional, performance, security, and compatibility testing to support a robust IoT product launch.",
+    keyStrategies: [
+      "Functional testing of all core features across Android and iOS",
+      "Real-world simulation for network and edge cases",
+      "Comprehensive mobile app testing across 20+ device models",
+      "API and backend testing for response times and sync accuracy",
+      "Security validation for authentication and data protection",
+      "Regression testing to ensure stability after updates"
+    ]
+  },
+  results: {
+    bugReduction: "Significant",
+    performanceImprovement: "Optimized",
+    roi: "Accelerated",
+    additionalMetrics: [
+      { label: "Streaming", value: "Stable with minimal delay and smooth reconnection" },
+      { label: "Notifications", value: "100% success rate for motion and doorbell alerts" },
+      { label: "Compatibility", value: "Consistent performance across Android and iOS" },
+      { label: "API Performance", value: "Reliable responses under high concurrency" },
+      { label: "Security", value: "Secure login and data sync with no vulnerabilities" }
+    ]
+  },
+  technologies: ["Functional Testing", "Performance Testing", "Security Testing", "Mobile App Testing", "API Testing", "Cloud Integration Testing", "Compatibility Testing", "Regression Testing", "Usability Testing"],
+  testimonial: {
+    quote: "Testriq’s thorough QA process ensured our smart doorbell app was reliable, secure, and ready for market launch.",
+    author: "Confidential",
+    role: "Product Manager",
+    company: "Confidential",
+    rating: 5
+  },
+  timeline: [
+    {
+      phase: "Functional and Mobile App Testing",
+      duration: "Initial phase",
+      activities: [
+        "Validating core user flows and event handling",
+        "Testing across 20+ Android and iOS devices"
+      ]
+    },
+    {
+      phase: "Real-World and Network Testing",
+      duration: "Core testing phase",
+      activities: [
+        "Simulating varied network conditions",
+        "Testing edge cases like background mode and network handoffs"
+      ]
+    },
+    {
+      phase: "API and Security Testing",
+      duration: "Validation phase",
+      activities: [
+        "Validating API endpoints for performance and accuracy",
+        "Ensuring secure communication with HTTPS/TLS"
+      ]
+    },
+    {
+      phase: "Regression and Compatibility Testing",
+      duration: "Final phase",
+      activities: [
+        "Conducting regression testing after updates",
+        "Verifying cross-device compatibility and session persistence"
+      ]
+    }
+  ],
+  keyTakeaways: [
+    "End-to-end testing ensures reliability in IoT systems",
+    "Real-world simulations are critical for validating network performance",
+    "Security validation protects user data and builds trust",
+    "Broad device compatibility enhances user experience",
+    "Close collaboration with dev teams accelerates issue resolution"
+  ],
+  nextSteps: [
+    "Support ongoing updates with regression testing",
+    "Enhance automation for faster testing cycles",
+    "Explore AI-driven testing for predictive QA",
+    "Expand compatibility testing for new devices and OS versions"
+  ]
+}
+
+
 
 ];
 

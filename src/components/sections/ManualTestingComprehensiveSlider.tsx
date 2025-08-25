@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaUser, FaEye, FaCheckCircle, FaBug, FaClipboardCheck, FaHandPaper, FaFlask } from "react-icons/fa";
 
@@ -21,7 +22,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Error handling validation for robust system behavior",
         "Workflow testing across user journeys and process flows",
         "Data integrity checks to maintain consistency and reliability"
-      ]
+      ],
+      action: "blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices"
     },
     {
       id: "usability-testing",
@@ -37,7 +39,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Accessibility compliance",
         "Mobile responsiveness",
         "User feedback analysis"
-      ]
+      ],
+      action: "blog/post/usability-testing-in-manual-testing-use-cases-techniques"
     },
     {
       id: "exploratory-testing",
@@ -53,7 +56,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Error condition exploration",
         "User behavior simulation",
         "Risk-based investigation"
-      ]
+      ],
+      action: "/exploratory-testing"
     },
     {
       id: "user-acceptance-testing",
@@ -69,7 +73,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Production readiness assessment",
         "Stakeholder sign-off",
         "Go-live preparation"
-      ]
+      ],
+      action: "blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques"
     },
     {
       id: "compatibility-testing",
@@ -85,7 +90,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Version compatibility",
         "Integration testing",
         "Environment validation"
-      ]
+      ],
+      action: "blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa"
     },
     {
       id: "accessibility-testing",
@@ -101,7 +107,8 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
         "Color contrast validation",
         "Alternative text verification",
         "Assistive technology support"
-      ]
+      ],
+      action: "blog/post/accessibility-testing-in-manual-testing-use-cases-techniques"
     }
   ];
 
@@ -187,9 +194,9 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link href={testingTypes[activeTab].action} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features & Capabilities</h4>

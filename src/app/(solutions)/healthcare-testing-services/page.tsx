@@ -5,7 +5,6 @@ import HealthcareTestingServicesSection from "@/components/sections/HealthcareTe
 import HealthcareTestingProcessSection from "@/components/sections/HealthcareTestingProcessSection";
 import HealthcareComplianceSection from "@/components/sections/HealthcareComplianceSection";
 import HealthcareToolsFrameworkSection from "@/components/sections/HealthcareToolsFrameworkSection";
-import HealthcareCaseStudiesSection from "@/components/sections/HealthcareCaseStudiesSection";
 import HealthcareROISection from "@/components/sections/HealthcareROISection";
 import HealthcareFAQSection from "@/components/sections/HealthcareFAQSection";
 import HealthcareContactSection from "@/components/sections/HealthcareContactSection";
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/healthcare-testing-services',
   },
@@ -99,7 +98,7 @@ const HealthcareTestingPage: React.FC = () => {
       <HealthcareTestingProcessSection />
       <HealthcareComplianceSection />
       <HealthcareToolsFrameworkSection />
-      <HealthcareCaseStudiesSection />
+      {/* <HealthcareCaseStudiesSection /> */}
       <HealthcareROISection />
       <HealthcareFAQSection />
       <HealthcareContactSection />

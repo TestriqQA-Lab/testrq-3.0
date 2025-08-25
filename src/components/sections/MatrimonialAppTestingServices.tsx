@@ -13,13 +13,15 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { FaFlask } from "react-icons/fa";
+import Link from "next/link";
 
 const MatrimonialAppTestingServices = () => {
   const testingServices = [
     {
       icon: <Smartphone className="w-10 h-10" />,
       title: "Mobile App Testing",
-      description: "Comprehensive testing across iOS and Android platforms for optimal user experience.",
+      description:
+        "Comprehensive testing across iOS and Android platforms for optimal user experience.",
       features: [
         "Cross-platform compatibility testing",
         "Device-specific performance optimization",
@@ -33,7 +35,8 @@ const MatrimonialAppTestingServices = () => {
     {
       icon: <Globe className="w-10 h-10" />,
       title: "Web Platform Testing",
-      description: "Full-stack web application testing for matrimonial platforms and admin panels.",
+      description:
+        "Full-stack web application testing for matrimonial platforms and admin panels.",
       features: [
         "Cross-browser compatibility testing",
         "Responsive design validation",
@@ -47,7 +50,8 @@ const MatrimonialAppTestingServices = () => {
     {
       icon: <Zap className="w-10 h-10" />,
       title: "Performance Testing",
-      description: "Load testing and performance optimization for high-traffic matrimonial platforms.",
+      description:
+        "Load testing and performance optimization for high-traffic matrimonial platforms.",
       features: [
         "Load and stress testing",
         "Database performance optimization",
@@ -61,7 +65,8 @@ const MatrimonialAppTestingServices = () => {
     {
       icon: <Shield className="w-10 h-10" />,
       title: "Security Testing",
-      description: "Comprehensive security assessment and penetration testing services.",
+      description:
+        "Comprehensive security assessment and penetration testing services.",
       features: [
         "Vulnerability assessment and penetration testing",
         "Data encryption and privacy testing",
@@ -75,7 +80,8 @@ const MatrimonialAppTestingServices = () => {
     {
       icon: <Users className="w-10 h-10" />,
       title: "User Experience Testing",
-      description: "Usability testing focused on matrimonial app user journeys and interactions.",
+      description:
+        "Usability testing focused on matrimonial app user journeys and interactions.",
       features: [
         "User journey and flow testing",
         "Accessibility compliance (WCAG)",
@@ -89,7 +95,8 @@ const MatrimonialAppTestingServices = () => {
     {
       icon: <Database className="w-10 h-10" />,
       title: "API & Integration Testing",
-      description: "Backend API testing and third-party integration validation.",
+      description:
+        "Backend API testing and third-party integration validation.",
       features: [
         "RESTful API testing and validation",
         "Third-party service integration testing",
@@ -106,22 +113,26 @@ const MatrimonialAppTestingServices = () => {
     {
       step: "01",
       title: "Test Planning",
-      description: "Comprehensive test strategy development based on your matrimonial app requirements.",
+      description:
+        "Comprehensive test strategy development based on your matrimonial app requirements.",
     },
     {
       step: "02",
       title: "Test Design",
-      description: "Creation of detailed test cases covering all functional and non-functional aspects.",
+      description:
+        "Creation of detailed test cases covering all functional and non-functional aspects.",
     },
     {
       step: "03",
       title: "Test Execution",
-      description: "Systematic execution of test cases with detailed reporting and issue tracking.",
+      description:
+        "Systematic execution of test cases with detailed reporting and issue tracking.",
     },
     {
       step: "04",
       title: "Quality Assurance",
-      description: "Final quality validation and certification based on industry standards.",
+      description:
+        "Final quality validation and certification based on industry standards.",
     },
   ];
 
@@ -137,17 +148,15 @@ const MatrimonialAppTestingServices = () => {
         >
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Comprehensive{" "}
             <span className="text-brand-blue">Testing Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end testing services specifically designed for matrimonial platforms, 
-            covering every aspect from security to user experience.
+            End-to-end testing services specifically designed for matrimonial
+            platforms, covering every aspect from security to user experience.
           </p>
         </motion.div>
 
@@ -162,18 +171,16 @@ const MatrimonialAppTestingServices = () => {
               viewport={{ once: true }}
               className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
             >
-              <div className={`${service.color} mb-4`}>
-                {service.icon}
-              </div>
-              
+              <div className={`${service.color} mb-4`}>{service.icon}</div>
+
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {service.title}
               </h3>
-              
+
               <p className="text-gray-600 mb-4 leading-relaxed">
                 {service.description}
               </p>
-              
+
               <div className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-start gap-2">
@@ -197,7 +204,7 @@ const MatrimonialAppTestingServices = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
             Our Testing Process
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testingProcess.map((step, index) => (
               <motion.div
@@ -211,11 +218,9 @@ const MatrimonialAppTestingServices = () => {
                 <div className="w-16 h-16 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
                   {step.step}
                 </div>
-                
-                <h4 className="font-bold text-gray-900 mb-2">
-                  {step.title}
-                </h4>
-                
+
+                <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
+
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {step.description}
                 </p>
@@ -243,8 +248,9 @@ const MatrimonialAppTestingServices = () => {
               Quality Metrics We Deliver
             </h3>
             <p className="text-blue-100 max-w-2xl mx-auto">
-              Our testing services ensure your matrimonial app meets the highest quality standards 
-              with measurable improvements in performance and user satisfaction.
+              Our testing services ensure your matrimonial app meets the highest
+              quality standards with measurable improvements in performance and
+              user satisfaction.
             </p>
           </div>
 
@@ -270,9 +276,11 @@ const MatrimonialAppTestingServices = () => {
           </div>
 
           <div className="text-center mt-8">
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Start Testing Assessment
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Start Testing Assessment
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -281,4 +289,3 @@ const MatrimonialAppTestingServices = () => {
 };
 
 export default MatrimonialAppTestingServices;
-

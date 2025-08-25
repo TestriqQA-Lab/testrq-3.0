@@ -3,9 +3,8 @@ import CareersHeroSection from "@/components/sections/CareersHeroSection";
 import CareersValuesSection from "@/components/sections/CareersValuesSection";
 import CareersOpenPositions from "@/components/sections/CareersOpenPositions";
 import CareersBenefitsSection from "@/components/sections/CareersBenefitsSection";
-import CareersTestimonialsSection from "@/components/sections/CareersTestimonialsSection";
 import CareersApplicationProcessSection from "@/components/sections/CareersApplicationProcessSection";
-import CareersCultureSection from "@/components/sections/CareersCultureSection";
+// import CareersCultureSection from "@/components/sections/CareersCultureSection";
 import { Metadata } from "next";
 import StructuredData, { careersPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/careers',
   },
@@ -97,8 +96,7 @@ const CareersPage: React.FC = () => {
       <CareersValuesSection />
       <CareersOpenPositions />
       <CareersBenefitsSection />
-      <CareersCultureSection />
-      <CareersTestimonialsSection />
+      {/* <CareersCultureSection /> */}
       <CareersApplicationProcessSection />
     </main>
     </div>

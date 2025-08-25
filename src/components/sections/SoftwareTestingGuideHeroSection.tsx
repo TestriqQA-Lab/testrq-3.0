@@ -6,8 +6,7 @@ import {
   FaChartLine,
   FaCog,
   FaShieldAlt,
-  FaArrowRight,
-  FaPlay,
+  FaArrowRight
 } from "react-icons/fa";
 
 const SoftwareTestingGuideHeroSection = () => {
@@ -56,10 +55,10 @@ const SoftwareTestingGuideHeroSection = () => {
                 </button>
               </Link>
 
-              <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
+              {/* <button className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
                 <FaPlay className="mr-2" />
                 Download PDF Guide
-              </button>
+              </button> */}
             </div>
 
             {/* Learning Stats */}

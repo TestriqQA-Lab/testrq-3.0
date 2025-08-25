@@ -18,25 +18,28 @@ const renderTitle = () => {
 const impactSection = {
   title: "Our Impact: Real-World Successes",
   subtitle:
-    "Testriq’s enterprise QA solutions deliver real-world success—accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
+    "Testriq’s enterprise QA solutions deliver real-world success-accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
   caseStudies: [
     {
-      title: "E-commerce Performance Boost",
-      badge: "30% faster load times",
+      title: "Testing Canva’s Design Platform",
+      badge: "Graphic design Success Story",
       description:
-        "Reduced page load times by 30% for a leading e-commerce client through comprehensive performance testing.",
+        "Ensured smooth UI updates and feature rollouts with a complete testing strategy across all devices and platforms.",
+      action: "/canva-case-study",
     },
     {
-      title: "Mobile Banking Security",
-      badge: "Zero security incidents",
+      title: "Milton Smart Stainless Steel Water Bottle Case Study",
+      badge: "Homewares Success Story",
       description:
-        "Identified and mitigated critical vulnerabilities for a mobile banking application through thorough security audit and security testing.",
+        "Tested key aspects like connectivity, functionality, measurement accuracy, and sample validation across the smart bottle and its app.",
+      action: "/milton-case-study",
     },
     {
-      title: "Smart Home Compatibility",
-      badge: "100% compatibility",
+      title: "Brandify QA for Digital Marketing Case Study",
+      badge: "Digital Marketing Success Story",
       description:
-        "Ensured seamless compatibility and functionality for a new line of smart home devices across various operating systems.",
+        "Applied industry QA standards tailored to Brandify’s needs, writing and tracking test cases in TestRail while ensuring smooth integration of technologies like voice assist.",
+      action: "/brandify-case-study",
     },
   ],
 };
@@ -55,8 +58,9 @@ const HomeOurImpact = () => {
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
         {impactSection.caseStudies.map((study, idx) => (
-          <div
+          <Link
             key={idx}
+            href={study.action}
             className="bg-white ring-sky-200 ring-2 rounded-lg shadow-sm p-6 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
           >
             <h3 className="text-xl mb-2">{study.title}</h3>
@@ -64,7 +68,7 @@ const HomeOurImpact = () => {
               {study.badge}
             </span>
             <p className="text-gray-500 text-sm py-2">{study.description}</p>
-          </div>
+          </Link>
         ))}
       </div>
 

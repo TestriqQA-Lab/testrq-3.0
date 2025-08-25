@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaTachometerAlt, FaUsers, FaChartLine, FaServer, FaCloud, FaBolt, FaFlask } from "react-icons/fa";
 
@@ -21,7 +22,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "Resource utilization monitoring",
         "Scalability assessment",
         "Capacity planning"
-      ]
+      ],
+      action: "/load-testing-in-performance-testing-complete-guide"
     },
     {
       id: "stress-testing",
@@ -37,7 +39,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "Recovery time measurement",
         "Bottleneck identification",
         "Failure point analysis"
-      ]
+      ],
+      action: "/stress-testing-applications-identifying-breaking-points"
     },
     {
       id: "scalability-testing",
@@ -53,7 +56,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "Database scalability testing",
         "Network scalability analysis",
         "Cloud infrastructure scaling"
-      ]
+      ],
+      action: "/scalability-testing-ensuring-growth-ready-applications"
     },
     {
       id: "volume-testing",
@@ -69,7 +73,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "Data retrieval and manipulation speed",
         "Impact of data growth on performance",
         "Data integrity under high volume"
-      ]
+      ],
+      action: "/volume-testing-managing-high-data-loads-efficiently"
     },
     {
       id: "endurance-testing",
@@ -85,7 +90,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "System stability over long runs",
         "Garbage collection efficiency",
         "Connection pool management"
-      ]
+      ],
+      action: "/endurance-testing-validating-long-term-application-stability"
     },
     {
       id: "spike-testing",
@@ -101,7 +107,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
         "Error handling under sudden load",
         "Resource allocation during spikes",
         "Concurrency management"
-      ]
+      ],
+      action: "/spike-testing-handling-sudden-traffic-surges"
     }
   ];
 
@@ -187,9 +194,9 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link href={`blog/post${performanceTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features & Capabilities</h4>

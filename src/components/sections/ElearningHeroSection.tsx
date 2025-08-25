@@ -20,7 +20,7 @@ import {
 
 const ElearningHeroSection: React.FC = () => {
   const keyStats = [
-    { value: "500M+", label: "Learners Reached", icon: FaUsers },
+    { value: "4.5/5", label: "Average User Satisfaction Score", icon: FaUsers },
     { value: "50+", label: "LMS Platforms", icon: FaLaptop },
     { value: "99.9%", label: "Uptime Achieved", icon: FaRocket },
     {
@@ -58,7 +58,7 @@ const ElearningHeroSection: React.FC = () => {
       <div className="flex flex-col text-center md:text-start relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
-          <div className="space-y-5 mb-48">
+          <div className="space-y-5">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] text-white bg-opacity-10 rounded-full px-6 py-2 border border-[theme(color.brand.blue)] border-opacity-20">
               <FaGraduationCap className="w-4 h-4" />

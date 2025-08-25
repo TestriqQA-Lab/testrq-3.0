@@ -12,13 +12,15 @@ import {
   CheckCircle,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 
 const FantasyAppCertificationPillars = () => {
   const pillars = [
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Security & Privacy",
-      description: "Advanced encryption, secure authentication, and comprehensive data protection to safeguard player information and financial transactions.",
+      description:
+        "We verify that your app follows advanced encryption, secure authentication, and robust data protection to safeguard player information and transactions.",
       features: [
         "End-to-end encryption",
         "Multi-factor authentication",
@@ -32,7 +34,8 @@ const FantasyAppCertificationPillars = () => {
     {
       icon: <Scale className="w-12 h-12" />,
       title: "Fair Play & Compliance",
-      description: "Ensuring regulatory compliance and fair gaming practices across all jurisdictions with transparent algorithms and anti-fraud measures.",
+      description:
+        "We ensure your platform adheres to fair gaming rules, regulatory requirements, and implements anti-fraud and verification measures.",
       features: [
         "Regulatory compliance",
         "Anti-fraud detection",
@@ -46,7 +49,8 @@ const FantasyAppCertificationPillars = () => {
     {
       icon: <Zap className="w-12 h-12" />,
       title: "Performance & Reliability",
-      description: "High-performance architecture with real-time data processing, minimal latency, and 99.9% uptime guarantee for seamless gaming experience.",
+      description:
+        "We assess your app’s architecture for real-time processing, low latency, and high uptime to ensure a reliable gaming experience.",
       features: [
         "Real-time data sync",
         "99.9% uptime SLA",
@@ -60,7 +64,8 @@ const FantasyAppCertificationPillars = () => {
     {
       icon: <Users className="w-12 h-12" />,
       title: "User Experience",
-      description: "Intuitive interface design, accessibility compliance, and cross-platform compatibility ensuring exceptional user engagement and satisfaction.",
+      description:
+        "We evaluate whether your app offers intuitive design, accessibility, and seamless cross-platform functionality for players.",
       features: [
         "Mobile-first design",
         "Accessibility (WCAG 2.1)",
@@ -74,7 +79,8 @@ const FantasyAppCertificationPillars = () => {
     {
       icon: <Lock className="w-12 h-12" />,
       title: "Data Integrity",
-      description: "Robust data validation, backup systems, and audit trails to maintain the integrity and accuracy of all gaming data and transactions.",
+      description:
+        "We check your platform’s data validation, backup, and audit mechanisms to ensure the accuracy and security of all records.",
       features: [
         "Data validation",
         "Automated backups",
@@ -88,7 +94,8 @@ const FantasyAppCertificationPillars = () => {
     {
       icon: <Trophy className="w-12 h-12" />,
       title: "Quality Assurance",
-      description: "Comprehensive testing protocols including functional, performance, and security testing to ensure the highest quality standards.",
+      description:
+        "We verify that your app has undergone functional, performance, and security testing to meet industry quality standards.",
       features: [
         "Automated testing",
         "Performance testing",
@@ -117,12 +124,14 @@ const FantasyAppCertificationPillars = () => {
             Certification Standards
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Six Pillars of Fantasy Sports{" "}
-            <span className="text-brand-blue">Certification</span>
+            The Six Pillars We <span className="text-brand-blue">Verify</span>{" "}
+            Before Certifying
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive certification framework covers every aspect of fantasy sports app development, 
-            ensuring your platform meets the highest industry standards and regulatory requirements.
+            We don’t build your app — we verify it. Our certification process
+            checks whether your fantasy sports platform fully satisfies these
+            six core pillars. Only platforms meeting all standards receive our
+            official certification.
           </p>
         </motion.div>
 
@@ -137,22 +146,13 @@ const FantasyAppCertificationPillars = () => {
               viewport={{ once: true }}
               className={`${pillar.bgColor} rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100`}
             >
-              {/* Icon */}
-              <div className={`${pillar.textColor} mb-6`}>
-                {pillar.icon}
-              </div>
-
-              {/* Title */}
+              <div className={`${pillar.textColor} mb-6`}>{pillar.icon}</div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {pillar.title}
               </h3>
-
-              {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {pillar.description}
               </p>
-
-              {/* Features */}
               <div className="space-y-3">
                 {pillar.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-3">
@@ -161,9 +161,9 @@ const FantasyAppCertificationPillars = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Gradient Border */}
-              <div className={`h-1 bg-gradient-to-r ${pillar.color} rounded-full mt-6`}></div>
+              <div
+                className={`h-1 bg-gradient-to-r ${pillar.color} rounded-full mt-6`}
+              ></div>
             </motion.div>
           ))}
         </div>
@@ -178,15 +178,18 @@ const FantasyAppCertificationPillars = () => {
         >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Ready to Get Your Fantasy Sports App Certified?
+              Does Your App Pass All Six Pillars?
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join the ranks of certified fantasy sports platforms and build trust with your players 
-              through our comprehensive certification program.
+              We only certify fantasy sports apps that meet all six of our
+              verification pillars. Begin the evaluation process today and earn
+              the mark of trust for your platform.
             </p>
-            <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-              Start Certification Process
-            </button>
+            <Link href="/contact-us">
+              <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                Start Certification Process
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>
@@ -195,4 +198,3 @@ const FantasyAppCertificationPillars = () => {
 };
 
 export default FantasyAppCertificationPillars;
-

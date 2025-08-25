@@ -53,7 +53,7 @@ const CaseStudiesOverviewSection = () => {
     },
     {
       icon: FaGlobe,
-      title: "Global Impact",
+      title: "Global Service Delivery",
       description:
         "Successfully served clients across 25+ countries with localized testing solutions and support",
       metric: "25+ Countries",
@@ -154,7 +154,7 @@ const CaseStudiesOverviewSection = () => {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">15+</div>
-              <p className="text-blue-100 text-sm">Industries Served</p>
+              <p className="text-blue-100 text-sm">Global Service Delivery</p>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">14+</div>

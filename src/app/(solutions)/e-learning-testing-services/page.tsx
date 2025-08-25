@@ -5,7 +5,6 @@ import ElearningTestingServicesSection from "@/components/sections/ElearningTest
 import ElearningPlatformsSection from "@/components/sections/ElearningPlatformsSection";
 import ElearningAccessibilitySection from "@/components/sections/ElearningAccessibilitySection";
 import ElearningPerformanceSection from "@/components/sections/ElearningPerformanceSection";
-import ElearningCaseStudiesSection from "@/components/sections/ElearningCaseStudiesSection";
 import ElearningFAQSection from "@/components/sections/ElearningFAQSection";
 import ElearningContactSection from "@/components/sections/ElearningContactSection";
 import { Metadata } from "next";
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: "https://testriq.com/e-learning-testing-services",
   },
@@ -105,7 +104,7 @@ const ElearningTestingPage: React.FC = () => {
       <ElearningPlatformsSection />
       <ElearningAccessibilitySection />
       <ElearningPerformanceSection />
-      <ElearningCaseStudiesSection />
+      {/* <ElearningCaseStudiesSection /> */}
       <ElearningFAQSection />
       <ElearningContactSection />
     </main>

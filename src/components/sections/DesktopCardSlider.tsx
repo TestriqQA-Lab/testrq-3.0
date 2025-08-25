@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CardSlider() {
@@ -31,6 +32,7 @@ export default function CardSlider() {
       colorlight: "blue-50",
       progress: "15%",
       keyTitle: "Key Activities",
+      action: "/requirement-analysis-in-desktop-testing-foundation-for-reliable-qa",
       keys: [
         { key: "Requirement gathering and documentation" },
         { key: "Platform and OS compatibility analysis" },
@@ -58,6 +60,7 @@ export default function CardSlider() {
       colorlight: "green-50",
       progress: "30%",
       keyTitle: "Key Activities",
+      action: "/environment-setup-in-desktop-testing-why-its-the-foundation-of-reliable-qa",
       keys: [
         { key: "Virtual machine and OS setup" },
         { key: "User role configuration" },
@@ -85,6 +88,7 @@ export default function CardSlider() {
       colorlight: "purple-50",
       progress: "60%",
       keyTitle: "Key Activities",
+      action: "/functional-regression-testing-for-desktop-apps-ensuring-quality-at-every-update",
       keys: [
         { key: "Feature validation and test execution" },
         { key: "Module-wise testing of components" },
@@ -112,6 +116,7 @@ export default function CardSlider() {
       colorlight: "red-50",
       progress: "80%",
       keyTitle: "Key Activities",
+      action: "/bug-logging-reporting-in-desktop-testing-best-practices-tools",
       keys: [
         { key: "Issue identification and categorization" },
         { key: "Detailed bug reporting with logs" },
@@ -265,15 +270,17 @@ export default function CardSlider() {
                 ></div>
               </div>
             </div>
-            <button
-              className={`mt-4 w-full bg-${
+            <div className="flex justify-center text-center">
+              <Link href={`blog/post${cards[activeCard].action}`}
+              className={`mt-4 w-md bg-${
                 cards[activeCard].colordark
               } text-white py-2 rounded-lg hover:bg-${cards[
                 activeCard
               ].colordark.replace("500", "600")}`}
             >
               Learn More About {cards[activeCard].title}
-            </button>
+            </Link>
+            </div>
           </div>
         </div>
 

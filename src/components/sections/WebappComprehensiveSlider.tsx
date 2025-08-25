@@ -55,7 +55,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-blue-100/80",
     elColor: "bg-blue-400",
     btnText: "Learn More About Security Testing",
-    action:"/security-testing"
+    action:"/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities"
   },
   {
     title: "Performance Testing",
@@ -82,7 +82,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-green-100/80",
     elColor: "bg-green-400",
     btnText: "Learn More About Performance Testing",
-    action:"/performance-testing-services"
+    action:"/advanced-web-app-performance-testing-techniques-for-load-stress-scalability"
   },
   {
     title: "Usability Testing",
@@ -109,7 +109,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-yellow-100/80",
     elColor: "bg-yellow-400",
     btnText: "Learn More About Usability Testing",
-    action:"#"
+    action:"/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates"
   },
   {
     title: "Responsive Testing",
@@ -136,7 +136,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-purple-100/80",
     elColor: "bg-purple-400",
     btnText: "Learn More About Responsive Testing",
-    action:"#"
+    action:"/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility"
   },
   {
     title: "Integration Testing",
@@ -163,7 +163,7 @@ const testingServices: FeatureSet[] = [
     bgColor: "bg-red-100/80",
     elColor: "bg-red-400",
     btnText: "Learn More About Integration Testing",
-    action:"#"
+    action:"/integration-testing-for-web-application-ensuring-seamless-system-interactions"
   },
 ];
 
@@ -181,7 +181,7 @@ export default function ComprehensiveTestingSlider() {
   return (
     <div className="relative px-8 md:px-12 lg:px-24 py-16 w-full mx-auto bg-[theme(color.background.gray)]">
       <div
-        className={`rounded-3xl p-8 md:p-12 text-black transition-all duration-300 ${current.bgColor}`}
+        className={`rounded-3xl p-6 lg:p-8 md:p-12 text-black transition-all duration-300 ${current.bgColor}`}
       >
         {/* Navigation */}
         <div className="flex justify-between items-center">
@@ -214,7 +214,7 @@ export default function ComprehensiveTestingSlider() {
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
           {/* Left Column */}
-          <div>
+          <div className="flex flex-col justify-center md:justify-start">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-16 h-16 rounded-xl bg-white/20 flex items-center justify-center text-3xl">
                 {current.icon}
@@ -233,13 +233,13 @@ export default function ComprehensiveTestingSlider() {
               ))}
             </ul>
 
-            <Link href={current.action} className="mt-14 bg-white text-black font-semibold px-6 py-3 rounded-xl">
+            <Link href={`blog/post${current.action}`} className="mt-14 bg-white text-center text-sm lg:text-md xl:text-lg text-black font-semibold py-3 rounded-xl">
               {current.btnText || current.learnMoreLabel}
             </Link>
           </div>
 
           {/* Right Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <div className="rounded-xl p-6 bg-white/10">
               <h4 className="text-xl font-bold mb-4">Service Statistics</h4>
               

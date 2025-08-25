@@ -31,7 +31,6 @@ const ETLCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's ETL testing ensured our financial data pipelines meet strict regulatory requirements while maintaining real-time performance.",
-      author: "Sarah Chen, Chief Data Officer",
       timeline: [
         "Requirements & Compliance Analysis",
         "ETL Pipeline Testing",
@@ -60,7 +59,6 @@ const ETLCaseStudies: React.FC = () => {
       ],
       testimonial:
         "The comprehensive ETL testing approach transformed our data integration capabilities and accelerated our analytics insights significantly.",
-      author: "Michael Rodriguez, VP of Data Analytics",
       timeline: [
         "Multi-source Analysis",
         "Integration Testing",
@@ -85,7 +83,7 @@ const ETLCaseStudies: React.FC = () => {
       ],
       testimonial:
         "Testriq's expertise in healthcare ETL testing ensured our data migration was secure, compliant, and completed ahead of schedule.",
-      author: "Dr. Jennifer Walsh, CTO",
+
       timeline: [
         "HIPAA Compliance Analysis",
         "Security Testing",
@@ -207,9 +205,6 @@ const ETLCaseStudies: React.FC = () => {
               <div className="bg-gray-50 rounded-xl p-6 border-l-4 border-l-green-500">
                 <p className="text-gray-700 italic mb-3">
                   &quot;{currentCase.testimonial}&quot;
-                </p>
-                <p className={`font-semibold ${colorClasses.text}`}>
-                  — {currentCase.author}
                 </p>
               </div>
             </div>

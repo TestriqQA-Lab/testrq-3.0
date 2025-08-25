@@ -1,10 +1,21 @@
 "use client";
 import { FaNetworkWired, FaWifi } from "react-icons/fa";
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowRight, FaPlay, FaCertificate } from "react-icons/fa";
 import Link from "next/link";
+import Lightbox from "../VideoLightBox"; 
 
 const IoTTestingHeroSection: React.FC = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
   return (
     <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
@@ -38,7 +49,7 @@ const IoTTestingHeroSection: React.FC = () => {
                 <FaArrowRight className="w-4 h-5" />
               </button>
             </Link>
-            <button className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
+            <button onClick={openLightbox} className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
               <FaPlay className="w-4 h-4" />
               Watch Demo
             </button>
@@ -47,7 +58,7 @@ const IoTTestingHeroSection: React.FC = () => {
           {/* Stats */}
           <div className="flex flex-wrap justify-center xl:justify-start gap-6">
             {[
-              ["500+", "IoT Devices Tested"],
+              ["30+", "IoT Devices Tested"],
               ["99.7%", "Issue Detection Rate"],
               ["36 hr", "Average Turnaround"],
               ["24/7", "Support Available"],
@@ -195,6 +206,8 @@ const IoTTestingHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

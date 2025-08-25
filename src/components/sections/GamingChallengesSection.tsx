@@ -1,15 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
-import { 
-  FaGamepad, 
-  FaBug, 
-  FaMobile, 
+import {
+  FaGamepad,
+  FaBug,
+  FaMobile,
   FaUsers,
   FaRocket,
   FaShieldAlt,
   FaClock,
-  FaChartLine,
   FaExclamationTriangle,
   FaArrowRight
 } from "react-icons/fa";
@@ -24,7 +24,8 @@ const GamingChallengesSection: React.FC = () => {
       stats: "73% of players uninstall games after encountering major bugs",
       solution: "Comprehensive functional testing across all game scenarios and edge cases",
       color: "from-red-500 to-pink-600",
-      bgColor: "bg-red-50"
+      bgColor: "bg-red-50",
+      action: "/game-breaking-bugs-preparing-your-game-for-a-smooth-launch"
     },
     {
       icon: FaClock,
@@ -34,7 +35,8 @@ const GamingChallengesSection: React.FC = () => {
       stats: "60% of players abandon games with consistent performance issues",
       solution: "Advanced performance testing and optimization across all target devices",
       color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50"
+      bgColor: "bg-orange-50",
+      action: "/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms"
     },
     {
       icon: FaMobile,
@@ -44,7 +46,8 @@ const GamingChallengesSection: React.FC = () => {
       stats: "45% of mobile games fail on specific device configurations",
       solution: "Comprehensive cross-platform testing on real devices and configurations",
       color: "from-blue-500 to-cyan-600",
-      bgColor: "bg-blue-50"
+      bgColor: "bg-blue-50",
+      action: "/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices"
     },
     {
       icon: FaUsers,
@@ -54,7 +57,8 @@ const GamingChallengesSection: React.FC = () => {
       stats: "Multiplayer issues cause 40% higher player dropout rates",
       solution: "Specialized multiplayer testing with network simulation and load testing",
       color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50"
+      bgColor: "bg-purple-50",
+      action: "/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking"
     },
     {
       icon: FaShieldAlt,
@@ -64,7 +68,8 @@ const GamingChallengesSection: React.FC = () => {
       stats: "Gaming industry faces 167% more cyberattacks than average",
       solution: "Security testing including anti-cheat validation and penetration testing",
       color: "from-green-500 to-teal-600",
-      bgColor: "bg-green-50"
+      bgColor: "bg-green-50",
+      action: "/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches"
     },
     {
       icon: FaRocket,
@@ -74,36 +79,11 @@ const GamingChallengesSection: React.FC = () => {
       stats: "67% of game launches experience critical issues in first week",
       solution: "Pre-launch stress testing and comprehensive release validation",
       color: "from-indigo-500 to-purple-600",
-      bgColor: "bg-indigo-50"
+      bgColor: "bg-indigo-50",
+      action: "/launch-day-failures-preventing-critical-issues-on-game-release"
     }
   ];
 
-  const challengeStats = [
-    {
-      icon: FaExclamationTriangle,
-      value: "73%",
-      label: "Player Uninstall Rate",
-      description: "Due to game-breaking bugs"
-    },
-    {
-      icon: FaChartLine,
-      value: "$2.1B",
-      label: "Annual Revenue Loss",
-      description: "From poor game quality"
-    },
-    {
-      icon: FaClock,
-      value: "40%",
-      label: "Higher Dropout Rate",
-      description: "In games with multiplayer issues"
-    },
-    {
-      icon: FaShieldAlt,
-      value: "167%",
-      label: "More Cyberattacks",
-      description: "Than other industries"
-    }
-  ];
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
@@ -126,20 +106,6 @@ const GamingChallengesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Challenge Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {challengeStats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-brand-blue to-sky-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <stat.icon className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">{stat.label}</div>
-              <div className="text-sm text-gray-600">{stat.description}</div>
-            </div>
-          ))}
-        </div>
-
         {/* Challenges Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {challenges.map((challenge, index) => (
@@ -147,33 +113,35 @@ const GamingChallengesSection: React.FC = () => {
               <div className={`w-16 h-16 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                 <challenge.icon className="w-8 h-8 text-white" />
               </div>
-              
+
               <h3 className="text-xl font-bold text-gray-900 mb-4">{challenge.title}</h3>
-              
+
               <div className="space-y-4">
                 <div>
                   <h4 className="text-sm font-semibold text-red-600 mb-2">Problem:</h4>
                   <p className="text-gray-700 text-sm">{challenge.problem}</p>
                 </div>
-                
+
                 <div>
                   <h4 className="text-sm font-semibold text-orange-600 mb-2">Impact:</h4>
                   <p className="text-gray-700 text-sm">{challenge.impact}</p>
                 </div>
-                
+
                 <div>
                   <h4 className="text-sm font-semibold text-green-600 mb-2">Stats:</h4>
                   <p className="text-gray-700 text-sm">{challenge.stats}</p>
                 </div>
-                
+
                 <div>
                   <h4 className="text-sm font-semibold text-green-600 mb-2">Our Solution:</h4>
                   <p className="text-gray-700 text-sm">{challenge.solution}</p>
                 </div>
               </div>
-              
-              <div className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors">
-                Learn More <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+
+              <div className="mt-6 pt-4 border-t border-gray-200">
+                <Link href={`blog/post${challenge.action}`} className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors">
+                  Learn More <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           ))}
@@ -189,14 +157,14 @@ const GamingChallengesSection: React.FC = () => {
               Don&apos;t Let These Challenges Ruin Your Game Launch
             </h3>
             <p className="mb-8 text-lg leading-relaxed">
-              Our comprehensive gaming testing methodology addresses all these critical challenges 
-              before they impact your players. From performance optimization to security validation, 
+              Our comprehensive gaming testing methodology addresses all these critical challenges
+              before they impact your players. From performance optimization to security validation,
               we ensure your game delivers the exceptional experience players expect.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="text-center p-4 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
-                <div className="text-2xl font-bold mb-2">500+</div>
+                <div className="text-2xl font-bold mb-2">50+</div>
                 <div className=" text-sm">Games Tested</div>
               </div>
               <div className="text-center p-4 text-brand-blue bg-white bg-opacity-10 rounded-2xl">
@@ -209,14 +177,6 @@ const GamingChallengesSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
-                Get Gaming Testing Quote
-              </button>
-              <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
-                View Gaming Case Studies
-              </button>
-            </div>
           </div>
         </div>
       </div>

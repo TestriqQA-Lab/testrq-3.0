@@ -13,6 +13,7 @@ import {
   Award
 } from 'lucide-react';
 import { CityData } from '@/app/lib/CityData';
+import Link from 'next/link';
 
 interface CityTestingHeroSectionProps {
   cityData: CityData;
@@ -68,9 +69,9 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <button className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
+              <Link href="/contact-us" className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
                 Schedule Consultation
-              </button>
+              </Link>
             </div>
 
             {/* Contact Info */}

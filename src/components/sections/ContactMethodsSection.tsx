@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   FaCalendarAlt,
   FaPhone,
@@ -12,29 +12,22 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
   FaVideo,
-  FaHeadset,
   FaFacebook,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
+import Image from "next/image";
+import CalendlyImg from "../../../public/Testriq-Calendly.png";
 
 const ContactMethodsSection: React.FC = () => {
-  const [selectedMeetingUrl, setSelectedMeetingUrl] = useState<string>(
-    "https://calendly.com/jayeshmistry-testriq/30-minute-meeting"
-  );
-
-  const handleMeetings = (duration: string) => {
-    setSelectedMeetingUrl(
-      `https://calendly.com/jayeshmistry-testriq/${duration}`
-    );
-  };
+  const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min";
 
   const contactMethods = [
     {
       icon: FaCalendarAlt,
       title: "Schedule a Meeting",
       description: "Book a personalized consultation with our QA experts",
-      details: "Available slots: Mon-Fri, 9 AM - 6 PM EST",
+      details: "Available slots: Mon-Fri, 9 AM - 6 PM IST",
       value: "Book Now",
       action: "#calendly-section",
       color: "from-purple-500 to-purple-700",
@@ -44,7 +37,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaPhone,
       title: "Phone Support",
       description: "Speak directly with our team for immediate assistance",
-      details: "(+91) 915-2929-343 • Mon-Fri, 9 AM - 6 PM EST",
+      details: "(+91) 915-2929-343 • Mon-Fri, 9 AM - 6 PM IST",
       value: "Call Now",
       action: "tel:+919152929343",
       color: "from-green-500 to-green-700",
@@ -74,7 +67,7 @@ const ContactMethodsSection: React.FC = () => {
       icon: FaComments,
       title: "Live Chat",
       description: "Get instant answers to your testing questions",
-      details: "Available Mon-Fri, 8 AM - 8 PM EST",
+      details: "Available Mon-Fri, 8 AM - 8 PM IST",
       value: "Start Chat",
       action: "#",
       color: "from-teal-500 to-teal-700",
@@ -86,7 +79,7 @@ const ContactMethodsSection: React.FC = () => {
       description: "Quick questions and updates via WhatsApp",
       details: "(+91) 915-2929-343 • Business hours only",
       value: "Message Us",
-      action: "#",
+      action: "https://wa.me/9152929343",
       color: "from-green-400 to-green-600",
       highlight: false,
     },
@@ -120,8 +113,8 @@ const ContactMethodsSection: React.FC = () => {
   ];
 
   const officeHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM EST", available: true },
-    { day: "Saturday", hours: "10:00 AM - 4:00 PM EST", available: true },
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM IST", available: true },
+    { day: "Saturday", hours: "10:00 AM - 4:00 PM IST", available: true },
     { day: "Sunday", hours: "Emergency Support Only", available: false },
   ];
 
@@ -204,79 +197,71 @@ const ContactMethodsSection: React.FC = () => {
         {/* Calendly Integration Section */}
         <div
           id="calendly-section"
-          className="bg-white rounded-2xl shadow-lg p-8 mb-16 border border-gray-100"
+          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Schedule Your Meeting
+          {/* Header Section */}
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              Book Your QA Consultation
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose a time that works best for you—our QA experts are ready to
-              discuss your software testing needs and provide personalized QA
-              recommendations across automation, manual, API, and performance
-              testing services.
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Connect with our QA experts to explore tailored solutions for your
+              software testing needs, including automation, manual, API, and
+              performance testing. Pick a time that suits you!
             </p>
           </div>
 
-          {/* Meeting Types */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Meeting Type */}
+          <div className="grid grid-cols-1 gap-6 mb-12 max-w-5xl mx-auto">
             <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("15-minute-meeting")}
+              className="group relative text-center p-6 bg-white rounded-2xl shadow-md cursor-pointer hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100"
+              // onClick={() => window.location.href = 'https://calendly.com/your-link/deep-dive'} // Replace with actual URL
             >
-              <FaComments className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Quick Consultation
-              </h4>
-              <p className="text-sm text-gray-600 mb-2">15 minutes</p>
-              <p className="text-xs text-gray-500">
-                Perfect for initial questions
-              </p>
-            </div>
-
-            <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("30-minute-meeting")}
-            >
-              <FaVideo className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300" />
+              <FaVideo className="w-10 h-10 text-blue-600 mx-auto mb-4" />
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">
                 Deep Dive Session
               </h4>
-              <p className="text-sm text-gray-600 mb-2">30 minutes</p>
-              <p className="text-xs text-gray-500">
-                Detailed project discussion
+              <p className="text-sm text-gray-600 mb-2 font-medium">
+                30 minutes
               </p>
-            </div>
-
-            <div
-              className="text-center p-6 bg-gray-50 rounded-xl cursor-pointer ring-1 ring-brand-blue hover:bg-sky-100 hover:ring-3 hover: transition-all duration-200 ease-in-out"
-              onClick={() => handleMeetings("45-minute-meeting")}
-            >
-              <FaHeadset className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Team Workshop
-              </h4>
-              <p className="text-sm text-gray-600 mb-2">45 minutes</p>
-              <p className="text-xs text-gray-500">Interactive team session</p>
+              <p className="text-sm text-gray-500">
+                In-depth discussion for your project needs
+              </p>
+              <div className="mt-4">
+                <button className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
+                  Schedule Now
+                </button>
+              </div>
             </div>
           </div>
 
-          {selectedMeetingUrl && (
-            // <div>
-            //   <div className="calendly-inline-widget min-w-[320px] h-[700px]" data-url={selectedMeetingUrl} ></div>
-            //   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            // </div>
-
-            <div className="calendly-container min-w-[320px] h-[700px]">
-              <InlineWidget
-                url={selectedMeetingUrl}
-                styles={{
-                  height: "700px",
-                  minWidth: "320px",
-                }}
+          {/* Calendly Widget and Image */}
+          <div className="flex flex-col lg:flex-row -gap-2 items-center">
+            <div className="w-full lg:w-1/2">
+              {selectedMeetingUrl && (
+                <div className="calendly-container w-full h-[600px] md:h-[1080px] lg:h-[700px] xl:h-[1110px] max-w-[1000px] mx-auto rounded-2xl lg:rounded-l-2xl lg:rounded-r-none overflow-hidden shadow-lg">
+                  <InlineWidget
+                    url={selectedMeetingUrl}
+                    styles={{
+                      height: "100%",
+                      width: "100%",
+                    }}
+                    className="w-full h-full"
+                  />
+                </div>
+              )}
+            </div>
+            <div className="w-full lg:w-1/2 hidden lg:block">
+              <Image
+                src={CalendlyImg}
+                alt="QA Consultation Illustration"
+                width={600}
+                height={600}
+                className="rounded-r-2xl shadow-md object-cover"
               />
             </div>
-          )}
+          </div>
         </div>
 
         {/* Office Hours & Social Links */}

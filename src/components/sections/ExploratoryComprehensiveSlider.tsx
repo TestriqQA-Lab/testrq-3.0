@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaSearch, FaRoute, FaEye, FaBug, FaUsers, FaLightbulb } from "react-icons/fa";
 
@@ -21,7 +22,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Reproducible test scenarios",
         "Coverage tracking",
         "Risk-based prioritization"
-      ]
+      ],
+      action: "/session-based-exploratory-testing-balancing-structure-with-creative-freedom"
     },
     {
       id: "user-journey-exploration",
@@ -37,7 +39,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Cross-platform journeys",
         "Integration point testing",
         "Workflow optimization"
-      ]
+      ],
+      action: "/user-journey-exploration-discovering-bugs-across-end-to-end-scenarios"
     },
     {
       id: "usability-investigation",
@@ -53,7 +56,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Navigation flow analysis",
         "Content clarity testing",
         "Mobile usability review"
-      ]
+      ],
+      action: "/usability-investigation-how-exploratory-testing-elevates-ux"
     },
     {
       id: "bug-discovery",
@@ -69,7 +73,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Performance edge cases",
         "Security vulnerability hunting",
         "Integration failure scenarios"
-      ]
+      ],
+      action: "/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing"
     },
     {
       id: "persona-based-testing",
@@ -85,7 +90,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Feature accessibility",
         "User preference validation",
         "Context-specific scenarios"
-      ]
+      ],
+      action: "/persona-based-testing-enhancing-qa-with-real-user-simulation"
     },
     {
       id: "heuristic-evaluation",
@@ -101,7 +107,8 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
         "Error prevention assessment",
         "User control analysis",
         "Help and documentation review"
-      ]
+      ],
+      action: "/heuristic-evaluation-in-testing-applying-ux-principles-to-find-flaws"
     }
   ];
 
@@ -193,9 +200,9 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <button className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(explorationTypes[activeTab].color)} hover:shadow-lg`}>
+              <Link href={`blog/post${explorationTypes[activeTab].action}`} className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(explorationTypes[activeTab].color)} hover:shadow-lg`}>
                 Learn More
-              </button>
+              </Link>
             </div>
 
             {/* Right Content - Visualization */}

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   FaRocket,
   FaCheckCircle,
@@ -12,8 +12,20 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
+import Lightbox from "../VideoLightBox"; 
 
 const LaunchFastQAHeroSection: React.FC = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
+  // Function to handle the lightbox open/close
+  const openLightbox = () => {
+    setIsLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsLightboxOpen(false);
+  };
+  
   return (
     <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -46,7 +58,7 @@ const LaunchFastQAHeroSection: React.FC = () => {
                   <FaArrowRight className="inline ml-2" />
                 </button>
               </Link>
-              <button className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+              <button onClick={openLightbox} className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
                 <FaPlay className="w-4 h-4 mr-2" />
                 Watch Demo
               </button>
@@ -211,6 +223,8 @@ const LaunchFastQAHeroSection: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Lightbox Modal */}
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
     </section>
   );
 };

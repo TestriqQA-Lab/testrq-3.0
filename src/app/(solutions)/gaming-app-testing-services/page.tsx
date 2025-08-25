@@ -5,7 +5,6 @@ import GamingTestingServicesSection from "@/components/sections/GamingTestingSer
 import GamingTestingProcessSection from "@/components/sections/GamingTestingProcessSection";
 import GamingPlatformsSection from "@/components/sections/GamingPlatformsSection";
 import GamingToolsFrameworkSection from "@/components/sections/GamingToolsFrameworkSection";
-import GamingCaseStudiesSection from "@/components/sections/GamingCaseStudiesSection";
 import GamingROISection from "@/components/sections/GamingROISection";
 import GamingFAQSection from "@/components/sections/GamingFAQSection";
 import GamingContactSection from "@/components/sections/GamingContactSection";
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/gaming-app-testing-services',
   },
@@ -100,7 +99,7 @@ const GamingTestingPage: React.FC = () => {
       <GamingTestingProcessSection />
       <GamingPlatformsSection />
       <GamingToolsFrameworkSection />
-      <GamingCaseStudiesSection />
+      {/* <GamingCaseStudiesSection /> */}
       <GamingROISection />
       <GamingFAQSection />
       <GamingContactSection />

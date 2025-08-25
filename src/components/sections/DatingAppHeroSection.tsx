@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -10,34 +10,37 @@ import {
   TrendingUp,
   Eye,
 } from "lucide-react";
+import Link from "next/link";
+import Lightbox from "../VideoLightBox";
 
 const DatingAppHeroSection = () => {
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   const trustMetrics = [
     {
-      number: "500+",
-      label: "Apps Certified",
+      label: "Expert-Backed Certification",
       icon: <Verified className="w-8 h-8" />,
       color: "text-blue-600",
     },
     {
-      number: "99.9%",
-      label: "Security Score",
+      label: "Advanced Security Standards",
       icon: <Shield className="w-8 h-8" />,
       color: "text-green-600",
     },
     {
-      number: "2x",
-      label: "Download Increase",
+      label: "Boost User Confidence",
       icon: <TrendingUp className="w-8 h-8" />,
       color: "text-purple-600",
     },
     {
-      number: "24/7",
-      label: "Monitoring",
+      label: "Continuous Safety Monitoring",
       icon: <Eye className="w-8 h-8" />,
       color: "text-orange-600",
     },
   ];
+
+  const openLightbox = () => setIsLightboxOpen(true);
+  const closeLightbox = () => setIsLightboxOpen(false);
 
   return (
     <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
@@ -53,7 +56,7 @@ const DatingAppHeroSection = () => {
           >
             <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
               <Shield className="w-4 h-4 mr-2" />
-              Trusted by 500+ Dating Apps Worldwide
+              The New Standard in Dating App Trust & Safety
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -65,13 +68,13 @@ const DatingAppHeroSection = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              The only dating app certification that users, investors, and app
-              stores actually trust. Join the elite league of verified dating
-              platforms.
+              Launch your dating platform with a seal of credibility. Our
+              certification helps you attract users, gain investor confidence,
+              and meet the highest safety standards from day one.
             </p>
           </motion.div>
 
-          {/* Trust Metrics */}
+          {/* Trust Points */}
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
             initial={{ opacity: 0, y: 40 }}
@@ -81,15 +84,14 @@ const DatingAppHeroSection = () => {
             {trustMetrics.map((metric, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100"
+                className="bg-white p-6 rounded-2xl shadow-lg border flex flex-col items-center border-gray-100"
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className={`${metric.color}`}>{metric.icon}</div>
-                <div className={`text-3xl font-bold ${metric.color} mb-2`}>
-                  {metric.number}
+                <div className={`${metric.color} mb-3`}>{metric.icon}</div>
+                <div className="text-lg font-semibold text-gray-800 leading-snug">
+                  {metric.label}
                 </div>
-                <div className="text-sm text-gray-600">{metric.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -101,19 +103,22 @@ const DatingAppHeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <motion.button
-              className="bg-brand-blue text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Get Certified Now
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </motion.button>
+            <Link href="/contact-us">
+              <motion.button
+                className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get Certified Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </motion.button>
+            </Link>
 
             <motion.button
-              className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
+              className="border-2 border-brand-blue cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={openLightbox}
             >
               <Play className="mr-2 w-5 h-5 text-brand-blue" />
               Watch Demo
@@ -121,6 +126,13 @@ const DatingAppHeroSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

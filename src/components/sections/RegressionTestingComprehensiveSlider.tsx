@@ -1,7 +1,16 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
-import { FaSyncAlt, FaBug, FaCheckCircle, FaCodeBranch, FaChartLine, FaCloud, FaFlask } from "react-icons/fa";
+import {
+  FaSyncAlt,
+  FaBug,
+  FaCheckCircle,
+  FaCodeBranch,
+  FaChartLine,
+  FaCloud,
+  FaFlask,
+} from "react-icons/fa";
 
 const RegressionTestingComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -13,15 +22,17 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       icon: <FaSyncAlt className="text-2xl" />,
       percentage: "95%",
       color: "blue",
-      description: "Automated regression testing for rapid and consistent validation",
+      description:
+        "Automated regression testing for rapid and consistent validation",
       features: [
         "Automated test suite execution",
         "Continuous integration support",
         "Parallel test execution",
         "Self-healing test scripts",
         "Comprehensive reporting",
-        "Cross-browser validation"
-      ]
+        "Cross-browser validation",
+      ],
+      action: "/automated-regression-testing-faster-smarter-qa-cycles",
     },
     {
       id: "manual-regression",
@@ -36,8 +47,9 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Edge case identification",
         "Visual regression testing",
         "Usability impact assessment",
-        "Business workflow validation"
-      ]
+        "Business workflow validation",
+      ],
+      action: "/manual-regression-testing-which-to-choose",
     },
     {
       id: "continuous-regression",
@@ -45,15 +57,17 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       icon: <FaCheckCircle className="text-2xl" />,
       percentage: "92%",
       color: "green",
-      description: "Continuous regression testing integrated with development workflows",
+      description:
+        "Continuous regression testing integrated with development workflows",
       features: [
         "CI/CD pipeline integration",
         "Automated trigger mechanisms",
         "Real-time feedback loops",
         "Build validation testing",
         "Deployment verification",
-        "Quality gate enforcement"
-      ]
+        "Quality gate enforcement",
+      ],
+      action: "/continuous-regression-testing-ensuring-quality-in-agile-devops",
     },
     {
       id: "impact-analysis",
@@ -61,15 +75,17 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       icon: <FaCodeBranch className="text-2xl" />,
       percentage: "96%",
       color: "orange",
-      description: "Intelligent impact analysis for optimized regression testing",
+      description:
+        "Intelligent impact analysis for optimized regression testing",
       features: [
         "Change impact assessment",
         "Test case prioritization",
         "Risk-based test selection",
         "Code coverage analysis",
         "Dependency mapping",
-        "Regression scope optimization"
-      ]
+        "Regression scope optimization",
+      ],
+      action: "/regression-impact-analysis-optimizing-test-coverage",
     },
     {
       id: "risk-based-regression",
@@ -77,15 +93,17 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       icon: <FaChartLine className="text-2xl" />,
       percentage: "94%",
       color: "teal",
-      description: "Risk-based approach to regression testing for maximum efficiency",
+      description:
+        "Risk-based approach to regression testing for maximum efficiency",
       features: [
         "Risk assessment matrix",
         "Critical path identification",
         "Business impact analysis",
         "Failure probability scoring",
         "Resource optimization",
-        "Strategic test planning"
-      ]
+        "Strategic test planning",
+      ],
+      action: "/risk-based-regression-testing-smarter-test-optimization",
     },
     {
       id: "cross-platform-regression",
@@ -93,26 +111,55 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       icon: <FaCloud className="text-2xl" />,
       percentage: "93%",
       color: "indigo",
-      description: "Cross-platform regression testing for comprehensive coverage",
+      description:
+        "Cross-platform regression testing for comprehensive coverage",
       features: [
         "Multi-browser testing",
         "Cross-device validation",
         "Operating system compatibility",
         "Mobile platform testing",
         "Cloud-based execution",
-        "Environment consistency"
-      ]
-    }
+        "Environment consistency",
+      ],
+      action:
+        "/cross-platform-regression-testing-ensuring-consistency-across-devices-os",
+    },
   ];
 
   const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: { bg: string; text: string; border: string } } = {
-      blue: { bg: "bg-blue-50", text: "text-blue-600", border: "border-blue-200" },
-      purple: { bg: "bg-purple-50", text: "text-purple-600", border: "border-purple-200" },
-      green: { bg: "bg-green-50", text: "text-green-600", border: "border-green-200" },
-      orange: { bg: "bg-orange-50", text: "text-orange-600", border: "border-orange-200" },
-      teal: { bg: "bg-teal-50", text: "text-teal-600", border: "border-teal-200" },
-      indigo: { bg: "bg-indigo-50", text: "text-indigo-600", border: "border-indigo-200" }
+    const colorMap: {
+      [key: string]: { bg: string; text: string; border: string };
+    } = {
+      blue: {
+        bg: "bg-blue-50",
+        text: "text-blue-600",
+        border: "border-blue-200",
+      },
+      purple: {
+        bg: "bg-purple-50",
+        text: "text-purple-600",
+        border: "border-purple-200",
+      },
+      green: {
+        bg: "bg-green-50",
+        text: "text-green-600",
+        border: "border-green-200",
+      },
+      orange: {
+        bg: "bg-orange-50",
+        text: "text-orange-600",
+        border: "border-orange-200",
+      },
+      teal: {
+        bg: "bg-teal-50",
+        text: "text-teal-600",
+        border: "border-teal-200",
+      },
+      indigo: {
+        bg: "bg-indigo-50",
+        text: "text-indigo-600",
+        border: "border-indigo-200",
+      },
     };
     return colorMap[color] || colorMap.blue;
   };
@@ -123,15 +170,17 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Regression Testing <span className="text-brand-blue">Expertise</span>
+            Regression Testing{" "}
+            <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our risk-based regression testing services tailored to safeguard software stability, prevent defects in critical workflows, and enable rapid, reliable releases through intelligent automation and continuous integration pipelines.
+            Explore our risk-based regression testing services tailored to
+            safeguard software stability, prevent defects in critical workflows,
+            and enable rapid, reliable releases through intelligent automation
+            and continuous integration pipelines.
           </p>
         </div>
 
@@ -144,13 +193,18 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                 <button
                   key={type.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
+                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${
+                    activeTab === index
                       ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                    }`}
+                  }`}
                 >
                   <div className="flex items-center justify-center space-x-2">
-                    <span className={activeTab === index ? colors.text : "text-gray-400"}>
+                    <span
+                      className={
+                        activeTab === index ? colors.text : "text-gray-400"
+                      }
+                    >
                       {type.icon}
                     </span>
                     <span className="hidden sm:inline">{type.title}</span>
@@ -167,35 +221,57 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
               return (
                 <div
                   key={type.id}
-                  className={`${activeTab === index ? "block" : "hidden"} transition-all duration-300`}
+                  className={`${
+                    activeTab === index ? "block" : "hidden"
+                  } transition-all duration-300`}
                 >
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div>
                       <div className="flex items-center space-x-4 mb-6">
-                        <div className={`w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center`}>
+                        <div
+                          className={`w-16 h-16 ${colors.bg} rounded-xl flex items-center justify-center`}
+                        >
                           <span className={colors.text}>{type.icon}</span>
                         </div>
                         <div>
-                          <h3 className="text-2xl font-bold text-gray-900">{type.title}</h3>
+                          <h3 className="text-2xl font-bold text-gray-900">
+                            {type.title}
+                          </h3>
                           <div className="flex items-center space-x-2 mt-2">
-                            <span className="text-sm text-gray-600">Success Rate:</span>
-                            <span className={`text-lg font-bold ${colors.text}`}>{type.percentage}</span>
+                            <span className="text-sm text-gray-600">
+                              Success Rate:
+                            </span>
+                            <span
+                              className={`text-lg font-bold ${colors.text}`}
+                            >
+                              {type.percentage}
+                            </span>
                           </div>
                         </div>
                       </div>
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <button className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link
+                        href={`blog/post${regressionTypes[activeTab].action}`}
+                        className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                      >
                         Learn More
-                      </button>
+                      </Link>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Key Features & Capabilities</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Key Features & Capabilities
+                      </h4>
                       <div className="grid grid-cols-1 gap-3">
                         {type.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <div className={`w-2 h-2 ${colors.bg} rounded-full`}></div>
+                          <div
+                            key={featureIndex}
+                            className="flex items-center space-x-3"
+                          >
+                            <div
+                              className={`w-2 h-2 bg-gray-400 rounded-full`}
+                            ></div>
                             <span className="text-gray-600">{feature}</span>
                           </div>
                         ))}
@@ -213,4 +289,3 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
 };
 
 export default RegressionTestingComprehensiveSlider;
-

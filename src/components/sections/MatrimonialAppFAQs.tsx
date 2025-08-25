@@ -3,43 +3,54 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import Link from "next/link";
 
 const MatrimonialAppFAQs = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "What is matrimonial app certification and why is it important?",
-      answer: "Matrimonial app certification is a comprehensive audit and validation process that ensures your platform meets international standards for security, privacy, quality, and user safety. It's important because it builds user trust, reduces security risks, ensures regulatory compliance, and gives you a competitive advantage in the market. Certified apps typically see 3x higher user trust and 45% better retention rates."
+      question:
+        "What is matrimonial app certification and why is it important?",
+      answer:
+        "Matrimonial app certification is a comprehensive audit and validation process that ensures your platform meets international standards for security, privacy, quality, and user safety. It's important because it builds user trust, reduces security risks, ensures regulatory compliance, and gives you a competitive advantage in the market. Certified apps typically see 3x higher user trust and 45% better retention rates.",
     },
     {
       question: "How long does the matrimonial app certification process take?",
-      answer: "The complete certification process typically takes 12-18 working days, depending on the complexity of your app and current compliance status. This includes initial assessment (2-3 days), comprehensive testing (7-10 days), security audit (3-5 days), and final certification issuance (1-2 days). We provide regular updates throughout the process and work efficiently to minimize any disruption to your operations."
+      answer:
+        "The complete certification process typically takes 12-18 working days, depending on the complexity of your app and current compliance status. This includes initial assessment (2-3 days), comprehensive testing (7-10 days), security audit (3-5 days), and final certification issuance (1-2 days). We provide regular updates throughout the process and work efficiently to minimize any disruption to your operations.",
     },
     {
       question: "What standards and regulations do you certify against?",
-      answer: "We certify against multiple international standards including ISO 27001 (Information Security Management), ISO 27701 (Privacy Information Management), GDPR (General Data Protection Regulation), CCPA (California Consumer Privacy Act), SOC 2 (Service Organization Control), and OWASP security guidelines. We also ensure compliance with regional data localization requirements and industry-specific matrimonial platform standards."
+      answer:
+        "We certify against multiple international standards including ISO 27001 (Information Security Management), ISO 27701 (Privacy Information Management), GDPR (General Data Protection Regulation), CCPA (California Consumer Privacy Act), SOC 2 (Service Organization Control), and OWASP security guidelines. We also ensure compliance with regional data localization requirements and industry-specific matrimonial platform standards.",
     },
     {
       question: "What types of testing are included in the certification?",
-      answer: "Our certification includes comprehensive testing across six key areas: Security Testing (vulnerability assessment, penetration testing, data encryption validation), Performance Testing (load testing, stress testing, optimization), Functional Testing (feature validation, user journey testing), Usability Testing (UX/UI assessment, accessibility compliance), API Testing (backend validation, integration testing), and Compliance Testing (regulatory requirement validation)."
+      answer:
+        "Our certification includes comprehensive testing across six key areas: Security Testing (vulnerability assessment, penetration testing, data encryption validation), Performance Testing (load testing, stress testing, optimization), Functional Testing (feature validation, user journey testing), Usability Testing (UX/UI assessment, accessibility compliance), API Testing (backend validation, integration testing), and Compliance Testing (regulatory requirement validation).",
     },
     {
       question: "How much does matrimonial app certification cost?",
-      answer: "Certification costs vary based on your app's complexity, current compliance status, and specific requirements. We offer flexible pricing packages starting from basic certification for new apps to comprehensive enterprise certification for established platforms. Contact us for a personalized quote based on your specific needs. Most clients see positive ROI within 3-6 months through increased user trust and reduced security risks."
+      answer:
+        "Certification costs vary based on your app's complexity, current compliance status, and specific requirements. We offer flexible pricing packages starting from basic certification for new apps to comprehensive enterprise certification for established platforms. Contact us for a personalized quote based on your specific needs. Most clients see positive ROI within 3-6 months through increased user trust and reduced security risks.",
     },
     {
       question: "Do you provide ongoing support after certification?",
-      answer: "Yes, we provide comprehensive ongoing support including continuous monitoring, regular compliance audits, security updates, and recertification services. Our support plans include 24/7 monitoring, quarterly compliance reviews, annual recertification, and immediate response to any security incidents. We also provide training for your team and help maintain your certification status as regulations evolve."
+      answer:
+        "Yes, we provide comprehensive ongoing support including continuous monitoring, regular compliance audits, security updates, and recertification services. Our support plans include 24/7 monitoring, quarterly compliance reviews, annual recertification, and immediate response to any security incidents. We also provide training for your team and help maintain your certification status as regulations evolve.",
     },
     {
       question: "Can you help with compliance for multiple regions?",
-      answer: "Absolutely. We specialize in multi-regional compliance and can help ensure your matrimonial app meets requirements across different jurisdictions including EU (GDPR), US (CCPA), India (data localization), and other regional regulations. Our team has expertise in international privacy laws and can guide you through the complexities of global compliance while maintaining a unified platform architecture."
+      answer:
+        "Absolutely. We specialize in multi-regional compliance and can help ensure your matrimonial app meets requirements across different jurisdictions including EU (GDPR), US (CCPA), India (data localization), and other regional regulations. Our team has expertise in international privacy laws and can guide you through the complexities of global compliance while maintaining a unified platform architecture.",
     },
     {
-      question: "What happens if issues are found during the certification process?",
-      answer: "If issues are identified during our assessment, we provide detailed remediation guidance and support to help you address them. Our team works closely with your developers to implement necessary fixes and improvements. We offer flexible timelines and can work in phases to address critical issues first. The certification process includes retesting after remediation to ensure all requirements are met before final certification is issued."
-    }
+      question:
+        "What happens if issues are found during the certification process?",
+      answer:
+        "If issues are identified during our assessment, we provide detailed remediation guidance and support to help you address them. Our team works closely with your developers to implement necessary fixes and improvements. We offer flexible timelines and can work in phases to address critical issues first. The certification process includes retesting after remediation to ensure all requirements are met before final certification is issued.",
+    },
   ];
 
   const toggleFAQ = (index: number) => {
@@ -57,9 +68,7 @@ const MatrimonialAppFAQs = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <span className="text-sm">
-              ● Frequently Asked Questions
-            </span>
+            <span className="text-sm">● Frequently Asked Questions</span>
           </div>
           <div className="flex items-center justify-center gap-3 mb-6">
             <HelpCircle className="w-8 h-8 text-brand-blue" />
@@ -69,7 +78,7 @@ const MatrimonialAppFAQs = () => {
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get answers to common questions about matrimonial app certification, 
+            Get answers to common questions about matrimonial app certification,
             our process, and how we can help secure your platform.
           </p>
         </motion.div>
@@ -99,7 +108,7 @@ const MatrimonialAppFAQs = () => {
                   )}
                 </div>
               </button>
-              
+
               <AnimatePresence>
                 {openFAQ === index && (
                   <motion.div
@@ -129,20 +138,23 @@ const MatrimonialAppFAQs = () => {
           className="text-center mt-12"
         >
           <div className="bg-gradient-to-r from-brand-blue to-blue-600 text-white rounded-xl p-8">
-            <h3 className="text-2xl font-bold mb-4">
-              Still Have Questions?
-            </h3>
+            <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Our certification experts are here to help. Schedule a free consultation 
-              to discuss your specific requirements and get personalized answers.
+              Our certification experts are here to help. Schedule a free
+              consultation to discuss your specific requirements and get
+              personalized answers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
-                Schedule Free Consultation
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
-                Contact Our Experts
-              </button>
+              <Link href="/contact-us#calendly-section">
+                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+                  Schedule Free Consultation
+                </button>
+              </Link>
+              <Link href="/contact-us">
+                <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#25A8E0] transition-colors duration-300">
+                  Contact Our Experts
+                </button>
+              </Link>
             </div>
           </div>
         </motion.div>
@@ -152,4 +164,3 @@ const MatrimonialAppFAQs = () => {
 };
 
 export default MatrimonialAppFAQs;
-

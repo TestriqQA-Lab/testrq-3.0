@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaBrain,
@@ -27,8 +28,9 @@ const AIComprehensiveSlider: React.FC = () => {
         "Model robustness validation",
       ],
       color: "purple",
-      gradient: "from-purple-500 to-purple-600",
+      gradientColor: "from-purple-500 to-purple-600",
       metric: "94% Accuracy",
+      action: "/model-validation-for-ai-applications"
     },
     {
       icon: <FaEye className="w-8 h-8" />,
@@ -42,8 +44,9 @@ const AIComprehensiveSlider: React.FC = () => {
         "Bias mitigation recommendations",
       ],
       color: "orange",
-      gradient: "from-orange-500 to-orange-600",
+      gradientColor: "from-orange-500 to-orange-600",
       metric: "Zero Bias Tolerance",
+      action: "/bias-fairness-testing-for-ai"
     },
     {
       icon: <FaEye className="w-8 h-8" />,
@@ -57,8 +60,9 @@ const AIComprehensiveSlider: React.FC = () => {
         "Explanation Quality",
       ],
       color: "blue",
-      gradient: "from-blue-500 to-blue-600",
+      gradientColor: "from-blue-500 to-blue-600",
       metric: "100% Transparency",
+      action: "/explainability-testing-in-ai"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
@@ -72,8 +76,9 @@ const AIComprehensiveSlider: React.FC = () => {
         "Resource Optimization",
       ],
       color: "green",
-      gradient: "from-green-500 to-green-600",
+      gradientColor: "from-green-500 to-green-600",
       metric: "Sub-second Response",
+      action: "/performance-testing-for-ai-applications"
     },
     {
       icon: <FaDatabase className="w-8 h-8" />,
@@ -87,8 +92,9 @@ const AIComprehensiveSlider: React.FC = () => {
         "Validation Rules",
       ],
       color: "indigo",
-      gradient: "from-indigo-500 to-indigo-600",
+      gradientColor: "from-indigo-500 to-indigo-600",
       metric: "100% Data Quality",
+      action: "/ai-testing-learning-guide"
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
@@ -102,10 +108,15 @@ const AIComprehensiveSlider: React.FC = () => {
         "Privacy protection validation",
       ],
       color: "red",
-      gradient: "from-red-500 to-red-600",
+      gradientColor: "from-red-500 to-red-600",
       metric: "100% Security Coverage",
+      action: "/ai-security-testing"
     },
   ];
+  // Function to move to the next tab
+  const nextTab = () => {
+    setActiveTab((prevTab) => (prevTab + 1) % testingTypes.length); // Loop back to the first tab when reaching the last one
+  };
 
   return (
     <section className="bg-gradient-to-br from-gray-50 to-purple-50 py-16 px-8 md:px-12 lg:px-24">
@@ -113,9 +124,7 @@ const AIComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">Comprehensive Testing Solutions</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Complete{" "}
@@ -130,57 +139,13 @@ const AIComprehensiveSlider: React.FC = () => {
           </p>
         </div>
 
-        {/* Interactive Neural Network Style Navigation */}
-        <div className="relative mb-12">
-          <div className="flex flex-wrap justify-center gap-4">
-            {testingTypes.map((type, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`relative px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === index
-                    ? `bg-gradient-to-r ${type.gradient} text-white shadow-lg`
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`${
-                      activeTab === index
-                        ? "text-white"
-                        : `text-${type.color}-500`
-                    }`}
-                  >
-                    {React.cloneElement(type.icon, { className: "w-5 h-5" })}
-                  </div>
-                  <div className="text-left">
-                    <div>{type.title}</div>
-                    <div
-                      className={`text-xs ${
-                        activeTab === index ? "text-white/80" : "text-gray-500"
-                      }`}
-                    >
-                      {type.metric}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Neural Connection Lines */}
-                {activeTab === index && (
-                  <div className="absolute inset-0 rounded-xl border-2 border-white/30 animate-pulse"></div>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Active Tab Content with AI-themed Design */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Side - Content */}
             <div className="space-y-6">
               <div
-                className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${testingTypes[activeTab].gradient} rounded-2xl text-white shadow-lg`}
+                className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} rounded-2xl text-white shadow-lg`}
               >
                 {testingTypes[activeTab].icon}
               </div>
@@ -217,12 +182,23 @@ const AIComprehensiveSlider: React.FC = () => {
                 ))}
               </div>
 
-              <button
-                className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
-              >
-                <span>Learn More</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+              <div className="mt-6 flex justify-between items-center">
+                <Link href={`blog/post${testingTypes[activeTab].action}`}
+                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                >
+                  <span>Learn More</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </Link>
+
+                {/* Next Button */}
+                <button
+                  className="px-6 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  onClick={nextTab}
+                >
+                  Next
+                </button>
+
+              </div>
             </div>
 
             {/* Right Side - AI Model Visualization */}

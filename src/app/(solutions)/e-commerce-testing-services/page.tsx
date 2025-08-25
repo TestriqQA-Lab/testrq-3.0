@@ -4,7 +4,6 @@ import EcommerceChallengesSection from "@/components/sections/EcommerceChallenge
 import EcommerceTestingServicesSection from "@/components/sections/EcommerceTestingServicesSection";
 import EcommerceTestingProcessSection from "@/components/sections/EcommerceTestingProcessSection";
 import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsSection";
-import EcommerceCaseStudiesSection from "@/components/sections/EcommerceCaseStudiesSection";
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
 import { Metadata } from "next";
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testrq-3-0.vercel.app/'),
+  metadataBase: new URL('https://testriq.com/'),
   alternates: {
     canonical: 'https://testriq.com/e-commerce-testing-services',
   },
@@ -96,7 +95,7 @@ const EcommerceTestingPage: React.FC = () => {
       <EcommerceTestingServicesSection />
       <EcommerceTestingProcessSection />
       <EcommercePlatformsSection />
-      <EcommerceCaseStudiesSection />
+      {/* <EcommerceCaseStudiesSection /> */}
       <EcommerceFAQSection />
       <EcommerceContactSection />
     </main>

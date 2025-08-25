@@ -9,48 +9,39 @@ const DatingAppFAQs = () => {
 
   const faqs = [
     {
-      question:
-        "How long does the dating app security certification process take?",
+      question: "What does the dating app certification process involve?",
       answer:
-        "The timeline varies by plan: Starter (2-3 weeks), Professional (3-4 weeks), and Enterprise (4-6 weeks). We provide regular updates and maintain clear communication throughout the process. Our streamlined approach ensures faster certification compared to traditional security audits.",
+        "We review your app against our six key pillars of trust and safety, including security, privacy, user protection, content integrity, compliance, and operational transparency. Certification is granted only when all six pillars are fully met.",
     },
     {
-      question:
-        "What happens if my dating app doesn't pass the initial security audit?",
+      question: "Do you help apps improve if they don't meet the six pillars?",
       answer:
-        "We provide detailed remediation guidance and work closely with your team to address any issues. Our goal is to help you achieve certification, not to fail you. We offer implementation support and re-testing at no additional cost for all identified vulnerabilities.",
+        "Yes. If your app falls short in any area, we provide clear, actionable recommendations so you can make the necessary changes before reapplying for certification.",
     },
     {
-      question: "Is the dating app certification recognized internationally?",
+      question: "Is this certification recognized outside my country?",
       answer:
-        "Yes, our certification is recognized globally and helps with compliance in major markets including US, EU, India, and APAC regions. We stay updated with international regulations like GDPR, CCPA, and other privacy laws affecting dating platforms.",
+        "Yes. Our six-pillar framework is based on globally accepted best practices, making it relevant for dating apps operating in multiple regions.",
     },
     {
-      question:
-        "Do you provide ongoing support after dating app certification?",
+      question: "What happens after my app is certified?",
       answer:
-        "Absolutely! We offer quarterly security reviews, ongoing monitoring, priority support, and help maintain your certification status. Our relationship doesn't end with certification - we're your long-term security partner.",
+        "Once certified, you’ll receive official documentation and the certification badge to display on your app and marketing materials. We also provide periodic reviews to ensure ongoing compliance.",
     },
     {
-      question:
-        "What makes TESTRIQ different from other dating app security auditors?",
+      question: "Do you work with all types of dating apps?",
       answer:
-        "We specialize exclusively in dating apps and understand the unique challenges of the industry. Our team has certified 500+ dating apps and we provide industry-specific insights, compliance frameworks, and solutions tailored for online dating platforms.",
+        "We work with both established platforms and startups, as long as they are committed to meeting all six pillars of trust and safety.",
     },
     {
-      question: "How does security certification improve dating app downloads?",
+      question: "What exactly are the six pillars of dating apps?",
       answer:
-        "Security-certified dating apps see 40% higher app store rankings, 65% better visibility, and 30% more organic downloads. Users are 78% more likely to download apps with visible security certifications, especially for sensitive platforms like dating apps.",
+        "The six pillars include: (1) Data Privacy & Security, (2) User Verification, (3) Content Moderation, (4) Fraud Prevention, (5) Compliance with Relevant Laws, and (6) Transparency & Accountability.",
     },
     {
-      question: "What security standards do you test for dating apps?",
+      question: "Do you guarantee app success after certification?",
       answer:
-        "We test against GDPR, CCPA, ISO 27001, SOC 2 Type II, and dating-specific security requirements including identity verification, content moderation, data encryption, fraud prevention, and user safety protocols.",
-    },
-    {
-      question: "Can small dating app startups afford security certification?",
-      answer:
-        "Yes! Our Starter plan at $2,999 is designed specifically for MVPs and small dating apps. This investment typically pays for itself through improved app store rankings, reduced rejection rates, and increased user trust within the first month.",
+        "Our role is to verify that your app meets the six pillars and issue certification. While this can strengthen user trust, we do not guarantee business performance.",
     },
   ];
 
@@ -59,16 +50,14 @@ const DatingAppFAQs = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <span className="text-sm">
-              ● Frequently Asked Questions
-            </span>
+            <span className="text-sm">● Frequently Asked Questions</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Frequently Asked <span className="text-brand-blue">Questions</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Everything you need to know about our dating app security
-            certification process
+            Learn how we verify dating apps against our six pillars and issue
+            certification
           </p>
         </div>
 

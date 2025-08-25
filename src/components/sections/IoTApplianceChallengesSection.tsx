@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaWifi,
@@ -24,7 +25,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "68% of IoT deployments face connectivity challenges",
       solution: "Comprehensive network testing across protocols, edge cases, and real-world conditions",
       color: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50"
+      bgColor: "bg-blue-50",
+      action: "/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks"
     },
     {
       icon: FaShieldAlt,
@@ -34,7 +36,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "IoT attacks increased by 300% in the last year",
       solution: "Advanced security testing including penetration testing and vulnerability assessments",
       color: "from-red-500 to-red-600",
-      bgColor: "bg-red-50"
+      bgColor: "bg-red-50",
+      action: "/iot-security-validation-protecting-devices-from-cyber-threats"
     },
     {
       icon: FaSync,
@@ -44,7 +47,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "45% of IoT projects fail due to data integration issues",
       solution: "End-to-end data flow testing and synchronization validation",
       color: "from-green-500 to-green-600",
-      bgColor: "bg-green-50"
+      bgColor: "bg-green-50",
+      action: "/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems"
     },
     {
       icon: FaBatteryHalf,
@@ -54,7 +58,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "Battery life issues affect 52% of IoT devices",
       solution: "Power consumption testing and optimization across usage scenarios",
       color: "from-orange-500 to-orange-600",
-      bgColor: "bg-orange-50"
+      bgColor: "bg-orange-50",
+      action: "/power-management-testing-optimizing-battery-life-for-iot-devices"
     },
     {
       icon: FaCloud,
@@ -64,7 +69,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "73% of IoT systems struggle with scale beyond 10K devices",
       solution: "Load testing and scalability validation for massive IoT deployments",
       color: "from-purple-500 to-purple-600",
-      bgColor: "bg-purple-50"
+      bgColor: "bg-purple-50",
+      action:"/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently"
     },
     {
       icon: FaCog,
@@ -74,7 +80,8 @@ const IoTChallengesSection: React.FC = () => {
       stats: "60% of IoT projects face interoperability challenges",
       solution: "Cross-platform compatibility testing and protocol validation",
       color: "from-teal-500 to-teal-600",
-      bgColor: "bg-teal-50"
+      bgColor: "bg-teal-50",
+      action: "/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices"
     }
   ];
 
@@ -190,10 +197,10 @@ const IoTChallengesSection: React.FC = () => {
                 </div>
 
                 {/* CTA */}
-                <button className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group`}>
+                <Link href={`blog/post${challenge.action}`} className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group`}>
                   Learn More
                   <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -216,7 +223,7 @@ const IoTChallengesSection: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 text-brand-blue gap-6 mb-8">
               <div className="text-center p-4 bg-white bg-opacity-10 rounded-2xl">
-                <div className="text-2xl font-bold mb-2">1000+</div>
+                <div className="text-2xl font-bold mb-2">30+</div>
                 <div className=" text-sm">IoT Devices Tested</div>
               </div>
               <div className="text-center p-4 bg-white text-brand-blue bg-opacity-10 rounded-2xl">
@@ -227,15 +234,6 @@ const IoTChallengesSection: React.FC = () => {
                 <div className="text-2xl font-bold mb-2">90%</div>
                 <div className="text-sm">Security Issue Reduction</div>
               </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
-              <button className="bg-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
-                Get IoT Testing Quote
-              </button>
-              <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                View IoT Case Studies
-              </button>
             </div>
           </div>
         </div>

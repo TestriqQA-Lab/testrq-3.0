@@ -139,7 +139,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${
                 hoveredCard === index ? "z-10" : ""
               }`}
               onMouseEnter={() => setHoveredCard(index)}
@@ -225,10 +225,10 @@ const ApiWhyChooseTestriq: React.FC = () => {
                     <p className="text-white/90 mb-4 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
-                    <button className="flex items-center gap-2 mx-auto bg-white/20 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
+                    <Link href="/contact-us" className="flex justify-center items-center gap-2 mx-auto bg-white/20 text-white px-4 py-2 rounded-lg font-semibold hover:bg-white/30 transition-colors duration-300 backdrop-blur-sm">
                       <span>Learn More</span>
                       <FaArrowRight className="w-4 h-4" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

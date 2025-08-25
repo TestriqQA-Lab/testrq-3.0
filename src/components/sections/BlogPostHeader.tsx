@@ -1,19 +1,18 @@
 "use client";
+// /home/ubuntu/updated_BlogPostHeader.tsx
 import Image from "next/image";
 import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
-  FaEye,
-  FaHeart,
-  FaShare,
-  FaBookmark,
   FaArrowLeft,
 } from "react-icons/fa";
 import Link from "next/link";
+import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
+import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
 
 interface BlogPost {
-  id: number;
+  id: string; // Changed from number to string
   title: string;
   excerpt: string;
   category: string;
@@ -27,7 +26,7 @@ interface BlogPost {
   views: string;
   likes: number;
   shares: number;
-  tags: string[];
+  tags: string[]; // Added missing tags property
 }
 
 interface BlogPostHeaderProps {
@@ -35,6 +34,9 @@ interface BlogPostHeaderProps {
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
+  const cleanExcerpt = decodeHtmlEntities(stripHtmlTags(post.excerpt)); // Strip HTML tags and decode entities from the excerpt
+  const decodedTitle = decodeHtmlEntities(post.title); // Decode HTML entities from the title
+
   return (
     <section className="bg-gradient-to-br from-gray-900 via-blue-950 to-gray-800 text-white py-16 px-8 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blurs */}
@@ -67,11 +69,11 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-white">
-              {post.title}
+              {decodedTitle}
             </h1>
 
             <p className="text-lg text-white/80 mb-8 leading-relaxed">
-              {post.excerpt}
+              {cleanExcerpt}
             </p>
 
             {/* Author + Meta */}
@@ -99,28 +101,11 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   <FaClock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <FaEye className="w-4 h-4" />
-                  <span>{post.views} views</span>
-                </div>
+                
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4">
-              <button className="flex items-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition">
-                <FaHeart className="w-4 h-4" />
-                <span>{post.likes}</span>
-              </button>
-              <button className="flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition">
-                <FaShare className="w-4 h-4" />
-                <span>{post.shares}</span>
-              </button>
-              <button className="flex items-center gap-2 px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition">
-                <FaBookmark className="w-4 h-4" />
-                <span>Save</span>
-              </button>
-            </div>
+           
           </div>
 
           {/* Right - Image */}
@@ -135,70 +120,21 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition">
-                  <span className="text-2xl">▶</span>
-                </button>
+                
               </div>
             </div>
 
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-white text-gray-900 p-4 rounded-xl shadow-lg">
-              <div className="text-2xl font-bold text-blue-600">
-                {post.views}
-              </div>
-              <div className="text-sm text-gray-700">Total Views</div>
-            </div>
-
-            <div className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-green-600 text-white p-4 rounded-xl shadow-lg">
-              <div className="text-2xl font-bold">{post.likes}</div>
-              <div className="text-sm">Likes</div>
-            </div>
           </div>
         </div>
 
-        {/* Tags */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-blue-200 font-medium">Tags:</span>
-            {post.tags.map((tag, index) => (
-              <Link
-                key={index}
-                href={`/blog/tag/${tag.toLowerCase()}`}
-                className="px-3 py-1 bg-white/10 text-blue-200 text-sm rounded-full hover:bg-white/20 transition"
-              >
-                #{tag}
-              </Link>
-            ))}
-          </div>
-        </div>
+        
 
-        {/* Share Section */}
-        <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="text-blue-200">Share this article:</span>
-            <div className="flex gap-3">
-              {[
-                { name: "Twitter", icon: "🐦", color: "bg-blue-400" },
-                { name: "LinkedIn", icon: "💼", color: "bg-blue-600" },
-                { name: "Facebook", icon: "📘", color: "bg-blue-700" },
-                { name: "Copy Link", icon: "🔗", color: "bg-gray-600" },
-              ].map((social) => (
-                <button
-                  key={social.name}
-                  className={`w-10 h-10 ${social.color} rounded-lg flex items-center justify-center text-white hover:scale-110 transition`}
-                  title={`Share on ${social.name}`}
-                >
-                  <span className="text-sm">{social.icon}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-blue-200 text-sm">Published on {post.date}</div>
-        </div>
+       
+        
       </div>
     </section>
   );
 };
 
 export default BlogPostHeader;
+

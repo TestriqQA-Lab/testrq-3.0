@@ -21,12 +21,12 @@ const DatingAppSixPillars = () => {
       icon: <Shield className="w-16 h-16" />,
       title: "Identity Verification",
       description:
-        "Advanced AI-powered profile authentication with biometric matching and document verification",
+        "We verify that the app implements advanced AI-powered profile authentication with biometric matching and document verification.",
       benefits: [
-        "Reduce fake profiles by 95%",
-        "Increase user trust",
-        "Prevent fraud",
-        "Real-time verification",
+        "Fake profile prevention",
+        "Boosted user trust",
+        "Fraud reduction",
+        "Real-time checks",
       ],
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600",
@@ -35,11 +35,11 @@ const DatingAppSixPillars = () => {
       icon: <Users className="w-16 h-16" />,
       title: "User Safety Controls",
       description:
-        "Comprehensive safety mechanisms with real-time monitoring and instant response systems",
+        "We ensure the app has robust, real-time safety mechanisms and instant response protocols.",
       benefits: [
         "24/7 threat detection",
         "Instant blocking",
-        "Emergency protocols",
+        "Emergency features",
         "Harassment prevention",
       ],
       color: "bg-green-50 border-green-200",
@@ -49,12 +49,12 @@ const DatingAppSixPillars = () => {
       icon: <MessageCircle className="w-16 h-16" />,
       title: "Content Moderation",
       description:
-        "AI-powered content filtering with human oversight for maximum safety and compliance",
+        "We check that all content is monitored with AI filtering and human review for compliance and safety.",
       benefits: [
         "NSFW detection",
-        "Hate speech filter",
+        "Hate speech filtering",
         "Auto-moderation",
-        "Human review",
+        "Human oversight",
       ],
       color: "bg-purple-50 border-purple-200",
       iconColor: "text-purple-600",
@@ -63,12 +63,12 @@ const DatingAppSixPillars = () => {
       icon: <Brain className="w-16 h-16" />,
       title: "Algorithm Fairness",
       description:
-        "Unbiased matching algorithms tested for fairness across all demographics and backgrounds",
+        "We validate that the app’s matching algorithms are unbiased and fair to all demographics.",
       benefits: [
         "Bias detection",
         "Fair matching",
         "Equal opportunities",
-        "Transparent algorithms",
+        "Transparency",
       ],
       color: "bg-orange-50 border-orange-200",
       iconColor: "text-orange-600",
@@ -77,11 +77,11 @@ const DatingAppSixPillars = () => {
       icon: <Lock className="w-16 h-16" />,
       title: "Data Privacy",
       description:
-        "Enterprise-grade security with GDPR compliance and end-to-end encryption",
+        "We ensure that the app’s data handling meets enterprise-grade privacy standards with full encryption and compliance.",
       benefits: [
         "GDPR compliance",
         "End-to-end encryption",
-        "Secure data storage",
+        "Secure storage",
         "Privacy by design",
       ],
       color: "bg-red-50 border-red-200",
@@ -91,12 +91,12 @@ const DatingAppSixPillars = () => {
       icon: <BarChart3 className="w-16 h-16" />,
       title: "Performance Monitoring",
       description:
-        "Continuous performance optimization and reliability testing for seamless user experience",
+        "We test and confirm that the app performs reliably under load and provides a smooth user experience.",
       benefits: [
-        "Performance optimization",
+        "Performance checks",
         "Uptime monitoring",
         "Load testing",
-        "User experience",
+        "UX validation",
       ],
       color: "bg-indigo-50 border-indigo-200",
       iconColor: "text-indigo-600",
@@ -109,17 +109,16 @@ const DatingAppSixPillars = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">
-              Comprehensive Testing Solutions
-            </span>
+            <span className="text-sm">App Certification Process</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Six Pillars of{" "}
-            <span className="text-brand-blue">Trust Certification</span>
+            <span className="text-brand-blue">App Trust Certification</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive certification covers every aspect of dating app
-            security and user protection
+            We don’t build dating apps — we certify them. Our process ensures
+            that any app meeting all six pillars earns our official{" "}
+            <strong>Trust Certification</strong>.
           </p>
         </div>
 
