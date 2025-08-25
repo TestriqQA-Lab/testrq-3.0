@@ -40,7 +40,7 @@ const HealthcareHeroSection: React.FC = () => {
       </div>
 
       {/* Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         <div className="absolute top-32 lg:top-22 xl:top-20 left-2/3 md:left-1/2 lg:left-1/3 xl:left-1/4 2xl:left-1/4 animate-float">
           <div className="w-16 h-16 bg-white bg-opacity-80 rounded-2xl shadow-lg flex items-center justify-center">
             <FaHeartbeat className="w-8 h-8 text-[theme(color.brand.blue)]" />

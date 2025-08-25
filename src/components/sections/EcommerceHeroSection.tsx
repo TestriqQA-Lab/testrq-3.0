@@ -106,7 +106,7 @@ const EcommerceHeroSection: React.FC = () => {
               </Link>
 
               <Link href="/contact-us">
-                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
+                <button className="w-full inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
                   <FaPlay className="mr-2" />
                   Schedule Consultation
                 </button>

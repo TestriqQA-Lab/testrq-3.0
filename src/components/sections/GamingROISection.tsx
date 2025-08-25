@@ -478,7 +478,7 @@ const GamingROISection: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
+        {/* <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">
               Calculate Your Game Testing ROI
@@ -499,7 +499,7 @@ const GamingROISection: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
