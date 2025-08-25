@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://www.testriq.com/web-application-testing-servicess",
+    canonical: "https://www.testriq.com/web-application-testing-services",
   },
   robots: {
     index: true,

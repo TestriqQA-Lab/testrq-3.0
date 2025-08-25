@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://www.testriq.com/mobile-application-testing-services",
+    canonical: "https://www.testriq.com/mobile-application-testing",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.testriq.com/mobile-application-testing-services",
+    url: "https://www.testriq.com/mobile-application-testing",
     siteName: "Testriq - Mobile App Testing Services",
     title: "Mobile Application Testing Services - iOS & Android QA | Testriq",
     description:
