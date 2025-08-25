@@ -59,7 +59,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
           <span className="text-white/60">{post.category}</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div>
             <span

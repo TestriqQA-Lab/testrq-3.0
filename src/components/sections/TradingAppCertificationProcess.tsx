@@ -166,12 +166,6 @@ const TradingAppCertificationProcess = () => {
                 </div>
               </div>
 
-              {/* Arrow (except for last step) */}
-              {index < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 mt-32">
-                  <ArrowRight className="w-8 h-8 text-brand-blue" />
-                </div>
-              )}
             </motion.div>
           ))}
         </div>

@@ -65,7 +65,7 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
           className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium">
-            <ShoppingCart className="w-4 h-4" />
+            <ShoppingCart className="w-4 h-4 hidden md:block" />
             Trusted E-Commerce Platform Certification
           </div>
         </motion.div>
@@ -83,7 +83,7 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
 
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             We certify shopping apps only after verifying they meet the highest
-            standards of security, performance, and user experience — so
+            standards of security, performance, and user experience - so
             customers can shop with confidence.
           </p>
         </motion.div>

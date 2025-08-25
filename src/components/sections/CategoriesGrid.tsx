@@ -196,10 +196,10 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
 
       {/* Call to Action Section */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
-        <h3 className="text-2xl font-bold mb-4">Can&apos;t find what you&aposre looking for?</h3>
+        <h3 className="text-2xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h3>
         <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
           Our comprehensive testing blog covers everything from basic concepts to advanced techniques. 
-          Explore our latest articles or suggest a topic you&aposd like us to cover.
+          Explore our latest articles or suggest a topic you&apos;d like us to cover.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

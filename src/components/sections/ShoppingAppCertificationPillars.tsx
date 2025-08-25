@@ -129,7 +129,7 @@ const ShoppingAppCertificationPillars = () => {
             Six Pillars We <span className="text-brand-blue">Certify</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don’t build your shopping app — we independently verify that it
+            We don’t build your shopping app - we independently verify that it
             meets these six critical pillars of security, performance, and
             usability. Our certification assures your customers that these
             standards are in place.
@@ -183,7 +183,7 @@ const ShoppingAppCertificationPillars = () => {
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Our role is to audit and confirm that your app meets these six
-              pillars — so your customers know they can shop with confidence.
+              pillars - so your customers know they can shop with confidence.
             </p>
           </div>
         </motion.div>
