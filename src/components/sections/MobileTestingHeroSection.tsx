@@ -42,7 +42,7 @@ const MobileTestingHeroSection: React.FC = () => {
             Ensure your mobile applications deliver seamless user experiences
             and top performance across all platforms. From Android to iOS, our
             mobile app testing services include functionality testing,
-            performance, usability, and mobile security testing — for every
+            performance, usability, and mobile security testing for every
             device and scenario.
           </p>
 
@@ -53,7 +53,7 @@ const MobileTestingHeroSection: React.FC = () => {
                 <FaArrowRight className="w-4 h-5" />
               </button>
             </Link>
-            <button onClick={openLightbox} className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
+            <button onClick={openLightbox} className="flex justify-center items-center gap-2 py-2 px-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer sm:w-auto">
               <FaPlay className="w-4 h-4" />
               Watch Demo
             </button>

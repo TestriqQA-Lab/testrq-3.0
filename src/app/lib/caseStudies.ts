@@ -2903,7 +2903,7 @@ overview: {
   industry: "Aerospace and UAV Technology",
   duration: "Single-phase project, completed in 2025",
   description: "Indo Wings implemented advanced encryption for secure drone-to-ground communication. Testriq Lab validated the security, stability, and market-readiness of the system through comprehensive testing.",
-  image: "/IndoWings_Logo.png",
+  image: "/indo-wings-logo.svg",
   metadata: {
     title: "Indo Wings Security Testing Case Study | Testriq QA Lab",
     description: "Discover how Testriq validated Indo Wings' encrypted drone communication system, ensuring security, stability, and compliance for market launch.",
@@ -3084,7 +3084,7 @@ overview: {
   industry: "Home Automation",
   duration: "Single-phase project, completed in 2025",
   description: "A home security startup developed a smart video doorbell system with mobile app integration. Testriq Lab performed end-to-end QA to ensure seamless functionality, security, and compatibility across platforms.",
-  image: "/SmartDoorbell_Logo.png",
+  image: "/confidential-home-automation.jpg",
   metadata: {
     title: "Smart Video Doorbell QA Case Study | Testriq QA Lab",
     description: "Learn how Testriq ensured seamless performance, security, and compatibility for a smart video doorbell app through comprehensive QA testing.",

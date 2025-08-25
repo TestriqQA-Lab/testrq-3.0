@@ -40,9 +40,9 @@ const WebappProvenTestingProcess = () => {
           {ctaSection.primaryButton.label}
           <FaArrowRight className="text-xs" />
         </Link>
-        <button className="inline-flex items-center px-6 py-3 gap-2 rounded-md bg-brand-blue hover:bg-sky-700 text-white transition duration-300 cursor-pointer text-sm font-medium">
+        {/* <button className="inline-flex items-center px-6 py-3 gap-2 rounded-md bg-brand-blue hover:bg-sky-700 text-white transition duration-300 cursor-pointer text-sm font-medium">
           Download Our Guide
-        </button>
+        </button> */}
       </div>
     </section>
   );

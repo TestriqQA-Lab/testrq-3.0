@@ -257,7 +257,7 @@ const IoTProvenTestingProcess: React.FC = () => {
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-4">
+              <div className="flex items-center justify-between gap-2 pt-4">
                 <div
                   className={`bg-${steps[activeStep].color}-100 text-${steps[activeStep].color}-800 px-3 py-1 rounded-full text-sm font-semibold`}
                 >
@@ -267,7 +267,7 @@ const IoTProvenTestingProcess: React.FC = () => {
                 {(
                   <button
                     onClick={() => setActiveStep((activeStep + 1)%steps.length)}
-                    className={`flex items-center gap-2 px-4 py-2 bg-gradient-to-r cursor-pointer ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
+                    className={`flex items-center gap-2 px-6 py-2 bg-gradient-to-r cursor-pointer ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
                   >
                     <span>Next Step</span>
                     <FaArrowRight className="w-4 h-4" />
