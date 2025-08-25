@@ -1,3 +1,4 @@
+
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
@@ -73,6 +74,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.seo.description,
     keywords: post.seo.keywords,
     authors: [{ name: post.author }],
+    alternates: {
+      canonical: `https://www.testriq.com/blog/post/${post.slug}`,
+      languages: {
+        'en-US': `https://www.testriq.com/blog/post/${post.slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt || post.seo.description,
@@ -133,4 +140,5 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
+
 
