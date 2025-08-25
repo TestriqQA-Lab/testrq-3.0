@@ -229,7 +229,7 @@ export default function MatrimonialAppsCertification() {
     { name: "Matrimonial App Certification", url: "https://testriq.com/matrimonial-apps-certification" }
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={matrimonialAppCertificationSchema} />

@@ -223,7 +223,7 @@ export default function ShoppingAppsCertification() {
     },
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />

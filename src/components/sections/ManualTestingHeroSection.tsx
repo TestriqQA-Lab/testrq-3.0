@@ -44,7 +44,7 @@ const ManualTestingHeroSection: React.FC = () => {
               automated testing often misses. Our skilled manual testers ensure
               your software delivers exceptional quality through comprehensive
               functional testing, usability testing, and exploratory
-              testing—powered by ISTQB-certified professionals and real-world
+              testing-powered by ISTQB-certified professionals and real-world
               insight.
             </p>
 

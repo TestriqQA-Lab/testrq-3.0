@@ -115,7 +115,7 @@ const MatrimonialAppCertificationPillars = () => {
             <span className="text-[#25A8E0]">Verify Before Certifying</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our certification isn’t just a badge — it’s proof that your
+            Our certification isn’t just a badge - it’s proof that your
             matrimonial app has been thoroughly evaluated against six critical
             pillars. Only platforms that meet every requirement earn our
             certification.
@@ -168,7 +168,7 @@ const MatrimonialAppCertificationPillars = () => {
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               If your app meets every requirement across security, privacy,
               quality, fairness, and compliance, you’ll receive our official
-              certification — a mark of trust for your users.
+              certification - a mark of trust for your users.
             </p>
             <Link href="/contact-us">
               <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">

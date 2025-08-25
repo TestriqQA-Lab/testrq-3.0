@@ -188,7 +188,7 @@ const ManualTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-lg font-bold text-blue-600">14+</div>
+                    <div className="text-lg font-bold text-blue-600">15+</div>
                     <div className="text-xs text-gray-500">
                       Years Experience
                     </div>

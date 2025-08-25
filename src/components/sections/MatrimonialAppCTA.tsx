@@ -164,7 +164,7 @@ const MatrimonialAppCTA = () => {
 
               <div className="space-y-4">
                 {[
-                  "14+ years of QA and security testing experience",
+                  "15+ years of QA and security testing experience",
                   "ISTQB certified experts and security specialists",
                   "99.8% client satisfaction rate",
                   "24/7 ongoing support and monitoring",
