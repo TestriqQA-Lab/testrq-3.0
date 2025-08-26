@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
+import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostsByTag } from "@/lib/wordpress-graphql";
@@ -53,26 +54,62 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: "Tag Not Found | Testriq Blog",
       description: "The requested blog tag could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   const tagName = tagData.tag.name;
+  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
 
   return {
-    title: `${tagName} Articles | Testriq Blog`,
-    description: `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName}.`,
-    keywords: `${tagName}, testing, qa, software testing, ${tag}`,
+    title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
+    description: tagDescription,
+    keywords: `${tagName.toLowerCase()}, ${tagName.toLowerCase()} testing, ${tagName.toLowerCase()} qa, software testing, ${tagName.toLowerCase()} best practices, ${tagName.toLowerCase()} tutorials, testing guides, qa insights, ISTQB certified experts`,
+    authors: [{ name: "Testriq QA Lab" }],
+    creator: "Testriq QA Lab",
+    publisher: "Testriq QA Lab",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
-      title: `${tagName} Articles | Testriq Blog`,
-      description: `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName}.`,
+      title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
+      description: tagDescription,
+      url: `https://www.testriq.com/blog/tag/${tag}`,
+      siteName: "Testriq",
+      locale: "en_US",
       type: "website",
-      url: `/blog/tag/${tag}`,
+      images: [
+        {
+          url: `https://www.testriq.com/images/tags/${tag}-og.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${tagName} Articles - Testriq Blog`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${tagName} Articles | Testriq Blog`,
-      description: `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName}.`,
+      title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
+      description: tagDescription,
+      images: [`https://www.testriq.com/images/tags/${tag}-twitter.jpg`],
+      creator: "@testriqlab",
+      site: "@testriqlab",
     },
+    alternates: {
+      canonical: `https://www.testriq.com/blog/tag/${tag}`,
+    },
+    category: "Technology",
   };
 }
 
@@ -85,10 +122,20 @@ export default async function TagPage({ params }: Props) {
   }
 
   const adaptedPosts = tagData.posts.map(adaptWordPressPost);
+  const tagName = tagData.tag.name;
+  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
 
   return (
     <div className="min-h-screen bg-gray-50">
       <MainLayout>
+        <BlogStructuredData
+          type="tag"
+          title={`${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`}
+          description={tagDescription}
+          url={`https://www.testriq.com/blog/tag/${tag}`}
+          tagName={tagName}
+          postCount={adaptedPosts.length}
+        />
         <TagHeroSection tag={tagData.tag} postCount={adaptedPosts.length} />
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -104,4 +151,3 @@ export default async function TagPage({ params }: Props) {
     </div>
   );
 }
-

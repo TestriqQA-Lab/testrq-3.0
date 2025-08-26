@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
+import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAdaptedCategoryData } from "@/lib/wordpress-data-adapter";
@@ -52,24 +53,62 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: "Category Not Found | Testriq Blog",
       description: "The requested blog category could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
+  const categoryName = categoryData.category.name;
+  const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
+
   return {
-    title: categoryData.category.seo.title,
-    description: categoryData.category.seo.description,
-    keywords: categoryData.category.seo.keywords,
+    title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
+    description: categoryDescription,
+    keywords: `${categoryName.toLowerCase()} testing, ${categoryName.toLowerCase()} qa, software testing, ${categoryName.toLowerCase()} best practices, ${categoryName.toLowerCase()} tutorials, testing guides, qa insights, ISTQB certified experts`,
+    authors: [{ name: "Testriq QA Lab" }],
+    creator: "Testriq QA Lab",
+    publisher: "Testriq QA Lab",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
-      title: categoryData.category.seo.title,
-      description: categoryData.category.seo.description,
+      title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
+      description: categoryDescription,
+      url: `https://www.testriq.com/blog/category/${category}`,
+      siteName: "Testriq",
+      locale: "en_US",
       type: "website",
-      url: `/blog/category/${category}`,
+      images: [
+        {
+          url: `https://www.testriq.com/images/categories/${category}-og.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${categoryName} Testing Articles - Testriq Blog`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: categoryData.category.seo.title,
-      description: categoryData.category.seo.description,
+      title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
+      description: categoryDescription,
+      images: [`https://www.testriq.com/images/categories/${category}-twitter.jpg`],
+      creator: "@testriqlab",
+      site: "@testriqlab",
     },
+    alternates: {
+      canonical: `https://www.testriq.com/blog/category/${category}`,
+    },
+    category: "Technology",
   };
 }
 
@@ -81,9 +120,20 @@ export default async function CategoryPage({ params }: Props) {
     notFound();
   }
 
+  const categoryName = categoryData.category.name;
+  const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
+
   return (
     <div>
       <MainLayout>
+        <BlogStructuredData
+          type="category"
+          title={`${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`}
+          description={categoryDescription}
+          url={`https://www.testriq.com/blog/category/${category}`}
+          categoryName={categoryName}
+          postCount={categoryData.posts.length}
+        />
         <CategoryHeroSection category={categoryData.category} />
         <div className="max-w-7xl mx-auto px-8 md:px-12 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -99,4 +149,3 @@ export default async function CategoryPage({ params }: Props) {
     </div>
   );
 }
-
