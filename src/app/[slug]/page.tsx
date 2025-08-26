@@ -158,7 +158,7 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
     "@type": "Article",
     "headline": caseStudy.title,
     "description": caseStudy.description,
-    "image": caseStudy.image ? `https://www.testriq.com${caseStudy.image}` : undefined,
+    "image": caseStudy.image ? `https://www.testriq.com${caseStudy.image}` : "https://www.testriq.com/og-image.png",
     "author": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
@@ -207,8 +207,13 @@ function generateCitySchema(cityData: CityData ) {
     "name": `Testriq QA Testing Services in ${cityData.name}`,
     "description": `Professional software testing and QA services in ${cityData.name}, ${cityData.state}. Expert manual testing, automation testing, and quality assurance solutions.`,
     "url": `https://www.testriq.com/${cityData.slug}`,
-    "telephone": "+91-XXXXXXXXXX",
-    "email": "info@testriq.com",
+    "telephone": "+91 915-2929-343",
+    "email": "contact@testriq.com",
+    "image": "https://www.testriq.com/logo.png", // Adding a default image for LocalBusiness schema
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.testriq.com/logo.png"
+    },
     "address": {
       "@type": "PostalAddress",
       "addressLocality": cityData.name,
