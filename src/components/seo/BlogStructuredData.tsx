@@ -201,7 +201,6 @@ export default function BlogStructuredData({
     },
     "description": "Leading software testing company providing expert QA services, test automation, performance testing, security testing, and mobile testing solutions.",
     "foundingDate": "2020",
-    "industry": "Software Testing and Quality Assurance",
     "serviceArea": "Global",
     "sameAs": [
       "https://www.linkedin.com/company/testriq-qa-lab",
