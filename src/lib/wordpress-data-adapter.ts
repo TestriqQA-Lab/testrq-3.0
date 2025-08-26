@@ -216,9 +216,9 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
     shares,
     tags: wpPost.tags?.nodes?.map(tag => tag.name) || [categoryName, 'Testing'],
     seo: {
-      title: `${wpPost.title} | Testriq Blog`,
-      description: wpPost.excerpt || `Read this article about ${categoryName.toLowerCase()} on Testriq Blog`,
-      keywords: wpPost.tags?.nodes?.map(tag => tag.name).join(', ') || `${categoryName.toLowerCase()}, testing, qa`
+      title: wpPost.seo?.title || `${wpPost.title} | Testriq Blog`,
+      description: wpPost.seo?.metaDesc || wpPost.excerpt || `Read this article about ${categoryName.toLowerCase()} on Testriq Blog`,
+      keywords: wpPost.tags?.nodes?.map(tag => tag.name).join(", ") || `${categoryName.toLowerCase()}, testing, qa`
     }
   };
 }

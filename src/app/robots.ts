@@ -10,14 +10,7 @@ export default function robots(): MetadataRoute.Robots {
           // Protect private and system paths
           '/private/',
           '/admin/',
-          '/_next/',   // build assets
-          '/static/',  // only if you truly expose this
-
-          // Optional: block API endpoints if they’re not meant for indexing.
-          // If some API endpoints serve public HTML or docs you want indexed, remove this.
-          // '/api/',
-
-          // Reduce crawl noise from tracking params (canonical should still point to clean URL)
+          // Reduce crawl noise from tracking params
           '/*?*utm_*',
           '/*?*fbclid=*',
           '/*?*gclid=*',
@@ -28,12 +21,7 @@ export default function robots(): MetadataRoute.Robots {
           '/*?*mc_eid=*',
         ],
       },
-
-      // IMPORTANT: Do NOT block AI crawlers.
-      // Leave out disallow rules for: GPTBot, anthropic-ai, PerplexityBot, Google-Extended, Amazonbot, Applebot-Extended, etc.
-      // These agents will fall under the global allow above.
     ],
     sitemap: 'https://www.testriq.com/sitemap.xml',
-    // host is non-standard and not needed
   };
 }
