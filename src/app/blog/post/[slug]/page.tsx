@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { extractStructuredData } from "@/lib/utils";
 
 const BlogPostHeader = dynamic(
   () => import("@/components/sections/BlogPostHeader"),
@@ -68,6 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const post = adaptWordPressPost(wpPost);
+  const structuredData = extractStructuredData(wpPost.content);
 
   return {
     title: post.seo.title,
@@ -102,6 +104,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt || post.seo.description,
       images: post.image ? [post.image] : [],
     },
+    ...(structuredData.length > 0 && {
+      script: structuredData.map((data, index) => ({
+        id: `structured-data-${index}`,
+        type: "application/ld+json",
+        json: data,
+      })),
+    }),
   };
 }
 

@@ -43,3 +43,48 @@ export const decodeHtmlEntities = (html: string): string => {
   return decoded;
 };
 
+
+
+export function extractStructuredData(htmlContent: string): unknown[] {
+  const scriptRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+  let match;
+  const structuredData: unknown[] = [];
+
+  while ((match = scriptRegex.exec(htmlContent)) !== null) {
+    let jsonString = match[1].trim();
+
+    // Find the actual JSON content within the extracted string
+    const firstBrace = jsonString.indexOf("{");
+    const firstBracket = jsonString.indexOf("[");
+    const lastBrace = jsonString.lastIndexOf("}");
+    const lastBracket = jsonString.lastIndexOf("]");
+
+    let startIndex = -1;
+    let endIndex = -1;
+
+    if (firstBrace !== -1 && (firstBracket === -1 || firstBrace < firstBracket)) {
+      startIndex = firstBrace;
+      endIndex = lastBrace;
+    } else if (firstBracket !== -1) {
+      startIndex = firstBracket;
+      endIndex = lastBracket;
+    }
+
+    if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
+      jsonString = jsonString.substring(startIndex, endIndex + 1);
+    } else {
+      console.warn("Could not find valid JSON start/end in script tag content:", jsonString.substring(0, 200));
+      continue;
+    }
+
+    try {
+      const jsonData = JSON.parse(jsonString);
+      structuredData.push(jsonData);
+    } catch (error) {
+      console.error("Error parsing structured data JSON:", error);
+      const problematicJsonSnippet = jsonString.substring(0, 200);
+      console.error("Problematic JSON string (first 200 chars): ", problematicJsonSnippet);
+    }
+  }
+  return structuredData;
+}
