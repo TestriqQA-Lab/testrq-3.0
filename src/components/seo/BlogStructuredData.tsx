@@ -118,7 +118,18 @@ export default function BlogStructuredData({
         "@type": "Audience",
         "audienceType": "QA Engineers, Software Testers, Developers, IT Professionals"
       },
-      "keywords": "software testing, QA, test automation, performance testing, security testing, mobile testing, API testing, regression testing, manual testing"
+      "keywords": "software testing, QA, test automation, performance testing, security testing, mobile testing, API testing, regression testing, manual testing",
+      "mainEntity": {
+        "@type": "Blog",
+        "name": "Testriq Software Testing Blog",
+        "description": "Expert insights, tutorials, and best practices in software testing and quality assurance",
+        "url": "https://www.testriq.com/blog",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Testriq QA Lab",
+          "url": "https://www.testriq.com"
+        }
+      }
     };
   } else if (type === 'category' && categoryName) {
     specificStructuredData = {
@@ -132,8 +143,10 @@ export default function BlogStructuredData({
         "@type": "ItemList",
         "name": `${categoryName} Testing Articles`,
         "description": `Collection of articles about ${categoryName} testing`,
-        "numberOfItems": postCount || 0
-      }
+        "numberOfItems": postCount || 0,
+        "itemListElement": []
+      },
+      "keywords": `${categoryName.toLowerCase()}, ${categoryName.toLowerCase()} testing, ${categoryName.toLowerCase()} qa, software testing, quality assurance`
     };
   } else if (type === 'tag' && tagName) {
     specificStructuredData = {
@@ -147,8 +160,10 @@ export default function BlogStructuredData({
         "@type": "ItemList",
         "name": `${tagName} Articles`,
         "description": `Collection of articles tagged with ${tagName}`,
-        "numberOfItems": postCount || 0
-      }
+        "numberOfItems": postCount || 0,
+        "itemListElement": []
+      },
+      "keywords": `${tagName.toLowerCase()}, software testing, quality assurance, QA insights`
     };
   } else if (type === 'search') {
     specificStructuredData = {
@@ -160,19 +175,93 @@ export default function BlogStructuredData({
           "urlTemplate": "https://www.testriq.com/blog/search?q={search_term_string}"
         },
         "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Search Results",
+        "description": "Search results for blog posts",
+        "itemListElement": []
       }
     };
   }
 
   const finalStructuredData = { ...baseStructuredData, ...specificStructuredData };
 
+  // Create Organization structured data
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.testriq.com/images/testriq-logo.png",
+      "width": 200,
+      "height": 60
+    },
+    "description": "Leading software testing company providing expert QA services, test automation, performance testing, security testing, and mobile testing solutions.",
+    "foundingDate": "2020",
+    "industry": "Software Testing and Quality Assurance",
+    "serviceArea": "Global",
+    "sameAs": [
+      "https://www.linkedin.com/company/testriq-qa-lab",
+      "https://twitter.com/testriqlab",
+      "https://www.facebook.com/testriq.lab"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-915-2929-343",
+      "contactType": "customer service",
+      "email": "contact@testriq.com",
+      "availableLanguage": "English"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  };
+
+  // Create Website structured data
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Testriq",
+    "url": "https://www.testriq.com",
+    "description": "Leading software testing company providing expert QA services, test automation, performance testing, security testing, and mobile testing solutions.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Testriq QA Lab"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.testriq.com/blog/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(finalStructuredData, null, 2)
-      }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(finalStructuredData, null, 0)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationData, null, 0)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteData, null, 0)
+        }}
+      />
+    </>
   );
 }
-

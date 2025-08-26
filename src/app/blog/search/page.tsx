@@ -3,6 +3,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import MainLayout from "@/components/layout/MainLayout";
+import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { searchPosts } from "@/lib/wordpress-graphql";
 import type { WordPressPost } from "@/lib/wordpress-graphql";
 import Link from "next/link";
@@ -85,6 +86,15 @@ const SearchResults: React.FC = () => {
 
   return (
     <MainLayout>
+      <BlogStructuredData
+        type="search"
+        title={query ? `Search Results for "${query}" | Testriq Blog` : "Search | Testriq Blog"}
+        description={query 
+          ? `Find articles, tutorials, and insights related to "${query}" on Testriq Blog. Explore expert content on software testing, QA best practices, and testing methodologies.`
+          : "Search through our comprehensive collection of software testing articles, tutorials, and expert insights. Find the QA knowledge you need from Testriq's ISTQB certified experts."
+        }
+        url={`https://www.testriq.com/blog/search${query ? `?q=${encodeURIComponent(query)}` : ''}`}
+      />
       <div className="min-h-screen bg-gray-50">
         {/* Search Header */}
         <div className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24">

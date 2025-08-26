@@ -62,6 +62,7 @@ export interface WordPressTag {
   id: string;
   name: string;
   slug: string;
+  description?: string;
   count: number;
 }
 
@@ -381,6 +382,7 @@ const GET_TAGS_QUERY = `
         id
         name
         slug
+        description
         count
       }
     }
@@ -989,7 +991,3 @@ export function getPageExcerpt(page: WordPressPage, maxLength: number = 160): st
 export function getPageFeaturedImageUrl(page: WordPressPage): string | null {
   return page.featuredImage?.node?.sourceUrl || null;
 }
-
-
-
-
