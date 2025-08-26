@@ -53,25 +53,25 @@ const BlogPostSidebar = dynamic(
 );
 
 // Custom Structured Data Component for Individual Posts
-function PostStructuredData({ structuredData }: { structuredData: unknown[] }) {
-  if (!structuredData || structuredData.length === 0) {
-    return null;
-  }
+// function PostStructuredData({ structuredData }: { structuredData: unknown[] }) {
+//   if (!structuredData || structuredData.length === 0) {
+//     return null;
+//   }
 
-  return (
-    <>
-      {structuredData.map((data, index) => (
-        <script
-          key={`structured-data-${index}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(data, null, 0)
-          }}
-        />
-      ))}
-    </>
-  );
-}
+//   return (
+//     <>
+//       {structuredData.map((data, index) => (
+//         <script
+//           key={`structured-data-${index}`}
+//           type="application/ld+json"
+//           dangerouslySetInnerHTML={{
+//             __html: JSON.stringify(data, null, 0)
+//           }}
+//         />
+//       ))}
+//     </>
+//   );
+// }
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: Props) {
     <div className="min-h-screen bg-gray-50">
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
-        <PostStructuredData structuredData={structuredData} />
+        {/* <PostStructuredData structuredData={structuredData} /> */}
         
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
