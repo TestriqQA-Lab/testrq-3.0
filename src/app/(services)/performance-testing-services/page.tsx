@@ -126,29 +126,29 @@ const PerformanceTestingToolsFramework = dynamic(
   }
 );
 
-const PerformanceTestingCaseStudies = dynamic(
-  () => import("@/components/sections/PerformanceTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const PerformanceTestingCaseStudies = dynamic(
+//   () => import("@/components/sections/PerformanceTestingCaseStudies"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
-const PerformanceTestingFAQs = dynamic(
-  () => import("@/components/sections/PerformanceTestingFAQs"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const PerformanceTestingFAQs = dynamic(
+//   () => import("@/components/sections/PerformanceTestingFAQs"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 const PerformanceTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/PerformanceTestingReadyToEnsureQuality"),
