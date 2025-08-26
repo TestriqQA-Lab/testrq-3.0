@@ -150,14 +150,14 @@ export const caseStudiesData: CaseStudy[] = [
       openGraph: {
         type: "article",
         locale: "en_US",
-        url: "https://www.testriq.com/case-study/canva-case-study",
+        url: "https://www.testriq.com/canva-case-study",
         siteName: "Testriq - QA Case Studies",
         title: "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
         description:
           "Testriq has supported Canva since 2018, ensuring high-quality releases, daily test executions, and reliable performance across all platforms.",
         images: [
           {
-            url: "/OG/Case-Study-Canva-og.webp",
+            url: '/OG/Case-Study-Canva-og.webp',
             width: 1200,
             height: 630,
             alt: "Canva QA Testing Case Study",
