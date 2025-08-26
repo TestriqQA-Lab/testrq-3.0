@@ -115,7 +115,7 @@ const IoTHeroSection: React.FC = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
+            <div className="flex justify-center md:justify-start gap-4 pt-4">
               <Link href="/contact-us">
                 <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
                   <FaRocket className="w-5 h-5" />

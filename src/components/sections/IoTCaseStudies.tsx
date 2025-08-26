@@ -238,7 +238,7 @@ const IoTCaseStudies: React.FC = () => {
                 {caseStudies[activeCase].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`w-auto md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
+                    className={`w-auto p-1 md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
                   >
                     <div className="flex items-center mb-2 ">
                       <div
