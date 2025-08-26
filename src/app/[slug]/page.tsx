@@ -280,63 +280,94 @@ function generateCitySchema(cityData: CityData ) {
 
 export async function generateMetadata({ params }: PageProps ) {
   const resolvedParams = await params;
-  console.log("generateMetadata resolvedParams:", resolvedParams);
   
   // First check if it's a case study
   const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
   if (caseStudy) {
-    console.log("generateMetadata caseStudy:", caseStudy);
     const metadata = caseStudy.metadata;
+    const pageTitle = metadata?.title || `${caseStudy.title} | Case Study | Testriq`;
+    const pageDescription = metadata?.description || caseStudy.description;
+    const canonicalUrl = `https://www.testriq.com/${caseStudy.slug}`;
+
     return {
-      title: metadata?.title || `${caseStudy.title} | Case Study | Testriq`,
-      description: metadata?.description || caseStudy.description,
-      keywords: metadata?.keywords,
-      authors: metadata?.authors,
-      creator: metadata?.creator,
-      publisher: metadata?.publisher,
-      formatDetection: metadata?.formatDetection,
-      alternates: metadata?.alternates,
-      openGraph: metadata?.openGraph,
-      twitter: metadata?.twitter,
+      title: pageTitle,
+      description: pageDescription,
+      keywords: metadata?.keywords || ["software testing", "QA", "case study"],
+      authors: metadata?.authors || [{ name: "Testriq QA Lab" }],
+      creator: metadata?.creator || "Testriq QA Lab",
+      publisher: metadata?.publisher || "Testriq QA Lab",
+      formatDetection: { telephone: false, address: false, email: false },
+      alternates: { canonical: canonicalUrl },
+      openGraph: {
+        title: pageTitle,
+        description: pageDescription,
+        url: canonicalUrl,
+        type: "article",
+        publishedTime: "2024-01-01", // Replace with actual published date if available
+        authors: ["Testriq QA Lab"],
+        images: [
+          {
+            url: `https://www.testriq.com${caseStudy.image}`,
+            width: 1200,
+            height: 630,
+            alt: caseStudy.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: pageTitle,
+        description: pageDescription,
+        images: [`https://www.testriq.com${caseStudy.image}`],
+      },
       verification: metadata?.verification,
-      robots: metadata?.robots
-        ? {
-            index: metadata.robots.index,
-            follow: metadata.robots.follow,
-            googleBot: metadata.robots.googleBot
-              ? {
-                  index: metadata.robots.googleBot.index,
-                  follow: metadata.robots.googleBot.follow,
-                  "max-video-preview":
-                    metadata.robots.googleBot["max-video-preview"],
-                  "max-image-preview": ["none", "standard", "large"].includes(
-                    metadata.robots.googleBot["max-image-preview"] as string
-                  )
-                    ? (metadata.robots.googleBot["max-image-preview"] as
-                        | "none"
-                        | "standard"
-                        | "large")
-                    : "large",
-                  "max-snippet": metadata.robots.googleBot["max-snippet"],
-                }
-              : undefined,
-          }
-        : undefined,
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
   
   // Fall back to city data
   const cityData = getCityData(resolvedParams.slug);
-  console.log("generateMetadata cityData:", cityData);
 
   if (!cityData) {
     return {};
   }
 
+  const pageTitle = cityData.metadata.title;
+  const pageDescription = cityData.metadata.description;
+  const canonicalUrl = `https://www.testriq.com/${cityData.slug}`;
+
   return {
-    title: cityData.metadata.title,
-    description: cityData.metadata.description,
+    title: pageTitle,
+    description: pageDescription,
     keywords: cityData.metadata.keywords,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      url: canonicalUrl,
+      type: "website",
+      images: [
+        {
+          url: "https://www.testriq.com/og-image.png", // Replace with a relevant image for city pages
+          width: 1200,
+          height: 630,
+          alt: pageTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description: pageDescription,
+      images: ["https://www.testriq.com/twitter-image.png"], // Replace with a relevant image for city pages
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
