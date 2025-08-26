@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import {
@@ -10,7 +10,7 @@ import {
   FaArrowRight,
   FaPlay,
 } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const QADocumentationHeroSection = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -58,14 +58,17 @@ const QADocumentationHeroSection = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
               <Link href="/contact-us">
                 <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200">
                   Get Started Today
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-              <button onClick={openLightbox} className="inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200">
+              <button
+                onClick={openLightbox}
+                className="inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-purple-50 transition-colors duration-200"
+              >
                 <FaPlay className="mr-2" />
                 Watch Demo
               </button>
@@ -222,7 +225,11 @@ const QADocumentationHeroSection = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

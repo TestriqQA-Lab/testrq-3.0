@@ -6,7 +6,7 @@ import {
   FaChartLine,
   FaCog,
   FaShieldAlt,
-  FaArrowRight
+  FaArrowRight,
 } from "react-icons/fa";
 
 const SoftwareTestingGuideHeroSection = () => {
@@ -92,8 +92,8 @@ const SoftwareTestingGuideHeroSection = () => {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-gray-600">
-                  <FaBook className="text-green-500" />
-                  <span>Software Testing Guide</span>
+                  <FaBook className="text-green-500 hidden md:block" />
+                  <span className="px-2">Software Testing Guide</span>
                   <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
                     Interactive Learning
                   </div>

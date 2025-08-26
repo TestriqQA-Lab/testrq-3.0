@@ -13,7 +13,7 @@ import {
   FaUserSecret,
 } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const SecurityTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -55,14 +55,17 @@ const SecurityTestingHeroSection: React.FC = () => {
               before they become critical.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
               <Link href="/contact-us">
                 <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
                   Get Started Today
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-              <button onClick={openLightbox} className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center">
+              <button
+                onClick={openLightbox}
+                className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center"
+              >
                 <FaPlay className="mr-2" />
                 Watch Demo
               </button>
@@ -225,7 +228,11 @@ const SecurityTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

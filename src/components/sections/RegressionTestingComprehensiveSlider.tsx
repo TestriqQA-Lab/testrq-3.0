@@ -199,7 +199,7 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
-                  <div className="flex items-center justify-center space-x-2">
+                  <div className="flex flex-col items-center justify-center space-x-2">
                     <span
                       className={
                         activeTab === index ? colors.text : "text-gray-400"
@@ -207,7 +207,7 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                     >
                       {type.icon}
                     </span>
-                    <span className="hidden sm:inline">{type.title}</span>
+                    <span className="hidden sm:inline py-1">{type.title}</span>
                   </div>
                 </button>
               );
