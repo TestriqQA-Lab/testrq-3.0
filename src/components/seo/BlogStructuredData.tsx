@@ -200,7 +200,7 @@ export default function BlogStructuredData({
       "height": 60
     },
     "description": "Leading software testing company providing expert QA services, test automation, performance testing, security testing, and mobile testing solutions.",
-    "foundingDate": "2020",
+    "foundingDate": "2010",
     "serviceArea": "Global",
     "sameAs": [
       "https://www.linkedin.com/company/testriq-qa-lab",
