@@ -153,7 +153,7 @@ const SearchResults: React.FC = () => {
 
                         {/* Title */}
                         <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
-                          <Link href={`/blog/${post.slug}`}>
+                          <Link href={`/blog/post/${post.slug}`}>
                             {stripHtml(post.title)}
                           </Link>
                         </h2>
