@@ -31,7 +31,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
     const fetchSidebarData = async () => {
       try {
         // Fetch all tags
-        const allTags = await getTags();
+        const { tags: allTags } = await getTags();
         
         // Filter out current tag and get related/popular tags
         const otherTags = allTags
@@ -107,10 +107,8 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
         <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
           <div className="animate-pulse">
             <div className="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
-            <div className="space-y-3">
-              <div className="h-3 bg-gray-200 rounded"></div>
-              <div className="h-3 bg-gray-200 rounded w-5/6"></div>
-            </div>
+            <div className="h-3 bg-gray-200 rounded"></div>
+            <div className="h-3 bg-gray-200 rounded w-5/6"></div>
           </div>
         </div>
       </aside>
@@ -282,4 +280,5 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
 };
 
 export default TagSidebar;
+
 

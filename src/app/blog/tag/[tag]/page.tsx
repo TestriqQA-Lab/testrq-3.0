@@ -3,8 +3,15 @@ import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostsByTag } from "@/lib/wordpress-graphql";
+import { getPostsByTag, getTags } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+
+export async function generateStaticParams() {
+  const { tags } = await getTags();
+  return tags.map((tag) => ({
+    tag: tag.slug,
+  }));
+}
 
 const TagHeroSection = dynamic(
   () => import("@/components/sections/TagHeroSection"),
@@ -62,7 +69,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const tagName = tagData.tag.name;
-  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
+  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq\'s ISTQB certified experts.`;
 
   return {
     title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
@@ -116,14 +123,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TagPage({ params }: Props) {
   const { tag } = await params;
   const tagData = await getPostsByTag(tag, 50);
-
-  if (!tagData.tag || tagData.posts.length === 0) {
+  if (!tagData.tag) {
     notFound();
   }
 
   const adaptedPosts = tagData.posts.map(adaptWordPressPost);
   const tagName = tagData.tag.name;
-  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
+  const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq\'s ISTQB certified experts.`;
+
+  if (adaptedPosts.length === 0) {
+    return (
+      <MainLayout>
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center p-8 bg-white rounded-lg shadow-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">No Articles Found for #{tagName}</h2>
+            <p className="text-gray-600 mb-6">It looks like there are no posts associated with this tag yet. Please check back later!</p>
+            <a href="/blog/tags" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors">
+              Browse All Tags
+            </a>
+          </div>
+        </div>
+      </MainLayout>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">

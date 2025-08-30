@@ -1,13 +1,14 @@
 import React from 'react';
 
 interface BlogStructuredDataProps {
-  type: 'blog' | 'category' | 'tag' | 'search';
+  type: 'blog' | 'category' | 'tag' | 'tags' | 'search';
   title: string;
   description: string;
   url: string;
   categoryName?: string;
   tagName?: string;
   postCount?: number;
+  tagCount?: number;
 }
 
 export default function BlogStructuredData({
@@ -17,7 +18,8 @@ export default function BlogStructuredData({
   url,
   categoryName,
   tagName,
-  postCount
+  postCount,
+  tagCount
 }: BlogStructuredDataProps) {
   const baseStructuredData = {
     "@context": "https://schema.org",
@@ -94,6 +96,13 @@ export default function BlogStructuredData({
       "name": tagName,
       "item": url
     });
+  } else if (type === 'tags') {
+    baseStructuredData.breadcrumb.itemListElement.push({
+      "@type": "ListItem",
+      "position": 3,
+      "name": "All Tags",
+      "item": url
+    });
   } else if (type === 'search') {
     baseStructuredData.breadcrumb.itemListElement.push({
       "@type": "ListItem",
@@ -164,6 +173,23 @@ export default function BlogStructuredData({
         "itemListElement": []
       },
       "keywords": `${tagName.toLowerCase()}, software testing, quality assurance, QA insights`
+    };
+  } else if (type === 'tags') {
+    specificStructuredData = {
+      "@type": ["WebPage", "CollectionPage"],
+      "about": {
+        "@type": "Thing",
+        "name": "Software Testing Tags",
+        "description": "Browse all software testing tags and topics"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "All Software Testing Tags",
+        "description": "Complete collection of software testing tags and topics",
+        "numberOfItems": tagCount || 0,
+        "itemListElement": []
+      },
+      "keywords": "software testing tags, QA topics, testing categories, test automation, performance testing, security testing, mobile testing"
     };
   } else if (type === 'search') {
     specificStructuredData = {

@@ -93,6 +93,7 @@ export interface CategoriesResponse {
 export interface TagsResponse {
   tags: {
     nodes: WordPressTag[];
+    pageInfo: WordPressPageInfo;
   };
 }
 
@@ -304,7 +305,7 @@ const GET_POSTS_BY_CATEGORY_QUERY = `
 // GraphQL query for fetching posts by tag
 const GET_POSTS_BY_TAG_QUERY = `
   query GetPostsByTag($tagSlug: String!, $first: Int, $after: String) {
-    posts(first: $first, after: $after, where: { status: PUBLISH, tag: $tagSlug }) {
+    posts(first: $first, after: $after, where: { status: PUBLISH, tagSlugIn: [$tagSlug] }) {
       nodes {
         id
         databaseId
@@ -376,14 +377,20 @@ const GET_CATEGORIES_QUERY = `
 
 // GraphQL query for fetching tags
 const GET_TAGS_QUERY = `
-  query GetTags {
-    tags(first: 100, where: { hideEmpty: true }) {
+  query GetTags($first: Int, $after: String) {
+    tags(first: $first, after: $after) {
       nodes {
         id
         name
         slug
         description
         count
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
       }
     }
   }
@@ -599,7 +606,7 @@ export async function getPostsByTag(
 }> {
   try {
     // First, get the tag information
-    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY, { first: 5000 }); // Fetch a large number of tags to ensure the specific tag is found
     const tag = tagsData.tags.nodes.find(t => t.slug === tagSlug) || null;
 
     // Then fetch posts for this tag
@@ -670,13 +677,30 @@ export async function getCategories(): Promise<WordPressCategory[]> {
 }
 
 // Fetch all tags
-export async function getTags(): Promise<WordPressTag[]> {
+export async function getTags(first: number = 100, after?: string): Promise<{
+  tags: WordPressTag[];
+  pageInfo: WordPressPageInfo;
+}> {
   try {
-    const data = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
-    return data.tags.nodes;
+    const data = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY, {
+      first,
+      after,
+    });
+    return {
+      tags: data.tags.nodes,
+      pageInfo: data.tags.pageInfo,
+    };
   } catch (error) {
-    console.error('Error fetching tags:', error);
-    return [];
+    console.error("Error fetching tags:", error);
+    return {
+      tags: [],
+      pageInfo: {
+        hasNextPage: false,
+        hasPreviousPage: false,
+        startCursor: "",
+        endCursor: "",
+      },
+    };
   }
 }
 
