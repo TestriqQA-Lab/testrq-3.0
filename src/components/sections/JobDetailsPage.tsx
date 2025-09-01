@@ -17,7 +17,7 @@ import {
   FaFacebook,
   FaCopy,
 } from "react-icons/fa";
-import { JobPosition } from "@/lib/openings";
+import { JobPosition } from "@/app/lib/openings";
 import Markdown from "react-markdown";
 import Link from "next/link";
 
