@@ -49,16 +49,16 @@ const SecurityTestingReadyToEnsureQuality: React.FC = () => {
 
           <div className="text-center text-gray-500">
             <p className="mb-2">Trusted by 50+ companies worldwide</p>
-            <div className="flex justify-center items-center space-x-8 text-sm">
-              <div className="flex items-center space-x-2">
+            <div className="flex flex-col md:flex-row justify-center items-center space-x-8 text-sm">
+              <div className="flex items-center space-x-2 py-2">
                 <FaCheckCircle className="text-green-600" />
                 <span>500+ Security Assessments</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 py-2">
                 <FaCheckCircle className="text-green-600" />
                 <span>98% Vulnerability Detection</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 py-2">
                 <FaCheckCircle className="text-green-600" />
                 <span>100% Compliance Success</span>
               </div>
@@ -219,8 +219,8 @@ const SecurityTestingReadyToEnsureQuality: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link href="/contact-us">
                 <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Get Free Security Assessment
-              </button>
+                  Get Free Security Assessment
+                </button>
               </Link>
             </div>
           </div>

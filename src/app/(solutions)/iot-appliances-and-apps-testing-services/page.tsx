@@ -12,8 +12,8 @@ import { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, iotTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "IoT Testing Services for Smart Devices",
-  description: "Testriq offers end-to-end IoT testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
+  title: "IoT Appliances and apps Testing Services for Smart Devices",
+  description: "Testriq offers end-to-end IoT appliances and apps testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
   keywords: [
     "IoT testing",
     "smart device testing",

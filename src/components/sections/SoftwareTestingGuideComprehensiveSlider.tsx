@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import {
-  ChevronRight,
   BookOpen,
   Code,
   Shield,
@@ -10,7 +9,6 @@ import {
   Target,
   Users,
   CheckCircle,
-  ArrowRight,
 } from "lucide-react";
 import { FaFlask } from "react-icons/fa";
 import Link from "next/link";
@@ -239,7 +237,6 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
                   </h4>
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4">
                     <div className="flex items-center text-sm text-gray-700">
-                      <ArrowRight className="h-4 w-4 text-blue-600 mr-2" />
                       {testingMethodologies[activeTab].content.learningPath}
                     </div>
                   </div>
@@ -278,7 +275,6 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
                         <span className="text-gray-700 font-medium">
                           {topic}
                         </span>
-                        <ChevronRight className="h-4 w-4 text-gray-400" />
                       </div>
                     )
                   )}

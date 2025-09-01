@@ -108,7 +108,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
   const processMetrics = [
     {
       label: "Success Rate",
-      value: "95%",
+      value: "99.5%",
       description: "Learners complete the program",
     },
     {
@@ -138,7 +138,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our structured approach to software testing education ensures
             comprehensive QA skill development through hands-on practice, expert
-            QA guidance, and industry-recognized QA certifications—covering
+            QA guidance, and industry-recognized QA certifications-covering
             everything from manual testing and automation testing to performance
             testing and security testing.
           </p>

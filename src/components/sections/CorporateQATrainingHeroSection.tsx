@@ -102,8 +102,8 @@ const CorporateQATrainingHeroSection: React.FC = () => {
               {/* Training Modules */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border-l-4 border-blue-500">
-                  <div className="flex items-center space-x-3">
-                    <FaUsers className="text-blue-600 text-xl" />
+                  <div className="flex flex-col md:flex-row items-center space-x-3">
+                    <FaUsers className="text-blue-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
                         Manual Testing Fundamentals
@@ -119,8 +119,8 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border-l-4 border-purple-500">
-                  <div className="flex items-center space-x-3">
-                    <FaLaptopCode className="text-purple-600 text-xl" />
+                  <div className="flex flex-col md:flex-row items-center space-x-3">
+                    <FaLaptopCode className="text-purple-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
                         Automation Testing
@@ -136,8 +136,8 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-50 to-green-100 rounded-lg border-l-4 border-green-500">
-                  <div className="flex items-center space-x-3">
-                    <FaChartLine className="text-green-600 text-xl" />
+                  <div className="flex flex-col md:flex-row items-center space-x-3">
+                    <FaChartLine className="text-green-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
                         Performance Testing
@@ -151,8 +151,8 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-between p-4 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg border-l-4 border-orange-500">
-                  <div className="flex items-center space-x-3">
-                    <FaTools className="text-orange-600 text-xl" />
+                  <div className="flex flex-col md:flex-row items-center space-x-3">
+                    <FaTools className="text-orange-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
                         QA Tools & Frameworks

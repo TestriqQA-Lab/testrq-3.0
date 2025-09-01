@@ -24,12 +24,13 @@ export const organizationSchema = {
   "url": "www.testriq.com",
   "logo": "www.testriq.com/logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
-  "foundingDate": "2020",
+  "foundingDate": "2010",
   "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+1-XXX-XXX-XXXX",
-    "contactType": "customer service",
-    "availableLanguage": ["English"]
+      "@type": "ContactPoint",
+      "telephone": "+91-915-2929-343",
+      "contactType": "customer service",
+      "email": "contact@testriq.com",
+      "availableLanguage": "English"
   },
   "address": {
     "@type": "PostalAddress",
