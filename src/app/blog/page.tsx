@@ -1,4 +1,4 @@
-import { BlogHeroSection, BlogPostsGrid, BlogCategories, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
+import { BlogHeroSection, BlogPostsGrid, BlogCategories, BlogQAKnowledgeHub, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
@@ -63,6 +63,7 @@ export default function BlogPage() {
       <BlogHeroSection />
       <BlogPostsGrid />
       <BlogCategories />
+      <BlogQAKnowledgeHub/>
       <BlogNewsletter />
     </MainLayout>
   );

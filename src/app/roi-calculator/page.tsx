@@ -17,9 +17,9 @@ const ROICalculatorPage: React.FC = () => {
             <FaCalculator className="w-4 h-4" />
             <span>ROI Calculator</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Calculate Your <span className="text-brand-blue">ROI</span> Today
-          </h2>
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Use our easy-to-use ROI calculator to see how investing in our solutions can benefit your business.
           </p>

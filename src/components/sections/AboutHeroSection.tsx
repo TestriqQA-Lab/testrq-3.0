@@ -20,13 +20,13 @@ const AboutHeroSection = () => {
           </span>
           Excellence
         </h1>
-        <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        <h2 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Pioneering{" "}
           <span className="text-[theme(color.brand.blue)]">
             Quality Assurance
           </span>{" "}
           Excellence
-        </h1>
+        </h2>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Testriq QA Lab LLP is a globally trusted software testing company with
