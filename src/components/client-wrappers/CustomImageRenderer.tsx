@@ -1,5 +1,5 @@
 import React from 'react';
-import parse, { domToReact, HTMLReactParserOptions } from 'html-react-parser';
+import parse, { HTMLReactParserOptions } from 'html-react-parser';
 import Image from 'next/image';
 
 interface CustomImageRendererProps {

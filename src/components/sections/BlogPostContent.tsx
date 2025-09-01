@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   FaShare,
   FaFont,
@@ -164,7 +165,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
       {/* Author Bio */}
       <div className="bg-gray-50 rounded-xl p-8 my-12">
         <div className="flex items-start gap-6">
-          <img
+          <Image
             src={post.authorImage}
             alt={post.author}
             width={80}
