@@ -1,4 +1,4 @@
-import { FaCode } from "react-icons/fa";
+import { FaBug, FaCode } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 export interface JobOpening {
@@ -16,7 +16,61 @@ export interface JobOpening {
 
 export const jobOpenings: JobOpening[] = [
   {
-    id: 1,
+    id: 1, // unique ID
+    title: "Manual Tester (API – Postman)",
+    location: "Hybrid (Mira Road, Mumbai)",
+    type: "Full-time",
+    experience: "3–5 Years",
+    fullDescription: `
+### Key Responsibilities:
+- Design, develop, and execute test cases for web and API applications.
+- Perform API testing using Postman, validating request/response flows and error handling.
+- Identify, document, and track defects using standard bug-tracking tools.
+- Perform regression, functional, integration and system testing.
+- Participate in test planning, requirement analysis, and test strategy discussions.
+
+### Requirements:
+- 3–5 years of experience in Manual Testing.
+- Strong hands-on experience with Postman for API testing.
+- Knowledge of REST APIs, JSON, and HTTP methods.
+- Familiarity with defect management tools (e.g., JIRA, Bugzilla).
+- Solid understanding of SDLC and STLC.
+- Experience in writing clear, concise, and comprehensive test documentation.
+- Good communication and analytical skills.
+    `,
+    skills: ["Manual Testing", "API Testing", "Postman", "REST APIs", "JIRA", "Bug Tracking"],
+    icon: FaBug,
+    color: "from-green-400 to-green-600",
+  },
+
+  {
+    id: 2,
+    title: "Manual Tester (Trading Domain)",
+    location: "On-Site (Kurla, Mumbai)",
+    type: "Full-time",
+    experience: "2–4 Years",
+    fullDescription: `
+### Key Responsibilities:
+- Analyze business requirements and prepare detailed test scenarios and test cases.
+- Perform manual testing of trading applications, order management systems, and related modules.
+- Validate trade workflows including order entry, execution, settlement and reporting.
+- Identify, log and track defects using bug-tracking tools.
+- Execute functional, regression, integration, and UAT testing.
+
+### Requirements:
+- 2–4 years of experience in Manual Testing, preferably in the Trading/Finance domain.
+- Strong understanding of trading workflows, financial products (Equity, Derivatives, Commodities, etc.).
+- Hands-on experience with bug tracking and test management tools (e.g., JIRA, Bugzilla, TestRail).
+- Good understanding of SDLC & STLC processes.
+- Strong analytical, problem-solving, and communication skills.
+- Knowledge of SQL for basic data validation will be an added advantage.
+    `,
+    skills: ["Manual Testing", "Trading", "Finance Domain", "JIRA", "TestRail", "SQL"],
+    icon: FaBug,
+    color: "from-yellow-400 to-yellow-600",
+  },
+  {
+    id: 3,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
@@ -69,7 +123,7 @@ Work Type: Full-time
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: 2,
+    id: 4,
     title: "Automation Test Engineer (Playwright + Javascript)",
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
@@ -115,7 +169,7 @@ Work Type: Full-time
     color: "from-green-500 to-green-700",
   },
   {
-    id: 3,
+    id: 5,
     title: "Playwright Automation Tester",
     location: "On-site (Western Mumbai)",
     type: "Full-time",
@@ -168,7 +222,7 @@ Work Type: Full-time
     color: "from-purple-500 to-purple-700",
   },
   {
-    id: 4,
+    id: 6,
     title: "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
     type: "Internship",
@@ -224,7 +278,7 @@ Duration: 3–6 months
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 5,
+    id: 7,
     title: "Penetration Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -281,7 +335,7 @@ Work Type: Full Time
     color: "from-red-500 to-red-700",
   },
   {
-    id: 6,
+    id: 8,
     title: "Data Processing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -330,7 +384,7 @@ Timing: 8:30pm to 5:30am
     color: "from-indigo-500 to-indigo-700",
   },
   {
-    id: 7,
+    id: 9,
     title: "Business Development Executive - Intern",
     location: "Mumbai (Mira Road)",
     type: "Internship",
@@ -380,7 +434,7 @@ Internship Duration: 3 Months
     color: "from-pink-500 to-pink-700",
   },
   {
-    id: 8,
+    id: 10,
     title: "SOC Analyst",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -433,7 +487,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     color: "from-teal-500 to-teal-700",
   },
   {
-    id: 9,
+    id: 11,
     title: "SEO & Digital Marketing Expert",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -493,7 +547,7 @@ Work Type: Full Time
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 10,
+    id: 12,
     title: "Front End Developer (Immediate Joiners Only)",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -543,7 +597,7 @@ Work Type: Full Time
     color: "from-blue-400 to-blue-600",
   },
   {
-    id: 11,
+    id: 13,
     title: "Graphic Designer",
     location: "Mumbai",
     type: "Full-time",
@@ -595,7 +649,7 @@ Work Type: Full Time
     color: "from-purple-400 to-purple-600",
   },
   {
-    id: 12,
+    id: 14,
     title: "Cypress Automation Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -659,7 +713,7 @@ Work Type: Full Time
     color: "from-green-400 to-green-600",
   },
   {
-    id: 13,
+    id: 15,
     title: "Business Development Manager",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -710,7 +764,7 @@ Work Type: Full Time
   },
 
   {
-    id: 14,
+    id: 16,
     title: "Digital Marketing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -760,7 +814,7 @@ Work Type: Full Time
   },
 
   {
-    id: 15,
+    id: 17,
     title: "Social Media Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -807,7 +861,7 @@ Work Type: Full Time
   },
 
   {
-    id: 16,
+    id: 18,
     title: "QA Test Lead",
     location: "Mumbai",
     type: "Full-time",
@@ -855,7 +909,7 @@ Work Type: Full Time
   },
 
   {
-    id: 17,
+    id: 19,
     title: "Product Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -903,7 +957,7 @@ Work Type: Full Time
   },
 
   {
-    id: 18,
+    id: 20,
     title: "Tele Sales Executive",
     location: "Mumbai",
     type: "Full-time",
