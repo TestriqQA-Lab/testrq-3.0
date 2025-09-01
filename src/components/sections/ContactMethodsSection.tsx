@@ -16,8 +16,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
-import Image from "next/image";
-import CalendlyImg from "../../../public/Testriq-Calendly.png";
+
 
 const ContactMethodsSection: React.FC = () => {
   const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min";
@@ -238,7 +237,7 @@ const ContactMethodsSection: React.FC = () => {
 
           {/* Calendly Widget and Image */}
           <div className="flex flex-col lg:flex-row -gap-2 items-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full">
               {selectedMeetingUrl && (
                 <div className="calendly-container w-full h-[600px] md:h-[1080px] lg:h-[700px] xl:h-[1110px] max-w-[1000px] mx-auto rounded-2xl lg:rounded-l-2xl lg:rounded-r-none overflow-hidden shadow-lg">
                   <InlineWidget
@@ -252,15 +251,7 @@ const ContactMethodsSection: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="w-full lg:w-1/2 hidden lg:block">
-              <Image
-                src={CalendlyImg}
-                alt="QA Consultation Illustration"
-                width={600}
-                height={600}
-                className="rounded-r-2xl shadow-md object-cover"
-              />
-            </div>
+            
           </div>
         </div>
 
