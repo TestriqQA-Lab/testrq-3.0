@@ -5,6 +5,31 @@ import Link from "next/link";
 
 const TeamLeadershipSection = () => {
   const leaders = [
+    
+    {
+      name: "Prashant Shukla",
+      position: "Senior Advisor",
+      experience: "20+ Years",
+      specialization: "Technology innovation & Strategic expansion",
+      bio: "Prashant Shukla, former Managing Director at Udemy (India & South Asia) and National Technology Officer at Microsoft India, has over 20 years of leadership experience in digital transformation, strategy, and innovation. As Senior Advisor at Testriq, he brings his expertise to drive growth, technology innovation, and strategic expansion.",
+      achievements: [
+        "Founded Testriq in 2010",
+        "Scaled company to 50+ employees",
+        "ISTQB Advanced Level Certified",
+        "Speaker at 20+ industry conferences",
+      ],
+      linkedin: "https://www.linkedin.com/in/sandeepmaske",
+      img: (
+        <Image
+          src="/sandeep-maske-img.webp"
+          alt="Sandeep Maske"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
+    },
+    
     {
       name: "Sandeep Maske",
       position: "Founder & CEO",
