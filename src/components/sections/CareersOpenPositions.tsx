@@ -15,7 +15,7 @@ import {
   FaFileAlt,
   FaTrash,
 } from "react-icons/fa";
-import { positions } from "@/lib/openings";
+import { positions } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -25,7 +25,7 @@ const CareersOpenPositions: React.FC = () => {
   const [selectedLocation, setSelectedLocation] = useState("all");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState<any>(null);
+const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -39,6 +39,7 @@ const CareersOpenPositions: React.FC = () => {
     noticePeriod: "",
     coverLetter: "",
   });
+  
 
   const departments = [
     { value: "all", label: "All Departments", count: 8 },
@@ -74,10 +75,22 @@ const CareersOpenPositions: React.FC = () => {
     return matchesSearch && matchesDepartment && matchesLocation;
   });
 
-  const handleApplyClick = (position: any, e: React.MouseEvent) => {
+  interface Position {
+    id: string;
+    title: string;
+    location: string;
+    color: string;
+  }
+
+  const handleApplyClick = (
+    position: unknown,
+    e: React.MouseEvent<HTMLButtonElement>
+  ) => {
     e.stopPropagation();
-    setSelectedPosition(position);
-    setShowApplicationModal(true);
+    if (typeof position === "object" && position !== null) {
+      setSelectedPosition(position as Position);
+      setShowApplicationModal(true);
+    }
   };
 
   const handleCloseModal = () => {
@@ -614,7 +627,7 @@ const CareersOpenPositions: React.FC = () => {
                         />
                       </div>
 
-                       <div>
+                      <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Position
                         </label>
