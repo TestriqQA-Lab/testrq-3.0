@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -65,11 +64,13 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center justify-center">
+              <Link href={"/contact-us"}>
+              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold  transition-all duration-200 inline-flex items-center justify-center">
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
-              <Link href="/contact-us" className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
+              </Link>
+              <Link href="/contact-us#calendly-section" className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
                 Schedule Consultation
               </Link>
             </div>

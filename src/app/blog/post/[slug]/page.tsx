@@ -4,8 +4,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
-import { extractStructuredData } from "@/lib/utils";
-
 const BlogPostHeader = dynamic(
   () => import("@/components/sections/BlogPostHeader"),
   {
@@ -160,9 +158,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   // Adapt WordPress post to match your component's expected interface
   const post = adaptWordPressPost(wpPost);
-  
-  // Extract structured data from WordPress content
-  const structuredData = extractStructuredData(wpPost.content);
+
 
   return (
     <div className="min-h-screen bg-gray-50">
