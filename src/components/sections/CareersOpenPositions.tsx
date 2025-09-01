@@ -45,12 +45,7 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
       position.skills.some((skill) =>
         skill.toLowerCase().includes(searchTerm.toLowerCase())
       );
-    const matchesLocation =
-      selectedLocation === "all" ||
-      position.location.toLowerCase().replace(/[^a-z]/g, "") ===
-        selectedLocation.replace("-", "");
-
-    return matchesSearch && matchesLocation;
+    return matchesSearch;
   });
 
   interface Position {
