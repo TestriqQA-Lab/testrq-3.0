@@ -1,5 +1,4 @@
-// src/lib/wordpress-data-adapter.ts
-import { WordPressPost, WordPressCategory, getPostsByCategory } from './wordpress-graphql';
+import { WordPressPost, WordPressCategory, getPostsByCategory, WordPressPage } from './wordpress-graphql';
 
 // Define the interfaces that your existing components expect
 export interface Category {
@@ -39,6 +38,20 @@ export interface Post {
   likes: number;
   shares: number;
   tags: string[];
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
+}
+
+export interface Page {
+  id: string;
+  slug: string;
+  title: string;
+  content: string;
+  date: string;
+  image: string | null;
   seo: {
     title: string;
     description: string;
@@ -246,3 +259,23 @@ export async function getAdaptedCategoryData(categorySlug: string, postCount: nu
   }
 }
 
+// Adapter function to convert WordPress page to expected Page interface
+export function adaptWordPressPage(wpPage: WordPressPage): Page {
+  return {
+    id: wpPage.slug,
+    slug: wpPage.slug,
+    title: wpPage.title,
+    content: wpPage.content,
+    date: new Date(wpPage.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }),
+    image: wpPage.featuredImage?.node?.sourceUrl || null,
+    seo: {
+      title: wpPage.seo?.title || `${wpPage.title} | Testriq`,
+      description: wpPage.seo?.metaDesc || wpPage.excerpt || `Learn more about ${wpPage.title.toLowerCase()} on Testriq`,
+      keywords: `${wpPage.title.toLowerCase()}, Testriq`
+    }
+  };
+}
