@@ -64,9 +64,10 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-8 text-center leading-tight">
+        <h1
+         className="text-4xl sm:text-5xl font-extrabold text-white mb-8 text-center leading-tight">
           Discover Expert QA Insights
-        </h2>
+        </h1>
         <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto text-center">
           Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources, including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>, and more. Explore suggested topics below to dive into Testriq’s expert content.
         </p>
