@@ -220,11 +220,6 @@ const SearchResults: React.FC = () => {
     return textarea.textContent || "";
   };
 
-  const truncateText = (text: string, maxLength: number) => {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength).trim() + "...";
-  };
-
   const totalResults = searchResults.length;
   const totalPages = Math.ceil(totalResults / postsPerPage);
   const currentPosts = searchResults.slice(
