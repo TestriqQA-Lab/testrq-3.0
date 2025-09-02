@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 
@@ -31,7 +32,7 @@ const AboutHeroSection = () => {
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Testriq QA Lab LLP is a globally trusted software testing company with
           over 15 years of experience. We deliver expert-led QA solutions across
-          the SDLC, combining ISTQB-certified talent, agile practices, and a
+          the <Link href="blog/post/understanding-the-sdlc-and-stlc-in-qa">SDLC</Link>, combining ISTQB-certified talent, <Link href="blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile practices</Link>, and a
           commitment to innovation and software quality.
         </p>
 

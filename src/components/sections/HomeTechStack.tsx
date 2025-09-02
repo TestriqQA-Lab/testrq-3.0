@@ -14,13 +14,32 @@ const renderTitle = () => {
   );
 };
 
-const techStack = {
+const techStack: {
+  title: string;
+  subtitle: React.ReactNode;
+  categories: {
+    title: string;
+    action: string;
+    items: {
+      name: string;
+      icon: React.ReactNode;
+    }[];
+  }[];
+} = {
   title: "Our Technology Stack",
-  subtitle:
-    "Testriq’s QA team leverages trusted tools like Selenium, JMeter, Postman, and OWASP to deliver reliable testing across automation, performance, API, and security for web and mobile platforms.",
+  subtitle: (
+    <>
+      Testriq’s <Link href="/our-team">QA team</Link> leverages trusted tools like{" "}
+      <Link href="blog/post/getting-started-with-selenium-a-beginners-guide"><span className="font-semibold">Selenium</span></Link>,{" "}
+      <Link href="blog/post/how-is-jmeter-used-for-performance-testing"><span className="font-semibold">JMeter</span></Link>,{" "}
+      <span className="font-semibold">Postman</span>, and{" "}
+      <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp"><span className="font-semibold">OWASP</span></Link> to deliver reliable testing across automation, performance, API, and security for web and mobile platforms.
+    </>
+  ),
   categories: [
     {
       title: "Automation Tools",
+      action: "/automation-testing-services",
       items: [
         {
           name: "Selenium WebDriver",
@@ -86,6 +105,7 @@ const techStack = {
     },
     {
       title: "Performance Testing",
+      action:"/performance-testing-services",
       items: [
         {
           name: "JMeter",
@@ -151,6 +171,7 @@ const techStack = {
     },
     {
       title: "API Testing",
+      action: "api-testing",
       items: [
         {
           name: "Postman",
@@ -216,6 +237,7 @@ const techStack = {
     },
     {
       title: "Security Testing",
+      action: "security-testing",
       items: [
         {
           name: "OWASP ZAP",
@@ -234,7 +256,7 @@ const techStack = {
           icon: (
             <Image
               src="/BurpSuite_Logo.png"
-              alt=" Burp Suite Logo"
+              alt="Burp Suite Logo"
               width={20}
               height={20}
               className="object-contain"
@@ -282,6 +304,8 @@ const techStack = {
   ],
 };
 
+
+
 const HeroTechStack = () => {
   return (
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 bg-[theme(color.background.gray)] text-center">
@@ -294,7 +318,7 @@ const HeroTechStack = () => {
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {techStack.categories.map((category, idx) => (
-          <div
+          <Link href={category.action}
             key={idx}
             className="bg-white ring-sky-200 ring-1 rounded-lg shadow-sm p-6 text-left transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl cursor-pointer hover:-translate-y-2"
           >
@@ -314,7 +338,7 @@ const HeroTechStack = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </Link>
         ))}
       </div>
       {/* Button */}
