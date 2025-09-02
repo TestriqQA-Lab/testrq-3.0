@@ -123,14 +123,24 @@ const CaseStudiesFeaturedSection = () => {
                     Technologies Used:
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {caseStudy.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {caseStudy.technologies.map((tech, techIndex) =>
+                      tech.link === "#" ? (
+                        <span
+                          key={techIndex}
+                          className="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full"
+                        >
+                          {tech.name}
+                        </span>
+                      ) : (
+                        <Link
+                          key={techIndex}
+                          href={tech.link}
+                          className="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full hover:bg-gray-200 transition-colors"
+                        >
+                          {tech.name}
+                        </Link>
+                      )
+                    )}
                   </div>
                 </div>
 
