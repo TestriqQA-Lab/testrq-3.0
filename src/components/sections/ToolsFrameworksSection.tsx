@@ -1,10 +1,11 @@
+import Link from "next/link";
 import React from "react";
 import { FaCube } from "react-icons/fa";
 
 const ToolsFrameworksSection = () => {
   const frameworks = [
     {
-      name: "Selenium WebDriver",
+      name: (<><Link href="/blog/post/getting-started-with-selenium-a-beginners-guide">Selenium WebDriver</Link></>),
       category: "Web Automation",
       description:
         "Industry-standard web application testing framework supporting multiple browsers and programming languages",
@@ -18,7 +19,7 @@ const ToolsFrameworksSection = () => {
         "Regression testing",
         "Cross-browser validation",
         "E2E testing",
-        "CI/CD integration",
+        (<><Link href="/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">CI/CD integration</Link></>),
       ],
       logo: "🔧",
       popularity: "Most Popular",
@@ -50,8 +51,8 @@ const ToolsFrameworksSection = () => {
         "Microsoft's modern automation framework for reliable end-to-end testing across all browsers",
       features: [
         "Auto-wait capabilities",
-        "Mobile testing",
-        "API testing",
+        (<><Link href="/mobile-application-testing">Mobile testing</Link></>),
+        (<><Link href="/api-testing">API testing</Link></>),
         "Codegen tool",
       ],
       useCases: [
@@ -64,21 +65,21 @@ const ToolsFrameworksSection = () => {
       popularity: "Fastest Growing",
     },
     {
-      name: "Appium",
+      name: (<><Link href="/blog/post/what-is-the-future-of-mobile-application-testing-appium">Appium</Link></>),
       category: "Mobile Testing",
       description:
         "Open-source mobile application testing framework for native, hybrid, and mobile web apps",
       features: [
         "Cross-platform support",
         "Real device testing",
-        "Cloud integration",
+        (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud integration</Link></>),
         "Parallel execution",
       ],
       useCases: [
         "Mobile app testing",
         "Cross-platform validation",
         "Device farm integration",
-        "Continuous testing",
+        (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">Continuous testing</Link></>),
       ],
       logo: "📱",
       popularity: "Mobile Leader",
@@ -97,7 +98,7 @@ const ToolsFrameworksSection = () => {
       useCases: [
         "JavaScript testing",
         "Concurrent execution",
-        "CI/CD pipelines",
+        (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD pipelines</Link></>),
         "Headless testing",
       ],
       logo: "☕",
@@ -115,8 +116,8 @@ const ToolsFrameworksSection = () => {
         "Detailed reporting",
       ],
       useCases: [
-        "Acceptance testing",
-        "RPA automation",
+        (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">Acceptance testing</Link></>),
+        (<><Link href="/blog/post/best-practices-in-robotic-process-automation-rpa-testing">RPA automation</Link></>),
         "API testing",
         "Database testing",
       ],
@@ -131,7 +132,7 @@ const ToolsFrameworksSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-            <FaCube  />
+            <FaCube />
             <span className="text-sm">Leading Frameworks/Tools</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -143,9 +144,13 @@ const ToolsFrameworksSection = () => {
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             We leverage the most advanced and reliable testing frameworks in the
             industry to deliver comprehensive software quality assurance
-            solutions for your projects—covering functional testing, automation
-            testing, API validation, performance benchmarking, and security
-            assurance with tools like Selenium, Cypress, JMeter, and Postman.
+            solutions for your projects-covering{" "}
+            <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
+              functional testing
+            </Link>
+            , <Link href="/automation-testing-services">automation testing</Link>, API validation, performance benchmarking, and
+            <Link href="/security-testing"> security assurance</Link> with tools like <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium, Cypress</Link>, JMeter, and
+            Postman.
           </p>
         </div>
 

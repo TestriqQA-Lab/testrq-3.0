@@ -10,6 +10,7 @@ import {
   FaTools,
 } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
+import Link from "next/link";
 
 const ToolsHeroSection = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -54,9 +55,9 @@ const ToolsHeroSection = () => {
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Discover our comprehensive suite of industry-leading testing tools and
-          frameworks. From Selenium, Cypress, and Playwright to specialized
-          healthcare testing solutions, we leverage the most advanced QA
-          automation technologies to ensure your software meets the highest
+          frameworks. From <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium, Cypress</Link>, and Playwright to specialized
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats"> healthcare testing solutions</Link>, we leverage the most advanced <Link href="/blog/post/automation-vs-manual-a-hybrid-approach-for-effective-qa">QA
+          automation</Link> technologies to ensure your software meets the highest
           quality standards, achieves regulatory compliance, and delivers
           reliable performance across platforms.
         </p>

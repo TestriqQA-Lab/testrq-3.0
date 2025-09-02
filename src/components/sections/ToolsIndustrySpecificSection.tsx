@@ -1,92 +1,176 @@
+import Link from "next/link";
 import React from "react";
-import { FaHeartbeat, FaShoppingCart, FaGraduationCap, FaGamepad, FaBitcoin, FaIndustry, FaChalkboardTeacher } from "react-icons/fa";
+import {
+  FaHeartbeat,
+  FaShoppingCart,
+  FaGraduationCap,
+  FaGamepad,
+  FaBitcoin,
+  FaIndustry,
+  FaChalkboardTeacher,
+} from "react-icons/fa";
 
 const ToolsIndustrySpecificSection = () => {
   const industries = [
     {
       icon: FaHeartbeat,
-      title: "Healthcare Testing",
-      description: "Specialized tools for HIPAA compliance, medical device testing, and healthcare software validation",
+      title: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Healthcare Testing</Link></>),
+      description:
+        "Specialized tools for HIPAA compliance, medical device testing, and healthcare software validation",
       tools: [
-        { name: "HL7 FHIR Validator", purpose: "Healthcare data standard validation" },
+        {
+          name: "HL7 FHIR Validator",
+          purpose: "Healthcare data standard validation",
+        },
         { name: "DICOM Toolkit", purpose: "Medical imaging testing" },
         { name: "Epic MyChart Tester", purpose: "EHR system testing" },
-        { name: "FDA 21 CFR Part 11", purpose: "Regulatory compliance validation" },
-        { name: "PHI Security Scanner", purpose: "Protected health information security" }
+        {
+          name: "FDA 21 CFR Part 11",
+          purpose: "Regulatory compliance validation",
+        },
+        {
+          name: "PHI Security Scanner",
+          purpose: "Protected health information security",
+        },
       ],
       compliance: ["HIPAA", "FDA 21 CFR Part 11", "IEC 62304", "ISO 13485"],
-      color: "red"
+      color: "red",
     },
     {
       icon: FaShoppingCart,
-      title: "E-commerce Testing",
-      description: "Comprehensive testing solutions for online retail platforms and payment systems",
+      title: (<><Link href="/blog/post/e-commerce-security-testing-compliance-services">E-commerce Testing</Link></>),
+      description:
+        "Comprehensive testing solutions for online retail platforms and payment systems",
       tools: [
-        { name: "Payment Gateway Tester", purpose: "Secure payment processing validation" },
-        { name: "Cart Abandonment Analyzer", purpose: "Shopping cart behavior testing" },
-        { name: "Inventory Sync Validator", purpose: "Real-time inventory testing" },
-        { name: "PCI DSS Scanner", purpose: "Payment card industry compliance" },
-        { name: "Multi-currency Tester", purpose: "International payment testing" }
+        {
+          name: "Payment Gateway Tester",
+          purpose: "Secure payment processing validation",
+        },
+        {
+          name: "Cart Abandonment Analyzer",
+          purpose: "Shopping cart behavior testing",
+        },
+        {
+          name: "Inventory Sync Validator",
+          purpose: "Real-time inventory testing",
+        },
+        {
+          name: "PCI DSS Scanner",
+          purpose: "Payment card industry compliance",
+        },
+        {
+          name: "Multi-currency Tester",
+          purpose: "International payment testing",
+        },
       ],
       compliance: ["PCI DSS", "GDPR", "CCPA", "SOX"],
-      color: "green"
+      color: "green",
     },
     {
       icon: FaGraduationCap,
-      title: "E-learning Testing",
-      description: "Educational technology testing with focus on accessibility and learning management systems",
+      title: (<><Link href="/blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices">E-learning Testing</Link></>),
+      description:
+        "Educational technology testing with focus on accessibility and learning management systems",
       tools: [
         { name: "SCORM Validator", purpose: "E-learning standard compliance" },
-        { name: "LMS Integration Tester", purpose: "Learning management system testing" },
-        { name: "Accessibility Checker", purpose: "WCAG 2.1 compliance validation" },
-        { name: "Video Streaming Tester", purpose: "Educational content delivery" },
-        { name: "Progress Tracking Validator", purpose: "Learning analytics testing" }
+        {
+          name: "LMS Integration Tester",
+          purpose: "Learning management system testing",
+        },
+        {
+          name: "Accessibility Checker",
+          purpose: "WCAG 2.1 compliance validation",
+        },
+        {
+          name: "Video Streaming Tester",
+          purpose: "Educational content delivery",
+        },
+        {
+          name: "Progress Tracking Validator",
+          purpose: "Learning analytics testing",
+        },
       ],
       compliance: ["WCAG 2.1", "Section 508", "COPPA", "FERPA"],
-      color: "blue"
+      color: "blue",
     },
     {
       icon: FaGamepad,
-      title: "Gaming Testing",
-      description: "Specialized gaming QA tools for performance, compatibility, and user experience testing",
+      title: (<><Link href="/blog/post/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking">Gaming Testing</Link></>),
+      description:
+        "Specialized gaming QA tools for performance, compatibility, and user experience testing",
       tools: [
-        { name: "Game Performance Profiler", purpose: "FPS and memory optimization" },
-        { name: "Multi-platform Tester", purpose: "Cross-platform compatibility" },
+        {
+          name: "Game Performance Profiler",
+          purpose: "FPS and memory optimization",
+        },
+        {
+          name: "Multi-platform Tester",
+          purpose: "Cross-platform compatibility",
+        },
         { name: "In-app Purchase Validator", purpose: "Monetization testing" },
-        { name: "Multiplayer Stress Tester", purpose: "Concurrent user testing" },
-        { name: "Anti-cheat Validator", purpose: "Security and fair play testing" }
+        {
+          name: "Multiplayer Stress Tester",
+          purpose: "Concurrent user testing",
+        },
+        {
+          name: "Anti-cheat Validator",
+          purpose: "Security and fair play testing",
+        },
       ],
       compliance: ["ESRB", "PEGI", "COPPA", "Platform Guidelines"],
-      color: "purple"
+      color: "purple",
     },
     {
       icon: FaBitcoin,
       title: "Fintech Testing",
-      description: "Financial technology testing with emphasis on security, compliance, and transaction integrity",
+      description:
+        "Financial technology testing with emphasis on security, compliance, and transaction integrity",
       tools: [
-        { name: "Blockchain Validator", purpose: "Cryptocurrency transaction testing" },
+        {
+          name: "Blockchain Validator",
+          purpose: "Cryptocurrency transaction testing",
+        },
         { name: "KYC/AML Tester", purpose: "Identity verification testing" },
-        { name: "Trading Algorithm Validator", purpose: "Financial algorithm testing" },
-        { name: "Regulatory Reporting Tester", purpose: "Compliance reporting validation" },
-        { name: "Fraud Detection Analyzer", purpose: "Security and fraud prevention" }
+        {
+          name: "Trading Algorithm Validator",
+          purpose: "Financial algorithm testing",
+        },
+        {
+          name: "Regulatory Reporting Tester",
+          purpose: "Compliance reporting validation",
+        },
+        {
+          name: "Fraud Detection Analyzer",
+          purpose: "Security and fraud prevention",
+        },
       ],
       compliance: ["SOX", "PCI DSS", "GDPR", "MiFID II"],
-      color: "yellow"
+      color: "yellow",
     },
     {
       icon: FaIndustry,
-      title: "IoT & Industrial",
-      description: "Internet of Things and industrial automation testing solutions",
+      title: (<><Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">IoT & Industrial</Link></>),
+      description:
+        "Internet of Things and industrial automation testing solutions",
       tools: [
         { name: "IoT Device Simulator", purpose: "Connected device testing" },
-        { name: "MQTT Protocol Tester", purpose: "IoT communication validation" },
+        {
+          name: "MQTT Protocol Tester",
+          purpose: "IoT communication validation",
+        },
         { name: "Edge Computing Validator", purpose: "Edge device testing" },
-        { name: "Industrial Protocol Tester", purpose: "Modbus, OPC-UA testing" },
-        { name: "Sensor Data Validator", purpose: "IoT data integrity testing" }
+        {
+          name: "Industrial Protocol Tester",
+          purpose: "Modbus, OPC-UA testing",
+        },
+        {
+          name: "Sensor Data Validator",
+          purpose: "IoT data integrity testing",
+        },
       ],
       compliance: ["IEC 61508", "ISO 26262", "IEC 62443", "FCC Part 15"],
-      color: "indigo"
-    }
+      color: "indigo",
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -96,7 +180,7 @@ const ToolsIndustrySpecificSection = () => {
       blue: "from-blue-50 to-blue-100 text-blue-600",
       purple: "from-purple-50 to-purple-100 text-purple-600",
       yellow: "from-yellow-50 to-yellow-100 text-yellow-600",
-      indigo: "from-indigo-50 to-indigo-100 text-indigo-600"
+      indigo: "from-indigo-50 to-indigo-100 text-indigo-600",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -107,16 +191,24 @@ const ToolsIndustrySpecificSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-            <FaChalkboardTeacher  />
+            <FaChalkboardTeacher />
             <span className="text-sm">Industry Expertise</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Industry-Specific{" "}
-            <span className="text-[theme(color.brand.blue)]">Testing Solutions</span>
+            <span className="text-[theme(color.brand.blue)]">
+              Testing Solutions
+            </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized testing tools and frameworks are tailored for industry-specific QA solutions, ensuring regulatory compliance and adherence to industry best practices across sectors like healthcare, banking and finance, telecommunications, and e-commerce through tools such as OWASP ZAP, Postman, JMeter, and Selenium.
-
+            Our specialized testing tools and frameworks are tailored for
+            industry-specific QA solutions, ensuring regulatory compliance and
+            adherence to industry best practices across sectors like{" "}
+            <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
+              healthcare
+            </Link>
+            , <Link href="/blog/post/etl-testing-case-studies">banking and finance</Link>, telecommunications, and <Link href="/blog/post/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere">e-commerce</Link> through
+            tools such as OWASP ZAP, Postman, <Link href="/blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide">JMeter</Link>, and <Link href="/blog/post/getting-started-with-selenium-a-beginners-guide">Selenium</Link>.
           </p>
         </div>
 
@@ -132,25 +224,39 @@ const ToolsIndustrySpecificSection = () => {
               >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${getColorClasses(industry.color)} flex items-center justify-center`}>
+                  <div
+                    className={`w-16 h-16 rounded-lg bg-gradient-to-br ${getColorClasses(
+                      industry.color
+                    )} flex items-center justify-center`}
+                  >
                     <IconComponent className="w-8 h-8" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{industry.title}</h3>
-                    <p className="text-gray-600 text-sm">{industry.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900">
+                      {industry.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {industry.description}
+                    </p>
                   </div>
                 </div>
 
                 {/* Specialized Tools */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-gray-800 mb-4">Specialized Tools:</h4>
+                  <h4 className="text-sm font-semibold text-gray-800 mb-4">
+                    Specialized Tools:
+                  </h4>
                   <div className="space-y-3">
                     {industry.tools.map((tool, toolIndex) => (
                       <div key={toolIndex} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full mt-2 flex-shrink-0"></div>
                         <div>
-                          <span className="font-medium text-gray-800 text-sm">{tool.name}</span>
-                          <p className="text-gray-600 text-xs">{tool.purpose}</p>
+                          <span className="font-medium text-gray-800 text-sm">
+                            {tool.name}
+                          </span>
+                          <p className="text-gray-600 text-xs">
+                            {tool.purpose}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -159,7 +265,9 @@ const ToolsIndustrySpecificSection = () => {
 
                 {/* Compliance Standards */}
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-800 mb-3">Compliance Standards:</h4>
+                  <h4 className="text-sm font-semibold text-gray-800 mb-3">
+                    Compliance Standards:
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {industry.compliance.map((standard, standardIndex) => (
                       <span
@@ -183,26 +291,36 @@ const ToolsIndustrySpecificSection = () => {
               Industry Testing Expertise
             </h3>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              Our deep industry knowledge and specialized QA tools ensure your software meets the highest standards of quality assurance, application security, and regulatory compliance across sectors like healthcare, finance, telecommunications, and e-commerce.
-
+              Our deep industry knowledge and specialized QA tools ensure your
+              software meets the highest standards of quality assurance,
+              application security, and regulatory compliance across sectors
+              like <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Healthcare</Link>, <Link href="/blog/post/etl-testing-case-studies">finance</Link>, telecommunications, and<Link href="/blog/post/e-commerce-security-testing-compliance-services"> E-commerce</Link>.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">15+</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                15+
+              </div>
               <p className="text-gray-700 text-sm">Industries Served</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">200+</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                200+
+              </div>
               <p className="text-gray-700 text-sm">Compliance Standards</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">100%</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                100%
+              </div>
               <p className="text-gray-700 text-sm">Regulatory Compliance</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">24/7</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">
+                24/7
+              </div>
               <p className="text-gray-700 text-sm">Expert Support</p>
             </div>
           </div>
@@ -213,4 +331,3 @@ const ToolsIndustrySpecificSection = () => {
 };
 
 export default ToolsIndustrySpecificSection;
-
