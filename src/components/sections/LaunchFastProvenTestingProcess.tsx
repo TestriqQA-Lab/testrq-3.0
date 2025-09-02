@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaSearch,
@@ -100,7 +101,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Our streamlined approach enables rapid testing sprints and quality
-            delivery, seamlessly aligned with agile QA testing and iterative
+            delivery, seamlessly aligned with <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link> and iterative
             development for a faster go-to-market.
           </p>
         </div>
