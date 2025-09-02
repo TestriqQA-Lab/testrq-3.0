@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Testriq Blog",
+    template: "",
     default:
       "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
   },

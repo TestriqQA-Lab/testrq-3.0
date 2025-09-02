@@ -300,7 +300,7 @@ const SearchResults: React.FC = () => {
                         <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3"
                         dangerouslySetInnerHTML={{ __html: renderContent(post.excerpt) }}
                         >
-                          
+                             
                         </p>
                         <Link
                           href={`/blog/post/${post.slug}`}
