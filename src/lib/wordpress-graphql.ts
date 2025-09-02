@@ -1,5 +1,3 @@
-// src/lib/wordpress-graphql.ts
-
 export interface WordPressPost {
   id: string;
   databaseId: number;
@@ -94,6 +92,43 @@ export interface TagsResponse {
   tags: {
     nodes: WordPressTag[];
   };
+}
+
+export interface WordPressPage {
+  id: string;
+  databaseId: number;
+  title: string;
+  content: string;
+  slug: string;
+  date: string;
+  modified: string;
+  status: string;
+  excerpt: string;
+  featuredImage?: {
+    node: {
+      sourceUrl: string;
+      altText: string;
+      mediaDetails: {
+        width: number;
+        height: number;
+      };
+    };
+  };
+  seo: {
+    title: string;
+    metaDesc: string;
+  };
+}
+
+export interface PagesResponse {
+  pages: {
+    nodes: WordPressPage[];
+    pageInfo: WordPressPageInfo;
+  };
+}
+
+export interface PageResponse {
+  page: WordPressPage | null;
 }
 
 const GRAPHQL_URL = process.env.WORDPRESS_GRAPHQL_URL || process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL;
@@ -502,6 +537,75 @@ const GET_RELATED_POSTS_QUERY = `
   }
 `;
 
+// GraphQL query for fetching WordPress pages
+const GET_PAGES_QUERY = `
+  query GetPages($first: Int, $after: String) {
+    pages(first: $first, after: $after, where: { status: PUBLISH }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        seo {
+          title
+          metaDesc
+        }
+        excerpt
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+    }
+  }
+`;
+
+// GraphQL query for fetching a single page by slug
+const GET_PAGE_BY_SLUG_QUERY = `
+  query GetPageBySlug($slug: ID!) {
+    page(id: $slug, idType: URI) {
+      id
+      databaseId
+      title
+      content
+      slug
+      date
+      modified
+            featuredImage {
+        node {
+          sourceUrl
+          altText
+          mediaDetails {
+            width
+            height
+          }
+        }
+      }
+      seo {
+        title
+        metaDesc
+      }
+      excerpt
+    }
+  }
+`;
+
 // Fetch all posts with pagination support
 export async function getPosts(first: number = 10, after?: string): Promise<{
   posts: WordPressPost[];
@@ -808,108 +912,6 @@ export async function getAllPosts(): Promise<WordPressPost[]> {
     return [];
   }
 }
-
-// Extension to wordpress-graphql.ts to add WordPress pages support
-// Add these interfaces and functions to your existing wordpress-graphql.ts file
-
-export interface WordPressPage {
-  id: string;
-  databaseId: number;
-  title: string;
-  content: string;
-  slug: string;
-  date: string;
-  modified: string;
-  status: string;
-  featuredImage?: {
-    node: {
-      sourceUrl: string;
-      altText: string;
-      mediaDetails: {
-        width: number;
-        height: number;
-      };
-    };
-  };
-}
-
-export interface WordPressPageInfo {
-  hasNextPage: boolean;
-  hasPreviousPage: boolean;
-  startCursor: string;
-  endCursor: string;
-}
-
-export interface PagesResponse {
-  pages: {
-    nodes: WordPressPage[];
-    pageInfo: WordPressPageInfo;
-  };
-}
-
-export interface PageResponse {
-  page: WordPressPage | null;
-}
-
-// GraphQL query for fetching WordPress pages
-const GET_PAGES_QUERY = `
-  query GetPages($first: Int, $after: String) {
-    pages(first: $first, after: $after, where: { status: PUBLISH }) {
-      nodes {
-        id
-        databaseId
-        title
-        content
-        slug
-        date
-        modified
-        status
-        featuredImage {
-          node {
-            sourceUrl
-            altText
-            mediaDetails {
-              width
-              height
-            }
-          }
-        }
-      }
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-        startCursor
-        endCursor
-      }
-    }
-  }
-`;
-
-// GraphQL query for fetching a single page by slug
-const GET_PAGE_BY_SLUG_QUERY = `
-  query GetPageBySlug($slug: ID!) {
-    page(id: $slug, idType: URI) {
-      id
-      databaseId
-      title
-      content
-      slug
-      date
-      modified
-      status
-      featuredImage {
-        node {
-          sourceUrl
-          altText
-          mediaDetails {
-            width
-            height
-          }
-        }
-      }
-    }
-  }
-`;
 
 // Fetch all WordPress pages with pagination support
 export async function getPages(first: number = 10, after?: string): Promise<{
