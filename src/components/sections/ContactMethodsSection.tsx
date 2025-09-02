@@ -140,7 +140,7 @@ const ContactMethodsSection: React.FC = () => {
             We understand that every client has different preferences. That’s
             why we offer multiple ways to connect with our QA experts - whether
             for a software testing consultation, project discussion, or quality
-            assurance support across automation, manual, or performance testing
+            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
             services.
           </p>
         </div>
@@ -206,7 +206,7 @@ const ContactMethodsSection: React.FC = () => {
             </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Connect with our QA experts to explore tailored solutions for your
-              software testing needs, including automation, manual, API, and
+              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
               performance testing. Pick a time that suits you!
             </p>
           </div>

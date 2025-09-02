@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaRocket,
@@ -14,48 +15,77 @@ const CaseStudiesOverviewSection = () => {
     {
       icon: FaRocket,
       title: "Accelerated Time-to-Market",
-      description:
-        "Reduced deployment cycles by 75% through comprehensive automation and streamlined testing processes",
+      description: (
+        <>
+          Reduced deployment cycles by 75% through comprehensive automation and
+          streamlined testing processes
+        </>
+      ),
       metric: "75% Faster",
       color: "blue",
     },
     {
       icon: FaShieldAlt,
       title: "Enhanced Security & Quality",
-      description:
-        "Achieved 99% bug reduction rate with advanced security testing and quality assurance protocols",
+      description: (
+        <>
+          Achieved 99% bug reduction rate with{" "}
+          <Link
+            href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats"
+          >
+            advanced security testing
+          </Link>{" "}
+          and quality assurance protocols
+        </>
+      ),
       metric: "99% Bug Reduction",
       color: "green",
     },
     {
       icon: FaCogs,
       title: "Process Optimization",
-      description:
-        "Implemented efficient testing workflows that improved overall development productivity by 60%",
+      description: (
+        <>
+          Implemented efficient testing workflows that improved overall
+          development productivity by 60%
+        </>
+      ),
       metric: "60% Efficiency Gain",
       color: "purple",
     },
     {
       icon: FaUsers,
       title: "Client Satisfaction",
-      description:
-        "Maintained 100% client satisfaction rate through dedicated support and exceptional service delivery",
+      description: (
+        <>
+          Maintained 100% client satisfaction rate through dedicated support and
+          exceptional service delivery
+        </>
+      ),
       metric: "100% Satisfaction",
       color: "orange",
     },
     {
       icon: FaChartBar,
       title: "ROI Improvement",
-      description:
-        "Delivered average 300% return on investment through reduced maintenance costs and faster releases",
+      description: (
+        <>
+          Delivered average 300% return on investment through reduced
+          maintenance costs and faster releases
+        </>
+      ),
       metric: "300% ROI",
       color: "red",
     },
     {
       icon: FaGlobe,
       title: "Global Service Delivery",
-      description:
-        "Successfully served clients across 25+ countries with localized testing solutions and support",
+      description: (
+        <>
+          Successfully served clients across 25+ countries with localized
+          testing solutions and support
+        </>
+      ),
       metric: "25+ Countries",
       color: "indigo",
     },
@@ -87,10 +117,13 @@ const CaseStudiesOverviewSection = () => {
             <span className="text-[theme(color.brand.blue)]">Worldwide</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive testing solutions have consistently delivered
-            exceptional results across diverse industries. Here&apos;s how
-            we&apos;ve helped our clients achieve their quality assurance goals
-            and business objectives.
+            Our{" "}
+            <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">
+              comprehensive testing solutions
+            </Link>{" "}
+            have consistently delivered exceptional results across diverse
+            industries. Here&apos;s how we&apos;ve helped our clients achieve
+            their quality assurance goals and business objectives.
           </p>
         </div>
 

@@ -6,7 +6,6 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaUsers,
-  FaFilter,
   FaFire,
   FaChevronDown,
   FaChevronUp,
@@ -15,14 +14,13 @@ import {
   FaFileAlt,
   FaTrash,
 } from "react-icons/fa";
-import { positions } from "@/app/lib/openings";
+import { jobOpenings } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
 
 const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedDepartment, setSelectedDepartment] = useState("all");
-  const [selectedLocation, setSelectedLocation] = useState("all");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
 const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
@@ -41,38 +39,14 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
   });
   
 
-  const departments = [
-    { value: "all", label: "All Departments", count: 8 },
-    { value: "automation", label: "Test Automation", count: 3 },
-    { value: "manual", label: "Manual Testing", count: 2 },
-    { value: "performance", label: "Performance Testing", count: 1 },
-    { value: "security", label: "Security Testing", count: 1 },
-    { value: "mobile", label: "Mobile Testing", count: 1 },
-  ];
 
-  const locations = [
-    { value: "select-mode", label: "Select-Mode", count: 15 },
-    { value: "on-site", label: "On-Site", count: 5 },
-    { value: "hybrid", label: "Hybrid", count: 5 },
-    { value: "remote", label: "Remote", count: 5 },
-  ];
-
-  const filteredPositions = positions.filter((position) => {
+  const filteredPositions = jobOpenings.filter((position) => {
     const matchesSearch =
       position.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      position.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       position.skills.some((skill) =>
         skill.toLowerCase().includes(searchTerm.toLowerCase())
       );
-    const matchesDepartment =
-      selectedDepartment === "all" ||
-      position.department === selectedDepartment;
-    const matchesLocation =
-      selectedLocation === "all" ||
-      position.location.toLowerCase().replace(/[^a-z]/g, "") ===
-        selectedLocation.replace("-", "");
-
-    return matchesSearch && matchesDepartment && matchesLocation;
+    return matchesSearch;
   });
 
   interface Position {
@@ -206,6 +180,7 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
         .job-description ol {
           margin-bottom: 1.5rem !important;
           padding-left: 1.5rem !important;
+          color: #4b5563 !important;
         }
 
         .job-description li {
@@ -295,10 +270,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
             </h2>
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore exciting opportunities to grow your career in software
-              testing. We&apos;re hiring passionate QA professionals in
-              automation testing, manual testing, performance testing, and
-              security testing to join our world-class quality assurance team.
+              Explore exciting opportunities to grow your <Link href="/blog/post/is-qa-a-good-career-software-tester">career in software
+              testing</Link>. We&apos;re hiring passionate QA professionals in
+              <Link href="/automation-testing-services"> automation testing</Link>, <Link href="/manual-testing">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and
+              <Link href="/security-testing"> security testing</Link> to join our world-class quality assurance team.
             </p>
           </div>
 
@@ -322,47 +297,7 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                 </div>
               </div>
 
-              {/* Department Filter */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Department
-                </label>
-                <div className="relative">
-                  <FaFilter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <select
-                    value={selectedDepartment}
-                    onChange={(e) => setSelectedDepartment(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 appearance-none"
-                  >
-                    {departments.map((dept) => (
-                      <option key={dept.value} value={dept.value}>
-                        {dept.label} ({dept.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Work Mode Filter */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Work-Mode
-                </label>
-                <div className="relative">
-                  <FaMapMarkerAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <select
-                    value={selectedLocation}
-                    onChange={(e) => setSelectedLocation(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 appearance-none"
-                  >
-                    {locations.map((loc) => (
-                      <option key={loc.value} value={loc.value}>
-                        {loc.label} ({loc.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+      
             </div>
 
             <div className="mt-6 flex items-center justify-between">
@@ -373,16 +308,6 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                 </span>{" "}
                 positions
               </p>
-              <button
-                onClick={() => {
-                  setSearchTerm("");
-                  setSelectedDepartment("all");
-                  setSelectedLocation("all");
-                }}
-                className="text-sm text-[theme(color.brand.blue)] hover:underline"
-              >
-                Clear all filters
-              </button>
             </div>
           </div>
 
@@ -393,10 +318,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
               return (
                 <div
                   key={position.id}
-                  onClick={() => setExpandedId(isExpanded ? null : position.id)}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden cursor-pointer"
+        
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
                 >
-                  <div className="p-8 relative">
+                  <div onClick={() => setExpandedId(isExpanded ? null : position.id)} className="p-8 relative cursor-pointer">
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                       {/* Left Side - Job Info */}
                       <div className="flex-1">
@@ -404,7 +329,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                           <div
                             className={`w-12 h-12 my-2 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
                           >
-                            <position.icon className="w-6 h-6 text-white" />
+                            {position.icon &&
+                              React.createElement(position.icon, {
+                                className: "w-6 h-6 text-white",
+                              })}
                           </div>
 
                           <div className="flex-1">
@@ -412,7 +340,7 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                               <h3 className="text-xl font-bold text-gray-900">
                                 {position.title}
                               </h3>
-                              {position.badges.map((badge, index) => (
+                              {position.badges?.map((badge, index) => (
                                 <span
                                   key={index}
                                   className={`px-2 py-1 text-xs flex flex-row font-semibold rounded-full border ${getBadgeStyle(
@@ -438,13 +366,6 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                                 <span>{position.experience}</span>
                               </div>
                             </div>
-
-                            <p className="text-gray-600 mb-4 leading-relaxed">
-                              {isExpanded
-                                ? position.description
-                                : position.description.slice(0, 120) + "..."}
-                            </p>
-
                             <div className="flex flex-wrap gap-2">
                               {position.skills
                                 .slice(
@@ -519,8 +440,6 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
               <button
                 onClick={() => {
                   setSearchTerm("");
-                  setSelectedDepartment("all");
-                  setSelectedLocation("all");
                 }}
                 className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
               >
@@ -666,34 +585,6 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Company
-                        </label>
-                        <input
-                          type="text"
-                          name="currentCompany"
-                          value={formData.currentCompany}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Enter your current company"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Role
-                        </label>
-                        <input
-                          type="text"
-                          name="currentRole"
-                          value={formData.currentRole}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Enter your current role"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
                           Total Experience *
                         </label>
                         <select
@@ -783,21 +674,6 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
                         </div>
                       )}
                     </div>
-                  </div>
-
-                  {/* Cover Letter */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Cover Letter (Optional)
-                    </label>
-                    <textarea
-                      name="coverLetter"
-                      value={formData.coverLetter}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
-                      placeholder="Tell us why you're interested in this role and what makes you a great fit..."
-                    />
                   </div>
                 </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaQuestionCircle,
@@ -11,12 +12,24 @@ import {
 const ContactFAQSection: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
-  const faqs = [
+  const faqs: {
+    question: string;
+    answer: React.ReactNode;
+  }[] = [
     {
       question: "What's the best way to contact Testriq for urgent issues?",
-      answer:
-        "For urgent QA issues, we recommend calling our direct support line at (+91) 915-2929-343 during business hours (9 AM – 6 PM IST). For critical production issues, our 24/7 emergency QA support is available. You can also use our live chat for immediate QA assistance with software testing, bug resolution, or deployment-related incidents.",
-    },
+      answer: (
+      <>
+        For urgent QA issues, we recommend calling our direct support line at
+        (+91) 915-2929-343 during business hours (9 AM – 6 PM IST). For critical
+        production issues, our 24/7 emergency QA support is available. You can
+        also use our live chat for immediate QA assistance with{" "}
+        <Link href="/software-testing-guide">
+          Software Testing
+        </Link>
+        , bug resolution, or deployment-related incidents.
+      </>
+    ),},
     {
       question: "How quickly can I expect a response to my inquiry?",
       answer:
@@ -157,7 +170,7 @@ const ContactFAQSection: React.FC = () => {
             <button
               onClick={scrollToCalendly}
               className="bg-white cursor-pointer bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30"
-            > 
+            >
               Schedule a Call
             </button>
           </div>

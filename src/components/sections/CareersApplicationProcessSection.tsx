@@ -84,11 +84,23 @@ const CareersApplicationProcessSection: React.FC = () => {
     },
   ];
 
-  const faqs = [
+  const faqs: {
+    question: string;
+    answer: React.ReactNode;
+  }[] = [
     {
       question: "How long does the entire hiring process take?",
-      answer:
-        "Our typical QA hiring process takes 2–3 weeks from application to offer, ensuring a thorough candidate evaluation across roles like manual testing, automation testing, and performance testing. For urgent software testing roles, we can expedite the process to 1–2 weeks. You’ll be kept informed of timelines, interview stages, and selection updates throughout your application journey at Testriq QA Lab.",
+      answer: (
+        <>
+          Our typical QA hiring process takes 2–3 weeks from application to
+          offer, ensuring a thorough candidate evaluation across roles like
+          <Link href="/manual-testing"> manual testing</Link>, <Link href="/automation-testing-services"> automation testing</Link>, and <Link href="/performance-testing-services">performance testing</Link>. For
+          urgent software testing roles, we can expedite the process to 1–2
+          weeks. You’ll be kept informed of timelines, interview stages, and
+          selection updates throughout your application journey at Testriq QA
+          Lab.
+        </>
+      ),
     },
     {
       question: "What should I expect in the technical interview?",

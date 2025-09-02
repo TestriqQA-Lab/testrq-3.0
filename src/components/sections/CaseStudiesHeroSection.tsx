@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import React from "react";
 import {
   FaArrowRight,
@@ -39,11 +40,11 @@ const CaseStudiesHeroSection = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Discover how our comprehensive software testing services have
+          Discover how our <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">comprehensive software testing</Link> services have
           transformed businesses across industries. From startups to Fortune 500
           companies, explore real results, measurable improvements, and success
-          stories that showcase our expertise in delivering exceptional QA
-          solutions.
+          stories that showcase our expertise in delivering exceptional <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA
+          solutions</Link>.
         </p>
 
         {/* CTAs */}

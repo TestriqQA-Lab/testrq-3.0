@@ -62,6 +62,7 @@ const company = [
   { title: "Case Studies", path: "/case-studies" },
   { title: "Blogs", path: "/blog" },
   { title: "Careers", path: "/careers" },
+  { title: "Locations we serve", path: "/locations-we-serve" },
   { title: "Contact Us", path: "/contact-us" },
 ];
 
