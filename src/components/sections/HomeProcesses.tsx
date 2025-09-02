@@ -4,33 +4,43 @@ import Link from "next/link";
 import React from "react";
 import { FaCogs, FaRocket } from "react-icons/fa";
 
-const processSteps = [
-  {
-    id: "01",
-    title: "Analyze & Plan",
-    description:
-      "Understand requirements and create comprehensive testing strategy.",
-    progress: 25,
-  },
-  {
-    id: "02",
-    title: "Execute & Test",
-    description: "Design and execute detailed test cases with precision.",
-    progress: 50,
-  },
-  {
-    id: "03",
-    title: "Report & Optimize",
-    description: "Provide insights and continuous improvement recommendations.",
-    progress: 75,
-  },
-  {
-    id: "04",
-    title: "Support & Deliver",
-    description: "Ensure smooth delivery and ongoing support.",
-    progress: 100,
-  },
-];
+const processSteps: {
+  id: string;
+  title: string;
+  description: React.ReactNode;
+  progress: number;
+}[] = [
+    {
+      id: "01",
+      title: "Analyze & Plan",
+      description:
+        (
+          <>
+            Understand requirements and create <Link href="blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing strategy</Link>.
+          </>
+        ),
+      progress: 25,
+    },
+    {
+      id: "02",
+      title: "Execute & Test",
+      description: (<>Design and execute detailed <Link href="blog/post/checklist-20-essential-test-cases-for-mobile-apps">test cases</Link> with precision.</>),
+      progress: 50,
+    },
+    {
+      id: "03",
+      title: "Report & Optimize",
+      description: "Provide insights and continuous improvement recommendations.",
+      progress: 75,
+    },
+    {
+      id: "04",
+      title: "Support & Deliver",
+      description: "Ensure smooth delivery and ongoing support.",
+      progress: 100,
+    }
+  ]
+
 
 const HomeProcesses = () => {
   return (
@@ -38,7 +48,7 @@ const HomeProcesses = () => {
       {/* Top Badge + Heading */}
       <div className="text-center mb-12">
         <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
-          <FaCogs  />
+          <FaCogs />
           <span className="text-sm">Our Process</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold">
@@ -49,7 +59,7 @@ const HomeProcesses = () => {
         <p className="text-gray-500 mt-4 max-w-4xl mx-auto">
           Our 4-step QA testing process ensures consistent software quality
           through strategic planning, precise execution, detailed reporting, and
-          ongoing support across web, mobile, and API testing environments.
+          ongoing support across web, <Link href="mobile-application-testing">mobile</Link>, and <Link href="api-testing">API testing</Link> environments.
         </p>
       </div>
 
@@ -100,7 +110,7 @@ const HomeProcesses = () => {
         {/* CTA Button */}
         <Link href="/contact-us">
           <button className="w-full cursor-pointer sm:w-auto bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-500 text-white px-6 py-2.5 rounded-xl text-sm font-semibold shadow hover:shadow-lg transition hover:-translate-y-1 duration-300">
-              Start Now
+            Start Now
           </button>
         </Link>
       </div>
