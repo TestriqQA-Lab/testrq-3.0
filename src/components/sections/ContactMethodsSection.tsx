@@ -16,6 +16,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
+import Link from "next/link";
 
 
 const ContactMethodsSection: React.FC = () => {
@@ -176,7 +177,7 @@ const ContactMethodsSection: React.FC = () => {
                 </p>
                 <p className="text-sm text-gray-500 mb-6">{method.details}</p>
 
-                <a
+                <Link
                   href={method.action}
                   onClick={(e) => {
                     if (method.title === "Schedule a Meeting") {
@@ -187,7 +188,7 @@ const ContactMethodsSection: React.FC = () => {
                   className={`cursor-pointer block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -200,7 +201,7 @@ const ContactMethodsSection: React.FC = () => {
         >
           {/* Header Section */}
           <div className="text-center mb-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               Book Your QA Consultation
             </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">

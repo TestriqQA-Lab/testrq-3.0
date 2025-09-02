@@ -203,7 +203,7 @@ const BlogCategories: React.FC = () => {
   }
 
   return (
-    <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+    <section id="blog-categories" className="bg-white py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
