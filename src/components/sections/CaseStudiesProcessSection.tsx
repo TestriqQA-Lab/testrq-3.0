@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaSearch,
@@ -41,7 +42,7 @@ const CaseStudiesProcessSection = () => {
         "Test strategy development and framework selection",
         "Resource allocation and team composition",
         "Timeline creation and milestone definition",
-        "Tool selection and environment setup planning",
+        <><Link href="/blog/post/top-10-automation-testing-tools-2025-edition">Tool selection and environment setup planning</Link></>,
       ],
       duration: "1 week",
       deliverables: ["Test Strategy", "Project Plan", "Resource Plan"],
@@ -56,7 +57,7 @@ const CaseStudiesProcessSection = () => {
       activities: [
         "Test environment setup and configuration",
         "Test case development and automation scripts",
-        "Comprehensive testing execution across all scenarios",
+        (<><Link href="/blog/post/test-execution-comprehensive-testing-implementation">Comprehensive testing execution across all scenarios</Link></>),
         "Continuous monitoring and real-time reporting",
       ],
       duration: "4-12 weeks",
@@ -73,7 +74,7 @@ const CaseStudiesProcessSection = () => {
         "Production environment validation and testing",
         "Go-live support and monitoring",
         "Performance optimization and fine-tuning",
-        "User acceptance testing coordination",
+        (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">User acceptance testing</Link>  coordination</>),
       ],
       duration: "1-2 weeks",
       deliverables: [
@@ -111,7 +112,7 @@ const CaseStudiesProcessSection = () => {
         "We measure success against defined KPIs and establish long-term partnership for continued excellence and growth.",
       activities: [
         "Success metrics evaluation and reporting",
-        "ROI calculation and business impact assessment",
+        (<><Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI calculation and business impact assessment</Link></>),
         "Knowledge transfer and team training",
         "Long-term partnership and support planning",
       ],

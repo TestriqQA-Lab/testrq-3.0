@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaHeartbeat,
@@ -16,8 +17,14 @@ const CaseStudiesIndustrySection = () => {
     {
       icon: FaHeartbeat,
       name: "Healthcare",
-      description:
-        "HIPAA-compliant testing solutions for medical devices and patient management systems",
+      description: (
+  <>
+    <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+      HIPAA-compliant testing
+    </Link>{" "}
+    solutions for medical devices and patient management systems
+  </>
+),
       caseStudies: 45,
       avgImprovement: "95%",
       keyMetrics: [
@@ -49,7 +56,7 @@ const CaseStudiesIndustrySection = () => {
       icon: FaBitcoin,
       name: "Fintech",
       description:
-        "Security-focused testing for banking, payments, and cryptocurrency platforms",
+      (<> <Link href="/blog/post/e-commerce-security-testing-compliance-services">Security-focused testing</Link> for banking, payments, and cryptocurrency platforms</>),
       caseStudies: 52,
       avgImprovement: "92%",
       keyMetrics: [
@@ -65,7 +72,7 @@ const CaseStudiesIndustrySection = () => {
       icon: FaGraduationCap,
       name: "EdTech",
       description:
-        "Accessibility and performance testing for educational platforms and learning management systems",
+      (<>Accessibility and <Link href="/blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices">performance testing for educational platforms</Link> and learning management systems</>),
       caseStudies: 34,
       avgImprovement: "88%",
       keyMetrics: [
@@ -80,7 +87,7 @@ const CaseStudiesIndustrySection = () => {
       icon: FaGamepad,
       name: "Gaming",
       description:
-        "Performance and compatibility testing for mobile and web-based gaming applications",
+      (<>Performance and <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">compatibility testing for mobile and web-based gaming applications </Link></>),
       caseStudies: 29,
       avgImprovement: "90%",
       keyMetrics: [
@@ -110,7 +117,7 @@ const CaseStudiesIndustrySection = () => {
       icon: FaMobile,
       name: "Mobile Apps",
       description:
-        "Comprehensive mobile testing across iOS and Android platforms",
+      (<> Comprehensive <Link href="/blog/post/mobile-automation-testing-guide-android-ios-frameworks">mobile testing across iOS and Android platforms</Link></>),
       caseStudies: 156,
       avgImprovement: "91%",
       keyMetrics: [
