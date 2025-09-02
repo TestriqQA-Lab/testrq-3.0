@@ -17,6 +17,7 @@ import {
 import { jobOpenings } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
 
 const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -269,10 +270,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
             </h2>
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore exciting opportunities to grow your career in software
-              testing. We&apos;re hiring passionate QA professionals in
-              automation testing, manual testing, performance testing, and
-              security testing to join our world-class quality assurance team.
+              Explore exciting opportunities to grow your <Link href="/blog/post/is-qa-a-good-career-software-tester">career in software
+              testing</Link>. We&apos;re hiring passionate QA professionals in
+              <Link href="/automation-testing-services"> automation testing</Link>, <Link href="/manual-testing">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and
+              <Link href="/security-testing"> security testing</Link> to join our world-class quality assurance team.
             </p>
           </div>
 

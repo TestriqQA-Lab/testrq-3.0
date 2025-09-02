@@ -23,26 +23,41 @@ export const jobOpenings: JobOpening[] = [
     experience: "3–5 Years",
     fullDescription: `
 ### Key Responsibilities:
-- Design, develop, and execute test cases for web and API applications.
-- Perform API testing using Postman, validating request/response flows and error handling.
-- Identify, document, and track defects using standard bug-tracking tools.
-- Perform regression, functional, integration and system testing.
-- Participate in test planning, requirement analysis, and test strategy discussions.
+- Actively attend all stand-ups and team meetings with pods.
+- Manage end-to-end QA for both backend and frontend applications.
+- Write, maintain and review detailed test cases.
+- Execute manual API testing using Postman.
+- Contribute to API automation efforts when required.
+- Perform database testing using SQL queries.
+- Track and manage bugs using JIRA.
+- Work with GitHub for version control and Jenkins for CI/CD integrations.
 
 ### Requirements:
-- 3–5 years of experience in Manual Testing.
-- Strong hands-on experience with Postman for API testing.
-- Knowledge of REST APIs, JSON, and HTTP methods.
-- Familiarity with defect management tools (e.g., JIRA, Bugzilla).
-- Solid understanding of SDLC and STLC.
-- Experience in writing clear, concise, and comprehensive test documentation.
-- Good communication and analytical skills.
-    `,
-    skills: ["Manual Testing", "API Testing", "Postman", "REST APIs", "JIRA", "Bug Tracking"],
+- 3–5 years of experience as a Manual Tester / QA Engineer.
+- Hands-on experience in API testing (Postman).
+- Exposure to API automation frameworks.
+- Strong understanding of frontend and backend QA processes.
+- Proficiency in writing and executing test cases.
+- Familiarity with GitHub, Jenkins, and JIRA.
+- Good knowledge of DB testing (SQL queries).
+- Strong communication and collaboration skills to work with cross-functional pods.
+  `,
+    skills: [
+      "Manual Testing",
+      "API Testing",
+      "Postman",
+      "API Automation",
+      "Frontend & Backend QA",
+      "Test Case Design",
+      "SQL (DB Testing)",
+      "JIRA",
+      "GitHub",
+      "Jenkins",
+      "CI/CD",
+    ],
     icon: FaBug,
     color: "from-green-400 to-green-600",
   },
-
   {
     id: 2,
     title: "Manual Tester (Trading Domain)",
@@ -65,7 +80,14 @@ export const jobOpenings: JobOpening[] = [
 - Strong analytical, problem-solving, and communication skills.
 - Knowledge of SQL for basic data validation will be an added advantage.
     `,
-    skills: ["Manual Testing", "Trading", "Finance Domain", "JIRA", "TestRail", "SQL"],
+    skills: [
+      "Manual Testing",
+      "Trading",
+      "Finance Domain",
+      "JIRA",
+      "TestRail",
+      "SQL",
+    ],
     icon: FaBug,
     color: "from-yellow-400 to-yellow-600",
   },
@@ -223,7 +245,8 @@ Work Type: Full-time
   },
   {
     id: 6,
-    title: "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
+    title:
+      "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
     type: "Internship",
     experience: "3–6 months",
