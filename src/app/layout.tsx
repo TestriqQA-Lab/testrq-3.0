@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     default: "Best Software Testing Company in Mumbai India | Testriq",
-    template: "%s | Testriq",
+    template: "%s",
   },
   description:
     "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",

@@ -97,7 +97,7 @@ export const cityData: Record<string, CityData> = {
     name: "Chennai",
     state: "Tamil Nadu",
     metadata: {
-      title: "Software QA Testing Services in Chennai | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Chennai | Testriq",
       description: "Leading software testing company in Chennai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services chennai, qa testing chennai, manual testing chennai, automation testing chennai, performance testing chennai, software testing company chennai, qa services tamil nadu, testing services chennai",
     },
@@ -285,7 +285,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bangalore",
     state: "Karnataka",
     metadata: {
-      title: "Software QA Testing Services in Bangalore | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bangalore | Testriq",
       description: "Top software testing company in Bangalore providing manual testing, automation testing, performance testing, and QA consulting services. Expert QA engineers.",
       keywords: "software testing services bangalore, qa testing bangalore, manual testing bangalore, automation testing bangalore, performance testing bangalore, software testing company bangalore, qa services karnataka, testing services bangalore",
     },
@@ -473,7 +473,7 @@ export const cityData: Record<string, CityData> = {
     name: "Delhi",
     state: "Delhi",
     metadata: {
-      title: "Software QA Testing Services in Delhi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Delhi | Testriq",
       description: "Leading software testing company in Delhi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services delhi, qa testing delhi, manual testing delhi, automation testing delhi, performance testing delhi, software testing company delhi, qa services delhi, testing services delhi",
     },
@@ -666,7 +666,7 @@ export const cityData: Record<string, CityData> = {
     name: "Agra",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Agra | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Agra | Testriq",
       description: "Leading software testing company in Agra offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services agra, qa testing agra, manual testing agra, automation testing agra, performance testing agra, software testing company agra, qa services uttar pradesh, testing services agra",
     },
@@ -858,7 +858,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ahmedabad",
     state: "Gujarat",
     metadata: {
-      title: "Software QA Testing Services in Ahmedabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ahmedabad | Testriq",
       description: "Leading software testing company in Ahmedabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ahmedabad, qa testing ahmedabad, manual testing ahmedabad, automation testing ahmedabad, performance testing ahmedabad, software testing company ahmedabad, qa services gujarat, testing services ahmedabad",
     },
@@ -1050,7 +1050,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ajmer",
     state: "Rajasthan",
     metadata: {
-      title: "Software QA Testing Services in Ajmer | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ajmer | Testriq",
       description: "Leading software testing company in Ajmer offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ajmer, qa testing ajmer, manual testing ajmer, automation testing ajmer, performance testing ajmer, software testing company ajmer, qa services rajasthan, testing services ajmer",
     },
@@ -1242,7 +1242,7 @@ export const cityData: Record<string, CityData> = {
     name: "Amritsar",
     state: "Punjab",
     metadata: {
-      title: "Software QA Testing Services in Amritsar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Amritsar | Testriq",
       description: "Leading software testing company in Amritsar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services amritsar, qa testing amritsar, manual testing amritsar, automation testing amritsar, performance testing amritsar, software testing company amritsar, qa services punjab, testing services amritsar",
     },
@@ -1434,7 +1434,7 @@ export const cityData: Record<string, CityData> = {
     name: "Andheri",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Andheri | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Andheri | Testriq",
       description: "Leading software testing company in Andheri offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services andheri, qa testing andheri, manual testing andheri, automation testing andheri, performance testing andheri, software testing company andheri, qa services maharashtra, testing services andheri",
     },
@@ -1626,7 +1626,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bandra",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Bandra | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bandra | Testriq",
       description: "Leading software testing company in Bandra offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services bandra, qa testing bandra, manual testing bandra, automation testing bandra, performance testing bandra, software testing company bandra, qa services maharashtra, testing services bandra",
     },
@@ -1818,7 +1818,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bengaluru",
     state: "Karnataka",
     metadata: {
-      title: "Software QA Testing Services in Bengaluru | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bengaluru | Testriq",
       description: "Top software testing company in Bengaluru providing manual testing, automation testing, performance testing, and QA consulting services. Expert QA engineers.",
       keywords: "software testing services bengaluru, qa testing bengaluru, manual testing bengaluru, automation testing bengaluru, performance testing bengaluru, software testing company bengaluru, qa services karnataka, testing services bengaluru",
     },
@@ -2010,7 +2010,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bhandup",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Bhandup | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bhandup | Testriq",
       description: "Leading software testing company in Bhandup offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services bhandup, qa testing bhandup, manual testing bhandup, automation testing bhandup, performance testing bhandup, software testing company bhandup, qa services maharashtra, testing services bhandup",
     },
@@ -2202,7 +2202,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bhayandar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Bhayandar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bhayandar | Testriq",
       description: "Leading software testing company in Bhayandar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services bhayandar, qa testing bhayandar, manual testing bhayandar, automation testing bhayandar, performance testing bhayandar, software testing company bhayandar, qa services maharashtra, testing services bhayandar",
     },
@@ -2394,7 +2394,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bhopal",
     state: "Madhya Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Bhopal | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bhopal | Testriq",
       description: "Leading software testing company in Bhopal offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services bhopal, qa testing bhopal, manual testing bhopal, automation testing bhopal, performance testing bhopal, software testing company bhopal, qa services madhya pradesh, testing services bhopal",
     },
@@ -2586,7 +2586,7 @@ export const cityData: Record<string, CityData> = {
     name: "Bhubaneswar",
     state: "Odisha",
     metadata: {
-      title: "Software QA Testing Services in Bhubaneswar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Bhubaneswar | Testriq",
       description: "Leading software testing company in Bhubaneswar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services bhubaneswar, qa testing bhubaneswar, manual testing bhubaneswar, automation testing bhubaneswar, performance testing bhubaneswar, software testing company bhubaneswar, qa services odisha, testing services bhubaneswar",
     },
@@ -2778,7 +2778,7 @@ export const cityData: Record<string, CityData> = {
     name: "Borivali",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Borivali | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Borivali | Testriq",
       description: "Leading software testing company in Borivali offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services borivali, qa testing borivali, manual testing borivali, automation testing borivali, performance testing borivali, software testing company borivali, qa services maharashtra, testing services borivali",
     },
@@ -2970,7 +2970,7 @@ export const cityData: Record<string, CityData> = {
     name: "Byculla",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Byculla | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Byculla | Testriq",
       description: "Leading software testing company in Byculla offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services byculla, qa testing byculla, manual testing byculla, automation testing byculla, performance testing byculla, software testing company byculla, qa services maharashtra, testing services byculla",
     },
@@ -3162,7 +3162,7 @@ export const cityData: Record<string, CityData> = {
     name: "Chandigarh",
     state: "Punjab",
     metadata: {
-      title: "Software QA Testing Services in Chandigarh | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Chandigarh | Testriq",
       description: "Leading software testing company in Chandigarh offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services chandigarh, qa testing chandigarh, manual testing chandigarh, automation testing chandigarh, performance testing chandigarh, software testing company chandigarh, qa services punjab, testing services chandigarh",
     },
@@ -3354,7 +3354,7 @@ export const cityData: Record<string, CityData> = {
     name: "Charni Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Charni Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Charni Road | Testriq",
       description: "Leading software testing company in Charni Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services charni road, qa testing charni road, manual testing charni road, automation testing charni road, performance testing charni road, software testing company charni road, qa services maharashtra, testing services charni road",
     },
@@ -3543,7 +3543,7 @@ export const cityData: Record<string, CityData> = {
     name: "Chinchpokli",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Chinchpokli | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Chinchpokli | Testriq",
       description: "Leading software testing company in Chinchpokli offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services chinchpokli, qa testing chinchpokli, manual testing chinchpokli, automation testing chinchpokli, performance testing chinchpokli, software testing company chinchpokli, qa services maharashtra, testing services chinchpokli",
     },
@@ -3735,7 +3735,7 @@ export const cityData: Record<string, CityData> = {
     name: "Churchgate",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Churchgate | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Churchgate | Testriq",
       description: "Leading software testing company in Churchgate offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services churchgate, qa testing churchgate, manual testing churchgate, automation testing churchgate, performance testing churchgate, software testing company churchgate, qa services maharashtra, testing services churchgate",
     },
@@ -3927,7 +3927,7 @@ export const cityData: Record<string, CityData> = {
     name: "Coimbatore",
     state: "Tamil Nadu",
     metadata: {
-      title: "Software QA Testing Services in Coimbatore | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Coimbatore | Testriq",
       description: "Leading software testing company in Coimbatore offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services coimbatore, qa testing coimbatore, manual testing coimbatore, automation testing coimbatore, performance testing coimbatore, software testing company coimbatore, qa services tamil nadu, testing services coimbatore",
     },
@@ -4119,7 +4119,7 @@ export const cityData: Record<string, CityData> = {
     name: "Cotton Green",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Cotton Green | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Cotton Green | Testriq",
       description: "Leading software testing company in Cotton Green offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services cotton green, qa testing cotton green, manual testing cotton green, automation testing cotton green, performance testing cotton green, software testing company cotton green, qa services maharashtra, testing services cotton green",
     },
@@ -4311,7 +4311,7 @@ export const cityData: Record<string, CityData> = {
     name: "CST",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in CST | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in CST | Testriq",
       description: "Leading software testing company in CST offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services cst, qa testing cst, manual testing cst, automation testing cst, performance testing cst, software testing company cst, qa services maharashtra, testing services cst",
     },
@@ -4503,7 +4503,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dadar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Dadar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dadar | Testriq",
       description: "Leading software testing company in Dadar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services dadar, qa testing dadar, manual testing dadar, automation testing dadar, performance testing dadar, software testing company dadar, qa services maharashtra, testing services dadar",
     },
@@ -4695,7 +4695,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dahisar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Dahisar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dahisar | Testriq",
       description: "Leading software testing company in Dahisar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services dahisar, qa testing dahisar, manual testing dahisar, automation testing dahisar, performance testing dahisar, software testing company dahisar, qa services maharashtra, testing services dahisar",
     },
@@ -4887,7 +4887,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dehradun",
     state: "Uttarakhand",
     metadata: {
-      title: "Software QA Testing Services in Dehradun | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dehradun | Testriq",
       description: "Leading software testing company in Dehradun offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services dehradun, qa testing dehradun, manual testing dehradun, automation testing dehradun, performance testing dehradun, software testing company dehradun, qa services uttarakhand, testing services dehradun",
     },
@@ -5076,7 +5076,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dombivli",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Dombivli | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dombivli | Testriq",
       description: "Leading software testing company in Dombivli offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services dombivli, qa testing dombivli, manual testing dombivli, automation testing dombivli, performance testing dombivli, software testing company dombivli, qa services maharashtra, testing services dombivli",
     },
@@ -5268,7 +5268,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ernakulam",
     state: "Kerala",
     metadata: {
-      title: "Software QA Testing Services in Ernakulam | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ernakulam | Testriq",
       description: "Leading software testing company in Ernakulam offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ernakulam, qa testing ernakulam, manual testing ernakulam, automation testing ernakulam, performance testing ernakulam, software testing company ernakulam, qa services kerala, testing services ernakulam",
     },
@@ -5460,7 +5460,7 @@ export const cityData: Record<string, CityData> = {
     name: "Faridabad",
     state: "Haryana",
     metadata: {
-      title: "Software QA Testing Services in Faridabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Faridabad | Testriq",
       description: "Leading software testing company in Faridabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services faridabad, qa testing faridabad, manual testing faridabad, automation testing faridabad, performance testing faridabad, software testing company faridabad, qa services haryana, testing services faridabad",
     },
@@ -5652,7 +5652,7 @@ export const cityData: Record<string, CityData> = {
     name: "Gandhinagar",
     state: "Gujarat",
     metadata: {
-      title: "Software QA Testing Services in Gandhinagar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Gandhinagar | Testriq",
       description: "Leading software testing company in Gandhinagar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services gandhinagar, qa testing gandhinagar, manual testing gandhinagar, automation testing gandhinagar, performance testing gandhinagar, software testing company gandhinagar, qa services gujarat, testing services gandhinagar",
     },
@@ -5844,7 +5844,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ghaziabad",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Ghaziabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ghaziabad | Testriq",
       description: "Leading software testing company in Ghaziabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ghaziabad, qa testing ghaziabad, manual testing ghaziabad, automation testing ghaziabad, performance testing ghaziabad, software testing company ghaziabad, qa services uttar pradesh, testing services ghaziabad",
     },
@@ -6036,7 +6036,7 @@ export const cityData: Record<string, CityData> = {
     name: "Goa",
     state: "Goa",
     metadata: {
-      title: "Software QA Testing Services in Goa | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Goa | Testriq",
       description: "Leading software testing company in Goa offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services goa, qa testing goa, manual testing goa, automation testing goa, performance testing goa, software testing company goa, qa services goa, testing services goa",
     },
@@ -6228,7 +6228,7 @@ export const cityData: Record<string, CityData> = {
     name: "Gorakhpur",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Gorakhpur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Gorakhpur | Testriq",
       description: "Leading software testing company in Gorakhpur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services gorakhpur, qa testing gorakhpur, manual testing gorakhpur, automation testing gorakhpur, performance testing gorakhpur, software testing company gorakhpur, qa services uttar pradesh, testing services gorakhpur",
     },
@@ -6420,7 +6420,7 @@ export const cityData: Record<string, CityData> = {
     name: "Greater Noida",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Greater Noida | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Greater Noida | Testriq",
       description: "Leading software testing company in Greater Noida offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services greater noida, qa testing greater noida, manual testing greater noida, automation testing greater noida, performance testing greater noida, software testing company greater noida, qa services uttar pradesh, testing services greater noida",
     },
@@ -6612,7 +6612,7 @@ export const cityData: Record<string, CityData> = {
     name: "Gurgaon",
     state: "Haryana",
     metadata: {
-      title: "Software QA Testing Services in Gurgaon | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Gurgaon | Testriq",
       description: "Leading software testing company in Gurgaon offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services gurgaon, qa testing gurgaon, manual testing gurgaon, automation testing gurgaon, performance testing gurgaon, software testing company gurgaon, qa services haryana, testing services gurgaon",
     },
@@ -6804,7 +6804,7 @@ export const cityData: Record<string, CityData> = {
     name: "Guwahati",
     state: "Assam",
     metadata: {
-      title: "Software QA Testing Services in Guwahati | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Guwahati | Testriq",
       description: "Leading software testing company in Guwahati offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services guwahati, qa testing guwahati, manual testing guwahati, automation testing guwahati, performance testing guwahati, software testing company guwahati, qa services assam, testing services guwahati",
     },
@@ -6996,7 +6996,7 @@ export const cityData: Record<string, CityData> = {
     name: "Gwalior",
     state: "Madhya Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Gwalior | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Gwalior | Testriq",
       description: "Leading software testing company in Gwalior offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services gwalior, qa testing gwalior, manual testing gwalior, automation testing gwalior, performance testing gwalior, software testing company gwalior, qa services madhya pradesh, testing services gwalior",
     },
@@ -7188,7 +7188,7 @@ export const cityData: Record<string, CityData> = {
     name: "Hyderabad",
     state: "Telangana",
     metadata: {
-      title: "Software QA Testing Services in Hyderabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Hyderabad | Testriq",
       description: "Leading software testing company in Hyderabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services hyderabad, qa testing hyderabad, manual testing hyderabad, automation testing hyderabad, performance testing hyderabad, software testing company hyderabad, qa services telangana, testing services hyderabad",
     },
@@ -7380,7 +7380,7 @@ export const cityData: Record<string, CityData> = {
     name: "Indore",
     state: "Madhya Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Indore | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Indore | Testriq",
       description: "Leading software testing company in Indore offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services indore, qa testing indore, manual testing indore, automation testing indore, performance testing indore, software testing company indore, qa services madhya pradesh, testing services indore",
     },
@@ -7572,7 +7572,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jaipur",
     state: "Rajasthan",
     metadata: {
-      title: "Software QA Testing Services in Jaipur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jaipur | Testriq",
       description: "Leading software testing company in Jaipur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jaipur, qa testing jaipur, manual testing jaipur, automation testing jaipur, performance testing jaipur, software testing company jaipur, qa services rajasthan, testing services jaipur",
     },
@@ -7764,7 +7764,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jalandhar",
     state: "Punjab",
     metadata: {
-      title: "Software QA Testing Services in Jalandhar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jalandhar | Testriq",
       description: "Leading software testing company in Jalandhar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jalandhar, qa testing jalandhar, manual testing jalandhar, automation testing jalandhar, performance testing jalandhar, software testing company jalandhar, qa services punjab, testing services jalandhar",
     },
@@ -7956,7 +7956,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jammu",
     state: "Jammu and Kashmir",
     metadata: {
-      title: "Software QA Testing Services in Jammu | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jammu | Testriq",
       description: "Leading software testing company in Jammu offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jammu, qa testing jammu, manual testing jammu, automation testing jammu, performance testing jammu, software testing company jammu, qa services jammu and kashmir, testing services jammu",
     },
@@ -8148,7 +8148,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jamshedpur",
     state: "Jharkhand",
     metadata: {
-      title: "Software QA Testing Services in Jamshedpur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jamshedpur | Testriq",
       description: "Leading software testing company in Jamshedpur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jamshedpur, qa testing jamshedpur, manual testing jamshedpur, automation testing jamshedpur, performance testing jamshedpur, software testing company jamshedpur, qa services jharkhand, testing services jamshedpur",
     },
@@ -8340,7 +8340,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jodhpur",
     state: "Rajasthan",
     metadata: {
-      title: "Software QA Testing Services in Jodhpur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jodhpur | Testriq",
       description: "Leading software testing company in Jodhpur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jodhpur, qa testing jodhpur, manual testing jodhpur, automation testing jodhpur, performance testing jodhpur, software testing company jodhpur, qa services rajasthan, testing services jodhpur",
     },
@@ -8532,7 +8532,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kalyan",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kalyan | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kalyan | Testriq",
       description: "Leading software testing company in Kalyan offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kalyan, qa testing kalyan, manual testing kalyan, automation testing kalyan, performance testing kalyan, software testing company kalyan, qa services maharashtra, testing services kalyan",
     },
@@ -8724,7 +8724,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kanpur",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Kanpur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kanpur | Testriq",
       description: "Leading software testing company in Kanpur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kanpur, qa testing kanpur, manual testing kanpur, automation testing kanpur, performance testing kanpur, software testing company kanpur, qa services uttar pradesh, testing services kanpur",
     },
@@ -8916,7 +8916,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kochi",
     state: "Kerala",
     metadata: {
-      title: "Software QA Testing Services in Kochi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kochi | Testriq",
       description: "Leading software testing company in Kochi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kochi, qa testing kochi, manual testing kochi, automation testing kochi, performance testing kochi, software testing company kochi, qa services kerala, testing services kochi",
     },
@@ -9108,7 +9108,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kolkata",
     state: "West Bengal",
     metadata: {
-      title: "Software QA Testing Services in Kolkata | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kolkata | Testriq",
       description: "Leading software testing company in Kolkata offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kolkata, qa testing kolkata, manual testing kolkata, automation testing kolkata, performance testing kolkata, software testing company kolkata, qa services west bengal, testing services kolkata",
     },
@@ -9300,7 +9300,7 @@ export const cityData: Record<string, CityData> = {
     name: "Lucknow",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Lucknow | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Lucknow | Testriq",
       description: "Leading software testing company in Lucknow offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services lucknow, qa testing lucknow, manual testing lucknow, automation testing lucknow, performance testing lucknow, software testing company lucknow, qa services uttar pradesh, testing services lucknow",
     },
@@ -9492,7 +9492,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ludhiana",
     state: "Punjab",
     metadata: {
-      title: "Software QA Testing Services in Ludhiana | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ludhiana | Testriq",
       description: "Leading software testing company in Ludhiana offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ludhiana, qa testing ludhiana, manual testing ludhiana, automation testing ludhiana, performance testing ludhiana, software testing company ludhiana, qa services punjab, testing services ludhiana",
     },
@@ -9684,7 +9684,7 @@ export const cityData: Record<string, CityData> = {
     name: "Madurai",
     state: "Tamil Nadu",
     metadata: {
-      title: "Software QA Testing Services in Madurai | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Madurai | Testriq",
       description: "Leading software testing company in Madurai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services madurai, qa testing madurai, manual testing madurai, automation testing madurai, performance testing madurai, software testing company madurai, qa services tamil nadu, testing services madurai",
     },
@@ -9876,7 +9876,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mangalore",
     state: "Karnataka",
     metadata: {
-      title: "Software QA Testing Services in Mangalore | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mangalore | Testriq",
       description: "Leading software testing company in Mangalore offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mangalore, qa testing mangalore, manual testing mangalore, automation testing mangalore, performance testing mangalore, software testing company mangalore, qa services karnataka, testing services mangalore",
     },
@@ -10068,7 +10068,7 @@ export const cityData: Record<string, CityData> = {
     name: "Meerut",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Meerut | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Meerut | Testriq",
       description: "Leading software testing company in Meerut offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services meerut, qa testing meerut, manual testing meerut, automation testing meerut, performance testing meerut, software testing company meerut, qa services uttar pradesh, testing services meerut",
     },
@@ -10260,7 +10260,7 @@ export const cityData: Record<string, CityData> = {
     name: "Moradabad",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Moradabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Moradabad | Testriq",
       description: "Leading software testing company in Moradabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services moradabad, qa testing moradabad, manual testing moradabad, automation testing moradabad, performance testing moradabad, software testing company moradabad, qa services uttar pradesh, testing services moradabad",
     },
@@ -10452,7 +10452,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mumbai",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mumbai | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mumbai | Testriq",
       description: "Leading software testing company in Mumbai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mumbai, qa testing mumbai, manual testing mumbai, automation testing mumbai, performance testing mumbai, software testing company mumbai, qa services maharashtra, testing services mumbai",
     },
@@ -10644,7 +10644,7 @@ export const cityData: Record<string, CityData> = {
     name: "Nagpur",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Nagpur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Nagpur | Testriq",
       description: "Leading software testing company in Nagpur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services nagpur, qa testing nagpur, manual testing nagpur, automation testing nagpur, performance testing nagpur, software testing company nagpur, qa services maharashtra, testing services nagpur",
     },
@@ -10836,7 +10836,7 @@ export const cityData: Record<string, CityData> = {
     name: "Nashik",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Nashik | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Nashik | Testriq",
       description: "Leading software testing company in Nashik offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services nashik, qa testing nashik, manual testing nashik, automation testing nashik, performance testing nashik, software testing company nashik, qa services maharashtra, testing services nashik",
     },
@@ -11028,7 +11028,7 @@ export const cityData: Record<string, CityData> = {
     name: "Navi Mumbai",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Navi Mumbai | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Navi Mumbai | Testriq",
       description: "Leading software testing company in Navi Mumbai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services navi mumbai, qa testing navi mumbai, manual testing navi mumbai, automation testing navi mumbai, performance testing navi mumbai, software testing company navi mumbai, qa services maharashtra, testing services navi mumbai",
     },
@@ -11220,7 +11220,7 @@ export const cityData: Record<string, CityData> = {
     name: "Noida",
     state: "Uttar Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Noida | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Noida | Testriq",
       description: "Leading software testing company in Noida offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services noida, qa testing noida, manual testing noida, automation testing noida, performance testing noida, software testing company noida, qa services uttar pradesh, testing services noida",
     },
@@ -11412,7 +11412,7 @@ export const cityData: Record<string, CityData> = {
     name: "Patna",
     state: "Bihar",
     metadata: {
-      title: "Software QA Testing Services in Patna | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Patna | Testriq",
       description: "Leading software testing company in Patna offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services patna, qa testing patna, manual testing patna, automation testing patna, performance testing patna, software testing company patna, qa services bihar, testing services patna",
     },
@@ -11604,7 +11604,7 @@ export const cityData: Record<string, CityData> = {
     name: "Pune",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Pune | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Pune | Testriq",
       description: "Leading software testing company in Pune offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services pune, qa testing pune, manual testing pune, automation testing pune, performance testing pune, software testing company pune, qa services maharashtra, testing services pune",
     },
@@ -11796,7 +11796,7 @@ export const cityData: Record<string, CityData> = {
     name: "Raipur",
     state: "Chhattisgarh",
     metadata: {
-      title: "Software QA Testing Services in Raipur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Raipur | Testriq",
       description: "Leading software testing company in Raipur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services raipur, qa testing raipur, manual testing raipur, automation testing raipur, performance testing raipur, software testing company raipur, qa services chhattisgarh, testing services raipur",
     },
@@ -11988,7 +11988,7 @@ export const cityData: Record<string, CityData> = {
     name: "Rajkot",
     state: "Gujarat",
     metadata: {
-      title: "Software QA Testing Services in Rajkot | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Rajkot | Testriq",
       description: "Leading software testing company in Rajkot offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services rajkot, qa testing rajkot, manual testing rajkot, automation testing rajkot, performance testing rajkot, software testing company rajkot, qa services gujarat, testing services rajkot",
     },
@@ -12180,7 +12180,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ranchi",
     state: "Jharkhand",
     metadata: {
-      title: "Software QA Testing Services in Ranchi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ranchi | Testriq",
       description: "Leading software testing company in Ranchi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ranchi, qa testing ranchi, manual testing ranchi, automation testing ranchi, performance testing ranchi, software testing company ranchi, qa services jharkhand, testing services ranchi",
     },
@@ -12372,7 +12372,7 @@ export const cityData: Record<string, CityData> = {
     name: "Secunderabad",
     state: "Telangana",
     metadata: {
-      title: "Software QA Testing Services in Secunderabad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Secunderabad | Testriq",
       description: "Leading software testing company in Secunderabad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services secunderabad, qa testing secunderabad, manual testing secunderabad, automation testing secunderabad, performance testing secunderabad, software testing company secunderabad, qa services telangana, testing services secunderabad",
     },
@@ -12564,7 +12564,7 @@ export const cityData: Record<string, CityData> = {
     name: "Shimla",
     state: "Himachal Pradesh",
     metadata: {
-      title: "Software QA Testing Services in Shimla | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Shimla | Testriq",
       description: "Leading software testing company in Shimla offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services shimla, qa testing shimla, manual testing shimla, automation testing shimla, performance testing shimla, software testing company shimla, qa services himachal pradesh, testing services shimla",
     },
@@ -12756,7 +12756,7 @@ export const cityData: Record<string, CityData> = {
     name: "Surat",
     state: "Gujarat",
     metadata: {
-      title: "Software QA Testing Services in Surat | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Surat | Testriq",
       description: "Leading software testing company in Surat offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services surat, qa testing surat, manual testing surat, automation testing surat, performance testing surat, software testing company surat, qa services gujarat, testing services surat",
     },
@@ -12948,7 +12948,7 @@ export const cityData: Record<string, CityData> = {
     name: "Thane",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Thane | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Thane | Testriq",
       description: "Leading software testing company in Thane offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services thane, qa testing thane, manual testing thane, automation testing thane, performance testing thane, software testing company thane, qa services maharashtra, testing services thane",
     },
@@ -13140,7 +13140,7 @@ export const cityData: Record<string, CityData> = {
     name: "Udaipur",
     state: "Rajasthan",
     metadata: {
-      title: "Software QA Testing Services in Udaipur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Udaipur | Testriq",
       description: "Leading software testing company in Udaipur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services udaipur, qa testing udaipur, manual testing udaipur, automation testing udaipur, performance testing udaipur, software testing company udaipur, qa services rajasthan, testing services udaipur",
     },
@@ -13332,7 +13332,7 @@ export const cityData: Record<string, CityData> = {
     name: "Vadodara",
     state: "Gujarat",
     metadata: {
-      title: "Software QA Testing Services in Vadodara | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Vadodara | Testriq",
       description: "Leading software testing company in Vadodara offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services vadodara, qa testing vadodara, manual testing vadodara, automation testing vadodara, performance testing vadodara, software testing company vadodara, qa services gujarat, testing services vadodara",
     },
@@ -13523,7 +13523,7 @@ export const cityData: Record<string, CityData> = {
     name: "Currey Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Currey Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Currey Road | Testriq",
       description: "Leading software testing company in Currey Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services currey road, qa testing currey road, manual testing currey road, automation testing currey road, performance testing currey road, software testing company currey road, qa services maharashtra, testing services currey road",
     },
@@ -13715,7 +13715,7 @@ export const cityData: Record<string, CityData> = {
     name: "Diva",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Diva | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Diva | Testriq",
       description: "Leading software testing company in Diva offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services diva, qa testing diva, manual testing diva, automation testing diva, performance testing diva, software testing company diva, qa services maharashtra, testing services diva",
     },
@@ -13907,7 +13907,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dockyard Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Dockyard Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dockyard Road | Testriq",
       description: "Leading software testing company in Dockyard Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services dockyard road, qa testing dockyard road, manual testing dockyard road, automation testing dockyard road, performance testing dockyard road, software testing company dockyard road, qa services maharashtra, testing services dockyard road",
     },
@@ -14099,7 +14099,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ghatkopar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Ghatkopar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ghatkopar | Testriq",
       description: "Leading software testing company in Ghatkopar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ghatkopar, qa testing ghatkopar, manual testing ghatkopar, automation testing ghatkopar, performance testing ghatkopar, software testing company ghatkopar, qa services maharashtra, testing services ghatkopar",
     },
@@ -14291,7 +14291,7 @@ export const cityData: Record<string, CityData> = {
     name: "Goregaon",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Goregaon | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Goregaon | Testriq",
       description: "Leading software testing company in Goregaon offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services goregaon, qa testing goregaon, manual testing goregaon, automation testing goregaon, performance testing goregaon, software testing company goregaon, qa services maharashtra, testing services goregaon",
     },
@@ -14483,7 +14483,7 @@ export const cityData: Record<string, CityData> = {
     name: "Grant Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Grant Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Grant Road | Testriq",
       description: "Leading software testing company in Grant Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services grant road, qa testing grant road, manual testing grant road, automation testing grant road, performance testing grant road, software testing company grant road, qa services maharashtra, testing services grant road",
     },
@@ -14675,7 +14675,7 @@ export const cityData: Record<string, CityData> = {
     name: "Gurugram",
     state: "Haryana",
     metadata: {
-      title: "Software QA Testing Services in Gurugram | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Gurugram | Testriq",
       description: "Leading software testing company in Gurugram offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services gurugram, qa testing gurugram, manual testing gurugram, automation testing gurugram, performance testing gurugram, software testing company gurugram, qa services haryana, testing services gurugram",
     },
@@ -14867,7 +14867,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jogeshwari",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Jogeshwari | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jogeshwari | Testriq",
       description: "Leading software testing company in Jogeshwari offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services jogeshwari, qa testing jogeshwari, manual testing jogeshwari, automation testing jogeshwari, performance testing jogeshwari, software testing company jogeshwari, qa services maharashtra, testing services jogeshwari",
     },
@@ -15059,7 +15059,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kalwa",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kalwa | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kalwa | Testriq",
       description: "Leading software testing company in Kalwa offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kalwa, qa testing kalwa, manual testing kalwa, automation testing kalwa, performance testing kalwa, software testing company kalwa, qa services maharashtra, testing services kalwa",
     },
@@ -15251,7 +15251,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kandivali",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kandivali | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kandivali | Testriq",
       description: "Leading software testing company in Kandivali offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kandivali, qa testing kandivali, manual testing kandivali, automation testing kandivali, performance testing kandivali, software testing company kandivali, qa services maharashtra, testing services kandivali",
     },
@@ -15443,7 +15443,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kanjurmarg",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kanjurmarg | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kanjurmarg | Testriq",
       description: "Leading software testing company in Kanjurmarg offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kanjurmarg, qa testing kanjurmarg, manual testing kanjurmarg, automation testing kanjurmarg, performance testing kanjurmarg, software testing company kanjurmarg, qa services maharashtra, testing services kanjurmarg",
     },
@@ -15635,7 +15635,7 @@ export const cityData: Record<string, CityData> = {
     name: "Khar Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Khar Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Khar Road | Testriq",
       description: "Leading software testing company in Khar Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services khar road, qa testing khar road, manual testing khar road, automation testing khar road, performance testing khar road, software testing company khar road, qa services maharashtra, testing services khar road",
     },
@@ -15827,7 +15827,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kings Circle",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kings Circle | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kings Circle | Testriq",
       description: "Leading software testing company in Kings Circle offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kings circle, qa testing kings circle, manual testing kings circle, automation testing kings circle, performance testing kings circle, software testing company kings circle, qa services maharashtra, testing services kings circle",
     },
@@ -16019,7 +16019,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kopar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kopar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kopar | Testriq",
       description: "Leading software testing company in Kopar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kopar, qa testing kopar, manual testing kopar, automation testing kopar, performance testing kopar, software testing company kopar, qa services maharashtra, testing services kopar",
     },
@@ -16211,7 +16211,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kurla",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Kurla | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kurla | Testriq",
       description: "Leading software testing company in Kurla offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services kurla, qa testing kurla, manual testing kurla, automation testing kurla, performance testing kurla, software testing company kurla, qa services maharashtra, testing services kurla",
     },
@@ -16403,7 +16403,7 @@ export const cityData: Record<string, CityData> = {
     name: "Lower Parel",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Lower Parel | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Lower Parel | Testriq",
       description: "Leading software testing company in Lower Parel offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services lower parel, qa testing lower parel, manual testing lower parel, automation testing lower parel, performance testing lower parel, software testing company lower parel, qa services maharashtra, testing services lower parel",
     },
@@ -16595,7 +16595,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mahalaxmi",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mahalaxmi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mahalaxmi | Testriq",
       description: "Leading software testing company in Mahalaxmi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mahalaxmi, qa testing mahalaxmi, manual testing mahalaxmi, automation testing mahalaxmi, performance testing mahalaxmi, software testing company mahalaxmi, qa services maharashtra, testing services mahalaxmi",
     },
@@ -16787,7 +16787,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mahim",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mahim | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mahim | Testriq",
       description: "Leading software testing company in Mahim offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mahim, qa testing mahim, manual testing mahim, automation testing mahim, performance testing mahim, software testing company mahim, qa services maharashtra, testing services mahim",
     },
@@ -16979,7 +16979,7 @@ export const cityData: Record<string, CityData> = {
     name: "Malad",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Malad | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Malad | Testriq",
       description: "Leading software testing company in Malad offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services malad, qa testing malad, manual testing malad, automation testing malad, performance testing malad, software testing company malad, qa services maharashtra, testing services malad",
     },
@@ -17171,7 +17171,7 @@ export const cityData: Record<string, CityData> = {
     name: "Marine Lines",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Marine Lines | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Marine Lines | Testriq",
       description: "Leading software testing company in Marine Lines offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services marine lines, qa testing marine lines, manual testing marine lines, automation testing marine lines, performance testing marine lines, software testing company marine lines, qa services maharashtra, testing services marine lines",
     },
@@ -17363,7 +17363,7 @@ export const cityData: Record<string, CityData> = {
     name: "Masjid Bandar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Masjid Bandar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Masjid Bandar | Testriq",
       description: "Leading software testing company in Masjid Bandar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services masjid bandar, qa testing masjid bandar, manual testing masjid bandar, automation testing masjid bandar, performance testing masjid bandar, software testing company masjid bandar, qa services maharashtra, testing services masjid bandar",
     },
@@ -17555,7 +17555,7 @@ export const cityData: Record<string, CityData> = {
     name: "Matunga Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Matunga Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Matunga Road | Testriq",
       description: "Leading software testing company in Matunga Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services matunga road, qa testing matunga road, manual testing matunga road, automation testing matunga road, performance testing matunga road, software testing company matunga road, qa services maharashtra, testing services matunga road",
     },
@@ -17747,7 +17747,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mira Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mira Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mira Road | Testriq",
       description: "Leading software testing company in Mira Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mira road, qa testing mira road, manual testing mira road, automation testing mira road, performance testing mira road, software testing company mira road, qa services maharashtra, testing services mira road",
     },
@@ -17939,7 +17939,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mulund",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mulund | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mulund | Testriq",
       description: "Leading software testing company in Mulund offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mulund, qa testing mulund, manual testing mulund, automation testing mulund, performance testing mulund, software testing company mulund, qa services maharashtra, testing services mulund",
     },
@@ -18131,7 +18131,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mumbai Central",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mumbai Central | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mumbai Central | Testriq",
       description: "Leading software testing company in Mumbai Central offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mumbai central, qa testing mumbai central, manual testing mumbai central, automation testing mumbai central, performance testing mumbai central, software testing company mumbai central, qa services maharashtra, testing services mumbai central",
     },
@@ -18323,7 +18323,7 @@ export const cityData: Record<string, CityData> = {
     name: "Mumbra",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Mumbra | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Mumbra | Testriq",
       description: "Leading software testing company in Mumbra offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services mumbra, qa testing mumbra, manual testing mumbra, automation testing mumbra, performance testing mumbra, software testing company mumbra, qa services maharashtra, testing services mumbra",
     },
@@ -18515,7 +18515,7 @@ export const cityData: Record<string, CityData> = {
     name: "Nahur",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Nahur | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Nahur | Testriq",
       description: "Leading software testing company in Nahur offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services nahur, qa testing nahur, manual testing nahur, automation testing nahur, performance testing nahur, software testing company nahur, qa services maharashtra, testing services nahur",
     },
@@ -18707,7 +18707,7 @@ export const cityData: Record<string, CityData> = {
     name: "Naigaon",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Naigaon | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Naigaon | Testriq",
       description: "Leading software testing company in Naigaon offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services naigaon, qa testing naigaon, manual testing naigaon, automation testing naigaon, performance testing naigaon, software testing company naigaon, qa services maharashtra, testing services naigaon",
     },
@@ -18899,7 +18899,7 @@ export const cityData: Record<string, CityData> = {
     name: "Nalasopara",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Nalasopara | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Nalasopara | Testriq",
       description: "Leading software testing company in Nalasopara offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services nalasopara, qa testing nalasopara, manual testing nalasopara, automation testing nalasopara, performance testing nalasopara, software testing company nalasopara, qa services maharashtra, testing services nalasopara",
     },
@@ -19091,7 +19091,7 @@ export const cityData: Record<string, CityData> = {
     name: "Prabhadevi",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Prabhadevi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Prabhadevi | Testriq",
       description: "Leading software testing company in Prabhadevi offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services prabhadevi, qa testing prabhadevi, manual testing prabhadevi, automation testing prabhadevi, performance testing prabhadevi, software testing company prabhadevi, qa services maharashtra, testing services prabhadevi",
     },
@@ -19283,7 +19283,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ram Mandir",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Ram Mandir | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ram Mandir | Testriq",
       description: "Leading software testing company in Ram Mandir offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services ram mandir, qa testing ram mandir, manual testing ram mandir, automation testing ram mandir, performance testing ram mandir, software testing company ram mandir, qa services maharashtra, testing services ram mandir",
     },
@@ -19475,7 +19475,7 @@ export const cityData: Record<string, CityData> = {
     name: "Reay Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Reay Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Reay Road | Testriq",
       description: "Leading software testing company in Reay Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services reay road, qa testing reay road, manual testing reay road, automation testing reay road, performance testing reay road, software testing company reay road, qa services maharashtra, testing services reay road",
     },
@@ -19667,7 +19667,7 @@ export const cityData: Record<string, CityData> = {
     name: "Sandhurst Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Sandhurst Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Sandhurst Road | Testriq",
       description: "Leading software testing company in Sandhurst Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services sandhurst road, qa testing sandhurst road, manual testing sandhurst road, automation testing sandhurst road, performance testing sandhurst road, software testing company sandhurst road, qa services maharashtra, testing services sandhurst road",
     },
@@ -19859,7 +19859,7 @@ export const cityData: Record<string, CityData> = {
     name: "Santacruz",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Santacruz | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Santacruz | Testriq",
       description: "Leading software testing company in Santacruz offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services santacruz, qa testing santacruz, manual testing santacruz, automation testing santacruz, performance testing santacruz, software testing company santacruz, qa services maharashtra, testing services santacruz",
     },
@@ -20051,7 +20051,7 @@ export const cityData: Record<string, CityData> = {
     name: "Sewri",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Sewri | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Sewri | Testriq",
       description: "Leading software testing company in Sewri offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services sewri, qa testing sewri, manual testing sewri, automation testing sewri, performance testing sewri, software testing company sewri, qa services maharashtra, testing services sewri",
     },
@@ -20243,7 +20243,7 @@ export const cityData: Record<string, CityData> = {
     name: "Sion",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Sion | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Sion | Testriq",
       description: "Leading software testing company in Sion offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services sion, qa testing sion, manual testing sion, automation testing sion, performance testing sion, software testing company sion, qa services maharashtra, testing services sion",
     },
@@ -20435,7 +20435,7 @@ export const cityData: Record<string, CityData> = {
     name: "Thakurli",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Thakurli | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Thakurli | Testriq",
       description: "Leading software testing company in Thakurli offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services thakurli, qa testing thakurli, manual testing thakurli, automation testing thakurli, performance testing thakurli, software testing company thakurli, qa services maharashtra, testing services thakurli",
     },
@@ -20627,7 +20627,7 @@ export const cityData: Record<string, CityData> = {
     name: "Trivandrum",
     state: "Kerala",
     metadata: {
-      title: "Software QA Testing Services in Trivandrum | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Trivandrum | Testriq",
       description: "Leading software testing company in Trivandrum offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services trivandrum, qa testing trivandrum, manual testing trivandrum, automation testing trivandrum, performance testing trivandrum, software testing company trivandrum, qa services kerala, testing services trivandrum",
     },
@@ -20819,7 +20819,7 @@ export const cityData: Record<string, CityData> = {
     name: "Vasai",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Vasai | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Vasai | Testriq",
       description: "Leading software testing company in Vasai offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services vasai, qa testing vasai, manual testing vasai, automation testing vasai, performance testing vasai, software testing company vasai, qa services maharashtra, testing services vasai",
     },
@@ -21011,7 +21011,7 @@ export const cityData: Record<string, CityData> = {
     name: "Vidyavihar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Vidyavihar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Vidyavihar | Testriq",
       description: "Leading software testing company in Vidyavihar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services vidyavihar, qa testing vidyavihar, manual testing vidyavihar, automation testing vidyavihar, performance testing vidyavihar, software testing company vidyavihar, qa services maharashtra, testing services vidyavihar",
     },
@@ -21203,7 +21203,7 @@ export const cityData: Record<string, CityData> = {
     name: "Vikhroli",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Vikhroli | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Vikhroli | Testriq",
       description: "Leading software testing company in Vikhroli offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services vikhroli, qa testing vikhroli, manual testing vikhroli, automation testing vikhroli, performance testing vikhroli, software testing company vikhroli, qa services maharashtra, testing services vikhroli",
     },
@@ -21395,7 +21395,7 @@ export const cityData: Record<string, CityData> = {
     name: "Vile Parle",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Vile Parle | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Vile Parle | Testriq",
       description: "Leading software testing company in Vile Parle offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services vile parle, qa testing vile parle, manual testing vile parle, automation testing vile parle, performance testing vile parle, software testing company vile parle, qa services maharashtra, testing services vile parle",
     },
@@ -21587,7 +21587,7 @@ export const cityData: Record<string, CityData> = {
     name: "Virar",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Virar | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Virar | Testriq",
       description: "Leading software testing company in Virar offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services virar, qa testing virar, manual testing virar, automation testing virar, performance testing virar, software testing company virar, qa services maharashtra, testing services virar",
     },
@@ -21779,7 +21779,7 @@ export const cityData: Record<string, CityData> = {
     name: "Wadala Road",
     state: "Maharashtra",
     metadata: {
-      title: "Software QA Testing Services in Wadala Road | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Wadala Road | Testriq",
       description: "Leading software testing company in Wadala Road offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts.",
       keywords: "software testing services wadala road, qa testing wadala road, manual testing wadala road, automation testing wadala road, performance testing wadala road, software testing company wadala road, qa services maharashtra, testing services wadala road",
     },
@@ -21968,7 +21968,7 @@ export const cityData: Record<string, CityData> = {
     name: "Abu Dhabi",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Abu Dhabi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Abu Dhabi | Testriq",
       description: "Leading software testing company in Abu Dhabi UAE offering manual testing, automation testing, performance testing, and QA consulting services. ISTQB certified experts for reliable software quality assurance.",
       keywords: "software testing services abu dhabi, qa testing abu dhabi, manual testing abu dhabi, automation testing abu dhabi, performance testing abu dhabi, software testing company abu dhabi uae, qa services abu dhabi, testing services abu dhabi, software qa abu dhabi",
     },
@@ -22157,7 +22157,7 @@ export const cityData: Record<string, CityData> = {
     name: "Sharjah",
     state: "Sharjah",
     metadata: {
-      title: "Software QA Testing Services in Sharjah | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Sharjah | Testriq",
       description: "Top software testing company in Sharjah UAE providing manual testing, automation testing, performance testing, and QA consulting services. Expert QA engineers for high-quality software assurance.",
       keywords: "software testing services sharjah, qa testing sharjah, manual testing sharjah, automation testing sharjah, performance testing sharjah, software testing company sharjah uae, qa services sharjah, testing services sharjah, software qa sharjah",
     },
@@ -22345,7 +22345,7 @@ export const cityData: Record<string, CityData> = {
     name: "Al Ain",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Al Ain | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Al Ain | Testriq",
       description: "Premier software testing company in Al Ain UAE specializing in manual testing, automation testing, performance testing, and QA consulting services. Certified experts ensuring top-tier software quality.",
       keywords: "software testing services al ain, qa testing al ain, manual testing al ain, automation testing al ain, performance testing al ain, software testing company al ain uae, qa services al ain, testing services al ain, software qa al ain",
     },
@@ -22533,7 +22533,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ajman",
     state: "Ajman",
     metadata: {
-      title: "Software QA Testing Services in Ajman | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ajman | Testriq",
       description: "Reliable software testing company in Ajman UAE offering manual testing, automation testing, performance testing, and QA consulting services. Certified QA specialists for superior software reliability.",
       keywords: "software testing services ajman, qa testing ajman, manual testing ajman, automation testing ajman, performance testing ajman, software testing company ajman uae, qa services ajman, testing services ajman, software qa ajman",
     },
@@ -22721,7 +22721,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ras Al Khaimah",
     state: "Ras Al Khaimah",
     metadata: {
-      title: "Software QA Testing Services in Ras Al Khaimah | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ras Al Khaimah | Testriq",
       description: "Expert software testing company in Ras Al Khaimah UAE providing manual testing, automation testing, performance testing, and QA consulting services. Ensuring robust software quality with certified professionals.",
       keywords: "software testing services ras al khaimah, qa testing ras al khaimah, manual testing ras al khaimah, automation testing ras al khaimah, performance testing ras al khaimah, software testing company ras al khaimah uae, qa services ras al khaimah, testing services ras al khaimah, software qa ras al khaimah",
     },
@@ -22909,7 +22909,7 @@ export const cityData: Record<string, CityData> = {
     name: "Fujairah",
     state: "Fujairah",
     metadata: {
-      title: "Software QA Testing Services in Fujairah | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Fujairah | Testriq",
       description: "Trusted software testing company in Fujairah UAE delivering manual testing, automation testing, performance testing, and QA consulting services. Professional QA team for exceptional software performance.",
       keywords: "software testing services fujairah, qa testing fujairah, manual testing fujairah, automation testing fujairah, performance testing fujairah, software testing company fujairah uae, qa services fujairah, testing services fujairah, software qa fujairah",
     },
@@ -23097,7 +23097,7 @@ export const cityData: Record<string, CityData> = {
     name: "Umm Al Quwain",
     state: "Umm Al Quwain",
     metadata: {
-      title: "Software QA Testing Services in Umm Al Quwain | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Umm Al Quwain | Testriq",
       description: "Professional software testing company in Umm Al Quwain UAE offering manual testing, automation testing, performance testing, and QA consulting services. Dedicated QA experts for flawless software delivery.",
       keywords: "software testing services umm al quwain, qa testing umm al quwain, manual testing umm al quwain, automation testing umm al quwain, performance testing umm al quwain, software testing company umm al quwain uae, qa services umm al quwain, testing services umm al quwain, software qa umm al quwain",
     },
@@ -23285,7 +23285,7 @@ export const cityData: Record<string, CityData> = {
     name: "Kalba",
     state: "Sharjah",
     metadata: {
-      title: "Software QA Testing Services in Kalba | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Kalba | Testriq",
       description: "Specialized software testing company in Kalba UAE focusing on manual testing, automation testing, performance testing, and QA consulting services. Ensuring high standards in software quality.",
       keywords: "software testing services kalba, qa testing kalba, manual testing kalba, automation testing kalba, performance testing kalba, software testing company kalba uae, qa services kalba, testing services kalba, software qa kalba",
     },
@@ -23473,7 +23473,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dibba Al-Fujairah",
     state: "Fujairah",
     metadata: {
-      title: "Software QA Testing Services in Dibba Al-Fujairah | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dibba Al-Fujairah | Testriq",
       description: "Leading software testing company in Dibba Al-Fujairah UAE providing manual testing, automation testing, performance testing, and QA consulting services. Expert QA for dependable software solutions.",
       keywords: "software testing services dibba al fujairah, qa testing dibba al fujairah, manual testing dibba al fujairah, automation testing dibba al fujairah, performance testing dibba al fujairah, software testing company dibba al fujairah uae, qa services dibba al fujairah, testing services dibba al fujairah, software qa dibba al fujairah",
     },
@@ -23661,7 +23661,7 @@ export const cityData: Record<string, CityData> = {
     name: "Madinat Zayed",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Madinat Zayed | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Madinat Zayed | Testriq",
       description: "Quality software testing company in Madinat Zayed UAE offering manual testing, automation testing, performance testing, and QA consulting services. Certified experts for reliable QA outcomes.",
       keywords: "software testing services madinat zayed, qa testing madinat zayed, manual testing madinat zayed, automation testing madinat zayed, performance testing madinat zayed, software testing company madinat zayed uae, qa services madinat zayed, testing services madinat zayed, software qa madinat zayed",
     },
@@ -23849,7 +23849,7 @@ export const cityData: Record<string, CityData> = {
     name: "Khor Fakkan",
     state: "Sharjah",
     metadata: {
-      title: "Software QA Testing Services in Khor Fakkan | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Khor Fakkan | Testriq",
       description: "Advanced software testing company in Khor Fakkan UAE specializing in manual testing, automation testing, performance testing, and QA consulting services. Ensuring optimal software functionality.",
       keywords: "software testing services khor fakkan, qa testing khor fakkan, manual testing khor fakkan, automation testing khor fakkan, performance testing khor fakkan, software testing company khor fakkan uae, qa services khor fakkan, testing services khor fakkan, software qa khor fakkan",
     },
@@ -24037,7 +24037,7 @@ export const cityData: Record<string, CityData> = {
     name: "Al Dhannah",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Al Dhannah | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Al Dhannah | Testriq",
       description: "Comprehensive software testing company in Al Dhannah UAE offering manual testing, automation testing, performance testing, and QA consulting services. Focused on delivering high-quality QA for industrial applications.",
       keywords: "software testing services al dhannah, qa testing al dhannah, manual testing al dhannah, automation testing al dhannah, performance testing al dhannah, software testing company al dhannah uae, qa services al dhannah, testing services al dhannah, software qa al dhannah",
     },
@@ -24225,7 +24225,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ghayathi",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Ghayathi | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ghayathi | Testriq",
       description: "Efficient software testing company in Ghayathi UAE providing manual testing, automation testing, performance testing, and QA consulting services. Committed to superior software testing standards.",
       keywords: "software testing services ghayathi, qa testing ghayathi, manual testing ghayathi, automation testing ghayathi, performance testing ghayathi, software testing company ghayathi uae, qa services ghayathi, testing services ghayathi, software qa ghayathi",
     },
@@ -24413,7 +24413,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dhaid",
     state: "Sharjah",
     metadata: {
-      title: "Software QA Testing Services in Dhaid | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dhaid | Testriq",
       description: "Dedicated software testing company in Dhaid UAE offering manual testing, automation testing, performance testing, and QA consulting services. Focused on quality assurance for agricultural and local businesses.",
       keywords: "software testing services dhaid, qa testing dhaid, manual testing dhaid, automation testing dhaid, performance testing dhaid, software testing company dhaid uae, qa services dhaid, testing services dhaid, software qa dhaid",
     },
@@ -24601,7 +24601,7 @@ export const cityData: Record<string, CityData> = {
     name: "Jebel Ali",
     state: "Dubai",
     metadata: {
-      title: "Software QA Testing Services in Jebel Ali | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Jebel Ali | Testriq",
       description: "Premier software testing company in Jebel Ali UAE specializing in manual testing, automation testing, performance testing, and QA consulting services. Ensuring excellence in logistics and trade software.",
       keywords: "software testing services jebel ali, qa testing jebel ali, manual testing jebel ali, automation testing jebel ali, performance testing jebel ali, software testing company jebel ali uae, qa services jebel ali, testing services jebel ali, software qa jebel ali",
     },
@@ -24789,7 +24789,7 @@ export const cityData: Record<string, CityData> = {
     name: "Liwa Oasis",
     state: "Abu Dhabi",
     metadata: {
-      title: "Software QA Testing Services in Liwa Oasis | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Liwa Oasis | Testriq",
       description: "Specialized software testing company in Liwa Oasis UAE offering manual testing, automation testing, performance testing, and QA consulting services. Tailored QA for desert and tourism applications.",
       keywords: "software testing services liwa oasis, qa testing liwa oasis, manual testing liwa oasis, automation testing liwa oasis, performance testing liwa oasis, software testing company liwa oasis uae, qa services liwa oasis, testing services liwa oasis, software qa liwa oasis",
     },
@@ -24977,7 +24977,7 @@ export const cityData: Record<string, CityData> = {
     name: "Hatta",
     state: "Dubai",
     metadata: {
-      title: "Software QA Testing Services in Hatta | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Hatta | Testriq",
       description: "Expert software testing company in Hatta UAE providing manual testing, automation testing, performance testing, and QA consulting services. Specialized QA for tourism and outdoor applications.",
       keywords: "software testing services hatta, qa testing hatta, manual testing hatta, automation testing hatta, performance testing hatta, software testing company hatta uae, qa services hatta, testing services hatta, software qa hatta",
     },
@@ -25165,7 +25165,7 @@ export const cityData: Record<string, CityData> = {
     name: "Ar-Rams",
     state: "Ras Al Khaimah",
     metadata: {
-      title: "Software QA Testing Services in Ar-Rams | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Ar-Rams | Testriq",
       description: "Reliable software testing company in Ar-Rams UAE offering manual testing, automation testing, performance testing, and QA consulting services. Focused on coastal and local business QA needs.",
       keywords: "software testing services ar rams, qa testing ar rams, manual testing ar rams, automation testing ar rams, performance testing ar rams, software testing company ar rams uae, qa services ar rams, testing services ar rams, software qa ar rams",
     },
@@ -25353,7 +25353,7 @@ export const cityData: Record<string, CityData> = {
     name: "Dibba Al-Hisn",
     state: "Sharjah",
     metadata: {
-      title: "Software QA Testing Services in Dibba Al-Hisn | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Dibba Al-Hisn | Testriq",
       description: "Professional software testing company in Dibba Al-Hisn UAE offering manual testing, automation testing, performance testing, and QA consulting services. Tailored QA for coastal communities.",
       keywords: "software testing services dibba al hisn, qa testing dibba al hisn, manual testing dibba al hisn, automation testing dibba al hisn, performance testing dibba al hisn, software testing company dibba al hisn uae, qa services dibba al hisn, testing services dibba al hisn, software qa dibba al hisn",
     },
@@ -25541,7 +25541,7 @@ export const cityData: Record<string, CityData> = {
     name: "Al Jazirah Al Hamra",
     state: "Ras Al Khaimah",
     metadata: {
-      title: "Software QA Testing Services in Al Jazirah Al Hamra | Manual & Automation Testing | Testriq",
+      title: "Software QA Testing Services in Al Jazirah Al Hamra | Testriq",
       description: "Expert software testing company in Al Jazirah Al Hamra UAE providing manual testing, automation testing, performance testing, and QA consulting services. Quality assurance for heritage and modern applications.",
       keywords: "software testing services al jazirah al hamra, qa testing al jazirah al hamra, manual testing al jazirah al hamra, automation testing al jazirah al hamra, performance testing al jazirah al hamra, software testing company al jazirah al hamra uae, qa services al jazirah al hamra, testing services al jazirah al hamra, software qa al jazirah al hamra",
     },

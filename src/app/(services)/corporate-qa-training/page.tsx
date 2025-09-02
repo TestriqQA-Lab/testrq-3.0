@@ -7,7 +7,7 @@ import StructuredData, {
 
 export const metadata: Metadata = {
   title:
-    "Corporate QA Training Services - Professional Software Testing Training",
+    "Corporate QA Training Services - Professional Software Testing",
   description:
     "Transform your team with comprehensive Corporate QA Training services. Expert-led training programs covering manual testing, automation, performance testing, and quality assurance best practices.",
   keywords: [

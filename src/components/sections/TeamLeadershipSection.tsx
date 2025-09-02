@@ -261,14 +261,16 @@ const TeamLeadershipSection = () => {
                       </div>
 
                       {/* Floating Badge */}
-                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-white">
-                            {leader.experience.split("+")[0]}+
+                      {leader.name !== "Prashant Shukla" && (
+                        <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-white">
+                              {leader.experience.split("+")[0]}+
+                            </div>
+                            <div className="text-xs text-gray-100">Years</div>
                           </div>
-                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -320,14 +322,16 @@ const TeamLeadershipSection = () => {
                     </div>
 
                     {/* Floating Badge */}
-                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-white">
-                          {leader.experience.split("+")[0]}+
+                    {leader.name !== "Prashant Shukla" && (
+                      <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
+                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                        <div className="text-xs text-gray-100">Years</div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -390,14 +394,16 @@ const TeamLeadershipSection = () => {
                       </div>
 
                       {/* Floating Badge */}
-                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-white">
-                            {leader.experience.split("+")[0]}+
+                      {leader.name !== "Prashant Shukla" && (
+                        <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-white">
+                              {leader.experience.split("+")[0]}+
+                            </div>
+                            <div className="text-xs text-gray-100">Years</div>
                           </div>
-                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -449,14 +455,16 @@ const TeamLeadershipSection = () => {
                     </div>
 
                     {/* Floating Badge */}
-                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-white">
-                          {leader.experience.split("+")[0]}+
+                    {leader.name !== "Prashant Shukla" && (
+                      <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
+                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                        <div className="text-xs text-gray-100">Years</div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>

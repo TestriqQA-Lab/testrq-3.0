@@ -4,7 +4,7 @@ import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
+  title: "Software Testing Blog | QA Insights & Best Practices",
   description: "Stay updated with the latest trends, insights, and best practices in software testing and QA. Explore expert articles, tutorials, and industry news from Testriq's ISTQB certified experts.",
   keywords: "software testing blog, QA insights, test automation, performance testing, security testing, mobile testing, API testing, regression testing, manual testing, testing best practices, ISTQB certified experts, software quality assurance",
   authors: [{ name: "Testriq QA Lab" }],

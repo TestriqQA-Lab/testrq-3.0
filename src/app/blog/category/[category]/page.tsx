@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
 
   return {
-    title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
+    title: `${categoryName} | Insights & Best Practices`,
     description: categoryDescription,
     keywords: `${categoryName.toLowerCase()} testing, ${categoryName.toLowerCase()} qa, software testing, ${categoryName.toLowerCase()} best practices, ${categoryName.toLowerCase()} tutorials, testing guides, qa insights, ISTQB certified experts`,
     authors: [{ name: "Testriq QA Lab" }],

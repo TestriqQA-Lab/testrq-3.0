@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: {
     template: "",
     default:
-      "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
+      "Software Testing Blog | Expert QA Insights & Best Practices",
   },
   description:
     "Discover expert insights on test automation, performance testing, security testing, mobile app testing, and quality assurance best practices to accelerate your testing excellence.",

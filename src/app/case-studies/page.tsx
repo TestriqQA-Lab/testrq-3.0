@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Client Case Studies & Success Stories | Testriq QA Testing Results",
+  title: "Case Studies & Success Stories | Testriq QA Testing Results",
   description: "Explore our client success stories and case studies showcasing real results from our software testing services. See how we helped businesses achieve 99% bug reduction, 75% faster releases, and improved user satisfaction.",
   keywords: "client case studies, success stories, software testing results, QA case studies, testing testimonials, client testimonials, software quality results, testing ROI, QA success metrics",
   metadataBase: new URL('https://www.testriq.com/'),
