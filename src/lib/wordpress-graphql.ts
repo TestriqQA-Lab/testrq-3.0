@@ -103,6 +103,7 @@ export interface WordPressPage {
   date: string;
   modified: string;
   status: string;
+  excerpt: string;
   featuredImage?: {
     node: {
       sourceUrl: string;
@@ -112,6 +113,10 @@ export interface WordPressPage {
         height: number;
       };
     };
+  };
+  seo: {
+    title: string;
+    metaDesc: string;
   };
 }
 
@@ -555,6 +560,11 @@ const GET_PAGES_QUERY = `
             }
           }
         }
+        seo {
+          title
+          metaDesc
+        }
+        excerpt
       }
       pageInfo {
         hasNextPage
@@ -577,8 +587,7 @@ const GET_PAGE_BY_SLUG_QUERY = `
       slug
       date
       modified
-      status
-      featuredImage {
+            featuredImage {
         node {
           sourceUrl
           altText
@@ -588,6 +597,11 @@ const GET_PAGE_BY_SLUG_QUERY = `
           }
         }
       }
+      seo {
+        title
+        metaDesc
+      }
+      excerpt
     }
   }
 `;
