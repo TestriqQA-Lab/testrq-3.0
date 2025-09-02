@@ -25,9 +25,9 @@ const Hero = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Accelerate your product launch with Independent software testing
-          services and QA solutions. With over a decade of experience, our ISTQB
-          Certified Experts deliver software quality, scalable QA services, and
+          Accelerate your product launch with Independent <Link href="/software-testing-guide">software testing
+          services</Link> and QA solutions. With over a decade of experience, our ISTQB
+          Certified Experts deliver <Link href="blog/post/how-does-validation-optimization-improve-web-application-quality">software quality</Link>, <Link href="blog/post/top-software-testing-services-to-elevate-your-software-2">scalable QA services</Link>, and
           award-winning apps for startups and industry leaders.
         </p>
 

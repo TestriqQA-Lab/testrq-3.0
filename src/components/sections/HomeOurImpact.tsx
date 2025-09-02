@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
 const renderTitle = () => {
-  const titleParts = impactSection.title.split("Real-World Successes");
+  const titleParts = impactSection[0].title.split("Real-World Successes");
   return (
     <>
       {titleParts[0]}
@@ -15,10 +15,24 @@ const renderTitle = () => {
   );
 };
 
-const impactSection = {
+const impactSection : {
+  title: string;
+  subtitle: React.ReactNode;
+  caseStudies: {
+    title: string;
+    badge: string;
+    description: string;
+    action: string;
+  }[];
+}[] = [ 
+  {
   title: "Our Impact: Real-World Successes",
   subtitle:
-    "Testriq’s enterprise QA solutions deliver real-world success-accelerating performance, securing fintech apps, and ensuring compatibility across web, mobile, and IoT through proven software testing case studies.",
+    (
+      <>
+      Testriq’s enterprise <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA solutions</Link> deliver real-world success-accelerating performance, securing <Link href="banking-finance-industry-testing-services">fintech apps</Link>, and ensuring compatibility across web, mobile, and <Link href="iot-device-testing-services">IoT</Link> through proven software testing <Link href="case-studies">case studies</Link>.
+      </>
+    ),
   caseStudies: [
     {
       title: "Testing Canva’s Design Platform",
@@ -42,7 +56,8 @@ const impactSection = {
       action: "/brandify-case-study",
     },
   ],
-};
+}
+]
 
 const HomeOurImpact = () => {
   return (
@@ -51,13 +66,13 @@ const HomeOurImpact = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
-          {impactSection.subtitle}
+          {impactSection[0].subtitle}
         </p>
       </div>
 
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
-        {impactSection.caseStudies.map((study, idx) => (
+        {impactSection[0].caseStudies.map((study, idx) => (
           <Link
             key={idx}
             href={study.action}

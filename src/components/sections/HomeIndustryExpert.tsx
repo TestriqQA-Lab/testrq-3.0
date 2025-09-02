@@ -13,14 +13,24 @@ interface cardInfo {
 
 const HomeIndustryExpert = () => {
 
-    const heading = {
-        title: 'Industry Expertise',
-        info: 'Testriq delivers specialized QA services for regulated and growth-focused industries-ensuring compliance, usability, and performance across e-commerce, fintech, healthcare, SaaS, EdTech, IoT, mobile apps, and gaming platforms.'
-    }
-
+    const heading: {
+        title: string;
+        info: React.ReactNode;
+    }[] = [
+            {
+                title: 'Industry Expertise',
+                info: (
+                    <>
+                        Testriq delivers specialized QA services for regulated and growth-focused industries-ensuring compliance, usability, and <Link href="performance-testing-services">performance</Link> across <Link href="e-commerce-testing-services">e-commerce</Link>,
+                         <Link href="banking-finance-industry-testing-services"> fintech</Link>, <Link href="healthcare-testing-services">healthcare</Link>, <Link href="software-testing-guide">SaaS</Link>,
+                          <Link href="e-learning-testing-services"> EdTech</Link>, <Link href="iot-device-testing-services">IoT</Link>, <Link href="mobile-application-testing">mobile apps</Link>, and <Link href="gaming-app-testing-services">gaming platforms</Link>.
+                    </>
+                )
+            }
+        ]
     // Split the title into parts to style "Client" in blue
     const renderTitle = () => {
-        const titleParts = heading.title.split('Expertise');
+        const titleParts = heading[0].title.split('Expertise');
         return (
             <>
                 {titleParts[0]}
@@ -44,7 +54,7 @@ const HomeIndustryExpert = () => {
         <section className='flex flex-col w-full bg-white mx-auto md:px-8 px-8 xl:px-24 py-15 gap-y-15'>
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading.info}</p>
+                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading[0].info}</p>
             </div>
 
 
@@ -53,19 +63,19 @@ const HomeIndustryExpert = () => {
                     cardData.map((card) => {
                         // const Icon = card.icon;
 
-                        return ( <Link href={card.action} key={card.title}>
-                        <div className='flex flex-col justify-center items-center text-center ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-2'>
-                            <span className='text-3xl bg-sky-100 p-2 rounded-xl'>{card.icon}</span>
-                            <h2 className='text-xl'>{card.title}</h2>
-                            <p className='text-gray-500 text-sm'>{card.detail}</p>
-                        </div>
+                        return (<Link href={card.action} key={card.title}>
+                            <div className='flex flex-col justify-center items-center text-center ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-lg hover:-translate-y-2'>
+                                <span className='text-3xl bg-sky-100 p-2 rounded-xl'>{card.icon}</span>
+                                <h2 className='text-xl'>{card.title}</h2>
+                                <p className='text-gray-500 text-sm'>{card.detail}</p>
+                            </div>
                         </Link>
-                    )
-                })
+                        )
+                    })
                 }
             </div>
-            
-            
+
+
 
         </section>
     )
