@@ -152,7 +152,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
             LaunchFast QA?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We blend rapid testing sprint expertise with agile QA methodologies to deliver LaunchFast QA services that boost your go-to-market speed while ensuring exceptional quality, reliability, and investor-ready products.
+            We blend rapid testing sprint expertise with <Link href='blog/post/integrating-qa-into-agile-a-step-by-step-guide'>agile QA</Link> methodologies to deliver <Link href='launchfast-qa'>LaunchFast QA</Link> services that boost your go-to-market speed while ensuring exceptional quality, reliability, and investor-ready products.
           </p>
         </div>
 
@@ -274,7 +274,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
               LaunchFast QA Excellence Network
             </h3>
             <p className="text-gray-600 mb-8">
-              Rapid testing methodologies and technologies we&apos;ve
+              <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Rapid testing methodologies</Link> and technologies we&apos;ve
               successfully implemented
             </p>
 
@@ -304,7 +304,7 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
             Ready to Accelerate Your Launch?
           </h3>
           <p className="text-gray-600 mb-6">
-            Join 300+ startups that trust our LaunchFast QA expertise. Start your journey with rapid testing sprints, pre-launch testing, and go-to-market QA to ensure on-time, successful launches.
+            Join 300+ startups that trust our LaunchFast QA expertise. Start your journey with rapid testing sprints, <Link href='blog/post/performance-optimization-for-pre-launch-software-testing'>pre-launch testing</Link>, and <Link href="blog/post/how-automated-testing-boosted-fortune-500-company-productivity">go-to-market</Link> QA to ensure on-time, successful launches.
           </p>
           <Link href={"/contact-us"}>
             <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
