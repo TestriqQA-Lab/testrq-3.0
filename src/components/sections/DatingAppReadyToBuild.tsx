@@ -22,7 +22,7 @@ const DatingAppReadyToBuild = () => {
 
             <p className="text-xl mb-12 opacity-90">
               We certify dating apps that meet all six pillars of trust, helping
-              them showcase safety, reliability, and user protection.
+              them showcase safety, <Link href="/blog/post/performance-testing-for-ai-applications">reliability</Link>, and user protection.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto">

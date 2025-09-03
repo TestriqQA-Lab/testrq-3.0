@@ -19,7 +19,7 @@ const MatrimonialAppTestingServices = () => {
   const testingServices = [
     {
       icon: <Smartphone className="w-10 h-10" />,
-      title: "Mobile App Testing",
+      title: (<><Link href="/mobile-application-testing">Mobile App Testing</Link></>),
       description:
         "Comprehensive testing across iOS and Android platforms for optimal user experience.",
       features: [
@@ -34,7 +34,7 @@ const MatrimonialAppTestingServices = () => {
     },
     {
       icon: <Globe className="w-10 h-10" />,
-      title: "Web Platform Testing",
+      title: (<><Link href="/web-application-testing-services">Web Platform Testing</Link></>),
       description:
         "Full-stack web application testing for matrimonial platforms and admin panels.",
       features: [
@@ -49,7 +49,7 @@ const MatrimonialAppTestingServices = () => {
     },
     {
       icon: <Zap className="w-10 h-10" />,
-      title: "Performance Testing",
+      title: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
       description:
         "Load testing and performance optimization for high-traffic matrimonial platforms.",
       features: [
@@ -64,7 +64,7 @@ const MatrimonialAppTestingServices = () => {
     },
     {
       icon: <Shield className="w-10 h-10" />,
-      title: "Security Testing",
+      title: (<><Link href="/security-testing">Security Testing</Link></>),
       description:
         "Comprehensive security assessment and penetration testing services.",
       features: [
@@ -79,7 +79,7 @@ const MatrimonialAppTestingServices = () => {
     },
     {
       icon: <Users className="w-10 h-10" />,
-      title: "User Experience Testing",
+      title: (<><Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">User Experience</Link> Testing</>),
       description:
         "Usability testing focused on matrimonial app user journeys and interactions.",
       features: [
@@ -94,7 +94,7 @@ const MatrimonialAppTestingServices = () => {
     },
     {
       icon: <Database className="w-10 h-10" />,
-      title: "API & Integration Testing",
+      title: (<><Link href="/api-testing">API</Link> & Integration Testing</>),
       description:
         "Backend API testing and third-party integration validation.",
       features: [

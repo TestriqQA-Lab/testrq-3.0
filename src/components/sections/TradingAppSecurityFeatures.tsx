@@ -12,6 +12,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const TradingAppSecurityFeatures = () => {
   const securityFeatures = [
@@ -21,7 +22,7 @@ const TradingAppSecurityFeatures = () => {
       description:
         "We ensure your platform protects all trading data and communications with robust encryption before granting certification.",
       features: [
-        "AES-256 encryption for data at rest",
+      (<>AES-256 <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">encryption</Link> for data at rest</>),
         "TLS 1.3 for data in transit",
         "Secure key management",
         "Encrypted trading communications",
@@ -35,8 +36,8 @@ const TradingAppSecurityFeatures = () => {
       description:
         "We validate that your identity checks prevent fraud and maintain regulatory compliance.",
       features: [
-        "Document verification",
-        "Biometric authentication",
+        (<>Document <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">verification</Link></>),
+        (<><Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">Biometric</Link> authentication</>),
         "Address verification",
         "Enhanced due diligence",
       ],
@@ -50,8 +51,8 @@ const TradingAppSecurityFeatures = () => {
         "We confirm that multi-factor authentication and secure login methods are implemented effectively.",
       features: [
         "2FA/MFA support",
-        "Hardware token integration",
-        "Biometric login",
+        (<>Hardware token <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">integration</Link></>),
+        (<><Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">Biometric</Link> login</>),
         "Session management",
       ],
       color: "text-purple-600",
@@ -63,8 +64,8 @@ const TradingAppSecurityFeatures = () => {
       description:
         "We check that all stored data is encrypted, backed up, and access is tightly controlled.",
       features: [
-        "Encrypted databases",
-        "Secure cloud storage",
+        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Encrypted</Link> databases</>),
+        (<>Secure <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">cloud</Link> storage</>),
         "Regular automated backups",
         "Access control policies",
       ],
@@ -79,8 +80,8 @@ const TradingAppSecurityFeatures = () => {
       features: [
         "24/7 system monitoring",
         "Anomaly detection",
-        "Performance tracking",
-        "Security event logging",
+        (<><Link href="/performance-testing-services">Performance</Link></>),
+        (<><Link href="/security-testing">Security</Link> event logging</>),
       ],
       color: "text-orange-600",
       bgColor: "bg-orange-50",
@@ -91,7 +92,7 @@ const TradingAppSecurityFeatures = () => {
       description:
         "We assess your fraud detection capabilities to ensure suspicious activity is quickly identified and addressed.",
       features: [
-        "Machine learning algorithms",
+        (<><Link href="/blog/post/ai-testing-learning-guide">Machine learning algorithms</Link></>),
         "Pattern recognition",
         "Risk scoring",
         "Automated alerts",
