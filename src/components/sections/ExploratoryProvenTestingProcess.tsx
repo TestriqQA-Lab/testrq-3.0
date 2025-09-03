@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import Link from "next/link";
+import React, { JSX, useState } from "react";
 import {
   FaSearch,
   FaRoute,
@@ -12,14 +13,22 @@ import {
 const ExploratoryProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  const steps = [
+  const steps :{
+    id: number;
+    title: string;
+    duration: string;
+    icon: JSX.Element;
+    description: React.ReactNode;
+    activities: string[];
+    nextStep: string;
+  }[] = [
     {
       id: 1,
       title: "Charter Definition & Planning",
       duration: "30-60 minutes",
       icon: <FaSearch className="text-2xl" />,
       description:
-        "Define exploration objectives, scope, and testing charters to guide systematic investigation.",
+        (<>Define exploration objectives, scope, and testing charters to <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>guide systematic investigation</Link>.</>),
       activities: [
         "Charter creation and refinement",
         "Risk area identification",
@@ -34,7 +43,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       duration: "2-4 hours",
       icon: <FaRoute className="text-2xl" />,
       description:
-        "Conduct structured exploration sessions using defined charters and systematic investigation techniques.",
+        (<>Conduct <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>structured exploration sessions</Link> using defined charters and systematic investigation techniques.</>),
       activities: [
         "Charter-guided exploration",
         "Real-time note taking",
@@ -49,7 +58,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       duration: "1-2 hours",
       icon: <FaLightbulb className="text-2xl" />,
       description:
-        "Analyze findings, identify patterns, and generate actionable insights from exploration sessions.",
+        (<>Analyze findings, identify patterns, and generate <Link href='blog/post/what-are-the-principles-of-exploratory-testing'>actionable insights from exploration sessions</Link>.</>),
       activities: [
         "Session data analysis",
         "Pattern identification",
@@ -64,7 +73,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       duration: "1-2 hours",
       icon: <FaBug className="text-2xl" />,
       description:
-        "Document discovered issues with detailed reproduction steps and impact assessment.",
+        (<><Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>Document discovered issues</Link> with detailed reproduction steps and impact assessment.</>),
       activities: [
         "Bug report creation",
         "Reproduction step documentation",
@@ -79,7 +88,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
       duration: "30-60 minutes",
       icon: <FaFileAlt className="text-2xl" />,
       description:
-        "Provide actionable recommendations and plan follow-up exploration sessions if needed.",
+        (<>Provide actionable recommendations and plan follow-up <Link href='blog/post/session-based-exploratory-testing-balancing-structure-with-creative-freedom'>exploration sessions</Link> if needed.</>),
       activities: [
         "Improvement recommendations",
         "Priority assessment",
