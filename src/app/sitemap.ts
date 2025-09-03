@@ -213,6 +213,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { slug: 'case-studies', title: 'Case Studies' },
       { slug: 'tools', title: 'Tools' },
       { slug: 'roi-calculator', title: 'ROI Calculator' },
+      { slug: 'locations-we-serve', title: 'Locations We Serve' },
       
       // Legal pages
       { slug: 'privacy-policy', title: 'Privacy Policy' },
