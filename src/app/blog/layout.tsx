@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Testriq QA Team" }],
   creator: "Testriq",
   publisher: "Testriq",
-  formatDetection: {
+  formatDetection: {  
     email: false,
     address: false,
     telephone: false,

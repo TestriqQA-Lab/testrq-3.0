@@ -14,6 +14,235 @@ import {
 
 import { locationData, LocationData } from "../lib/LocationData"; // adjust path if needed
 
+// Structured Data for LocalBusiness and Service
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA Lab LLP",
+      "alternateName": "Testriq",
+      "url": "https://www.testriq.com/",
+      "logo": "https://www.testriq.com/logo.png",
+      "description": "Leading software testing company providing comprehensive QA services across multiple locations including web application testing, mobile app testing, API testing, and test automation services.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mumbai",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "19.0760",
+        "longitude": "72.8777"
+      },
+      "telephone": "+91-9876543210",
+      "email": "info@testriq.com",
+      "foundingDate": "2020",
+      "numberOfEmployees": "50-100",
+      "priceRange": "$$",
+      "serviceArea": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "Country", 
+          "name": "United Arab Emirates"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Testing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Testing",
+              "description": "Comprehensive web application testing services including functional, performance, and security testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Testing",
+              "description": "Mobile application testing for iOS and Android platforms including usability and compatibility testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "API Testing",
+              "description": "REST and SOAP API testing services for data validation and integration testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Test Automation",
+              "description": "Automated testing solutions using Selenium, Cypress, and other industry-standard tools"
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/testriq",
+        "https://twitter.com/testriq",
+        "https://www.facebook.com/testriq"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/locations-we-serve/#service",
+      "name": "Software Testing Services",
+      "description": "Professional software testing and quality assurance services available across multiple locations in India and UAE",
+      "provider": {
+        "@id": "https://www.testriq.com/#organization"
+      },
+      "serviceType": "Software Testing",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India",
+          "containsPlace": [
+            {
+              "@type": "State",
+              "name": "Maharashtra",
+              "containsPlace": [
+                {"@type": "City", "name": "Mumbai"},
+                {"@type": "City", "name": "Pune"},
+                {"@type": "City", "name": "Nashik"},
+                {"@type": "City", "name": "Nagpur"}
+              ]
+            },
+            {
+              "@type": "State", 
+              "name": "Karnataka",
+              "containsPlace": [
+                {"@type": "City", "name": "Bangalore"},
+                {"@type": "City", "name": "Mysore"},
+                {"@type": "City", "name": "Hubli"}
+              ]
+            },
+            {
+              "@type": "State",
+              "name": "Tamil Nadu", 
+              "containsPlace": [
+                {"@type": "City", "name": "Chennai"},
+                {"@type": "City", "name": "Coimbatore"},
+                {"@type": "City", "name": "Madurai"}
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates",
+          "containsPlace": [
+            {
+              "@type": "State",
+              "name": "Dubai",
+              "containsPlace": [
+                {"@type": "City", "name": "Dubai"},
+                {"@type": "City", "name": "Sharjah"}
+              ]
+            },
+            {
+              "@type": "State",
+              "name": "Abu Dhabi", 
+              "containsPlace": [
+                {"@type": "City", "name": "Abu Dhabi"},
+                {"@type": "City", "name": "Al Ain"}
+              ]
+            }
+          ]
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Testing Services Portfolio",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Manual Testing Services",
+              "description": "Expert manual testing services for functional, usability, and exploratory testing"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automation Testing Services",
+              "description": "Comprehensive test automation using Selenium, Cypress, TestComplete, and custom frameworks"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Performance Testing Services",
+              "description": "Load, stress, and performance testing using JMeter, LoadRunner, and other tools"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Testing Services", 
+              "description": "Application security testing including penetration testing and vulnerability assessment"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/locations-we-serve/#webpage",
+      "url": "https://www.testriq.com/locations-we-serve/",
+      "name": "Software Testing Services Locations - Testriq QA Lab",
+      "description": "Discover comprehensive software testing services across major cities in India and UAE. Professional QA testing solutions tailored to local market needs.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.testriq.com/#website",
+        "name": "Testriq - Professional Software Testing Services",
+        "url": "https://www.testriq.com/"
+      },
+      "about": {
+        "@id": "https://www.testriq.com/locations-we-serve/#service"
+      },
+      "mainEntity": {
+        "@id": "https://www.testriq.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/locations-we-serve/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Locations We Serve",
+          "item": "https://www.testriq.com/locations-we-serve/"
+        }
+      ]
+    }
+  ]
+};
 
 const LocationsWeServe: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -21,7 +250,6 @@ const LocationsWeServe: React.FC = () => {
     new Set()
   );
   const [expandedStates, setExpandedStates] = useState<Set<string>>(new Set());
-
 
   const toggleCountryExpansion = (country: string) => {
     const newExpanded = new Set(expandedCountries);
@@ -113,303 +341,336 @@ const LocationsWeServe: React.FC = () => {
   );
 
   return (
-    <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaGlobe className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">Global Reach</span>
-          </div>
-
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Locations We{" "}
-            <span className="text-[theme(color.brand.blue)]">Serve</span>
-          </h1>
-
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            Discover our comprehensive QA testing services across major cities
-            and regions. We provide world-class software testing solutions
-            tailored to local market needs.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
-            <div className="flex items-center gap-2">
-              <FaFlag className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span>
-                <strong>{Object.keys(locationData).length}</strong> Countries
-              </span>
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      
+      <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+              <FaGlobe className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">Global Reach</span>
             </div>
-            <div className="flex items-center gap-2">
-              <FaMapMarkerAlt className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span>
-                <strong>
-                  {Object.values(locationData).reduce(
-                    (total, states) => total + Object.keys(states).length,
-                    0
-                  )}
-                </strong>{" "}
-                States/Regions
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaCity className="w-4 h-4 text-[theme(color.brand.blue)]" />
-              <span>
-                <strong>{totalLocations}+</strong> Locations
-              </span>
-            </div>
-          </div>
-        </div>
 
-        {/* Search Bar */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100">
-          <div className="max-w-2xl mx-auto">
-            <label className="block text-sm font-medium text-gray-700 mb-4 text-center">
-              Search for your city, state, or country
-            </label>
-            <div className="relative">
-              <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Search locations... (e.g., Mumbai, Maharashtra, India)"
-                className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 text-lg"
-              />
-            </div>
-            {searchTerm && (
-              <p className="text-sm text-gray-500 mt-2 text-center">
-                Found locations in {Object.keys(filteredData).length} countries
-              </p>
-            )}
-          </div>
-        </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Software Testing Services{" "}
+              <span className="text-[theme(color.brand.blue)]">Locations We Serve</span>
+            </h1>
 
-        {/* Locations Grid */}
-        <div className="space-y-8">
-          {Object.entries(filteredData).map(([country, states]) => (
-            <div
-              key={country}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
-            >
-              {/* Country Header */}
-              <div
-                className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-700 text-white p-6 cursor-pointer hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
-                onClick={() => toggleCountryExpansion(country)}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <FaFlag className="w-6 h-6" />
-                    <div>
-                      <h2 className="text-2xl font-bold">{country}</h2>
-                      <p className="text-blue-100 text-sm">
-                        {Object.keys(states).length} states •{" "}
-                        {Object.values(states).reduce(
-                          (total, cities) => total + Object.keys(cities).length,
-                          0
-                        )}{" "}
-                        cities
-                      </p>
-                    </div>
-                  </div>
-                  {expandedCountries.has(country) ? (
-                    <FaChevronUp className="w-5 h-5" />
-                  ) : (
-                    <FaChevronDown className="w-5 h-5" />
-                  )}
-                </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+              Discover our comprehensive QA testing services across major cities and regions in India and UAE. We provide world-class software testing solutions including manual testing, automation testing, performance testing, and API testing tailored to local market needs and business requirements.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
+              <div className="flex items-center gap-2">
+                <FaFlag className="w-4 h-4 text-[theme(color.brand.blue)]" />
+                <span>
+                  <strong>{Object.keys(locationData).length}</strong> Countries
+                </span>
               </div>
+              <div className="flex items-center gap-2">
+                <FaMapMarkerAlt className="w-4 h-4 text-[theme(color.brand.blue)]" />
+                <span>
+                  <strong>
+                    {Object.values(locationData).reduce(
+                      (total, states) => total + Object.keys(states).length,
+                      0
+                    )}
+                  </strong>{" "}
+                  States/Regions
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaCity className="w-4 h-4 text-[theme(color.brand.blue)]" />
+                <span>
+                  <strong>{totalLocations}+</strong> Locations
+                </span>
+              </div>
+            </div>
+          </div>
 
-              {/* States */}
-              {expandedCountries.has(country) && (
-                <div className="p-6">
-                  <div className="space-y-4">
-                    {Object.entries(states).map(([state, cities]) => (
-                      <div
-                        key={state}
-                        className="border border-gray-200 rounded-xl overflow-hidden"
-                      >
-                        {/* State Header */}
+          {/* Search Bar */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100">
+            <div className="max-w-2xl mx-auto">
+              <label className="block text-sm font-medium text-gray-700 mb-4 text-center">
+                Search for your city, state, or country to find software testing services
+              </label>
+              <div className="relative">
+                <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search locations for software testing services... (e.g., Mumbai, Maharashtra, India)"
+                  className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 text-lg"
+                />
+              </div>
+              {searchTerm && (
+                <p className="text-sm text-gray-500 mt-2 text-center">
+                  Found software testing services in {Object.keys(filteredData).length} countries
+                </p>
+              )}
+            </div>
+          </div>
+
+          {/* Locations Grid */}
+          <div className="space-y-8">
+            {Object.entries(filteredData).map(([country, states]) => (
+              <div
+                key={country}
+                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+              >
+                {/* Country Header */}
+                <div
+                  className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-700 text-white p-6 cursor-pointer hover:from-blue-700 hover:to-blue-800 transition-all duration-300"
+                  onClick={() => toggleCountryExpansion(country)}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <FaFlag className="w-6 h-6" />
+                      <div>
+                        <h2 className="text-2xl font-bold">Software Testing Services in {country}</h2>
+                        <p className="text-blue-100 text-sm">
+                          {Object.keys(states).length} states •{" "}
+                          {Object.values(states).reduce(
+                            (total, cities) => total + Object.keys(cities).length,
+                            0
+                          )}{" "}
+                          cities offering professional QA testing solutions
+                        </p>
+                      </div>
+                    </div>
+                    {expandedCountries.has(country) ? (
+                      <FaChevronUp className="w-5 h-5" />
+                    ) : (
+                      <FaChevronDown className="w-5 h-5" />
+                    )}
+                  </div>
+                </div>
+
+                {/* States */}
+                {expandedCountries.has(country) && (
+                  <div className="p-6">
+                    <div className="space-y-4">
+                      {Object.entries(states).map(([state, cities]) => (
                         <div
-                          className="bg-gray-50 p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
-                          onClick={() => toggleStateExpansion(state)}
+                          key={state}
+                          className="border border-gray-200 rounded-xl overflow-hidden"
                         >
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <FaMapMarkerAlt className="w-5 h-5 text-[theme(color.brand.blue)]" />
-                              <div>
-                                <h3 className="text-lg font-semibold text-gray-900">
-                                  {state}
-                                </h3>
-                                <p className="text-sm text-gray-600">
-                                  {Object.keys(cities).length} cities
-                                </p>
+                          {/* State Header */}
+                          <div
+                            className="bg-gray-50 p-4 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
+                            onClick={() => toggleStateExpansion(state)}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                <FaMapMarkerAlt className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                                <div>
+                                  <h3 className="text-lg font-semibold text-gray-900">
+                                    Software Testing Services in {state}
+                                  </h3>
+                                  <p className="text-sm text-gray-600">
+                                    {Object.keys(cities).length} cities with professional QA testing services
+                                  </p>
+                                </div>
+                              </div>
+                              {expandedStates.has(state) ? (
+                                <FaChevronUp className="w-4 h-4 text-gray-500" />
+                              ) : (
+                                <FaChevronDown className="w-4 h-4 text-gray-500" />
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Cities */}
+                          {expandedStates.has(state) && (
+                            <div className="p-4">
+                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {Object.entries(cities).map(([city, urls]) => (
+                                  <div
+                                    key={city}
+                                    className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200"
+                                  >
+                                    <div className="flex items-center gap-2 mb-3">
+                                      <FaCity className="w-4 h-4 text-[theme(color.brand.blue)]" />
+                                      <h4 className="font-semibold text-gray-900">
+                                        Software Testing in {city}
+                                      </h4>
+                                    </div>
+
+                                    {Array.isArray(urls) ? (
+                                      <div className="space-y-2">
+                                        <p className="text-xs text-gray-500 mb-2">
+                                          {urls.length} testing service locations available
+                                        </p>
+                                        <div className="max-h-32 overflow-y-auto space-y-1">
+                                          {urls.map((url, index) => (
+                                            <a
+                                              key={index}
+                                              href={url}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="flex items-center justify-between text-sm text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group p-2 rounded hover:bg-blue-50 transition-all duration-200"
+                                            >
+                                              <span className="truncate">
+                                                Professional Software Testing Services in{" "}
+                                                {getLocationName(url)}
+                                              </span>
+                                              <FaExternalLinkAlt className="w-3 h-3 flex-shrink-0 ml-2 group-hover:opacity-100 transition-opacity" />
+                                            </a>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    ) : (
+                                      <a
+                                        href={urls}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group"
+                                      >
+                                        <span>
+                                          Professional Software Testing Services in {city}
+                                        </span>
+                                        <FaExternalLinkAlt className="w-4 h-4 group-hover:opacity-100 transition-opacity" />
+                                      </a>
+                                    )}
+                                  </div>
+                                ))}
                               </div>
                             </div>
-                            {expandedStates.has(state) ? (
-                              <FaChevronUp className="w-4 h-4 text-gray-500" />
-                            ) : (
-                              <FaChevronDown className="w-4 h-4 text-gray-500" />
-                            )}
-                          </div>
+                          )}
                         </div>
-
-                        {/* Cities */}
-                        {expandedStates.has(state) && (
-                          <div className="p-4">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                              {Object.entries(cities).map(([city, urls]) => (
-                                <div
-                                  key={city}
-                                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200"
-                                >
-                                  <div className="flex items-center gap-2 mb-3">
-                                    <FaCity className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                                    <h4 className="font-semibold text-gray-900">
-                                      {city}
-                                    </h4>
-                                  </div>
-
-                                  {Array.isArray(urls) ? (
-                                    <div className="space-y-2">
-                                      <p className="text-xs text-gray-500 mb-2">
-                                        {urls.length} locations available
-                                      </p>
-                                      <div className="max-h-32 overflow-y-auto space-y-1">
-                                        {urls.map((url, index) => (
-                                          <a
-                                            key={index}
-                                            href={url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-between text-sm text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group p-2 rounded hover:bg-blue-50 transition-all duration-200"
-                                          >
-                                            <span className="truncate">
-                                              Software Testing Services in{" "}
-                                              {getLocationName(url)}
-                                            </span>
-                                            <FaExternalLinkAlt className="w-3 h-3 flex-shrink-0 ml-2 group-hover:opacity-100 transition-opacity" />
-                                          </a>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  ) : (
-                                    <a
-                                      href={urls}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="flex items-center justify-between text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group"
-                                    >
-                                      <span>
-                                        Software Testing Service in {city}
-                                      </span>
-                                      <FaExternalLinkAlt className="w-4 h-4 group-hover:opacity-100 transition-opacity" />
-                                    </a>
-                                  )}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* No Results */}
-        {Object.keys(filteredData).length === 0 && searchTerm && (
-          <div className="text-center py-16">
-            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <FaSearch className="w-8 h-8 text-gray-400" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">
-              No locations found
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Try adjusting your search term or browse all locations above.
-            </p>
-            <button
-              onClick={() => setSearchTerm("")}
-              className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-            >
-              Show All Locations
-            </button>
+                )}
+              </div>
+            ))}
           </div>
-        )}
 
-        {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
-          <FaGlobe className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
-          <h3 className="text-2xl font-bold mb-4">
-            Don&apos;t See Your Location?
-          </h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            We&apos;re constantly expanding our services to new locations.
-            Contact us to discuss bringing our world-class QA testing services
-            to your area.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
-              <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[theme(color.brand.blue)] transition-all duration-300">
-                Contact Us
+          {/* No Results */}
+          {Object.keys(filteredData).length === 0 && searchTerm && (
+            <div className="text-center py-16">
+              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <FaSearch className="w-8 h-8 text-gray-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                No software testing service locations found
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Try adjusting your search term or browse all testing service locations above.
+              </p>
+              <button
+                onClick={() => setSearchTerm("")}
+                className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
+              >
+                Show All Testing Service Locations
               </button>
-            </Link>
+            </div>
+          )}
+
+          {/* Call to Action */}
+          <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
+            <FaGlobe className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
+            <h3 className="text-2xl font-bold mb-4">
+              Don&apos;t See Your Location for Software Testing Services?
+            </h3>
+            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+              We&apos;re constantly expanding our software testing and QA services to new locations.
+              Contact us to discuss bringing our world-class software testing, automation testing, 
+              performance testing, and API testing services to your area.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact-us">
+                <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[theme(color.brand.blue)] transition-all duration-300">
+                  Contact Us for Testing Services
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Stats */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
+              <FaFlag className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900 mb-1">
+                {Object.keys(locationData).length}
+              </div>
+              <div className="text-sm text-gray-600">Countries Served</div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
+              <FaMapMarkerAlt className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900 mb-1">
+                {Object.values(locationData).reduce(
+                  (total, states) => total + Object.keys(states).length,
+                  0
+                )}
+              </div>
+              <div className="text-sm text-gray-600">States/Regions</div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
+              <FaCity className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900 mb-1">
+                {totalLocations}+
+              </div>
+              <div className="text-sm text-gray-600">Testing Service Locations</div>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
+              <FaGlobe className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900 mb-1">24/7</div>
+              <div className="text-sm text-gray-600">Support Available</div>
+            </div>
+          </div>
+
+          {/* Services Overview */}
+          <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Our Software Testing Services Available Across All Locations
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <FaGlobe className="w-6 h-6 text-[theme(color.brand.blue)]" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Manual Testing</h3>
+                <p className="text-sm text-gray-600">Comprehensive manual testing services including functional, usability, and exploratory testing</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <FaGlobe className="w-6 h-6 text-[theme(color.brand.blue)]" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Automation Testing</h3>
+                <p className="text-sm text-gray-600">Test automation using Selenium, Cypress, TestComplete, and custom automation frameworks</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <FaGlobe className="w-6 h-6 text-[theme(color.brand.blue)]" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Performance Testing</h3>
+                <p className="text-sm text-gray-600">Load testing, stress testing, and performance optimization using JMeter and LoadRunner</p>
+              </div>
+              <div className="text-center p-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <FaGlobe className="w-6 h-6 text-[theme(color.brand.blue)]" />
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">API Testing</h3>
+                <p className="text-sm text-gray-600">REST and SOAP API testing for data validation, integration testing, and API security testing</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
-            <FaFlag className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-gray-900 mb-1">
-              {Object.keys(locationData).length}
-            </div>
-            <div className="text-sm text-gray-600">Countries</div>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
-            <FaMapMarkerAlt className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-gray-900 mb-1">
-              {Object.values(locationData).reduce(
-                (total, states) => total + Object.keys(states).length,
-                0
-              )}
-            </div>
-            <div className="text-sm text-gray-600">States/Regions</div>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
-            <FaCity className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-gray-900 mb-1">
-              {Object.values(locationData).reduce(
-                (total, states) =>
-                  total +
-                  Object.values(states).reduce(
-                    (stateTotal, cities) =>
-                      stateTotal + Object.keys(cities).length,
-                    0
-                  ),
-                0
-              )}
-            </div>
-            <div className="text-sm text-gray-600">Major Cities</div>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 text-center shadow-lg border border-gray-100">
-            <FaGlobe className="w-8 h-8 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <div className="text-2xl font-bold text-gray-900 mb-1">
-              {totalLocations}+
-            </div>
-            <div className="text-sm text-gray-600">Total Locations</div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
 export default LocationsWeServe;
+
