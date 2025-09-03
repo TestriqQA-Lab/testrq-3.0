@@ -17,21 +17,21 @@ const MatrimonialAppSecurityFeatures = () => {
   const securityFeatures = [
     {
       icon: <Lock className="w-8 h-8" />,
-      title: "End-to-End Encryption",
+      title: (<>End-to-End <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">Encryption</Link></>),
       description:
         "We verify if your platform implements robust encryption standards to protect communication and sensitive data.",
-      benefits: ["Message Privacy", "Data Protection", "Secure File Sharing"],
+      benefits: ["Message Privacy", (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Data Protection</Link></>), "Secure File Sharing"],
       color: "text-blue-600",
       bgColor: "bg-blue-50",
     },
     {
       icon: <Fingerprint className="w-8 h-8" />,
-      title: "Identity Verification",
+      title: (<>Identity <Link href="/blog/post/learn-how-validation-optimization">Verification</Link></>),
       description:
         "We ensure your user onboarding includes strong identity checks to eliminate fake or fraudulent profiles.",
       benefits: [
         "Document Verification",
-        "Biometric Checks",
+        (<><Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">Biometric Checks</Link></>),
         "Phone Verification",
       ],
       color: "text-green-600",
@@ -39,37 +39,37 @@ const MatrimonialAppSecurityFeatures = () => {
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: "Advanced Authentication",
+      title: (<>Advanced <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">Authentication</Link></>),
       description:
         "We assess if your authentication methods meet modern security standards for account protection.",
-      benefits: ["2FA/MFA Support", "OAuth Integration", "Session Management"],
+      benefits: ["2FA/MFA Support", (<><Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">OAuth </Link>Integration</>), "Session Management"],
       color: "text-purple-600",
       bgColor: "bg-purple-50",
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Secure Data Storage",
+      title: (<>Secure <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data</Link> Storage</>),
       description:
         "We check if your data storage is encrypted, backed up, and access-controlled to prevent breaches.",
-      benefits: ["Data Encryption", "Secure Backups", "Access Controls"],
+      benefits: [(<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Data Encryption</Link></>), "Secure Backups", "Access Controls"],
       color: "text-orange-600",
       bgColor: "bg-orange-50",
     },
     {
       icon: <Eye className="w-8 h-8" />,
-      title: "Privacy Controls",
+      title: (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Privacy</Link>Controls</>),
       description:
         "We evaluate how effectively your privacy settings allow users to control their information visibility.",
-      benefits: ["Profile Privacy", "Photo Protection", "Contact Controls"],
+      benefits: [(<>Profile <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Privacy</Link></>), "Photo Protection", "Contact Controls"],
       color: "text-pink-600",
       bgColor: "bg-pink-50",
     },
     {
       icon: <AlertTriangle className="w-8 h-8" />,
-      title: "Threat Detection",
+      title: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Threat</Link> Detection</>),
       description:
         "We verify whether your platform detects and blocks suspicious activities in real-time.",
-      benefits: ["Scam Detection", "Behavior Analysis", "Real-time Monitoring"],
+      benefits: ["Scam Detection", "Behavior Analysis", (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time</Link> Monitoring</>)],
       color: "text-red-600",
       bgColor: "bg-red-50",
     },
@@ -90,7 +90,7 @@ const MatrimonialAppSecurityFeatures = () => {
             <span className="text-brand-blue">Matrimonial App Security</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don’t build your security — we verify it. Our certification
+            We don’t build your <Link href="/security-testing">security</Link> - we verify it. Our certification
             process ensures your platform meets these six essential security
             pillars, giving your users confidence and trust.
           </p>
@@ -144,7 +144,7 @@ const MatrimonialAppSecurityFeatures = () => {
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Once we confirm your platform satisfies all six pillars, we
               provide an official certification to showcase your commitment to
-              user safety and data protection.
+              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance"> user safety </Link>and <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">data protection</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">

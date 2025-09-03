@@ -48,8 +48,8 @@ const MatrimonialAppHeroSection = () => {
             className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
             Ensure your matrimonial platform meets the highest standards of
-            security, privacy, and quality. Get certified with comprehensive
-            testing that builds user trust and protects sensitive data.
+            <Link href="/security-testing"> security</Link>, <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">privacy</Link>, and quality. Get certified with <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">comprehensive
+            testing</Link> that builds user trust and protects sensitive data.
           </motion.p>
 
           <motion.div
@@ -87,7 +87,7 @@ const MatrimonialAppHeroSection = () => {
                 Security First
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Built on industry-leading security testing methods to safeguard
+                Built on industry-leading <Link href="/security-testing">security testing</Link> methods to safeguard
                 sensitive user data and ensure platform safety.
               </p>
             </div>

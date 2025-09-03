@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, CheckCircle } from "lucide-react";
+import Link from "next/link";
 
 const DatingAppSecurityChallenges = () => {
   const securityThreats = [
@@ -34,7 +35,7 @@ const DatingAppSecurityChallenges = () => {
     "Financial transactions for premium features",
     "Vulnerable user demographics targeted by scammers",
     "Reputation damage affects user acquisition",
-    "App store compliance requirements",
+    (<>App store <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">compliance</Link> requirements</>),
   ];
 
   return (
@@ -46,7 +47,7 @@ const DatingAppSecurityChallenges = () => {
             <span className="text-brand-blue">Security Challenges</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Understanding the unique security risks and vulnerabilities in
+            Understanding the unique <Link href="/security-testing">security</Link> risks and vulnerabilities in
             online dating platforms
           </p>
         </div>

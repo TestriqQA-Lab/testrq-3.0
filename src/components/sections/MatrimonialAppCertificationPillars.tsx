@@ -20,10 +20,18 @@ const MatrimonialAppCertificationPillars = () => {
       description:
         "We verify that your platform follows industry-leading security practices like encryption, secure authentication, and regular security audits.",
       features: [
-        "Data Encryption",
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Data Encryption
+          </Link>
+        </>,
         "Secure Authentication",
         "Vulnerability Assessment",
-        "Security Audits",
+        <>
+          <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">
+            Security Audits
+          </Link>
+        </>,
       ],
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600",
@@ -34,9 +42,15 @@ const MatrimonialAppCertificationPillars = () => {
       description:
         "We ensure that your platform meets privacy laws and best practices, including GDPR, data minimization, and consent management.",
       features: [
-        "GDPR Compliance",
+        <>
+          <Link href="/blog/post/e-commerce-security-testing-compliance-services">
+            GDPR Compliance
+          </Link>
+        </>,
         "Privacy Controls",
-        "Data Minimization",
+        <>
+          <Link href="/blog/post/etl-security-testing">Data Minimization</Link>
+        </>,
         "Consent Management",
       ],
       color: "bg-green-50 border-green-200",
@@ -45,8 +59,27 @@ const MatrimonialAppCertificationPillars = () => {
     {
       icon: <CheckCircle className="w-12 h-12" />,
       title: "Quality Assurance",
-      description:
-        "We assess the quality of your app through functional, usability, performance, and compatibility testing before approval.",
+      description: (
+        <>
+          We assess the quality of your app through{" "}
+          <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
+            functional
+          </Link>
+          ,{" "}
+          <Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">
+            usability
+          </Link>
+          ,{" "}
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            performance
+          </Link>
+          , and{" "}
+          <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
+            compatibility
+          </Link>{" "}
+          testing before approval.
+        </>
+      ),
       features: [
         "Functional Testing",
         "Performance Testing",
@@ -63,9 +96,9 @@ const MatrimonialAppCertificationPillars = () => {
         "We verify systems that protect users from scams, ensure profile authenticity, and provide safety reporting tools.",
       features: [
         "Identity Verification",
-        "Profile Validation",
+        (<><Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">Profile Validation</Link></>),
         "Anti-Scam Protection",
-        "User Reporting",
+        (<><Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">User Reporting</Link></>),
       ],
       color: "bg-orange-50 border-orange-200",
       iconColor: "text-orange-600",
@@ -78,8 +111,8 @@ const MatrimonialAppCertificationPillars = () => {
       features: [
         "Algorithm Auditing",
         "Bias Detection",
-        "Fairness Testing",
-        "Transparency Reports",
+        (<><Link href="/blog/post/bias-fairness-testing-for-ai">Fairness Testing</Link></>),
+      (<><Link href="/blog/post/final-reporting-comprehensive-qa-summary">Transparency Reports</Link></>),
       ],
       color: "bg-pink-50 border-pink-200",
       iconColor: "text-pink-600",
@@ -90,7 +123,7 @@ const MatrimonialAppCertificationPillars = () => {
       description:
         "We confirm that your platform meets legal and industry standards required for certification.",
       features: [
-        "Legal Compliance",
+        (<>Legal <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">Compliance</Link></>),
         "Industry Standards",
         "Audit Reports",
         "Certification Maintenance",
@@ -166,8 +199,8 @@ const MatrimonialAppCertificationPillars = () => {
               We Only Certify What Passes Our Six-Pillar Check
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              If your app meets every requirement across security, privacy,
-              quality, fairness, and compliance, you’ll receive our official
+              If your app meets every requirement across <Link href="/security-testing">security</Link>, <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">privacy</Link>,
+              <Link href="/blog/post/data-quality-testing-in-etl"> quality</Link>, <Link href="/blog/post/bias-fairness-testing-for-ai">fairness</Link>, and <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">compliance</Link>, you’ll receive our official
               certification - a mark of trust for your users.
             </p>
             <Link href="/contact-us">

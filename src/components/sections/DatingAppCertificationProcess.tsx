@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Target, Eye, AlertTriangle, Zap, Award } from "lucide-react";
+import Link from "next/link";
 
 const DatingAppCertificationProcess = () => {
   const processSteps = [
@@ -18,13 +19,13 @@ const DatingAppCertificationProcess = () => {
       step: "02",
       title: "Comprehensive Audit",
       description:
-        "Deep dive security testing across all parameters including penetration testing",
+        (<>Deep dive <Link href="/security-testing">security testing</Link> across all parameters including <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link></>),
       duration: "1-2 weeks",
       icon: <Eye className="w-6 h-6 md:w-8 md:h-8" />,
     },
     {
       step: "03",
-      title: "Vulnerability Assessment",
+      title: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">Vulnerability</Link> Assessment</>),
       description:
         "Detailed analysis with prioritized recommendations and remediation roadmap",
       duration: "2-3 days",
@@ -34,7 +35,7 @@ const DatingAppCertificationProcess = () => {
       step: "04",
       title: "Implementation Support",
       description:
-        "Guided implementation of security improvements and best practices",
+        (<>Guided implementation of security improvements and <Link href="/blog/post/rest-api-testing-guide-endpoints-methods-best-practices">best practices</Link></>),
       duration: "1 week",
       icon: <Zap className="w-6 h-6 md:w-8 md:h-8" />,
     },

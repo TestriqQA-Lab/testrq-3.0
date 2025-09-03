@@ -23,7 +23,7 @@ const DatingAppHeroSection = () => {
       color: "text-blue-600",
     },
     {
-      label: "Advanced Security Standards",
+      label: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced Security</Link> Standards</>),
       icon: <Shield className="w-8 h-8" />,
       color: "text-green-600",
     },
@@ -70,7 +70,7 @@ const DatingAppHeroSection = () => {
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Launch your dating platform with a seal of credibility. Our
               certification helps you attract users, gain investor confidence,
-              and meet the highest safety standards from day one.
+              and meet the highest <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">safety</Link> standards from day one.
             </p>
           </motion.div>
 

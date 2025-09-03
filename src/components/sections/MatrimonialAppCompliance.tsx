@@ -19,10 +19,10 @@ const MatrimonialAppCompliance = () => {
       icon: <Globe className="w-10 h-10" />,
       title: "GDPR Compliance",
       description:
-        "European General Data Protection Regulation compliance for global matrimonial platforms.",
+        (<>European General Data Protection Regulation European General Data Protection Regulation <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">compliance</Link> for global matrimonial platforms. for global matrimonial platforms.</>),
       requirements: [
         "Data Subject Rights Implementation",
-        "Privacy by Design Architecture",
+        (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Privacy</Link> by Design Architecture</>),
         "Consent Management Systems",
         "Data Processing Records",
       ],
@@ -49,13 +49,13 @@ const MatrimonialAppCompliance = () => {
     },
     {
       icon: <Shield className="w-10 h-10" />,
-      title: "ISO 27001 Certification",
+      title: (<><Link href="/blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond">ISO</Link> 27001 Certification</>),
       description:
         "International standard for information security management systems.",
       requirements: [
         "Information Security Policy",
         "Risk Assessment Framework",
-        "Security Controls Implementation",
+        (<><Link href="/blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond">Security</Link> Controls Implementation</>),
         "Continuous Monitoring",
       ],
       regions: ["Global Standard"],
@@ -71,7 +71,7 @@ const MatrimonialAppCompliance = () => {
       requirements: [
         "Local Data Storage",
         "Cross-border Transfer Controls",
-        "Regional Server Infrastructure",
+        (<>Regional Server <Link href="/blog/post/strategies-for-implementing-test-driven-infrastructure">Infrastructure</Link></>),
         "Jurisdiction-specific Policies",
       ],
       regions: ["India", "Russia", "China", "Brazil"],
@@ -85,9 +85,9 @@ const MatrimonialAppCompliance = () => {
     {
       category: "Data Protection",
       items: [
-        "Personal data encryption at rest and in transit",
+        (<>Personal data <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">encryption</Link> at rest and in transit</>),
         "Secure user authentication and authorization",
-        "Regular security vulnerability assessments",
+        (<>Regular <Link href="/security-testing">security</Link> vulnerability assessments</>),
         "Data breach notification procedures",
       ],
     },
@@ -97,11 +97,11 @@ const MatrimonialAppCompliance = () => {
         "User consent management system",
         "Data portability and export features",
         "Right to erasure (delete account) functionality",
-        "Privacy policy transparency and accessibility",
+        (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Privacy</Link> policy transparency and accessibility</>),
       ],
     },
     {
-      category: "Operational Security",
+      category: (<>Operational <Link href="/security-testing">Security</Link></>),
       items: [
         "Employee background checks and training",
         "Access control and privilege management",
@@ -125,7 +125,7 @@ const MatrimonialAppCompliance = () => {
             Global <span className="text-brand-blue">Compliance Standards</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ensure your matrimonial app meets international regulatory
+            Ensure your matrimonial app meets international <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory </Link>
             requirements and industry standards across different jurisdictions
             and markets.
           </p>
@@ -250,7 +250,7 @@ const MatrimonialAppCompliance = () => {
             </div>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Not sure if your matrimonial app meets all compliance
-              requirements? Get a free compliance gap assessment to identify
+              requirements? Get a free <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">compliance</Link> gap assessment to identify
               areas that need attention.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
