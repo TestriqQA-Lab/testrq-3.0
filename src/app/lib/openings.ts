@@ -55,6 +55,7 @@ export const jobOpenings: JobOpening[] = [
       "Jenkins",
       "CI/CD",
     ],
+    badges: ["Urgent", "Featured"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
   },
@@ -88,11 +89,59 @@ export const jobOpenings: JobOpening[] = [
       "TestRail",
       "SQL",
     ],
+    badges: ["Urgent", "Featured"],
     icon: FaBug,
     color: "from-yellow-400 to-yellow-600",
   },
   {
     id: 3,
+    title: "Automation Test Engineer (Playwright + Javascript)",
+    location: "On-site (Prabhadevi, Mumbai)",
+    type: "Full-time",
+    experience: "2 – 3 years",
+    fullDescription: `
+### Job Description:
+
+Role: Automation Test Engineer (Playwright + Javascript)  
+Experience: 2 – 3 years  
+Location: On-site (Prabhadevi, Mumbai)  
+Work Type: Full-time  
+
+---
+
+### Key Responsibilities:
+
+- Develop and maintain automation test scripts using **Javascript** and **Playwright**.
+- Execute cross-browser and responsive testing.
+- Integrate automation tests with **CI/CD pipelines** (Jenkins, GitHub Actions).
+- Identify, log, and track defects using **JIRA** or similar tools.
+
+---
+
+### Required Skills:
+
+- At least **2 years of experience** in Automation.
+- Proficient in **Playwright**.
+- Strong programming knowledge of **JavaScript**.
+- Experience with frameworks like **TestNG, Mocha, Jest**, or similar.
+- Familiarity with **Git, Jenkins**, and other DevOps tools.
+    `,
+    skills: [
+      "Playwright",
+      "JavaScript",
+      "TestNG",
+      "Mocha",
+      "Jest",
+      "CI/CD (Jenkins/GitHub Actions)",
+      "Git",
+      "JIRA",
+    ],
+    badges: ["Urgent", "Featured"],
+    icon: FaCode,
+    color: "from-green-500 to-green-700",
+  },
+  {
+    id: 4,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
@@ -143,52 +192,6 @@ Work Type: Full-time
     badges: ["Urgent", "Featured"],
     icon: FaCode,
     color: "from-blue-500 to-blue-700",
-  },
-  {
-    id: 4,
-    title: "Automation Test Engineer (Playwright + Javascript)",
-    location: "On-site (Prabhadevi, Mumbai)",
-    type: "Full-time",
-    experience: "2 – 3 years",
-    fullDescription: `
-### Job Description:
-
-Role: Automation Test Engineer (Playwright + Javascript)  
-Experience: 2 – 3 years  
-Location: On-site (Prabhadevi, Mumbai)  
-Work Type: Full-time  
-
----
-
-### Key Responsibilities:
-
-- Develop and maintain automation test scripts using **Javascript** and **Playwright**.
-- Execute cross-browser and responsive testing.
-- Integrate automation tests with **CI/CD pipelines** (Jenkins, GitHub Actions).
-- Identify, log, and track defects using **JIRA** or similar tools.
-
----
-
-### Required Skills:
-
-- At least **2 years of experience** in Automation.
-- Proficient in **Playwright**.
-- Strong programming knowledge of **JavaScript**.
-- Experience with frameworks like **TestNG, Mocha, Jest**, or similar.
-- Familiarity with **Git, Jenkins**, and other DevOps tools.
-    `,
-    skills: [
-      "Playwright",
-      "JavaScript",
-      "TestNG",
-      "Mocha",
-      "Jest",
-      "CI/CD (Jenkins/GitHub Actions)",
-      "Git",
-      "JIRA",
-    ],
-    icon: FaCode,
-    color: "from-green-500 to-green-700",
   },
   {
     id: 5,

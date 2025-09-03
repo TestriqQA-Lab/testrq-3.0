@@ -118,7 +118,7 @@ const TradingAppBenefits = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover how certification transforms your trading platform into a
-            trusted, secure, and high-performing service that traders prefer and
+            trusted, <Link href="/security-testing">secure</Link>, and <Link href="/performance-testing-services">high-performing service</Link> that traders prefer and
             regulators approve.
           </p>
         </motion.div>
