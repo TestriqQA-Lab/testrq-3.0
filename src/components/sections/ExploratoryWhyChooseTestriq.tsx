@@ -152,7 +152,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Exploratory Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We combine expert exploratory testing skills with systematic investigation techniques to deliver comprehensive exploratory testing that uncovers critical issues and provides actionable insights for continuous product improvement.
+            We combine expert exploratory testing skills with <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link> techniques to deliver comprehensive exploratory testing that uncovers <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>critical issues</Link> and provides actionable insights for continuous product improvement.
           </p>
         </div>
 
@@ -171,16 +171,16 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div
                   className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${hoveredCard === advantage.id
-                      ? getColorClasses(advantage.color, true)
-                      : getIconBgColor(advantage.color)
+                    ? getColorClasses(advantage.color, true)
+                    : getIconBgColor(advantage.color)
                     }`}
                 >
                   {advantage.icon}
                 </div>
                 <div
                   className={`text-lg font-bold ${hoveredCard === advantage.id
-                      ? "text-white"
-                      : "text-gray-900"
+                    ? "text-white"
+                    : "text-gray-900"
                     }`}
                 >
                   {advantage.metric}
@@ -197,8 +197,8 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
 
               <p
                 className={`mb-6 leading-relaxed ${hoveredCard === advantage.id
-                    ? "text-white text-opacity-90"
-                    : "text-gray-600"
+                  ? "text-white text-opacity-90"
+                  : "text-gray-600"
                   }`}
               >
                 {advantage.description}
@@ -208,8 +208,8 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               <div className="space-y-3">
                 <h4
                   className={`font-semibold ${hoveredCard === advantage.id
-                      ? "text-white"
-                      : "text-gray-900"
+                    ? "text-white"
+                    : "text-gray-900"
                     }`}
                 >
                   Key Capabilities:
@@ -219,14 +219,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
                     <div key={index} className="flex items-center space-x-3">
                       <div
                         className={`w-2 h-2 rounded-full ${hoveredCard === advantage.id
-                            ? "bg-white bg-opacity-70"
-                            : getIconBgColor(advantage.color)
+                          ? "bg-white bg-opacity-70"
+                          : getIconBgColor(advantage.color)
                           }`}
                       ></div>
                       <span
                         className={`text-sm ${hoveredCard === advantage.id
-                            ? "text-white text-opacity-90"
-                            : "text-gray-700"
+                          ? "text-white text-opacity-90"
+                          : "text-gray-700"
                           }`}
                       >
                         {capability}
@@ -240,14 +240,14 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
               <Link href="/contact-us">
                 <button
                   className={`w-full cursor-pointer mt-10 py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${hoveredCard === advantage.id
-                      ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
-                        advantage.color,
-                        false
-                      )} border-white border-opacity-30`
-                      : `${getColorClasses(
-                        advantage.color,
-                        false
-                      )} hover:shadow-lg`
+                    ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
+                      advantage.color,
+                      false
+                    )} border-white border-opacity-30`
+                    : `${getColorClasses(
+                      advantage.color,
+                      false
+                    )} hover:shadow-lg`
                     }`}
                 >
                   Explore Testing

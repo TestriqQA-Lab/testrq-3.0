@@ -12,7 +12,11 @@ const ExploratoryFAQs: React.FC = () => {
       question:
         "What is exploratory testing and how does it differ from scripted testing?",
       answer:
-        "Exploratory testing is a simultaneous learning, test design, and test execution approach where testers actively investigate the application to discover issues. Unlike scripted testing that follows predetermined test cases, exploratory testing combines human intuition, creativity, and systematic investigation to uncover bugs, usability issues, and edge cases that scripted tests often miss. It’s particularly effective for finding unexpected behaviors and enhancing overall user experience.",
+        (
+          <>
+          Exploratory testing is a simultaneous learning, test design, and <Link href='blog/post/test-execution-comprehensive-testing-implementation'>test execution</Link> approach where testers actively investigate the application to discover issues. Unlike scripted testing that follows predetermined test cases, exploratory testing combines human intuition, creativity, and systematic investigation to uncover bugs, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability issues</Link>, and edge cases that scripted tests often miss. It’s particularly effective for finding unexpected behaviors and enhancing overall user experience.
+          </>
+        ),
     },
     {
       question:
