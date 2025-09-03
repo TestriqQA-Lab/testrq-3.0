@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Software Testing Services Locations - India & UAE | Testriq QA Lab",
+  title: "Software Testing Services Locations - India & UAE |Testriq QA Lab",
   description: "Professional software testing services across major cities in India and UAE. Expert QA testing, automation testing, performance testing, and API testing solutions tailored to local market needs. Available in Mumbai, Bangalore, Chennai, Dubai, and 129+ locations.",
   keywords: [
     "software testing services locations",
