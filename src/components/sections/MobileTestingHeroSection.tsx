@@ -39,10 +39,10 @@ const MobileTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your mobile applications deliver seamless user experiences
+            Ensure your mobile applications deliver seamless <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>{" "}
             and top performance across all platforms. From Android to iOS, our
-            mobile app testing services include functionality testing,
-            performance, usability, and mobile security testing for every
+            mobile app testing services include <Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>functionality testing</Link>,{" "}
+            <Link href='performance-testing-services'>performance</Link>, <Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>usability</Link>, and mobile <Link href='security-testing'>security testing</Link> for every
             device and scenario.
           </p>
 

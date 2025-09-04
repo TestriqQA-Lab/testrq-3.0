@@ -60,12 +60,13 @@ const renderContent = (content: string) => {
   return cleanContent;
 };
 // Blog Search Hub component - Unchanged
+// Blog Search Hub - now only renders the search bar
 const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: string) => void; handleSearch: (e: React.FormEvent) => void }> = ({ searchQuery, setSearchQuery, handleSearch }) => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
       <div className="max-w-7xl mx-auto">
-        {/* Second Search Bar */}
-        <div className="max-w-2xl mx-auto mb-8">
+        {/* Search Bar */}
+        <div className="max-w-2xl mx-auto">
           <form onSubmit={handleSearch} className="relative">
             <input
               type="text"
@@ -83,48 +84,28 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
             </button>
           </form>
         </div>
-        <h1
-         className="text-4xl sm:text-5xl font-extrabold text-white mb-8 text-center leading-tight">
-          Discover Expert QA Insights
-        </h1>
-        <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto text-center">
-          Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources, including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>, and more. Explore suggested topics below to dive into Testriq’s expert content.
-        </p>
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-300 transition-all duration-300 hover:scale-105">
-            <h3 className="text-xl font-semibold text-white mb-3">Automation Testing Search</h3>
-            <p className="text-gray-300 mb-4">Search for <strong>test automation best practices</strong> and tools like Selenium to streamline QA processes.</p>
-            <Link href="/blog/search?q=automation" className="inline-flex items-center text-cyan-300 hover:text-cyan-100 font-medium transition-colors">
-              Search Now <FaArrowRight className="ml-2" />
-            </Link>
-          </div>
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-300 transition-all duration-300 hover:scale-105">
-            <h3 className="text-xl font-semibold text-white mb-3">Best Practices QA Search</h3>
-            <p className="text-gray-300 mb-4">Explore <strong>best practices for QA search</strong> in CI/CD and Agile environments.</p>
-            <Link href="/blog/category/best-practices" className="inline-flex items-center text-cyan-300 hover:text-cyan-100 font-medium transition-colors">
-              View Category <FaArrowRight className="ml-2" />
-            </Link>
-          </div>
-          <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-300 transition-all duration-300 hover:scale-105">
-            <h3 className="text-xl font-semibold text-white mb-3">Security Testing Resources</h3>
-            <p className="text-gray-300 mb-4">Conduct a <strong>search QA insights</strong> for vulnerability detection and secure coding.</p>
-            <Link href="/blog/search?q=security" className="inline-flex items-center text-cyan-300 hover:text-cyan-100 font-medium transition-colors">
-              Search Now <FaArrowRight className="ml-2" />
-            </Link>
-          </div>
-        </div> */}
-        
-        
       </div>
     </div>
   );
 };
 
+
 // Search Insights component - Unchanged
 const SearchInsights: React.FC = () => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0B0F1C]/10 to-[#1B2A5A]/10 backdrop-blur-md animate-fade-in">
+      <div className="py-12 px-4 sm:px-6 lg:px-8 animate-fade-in text-center max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+          Discover Expert QA Insights
+        </h1>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources,
+          including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>,
+          and more. Explore suggested topics below to dive into Testriq’s expert content.
+        </p>
+      </div>
       <div className="max-w-7xl mx-auto bg-white/10 border border-cyan-300/20 rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
+
         {/* Decorative Element */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
         <div className="flex items-center justify-center mb-6">
@@ -299,9 +280,9 @@ const SearchResults: React.FC = () => {
                           </div>
                         </div>
                         <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3"
-                        dangerouslySetInnerHTML={{ __html: renderContent(post.excerpt) }}
+                          dangerouslySetInnerHTML={{ __html: renderContent(post.excerpt) }}
                         >
-                             
+
                         </p>
                         <Link
                           href={`/blog/post/${post.slug}`}
@@ -355,8 +336,8 @@ const SearchResults: React.FC = () => {
                         key={index + 1}
                         onClick={() => setCurrentPage(index + 1)}
                         className={`px-4 py-2 rounded-full font-semibold transition-colors ${currentPage === index + 1
-                            ? "bg-cyan-500 text-white"
-                            : "text-gray-600 hover:bg-cyan-100"
+                          ? "bg-cyan-500 text-white"
+                          : "text-gray-600 hover:bg-cyan-100"
                           }`}
                       >
                         {index + 1}
@@ -379,6 +360,7 @@ const SearchResults: React.FC = () => {
         </div>
 
         {/* Search Insights - Unchanged */}
+
         <SearchInsights />
       </div>
     </MainLayout>
