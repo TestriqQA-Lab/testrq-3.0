@@ -2,7 +2,7 @@
 
 import { Url } from "next/dist/shared/lib/router/router";
 import Link from "next/link";
-import { JSX, useState } from "react";
+import React, { JSX, useState } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -14,7 +14,7 @@ import {
 type FeatureSet = {
   title: string;
   subtitle: string;
-  description: string;
+  description: React.ReactNode;
   icon: string | JSX.Element;
   stats: { label: string; value: string }[];
   processLabel?: string;
@@ -34,7 +34,7 @@ const testingServices: FeatureSet[] = [
     title: "Security Testing",
     subtitle: "Vulnerability Assessment",
     description:
-      "Identify vulnerabilities and security flaws to protect your web application from threats, data breaches, and malicious attacks through comprehensive security testing and robust data protection validation.",
+      (<>Identify vulnerabilities and security flaws to protect your web application from threats, data breaches, and malicious attacks through comprehensive <Link href='security-testing'>security testing</Link> and <Link href='blog/post/ai-security-testing'>robust data</Link> protection validation.</>),
     icon: "🛡️",
     stats: [
       { label: "Tests Run", value: "200+" },
@@ -61,7 +61,7 @@ const testingServices: FeatureSet[] = [
     title: "Performance Testing",
     subtitle: "Speed & Scalability Optimization",
     description:
-      "Evaluate your web application's speed, scalability, and stability under various load conditions and user scenarios to ensure optimal performance and user experience.",
+      (<>Evaluate your web application's speed, scalability, and stability under various load conditions and user scenarios to ensure optimal <Link href='performance-testing-services'>performance</Link> and user experience.</>),
     icon: "🚀",
     stats: [
       { label: "Tests Run", value: "300+" },
@@ -88,7 +88,7 @@ const testingServices: FeatureSet[] = [
     title: "Usability Testing",
     subtitle: "User Experience Optimization",
     description:
-      "Ensure your web application provides an intuitive and engaging user experience across all user personas, devices, and interaction patterns for maximum user satisfaction.",
+      (<>Ensure your web application provides an intuitive and engaging user experience across all <Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user personas</Link>, devices, and interaction patterns for maximum user satisfaction.</>),
     features: [
       "User Experience Testing",
       "Navigation Testing",
@@ -102,8 +102,8 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "92%" },
       { label: "Days", value: "2-3" },
     ],
-    processLabel: "Performance Testing Process",
-    processDescription: "Comprehensive performance testing workflow",
+    processLabel: "Usability Testing Process",
+    processDescription: "Comprehensive usability testing workflow",
     progress: "92%",
     icon: <FaUsers />,
     bgColor: "bg-yellow-100/80",
@@ -115,7 +115,7 @@ const testingServices: FeatureSet[] = [
     title: "Responsive Testing",
     subtitle: "Multi-device Compatibility",
     description:
-      "Verify that your web application works flawlessly across all devices, screen sizes, orientations, and touch interfaces for consistent user experiences everywhere.",
+      (<>Verify that your web application works flawlessly across all devices, screen sizes, orientations, and touch interfaces for consistent <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link> everywhere.</>),
     features: [
       "Mobile Responsiveness",
       "Desktop Optimization",
@@ -129,8 +129,8 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "96%" },
       { label: "Days", value: "1-2" },
     ],
-    processLabel: "Performance Testing Process",
-    processDescription: "Comprehensive performance testing workflow",
+    processLabel: "Responsive Testing Process",
+    processDescription: "Comprehensive responsive testing workflow",
     progress: "96%",
     icon: <FaMobileAlt />,
     bgColor: "bg-purple-100/80",
@@ -142,7 +142,7 @@ const testingServices: FeatureSet[] = [
     title: "Integration Testing",
     subtitle: "Seamless System Integration",
     description:
-      "Test the seamless integration between different modules, third-party services, external APIs, and system components to ensure smooth data flow and functionality.",
+      (<>Test the seamless integration between different modules, third-party services, external APIs, and system components to ensure <Link href='blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability'>smooth data flow</Link> and functionality.</>),
     features: [
       "API Integration Testing",
       "Database Integration",
@@ -156,8 +156,8 @@ const testingServices: FeatureSet[] = [
       { label: "Coverage", value: "94%" },
       { label: "Days", value: "3-4" },
     ],
-    processLabel: "Performance Testing Process",
-    processDescription: "Comprehensive performance testing workflow",
+    processLabel: "Integration Testing Process",
+    processDescription: "Comprehensive integration testing workflow",
     progress: "94%",
     icon: <FaPlug />,
     bgColor: "bg-red-100/80",

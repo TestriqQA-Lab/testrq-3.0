@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaChevronLeft,
@@ -151,7 +152,7 @@ const DesktopComprehensiveSlider: React.FC = () => {
                             <div className="flex flex-col items-center">
                               <div className="mb-4">{slide.icon}</div>
                               <div className="text-white font-semibold">
-                                Platform Testing
+                                <Link href='blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices'>Platform Testing</Link>
                               </div>
                             </div>
                           </div>

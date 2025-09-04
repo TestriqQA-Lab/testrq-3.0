@@ -15,42 +15,42 @@ const DesktopWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       icon: <FaAward className="w-8 h-8" />,
-      title: "Industry Expertise",
+      title: (<Link href='healthcare-testing-services'>Industry Expertise</Link>),
       description:
         "Over 8+ years of specialized experience in desktop application testing across all major platforms and technologies.",
       stats: "500+ Desktop Apps Tested",
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      title: "Expert Team",
+      title: (<Link href='our-team'>Expert Team</Link>),
       description:
         "Certified testing professionals with deep knowledge of Windows, macOS, and Linux desktop environments.",
       stats: "50+ QA Specialists",
     },
     {
       icon: <FaClock className="w-8 h-8" />,
-      title: "Rapid Turnaround",
+      title: (<Link href='banking-finance-industry-testing-services'>Rapid Turnaround</Link>),
       description:
         "Efficient testing processes that deliver comprehensive results without compromising on quality or thoroughness.",
       stats: "24-48 Hour Delivery",
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Security First",
+      title: (<Link href='security-testing'>Security First</Link>),
       description:
         "Advanced security testing methodologies to protect your desktop applications from vulnerabilities and threats.",
       stats: "99.9% Security Coverage",
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Excellence",
+      title: (<Link href='performance-testing'>Performance Excellence</Link>),
       description:
         "Comprehensive performance testing ensuring your desktop applications run smoothly under all conditions.",
       stats: "95% Performance Improvement",
     },
     {
       icon: <FaHeadset className="w-8 h-8" />,
-      title: "24/7 Support",
+      title: (<Link href='contact-us'>24/7 Support</Link>),
       description:
         "Round-the-clock support and communication throughout your testing project with dedicated project managers.",
       stats: "24/7 Availability",
@@ -73,7 +73,7 @@ const DesktopWhyChooseTestriq: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We combine industry expertise, cutting-edge tools, and proven
+            We combine <Link href='e-commerce-testing-services'>industry expertise</Link>, <Link href='tools'>cutting-edge tools</Link>, and proven
             methodologies to deliver exceptional desktop application testing
             services that exceed expectations.Whether you&apos;re a startup or
             an enterprise, our QA testing for desktop software ensures speed,
@@ -121,19 +121,19 @@ const DesktopWhyChooseTestriq: React.FC = () => {
               <div className="space-y-6">
                 {[
                   {
-                    feature: "Testing Speed",
+                    feature: (<Link href='blog/post/performance-testing-for-ai-applications'>Testing Speed</Link>),
                     testriq: "24-48 hours",
                     traditional: "1-2 weeks",
                     advantage: "10x faster",
                   },
                   {
-                    feature: "Platform Coverage",
+                    feature: (<Link href='blog/post/cross-platform-regression-testing-ensuring-consistency-across-devices-os'>Platform Coverage</Link>),
                     testriq: "15+ platforms",
                     traditional: "3-5 platforms",
                     advantage: "3x more coverage",
                   },
                   {
-                    feature: "Bug Detection Rate",
+                    feature: (<Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>Bug Detection Rate</Link>),
                     testriq: "99.8%",
                     traditional: "85-90%",
                     advantage: "15% higher",
