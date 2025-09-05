@@ -8,13 +8,13 @@ const MobileWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       icon: <FaAward className="w-8 h-8" />,
-      title: "Mobile Testing Expertise",
+      title: (<Link href='mobile-application-testing'>Mobile Testing Expertise</Link>),
       description: "Over 8+ years of specialized experience in mobile application testing across iOS, Android, and cross-platform technologies.",
       stats: "1000+ Mobile Apps Tested"
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      title: "Expert Mobile QA Team",
+      title: (<Link href='our-team'>Expert Mobile QA Team</Link>),
       description: "Certified mobile testing professionals with deep knowledge of iOS and Android ecosystems, app store requirements, and mobile UX.",
       stats: "50+ Mobile QA Specialists"
     },
@@ -26,19 +26,19 @@ const MobileWhyChooseTestriq: React.FC = () => {
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Mobile Security First",
+      title: (<Link href='security-testing'>Mobile Security First</Link>),
       description: "Advanced mobile security testing methodologies to protect your apps from vulnerabilities and ensure data privacy compliance.",
       stats: "99.9% Security Coverage"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Excellence",
+      title: (<Link href='performance-testing-services'>Performance Excellence</Link>),
       description: "Comprehensive performance testing ensuring your mobile apps run smoothly across all devices and network conditions.",
       stats: "95% Performance Improvement"
     },
     {
       icon: <FaHeadset className="w-8 h-8" />,
-      title: "24/7 Mobile Support",
+      title: (<Link href='contact-us'>24/7 Mobile Support</Link>),
       description: "Round-the-clock support throughout your mobile testing project with dedicated mobile testing specialists and project managers.",
       stats: "24/7 Availability"
     }
@@ -104,13 +104,13 @@ const MobileWhyChooseTestriq: React.FC = () => {
               <div className="space-y-6">
                 {[
                   {
-                    feature: "Testing Speed",
+                    feature: (<Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Testing Speed</Link>),
                     testriq: "12-24 hours",
                     traditional: "3-5 days",
                     advantage: "5x faster"
                   },
                   {
-                    feature: "Device Coverage",
+                    feature: (<Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>Device Coverage</Link>),
                     testriq: "50+ real devices",
                     traditional: "10-15 devices",
                     advantage: "3x more coverage"
@@ -122,7 +122,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
                     advantage: "15% higher"
                   },
                   {
-                    feature: "Cost Efficiency",
+                    feature: (<Link href='blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud'>Cost Efficiency</Link>),
                     testriq: "50% less cost",
                     traditional: "Standard pricing",
                     advantage: "50% savings"

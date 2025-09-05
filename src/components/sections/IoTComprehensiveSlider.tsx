@@ -124,7 +124,7 @@ const IoTComprehensiveSlider: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Coverage</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive IoT device testing services cover every layer of your connected ecosystem, ensuring device reliability, security compliance, protocol interoperability, and performance validation across real-world conditions and all supported IoT protocols.
+            Our comprehensive IoT device testing services cover every layer of your connected ecosystem, ensuring device reliability, <Link href='blog/post/iot-security-validation-protecting-devices-from-cyber-threats'>security compliance</Link>, <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>protocol interoperability</Link>, and <Link href='performance-testing-services'>performance</Link> validation across real-world conditions and all supported IoT protocols.
           </p>
         </div>
 

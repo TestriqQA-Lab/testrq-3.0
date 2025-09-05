@@ -17,6 +17,7 @@ const IoTCardSlider: React.FC = () => {
         "Actuator response validation",
       ],
       highlight: "99.9% functionality coverage",
+      action: "blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices"
     },
     {
       title: "Connectivity & Protocol Testing",
@@ -29,6 +30,7 @@ const IoTCardSlider: React.FC = () => {
         "Protocol compliance verification",
       ],
       highlight: "100% protocol compliance",
+      action: "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
     },
     {
       title: "Security & Privacy Testing",
@@ -41,6 +43,7 @@ const IoTCardSlider: React.FC = () => {
         "Privacy protection testing",
       ],
       highlight: "Zero security vulnerabilities",
+      action: "blog/post/ai-security-testing"
     },
   ];
 
@@ -56,7 +59,7 @@ const IoTCardSlider: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our specialized testing approaches ensure your IoT devices meet the
-            highest standards of functionality, connectivity, and security.
+            highest standards of <Link href='blog/post/how-does-validation-optimization-improve-web-application-quality'>functionality</Link>, <Link href='blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks'>connectivity</Link>, and <Link href='security-testing'>security</Link>.
           </p>
         </div>
 
@@ -90,10 +93,10 @@ const IoTCardSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
+              <Link href={type.action} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4 ml-2" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
