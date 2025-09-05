@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaAward, FaUsers, FaClock, FaShieldAlt, FaChartLine, FaHeadset } from "react-icons/fa";
 
@@ -59,7 +60,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Mobile Testing?</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We combine mobile QA expertise, industry-leading tools, and proven testing methodologies to deliver full-cycle mobile application testing services that ensure faster time-to-market and app store success.
+            We combine mobile QA expertise, <Link href='tools'>industry-leading tools</Link>, and proven testing methodologies to deliver full-cycle mobile application testing services that ensure faster <Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>time-to-market</Link> and app store success.
           </p>
         </div>
 
