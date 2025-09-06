@@ -44,23 +44,41 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const shareOnX = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
     const text = `Check out this article: ${post.title}`;
-    window.open(`https://X.com/intent/tweet?text=${encodeURIComponent(text )}&url=${encodeURIComponent(url)}`, "_blank");
+    window.open(
+      `https://X.com/intent/tweet?text=${encodeURIComponent(
+        text
+      )}&url=${encodeURIComponent(url)}`,
+      "_blank"
+    );
   };
 
   const shareOnLinkedIn = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
-    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url )}`, "_blank");
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+        url
+      )}`,
+      "_blank"
+    );
   };
 
   const shareOnFacebook = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url )}`, "_blank");
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      "_blank"
+    );
   };
 
   const shareOnReddit = () => {
     const url = `${window.location.origin}/blog/${post.slug}`;
     const title = post.title;
-    window.open(`https://reddit.com/submit?url=${encodeURIComponent(url )}&title=${encodeURIComponent(title)}`, "_blank");
+    window.open(
+      `https://reddit.com/submit?url=${encodeURIComponent(
+        url
+      )}&title=${encodeURIComponent(title)}`,
+      "_blank"
+    );
   };
 
   const copyToClipboard = async () => {
@@ -100,16 +118,15 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           </div>
 
           <div className="flex items-center gap-3">
-          
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
                 className="flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-700 rounded-lg hover:bg-blue-50 transition-colors"
               >
                 <FaShare className="w-4 h-4" />
                 <span>{post.shares}</span>
               </button>
-              
+
               {showShareMenu && (
                 <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg p-2 z-20">
                   <button
@@ -150,13 +167,12 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
                 </div>
               )}
             </div>
-
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div 
+      <div
         className={`prose prose-lg px-6 max-w-none text-gray-800 ${fontSize}`}
       >
         <CustomImageRenderer content={post.content} />
