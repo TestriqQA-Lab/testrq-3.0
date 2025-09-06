@@ -11,45 +11,134 @@ const ShoppingAppFAQs = () => {
   const faqs = [
     {
       question: "What is shopping app certification and why is it important?",
-      answer:
-        "Shopping app certification is a comprehensive validation process that ensures your platform meets standards for security, performance, compliance, and user trust. It’s crucial for enhancing credibility, minimizing risk, and boosting user retention in competitive retail markets.",
+      answer: (
+        <>
+          Shopping app certification is a comprehensive validation process that
+          ensures your platform meets standards for{" "}
+          <Link href="">security</Link>, <Link href="">performance</Link>,{" "}
+          <Link href="">compliance</Link>, and user trust. It’s crucial for
+          enhancing credibility, minimizing risk, and boosting user retention in
+          competitive <Link href="">e-commerce</Link> markets.
+        </>
+      ),
     },
     {
       question: "How long does the shopping app certification process take?",
-      answer:
-        "The certification typically takes 10–15 working days. This includes assessment, security and performance audits, functional testing, and final certification. Timelines may vary based on platform complexity.",
+      answer: (
+        <>
+          The certification typically takes 10–15 working days. This includes
+          assessment,{" "}
+          <Link href="/blog/post/ai-security-testing">security</Link> and{" "}
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            performance
+          </Link>{" "}
+          audits,{" "}
+          <Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">
+            functional testing
+          </Link>
+          , and final certification. Timelines may vary based on platform
+          complexity.
+        </>
+      ),
     },
     {
       question:
         "Which regulations and standards are covered in the certification?",
-      answer:
-        "Our certification covers standards like PCI DSS (for payment security), GDPR, CCPA, ISO 27001, OWASP, and local data protection regulations relevant to e-commerce platforms.",
+      answer: (
+        <>
+          Our certification covers standards like PCI DSS (for payment{" "}
+          <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+            security
+          </Link>
+          ), GDPR, CCPA, ISO 27001,{" "}
+          <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">
+            OWASP
+          </Link>
+          , and local data protection regulations relevant to{" "}
+          <Link href="/blog/post/e-commerce-security-testing-compliance-services">
+            e-commerce
+          </Link>{" "}
+          platforms.
+        </>
+      ),
     },
     {
       question: "What kinds of testing are included in the certification?",
-      answer:
-        "Testing includes Security (encryption, vulnerability scans), Performance (load & stress testing), Functional (shopping cart, payment flow), UX (conversion optimization), API and third-party integration testing.",
+      answer: (
+        <>
+          Testing includes{" "}
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Security
+          </Link>{" "}
+          (encryption, vulnerability scans),{" "}
+          <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+            Performance
+          </Link>{" "}
+          (
+          <Link href="/blog/post/advanced-web-app-performance-testing-techniques-for-load-stress-scalability">
+            load & stress testing
+          </Link>
+          ),{" "}
+          <Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">
+            Functional testing
+          </Link>{" "}
+          (shopping cart, payment flow), UX (conversion optimization), API and
+          third-party integration testing.
+        </>
+      ),
     },
     {
       question: "How much does shopping app certification cost?",
-      answer:
-        "Cost depends on your app’s scale and required depth of testing. Packages start from basic compliance to full-suite enterprise certification. Contact us for a customized quote based on your e-commerce architecture.",
+      answer: (
+        <>
+          Cost depends on your app’s scale and required depth of testing.
+          Packages start from basic{" "}
+          <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+            compliance
+          </Link>{" "}
+          to full-suite enterprise certification. Contact us for a customized
+          quote based on your{" "}
+          <Link href="/e-commerce-testing-services">e-commerce</Link>{" "}
+          architecture.
+        </>
+      ),
     },
     {
       question: "Do you offer support after certification?",
-      answer:
-        "Yes, we provide post-certification support including regular audits, update testing, vulnerability patching, and re-certification. Support packages are tailored to match your release frequency and business goals.",
+      answer: (
+        <>
+          Yes, we provide post-certification support including regular audits,
+          update testing, vulnerability patching, and re-certification. Support
+          packages are tailored to match your release frequency and business
+          goals.
+        </>
+      ),
     },
     {
       question:
         "Can I certify a multi-region or cross-border shopping platform?",
-      answer:
-        "Absolutely. We support regional compliance for the EU, US, India, LATAM, and more. Our experts ensure cross-border data transfers, payment systems, and privacy laws are properly addressed.",
+      answer: (
+        <>
+          Absolutely. We support regional{" "}
+          <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+            compliance
+          </Link>{" "}
+          for the EU, US, India, LATAM, and more. Our experts ensure
+          cross-border data transfers, payment systems, and{" "}
+          <Link href="/blog/post/ai-security-testing">privacy</Link> laws are
+          properly addressed.
+        </>
+      ),
     },
     {
       question: "What if my shopping app fails any part of the assessment?",
-      answer:
-        "We provide a detailed gap report and remediation support. Our team will help your developers fix the issues and re-test affected areas before issuing final certification.",
+      answer: (
+        <>
+          We provide a detailed gap report and remediation support. Our team
+          will help your developers fix the issues and re-test affected areas
+          before issuing final certification.
+        </>
+      ),
     },
   ];
 
@@ -79,8 +168,10 @@ const ShoppingAppFAQs = () => {
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Find answers about our shopping app certification services, process,
-            timelines, and how we help elevate your e-commerce platform’s trust
-            and performance.
+            timelines, and how we help elevate your{" "}
+            <Link href="/e-commerce-testing-services">e-commerce</Link>{" "}
+            platform’s trust and{" "}
+            <Link href="/performance-testing-services">performance</Link>.
           </p>
         </motion.div>
 

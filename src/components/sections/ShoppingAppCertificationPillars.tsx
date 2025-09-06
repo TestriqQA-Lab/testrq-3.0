@@ -12,14 +12,23 @@ import {
   CheckCircle,
   Star,
 } from "lucide-react";
+import Link from "next/link";
 
 const ShoppingAppCertificationPillars = () => {
   const pillars = [
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Security & Privacy",
-      description:
-        "We verify your app’s encryption, payment security, and data protection measures to ensure compliance with global security standards.",
+      description: (
+        <>
+          We verify your app’s encryption, payment{" "}
+          <Link href="/security-testing">security</Link>, and{" "}
+          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+            data protection
+          </Link>{" "}
+          measures to ensure compliance with global security standards.
+        </>
+      ),
       features: [
         "PCI DSS compliance",
         "SSL/TLS encryption",
@@ -33,8 +42,15 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <CreditCard className="w-12 h-12" />,
       title: "Payment Security",
-      description:
-        "We confirm that your payment gateway meets the highest fraud detection and secure transaction requirements.",
+      description: (
+        <>
+          We confirm that your{" "}
+          <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+            payment gateway
+          </Link>{" "}
+          meets the highest fraud detection and secure transaction requirements.
+        </>
+      ),
       features: [
         "Payment tokenization",
         "Fraud detection",
@@ -48,13 +64,29 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Zap className="w-12 h-12" />,
       title: "Performance & Speed",
-      description:
-        "We evaluate your app’s speed, scalability, and uptime to ensure it delivers a fast and reliable shopping experience.",
+      description: (
+        <>
+          We evaluate your app’s{" "}
+          <Link href="/blog/post/performance-testing-for-ai-applications">
+            speed
+          </Link>
+          ,{" "}
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            scalability
+          </Link>
+          , and uptime to ensure it delivers a fast and reliable shopping
+          experience.
+        </>
+      ),
       features: [
         "Sub-3s load times",
         "CDN optimization",
         "Auto-scaling",
-        "Performance monitoring",
+        <>
+          <Link href="/performance-testing-services">
+            Performance monitoring
+          </Link>
+        </>,
       ],
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
@@ -63,11 +95,20 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Users className="w-12 h-12" />,
       title: "User Experience",
-      description:
-        "We assess navigation, responsiveness, and accessibility to confirm your app offers an exceptional user journey.",
+      description: (
+        <>
+          We assess navigation, responsiveness, and{" "}
+          <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+            accessibility
+          </Link>{" "}
+          to confirm your app offers an exceptional user journey.
+        </>
+      ),
       features: [
         "Mobile-first design",
-        "Accessibility (WCAG 2.1)",
+        <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+          Accessibility (WCAG 2.1)
+        </Link>,
         "One-click checkout",
         "Personalization",
       ],
@@ -78,10 +119,30 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <Lock className="w-12 h-12" />,
       title: "Data Protection",
-      description:
-        "We verify secure data handling practices to ensure compliance and safeguard customer privacy.",
+      description: (
+        <>
+          We verify{" "}
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            secure data
+          </Link>{" "}
+          handling practices to ensure{" "}
+          <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+            compliance
+          </Link>{" "}
+          and safeguard customer{" "}
+          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+            privacy
+          </Link>
+          .
+        </>
+      ),
       features: [
-        "Data encryption at rest",
+        <>
+          <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+            Data encryption
+          </Link>{" "}
+          at rest
+        </>,
         "Privacy controls",
         "Secure backups",
         "Access controls",
@@ -93,8 +154,16 @@ const ShoppingAppCertificationPillars = () => {
     {
       icon: <ShoppingCart className="w-12 h-12" />,
       title: "E-commerce Standards",
-      description:
-        "We check that your operations, from inventory to support, meet recognized e-commerce best practices.",
+      description: (
+        <>
+          We check that your operations, from inventory to support, meet
+          recognized{" "}
+          <Link href="/blog/post/e-commerce-security-testing-compliance-services">
+            e-commerce
+          </Link>{" "}
+          best practices.
+        </>
+      ),
       features: [
         "Inventory tracking",
         "Order management",
@@ -130,9 +199,14 @@ const ShoppingAppCertificationPillars = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We don’t build your shopping app - we independently verify that it
-            meets these six critical pillars of security, performance, and
-            usability. Our certification assures your customers that these
-            standards are in place.
+            meets these six critical pillars of{" "}
+            <Link href="/security-testing">security</Link>,{" "}
+            <Link href="/performance-testing-services">performance</Link>, and{" "}
+            <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              usability
+            </Link>
+            . Our certification assures your customers that these standards are
+            in place.
           </p>
         </motion.div>
 
