@@ -159,8 +159,8 @@ const ETLWhyChooseTestriq: React.FC = () => {
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
             We combine ETL expertise with testing excellence to deliver ETL
             testing services that ensure reliable, accurate, and
-            high-performance data pipelines for your business-critical
-            applications, data integration workflows, and analytics platforms.
+            high-performance <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipelines</Link> for your <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>business-critical
+            applications</Link>, data integration workflows, and analytics platforms.
           </p>
         </div>
 
@@ -299,7 +299,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
             </h3>
             <p className="text-gray-600">
               Join 300+ companies that trust our ETL testing expertise. Start
-              with a comprehensive data pipeline assessment to ensure your ETL
+              with a comprehensive <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipeline assessment</Link> to ensure your ETL
               processes are reliable, accurate, and optimized for performance
               and compliance.
             </p>

@@ -7,7 +7,7 @@ import { FaTools } from "react-icons/fa";
 const ETLToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      title: "ETL Testing Tools",
+      title: (<Link href='tools'>ETL Testing Tools</Link>),
       tools: [
         {
           name: "QuerySurge",
@@ -70,7 +70,7 @@ const ETLToolsFramework: React.FC = () => {
       ],
     },
     {
-      title: "Performance Testing",
+      title: (<Link href='performance-testing-services'>Performance Testing</Link>),
       tools: [
         {
           name: "Apache JMeter",
@@ -105,7 +105,7 @@ const ETLToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We leverage cutting-edge ETL testing tools and frameworks to ensure
+            We leverage cutting-edge <Link href='tools'>ETL testing tools</Link> and frameworks to ensure
             comprehensive validation of your data pipelines across all
             extraction, transformation, and loading stages—ensuring data
             accuracy, quality assurance, and pipeline reliability.
@@ -159,7 +159,7 @@ const ETLToolsFramework: React.FC = () => {
                 Comprehensive ETL Testing Approach
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Our ETL testing methodology combines industry-leading tools with
+                Our ETL testing methodology combines <Link href='tools'>industry-leading tools</Link> with
                 proven testing frameworks to deliver comprehensive validation of
                 your data integration processes. We ensure data accuracy,
                 performance optimization, and pipeline reliability across all
