@@ -84,11 +84,22 @@ const GamingHeroSection: React.FC = () => {
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
               Deliver flawless gaming experiences across all platforms with our
-              comprehensive game testing services. From mobile games to AAA
-              titles, our gaming software testing solutions ensure optimal
-              performance, engaging gameplay, and bug-free launches through
-              cross-platform compatibility, gameplay mechanics testing, and
-              security-focused game QA.
+              comprehensive{" "}
+              <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+                game testing
+              </Link>{" "}
+              services. From mobile games to AAA titles, our gaming software
+              testing solutions ensure optimal{" "}
+              <Link href="/performance-testing-services">performance</Link>,
+              engaging gameplay, and bug-free launches through{" "}
+              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                cross-platform compatibility
+              </Link>
+              , gameplay mechanics testing, and{" "}
+              <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+                security-focused game QA
+              </Link>
+              .
             </p>
 
             {/* Key Benefits */}
@@ -96,13 +107,17 @@ const GamingHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-[theme(color.brand.blue)] flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Cross-Platform Testing
+                  <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                    Cross-Platform Testing
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-[theme(color.brand.blue)] flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Performance Optimization
+                  <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                    Performance Optimization
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -226,8 +241,11 @@ const GamingHeroSection: React.FC = () => {
               Ready to Launch Your Next Hit Game?
             </h3>
             <p className="text-blue-100 mb-6 text-lg">
-              Join 50+ game studios that trust Testriq for comprehensive gaming
-              QA testing solutions.
+              Join 50+ game studios that trust Testriq for{" "}
+              <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
+                comprehensive
+              </Link>{" "}
+              gaming QA testing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
               <Link href="/contact-us">
