@@ -45,7 +45,14 @@ const ElearningPlatformsSection: React.FC = () => {
       icon: <FaBookOpen className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
     },
     {
-      name: "Custom LMS",
+      name: (
+        <>
+          Custom{" "}
+          <Link href="/blog/post/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users">
+            LMS
+          </Link>
+        </>
+      ),
       icon: <FaLaptopCode className="w-8 h-8 text-brand-blue mx-auto mb-3" />,
     },
     {
