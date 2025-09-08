@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -10,7 +11,11 @@ const ApiFAQs: React.FC = () => {
     {
       question: "What types of APIs can you test?",
       answer:
-        "We test all types of APIs including REST, SOAP, GraphQL, gRPC, and WebSocket APIs. Our team has experience with various protocols, authentication methods, and data formats to ensure comprehensive testing coverage.",
+        (
+          <>
+            We test all types of APIs including <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'></Link>, <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>SOAP</Link>, <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>GraphQL</Link>, GRPC, and WebSocket APIs. <Link href='our-team'>Our team</Link> has experience with various protocols, authentication methods, and data formats to ensure comprehensive testing coverage.
+          </>
+        ),
     },
     {
       question: "How long does API testing typically take?",
@@ -20,32 +25,56 @@ const ApiFAQs: React.FC = () => {
     {
       question: "Do you provide automated API testing?",
       answer:
-        "Yes, we specialize in automated API testing using industry-leading tools like Postman, REST Assured, and custom frameworks. Automation helps ensure consistent testing, faster feedback, and continuous validation in CI/CD pipelines.",
+        (
+          <>
+            Yes, we specialize in automated API testing using industry-leading tools like Postman, <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'>REST Assured</Link>, and custom frameworks. Automation helps ensure consistent testing, faster feedback, and continuous validation in <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipelines</Link>.
+          </>
+        ),
     },
     {
       question: "What security testing do you perform on APIs?",
       answer:
-        "Our security testing includes authentication and authorization testing, input validation, SQL injection testing, XSS prevention, rate limiting validation, and data encryption verification. We follow OWASP API Security guidelines.",
+        (
+          <>
+            Our security testing includes <Link href='blog/post/security-testing-checklist-before-go-live-2'>authentication and authorization testing</Link>, input validation, SQL injection testing, XSS prevention, rate limiting validation, and data encryption verification. We follow <Link href='blog/post/top-10-security-vulnerabilities-based-on-owasp'>OWASP API Security</Link> guidelines.
+          </>
+        ),
     },
     {
       question: "Can you integrate API testing into our CI/CD pipeline?",
       answer:
-        "Absolutely! We can integrate automated API tests into your existing CI/CD pipeline using tools like Jenkins, GitLab CI, GitHub Actions, or Azure DevOps. This ensures continuous validation of your APIs with every deployment.",
+        (
+          <>
+            Absolutely! We can integrate automated API tests into your existing <Link href='blog/post/devsecops-integrating-security-in-your-ci-cd-pipeline-2'>CI/CD pipeline</Link> using tools like Jenkins, GitLab CI, GitHub Actions, or Azure <Link href='blog/post/integrating-performance-testing-into-ci-cd-for-devops-success'>DevOps</Link>. This ensures continuous validation of your APIs with every deployment.
+          </>
+        ),
     },
     {
       question: "What deliverables do you provide?",
       answer:
-        "We provide comprehensive test reports, automated test scripts, performance benchmarks, security assessment reports, and detailed documentation. All deliverables include actionable recommendations for improvement.",
+        (
+          <>
+            We provide comprehensive test reports, automated test scripts, performance benchmarks, <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>security assessment reports</Link>, and <Link href='blog/post/how-to-write-qa-documentation-a-complete-guide'>detailed documentation</Link>. All deliverables include actionable recommendations for improvement.
+          </>
+        ),
     },
     {
       question: "Do you test third-party API integrations?",
       answer:
-        "Yes, we test integrations with third-party APIs including payment gateways, social media APIs, cloud services, and other external systems. We ensure proper error handling, data mapping, and performance optimization.",
+        (
+          <>
+            Yes, we test integrations with <Link href='blog/post/api-integration-testing-ensuring-seamless-system-communication'>third-party APIs</Link> including payment gateways, social media APIs, <Link href='blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation'>cloud services</Link>, and other external systems. We ensure proper error handling, data mapping, and performance optimization.
+          </>
+        ),
     },
     {
       question: "What tools do you use for API testing?",
       answer:
-        "We use a comprehensive toolkit including Postman, SoapUI, REST Assured, JMeter, Karate, Newman, and custom frameworks. Tool selection depends on your specific requirements and technology stack.",
+        (
+          <>
+            We use a comprehensive toolkit including Postman, SoapUI, <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'>REST Assured</Link>, <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>JMeter</Link>, Karate, Newman, and custom frameworks. Tool selection depends on your specific requirements and <Link href='blog/post/what-are-the-monitoring-tools-in-software-testing'>technology stack</Link>.
+          </>
+        ),
     },
   ];
 

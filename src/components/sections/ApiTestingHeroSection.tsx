@@ -25,9 +25,9 @@ const ApiTestingHeroSection: React.FC = () => {
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Guarantee robust, secure, and high-performance API integrations with
-            our end-to-end API testing services. From RESTful and SOAP APIs to
-            GraphQL and microservices, we perform functional, load, and security
-            testing to ensure reliable data exchange and seamless system
+            our end-to-end API testing services. From RESTful and <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>SOAP APIs</Link> to{" "}
+            <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>GraphQL</Link> and microservices, we perform functional, <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load</Link>, and <Link href='security-testing'>security
+            testing</Link> to ensure reliable data exchange and seamless system
             communication.
           </p>
 

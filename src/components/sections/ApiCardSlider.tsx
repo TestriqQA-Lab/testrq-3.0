@@ -10,6 +10,7 @@ const ApiCardSlider: React.FC = () => {
       title: "Functional Testing",
       description:
         "Comprehensive validation of API functionality, endpoints, and business logic.",
+        action: "blog/post/rest-api-testing-guide-endpoints-methods-best-practices",
       features: [
         "Request/Response validation",
         "Data integrity testing",
@@ -22,6 +23,7 @@ const ApiCardSlider: React.FC = () => {
       title: "Performance Testing",
       description:
         "Ensure your APIs perform optimally under various load conditions.",
+        action: "performance-testing-services",
       features: [
         "Load testing",
         "Stress testing",
@@ -34,6 +36,7 @@ const ApiCardSlider: React.FC = () => {
       title: "Security Testing",
       description:
         "Comprehensive security assessment to protect your APIs from threats.",
+        action: "security-testing",
       features: [
         "Authentication testing",
         "Authorization validation",
@@ -90,10 +93,10 @@ const ApiCardSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <button className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
+              <Link href={type.action} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4 ml-2" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
