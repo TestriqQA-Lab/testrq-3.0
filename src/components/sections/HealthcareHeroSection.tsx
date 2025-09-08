@@ -82,10 +82,10 @@ const HealthcareHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure patient safety, regulatory compliance, and healthcare data
-              security with our specialized healthcare testing services. From
-              EHR system testing to medical software QA, we validate your
-              healthcare solutions meet HIPAA compliance, FDA regulations, and
+              Ensure <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">patient safety</Link>, regulatory compliance, and healthcare data
+              security with our specialized healthcare testing services. From{" "}
+              <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR system</Link> testing to medical software QA, we validate your
+              healthcare solutions meet <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA compliance</Link>, FDA regulations, and
               other industry standards.
             </p>
 
@@ -100,13 +100,13 @@ const HealthcareHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  FDA Validation Support
+                  <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA Validation</Link> Support
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Medical Device Testing
+                  <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Medical Device Testing</Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">

@@ -23,7 +23,7 @@ const ShoppingAppTestingServices = () => {
         <>
           End-to-end testing for shopping apps across{" "}
           <Link href="/mobile-application-testing">iOS and Android</Link>{" "}
-          platforms.",
+          platforms.
         </>
       ),
       features: [
