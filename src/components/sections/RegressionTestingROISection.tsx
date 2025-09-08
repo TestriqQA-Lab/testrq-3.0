@@ -24,9 +24,9 @@ const RegressionTestingROISection: React.FC = () => {
             <span className="text-brand-blue">ROI of Regression</span> Testing
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Regression testing is a critical investment that ensures software
-            stability and quality with every release. By preventing defects and
-            reducing risks, it delivers significant returns and maintains user
+            Regression testing is a critical investment that ensures <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software
+            stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
+            reducing risks</Link>, it delivers significant returns and maintains user
             satisfaction.
           </p>
         </div>

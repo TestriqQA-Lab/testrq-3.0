@@ -177,10 +177,10 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
             <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our risk-based regression testing services tailored to
-            safeguard software stability, prevent defects in critical workflows,
-            and enable rapid, reliable releases through intelligent automation
-            and continuous integration pipelines.
+            Explore our <Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>risk-based regression testing services</Link> tailored to{" "}
+            <Link href='blog/post/what-is-load-testing-in-software-engineering'>safeguard software stability</Link>, prevent <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>defects in critical workflows</Link>,
+            and enable rapid, reliable releases through <Link href='blog/post/the-role-of-automation-in-shift-left-and-shift-right-testing'>intelligent automation</Link>{" "}
+            and <Link href='blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops'>continuous integration pipelines</Link>.
           </p>
         </div>
 
