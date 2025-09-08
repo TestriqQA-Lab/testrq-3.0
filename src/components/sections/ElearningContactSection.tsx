@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useState } from "react";
 import {
   FaRocket,
@@ -18,6 +17,7 @@ import {
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import Link from "next/link";
 
 const ElearningContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +36,12 @@ const ElearningContactSection: React.FC = () => {
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
   const [institutionError, setInstitutionError] = useState<string | null>(null);
-  const [platformTypeError, setPlatformTypeError] = useState<string | null>(null);
-  const [numberOfUsersError, setNumberOfUsersError] = useState<string | null>(null);
+  const [platformTypeError, setPlatformTypeError] = useState<string | null>(
+    null
+  );
+  const [numberOfUsersError, setNumberOfUsersError] = useState<string | null>(
+    null
+  );
   const [messageError, setMessageError] = useState<string | null>(null);
 
   const validatePhoneNumber = (phone: string | undefined) => {
@@ -62,7 +66,10 @@ const ElearningContactSection: React.FC = () => {
         const n1 = parseInt(num[i]);
         const n2 = parseInt(num[i + 1]);
         const n3 = parseInt(num[i + 2]);
-        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+        if (
+          (n2 === n1 + 1 && n3 === n2 + 1) ||
+          (n2 === n1 - 1 && n3 === n2 - 1)
+        ) {
           return true;
         }
       }
@@ -219,7 +226,9 @@ const ElearningContactSection: React.FC = () => {
         if (response.ok) {
           console.log("Form submitted successfully");
           setIsSubmitted(true);
-          document.getElementById("elearning-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          document
+            .getElementById("elearning-form-section")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
           setTimeout(() => setIsSubmitted(false), 5000);
 
           setFormData({
@@ -276,11 +285,25 @@ const ElearningContactSection: React.FC = () => {
   ];
 
   const benefits = [
-    "Free e-learning platform assessment",
+    <>
+      Free{" "}
+      <Link href="/blog/post/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress">
+        e-learning platform assessment
+      </Link>
+    </>,
     "Educational technology expertise",
     "Accessibility compliance guidance",
-    "Performance optimization strategy",
-    "Integration testing recommendations",
+    <>
+      <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+        Performance optimization strategy
+      </Link>
+    </>,
+    <>
+      <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
+        Integration testing
+      </Link>{" "}
+      recommendations
+    </>,
     "Scalability planning and roadmap",
   ];
 
@@ -389,7 +412,10 @@ const ElearningContactSection: React.FC = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div id="elearning-form-section" className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2">
+          <div
+            id="elearning-form-section"
+            className="bg-white rounded-3xl lg:p-8 md:p-8 sm:p-2 shadow-2xl md:mt-16 sm:mt-2"
+          >
             <div className="bg-gray-50 rounded-2xl p-6">
               <h4 className="font-semibold text-gray-900 mb-4">
                 Quick E-Learning Assessment Form
@@ -419,11 +445,17 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                          fullNameError ? "border-red-500" : "border-gray-200"
+                        }`}
                         placeholder="Your Name"
                       />
                     </div>
-                    {fullNameError && <p className="text-red-500 text-xs mt-1">{fullNameError}</p>}
+                    {fullNameError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {fullNameError}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -439,11 +471,15 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                          emailError ? "border-red-500" : "border-gray-200"
+                        }`}
                         placeholder="Email Address"
                       />
                     </div>
-                    {emailError && <p className="text-red-500 text-xs mt-1">{emailError}</p>}
+                    {emailError && (
+                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                    )}
                   </div>
 
                   <div>
@@ -455,13 +491,19 @@ const ElearningContactSection: React.FC = () => {
                         international
                         value={formData.businessPhone}
                         onChange={handlePhoneChange}
-                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
-                        className={`w-full phone-input-container ${phoneError ? 'border-red-500' : 'border-gray-200'}`}
+                        onBlur={() =>
+                          validatePhoneNumber(formData.businessPhone)
+                        }
+                        className={`w-full phone-input-container ${
+                          phoneError ? "border-red-500" : "border-gray-200"
+                        }`}
                         placeholder="Enter phone number"
                         inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       />
                     </div>
-                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
+                    {phoneError && (
+                      <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                    )}
                   </div>
 
                   <div>
@@ -477,11 +519,19 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateInstitution(formData.institution)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${institutionError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
+                          institutionError
+                            ? "border-red-500"
+                            : "border-gray-200"
+                        }`}
                         placeholder="Institution/Organization Name"
                       />
                     </div>
-                    {institutionError && <p className="text-red-500 text-xs mt-1">{institutionError}</p>}
+                    {institutionError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {institutionError}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -494,21 +544,35 @@ const ElearningContactSection: React.FC = () => {
                         name="platformType"
                         value={formData.platformType}
                         onChange={handleInputChange}
-                        onBlur={() => validatePlatformType(formData.platformType)}
+                        onBlur={() =>
+                          validatePlatformType(formData.platformType)
+                        }
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${platformTypeError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
+                          platformTypeError
+                            ? "border-red-500"
+                            : "border-gray-200"
+                        }`}
                       >
                         <option value="">Select Your Platform Type</option>
                         <option value="moodle">Moodle</option>
                         <option value="canvas">Canvas</option>
                         <option value="blackboard">Blackboard</option>
-                        <option value="google-classroom">Google Classroom</option>
+                        <option value="google-classroom">
+                          Google Classroom
+                        </option>
                         <option value="custom">Custom LMS</option>
-                        <option value="corporate">Corporate Training Platform</option>
+                        <option value="corporate">
+                          Corporate Training Platform
+                        </option>
                         <option value="other">Other</option>
                       </select>
                     </div>
-                    {platformTypeError && <p className="text-red-500 text-xs mt-1">{platformTypeError}</p>}
+                    {platformTypeError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {platformTypeError}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -521,9 +585,15 @@ const ElearningContactSection: React.FC = () => {
                         name="numberOfUsers"
                         value={formData.numberOfUsers}
                         onChange={handleInputChange}
-                        onBlur={() => validateNumberOfUsers(formData.numberOfUsers)}
+                        onBlur={() =>
+                          validateNumberOfUsers(formData.numberOfUsers)
+                        }
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${numberOfUsersError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
+                          numberOfUsersError
+                            ? "border-red-500"
+                            : "border-gray-200"
+                        }`}
                       >
                         <option value="">Number of Users</option>
                         <option value="small">Under 1,000 users</option>
@@ -532,7 +602,11 @@ const ElearningContactSection: React.FC = () => {
                         <option value="enterprise">50,000+ users</option>
                       </select>
                     </div>
-                    {numberOfUsersError && <p className="text-red-500 text-xs mt-1">{numberOfUsersError}</p>}
+                    {numberOfUsersError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {numberOfUsersError}
+                      </p>
+                    )}
                   </div>
 
                   <div>
@@ -548,11 +622,17 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() => validateMessage(formData.message)}
                         required
                         rows={4}
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? 'border-red-500' : 'border-gray-200'}`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${
+                          messageError ? "border-red-500" : "border-gray-200"
+                        }`}
                         placeholder="Tell us about your e-learning testing needs..."
                       />
                     </div>
-                    {messageError && <p className="text-red-500 text-xs mt-1">{messageError}</p>}
+                    {messageError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {messageError}
+                      </p>
+                    )}
                   </div>
 
                   <button
@@ -590,4 +670,3 @@ const ElearningContactSection: React.FC = () => {
 };
 
 export default ElearningContactSection;
-

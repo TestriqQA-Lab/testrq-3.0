@@ -22,6 +22,7 @@ const TeamMembersSection = () => {
         "Specialists in test automation frameworks and CI/CD integration",
       color: "bg-blue-500",
       skills: ["Selenium", "Cypress", "Playwright", "API Testing", "CI/CD"],
+      action: "automation-testing-services"
     },
     {
       name: "Mobile Testing",
@@ -36,6 +37,7 @@ const TeamMembersSection = () => {
         "Flutter",
         "Appium",
       ],
+      action: "mobile-application-testing"
     },
     {
       name: "Security Testing",
@@ -49,6 +51,7 @@ const TeamMembersSection = () => {
         "Vulnerability Assessment",
         "Security Audits",
       ],
+      action: "security-testing"
     },
     {
       name: "AI/ML Testing",
@@ -63,6 +66,7 @@ const TeamMembersSection = () => {
         "AI Ethics",
         "Performance Testing",
       ],
+      action: "ai-application-testing"
     },
     {
       name: "Performance Testing",
@@ -77,6 +81,7 @@ const TeamMembersSection = () => {
         "Performance Monitoring",
         "Scalability",
       ],
+      action: "performance-testing-services"
     },
     {
       name: "Manual Testing",
@@ -90,6 +95,7 @@ const TeamMembersSection = () => {
         "Regression Testing",
         "UAT",
       ],
+      action: "manual-testing"
     },
   ];
 
@@ -199,16 +205,15 @@ const TeamMembersSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our team is organized into specialized QA departments, each bringing
-            deep expertise in automation testing, manual testing, performance
-            testing, and digital solutions to deliver comprehensive quality
-            assurance services.
+            deep expertise in <Link href='automation-testing-services'>automation testing</Link>, <Link href='manual-testing'>manual testing</Link>,
+            <Link href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
           </p>
         </div>
 
         {/* Departments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {departments.map((dept, index) => (
-            <div
+            <Link href={dept.action}
               key={index}
               className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
             >
@@ -243,7 +248,7 @@ const TeamMembersSection = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

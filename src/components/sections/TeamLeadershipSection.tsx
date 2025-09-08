@@ -480,8 +480,8 @@ const TeamLeadershipSection = () => {
               <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              At Testriq, we lead by example and foster innovation in software
-              testing, building a QA team culture where every member thrives and
+              At Testriq, we lead by example and foster innovation in <Link href='software-testing-guide'>software
+              testing</Link>, building a QA team culture where every member thrives and
               drives collective success.
             </p>
           </div>

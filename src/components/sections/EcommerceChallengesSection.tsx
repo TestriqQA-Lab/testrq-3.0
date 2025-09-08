@@ -25,7 +25,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive checkout flow testing and UX optimization",
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
-      action: "/reduce-cart-abandonment-with-checkout-testing"
+      action: "/reduce-cart-abandonment-with-checkout-testing",
     },
     {
       icon: FaCreditCard,
@@ -35,7 +35,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Rigorous payment integration testing across all gateways",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
-      action: "/secure-payment-gateway-testing-for-e-commerce"
+      action: "/secure-payment-gateway-testing-for-e-commerce",
     },
     {
       icon: FaMobile,
@@ -46,7 +46,7 @@ const EcommerceChallengesSection: React.FC = () => {
         "Mobile-first testing approach with device-specific optimization",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
-      action: "/mobile-commerce-optimization-testing-services"
+      action: "/mobile-commerce-optimization-testing-services",
     },
     {
       icon: FaClock,
@@ -56,7 +56,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Load testing and performance optimization strategies",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
-      action: "/performance-load-testing-for-e-commerce-sites"
+      action: "/performance-load-testing-for-e-commerce-sites",
     },
     {
       icon: FaShieldAlt,
@@ -66,7 +66,7 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive security testing and compliance validation",
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
-      action: "/e-commerce-security-testing-compliance-services"
+      action: "/e-commerce-security-testing-compliance-services",
     },
     {
       icon: FaGlobe,
@@ -76,7 +76,8 @@ const EcommerceChallengesSection: React.FC = () => {
       solution: "Comprehensive cross-platform compatibility testing",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
-      action: "/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere"
+      action:
+        "/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere",
     },
   ];
 
@@ -107,13 +108,21 @@ const EcommerceChallengesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            E-commerce platforms face unique challenges such as performance
-            bottlenecks, payment failures, and security vulnerabilities that can
-            significantly impact revenue and customer satisfaction. Our
-            e-commerce QA testing solutions address these critical issues
-            through functional testing, checkout validation, and cross-browser
-            compatibility testing — ensuring risks are mitigated before they
-            affect your bottom line.
+            E-commerce platforms face unique challenges such as{" "}
+            <Link href="/performance-testing-services">performance</Link>{" "}
+            bottlenecks, payment failures, and{" "}
+            <Link href="/security-testing">security</Link> vulnerabilities that
+            can significantly impact revenue and customer satisfaction. Our{" "}
+            <Link href="/e-commerce-testing-services">e-commerce</Link> QA
+            testing solutions address these critical issues through{" "}
+            <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
+              functional testing
+            </Link>
+            , checkout validation, and cross-browser{" "}
+            <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
+              compatibility testing
+            </Link>{" "}
+            - ensuring risks are mitigated before they affect your bottom line.
           </p>
         </div>
 
@@ -181,7 +190,10 @@ const EcommerceChallengesSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link href={`blog/post${challenge.action}`} className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link
+                  href={`blog/post${challenge.action}`}
+                  className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
+                >
                   Learn More
                   <FaArrowRight className="w-3 h-3" />
                 </Link>
@@ -226,8 +238,13 @@ const EcommerceChallengesSection: React.FC = () => {
               <FaShieldAlt className="w-12 h-12 mx-auto mb-4 opacity-80" />
               <h4 className="text-xl font-bold mb-2">Brand Damage</h4>
               <p className="text-sm">
-                Security breaches and poor performance damage brand reputation,
-                requiring years and millions to rebuild trust.
+                <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+                  Security breaches
+                </Link>{" "}
+                and poor{" "}
+                <Link href="/performance-testing-services">performance</Link>{" "}
+                damage brand reputation, requiring years and millions to rebuild
+                trust.
               </p>
             </div>
           </div>

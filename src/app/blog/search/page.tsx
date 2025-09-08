@@ -64,6 +64,25 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 animate-fade-in">
       <div className="max-w-7xl mx-auto">
+        {/* Second Search Bar */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <form onSubmit={handleSearch} className="relative">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search testing topics, tools, or best practices..."
+              className="w-full pl-12 pr-32 py-4 rounded-xl bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+            />
+            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <button
+              type="submit"
+              className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-medium transition"
+            >
+              Search
+            </button>
+          </form>
+        </div>
         <h1
          className="text-4xl sm:text-5xl font-extrabold text-white mb-8 text-center leading-tight">
           Discover Expert QA Insights
@@ -71,7 +90,7 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
         <p className="text-lg text-gray-200 mb-12 max-w-3xl mx-auto text-center">
           Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources, including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>, and more. Explore suggested topics below to dive into Testriq’s expert content.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-cyan-300 transition-all duration-300 hover:scale-105">
             <h3 className="text-xl font-semibold text-white mb-3">Automation Testing Search</h3>
             <p className="text-gray-300 mb-4">Search for <strong>test automation best practices</strong> and tools like Selenium to streamline QA processes.</p>
@@ -93,26 +112,8 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
               Search Now <FaArrowRight className="ml-2" />
             </Link>
           </div>
-        </div>
-        {/* Second Search Bar */}
-        <div className="max-w-2xl mx-auto mb-8">
-          <form onSubmit={handleSearch} className="relative">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search testing topics, tools, or best practices..."
-              className="w-full pl-12 pr-32 py-4 rounded-xl bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
-            />
-            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <button
-              type="submit"
-              className="absolute right-2 top-1/2 -translate-y-1/2 px-5 py-2 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-medium transition"
-            >
-              Search
-            </button>
-          </form>
-        </div>
+        </div> */}
+        
         
       </div>
     </div>

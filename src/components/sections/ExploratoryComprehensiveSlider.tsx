@@ -1,20 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import { FaSearch, FaRoute, FaEye, FaBug, FaUsers, FaLightbulb } from "react-icons/fa";
 
 const ExploratoryComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const explorationTypes = [
+  const explorationTypes : {
+    id: string;
+    title: string;
+    icon: JSX.Element;
+    percentage: string;
+    color: string;
+    description: React.ReactNode;
+    features: string[];
+    action: string;
+  }[] = [
     {
       id: "session-based-testing",
       title: "Session-Based Testing",
       icon: <FaSearch className="text-2xl" />,
       percentage: "95%",
       color: "green",
-      description: "Our comprehensive exploratory testing services merge systematic investigation with human intuition to uncover critical issues, usability problems, and edge cases across all platforms, devices, and real-world user scenarios.",
+      description: (<>Our comprehensive exploratory testing services merge <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link> with human intuition to uncover critical issues, usability problems, and edge cases across all platforms, devices, and real-world user scenarios.</>),
       features: [
         "Time-boxed exploration sessions",
         "Charter-based investigation",
@@ -31,7 +40,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaRoute className="text-2xl" />,
       percentage: "92%",
       color: "blue",
-      description: "Deep exploration of user workflows and scenarios across all touchpoints",
+      description: (<><Link href='blog/post/exploratory-software-testing-a-journey-beyond-the-script'>Deep exploration</Link> of user workflows and scenarios across all touchpoints</>),
       features: [
         "End-to-end user flows",
         "Alternative path testing",
@@ -48,7 +57,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaEye className="text-2xl" />,
       percentage: "98%",
       color: "purple",
-      description: "Comprehensive usability assessment and user experience evaluation",
+      description: (<><Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>Comprehensive usability</Link> assessment and user experience evaluation</>),
       features: [
         "Interface design evaluation",
         "Accessibility assessment",
@@ -65,7 +74,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaBug className="text-2xl" />,
       percentage: "89%",
       color: "orange",
-      description: "Systematic bug hunting using creative scenarios and heuristic evaluation",
+      description: (<><Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>Systematic bug</Link> hunting using creative scenarios and heuristic evaluation</>),
       features: [
         "Boundary value testing",
         "Error handling validation",
@@ -82,7 +91,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaUsers className="text-2xl" />,
       percentage: "94%",
       color: "teal",
-      description: "Role-based exploration using different user personas and scenarios",
+      description: (<><Link href='blog/post/session-based-exploratory-testing-balancing-structure-with-creative-freedom'>Role-based exploration</Link> using different user personas and scenarios</>),
       features: [
         "User role simulation",
         "Permission level testing",
@@ -99,7 +108,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
       icon: <FaLightbulb className="text-2xl" />,
       percentage: "96%",
       color: "indigo",
-      description: "Expert evaluation using established usability principles and guidelines",
+      description: (<><Link href='blog/post/heuristic-evaluation-in-testing-applying-ux-principles-to-find-flaws'>Expert evaluation</Link> using established usability principles and guidelines</>),
       features: [
         "Nielsen's heuristics application",
         "Design principle validation",
@@ -144,7 +153,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
             Complete Exploratory Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our comprehensive exploratory testing services merge systematic investigation with human intuition to uncover critical issues, usability problems, and edge cases across all platforms, devices, and real-world user scenarios.
+            Our comprehensive exploratory testing services merge systematic investigation with human intuition to uncover <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>critical issues</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability problems</Link>, and <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>edge cases across all platforms</Link>, devices, and real-world user scenarios.
           </p>
         </div>
 

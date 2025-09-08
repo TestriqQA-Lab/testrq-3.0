@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaUsers, FaGraduationCap, FaGlobe } from "react-icons/fa";
 
@@ -29,8 +30,8 @@ const TeamHeroSection = () => {
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           At Testriq QA Lab, our ISTQB-certified team brings decades of
-          real-world experience in automation, manual, and performance testing.
-          We&apos;re passionate about helping companies launch faster, safer,
+          real-world experience in <Link href='automation-testing-services'>automation</Link>, <Link href='manual-testing'>manual</Link>, and <Link href='performance-testing-services'>performance testing</Link>.
+          We&apos;re passionate about helping companies <Link href='launchfast-qa'>launch faster</Link>, safer,
           and smoother software.
         </p>
 
