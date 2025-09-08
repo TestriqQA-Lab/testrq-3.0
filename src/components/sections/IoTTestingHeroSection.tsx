@@ -35,11 +35,10 @@ const IoTTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your IoT devices deliver seamless connectivity, high
-            performance, and secure communication with our systematic IoT
-            testing services. From smart home devices to industrial IoT systems,
+            Ensure your IoT devices deliver seamless <Link href='blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks'>connectivity</Link>, high <Link href='performance-testing-services'>performance</Link>, and secure communication with our systematic <Link href='iot-appliances-and-apps-testing-services'>IoT
+            testing</Link> services. From smart home devices to industrial IoT systems,
             we validate every layer, including hardware, protocols, and cloud
-            integrations for end-to-end reliability and security.
+            integrations for end-to-end reliability and <Link href='security-testing'>security</Link>.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

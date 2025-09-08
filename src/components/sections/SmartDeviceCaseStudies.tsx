@@ -144,8 +144,8 @@ const SmartDeviceCaseStudies: React.FC = () => {
             <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover how our comprehensive smart device testing services have
-            helped companies achieve remarkable improvements in connectivity,
+            Discover how our comprehensive <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> services have
+            helped companies achieve remarkable improvements in <Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>connectivity</Link>,
             performance, and user satisfaction across various device categories.
           </p>
         </div>

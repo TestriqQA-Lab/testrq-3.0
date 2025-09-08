@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaNetworkWired,
@@ -33,10 +34,10 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "02",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: "Security & Protocol Testing",
+      title: (<Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>Security & Protocol Testing</Link>),
       shortTitle: "Security",
       description:
-        "Thorough testing of device security, communication protocols, and data transmission integrity.",
+        (<>Thorough testing of device security, <Link href='blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices'>communication protocols</Link>, and <Link href='blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches'>data transmission</Link> integrity.</>),
       details: [
         "Device authentication testing",
         "Encryption protocol validation",
@@ -50,13 +51,13 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "03",
       icon: <FaChartLine className="w-6 h-6" />,
-      title: "Performance & Scalability Testing",
+      title: (<Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>Performance & Scalability Testing</Link>),
       shortTitle: "Performance",
       description:
         "Evaluate IoT system performance under various load conditions and network scenarios.",
       details: [
         "Device performance benchmarking",
-        "Network load testing",
+        (<>Network <Link href='blog/post/what-is-load-testing-in-software-engineering'>load testing</Link></>),
         "Scalability assessment",
         "Battery life optimization",
       ],
@@ -67,13 +68,13 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "04",
       icon: <FaCheckCircle className="w-6 h-6" />,
-      title: "Report & Optimization",
+      title: (<Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>Report & Optimization</Link>),
       shortTitle: "Delivery",
       description:
         "Detailed reporting with actionable insights and recommendations for IoT system improvements.",
       details: [
         "Comprehensive IoT test report",
-        "Security vulnerability assessment",
+        (<Link href='blog/post/ai-security-testing'>Security vulnerability assessment</Link>),
         "Performance optimization guide",
         "Deployment recommendations",
       ],
@@ -93,7 +94,7 @@ const IoTProvenTestingProcess: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our systematic approach ensures end-to-end IoT testing coverage,
-            delivering reliable and secure connected device ecosystems.
+            delivering reliable and secure connected <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>device ecosystems</Link>.
           </p>
         </div>
 

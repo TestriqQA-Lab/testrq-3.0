@@ -134,8 +134,8 @@ const RoboticWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We combine robotic expertise with testing excellence to deliver
-            robotic testing services that ensure reliable, safe, and
-            high-performance robotic systems for your applications.
+            <Link href='robotics-testing-services'>robotic testing services</Link> that ensure reliable, safe, and
+            high-performance <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> for your applications.
           </p>
         </div>
 

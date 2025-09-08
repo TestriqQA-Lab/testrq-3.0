@@ -25,10 +25,9 @@ const AITestingHeroSection: React.FC = () => {
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Ensure your AI applications deliver accurate, fair, and reliable
-            results with our systematic AI testing services. From machine
-            learning models to generative AI - our QA for AI applications covers
-            everything from functionality to ethical compliance and end-to-end
-            validation.
+            results with our systematic AI testing services. From <Link href='blog/post/ai-testing-learning-guide'>machine
+            learning</Link> models to <Link href='blog/post/ai-testing-learning-guide'>generative AI</Link> - our QA for AI applications covers
+            everything from functionality to <Link href='blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment'>ethical compliance</Link> and <Link href='blog/post/final-reporting-comprehensive-qa-summary'>end-to-end validation</Link>.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
@@ -89,7 +88,7 @@ const AITestingHeroSection: React.FC = () => {
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-semibold text-gray-700">
-                    Model Validation
+                    <Link href='blog/post/model-validation-for-ai-applications'>Model Validation</Link>
                   </span>
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 </div>
@@ -100,7 +99,7 @@ const AITestingHeroSection: React.FC = () => {
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-semibold text-gray-700">
-                    Performance Testing
+                    <Link href='performance-testing-services'>Performance Testing</Link>
                   </span>
                   <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                 </div>
@@ -111,7 +110,7 @@ const AITestingHeroSection: React.FC = () => {
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-semibold text-gray-700">
-                    Bias Detection
+                    <Link href='blog/post/bias-fairness-testing-for-ai'>Bias Detection</Link>
                   </span>
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
                 </div>
@@ -122,7 +121,7 @@ const AITestingHeroSection: React.FC = () => {
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-semibold text-gray-700">
-                    Explainability Testing
+                    <Link href='blog/post/explainability-testing-in-ai'>Explainability Testing</Link>
                   </span>
                   <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
                 </div>

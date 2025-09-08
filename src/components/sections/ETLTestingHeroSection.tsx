@@ -44,11 +44,11 @@ const ETLTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Ensure your data pipelines deliver accurate, complete, and
-              reliable data with our comprehensive ETL testing services. From
-              data extraction, transformation, and loading, we validate every
-              layer of your ETL process to ensure seamless data integration,
-              quality assurance, and regulatory compliance.
+              Ensure your <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipelines deliver accurate</Link>, complete, and{" "}
+              <Link href='blog/post/data-quality-testing-in-etl'>reliable data</Link> with our comprehensive ETL testing services. From{" "}
+              <Link href='blog/post/data-extraction-testing'>data extraction, transformation</Link>, and <Link href='blog/post/data-loading-testing-etl-performance-testing'>loading</Link>, we validate every
+              layer of your ETL process to ensure seamless <Link href='blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability'>data integration</Link>,
+              <Link href='blog/post/data-quality-testing-in-etl'>quality assurance</Link>, and <Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>regulatory compliance</Link>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

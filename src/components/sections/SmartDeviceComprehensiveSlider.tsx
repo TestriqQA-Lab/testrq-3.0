@@ -139,7 +139,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
             Complete Smart Device Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our smart product testing services cover every aspect of your connected device ecosystem, ensuring reliability, security, and optimal performance across all smart devices and smart appliances.
+            Our <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>smart product testing services</Link> cover every aspect of your connected device ecosystem, ensuring <Link href='blog/post/performance-testing-for-ai-applications'>reliability</Link>, <Link href='security-testing'>security</Link>, and <Link href='performance-testing-services'>optimal performance</Link> across all smart devices and smart appliances.
           </p>
         </div>
 

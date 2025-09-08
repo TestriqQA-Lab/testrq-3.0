@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -10,37 +11,65 @@ const RoboticFAQs: React.FC = () => {
     {
       question: "What types of robotic systems can you test?",
       answer:
-        "We test a wide range of robotic systems including industrial robots, service robots, autonomous vehicles, robotic arms, surgical robots, and collaborative robots (cobots). Our testing covers both hardware and software components across various industries.",
+        (
+          <>
+            We test a wide range of <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> including industrial robots, service robots, <Link href='blog/post/testing-autonomous-robots-navigation-perception-and-real-world-qa'>autonomous vehicles</Link>, robotic arms, surgical robots, and collaborative robots (cobots). Our testing covers both hardware and software components across various industries.
+          </>
+        ),
     },
     {
       question: "How do you ensure safety during robotic testing?",
       answer:
-        "Safety is our top priority. We follow strict safety protocols including ISO 10218 and ISO 13482 standards, implement comprehensive risk assessments, use controlled testing environments, and conduct thorough emergency stop and fail-safe mechanism testing.",
+        (
+          <>
+            Safety is our top priority. We follow strict safety protocols including <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 10218</Link> and <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 13482</Link> standards, implement comprehensive risk assessments, use controlled testing environments, and conduct thorough emergency stop and fail-safe mechanism testing.
+          </>
+        ),
     },
     {
       question: "What is the typical duration for robotic testing projects?",
       answer:
-        "Project duration varies based on complexity, but typically ranges from 2-8 weeks. Simple functional testing may take 2-3 weeks, while comprehensive testing including safety validation, performance optimization, and integration testing can take 6-8 weeks.",
+        (
+          <>
+            Project duration varies based on complexity, but typically ranges from 2-8 weeks. Simple <Link href='blog/post/functional-testing-for-robotic-systems-precision-sensors-control'>functional testing</Link> may take 2-3 weeks, while comprehensive testing including safety validation, performance optimization, and integration testing can take 6-8 weeks.
+          </>
+        ),
     },
     {
       question: "Do you provide testing for autonomous robotic systems?",
       answer:
-        "Yes, we specialize in autonomous system testing including navigation algorithms, path planning, obstacle avoidance, decision-making systems, and machine learning model validation. We test both simulated and real-world scenarios.",
+        (
+          <>
+            Yes, we specialize in <Link href='blog/post/testing-autonomous-robots-navigation-perception-and-real-world-qa'>autonomous system</Link> testing including navigation algorithms, path planning, obstacle avoidance, decision-making systems, and <Link href='blog/post/ai-testing-learning-guide'>machine learning</Link> model validation. We test both simulated and real-world scenarios.
+          </>
+        ),
     },
     {
       question: "Can you test robotic systems that are already in production?",
       answer:
-        "Absolutely. We can perform testing on existing production systems through controlled testing environments, regression testing, performance optimization, and safety audits without disrupting your operations.",
+        (
+          <>
+            Absolutely. We can perform testing on existing production systems through controlled testing environments, <Link href='regression-testing'>regression testing</Link>, performance optimization, and safety audits without disrupting your operations.
+          </>
+        ),
     },
     {
       question: "What testing standards and certifications do you follow?",
       answer:
-        "We follow international standards including ISO 10218 (Industrial robots), ISO 13482 (Personal care robots), IEC 61508 (Functional safety), and industry-specific standards. We can help achieve certifications required for your market.",
+        (
+          <>
+            We follow international standards including <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 10218</Link> (Industrial robots), <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 13482</Link> (Personal care robots), IEC 61508 (Functional safety), and industry-specific standards. We can help achieve certifications required for your market.
+          </>
+        ),
     },
     {
       question: "Do you provide testing for robotic software and algorithms?",
       answer:
-        "Yes, we provide comprehensive software testing including control algorithms, motion planning software, sensor fusion algorithms, machine learning models, and robotic operating system (ROS) applications.",
+        (
+          <>
+            Yes, we provide comprehensive <Link href='software-testing-guide'>software testing</Link> including control algorithms, motion planning software, sensor fusion algorithms, machine learning models, and robotic operating system (ROS) applications.
+          </>
+        ),
     },
     {
       question:

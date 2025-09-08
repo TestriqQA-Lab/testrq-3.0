@@ -141,8 +141,8 @@ const ETLCaseStudies: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover how our comprehensive ETL testing services have helped
-            companies achieve significant improvements in data quality,
-            processing speed, and regulatory compliance across diverse
+            companies achieve significant improvements in <Link href='blog/post/data-quality-testing-in-etl'>data quality</Link>,
+            processing speed, and <Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>regulatory compliance</Link> across diverse
             industries and data ecosystems.
           </p>
         </div>

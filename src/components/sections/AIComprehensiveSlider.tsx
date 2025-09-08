@@ -18,7 +18,7 @@ const AIComprehensiveSlider: React.FC = () => {
   const testingTypes = [
     {
       icon: <FaBrain className="w-8 h-8" />,
-      title: "Model Validation",
+      title: (<Link href='blog/post/model-validation-for-ai-applications'>Model Validation</Link>),
       description:
         "Comprehensive testing of machine learning models including accuracy, precision, and performance validation to ensure robust AI outcomes.",
       features: [
@@ -34,7 +34,7 @@ const AIComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaEye className="w-8 h-8" />,
-      title: "Bias Detection",
+      title: (<Link href='blog/post/bias-fairness-testing-for-ai'>Bias Detection</Link>),
       description:
         "Advanced testing to ensure AI systems are fair and ethical across all user groups with robust fairness metrics.",
       features: [
@@ -50,7 +50,7 @@ const AIComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaEye className="w-8 h-8" />,
-      title: "Explainability Testing",
+      title: (<Link href='blog/post/explainability-testing-in-ai'>Explainability Testing</Link>),
       description:
         "Testing AI model interpretability and explainability to ensure transparent decision-making processes.",
       features: [
@@ -66,7 +66,7 @@ const AIComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Testing",
+      title: (<Link href='performance-testing-services'>Performance Testing</Link>),
       description:
         "Comprehensive performance evaluation including latency, throughput, and scalability testing.",
       features: [
@@ -82,7 +82,7 @@ const AIComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaDatabase className="w-8 h-8" />,
-      title: "Data Quality Testing",
+      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality Testing</Link>),
       description:
         "Comprehensive data validation including integrity, completeness, and quality assessment for AI training.",
       features: [
@@ -98,7 +98,7 @@ const AIComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "AI Security Testing",
+      title: (<Link href='blog/post/ai-security-testing'>AI Security Testing</Link>),
       description:
         "Comprehensive security assessment to protect AI systems from threats and attacks with adversarial robustness validation.",
       features: [

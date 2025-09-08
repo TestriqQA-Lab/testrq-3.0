@@ -14,7 +14,7 @@ const SmartDeviceAnyQuestions: React.FC = () => {
         <p className="text-xl text-green-100 mb-8 leading-relaxed">
           Get started with comprehensive smart device testing services. Our
           experts are ready to help ensure your connected devices are reliable,
-          secure, and deliver exceptional user experiences.
+          secure, and deliver exceptional <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

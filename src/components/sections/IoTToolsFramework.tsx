@@ -49,11 +49,12 @@ import {
 } from "react-icons/si";
 
 import { MdDevices, MdCloud } from "react-icons/md";
+import Link from "next/link";
 
 const IoTToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      category: "IoT Testing Platforms",
+      category: (<Link href='blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems'>IoT Testing Platforms</Link>),
       icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -125,7 +126,7 @@ const IoTToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Performance & Load Testing",
+      category: (<Link href='blog/post/performance-load-testing-for-e-commerce-sites'>Performance & Load Testing</Link>),
       icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -161,7 +162,7 @@ const IoTToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Security Testing Tools",
+      category: (<Link href='blog/post/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities'>Security Testing Tools</Link>),
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -197,7 +198,7 @@ const IoTToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Automation Frameworks",
+      category: (<Link href='blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Automation Frameworks</Link>),
       icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -233,7 +234,7 @@ const IoTToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Cloud & Edge Testing",
+      category: (<Link href='blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core'>Cloud & Edge Testing</Link>),
       icon: <MdCloud className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -285,8 +286,8 @@ const IoTToolsFramework: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage cutting-edge tools and frameworks specifically designed
-            for IoT testing to ensure comprehensive validation of your connected
+            We leverage <Link href='tools'>cutting-edge tools</Link> and frameworks specifically designed
+            for IoT testing to ensure <Link href='blog/post/how-does-validation-optimization-improve-web-application-quality'>comprehensive validation</Link> of your connected
             devices and systems across all layers of the IoT stack.
           </p>
         </div>
@@ -329,8 +330,8 @@ const IoTToolsFramework: React.FC = () => {
             Custom IoT Testing Solutions
           </h3>
           <p className="text-gray-700 text-lg mb-6 max-w-3xl mx-auto">
-            We tailor our IoT QA frameworks to your protocols, devices, and
-            infrastructure, offering protocol-specific validation, end-to-end
+            We tailor our IoT QA frameworks to your protocols, devices, and {" "}
+            <Link href='blog/post/strategies-for-implementing-test-driven-infrastructure'>infrastructure</Link>, offering protocol-specific validation, end-to-end
             testing, and scalable coverage for enterprise-grade IoT ecosystems.
           </p>
         </div>
