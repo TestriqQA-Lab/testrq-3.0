@@ -30,7 +30,7 @@ const EcommerceFAQSection: React.FC = () => {
       question: "How long does e-commerce testing typically take?",
       answer: (
         <>
-          The duration depends on your platform's complexity and scope. A basic
+          The duration depends on your platform&apos;s complexity and scope. A basic
           e-commerce site typically takes 2-4 weeks for{" "}
           <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
             comprehensive testing

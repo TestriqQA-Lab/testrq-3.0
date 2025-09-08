@@ -30,10 +30,10 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        "PCI DSS compliance",
-        "SSL/TLS encryption",
-        "Data anonymization",
-        "GDPR compliance",
+        { id: 1, content: "PCI DSS compliance" },
+        { id: 2, content: "SSL/TLS encryption" },
+        { id: 3, content: "Data anonymization" },
+        { id: 4, content: "GDPR compliance" },
       ],
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
@@ -52,10 +52,10 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        "Payment tokenization",
-        "Fraud detection",
-        "Multi-gateway support",
-        "3D Secure authentication",
+        { id: 1, content: "Payment tokenization" },
+        { id: 2, content: "Fraud detection" },
+        { id: 3, content: "Multi-gateway support" },
+        { id: 4, content: "3D Secure authentication" },
       ],
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
@@ -79,14 +79,17 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        "Sub-3s load times",
-        "CDN optimization",
-        "Auto-scaling",
-        <>
-          <Link href="/performance-testing-services">
-            Performance monitoring
-          </Link>
-        </>,
+        { id: 1, content: "Sub-3s load times" },
+        { id: 2, content: "CDN optimization" },
+        { id: 3, content: "Auto-scaling" },
+        {
+          id: 4,
+          content: (
+            <Link href="/performance-testing-services">
+              Performance monitoring
+            </Link>
+          ),
+        },
       ],
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
@@ -105,12 +108,17 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        "Mobile-first design",
-        <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
-          Accessibility (WCAG 2.1)
-        </Link>,
-        "One-click checkout",
-        "Personalization",
+        { id: 1, content: "Mobile-first design" },
+        {
+          id: 2,
+          content: (
+            <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+              Accessibility (WCAG 2.1)
+            </Link>
+          ),
+        },
+        { id: 3, content: "One-click checkout" },
+        { id: 4, content: "Personalization" },
       ],
       color: "from-orange-500 to-orange-600",
       bgColor: "bg-orange-50",
@@ -137,15 +145,17 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        <>
-          <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
-            Data encryption
-          </Link>{" "}
-          at rest
-        </>,
-        "Privacy controls",
-        "Secure backups",
-        "Access controls",
+        {
+          id: 1,
+          content: (
+            <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+              Data encryption
+            </Link>
+          ),
+        },
+        { id: 2, content: "Privacy controls" },
+        { id: 3, content: "Secure backups" },
+        { id: 4, content: "Access controls" },
       ],
       color: "from-red-500 to-red-600",
       bgColor: "bg-red-50",
@@ -165,10 +175,10 @@ const ShoppingAppCertificationPillars = () => {
         </>
       ),
       features: [
-        "Inventory tracking",
-        "Order management",
-        "Return processing",
-        "Customer support",
+        { id: 1, content: "Inventory tracking" },
+        { id: 2, content: "Order management" },
+        { id: 3, content: "Return processing" },
+        { id: 4, content: "Customer support" },
       ],
       color: "from-yellow-500 to-yellow-600",
       bgColor: "bg-yellow-50",
@@ -229,10 +239,10 @@ const ShoppingAppCertificationPillars = () => {
                 {pillar.description}
               </p>
               <div className="space-y-3">
-                {pillar.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center gap-3">
+                {pillar.features.map(({ id, content }) => (
+                  <div key={id} className="flex items-center gap-3">
                     <CheckCircle className={`w-5 h-5 ${pillar.textColor}`} />
-                    <span className="text-sm text-gray-700">{feature}</span>
+                    <span className="text-sm text-gray-700">{content}</span>
                   </div>
                 ))}
               </div>

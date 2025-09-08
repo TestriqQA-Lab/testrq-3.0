@@ -20,7 +20,7 @@ const ShoppingAppCertificationProcess = () => {
       title: "Initial Compliance Assessment",
       description: (
         <>
-          We evaluate your shopping app's architecture,{" "}
+          We evaluate your shopping app&apos;s architecture,{" "}
           <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">
             data handling practices
           </Link>
