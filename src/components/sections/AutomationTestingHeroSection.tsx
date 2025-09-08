@@ -47,9 +47,9 @@ const AutomationTestingHeroSection: React.FC = () => {
 
             <p className="text-xl text-gray-600 leading-relaxed">
               Transform your testing strategy with cutting-edge automation
-              testing frameworks, seamless CI/CD pipeline integration, and
+              testing frameworks, seamless <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
               intelligent test execution. Our advanced test automation solutions
-              using Selenium, API automation, and mobile automation reduce
+              using <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='blog/post/mobile-automation-testing-guide-android-ios-frameworks'>mobile automation reduce</Link>{" "}
               testing time by up to 80%, while significantly improving test
               coverage, reliability, and overall software quality.
             </p>

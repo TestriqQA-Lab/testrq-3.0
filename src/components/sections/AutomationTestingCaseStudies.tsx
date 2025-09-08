@@ -20,7 +20,7 @@ const AutomationTestingCaseStudies: React.FC = () => {
       client: "Fortune 500 Technology Company",
       industry: "Technology",
       challenge:
-        "Complex enterprise application required comprehensive Automation testing to ensure optimal performance and reliability.",
+        (<>Complex enterprise application required comprehensive Automation testing to ensure <Link href='performance-testing-services'>optimal performance and reliability</Link>.</>),
       solution:
         "Our expert team implemented advanced Automation testing strategies with cutting-edge tools and methodologies.",
       results: [
@@ -51,7 +51,7 @@ const AutomationTestingCaseStudies: React.FC = () => {
       client: "Leading Financial Institution",
       industry: "Financial Services",
       challenge:
-        "Mission-critical financial platform needed rigorous Automation testing to ensure security and compliance.",
+        (<>Mission-critical <Link href='banking-finance-industry-testing-services'>financial platform</Link> needed rigorous Automation testing to ensure security and compliance.</>),
       solution:
         "Comprehensive Automation testing approach with industry-specific compliance validation and security protocols.",
       results: [
@@ -82,7 +82,7 @@ const AutomationTestingCaseStudies: React.FC = () => {
       client: "Healthcare Technology Provider",
       industry: "Healthcare",
       challenge:
-        "Healthcare management system required extensive Automation testing to ensure patient data security and system reliability.",
+        (<><Link href='healthcare-testing-services'>Healthcare management system</Link> required extensive Automation testing to ensure patient data security and system reliability.</>),
       solution:
         "Specialized Automation testing with healthcare compliance focus and comprehensive validation protocols.",
       results: [

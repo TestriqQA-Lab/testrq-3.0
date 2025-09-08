@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaClipboardList, FaBug, FaChartLine, FaUsers, FaCloud, FaMobile, FaTools } from "react-icons/fa";
 
@@ -127,7 +128,7 @@ const ManualTestingToolsFramework: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading tools and frameworks to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting-delivering reliable, high-quality software assurance.
+            We leverage <Link href='tools'>industry-leading tools and frameworks</Link> to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting-delivering reliable, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high-quality software assurance</Link>.
           </p>
         </div>
 

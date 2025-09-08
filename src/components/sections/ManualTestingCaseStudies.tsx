@@ -20,7 +20,12 @@ const ManualTestingCaseStudies: React.FC = () => {
       client: "Global Retail Corporation",
       industry: "E-Commerce",
       challenge:
-        "A major e-commerce platform was experiencing high user abandonment rates due to critical usability issues and functional defects that automated testing couldn't detect.",
+        (
+          <>
+            A major <Link href='e-commerce-testing-services'>e-commerce platform</Link> was experiencing high user abandonment rates due to critical
+            usability issues and functional defects that automated testing couldn't detect.
+          </>
+        ),
       solution:
         "Our manual testing team conducted comprehensive exploratory testing, user journey validation, and cross-browser compatibility testing to identify and resolve critical issues.",
       results: [
@@ -51,7 +56,12 @@ const ManualTestingCaseStudies: React.FC = () => {
       client: "Medical Software Company",
       industry: "Healthcare",
       challenge:
-        "A healthcare management system needed rigorous manual testing to ensure HIPAA compliance and patient data security while maintaining optimal user experience.",
+        (
+          <>
+            A <Link href='healthcare-testing-services'>healthcare management system</Link> needed rigorous manual testing to ensure HIPAA compliance
+            and patient data security while maintaining optimal user experience.
+          </>
+        ),
       solution:
         "Our certified manual testers performed comprehensive security testing, compliance validation, and user acceptance testing with healthcare professionals.",
       results: [
@@ -82,7 +92,12 @@ const ManualTestingCaseStudies: React.FC = () => {
       client: "Regional Banking Institution",
       industry: "Financial Services",
       challenge:
-        "A mobile banking application had complex user workflows that required extensive manual testing to ensure seamless customer experience and transaction security.",
+        (
+          <>
+            A mobile <Link href='banking-finance-industry-testing-services'>banking application</Link> had complex user workflows that required extensive manual
+            testing to ensure seamless customer experience and transaction security.
+          </>
+        ),
       solution:
         "Our manual testing specialists conducted end-to-end user journey testing, accessibility validation, and security testing across multiple mobile devices and platforms.",
       results: [
@@ -155,8 +170,8 @@ const ManualTestingCaseStudies: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Discover how our comprehensive manual testing services have helped
-            organizations across industries achieve exceptional software
-            quality, enhanced user experiences, and measurable business
+            organizations across industries achieve <Link href='blog/post/the-future-of-qa-trends-shaping-software-testing-in-2025'>exceptional software
+              quality</Link>, enhanced <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, and measurable business
             outcomes.
           </p>
         </div>
@@ -169,11 +184,10 @@ const ManualTestingCaseStudies: React.FC = () => {
               <button
                 key={study.id}
                 onClick={() => setActiveCase(index)}
-                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  activeCase === index
-                    ? `${colors.bg} ${colors.text} ${colors.border} border-2`
-                    : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300"
-                }`}
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${activeCase === index
+                  ? `${colors.bg} ${colors.text} ${colors.border} border-2`
+                  : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300"
+                  }`}
               >
                 {study.industry}
               </button>
@@ -188,9 +202,8 @@ const ManualTestingCaseStudies: React.FC = () => {
             return (
               <div
                 key={study.id}
-                className={`${
-                  activeCase === index ? "block" : "hidden"
-                } p-8 md:p-12`}
+                className={`${activeCase === index ? "block" : "hidden"
+                  } p-8 md:p-12`}
               >
                 <div className="grid lg:grid-cols-2 gap-12">
                   {/* Left Content */}
