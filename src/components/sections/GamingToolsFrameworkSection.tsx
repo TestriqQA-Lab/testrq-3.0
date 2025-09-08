@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaGamepad,
@@ -44,12 +45,12 @@ const GamingToolsFrameworkSection: React.FC = () => {
         },
         {
           name: "GameDriver",
-          description: "Cross-platform game automation",
+          description: (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-platform</Link> game automation</>),
           icon: <FaLaptopCode className="w-5 h-5 text-blue-500" />,
         },
         {
           name: "AltTester",
-          description: "Unity UI test automation",
+          description: (<>Unity <Link href="/blog/post/etl-testing-tools-frameworks">UI test</Link> automation</>),
           icon: <FaBoxOpen className="w-5 h-5 text-blue-500" />,
         },
       ],
@@ -61,7 +62,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
       bgColor: "bg-blue-50",
       tools: [
         {
-          name: "Appium",
+          name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link></>),
           description: "Mobile app automation framework",
           icon: <SiAppium className="w-5 h-5 text-blue-500" />,
         },
@@ -83,7 +84,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Performance Testing",
+      category: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
       icon: FaRocket,
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
@@ -111,13 +112,13 @@ const GamingToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Automation Testing",
+      category: (<><Link href="/automation-testing-services">Automation Testing</Link></>),
       icon: FaCog,
       color: "text-[theme(color.brand.blue)]",
       bgColor: "bg-blue-50",
       tools: [
         {
-          name: "Selenium",
+          name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium</Link></>),
           description: "Web-based game automation",
           icon: <SiSelenium className="w-5 h-5 text-blue-500" />,
         },
@@ -143,7 +144,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
   const platformFrameworks = [
     {
       name: "Mobile Platforms",
-      description: "iOS and Android game testing frameworks",
+      description: (<><Link href="/mobile-application-testing">iOS and Android game testing</Link> frameworks</>),
       features: [
         "Touch Controls",
         "Device Compatibility",
@@ -168,7 +169,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
       description: "PlayStation, Xbox, and Nintendo testing",
       features: [
         "Certification",
-        "Platform Features",
+        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Platform Features</Link></>),
         "Controllers",
         "Online Services",
       ],
@@ -201,9 +202,9 @@ const GamingToolsFrameworkSection: React.FC = () => {
             <span className="block text-brand-blue">Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage cutting-edge game testing tools and frameworks specifically
-            designed for gaming applications, ensuring optimized game
-            performance, immersive gameplay, and flawless gaming experiences
+            Leverage cutting-edge game testing <Link href="/tools">tools</Link> and frameworks specifically
+            designed for gaming applications, ensuring optimized game{" "}
+            <Link href="/performance-testing-services">performance</Link>, immersive gameplay, and flawless gaming experiences
             across all platforms.
           </p>
         </div>
@@ -259,7 +260,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
               Cross-Platform Gaming Validation
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive game testing frameworks ensuring your games deliver
+              <Link href="/blog/post/test-execution-comprehensive-testing-implementation">Comprehensive</Link> game testing frameworks ensuring your games deliver
               flawless performance across all gaming platforms and devices,
               including mobile, console, PC, and browser-based environments.
             </p>
