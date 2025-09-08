@@ -60,13 +60,27 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure flawless online shopping experiences, secure payment
-              gateway transactions, and optimal performance across all browsers,
-              devices, and operating systems. Our end-to-end e-commerce testing
-              services include functional testing, security testing, and
-              cross-platform validation — helping you reduce cart abandonment,
-              boost conversion rates, and build trust in your e-commerce
-              platform.
+              Ensure flawless online shopping experiences,{" "}
+              <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+                secure payment gateway
+              </Link>{" "}
+              transactions, and optimal{" "}
+              <Link href="/performance-testing-services">performance</Link>{" "}
+              across all browsers, devices, and operating systems. Our
+              end-to-end{" "}
+              <Link href="/e-commerce-testing-services">
+                e-commerce testing{" "}
+              </Link>
+              services include{" "}
+              <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
+                functional testing
+              </Link>
+              , <Link href="/security-testing">security testing</Link>, and{" "}
+              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                cross-platform
+              </Link>{" "}
+              validation - helping you reduce cart abandonment, boost conversion
+              rates, and build trust in your e-commerce platform.
             </p>
 
             {/* Key Benefits */}
@@ -74,7 +88,9 @@ const EcommerceHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Secure Payment Testing
+                  <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+                    Secure Payment Testing
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -92,7 +108,10 @@ const EcommerceHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Cross-Platform Compatibility
+                  <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                    Cross-Platform
+                  </Link>{" "}
+                  Compatibility
                 </span>
               </div>
             </div>
@@ -209,7 +228,11 @@ const EcommerceHeroSection: React.FC = () => {
             </h3>
             <p className="text-blue-100 mb-6 text-lg">
               Join 500+ e-commerce businesses that trust Testriq for
-              comprehensive QA testing solutions.
+              comprehensive{" "}
+              <Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">
+                QA testing
+              </Link>{" "}
+              solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">

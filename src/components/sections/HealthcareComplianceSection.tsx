@@ -148,8 +148,8 @@ const HealthcareComplianceSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive compliance testing and regulatory validation services
-            ensuring your healthcare software meets all HIPAA, FDA, and GDPR
+           <Link href="/blog/post/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress">Comprehensive compliance</Link> testing and regulatory validation services
+            ensuring your healthcare software meets all <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA</Link>, <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA</Link>, and GDPR
             regulatory requirements and healthcare industry standards.
           </p>
         </div>

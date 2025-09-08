@@ -80,7 +80,13 @@ const ElearningAccessibilitySection: React.FC = () => {
 
   const complianceStandards = [
     {
-      standard: "WCAG 2.1 AA",
+      standard: (
+        <>
+          <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+            WCAG 2.1 AA
+          </Link>
+        </>
+      ),
       description: "Web Content Accessibility Guidelines Level AA compliance",
       coverage: "100%",
     },
@@ -147,10 +153,21 @@ const ElearningAccessibilitySection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ensure your e-learning platform is WCAG-compliant, inclusive, and
-            accessible to all learners, including those with disabilities. Our
-            comprehensive accessibility testing services help you reach every
-            student and meet global compliance standards.
+            Ensure your e-learning platform is{" "}
+            <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+              WCAG-compliant
+            </Link>
+            , inclusive, and accessible to all learners, including those with
+            disabilities. Our
+            <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
+              {" "}
+              comprehensive
+            </Link>{" "}
+            <Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">
+              accessibility testing
+            </Link>{" "}
+            services help you reach every student and meet global compliance
+            standards.
           </p>
         </div>
 
@@ -376,9 +393,12 @@ const ElearningAccessibilitySection: React.FC = () => {
             Make Your E-Learning Platform Accessible Today
           </h3>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don&apos;t exclude potential learners due to accessibility barriers.
-            Let us help you create an inclusive learning environment that
-            benefits everyone.
+            Don&apos;t exclude potential learners due to{" "}
+            <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              accessibility
+            </Link>{" "}
+            barriers. Let us help you create an inclusive learning environment
+            that benefits everyone.
           </p>
 
           <div className="flex flex-col text-brand-blue sm:flex-row gap-4 justify-center">
@@ -397,7 +417,10 @@ const ElearningAccessibilitySection: React.FC = () => {
           <div className="mt-8 text-blue-100 text-sm">
             <p>
               ✓ WCAG 2.1 AA compliance • ✓ Legal protection • ✓ Inclusive design
-              • ✓ Better user experience
+              • ✓ Better{" "}
+              <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+                user experience
+              </Link>
             </p>
           </div>
         </div>

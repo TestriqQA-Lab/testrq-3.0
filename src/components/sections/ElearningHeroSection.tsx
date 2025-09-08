@@ -76,11 +76,25 @@ const ElearningHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure exceptional learner experiences with comprehensive
+              Ensure exceptional learner experiences with{" "}
+              <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
+                comprehensive
+              </Link>{" "}
               e-learning testing for LMS platforms, online learning systems, and
-              educational applications. From WCAG accessibility compliance to
-              performance testing and scalability, we help you deliver
-              inclusive, secure education platforms that truly make an impact.
+              educational applications. From{" "}
+              <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+                WCAG accessibility compliance
+              </Link>{" "}
+              to{" "}
+              <Link href="/performance-testing-services">
+                performance testing
+              </Link>{" "}
+              and{" "}
+              <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+                scalability
+              </Link>
+              , we help you deliver inclusive, secure education platforms that
+              truly make an impact.
             </p>
 
             {/* Learning Types */}
@@ -102,7 +116,9 @@ const ElearningHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  WCAG 2.1 Compliance
+                  <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+                    WCAG 2.1 Compliance
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -114,13 +130,17 @@ const ElearningHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Multi-Device Testing
+                  <Link href="/blog/post/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility">
+                    Multi-Device Testing
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Performance Optimization
+                  <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                    Performance Optimization
+                  </Link>
                 </span>
               </div>
             </div>

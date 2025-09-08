@@ -12,15 +12,27 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const ShoppingAppTestingServices = () => {
   const testingServices = [
     {
       icon: <ShoppingBag className="w-10 h-10" />,
       title: "E-Commerce App Testing",
-      description: "End-to-end testing for shopping apps across iOS and Android platforms.",
+      description: (
+        <>
+          End-to-end testing for shopping apps across{" "}
+          <Link href="/mobile-application-testing">iOS and Android</Link>{" "}
+          platforms.
+        </>
+      ),
       features: [
-        "Device and OS compatibility testing",
+        <>
+          Device and OS{" "}
+          <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
+            compatibility testing
+          </Link>
+        </>,
         "Cart, checkout, and payment flow testing",
         "Push notification and deep link validation",
         "App store and Play Store compliance",
@@ -31,13 +43,30 @@ const ShoppingAppTestingServices = () => {
     },
     {
       icon: <Globe className="w-10 h-10" />,
-      title: "Web Store Testing",
-      description: "Robust testing for online shopping portals and admin dashboards.",
+      title: (
+        <>
+          <Link href="/web-application-testing-services">
+            Web Store Testing
+          </Link>
+        </>
+      ),
+      description:
+        "Robust testing for online shopping portals and admin dashboards.",
       features: [
-        "Cross-browser and responsive layout testing",
+        <>
+          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+            Cross-browser
+          </Link>{" "}
+          and responsive layout testing
+        </>,
         "PWA and desktop compatibility",
         "SEO and schema markup validation",
-        "Accessibility and compliance checks",
+        <>
+          <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+            Accessibility
+          </Link>{" "}
+          and compliance checks
+        </>,
       ],
       color: "text-green-600",
       bgColor: "bg-green-50",
@@ -45,13 +74,30 @@ const ShoppingAppTestingServices = () => {
     },
     {
       icon: <Zap className="w-10 h-10" />,
-      title: "Performance Testing",
-      description: "Test platform performance during traffic spikes and sale events.",
+      title: (
+        <>
+          <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
+            Performance Testing
+          </Link>
+        </>
+      ),
+      description:
+        "Test platform performance during traffic spikes and sale events.",
       features: [
-        "Load and stress testing",
+        <>
+          <Link href="/blog/post/understanding-load-vs-stress-vs-soak-testing">
+            Load and stress testing
+          </Link>
+        </>,
         "Checkout latency analysis",
         "Search and filter speed validation",
-        "CDN and image optimization checks",
+        <>
+          CDN and image{" "}
+          <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">
+            optimization
+          </Link>{" "}
+          checks
+        </>,
       ],
       color: "text-purple-600",
       bgColor: "bg-purple-50",
@@ -59,13 +105,32 @@ const ShoppingAppTestingServices = () => {
     },
     {
       icon: <Shield className="w-10 h-10" />,
-      title: "Security Testing",
-      description: "Ensure secure transactions and data protection for online shoppers.",
+      title: (
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Security Testing
+          </Link>
+        </>
+      ),
+      description:
+        "Ensure secure transactions and data protection for online shoppers.",
       features: [
         "Vulnerability scanning & VAPT",
-        "Secure payment gateway validation",
+        <>
+          Secure{" "}
+          <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+            payment gateway
+          </Link>{" "}
+          validation
+        </>,
         "Session and cookie security",
-        "User data encryption checks",
+        <>
+          User data{" "}
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            encryption
+          </Link>{" "}
+          checks
+        </>,
       ],
       color: "text-red-600",
       bgColor: "bg-red-50",
@@ -73,12 +138,27 @@ const ShoppingAppTestingServices = () => {
     },
     {
       icon: <Users className="w-10 h-10" />,
-      title: "User Experience Testing",
-      description: "Evaluate shopping journeys, ease of navigation, and conversion paths.",
+      title: (
+        <>
+          <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+            User Experience Testing
+          </Link>
+        </>
+      ),
+      description:
+        "Evaluate shopping journeys, ease of navigation, and conversion paths.",
       features: [
         "Customer flow analysis",
-        "WCAG accessibility audits",
-        "UI/UX issue detection",
+        <>
+          <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+            WCAG accessibility audits
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
+            UI/UX issue detection
+          </Link>
+        </>,
         "Conversion optimization A/B testing",
       ],
       color: "text-orange-600",
@@ -87,11 +167,26 @@ const ShoppingAppTestingServices = () => {
     },
     {
       icon: <Database className="w-10 h-10" />,
-      title: "Integration & API Testing",
-      description: "Test APIs and 3rd-party tools critical to e-commerce operations.",
+      title: (
+        <>
+          Integration & <Link href="/api-testing">API Testing</Link>
+        </>
+      ),
+      description: (
+        <>
+          Test APIs and 3rd-party tools critical to{" "}
+          <Link href="/e-commerce-testing-services">e-commerce</Link>{" "}
+          operations.
+        </>
+      ),
       features: [
         "Payment, tax, and shipping APIs",
-        "ERP, CRM, and analytics integrations",
+        <>
+          ERP, CRM, and analytics{" "}
+          <Link href="/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations">
+            integrations
+          </Link>
+        </>,
         "Social login & single sign-on checks",
         "Webhook and queue reliability",
       ],
@@ -105,22 +200,37 @@ const ShoppingAppTestingServices = () => {
     {
       step: "01",
       title: "Requirement Analysis",
-      description: "Understand business goals and test objectives for your shopping platform.",
+      description:
+        "Understand business goals and test objectives for your shopping platform.",
     },
     {
       step: "02",
       title: "Test Case Design",
-      description: "Craft functional, regression, and edge-case scenarios for real-world coverage.",
+      description: (
+        <>
+          Craft functional, <Link href="/regression-testing">regression</Link>,
+          and edge-case scenarios for real-world coverage.
+        </>
+      ),
     },
     {
       step: "03",
       title: "Execution & Reporting",
-      description: "Run tests across devices and browsers with real-time issue tracking.",
+      description: (
+        <>
+          Run tests across devices and{" "}
+          <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">
+            browsers
+          </Link>{" "}
+          with real-time issue tracking.
+        </>
+      ),
     },
     {
       step: "04",
       title: "Go-Live Validation",
-      description: "Certify app readiness for peak traffic, seasonal campaigns, and secure launches.",
+      description:
+        "Certify app readiness for peak traffic, seasonal campaigns, and secure launches.",
     },
   ];
 
@@ -135,10 +245,19 @@ const ShoppingAppTestingServices = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            End-to-End <span className="text-brand-blue">Testing for Shopping Apps</span>
+            End-to-End{" "}
+            <span className="text-brand-blue">Testing for Shopping Apps</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From user experience to secure checkout, our QA services ensure your shopping app delivers top-tier performance, conversion, and reliability.
+            From user experience to{" "}
+            <Link href="/blog/post/which-iot-platform-is-the-most-secure-for-your-business">
+              secure
+            </Link>{" "}
+            checkout, our QA services ensure your shopping app delivers top-tier{" "}
+            <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+              performance
+            </Link>
+            , conversion, and reliability.
           </p>
         </motion.div>
 
@@ -154,8 +273,12 @@ const ShoppingAppTestingServices = () => {
               className={`${service.bgColor} ${service.borderColor} border-2 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2`}
             >
               <div className={`${service.color} mb-4`}>{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                {service.description}
+              </p>
               <div className="space-y-2">
                 {service.features.map((feature, i) => (
                   <div key={i} className="flex items-start gap-2">
@@ -193,7 +316,9 @@ const ShoppingAppTestingServices = () => {
                   {step.step}
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">{step.title}</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
                 {index < testingProcess.length - 1 && (
                   <div className="hidden lg:block absolute top-8 -right-3 text-brand-blue">
                     <ArrowRight className="w-6 h-6" />
