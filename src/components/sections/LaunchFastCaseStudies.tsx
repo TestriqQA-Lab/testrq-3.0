@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { JSX, useState } from "react";
+import React, { useState } from "react";
 import {
   FaChevronLeft,
   FaChevronRight,
