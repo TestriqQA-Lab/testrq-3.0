@@ -214,7 +214,7 @@ const HealthcareTestingProcessSection: React.FC = () => {
             </h3>
             <p className="mb-8 text-lg max-w-2xl mx-auto">
               Let our healthcare testing experts guide you through a compliant,
-              secure, and efficient testing process.
+              secure, and <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">efficient testing process</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
               <Link href="/contact-us">

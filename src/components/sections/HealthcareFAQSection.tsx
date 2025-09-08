@@ -36,7 +36,7 @@ const HealthcareFAQSection: React.FC = () => {
         {
           question: "Do you provide HIPAA compliance certification?",
           answer:
-            "While HIPAA doesn&apos;t require formal certification, we provide comprehensive compliance validation reports and documentation that demonstrate your software meets all HIPAA requirements. Our reports are accepted by auditors and can be used for compliance demonstrations.",
+            "While HIPAA doesn't require formal certification, we provide comprehensive compliance validation reports and documentation that demonstrate your software meets all HIPAA requirements. Our reports are accepted by auditors and can be used for compliance demonstrations.",
         },
       ],
     },
@@ -59,7 +59,7 @@ const HealthcareFAQSection: React.FC = () => {
           question:
             "How do you handle software as medical device (SaMD) testing?",
           answer:
-            "We follow FDA&apos;s Software as Medical Device guidance, conducting risk-based testing based on SaMD categorization (I-IV). Our approach includes clinical evaluation, software lifecycle processes, quality management, and post-market surveillance planning.",
+            "We follow FDA's Software as Medical Device guidance, conducting risk-based testing based on SaMD categorization (I-IV). Our approach includes clinical evaluation, software lifecycle processes, quality management, and post-market surveillance planning.",
         },
       ],
     },

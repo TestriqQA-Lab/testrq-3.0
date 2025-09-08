@@ -25,22 +25,23 @@ import {
 } from "react-icons/si";
 
 import{FaNetworkWired, FaBoxes, FaCogs } from "react-icons/fa";
+import Link from "next/link";
 
 const HealthcareToolsFrameworkSection: React.FC = () => {
   const testingTools = [
     {
-      category: "Security Testing",
+      category: (<><Link href="/security-testing">Security Testing</Link></>),
       icon: FaShieldAlt,
       color: "text-red-500",
       bgColor: "bg-red-50",
       tools: [
         {
-          name: "OWASP ZAP",
+          name: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link></>),
           description: "Web application security scanner",
           icon: <SiOwasp className="w-5 h-5 text-red-500" />,
         },
         {
-          name: "Burp Suite",
+          name: (<><Link href="/blog/post/using-burp-suite-for-security-testing-beginner-to-pro">Burp Suite</Link></>),
           description: "Penetration testing platform",
           icon: <SiBurpsuite className="w-5 h-5 text-red-500" />,
         },
@@ -57,18 +58,18 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Automation Testing",
+      category: (<><Link href="/automation-testing-services">Automation Testing</Link></>),
       icon: FaCog,
       color: "text-blue-500",
       bgColor: "bg-blue-50",
       tools: [
         {
-          name: "Selenium",
+          name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium</Link></>),
           description: "Web application automation",
           icon: <SiSelenium className="w-5 h-5 text-blue-500" />,
         },
         {
-          name: "Appium",
+          name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link></>),
           description: "Mobile app automation",
           icon: <SiAppium className="w-5 h-5 text-blue-500" />,
         },
@@ -85,7 +86,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "API Testing",
+      category: (<><Link href="/api-testing">API Testing</Link></>),
       icon: FaCode,
       color: "text-green-500",
       bgColor: "bg-green-50",
@@ -113,18 +114,18 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Performance Testing",
+      category: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
       icon: FaDatabase,
       color: "text-purple-500",
       bgColor: "bg-purple-50",
       tools: [
         {
-          name: "JMeter",
+          name: (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link></>),
           description: "Load and performance testing",
           icon: <SiJest className="w-5 h-5 text-purple-500" />,
         },
         {
-          name: "LoadRunner",
+          name: (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">LoadRunner</Link></>),
           description: "Enterprise performance testing",
           icon: <FaCogs className="w-5 h-5 text-purple-500" />,
         },
@@ -155,7 +156,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      name: "FDA Validation",
+      name: (<><Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA Validation</Link></>),
       description: "Food and Drug Administration software validation support",
       features: [
         "21 CFR Part 820",
@@ -204,7 +205,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Leverage industry-leading tools and QA frameworks specifically
             designed for healthcare software testing, ensuring HIPAA compliance,
-            data security, and optimal performance testing across all medical
+            <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data security</Link>, and optimal <Link href="/performance-testing-services">performance testing</Link> across all medical
             applications.
           </p>
         </div>
@@ -310,7 +311,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
               </div>
               <h4 className="text-xl font-bold mb-2">Cloud Testing</h4>
               <p className="text-blue-100">
-                AWS, Azure, GCP healthcare cloud validation
+                <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">AWS, Azure, GCP healthcare cloud validation</Link>
               </p>
             </div>
 
@@ -320,7 +321,7 @@ const HealthcareToolsFrameworkSection: React.FC = () => {
               </div>
               <h4 className="text-xl font-bold mb-2">Data Validation</h4>
               <p className="text-blue-100">
-                EHR, EMR, and clinical data integrity testing
+                <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR, EMR</Link>, and clinical data integrity testing
               </p>
             </div>
 
