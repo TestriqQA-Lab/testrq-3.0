@@ -12,77 +12,92 @@ import {
   FaChartLine,
   FaExclamationTriangle,
   FaArrowRight,
-  FaSync
+  FaSync,
 } from "react-icons/fa";
 
 const IoTChallengesSection: React.FC = () => {
   const challenges = [
     {
       icon: FaNetworkWired,
-      title: "Device Connectivity Issues",
-      problem: "IoT devices failing to maintain stable connections across different network conditions and protocols",
+      title: (<><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Device Connectivity Issues</Link></>),
+      problem:
+        "IoT devices failing to maintain stable connections across different network conditions and protocols",
       impact: "Device unreliability and poor user experience",
       stats: "68% of IoT deployments face connectivity challenges",
-      solution: "Comprehensive network testing across protocols, edge cases, and real-world conditions",
+      solution:
+        "Comprehensive network testing across protocols, edge cases, and real-world conditions",
       color: "from-blue-500 to-blue-600",
       bgColor: "bg-blue-50",
-      action: "/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks"
+      action:
+        "/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks",
     },
     {
       icon: FaShieldAlt,
-      title: "Security Vulnerabilities",
-      problem: "IoT devices often lack proper security measures, creating entry points for cyberattacks",
-      impact: "Data breaches, privacy violations, and network compromises",
+      title: (<><Link href="/blog/post/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities">Security Vulnerabilities</Link></>),
+      problem:
+        "IoT devices often lack proper security measures, creating entry points for cyberattacks",
+      impact: (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Data breaches</Link>, privacy violations, and network compromises</>),
       stats: "IoT attacks increased by 300% in the last year",
-      solution: "Advanced security testing including penetration testing and vulnerability assessments",
+      solution:
+        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced security testing</Link> including <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link> and vulnerability assessments</>),
       color: "from-red-500 to-red-600",
       bgColor: "bg-red-50",
-      action: "/iot-security-validation-protecting-devices-from-cyber-threats"
+      action: "/iot-security-validation-protecting-devices-from-cyber-threats",
     },
     {
       icon: FaSync,
-      title: "Data Synchronization Problems",
-      problem: "Inconsistent data flow between IoT devices, edge systems, and cloud platforms",
+      title: (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data Synchronization Problems</Link></>),
+      problem:
+        "Inconsistent data flow between IoT devices, edge systems, and cloud platforms",
       impact: "Inaccurate analytics and unreliable automation",
-      stats: "45% of IoT projects fail due to data integration issues",
+      stats: (<>45% of IoT projects fail due to <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">data integration issues</Link></>),
       solution: "End-to-end data flow testing and synchronization validation",
       color: "from-green-500 to-green-600",
       bgColor: "bg-green-50",
-      action: "/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems"
+      action:
+        "/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems",
     },
     {
       icon: FaBatteryHalf,
       title: "Power Management Issues",
-      problem: "IoT devices draining batteries faster than expected or failing power optimization",
+      problem:
+        "IoT devices draining batteries faster than expected or failing power optimization",
       impact: "Frequent maintenance and reduced device lifespan",
       stats: "Battery life issues affect 52% of IoT devices",
-      solution: "Power consumption testing and optimization across usage scenarios",
+      solution:
+        (<>Power <Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">consumption testing</Link> and optimization across usage scenarios</>),
       color: "from-orange-500 to-orange-600",
       bgColor: "bg-orange-50",
-      action: "/power-management-testing-optimizing-battery-life-for-iot-devices"
+      action:
+        "/power-management-testing-optimizing-battery-life-for-iot-devices",
     },
     {
       icon: FaCloud,
       title: "Scalability Limitations",
-      problem: "IoT systems failing to handle increasing device counts and data volumes",
+      problem:
+        "IoT systems failing to handle increasing device counts and data volumes",
       impact: "System crashes and performance degradation",
       stats: "73% of IoT systems struggle with scale beyond 10K devices",
-      solution: "Load testing and scalability validation for massive IoT deployments",
+      solution:
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load testing</Link> and <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">scalability</Link> validation for massive IoT deployments</>),
       color: "from-purple-500 to-purple-600",
       bgColor: "bg-purple-50",
-      action:"/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently"
+      action:
+        "/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently",
     },
     {
       icon: FaCog,
-      title: "Interoperability Failures",
-      problem: "Different IoT devices and platforms failing to work together seamlessly",
+      title: (<><Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">Interoperability Failures</Link></>),
+      problem:
+        "Different IoT devices and platforms failing to work together seamlessly",
       impact: "Fragmented ecosystems and limited functionality",
       stats: "60% of IoT projects face interoperability challenges",
-      solution: "Cross-platform compatibility testing and protocol validation",
+      solution: (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-platform compatibility</Link> testing and protocol validation</>),
       color: "from-teal-500 to-teal-600",
       bgColor: "bg-teal-50",
-      action: "/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices"
-    }
+      action:
+        "/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices",
+    },
   ];
 
   const challengeStats = [
@@ -90,26 +105,26 @@ const IoTChallengesSection: React.FC = () => {
       icon: FaExclamationTriangle,
       value: "68%",
       label: "Connectivity Issues",
-      description: "IoT deployments facing network challenges"
+      description: "IoT deployments facing network challenges",
     },
     {
       icon: FaShieldAlt,
       value: "300%",
       label: "Security Attack Increase",
-      description: "Growth in IoT-targeted cyberattacks"
+      description: "Growth in IoT-targeted cyberattacks",
     },
     {
       icon: FaChartLine,
       value: "45%",
       label: "Project Failure Rate",
-      description: "Due to data integration problems"
+      description: "Due to data integration problems",
     },
     {
       icon: FaBatteryHalf,
       value: "52%",
       label: "Power Issues",
-      description: "Devices with battery optimization problems"
-    }
+      description: "Devices with battery optimization problems",
+    },
   ];
 
   return (
@@ -128,20 +143,30 @@ const IoTChallengesSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            IoT applications face unique challenges that can compromise functionality, IoT security, and user trust. Our specialized IoT testing services proactively address these critical issues—such as interoperability, real-time performance, and data privacy risks—before they impact your IoT ecosystem..
-
+            IoT applications face unique challenges that can compromise{" "}
+            <Link href="/blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa">functionality</Link>, <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT security</Link>, and user trust. Our specialized IoT
+            testing services proactively address these critical issues-such as{" "}
+            <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">interoperability</Link>, real-time performance, and{" "}<Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">{" "}data privacy</Link>
+            {" "}risks-before they impact your IoT ecosystem..
           </p>
         </div>
 
         {/* Challenge Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {challengeStats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div
+              key={index}
+              className="text-center p-6 bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
               <div className="w-16 h-16 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <stat.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-lg font-semibold text-gray-800 mb-2">{stat.label}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {stat.value}
+              </div>
+              <div className="text-lg font-semibold text-gray-800 mb-2">
+                {stat.label}
+              </div>
               <div className="text-sm text-gray-600">{stat.description}</div>
             </div>
           ))}
@@ -150,14 +175,21 @@ const IoTChallengesSection: React.FC = () => {
         {/* Challenges Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {challenges.map((challenge, index) => (
-            <div key={index} className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30">
+            <div
+              key={index}
+              className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100 hover:border-[theme(color.brand.blue)] hover:border-opacity-30"
+            >
               {/* Header */}
               <div className={`${challenge.bgColor} p-6 pb-4`}>
                 <div className="flex items-center gap-4">
-                  <div className={`w-14 h-14 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`w-14 h-14 bg-gradient-to-r ${challenge.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                  >
                     <challenge.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{challenge.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {challenge.title}
+                  </h3>
                 </div>
               </div>
 
@@ -169,7 +201,9 @@ const IoTChallengesSection: React.FC = () => {
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                     PROBLEM
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">{challenge.problem}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {challenge.problem}
+                  </p>
                 </div>
 
                 {/* Impact */}
@@ -178,12 +212,16 @@ const IoTChallengesSection: React.FC = () => {
                     <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                     IMPACT
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">{challenge.impact}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {challenge.impact}
+                  </p>
                 </div>
 
                 {/* Stats */}
                 <div className="mb-4 p-3 bg-gray-50 rounded-xl">
-                  <div className="text-sm font-bold text-gray-900 mb-1">Industry Statistic</div>
+                  <div className="text-sm font-bold text-gray-900 mb-1">
+                    Industry Statistic
+                  </div>
                   <div className="text-sm text-gray-600">{challenge.stats}</div>
                 </div>
 
@@ -193,11 +231,16 @@ const IoTChallengesSection: React.FC = () => {
                     <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                     OUR SOLUTION
                   </h4>
-                  <p className="text-gray-700 text-sm leading-relaxed">{challenge.solution}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {challenge.solution}
+                  </p>
                 </div>
 
                 {/* CTA */}
-                <Link href={`blog/post${challenge.action}`} className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group`}>
+                <Link
+                  href={`blog/post${challenge.action}`}
+                  className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group`}
+                >
                   Learn More
                   <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -216,9 +259,10 @@ const IoTChallengesSection: React.FC = () => {
               Don&apos;t Let These Challenges Compromise Your IoT Success
             </h3>
             <p className="text-blue-100 mb-8 text-lg leading-relaxed">
-              Our comprehensive IoT testing methodology addresses all these critical challenges
-              before they impact your devices, users, and business operations. From edge-to-cloud
-              validation to security hardening, we ensure your IoT ecosystem performs flawlessly.
+              Our comprehensive <Link href="/blog/post/beginners-guide-to-iot-testing-types-tools-protocol-ecosystem">IoT testing</Link> methodology addresses all these
+              critical challenges before they impact your devices, users, and
+              business operations. From edge-to-cloud validation to security
+              hardening, we ensure your IoT ecosystem performs flawlessly.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 text-brand-blue gap-6 mb-8">
@@ -243,4 +287,3 @@ const IoTChallengesSection: React.FC = () => {
 };
 
 export default IoTChallengesSection;
-

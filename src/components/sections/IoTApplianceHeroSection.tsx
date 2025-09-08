@@ -23,9 +23,9 @@ const IoTHeroSection: React.FC = () => {
 
   const trustBadges = [
     "Edge-to-Cloud Testing",
-    "IoT Security Validation",
+    (<><Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT Security Validation</Link></>),
     "Protocol Compliance",
-    "Industrial IoT Expertise",
+    (<><Link href="/blog/post/how-to-test-iot-devices-for-reliability">Industrial IoT Expertise</Link></>),
   ];
 
   return (
@@ -80,8 +80,8 @@ const IoTHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure seamless connectivity, robust IoT security, and optimized
-              performance across your entire IoT ecosystem. From smart devices
+              Ensure seamless <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">connectivity</Link>, robust IoT security, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">optimized
+              performance</Link> across your entire IoT ecosystem. From <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">smart devices</Link>{" "}
               to industrial IoT systems, we validate every connection in your
               edge-to-cloud architecture through advanced IoT testing services.
             </p>
@@ -91,13 +91,13 @@ const IoTHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Device Connectivity Testing
+                  <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Device Connectivity Testing</Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  IoT Security Validation
+                  <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT Security Validation</Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -185,7 +185,7 @@ const IoTHeroSection: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">
-                    Device Reliability Increase
+                    Device <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Reliability</Link> Increase
                   </span>
                   <span className="font-bold text-cyan-600">+55%</span>
                 </div>
