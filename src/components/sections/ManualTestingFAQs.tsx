@@ -13,7 +13,7 @@ const ManualTestingFAQs: React.FC = () => {
       answer:
         (
           <>
-            <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>Manual testing</Link> is a software testing approach where human testers manually execute test cases without relying on <Link href='automation-testing-services'>automation tools</Link>. It's essential for identifying usability issues, user experience problems,
+            <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>Manual testing</Link> is a software testing approach where human testers manually execute test cases without relying on <Link href='automation-testing-services'>automation tools</Link>. It&apos;s essential for identifying usability issues, user experience problems,
             and edge cases that automated testing often overlooks. Manual testing brings a human perspective, ensuring applications are intuitive, accessible, and aligned with real-world user expectations.
           </>
         ),
@@ -21,7 +21,7 @@ const ManualTestingFAQs: React.FC = () => {
     {
       question: "When should I choose manual testing over automated testing?",
       answer:
-        (<>Manual testing is ideal for <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>exploratory testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, ad-hoc testing, and scenarios requiring human judgment. Choose manual testing when you need to test user interfaces, evaluate user experience, perform accessibility testing, or when test cases are executed infrequently. It's also preferred for complex scenarios that require human intuition, creative thinking, or when the application is in early development stages with frequent changes.</>),
+        (<>Manual testing is ideal for <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>exploratory testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, ad-hoc testing, and scenarios requiring human judgment. Choose manual testing when you need to test user interfaces, evaluate user experience, perform accessibility testing, or when test cases are executed infrequently. It&apos;s also preferred for complex scenarios that require human intuition, creative thinking, or when the application is in early development stages with frequent changes.</>),
     },
     {
       question: "What types of manual testing services does Testriq offer?",

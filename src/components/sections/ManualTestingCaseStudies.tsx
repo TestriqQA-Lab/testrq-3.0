@@ -23,7 +23,7 @@ const ManualTestingCaseStudies: React.FC = () => {
         (
           <>
             A major <Link href='e-commerce-testing-services'>e-commerce platform</Link> was experiencing high user abandonment rates due to critical
-            usability issues and functional defects that automated testing couldn't detect.
+            usability issues and functional defects that automated testing couldn&apos;t detect.
           </>
         ),
       solution:
