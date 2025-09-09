@@ -53,6 +53,7 @@ const specializedTesting = [
   { title: "QA Documentation Services", path: "/qa-documentation-services" },
   { title: "Data Analysis", path: "/data-analysis-services" },
   { title: "Software Testing Guide", path: "/software-testing-guide" },
+  { title: "Corporate QA Training", path: "/corporate-qa-training" },
 ];
 
 const company = [
@@ -62,6 +63,7 @@ const company = [
   { title: "Case Studies", path: "/case-studies" },
   { title: "Blogs", path: "/blog" },
   { title: "Careers", path: "/careers" },
+  { title: "Locations We Serve", path: "/locations-we-serve" },
   { title: "Contact Us", path: "/contact-us" },
 ];
 

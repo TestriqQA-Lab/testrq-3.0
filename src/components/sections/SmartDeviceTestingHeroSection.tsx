@@ -35,15 +35,14 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your smart devices deliver seamless connectivity, optimal
-              performance, and robust security with our smart device testing
-              services. From wearables to smart home devices – we validate every
-              aspect of your IoT device and connected ecosystem.
+              Ensure your <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>smart devices</Link> deliver seamless connectivity, <Link href='performance-testing-services'>optimal
+              performance</Link>, and robust <Link href='security-testing'>security</Link> with our <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> services. From wearables to smart home devices – we validate every
+              aspect of your <Link href='blog/post/how-to-test-iot-devices-for-reliability-2'>IoT device</Link> and connected ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact-us">
-                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
+                <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
                   Get Started Today
                   <FaArrowRight className="inline ml-2" />
                 </button>

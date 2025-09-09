@@ -30,20 +30,52 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Secure Payments",
-      description:
-        "We verify payment gateways meet top-tier encryption and fraud prevention standards.",
+      description: (
+        <>
+          We verify{" "}
+          <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+            payment gateways
+          </Link>{" "}
+          meet top-tier{" "}
+          <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+            encryption
+          </Link>{" "}
+          and fraud prevention standards
+        </>
+      ),
     },
     {
       icon: <Award className="w-8 h-8" />,
       title: "Verified Performance",
-      description:
-        "Every app undergoes rigorous speed, scalability, and reliability checks before certification.",
+      description: (
+        <>
+          Every app undergoes rigorous{" "}
+          <Link href="/blog/post/performance-testing-for-ai-applications">
+            speed
+          </Link>
+          ,{" "}
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            scalability
+          </Link>
+          , and{" "}
+          <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
+            reliability
+          </Link>{" "}
+          checks before certification.
+        </>
+      ),
     },
     {
       icon: <Star className="w-8 h-8" />,
       title: "User Experience Excellence",
-      description:
-        "Certification only granted to apps delivering smooth, intuitive, and accessible shopping experiences.",
+      description: (
+        <>
+          Certification only granted to apps delivering smooth, intuitive, and{" "}
+          <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+            accessible shopping experiences.
+          </Link>
+        </>
+      ),
     },
   ];
 
@@ -65,7 +97,7 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
           className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium">
-            <ShoppingCart className="w-4 h-4" />
+            <ShoppingCart className="w-4 h-4 hidden md:block" />
             Trusted E-Commerce Platform Certification
           </div>
         </motion.div>
@@ -83,8 +115,12 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
 
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             We certify shopping apps only after verifying they meet the highest
-            standards of security, performance, and user experience — so
-            customers can shop with confidence.
+            standards of <Link href="/security-testing">security</Link>,{" "}
+            <Link href="/performance-testing-services">performance</Link>, and{" "}
+            <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              user experience
+            </Link>{" "}
+            - so customers can shop with confidence.
           </p>
         </motion.div>
 
@@ -93,7 +129,7 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto"
         >
           <Link href="/contact-us">
             <button className="bg-brand-blue cursor-pointer  text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">

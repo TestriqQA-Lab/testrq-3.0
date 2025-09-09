@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/our-team',
+    canonical: 'https://www.testriq.com/our-team',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/our-team',
+    url: 'https://www.testriq.com/our-team',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Meet Our Team - Certified QA Experts | Testriq',
     description: 'Meet Testriq’s team of ISTQB-certified QA professionals with decades of software testing experience. Get to know the leaders and departments behind our testing excellence.',
@@ -136,9 +136,9 @@ const HomeReadyToElevate = dynamic(
 
 export default function OurTeam() {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/our-team" },
-    { name: "Our Team", url: "https://testriq.com/our-team" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/our-team" },
+    { name: "Our Team", url: "https://www.testriq.com/our-team" }
   ]
   return (
     <div>

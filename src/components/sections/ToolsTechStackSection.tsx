@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaLayerGroup,
@@ -71,7 +72,7 @@ const ToolsTechStackSection = () => {
         icon: <FaJira className="w-8 h-8" />,
       },
       {
-        name: "Azure DevOps",
+        name: (<><Link href="/blog/post/integrating-performance-testing-into-ci-cd-for-devops-success">Azure DevOps</Link></>),
         description: "End-to-End DevOps lifecycle",
         usage: "85%",
         icon: <FaGithub className="w-8 h-8" />,
@@ -187,13 +188,13 @@ const ToolsTechStackSection = () => {
     ],
     "Specialized Tools": [
       {
-        name: "OWASP ZAP",
+        name: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link></>),
         description: "Security testing and vulnerability scanning",
         usage: "90%",
         icon: <FaShieldAlt className="w-8 h-8" />,
       },
       {
-        name: "JMeter",
+        name: (<><Link href="/blog/post/how-is-jmeter-used-for-performance-testing">JMeter</Link></>),
         description: "Performance and load testing",
         usage: "95%",
         icon: <FaPlayCircle className="w-8 h-8" />,
@@ -236,10 +237,10 @@ const ToolsTechStackSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our comprehensive software testing technology stack encompasses
-            every aspect of modern QA practices—from programming languages and
-            automation frameworks like Selenium, Cypress, and Playwright, to
-            cloud testing platforms, CI/CD tools, and specialized QA tools for
-            performance, security, and API testing.
+            every aspect of modern QA practices-from programming languages and
+            automation frameworks like <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium, Cypress</Link>, and Playwright, to
+            <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core"> cloud testing platforms</Link>, CI/CD tools, and specialized QA tools for
+            <Link href="/performance-testing-services"> performance</Link>, <Link href="/security-testing">security</Link>, and <Link href="/api-testing">API testing</Link>.
           </p>
         </div>
 

@@ -98,7 +98,7 @@ const CaseStudyTechnologiesSection: React.FC<
         {/* Technologies Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {caseStudy.technologies.map((tech, index) => {
-            const category = getTechnologyCategory(tech);
+            const category = getTechnologyCategory(tech.name);
             const IconComponent = getCategoryIcon(category);
             const colorClass = getCategoryColor(category);
 
@@ -114,7 +114,7 @@ const CaseStudyTechnologiesSection: React.FC<
                     <IconComponent className="w-5 h-5" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">{tech}</h3>
+                    <h3 className="font-semibold text-gray-900">{tech.name}</h3>
                     <p className="text-sm text-gray-500 capitalize">
                       {category} Tool
                     </p>

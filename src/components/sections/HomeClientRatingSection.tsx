@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Link from "next/link";
 
 // Dynamically import RatingStar
 const RatingStar = dynamic(() => import("@/components/RatingStar"), {
@@ -34,13 +35,22 @@ const useMediaQuery = (width: number) => {
 };
 
 const ClientRatingSection = () => {
-  const heading = {
-    title: "What Our Clients Say?",
-    info: "Trusted by global startups and enterprises, Testriq is a leading QA outsourcing partner known for ISTQB certified experts, dependable QA support, and consistent software quality across every project.",
-  };
+  const heading: {
+    title: string;
+    info: React.ReactNode;
+  }[] = [
+      {
+        title: "What Our Clients Say?",
+        info: (
+          <>
+          Trusted by global startups and enterprises, Testriq is a leading QA outsourcing partner known for ISTQB certified experts, dependable <Link href="blog/post/what-is-the-best-emerging-technology-to-learn-in-qa-support">QA support</Link>, and consistent software quality across every project.
+          </>
+        ),
+      }
+    ];
 
   const renderTitle = () => {
-    const titleParts = heading.title.split("Clients");
+    const titleParts = heading[0].title.split("Clients");
     return (
       <>
         {titleParts[0]}
@@ -57,6 +67,7 @@ const ClientRatingSection = () => {
       clientName: "Loren De Camas",
       designation: "QA Lead at Canva",
       company: "Canva",
+      action:"canva-case-study",
       icon: (
         <Image
           src="/Canva_Logo.png"
@@ -73,6 +84,7 @@ const ClientRatingSection = () => {
       clientName: "Jake Browning",
       designation: "Director of Product and Technology",
       company: "Ragnar",
+      action:"ragnar-case-study",
       icon: (
         <Image
           src="/Ragnar_logo.webp"
@@ -89,6 +101,7 @@ const ClientRatingSection = () => {
       clientName: "Ranjan Upadhyay",
       designation: "Vice President - Operations",
       company: "Digiboxx",
+      action:"digiboxx-case-study",
       icon: (
         <Image
           src="/Digiboxx-Logo.webp"
@@ -105,6 +118,7 @@ const ClientRatingSection = () => {
       clientName: "Vinay Vikram Singh",
       designation: "Director",
       company: "Kanishka Software",
+      action:"kanishka-software-case-study",
       icon: (
         <Image
           src="/Kanishka_Software_Logo.webp"
@@ -121,6 +135,7 @@ const ClientRatingSection = () => {
       clientName: "Dave Hadden",
       designation: "Founder and President, Pro-ficiency",
       company: "Pro-ficiency",
+      action:"pro-ficiency-case-study",
       icon: (
         <Image
           src="/Pro-ficiency_Logo.webp"
@@ -173,7 +188,7 @@ const ClientRatingSection = () => {
         {renderTitle()}
       </h2>
       <p className="text-center text-base md:text-lg text-gray-500">
-        {heading.info}
+        {heading[0].info}
       </p>
 
       <div className="relative mt-10">
@@ -191,11 +206,10 @@ const ClientRatingSection = () => {
             className={`flex transition-transform duration-700 ease-in-out p-5`}
           >
             {getVisibleCards().map((card, index) => (
-              <div
+              <Link href={card.action}
                 key={index}
-                className={`px-2 ${
-                  isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
-                }`}
+                className={`px-2 ${isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
+                  }`}
               >
                 <div className="flex flex-col h-full ring-sky-200 ring-1 bg-[theme(color.background.gray)] rounded-lg p-5 gap-y-6 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200 hover:-translate-y-2">
                   {card.icon}
@@ -217,7 +231,7 @@ const ClientRatingSection = () => {
                     <RatingStar />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -42,7 +42,7 @@ const AIAnyQuestions: React.FC = () => {
             About AI Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our AI testing specialists are here to help. Get in touch with us to
+            Our AI testing specialists are here to help. <Link href='contact-us'>Get in touch</Link> with us to
             discuss your specific AI requirements and learn how we can ensure
             your AI systems are accurate, fair, and reliable.
           </p>

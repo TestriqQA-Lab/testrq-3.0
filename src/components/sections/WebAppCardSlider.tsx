@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function CardSlider() {
@@ -8,7 +9,7 @@ export default function CardSlider() {
 
   const headings = {
     title: "Systematic 6-Steps Testing Methodolgy",
-    info: "Our proven testing methodology ensures comprehensive coverage, efficient issue detection, and reliable web application performance through systematic execution, detailed bug reporting, and actionable QA insights.",
+    info: (<>Our proven testing methodology ensures comprehensive coverage, efficient issue detection, and reliable web application performance through systematic execution, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>detailed bug reporting</Link>, and actionable QA insights.</>),
   };
 
   const cards = [
@@ -17,7 +18,7 @@ export default function CardSlider() {
       days: "1-2 days",
       quote: "Understanding Your Requirements",
       content:
-        "We begin with a thorough analysis of your web application, aligning with business goals, user expectations, and technical specifications to craft a tailored testing strategy that ensures full coverage, compliance, and optimal performance.",
+        (<>We begin with a thorough analysis of your web application, aligning with business goals, user expectations, and technical specifications to craft a tailored testing strategy that ensures full coverage, compliance, and optimal <Link href='performance-testing-services'>performance</Link>.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -32,10 +33,10 @@ export default function CardSlider() {
       progress: "15%",
       keyTitle: "Key Activities",
       keys: [
-        { key: "Requirement gathering and documentation" },
+        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
         { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
+        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
+        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
         { key: "Testing scope definition" },
       ],
     },
@@ -44,7 +45,7 @@ export default function CardSlider() {
       days: "1-2 days",
       quote: "Preparing Testing Infrastructure",
       content:
-        "We configure robust testing environments that mirror your production setup, ensuring reliable, consistent test results across all web application testing scenarios, including functionality, security, performance, and usability.",
+        (<>We configure robust testing environments that mirror your production setup, ensuring reliable, consistent test results across all web application testing scenarios, including functionality, <Link href='security-testing'>security</Link>, <Link href='performance-testing-services'>performance</Link>, and usability.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -59,10 +60,10 @@ export default function CardSlider() {
       progress: "30%",
       keyTitle: "Key Activities",
       keys: [
-        { key: "Requirement gathering and documentation" },
+        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
         { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
+        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
+        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
         { key: "Testing scope definition" },
       ],
     },
@@ -86,10 +87,10 @@ export default function CardSlider() {
       progress: "60%",
       keyTitle: "Key Activities",
       keys: [
-        { key: "Requirement gathering and documentation" },
+        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
         { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
+        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
+        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
         { key: "Testing scope definition" },
       ],
     },
@@ -319,7 +320,7 @@ export default function CardSlider() {
                 ></div>
               </div>
             </div>
-            <button
+            {/* <button
               className={`mt-4 w-full bg-${
                 cards[activeCard].colordark
               } text-white py-2 rounded-lg hover:bg-${cards[
@@ -327,7 +328,7 @@ export default function CardSlider() {
               ].colordark.replace("500", "600")}`}
             >
               Learn More About {cards[activeCard].title}
-            </button>
+            </button> */}
           </div>
         </div>
 

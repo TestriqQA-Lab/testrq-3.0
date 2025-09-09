@@ -1,4 +1,13 @@
 import React from 'react'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Testriq QA Lab',
+  description: 'Learn about the privacy policy of the Testriq QA Lab website.',
+  alternates: {
+    canonical: 'https://www.testriq.com/privacy-policy',
+  },
+};
 
 const PrivacyPolicy = () => {
   return (
@@ -116,7 +125,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <a href="https://testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://testriq.com</a>
+                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <a href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</a>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -511,7 +520,7 @@ const PrivacyPolicy = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <ul className="space-y-2 text-gray-700">
                 <li>– By email: <a href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</a></li>
-                <li>– By visiting this page on our website: <a href="https://testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">https://testriq.com/contact-us</a></li>
+                <li>– By visiting this page on our website: <a href="https://www.testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com/contact-us</a></li>
                 <li>– By phone number: <a href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</a></li>
               </ul>
             </div>

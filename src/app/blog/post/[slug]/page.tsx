@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
-
 const BlogPostHeader = dynamic(
   () => import("@/components/sections/BlogPostHeader"),
   {
@@ -51,6 +50,27 @@ const BlogPostSidebar = dynamic(
   }
 );
 
+// Custom Structured Data Component for Individual Posts
+// function PostStructuredData({ structuredData }: { structuredData: unknown[] }) {
+//   if (!structuredData || structuredData.length === 0) {
+//     return null;
+//   }
+
+//   return (
+//     <>
+//       {structuredData.map((data, index) => (
+//         <script
+//           key={`structured-data-${index}`}
+//           type="application/ld+json"
+//           dangerouslySetInnerHTML={{
+//             __html: JSON.stringify(data, null, 0)
+//           }}
+//         />
+//       ))}
+//     </>
+//   );
+// }
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -63,6 +83,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: "Post Not Found | Testriq Blog",
       description: "The requested blog post could not be found.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
@@ -73,13 +97,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.seo.description,
     keywords: post.seo.keywords,
     authors: [{ name: post.author }],
+    creator: "Testriq QA Lab",
+    publisher: "Testriq QA Lab",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    alternates: {
+      canonical: `https://www.testriq.com/blog/post/${post.slug}`,
+      languages: {
+        'en-US': `https://www.testriq.com/blog/post/${post.slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt || post.seo.description,
       type: "article",
       publishedTime: wpPost.date,
+      modifiedTime: wpPost.modified,
       authors: [post.author],
       tags: post.tags,
+      url: `https://www.testriq.com/blog/post/${post.slug}`,
+      siteName: "Testriq",
+      locale: "en_US",
       images: post.image ? [
         {
           url: post.image,
@@ -94,7 +141,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt || post.seo.description,
       images: post.image ? [post.image] : [],
+      creator: "@testriqlab",
+      site: "@testriqlab",
     },
+    category: "Technology",
   };
 }
 
@@ -109,13 +159,17 @@ export default async function BlogPostPage({ params }: Props) {
   // Adapt WordPress post to match your component's expected interface
   const post = adaptWordPressPost(wpPost);
 
+
   return (
     <div className="min-h-screen bg-gray-50">
       <MainLayout>
+        {/* Custom Structured Data from WordPress */}
+        {/* <PostStructuredData structuredData={structuredData} /> */}
+        
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
         <div className="max-w-7xl mx-auto py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 px-8 md:px-12 lg:px-8">
             <div className="lg:col-span-2">
               <BlogPostContent post={post} />
               {/* <BlogPostComments postId={post.id} /> */}
@@ -133,4 +187,3 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
-

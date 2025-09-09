@@ -17,7 +17,14 @@ const ShoppingAppCTA = () => {
   const ctaFeatures = [
     {
       icon: <Shield className="w-6 h-6" />,
-      text: "End-to-End Security Compliance",
+      text: (
+        <>
+          End-to-End{" "}
+          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+            Security Compliance
+          </Link>
+        </>
+      ),
     },
     {
       icon: <Clock className="w-6 h-6" />,

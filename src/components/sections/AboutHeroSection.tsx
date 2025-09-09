@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { FaCheckCircle, FaInfoCircle } from "react-icons/fa";
 
@@ -20,18 +21,18 @@ const AboutHeroSection = () => {
           </span>
           Excellence
         </h1>
-        <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        <h2 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Pioneering{" "}
           <span className="text-[theme(color.brand.blue)]">
             Quality Assurance
           </span>{" "}
           Excellence
-        </h1>
+        </h2>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Testriq QA Lab LLP is a globally trusted software testing company with
-          over 14 years of experience. We deliver expert-led QA solutions across
-          the SDLC, combining ISTQB-certified talent, agile practices, and a
+          over 15 years of experience. We deliver expert-led QA solutions across
+          the <Link href="blog/post/understanding-the-sdlc-and-stlc-in-qa">SDLC</Link>, combining ISTQB-certified talent, <Link href="blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile practices</Link>, and a
           commitment to innovation and software quality.
         </p>
 

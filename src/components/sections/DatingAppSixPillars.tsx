@@ -12,6 +12,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { FaFlask } from "react-icons/fa";
+import Link from "next/link";
 
 const DatingAppSixPillars = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
@@ -26,7 +27,7 @@ const DatingAppSixPillars = () => {
         "Fake profile prevention",
         "Boosted user trust",
         "Fraud reduction",
-        "Real-time checks",
+        (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time checks</Link></>),
       ],
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600",
@@ -35,7 +36,7 @@ const DatingAppSixPillars = () => {
       icon: <Users className="w-16 h-16" />,
       title: "User Safety Controls",
       description:
-        "We ensure the app has robust, real-time safety mechanisms and instant response protocols.",
+        (<>We ensure the app has robust, <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time</Link> safety mechanisms and instant response protocols.</>),
       benefits: [
         "24/7 threat detection",
         "Instant blocking",
@@ -65,7 +66,7 @@ const DatingAppSixPillars = () => {
       description:
         "We validate that the app’s matching algorithms are unbiased and fair to all demographics.",
       benefits: [
-        "Bias detection",
+        (<><Link href="/blog/post/bias-fairness-testing-for-ai">Bias detection</Link></>),
         "Fair matching",
         "Equal opportunities",
         "Transparency",
@@ -75,7 +76,7 @@ const DatingAppSixPillars = () => {
     },
     {
       icon: <Lock className="w-16 h-16" />,
-      title: "Data Privacy",
+      title: (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Data Privacy</Link></>),
       description:
         "We ensure that the app’s data handling meets enterprise-grade privacy standards with full encryption and compliance.",
       benefits: [
@@ -95,7 +96,7 @@ const DatingAppSixPillars = () => {
       benefits: [
         "Performance checks",
         "Uptime monitoring",
-        "Load testing",
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load testing</Link></>),
         "UX validation",
       ],
       color: "bg-indigo-50 border-indigo-200",
@@ -116,7 +117,7 @@ const DatingAppSixPillars = () => {
             <span className="text-brand-blue">App Trust Certification</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We don’t build dating apps — we certify them. Our process ensures
+            We don’t build dating apps - we certify them. Our process ensures
             that any app meeting all six pillars earns our official{" "}
             <strong>Trust Certification</strong>.
           </p>

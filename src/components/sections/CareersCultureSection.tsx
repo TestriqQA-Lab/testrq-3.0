@@ -146,8 +146,10 @@ const CareersCultureSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our QA culture is built on mutual respect, continuous learning, and a genuine commitment to team collaboration and professional growth. Discover what makes Testriq a place where careers in software testing and meaningful workplace connections flourish.
-
+            Our QA culture is built on mutual respect, continuous learning, and
+            a genuine commitment to team collaboration and professional growth.
+            Discover what makes Testriq a place where careers in software
+            testing and meaningful workplace connections flourish.
           </p>
         </div>
 
@@ -181,8 +183,8 @@ const CareersCultureSection: React.FC = () => {
               Culture in Action
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Here&apos;s how we bring our values to life through regular activities
-              and initiatives.
+              Here&apos;s how we bring our values to life through regular
+              activities and initiatives.
             </p>
           </div>
 
@@ -263,10 +265,10 @@ const CareersCultureSection: React.FC = () => {
               </h3>
 
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-                Being remote-first doesn&apos;t mean being disconnected. We&apos;ve built
-                a culture that thrives across time zones, bringing people
-                together through shared goals, regular communication, and
-                meaningful interactions.
+                Being remote-first doesn&apos;t mean being disconnected.
+                We&apos;ve built a culture that thrives across time zones,
+                bringing people together through shared goals, regular
+                communication, and meaningful interactions.
               </p>
 
               <div className="space-y-4">
@@ -275,7 +277,7 @@ const CareersCultureSection: React.FC = () => {
                     <FaGlobe className="w-4 h-4 text-[theme(color.brand.blue)]" />
                   </div>
                   <span className="text-blue-100">
-                    15+ Global Service Delivery
+                    25+ Global Service Delivery
                   </span>
                 </div>
 
@@ -307,16 +309,18 @@ const CareersCultureSection: React.FC = () => {
 
               <div className="space-y-6">
                 <blockquote className="text-[theme(color.brand.blue)] italic">
-                  &quot;I&apos;ve never felt more connected to a team while working
-                  remotely. The culture here makes distance irrelevant.&quot;
+                  &quot;I&apos;ve never felt more connected to a team while
+                  working remotely. The culture here makes distance
+                  irrelevant.&quot;
                 </blockquote>
                 <div className="text-sm text-[theme(color.brand.blue)]">
                   — Alex Chen, Senior QA Engineer (Singapore)
                 </div>
 
                 <blockquote className="text-[theme(color.brand.blue)] italic">
-                  &quot;The flexibility to work from anywhere while being part of
-                  such a supportive team is incredible. Best of both worlds!&quot;
+                  &quot;The flexibility to work from anywhere while being part
+                  of such a supportive team is incredible. Best of both
+                  worlds!&quot;
                 </blockquote>
                 <div className="text-sm text-[theme(color.brand.blue)]">
                   — Maria Rodriguez, Test Automation Lead (Spain)

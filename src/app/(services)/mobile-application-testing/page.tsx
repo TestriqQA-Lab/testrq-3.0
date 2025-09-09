@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/mobile-application-testing",
+    canonical: "https://www.testriq.com/mobile-application-testing",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/mobile-application-testing-services",
+    url: "https://www.testriq.com/mobile-application-testing",
     siteName: "Testriq - Mobile App Testing Services",
     title: "Mobile Application Testing Services - iOS & Android QA | Testriq",
     description:
@@ -185,14 +185,14 @@ const MobileCardSlider = dynamic(
 
 export default function MobileAppTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/mobile-application-testing-services",
+      url: "https://www.testriq.com/mobile-application-testing-services",
     },
     {
       name: "Web Application Testing",
-      url: "https://testriq.com/mobile-application-testing-services",
+      url: "https://www.testriq.com/mobile-application-testing-services",
     },
   ];
   return (

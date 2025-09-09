@@ -37,15 +37,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/launchfast-qa",
+    canonical: "https://www.testriq.com/launchfast-qa",
   },
 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/launchfast-qa",
+    url: "https://www.testriq.com/launchfast-qa",
     siteName: "Testriq - LaunchFast QA Services",
     title:
       "LaunchFast QA Services - Rapid Product Testing for Startups | Testriq",
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
 
 export default function LaunchFastQAPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/launchfast-qa" },
-    { name: "LanuchFast QA", url: "https://testriq.com/launchfast-qa" },
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/launchfast-qa" },
+    { name: "LanuchFast QA", url: "https://www.testriq.com/launchfast-qa" },
   ];
   return (
     <div className="min-h-screen bg-white">

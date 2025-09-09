@@ -33,15 +33,15 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
- metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://www.testriq.com/'),
  alternates: {
-  canonical: 'https://testriq.com/contact-us',
+  canonical: 'https://www.testriq.com/contact-us',
   },
   openGraph: {
     title: "Contact Us | Get in Touch with Testriq QA Experts",
     description: "Reach out to Testriq for your QA and software testing needs.",
     type: "website",
-    url: "https://testriq.com/contact-us",
+    url: "https://www.testriq.com/contact-us",
     images: [
       {
         url: "/OG/Contact-Us-Og.webp",
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
 
 const ContactUsPage: React.FC = () => {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/contact-us" },
-    { name: "Contact Us", url: "https://testriq.com/contact-uss" },
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/contact-us" },
+    { name: "Contact Us", url: "https://www.testriq.com/contact-uss" },
   ];
   return (
     <div className="scroll-smooth">

@@ -12,8 +12,8 @@ import { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, iotTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "IoT Testing Services for Smart Devices",
-  description: "Testriq offers end-to-end IoT testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
+  title: "IoT Appliances and apps Testing Services for Smart Devices",
+  description: "Testriq offers end-to-end IoT appliances and apps testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
   keywords: [
     "IoT testing",
     "smart device testing",
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/iot-appliances-and-apps-testing-services",
+    canonical: "https://www.testriq.com/iot-appliances-and-apps-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/iot-appliances-and-apps-testing-services",
+    url: "https://www.testriq.com/iot-appliances-and-apps-testing-services",
     siteName: "Testriq - Professional Software Testing Services",
     title: "IoT Testing Solutions – Smart Device & Connected App QA | Testriq",
     description: "Ensure flawless performance, connectivity, and security across your IoT ecosystem. Testriq offers specialized IoT testing services for smart devices, edge computing, protocol validation, and cloud integration.",
@@ -83,9 +83,9 @@ export const metadata: Metadata = {
 
 const IoTTestingPage: React.FC = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/iot-appliances-and-apps-testing-servicess" },
-    { name: "iot Testing Service", url: "https://testriq.com/iot-appliances-and-apps-testing-servicess" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/iot-appliances-and-apps-testing-servicess" },
+    { name: "iot Testing Service", url: "https://www.testriq.com/iot-appliances-and-apps-testing-servicess" }
   ];
 
   return (

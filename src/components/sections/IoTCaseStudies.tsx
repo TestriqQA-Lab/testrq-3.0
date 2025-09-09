@@ -8,126 +8,139 @@ const IoTCaseStudies: React.FC = () => {
   const [activeCase, setActiveCase] = useState(0);
 
   const caseStudies = [
-  {
-    id: 1,
-    company: "Hamilton Housewares Pvt Ltd.",
-    industry: "Homewares",
-    challenge: "Ensuring Quality and Reliability of Smart Hydration Product",
-    solution: "Comprehensive testing of the MILTON Smart Stainless Steel Water Bottle and its iOS/Android apps, focusing on connectivity, functionality, and measurement accuracy.",
-    results: {
-      connectivity: "Significantly improved stability across devices",
-      accuracy: "Enhanced measurement precision",
-      quality: "Top-tier product performance",
+    {
+      id: 1,
+      company: "Hamilton Housewares Pvt Ltd.",
+      industry: "Homewares",
+      challenge: "Ensuring Quality and Reliability of Smart Hydration Product",
+      solution: (
+        <>
+          Comprehensive testing of the MILTON Smart Stainless Steel Water Bottle and its{" "}
+          <Link href='blog/post/ios-vs-android-testing-key-differences-every-qa-should-know'>iOS/Android apps</Link>, focusing on <Link href='blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks'>connectivity</Link>, functionality, and measurement accuracy.
+        </>
+      ),
+      results: {
+        connectivity: "Significantly improved stability across devices",
+        accuracy: "Enhanced measurement precision",
+        quality: "Top-tier product performance",
+      },
+      metrics: [
+        {
+          label: "Devices Tested",
+          value: "20+",
+          icon: <FaMobileAlt className="w-4 h-4" />,
+        },
+        {
+          label: "Connectivity Protocols",
+          value: "Bluetooth",
+          icon: <FaBluetooth className="w-4 h-4" />,
+        },
+        {
+          label: "Measurement Accuracy",
+          value: "Improved precision",
+          icon: <FaTachometerAlt className="w-4 h-4" />,
+        },
+        {
+          label: "Quality Standards",
+          value: "Met high standards",
+          icon: <FaCheckCircle className="w-4 h-4" />,
+        },
+      ],
+      testimonial: "Testriq’s rigorous testing ensured our MILTON Smart Stainless Steel Water Bottle and app met the highest quality standards, enhancing user experience and reliability.",
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
+      icon: "💧",
+      action: "/milton-case-study"
     },
-    metrics: [
-      {
-        label: "Devices Tested",
-        value: "20+",
-        icon: <FaMobileAlt className="w-4 h-4" />,
+    {
+      id: 2,
+      company: "Indo Wings Private Limited",
+      industry: "Aerospace and UAV Technology",
+      challenge: "Validating Secure Drone Communication System",
+      solution: (
+        <>
+          Comprehensive <Link href='security-testing'>security</Link> and <Link href='performance-testing-services'>performance testing</Link> of encrypted drone-to-ground communication and Android-based ground control app, in collaboration with Audix Technologies.
+        </>
+      ),
+      results: {
+        security: "100% secure communication protocols",
+        apkResilience: "Strong resistance to tampering",
+        performance: "Stable with no latency issues",
+        compliance: "Certified by Audix Technologies",
       },
-      {
-        label: "Connectivity Protocols",
-        value: "Bluetooth",
-        icon: <FaBluetooth className="w-4 h-4" />,
-      },
-      {
-        label: "Measurement Accuracy",
-        value: "Improved precision",
-        icon: <FaTachometerAlt className="w-4 h-4" />,
-      },
-      {
-        label: "Quality Standards",
-        value: "Met high standards",
-        icon: <FaCheckCircle className="w-4 h-4" />,
-      },
-    ],
-    testimonial: "Testriq’s rigorous testing ensured our MILTON Smart Stainless Steel Water Bottle and app met the highest quality standards, enhancing user experience and reliability.",
-    color: "blue",
-    gradient: "from-blue-500 to-blue-600",
-    icon: "💧",
-    action: "/milton-case-study"
-  },
-  {
-    id: 2,
-    company: "Indo Wings Private Limited",
-    industry: "Aerospace and UAV Technology",
-    challenge: "Validating Secure Drone Communication System",
-    solution: "Comprehensive security and performance testing of encrypted drone-to-ground communication and Android-based ground control app, in collaboration with Audix Technologies.",
-    results: {
-      security: "100% secure communication protocols",
-      apkResilience: "Strong resistance to tampering",
-      performance: "Stable with no latency issues",
-      compliance: "Certified by Audix Technologies",
+      metrics: [
+        {
+          label: "Security Protocols Tested",
+          value: "Multiple",
+          icon: <FaShieldAlt className="w-4 h-4" />,
+        },
+        {
+          label: "APK Security",
+          value: "Tamper-resistant",
+          icon: <FaLock className="w-4 h-4" />,
+        },
+        {
+          label: "Performance Stability",
+          value: "No latency issues",
+          icon: <FaTachometerAlt className="w-4 h-4" />,
+        },
+        {
+          label: "Compliance",
+          value: "Certified",
+          icon: <FaCheckCircle className="w-4 h-4" />,
+        },
+      ],
+      testimonial: "Testriq's rigorous testing and partnership with Audix Technologies ensured our drone communication system was secure and market-ready.",
+      color: "green",
+      gradient: "from-green-500 to-green-600",
+      icon: "🚁",
+      action: "/indo-wings-case-study"
     },
-    metrics: [
-      {
-        label: "Security Protocols Tested",
-        value: "Multiple",
-        icon: <FaShieldAlt className="w-4 h-4" />,
+    {
+      id: 3,
+      company: "Confidential",
+      industry: "Home Automation",
+      challenge: "Ensuring Seamless Smart Video Doorbell Performance",
+      solution: (
+        <>
+        End-to-end QA testing of mobile apps, <Link href='api-testing'>APIs</Link>, <Link href='blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core'>cloud integration</Link>, and device communication for a smart video doorbell system.
+        </>
+      ),
+      results: {
+        streaming: "Stable with minimal delay",
+        notifications: "100% success rate for alerts",
+        compatibility: "Consistent across Android and iOS",
+        security: "No vulnerabilities in data sync",
       },
-      {
-        label: "APK Security",
-        value: "Tamper-resistant",
-        icon: <FaLock className="w-4 h-4" />,
-      },
-      {
-        label: "Performance Stability",
-        value: "No latency issues",
-        icon: <FaTachometerAlt className="w-4 h-4" />,
-      },
-      {
-        label: "Compliance",
-        value: "Certified",
-        icon: <FaCheckCircle className="w-4 h-4" />,
-      },
-    ],
-    testimonial: "Testriq's rigorous testing and partnership with Audix Technologies ensured our drone communication system was secure and market-ready.",
-    color: "green",
-    gradient: "from-green-500 to-green-600",
-    icon: "🚁",
-    action: "/indo-wings-case-study"
-  },
-  {
-    id: 3,
-    company: "Confidential",
-    industry: "Home Automation",
-    challenge: "Ensuring Seamless Smart Video Doorbell Performance",
-    solution: "End-to-end QA testing of mobile apps, APIs, cloud integration, and device communication for a smart video doorbell system.",
-    results: {
-      streaming: "Stable with minimal delay",
-      notifications: "100% success rate for alerts",
-      compatibility: "Consistent across Android and iOS",
-      security: "No vulnerabilities in data sync",
+      metrics: [
+        {
+          label: "Devices Tested",
+          value: "20+",
+          icon: <FaMobileAlt className="w-4 h-4" />,
+        },
+        {
+          label: "Notification Success",
+          value: "100%",
+          icon: <FaBell className="w-4 h-4" />,
+        },
+        {
+          label: "Streaming Stability",
+          value: "Minimal delay",
+          icon: <FaVideo className="w-4 h-4" />,
+        },
+        {
+          label: "Security",
+          value: "Secure data sync",
+          icon: <FaLock className="w-4 h-4" />,
+        },
+      ],
+      testimonial: "Testriq’s thorough QA process ensured our smart doorbell app was reliable, secure, and ready for market launch.",
+      color: "purple",
+      gradient: "from-purple-500 to-purple-600",
+      icon: "🔔",
+      action: "/smart-doorbell-case-study"
     },
-    metrics: [
-      {
-        label: "Devices Tested",
-        value: "20+",
-        icon: <FaMobileAlt className="w-4 h-4" />,
-      },
-      {
-        label: "Notification Success",
-        value: "100%",
-        icon: <FaBell className="w-4 h-4" />,
-      },
-      {
-        label: "Streaming Stability",
-        value: "Minimal delay",
-        icon: <FaVideo className="w-4 h-4" />,
-      },
-      {
-        label: "Security",
-        value: "Secure data sync",
-        icon: <FaLock className="w-4 h-4" />,
-      },
-    ],
-    testimonial: "Testriq’s thorough QA process ensured our smart doorbell app was reliable, secure, and ready for market launch.",
-    color: "purple",
-    gradient: "from-purple-500 to-purple-600",
-    icon: "🔔",
-    action: "/smart-doorbell-case-study"
-  },
-];
+  ];
 
 
   return (
@@ -158,8 +171,8 @@ const IoTCaseStudies: React.FC = () => {
               key={index}
               onClick={() => setActiveCase(index)}
               className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${activeCase === index
-                  ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
+                ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
                 }`}
             >
               <div className="flex items-center gap-3">
@@ -178,8 +191,8 @@ const IoTCaseStudies: React.FC = () => {
               {/* IoT Connection Indicator */}
               <div
                 className={`absolute top-2 right-2 w-2 h-2 rounded-full ${activeCase === index
-                    ? "bg-white animate-pulse"
-                    : `bg-${study.color}-500`
+                  ? "bg-white animate-pulse"
+                  : `bg-${study.color}-500`
                   }`}
               ></div>
             </button>
@@ -238,7 +251,7 @@ const IoTCaseStudies: React.FC = () => {
                 {caseStudies[activeCase].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`w-auto md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
+                    className={`w-auto p-1 md:p-4 -mx-1 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
                   >
                     <div className="flex items-center mb-2 ">
                       <div

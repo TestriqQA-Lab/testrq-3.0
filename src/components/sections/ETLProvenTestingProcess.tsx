@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronRight, FaPlay } from "react-icons/fa";
 
@@ -9,7 +10,7 @@ const ETLProvenTestingProcess: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      title: "Requirements & Data Analysis",
+      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>Requirements & Data Analysis</Link>),
       description:
         "Comprehensive analysis of ETL requirements, data sources, and business rules to create a detailed testing strategy.",
       duration: "3-4 days",
@@ -23,7 +24,7 @@ const ETLProvenTestingProcess: React.FC = () => {
     },
     {
       id: 2,
-      title: "Test Environment Setup",
+      title: (<Link href='blog/post/environment-setup-in-desktop-testing-why-its-the-foundation-of-reliable-qa'>Test Environment Setup</Link>),
       description:
         "Setting up comprehensive testing environments with data samples and validation frameworks for thorough ETL testing.",
       duration: "2-3 days",
@@ -37,7 +38,7 @@ const ETLProvenTestingProcess: React.FC = () => {
     },
     {
       id: 3,
-      title: "Data Extraction Testing",
+      title: (<Link href='blog/post/data-extraction-testing'>Data Extraction Testing</Link>),
       description:
         "Executing comprehensive data extraction tests to validate source connectivity and data retrieval accuracy.",
       duration: "4-5 days",
@@ -51,7 +52,7 @@ const ETLProvenTestingProcess: React.FC = () => {
     },
     {
       id: 4,
-      title: "Transformation & Loading Testing",
+      title: (<Link href='blog/post/data-loading-testing-etl-performance-testing'>Transformation & Loading Testing</Link>),
       description:
         "Advanced testing of data transformation logic and loading processes to ensure data integrity and accuracy.",
       duration: "5-7 days",
@@ -91,8 +92,8 @@ const ETLProvenTestingProcess: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
             Our systematic ETL testing approach ensures comprehensive coverage,
-            delivering reliable, accurate, and high-performance data pipelines
-            for your business-critical applications and data analytics
+            delivering reliable, accurate, and high-performance <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipelines</Link>{" "}
+            for your <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>business-critical applications</Link> and data analytics
             workflows.
           </p>
         </div>

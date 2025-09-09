@@ -39,6 +39,18 @@ export const BlogCategories = dynamic(
   }
 );
 
+export const BlogQAKnowledgeHub = dynamic(
+  () => import("@/components/sections/BlogQAKnowledgeHub"),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export const BlogNewsletter = dynamic(
   () => import("@/components/sections/BlogNewsletter"),
   {

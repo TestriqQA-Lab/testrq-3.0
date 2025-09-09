@@ -16,8 +16,8 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { InlineWidget } from "react-calendly";
-import Image from "next/image";
-import CalendlyImg from "../../../public/Testriq-Calendly.png";
+import Link from "next/link";
+
 
 const ContactMethodsSection: React.FC = () => {
   const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min";
@@ -138,9 +138,9 @@ const ContactMethodsSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We understand that every client has different preferences. That’s
-            why we offer multiple ways to connect with our QA experts—whether
+            why we offer multiple ways to connect with our QA experts - whether
             for a software testing consultation, project discussion, or quality
-            assurance support across automation, manual, or performance testing
+            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
             services.
           </p>
         </div>
@@ -177,7 +177,7 @@ const ContactMethodsSection: React.FC = () => {
                 </p>
                 <p className="text-sm text-gray-500 mb-6">{method.details}</p>
 
-                <a
+                <Link
                   href={method.action}
                   onClick={(e) => {
                     if (method.title === "Schedule a Meeting") {
@@ -188,7 +188,7 @@ const ContactMethodsSection: React.FC = () => {
                   className={`cursor-pointer block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
-                </a>
+                </Link>
               </div>
             </div>
           ))}
@@ -201,12 +201,12 @@ const ContactMethodsSection: React.FC = () => {
         >
           {/* Header Section */}
           <div className="text-center mb-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               Book Your QA Consultation
             </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Connect with our QA experts to explore tailored solutions for your
-              software testing needs, including automation, manual, API, and
+              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
               performance testing. Pick a time that suits you!
             </p>
           </div>
@@ -238,7 +238,7 @@ const ContactMethodsSection: React.FC = () => {
 
           {/* Calendly Widget and Image */}
           <div className="flex flex-col lg:flex-row -gap-2 items-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full">
               {selectedMeetingUrl && (
                 <div className="calendly-container w-full h-[600px] md:h-[1080px] lg:h-[700px] xl:h-[1110px] max-w-[1000px] mx-auto rounded-2xl lg:rounded-l-2xl lg:rounded-r-none overflow-hidden shadow-lg">
                   <InlineWidget
@@ -252,15 +252,7 @@ const ContactMethodsSection: React.FC = () => {
                 </div>
               )}
             </div>
-            <div className="w-full lg:w-1/2 hidden lg:block">
-              <Image
-                src={CalendlyImg}
-                alt="QA Consultation Illustration"
-                width={600}
-                height={600}
-                className="rounded-r-2xl shadow-md object-cover"
-              />
-            </div>
+            
           </div>
         </div>
 

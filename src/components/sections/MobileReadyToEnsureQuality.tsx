@@ -31,8 +31,8 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
               Transform your mobile application with our comprehensive testing
-              approach. We ensure your app delivers exceptional performance,
-              security, and user experience across all devices and platforms,
+              approach. We ensure your app delivers exceptional <Link href='performance-testing-services'>performance</Link>,
+              <Link href='security-testing'>security</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> across all devices and platforms,
               from iOS to Android.
             </p>
 

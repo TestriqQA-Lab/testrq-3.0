@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/shopping-apps-certification",
+    canonical: "https://www.testriq.com/shopping-apps-certification",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/shopping-apps-certification",
+    url: "https://www.testriq.com/shopping-apps-certification",
     siteName: "Testriq - Shopping App Certification Services",
     title:
       "Shopping App Certification | Secure E-Commerce Testing & PCI Compliance | Testriq",
@@ -212,18 +212,18 @@ const faqSchema = {
 
 export default function ShoppingAppsCertification() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/shopping-apps-certification",
+      url: "https://www.testriq.com/shopping-apps-certification",
     },
     {
       name: "Shopping App Certification ",
-      url: "https://testriq.com/shopping-apps-certification",
+      url: "https://www.testriq.com/shopping-apps-certification",
     },
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />

@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  ArrowRight,
-  CheckCircle,
-  Star,
-  Award,
-  TrendingUp,
-} from "lucide-react";
+import { ArrowRight, CheckCircle, Star, Award, TrendingUp } from "lucide-react";
 import Link from "next/link";
 
 const SoftwareTestingGuideReadyToEnsureQuality = () => {
@@ -33,7 +27,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
 
   const stats = [
     { number: "15,000+", label: "Students Trained" },
-    { number: "95%", label: "Success Rate" },
+    { number: "99.5%", label: "Success Rate" },
     { number: "4.9/5", label: "Average Rating" },
     { number: "50+", label: "Countries Reached" },
   ];
@@ -51,7 +45,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
             through our comprehensive software testing education program. Start
             your journey to becoming a certified testing expert in manual
             testing, automation testing, performance testing, security testing,
-            and more—guided by industry-recognized QA best practices and
+            and more-guided by industry-recognized QA best practices and
             hands-on learning.
           </p>
         </div>
@@ -125,10 +119,6 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
             </Link>
-
-            <p className="text-center text-gray-500 text-sm mt-4">
-              30-day money-back guarantee
-            </p>
           </div>
         </div>
 

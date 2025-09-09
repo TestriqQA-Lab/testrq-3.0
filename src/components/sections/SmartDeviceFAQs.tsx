@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -15,17 +16,29 @@ const SmartDeviceFAQs: React.FC = () => {
     {
       question: "How do you test connectivity across different protocols?",
       answer:
-        "We conduct comprehensive connectivity testing across WiFi (802.11 a/b/g/n/ac/ax), Bluetooth (Classic and BLE), NFC, cellular networks (3G/4G/5G), Zigbee, Z-Wave, and other IoT protocols. Our testing includes signal strength analysis, range testing, interference testing, and protocol compliance validation.",
+        (
+          <>
+            We conduct comprehensive <Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>connectivity testing</Link> across WiFi (802.11 a/b/g/n/ac/ax), Bluetooth (Classic and BLE), NFC, cellular networks (3G/4G/5G), Zigbee, Z-Wave, and other IoT protocols. Our testing includes signal strength analysis, range testing, interference testing, and protocol compliance validation.
+          </>
+        ),
     },
     {
       question: "What security testing do you perform on smart devices?",
       answer:
-        "Our security testing includes data encryption validation, authentication protocol testing, vulnerability assessments, penetration testing, privacy protection validation, secure communication testing, and compliance with security standards like OWASP IoT Top 10 and industry-specific security requirements.",
+        (
+          <>
+            Our <Link href='security-testing'>security testing</Link> includes <Link href='blog/post/ai-security-testing'>data encryption validation</Link>, authentication protocol testing, vulnerability assessments, penetration testing, privacy protection validation, secure communication testing, and compliance with security standards like OWASP IoT Top 10 and industry-specific security requirements.
+          </>
+        ),
     },
     {
       question: "How do you test battery life and power consumption?",
       answer:
-        "We perform comprehensive battery testing including battery life measurement under various usage scenarios, power consumption analysis, charging performance testing, thermal testing, and energy efficiency optimization. We use specialized equipment to measure precise power consumption patterns.",
+        (
+          <>
+            We perform comprehensive <Link href='blog/post/battery-power-testing-for-smart-devices-optimization-guide'>battery testing</Link> including battery life measurement under various usage scenarios, power consumption analysis, charging performance testing, thermal testing, and energy efficiency optimization. We use specialized equipment to measure precise power consumption patterns.
+          </>
+        ),
     },
     {
       question: "Can you test smart devices that are still in development?",
@@ -35,7 +48,11 @@ const SmartDeviceFAQs: React.FC = () => {
     {
       question: "Do you provide testing for smart device apps and software?",
       answer:
-        "Absolutely. We test companion mobile apps, device firmware, cloud connectivity, API integrations, user interfaces, and software updates. Our testing covers functionality, performance, security, and user experience across iOS and Android platforms.",
+        (
+          <>
+            Absolutely. We test companion <Link href='mobile-application-testing'>mobile apps</Link>, device firmware, cloud connectivity, <Link href='api-testing'>API integrations</Link>, user interfaces, and software updates. Our testing covers functionality, performance, security, and user experience across iOS and Android platforms.
+          </>
+        ),
     },
     {
       question:
@@ -46,7 +63,11 @@ const SmartDeviceFAQs: React.FC = () => {
     {
       question: "What compliance and certification testing do you offer?",
       answer:
-        "We provide testing for various compliance standards including FCC, CE, IC, Bluetooth SIG, WiFi Alliance, and industry-specific certifications. We help ensure your smart devices meet regulatory requirements for target markets and can assist with certification processes.",
+        (
+          <>
+            We provide testing for various <Link href='blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps'>compliance standards</Link> including FCC, CE, IC, Bluetooth SIG, WiFi Alliance, and industry-specific certifications. We help ensure your smart devices meet regulatory requirements for target markets and can assist with certification processes.
+          </>
+        ),
     },
   ];
 

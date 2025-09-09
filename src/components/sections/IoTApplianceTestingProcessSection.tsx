@@ -331,9 +331,9 @@ const IoTTestingProcessSection: React.FC = () => {
                     Start Your IoT Project
                   </button>
                 </Link>
-                <button className="bg-gray-100 cursor-pointer text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg hover:text-brand-blue hover:scale-98 hover:ring-brand-blue hover:ring-1 transition-all">
+                <Link href="/contact-us" className="bg-gray-100 cursor-pointer text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg hover:text-brand-blue hover:scale-98 hover:ring-brand-blue hover:ring-1 transition-all">
                   Learn More About Our Process
-                </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/gaming-app-testing-services',
+    canonical: 'https://www.testriq.com/gaming-app-testing-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/gaming-app-testing-services',
+    url: 'https://www.testriq.com/gaming-app-testing-services',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Gaming App Testing Solutions | Mobile Game QA & Performance Testing | Testriq',
     description: 'Testriq offers specialized game QA for mobile, console, and VR games—ensuring flawless gameplay, performance, and player retention. Trusted by 500+ gaming studios.',
@@ -84,9 +84,9 @@ export const metadata: Metadata = {
 
 const GamingTestingPage: React.FC = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/gaming-app-testing-services" },
-    { name: "Gaming Testing Service", url: "https://testriq.com/gaming-app-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/gaming-app-testing-services" },
+    { name: "Gaming Testing Service", url: "https://www.testriq.com/gaming-app-testing-services" }
   ];
   return (
     <div>  

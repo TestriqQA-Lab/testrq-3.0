@@ -9,12 +9,12 @@ export default function CardSlider() {
 
   const headings = {
     title: "Systematic 6-Steps Desktop App Testing Methodology",
-    info: "Our structured desktop testing methodology ensures consistent performance, usability, and stability of your desktop applications across all operating systems and environments.",
+    info: (<>Our structured desktop testing methodology ensures consistent <Link href='performance-testing-services'>performance</Link>, <Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>usability</Link>, and stability of your desktop applications across all operating systems and environments.</>),
   };
 
   const cards = [
     {
-      title: "Requirement Analysis",
+      title: (<Link href='blog/post/requirement-analysis-in-desktop-testing-foundation-for-reliable-qa'>Requirement Analysis</Link>),
       days: "1-2 days",
       quote: "Understanding System Functionality",
       content:
@@ -42,7 +42,7 @@ export default function CardSlider() {
       ],
     },
     {
-      title: "Environment Setup",
+      title: (<Link href='blog/post/environment-setup-in-desktop-testing-why-its-the-foundation-of-reliable-qa'>Environment Setup</Link>),
       days: "1-2 days",
       quote: "Preparing OS-Based Test Environments",
       content:
@@ -70,7 +70,7 @@ export default function CardSlider() {
       ],
     },
     {
-      title: "Functional & Regression Testing",
+      title: (<Link href='blog/post/functional-regression-testing-for-desktop-apps-ensuring-quality-at-every-update'>Functional & Regression Testing</Link>),
       days: "3-5 days",
       quote: "Verifying Application Logic & Updates",
       content:
@@ -98,7 +98,7 @@ export default function CardSlider() {
       ],
     },
     {
-      title: "Bug Logging & Reporting",
+      title: (<Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>Bug Logging & Reporting</Link>),
       days: "1-2 days",
       quote: "Detailed Issue Documentation",
       content:
@@ -160,7 +160,7 @@ export default function CardSlider() {
         <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
         <p className="text-gray-500 text-center max-w-4xl m-auto py-5">{headings.info}</p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
+      <div className="flex max-w-7xl mx-auto flex-col md:flex-row justify-center items-start md:p-6 min-h-screen">
         <div className="hidden md:block w-full md:w-1/2 space-y-4 relative">
           {" "}
           {/* Increased space-y from 4 to 6 */}
@@ -289,7 +289,7 @@ export default function CardSlider() {
           {cards.map((card) => {
             return (
               <div
-                key={card.title}
+                key={card.quote}
                 className={`w-full p-6 rounded-lg shadow-xl ring-${card.colordark} bg-${card.colorlight}  bg-opacity-50`}
               >
                 <div className="flex items-center">

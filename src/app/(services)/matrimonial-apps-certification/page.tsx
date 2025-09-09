@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/matrimonial-apps-certification',
+    canonical: 'https://www.testriq.com/matrimonial-apps-certification',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/matrimonial-apps-certification',
+    url: 'https://www.testriq.com/matrimonial-apps-certification',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Matrimonial App Certification | Security, Privacy & Quality Compliance - Testriq',
     description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
@@ -224,12 +224,12 @@ const faqSchema = {
 
 export default function MatrimonialAppsCertification() {
     const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/matrimonial-apps-certification" },
-    { name: "Matrimonial App Certification", url: "https://testriq.com/matrimonial-apps-certification" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/matrimonial-apps-certification" },
+    { name: "Matrimonial App Certification", url: "https://www.testriq.com/matrimonial-apps-certification" }
   ];
   return (
-    <div>
+    <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={matrimonialAppCertificationSchema} />

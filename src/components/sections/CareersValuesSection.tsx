@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaLightbulb,
@@ -109,7 +110,7 @@ const CareersValuesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our core values shape our QA culture and drive collaboration to deliver high-quality software testing solutions in automation, manual QA, performance, and security, ensuring compliance and customer satisfaction.
+            Our core values shape our QA culture and drive collaboration to deliver <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">high-quality software testing</Link> solutions in <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual QA</Link>, <Link href="/performance-testing-services">performance</Link>, and <Link href="/security-testing">security</Link>, ensuring compliance and customer satisfaction.
 
           </p>
         </div>

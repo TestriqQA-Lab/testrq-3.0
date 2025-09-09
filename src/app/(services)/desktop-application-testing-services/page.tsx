@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/desktop-application-testing-services",
+    canonical: "https://www.testriq.com/desktop-application-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/desktop-application-testing-services",
+    url: "https://www.testriq.com/desktop-application-testing-services",
     siteName: "Testriq - Desktop Application Testing Services",
     title:
       "Desktop Application Testing Services - Secure & Reliable QA | Testriq",
@@ -176,14 +176,14 @@ const DesktopCardSlider = dynamic(
 
 export default function DesktopAppTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/desktop-application-testing-services",
+      url: "https://www.testriq.com/desktop-application-testing-services",
     },
     {
       name: "Desktop Application Service",
-      url: "https://testriq.com/desktop-application-testing-services",
+      url: "https://www.testriq.com/desktop-application-testing-services",
     },
   ];
 

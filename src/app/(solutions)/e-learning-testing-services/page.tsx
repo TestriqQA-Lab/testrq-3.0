@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: "https://testriq.com/e-learning-testing-services",
+    canonical: "https://www.testriq.com/e-learning-testing-services",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/e-learning-testing-services",
+    url: "https://www.testriq.com/e-learning-testing-services",
     siteName: "Testriq - Professional Software Testing Services",
     title: "E-Learning Testing Services | LMS & Educational Platform QA | Testriq",
     description:
@@ -89,9 +89,9 @@ export const metadata: Metadata = {
 
 const ElearningTestingPage: React.FC = () => {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/e-learning-testing-servicess" },
-    { name: "E-Learning Testing", url: "https://testriq.com/e-learning-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/e-learning-testing-servicess" },
+    { name: "E-Learning Testing", url: "https://www.testriq.com/e-learning-testing-services" }
   ];
   return (
     <div>

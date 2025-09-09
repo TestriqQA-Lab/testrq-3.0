@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 // import { FiTarget } from "react-icons/fi";
 // import { FaRegClock } from "react-icons/fa";
@@ -7,14 +8,24 @@ import React from 'react'
 const HomeChooseTestriq = () => {
 
     // Define the heading and card data
-    const heading = {
-        title: 'Why Choose Testriq?',
-        info: 'Testriq stands out as a strategic QA partner with deep domain expertise, certified professionals, and a commitment to innovation. We help businesses of all sizes deliver secure, high-performing software through tailored testing solutions, agile methodologies, and technology-driven quality assurance at every stage.'
-    }
+    const heading: {
+        title: string;
+        info: React.ReactNode;
+    }[] = [
+            {
+                title: 'Why Choose Testriq?',
+                info: (
+                    <>
+                    Testriq stands out as a strategic QA partner with deep domain expertise, certified professionals, and a commitment to innovation. We help businesses of all sizes deliver secure,
+                    high-performing software through tailored testing solutions, <Link href="blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile methodologies</Link>, and technology-driven quality assurance at every stage.
+                    </>
+                )
+            }
+        ]
 
     // Split the title into parts to style "Software Testing" in blue
     const renderTitle = () => {
-        const titleParts = heading.title.split('Testriq');
+        const titleParts = heading[0].title.split('Testriq');
         return (
             <>
                 {titleParts[0]}
@@ -39,7 +50,7 @@ const HomeChooseTestriq = () => {
             {/* Heading section */}
             <div className='flex flex-col gap-y-5 text-center'>
                 <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading.info}</p>
+                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading[0].info}</p>
             </div>
 
             {/* Card grid layout */}

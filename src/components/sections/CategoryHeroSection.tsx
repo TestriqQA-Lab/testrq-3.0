@@ -20,7 +20,53 @@ interface CategoryHeroSectionProps {
   category: Category;
 }
 
-const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) => {
+  // Function to clean and render HTML content properly
+  const renderContent = (content: string) => {
+    // Clean up the content and fix common WordPress issues
+    const cleanContent = content
+      // Remove excessive line breaks and normalize spacing
+      .replace(/\n\s*\n\s*\n/g, '\n\n')
+      // Fix image tags to ensure proper src attributes
+      .replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/gi, (match, before, src, after) => {
+        // Ensure the image has proper attributes
+        const altMatch = match.match(/alt=["']([^"']*?)["']/i);
+        const alt = altMatch ? altMatch[1] : '';
+        return `<img${before}src="${src}"${after} alt="${alt}" style="max-width: 100%; height: auto; margin: 1rem 0; border-radius: 8px;">`;
+      })
+      // Fix paragraph spacing
+      .replace(/<p>/g, '<p style="margin-bottom: 1rem; line-height: 1.7;">')
+      // Fix heading spacing
+      .replace(/<h1>/g, '<h1 style="font-size: 2rem; font-weight: bold; margin: 2rem 0 1rem 0; color: #1f2937;">')
+      .replace(/<h2>/g, '<h2 style="font-size: 1.75rem; font-weight: bold; margin: 1.75rem 0 1rem 0; color: #1f2937;">')
+      .replace(/<h3>/g, '<h3 style="font-size: 1.5rem; font-weight: bold; margin: 1.5rem 0 0.75rem 0; color: #1f2937;">')
+      .replace(/<h4>/g, '<h4 style="font-size: 1.25rem; font-weight: bold; margin: 1.25rem 0 0.75rem 0; color: #1f2937;">')
+      .replace(/<h5>/g, '<h5 style="font-size: 1.125rem; font-weight: bold; margin: 1.125rem 0 0.5rem 0; color: #1f2937;">')
+      .replace(/<h6>/g, '<h6 style="font-size: 1rem; font-weight: bold; margin: 1rem 0 0.5rem 0; color: #1f2937;">')
+      // Fix list spacing
+      .replace(/<ul>/g, '<ul style="margin: 1rem 0; padding-left: 1.5rem;">')
+      .replace(/<ol>/g, '<ol style="margin: 1rem 0; padding-left: 1.5rem;">')
+      .replace(/<li>/g, '<li style="margin-bottom: 0.5rem; line-height: 1.6;">')
+      // Fix blockquote styling
+      .replace(/<blockquote>/g, '<blockquote style="border-left: 4px solid #3b82f6; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #4b5563;">')
+      // Fix figure and figcaption
+      .replace(/<figure>/g, '<figure style="margin: 1.5rem 0; text-align: center;">')
+      .replace(/<figcaption>/g, '<figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280; font-style: italic;">')
+      // Fix code blocks
+      .replace(/<pre>/g, '<pre style="background-color: #1f2937; color: #f9fafb; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0;">')
+      .replace(/<code>/g, '<code style="background-color: #f3f4f6; color: #1f2937; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace; font-size: 0.875rem;">')
+      // Fix table styling
+      .replace(/<table>/g, '<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; border: 1px solid #e5e7eb;">')
+      .replace(/<th>/g, '<th style="padding: 0.75rem; background-color: #f9fafb; border: 1px solid #e5e7eb; font-weight: bold; text-align: left;">')
+      .replace(/<td>/g, '<td style="padding: 0.75rem; border: 1px solid #e5e7eb;">')
+      // Fix links
+      .replace(/<a([^>]*?)>/g, '<a$1 style="color: #3b82f6; text-decoration: underline; hover:color: #2563eb;">');
+
+    return cleanContent;
+  };
+
+const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
+  category,
+}) => {
   return (
     <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 text-white py-13 px-8 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Elements */}
@@ -33,14 +79,19 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-blue-200 mb-8">
-          <Link href="/blog" className="flex items-center gap-2 hover:text-white transition-colors">
+          <Link
+            href="/blog"
+            className="flex items-center gap-2 hover:text-white transition-colors"
+          >
             <FaArrowLeft className="w-4 h-4" />
             <span>Back to Blog</span>
           </Link>
-          <span>/</span>
-          <span className="text-gray-400">Categories</span>
-          <span>/</span>
-          <span className="text-white">{category.name}</span>
+          <div className="hidden md:block">
+            <span> / </span>
+            <span className="text-gray-400">Categories</span>
+            <span> / </span>
+            <span className="text-white">{category.name}</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -48,10 +99,14 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
           <div>
             {/* Category Icon and Badge */}
             <div className="flex items-center gap-4 mb-6">
-              <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}>
+              <div
+                className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}
+              >
                 {category.icon}
               </div>
-              <span className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}>
+              <span
+                className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}
+              >
                 {category.name} Category
               </span>
             </div>
@@ -65,11 +120,12 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
             </h1>
 
             {/* Description */}
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {category.description}
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: renderContent(category.description) }}
+            >
+            
             </p>
           </div>
-
 
           {/* Right Content - Abstract Insight Visualization */}
           <div className="relative flex items-center justify-center p-2">
@@ -93,18 +149,17 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({ category }) =
 
               {/* Text overlay */}
               <div className="relative z-10 text-center">
-                <h3 className="text-3xl font-bold text-white mb-2">Deep Insights</h3>
+                <h3 className="text-3xl font-bold text-white mb-2">
+                  Deep Insights
+                </h3>
                 <p className="text-blue-200 text-lg">Unlocking Knowledge</p>
               </div>
             </div>
           </div>
         </div>
-    
-        
       </div>
     </section>
   );
 };
 
 export default CategoryHeroSection;
-

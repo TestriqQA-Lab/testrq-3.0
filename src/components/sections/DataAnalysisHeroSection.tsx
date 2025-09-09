@@ -42,7 +42,7 @@ const DataAnalysisHeroSection = () => {
                 leverages advanced statistical modeling, machine learning model
                 building, and cutting-edge data analysis tools to uncover hidden
                 patterns, trends, and strategic opportunities within your
-                data—turning complex information into realistic, actionable
+                data-turning complex information into realistic, actionable
                 insights.
               </p>
             </div>
@@ -89,8 +89,8 @@ const DataAnalysisHeroSection = () => {
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <FaChartLine className="text-purple-500" />
-                  <span>Analytics Dashboard</span>
+                  <FaChartLine className="text-purple-500 hidden md:block" />
+                  <span className="px-2">Analytics Dashboard</span>
                   <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
                     Live Data
                   </div>
@@ -103,7 +103,7 @@ const DataAnalysisHeroSection = () => {
                 </div>
 
                 {/* Analytics Types */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-purple-50 rounded-lg">
                     <FaDatabase className="mx-auto text-2xl text-purple-600 mb-2" />
                     <div className="text-sm font-medium text-purple-800">

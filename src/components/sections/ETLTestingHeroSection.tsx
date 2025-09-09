@@ -22,9 +22,9 @@ const ETLTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative py-10 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-20 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
+      <div className="hidden lg:block absolute top-20 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-bounce"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-25"></div>
 
@@ -44,16 +44,16 @@ const ETLTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Ensure your data pipelines deliver accurate, complete, and
-              reliable data with our comprehensive ETL testing services. From
-              data extraction, transformation, and loading, we validate every
-              layer of your ETL process to ensure seamless data integration,
-              quality assurance, and regulatory compliance.
+              Ensure your <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipelines deliver accurate</Link>, complete, and{" "}
+              <Link href='blog/post/data-quality-testing-in-etl'>reliable data</Link> with our comprehensive ETL testing services. From{" "}
+              <Link href='blog/post/data-extraction-testing'>data extraction, transformation</Link>, and <Link href='blog/post/data-loading-testing-etl-performance-testing'>loading</Link>, we validate every
+              layer of your ETL process to ensure seamless <Link href='blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability'>data integration</Link>,
+              <Link href='blog/post/data-quality-testing-in-etl'>quality assurance</Link>, and <Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>regulatory compliance</Link>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact-us">
-                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
+                <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
                   Get Started Today
                 </button>
               </Link>

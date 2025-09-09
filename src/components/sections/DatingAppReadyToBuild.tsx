@@ -22,10 +22,10 @@ const DatingAppReadyToBuild = () => {
 
             <p className="text-xl mb-12 opacity-90">
               We certify dating apps that meet all six pillars of trust, helping
-              them showcase safety, reliability, and user protection.
+              them showcase safety, <Link href="/blog/post/performance-testing-for-ai-applications">reliability</Link>, and user protection.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto">
               <Link href="/contact-us">
                 <motion.button
                   className="bg-white cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-gray-100 transition-all duration-300 flex items-center justify-center"
@@ -53,7 +53,7 @@ const DatingAppReadyToBuild = () => {
                 🔒 Your Users Deserve Better. Let&apos;s Build It.
               </p>
               <p className="text-base">
-                TESTRIQ QA Lab — Your partner in building safe, real, and
+                TESTRIQ QA Lab - Your partner in building safe, real, and
                 trusted dating experiences.
               </p>
             </div>

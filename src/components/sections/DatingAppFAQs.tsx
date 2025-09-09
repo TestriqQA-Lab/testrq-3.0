@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 const DatingAppFAQs = () => {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
@@ -21,7 +22,7 @@ const DatingAppFAQs = () => {
     {
       question: "Is this certification recognized outside my country?",
       answer:
-        "Yes. Our six-pillar framework is based on globally accepted best practices, making it relevant for dating apps operating in multiple regions.",
+        (<>Yes. Our six-pillar framework is based on globally accepted <Link href="/blog/post/web-application-automation-testing-tools-frameworks-best-practices">best practices</Link>, making it relevant for dating apps operating in multiple regions.</>),
     },
     {
       question: "What happens after my app is certified?",
@@ -36,7 +37,7 @@ const DatingAppFAQs = () => {
     {
       question: "What exactly are the six pillars of dating apps?",
       answer:
-        "The six pillars include: (1) Data Privacy & Security, (2) User Verification, (3) Content Moderation, (4) Fraud Prevention, (5) Compliance with Relevant Laws, and (6) Transparency & Accountability.",
+        (<>The six pillars include: (1) <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Data Privacy & Security</Link>, (2) User Verification, (3) Content Moderation, (4) Fraud Prevention, (5) Compliance with Relevant Laws, and (6) Transparency & Accountability.</>),
     },
     {
       question: "Do you guarantee app success after certification?",

@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/about-us',
+    canonical: 'https://www.testriq.com/about-us',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/about-us',
+    url: 'https://www.testriq.com/about-us',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'About Us - Testriq QA Lab | Trusted Software Testing Company',
     description: 'Learn about Testriq QA Lab – a globally trusted software testing company with 14+ years of experience. Discover our mission, values, journey, certifications, and why top companies trust our QA excellence.',
@@ -161,8 +161,8 @@ const AboutFAQ = dynamic(
 
 export default function AboutUs() {
    const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "about Page", url: "https://testriq.com/about-us" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "about Page", url: "https://www.testriq.com/about-us" }
   ];
   return (
     <div>

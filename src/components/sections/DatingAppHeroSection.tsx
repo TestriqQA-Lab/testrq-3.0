@@ -23,7 +23,7 @@ const DatingAppHeroSection = () => {
       color: "text-blue-600",
     },
     {
-      label: "Advanced Security Standards",
+      label: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced Security</Link> Standards</>),
       icon: <Shield className="w-8 h-8" />,
       color: "text-green-600",
     },
@@ -55,7 +55,7 @@ const DatingAppHeroSection = () => {
             className="mb-8"
           >
             <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
-              <Shield className="w-4 h-4 mr-2" />
+              <Shield className="w-4 h-4 mr-2 hidden md:block" />
               The New Standard in Dating App Trust & Safety
             </div>
 
@@ -70,7 +70,7 @@ const DatingAppHeroSection = () => {
             <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Launch your dating platform with a seal of credibility. Our
               certification helps you attract users, gain investor confidence,
-              and meet the highest safety standards from day one.
+              and meet the highest <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">safety</Link> standards from day one.
             </p>
           </motion.div>
 
@@ -98,7 +98,7 @@ const DatingAppHeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}

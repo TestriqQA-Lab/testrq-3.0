@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaHeart,
@@ -103,7 +104,7 @@ const TeamCultureSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             We&apos;ve built a culture that values growth, collaboration, and
-            innovation in software testing. Our QA professionals and test
+            innovation in <Link href='software-testing-guide'>software testing</Link>. Our QA professionals and test
             automation experts are our greatest asset, and we invest in their
             success and well-being.
           </p>
@@ -140,7 +141,7 @@ const TeamCultureSection = () => {
             </h3>
             <p className="text-gray-700 text-lg max-w-2xl mx-auto">
               We offer comprehensive benefits designed to support our team
-              members&apos; professional growth and personal well-being.
+              member&apos;s professional growth and personal well-being.
             </p>
           </div>
 

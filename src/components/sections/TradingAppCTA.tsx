@@ -164,7 +164,7 @@ const TradingAppCTA = () => {
 
               <div className="space-y-4">
                 {[
-                  "14+ years of fintech and trading platform expertise",
+                  "15+ years of fintech and trading platform expertise",
                   "FINRA, SEC, and MiFID II compliance specialists",
                   "Ultra-low latency testing capabilities (< 1ms)",
                   "99.9% client satisfaction rate",

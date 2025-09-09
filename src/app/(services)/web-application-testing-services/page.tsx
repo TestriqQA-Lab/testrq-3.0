@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
     description:
       "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
-    url: "https://testriq.com/web-application-testing-services",
+    url: "https://www.testriq.com/web-application-testing-services",
     type: "website",
     images: [
       {
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
       "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/web-application-testing-services",
+    canonical: "https://www.testriq.com/web-application-testing-services",
   },
   robots: {
     index: true,
@@ -164,14 +164,14 @@ const CardSlider = dynamic(
 
 export default function WebAppTesting() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/web-application-testing-services",
+      url: "https://www.testriq.com/web-application-testing-services",
     },
     {
       name: "Web Application Testing",
-      url: "https://testriq.com/web-application-testing-services",
+      url: "https://www.testriq.com/web-application-testing-services",
     },
   ];
 

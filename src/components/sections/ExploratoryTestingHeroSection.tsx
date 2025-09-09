@@ -47,12 +47,12 @@ const ExploratoryTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Uncover critical bugs and usability issues that traditional scripted testing often overlooks. Our systematic exploratory testing blends human intuition with structured investigation to deliver comprehensive quality validation and actionable UX insights for exceptional user experiences.
+              Uncover critical bugs and <Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>usability issues</Link> that traditional scripted testing often overlooks. Our systematic <Link href='exploratory-testing'>exploratory testing</Link> blends human intuition with structured investigation to deliver comprehensive quality validation and actionable <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>UX insights</Link> for exceptional user experiences.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href={"/contact-us"}>
-                <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
+                <button className="w-full bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
                   Get Started Today
                   <FaArrowRight className="inline ml-2" />
                 </button>

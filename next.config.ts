@@ -17,6 +17,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/our-clients',
+        destination: '/case-studies', // Ise sahi naye URL se badal lein
+        permanent: true, // Yeh 301 redirect set karta hai
+      },
+      {
+        source: '/contact',
+        destination: '/contact-us', // Ise apne naye contact page ke URL se badal lein
+        permanent: true,
+      },
+    ]
+  },
+
 };
 
 export default nextConfig;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useRef } from "react";
 import {
   FaSearch,
@@ -16,7 +17,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      title: "System & Requirements Analysis",
+      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>System & Requirements Analysis</Link>),
       description:
         "Comprehensive analysis of robotic systems, specifications, and safety requirements to create a detailed testing strategy.",
       icon: <FaSearch className="w-6 h-6" />,
@@ -31,7 +32,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
     },
     {
       id: 2,
-      title: "Test Environment Setup",
+      title: (<Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>Test Environment Setup</Link>),
       description:
         "Setting up controlled testing environments with safety protocols and monitoring systems for comprehensive robotic testing.",
       icon: <FaCog className="w-6 h-6" />,
@@ -46,7 +47,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
     },
     {
       id: 3,
-      title: "Functional & Safety Testing",
+      title: (<Link href='blog/post/functional-testing-for-robotic-systems-precision-sensors-control'>Functional & Safety Testing</Link>),
       description:
         "Executing comprehensive functional tests and critical safety validations to ensure robotic systems meet all requirements.",
       icon: <FaShieldAlt className="w-6 h-6" />,
@@ -61,7 +62,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
     },
     {
       id: 4,
-      title: "Performance & Integration Testing",
+      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Performance & Integration Testing</Link>),
       description:
         "Advanced performance testing, test automation for robotics, and system integration validation to ensure optimal operation in real-world scenarios.",
       icon: <FaChartLine className="w-6 h-6" />,

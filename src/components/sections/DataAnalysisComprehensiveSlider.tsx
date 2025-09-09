@@ -195,7 +195,7 @@ const DataAnalysisComprehensiveSlider = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Explore our comprehensive range of data analysis services designed
             to extract maximum business value from your data at every stage of
-            the analytics maturity journey—from data discovery and exploratory
+            the analytics maturity journey-from data discovery and exploratory
             data analysis to predictive analytics, prescriptive insights, and
             strategic decision-making.
           </p>

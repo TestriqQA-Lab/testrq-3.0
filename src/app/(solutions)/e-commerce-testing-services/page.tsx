@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/e-commerce-testing-services',
+    canonical: 'https://www.testriq.com/e-commerce-testing-services',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/e-commerce-testing-services',
+    url: 'https://www.testriq.com/e-commerce-testing-services',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'E-Commerce Testing Services - Boost Conversions & Security | Testriq',
     description: 'Ensure flawless shopping experiences, secure transactions, and high performance with Testriq\'s e-commerce testing services. Improve conversions, reduce cart abandonment, and meet compliance standards across all major platforms.',
@@ -81,9 +81,9 @@ export const metadata: Metadata = {
 
 const EcommerceTestingPage: React.FC = () => {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/e-commerce-testing-services" },
-    { name: "E-Commerce Testing", url: "https://testriq.com/e-commerce-testing-services" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/e-commerce-testing-services" },
+    { name: "E-Commerce Testing", url: "https://www.testriq.com/e-commerce-testing-services" }
   ];
   return (
     <div>

@@ -22,9 +22,9 @@ const MatrimonialAppCertificationProcess = () => {
         "Comprehensive analysis of your matrimonial app's architecture, security measures, and compliance status.",
       duration: "2-3 days",
       deliverables: [
-        "Security Assessment Report",
+        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Security Assessment Report</Link></>),
         "Compliance Gap Analysis",
-        "Testing Strategy",
+        <><Link href="/blog/post/test-execution-comprehensive-testing-implementation">Testing Strategy</Link></>,
       ],
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600",
@@ -37,9 +37,9 @@ const MatrimonialAppCertificationProcess = () => {
         "In-depth testing across security, functionality, performance, and user experience dimensions.",
       duration: "7-10 days",
       deliverables: [
-        "Test Execution Reports",
+        (<><Link href="/blog/post/test-execution-comprehensive-testing-implementation">Test Execution</Link> Reports</>),
         "Vulnerability Assessment",
-        "Performance Analysis",
+        (<><Link href="/blog/post/performance-testing-for-ai-applications">Performance Analysis</Link></>),
       ],
       color: "bg-green-50 border-green-200",
       iconColor: "text-green-600",
@@ -53,8 +53,8 @@ const MatrimonialAppCertificationProcess = () => {
       duration: "3-5 days",
       deliverables: [
         "Security Audit Report",
-        "Penetration Test Results",
-        "Privacy Compliance Review",
+      (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Test</Link> Results</>),
+        (<>Privacy <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">Compliance</Link> Review</>),
       ],
       color: "bg-purple-50 border-purple-200",
       iconColor: "text-purple-600",
@@ -68,7 +68,7 @@ const MatrimonialAppCertificationProcess = () => {
       duration: "1-2 days",
       deliverables: [
         "Certification Certificate",
-        "Compliance Badge",
+        (<><Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">Compliance</Link> Badge</>),
         "Ongoing Support Plan",
       ],
       color: "bg-orange-50 border-orange-200",
@@ -94,8 +94,14 @@ const MatrimonialAppCertificationProcess = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             A systematic 4-step approach to ensure your matrimonial app meets
-            the highest standards of security, privacy, and quality. Typically
-            completed in 12-18 working days.
+            the highest standards of{" "}
+            <Link href="/security-testing">security</Link>,{" "}
+            <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+              privacy
+            </Link>
+            , and{" "}
+            <Link href="/blog/post/data-quality-testing-in-etl"> quality</Link>.
+            Typically completed in 12-18 working days.
           </p>
         </motion.div>
 

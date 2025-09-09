@@ -41,10 +41,10 @@ const DesktopTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your desktop applications deliver exceptional performance and
+            Ensure your desktop applications deliver exceptional <Link href='performance-testing-services'>performance</Link> and
             reliability with our comprehensive testing services. From
-            functionality to compatibility, security to usability - we test
-            across all platforms and environments using manual desktop application testing and exploratory desktop testing techniques.
+            functionality to compatibility, <Link href='security-testing'>security</Link> to usability - we test
+            across all platforms and environments using <Link href='manual-testing'>manual</Link> desktop application testing and exploratory desktop testing techniques.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

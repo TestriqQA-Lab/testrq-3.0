@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaArrowRight,
@@ -20,7 +21,7 @@ const AICaseStudies: React.FC = () => {
       id: 1,
       company: "AI-Powered Recruiting Platform",
       industry: "Human Resources Technology",
-      challenge: "AI Bias Detection & Fairness",
+      challenge: (<Link href='blog/post/bias-fairness-testing-for-ai'>AI Bias Detection & Fairness</Link>),
       solution:
         "Comprehensive AI bias testing and fairness validation for recruitment algorithms to ensure equal opportunity hiring.",
       results: {
@@ -61,7 +62,7 @@ const AICaseStudies: React.FC = () => {
       id: 2,
       company: "Autonomous Vehicle Systems",
       industry: "Automotive Technology",
-      challenge: "AI Safety & Reliability Testing",
+      challenge: (<Link href='blog/post/ai-security-testing'>AI Safety & Reliability Testing</Link>),
       solution:
         "End-to-end AI model validation for autonomous driving systems with comprehensive safety and performance testing.",
       results: {
@@ -102,7 +103,7 @@ const AICaseStudies: React.FC = () => {
       id: 3,
       company: "Medical Diagnosis AI",
       industry: "Healthcare Technology",
-      challenge: "Medical AI Accuracy & Explainability",
+      challenge: (<Link href='blog/post/explainability-testing-in-ai'>Medical AI Accuracy & Explainability</Link>),
       solution:
         "Specialized medical AI testing with FDA compliance validation and explainability assessment for diagnostic algorithms.",
       results: {
@@ -158,7 +159,8 @@ const AICaseStudies: React.FC = () => {
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Discover how our comprehensive AI testing services have helped
             companies achieve remarkable improvements in accuracy, fairness, and
-            reliability of their intelligent systems.
+            reliability of their <Link href='blog/post/testing-ai-powered-applications-navigating-the-maze-with-a-smile'>intelligent
+            systems</Link>.
           </p>
         </div>
 

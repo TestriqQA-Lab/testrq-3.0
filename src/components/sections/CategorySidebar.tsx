@@ -155,8 +155,8 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
  {/* Newsletter Signup */}
       <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
         <div className="text-center">
-          <div className="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6 text-white" />
+          <div className="w-12 h-12 bg-gradient-to-br ${category.color} bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <FaBell className="w-6 h-6"/>
           </div>
           <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
           <p className="text-white text-opacity-90 text-sm mb-4">

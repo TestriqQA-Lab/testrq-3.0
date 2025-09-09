@@ -128,10 +128,9 @@ const IoTWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">IoT Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine certified IoT QA expertise, real-world simulation, and
-            advanced tools to deliver IoT testing services that ensure reliable
-            performance, secure connectivity, and protocol-compliant IoT device
-            ecosystems.
+            We combine certified IoT QA expertise, <Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>real-world simulation</Link>, and
+            <Link href='tools'> advanced tools</Link> to deliver IoT testing services that ensure reliable
+            performance, <Link href='blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more'>secure connectivity</Link>, and <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>protocol-compliant</Link> IoT device ecosystems.
           </p>
         </div>
 

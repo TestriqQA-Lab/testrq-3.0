@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "https://testriq.com/exploratory-testing",
+    canonical: "https://www.testriq.com/exploratory-testing",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://testriq.com/exploratory-testing",
+    url: "https://www.testriq.com/exploratory-testing",
     siteName: "Testriq - Exploratory Testing Services",
     title: "Exploratory Testing Services - Discover Hidden Issues | Testriq",
     description:
@@ -86,14 +86,14 @@ export const metadata: Metadata = {
 
 export default function ExploratoryTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
-      url: "https://testriq.com/web-application-testing-services",
+      url: "https://www.testriq.com/web-application-testing-services",
     },
     {
       name: "Web Application Testing",
-      url: "https://testriq.com/web-application-testing-services",
+      url: "https://www.testriq.com/web-application-testing-services",
     },
   ];
   return (

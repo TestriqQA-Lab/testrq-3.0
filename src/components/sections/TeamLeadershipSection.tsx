@@ -5,6 +5,28 @@ import Link from "next/link";
 
 const TeamLeadershipSection = () => {
   const leaders = [
+    
+    {
+      name: "Prashant Shukla",
+      position: "Senior Advisor",
+      experience: "20+ Years",
+      specialization: "IT Strategy & Leadership",
+      bio: "Prashant Shukla, former Managing Director at Udemy (India & South Asia) and National Technology Officer at Microsoft India, has over 20 years of leadership experience in digital transformation, strategy, and innovation. As Senior Advisor at Testriq, he brings his expertise to drive growth, technology innovation, and strategic expansion.",
+      achievements: [
+
+      ],
+      linkedin: "https://www.linkedin.com/in/shukp/",
+      img: (
+        <Image
+          src="/prashant-shukla.png"
+          alt="Prashant-shukla"
+          width={350}
+          height={250}
+          className="object-cover rounded-full"
+        />
+      ),
+    },
+    
     {
       name: "Sandeep Maske",
       position: "Founder & CEO",
@@ -89,7 +111,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
       img: (
         <Image
-          src="/Rohan_Maske.webp"
+          src="/Rohan_Maske.png"
           alt="Rohan_Maske"
           width={350}
           height={250}
@@ -187,9 +209,7 @@ const TeamLeadershipSection = () => {
             <span className="text-[theme(color.brand.blue)]">Leaders</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our leadership team brings decades of quality assurance and business
-            development experience across global enterprises, driving digital
-            transformation and testing innovation.
+            Prashant Shukla, former Managing Director at Udemy (India & South Asia) and National Technology Officer at Microsoft India, has over 20 years of leadership experience in digital transformation, strategy, and innovation. As Senior Advisor at Testriq, he brings his expertise to drive growth, technology innovation, and strategic expansion.
           </p>
         </div>
 
@@ -241,14 +261,16 @@ const TeamLeadershipSection = () => {
                       </div>
 
                       {/* Floating Badge */}
-                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-white">
-                            {leader.experience.split("+")[0]}+
+                      {leader.name !== "Prashant Shukla" && (
+                        <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-white">
+                              {leader.experience.split("+")[0]}+
+                            </div>
+                            <div className="text-xs text-gray-100">Years</div>
                           </div>
-                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -256,19 +278,21 @@ const TeamLeadershipSection = () => {
                     {leader.bio}
                   </p>
 
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                      Key Achievements
-                    </h4>
-                    <div className="space-y-2">
-                      {leader.achievements.map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
-                          <span className="text-gray-700">{achievement}</span>
-                        </div>
-                      ))}
+                  {leader.achievements.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                        Key Achievements
+                      </h4>
+                      <div className="space-y-2">
+                        {leader.achievements.map((achievement, achIndex) => (
+                          <div key={achIndex} className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
+                            <span className="text-gray-700">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* Social Links */}
                   <Link
@@ -298,14 +322,16 @@ const TeamLeadershipSection = () => {
                     </div>
 
                     {/* Floating Badge */}
-                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-white">
-                          {leader.experience.split("+")[0]}+
+                    {leader.name !== "Prashant Shukla" && (
+                      <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
+                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                        <div className="text-xs text-gray-100">Years</div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -368,14 +394,16 @@ const TeamLeadershipSection = () => {
                       </div>
 
                       {/* Floating Badge */}
-                      <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-white">
-                            {leader.experience.split("+")[0]}+
+                      {leader.name !== "Prashant Shukla" && (
+                        <div className="absolute top-0 -right-2 md:top-5 md:right-2 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-white">
+                              {leader.experience.split("+")[0]}+
+                            </div>
+                            <div className="text-xs text-gray-100">Years</div>
                           </div>
-                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -383,19 +411,21 @@ const TeamLeadershipSection = () => {
                     {leader.bio}
                   </p>
 
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                      Key Achievements
-                    </h4>
-                    <div className="space-y-2">
-                      {leader.achievements.map((achievement, achIndex) => (
-                        <div key={achIndex} className="flex items-center gap-3">
-                          <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
-                          <span className="text-gray-700">{achievement}</span>
-                        </div>
-                      ))}
+                  {leader.achievements.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                        Key Achievements
+                      </h4>
+                      <div className="space-y-2">
+                        {leader.achievements.map((achievement, achIndex) => (
+                          <div key={achIndex} className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-[theme(color.brand.blue)] rounded-full"></div>
+                            <span className="text-gray-700">{achievement}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* Social Links */}
                   <Link
@@ -425,14 +455,16 @@ const TeamLeadershipSection = () => {
                     </div>
 
                     {/* Floating Badge */}
-                    <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-white">
-                          {leader.experience.split("+")[0]}+
+                    {leader.name !== "Prashant Shukla" && (
+                      <div className="absolute top-10 right-3 bg-linear-to-r from-cyan-500 to-blue-500 rounded-lg shadow-lg p-3">
+                        <div className="text-center">
+                          <div className="text-lg font-bold text-white">
+                            {leader.experience.split("+")[0]}+
+                          </div>
+                          <div className="text-xs text-gray-100">Years</div>
                         </div>
-                        <div className="text-xs text-gray-100">Years</div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -448,8 +480,8 @@ const TeamLeadershipSection = () => {
               <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              At Testriq, we lead by example and foster innovation in software
-              testing, building a QA team culture where every member thrives and
+              At Testriq, we lead by example and foster innovation in <Link href='software-testing-guide'>software
+              testing</Link>, building a QA team culture where every member thrives and
               drives collective success.
             </p>
           </div>

@@ -43,8 +43,8 @@ const WebappTestingHeroSection: React.FC = () => {
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Ensure your web applications deliver exceptional user experiences
             with our systematic web application testing services. From
-            functionality and performance to security, usability, and bug
-            detection — we test it all to ensure maximum quality, compliance,
+            functionality and <Link href='performance-testing-services'>performance</Link> to <Link href='security-testing'>security</Link>, <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>usability</Link>, and <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>bug
+            detection</Link> - we test it all to ensure maximum quality, compliance,
             and cross-platform compatibility.
           </p>
 

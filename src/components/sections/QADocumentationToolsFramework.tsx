@@ -544,8 +544,8 @@ const QADocumentationToolsFramework = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We leverage industry-leading tools and frameworks like Selenium,
             Appium, Cypress, and Postman to create, manage, and maintain
-            comprehensive QA documentation—including test plans, test cases, and
-            traceability matrices—that enhance team productivity and ensure
+            comprehensive QA documentation-including test plans, test cases, and
+            traceability matrices-that enhance team productivity and ensure
             consistent quality assurance documentation delivery.
           </p>
         </div>

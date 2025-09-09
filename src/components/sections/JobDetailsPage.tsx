@@ -1,3 +1,4 @@
+ 
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -17,9 +18,24 @@ import {
   FaFacebook,
   FaCopy,
 } from "react-icons/fa";
-import { JobPosition } from "@/lib/openings";
+import { IconType } from "react-icons";
 import Markdown from "react-markdown";
 import Link from "next/link";
+
+export interface JobPosition {
+  id: number;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  fullDescription: string;
+  skills: string[];
+  badges: string[];
+  icon: IconType;
+  color: string;
+}
 
 interface JobDetailsPageProps {
   job: JobPosition;
@@ -370,7 +386,7 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
               
               {job.badges.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {job.badges.map((badge, index) => (
+                  {job.badges.map((badge: string, index: number) => (
                     <span
                       key={index}
                       className={`px-3 py-1 text-sm font-semibold rounded-full border ${getBadgeStyle(badge)}`}
@@ -407,163 +423,111 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
                         <FaShare className="w-4 h-4" />
                       </button>
                       {showShareMenu && (
-                        <div className="absolute right-0 top-12 bg-white rounded-lg shadow-lg p-2 z-10 min-w-[150px]">
+                        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
                           <button
                             onClick={() => handleShare('linkedin')}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+                            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                           >
-                            <FaLinkedin className="w-4 h-4 text-blue-600" />
-                            LinkedIn
+                            <FaLinkedin className="mr-2" /> LinkedIn
                           </button>
                           <button
                             onClick={() => handleShare('twitter')}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+                            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                           >
-                            <FaTwitter className="w-4 h-4 text-blue-400" />
-                            Twitter
+                            <FaTwitter className="mr-2" /> Twitter
                           </button>
                           <button
                             onClick={() => handleShare('facebook')}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+                            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                           >
-                            <FaFacebook className="w-4 h-4 text-blue-600" />
-                            Facebook
+                            <FaFacebook className="mr-2" /> Facebook
                           </button>
                           <button
                             onClick={() => handleShare('copy')}
-                            className="flex items-center gap-2 w-full px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-300"
+                            className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
                           >
-                            <FaCopy className="w-4 h-4 text-gray-600" />
-                            Copy Link
+                            <FaCopy className="mr-2" /> Copy Link
                           </button>
                         </div>
                       )}
                     </div>
                   </div>
                 </div>
-                
                 <button
                   onClick={() => setShowApplyModal(true)}
-                  className="w-full bg-white text-[theme(color.brand.blue)] font-semibold py-4 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-300 mb-4"
+                  className="w-full px-6 py-3 bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2"
                 >
-                  Apply Now
+                  <FaRocket className="w-5 h-5" /> Apply Now
                 </button>
-                
-                <div className="space-y-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <FaCalendarAlt className="w-4 h-4 text-blue-200" />
-                    <span>Posted 2 days ago</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaUsers className="w-4 h-4 text-blue-200" />
-                    <span>15+ applicants</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaRocket className="w-4 h-4 text-blue-200" />
-                    <span>Fast hiring process</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      {/* Job Details Content */}
+      <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="lg:col-span-2">
           {/* Job Description */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Job Description</h2>
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                <Markdown>{job.fullDescription}</Markdown>
-              </div>
-            </div>
-            
-            {/* Skills Required */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Skills Required</h2>
-              <div className="flex flex-wrap gap-3">
-                {job.skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-[theme(color.brand.blue)] bg-opacity-10 text-[theme(color.brand.blue)] text-sm rounded-full font-medium border border-blue-200"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Job Description</h2>
+            <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+              <Markdown>{job.fullDescription}</Markdown>
             </div>
           </div>
-          
-          {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Job Summary */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Job Summary</h3>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Department</span>
-                  <span className="font-medium capitalize">{job.department}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Experience</span>
-                  <span className="font-medium">{job.experience}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Job Type</span>
-                  <span className="font-medium">{job.type}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Location</span>
-                  <span className="font-medium">{job.location}</span>
-                </div>
-              </div>
+
+          {/* Skills Required */}
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Skills Required</h2>
+            <div className="flex flex-wrap gap-3">
+              {job.skills.map((skill: string, index: number) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-[theme(color.brand.blue)] bg-opacity-10 text-[theme(color.brand.blue)] text-sm rounded-full font-medium border border-blue-200"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
-            
-            {/* Company Info */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">About Testriq</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Testriq is a leading software testing company that provides comprehensive QA services to businesses worldwide. We specialize in automation testing, manual testing, performance testing, and security testing.
-              </p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <FaBuilding className="w-4 h-4 text-gray-400" />
-                  <span>Software Testing Services</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaUsers className="w-4 h-4 text-gray-400" />
-                  <span>50-200 employees</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaMapMarkerAlt className="w-4 h-4 text-gray-400" />
-                  <span>Global presence</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Similar Jobs */}
-            <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Similar Jobs</h3>
-              <div className="space-y-3">
-                {/* You can add similar jobs here */}
-                <Link href="/careers" className="block p-3 border border-gray-200 rounded-lg hover:border-[theme(color.brand.blue)] transition-colors duration-300">
-                  <h4 className="font-medium text-gray-900">QA Test Engineer</h4>
-                  <p className="text-sm text-gray-600">Manual Testing • 2-4 years</p>
-                </Link>
-                <Link href="/careers" className="block p-3 border border-gray-200 rounded-lg hover:border-[theme(color.brand.blue)] transition-colors duration-300">
-                  <h4 className="font-medium text-gray-900">Performance Testing Specialist</h4>
-                  <p className="text-sm text-gray-600">Performance Testing • 4+ years</p>
-                </Link>
-              </div>
-            </div>
+          </div>
+        </div>
+
+        {/* Sidebar */}
+        <div className="lg:col-span-1">
+          <div className="bg-white rounded-2xl shadow-lg p-8 sticky top-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Job Summary</h3>
+            <ul className="space-y-4 text-gray-700">
+              <li className="flex items-center gap-3">
+                <FaBuilding className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <span>Department: {job.department}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaMapMarkerAlt className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <span>Location: {job.location}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaClock className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <span>Employment Type: {job.type}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaUsers className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <span>Experience: {job.experience}</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaCalendarAlt className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                <span>Posted: Just Now</span> {/* You might want to replace this with actual date logic */}
+              </li>
+            </ul>
+            <button
+              onClick={() => setShowApplyModal(true)}
+              className="mt-8 w-full px-6 py-3 bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
+            >
+              <FaRocket className="w-5 h-5" /> Apply Now
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Application Modal */}
       {showApplyModal && <JobApplicationModal job={job} onClose={() => setShowApplyModal(false)} />}
     </div>
   );

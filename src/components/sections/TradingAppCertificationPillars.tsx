@@ -12,6 +12,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { FaFlask } from "react-icons/fa";
+import Link from "next/link";
 
 const TradingAppCertificationPillars = () => {
   const pillars = [
@@ -21,8 +22,8 @@ const TradingAppCertificationPillars = () => {
       description:
         "We verify the implementation of ISO 27001 compliance, end-to-end encryption, multi-factor authentication, and advanced fraud detection before certification.",
       features: [
-        "Data Encryption",
-        "Secure Authentication",
+        (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Data Encryption</Link></>),
+        (<><Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">Secure Authentication</Link></>),
         "Vulnerability Assessment",
         "Fraud Detection",
       ],
@@ -38,8 +39,8 @@ const TradingAppCertificationPillars = () => {
       features: [
         "FINRA Compliance",
         "KYC/AML Verification",
-        "Data Privacy (GDPR)",
-        "Regulatory Reporting",
+        (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Data Privacy (GDPR)</Link></>),
+        (<><Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Regulatory Reporting</Link></>),
       ],
       color: "text-green-600",
       bgColor: "bg-green-50",
@@ -52,8 +53,8 @@ const TradingAppCertificationPillars = () => {
         "We validate low latency, high throughput, scalability, and disaster recovery plans to ensure reliable operations before issuing certification.",
       features: [
         "Low Latency Testing",
-        "Scalability Assessment",
-        "Load Testing",
+        (<><Link href="/blog/post/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users">Scalability Assessment</Link></>),
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing</Link></>),
         "Disaster Recovery",
       ],
       color: "text-purple-600",
@@ -67,8 +68,8 @@ const TradingAppCertificationPillars = () => {
         "We check real-time market data validation, transaction integrity, order execution accuracy, and data reconciliation before certification is granted.",
       features: [
         "Market Data Validation",
-        "Transaction Integrity",
-        "Order Execution Accuracy",
+        (<>Transaction <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">Integrity</Link></>),
+        (<>Order Execution <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Accuracy</Link></>),
         "Data Reconciliation",
       ],
       color: "text-red-600",
@@ -81,10 +82,10 @@ const TradingAppCertificationPillars = () => {
       description:
         "We review algorithm validation, risk management controls, safeguards, and performance monitoring before approving your certification.",
       features: [
-        "Algorithm Validation",
+        (<>Algorithm <Link href="/blog/post/learn-how-validation-optimization">Validation</Link></>),
         "Risk Management",
         "Trading Safeguards",
-        "Performance Monitoring",
+        (<><Link href="/performance-testing-services">Performance</Link> Monitoring</>),
       ],
       color: "text-orange-600",
       bgColor: "bg-orange-50",
@@ -97,9 +98,9 @@ const TradingAppCertificationPillars = () => {
         "We evaluate interface design, device compatibility, error handling, and accessibility compliance before granting certification.",
       features: [
         "Interface Design",
-        "Cross-Device Testing",
+        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Device Testing</Link></>),
         "Error Handling",
-        "Accessibility (WCAG)",
+      (<><Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">Accessibility (WCAG)</Link></>),
       ],
       color: "text-pink-600",
       bgColor: "bg-pink-50",
@@ -130,8 +131,8 @@ const TradingAppCertificationPillars = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We certify only after verifying that your trading platform meets
-            every one of these pillars — ensuring security, compliance, and
-            performance your users can trust.
+            every one of these pillars - ensuring <Link href="/security-testing">security</Link>, <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">compliance</Link>, and
+            <Link href="/performance-testing-services"> performance</Link> your users can trust.
           </p>
         </motion.div>
 

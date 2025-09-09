@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
- metadataBase: new URL('https://testriq.com/'),
+ metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
-    canonical: 'https://testriq.com/regression-testing',
+    canonical: 'https://www.testriq.com/regression-testing',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://testriq.com/regression-testings',
+    url: 'https://www.testriq.com/regression-testings',
     siteName: 'Testriq - Professional Software Testing Services',
     title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
     description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
@@ -182,9 +182,9 @@ const RegressionTestingFAQs = dynamic(() => import("@/components/sections/Regres
 
 export default function RegressionTestingPage() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://testriq.com/" },
-    { name: "Services", url: "https://testriq.com/regression-testing" },
-    { name: "Regression Testing", url: "https://testriq.com/regression-testing" }
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/regression-testing" },
+    { name: "Regression Testing", url: "https://www.testriq.com/regression-testing" }
   ];
 
   return (

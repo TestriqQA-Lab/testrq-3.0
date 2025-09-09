@@ -46,9 +46,9 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
                       <Image
                         src={caseStudy.image}
                         alt={caseStudy.client}
-                        className="w-48 h-48 object-contain"
-                        width={10}
-                        height={10}
+                        className="object-contain"
+                        width={164}
+                        height={164}
                       />
                     ) : (
                       <FaIndustry className="w-8 h-8 text-white" />

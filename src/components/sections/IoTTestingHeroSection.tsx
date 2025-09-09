@@ -18,7 +18,7 @@ const IoTTestingHeroSection: React.FC = () => {
   };
   return (
     <section className="bg-white text-black py-16 px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
+      <div className=" mx-auto grid grid-cols-1 xl:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
@@ -35,11 +35,10 @@ const IoTTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your IoT devices deliver seamless connectivity, high
-            performance, and secure communication with our systematic IoT
-            testing services. From smart home devices to industrial IoT systems,
+            Ensure your IoT devices deliver seamless <Link href='blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks'>connectivity</Link>, high <Link href='performance-testing-services'>performance</Link>, and secure communication with our systematic <Link href='iot-appliances-and-apps-testing-services'>IoT
+            testing</Link> services. From smart home devices to industrial IoT systems,
             we validate every layer, including hardware, protocols, and cloud
-            integrations for end-to-end reliability and security.
+            integrations for end-to-end reliability and <Link href='security-testing'>security</Link>.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
@@ -49,7 +48,7 @@ const IoTTestingHeroSection: React.FC = () => {
                 <FaArrowRight className="w-4 h-5" />
               </button>
             </Link>
-            <button onClick={openLightbox} className="flex items-center gap-2 py-3 px-5 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer w-full sm:w-auto">
+            <button onClick={openLightbox} className="flex justify-center items-center gap-2 py-2 px-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer sm:w-auto">
               <FaPlay className="w-4 h-4" />
               Watch Demo
             </button>
