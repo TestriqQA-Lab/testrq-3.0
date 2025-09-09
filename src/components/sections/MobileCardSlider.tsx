@@ -8,13 +8,18 @@ export default function CardSlider() {
     const [autoHover, setAutoHover] = useState(true);
 
     const headings = {
-        title: 'Systematic 6-Steps Testing Methodolgy',
-        info: 'Our proven mobile testing methodology ensures full coverage across devices and platforms, efficient issue detection, and reliable mobile app performance through systematic execution tailored for iOS, Android, and cross-platform environments.'
+        title: 'Systematic 4-Steps Testing Methodolgy',
+        info: (
+            <>
+            Our proven mobile testing methodology ensures full coverage across <Link href='blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices'>devices and platforms</Link>, 
+            <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'> efficient issue</Link> detection, and reliable mobile app performance through systematic execution tailored for iOS, Android, and cross-platform environments.
+            </>
+        )
     }
 
     const cards = [
         {
-            title: "Discovery & Analysis",
+            title: (<Link href='blog/post/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys'>Discovery & Analysis</Link>),
             days: "1-2 days",
             quote: 'Understanding Your Requirements',
             content: "Understanding Your Requirements We begin with a comprehensive analysis of your mobile application, understanding your business requirements, user expectations, and technical specifications to create a tailored testing strategy.",
@@ -28,7 +33,7 @@ export default function CardSlider() {
 
         },
         {
-            title: "Environment Setup",
+            title: (<Link href='blog/post/mobile-testing-environment-setup'>Environment Setup</Link>),
             days: "1-2 days",
             quote: 'Preparing Testing Infrastructure',
             content: "Preparing Testing Infrastructure Configure comprehensive testing environments that accurately mirror your production setup, ensuring reliable and consistent test results across all mobile testing scenarios.",
@@ -41,7 +46,7 @@ export default function CardSlider() {
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
         {
-            title: "Test Execution",
+            title: (<Link href='blog/post/test-execution-in-mobile-qa-strategies-for-comprehensive-mobile-app-validation'>Test Execution</Link>),
             days: "3-5 days",
             quote: 'Comprehensive Testing Implementation',
             content: "Comprehensive Testing Implementation Execute systematic testing across all defined scenarios using both manual and automated approaches to ensure comprehensive coverage of your mobile application functionality.",
@@ -54,7 +59,7 @@ export default function CardSlider() {
             keys: [{ key: 'Requirement gathering and documentation' }, { key: 'Technical architecture analysis' }, { key: 'user persona and journey mapping' }, { key: 'Risk assessment and prioritization' }, { key: 'Testing scope definition' }]
         },
         {
-            title: "Issue Documentation",
+            title: (<Link href='blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow'>Issue Documentation</Link>),
             days: "1-2 days",
             quote: 'Detailed Bug Reporting',
             content: "Detailed Bug Reporting\nSystematically identify, document, and prioritize all issues found during testing with detailed reproduction steps and visual evidence for efficient resolution.",
@@ -85,11 +90,11 @@ export default function CardSlider() {
 
     // Split the title into parts to style "6-Step" in blue
     const renderTitle = () => {
-        const titleParts = headings.title.split('6-Steps');
+        const titleParts = headings.title.split('4-Steps');
         return (
             <>
                 {titleParts[0]}
-                <span className="text-[theme(color.brand.blue)]">6-Steps</span>
+                <span className="text-[theme(color.brand.blue)]">4-Steps</span>
                 {titleParts[1]}
             </>
         );
@@ -207,7 +212,7 @@ export default function CardSlider() {
                 <div className={`md:hidden mt-6 md:mt-0 md:ml-15 space-y-6`}>
                     {
                         cards.map((card) => {
-                            return <div key={card.title} className={`w-full p-6 rounded-lg shadow-xl ring-${card.colordark} bg-${card.colorlight}  bg-opacity-50`}>
+                            return <div key={card.keyTitle} className={`w-full p-6 rounded-lg shadow-xl ring-${card.colordark} bg-${card.colorlight}  bg-opacity-50`}>
                                 <div className="flex items-center">
                                     <div className={`p-1 md:p-3 rounded-xl bg-${card.colordark}`}>
                                         {card.icon}

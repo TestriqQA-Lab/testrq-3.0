@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaChevronLeft,
@@ -16,7 +17,7 @@ const MobileComprehensiveSlider: React.FC = () => {
 
   const slides = [
     {
-      title: "iOS Application Testing",
+      title: (<Link href='blog/post/what-are-the-testing-tools-for-ios-app-testing'>iOS Application Testing</Link>),
       description:
         "Comprehensive testing for iOS applications across all Apple devices and iOS versions.",
       icon: <FaApple className="w-12 h-12" />,
@@ -31,7 +32,7 @@ const MobileComprehensiveSlider: React.FC = () => {
       color: "from-gray-700 to-gray-900",
     },
     {
-      title: "Android Application Testing",
+      title: (<Link href='blog/post/ios-vs-android-testing-key-differences-every-qa-should-know'>Android Application Testing</Link>),
       description:
         "Expert testing services for Android applications across diverse devices and Android versions.",
       icon: <FaAndroid className="w-12 h-12" />,
@@ -46,7 +47,7 @@ const MobileComprehensiveSlider: React.FC = () => {
       color: "from-green-500 to-green-700",
     },
     {
-      title: "Cross-Platform Testing",
+      title: (<Link href='blog/post/cross-platform-regression-testing-ensuring-consistency-across-devices-os'>Cross-Platform Testing</Link>),
       description:
         "Ensure consistent functionality and user experience across both iOS and Android platforms.",
       icon: <FaMobile className="w-12 h-12" />,
@@ -61,7 +62,7 @@ const MobileComprehensiveSlider: React.FC = () => {
       color: "from-purple-500 to-purple-700",
     },
     {
-      title: "Tablet & Wearable Testing",
+      title: (<Link href='blog/post/battery-power-testing-for-smart-devices-optimization-guide'>Tablet & Wearable Testing</Link>),
       description:
         "Specialized testing for tablets, smartwatches, and other mobile form factors.",
       icon: <FaTabletAlt className="w-12 h-12" />,
@@ -103,7 +104,7 @@ const MobileComprehensiveSlider: React.FC = () => {
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             Our comprehensive mobile app testing services cover all major
             platforms and devices, ensuring your application performs flawlessly
-            across the iOS, Android, and cross-platform app mobile ecosystem.
+            across the <Link href='blog/post/what-are-the-testing-tools-for-ios-app-testing'>iOS</Link>, <Link href='blog/post/ios-vs-android-testing-key-differences-every-qa-should-know'>Android</Link>, and cross-platform app mobile ecosystem.
           </p>
         </div>
 

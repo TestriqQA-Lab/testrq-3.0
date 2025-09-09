@@ -133,8 +133,8 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
             Smart Device Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We combine smart device expertise with testing excellence to deliver
-            smart device testing services that ensure reliable, secure, and
+            We combine smart device expertise with testing excellence to deliver{" "}
+            <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing services</Link> that ensure <Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>reliable</Link>, secure, and
             high-performance connected devices for your users.
           </p>
         </div>

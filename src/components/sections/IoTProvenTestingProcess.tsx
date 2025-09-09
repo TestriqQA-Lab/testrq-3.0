@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaNetworkWired,
@@ -21,10 +22,10 @@ const IoTProvenTestingProcess: React.FC = () => {
       description:
         "Comprehensive analysis of IoT devices, protocols, and network infrastructure to create a tailored testing strategy for optimal coverage.",
       details: [
-        "IoT device specification review",
-        "Network topology analysis",
-        "Protocol compatibility assessment",
-        "Security requirements evaluation",
+        { id: 'spec-review', content: "IoT device specification review" },
+        { id: 'topology-analysis', content: "Network topology analysis" },
+        { id: 'protocol-assessment', content: "Protocol compatibility assessment" },
+        { id: 'security-evaluation', content: "Security requirements evaluation" },
       ],
       color: "teal",
       gradient: "from-teal-500 to-teal-600",
@@ -33,15 +34,35 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "02",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: "Security & Protocol Testing",
+      title: (
+        <Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>
+          Security & Protocol Testing
+        </Link>
+      ),
       shortTitle: "Security",
-      description:
-        "Thorough testing of device security, communication protocols, and data transmission integrity.",
+      description: (
+        <>
+          Thorough testing of device security,{' '}
+          <Link href='blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices'>
+            communication protocols
+          </Link>, and{' '}
+          <Link href='blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches'>
+            data transmission
+          </Link>{' '}
+          integrity.
+        </>
+      ),
       details: [
-        "Device authentication testing",
-        "Encryption protocol validation",
-        "Communication security assessment",
-        "Vulnerability penetration testing",
+        { id: 'device-auth', content: "Device authentication testing" },
+        { id: 'encryption-validation', content: "Encryption protocol validation" },
+        { id: 'comm-assessment', content: "Communication security assessment" },
+        {
+          id: 'penetration-testing', content: (
+            <Link href='blog/post/device-penetration-testing'>
+              Vulnerability penetration testing
+            </Link>
+          )
+        },
       ],
       color: "red",
       gradient: "from-red-500 to-red-600",
@@ -50,15 +71,27 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "03",
       icon: <FaChartLine className="w-6 h-6" />,
-      title: "Performance & Scalability Testing",
+      title: (
+        <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>
+          Performance & Scalability Testing
+        </Link>
+      ),
       shortTitle: "Performance",
       description:
         "Evaluate IoT system performance under various load conditions and network scenarios.",
       details: [
-        "Device performance benchmarking",
-        "Network load testing",
-        "Scalability assessment",
-        "Battery life optimization",
+        { id: 'benchmarking', content: "Device performance benchmarking" },
+        {
+          id: 'network-load-testing', content: (
+            <>Network{' '}
+              <Link href='blog/post/what-is-load-testing-in-software-engineering'>
+                load testing
+              </Link>
+            </>
+          )
+        },
+        { id: 'scalability', content: "Scalability assessment" },
+        { id: 'battery-optimization', content: "Battery life optimization" },
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -67,21 +100,32 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "04",
       icon: <FaCheckCircle className="w-6 h-6" />,
-      title: "Report & Optimization",
+      title: (
+        <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>
+          Report & Optimization
+        </Link>
+      ),
       shortTitle: "Delivery",
       description:
         "Detailed reporting with actionable insights and recommendations for IoT system improvements.",
       details: [
-        "Comprehensive IoT test report",
-        "Security vulnerability assessment",
-        "Performance optimization guide",
-        "Deployment recommendations",
+        { id: 'comprehensive-report', content: "Comprehensive IoT test report" },
+        {
+          id: 'security-vuln-assessment', content: (
+            <Link href='blog/post/ai-security-testing'>
+              Security vulnerability assessment
+            </Link>
+          )
+        },
+        { id: 'performance-guide', content: "Performance optimization guide" },
+        { id: 'deployment-recommendations', content: "Deployment recommendations" },
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",
       duration: "2-3 days",
     },
   ];
+
 
   return (
     <section className="bg-gradient-to-br from-white to-teal-50 py-16 px-8 md:px-12 lg:px-24">
@@ -93,7 +137,7 @@ const IoTProvenTestingProcess: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our systematic approach ensures end-to-end IoT testing coverage,
-            delivering reliable and secure connected device ecosystems.
+            delivering reliable and secure connected <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>device ecosystems</Link>.
           </p>
         </div>
 
@@ -128,13 +172,12 @@ const IoTProvenTestingProcess: React.FC = () => {
                     >
                       <button
                         onClick={() => setActiveStep(index)}
-                        className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 transform hover:scale-110 ${
-                          activeStep === index
-                            ? `bg-gradient-to-r ${step.gradient} shadow-lg`
-                            : activeStep > index
+                        className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 transform hover:scale-110 ${activeStep === index
+                          ? `bg-gradient-to-r ${step.gradient} shadow-lg`
+                          : activeStep > index
                             ? "bg-green-500 shadow-md"
                             : "bg-gray-400"
-                        }`}
+                          }`}
                       >
                         {activeStep > index ? (
                           <FaCheckCircle className="w-5 h-5" />
@@ -145,15 +188,13 @@ const IoTProvenTestingProcess: React.FC = () => {
 
                       {/* Connection Line to Center */}
                       <div
-                        className={`absolute top-1/2 left-1/2 w-px h-24 origin-bottom transform -translate-x-1/2 -translate-y-full ${
-                          activeStep >= index
-                            ? `bg-${step.color}-500`
-                            : "bg-gray-300"
-                        } transition-colors duration-300`}
+                        className={`absolute top-1/2 left-1/2 w-px h-24 origin-bottom transform -translate-x-1/2 -translate-y-full ${activeStep >= index
+                          ? `bg-${step.color}-500`
+                          : "bg-gray-300"
+                          } transition-colors duration-300`}
                         style={{
-                          transform: `translate(-50%, -100%) rotate(${
-                            angle + 180
-                          }deg)`,
+                          transform: `translate(-50%, -100%) rotate(${angle + 180
+                            }deg)`,
                           transformOrigin: "bottom center",
                         }}
                       ></div>
@@ -161,11 +202,10 @@ const IoTProvenTestingProcess: React.FC = () => {
                       {/* Step Label */}
                       <div className="mt-4 text-center">
                         <div
-                          className={`font-semibold text-sm ${
-                            activeStep === index
-                              ? `text-${step.color}-600`
-                              : "text-gray-600"
-                          }`}
+                          className={`font-semibold text-sm ${activeStep === index
+                            ? `text-${step.color}-600`
+                            : "text-gray-600"
+                            }`}
                         >
                           {step.shortTitle}
                         </div>
@@ -187,19 +227,17 @@ const IoTProvenTestingProcess: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${
-                    activeStep === index
-                      ? `border-${step.color}-500 bg-${step.color}-50`
-                      : "border-gray-200 bg-white hover:border-gray-300"
-                  }`}
+                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${activeStep === index
+                    ? `border-${step.color}-500 bg-${step.color}-50`
+                    : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
                 >
                   <div className="flex items-center">
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-white mr-4 ${
-                        activeStep === index
-                          ? `bg-gradient-to-r ${step.gradient}`
-                          : "bg-gray-400"
-                      }`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-white mr-4 ${activeStep === index
+                        ? `bg-gradient-to-r ${step.gradient}`
+                        : "bg-gray-400"
+                        }`}
                     >
                       {step.number}
                     </div>
@@ -247,14 +285,15 @@ const IoTProvenTestingProcess: React.FC = () => {
 
               <div className="space-y-3">
                 <h4 className="font-semibold text-gray-900">Key Activities:</h4>
-                {steps[activeStep].details.map((detail, index) => (
-                  <div key={index} className="flex items-center">
+                {steps[activeStep].details.map((detail) => (
+                  <div key={detail.id} className="flex items-center">
                     <div
                       className={`w-2 h-2 bg-${steps[activeStep].color}-500 rounded-full mr-3 animate-pulse`}
                     ></div>
-                    <span className="text-gray-700">{detail}</span>
+                    <span className="text-gray-700">{detail.content}</span>
                   </div>
                 ))}
+
               </div>
 
               <div className="flex items-center justify-between gap-2 pt-4">
@@ -266,7 +305,7 @@ const IoTProvenTestingProcess: React.FC = () => {
 
                 {(
                   <button
-                    onClick={() => setActiveStep((activeStep + 1)%steps.length)}
+                    onClick={() => setActiveStep((activeStep + 1) % steps.length)}
                     className={`flex items-center gap-2 px-6 py-2 bg-gradient-to-r cursor-pointer ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
                   >
                     <span>Next Step</span>

@@ -32,7 +32,7 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
               Transform your desktop application with our comprehensive testing
               approach. We ensure your software delivers exceptional
-              performance, security, and user experience across all platforms
+              <Link href='performance-testing-services'> performance</Link>, <Link href='security-testing'>security</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> across all platforms
               and environments.
             </p>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaRobot,
@@ -135,9 +136,8 @@ const RoboticToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage cutting-edge tools and frameworks specifically designed
-            for robotic testing to ensure comprehensive validation of your
-            robotic systems across all performance, safety, and functionality
+            We leverage cutting-edge <Link href='tools'>tools and frameworks</Link> specifically designed for robotic testing to ensure comprehensive validation of your{" "}
+            <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> across all performance, safety, and functionality
             metrics.
           </p>
         </div>

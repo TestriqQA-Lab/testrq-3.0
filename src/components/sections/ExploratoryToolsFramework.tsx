@@ -141,9 +141,9 @@ const ExploratoryToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage specialized tools and frameworks purpose-built for
-            exploratory testing to enable systematic investigation,
-            comprehensive documentation, and seamless collaboration throughout
+            We leverage specialized <Link href='tools'>tools and frameworks</Link> purpose-built for
+            exploratory testing to enable <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link>,
+            <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'> comprehensive documentation</Link>, and seamless collaboration throughout
             the exploration process.
           </p>
         </div>
@@ -193,8 +193,8 @@ const ExploratoryToolsFramework: React.FC = () => {
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
               Our systematic exploratory approach blends proven investigation
-              techniques with modern testing tools to ensure comprehensive
-              coverage and maximum issue discovery across your application.
+              techniques with <Link href='tools'>modern testing tools</Link> to ensure comprehensive
+              coverage and <Link href='blog/post/why-discovery-analysis-matters-in-testing'>maximum issue discovery</Link> across your application.
             </p>
           </div>
 
@@ -227,8 +227,8 @@ const ExploratoryToolsFramework: React.FC = () => {
           </h3>
           <p className="text-gray-600 mb-6 max-w-3xl mx-auto">
             Our team applies diverse exploration techniques and investigation
-            approaches to ensure comprehensive coverage and effective issue
-            discovery across all application types and domains.
+            approaches to ensure comprehensive coverage and <Link href='blog/post/why-discovery-analysis-matters-in-testing'>effective issue
+              discovery</Link> across all application types and domains.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {[
@@ -262,9 +262,8 @@ const ExploratoryToolsFramework: React.FC = () => {
               Comprehensive Exploratory Testing Toolkit
             </h3>
             <p className="text-gray-600 mb-8">
-              Our toolkit is specifically designed for effective exploratory
-              testing, ensuring systematic investigation, comprehensive
-              documentation, and actionable insights.
+              Our <Link href='tools'>toolkit</Link> is specifically designed for effective exploratory
+              testing, ensuring <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link>, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'> comprehensive documentation</Link>, and actionable insights.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

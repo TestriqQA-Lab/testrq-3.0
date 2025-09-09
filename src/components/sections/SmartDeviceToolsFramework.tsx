@@ -24,6 +24,7 @@ import {
 } from "react-icons/si";
 
 import { MdInsights } from "react-icons/md";
+import Link from "next/link";
 
 const SmartDeviceToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -146,8 +147,8 @@ const SmartDeviceToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage cutting-edge tools and frameworks specifically designed
-            for smart device testing to ensure comprehensive validation of your
+            We leverage cutting-edge <Link href='tools'>tools and frameworks</Link> specifically designed
+            for <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> to ensure comprehensive validation of your
             connected devices across all connectivity, security, and performance
             metrics.
           </p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useRef } from "react";
 import {
   FaSearch,
@@ -16,7 +17,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      title: "Device & Requirements Analysis",
+      title: (<Link href='blog/post/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys'>Device & Requirements Analysis</Link>),
       description:
         "Comprehensive analysis of smart device specifications, connectivity requirements, and user scenarios to create a detailed testing strategy.",
       icon: <FaSearch className="w-6 h-6" />,
@@ -31,7 +32,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     },
     {
       id: 2,
-      title: "Test Environment Setup",
+      title: (<Link href='blog/post/environment-setup-in-desktop-testing-why-its-the-foundation-of-reliable-qa'>Test Environment Setup</Link>),
       description:
         "Setting up comprehensive testing environments with various network conditions and device configurations for thorough validation.",
       icon: <FaCog className="w-6 h-6" />,
@@ -46,7 +47,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     },
     {
       id: 3,
-      title: "Connectivity & Security Testing",
+      title: (<Link href='blog/post/security-testing-checklist-before-go-live-2'>Connectivity & Security Testing</Link>),
       description:
         "Executing comprehensive connectivity tests and smart device security testing validations to ensure reliable and secure device operation.",
       icon: <FaShieldAlt className="w-6 h-6" />,
@@ -61,7 +62,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     },
     {
       id: 4,
-      title: "Performance & UX Testing",
+      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Performance & UX Testing</Link>),
       description:
         "Advanced performance testing and user experience validation to ensure optimal device performance and usability.",
       icon: <FaChartLine className="w-6 h-6" />,
@@ -76,7 +77,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     },
     {
       id: 5,
-      title: "Validation & Delivery",
+      title: (<Link href='blog/post/learn-how-validation-optimization'>Validation & Delivery</Link>),
       description:
         "Final validation, comprehensive reporting, and delivery of certified smart devices with detailed documentation.",
       icon: <FaCheckCircle className="w-6 h-6" />,
@@ -123,7 +124,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our systematic approach ensures comprehensive smart device testing
-            coverage, delivering reliable, secure, and high-performance
+            coverage, delivering <Link href='blog/post/performance-testing-for-ai-applications'>reliable</Link>, <Link href='security-testing'>secure</Link>, and high-performance
             connected devices for your users.
           </p>
         </div>

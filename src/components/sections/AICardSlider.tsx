@@ -7,7 +7,7 @@ import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 const AICardSlider: React.FC = () => {
   const testingTypes = [
     {
-      title: "Model Validation Testing",
+      title: (<Link href='blog/post/model-validation-for-ai-applications'>Model Validation Testing</Link>),
       description:
         "Comprehensive validation of AI model accuracy, performance, and reliability.",
       features: [
@@ -20,7 +20,7 @@ const AICardSlider: React.FC = () => {
       action: "/model-validation-for-ai-applications"
     },
     {
-      title: "Bias & Fairness Testing",
+      title: (<Link href='blog/post/bias-fairness-testing-for-ai'>Bias & Fairness Testing</Link>),
       description:
         "Advanced testing to ensure AI systems are fair and ethical across all user groups.",
       features: [
@@ -33,7 +33,7 @@ const AICardSlider: React.FC = () => {
       action: "/bias-fairness-testing-for-ai"
     },
     {
-      title: "AI Security Testing",
+      title: (<Link href='blog/post/ai-security-testing'>AI Security Testing</Link>),
       description:
         "Comprehensive security assessment to protect AI systems from threats and attacks.",
       features: [
@@ -59,7 +59,7 @@ const AICardSlider: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our specialized testing approaches ensure your AI systems meet the
-            highest standards of accuracy, fairness, and security.
+            highest standards of <Link href='blog/post/data-extraction-testing'>accuracy</Link>, fairness, and <Link href='security-testing'>security</Link>.
           </p>
         </div>
 

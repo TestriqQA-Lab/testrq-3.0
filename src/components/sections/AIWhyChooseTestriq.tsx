@@ -130,8 +130,7 @@ const AIWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             We combine certified AI QA expertise with testing excellence to
-            deliver AI testing services that ensure accurate, fair, and reliable
-            intelligent systems for your applications.
+            deliver <Link href='ai-application-testing'>AI testing</Link> services that ensure accurate, fair, and <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>reliable intelligent systems</Link>. for your applications.
           </p>
         </div>
 
@@ -287,7 +286,7 @@ const AIWhyChooseTestriq: React.FC = () => {
               AI Testing Intelligence Network
             </h3>
             <p className="text-gray-600">
-              Machine learning models and AI systems we&apos;ve successfully
+              <Link href='blog/post/ai-testing-learning-guide'>Machine learning</Link> models and AI systems we&apos;ve successfully
               validated
             </p>
           </div>

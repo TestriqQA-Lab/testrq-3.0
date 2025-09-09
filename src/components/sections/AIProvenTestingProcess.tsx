@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaDatabase,
@@ -16,7 +17,7 @@ const AIProvenTestingProcess: React.FC = () => {
     {
       number: "01",
       icon: <FaDatabase className="w-6 h-6" />,
-      title: "Data & Model Analysis",
+      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>Data & Model Analysis</Link>),
       shortTitle: "Analysis",
       description:
         "Comprehensive analysis of training data, model architecture, and AI requirements to create a tailored testing strategy for optimal AI performance.",
@@ -33,7 +34,7 @@ const AIProvenTestingProcess: React.FC = () => {
     {
       number: "02",
       icon: <FaBrain className="w-6 h-6" />,
-      title: "AI Model Validation",
+      title: (<Link href='blog/post/model-validation-for-ai-applications'>AI Model Validation</Link>),
       shortTitle: "Validation",
       description:
         "Thorough validation of model accuracy, bias detection, and performance across diverse datasets and scenarios.",
@@ -50,7 +51,7 @@ const AIProvenTestingProcess: React.FC = () => {
     {
       number: "03",
       icon: <FaChartLine className="w-6 h-6" />,
-      title: "Performance & Security Testing",
+      title: (<Link href='performance-testing-services'>Performance & Security Testing</Link>),
       shortTitle: "Performance",
       description:
         "Evaluate AI model performance, security vulnerabilities, and robustness against adversarial attacks.",
@@ -67,7 +68,7 @@ const AIProvenTestingProcess: React.FC = () => {
     {
       number: "04",
       icon: <FaCheckCircle className="w-6 h-6" />,
-      title: "Report & Optimization",
+      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Report & Optimization</Link>),
       shortTitle: "Delivery",
       description:
         "Detailed reporting with actionable insights and recommendations for AI model improvements and ethical compliance.",
@@ -94,7 +95,7 @@ const AIProvenTestingProcess: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures end-to-end AI testing coverage, delivering accurate, fair, and reliable intelligent systems.
+            Our systematic approach ensures <Link href='blog/post/why-discovery-analysis-matters-in-testing'>end-to-end AI testing</Link> coverage, delivering accurate, fair, and <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>reliable intelligent systems</Link>.
           </p>
         </div>
 

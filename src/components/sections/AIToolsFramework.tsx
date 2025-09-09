@@ -31,6 +31,7 @@ import {
 } from "react-icons/fa";
 
 import { MdModelTraining, MdAnalytics } from "react-icons/md";
+import Link from "next/link";
 
 const AIToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -181,7 +182,7 @@ const AIToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Performance Testing",
+      category: (<Link href='performance-testing-services'>Performance Testing</Link>),
       icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -217,7 +218,7 @@ const AIToolsFramework: React.FC = () => {
       ],
     },
     {
-      category: "Security Testing Tools",
+      category: (<Link href='security-testing'>Security Testing Tools</Link>),
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
@@ -270,8 +271,8 @@ const AIToolsFramework: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             We leverage state-of-the-art AI testing tools and AI testing
-            frameworks to ensure comprehensive validation of intelligent
-            systems, covering the full spectrum of QA for AI applications, from
+            frameworks to ensure comprehensive validation of <Link href='blog/post/testing-ai-powered-applications-navigating-the-maze-with-a-smile'>intelligent
+            systems</Link>, covering the full spectrum of <Link href='blog/post/ai-security-testing'>QA for AI applications</Link>, from
             bias detection to performance benchmarking.
           </p>
         </div>
@@ -315,7 +316,7 @@ const AIToolsFramework: React.FC = () => {
           </h3>
           <p className="text-gray-700 text-lg mb-3 max-w-3xl mx-auto">
             We can adapt our testing approach to work with your specific AI
-            models, frameworks, and deployment environments, ensuring
+            models, <Link href='blog/post/etl-testing-tools-frameworks'>frameworks</Link>, and deployment environments, ensuring
             comprehensive coverage for your unique AI applications and use
             cases.
           </p>

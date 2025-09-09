@@ -138,8 +138,8 @@ const RoboticComprehensiveSlider: React.FC = () => {
             Complete Robotic Testing <span className="text-brand-blue">Coverage</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive robotic testing services cover every aspect of your robotic ecosystem,
-            ensuring reliability, safety, and optimal performance across all robotic systems and applications.
+            Our comprehensive <Link href='robotics-testing-services'>robotic testing services</Link> cover every aspect of your <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic ecosystem</Link>,
+            ensuring reliability, safety, and <Link href='blog/post/etl-performance-testing'>optimal performance</Link> across all robotic systems and applications.
           </p>
         </div>
 
