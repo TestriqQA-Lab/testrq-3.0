@@ -24,7 +24,7 @@ const IoTFAQSection: React.FC = () => {
       color: "from-blue-500 to-blue-600",
       faqs: [
         {
-          question: "What types of IoT devices do you test?",
+          question: (<Link href="/blog/post/how-to-test-iot-devices-for-reliability-2">What types of IoT devices do you test?</Link>),
           answer:
             "We test a wide range of IoT devices including smart home devices (thermostats, lighting, security cameras), industrial IoT sensors and actuators, wearables, connected vehicles, medical IoT devices, and smart city infrastructure. Our IoT testing expertise spans communication protocols like MQTT, Zigbee, BLE, and LoRaWAN, as well as diverse hardware platforms and edge-to-cloud environments.",
         },
@@ -43,7 +43,7 @@ const IoTFAQSection: React.FC = () => {
     },
     {
       icon: FaShieldAlt,
-      title: "IoT Security Testing",
+      title: (<Link href="/blog/post/why-is-iot-security-testing-important">IoT Security Testing</Link>),
       color: "from-green-500 to-green-600",
       faqs: [
         {
@@ -55,7 +55,7 @@ const IoTFAQSection: React.FC = () => {
         {
           question: "Do you test for compliance with IoT security standards?",
           answer:
-            "Yes, we ensure your IoT solutions comply with relevant security standards and regulations such as GDPR, CCPA, HIPAA (for healthcare IoT), NIST IoT cybersecurity guidelines, and industry-specific certifications. We provide detailed reports and recommendations for compliance.",
+            (<>Yes, we ensure your IoT solutions comply with relevant security standards and regulations such as GDPR, CCPA, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA (for healthcare IoT)</Link>, NIST IoT cybersecurity guidelines, and industry-specific certifications. We provide detailed reports and recommendations for compliance.</>),
         },
         {
           question: "How do you handle data privacy in IoT testing?",
@@ -178,8 +178,8 @@ const IoTFAQSection: React.FC = () => {
             <span className="block text-brand-blue">Questions & Answers</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Get answers to the most common questions about IoT software testing,
-            device compatibility, security, and our comprehensive testing
+            Get answers to the most common questions about <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">IoT software testing</Link>,
+            device compatibility, security, and our <Link href="/blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing</Link>
             services.
           </p>
         </div>
@@ -294,7 +294,7 @@ const IoTFAQSection: React.FC = () => {
               Device Compatibility
             </h4>
             <p className="text-gray-600 text-sm">
-              Expert advice on IoT device compatibility and interoperability
+              Expert advice on IoT device <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">compatibility</Link> and interoperability
             </p>
           </div>
 

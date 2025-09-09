@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaWifi,
@@ -23,7 +24,7 @@ import {
 const IoTToolsFrameworkSection: React.FC = () => {
   const testingTools = [
     {
-      category: "Connectivity Testing",
+      category: (<><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Connectivity Testing</Link></>),
       icon: FaWifi,
       color: "text-blue-500",
       bgColor: "bg-blue-50",
@@ -51,7 +52,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Security Testing",
+      category: (<><Link href="/security-testing">Security Testing</Link></>),
       icon: FaShieldAlt,
       color: "text-red-500",
       bgColor: "bg-red-50",
@@ -67,7 +68,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
           icon: <FaTools className="w-5 h-5 text-red-500" />, // General tool icon
         },
         {
-          name: "OWASP ZAP",
+          name: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link></>),
           description: "Web application security scanner",
           icon: <FaLock className="w-5 h-5 text-red-500" />, // Security icon
         },
@@ -79,19 +80,19 @@ const IoTToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Performance Testing",
+      category: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Performance Testing</Link></>),
       icon: FaCog,
       color: "text-green-500",
       bgColor: "bg-green-50",
       tools: [
         {
-          name: "JMeter",
+          name: (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link></>),
           description: "Load testing for IoT APIs",
           icon: <SiJest className="w-5 h-5 text-green-500" />, // Load testing-related logo
         },
         {
           name: "Gatling",
-          description: "High-performance load testing",
+          description: (<>High-performance <Link href="/blog/post/load-testing-in-performance-testing-complete-guide">load testing</Link></>),
           icon: <FaRocket className="w-5 h-5 text-green-500" />, // Performance testing icon
         },
         {
@@ -107,7 +108,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
       ],
     },
     {
-      category: "Device Testing",
+      category: (<Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Device Testing</Link>),
       icon: FaMicrochip,
       color: "text-purple-500",
       bgColor: "bg-purple-50",
@@ -138,7 +139,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
 
   const protocolFrameworks = [
     {
-      name: "Communication Protocols",
+      name: (<Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">Communication Protocols</Link>),
       description: "Testing frameworks for IoT communication standards",
       features: ["MQTT", "CoAP", "HTTP/HTTPS", "WebSocket"],
       icon: <FaNetworkWired className="w-8 h-8 text-blue-500" />, // Network-related icon
@@ -161,7 +162,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
       icon: <FaMicrochip className="w-8 h-8 text-blue-500" />, // Edge device-related
     },
     {
-      name: "Cloud Integration",
+      name: (<Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud Integration</Link>),
       description: "Cloud platform and service validation",
       features: [
         "AWS IoT Core",
@@ -189,9 +190,9 @@ const IoTToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Leverage specialized IoT testing tools and frameworks designed for
-            IoT ecosystems, ensuring seamless device connectivity, robust IoT
-            security, and optimized performance across edge-to-cloud
+            Leverage specialized IoT testing <Link href="/tools">tools and frameworks</Link> designed for
+            IoT ecosystems, ensuring <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">seamless device connectivity</Link>, robust IoT
+            security, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">optimized performance</Link> across edge-to-cloud
             architectures and diverse connected environments.
           </p>
         </div>
@@ -304,7 +305,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
                 <FaNetworkWired className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Network Testing</h4>
-              <p>Connectivity and protocol validation</p>
+              <p><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Connectivity and protocol validation</Link></p>
             </div>
 
             <div className="text-center">
@@ -312,7 +313,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
                 <FaCloud className="w-10 h-10 text-white" />
               </div>
               <h4 className="text-xl font-bold mb-2">Cloud Testing</h4>
-              <p>Platform integration and scalability</p>
+              <p><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">Platform integration</Link> and scalability</p>
             </div>
           </div>
         </div>

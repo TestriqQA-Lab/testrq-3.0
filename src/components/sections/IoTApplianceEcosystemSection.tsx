@@ -35,7 +35,7 @@ const IoTEcosystemSection: React.FC = () => {
     },
     {
       icon: FaNetworkWired,
-      title: "Connectivity & Gateways",
+      title: (<><Link href="/blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">Connectivity & Gateways</Link></>),
       description:
         "The communication layer that enables devices to connect to the internet and other systems, often via IoT gateways.",
       examples: [
@@ -61,13 +61,13 @@ const IoTEcosystemSection: React.FC = () => {
     },
     {
       icon: FaCloud,
-      title: "Cloud Platforms & Analytics",
+      title: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Cloud Platforms & Analytics</Link></>),
       description:
         "Centralized platforms for data storage, processing, advanced analytics, and application hosting.",
       examples: [
         "AWS IoT, Azure IoT, Google Cloud IoT",
         "Data Lakes & Warehouses",
-        "AI/ML Services",
+        (<><Link href="/blog/post/ai-testing-learning-guide">AI/ML Services</Link></>),
         "Dashboarding & Visualization",
       ],
       color: "from-orange-500 to-orange-600",
@@ -87,7 +87,7 @@ const IoTEcosystemSection: React.FC = () => {
     },
     {
       icon: FaShieldAlt,
-      title: "Security & Privacy",
+      title: (<><Link href="/blog/post/ai-security-testing">Security & Privacy</Link></>),
       description:
         "Critical measures and protocols implemented across all layers to protect data, devices, and user privacy.",
       examples: [
@@ -154,9 +154,9 @@ const IoTEcosystemSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Understanding the intricate layers of IoT architecture is crucial
-            for successful deployment. We provide comprehensive IoT testing
-            services across every component of your IoT ecosystem—from edge
-            devices and sensors to gateways, protocols, and cloud platforms.
+            for successful deployment. We provide <Link href="/blog/post/test-execution-comprehensive-testing-implementation">comprehensive IoT testing</Link>{" "}
+            services across every component of your IoT <Link href="/blog/post/beginners-guide-to-iot-testing-types-tools-protocol-ecosystem">ecosystem</Link>-from edge
+            devices and <Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">sensors</Link> to gateways, protocols, and cloud platforms.
           </p>
         </div>
 
@@ -199,9 +199,9 @@ const IoTEcosystemSection: React.FC = () => {
               Our Testing Covers the Entire IoT Journey
             </h3>
             <p className="text-blue-100 mb-8 text-lg leading-relaxed">
-              From the smallest sensor to the largest cloud infrastructure, we
+              From the smallest sensor to the largest <Link href="/blog/post/strategies-for-implementing-test-driven-infrastructure">cloud infrastructure</Link>, we
               ensure every component of your IoT solution is rigorously tested
-              for functionality, security, performance, and interoperability.
+              for <Link href="/blog/post/functional-testing-for-robotics-movement-sensors-and-control-logic">functionality</Link>, <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">security</Link>, <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">performance</Link>, and <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">interoperability</Link>.
             </p>
             <div className="relative flex items-center justify-center py-8">
               <FaMicrochip className="w-16 h-16 text-white opacity-70 absolute left-0 top-1/2 -translate-y-1/2" />
@@ -227,7 +227,7 @@ const IoTEcosystemSection: React.FC = () => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our IoT testing expertise spans diverse industries, ensuring your
               connected IoT solutions meet the unique demands, compliance
-              standards, and regulatory requirements of your target market—from
+              standards, and <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory requirements</Link> of your target market-from
               healthcare IoT and industrial IoT to smart home and automotive
               systems.
             </p>
