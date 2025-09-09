@@ -11,7 +11,6 @@ import {
   FaClock,
   FaChartLine,
   FaCheckCircle,
-  FaArrowRight,
   FaCloud,
   FaCog,
 } from "react-icons/fa";
@@ -107,19 +106,19 @@ const TelecomSoftwareTestingSection: React.FC = () => {
         "Analyzing telecom software requirements and preparing a detailed test strategy.",
       activities: [
         "Requirement Review",
-        "Test Case Design",
+        (<><Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">Test Case Design</Link></>),
         "Tool Setup",
         "Environment Provisioning",
       ],
     },
     {
-      phase: "Functional Testing",
+      phase: (<><Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">Functional Testing</Link></>),
       description:
         "Validating core features, APIs, and workflows of telecom applications.",
       activities: [
         "Feature Validation",
-        "API Testing",
-        "Integration Testing",
+        (<><Link href="/api-testing">API Testing</Link></>),
+        (<><Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">Integration Testing</Link></>),
         "UI/UX Verification",
       ],
     },
@@ -128,19 +127,19 @@ const TelecomSoftwareTestingSection: React.FC = () => {
       description:
         "Measuring and optimizing software responsiveness under varying load conditions.",
       activities: [
-        "Load Simulation",
-        "Stress Testing",
+        (<><Link href="/blog/post/data-loading-testing-etl-performance-testing">Load Simulation</Link></>),
+        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
         "Scalability Checks",
         "Response Time Analysis",
       ],
     },
     {
-      phase: "Security Testing",
+      phase: (<><Link href="/security-testing">Security Testing</Link></>),
       description:
         "Ensuring telecom software is secure and compliant with industry regulations.",
       activities: [
         "Vulnerability Scanning",
-        "Penetration Testing",
+        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
         "Access Control Validation",
         "Data Security Checks",
       ],
@@ -280,13 +279,13 @@ const TelecomSoftwareTestingSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+{/* 
               <div className="pt-4 border-t border-gray-200">
                 <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
                   <FaArrowRight className="w-3 h-3" />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

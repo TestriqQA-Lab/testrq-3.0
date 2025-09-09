@@ -12,7 +12,6 @@ import {
   FaCog,
   FaChartLine,
   FaCheckCircle,
-  FaArrowRight,
   FaGlobe,
   FaPhone,
 } from "react-icons/fa";
@@ -25,7 +24,7 @@ const TelecomTestingServicesSection: React.FC = () => {
       description:
         "Validation of 5G-enabled telecom applications, APIs, and orchestration platforms — ensuring seamless integration, scalability, and performance for next-gen services.",
       features: [
-        "API Validation",
+        (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">API Validation</Link></>),
         "Service Orchestration Testing",
         "Scalability Checks",
         "Performance Benchmarking",
@@ -35,14 +34,14 @@ const TelecomTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaSignal,
-      title: "IoT Application Testing",
+      title: (<><Link href="/iot-appliances-and-apps-testing-services">IoT Application Testing</Link></>),
       description:
         "Comprehensive testing of IoT-enabled telecom platforms, device management software, and data integration layers for reliability and accuracy.",
       features: [
-        "Platform Compatibility",
+        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Platform Compatibility</Link></>),
         "Protocol Handling",
         "Data Validation",
-        "Performance Monitoring",
+        (<><Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">Performance Monitoring</Link></>),
       ],
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
@@ -68,9 +67,9 @@ const TelecomTestingServicesSection: React.FC = () => {
         "Functional and usability testing for customer-facing and internal telecom mobile applications, ensuring smooth user journeys and compatibility across devices.",
       features: [
         "Functional Validation",
-        "Cross-Device Testing",
+        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Device Testing</Link></>),
         "UI/UX Checks",
-        "Integration Testing",
+        (<><Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">Integration Testing</Link></>),
       ],
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
@@ -81,7 +80,7 @@ const TelecomTestingServicesSection: React.FC = () => {
       description:
         "Security assessment for telecom applications, portals, and platforms including vulnerability scanning, authentication checks, and compliance validation.",
       features: [
-        "Penetration Testing",
+        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
         "Vulnerability Assessment",
         "Access Control Validation",
         "Threat Modeling",
@@ -95,8 +94,8 @@ const TelecomTestingServicesSection: React.FC = () => {
       description:
         "Load, stress, and scalability testing for telecom business systems, billing platforms, and OSS/BSS solutions to ensure peak performance.",
       features: [
-        "Load Testing",
-        "Stress Testing",
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing</Link></>),
+        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
         "Scalability Analysis",
         "Throughput Measurement",
       ],
@@ -109,7 +108,7 @@ const TelecomTestingServicesSection: React.FC = () => {
       description:
         "Validation of cloud-based OSS/BSS, NFV, and SDN software implementations for reliability, deployment automation, and seamless integration.",
       features: [
-        "Cloud Integration",
+        (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud Integration</Link></>),
         "Orchestration Testing",
         "Resilience Validation",
         "Deployment Testing",
@@ -123,9 +122,9 @@ const TelecomTestingServicesSection: React.FC = () => {
       description:
         "Automated testing frameworks for continuous validation of telecom software, regression testing, and CI/CD pipeline integration.",
       features: [
-        "Test Automation",
+        (<><Link href="/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">Test Automation</Link></>),
         "CI/CD Integration",
-        "Regression Testing",
+        (<><Link href="/regression-testing">Regression Testing</Link></>),
         "Continuous Monitoring",
       ],
       color: "from-pink-500 to-red-600",
@@ -159,9 +158,9 @@ const TelecomTestingServicesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Complete testing services for telecom applications, platforms, and
-            digital ecosystems — ensuring functionality, performance, and
-            security across the entire software lifecycle.
+            Complete testing services for telecom applications, platforms, and{"  "}
+            digital ecosystems - ensuring <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">functionality</Link>, <Link href="/performance-testing-services">performance</Link>, and
+            <Link href="/security-testing">security</Link> across the entire software lifecycle.
           </p>
         </div>
 
@@ -215,13 +214,13 @@ const TelecomTestingServicesSection: React.FC = () => {
                   ))}
                 </div>
               </div>
-
+{/* 
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Learn More
                   <FaArrowRight className="w-3 h-3" />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -246,8 +245,8 @@ const TelecomTestingServicesSection: React.FC = () => {
               </h4>
               <p className="text-sm text-gray-600">
                 20+ years of experience validating telecom software platforms
-                worldwide with deep knowledge of industry standards and
-                integrations.
+                worldwide with deep knowledge of industry standards and{" "}
+                <Link href="/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations">integrations</Link>.
               </p>
             </div>
 
@@ -269,7 +268,7 @@ const TelecomTestingServicesSection: React.FC = () => {
               </h4>
               <p className="text-sm text-gray-600">
                 Structured, repeatable testing approaches tailored for telecom
-                application ecosystems and complex integrations.
+                application <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">ecosystems</Link> and complex integrations.
               </p>
             </div>
           </div>
@@ -281,8 +280,8 @@ const TelecomTestingServicesSection: React.FC = () => {
             Ready to Elevate Your Telecom Software Quality?
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Let our experts help you enhance performance, security, and
-            reliability across your telecom software landscape.
+            Let our experts help you enhance <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">performance</Link>, <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">security</Link>, and {" "}
+            <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">reliability</Link> across your telecom software landscape.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">

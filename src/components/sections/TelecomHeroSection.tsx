@@ -13,7 +13,7 @@ import {
 
 const TelecomHeroSection: React.FC = () => {
   const keyStats = [
-    { value: "99%", label: "Software Reliability", icon: FaNetworkWired },
+    { value: "99%", label: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Software Reliability</Link></>), icon: FaNetworkWired },
     { value: "30+", label: "Telecom Apps Tested", icon: FaWifi },
     { value: "1M+", label: "Test Scenarios Executed", icon: FaSignal },
     { value: "24/7", label: "Continuous QA Support", icon: FaRocket },
@@ -21,9 +21,9 @@ const TelecomHeroSection: React.FC = () => {
 
   const trustBadges = [
     "Telecom App QA Specialists",
-    "Agile Testing Processes",
+    (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">Agile Testing Processes</Link></>),
     "Security & Compliance Ready",
-    "ISO 27001 Certified",
+    (<><Link href="/blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond">ISO 27001 Certified</Link></>),
   ];
 
   return (
@@ -56,10 +56,10 @@ const TelecomHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              We specialize in ensuring the quality and performance of telecom
-              software through comprehensive testing services. Our approach
+              We specialize in ensuring the quality and <Link href="/performance-testing-services">performance</Link> of telecom
+              software through <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">comprehensive testing services</Link>. Our approach
               guarantees that every system runs smoothly, meets high performance
-              standards, and provides a reliable, seamless experience for end
+              standards, and provides a reliable, <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">seamless experience</Link> for end
               users.
             </p>
 
@@ -86,7 +86,7 @@ const TelecomHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Performance & Security Testing
+                  Performance & <Link href="/security-testing">Security Testing</Link>
                 </span>
               </div>
             </div>

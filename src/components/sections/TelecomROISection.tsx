@@ -80,7 +80,7 @@ const TelecomROISection: React.FC = () => {
       timeframe: "10 months",
     },
     {
-      category: "Security Testing",
+      category: (<><Link href="/security-testing">Security Testing</Link></>),
       investment: "$100K",
       savings: "$1.5M",
       roi: "1400%",
@@ -165,9 +165,9 @@ const TelecomROISection: React.FC = () => {
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our telecommunications testing solutions deliver quantifiable ROI
-            through improved network performance, reduced operational costs,
+            through improved network <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">performance</Link>, reduced <Link href="/blog/post/power-management-testing-optimizing-battery-life-for-iot-devices">operational costs</Link>,
             enhanced service reliability, and increased customer satisfaction
-            across 5G networks, VoIP systems, and real-time communication
+            across 5G networks, VoIP systems, and <Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">real-time communication</Link>{" "}
             platforms.
           </p>
         </div>
