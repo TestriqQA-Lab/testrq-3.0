@@ -12,7 +12,6 @@ import {
   FaFileAlt,
   FaChartLine,
   FaUsers,
-  FaArrowRight,
 } from "react-icons/fa";
 
 const BankingComplianceSection: React.FC = () => {
@@ -168,8 +167,8 @@ const BankingComplianceSection: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Navigate the complex regulatory landscape with confidence. Our
             financial compliance testing services ensure your banking and
-            financial institution meets all regulatory requirements—including
-            PCI DSS, SOX, and GDPR—and avoids costly non-compliance penalties,
+            financial institution meets all regulatory requirements-including
+            PCI DSS, SOX, and GDPR-and avoids costly non-compliance penalties,
             legal risks, and reputational damage..
           </p>
         </div>
@@ -222,13 +221,6 @@ const BankingComplianceSection: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-sm text-red-600">{standard.penalty}</p>
-              </div>
-
-              <div className="pt-4 border-t border-gray-200">
-                <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-                  Learn More
-                  <FaArrowRight className="w-3 h-3" />
-                </button>
               </div>
             </div>
           ))}

@@ -65,21 +65,21 @@ const BankingROISection: React.FC = () => {
       timeframe: "12 months",
     },
     {
-      category: "Security Testing",
+      category: (<><Link href="/security-testing">Security Testing</Link></>),
       investment: "$100K",
       savings: "$2M",
       roi: "1900%",
       timeframe: "6 months",
     },
     {
-      category: "Compliance Testing",
+      category: (<><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">Compliance Testing</Link></>),
       investment: "$80K",
       savings: "$500K",
       roi: "525%",
       timeframe: "9 months",
     },
     {
-      category: "Performance Testing",
+      category: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Performance Testing</Link></>),
       investment: "$120K",
       savings: "$800K",
       roi: "567%",
@@ -162,11 +162,12 @@ const BankingROISection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our banking and finance testing solutions deliver quantifiable ROI
+            Our banking and finance testing solutions deliver quantifiable <Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI</Link>{" "}
             through cost savings, risk reduction, and operational efficiency
             improvements, directly impacting your bottom line by enhancing
-            regulatory compliance, financial application stability, and platform
-            performance.
+            regulatory compliance, financial application stability, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms
+            ">platform
+            performance</Link>.
           </p>
         </div>
 

@@ -14,7 +14,6 @@ import {
   FaLock,
   FaCog,
   FaCheckCircle,
-  FaArrowRight,
 } from "react-icons/fa";
 
 const BankingTestingServicesSection: React.FC = () => {
@@ -25,7 +24,7 @@ const BankingTestingServicesSection: React.FC = () => {
       description:
         "Comprehensive security assessments including penetration testing, vulnerability scanning, and threat modeling to protect against cyber attacks.",
       features: [
-        "Penetration Testing",
+        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
         "Vulnerability Assessment",
         "Security Code Review",
         "Threat Modeling",
@@ -35,7 +34,7 @@ const BankingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaGavel,
-      title: "Compliance Testing",
+      title: (<><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">Compliance Testing</Link></>),
       description:
         "Ensure adherence to financial regulations including PCI DSS, SOX, GDPR, Basel III, and other industry standards.",
       features: [
@@ -53,9 +52,9 @@ const BankingTestingServicesSection: React.FC = () => {
       description:
         "Load testing and performance optimization to ensure your banking systems can handle peak transaction volumes.",
       features: [
-        "Load Testing",
-        "Stress Testing",
-        "Volume Testing",
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing</Link></>),
+        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
+        (<><Link href="/blog/post/volume-testing-managing-high-data-loads-efficiently">Volume Testing</Link></>),
         "Scalability Analysis",
       ],
       color: "from-green-500 to-teal-600",
@@ -67,7 +66,7 @@ const BankingTestingServicesSection: React.FC = () => {
       description:
         "Specialized testing for mobile banking applications across iOS and Android platforms with focus on security and usability.",
       features: [
-        "Cross-Platform Testing",
+        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Platform Testing</Link></>),
         "Mobile Security",
         "Biometric Authentication",
         "Offline Functionality",
@@ -82,7 +81,7 @@ const BankingTestingServicesSection: React.FC = () => {
         "End-to-end testing of core banking systems including account management, transaction processing, and customer data integrity.",
       features: [
         "Transaction Validation",
-        "Data Integrity",
+        (<><Link href="/blog/post/data-quality-testing-in-etl">Data Integrity</Link></>),
         "Account Management",
         "Batch Processing",
       ],
@@ -91,7 +90,7 @@ const BankingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCode,
-      title: "API Testing",
+      title: (<><Link href="/api-testing">API Testing</Link></>),
       description:
         "Comprehensive API testing for open banking, payment gateways, and third-party integrations with security focus.",
       features: [
@@ -105,12 +104,12 @@ const BankingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCog,
-      title: "Automation Testing",
+      title: (<><Link href="/automation-testing-services">Automation Testing</Link></>),
       description:
         "Automated testing frameworks for continuous integration and deployment in banking environments.",
       features: [
         "CI/CD Integration",
-        "Regression Testing",
+        (<><Link href="/regression-testing">Regression Testing</Link></>),
         "Test Data Management",
         "Automated Reporting",
       ],
@@ -119,13 +118,13 @@ const BankingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaUsers,
-      title: "User Acceptance Testing",
+      title: (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">User Acceptance Testing</Link></>),
       description:
         "Business user validation and acceptance testing to ensure banking applications meet business requirements.",
       features: [
         "Business Validation",
         "User Journey Testing",
-        "Accessibility Testing",
+        (<><Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">Accessibility Testing</Link></>),
         "Training Support",
       ],
       color: "from-pink-500 to-red-600",
@@ -159,10 +158,10 @@ const BankingTestingServicesSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            End-to-end banking and finance testing services designed
+            End-to-end banking and <Link href="/blog/post/etl-testing-case-studies">finance testing services</Link> designed
             specifically for the banking and financial services industry,
-            ensuring application security, regulatory compliance (including PCI
-            DSS, GDPR, and SOX), and optimal performance across all your
+            ensuring <Link href="/mobile-application-testing">application security</Link>, regulatory compliance (including PCI
+            DSS, GDPR, and SOX), and optimal <Link href="/performance-testing-services">performance</Link> across all your
             financial platforms and transactional systems.
           </p>
         </div>
@@ -217,13 +216,6 @@ const BankingTestingServicesSection: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <button className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-                  Learn More
-                  <FaArrowRight className="w-3 h-3" />
-                </button>
-              </div>
             </div>
           ))}
         </div>
@@ -250,7 +242,7 @@ const BankingTestingServicesSection: React.FC = () => {
               </h4>
               <p className="text-sm text-gray-600">
                 15+ years of experience in banking and financial services
-                testing with deep understanding of industry regulations and
+                testing with deep understanding of industry <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">regulations</Link> and
                 compliance requirements.
               </p>
             </div>
@@ -261,8 +253,8 @@ const BankingTestingServicesSection: React.FC = () => {
                 Security First
               </h4>
               <p className="text-sm text-gray-600">
-                Advanced security testing methodologies and tools to protect
-                against evolving cyber threats and ensure data protection
+               <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced security testing</Link> methodologies and tools to protect
+                against evolving cyber threats and ensure <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">data protection</Link>{" "}
                 compliance.
               </p>
             </div>
@@ -273,7 +265,7 @@ const BankingTestingServicesSection: React.FC = () => {
                 Proven Methodologies
               </h4>
               <p className="text-sm text-gray-600">
-                Industry-standard testing frameworks and methodologies
+                Industry-standard <Link href="/tools">testing frameworks</Link> and methodologies
                 specifically designed for banking applications and financial
                 systems.
               </p>
@@ -288,7 +280,7 @@ const BankingTestingServicesSection: React.FC = () => {
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
             Let our banking testing experts help you achieve regulatory
-            compliance, enhance security, and deliver exceptional customer
+            compliance, <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">enhance security</Link>, and deliver exceptional customer
             experiences.
           </p>
 

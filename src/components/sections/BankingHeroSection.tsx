@@ -59,9 +59,9 @@ const BankingHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure bulletproof security, regulatory compliance, and flawless
-              performance across all your banking and financial platforms. Our
-              comprehensive banking and finance testing services help you build
+              Ensure bulletproof <Link href="/security-testing">security</Link>, <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory compliance</Link>, and flawless{" "}
+              <Link href="/performance-testing-services">performance</Link> across all your banking and financial platforms. Our
+              comprehensive banking and <Link href="/blog/post/etl-testing-case-studies">finance testing services</Link> help you build
               customer trust, meet GDPR, PCI DSS, and SOX compliance
               requirements, and stay ahead of evolving financial threats through
               robust BFSI testing solutions.
@@ -72,13 +72,13 @@ const BankingHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Regulatory Compliance
+                  <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Regulatory Compliance</Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Advanced Security Testing
+                  <Link href="/security-testing">Advanced Security Testing</Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">

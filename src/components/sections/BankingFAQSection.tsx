@@ -24,7 +24,7 @@ const BankingFAQSection: React.FC = () => {
           question:
             "What types of security testing do you perform for banking applications?",
           answer:
-            "We conduct comprehensive security testing for banking and financial applications, including penetration testing, vulnerability assessments, secure code reviews, authentication and authorization testing, data encryption validation, and compliance testing aligned with regulatory standards such as PCI DSS, SOX, and GDPR. Our financial application security testing covers web applications, mobile banking apps, APIs, and core banking systems, ensuring end-to-end protection across all digital channels.",
+            (<>We conduct comprehensive security testing for banking and financial applications, including <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link>, vulnerability assessments, secure code reviews, authentication and authorization testing, <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data encryption</Link> validation, and compliance testing aligned with regulatory standards such as PCI DSS, SOX, and GDPR. Our financial application security testing covers web applications, mobile banking apps, APIs, and core banking systems, ensuring end-to-end protection across all digital channels.</>),
         },
         {
           question:
@@ -82,7 +82,7 @@ const BankingFAQSection: React.FC = () => {
           question:
             "Do you provide ongoing testing support after implementation?",
           answer:
-            "Yes, we offer various ongoing support models including continuous testing services, regular security assessments, compliance monitoring, regression testing for updates, and 24/7 monitoring services. Our support packages are customizable based on your specific needs and can include dedicated testing teams.",
+            (<>Yes, we offer various ongoing support models including continuous testing services, regular security assessments, compliance monitoring, <Link href="/regression-testing">regression testing</Link> for updates, and 24/7 monitoring services. Our support packages are customizable based on your specific needs and can include dedicated testing teams.</>),
         },
       ],
     },
@@ -135,7 +135,7 @@ const BankingFAQSection: React.FC = () => {
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Get answers to the most frequently asked questions about our banking
-            and finance testing services, compliance requirements, and
+            and <Link href="/blog/post/etl-testing-case-studies">finance testing services</Link>, compliance requirements, and
             implementation processes.
           </p>
         </div>
