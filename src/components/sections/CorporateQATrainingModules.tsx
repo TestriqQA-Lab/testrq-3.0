@@ -24,14 +24,14 @@ const CorporateQATrainingModules: React.FC = () => {
           description:
             "Essential concepts of software testing and quality assurance principles.",
           topics: [
-            "SDLC & STLC",
-            "Test Planning",
+            (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">SDLC & STLC</Link></>),
+            (<><Link href="/blog/post/robotic-software-testing-ros2-gazebo-and-motion-planning-validation">Test Planning</Link></>),
             "Test Design",
             "Defect Management",
           ],
         },
         {
-          title: "Manual Testing Mastery",
+          title: (<><Link href="/manual-testing">Manual Testing Mastery</Link></>),
           duration: "24 hours",
           level: "Beginner to Intermediate",
           description:
@@ -39,8 +39,8 @@ const CorporateQATrainingModules: React.FC = () => {
           topics: [
             "Test Case Design",
             "Exploratory Testing",
-            "Usability Testing",
-            "Cross-browser Testing",
+            (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability Testing</Link></>),
+            (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser Testing</Link></>),
           ],
         },
       ],
@@ -50,7 +50,7 @@ const CorporateQATrainingModules: React.FC = () => {
       icon: <FaLaptopCode className="text-2xl text-purple-600" />,
       courses: [
         {
-          title: "Selenium WebDriver",
+          title: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>),
           duration: "32 hours",
           level: "Intermediate",
           description: "Master web automation testing with Selenium WebDriver.",
@@ -67,10 +67,10 @@ const CorporateQATrainingModules: React.FC = () => {
           level: "Intermediate",
           description: "Automated testing of REST APIs and web services.",
           topics: [
-            "REST API Testing",
+            (<><Link href="/api-testing">REST API Testing</Link></>),
             "Postman",
             "RestAssured",
-            "API Security Testing",
+            (<><Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">API Security Testing</Link></>),
           ],
         },
       ],
@@ -80,26 +80,26 @@ const CorporateQATrainingModules: React.FC = () => {
       icon: <FaChartLine className="text-2xl text-green-600" />,
       courses: [
         {
-          title: "Performance Testing",
+          title: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
           duration: "28 hours",
           level: "Advanced",
           description: "Load, stress, and performance testing methodologies.",
           topics: [
-            "JMeter",
-            "LoadRunner",
+            (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link></>),
+            (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">LoadRunner</Link></>),
             "Performance Monitoring",
             "Bottleneck Analysis",
           ],
         },
         {
-          title: "Security Testing",
+          title: (<Link href="/security-testing">Security Testing</Link>),
           duration: "24 hours",
           level: "Advanced",
           description:
             "Security testing principles and vulnerability assessment.",
           topics: [
-            "OWASP Top 10",
-            "Penetration Testing",
+            (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP Top 10</Link></>),
+            (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
             "Security Tools",
             "Compliance Testing",
           ],
@@ -111,7 +111,7 @@ const CorporateQATrainingModules: React.FC = () => {
       icon: <FaRocket className="text-2xl text-orange-600" />,
       courses: [
         {
-          title: "DevOps & CI/CD",
+          title: (<><Link href="/blog/post/automated-etl-testing">DevOps & CI/CD</Link></>),
           duration: "20 hours",
           level: "Intermediate to Advanced",
           description:
@@ -119,12 +119,12 @@ const CorporateQATrainingModules: React.FC = () => {
           topics: ["Jenkins", "Docker", "Kubernetes", "Pipeline Testing"],
         },
         {
-          title: "Agile Testing",
+          title: (<><Link href="/blog/post/agile-testing-vs-waterfall-testing-a-comparative-study">Agile Testing</Link></>),
           duration: "16 hours",
           level: "All Levels",
           description: "Testing in Agile environments and methodologies.",
           topics: [
-            "Scrum Testing",
+            (<><Link href="/blog/post/agile-testing-vs-waterfall-testing-a-comparative-study">Scrum Testing</Link></>),
             "BDD/TDD",
             "Sprint Testing",
             "Continuous Testing",
@@ -172,7 +172,7 @@ const CorporateQATrainingModules: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Our structured curriculum covers everything from QA fundamentals to
-            advanced testing techniques, ensuring your team gains comprehensive
+            <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">advanced testing</Link> techniques, ensuring your team gains comprehensive
             expertise.
           </p>
         </div>

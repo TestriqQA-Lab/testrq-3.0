@@ -36,8 +36,8 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Elevate your organization&apos;s software quality with
               comprehensive QA training programs. Our expert-led corporate
-              training covers manual testing, automation frameworks, performance
-              testing, and quality assurance best practices. Delivered by
+              training covers <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation</Link> frameworks, <Link href="/performance-testing-services">performance
+              testing</Link>, and quality assurance best practices. Delivered by
               ISTQB-certified professionals with hands-on experience and
               industry-proven methodologies to upskill your entire QA team.
             </p>
@@ -106,7 +106,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                     <FaUsers className="text-blue-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        Manual Testing Fundamentals
+                        <Link href="/manual-testing">Manual Testing Fundamentals</Link>
                       </div>
                       <div className="text-sm text-gray-600">
                         24 participants active
@@ -123,7 +123,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                     <FaLaptopCode className="text-purple-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        Automation Testing
+                        <Link href="/automation-testing-services">Automation Testing</Link>
                       </div>
                       <div className="text-sm text-gray-600">
                         18 participants active
@@ -140,7 +140,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                     <FaChartLine className="text-green-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        Performance Testing
+                        <Link href="/performance-testing-services">Performance Testing</Link>
                       </div>
                       <div className="text-sm text-gray-600">
                         12 participants active

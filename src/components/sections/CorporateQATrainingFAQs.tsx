@@ -10,7 +10,7 @@ const CorporateQATrainingFAQs: React.FC = () => {
     {
       question: "What types of training programs do you offer?",
       answer:
-        "We offer comprehensive training programs covering manual testing, automation testing, performance testing, security testing, API testing, mobile testing, and specialized industry-specific QA training. All programs can be customized to meet your organization's specific needs and skill levels.",
+        (<>We offer comprehensive training programs covering <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>, <Link href="/api-testing">API testing</Link>, <Link href="/mobile-application-testing">mobile testing</Link>, and specialized industry-specific QA training. All programs can be customized to meet your organization&apos;s specific needs and skill levels.</>),
     },
     {
       question: "How long are the training programs?",

@@ -19,7 +19,7 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
   const trainingModules = [
     {
       id: 0,
-      title: "Manual Testing Mastery",
+      title: (<><Link href="/manual-testing">Manual Testing Mastery</Link></>),
       icon: <FaGraduationCap className="text-3xl text-blue-600" />,
       description:
         "Comprehensive manual testing methodologies and best practices",
@@ -27,8 +27,8 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
         "Test Case Design & Execution",
         "Exploratory Testing Techniques",
         "Bug Reporting & Tracking",
-        "User Experience Testing",
-        "Cross-browser Compatibility",
+        (<><Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">User Experience Testing</Link></>),
+        (<><Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">Cross-browser Compatibility</Link></>),
         "Mobile Testing Strategies",
       ],
       duration: "40 Hours",
@@ -41,10 +41,10 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       icon: <FaLaptopCode className="text-3xl text-purple-600" />,
       description: "Advanced automation frameworks and tools mastery",
       features: [
-        "Selenium WebDriver",
+        (<><Link href="Selenium WebDriver">Selenium WebDriver</Link></>),
         "Test Framework Development",
-        "CI/CD Integration",
-        "API Test Automation",
+        (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD Integration</Link></>),
+        (<><Link href="/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations">API Test Automation</Link></>),
         "Data-Driven Testing",
         "Page Object Model",
       ],
@@ -58,11 +58,11 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       icon: <FaChartLine className="text-3xl text-green-600" />,
       description: "Performance testing strategies and optimization techniques",
       features: [
-        "Load Testing Fundamentals",
-        "JMeter & LoadRunner",
+        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing Fundamentals</Link></>),
+        (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter & LoadRunner</Link></>),
         "Performance Monitoring",
-        "Bottleneck Analysis",
-        "Scalability Testing",
+        (<><Link href="/blog/post/etl-performance-testing">Bottleneck Analysis</Link></>),
+        (<><Link href="/blog/post/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users">Scalability Testing</Link></>),
         "Performance Tuning",
       ],
       duration: "35 Hours",
@@ -240,7 +240,7 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Join hundreds of companies that have already elevated their
-              software quality with our comprehensive training programs.
+              <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">software quality</Link> with our comprehensive training programs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
