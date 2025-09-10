@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaFileAlt,
@@ -25,11 +26,11 @@ const QADocumentationToolsFramework = () => {
   const toolCategories = [
     {
       id: "documentation-tools",
-      title: "Documentation Tools",
+      title: (<><Link href="/tools">Documentation Tools</Link></>),
       icon: FaFileAlt,
       color: "blue",
       description:
-        "Professional documentation creation and management tools for comprehensive QA documentation.",
+        (<>Professional documentation creation and management tools for <Link href="/blog/post/how-to-write-qa-documentation-a-complete-guide">comprehensive QA documentation.</Link></>),
       tools: [
         {
           name: "Confluence",
@@ -87,7 +88,7 @@ const QADocumentationToolsFramework = () => {
           description: "Modern documentation platform with Git integration",
           features: [
             "Git synchronization",
-            "API documentation",
+            (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">API</Link> documentation</>),
             "Custom domains",
             "Analytics",
           ],
@@ -207,7 +208,7 @@ const QADocumentationToolsFramework = () => {
             "Pull requests",
             "Issue tracking",
             "Project management",
-            "CI/CD integration",
+            (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD integration</Link></>),
           ],
           useCases: [
             "Documentation hosting",
@@ -227,7 +228,7 @@ const QADocumentationToolsFramework = () => {
             "Merge requests",
           ],
           useCases: [
-            "DevOps documentation",
+            (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">DevOps</Link> documentation</>),
             "Technical specs",
             "Process automation",
           ],
@@ -254,7 +255,7 @@ const QADocumentationToolsFramework = () => {
     },
     {
       id: "automation-tools",
-      title: "Automation & Integration",
+      title: (<><Link href="/automation-testing-services">Automation & Integration</Link></>),
       icon: FaCode,
       color: "orange",
       description:
@@ -268,7 +269,7 @@ const QADocumentationToolsFramework = () => {
             "Workflow automation",
             "App integrations",
             "Trigger-based actions",
-            "Data synchronization",
+            (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data synchronization</Link></>),
           ],
           useCases: [
             "Document automation",
@@ -284,7 +285,7 @@ const QADocumentationToolsFramework = () => {
             "Template library",
             "Approval workflows",
             "Data connectors",
-            "AI capabilities",
+            (<><Link href="/blog/post/ai-testing-learning-guide">AI capabilities</Link></>),
           ],
           useCases: [
             "Approval processes",
@@ -344,7 +345,7 @@ const QADocumentationToolsFramework = () => {
             "User behavior tracking",
             "Content analytics",
             "Custom reports",
-            "Real-time data",
+            (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time data</Link></>),
           ],
           useCases: [
             "Usage analytics",
@@ -364,9 +365,9 @@ const QADocumentationToolsFramework = () => {
             "Conversion funnels",
           ],
           useCases: [
-            "User experience analysis",
+            (<><Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">User experience analysis</Link></>),
             "Content optimization",
-            "Usability testing",
+            (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability testing</Link></>),
           ],
           icon: <FaWifi className="w-6 h-6" />,
         },
@@ -383,7 +384,7 @@ const QADocumentationToolsFramework = () => {
           useCases: [
             "User engagement",
             "Feature adoption",
-            "Performance metrics",
+            (<><Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">Performance metrics</Link></>),
           ],
           icon: <FaDatabase className="w-6 h-6" />,
         },
@@ -408,7 +409,7 @@ const QADocumentationToolsFramework = () => {
     },
     {
       id: "cloud-platforms",
-      title: "Cloud Platforms",
+      title: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Cloud Platforms</Link></>),
       icon: FaCloud,
       color: "indigo",
       description:
@@ -436,7 +437,7 @@ const QADocumentationToolsFramework = () => {
           description: "Cloud-based productivity and collaboration tools",
           features: [
             "Real-time collaboration",
-            "Cloud storage",
+            (<><Link href="/blog/post/cloud-based-performance-testing-scaling-for-modern-architectures-2">Cloud storage</Link></>),
             "Communication tools",
             "Admin controls",
           ],
@@ -476,7 +477,7 @@ const QADocumentationToolsFramework = () => {
           useCases: [
             "Enterprise hosting",
             "AI integration",
-            "DevOps workflows",
+            (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">DevOps workflows</Link></>),
           ],
           icon: <FaCloud className="w-6 h-6" />,
         },
@@ -542,11 +543,11 @@ const QADocumentationToolsFramework = () => {
             Professional QA Documentation Technology Stack
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We leverage industry-leading tools and frameworks like Selenium,
-            Appium, Cypress, and Postman to create, manage, and maintain
-            comprehensive QA documentation-including test plans, test cases, and
+            We leverage industry-leading <Link href="/tools">tools</Link> and frameworks like <Link href="/blog/post/getting-started-with-selenium-a-beginners-guide">Selenium</Link>,{" "}
+            <Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link>, <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Cypress</Link>, and Postman to create, manage, and maintain
+            comprehensive QA documentation-including test plans, <Link href="/blog/post/how-many-test-cases-have-you-automated-per-day">test cases</Link>, and
             traceability matrices-that enhance team productivity and ensure
-            consistent quality assurance documentation delivery.
+            consistent <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">quality assurance</Link> documentation delivery.
           </p>
         </div>
 
@@ -665,7 +666,7 @@ const QADocumentationToolsFramework = () => {
               Integrated Technology Ecosystem
             </h3>
             <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Our comprehensive technology stack ensures seamless integration,
+              Our comprehensive technology stack ensures <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">seamless integration</Link>,
               efficient workflows, and measurable improvements in documentation
               quality and team productivity.
             </p>
@@ -691,7 +692,7 @@ const QADocumentationToolsFramework = () => {
               </div>
               <h4 className="text-xl font-semibold mb-3">Measurable Results</h4>
               <p className="opacity-90">
-                Advanced analytics and reporting provide insights into
+                <Link href="/blog/post/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress">Advanced analytics</Link> and reporting provide insights into
                 documentation effectiveness and team performance metrics.
               </p>
             </div>
@@ -704,8 +705,8 @@ const QADocumentationToolsFramework = () => {
                 Scalable Infrastructure
               </h4>
               <p className="opacity-90">
-                Cloud-based solutions ensure scalability, security, and
-                accessibility for teams of any size and geographic distribution.
+                Cloud-based solutions ensure <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">scalability</Link>, <Link href="/security-testing">security</Link>, and{" "}
+                <Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">accessibility</Link> for teams of any size and geographic distribution.
               </p>
             </div>
           </div>

@@ -16,7 +16,13 @@ const QADocumentationComprehensiveSlider = () => {
   const documentationTypes = [
     {
       id: "test-planning",
-      title: "Test Planning & Strategy",
+      title: (
+        <>
+          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+            Test Planning & Strategy
+          </Link>
+        </>
+      ),
       icon: FaFileAlt,
       color: "blue",
       description:
@@ -25,7 +31,11 @@ const QADocumentationComprehensiveSlider = () => {
         "Test Strategy Development",
         "Scope Definition & Boundaries",
         "Resource Planning & Allocation",
-        "Risk Assessment & Mitigation",
+        <>
+          <Link href="/blog/post/risk-based-regression-testing-smarter-test-optimization">
+            Risk Assessment & Mitigation
+          </Link>
+        </>,
         "Timeline & Milestone Planning",
         "Entry & Exit Criteria",
       ],
@@ -46,7 +56,13 @@ const QADocumentationComprehensiveSlider = () => {
     },
     {
       id: "test-cases",
-      title: "Test Case Documentation",
+      title: (
+        <>
+          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+            Test Case Documentation
+          </Link>
+        </>
+      ),
       icon: FaClipboardList,
       color: "green",
       description:
@@ -76,16 +92,30 @@ const QADocumentationComprehensiveSlider = () => {
     },
     {
       id: "requirements",
-      title: "Requirements Documentation",
+      title: (
+        <>
+          <Link href="/blog/post/how-to-write-qa-documentation-a-complete-guide">
+            Requirements Documentation
+          </Link>
+        </>
+      ),
       icon: FaProjectDiagram,
       color: "purple",
       description:
         "Clear and comprehensive requirements documentation that ensures alignment between business needs and technical implementation.",
       features: [
         "Business Requirements Analysis",
-        "Functional Specifications",
+        <>
+          <Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">
+            Functional Specifications
+          </Link>
+        </>,
         "Non-Functional Requirements",
-        "Acceptance Criteria Definition",
+        <>
+          <Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">
+            Acceptance Criteria Definition
+          </Link>
+        </>,
         "User Story Documentation",
         "Requirements Traceability",
       ],
@@ -129,7 +159,11 @@ const QADocumentationComprehensiveSlider = () => {
         "SOP Documentation",
         "Process Flow Diagrams",
         "Quality Checklists",
-        "Compliance Guidelines",
+        <>
+          <Link href="/blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
+            Compliance Guidelines
+          </Link>
+        </>,
         "Training Materials",
         "Process Metrics",
       ],
@@ -142,7 +176,11 @@ const QADocumentationComprehensiveSlider = () => {
       description:
         "Comprehensive reporting templates and analytics documentation for tracking quality metrics and project health.",
       features: [
-        "Quality Metrics Definition",
+        <>
+          <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">
+            Quality Metrics Definition
+          </Link>
+        </>,
         "Dashboard Templates",
         "Progress Reporting",
         "KPI Tracking Systems",
@@ -150,7 +188,11 @@ const QADocumentationComprehensiveSlider = () => {
         "Executive Summaries",
       ],
       benefits: [
-        "Data-driven decisions",
+        <>
+          <Link href="/blog/post/data-quality-testing-in-etl">
+            Data-driven decisions
+          </Link>
+        </>,
         "Improved visibility",
         "Proactive issue detection",
         "Stakeholder confidence",
@@ -166,7 +208,13 @@ const QADocumentationComprehensiveSlider = () => {
     },
     {
       id: "user-acceptance",
-      title: "User Acceptance Testing",
+      title: (
+        <>
+          <Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">
+            User Acceptance Testing
+          </Link>
+        </>
+      ),
       icon: FaUsers,
       color: "indigo",
       description:
@@ -175,7 +223,11 @@ const QADocumentationComprehensiveSlider = () => {
         "UAT Planning & Strategy",
         "User Story Validation",
         "Acceptance Criteria",
-        "Test Scenario Design",
+        <>
+          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+            Test Scenario Design
+          </Link>
+        </>,
         "User Training Materials",
         "Sign-off Procedures",
       ],
@@ -183,7 +235,11 @@ const QADocumentationComprehensiveSlider = () => {
         "User satisfaction assurance",
         "Business goal alignment",
         "Smooth deployment",
-        "Reduced post-launch issues",
+        <>
+          <Link href="/blog/post/launch-day-failures-preventing-critical-issues-on-game-release">
+            Reduced post-launch issues
+          </Link>
+        </>,
       ],
       deliverables: [
         "UAT Test Plan",
@@ -248,10 +304,20 @@ const QADocumentationComprehensiveSlider = () => {
             Comprehensive QA Documentation Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our complete range of QA documentation services designed to
-            streamline your testing roadmap, ensure requirements traceability
-            and QA best practices, and maintain consistent quality assurance
-            documentation standards across all your projects.
+            Explore our complete range of{" "}
+            <Link href="/blog/post/how-to-write-secure-test-cases-2">
+              QA documentation
+            </Link>{" "}
+            services designed to streamline your{" "}
+            <Link href="/blog/post/ai-testing-learning-guide">
+              testing roadmap
+            </Link>
+            , ensure requirements traceability and{" "}
+            <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">
+              QA best practices
+            </Link>
+            , and maintain consistent quality assurance documentation standards
+            across all your projects.
           </p>
         </div>
 
@@ -379,7 +445,9 @@ const QADocumentationComprehensiveSlider = () => {
                 </h5>
                 <p className="text-gray-600 text-sm mb-4">
                   Our expert team can help you implement comprehensive{" "}
-                  {activeDoc.title.toLowerCase()}
+                  {typeof activeDoc.title === "string"
+                    ? activeDoc.title.toLowerCase()
+                    : ""}
                   for your projects.
                 </p>
                 <Link href="/contact-us">

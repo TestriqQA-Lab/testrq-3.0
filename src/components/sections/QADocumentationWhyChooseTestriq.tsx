@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaAward, FaClock, FaUsers, FaShieldAlt, FaChartLine, FaCog, FaGlobe, FaHandshake } from 'react-icons/fa';
 
@@ -6,7 +7,7 @@ const QADocumentationWhyChooseTestriq = () => {
     {
       icon: FaAward,
       title: "Industry Expertise",
-      description: "15+ years of experience in QA documentation across diverse industries including healthcare, fintech, e-commerce, and enterprise software.",
+      description: (<>15+ years of experience in QA documentation across diverse industries including <Link href="/blog/post/etl-testing-case-studies">healthcare, fintech, e-commerce, and enterprise software.</Link></>),
       metrics: "150+ Projects Documented",
       color: "blue"
     },
@@ -88,7 +89,7 @@ const QADocumentationWhyChooseTestriq = () => {
             Your Trusted Partner for Professional QA Documentation
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            With over 15 years of experience and 150+ successful projects, we deliver comprehensive QA documentation solutions that enhance team productivity through documentation clarity, ensure compliance with QA standards documentation, and accelerate project delivery with structured test plans and requirements analysis.
+            With over 15 years of experience and 150+ successful projects, we deliver comprehensive <Link href="/blog/post/how-to-write-secure-test-cases-2">QA documentation</Link> solutions that enhance team productivity through documentation clarity, ensure compliance with QA standards documentation, and accelerate project delivery with <Link href="/blog/post/test-execution-comprehensive-testing-implementation">structured test plans</Link> and requirements analysis.
 
           </p>
         </div>
@@ -143,7 +144,7 @@ const QADocumentationWhyChooseTestriq = () => {
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">99%</div>
-              <div className="text-lg opacity-90">Accuracy Rate</div>
+              <div className="text-lg opacity-90"><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Accuracy</Link> Rate</div>
               <div className="text-sm opacity-75 mt-1">Quality assured delivery</div>
             </div>
             <div className="text-center">
@@ -167,7 +168,7 @@ const QADocumentationWhyChooseTestriq = () => {
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our team holds industry-leading certifications and follows international standards
-              to ensure the highest quality documentation delivery.
+              to ensure the highest quality <Link href="/blog/post/how-to-write-secure-test-cases-2">documentation</Link> delivery.
             </p>
           </div>
 
@@ -180,7 +181,7 @@ const QADocumentationWhyChooseTestriq = () => {
               <div className="space-y-2 text-gray-600">
                 <div>ISO 9001:2015 Certified</div>
                 <div>ISTQB Certified Professionals</div>
-                <div>Agile Testing Certified</div>
+                <div><Link href="/blog/post/automated-etl-testing">Agile</Link> Testing Certified</div>
                 <div>Technical Writing Certified</div>
               </div>
             </div>
@@ -192,7 +193,7 @@ const QADocumentationWhyChooseTestriq = () => {
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Compliance Standards</h4>
               <div className="space-y-2 text-gray-600">
                 <div>FDA 21 CFR Part 11</div>
-                <div>HIPAA Compliance</div>
+                <div><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA Compliance</Link></div>
                 <div>SOX Requirements</div>
                 <div>GDPR Compliance</div>
               </div>
@@ -207,7 +208,7 @@ const QADocumentationWhyChooseTestriq = () => {
                 <div>IEEE 829 Test Documentation</div>
                 <div>CMMI Level 3 Processes</div>
                 <div>Agile/Scrum Methodologies</div>
-                <div>DevOps Integration</div>
+                <div><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">DevOps Integration</Link></div>
               </div>
             </div>
           </div>

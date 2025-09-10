@@ -180,11 +180,11 @@ const QADocumentationCaseStudies = () => {
             Real Results from QA Documentation Projects
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover how our comprehensive QA documentation services have helped
-            organizations across various industries achieve compliance, enhance
-            software quality assurance, improve documentation clarity and
+            Discover how our comprehensive <Link href="/blog/post/how-to-write-secure-test-cases-2">QA documentation</Link> services have helped
+            organizations across various industries achieve <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">compliance</Link>, enhance
+            software <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">quality assurance</Link>, improve documentation clarity and
             efficiency, and accelerate project delivery through well-structured
-            test plans, test cases, and QA process documentation.
+            test plans, <Link href="/blog/post/how-many-test-cases-have-you-automated-per-day">test cases</Link>, and QA process documentation.
           </p>
         </div>
 
@@ -386,7 +386,7 @@ const QADocumentationCaseStudies = () => {
             </h3>
             <p className="text-xl mb-8 opacity-90">
               Join these successful organizations and experience the benefits of
-              professional QA documentation services.
+              professional <Link href="/blog/post/a-step-by-step-guide-to-the-qa-documentation-services-process">QA documentation services</Link>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">

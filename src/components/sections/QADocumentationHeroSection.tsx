@@ -45,14 +45,14 @@ const QADocumentationHeroSection = () => {
 
               <p className="text-xl text-gray-600 leading-relaxed">
                 Comprehensive quality assurance documentation services to
-                streamline your QA process documentation, ensure requirements
+                streamline your <Link href="/blog/post/a-step-by-step-guide-to-the-qa-documentation-services-process">QA process</Link> documentation, ensure requirements
                 traceability, and maintain consistent QA standards documentation
-                across all software development projects.
+                across all <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">software development</Link> projects.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 Our expert technical writers and QA professionals create
-                detailed test plans, test cases, requirements documentation, and
+                detailed <Link href="/blog/post/test-execution-comprehensive-testing-implementation">test plans</Link>, test cases, requirements <Link href="/blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow">documentation</Link>, and
                 QA deliverables that enhance client collaboration, reduce
                 errors, and accelerate project delivery.
               </p>
@@ -82,7 +82,7 @@ const QADocumentationHeroSection = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">99%</div>
-                <div className="text-sm text-gray-600">Accuracy Rate</div>
+                <div className="text-sm text-gray-600"><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Accuracy</Link> Rate</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-purple-600">150+</div>
