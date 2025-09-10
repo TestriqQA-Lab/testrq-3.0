@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, BarChart3, TrendingUp, Shield, Zap, CheckCircle, Star, Brain } from 'lucide-react';
 import { FaAward } from 'react-icons/fa';
+import Link from 'next/link';
 
 const DataAnalysisWhyChooseTestriq = () => {
   const advantages = [
@@ -13,31 +14,31 @@ const DataAnalysisWhyChooseTestriq = () => {
     {
       icon: <BarChart3 className="h-8 w-8 text-purple-600" />,
       title: 'Comprehensive Tool Mastery',
-      description: 'Proficiency across all major analytics platforms including Python, R, SQL, Tableau, Power BI, and cloud-based analytics solutions.',
+      description: (<>Proficiency across all major analytics platforms including Python, R, SQL, Tableau, Power BI, and <Link href="/blog/post/cloud-based-performance-testing-scaling-for-modern-architectures-2">cloud-based</Link> analytics solutions.</>),
       metrics: '25+ Analytics Tools & Platforms'
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-green-600" />,
       title: 'Proven Business Impact',
       description: 'Delivered measurable business value with average ROI of 4.2x and helped clients achieve significant performance improvements.',
-      metrics: '4.2x Average ROI Delivered'
+      metrics: (<>4.2x Average <Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI</Link> Delivered</>)
     },
     {
       icon: <Users className="h-8 w-8 text-indigo-600" />,
       title: 'Industry Specialization',
-      description: 'Deep domain expertise across multiple industries including finance, healthcare, retail, manufacturing, and technology sectors.',
+      description: (<>Deep domain expertise across multiple industries including <Link href="/blog/post/etl-testing-case-studies">finance, healthcare, retail, manufacturing, and technology sectors</Link>.</>),
       metrics: '15+ Industry Verticals'
     },
     {
       icon: <Shield className="h-8 w-8 text-red-600" />,
       title: 'Data Security & Compliance',
-      description: 'Enterprise-grade security protocols and compliance with GDPR, HIPAA, SOX, and other regulatory requirements for data protection.',
+      description: (<>Enterprise-grade security protocols and compliance with GDPR, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA</Link>, SOX, and other regulatory requirements for data protection.</>),
       metrics: '99.9% Data Security Standard'
     },
     {
       icon: <Zap className="h-8 w-8 text-orange-600" />,
       title: 'Rapid Deployment',
-      description: 'Accelerated project delivery with agile methodologies and pre-built frameworks that reduce time-to-insight by up to 60%.',
+      description: (<>Accelerated project delivery with <Link href="/blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile methodologies</Link> and pre-built frameworks that reduce time-to-insight by up to 60%.</>),
       metrics: '60% Faster Time-to-Insight'
     }
   ];
@@ -58,7 +59,7 @@ const DataAnalysisWhyChooseTestriq = () => {
   ];
 
   const certifications = [
-    'AWS Certified Data Analytics',
+    (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">AWS</Link> Certified Data Analytics</>),
     'Google Cloud Professional Data Engineer',
     'Microsoft Azure Data Scientist Associate',
     'Tableau Desktop Certified Professional',
@@ -80,7 +81,7 @@ const DataAnalysisWhyChooseTestriq = () => {
             Why Choose Testriq for <span className='text-brand-blue'>Data Analytics</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced data analysis tools, and cutting-edge technologies like machine learning model building and natural language processing.
+            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced <Link href="/tools">data analysis tools</Link>, and cutting-edge technologies like machine learning model building and <Link href="/blog/post/ai-testing-learning-guide">natural language processing</Link>.
           </p>
         </div>
 

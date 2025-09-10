@@ -12,12 +12,12 @@ import {
 
 const DataAnalysisReadyToEnsureQuality = () => {
   const benefits = [
-    "Advanced machine learning and AI capabilities",
+    (<><Link href="/blog/post/ai-testing-learning-guide">Advanced machine learning and AI capabilities</Link></>),
     "Real-time analytics and automated insights",
     "Expert data scientists and analysts",
     "Scalable cloud-based infrastructure",
     "Industry-specific domain expertise",
-    "Comprehensive data security and compliance",
+    (<>Comprehensive data <Link href="/security-testing">security</Link> and compliance</>),
   ];
 
   const testimonials = [

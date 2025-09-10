@@ -30,7 +30,7 @@ const DataAnalysisHeroSection = () => {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Professional data analysis services that transform your raw data
+                Professional <Link href="/blog/post/why-discovery-analysis-matters-in-testing">data analysis services</Link> that transform your raw data
                 into powerful business insights. From descriptive analytics to
                 predictive modeling, we empower you to make data-driven
                 decisions that steer your business ahead and drive measurable
@@ -39,7 +39,7 @@ const DataAnalysisHeroSection = () => {
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 Our dedicated data team of expert data scientists and analysts
-                leverages advanced statistical modeling, machine learning model
+                leverages advanced statistical modeling, <Link href="/blog/post/ai-testing-learning-guide">machine learning</Link> model
                 building, and cutting-edge data analysis tools to uncover hidden
                 patterns, trends, and strategic opportunities within your
                 data-turning complex information into realistic, actionable

@@ -21,6 +21,7 @@ import {
   FaCogs,
   FaChartLine,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const DataAnalysisToolsFramework = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -120,7 +121,7 @@ const DataAnalysisToolsFramework = () => {
         },
         {
           name: "Amazon Redshift",
-          description: "Cloud data warehouse solution",
+          description: (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud</Link> data warehouse solution</>),
           level: "Intermediate",
           popularity: "80%",
           icon: <FaCloud className="h-6 w-6" />,
@@ -136,7 +137,7 @@ const DataAnalysisToolsFramework = () => {
       tools: [
         {
           name: "Tableau",
-          description: "Leading business intelligence platform",
+          description: (<>Leading business intelligence <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">platform</Link></>),
           level: "Beginner to Advanced",
           popularity: "92%",
           icon: <FaChartLine className="h-6 w-6" />,
@@ -180,7 +181,7 @@ const DataAnalysisToolsFramework = () => {
     },
     {
       id: "ml-ai",
-      title: "Machine Learning & AI",
+      title: (<><Link href="/blog/post/ai-testing-learning-guide">Machine Learning & AI</Link></>),
       icon: <Brain className="h-6 w-6" />,
       description:
         "Advanced machine learning and artificial intelligence frameworks",
@@ -231,7 +232,7 @@ const DataAnalysisToolsFramework = () => {
     },
     {
       id: "cloud",
-      title: "Cloud Platforms",
+      title: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Cloud Platforms</Link></>),
       icon: <Cloud className="h-6 w-6" />,
       description: "Cloud-based analytics and data processing platforms",
       tools: [
@@ -344,10 +345,10 @@ const DataAnalysisToolsFramework = () => {
             <span className="text-brand-blue">Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Leverage cutting-edge data analysis tools and analytical frameworks
+            Leverage cutting-edge data analysis <Link href="/tools">tools</Link> and analytical frameworks
             to unlock the full potential of your data. Our expertise spans the
-            entire data analytics technology stack, including statistical
-            modeling, machine learning model building, and natural language
+            entire <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">data analytics</Link> technology stack, including statistical
+            modeling, <Link href="/blog/post/ai-testing-learning-guide">machine learning</Link> model building, and natural language
             processing to drive data-driven recommendations and business
             intelligence.
           </p>
@@ -440,9 +441,9 @@ const DataAnalysisToolsFramework = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 "Enterprise Integration",
-                "Cloud Deployment",
-                "API Connectivity",
-                "Real-time Processing",
+                (<><Link href="/blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud">Cloud Deployment</Link></>),
+                (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">API Connectivity</Link></>),
+                (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time Processing</Link></>),
               ].map((capability, index) => (
                 <div
                   key={index}
@@ -471,7 +472,7 @@ const DataAnalysisToolsFramework = () => {
                 Data Layer
               </h4>
               <p className="text-gray-600 text-sm">
-                Robust data storage, processing, and management infrastructure
+                Robust <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">data storage</Link>, processing, and management infrastructure
                 for all data types.
               </p>
             </div>
@@ -497,7 +498,7 @@ const DataAnalysisToolsFramework = () => {
                 Presentation Layer
               </h4>
               <p className="text-gray-600 text-sm">
-                Interactive dashboards, reports, and visualization tools for
+                Interactive dashboards, reports, and <Link href="/tools">visualization tools</Link> for
                 actionable insights.
               </p>
             </div>
@@ -545,9 +546,9 @@ const DataAnalysisToolsFramework = () => {
               <div className="bg-white/10 rounded-lg p-4 mb-3">
                 <span className="text-2xl font-bold">4</span>
               </div>
-              <h4 className="font-semibold mb-2">Optimization</h4>
+              <h4 className="font-semibold mb-2"><Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">Optimization</Link></h4>
               <p className="text-blue-100 text-sm">
-                Continuous monitoring and performance tuning
+                Continuous monitoring and <Link href="/performance-testing-services">performance</Link> tuning
               </p>
             </div>
           </div>

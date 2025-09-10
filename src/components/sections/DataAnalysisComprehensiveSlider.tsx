@@ -25,7 +25,7 @@ const DataAnalysisComprehensiveSlider = () => {
         "Understand what happened in your business through comprehensive data analysis",
       content: {
         overview:
-          "Descriptive analytics helps you understand historical data and current business performance through statistical analysis and data visualization.",
+          (<>Descriptive analytics helps you understand historical data and current business <Link href="/performance-testing-services">performance</Link> through statistical analysis and data visualization.</>),
         keyCapabilities: [
           "Historical Data Analysis",
           "Statistical Summaries",
@@ -81,8 +81,8 @@ const DataAnalysisComprehensiveSlider = () => {
         overview:
           "Predictive analytics uses machine learning and statistical models to forecast future events and trends based on historical data patterns.",
         keyCapabilities: [
-          "Forecasting Models",
-          "Risk Assessment",
+          (<><Link href="/blog/post/model-validation-for-ai-applications">Forecasting Models</Link></>),
+          (<><Link href="/blog/post/risk-based-regression-testing-smarter-test-optimization">Risk Assessment</Link></>),
           "Customer Behavior Prediction",
           "Demand Forecasting",
           "Churn Prediction",
@@ -134,8 +134,8 @@ const DataAnalysisComprehensiveSlider = () => {
         overview:
           "Cognitive analytics combines AI, machine learning, and natural language processing to provide human-like insights and automated analysis.",
         keyCapabilities: [
-          "Natural Language Processing",
-          "Machine Learning Models",
+          (<><Link href="/blog/post/ai-testing-learning-guide">Natural Language Processing</Link></>),
+          (<><Link href="/blog/post/ai-testing-learning-guide">Machine Learning Models</Link></>),
           "Automated Insights Generation",
           "Pattern Recognition",
           "Sentiment Analysis",
@@ -162,7 +162,7 @@ const DataAnalysisComprehensiveSlider = () => {
           "Real-time analytics processes data streams instantly to provide immediate insights and enable rapid response to changing conditions.",
         keyCapabilities: [
           "Stream Processing",
-          "Real-time Dashboards",
+          (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time Dashboards</Link></>),
           "Alert Systems",
           "Live Data Monitoring",
           "Instant Notifications",
@@ -193,10 +193,10 @@ const DataAnalysisComprehensiveSlider = () => {
             <span className="text-brand-blue">Analytics Methodology Suite</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our comprehensive range of data analysis services designed
+            Explore our <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">comprehensive</Link> range of data analysis services designed
             to extract maximum business value from your data at every stage of
-            the analytics maturity journey-from data discovery and exploratory
-            data analysis to predictive analytics, prescriptive insights, and
+            the <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">analytics</Link> maturity journey-from data discovery and <Link href="/blog/post/exploratory-software-testing-a-journey-beyond-the-script">exploratory</Link>
+            {" "}data analysis to predictive analytics, prescriptive insights, and
             strategic decision-making.
           </p>
         </div>

@@ -16,13 +16,13 @@ const DataAnalysisProvenTestingProcess = () => {
   const analysisSteps = [
     {
       step: "01",
-      title: "Data Discovery & Assessment",
+      title: (<><Link href="/blog/post/why-discovery-analysis-matters-in-testing">Data Discovery</Link> & Assessment</>),
       icon: <FaSearch className="h-8 w-8 text-blue-600" />,
       description:
         "Comprehensive evaluation of available data sources and quality assessment",
       details: [
         "Data source identification and cataloging",
-        "Data quality assessment and profiling",
+        (<><Link href="/blog/post/data-quality-testing-in-etl">Data quality</Link> assessment and profiling</>),
         "Business requirements gathering",
         "Stakeholder alignment and goal setting",
       ],
@@ -34,10 +34,10 @@ const DataAnalysisProvenTestingProcess = () => {
       title: "Data Collection & Integration",
       icon: <FaDatabase className="h-8 w-8 text-purple-600" />,
       description:
-        "Systematic data gathering and integration from multiple sources",
+        (<>Systematic data gathering and <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">integration</Link> from multiple sources</>),
       details: [
         "Multi-source data extraction",
-        "Data integration and consolidation",
+        (<><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">Data integration</Link> and consolidation</>),
         "Data validation and verification",
         "Secure data storage setup",
       ],
@@ -82,9 +82,9 @@ const DataAnalysisProvenTestingProcess = () => {
         "Apply sophisticated analytical techniques and build predictive models",
       details: [
         "Statistical modeling and analysis",
-        "Machine learning model development",
+        (<><Link href="/blog/post/ai-testing-learning-guide">Machine learning model development</Link></>),
         "Model validation and testing",
-        "Performance optimization",
+        (<><Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">Performance optimization</Link></>),
       ],
       duration: "2-3 weeks",
       outcome: "Validated analytical models",
@@ -107,7 +107,7 @@ const DataAnalysisProvenTestingProcess = () => {
 
   const processMetrics = [
     {
-      label: "Data Accuracy",
+      label: (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data Accuracy</Link></>),
       value: "99.5%",
       description: "Clean and validated data quality",
     },
@@ -146,10 +146,10 @@ const DataAnalysisProvenTestingProcess = () => {
             Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our systematic approach to professional data analysis ensures
-            reliable data insights and data-driven recommendations through
-            rigorous analytical methodologies, statistical modeling, and quality
-            assurance at every step of the data analytics process.
+            Our systematic approach to professional data analysis ensures{" "}
+            <Link href="/blog/post/how-environment-setup-shapes-reliable-web-application-testing">reliable</Link> data insights and data-driven recommendations through
+            rigorous analytical methodologies, statistical modeling, and{" "}
+            <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">quality assurance</Link> at every step of the data analytics process.
           </p>
         </div>
 
