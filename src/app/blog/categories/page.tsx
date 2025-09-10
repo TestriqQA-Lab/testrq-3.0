@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.testriq.com/images/testriq-categories-og.jpg",
+        url: "/OG/Blog-OG-Img.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Blog Categories - Software Testing & QA Topics",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Testing Categories | Software Testing & QA Topics | Testriq Blog",
     description: "Explore comprehensive testing and QA categories on Testriq Blog. Find expert guides, tutorials, and best practices for test automation, performance testing, security testing, mobile testing, API testing, and more.",
-    images: ["https://www.testriq.com/images/testriq-categories-twitter.jpg"],
+    images: ["/OG/Blog-Twitter-Img.webp"],
     creator: "@testriqlab",
     site: "@testriqlab",
   },
