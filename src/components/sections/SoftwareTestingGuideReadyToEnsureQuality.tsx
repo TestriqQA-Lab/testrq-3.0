@@ -42,9 +42,9 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Join thousands of QA professionals who have advanced their careers
-            through our comprehensive software testing education program. Start
-            your journey to becoming a certified testing expert in manual
-            testing, automation testing, performance testing, security testing,
+            through our <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">comprehensive</Link> software testing education program. Start
+            your journey to becoming a certified testing expert in{" "}
+            <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>,
             and more-guided by industry-recognized QA best practices and
             hands-on learning.
           </p>

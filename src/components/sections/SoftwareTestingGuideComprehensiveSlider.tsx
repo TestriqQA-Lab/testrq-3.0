@@ -22,16 +22,16 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
       title: "Testing Fundamentals",
       icon: <BookOpen className="h-6 w-6" />,
       description:
-        "Master the core principles and foundations of software testing",
+        (<>Master the <Link href="/blog/post/core-principles-of-functional-mobile-application-testing">core principles</Link> and foundations of software testing</>),
       content: {
         overview:
           "Build a solid foundation in software testing principles, methodologies, and best practices that form the backbone of quality assurance.",
         keyTopics: [
-          "Software Testing Life Cycle (STLC)",
-          "Test Planning and Strategy",
+          (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">Software Testing Life Cycle (STLC)</Link></>),
+          (<><Link href="/blog/post/test-execution-comprehensive-testing-implementation">Test Planning and Strategy</Link></>),
           "Test Case Design Techniques",
           "Defect Life Cycle Management",
-          "Testing Documentation",
+          (<><Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">Testing Documentation</Link></>),
           "Quality Metrics and KPIs",
         ],
         benefits: [
@@ -48,17 +48,17 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
       title: "Manual Testing Mastery",
       icon: <Users className="h-6 w-6" />,
       description:
-        "Comprehensive guide to manual testing techniques and methodologies",
+        (<>Comprehensive guide to <Link href="/manual-testing">manual testing</Link> techniques and methodologies</>),
       content: {
         overview:
           "Deep dive into manual testing approaches, exploratory testing, and user experience validation techniques for thorough quality assurance.",
         keyTopics: [
-          "Exploratory Testing Techniques",
-          "User Acceptance Testing (UAT)",
-          "Usability Testing Methods",
-          "Cross-browser Testing",
+          (<><Link href="/blog/post/exploratory-software-testing-a-journey-beyond-the-script">Exploratory Testing Techniques</Link></>),
+          (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">User Acceptance Testing (UAT)</Link></>),
+          (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability Testing Methods</Link></>),
+          (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser Testing</Link></>),
           "Mobile Testing Strategies",
-          "Accessibility Testing",
+          (<><Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">Accessibility Testing</Link></>),
         ],
         benefits: [
           "Master exploratory testing skills",
@@ -78,11 +78,11 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
         overview:
           "Master test automation frameworks, scripting languages, and CI/CD integration for scalable and maintainable automated testing solutions.",
         keyTopics: [
-          "Automation Framework Design",
-          "Selenium WebDriver Advanced",
-          "API Testing Automation",
-          "Mobile Automation (Appium)",
-          "CI/CD Pipeline Integration",
+          (<><Link href="/automation-testing-services">Automation Framework Design</Link></>),
+          (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver Advanced</Link></>),
+          (<><Link href="/api-testing">API Testing Automation</Link></>),
+          (<><Link href="/mobile-application-testing">Mobile Automation (Appium)</Link></>),
+          (<><Link href="/blog/post/devsecops-integrating-security-in-your-ci-cd-pipeline-2">CI/CD Pipeline Integration</Link></>),
           "Test Data Management",
         ],
         benefits: [
@@ -104,11 +104,11 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
         overview:
           "Comprehensive performance testing methodologies including load testing, stress testing, and performance optimization techniques.",
         keyTopics: [
-          "Load Testing Strategies",
-          "Stress and Volume Testing",
+          (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing Strategies</Link></>),
+          (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress and Volume Testing</Link></>),
           "Performance Monitoring",
-          "Bottleneck Identification",
-          "Scalability Testing",
+          (<><Link href="/blog/post/etl-performance-testing">Bottleneck Identification</Link></>),
+          (<><Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">Scalability Testing</Link></>),
           "Performance Optimization",
         ],
         benefits: [
@@ -123,7 +123,7 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
     },
     {
       id: "security",
-      title: "Security Testing",
+      title: (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Security Testing</Link></>),
       icon: <Shield className="h-6 w-6" />,
       description:
         "Vulnerability assessment and penetration testing techniques",
@@ -132,10 +132,10 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
           "Advanced security testing methodologies including vulnerability assessment, penetration testing, and security compliance validation.",
         keyTopics: [
           "Vulnerability Assessment",
-          "Penetration Testing Basics",
-          "OWASP Top 10 Testing",
+          (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing Basics</Link></>),
+          (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP Top 10 Testing</Link></>),
           "Security Compliance Testing",
-          "Authentication Testing",
+          (<><Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">Authentication Testing</Link></>),
           "Data Protection Validation",
         ],
         benefits: [
@@ -150,17 +150,17 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
     },
     {
       id: "api-testing",
-      title: "API Testing",
+      title: (<><Link href="/api-testing">API Testing</Link></>),
       icon: <Target className="h-6 w-6" />,
       description: "REST, SOAP, and GraphQL API testing methodologies",
       content: {
         overview:
           "Master API testing techniques for REST, SOAP, and GraphQL APIs with comprehensive validation and integration testing strategies.",
         keyTopics: [
-          "REST API Testing",
+          (<><Link href="/blog/post/rest-api-testing-guide-endpoints-methods-best-practices">REST API Testing</Link></>),
           "SOAP Service Testing",
-          "GraphQL Testing",
-          "API Security Testing",
+          (<><Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">GraphQL Testing</Link></>),
+          (<><Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">API Security Testing</Link></>),
           "Contract Testing",
           "API Performance Testing",
         ],
@@ -189,7 +189,7 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
             <span className="text-brand-blue">Testing Methodology Guide</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore comprehensive testing methodologies with detailed guides,
+            Explore <Link href="/blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing</Link> methodologies with detailed guides,
             practical examples, and structured learning paths for every testing
             discipline.
           </p>

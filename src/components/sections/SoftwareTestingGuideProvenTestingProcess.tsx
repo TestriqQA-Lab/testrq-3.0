@@ -35,9 +35,9 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
       icon: <Target className="h-8 w-8 text-purple-600" />,
       description: "Master fundamental testing principles and methodologies",
       details: [
-        "Software Testing Life Cycle (STLC)",
+        (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">Software Testing Life Cycle (STLC)</Link></>),
         "Test planning and strategy",
-        "Test case design techniques",
+        (<><Link href="/blog/post/checklist-20-essential-test-cases-for-mobile-apps">Test case design techniques</Link></>),
         "Defect management processes",
       ],
       duration: "2-3 weeks",
@@ -139,8 +139,8 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
             Our structured approach to software testing education ensures
             comprehensive QA skill development through hands-on practice, expert
             QA guidance, and industry-recognized QA certifications-covering
-            everything from manual testing and automation testing to performance
-            testing and security testing.
+            everything from <Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">manual testing</Link> and <Link href="/blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud">automation testing</Link> to{" "}
+            <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">performance testing</Link> and <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">security testing</Link>.
           </p>
         </div>
 

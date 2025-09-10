@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle, BookOpen, Users, Award } from 'lucide-react';
+import Link from 'next/link';
 
 const SoftwareTestingGuideFAQs = () => {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
@@ -17,7 +18,7 @@ const SoftwareTestingGuideFAQs = () => {
         },
         {
           question: 'What are the different types of software testing?',
-          answer: 'Software testing can be categorized in multiple ways: by approach (manual vs automated), by level (unit, integration, system, acceptance), by type (functional vs non-functional), and by knowledge of code (black-box, white-box, gray-box). Each type serves specific purposes in ensuring comprehensive software quality.'
+          answer: (<>Software testing can be categorized in multiple ways: by approach (<Link href="/blog/post/manual-regression-testing-which-to-choose">manual</Link> vs <Link href="/blog/post/automated-etl-testing">automated</Link>), by level (unit, integration, system, acceptance), by type (<Link href="/blog/post/functional-testing-for-robotic-systems-precision-sensors-control">functional</Link> vs non-functional), and by knowledge of code (black-box, white-box, gray-box). Each type serves specific purposes in ensuring comprehensive software quality.</>),
         },
         {
           question: 'How do I start a career in software testing?',
@@ -34,15 +35,15 @@ const SoftwareTestingGuideFAQs = () => {
       icon: <Users className="h-5 w-5" />,
       faqs: [
         {
-          question: 'What is the difference between manual and automated testing?',
+          question: (<>What is the difference between manual and <Link href="/blog/post/how-automated-testing-boosted-fortune-500-company-productivity">automated testing</Link>?</>),
           answer: 'Manual testing involves human testers executing test cases without automation tools, providing exploratory capabilities and user experience insights. Automated testing uses scripts and tools to execute tests, offering speed, repeatability, and efficiency for regression testing. Both approaches are complementary and serve different purposes in a comprehensive testing strategy.'
         },
         {
-          question: 'When should I use automated testing vs manual testing?',
+          question: (<>When should I use automated testing vs <Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">manual testing</Link>?</>),
           answer: 'Use automated testing for repetitive tasks, regression testing, load testing, and when you have stable requirements. Manual testing is better for exploratory testing, usability testing, ad-hoc testing, and when requirements frequently change. The optimal approach often combines both methods strategically.'
         },
         {
-          question: 'What is the Software Testing Life Cycle (STLC)?',
+          question: (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">What is the Software Testing Life Cycle (STLC)?</Link></>),
           answer: 'STLC consists of six phases: Requirement Analysis, Test Planning, Test Case Development, Test Environment Setup, Test Execution, and Test Closure. Each phase has specific deliverables and entry/exit criteria, ensuring systematic and thorough testing throughout the software development process.'
         },
         {
@@ -68,7 +69,7 @@ const SoftwareTestingGuideFAQs = () => {
           answer: 'Popular choices include Java (widely used, extensive libraries), Python (easy to learn, versatile), C# (Microsoft ecosystem), and JavaScript (web-focused). Choose based on your team\'s expertise, application technology stack, and tool compatibility. Many testing tools support multiple languages.'
         },
         {
-          question: 'How do I implement CI/CD for testing?',
+          question: (<>How do I implement <Link href="/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">CI/CD</Link> for testing?</>),
           answer: 'Integrate automated tests into your CI/CD pipeline using tools like Jenkins, GitLab CI, or Azure DevOps. Set up automated test execution on code commits, implement parallel test execution, configure test reporting, and establish quality gates. Ensure fast feedback loops and maintain test stability for effective continuous integration.'
         }
       ]
@@ -90,7 +91,7 @@ const SoftwareTestingGuideFAQs = () => {
           answer: 'Risk-based testing prioritizes testing efforts based on risk assessment of different application areas. Identify potential risks, assess their probability and impact, prioritize testing accordingly, and allocate resources to high-risk areas. This approach optimizes testing efficiency and ensures critical functionality receives adequate attention.'
         },
         {
-          question: 'How do I handle testing in Agile environments?',
+          question: (<>How do I handle testing in <Link href="/blog/post/automated-etl-testing">Agile environments</Link>?</>),
           answer: 'Agile testing emphasizes continuous testing, early involvement, collaboration, and adaptability. Implement practices like test-driven development (TDD), behavior-driven development (BDD), continuous integration, automated regression testing, and regular retrospectives. Focus on delivering working software with quality built-in throughout the development process.'
         }
       ]

@@ -30,19 +30,19 @@ const SoftwareTestingGuideHeroSection = () => {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Everything you need to know about software testing services –
-                from fundamental QA concepts to advanced testing methodologies.
-                Learn various testing types, QA best practices, testing tools,
-                and automation frameworks used by leading quality assurance
+                Everything you need to know about software testing services -
+                from fundamental QA concepts to <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">advanced testing</Link> methodologies.
+                Learn various testing types, <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">QA best practices</Link>, <Link href="/tools">testing tools</Link>,
+                and <Link href="/automation-testing-services">automation</Link> frameworks used by leading quality assurance
                 companies and industry professionals.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 Whether you&apos;re a beginner starting your QA journey or an
-                experienced QA professional looking to enhance your skills, this
-                comprehensive software testing guide covers manual testing,
-                automation testing, performance testing, security testing, API
-                testing, and more to help you deliver bug-free, scalable
+                experienced QA professional looking to enhance your skills, this{" "}
+                <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">comprehensive software testing</Link> guide covers <Link href="/manual-testing">manual testing</Link>,{" "}
+                <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>,{" "}
+                <Link href="/api-testing">API testing</Link>, and more to help you deliver bug-free, scalable
                 software.
               </p>
             </div>
@@ -178,19 +178,19 @@ const SoftwareTestingGuideHeroSection = () => {
                 {/* Learning Topics */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-sm">
-                    <span>Manual Testing</span>
+                    <span><Link href="/manual-testing">Manual Testing</Link></span>
                     <span className="text-green-600 font-medium">
                       Completed
                     </span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
-                    <span>Automation Testing</span>
+                    <span><Link href="/automation-testing-services">Automation Testing</Link></span>
                     <span className="text-blue-600 font-medium">
                       In Progress
                     </span>
                   </div>
                   <div className="flex justify-between items-center text-sm">
-                    <span>Performance Testing</span>
+                    <span><Link href="/performance-testing-services">Performance Testing</Link></span>
                     <span className="text-gray-400 font-medium">Locked</span>
                   </div>
                 </div>

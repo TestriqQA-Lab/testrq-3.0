@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Smartphone, Shield, Zap, Database, Globe, CheckCircle } from 'lucide-react';
 import { FaTools, FaPython, FaJava, FaNodeJs, FaGithub, FaAndroid, FaApple, FaLinux, FaDocker,FaShieldAlt, FaCloud, FaDatabase, FaChrome } from 'react-icons/fa';
+import Link from 'next/link';
 
 const SoftwareTestingGuideToolsFramework = () => {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -14,9 +15,9 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <FaTools className="h-6 w-6" />,
       description: 'Comprehensive automation testing tools and frameworks',
       tools: [
-        { name: 'Selenium WebDriver', description: 'Web application automation', level: 'Beginner to Advanced', popularity: '95%', icon: <FaJava className="h-6 w-6" /> },
-        { name: 'Cypress', description: 'Modern web testing framework', level: 'Intermediate', popularity: '88%', icon: <FaNodeJs className="h-6 w-6" /> },
-        { name: 'Playwright', description: 'Cross-browser automation', level: 'Intermediate', popularity: '82%', icon: <FaGithub className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>), description: 'Web application automation', level: 'Beginner to Advanced', popularity: '95%', icon: <FaJava className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Cypress</Link></>), description: 'Modern web testing framework', level: 'Intermediate', popularity: '88%', icon: <FaNodeJs className="h-6 w-6" /> },
+        { name: 'Playwright', description: (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser automation</Link></>), level: 'Intermediate', popularity: '82%', icon: <FaGithub className="h-6 w-6" /> },
         { name: 'TestComplete', description: 'Commercial automation tool', level: 'Beginner', popularity: '75%', icon: <FaDocker className="h-6 w-6" /> },
         { name: 'Katalon Studio', description: 'All-in-one automation solution', level: 'Beginner', popularity: '78%', icon: <FaLinux className="h-6 w-6" /> },
         { name: 'Robot Framework', description: 'Keyword-driven automation', level: 'Intermediate', popularity: '70%', icon: <FaPython className="h-6 w-6" /> }
@@ -24,13 +25,13 @@ const SoftwareTestingGuideToolsFramework = () => {
     },
     {
       id: 'mobile',
-      title: 'Mobile Testing',
+      title: (<><Link href="/mobile-application-testing">Mobile Testing</Link></>),
       icon: <Smartphone className="h-6 w-6" />,
       description: 'Mobile application testing tools and frameworks',
       tools: [
-        { name: 'Appium', description: 'Cross-platform mobile automation', level: 'Intermediate', popularity: '90%', icon: <FaAndroid className="h-6 w-6" /> },
-        { name: 'Espresso', description: 'Android UI testing framework', level: 'Intermediate', popularity: '85%', icon: <FaAndroid className="h-6 w-6" /> },
-        { name: 'XCUITest', description: 'iOS native testing framework', level: 'Intermediate', popularity: '80%', icon: <FaApple className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link></>), description: 'Cross-platform mobile automation', level: 'Intermediate', popularity: '90%', icon: <FaAndroid className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Espresso</Link></>), description: 'Android UI testing framework', level: 'Intermediate', popularity: '85%', icon: <FaAndroid className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">XCUITest</Link></>), description: 'iOS native testing framework', level: 'Intermediate', popularity: '80%', icon: <FaApple className="h-6 w-6" /> },
         { name: 'Detox', description: 'React Native testing framework', level: 'Advanced', popularity: '72%', icon: <FaApple className="h-6 w-6" /> },
         { name: 'Firebase Test Lab', description: 'Cloud-based mobile testing', level: 'Beginner', popularity: '75%', icon: <FaCloud className="h-6 w-6" /> },
         { name: 'BrowserStack', description: 'Real device cloud testing', level: 'Beginner', popularity: '88%', icon: <FaCloud className="h-6 w-6" /> }
@@ -38,12 +39,12 @@ const SoftwareTestingGuideToolsFramework = () => {
     },
     {
       id: 'performance',
-      title: 'Performance Testing',
+      title: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Performance Testing</Link></>),
       icon: <Zap className="h-6 w-6" />,
       description: 'Load testing and performance monitoring tools',
       tools: [
-        { name: 'JMeter', description: 'Open-source load testing tool', level: 'Intermediate', popularity: '92%', icon: <FaJava className="h-6 w-6" /> },
-        { name: 'LoadRunner', description: 'Enterprise performance testing', level: 'Advanced', popularity: '85%', icon: <FaDocker className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link></>), description: 'Open-source load testing tool', level: 'Intermediate', popularity: '92%', icon: <FaJava className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">LoadRunner</Link></>), description: 'Enterprise performance testing', level: 'Advanced', popularity: '85%', icon: <FaDocker className="h-6 w-6" /> },
         { name: 'Gatling', description: 'High-performance load testing', level: 'Advanced', popularity: '78%', icon: <FaJava className="h-6 w-6" /> },
         { name: 'K6', description: 'Developer-centric load testing', level: 'Intermediate', popularity: '75%', icon: <FaNodeJs className="h-6 w-6" /> },
         { name: 'BlazeMeter', description: 'Cloud-based performance testing', level: 'Beginner', popularity: '80%', icon: <FaCloud className="h-6 w-6" /> },
@@ -56,8 +57,8 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Shield className="h-6 w-6" />,
       description: 'Security testing and vulnerability assessment tools',
       tools: [
-        { name: 'OWASP ZAP', description: 'Web application security scanner', level: 'Intermediate', popularity: '88%', icon: <FaShieldAlt className="h-6 w-6" /> },
-        { name: 'Burp Suite', description: 'Web vulnerability scanner', level: 'Advanced', popularity: '92%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link></>), description: 'Web application security scanner', level: 'Intermediate', popularity: '88%', icon: <FaShieldAlt className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/using-burp-suite-for-security-testing-beginner-to-pro">Burp Suite</Link></>), description: 'Web vulnerability scanner', level: 'Advanced', popularity: '92%', icon: <FaShieldAlt className="h-6 w-6" /> },
         { name: 'Nessus', description: 'Vulnerability assessment tool', level: 'Intermediate', popularity: '85%', icon: <FaShieldAlt className="h-6 w-6" /> },
         { name: 'SonarQube', description: 'Code quality and security analysis', level: 'Intermediate', popularity: '80%', icon: <FaGithub className="h-6 w-6" /> },
         { name: 'Checkmarx', description: 'Static application security testing', level: 'Advanced', popularity: '75%', icon: <FaShieldAlt className="h-6 w-6" /> },
@@ -66,7 +67,7 @@ const SoftwareTestingGuideToolsFramework = () => {
     },
     {
       id: 'api',
-      title: 'API Testing',
+      title: (<><Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">API Testing</Link></>),
       icon: <Database className="h-6 w-6" />,
       description: 'API testing and service validation tools',
       tools: [
@@ -108,7 +109,7 @@ const SoftwareTestingGuideToolsFramework = () => {
             Essential Testing <span className='text-brand-blue'>Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Master the most popular and effective software testing tools across all domains. Gain hands-on experience with comprehensive QA guides, test automation frameworks, and practical examples covering tools like Selenium, Pytest, Postman, JIRA, TestRail, and Jenkins used in manual testing, automation testing, API testing, and more.
+            Master the most popular and effective software testing tools across all domains. Gain hands-on experience with comprehensive QA guides, <Link href="/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">test automation</Link> frameworks, and practical examples covering tools like <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium</Link>, Pytest, Postman, JIRA, TestRail, and Jenkins used in manual testing, automation testing, API testing, and more.
           </p>
         </div>
 

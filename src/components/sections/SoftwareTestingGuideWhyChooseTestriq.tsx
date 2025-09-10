@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, BookOpen, TrendingUp, Shield, Zap, CheckCircle, Star } from 'lucide-react';
 import { FaAward } from 'react-icons/fa';
+import Link from 'next/link';
 
 const SoftwareTestingGuideWhyChooseTestriq = () => {
   const advantages = [
@@ -37,7 +38,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
     {
       icon: <Zap className="h-8 w-8 text-orange-600" />,
       title: 'Cutting-Edge Methodologies',
-      description: 'Stay ahead with the latest testing trends, tools, and methodologies including AI-powered testing approaches.',
+      description: (<>Stay ahead with the latest testing trends, <Link href="/blog/post/etl-testing-tools-frameworks">tools</Link>, and methodologies including AI-powered testing approaches.</>),
       metrics: 'Latest Industry Trends'
     }
   ];
@@ -72,7 +73,7 @@ const SoftwareTestingGuideWhyChooseTestriq = () => {
             <span className='text-brand-blue'>Why Choose Testriq</span> for Testing Education?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of software testing professionals who have advanced their careers through our comprehensive, industry-proven QA training platform, offering expert-led learning in manual testing, automation testing, performance testing, security testing, and more.
+            Join thousands of software testing professionals who have advanced their careers through our comprehensive, industry-proven QA training platform, offering expert-led learning in <Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">manual testing</Link>, <Link href="/blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud">automation testing</Link>, <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">performance testing</Link>, <Link href="/blog/post/etl-security-testing">security testing</Link>, and more.
           </p>
         </div>
 
