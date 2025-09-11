@@ -48,11 +48,11 @@ const LaunchFastQAHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Get your product to market faster with <Link href='launchfast-qa'>LaunchFast QA</Link>. We deliver rapid testing sprints, <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, on-demand QA services, and continuous QA for startups and fast-moving teams. Our MVP QA testing and pre-launch testing ensure <Link href='blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link>, early defect detection, and a bug-free product ready for go-to-market.
+              Get your product to market faster with <Link title="LaunchFast QA" href='launchfast-qa'>LaunchFast QA</Link>. We deliver rapid testing sprints, <Link title="agile QA testing" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, on-demand QA services, and continuous QA for startups and fast-moving teams. Our MVP QA testing and pre-launch testing ensure <Link title="CI/CD integration" href='blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link>, early defect detection, and a bug-free product ready for go-to-market.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={"/contact-us"}>
+              <Link title="Contact Us – Testriq QA Lab" href={"/contact-us"}>
                 <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
                   Get Started Today
                   <FaArrowRight className="inline ml-2" />

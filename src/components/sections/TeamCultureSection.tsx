@@ -104,7 +104,7 @@ const TeamCultureSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             We&apos;ve built a culture that values growth, collaboration, and
-            innovation in <Link href='software-testing-guide'>software testing</Link>. Our QA professionals and test
+            innovation in <Link title="software testing" href='software-testing-guide'>software testing</Link>. Our QA professionals and test
             automation experts are our greatest asset, and we invest in their
             success and well-being.
           </p>
