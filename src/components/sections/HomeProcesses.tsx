@@ -16,7 +16,7 @@ const processSteps: {
       description:
         (
           <>
-            Understand requirements and create <Link href="blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing strategy</Link>.
+            Understand requirements and create <Link title="comprehensive testing strategy" href="blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing strategy</Link>.
           </>
         ),
       progress: 25,
@@ -24,7 +24,7 @@ const processSteps: {
     {
       id: "02",
       title: "Execute & Test",
-      description: (<>Design and execute detailed <Link href="blog/post/checklist-20-essential-test-cases-for-mobile-apps">test cases</Link> with precision.</>),
+      description: (<>Design and execute detailed <Link title="test cases" href="blog/post/checklist-20-essential-test-cases-for-mobile-apps">test cases</Link> with precision.</>),
       progress: 50,
     },
     {
@@ -59,7 +59,7 @@ const HomeProcesses = () => {
         <p className="text-gray-500 mt-4 max-w-4xl mx-auto">
           Our 4-step QA testing process ensures consistent software quality
           through strategic planning, precise execution, detailed reporting, and
-          ongoing support across web, <Link href="mobile-application-testing">mobile</Link>, and <Link href="api-testing">API testing</Link> environments.
+          ongoing support across web, <Link title="test cases" href="mobile-application-testing">test cases</Link>, and <Link title="API testing" href="api-testing">API testing</Link> environments.
         </p>
       </div>
 
@@ -108,7 +108,7 @@ const HomeProcesses = () => {
         </div>
 
         {/* CTA Button */}
-        <Link href="/contact-us">
+        <Link title="cta button" href="/contact-us">
           <button className="w-full cursor-pointer sm:w-auto bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-500 text-white px-6 py-2.5 rounded-xl text-sm font-semibold shadow hover:shadow-lg transition hover:-translate-y-1 duration-300">
             Start Now
           </button>

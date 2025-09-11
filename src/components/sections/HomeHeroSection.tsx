@@ -25,15 +25,15 @@ const Hero = () => {
         </h1>
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-          Accelerate your product launch with Independent <Link href="/software-testing-guide">software testing
+          Accelerate your product launch with Independent <Link title="Software Testing Guide – Best Practices" href="/software-testing-guide">software testing
           services</Link> and QA solutions. With over a decade of experience, our ISTQB
-          Certified Experts deliver <Link href="blog/post/how-does-validation-optimization-improve-web-application-quality">software quality</Link>, <Link href="blog/post/top-software-testing-services-to-elevate-your-software-2">scalable QA services</Link>, and
+          Certified Experts deliver <Link title="software quality" href="blog/post/how-does-validation-optimization-improve-web-application-quality">software quality</Link>, <Link title="scalable QA services" href="blog/post/top-software-testing-services-to-elevate-your-software-2">scalable QA services</Link>, and
           award-winning apps for startups and industry leaders.
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row justify-center items-center xl:justify-start gap-4 mb-8">
-          <Link href="/contact-us">
+          <Link title="contact-us" href="/contact-us">
             <button className="flex items-center gap-2 py-3 px-5 border bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:scale-105 cursor-pointer w-full sm:w-auto">
               <span className="text-base">Get Started Today</span>
               <FaArrowRight className="w-4 h-5" />

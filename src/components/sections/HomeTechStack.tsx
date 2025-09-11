@@ -45,6 +45,7 @@ const techStack: {
           name: "Selenium WebDriver",
           icon: (
             <Image
+            title="Selenium Automation Logo"
               src="/Selenium_Logo.png"
               alt="Selenium Logo"
               width={20}
@@ -57,6 +58,7 @@ const techStack: {
           name: "Cypress",
           icon: (
             <Image
+            title="Cypress Testing Logo"
               src="/Cypress_Logo.png"
               alt="Cypress Logo"
               width={20}
@@ -69,6 +71,7 @@ const techStack: {
           name: "Playwright",
           icon: (
             <Image
+            title="Playwright Automation Logo"
               src="/Playwright_Logo.svg"
               alt="Playwright Logo"
               width={20}
@@ -81,6 +84,7 @@ const techStack: {
           name: "Appium",
           icon: (
             <Image
+            title="Appium Mobile Automation Logo"
               src="/Appium_Logo.svg"
               alt="Appium Logo"
               width={20}
@@ -93,6 +97,7 @@ const techStack: {
           name: "TestComplete",
           icon: (
             <Image
+            title="TestComplete Automation Logo"
               src="/TestComplete_Logo.png"
               alt="TestComplete Logo"
               width={20}
@@ -111,6 +116,7 @@ const techStack: {
           name: "JMeter",
           icon: (
             <Image
+            title="Apache JMeter Load Testing Logo"
               src="/JMeter_Logo.svg"
               alt="JMeter Logo"
               width={20}
@@ -123,6 +129,7 @@ const techStack: {
           name: "LoadRunner",
           icon: (
             <Image
+            title="Micro Focus LoadRunner Logo"
               src="/Loadrunner_Logo.png"
               alt="LoadRunner Logo"
               width={20}
@@ -135,6 +142,7 @@ const techStack: {
           name: "K6",
           icon: (
             <Image
+            title="K6 Load Testing Tool Logo"
               src="/K6_Logo.png"
               alt="K6 Logo"
               width={20}
@@ -147,6 +155,7 @@ const techStack: {
           name: "Gatling",
           icon: (
             <Image
+            title="Gatling Performance Testing Logo"
               src="/Gatling_Logo.png"
               alt="Gatling Logo"
               width={20}
@@ -159,6 +168,7 @@ const techStack: {
           name: "BlazeMeter",
           icon: (
             <Image
+            title="BlazeMeter Load Testing Logo"
               src="/BlazeMeter_Logo.png"
               alt="BlazeMeter Logo"
               width={20}
@@ -177,6 +187,7 @@ const techStack: {
           name: "Postman",
           icon: (
             <Image
+            title="Postman API Testing Logo"
               src="/Postman_Logo.png"
               alt="Postman Logo"
               width={20}
@@ -189,6 +200,7 @@ const techStack: {
           name: "REST Assured",
           icon: (
             <Image
+            title="REST Assured API Testing Logo"
               src="/RestAssured_Logo.png"
               alt="REST Assured"
               width={20}
@@ -201,6 +213,7 @@ const techStack: {
           name: "SoapUI",
           icon: (
             <Image
+            title="SoapUI API Testing Logo"
               src="/SoapUI_Logo.png"
               alt="SoapUI Logo"
               width={20}
@@ -213,6 +226,7 @@ const techStack: {
           name: "Insomnia",
           icon: (
             <Image
+            title="Insomnia API Testing Tool Logo"
               src="/Insomnia_Logo.png"
               alt="Insomnia Logo"
               width={20}
@@ -225,6 +239,7 @@ const techStack: {
           name: "Newman",
           icon: (
             <Image
+            title="Newman API Test Runner Logo"
               src="/Newman_Logo.png"
               alt="Newman Logo"
               width={20}
@@ -243,6 +258,7 @@ const techStack: {
           name: "OWASP ZAP",
           icon: (
             <Image
+            title="OWASP ZAP Security Testing Logo"
               src="/Owasp_Zap_Logo.png"
               alt="OWASP ZAP Logo"
               width={20}
@@ -255,6 +271,7 @@ const techStack: {
           name: "Burp Suite",
           icon: (
             <Image
+            title="Burp Suite Web Security Testing Logo"
               src="/BurpSuite_Logo.png"
               alt="Burp Suite Logo"
               width={20}
@@ -267,6 +284,7 @@ const techStack: {
           name: "Nessus",
           icon: (
             <Image
+            title="Nessus Vulnerability Scanner Logo"
               src="/Nessus_Logo.png"
               alt="Nessus Logo"
               width={20}
@@ -279,6 +297,7 @@ const techStack: {
           name: "Veracode",
           icon: (
             <Image
+            title="Veracode Application Security Logo"
               src="/VeraCode_Logo.png"
               alt="Veracode Logo"
               width={20}
@@ -291,6 +310,7 @@ const techStack: {
           name: "Checkmarx",
           icon: (
             <Image
+            title="Checkmarx Static Code Analysis Logo"
               src="/Checkmarx_Logo.png"
               alt="Checkmarx Logo"
               width={20}

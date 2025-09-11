@@ -8,9 +8,9 @@ import image3 from '../../public/Robot-AI.svg';
 
 
 const images = [
-  { src: image1, alt: 'Launch Fast QA', text: 'LaunchFast QA Start-Up Specials' },
-  { src: image2, alt: 'Group Computers', text: 'Web and Mobile Applications' },
-  { src: image3, alt: 'Robot AI', text: 'AI and ML Applications' },
+  { title:"Launch Fast QA", src: image1, alt: 'Launch Fast QA', text: 'LaunchFast QA Start-Up Specials' },
+  { title:"Group Computers", src: image2, alt: 'Group Computers', text: 'Web and Mobile Applications' },
+  { title:"Robot AI", src: image3, alt: 'Robot AI', text: 'AI and ML Applications' },
 ];
 
 const ImageSlider = () => {
@@ -67,6 +67,7 @@ const ImageSlider = () => {
             }`}
           >
             <Image
+              title={image.title}
               src={image.src}
               alt={image.alt}
             //   fill

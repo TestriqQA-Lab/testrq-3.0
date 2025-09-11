@@ -232,6 +232,7 @@ const Navbar = () => {
         <Link href="/" onClick={() => handleLinkClick("/", "")}>
           <div className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
             <Image
+              title="Testriq Logo"
               src={Testriq_Logo}
               alt="Testriq_Logo"
               height={100}

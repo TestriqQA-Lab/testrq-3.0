@@ -2,15 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/Ace-learning-1_IMG.svg',
-  '/attom-1_IMG.svg',
-  '/awl-sundry-1_IMG.svg',
-  '/brightCOIN_IMG.svg',
-  '/mom-1-1_IMG.svg',
-  '/realtyTrac_IMG.svg',
-  '/tire-agent-1_IMG.svg',
-  '/soci-2-1_IMG.svg',
+  { link: '/Ace-learning-1_IMG.svg', title: 'Ace Learning Logo' },
+  { link: '/attom-1_IMG.svg', title: 'Attom Logo' },
+  { link: '/awl-sundry-1_IMG.svg', title: 'AWL Sundry Logo' },
+  { link: '/brightCOIN_IMG.svg', title: 'Bright Coin Logo' },
+  { link: '/mom-1-1_IMG.svg', title: 'MOM Logo' },
+  { link: '/realtyTrac_IMG.svg', title: 'RealtyTrac Logo' },
+  { link: '/tire-agent-1_IMG.svg', title: 'Tire Agent Logo' },
+  { link: '/soci-2-1_IMG.svg', title: 'Soci Logo' },
 ];
+
 
 const ImageMarquee = () => {
   return (
@@ -19,8 +20,9 @@ const ImageMarquee = () => {
         <span className=" text-4xl">
           {images.map((src, index) => (
             <Image
+            title={src.title}
               key={index}
-              src={src}
+              src={src.link}
               alt={`Company Logo ${index + 1}`}
               className="inline-block mx-10"
               width={150}
@@ -32,8 +34,9 @@ const ImageMarquee = () => {
         <span className="text-4xl">
           {images.map((src, index) => (
             <Image
+            title={src.title}
               key={index}
-              src={src}
+              src={src.link}
               alt={`Company Logo ${index + 1}`}
               className="inline-block mx-10"
               width={150}

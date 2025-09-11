@@ -39,15 +39,20 @@ const ClientRatingSection = () => {
     title: string;
     info: React.ReactNode;
   }[] = [
-      {
-        title: "What Our Clients Say?",
-        info: (
-          <>
-          Trusted by global startups and enterprises, Testriq is a leading QA outsourcing partner known for ISTQB certified experts, dependable <Link href="blog/post/what-is-the-best-emerging-technology-to-learn-in-qa-support">QA support</Link>, and consistent software quality across every project.
-          </>
-        ),
-      }
-    ];
+    {
+      title: "What Our Clients Say?",
+      info: (
+        <>
+          Trusted by global startups and enterprises, Testriq is a leading QA
+          outsourcing partner known for ISTQB certified experts, dependable{" "}
+          <Link href="blog/post/what-is-the-best-emerging-technology-to-learn-in-qa-support">
+            QA support
+          </Link>
+          , and consistent software quality across every project.
+        </>
+      ),
+    },
+  ];
 
   const renderTitle = () => {
     const titleParts = heading[0].title.split("Clients");
@@ -67,9 +72,10 @@ const ClientRatingSection = () => {
       clientName: "Loren De Camas",
       designation: "QA Lead at Canva",
       company: "Canva",
-      action:"canva-case-study",
+      action: "canva-case-study",
       icon: (
         <Image
+          title="Canva Logo"
           src="/Canva_Logo.png"
           alt="Canva_Logo"
           width={120}
@@ -84,9 +90,10 @@ const ClientRatingSection = () => {
       clientName: "Jake Browning",
       designation: "Director of Product and Technology",
       company: "Ragnar",
-      action:"ragnar-case-study",
+      action: "ragnar-case-study",
       icon: (
         <Image
+          title="Ragnar Logo"
           src="/Ragnar_logo.webp"
           alt="Ragnar_logo"
           width={120}
@@ -101,9 +108,10 @@ const ClientRatingSection = () => {
       clientName: "Ranjan Upadhyay",
       designation: "Vice President - Operations",
       company: "Digiboxx",
-      action:"digiboxx-case-study",
+      action: "digiboxx-case-study",
       icon: (
         <Image
+          title="Digiboxx Logo"
           src="/Digiboxx-Logo.webp"
           alt="Digiboxx_logo"
           width={120}
@@ -118,9 +126,10 @@ const ClientRatingSection = () => {
       clientName: "Vinay Vikram Singh",
       designation: "Director",
       company: "Kanishka Software",
-      action:"kanishka-software-case-study",
+      action: "kanishka-software-case-study",
       icon: (
         <Image
+          title="Kanishka Software Logo"
           src="/Kanishka_Software_Logo.webp"
           alt="Kanishka_Software_Logo"
           width={120}
@@ -135,9 +144,10 @@ const ClientRatingSection = () => {
       clientName: "Dave Hadden",
       designation: "Founder and President, Pro-ficiency",
       company: "Pro-ficiency",
-      action:"pro-ficiency-case-study",
+      action: "pro-ficiency-case-study",
       icon: (
         <Image
+          title="Pro-ficiency Logo"
           src="/Pro-ficiency_Logo.webp"
           alt="Pro-ficiency_Logo"
           width={120}
@@ -206,10 +216,12 @@ const ClientRatingSection = () => {
             className={`flex transition-transform duration-700 ease-in-out p-5`}
           >
             {getVisibleCards().map((card, index) => (
-              <Link href={card.action}
+              <Link
+                href={card.action}
                 key={index}
-                className={`px-2 ${isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
-                  }`}
+                className={`px-2 ${
+                  isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
+                }`}
               >
                 <div className="flex flex-col h-full ring-sky-200 ring-1 bg-[theme(color.background.gray)] rounded-lg p-5 gap-y-6 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200 hover:-translate-y-2">
                   {card.icon}

@@ -22,7 +22,7 @@ const HomeComprehensiveSoftwareTesting = () => {
                 title: 'Comprehensive Software Testing Services',
                 info: (
                     <>
-                        Explore specialized <Link href="software-testing-guide">software testing services</Link> and end-to-end <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA solutions</Link> tailored to your needs. Our ISTQB Certified Experts ensure reliable, scalable <Link href="blog/post/test-execution-in-mobile-qa-strategies-for-comprehensive-mobile-app-validation">QA for mobile</Link>, web, <Link href="performance-testing-services">performance</Link>, <Link href="automation-testing-services">automation</Link>, and <Link href="security-testing">security testing</Link>.
+                        Explore specialized <Link title='software testing services' href="software-testing-guide">software testing services</Link> and end-to-end <Link title='QA solutions' href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA solutions</Link> tailored to your needs. Our ISTQB Certified Experts ensure reliable, scalable <Link title='QA for mobile' href="blog/post/test-execution-in-mobile-qa-strategies-for-comprehensive-mobile-app-validation">QA for mobile</Link>, web, <Link title='performance' href="performance-testing-services">performance</Link>, <Link title='automation' href="automation-testing-services">automation</Link>, and <Link title='security testing' href="security-testing">security testing</Link>.
                     </>
                 )
 
@@ -70,7 +70,7 @@ return (
                 cardData.map((card) => {
                     const Icon = card.icon;
 
-                    return <Link href={card.href} key={card.title}>
+                    return <Link title={card.title} href={card.href} key={card.title}>
                         <div className='flex flex-col ring-sky-200 ring-1 bg-white rounded-lg p-5 md:p-5 h-60 md:h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl  hover:-translate-y-2'>
                             <span><Icon className='text-[theme(color.brand.blue)] bg-sky-100 p-2 rounded-lg' size={35} /></span>
                             <h2 className='text-xl'>{card.title}</h2>

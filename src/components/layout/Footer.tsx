@@ -69,16 +69,19 @@ const company = [
 
 const partners = [
   {
+    title: "GoodFirms Trusted Review Logo",
     src: "/GoodFirms_Logo.png",
     alt: "GoodFirms Logo",
     href: "https://www.goodfirms.co/company/testriq-qa-lab",
   },
   {
+    title: "Clutch.io Verified Company Logo",
     src: "/ClutchIO_Logo.png",
     alt: "Clutch.io Logo",
     href: "https://clutch.co/profile/testriq-qa-lab",
   },
   {
+    title: "DesignRush Verified Agency Logo",
     src: "/DesignRush_Logo.png",
     alt: "DesignRush Logo",
     href: "https://www.designrush.com",
@@ -93,7 +96,7 @@ const Footer = () => {
           {/* Company Information */}
           <div className="space-y-4 xl:mr-10">
             <div className="flex items-center space-x-2">
-              <Image src={Logo} alt="Testriq_Logo" width={150} />
+              <Image title="Testriq Logo" src={Logo} alt="Testriq_Logo" width={150} />
             </div>
             <p className="text-gray-800 text-sm leading-relaxed">
               Premium software testing services with over a decade of
@@ -134,11 +137,11 @@ const Footer = () => {
             {/* ISO-Certificate-Image */}
             <div className='space-y-2'>
               <div className='flex gap-1'>
-                <Image src="/Footer_Images/ISO-9001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
-                <Image src="/Footer_Images/ISO-27001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
+                <Image title="ISO 9001 Certification Badge" src="/Footer_Images/ISO-9001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
+                <Image title="ISO 9001 Certification Badge" src="/Footer_Images/ISO-27001-100x40-1.png" alt='ISO-9001-100x40-1' width={120} height={100} />
               </div>
               <div>
-                <Image src="/Footer_Images/msme-logo.png" alt='ISO-9001-100x40-1' width={100} height={100} />
+                <Image title="ISO 9001 Certification Badge" src="/Footer_Images/msme-logo.png" alt='ISO-9001-100x40-1' width={100} height={100} />
               </div>
             </div>
 
@@ -247,6 +250,7 @@ const Footer = () => {
               className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
             >
               <Image
+                title={partner.title}
                 src={partner.src}
                 alt={partner.alt}
                 width={80}
