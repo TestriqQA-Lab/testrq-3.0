@@ -32,10 +32,10 @@ const SecurityTestingCaseStudies: React.FC = () => {
         "Enhanced fraud detection capabilities by 40%",
       ],
       technologies: [
-        "Web Application Testing",
-        "API Security",
-        "Mobile Security",
-        "Network Penetration Testing",
+        (<><Link href="/web-application-testing-services">Web Application Testing</Link></>),
+        (<><Link href="/api-testing">API Security</Link></>),
+        (<><Link href="/mobile-application-testing">Mobile Security</Link></>),
+        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Network Penetration Testing</Link></>),
       ],
       timeline: "8 weeks",
       teamSize: "12 security experts",
@@ -188,7 +188,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
             organizations across various industries strengthen their
             cybersecurity posture, achieve regulatory compliance with standards
             like ISO 27001 and HIPAA, and protect against sophisticated threats
-            such as phishing attacks, unauthorized access, and data breaches.
+            such as phishing attacks, unauthorized access, and <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data breaches</Link>.
           </p>
         </div>
 
@@ -385,7 +385,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
               Financial Services
             </h4>
             <p className="text-sm text-gray-600">
-              Banking, insurance, and fintech security testing
+              <Link href="/banking-finance-industry-testing-services">Banking, insurance, and fintech security testing</Link>
             </p>
           </div>
 
@@ -393,7 +393,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
             <div className="bg-red-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaHeart className="text-white" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Healthcare</h4>
+            <h4 className="font-semibold text-gray-900 mb-2"><Link href="/healthcare-testing-services">Healthcare</Link></h4>
             <p className="text-sm text-gray-600">
               HIPAA compliance and patient data protection
             </p>
@@ -403,7 +403,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
             <div className="bg-green-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaBuilding className="text-white" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">E-commerce</h4>
+            <h4 className="font-semibold text-gray-900 mb-2"><Link href="/e-commerce-testing-services">E-commerce</Link></h4>
             <p className="text-sm text-gray-600">
               Payment security and fraud prevention
             </p>
@@ -413,7 +413,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
             <div className="bg-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
               <FaUniversity className="text-white" />
             </div>
-            <h4 className="font-semibold text-gray-900 mb-2">Education</h4>
+            <h4 className="font-semibold text-gray-900 mb-2"><Link href="/e-learning-testing-services">Education</Link></h4>
             <p className="text-sm text-gray-600">
               Student data protection and research security
             </p>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaShieldAlt, FaCertificate, FaUsers, FaChartLine, FaClock, FaCheckCircle, FaAward } from "react-icons/fa";
 
@@ -7,7 +8,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       icon: <FaShieldAlt className="text-3xl" />,
-      title: "Advanced Security Expertise",
+      title: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced Security Expertise</Link></>),
       description: "Our certified security professionals bring deep expertise in cybersecurity, ethical hacking, and compliance testing to ensure comprehensive protection against evolving threats.",
       stats: "CISSP & CEH Certified",
       color: "red"
@@ -22,7 +23,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaUsers className="text-3xl" />,
       title: "Dedicated Security Teams",
-      description: "Specialized security testing teams with expertise in penetration testing, vulnerability assessment, and security architecture review.",
+      description: (<>Specialized security testing teams with expertise in <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link>, vulnerability assessment, and security architecture review.</>),
       stats: "25+ Security Experts",
       color: "green"
     },
@@ -43,7 +44,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaCheckCircle className="text-3xl" />,
       title: "Comprehensive Security Coverage",
-      description: "End-to-end security testing covering web applications, APIs, mobile apps, cloud infrastructure, and network security.",
+      description: (<><Link href="/blog/post/user-journey-exploration-discovering-bugs-across-end-to-end-scenarios">End-to-end</Link> security testing covering web applications, <Link href="/api-testing">APIs</Link>, <Link href="/mobile-application-testing">mobile apps</Link>, <Link href="/blog/post/cloud-enabled-or-on-premise-for-performance-testing">cloud infrastructure</Link>, and network security.</>),
       stats: "360° Security Testing",
       color: "indigo"
     }
@@ -75,7 +76,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Security Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive security testing solutions that protect your applications from cyber threats, ensure regulatory compliance with standards like GDPR and HIPAA, and maintain the highest standards of data protection, application security, and user trust.
+            Testriq delivers comprehensive security testing solutions that protect your applications from cyber threats, ensure <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory compliance</Link> with standards like GDPR and HIPAA, and maintain the highest standards of data protection, <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">application security</Link>, and user trust.
 
           </p>
         </div>
@@ -163,7 +164,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                <span className="text-gray-700">OWASP Security Testing Methodology</span>
+                <span className="text-gray-700"><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP</Link> Security Testing Methodology</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-red-600 rounded-full"></div>
@@ -182,7 +183,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-gray-900 mb-1">Comprehensive Threat Coverage</h5>
-                  <p className="text-sm text-gray-600">Complete protection against OWASP Top 10 and emerging threats</p>
+                  <p className="text-sm text-gray-600">Complete protection against <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP Top 10</Link> and emerging threats</p>
                 </div>
               </div>
 
@@ -201,7 +202,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-900 mb-1">Advanced Penetration Testing</h5>
+                  <h5 className="font-semibold text-gray-900 mb-1">Advanced <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></h5>
                   <p className="text-sm text-gray-600">Ethical hacking and real-world attack simulation for maximum security</p>
                 </div>
               </div>
