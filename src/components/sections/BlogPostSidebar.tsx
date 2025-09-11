@@ -255,6 +255,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
                 className="flex gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
               >
                 <Image
+                  title={relatedPost.title}
                   src={relatedPost.image}
                   alt={relatedPost.title}
                   width={64}

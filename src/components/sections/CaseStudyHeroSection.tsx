@@ -94,6 +94,7 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
               }`}>
               <div className="flex justify-center flex-col text-center">
                 <Image
+                  title={caseStudy.client}
                   src={caseStudy.image}
                   alt={`${caseStudy.client} Case Study - ${caseStudy.title}`}
                   width={300}

@@ -44,6 +44,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Canva",
       icon: (
         <Image
+          title="Canva_Logo"
           src="/Canva_Logo.png"
           alt="Canva_Logo"
           width={120}
@@ -60,6 +61,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Ragnar",
       icon: (
         <Image
+          title="Ragnar logo"
           src="/Ragnar_logo.webp"
           alt="Ragnar_logo"
           width={120}
@@ -76,6 +78,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Digiboxx",
       icon: (
         <Image
+          title="Digiboxx logo"
           src="/Digiboxx-Logo.webp"
           alt="Digiboxx_logo"
           width={120}
@@ -92,6 +95,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Kanishka Software",
       icon: (
         <Image
+        title="Kanishka Software Logo"
           src="/Kanishka_Software_Logo.webp"
           alt="Kanishka_Software_Logo"
           width={120}
@@ -108,6 +112,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Pro-ficiency",
       icon: (
         <Image
+        title="Pro-ficiency Logo"
           src="/Pro-ficiency_Logo.webp"
           alt="Pro-ficiency_Logo"
           width={120}

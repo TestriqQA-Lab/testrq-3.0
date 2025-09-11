@@ -49,6 +49,7 @@ const EcommercePlatformsSection: React.FC = () => {
             >
               <div className="w-20 h-20 mx-auto rounded-xl flex items-center justify-center bg-gradient-to-r from-brand-blue via-sky-600 to-blue-800 hover:scale-105 transition-all duration-200 ease-in-out">
                 <Image
+                title={platform.title}
                   src={platform.img}
                   alt={platform.title}
                   width={60}
