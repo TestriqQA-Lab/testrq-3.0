@@ -18,6 +18,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/shukp/",
       img: (
         <Image
+        title="Prashant Shukla"
           src="/prashant-shukla.png"
           alt="Prashant-shukla"
           width={350}
@@ -42,6 +43,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/sandeepmaske",
       img: (
         <Image
+        title="Sandeep Maske"
           src="/sandeep-maske-img.webp"
           alt="Sandeep Maske"
           width={350}
@@ -65,6 +67,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
       img: (
         <Image
+        title="Santosh Kakade"
           src="/Santosh_Kakade.webp"
           alt="Santosh_Kakade"
           width={350}
@@ -88,6 +91,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
       img: (
         <Image
+        title="Goutam Mishra"
           src="/Goutam_Mishra.webp"
           alt="Goutam_Mishra"
           width={350}
@@ -111,6 +115,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
       img: (
         <Image
+        title="Rohan Maske"
           src="/Rohan_Maske.png"
           alt="Rohan_Maske"
           width={350}
@@ -134,6 +139,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
       img: (
         <Image
+        title="Aatish Jadhav"
           src="/Aatish_Jadhav.webp"
           alt="Aatish_Jadhav"
           width={350}
@@ -160,6 +166,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
       img: (
         <Image
+        title="Shoeb Shaikh"
           src="/ShoebShaikh.webp"
           alt="ShoebShaikh"
           width={350}
@@ -183,6 +190,7 @@ const TeamLeadershipSection = () => {
       ],
       linkedin: "https://www.linkedin.com/in/profashishshetty/",
       img: <Image
+      title="Ashish Shetty"
         src="/AshishShetty.png"
         alt="ShoebShaikh"
         width={550}

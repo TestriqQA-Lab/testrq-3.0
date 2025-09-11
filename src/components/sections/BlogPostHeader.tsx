@@ -80,6 +80,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
             <div className="flex flex-wrap items-center gap-6 mb-8">
               <div className="flex items-center gap-3">
                 <Image
+                  title={post.author}
                   src={post.authorImage}
                   alt={post.author}
                   width={400}
@@ -112,6 +113,7 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
+                title={post.title}
                 src={post.image}
                 alt={post.title}
                 width={400}

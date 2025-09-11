@@ -100,6 +100,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
               {/* Image */}
               <div className="md:w-1/3 relative">
                 <Image
+                  title={post.title}
                   src={post.image}
                   alt={post.title}
                   width={400}
@@ -157,6 +158,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
                       <Image
+                        title={post.author}
                         src={post.authorImage}
                         alt={post.author}
                         width={20}

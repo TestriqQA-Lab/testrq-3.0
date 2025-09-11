@@ -95,6 +95,7 @@ const BlogPostsGrid: React.FC = () => {
                 >
                   <div className="relative">
                     <Image
+                      title={post.title}
                       src={post.image}
                       alt={post.title}
                       width={400}
@@ -126,6 +127,7 @@ const BlogPostsGrid: React.FC = () => {
                       <div className="grid grid-cols-2 items-center gap-4 text-sm text-gray-500">
                         <div className="flex items-center gap-2">
                           <Image
+                            title={post.author}
                             src={post.authorImage}
                             alt={post.author}
                             width={24}
@@ -174,6 +176,7 @@ const BlogPostsGrid: React.FC = () => {
                 >
                   <div className="relative">
                     <Image
+                      title={post.title}
                       src={post.image}
                       alt={post.title}
                       width={400}
@@ -251,6 +254,7 @@ const BlogPostsGrid: React.FC = () => {
                   >
                     <div className="relative">
                       <Image
+                        title={post.title}
                         src={post.image}
                         alt={post.title}
                         width={400}
@@ -285,6 +289,7 @@ const BlogPostsGrid: React.FC = () => {
                         <div className="flex items-center gap-3 text-sm text-gray-500">
                           <div className="flex items-center gap-2">
                             <Image
+                              title={post.author}
                               src={post.authorImage}
                               alt={post.author}
                               width={20}

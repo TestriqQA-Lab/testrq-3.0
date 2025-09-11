@@ -91,6 +91,7 @@ const BlogPostComments: React.FC<BlogPostCommentsProps> = ({ }) => {
     >
       <div className="flex items-start gap-4">
         <Image
+          title={comment.author}
           src={comment.authorImage}
           alt={comment.author}
           className="w-10 h-10 rounded-full"

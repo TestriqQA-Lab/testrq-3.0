@@ -44,6 +44,7 @@ const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
                   <div className="w-48 h-48 flex items-center justify-center mx-auto mb-3">
                     {caseStudy.image ? (
                       <Image
+                        title={caseStudy.client}
                         src={caseStudy.image}
                         alt={caseStudy.client}
                         className="object-contain"

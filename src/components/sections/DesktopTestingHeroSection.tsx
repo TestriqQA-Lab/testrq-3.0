@@ -83,6 +83,7 @@ const DesktopTestingHeroSection: React.FC = () => {
             {/* Main Desktop Icon */}
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 shadow-lg flex justify-center">
               <Image
+              title="Desktop App Testing Image"
                 src="/Desktop_App_Testing_Image.webp"
                 alt="Desktop_App_Testing_Image"
                 width={300}

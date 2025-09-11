@@ -274,6 +274,7 @@ const TeamMembersSection = () => {
                 <div className="text-center rounded-full">
                   <div className="w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Image
+                    title={member.name} 
                       src={member.src}
                       alt="Employees Photo"
                       width={200}

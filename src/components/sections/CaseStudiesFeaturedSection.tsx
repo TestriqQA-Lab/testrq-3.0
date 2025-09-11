@@ -159,6 +159,7 @@ const CaseStudiesFeaturedSection = () => {
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl p-8 h-80 flex items-center justify-center">
                   <div className="text-center">
                     <Image
+                      title={caseStudy.title}
                       src={caseStudy.image || "/placeholder.png"}
                       alt={caseStudy.client + " logo"}
                       width={240}

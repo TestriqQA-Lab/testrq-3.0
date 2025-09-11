@@ -437,6 +437,7 @@ const BankingContactSection: React.FC = () => {
                         international
                         countryCallingCodeEditable={false}
                         defaultCountry="IN"
+                        title="Phone Number"
                         value={formData.businessPhone}
                         onChange={handlePhoneChange}
                         onBlur={() => validatePhoneNumber(formData.businessPhone)}
