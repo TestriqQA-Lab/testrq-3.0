@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     images: ["/OG/testriq-locations-we-serve-twitter.webp"],
   },
   alternates: {
-    canonical: "https://www.testriq.com/locations-we-serve/",
+    canonical: "https://www.testriq.com/locations-we-serve",
   },
   robots: {
     index: true,
