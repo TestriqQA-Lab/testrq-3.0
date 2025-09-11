@@ -38,7 +38,11 @@ const ApiProvenTestingProcess: React.FC = () => {
       title: "Test Design & Execution",
       shortTitle: "Testing",
       description:
-        "Design and execute comprehensive test cases covering functional, performance, and security aspects of your APIs.",
+        (
+          <>
+            Design and <Link href='blog/post/test-execution-comprehensive-testing-implementation'>execute comprehensive test</Link> cases covering functional, performance, and security aspects of your APIs.
+          </>
+        ),
       details: [
         "Test case design and development",
         "Automated test script creation",
@@ -55,7 +59,11 @@ const ApiProvenTestingProcess: React.FC = () => {
       title: "Performance & Load Testing",
       shortTitle: "Performance",
       description:
-        "Evaluate API performance under various load conditions and identify bottlenecks and optimization opportunities.",
+        (
+          <>
+            Evaluate <Link href='blog/post/performance-load-testing-for-e-commerce-sites'>API performance under various load</Link> conditions and identify bottlenecks and optimization opportunities.
+          </>
+        ),
       details: [
         "Load testing and stress testing",
         "Performance bottleneck identification",
@@ -72,7 +80,11 @@ const ApiProvenTestingProcess: React.FC = () => {
       title: "Report & Optimization",
       shortTitle: "Delivery",
       description:
-        "Detailed reporting with actionable insights and recommendations for API improvements and optimization.",
+        (
+          <>
+            Detailed <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>reporting with actionable insights</Link> and recommendations for API improvements and optimization.
+          </>
+        ),
       details: [
         "Comprehensive test report generation",
         "Issue prioritization and categorization",
@@ -112,13 +124,12 @@ const ApiProvenTestingProcess: React.FC = () => {
                   {/* Step Button */}
                   <button
                     onClick={() => setActiveStep(index)}
-                    className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-300 transform hover:scale-110 ${
-                      activeStep === index
-                        ? `bg-gradient-to-r ${step.gradient} shadow-lg`
-                        : activeStep > index
+                    className={`w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-lg transition-all duration-300 transform hover:scale-110 ${activeStep === index
+                      ? `bg-gradient-to-r ${step.gradient} shadow-lg`
+                      : activeStep > index
                         ? "bg-green-500 shadow-md"
                         : "bg-gray-300"
-                    }`}
+                      }`}
                   >
                     {activeStep > index ? (
                       <FaCheckCircle className="w-6 h-6" />
@@ -130,11 +141,10 @@ const ApiProvenTestingProcess: React.FC = () => {
                   {/* Step Label */}
                   <div className="mt-3 text-center">
                     <div
-                      className={`font-semibold text-sm ${
-                        activeStep === index
-                          ? `text-${step.color}-600`
-                          : "text-gray-600"
-                      }`}
+                      className={`font-semibold text-sm ${activeStep === index
+                        ? `text-${step.color}-600`
+                        : "text-gray-600"
+                        }`}
                     >
                       {step.shortTitle}
                     </div>
@@ -144,9 +154,8 @@ const ApiProvenTestingProcess: React.FC = () => {
                   {/* Connection Line */}
                   {index < steps.length - 1 && (
                     <div
-                      className={`absolute top-8 left-16 w-full h-1 ${
-                        activeStep > index ? "bg-green-500" : "bg-gray-300"
-                      } transition-colors duration-300`}
+                      className={`absolute top-8 left-16 w-full h-1 ${activeStep > index ? "bg-green-500" : "bg-gray-300"
+                        } transition-colors duration-300`}
                       style={{ width: "calc(100vw / 4 - 4rem)" }}
                     ></div>
                   )}
@@ -162,19 +171,17 @@ const ApiProvenTestingProcess: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${
-                    activeStep === index
-                      ? `border-${step.color}-500 bg-${step.color}-50`
-                      : "border-gray-200 bg-white hover:border-gray-300"
-                  }`}
+                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${activeStep === index
+                    ? `border-${step.color}-500 bg-${step.color}-50`
+                    : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
                 >
                   <div className="flex items-center">
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-white mr-4 ${
-                        activeStep === index
-                          ? `bg-gradient-to-r ${step.gradient}`
-                          : "bg-gray-400"
-                      }`}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-white mr-4 ${activeStep === index
+                        ? `bg-gradient-to-r ${step.gradient}`
+                        : "bg-gray-400"
+                        }`}
                     >
                       {step.number}
                     </div>

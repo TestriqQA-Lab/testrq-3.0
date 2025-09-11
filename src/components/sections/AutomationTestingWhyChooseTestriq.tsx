@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaRocket,
@@ -107,8 +108,8 @@ const AutomationTestingWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Testriq offers cutting-edge automation testing solutions that boost
-            development speed, enhance software quality, and deliver high ROI
-            with intelligent automation strategies and expert implementation.
+            development speed, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>enhance software quality</Link>, and deliver high ROI
+            with <Link href='blog/post/the-role-of-automation-in-shift-left-and-shift-right-testing'>intelligent automation strategies</Link> and expert implementation.
           </p>
         </div>
 

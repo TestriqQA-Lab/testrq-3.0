@@ -162,8 +162,8 @@ const ApiCaseStudies: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Discover how our comprehensive API testing services have helped
-            companies achieve remarkable improvements in security, performance,
-            and reliability.
+            companies achieve remarkable improvements in <Link href='blog/post/iot-security-validation-protecting-devices-from-cyber-threats'>security</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>performance</Link>,{" "}
+            and <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>reliability</Link>.
           </p>
         </div>
 

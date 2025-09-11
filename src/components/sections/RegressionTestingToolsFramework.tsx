@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaSyncAlt, FaBug, FaCodeBranch, FaChartLine, FaCloud, FaCogs, FaTools } from "react-icons/fa";
 
@@ -127,7 +128,7 @@ const RegressionTestingToolsFramework: React.FC = () => {
             Regression Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading tools and frameworks to deliver efficient, comprehensive, and reliable regression testing solutions that ensure software stability with every release.
+            We leverage industry-leading <Link href='tools'>tools and frameworks</Link> to deliver efficient, comprehensive, and reliable regression testing solutions that ensure <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability</Link> with every release.
 
           </p>
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode, FaTools } from "react-icons/fa";
 
@@ -127,7 +128,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
             Automation Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We use cutting-edge automation tools and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across web, mobile, API, and CI/CD environments.
+            We use <Link href='tools'>cutting-edge automation tools</Link> and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, <Link href='api-testing'>API</Link>, and <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD environments</Link>.
           </p>
         </div>
 

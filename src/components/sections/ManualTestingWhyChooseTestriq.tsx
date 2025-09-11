@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaAward,
@@ -107,9 +108,9 @@ const ManualTestingWhyChooseTestriq: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Testriq stands out as a strategic manual testing partner, combining
             deep domain expertise, ISTQB-certified professionals, and a proven
-            commitment to exceptional software quality through human-centered
-            testing approaches like functional, usability, and exploratory
-            testing.
+            commitment to <Link href='blog/post/the-future-of-qa-trends-shaping-software-testing-in-2025'>exceptional software quality</Link> through <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>human-centered
+            testing</Link> approaches like <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>functional</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability</Link>, and <Link href='blog/post/what-are-the-principles-of-exploratory-testing'>exploratory
+            testing</Link>.
           </p>
         </div>
 
@@ -206,25 +207,25 @@ const ManualTestingWhyChooseTestriq: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
                 <span className="text-gray-700">
-                  Healthcare & FinTech – compliance & data integrity
+                  <Link href='healthcare-testing-services'>Healthcare & FinTech</Link> – compliance & data integrity
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
                 <span className="text-gray-700">
-                  E-commerce & Retail – UX & functional validation
+                  <Link href='e-commerce-testing-services'>E-commerce & Retail</Link> – UX & functional validation
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
                 <span className="text-gray-700">
-                  EdTech & SaaS – accessibility & workflow coverage
+                  <Link href='e-learning-testing-services'>EdTech & SaaS</Link> – accessibility & workflow coverage
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
                 <span className="text-gray-700">
-                  IoT & Smart Devices – connectivity & usability assurance
+                  <Link href='iot-device-testing-services'>IoT & Smart Devices</Link> – connectivity & usability assurance
                 </span>
               </div>
             </div>

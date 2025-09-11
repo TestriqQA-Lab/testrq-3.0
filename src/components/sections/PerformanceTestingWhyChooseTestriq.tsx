@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaTachometerAlt, FaCogs, FaChartLine, FaUsers, FaClock, FaCheckCircle, FaAward } from "react-icons/fa";
 
@@ -75,8 +76,7 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
             Why Choose <span className="text-brand-blue">Testriq</span> for Performance Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive performance testing solutions that ensure your applications are fast, scalable, and stable under any load testing or infrastructure performance testing scenario. Our expert team and advanced methodologies guarantee optimal performance, enterprise-grade QA, and exceptional user experiences, while helping you achieve faster time-to-market.
-
+            Testriq delivers comprehensive performance testing solutions that ensure your applications are fast, scalable, and stable under any <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load testing</Link> or infrastructure <Link href='blog/post/etl-performance-testing'>performance testing scenario</Link>. <Link href='our-team'>Our expert team</Link> and advanced methodologies guarantee optimal performance, enterprise-grade QA, and exceptional <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, while helping you achieve faster time-to-market.
           </p>
         </div>
 

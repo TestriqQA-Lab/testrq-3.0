@@ -11,17 +11,22 @@ const ManualTestingFAQs: React.FC = () => {
     {
       question: "What is manual testing and why is it important?",
       answer:
-        "Manual testing is a software testing approach where human testers manually execute test cases without relying on automation tools. It's essential for identifying usability issues, user experience problems, and edge cases that automated testing often overlooks. Manual testing brings a human perspective, ensuring applications are intuitive, accessible, and aligned with real-world user expectations.",
+        (
+          <>
+            <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>Manual testing</Link> is a software testing approach where human testers manually execute test cases without relying on <Link href='automation-testing-services'>automation tools</Link>. It&apos;s essential for identifying usability issues, user experience problems,
+            and edge cases that automated testing often overlooks. Manual testing brings a human perspective, ensuring applications are intuitive, accessible, and aligned with real-world user expectations.
+          </>
+        ),
     },
     {
       question: "When should I choose manual testing over automated testing?",
       answer:
-        "Manual testing is ideal for exploratory testing, usability testing, ad-hoc testing, and scenarios requiring human judgment. Choose manual testing when you need to test user interfaces, evaluate user experience, perform accessibility testing, or when test cases are executed infrequently. It's also preferred for complex scenarios that require human intuition, creative thinking, or when the application is in early development stages with frequent changes.",
+        (<>Manual testing is ideal for <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>exploratory testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, ad-hoc testing, and scenarios requiring human judgment. Choose manual testing when you need to test user interfaces, evaluate user experience, perform accessibility testing, or when test cases are executed infrequently. It&apos;s also preferred for complex scenarios that require human intuition, creative thinking, or when the application is in early development stages with frequent changes.</>),
     },
     {
       question: "What types of manual testing services does Testriq offer?",
       answer:
-        "Testriq offers comprehensive manual testing services including functional testing, usability testing, exploratory testing, user acceptance testing (UAT), accessibility testing, cross-browser testing, mobile testing, API testing, database testing, and compatibility testing. We also provide specialized services like localization testing, security testing, and compliance testing tailored to your industry requirements.",
+        (<>Testriq offers comprehensive manual testing services including functional testing, usability testing, exploratory testing, user acceptance testing (UAT), accessibility testing, cross-browser testing, <Link href='mobile-application-testing'>mobile testing</Link>, <Link href='api-testing'>API testing</Link>, database testing, and compatibility testing. We also provide specialized services like localization testing, <Link href='security-testing'>security testing</Link>, and compliance testing tailored to your industry requirements.</>),
     },
     {
       question: "How long does a typical manual testing project take?",
@@ -36,13 +41,13 @@ const ManualTestingFAQs: React.FC = () => {
     {
       question: "How do you ensure the quality of manual testing?",
       answer:
-        "We ensure quality through certified testing professionals, standardized testing processes, comprehensive test documentation, regular quality reviews, and continuous training programs. Our testers follow industry best practices, use proven testing methodologies, and maintain detailed test logs. We also implement peer reviews, quality checkpoints, and client feedback loops to maintain the highest testing standards.",
+        (<>We ensure quality through certified testing professionals, standardized testing processes, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>comprehensive test documentation</Link>, regular quality reviews, and continuous training programs. Our testers follow industry best practices, use proven testing methodologies, and maintain detailed test logs. We also implement peer reviews, quality checkpoints, and client feedback loops to maintain the highest testing standards.</>),
     },
     {
       question:
         "Can you integrate manual testing with our existing development process?",
       answer:
-        "Yes, we seamlessly integrate with various development methodologies including Agile, Scrum, DevOps, and Waterfall. Our team can work with your existing tools, processes, and timelines. We adapt our testing approach to fit your development cycles, participate in sprint planning, provide regular status updates, and ensure testing activities align with your release schedules and quality gates.",
+        (<>Yes, we seamlessly integrate with various development methodologies including <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Agile</Link>, Scrum, <Link href='blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops'>DevOps</Link>, and <Link href='blog/post/agile-testing-vs-waterfall-testing-a-comparative-study'>Waterfall</Link>. Our team can work with your existing tools, processes, and timelines. We adapt our testing approach to fit your development cycles, participate in sprint planning, provide regular status updates, and ensure testing activities align with your release schedules and quality gates.</>),
     },
     {
       question: "What deliverables do you provide after manual testing?",
@@ -53,12 +58,12 @@ const ManualTestingFAQs: React.FC = () => {
       question:
         "How do you handle confidential and sensitive data during testing?",
       answer:
-        "We maintain strict data security protocols including signed NDAs, secure testing environments, data encryption, access controls, and compliance with industry standards like GDPR, HIPAA, and SOC 2. Our team members undergo security training, and we use anonymized test data whenever possible. We also provide detailed security reports and maintain audit trails for all testing activities.",
+        (<>We maintain strict <Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>data security protocols</Link> including signed NDAs, secure testing environments, data encryption, access controls, and compliance with industry standards like GDPR, <Link href='blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps'>HIPAA</Link>, and SOC 2. Our team members undergo security training, and we use anonymized test data whenever possible. We also provide detailed security reports and maintain audit trails for all testing activities.</>),
     },
     {
       question: "Do you provide manual testing for mobile applications?",
       answer:
-        "Yes, we specialize in comprehensive mobile application testing across iOS and Android platforms. Our services include functional testing, usability testing, compatibility testing across different devices and OS versions, performance testing, security testing, and app store compliance testing. We test on real devices and emulators to ensure optimal performance across various mobile environments.",
+        (<>Yes, we specialize in comprehensive <Link href='mobile-application-testing'>mobile application testing</Link> across iOS and Android platforms. Our services include functional testing, usability testing, compatibility testing across different devices and OS versions, <Link href='performance-testing-services'>performance testing</Link>, <Link href='security-testing'>security testing</Link>, and app store compliance testing. We test on real devices and emulators to ensure optimal performance across various mobile environments.</>),
     },
   ];
 
@@ -106,11 +111,10 @@ const ManualTestingFAQs: React.FC = () => {
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openFAQ === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${openFAQ === index
+                  ? "max-h-96 opacity-100"
+                  : "max-h-0 opacity-0"
+                  }`}
               >
                 <div className="px-8 pb-6">
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>

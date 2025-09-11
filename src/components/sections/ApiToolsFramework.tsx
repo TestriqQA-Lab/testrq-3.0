@@ -71,9 +71,9 @@ const ApiToolsFramework: React.FC = () => {
             We Use
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage industry-leading tools and frameworks to deliver
-            comprehensive API testing solutions that ensure reliability,
-            performance, and security.
+            We leverage <Link href='tools'>industry-leading tools and frameworks</Link> to deliver
+            comprehensive API testing solutions that ensure <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>reliability</Link>,{" "}
+            <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>performance</Link>, and <Link href='security-testing'>security</Link>.
           </p>
         </div>
 

@@ -102,8 +102,8 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Our systematic automation testing process ensures streamlined
             implementation, dependable execution, and ongoing optimization to
-            maximize ROI, accelerate testing cycles, and ensure high software
-            quality.
+            maximize ROI, <Link href='blog/post/automated-etl-testing'>accelerate testing cycles</Link>, and ensure <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high software
+            quality</Link>.
           </p>
         </div>
 
