@@ -19,8 +19,8 @@ const QAKnowledgeHub: React.FC = () => {
                 {/* Enhanced Introduction */}
                 <div className="text-lg text-gray-700 mb-12 max-w-7xl mx-auto">
                     <p className="mb-6 text-center">
-                        At Testriq, we're dedicated to empowering software teams with expert quality assurance (QA) insights. Our QA Knowledge Hub is your go-to resource for
-                        mastering software testing, whether you're a QA engineer, developer, or business leader aiming to deliver flawless applications.
+                        At Testriq, we&apos;re dedicated to empowering software teams with expert quality assurance (QA) insights. Our QA Knowledge Hub is your go-to resource for
+                        mastering software testing, whether you&apos;re a QA engineer, developer, or business leader aiming to deliver flawless applications.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -30,7 +30,7 @@ const QAKnowledgeHub: React.FC = () => {
                                 Our blog stands out in the crowded landscape of software testing resources by offering content that bridges the gap between theoretical knowledge and practical application. Each article is crafted by ISTQB-certified professionals and industry veterans who bring years of hands-on experience to every piece of content.
                             </p>
                             <p className="mb-4">
-                                We understand that the software testing landscape is constantly evolving, with new tools, methodologies, and challenges emerging regularly. That's why our knowledge hub is continuously updated with the latest trends, from cutting-edge automation frameworks to emerging AI-driven testing approaches.
+                                We understand that the software testing landscape is constantly evolving, with new tools, methodologies, and challenges emerging regularly. That&apos;s why our knowledge hub is continuously updated with the latest trends, from cutting-edge automation frameworks to emerging AI-driven testing approaches.
                             </p>
                         </div>
                         
@@ -40,7 +40,7 @@ const QAKnowledgeHub: React.FC = () => {
                                 Unlike generic testing blogs, our content is rooted in real-world project experience. Every tutorial, guide, and best practice recommendation comes from actual implementations across diverse industries, from fintech to healthcare, e-commerce to enterprise software.
                             </p>
                             <p className="mb-4">
-                                Our comprehensive approach covers not just the technical aspects of testing, but also the business impact, team dynamics, and strategic considerations that make QA initiatives successful. We believe in empowering our readers with both the 'how' and the 'why' behind effective testing practices.
+                                Our comprehensive approach covers not just the technical aspects of testing, but also the business impact, team dynamics, and strategic considerations that make QA initiatives successful. We believe in empowering our readers with both the &apos;how&apos; and the &apos;why&apos; behind effective testing practices.
                             </p>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ const QAKnowledgeHub: React.FC = () => {
                             From automation tools like Selenium and Appium to Agile methodologies and performance testing, our blog offers the latest trends, practical tips, and real-world case studies to elevate your testing strategy. With insights from industry experts, we simplify complex QA concepts into actionable advice.
                         </p>
                         <p className="text-center">
-                            Whether you're looking to implement your first automation framework, optimize existing testing processes, or stay ahead of emerging trends in AI and machine learning testing, our knowledge hub provides the depth and breadth of information you need to succeed.
+                            Whether you&apos;re looking to implement your first automation framework, optimize existing testing processes, or stay ahead of emerging trends in AI and machine learning testing, our knowledge hub provides the depth and breadth of information you need to succeed.
                         </p>
                     </div>
                 </div>

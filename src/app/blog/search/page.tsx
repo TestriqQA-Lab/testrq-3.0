@@ -101,7 +101,7 @@ const SearchInsights: React.FC = () => {
         <p className="text-lg text-gray-600 leading-relaxed mb-8">
           Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources,
           including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>,
-          and more. Explore suggested topics below to dive into Testriq's expert content.
+          and more. Explore suggested topics below to dive into Testriq&apos;s expert content.
         </p>
         
         {/* Enhanced Introduction Section */}
@@ -111,10 +111,10 @@ const SearchInsights: React.FC = () => {
             <div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Advanced Search Capabilities</h3>
               <p className="text-gray-700 mb-4">
-                Our intelligent search system is designed to understand the nuances of software testing terminology and concepts. Whether you're looking for specific tools like Selenium WebDriver, methodologies like Behavior-Driven Development (BDD), or industry-specific testing approaches, our search engine delivers precisely what you need.
+                Our intelligent search system is designed to understand the nuances of software testing terminology and concepts. Whether you&apos;re looking for specific tools like Selenium WebDriver, methodologies like Behavior-Driven Development (BDD), or industry-specific testing approaches, our search engine delivers precisely what you need.
               </p>
               <p className="text-gray-700 mb-4">
-                The search functionality goes beyond simple keyword matching. It understands synonyms, related concepts, and contextual relationships within the QA domain. For instance, searching for "automation" will also surface content about CI/CD integration, framework design, and test orchestration.
+                The search functionality goes beyond simple keyword matching. It understands synonyms, related concepts, and contextual relationships within the QA domain. For instance, searching for &quot;automation&quot; will also surface content about CI/CD integration, framework design, and test orchestration.
               </p>
             </div>
             <div>
@@ -123,7 +123,7 @@ const SearchInsights: React.FC = () => {
                 Our content is meticulously organized into categories that reflect the real-world structure of software testing projects. From foundational concepts for beginners to advanced techniques for seasoned professionals, every piece of content is tagged and categorized for maximum discoverability.
               </p>
               <p className="text-gray-700 mb-4">
-                Each category contains in-depth articles, practical tutorials, case studies, and tool comparisons that provide comprehensive coverage of the topic. This systematic approach ensures that whether you're troubleshooting a specific issue or planning a complete testing strategy, you'll find relevant, actionable information.
+                Each category contains in-depth articles, practical tutorials, case studies, and tool comparisons that provide comprehensive coverage of the topic. This systematic approach ensures that whether you&apos;re troubleshooting a specific issue or planning a complete testing strategy, you&apos;ll find relevant, actionable information.
               </p>
             </div>
           </div>
@@ -141,7 +141,7 @@ const SearchInsights: React.FC = () => {
         </div>
         
         <p className="text-lg text-gray-700 mb-8 text-center leading-relaxed">
-          Testriq's <strong className="text-cyan-600">software testing search</strong> hub is your go-to resource for <strong className="text-cyan-600">QA blog search</strong> and expert insights. Discover why our blog is trusted by professionals worldwide:
+          Testriq&apos;s <strong className="text-cyan-600">software testing search</strong> hub is your go-to resource for <strong className="text-cyan-600">QA blog search</strong> and expert insights. Discover why our blog is trusted by professionals worldwide:
         </p>
         
         {/* Enhanced Features Section */}
@@ -198,11 +198,11 @@ const SearchInsights: React.FC = () => {
             <div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Effective Keywords</h4>
               <p className="text-gray-700 text-sm mb-3">
-                Use specific terms like "automation frameworks," "manual testing tips," "performance bottlenecks," or "security vulnerabilities" to find targeted content.
+                Use specific terms like &quot;automation frameworks,&quot; &quot;manual testing tips,&quot; &quot;performance bottlenecks,&quot; or &quot;security vulnerabilities&quot; to find targeted content.
               </p>
               <div className="bg-gray-100 rounded p-3">
                 <p className="text-xs text-gray-600 font-mono">
-                  Examples: "selenium grid setup", "api testing postman", "mobile testing appium"
+                  Examples: &quot;selenium grid setup&quot;, &quot;api testing postman&quot;, &quot;mobile testing appium&quot;
                 </p>
               </div>
             </div>
@@ -214,7 +214,7 @@ const SearchInsights: React.FC = () => {
               </p>
               <div className="bg-gray-100 rounded p-3">
                 <p className="text-xs text-gray-600 font-mono">
-                  "test automation" OR "automated testing" -manual
+                  &quot;test automation&quot; OR &quot;automated testing&quot; -manual
                 </p>
               </div>
             </div>
@@ -234,7 +234,7 @@ const SearchInsights: React.FC = () => {
         </div>
         
         <p className="text-lg text-gray-700 mb-8 text-center">
-          Optimize your <strong className="text-cyan-600">QA blog search</strong> experience by combining specific keywords with our advanced filtering options. Whether you're looking for beginner tutorials, advanced techniques, or industry-specific solutions, our comprehensive search system will connect you with the most relevant and valuable content.
+          Optimize your <strong className="text-cyan-600">QA blog search</strong> experience by combining specific keywords with our advanced filtering options. Whether you&apos;re looking for beginner tutorials, advanced techniques, or industry-specific solutions, our comprehensive search system will connect you with the most relevant and valuable content.
         </p>
         
         {/* Popular Search Terms */}

@@ -31,7 +31,7 @@ const ROICalculatorPage: React.FC = () => {
             Calculate Your <span className="text-brand-blue">ROI</span> Today
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Use our comprehensive ROI calculator to quantify the financial benefits of investing in professional software testing and quality assurance services. Discover how Testriq's solutions can transform your development process and deliver measurable business value.
+            Use our comprehensive ROI calculator to quantify the financial benefits of investing in professional software testing and quality assurance services. Discover how Testriq&apos;s solutions can transform your development process and deliver measurable business value.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const ROICalculatorPage: React.FC = () => {
             <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">The Business Impact of Quality Assurance</h3>
               <p className="text-gray-700 mb-4">
-                Quality assurance is not just a technical necessity—it's a strategic business investment that directly impacts your bottom line. Professional QA services can reduce development costs by up to 50% by catching defects early in the development cycle, when they're significantly less expensive to fix.
+                Quality assurance is not just a technical necessity - it&apos;s a strategic business investment that directly impacts your bottom line. Professional QA services can reduce development costs by up to 50% by catching defects early in the development cycle, when they&apos;re significantly less expensive to fix.
               </p>
               <p className="text-gray-700 mb-4">
                 Studies show that fixing a bug in production costs 10-100 times more than addressing it during the development phase. Our ROI calculator will help you quantify these savings and understand the true value of investing in comprehensive testing strategies.
@@ -128,7 +128,7 @@ const ROICalculatorPage: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">Input Your Data</h3>
               <p className="text-gray-700">
-                Provide information about your current development process, including project size, team composition, current bug detection rates, and development costs. Our calculator uses industry benchmarks to fill in gaps where specific data isn't available.
+                Provide information about your current development process, including project size, team composition, current bug detection rates, and development costs. Our calculator uses industry benchmarks to fill in gaps where specific data isn&apos;t available.
               </p>
             </div>
             
@@ -165,7 +165,7 @@ const ROICalculatorPage: React.FC = () => {
               <div>
                 <h4 className="font-semibold text-gray-800 mb-2">Technology Stack Considerations</h4>
                 <p className="text-gray-700 text-sm">
-                  Whether you're working with web applications, mobile apps, APIs, or complex enterprise systems, our calculator adjusts its analysis to account for the unique testing requirements of your technology stack.
+                  Whether you&apos;re working with web applications, mobile apps, APIs, or complex enterprise systems, our calculator adjusts its analysis to account for the unique testing requirements of your technology stack.
                 </p>
               </div>
               <div>
@@ -333,7 +333,7 @@ const ROICalculatorPage: React.FC = () => {
               <div className="mb-6">
                 <div className="flex items-start mb-3">
                   <FaQuestionCircle className="w-5 h-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                  <h3 className="text-lg font-semibold text-gray-800">What if I don't have all the required data?</h3>
+                  <h3 className="text-lg font-semibold text-gray-800">What if I don&apos;t have all the required data?</h3>
                 </div>
                 <p className="text-gray-700 ml-8">
                   Our calculator is designed to work with incomplete data by using industry averages and intelligent estimates. However, the more accurate data you provide, the more precise your ROI projections will be.
@@ -405,7 +405,7 @@ const ROICalculatorPage: React.FC = () => {
         <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Maximize Your Testing ROI?</h2>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Don't wait for the calculator to launch. Contact our experts today for a personalized consultation and discover how Testriq can help you achieve exceptional returns on your quality assurance investments.
+            Don&apos;t wait for the calculator to launch. Contact our experts today for a personalized consultation and discover how Testriq can help you achieve exceptional returns on your quality assurance investments.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
