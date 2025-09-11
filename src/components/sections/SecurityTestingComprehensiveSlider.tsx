@@ -21,8 +21,15 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       title: "Vulnerability Assessment",
       icon: <FaShieldAlt className="text-2xl" />,
       color: "red",
-      description:
-        "Comprehensive vulnerability scanning and assessment to identify security weaknesses",
+      description: (
+        <>
+          Comprehensive{" "}
+          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+            vulnerability
+          </Link>{" "}
+          scanning and assessment to identify security weaknesses
+        </>
+      ),
       features: [
         {
           title: "Automated Vulnerability Scanning",
@@ -31,7 +38,11 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           metrics: "500+ Vulnerability Types Detected",
         },
         {
-          title: "Manual Security Testing",
+          title: (
+            <>
+              <Link href="/manual-testing">Manual Security Testing</Link>
+            </>
+          ),
           description:
             "Expert security professionals conduct thorough manual testing to identify complex vulnerabilities that automated tools might miss.",
           metrics: "95% Critical Vulnerability Detection",
@@ -52,7 +63,13 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
     },
     {
       id: "penetration-testing",
-      title: "Penetration Testing",
+      title: (
+        <>
+          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
+            Penetration Testing
+          </Link>
+        </>
+      ),
       icon: <FaBug className="text-2xl" />,
       color: "orange",
       description:
@@ -62,7 +79,13 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           title: "Web Application Penetration Testing",
           description:
             "Comprehensive testing of web applications including authentication bypass, injection attacks, and business logic flaws.",
-          metrics: "OWASP Top 10 Coverage",
+          metrics: (
+            <>
+              <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">
+                OWASP Top 10 Coverage
+              </Link>
+            </>
+          ),
         },
         {
           title: "Network Penetration Testing",
@@ -71,9 +94,25 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           metrics: "Layer 2-7 Network Testing",
         },
         {
-          title: "API Security Testing",
-          description:
-            "Specialized testing for REST, GraphQL, and SOAP APIs including authentication, authorization, and data validation vulnerabilities.",
+          title: (
+            <>
+              <Link href="/api-testing">API Security Testing</Link>
+            </>
+          ),
+          description: (
+            <>
+              Specialized testing for <Link href="/api-testing">REST</Link>,{" "}
+              <Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">
+                GraphQL
+              </Link>
+              , and{" "}
+              <Link href="/blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability">
+                SOAP APIs
+              </Link>{" "}
+              including authentication, authorization, and data validation
+              vulnerabilities.
+            </>
+          ),
           metrics: "API Security Best Practices",
         },
         {
@@ -89,8 +128,14 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       title: "Authentication & Authorization",
       icon: <FaLock className="text-2xl" />,
       color: "blue",
-      description:
-        "Comprehensive testing of authentication and authorization mechanisms",
+      description: (
+        <>
+          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+            Comprehensive testing
+          </Link>{" "}
+          of authentication and authorization mechanisms
+        </>
+      ),
       features: [
         {
           title: "Multi-Factor Authentication Testing",
@@ -126,7 +171,13 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       description: "Comprehensive data security and privacy protection testing",
       features: [
         {
-          title: "Data Encryption Testing",
+          title: (
+            <>
+              <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+                Data Encryption Testing
+              </Link>
+            </>
+          ),
           description:
             "Validation of encryption implementations including data at rest, in transit, and in processing encryption mechanisms.",
           metrics: "AES-256 & TLS 1.3 Validation",
@@ -159,9 +210,23 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       description: "Comprehensive infrastructure and network security testing",
       features: [
         {
-          title: "Cloud Security Assessment",
-          description:
-            "Comprehensive security testing for AWS, Azure, GCP, and hybrid cloud environments including misconfigurations and access controls.",
+          title: (
+            <>
+              <Link href="/blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud">
+                Cloud Security Assessment
+              </Link>
+            </>
+          ),
+          description: (
+            <>
+              Comprehensive security testing for{" "}
+              <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">
+                AWS, Azure, GCP
+              </Link>
+              , and hybrid cloud environments including misconfigurations and
+              access controls.
+            </>
+          ),
           metrics: "Multi-Cloud Security",
         },
         {
@@ -177,7 +242,13 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           metrics: "Network Perimeter Security",
         },
         {
-          title: "DevSecOps Integration",
+          title: (
+            <>
+              <Link href="/blog/post/devsecops-integrating-security-in-your-ci-cd-pipeline-2">
+                DevSecOps Integration
+              </Link>
+            </>
+          ),
           description:
             "Security testing integration into CI/CD pipelines with automated security scanning and continuous monitoring.",
           metrics: "Shift-Left Security",
@@ -193,13 +264,25 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
         "Comprehensive source code security analysis and secure coding practices",
       features: [
         {
-          title: "Static Code Analysis",
+          title: (
+            <>
+              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
+                Static Code Analysis
+              </Link>
+            </>
+          ),
           description:
             "Automated and manual source code review to identify security vulnerabilities, coding flaws, and insecure patterns.",
           metrics: "SAST & Manual Review",
         },
         {
-          title: "Dynamic Code Analysis",
+          title: (
+            <>
+              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
+                Dynamic Code Analysis
+              </Link>
+            </>
+          ),
           description:
             "Runtime security testing to identify vulnerabilities that manifest during application execution and user interaction.",
           metrics: "DAST & IAST Testing",
@@ -284,9 +367,19 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Explore our comprehensive security testing services designed to
-            protect your applications from cyber threats, ensure compliance with
-            security standards like GDPR, HIPAA, and PCI DSS, and maintain the
-            highest levels of data protection and user trust.
+            protect your applications from{" "}
+            <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+              cyber threats
+            </Link>
+            , ensure compliance with security standards like GDPR,{" "}
+            <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+              HIPAA
+            </Link>
+            , and PCI DSS, and maintain the highest levels of{" "}
+            <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+              data protection
+            </Link>{" "}
+            and user trust.
           </p>
         </div>
 
@@ -386,7 +479,10 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
                       Success Rate
                     </h4>
                     <p className="text-gray-600 text-sm">
-                      Proven track record in {activeTabData.title.toLowerCase()}
+                      Proven track record in{" "}
+                      {typeof activeTabData.title === "string"
+                        ? activeTabData.title.toLowerCase()
+                        : ""}
                     </p>
                   </div>
                   <div className="text-right">
@@ -416,7 +512,8 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Our comprehensive security testing services ensure your
               applications are protected against the latest cyber threats and
-              comply with industry security standards.
+              comply with industry{" "}
+              <Link href="/security-testing">security</Link> standards.
             </p>
             <Link href="/contact-us">
               <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">

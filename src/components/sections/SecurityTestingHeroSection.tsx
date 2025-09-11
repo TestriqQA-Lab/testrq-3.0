@@ -46,12 +46,32 @@ const SecurityTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Protect your applications from cybersecurity threats with our
-              comprehensive security testing services. Our expert team conducts
-              penetration testing, vulnerability assessments, static application
-              security testing (SAST), dynamic application security testing
-              (DAST), and compliance testing to identify and eliminate risks
-              like SQL injection, cross-site scripting (XSS), and insecure APIs
+              Protect your applications from{" "}
+              <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+                cybersecurity threats
+              </Link>{" "}
+              with our{" "}
+              <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
+                comprehensive
+              </Link>{" "}
+              security testing services. Our expert team conducts{" "}
+              <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
+                penetration testing
+              </Link>
+              , vulnerability assessments,{" "}
+              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
+                static application security testing (SAST), dynamic application
+                security testing (DAST)
+              </Link>
+              , and{""}
+              <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+                compliance testing
+              </Link>{" "}
+              to identify and eliminate risks like SQL injection, cross-site
+              scripting (XSS), and{" "}
+              <Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">
+                insecure APIs
+              </Link>{" "}
               before they become critical.
             </p>
 
