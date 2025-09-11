@@ -94,53 +94,184 @@ const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: str
 const SearchInsights: React.FC = () => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0B0F1C]/10 to-[#1B2A5A]/10 backdrop-blur-md animate-fade-in">
-      <div className="py-12 px-4 sm:px-6 lg:px-8 animate-fade-in text-center max-w-4xl mx-auto">
+      <div className="py-12 px-4 sm:px-6 lg:px-8 animate-fade-in text-center max-w-6xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
           Discover Expert QA Insights
         </h1>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-lg text-gray-600 leading-relaxed mb-8">
           Use our <strong>software testing search</strong> to find <strong>QA blog search</strong> resources,
           including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>,
-          and more. Explore suggested topics below to dive into Testriq’s expert content.
+          and more. Explore suggested topics below to dive into Testriq's expert content.
         </p>
+        
+        {/* Enhanced Introduction Section */}
+        <div className="bg-white rounded-lg p-8 shadow-lg mb-12 text-left">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Your Gateway to Comprehensive QA Knowledge</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Advanced Search Capabilities</h3>
+              <p className="text-gray-700 mb-4">
+                Our intelligent search system is designed to understand the nuances of software testing terminology and concepts. Whether you're looking for specific tools like Selenium WebDriver, methodologies like Behavior-Driven Development (BDD), or industry-specific testing approaches, our search engine delivers precisely what you need.
+              </p>
+              <p className="text-gray-700 mb-4">
+                The search functionality goes beyond simple keyword matching. It understands synonyms, related concepts, and contextual relationships within the QA domain. For instance, searching for "automation" will also surface content about CI/CD integration, framework design, and test orchestration.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Curated Content Categories</h3>
+              <p className="text-gray-700 mb-4">
+                Our content is meticulously organized into categories that reflect the real-world structure of software testing projects. From foundational concepts for beginners to advanced techniques for seasoned professionals, every piece of content is tagged and categorized for maximum discoverability.
+              </p>
+              <p className="text-gray-700 mb-4">
+                Each category contains in-depth articles, practical tutorials, case studies, and tool comparisons that provide comprehensive coverage of the topic. This systematic approach ensures that whether you're troubleshooting a specific issue or planning a complete testing strategy, you'll find relevant, actionable information.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+      
       <div className="max-w-7xl mx-auto bg-white/10 border border-cyan-300/20 rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
-
         {/* Decorative Element */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center justify-center mb-8">
           <FaLightbulb className="w-10 h-10 text-cyan-500 mr-3" />
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center">
             Unlock QA Excellence with Testriq
           </h2>
         </div>
-        <p className="text-lg text-gray-700 mb-6 text-center leading-relaxed">
-          Testriq’s <strong className="text-cyan-600">software testing search</strong> hub is your go-to resource for <strong className="text-cyan-600">QA blog search</strong> and expert insights. Discover why our blog is trusted by professionals:
+        
+        <p className="text-lg text-gray-700 mb-8 text-center leading-relaxed">
+          Testriq's <strong className="text-cyan-600">software testing search</strong> hub is your go-to resource for <strong className="text-cyan-600">QA blog search</strong> and expert insights. Discover why our blog is trusted by professionals worldwide:
         </p>
-        <ul className="space-y-4 mb-8 text-gray-700 text-base md:text-lg">
-          <li>
-            <span className="text-cyan-500 mr-2">•</span>
-            Find&nbsp; <strong className="text-cyan-600">test automation best practices</strong>&nbsp; and tools like &nbsp;<Link href="/blog/search?q=selenium" className="text-cyan-600 hover:text-cyan-800 underline">Selenium</Link> &nbsp;for streamlined QA workflows.
-          </li>
-          <li>
-            <span className="text-cyan-500 mr-2">•</span>
-            Explore &nbsp;<strong className="text-cyan-600">Agile testing methodologies</strong>&nbsp; and &nbsp;<strong className="text-cyan-600">best practices for QA search</strong>&nbsp; in CI/CD pipelines
-          </li>
-          <li>
-            <span className="text-cyan-500 mr-2">•</span>
-            Access actionable guides on <strong className="text-cyan-600">test-driven development (TDD)</strong>, <strong className="text-cyan-600">integration testing strategies</strong>, and tools like <Link href="/blog/search?q=jmeter" className="text-cyan-600 hover:text-cyan-800 underline">JMeter</Link>.
-          </li>
-          <li>
-            <span className="text-cyan-500 mr-2">•</span>
-            Dive into <strong className="text-cyan-600">search QA insights</strong> for <Link href="/blog/search?q=security" className="text-cyan-600 hover:text-cyan-800 underline">security testing</Link> and AI-driven testing trends.
-          </li>
-        </ul>
+        
+        {/* Enhanced Features Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
+          <div className="bg-white/20 rounded-lg p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Comprehensive Testing Coverage</h3>
+            <ul className="space-y-3 text-gray-700 text-base">
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Find <strong className="text-cyan-600">test automation best practices</strong> and tools like <Link href="/blog/search?q=selenium" className="text-cyan-600 hover:text-cyan-800 underline">Selenium</Link>, Cypress, and Playwright for streamlined QA workflows.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Explore <strong className="text-cyan-600">Agile testing methodologies</strong> and <strong className="text-cyan-600">best practices for QA search</strong> in CI/CD pipelines and DevOps environments.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Access actionable guides on <strong className="text-cyan-600">test-driven development (TDD)</strong>, <strong className="text-cyan-600">integration testing strategies</strong>, and performance testing tools like <Link href="/blog/search?q=jmeter" className="text-cyan-600 hover:text-cyan-800 underline">JMeter</Link>.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Dive into <strong className="text-cyan-600">search QA insights</strong> for <Link href="/blog/search?q=security" className="text-cyan-600 hover:text-cyan-800 underline">security testing</Link>, API testing, and AI-driven testing trends.
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-white/20 rounded-lg p-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Industry-Leading Expertise</h3>
+            <ul className="space-y-3 text-gray-700 text-base">
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Content authored by ISTQB-certified professionals with extensive industry experience across multiple domains and technologies.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Real-world case studies and examples from successful testing implementations in fintech, healthcare, e-commerce, and enterprise software.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Up-to-date coverage of emerging trends including AI testing, IoT device testing, blockchain application testing, and cloud-native testing strategies.
+              </li>
+              <li>
+                <span className="text-cyan-500 mr-2">•</span>
+                Practical tutorials with step-by-step instructions, code examples, and downloadable resources for immediate implementation.
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        {/* Search Tips Section */}
+        <div className="bg-white/30 rounded-lg p-8 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Maximize Your Search Results</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Effective Keywords</h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Use specific terms like "automation frameworks," "manual testing tips," "performance bottlenecks," or "security vulnerabilities" to find targeted content.
+              </p>
+              <div className="bg-gray-100 rounded p-3">
+                <p className="text-xs text-gray-600 font-mono">
+                  Examples: "selenium grid setup", "api testing postman", "mobile testing appium"
+                </p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Search Operators</h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Use quotes for exact phrases, OR for multiple terms, and minus (-) to exclude terms from your search results.
+              </p>
+              <div className="bg-gray-100 rounded p-3">
+                <p className="text-xs text-gray-600 font-mono">
+                  "test automation" OR "automated testing" -manual
+                </p>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Topic Categories</h4>
+              <p className="text-gray-700 text-sm mb-3">
+                Browse by categories like automation, performance, security, or mobile testing to discover comprehensive topic coverage.
+              </p>
+              <div className="bg-gray-100 rounded p-3">
+                <p className="text-xs text-gray-600 font-mono">
+                  Categories: Tools, Methodologies, Best Practices
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <p className="text-lg text-gray-700 mb-8 text-center">
-          Optimize your <strong className="text-cyan-600">QA blog search</strong> with keywords like “automation frameworks” or “manual testing tips” to uncover tutorials and case studies from industry experts.
+          Optimize your <strong className="text-cyan-600">QA blog search</strong> experience by combining specific keywords with our advanced filtering options. Whether you're looking for beginner tutorials, advanced techniques, or industry-specific solutions, our comprehensive search system will connect you with the most relevant and valuable content.
         </p>
+        
+        {/* Popular Search Terms */}
+        <div className="bg-white/20 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Popular Search Terms</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              'selenium automation',
+              'api testing',
+              'performance testing',
+              'mobile testing',
+              'security testing',
+              'test automation frameworks',
+              'agile testing',
+              'continuous testing',
+              'test data management',
+              'defect management',
+              'test planning',
+              'regression testing'
+            ].map((term, index) => (
+              <Link
+                key={index}
+                href={`/blog/search?q=${encodeURIComponent(term)}`}
+                className="bg-cyan-100 hover:bg-cyan-200 text-cyan-800 px-3 py-1 rounded-full text-sm font-medium transition-colors"
+              >
+                {term}
+              </Link>
+            ))}
+          </div>
+        </div>
+        
         <div className="text-center">
-          <Link href="/blog" className="inline-block bg-cyan-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-cyan-600 transition-all duration-300 hover:shadow-lg">
+          <Link href="/blog" className="inline-block bg-cyan-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-cyan-600 transition-all duration-300 hover:shadow-lg mr-4">
             Explore More QA Insights
+          </Link>
+          <Link href="/case-studies" className="inline-block bg-gray-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 hover:shadow-lg">
+            View Success Stories
           </Link>
         </div>
       </div>

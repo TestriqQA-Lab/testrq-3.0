@@ -44,10 +44,11 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
               </div>
             </div>
 
-            {/* Title */}
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            {/* Title - Fixed: Changed from h1 to h2 to avoid duplicate H1 tags */}
+            {/* The page title (H1) is now handled by the document head/metadata */}
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {caseStudy.title}
-            </h1>
+            </h2>
 
             {/* Client */}
             <p className="text-xl text-gray-600 mb-6">
@@ -94,7 +95,7 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
               <div className="flex justify-center flex-col text-center">
                 <Image
                   src={caseStudy.image}
-                  alt={caseStudy.client}
+                  alt={`${caseStudy.client} Case Study - ${caseStudy.title}`}
                   width={300}
                   height={200}
                   className="object-contain"
@@ -112,3 +113,4 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
 };
 
 export default CaseStudyHeroSection;
+

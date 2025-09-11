@@ -290,14 +290,15 @@ export async function generateMetadata({ params }: PageProps ) {
   const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
   if (caseStudy) {
     const metadata = caseStudy.metadata;
-    const pageTitle = metadata?.title || `${caseStudy.title} | Case Study | Testriq`;
+    // Fixed: Use unique title for each case study to avoid duplicate title tags
+    const pageTitle = metadata?.title || `${caseStudy.title} - Case Study | Testriq QA Lab`;
     const pageDescription = metadata?.description || caseStudy.description;
     const canonicalUrl = `https://www.testriq.com/${caseStudy.slug}`;
 
     return {
       title: pageTitle,
       description: pageDescription,
-      keywords: metadata?.keywords || ["software testing", "QA", "case study"],
+      keywords: metadata?.keywords || ["software testing", "QA", "case study", caseStudy.industry.toLowerCase(), caseStudy.client.toLowerCase()],
       authors: metadata?.authors || [{ name: "Testriq QA Lab" }],
       creator: metadata?.creator || "Testriq QA Lab",
       publisher: metadata?.publisher || "Testriq QA Lab",
@@ -315,7 +316,7 @@ export async function generateMetadata({ params }: PageProps ) {
             url: `https://www.testriq.com${caseStudy.image}`,
             width: 1200,
             height: 630,
-            alt: caseStudy.title,
+            alt: `${caseStudy.client} Case Study - ${caseStudy.title}`,
           },
         ],
       },
@@ -329,6 +330,13 @@ export async function generateMetadata({ params }: PageProps ) {
       robots: {
         index: true,
         follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
       },
     };
   }
@@ -372,6 +380,13 @@ export async function generateMetadata({ params }: PageProps ) {
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
   };
 }
@@ -447,3 +462,4 @@ export async function generateStaticParams() {
   
   return allSlugs;
 }
+

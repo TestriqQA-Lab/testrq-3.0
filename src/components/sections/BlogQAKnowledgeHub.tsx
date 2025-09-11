@@ -9,88 +9,200 @@ const QAKnowledgeHub: React.FC = () => {
         });
     };
 
-    
     return (
-        <section className="bg-gradient-to-r from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gradient-to-r from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl font-extrabold text-gray-900 mb-10 text-center sm:text-5xl">
                     Explore Our QA Knowledge Hub
                 </h2>
-                <p className="text-lg text-gray-700 mb-12 text-center max-w-7xl mx-auto">
-                    At Testriq, we’re dedicated to empowering software teams with expert quality assurance (QA) insights. Our QA Knowledge Hub is your go-to resource for
-                    mastering software testing, whether you’re a QA engineer, developer, or business leader aiming to deliver flawless applications. From automation tools
-                    like Selenium and Appium to Agile methodologies and performance testing, our blog offers the latest trends, practical tips, and real-world case studies
-                    to elevate your testing strategy. With insights from industry experts, we simplify complex QA concepts into actionable advice. Dive into our curated topics
-                    below to discover how Testriq can help you achieve superior software quality and streamline development.
-                </p>
-                {/* Optional Image - Uncomment to include */}
-                {/* <img
-          src="/images/qa-workflow.jpg"
-          alt="Testriq QA Knowledge Hub for Software Testing Best Practices"
-          className="w-full h-auto max-w-2xl mx-auto mb-8 rounded-lg shadow-md"
-        /> */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                {/* Enhanced Introduction */}
+                <div className="text-lg text-gray-700 mb-12 max-w-7xl mx-auto">
+                    <p className="mb-6 text-center">
+                        At Testriq, we're dedicated to empowering software teams with expert quality assurance (QA) insights. Our QA Knowledge Hub is your go-to resource for
+                        mastering software testing, whether you're a QA engineer, developer, or business leader aiming to deliver flawless applications.
+                    </p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Our Knowledge Hub?</h3>
+                            <p className="mb-4">
+                                Our blog stands out in the crowded landscape of software testing resources by offering content that bridges the gap between theoretical knowledge and practical application. Each article is crafted by ISTQB-certified professionals and industry veterans who bring years of hands-on experience to every piece of content.
+                            </p>
+                            <p className="mb-4">
+                                We understand that the software testing landscape is constantly evolving, with new tools, methodologies, and challenges emerging regularly. That's why our knowledge hub is continuously updated with the latest trends, from cutting-edge automation frameworks to emerging AI-driven testing approaches.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4">What Makes Us Different?</h3>
+                            <p className="mb-4">
+                                Unlike generic testing blogs, our content is rooted in real-world project experience. Every tutorial, guide, and best practice recommendation comes from actual implementations across diverse industries, from fintech to healthcare, e-commerce to enterprise software.
+                            </p>
+                            <p className="mb-4">
+                                Our comprehensive approach covers not just the technical aspects of testing, but also the business impact, team dynamics, and strategic considerations that make QA initiatives successful. We believe in empowering our readers with both the 'how' and the 'why' behind effective testing practices.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-6 shadow-md mb-8">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Content Philosophy</h3>
+                        <p className="text-center mb-4">
+                            From automation tools like Selenium and Appium to Agile methodologies and performance testing, our blog offers the latest trends, practical tips, and real-world case studies to elevate your testing strategy. With insights from industry experts, we simplify complex QA concepts into actionable advice.
+                        </p>
+                        <p className="text-center">
+                            Whether you're looking to implement your first automation framework, optimize existing testing processes, or stay ahead of emerging trends in AI and machine learning testing, our knowledge hub provides the depth and breadth of information you need to succeed.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Enhanced Category Grid with Detailed Descriptions */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {[
                         {
                             title: 'Automation Testing',
-                            description: 'Discover tools like Selenium and Appium to streamline testing and boost efficiency.',
+                            description: 'Discover comprehensive guides on automation tools like Selenium, Appium, Cypress, and Playwright. Learn how to design robust test frameworks, implement CI/CD integration, and maximize ROI from test automation investments.',
+                            detailedInfo: 'Our automation testing section covers everything from beginner-friendly tutorials to advanced framework design patterns. Explore topics like Page Object Model implementation, data-driven testing strategies, and cross-browser compatibility solutions.',
                             link: '/blog/category/automation-testing-services',
+                            topics: ['Selenium WebDriver', 'Appium Mobile Testing', 'CI/CD Integration', 'Framework Design']
                         },
                         {
                             title: 'Manual Testing Best Practices',
-                            description: 'Learn proven techniques to ensure comprehensive test coverage for your applications.',
+                            description: 'Master proven manual testing techniques that ensure comprehensive test coverage. Learn exploratory testing methods, test case design principles, and effective bug reporting strategies.',
+                            detailedInfo: 'Manual testing remains a cornerstone of quality assurance. Our guides help you develop systematic approaches to test planning, execution, and documentation that complement automated testing efforts.',
                             link: '/blog/category/manual-testing',
+                            topics: ['Test Case Design', 'Exploratory Testing', 'Bug Reporting', 'Test Planning']
                         },
                         {
                             title: 'Security Testing',
-                            description: 'Uncover vulnerabilities with tools and techniques to ensure robust application security.',
+                            description: 'Uncover vulnerabilities with advanced security testing tools and techniques. Learn about penetration testing, vulnerability assessments, and secure coding practices to ensure robust application security.',
+                            detailedInfo: 'Security testing is more critical than ever in today\'s threat landscape. Our content covers OWASP guidelines, security testing tools, and methodologies to identify and mitigate security risks.',
                             link: '/blog/category/security-testing',
+                            topics: ['OWASP Testing', 'Penetration Testing', 'Vulnerability Assessment', 'Secure Code Review']
                         },
                         {
                             title: 'AI Application Testing',
-                            description: 'Master testing strategies for AI-driven applications to ensure accuracy and reliability.',
+                            description: 'Master cutting-edge testing strategies for AI-driven applications. Learn how to test machine learning models, validate AI algorithms, and ensure accuracy and reliability in intelligent systems.',
+                            detailedInfo: 'As AI becomes integral to modern applications, specialized testing approaches are essential. Explore model validation techniques, bias detection methods, and performance testing for AI systems.',
                             link: '/blog/category/ai-application-testing',
+                            topics: ['ML Model Testing', 'AI Algorithm Validation', 'Bias Detection', 'Performance Testing']
                         },
                         {
                             title: 'Performance Testing Essentials',
-                            description: 'Master tools like JMeter to optimize application speed and reliability.',
+                            description: 'Master performance testing tools like JMeter, LoadRunner, and K6 to optimize application speed and reliability. Learn load testing strategies, bottleneck identification, and scalability planning.',
+                            detailedInfo: 'Performance testing ensures your applications can handle real-world usage patterns. Our comprehensive guides cover everything from basic load testing to complex performance engineering scenarios.',
                             link: '/blog/category/performance-testing-services',
+                            topics: ['Load Testing', 'Stress Testing', 'Scalability Planning', 'Performance Monitoring']
                         },
                         {
                             title: 'Testriq Case Studies',
-                            description: 'Explore real-world examples of how our QA solutions drive success.',
+                            description: 'Explore detailed real-world examples of how our QA solutions drive measurable business success. Learn from actual project implementations and their outcomes.',
+                            detailedInfo: 'Our case studies provide transparent insights into project challenges, solutions implemented, and results achieved. These real-world examples offer valuable lessons for your own QA initiatives.',
                             link: '/case-studies',
+                            topics: ['Project Success Stories', 'ROI Analysis', 'Implementation Strategies', 'Lessons Learned']
                         },
                     ].map((topic, index) => (
                         <div
                             key={index}
-                            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                            className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                         >
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">{topic.title}</h3>
+                            <h3 className="text-xl font-semibold text-gray-900 mb-3">{topic.title}</h3>
                             <p className="text-gray-600 mb-4">{topic.description}</p>
+                            <p className="text-sm text-gray-500 mb-4">{topic.detailedInfo}</p>
+                            
+                            <div className="mb-4">
+                                <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Topics:</h4>
+                                <div className="flex flex-wrap gap-2">
+                                    {topic.topics.map((topicItem, topicIndex) => (
+                                        <span key={topicIndex} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                                            {topicItem}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            
                             <Link
                                 href={topic.link}
-                                className="text-brand-blue font-medium hover:text-blue-800 transition-colors duration-200"
+                                className="text-brand-blue font-medium hover:text-blue-800 transition-colors duration-200 inline-flex items-center"
                             >
-                                Explore Now &rarr;
+                                Explore Now 
+                                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
                             </Link>
                         </div>
                     ))}
                 </div>
-                <div className="mt-10 text-center">
-                    <p className="text-lg text-gray-700 mb-4">
-                        Start your QA journey today with expert insights and practical solutions!
+
+                {/* Additional Value Proposition Section */}
+                <div className="bg-white rounded-lg p-8 shadow-md mb-10">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Why Industry Leaders Trust Our Insights</h3>
+                    
+                    <div className="grid md:grid-cols-3 gap-8 mb-8">
+                        <div className="text-center">
+                            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-semibold mb-2">Expert Authorship</h4>
+                            <p className="text-gray-600">Content created by ISTQB-certified professionals and industry veterans with proven track records in delivering successful QA projects across multiple industries.</p>
+                        </div>
+                        
+                        <div className="text-center">
+                            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-semibold mb-2">Practical Implementation</h4>
+                            <p className="text-gray-600">Every article includes actionable insights, code examples, and step-by-step guides that you can immediately apply to your own testing projects and workflows.</p>
+                        </div>
+                        
+                        <div className="text-center">
+                            <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2" />
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-semibold mb-2">Current & Relevant</h4>
+                            <p className="text-gray-600">Stay ahead of the curve with content that covers the latest tools, methodologies, and industry trends, updated regularly to reflect the evolving QA landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div className="text-center">
+                        <p className="text-lg text-gray-700 mb-6">
+                            Join thousands of QA professionals who rely on our insights to advance their careers and improve their testing practices. Our community-driven approach ensures that content remains relevant, practical, and immediately applicable to real-world scenarios.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Call to Action Section */}
+                <div className="text-center">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        Ready to Transform Your Testing Strategy?
+                    </h3>
+                    <p className="text-lg text-gray-700 mb-6">
+                        Start your QA journey today with expert insights and practical solutions that deliver measurable results!
                     </p>
-                    <Link
-                        href="/blog#blog-categories"
-                        onClick={(e) => {
-                            e.preventDefault(); // Prevent default link behavior
-                            scrollToCategory(); // Trigger smooth scroll
-                        }}
-                        className="inline-block bg-brand-blue text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors duration-200"
-                    >
-                        Explore More
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link
+                            href="/blog#blog-categories"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToCategory();
+                            }}
+                            className="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-200"
+                        >
+                            Explore All Categories
+                        </Link>
+                        <Link
+                            href="/case-studies"
+                            className="inline-block bg-gray-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors duration-200"
+                        >
+                            View Success Stories
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>
@@ -98,3 +210,4 @@ const QAKnowledgeHub: React.FC = () => {
 };
 
 export default QAKnowledgeHub;
+
