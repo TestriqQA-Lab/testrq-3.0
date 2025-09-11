@@ -138,7 +138,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Expertise</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive manual testing services built to ensure exceptional software quality through human-centered testing approaches, including functional testing, usability testing, exploratory testing, and UAT-executed by ISTQB-certified experts.
+            Explore our <Link href='blog/post/accessibility-testing-in-manual-testing-use-cases-techniques'>comprehensive manual testing services</Link> built to ensure <Link href='blog/post/the-future-of-software-testing-embracing-the-trends-of-2024-and-beyond'>exceptional software quality</Link> through <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>human-centered testing</Link> approaches, including <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, exploratory testing, and <Link href='blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques'>UAT-executed</Link> by ISTQB-certified experts.
           </p>
         </div>
 

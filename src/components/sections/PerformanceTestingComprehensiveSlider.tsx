@@ -179,8 +179,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our comprehensive performance testing services designed to
             ensure your applications are fast, scalable, and stable under any
-            load. Our solutions focus on application performance, scalability
-            testing, and load simulation to deliver high-speed, reliable digital
+            load. Our solutions focus on application <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>performance, scalability
+            testing</Link>, and load simulation to deliver high-speed, reliable digital
             experiences.
           </p>
         </div>

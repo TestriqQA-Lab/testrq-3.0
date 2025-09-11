@@ -35,12 +35,11 @@ const RegressionTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ensure your software updates don&apos;t break existing
-              functionality with our comprehensive regression testing services.
-              We use selective, progressive, and automated regression testing
-              strategies-supported by robust test scripts, continuous regression
-              testing, and impact analysis-to maintain software stability while
-              accelerating your CI/CD pipelines and reducing production defects.
+              Ensure your <Link href='blog/post/the-future-of-qa-trends-shaping-software-testing-in-2025'>software updates</Link> don&apos;t break existing
+              functionality with our <Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>comprehensive regression testing services</Link>.
+              We use selective, progressive, and <Link href='blog/post/automated-regression-testing-faster-smarter-qa-cycles'>automated regression testing</Link>{" "}
+              strategies-supported by <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>robust test scripts</Link>, <Link href='blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops'>continuous regression</Link> testing, and <Link href='blog/post/regression-impact-analysis-optimizing-test-coverage'>impact analysis</Link>-to maintain software stability while
+              accelerating your <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipelines</Link> and <Link href='blog/post/automated-regression-testing-faster-smarter-qa-cycles'>reducing production defects.</Link>
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
