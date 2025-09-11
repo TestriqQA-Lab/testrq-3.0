@@ -4,24 +4,42 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Case Studies & Success Stories | Testriq QA Testing Results",
-  description: "Explore our client success stories and case studies showcasing real results from our software testing services. See how we helped businesses achieve 99% bug reduction, 75% faster releases, and improved user satisfaction.",
-  keywords: "client case studies, success stories, software testing results, QA case studies, testing testimonials, client testimonials, software quality results, testing ROI, QA success metrics",
-  metadataBase: new URL('https://www.testriq.com/'),
- alternates: {
-  canonical: 'https://www.testriq.com/case-studies',
+  description:
+    "Explore our client success stories and case studies showcasing real results from our software testing services. See how we helped businesses achieve 99% bug reduction, 75% faster releases, and improved user satisfaction.",
+  keywords:
+    "client case studies, success stories, software testing results, QA case studies, testing testimonials, client testimonials, software quality results, testing ROI, QA success metrics",
+  metadataBase: new URL("https://www.testriq.com/"),
+  alternates: {
+    canonical: "https://www.testriq.com/case-studies",
   },
   openGraph: {
-    title: "Client Case Studies & Success Stories | Testriq QA Testing Results",
-    description: "Explore our client success stories and case studies showcasing real results from our software testing services.",
+    title:
+      "Client Case Studies & Success Stories | Testriq QA Testing Results",
+    description:
+      "Explore our client success stories and case studies showcasing real results from our software testing services.",
     type: "website",
     url: "https://www.testriq.com/case-studies",
+    images: [
+      {
+        url: "/OG/case-study-og.webp", // 🔹 your OG image URL
+        width: 1200,
+        height: 630,
+        alt: "Testriq Case Studies & Client Success Stories",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Client Case Studies & Success Stories | Testriq QA Testing Results",
-    description: "Explore our client success stories and case studies showcasing real results from our software testing services.",
+    title:
+      "Client Case Studies & Success Stories | Testriq QA Testing Results",
+    description:
+      "Explore our client success stories and case studies showcasing real results from our software testing services.",
+    images: [
+      "/OG/case-study-twitter.webp", // 🔹 your Twitter image URL
+    ],
   },
 };
+
 
 const CaseStudiesHeroSection = dynamic(
   () => import("@/components/sections/CaseStudiesHeroSection"),
