@@ -18,6 +18,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/shukp/",
       img: (
         <Image
+        title="Prashant Shukla – QA Expert at Testriq"
           src="/prashant-shukla.png"
           alt="Prashant-shukla"
           width={350}
@@ -42,6 +43,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/sandeepmaske",
       img: (
         <Image
+        title="Sandeep Maske – Senior QA Analyst"
           src="/sandeep-maske-img.webp"
           alt="Sandeep Maske"
           width={350}
@@ -65,6 +67,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
       img: (
         <Image
+        title="Santosh Kakade – QA Specialist"
           src="/Santosh_Kakade.webp"
           alt="Santosh_Kakade"
           width={350}
@@ -88,6 +91,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
       img: (
         <Image
+        title="Goutam Mishra – QA Automation Engineer"
           src="/Goutam_Mishra.webp"
           alt="Goutam_Mishra"
           width={350}
@@ -111,6 +115,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
       img: (
         <Image
+        title="Rohan Maske – Manual Testing Expert"
           src="/Rohan_Maske.png"
           alt="Rohan_Maske"
           width={350}
@@ -134,6 +139,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
       img: (
         <Image
+        title="Aatish Jadhav – QA Team Member"
           src="/Aatish_Jadhav.webp"
           alt="Aatish_Jadhav"
           width={350}
@@ -160,6 +166,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
       img: (
         <Image
+        title="Shoeb Shaikh – QA Group Manager"
           src="/ShoebShaikh.webp"
           alt="ShoebShaikh"
           width={350}
@@ -183,6 +190,7 @@ const TeamLeadershipSection = () => {
       ],
       linkedin: "https://www.linkedin.com/in/profashishshetty/",
       img: <Image
+      title="AshishShetty"
         src="/AshishShetty.png"
         alt="ShoebShaikh"
         width={550}
@@ -296,6 +304,7 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
+                  title={leader.name}
                     href={leader.linkedin}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
@@ -429,6 +438,7 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
+                  title={leader.name}
                     href={leader.linkedin}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
@@ -480,7 +490,8 @@ const TeamLeadershipSection = () => {
               <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              At Testriq, we lead by example and foster innovation in <Link href='software-testing-guide'>software
+              At Testriq, we lead by example and foster innovation in <Link title="software
+              testing" href='software-testing-guide'>software
               testing</Link>, building a QA team culture where every member thrives and
               drives collective success.
             </p>

@@ -205,15 +205,15 @@ const TeamMembersSection = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our team is organized into specialized QA departments, each bringing
-            deep expertise in <Link href='automation-testing-services'>automation testing</Link>, <Link href='manual-testing'>manual testing</Link>,
-            <Link href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
+            deep expertise in <Link title="automation testing" href='automation-testing-services'>automation testing</Link>, <Link title="manual testing" href='manual-testing'>manual testing</Link>,
+            <Link title="performance testing" href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
           </p>
         </div>
 
         {/* Departments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {departments.map((dept, index) => (
-            <Link href={dept.action}
+            <Link title={dept.name} href={dept.action}
               key={index}
               className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
             >
@@ -291,6 +291,7 @@ const TeamMembersSection = () => {
                     {member.department}
                   </div>
                   <Link
+                  title={member.name}
                     href={member.linkedin}
                     className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >

@@ -57,7 +57,7 @@ const LaunchFastToolsFramework: React.FC = () => {
     {
       title: (
         <>
-        <Link href='performance-testing-services'>Performance Testing</Link>
+        <Link title="Performance Testing" href='performance-testing-services'>Performance Testing</Link>
         </>
       ),
       tools: [
@@ -82,7 +82,7 @@ const LaunchFastToolsFramework: React.FC = () => {
     {
       title: (
         <>
-        <Link href='mobile-application-testing'>Mobile Testing</Link>
+        <Link title="Mobile Testing" href='mobile-application-testing'>Mobile Testing</Link>
         </>
       ),
       tools: [
@@ -107,7 +107,7 @@ const LaunchFastToolsFramework: React.FC = () => {
     {
       title: (
         <>
-        <Link href='api-testing'>API Testing</Link>
+        <Link title="API Testing" href='api-testing'>API Testing</Link>
         </>
       ),
       tools: [
@@ -161,7 +161,7 @@ const LaunchFastToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage cutting-edge tools like <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link>, and <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide-2'>JMeter</Link>,
+            We leverage cutting-edge tools like <Link title="Selenium" href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link title="Cypress" href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link>, and <Link title="JMeter" href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide-2'>JMeter</Link>,
             optimized for rapid testing sprints and agile development, to ensure
             comprehensive QA validation across all platforms and environments.
           </p>
@@ -212,7 +212,8 @@ const LaunchFastToolsFramework: React.FC = () => {
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
               Our curated tech stack supports rapid testing sprints, delivering
-              maximum efficiency and test coverage for <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, <Link href='blog/post/performance-optimization-for-pre-launch-software-testing'>fast
+              maximum efficiency and test coverage for <Link title="agile QA testing" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, <Link title="fast
+              product launches" href='blog/post/performance-optimization-for-pre-launch-software-testing'>fast
               product launches</Link>, and seamless go-to-market QA execution
             </p>
           </div>
@@ -279,7 +280,7 @@ const LaunchFastToolsFramework: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link href={"/tools"}>
+          <Link  href={"/tools"} title="Explore our full QA technology stack">
             <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
               Explore Our Technology Stack
             </button>
