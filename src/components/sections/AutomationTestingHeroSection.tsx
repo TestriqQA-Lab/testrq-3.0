@@ -45,14 +45,15 @@ const AutomationTestingHeroSection: React.FC = () => {
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Transform your testing strategy with cutting-edge automation
-              testing frameworks, seamless <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
-              intelligent test execution. Our advanced test automation solutions
-              using <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='blog/post/mobile-automation-testing-guide-android-ios-frameworks'>mobile automation reduce</Link>{" "}
-              testing time by up to 80%, while significantly improving test
-              coverage, reliability, and overall software quality.
-            </p>
+           <p className="text-xl text-gray-600 leading-relaxed">
+  Transform your testing strategy with cutting-edge automation
+  testing frameworks, seamless <Link href='/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
+  intelligent test execution. Our advanced test automation solutions
+  using <Link href='/blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='/blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Mobile Automation Testing for Android &amp; iOS</Link>{" "}
+  reduce testing time by up to 80%, while significantly improving test
+  coverage, reliability, and overall software quality.
+</p>
+
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4 w-full sm:w-auto">
               <Link href="/contact-us">

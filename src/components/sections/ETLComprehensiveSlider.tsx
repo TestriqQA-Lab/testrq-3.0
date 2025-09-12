@@ -215,7 +215,7 @@ const ETLComprehensiveSlider: React.FC = () => {
 
               <div className="flex justify-between items-center">
                 <Link href={`blog/post${activeTestingType.action}`} className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
-                  Learn More
+                  Explore Data Extraction Testing
                 </Link>
                 <button
                   className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
