@@ -457,7 +457,7 @@ const QADocumentationComprehensiveSlider = () => {
                       "bg-"
                     )} text-white cursor-pointer font-medium rounded-lg hover:opacity-90 transition-opacity duration-200`}
                   >
-                    Start {activeDoc.title} Project
+                  Contact Us
                   </button>
                 </Link>
               </div>
