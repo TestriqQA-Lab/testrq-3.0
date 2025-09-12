@@ -225,7 +225,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                   testingTypes[activeTab].color
                 )} hover:shadow-lg`}
               >
-                Learn More
+                Explore {testingTypes[activeTab].title}
               </Link>
             </div>
 

@@ -210,7 +210,7 @@ const ExploratoryComprehensiveSlider: React.FC = () => {
               </div>
 
               <Link href={`blog/post${explorationTypes[activeTab].action}`} className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(explorationTypes[activeTab].color)} hover:shadow-lg`}>
-                Learn More
+                Explore {explorationTypes[activeTab].title}
               </Link>
             </div>
 

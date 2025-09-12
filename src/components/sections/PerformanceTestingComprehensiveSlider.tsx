@@ -257,7 +257,7 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
                         href={`blog/post${performanceTypes[activeTab].action}`}
                         className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
                       >
-                        Learn More
+                        Explore {performanceTypes[activeTab].title}
                       </Link>
                     </div>
                     <div>

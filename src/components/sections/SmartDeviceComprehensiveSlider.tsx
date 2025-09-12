@@ -191,7 +191,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
               </div>
 
               <Link href={testingTypes[activeTab].action} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
-                Learn More
+                Explore {testingTypes[activeTab].title}
               </Link>
             </div>
 
