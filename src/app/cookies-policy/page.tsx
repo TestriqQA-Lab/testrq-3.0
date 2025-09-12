@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Cookies Policy | Testriq QA Lab',
@@ -65,7 +66,7 @@ const CookiesPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <a href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</a>
+                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -141,10 +142,10 @@ const CookiesPolicy = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-800 mb-4">Browser-specific Cookie Management:</h4>
               <ul className="space-y-2 text-gray-700">
-                <li>For the Chrome web browser, please visit this page from Google: <a href="https://support.google.com/" className="text-blue-600 hover:text-blue-800 underline">https://support.google.com/</a></li>
-                <li>For the Internet Explorer web browser, please visit this page from Microsoft: <a href="http://support.microsoft.com/kb/278835" className="text-blue-600 hover:text-blue-800 underline">http://support.microsoft.com/kb/278835</a></li>
-                <li>For the Firefox web browser, please visit this page from Mozilla: <a href="https://support.mozilla.org/" className="text-blue-600 hover:text-blue-800 underline">https://support.mozilla.org/</a></li>
-                <li>For the Safari web browser, please visit this page from Apple: <a href="https://support.apple.com/guide/safari/" className="text-blue-600 hover:text-blue-800 underline">https://support.apple.com/guide/safari/</a></li>
+                <li>For the Chrome web browser, please visit this page from Google: <Link href="https://support.google.com/" className="text-blue-600 hover:text-blue-800 underline">https://support.google.com/</Link></li>
+                <li>For the Internet Explorer web browser, please visit this page from Microsoft: <Link href="http://support.microsoft.com/kb/278835" className="text-blue-600 hover:text-blue-800 underline">http://support.microsoft.com/kb/278835</Link></li>
+                <li>For the Firefox web browser, please visit this page from Mozilla: <Link href="https://support.mozilla.org/" className="text-blue-600 hover:text-blue-800 underline">https://support.mozilla.org/</Link></li>
+                <li>For the Safari web browser, please visit this page from Apple: <Link href="https://support.apple.com/guide/safari/" className="text-blue-600 hover:text-blue-800 underline">https://support.apple.com/guide/safari/</Link></li>
                 <li>For any other web browser, please visit your web browser&apos;s official web pages.</li>
               </ul>
             </div>
@@ -155,7 +156,7 @@ const CookiesPolicy = () => {
               More Information about Cookies
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              You can learn more about cookies: <a href="#" className="text-blue-600 hover:text-blue-800 underline">What Are Cookies?</a>
+              You can learn more about cookies: <Link href="#" className="text-blue-600 hover:text-blue-800 underline">What Are Cookies?</Link>
             </p>
           </section>
 
@@ -165,10 +166,10 @@ const CookiesPolicy = () => {
                 <strong>Address:</strong> Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> <a href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</a>
+                <strong>Phone:</strong> <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link>
               </p>
               <p className="text-gray-700">
-                <strong>Email:</strong> <a href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</a>
+                <strong>Email:</strong> <Link href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</Link>
               </p>
             </div>
           </section>

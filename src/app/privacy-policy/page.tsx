@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Testriq QA Lab',
@@ -89,7 +90,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <a href="https://www.facebook.com/testriq.lab" className="text-blue-600 hover:text-blue-800 underline">https://www.facebook.com/testriq.lab</a>
+                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <Link href="https://www.facebook.com/testriq.lab" className="text-blue-600 hover:text-blue-800 underline">https://www.facebook.com/testriq.lab</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -125,7 +126,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <a href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</a>
+                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -230,7 +231,7 @@ const PrivacyPolicy = () => {
               <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h4 className="text-lg font-semibold text-gray-800 mb-2">Flash Cookies</h4>
                 <p className="text-gray-700 leading-relaxed">
-                  Certain features of our Service may use locally stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how to delete Flash Cookies, You can go to the <a href="#" className="text-blue-600 hover:text-blue-800 underline">Adobe website</a> and follow the instructions provided by Adobe with respect to the Flash Player Settings Manager and make changes as directed therein.
+                  Certain features of our Service may use locally stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how to delete Flash Cookies, You can go to the Adobe website and follow the instructions provided by Adobe with respect to the Flash Player Settings Manager and make changes as directed therein.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-2">
                   Please note that If You disable or delete Flash Cookies, some features of our Service may not function properly.
@@ -246,7 +247,7 @@ const PrivacyPolicy = () => {
             </div>
 
             <p className="text-gray-700 leading-relaxed mt-6 mb-6">
-              Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <a href="https://www.privacypolicies.com/blog/cookies/" className="text-blue-600 hover:text-blue-800 underline">Cookies by Privacy Policies Generator.</a>
+              Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <Link href="https://www.privacypolicies.com/blog/cookies/" className="text-blue-600 hover:text-blue-800 underline">Cookies by Privacy Policies Generator.</Link>
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
@@ -519,9 +520,9 @@ const PrivacyPolicy = () => {
 
             <div className="bg-gray-50 p-6 rounded-lg">
               <ul className="space-y-2 text-gray-700">
-                <li>– By email: <a href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</a></li>
-                <li>– By visiting this page on our website: <a href="https://www.testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com/contact-us</a></li>
-                <li>– By phone number: <a href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</a></li>
+                <li>– By email: <Link href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</Link></li>
+                <li>– By visiting this page on our website: <Link href="https://www.testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com/contact-us</Link></li>
+                <li>– By phone number: <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link></li>
               </ul>
             </div>
           </section>
@@ -532,10 +533,10 @@ const PrivacyPolicy = () => {
                 <strong>Address:</strong> Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> <a href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</a>
+                <strong>Phone:</strong> <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link>
               </p>
               <p className="text-gray-700">
-                <strong>Email:</strong> <a href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</a>
+                <strong>Email:</strong> <Link href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</Link>
               </p>
             </div>
           </section>

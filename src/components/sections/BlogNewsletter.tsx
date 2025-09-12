@@ -130,13 +130,13 @@ const handleSubscribe = async (e: React.FormEvent) => {
                   { icon: <FaFacebook />, href: "https://www.facebook.com/testriq.lab/" },
                   { icon: <FaInstagram />, href: "https://instagram.com/testriq" },
                 ].map((s, i) => (
-                  <a
+                  <Link
                     key={i}
                     href={s.href}
                     className="w-12 h-12 text-gray-600 hover:text-cyan-300 bg-white bg-opacity-10 rounded-lg flex items-center justify-center transition-colors"
                   >
                     {s.icon}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Terms of services | Testriq QA Lab',
@@ -202,7 +203,7 @@ const TermsOfService = () => {
                   <strong>Location:</strong> Mumbai – India
                 </p>
                 <p className="text-gray-700">
-                  <strong>Web:</strong> <a href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</a>
+                  <strong>Web:</strong> <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</Link>
                 </p>
               </div>
             </div>
@@ -214,10 +215,10 @@ const TermsOfService = () => {
                 <strong>Address:</strong> Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> <a href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</a>
+                <strong>Phone:</strong> <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link>
               </p>
               <p className="text-gray-700">
-                <strong>Email:</strong> <a href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</a>
+                <strong>Email:</strong> <Link href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</Link>
               </p>
             </div>
           </section>
