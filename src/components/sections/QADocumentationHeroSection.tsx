@@ -61,7 +61,7 @@ const QADocumentationHeroSection = () => {
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
               <Link href="/contact-us">
                 <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200">
-                  Get Started Today
+                     Contact Us
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
