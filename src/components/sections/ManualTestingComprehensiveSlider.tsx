@@ -195,7 +195,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
                         {type.description}
                       </p>
                       <Link href={testingTypes[activeTab].action} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                        Learn More
+                        Explore {testingTypes[activeTab].title}
                       </Link>
                     </div>
                     <div>

@@ -195,7 +195,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
                         {type.description}
                       </p>
                       <Link href={`blog/post${automationTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                        Learn More
+                        Explore {automationTypes[activeTab].title}
                       </Link>
                     </div>
                     <div>
