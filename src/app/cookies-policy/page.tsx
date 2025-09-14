@@ -66,7 +66,7 @@ const CookiesPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</Link>
+                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">Visit Testriq</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -142,10 +142,10 @@ const CookiesPolicy = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-800 mb-4">Browser-specific Cookie Management:</h4>
               <ul className="space-y-2 text-gray-700">
-                <li>For the Chrome web browser, please visit this page from Google: <Link href="https://support.google.com/" className="text-blue-600 hover:text-blue-800 underline">https://support.google.com/</Link></li>
-                <li>For the Internet Explorer web browser, please visit this page from Microsoft: <Link href="http://support.microsoft.com/kb/278835" className="text-blue-600 hover:text-blue-800 underline">http://support.microsoft.com/kb/278835</Link></li>
-                <li>For the Firefox web browser, please visit this page from Mozilla: <Link href="https://support.mozilla.org/" className="text-blue-600 hover:text-blue-800 underline">https://support.mozilla.org/</Link></li>
-                <li>For the Safari web browser, please visit this page from Apple: <Link href="https://support.apple.com/guide/safari/" className="text-blue-600 hover:text-blue-800 underline">https://support.apple.com/guide/safari/</Link></li>
+                <li>For the Chrome web browser, please visit this page from Google: <Link href="https://support.google.com/" className="text-blue-600 hover:text-blue-800 underline">Chrome Browser Settings</Link></li>
+                <li>For the Internet Explorer web browser, please visit this page from Microsoft: <Link href="http://support.microsoft.com/kb/278835" className="text-blue-600 hover:text-blue-800 underline">Disable Cookies in Internet Explorer</Link></li>
+                <li>For the Firefox web browser, please visit this page from Mozilla: <Link href="https://support.mozilla.org/" className="text-blue-600 hover:text-blue-800 underline">Firefox Cookie Settings</Link></li>
+                <li>For the Safari web browser, please visit this page from Apple: <Link href="https://support.apple.com/guide/safari/" className="text-blue-600 hover:text-blue-800 underline">Safari Privacy Controls</Link></li>
                 <li>For any other web browser, please visit your web browser&apos;s official web pages.</li>
               </ul>
             </div>

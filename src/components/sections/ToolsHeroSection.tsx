@@ -40,18 +40,13 @@ const ToolsHeroSection = () => {
           <span className="text-sm">Advanced Testing Arsenal</span>
         </div>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
+        <h1 className="text-3xl  md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
           Cutting-Edge{" "}
           <span className="text-[theme(color.brand.blue)]">
             Testing Tools <br />& Frameworks
           </span>
         </h1>
-        <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-          Cutting-Edge{" "}
-          <span className="text-[theme(color.brand.blue)]">
-            Testing Tools & Frameworks
-          </span>
-        </h1>
+        
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Discover our comprehensive suite of industry-leading testing tools and

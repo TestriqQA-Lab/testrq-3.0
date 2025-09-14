@@ -90,7 +90,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <Link href="https://www.facebook.com/testriq.lab" className="text-blue-600 hover:text-blue-800 underline">https://www.facebook.com/testriq.lab</Link>
+                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <Link href="https://www.facebook.com/testriq.lab" className="text-blue-600 hover:text-blue-800 underline">Follow Testriq on Facebook</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -126,7 +126,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com</Link>
+                <strong>Website</strong> refers to TESTRIQ QA Lab, accessible from <Link href="https://www.testriq.com" className="text-blue-600 hover:text-blue-800 underline">Visit Testriq website</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -521,7 +521,7 @@ const PrivacyPolicy = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <ul className="space-y-2 text-gray-700">
                 <li>– By email: <Link href="mailto:contact@testriq.com" className="text-blue-600 hover:text-blue-800 underline">contact@testriq.com</Link></li>
-                <li>– By visiting this page on our website: <Link href="https://www.testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">https://www.testriq.com/contact-us</Link></li>
+                <li>– By visiting this page on our website: <Link href="https://www.testriq.com/contact-us" className="text-blue-600 hover:text-blue-800 underline">Contact Our QA Experts</Link></li>
                 <li>– By phone number: <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link></li>
               </ul>
             </div>

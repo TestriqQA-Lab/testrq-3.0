@@ -5,12 +5,24 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          // Explicitly allow contact page and assets
+          '/contact-us',
+          '/assets/',
+          '/css/',
+          '/js/',
+          '/images/',
+          '/_next/', // Next.js assets
+          '/static/', // Static files
+        ],
         disallow: [
           // Protect private and system paths
           '/private/',
           '/admin/',
-          // Reduce crawl noise from tracking params
+          '/api/', // API routes (optional)
+          
+          // Reduce crawl noise from tracking params BUT exclude embed params
           '/*?*utm_*',
           '/*?*fbclid=*',
           '/*?*gclid=*',
@@ -19,6 +31,14 @@ export default function robots(): MetadataRoute.Robots {
           '/*?*_hsenc=*',
           '/*?*mc_cid=*',
           '/*?*mc_eid=*',
+          
+          // Block print and share versions
+          '/*?*print=*',
+          '/*?*share=*',
+          
+          // Block search and filter params (optional)
+          '/*?*search=*',
+          '/*?*filter=*',
         ],
       },
     ],
