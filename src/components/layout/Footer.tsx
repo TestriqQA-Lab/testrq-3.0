@@ -23,6 +23,11 @@ interface specializedTesting {
   path: Url;
 }
 
+interface blogCategory {
+  title: string;
+  path: Url;
+}
+
 const coreService = [
   { title: "LaunchFast QA", path: "/launchfast-qa" },
   { title: "Exploratory Testing", path: "/exploratory-testing" },
@@ -56,6 +61,18 @@ const specializedTesting = [
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
 ];
 
+// Enhanced blog categories for better internal linking
+const blogCategories = [
+  { title: "Mobile Application Testing", path: "/blog/category/mobile-application-testing" },
+  { title: "API Testing", path: "/blog/category/api-testing" },
+  { title: "Performance Testing", path: "/blog/category/performance-testing-services" },
+  { title: "QA Testing", path: "/blog/category/qa-testing" },
+  { title: "Best Practices", path: "/blog/category/best-practices" },
+  { title: "Software Testing Tools", path: "/blog/category/software-testing-tools" },
+  { title: "Automation Testing", path: "/blog/category/automation-testing" },
+  { title: "IoT Device Testing", path: "/blog/category/iot-device-testing" },
+];
+
 const company = [
   { title: "About Us", path: "/about-us" },
   { title: "Our Team", path: "/our-team" },
@@ -65,6 +82,7 @@ const company = [
   { title: "Careers", path: "/careers" },
   { title: "Locations We Serve", path: "/locations-we-serve" },
   { title: "Contact Us", path: "/contact-us" },
+  { title: "ROI Calculator", path: "/roi-calculator" },
 ];
 
 const partners = [
@@ -92,9 +110,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 border-t border-gray-200 py-16 px-8 md:px-12 lg:px-24">
       <div className="mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Information */}
-          <div className="space-y-4 xl:mr-10">
+          <div className="space-y-4 xl:mr-10 lg:col-span-2">
             <div className="flex items-center space-x-2">
               <Image title="Testriq Logo" src={Logo} alt="Testriq_Logo" width={150} />
             </div>
@@ -220,6 +238,33 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Blog Categories - NEW SECTION */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-gray-800 border-b border-blue-200 pb-2">
+              Testing Insights
+            </h3>
+            <ul className="space-y-2">
+              {blogCategories.map((category) => (
+                <li key={category.title}>
+                  <Link
+                    href={category.path}
+                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                  >
+                    {category.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2">
+              <Link
+                href="/blog"
+                className="text-sm font-medium text-brand-blue hover:text-blue-700 transition-colors"
+              >
+                View All Articles →
+              </Link>
+            </div>
+          </div>
+
           {/* Company Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-800 border-b border-blue-200 pb-2">
@@ -287,7 +332,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="#"
+                href="/sitemap.xml"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap
@@ -301,3 +346,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
