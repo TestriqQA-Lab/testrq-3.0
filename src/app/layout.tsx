@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import TawkToScript from "@/components/TawkToScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +105,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <TawkToScript />
       </body>
     </html>
   );
