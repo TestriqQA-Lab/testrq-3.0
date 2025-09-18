@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true",
+});
 
 const nextConfig: NextConfig = {
+
+  reactStrictMode: true, // ✅ Helps catch performance issues in dev
+  swcMinify: true,       // ✅ Smaller, faster JS bundles
+
+  experimental: {
+    esmExternals: "loose" // ✅ Reduces polyfills/legacy JS
+  },
+
+
   images: {
     // Disable all Next.js/Vercel image optimization globally
     unoptimized: true, // images will be served as-is, no optimizer requests [1][13]
@@ -37,4 +51,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
+;
