@@ -37,7 +37,7 @@ const AboutHeroSection = () => {
             "15+ Years of  Testing Industry Experience",
             "Trusted by Startups to Enterprise Leaders",
           ].map((point, index) => (
-            <div key={index} className="flex items-center gap-3 text-left">
+            <div key={index} className="flex items-center md:justify-center xl:justify-start gap-3 text-left">
               <FaCheckCircle className="text-[theme(color.brand.blue)] w-5 h-5 flex-shrink-0" />
               <span className="text-gray-700 text-base">{point}</span>
             </div>

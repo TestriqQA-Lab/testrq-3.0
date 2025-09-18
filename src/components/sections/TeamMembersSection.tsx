@@ -294,6 +294,7 @@ const TeamMembersSection = () => {
                   <Link
                   title={member.name}
                     href={member.linkedin}
+                    aria-label={`${member.name} linkedin`}
                     className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
                     <FaLinkedin size={20} />

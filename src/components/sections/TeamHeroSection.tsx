@@ -75,9 +75,9 @@ const TeamHeroSection = () => {
               <div className="w-24 h-24 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaUsers className="text-white w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 Our Team
-              </h3>
+              </h2>
               <p className="text-gray-600 text-sm px-4">
                 United by passion for quality and excellence
               </p>
