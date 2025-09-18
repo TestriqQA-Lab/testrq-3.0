@@ -19,9 +19,11 @@ export default function TawkToScript() {
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://embed.tawk.to/5f8ff79efd4ff5477ea7aae5/1j58u74lc";
-    script.setAttribute("crossorigin", "*");
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "anonymous"); // ✅ correct usage
     document.body.appendChild(script);
 
+    // Tawk needs these globals
     window.Tawk_API = window.Tawk_API || {};
     window.Tawk_LoadStart = new Date();
 
