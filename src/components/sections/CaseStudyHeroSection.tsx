@@ -46,9 +46,9 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
 
             {/* Title - Fixed: Changed from h1 to h2 to avoid duplicate H1 tags */}
             {/* The page title (H1) is now handled by the document head/metadata */}
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {caseStudy.title}
-            </h2>
+            </h1>
 
             {/* Client */}
             <p className="text-xl text-gray-600 mb-6">

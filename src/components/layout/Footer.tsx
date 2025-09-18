@@ -1,12 +1,13 @@
 "use client";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaLinkedinIn, 
+  FaPhoneAlt, 
+  FaEnvelope, 
+  FaMapMarkerAlt 
+} from "react-icons/fa";
+
 import { BsTwitterX } from "react-icons/bs";
 import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
@@ -107,7 +108,7 @@ const Footer = () => {
             {/* Contact Information */}
             <div className="space-y-2">
               <div className="flex space-x-2 text-sm text-gray-800">
-                <MapPin className="h-15 w-15 text-brand-blue" />
+                <FaMapMarkerAlt className="h-15 w-15 text-brand-blue" />
                 <p>
                   Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
                   Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
@@ -115,7 +116,7 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">
-                <Phone className="h-4 w-4 text-brand-blue" />
+                <FaPhoneAlt className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="tel:+919152929343"
                   className="hover:text-brand-blue transition-colors"
@@ -124,7 +125,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">
-                <Mail className="h-4 w-4 text-brand-blue" />
+                <FaEnvelope className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="mailto:contact@testriq.com"
                   className="hover:text-brand-blue transition-colors"
@@ -152,30 +153,34 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
+                <FaLinkedinIn className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://www.facebook.com/testriq.lab/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Facebook"
               >
-                <Facebook className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
+                <FaFacebookF className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://instagram.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5 text-gray-800 group-hover:text-pink-600 transition-colors" />
+                <FaInstagram className="h-5 w-5 text-gray-800 group-hover:text-pink-600 transition-colors" />
               </Link>
               <Link
                 href="https://x.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Twitter"
               >
                 <BsTwitterX className="h-5 w-5 text-gray-800 group-hover:text-blue-400 transition-colors" />
               </Link>
