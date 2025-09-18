@@ -1,13 +1,6 @@
 import React from "react";
-import DataAnalysisHeroSection from "@/components/sections/DataAnalysisHeroSection";
-import DataAnalysisComprehensiveSlider from "@/components/sections/DataAnalysisComprehensiveSlider";
-import DataAnalysisProvenTestingProcess from "@/components/sections/DataAnalysisProvenTestingProcess";
-import DataAnalysisWhyChooseTestriq from "@/components/sections/DataAnalysisWhyChooseTestriq";
-import DataAnalysisToolsFramework from "@/components/sections/DataAnalysisToolsFramework";
-// import DataAnalysisCaseStudies from "@/components/sections/DataAnalysisCaseStudies";
-import DataAnalysisFAQs from "@/components/sections/DataAnalysisFAQs";
-import DataAnalysisReadyToEnsureQuality from "@/components/sections/DataAnalysisReadyToEnsureQuality";
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import StructuredData, {
   createBreadcrumbSchema,
   dataAnalysisServiceSchema,
@@ -88,6 +81,95 @@ export const metadata: Metadata = {
     yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
+
+const DataAnalysisHeroSection = dynamic(
+  () => import("@/components/sections/DataAnalysisHeroSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisComprehensiveSlider = dynamic(
+  () => import("@/components/sections/DataAnalysisComprehensiveSlider"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisProvenTestingProcess = dynamic(
+  () => import("@/components/sections/DataAnalysisProvenTestingProcess"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisWhyChooseTestriq = dynamic(
+  () => import("@/components/sections/DataAnalysisWhyChooseTestriq"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisToolsFramework = dynamic(
+  () => import("@/components/sections/DataAnalysisToolsFramework"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+// import DataAnalysisCaseStudies from "@/components/sections/DataAnalysisCaseStudies";
+
+const DataAnalysisFAQs = dynamic(
+  () => import("@/components/sections/DataAnalysisFAQs"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisReadyToEnsureQuality = dynamic(
+  () => import("@/components/sections/DataAnalysisReadyToEnsureQuality"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+
+
 
 const DataAnalysisPage = () => {
   const breadcrumbItems = [
