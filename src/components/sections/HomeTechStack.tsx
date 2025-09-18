@@ -47,7 +47,7 @@ const techStack: {
             <Image
             title="Selenium Automation Logo"
               src="/Selenium_Logo.png"
-              alt="Selenium Logo"
+              alt="Selenium logo"
               width={20}
               height={20}
               className="object-contain"
@@ -60,7 +60,7 @@ const techStack: {
             <Image
             title="Cypress Testing Logo"
               src="/Cypress_Logo.png"
-              alt="Cypress Logo"
+              alt="Cypress logo"
               width={20}
               height={20}
               className="object-contain"
@@ -73,7 +73,7 @@ const techStack: {
             <Image
             title="Playwright Automation Logo"
               src="/Playwright_Logo.svg"
-              alt="Playwright Logo"
+              alt="Playwright logo"
               width={20}
               height={20}
               className="object-contain"
@@ -86,7 +86,7 @@ const techStack: {
             <Image
             title="Appium Mobile Automation Logo"
               src="/Appium_Logo.svg"
-              alt="Appium Logo"
+              alt="Appium logo"
               width={20}
               height={20}
               className="object-contain"
@@ -99,7 +99,7 @@ const techStack: {
             <Image
             title="TestComplete Automation Logo"
               src="/TestComplete_Logo.png"
-              alt="TestComplete Logo"
+              alt="TestComplete logo"
               width={20}
               height={20}
               className="object-contain"
@@ -118,7 +118,7 @@ const techStack: {
             <Image
             title="Apache JMeter Load Testing Logo"
               src="/JMeter_Logo.svg"
-              alt="JMeter Logo"
+              alt="JMeter logo"
               width={20}
               height={20}
               className="object-contain"
@@ -131,7 +131,7 @@ const techStack: {
             <Image
             title="Micro Focus LoadRunner Logo"
               src="/Loadrunner_Logo.png"
-              alt="LoadRunner Logo"
+              alt="LoadRunner logo"
               width={20}
               height={20}
               className="object-contain"
@@ -144,7 +144,7 @@ const techStack: {
             <Image
             title="K6 Load Testing Tool Logo"
               src="/K6_Logo.png"
-              alt="K6 Logo"
+              alt="K6 logo"
               width={20}
               height={20}
               className="object-contain"
@@ -157,7 +157,7 @@ const techStack: {
             <Image
             title="Gatling Performance Testing Logo"
               src="/Gatling_Logo.png"
-              alt="Gatling Logo"
+              alt="Gatling logo"
               width={20}
               height={20}
               className="object-contain"
@@ -170,7 +170,7 @@ const techStack: {
             <Image
             title="BlazeMeter Load Testing Logo"
               src="/BlazeMeter_Logo.png"
-              alt="BlazeMeter Logo"
+              alt="BlazeMeter logo"
               width={20}
               height={20}
               className="object-contain"
@@ -189,7 +189,7 @@ const techStack: {
             <Image
             title="Postman API Testing Logo"
               src="/Postman_Logo.png"
-              alt="Postman Logo"
+              alt="Postman logo"
               width={20}
               height={20}
               className="object-contain"
@@ -202,7 +202,7 @@ const techStack: {
             <Image
             title="REST Assured API Testing Logo"
               src="/RestAssured_Logo.png"
-              alt="REST Assured"
+              alt="REST assured"
               width={20}
               height={20}
               className="object-contain"
@@ -215,7 +215,7 @@ const techStack: {
             <Image
             title="SoapUI API Testing Logo"
               src="/SoapUI_Logo.png"
-              alt="SoapUI Logo"
+              alt="SoapUI logo"
               width={20}
               height={20}
               className="object-contain"
@@ -228,7 +228,7 @@ const techStack: {
             <Image
             title="Insomnia API Testing Tool Logo"
               src="/Insomnia_Logo.png"
-              alt="Insomnia Logo"
+              alt="Insomnia logo"
               width={20}
               height={20}
               className="object-contain"
@@ -241,7 +241,7 @@ const techStack: {
             <Image
             title="Newman API Test Runner Logo"
               src="/Newman_Logo.png"
-              alt="Newman Logo"
+              alt="Newman logo"
               width={20}
               height={20}
               className="object-contain"
@@ -260,7 +260,7 @@ const techStack: {
             <Image
             title="OWASP ZAP Security Testing Logo"
               src="/Owasp_Zap_Logo.png"
-              alt="OWASP ZAP Logo"
+              alt="OWASP logo"
               width={20}
               height={20}
               className="object-contain"
@@ -273,7 +273,7 @@ const techStack: {
             <Image
             title="Burp Suite Web Security Testing Logo"
               src="/BurpSuite_Logo.png"
-              alt="Burp Suite Logo"
+              alt="Burp Suite logo"
               width={20}
               height={20}
               className="object-contain"
@@ -286,7 +286,7 @@ const techStack: {
             <Image
             title="Nessus Vulnerability Scanner Logo"
               src="/Nessus_Logo.png"
-              alt="Nessus Logo"
+              alt="Nessus logo"
               width={20}
               height={20}
               className="object-contain"
@@ -299,7 +299,7 @@ const techStack: {
             <Image
             title="Veracode Application Security Logo"
               src="/VeraCode_Logo.png"
-              alt="Veracode Logo"
+              alt="Veracode logo"
               width={20}
               height={20}
               className="object-contain"
@@ -312,7 +312,7 @@ const techStack: {
             <Image
             title="Checkmarx Static Code Analysis Logo"
               src="/Checkmarx_Logo.png"
-              alt="Checkmarx Logo"
+              alt="Checkmarx logo"
               width={20}
               height={20}
               className="object-contain"

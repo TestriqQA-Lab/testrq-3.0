@@ -229,12 +229,12 @@ const Navbar = () => {
     <nav className="bg-white shadow-md px-4 sm:px-6 md:px-16 sticky top-0 z-50">
       <div className="flex justify-between items-center px-2 sm:px-5 md:px-8 py-3 sm:py-4">
         {/* Logo */}
-        <Link href="/" onClick={() => handleLinkClick("/", "")}>
+        <Link href="/" onClick={() => handleLinkClick("/", "")} aria-label="Testriq Home">
           <div className="text-xl sm:text-2xl md:text-3xl font-bold cursor-pointer">
             <Image
               title="Testriq Logo"
               src={Testriq_Logo}
-              alt="Testriq_Logo"
+              alt="Testriq logo"
               height={100}
               width={120}
             />
@@ -256,6 +256,7 @@ const Navbar = () => {
                 <Link
                   href={item.link}
                   onClick={() => handleLinkClick(item.link, "")}
+                  aria-label={item.label}
                 >
                   <div
                     className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${
@@ -300,6 +301,7 @@ const Navbar = () => {
                                 onClick={() =>
                                   handleLinkClick(column.link, item.label)
                                 }
+                                aria-label={column.label}
                               >
                                 <h2
                                   className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${
@@ -336,6 +338,7 @@ const Navbar = () => {
                                           item.label
                                         )
                                       }
+                                      aria-label={service.label}
                                     >
                                       <span
                                         className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${
@@ -373,6 +376,7 @@ const Navbar = () => {
                               item.label
                             )
                           }
+                          aria-label={"label" in subItem ? subItem.label : subItem.heading}
                         >
                           <span
                             className={`block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer ${
@@ -444,6 +448,7 @@ const Navbar = () => {
                     <Link
                       href={item.link}
                       onClick={() => handleLinkClick(item.link, "")}
+                      aria-label={item.label}
                     >
                       <span
                         className={`text-md font-medium ${
@@ -490,6 +495,7 @@ const Navbar = () => {
                                   onClick={() =>
                                     handleLinkClick(column.link, item.label)
                                   }
+                                  aria-label={column.label}
                                 >
                                   <h3
                                     className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${
@@ -517,6 +523,7 @@ const Navbar = () => {
                                     onClick={() =>
                                       handleLinkClick(service.link, item.label)
                                     }
+                                    aria-label={service.label}
                                   >
                                     <span
                                       className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${
@@ -546,6 +553,7 @@ const Navbar = () => {
                                   item.label
                                 )
                               }
+                              aria-label={"label" in subItem ? subItem.label : subItem.heading}
                             >
                               <span
                                 className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${
@@ -605,6 +613,7 @@ const Navbar = () => {
                     <Link
                       href={item.link}
                       onClick={() => handleLinkClick(item.link, "")}
+                      aria-label={item.label}
                     >
                       <span
                         className={`text-base font-medium ${
@@ -651,6 +660,7 @@ const Navbar = () => {
                                   onClick={() =>
                                     handleLinkClick(column.link, item.label)
                                   }
+                                  aria-label={column.label}
                                 >
                                   <h3
                                     className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${
@@ -678,6 +688,7 @@ const Navbar = () => {
                                     onClick={() =>
                                       handleLinkClick(service.link, item.label)
                                     }
+                                    aria-label={service.label}
                                   >
                                     <span
                                       className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${
@@ -707,6 +718,7 @@ const Navbar = () => {
                                 item.label
                               )
                             }
+                            aria-label={"label" in subItem ? subItem.label : subItem.heading}
                           >
                             <span
                               className={`block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md ${

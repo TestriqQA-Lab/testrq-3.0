@@ -96,7 +96,7 @@ const Footer = () => {
           {/* Company Information */}
           <div className="space-y-4 xl:mr-10">
             <div className="flex items-center space-x-2">
-              <Image title="Testriq Logo" src={Logo} alt="Testriq_Logo" width={150} />
+              <Image title="Testriq Logo" src={Logo} alt="Testriq_logo" width={150} />
             </div>
             <p className="text-gray-800 text-sm leading-relaxed">
               Premium software testing services with over a decade of
@@ -193,6 +193,7 @@ const Footer = () => {
                   <Link
                     href={service.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={service.title}
                   >
                     {service.title}
                   </Link>
@@ -212,6 +213,7 @@ const Footer = () => {
                   <Link
                     href={service.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={service.title}
                   >
                     {service.title}
                   </Link>
@@ -231,6 +233,7 @@ const Footer = () => {
                   <Link
                     href={link.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={link.title}
                   >
                     {link.title}
                   </Link>
@@ -248,6 +251,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
+              aria-label={partner.title}
             >
               <Image
                 title={partner.title}
