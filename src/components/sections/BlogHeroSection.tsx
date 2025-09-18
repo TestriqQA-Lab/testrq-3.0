@@ -115,10 +115,9 @@ const BlogHeroSection: React.FC = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Discover expert insights on test automation, performance testing,
-          security testing, mobile app testing, and QA best practices to
-          accelerate your testing excellence.
+        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-7xl mx-auto leading-relaxed">
+          Stay ahead in the evolving world of software testing with expert QA insights, best practices for automation, and up-to-date guidance on performance, security, and API testing. Our comprehensive blog covers test automation frameworks like Selenium and Appium, in-depth guides on mobile and web application QA, as well as strategies for integrating CI/CD and effective bug tracking.
+          Explore cutting-edge trends in AI-driven software testing, load and stress testing, cloud-native QA, and security vulnerabilities, empowering your development teams to deliver robust, scalable, and secure digital solutions.
         </p>
 
         {/* Search Bar */}
@@ -164,9 +163,8 @@ const BlogHeroSection: React.FC = () => {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div
-                className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${
-                  stat.isAnimated && isLoaded ? "" : ""
-                }`}
+                className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${stat.isAnimated && isLoaded ? "" : ""
+                  }`}
               >
                 {stat.number}
               </div>
