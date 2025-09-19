@@ -179,7 +179,7 @@ const ApiComprehensiveSlider: React.FC = () => {
 
               <div className="w-40">
                 <Link href={testingTypes[activeTab].action}
-                className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`}
+                className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
               >
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4" />

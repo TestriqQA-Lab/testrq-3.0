@@ -147,8 +147,9 @@ const HealthcareChallengesSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link href={`blog/post${challenge.action}`} className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors">
-                  Learn More{" "}
+                <Link href={`blog/post${challenge.action}`} className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors" aria-label={`Learn more about ${challenge.title}`}
+                >
+                  Learn More
                   <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

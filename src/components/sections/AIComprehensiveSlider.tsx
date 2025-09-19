@@ -184,7 +184,7 @@ const AIComprehensiveSlider: React.FC = () => {
 
               <div className="mt-6 flex justify-between items-center">
                 <Link href={`blog/post${testingTypes[activeTab].action}`}
-                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
                 >
                   <span>Learn More</span>
                   <FaArrowRight className="w-4 h-4" />

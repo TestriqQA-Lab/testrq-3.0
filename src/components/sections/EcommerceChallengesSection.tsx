@@ -192,7 +192,7 @@ const EcommerceChallengesSection: React.FC = () => {
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <Link
                   href={`blog/post${challenge.action}`}
-                  className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
+                  className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300" aria-label={`Learn more about ${challenge.title}`}
                 >
                   Learn More
                   <FaArrowRight className="w-3 h-3" />

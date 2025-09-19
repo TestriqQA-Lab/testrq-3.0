@@ -239,7 +239,7 @@ const IoTChallengesSection: React.FC = () => {
                 {/* CTA */}
                 <Link
                   href={`blog/post${challenge.action}`}
-                  className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group`}
+                  className={`w-full bg-gradient-to-r ${challenge.color} text-white py-3 px-4 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group `  } aria-label={`Learn more about ${challenge.title}`}
                 >
                   Learn More
                   <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

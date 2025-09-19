@@ -147,6 +147,7 @@ const BlogPostsGrid: React.FC = () => {
                         <Link
                           href={`/blog/post/${post.id}`}
                           className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
+                          aria-label={`Read more about ${post.id}`}
                         >
                           Read More
                           <FaArrowRight className="w-3 h-3" />
@@ -307,6 +308,7 @@ const BlogPostsGrid: React.FC = () => {
                         <Link
                           href={`/blog/post/${post.id}`}
                           className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
+                          aria-label={`Read more about ${post.id}`}
                         >
                           Read More →
                         </Link>

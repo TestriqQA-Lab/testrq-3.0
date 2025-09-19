@@ -202,6 +202,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                   <Link
                     href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 mt-3 md:mt-0 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
+                    aria-label={`Learn more about ${post.title}`}
                   >
                     Read More
                     <FaArrowRight className="w-3 h-3" />
