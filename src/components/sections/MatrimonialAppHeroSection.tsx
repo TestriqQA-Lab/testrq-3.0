@@ -83,9 +83,9 @@ const MatrimonialAppHeroSection = () => {
               <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-brand-blue mb-4 group-hover:scale-110 transition-transform">
                 <Shield className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h2 className="text-lg font-semibold text-gray-800 mb-2">
                 Security First
-              </h3>
+              </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Built on industry-leading <Link href="/security-testing">security testing</Link> methods to safeguard
                 sensitive user data and ensure platform safety.
@@ -97,9 +97,9 @@ const MatrimonialAppHeroSection = () => {
               <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-pink-100 text-pink-500 mb-4 group-hover:scale-110 transition-transform">
                 <Heart className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h2 className="text-lg font-semibold text-gray-800 mb-2">
                 User Trust Focused
-              </h3>
+              </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Certification designed to build credibility, strengthen trust,
                 and improve user satisfaction for matrimonial platforms.
@@ -111,9 +111,9 @@ const MatrimonialAppHeroSection = () => {
               <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-green-100 text-green-500 mb-4 group-hover:scale-110 transition-transform">
                 <ArrowRight className="w-7 h-7" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <h2 className="text-lg font-semibold text-gray-800 mb-2">
                 Future-Ready
-              </h3>
+              </h2>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Continuous updates to match evolving matrimonial app regulations
                 and standards, keeping you ahead in compliance.

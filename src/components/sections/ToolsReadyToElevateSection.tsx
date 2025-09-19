@@ -81,11 +81,12 @@ const ToolsReadyToElevateSection = () => {
           </p>
 
           {/* Primary CTA Button */}
-          <Link href="/contact-us">
-            <button className="bg-white cursor-pointer text-sky-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center gap-3 mb-12">
-              Start Your Testing Journey
-              <FaArrowRight className="w-5 h-5" />
-            </button>
+          <Link
+            href="/contact-us"
+            className="bg-white cursor-pointer text-sky-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center gap-3 mb-12 min-h-[48px] min-w-[48px]"
+          >
+            Start Your Testing Journey
+            <FaArrowRight className="w-5 h-5" />
           </Link>
         </div>
 
@@ -117,13 +118,13 @@ const ToolsReadyToElevateSection = () => {
                 </p>
                 <h3 className="py-2">{option.detail}</h3>
 
-                <Link href={option.action}>
-                  <button
-                    className={`px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors bg-brand-blue text-white hover:bg-sky-700`}
-                  >
-                    {option.text}
-                  </button>
+                <Link
+                  href={option.action}
+                  className="px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors bg-brand-blue text-white hover:bg-sky-700 inline-flex items-center justify-center min-h-[48px] min-w-[48px]"
+                >
+                  {option.text}
                 </Link>
+
               </div>
             );
           })}
@@ -180,10 +181,11 @@ const ToolsReadyToElevateSection = () => {
               tools and frameworks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:scale-98 transition-all">
-                  Get Started Today
-                </button>
+              <Link
+                href="/contact-us"
+                className="bg-white cursor-pointer text-sky-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 hover:scale-98 transition-all inline-flex items-center justify-center min-h-[48px] min-w-[48px]"
+              >
+                Get Started Today
               </Link>
             </div>
           </div>

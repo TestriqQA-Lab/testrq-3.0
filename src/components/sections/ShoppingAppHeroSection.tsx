@@ -159,9 +159,9 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
               className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
             >
               <div className="mb-4 text-brand-blue">{item.icon}</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
+              <h2 className="text-lg font-bold text-gray-900 mb-2">
                 {item.title}
-              </h3>
+              </h2>
               <p className="text-gray-600">{item.description}</p>
             </div>
           ))}

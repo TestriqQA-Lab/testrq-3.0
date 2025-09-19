@@ -1,6 +1,17 @@
 import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
+
+const MainLayout = dynamic(
+  () => import("@/components/layout/MainLayout"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: "Case Studies & Success Stories | Testriq QA Testing Results",

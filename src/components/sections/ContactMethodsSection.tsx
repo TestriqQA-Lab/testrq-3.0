@@ -319,16 +319,17 @@ const ContactMethodsSection: React.FC = () => {
                 <h4 className="font-semibold text-gray-900 mb-3">Follow Us</h4>
                 <div className="flex gap-3">
                   {socialLinks.map((social, index) => (
-                    <a
+                    <Link
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-12 h-12 ${social.color} rounded-lg flex items-center justify-center text-white transition-colors duration-300`}
                       title={social.name}
+                      aria-label={social.name}
                     >
                       <social.icon className="w-5 h-5" />
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>

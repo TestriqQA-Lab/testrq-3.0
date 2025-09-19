@@ -13,7 +13,7 @@ import {
   FaCode,
 } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const AutomationTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -45,14 +45,14 @@ const AutomationTestingHeroSection: React.FC = () => {
               </span>
             </h1>
 
-           <p className="text-xl text-gray-600 leading-relaxed">
-  Transform your testing strategy with cutting-edge automation
-  testing frameworks, seamless <Link href='/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
-  intelligent test execution. Our advanced test automation solutions
-  using <Link href='/blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='/blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Mobile Automation Testing for Android &amp; iOS</Link>{" "}
-  reduce testing time by up to 80%, while significantly improving test
-  coverage, reliability, and overall software quality.
-</p>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Transform your testing strategy with cutting-edge automation
+              testing frameworks, seamless <Link href='/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
+              intelligent test execution. Our advanced test automation solutions
+              using <Link href='/blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='/blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Mobile Automation Testing for Android &amp; iOS</Link>{" "}
+              reduce testing time by up to 80%, while significantly improving test
+              coverage, reliability, and overall software quality.
+            </p>
 
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4 w-full sm:w-auto">
@@ -103,9 +103,9 @@ const AutomationTestingHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     Automation Control Center
-                  </h3>
+                  </h2>
                 </div>
                 <span className="text-sm text-purple-600 font-medium">
                   Running

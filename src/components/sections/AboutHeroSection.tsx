@@ -14,22 +14,15 @@ const AboutHeroSection = () => {
           </span>
         </div>
 
-        <h1 className="text-3xl hidden md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight md:py-3">
+        <h1 className="text-3xl md:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight">
           Pioneering{" "}
           <span className="text-[theme(color.brand.blue)]">
             Quality <br /> Assurance&nbsp;
           </span>
           Excellence
         </h1>
-        <h2 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-          Pioneering{" "}
-          <span className="text-[theme(color.brand.blue)]">
-            Quality Assurance
-          </span>{" "}
-          Excellence
-        </h2>
 
-        <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
+        <p className="mt-4 xl:mt-0 text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Testriq QA Lab LLP is a globally trusted software testing company with
           over 15 years of experience. We deliver expert-led QA solutions across
           the <Link title="Understanding SDLC & STLC in QA Process" href="blog/post/understanding-the-sdlc-and-stlc-in-qa">SDLC</Link>, combining ISTQB-certified talent, <Link title="agile practices" href="blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile practices</Link>, and a
@@ -44,7 +37,7 @@ const AboutHeroSection = () => {
             "15+ Years of  Testing Industry Experience",
             "Trusted by Startups to Enterprise Leaders",
           ].map((point, index) => (
-            <div key={index} className="flex items-center gap-3 text-left">
+            <div key={index} className="flex items-center md:justify-center xl:justify-start gap-3 text-left">
               <FaCheckCircle className="text-[theme(color.brand.blue)] w-5 h-5 flex-shrink-0" />
               <span className="text-gray-700 text-base">{point}</span>
             </div>
@@ -60,9 +53,9 @@ const AboutHeroSection = () => {
               <div className="w-24 h-24 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaCheckCircle className="text-white w-12 h-12" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 Quality First
-              </h3>
+              </h2>
               <p className="text-gray-600 text-sm px-4">
                 Every project we undertake is driven by our commitment to
                 excellence

@@ -12,6 +12,7 @@ const TeamLeadershipSection = () => {
       experience: "20+ Years",
       specialization: "IT Strategy & Leadership",
       bio: "Prashant Shukla, former Managing Director at Udemy (India & South Asia) and National Technology Officer at Microsoft India, has over 20 years of leadership experience in digital transformation, strategy, and innovation. As Senior Advisor at Testriq, he brings his expertise to drive growth, technology innovation, and strategic expansion.",
+      label: "Prashant Shukla linkedin",
       achievements: [
 
       ],
@@ -34,6 +35,7 @@ const TeamLeadershipSection = () => {
       experience: "20+ Years",
       specialization: "QA Strategy & Leadership",
       bio: "Sandeep Maske, Founder & CEO of TESTRIQ QA LAB & Cinute Digital, drives unparalleled excellence in software testing, empowering diverse industries with QA expertise.",
+      label: "Sandeep Maske linkedin",
       achievements: [
         "Founded Testriq in 2010",
         "Scaled company to 50+ employees",
@@ -58,6 +60,7 @@ const TeamLeadershipSection = () => {
       experience: "17+ Years",
       specialization: "QA & Digital Solutions",
       bio: "Santosh Kakade, With 17+ years in QA & digital solutions, lead TESTRIQ QA Lab & Cinute Digital, delivering top-tier testing services and upskilling professionals in tech.",
+      label: "Santosh Kakade linkedin",
       achievements: [
         "Led 100+ automation projects",
         "Expert in Selenium, Cypress, Playwright",
@@ -82,6 +85,7 @@ const TeamLeadershipSection = () => {
       experience: "20+ Years",
       specialization: "Software Testing & BD ",
       bio: "Goutam Mishra, With 20+ years in tech, excel in QA, testing, and project management, mentoring QA professionals while ensuring top-tier software quality across platforms.",
+      label: "Goutam Mishra linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -106,6 +110,7 @@ const TeamLeadershipSection = () => {
       experience: "8+ Years",
       specialization: "Expertise in BD and QA testing",
       bio: "A results-driven leader with 8+ years of expertise in BD, QA testing, HR, data analysis, talent acquisition & performance marketing, excelling in strategy, resource optimization, and innovation to drive efficiency.",
+      label: "Rohan Maske linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -130,6 +135,7 @@ const TeamLeadershipSection = () => {
       experience: "16+ Years",
       specialization: "Strategic Innovation Alignment",
       bio: "Senior Manager at TESTRIQ QA Lab with 16 years of industry experience. Driving strategic growth, aligning projects with innovation & quality, and empowering teams through Agile excellence.",
+      label: "Aatish Jadhav linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -164,6 +170,7 @@ const TeamLeadershipSection = () => {
         "Led L&D initiatives in academic and corporate environments"
       ],
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
+      label: "Shoeb Shaikh linkedin",
       img: (
         <Image
         title="Shoeb Shaikh"
@@ -189,6 +196,7 @@ const TeamLeadershipSection = () => {
         "Advanced Data Science & Machine Learning certified"
       ],
       linkedin: "https://www.linkedin.com/in/profashishshetty/",
+      label: "Ashish Shetty linkedin",
       img: <Image
       title="Ashish Shetty"
         src="/AshishShetty.png"
@@ -306,6 +314,7 @@ const TeamLeadershipSection = () => {
                   <Link
                   title={leader.name}
                     href={leader.linkedin}
+                    aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
                     <FaLinkedin size={30} />
@@ -440,6 +449,7 @@ const TeamLeadershipSection = () => {
                   <Link
                   title={leader.name}
                     href={leader.linkedin}
+                    aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
                     <FaLinkedin size={30} />

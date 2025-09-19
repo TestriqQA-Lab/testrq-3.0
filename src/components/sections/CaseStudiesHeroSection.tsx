@@ -73,15 +73,15 @@ const CaseStudiesHeroSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 p-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaChartLine className="w-12 h-12 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Growth</h3>
+            <h2 className="font-semibold text-gray-800">Growth</h2>
           </div>
           <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaUsers className="w-12 h-12 text-green-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Clients</h3>
+            <h2 className="font-semibold text-gray-800">Clients</h2>
           </div>
           <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaAward className="w-12 h-12 text-purple-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Excellence</h3>
+            <h2 className="font-semibold text-gray-800">Excellence</h2>
           </div>
         </div>
       </div>
