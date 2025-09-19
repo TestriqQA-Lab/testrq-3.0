@@ -289,6 +289,7 @@ const ExploratoryCaseStudies: React.FC = () => {
           <button
             onClick={prevCase}
             className="bg-white border-2 border-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-all duration-300"
+            aria-label="Previous Case Study"
           >
             <FaChevronLeft />
           </button>
@@ -303,6 +304,7 @@ const ExploratoryCaseStudies: React.FC = () => {
           <button
             onClick={nextCase}
             className="bg-white border-2 border-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center hover:border-green-600 hover:text-green-600 transition-all duration-300"
+            aria-label="Next Case Study"
           >
             <FaChevronRight />
           </button>

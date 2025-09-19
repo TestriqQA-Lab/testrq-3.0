@@ -32,8 +32,14 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
               Transform your desktop application with our comprehensive testing
               approach. We ensure your software delivers exceptional
-              <Link href='performance-testing-services'> performance</Link>, <Link href='security-testing'>security</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> across all platforms
-              and environments.
+              <Link href="performance-testing-services">
+                {" "}
+                performance
+              </Link>, <Link href="security-testing">security</Link>, and{" "}
+              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+                user experience
+              </Link>{" "}
+              across all platforms and environments.
             </p>
 
             {/* Benefits List */}
@@ -48,11 +54,13 @@ const DesktopReadyToEnsureQuality: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="flex cursor-pointer items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                  <span>Start Your Testing Project</span>
-                  <FaArrowRight className="w-4 h-4" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your Testing Project – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-brand-blue font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                <span>Start Your Testing Project</span>
+                <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

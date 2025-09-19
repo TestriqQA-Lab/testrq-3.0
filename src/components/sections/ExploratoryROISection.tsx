@@ -202,10 +202,8 @@ const ExploratoryROISection: React.FC = () => {
           <p className="text-gray-600 mb-6">
             Calculate your potential savings and see how exploratory testing can improve your product quality.
           </p>
-          <Link href="/contact-us">
-          <button className="bg-brand-blue text-white cursor-pointer px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <Link href="/contact-us" className="bg-brand-blue text-white cursor-pointer px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
             Calculate Your ROI
-          </button>
           </Link>
         </div>
       </div>

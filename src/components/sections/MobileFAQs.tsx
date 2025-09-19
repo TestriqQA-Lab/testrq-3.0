@@ -10,21 +10,35 @@ const MobileFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of mobile applications do you test?",
-      answer:
-        (
-          <>
-          We test all types of mobile applications including native iOS and Android apps, <Link href='blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices'>cross-platform apps</Link> (React Native, Flutter, Xamarin), hybrid apps (Ionic, Cordova), mobile games, enterprise apps, <Link href='e-commerce-testing-services'>e-commerce apps</Link>, and progressive web apps (PWAs). Our expertise covers consumer apps, business applications, and specialized industry solutions.
-          </>
-        ),
+      answer: (
+        <>
+          We test all types of mobile applications including native iOS and
+          Android apps,{" "}
+          <Link href="blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+            cross-platform apps
+          </Link>{" "}
+          (React Native, Flutter, Xamarin), hybrid apps (Ionic, Cordova), mobile
+          games, enterprise apps,{" "}
+          <Link href="e-commerce-testing-services">e-commerce apps</Link>, and
+          progressive web apps (PWAs). Our expertise covers consumer apps,
+          business applications, and specialized industry solutions.
+        </>
+      ),
     },
     {
       question: "Which devices and operating systems do you support?",
-      answer:
-        (
-          <>
-          We support over 50 <Link href='blog/post/real-device-vs-emulator-testing-which-is-better'>real devices</Link>, including iPhone (6s to 15 Pro Max), iPad, Samsung Galaxy, Google Pixel, OnePlus, Xiaomi, Huawei, tablets, and foldables. OS versions include iOS 12.0-17.x, iPadOS 13.0-17.x, watchOS 6.0-10.x, tvOS 13.0-17.x, and Android 7.0-14.0, plus Wear OS and Android TV.
-          </>
-        ),
+      answer: (
+        <>
+          We support over 50{" "}
+          <Link href="blog/post/real-device-vs-emulator-testing-which-is-better">
+            real devices
+          </Link>
+          , including iPhone (6s to 15 Pro Max), iPad, Samsung Galaxy, Google
+          Pixel, OnePlus, Xiaomi, Huawei, tablets, and foldables. OS versions
+          include iOS 12.0-17.x, iPadOS 13.0-17.x, watchOS 6.0-10.x, tvOS
+          13.0-17.x, and Android 7.0-14.0, plus Wear OS and Android TV.
+        </>
+      ),
     },
     {
       question: "How long does mobile application testing typically take?",
@@ -33,71 +47,120 @@ const MobileFAQs: React.FC = () => {
     },
     {
       question: "Do you provide automated testing for mobile applications?",
-      answer:
-        (
-          <>
-          Yes, we implement <Link href='automation-testing-services'>automated testing</Link> using tools like Appium, integrating with CI/CD pipelines for <Link href='regression-testing'>regression testing</Link>, cross-platform automation, and continuous testing to accelerate release cycles.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we implement{" "}
+          <Link href="automation-testing-services">automated testing</Link>{" "}
+          using tools like Appium, integrating with CI/CD pipelines for{" "}
+          <Link href="regression-testing">regression testing</Link>,
+          cross-platform automation, and continuous testing to accelerate
+          release cycles.
+        </>
+      ),
     },
     {
-      question: (<>What <Link href='security-testing'>security testing</Link> do you perform on mobile applications?</>),
-      answer:
-        (
-          <>
-          We conduct <Link href='blog/post/how-to-perform-penetration-testing-for-web-applications'>penetration testing</Link>, data encryption validation, authentication testing, and OWASP compliance checks to protect apps from vulnerabilities and ensure data privacy.
-          </>
-        ),
+      question: (
+        <>
+          What <Link href="security-testing">security testing</Link> do you
+          perform on mobile applications?
+        </>
+      ),
+      answer: (
+        <>
+          We conduct{" "}
+          <Link href="blog/post/how-to-perform-penetration-testing-for-web-applications">
+            penetration testing
+          </Link>
+          , data encryption validation, authentication testing, and OWASP
+          compliance checks to protect apps from vulnerabilities and ensure data
+          privacy.
+        </>
+      ),
     },
     {
       question: "Do you ensure app store compliance?",
-      answer:
-        (
-          <>
-          Yes, we validate apps against App Store and Google Play guidelines, including TestFlight beta testing for <Link href='blog/post/ios-vs-android-testing-key-differences-every-qa-should-know'>iOS</Link> and Google Play Store compliance, achieving a 99.5% first-submission approval rate.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we validate apps against App Store and Google Play guidelines,
+          including TestFlight beta testing for{" "}
+          <Link href="blog/post/ios-vs-android-testing-key-differences-every-qa-should-know">
+            iOS
+          </Link>{" "}
+          and Google Play Store compliance, achieving a 99.5% first-submission
+          approval rate.
+        </>
+      ),
     },
     {
       question: "Can you test mobile apps with backend integrations and APIs?",
-      answer:
-        (
-          <>
-          Yes, we test mobile apps with backend integrations, validating <Link href='api-testing'>APIs</Link>, data synchronization, payment gateways, push notifications, and <Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>connectivity</Link> with cloud or on-premise servers.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we test mobile apps with backend integrations, validating{" "}
+          <Link href="api-testing">APIs</Link>, data synchronization, payment
+          gateways, push notifications, and{" "}
+          <Link href="blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc">
+            connectivity
+          </Link>{" "}
+          with cloud or on-premise servers.
+        </>
+      ),
     },
     {
       question: "Do you provide performance testing for mobile applications?",
-      answer:
-        (
-          <>
-          Yes, we conduct comprehensive mobile <Link href='performance-testing-services'>performance testing</Link> including <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load testing</Link>, battery usage analysis, memory optimization, CPU performance, network performance testing, and app startup time optimization. We test under various device conditions and provide detailed performance reports with optimization recommendations.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we conduct comprehensive mobile{" "}
+          <Link href="performance-testing-services">performance testing</Link>{" "}
+          including{" "}
+          <Link href="blog/post/load-testing-in-performance-testing-complete-guide">
+            load testing
+          </Link>
+          , battery usage analysis, memory optimization, CPU performance,
+          network performance testing, and app startup time optimization. We
+          test under various device conditions and provide detailed performance
+          reports with optimization recommendations.
+        </>
+      ),
     },
     {
       question: "What deliverables do you provide after mobile testing?",
-      answer:
-        (
-          <>
-          We provide detailed test reports, including <Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>bug logs</Link> with reproduction steps, screenshots, performance metrics, security findings, compatibility results, and <Link href='blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices'>optimization recommendations</Link>.
-          </>
-        ),
+      answer: (
+        <>
+          We provide detailed test reports, including{" "}
+          <Link href="blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools">
+            bug logs
+          </Link>{" "}
+          with reproduction steps, screenshots, performance metrics, security
+          findings, compatibility results, and{" "}
+          <Link href="blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices">
+            optimization recommendations
+          </Link>
+          .
+        </>
+      ),
     },
     {
       question: "Do you offer post-launch support and monitoring?",
-      answer:
-        (
-          <>
-          Yes, we offer post-launch support, including maintenance testing, <Link href='regression-testing'>regression testing</Link> for updates, crash monitoring, and 24/7 support to ensure ongoing app performance.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we offer post-launch support, including maintenance testing,{" "}
+          <Link href="regression-testing">regression testing</Link> for updates,
+          crash monitoring, and 24/7 support to ensure ongoing app performance.
+        </>
+      ),
     },
     {
       question: "How do you ensure app data confidentiality?",
-      answer:
-        (<>We ensure confidentiality through NDAs, secure testing environments, encrypted data handling, and compliance with standards like <Link href='blog/post/top-10-security-vulnerabilities-based-on-owasp'>OWASP</Link> and GDPR.</>),
+      answer: (
+        <>
+          We ensure confidentiality through NDAs, secure testing environments,
+          encrypted data handling, and compliance with standards like{" "}
+          <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp">
+            OWASP
+          </Link>{" "}
+          and GDPR.
+        </>
+      ),
     },
   ];
 
@@ -119,7 +182,11 @@ const MobileFAQs: React.FC = () => {
           </h2>
           <p className="text-gray-600 text-lg">
             Get expert answers to common questions about mobile application
-            testing services, QA processes, <Link href='automation-testing-services'>test automation</Link>, <Link href='blog/post/real-device-vs-emulator-testing-which-is-better'>real device</Link>{" "}
+            testing services, QA processes,{" "}
+            <Link href="automation-testing-services">test automation</Link>,{" "}
+            <Link href="blog/post/real-device-vs-emulator-testing-which-is-better">
+              real device
+            </Link>{" "}
             testing, and app store compliance for iOS and Android apps.
           </p>
         </div>
@@ -172,10 +239,12 @@ const MobileFAQs: React.FC = () => {
               challenges.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us#calendly-section">
-                <button className="px-8 py-3 cursor-pointer border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors">
-                  Schedule Mobile Consultation
-                </button>
+              <Link
+                href="/contact-us#calendly-section"
+                title="Schedule Mobile Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
+              >
+                Schedule Mobile Consultation
               </Link>
             </div>
           </div>

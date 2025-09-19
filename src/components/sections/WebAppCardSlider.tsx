@@ -287,9 +287,9 @@ export default function CardSlider() {
             </p>
 
             <div className="flex flex-col leading-8 mt-5">
-              <h4 className="text-xl font-semibold mx-2">
+              <h3 className="text-xl font-semibold mx-2">
                 {cards[activeCard].keyTitle}
-              </h4>
+              </h3>
               <div>
                 {cards[activeCard].keys.map((item, idx) => (
                   <div key={idx} className="flex flex-row items-center">
@@ -359,9 +359,9 @@ export default function CardSlider() {
                 <p className="text-gray-600 text-lg mt-5">{card.content}</p>
 
                 <div className="flex flex-col md:leading-8 mt-5">
-                  <h4 className="text-xl font-semibold mx-2">
+                  <h3 className="text-xl font-semibold mx-2">
                     {card.keyTitle}
-                  </h4>
+                  </h3>
                   <div>
                     {cards[activeCard].keys.map((item, idx) => (
                       <div
