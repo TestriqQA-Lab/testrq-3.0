@@ -125,10 +125,10 @@ const handleSubscribe = async (e: React.FormEvent) => {
               <span className="text-gray-300 text-sm">Follow us:</span>
               <div className="flex gap-3">
                 {[
-                  { icon: <FaXTwitter />, href: "https://x.com/testriq" },
-                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/testriq-qa-lab" },
-                  { icon: <FaFacebook />, href: "https://www.facebook.com/testriq.lab/" },
-                  { icon: <FaInstagram />, href: "https://instagram.com/testriq" },
+                  { icon: <FaXTwitter />, href: "https://x.com/testriq", label: "Testriq Twitter" },
+                  { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/testriq-qa-lab", label: "Testriq Linkedin" },
+                  { icon: <FaFacebook />, href: "https://www.facebook.com/testriq.lab/", label: "Testriq Facebook" },
+                  { icon: <FaInstagram />, href: "https://instagram.com/testriq", label: "Testriq Instagram" },
                 ].map((s, i) => (
                   <Link
                     key={i}
