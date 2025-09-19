@@ -98,15 +98,15 @@ const ToolsHeroSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pb-10">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaCogs className="w-12 h-12 text-[theme(color.brand.blue)] mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Automation</h3>
+            <h2 className="font-semibold text-gray-800">Automation</h2>
           </div>
           <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaRocket className="w-12 h-12 text-green-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Performance</h3>
+            <h2 className="font-semibold text-gray-800">Performance</h2>
           </div>
           <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl text-center hover:shadow-lg transition-shadow">
             <FaShieldAlt className="w-12 h-12 text-purple-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-gray-800">Security</h3>
+            <h2 className="font-semibold text-gray-800">Security</h2>
           </div>
         </div>
       </div>
