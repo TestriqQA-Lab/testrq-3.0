@@ -31,7 +31,7 @@ const techStack: {
     <>
       Testriq’s <Link href="/our-team">QA team</Link> leverages trusted tools like{" "}
       <Link href="blog/post/getting-started-with-selenium-a-beginners-guide"><span className="font-semibold">Selenium</span></Link>,{" "}
-      <Link href="blog/post/how-is-jmeter-used-for-performance-testing"><span className="font-semibold">JMeter</span></Link>,{" "}
+      <Link  className="font-bold" href="blog/post/how-is-jmeter-used-for-performance-testing">JMeter</Link>,{" "}
       <span className="font-semibold">Postman</span>, and{" "}
       <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp"><span className="font-semibold">OWASP</span></Link> to deliver reliable testing across automation, performance, API, and security for web and mobile platforms.
     </>
