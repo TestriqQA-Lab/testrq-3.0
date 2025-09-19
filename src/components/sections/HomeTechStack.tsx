@@ -202,7 +202,7 @@ const techStack: {
             <Image
             title="REST Assured API Testing Logo"
               src="/RestAssured_Logo.png"
-              alt="REST assured"
+              alt="REST Logo"
               width={20}
               height={20}
               className="object-contain"
