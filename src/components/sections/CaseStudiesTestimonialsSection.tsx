@@ -16,21 +16,21 @@ const RatingStar = dynamic(() => import("@/components/RatingStar"), {
 });
 
 const useMediaQuery = (width: number) => {
-    const [targetReached, setTargetReached] = useState(false);
+  const [targetReached, setTargetReached] = useState(false);
 
-    useEffect(() => {
-      const updateTarget = () => {
-        setTargetReached(window.innerWidth < width);
-      };
+  useEffect(() => {
+    const updateTarget = () => {
+      setTargetReached(window.innerWidth < width);
+    };
 
-      updateTarget();
-      window.addEventListener("resize", updateTarget);
+    updateTarget();
+    window.addEventListener("resize", updateTarget);
 
-      return () => window.removeEventListener("resize", updateTarget);
-    }, [width]);
+    return () => window.removeEventListener("resize", updateTarget);
+  }, [width]);
 
-    return targetReached;
-  };
+  return targetReached;
+};
 
 const CaseStudiesTestimonialsSection = () => {
 
@@ -95,7 +95,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Kanishka Software",
       icon: (
         <Image
-        title="Kanishka Software Logo"
+          title="Kanishka Software Logo"
           src="/Kanishka_Software_Logo.webp"
           alt="Kanishka_Software_Logo"
           width={120}
@@ -112,7 +112,7 @@ const CaseStudiesTestimonialsSection = () => {
       company: "Pro-ficiency",
       icon: (
         <Image
-        title="Pro-ficiency Logo"
+          title="Pro-ficiency Logo"
           src="/Pro-ficiency_Logo.webp"
           alt="Pro-ficiency_Logo"
           width={120}
@@ -189,55 +189,57 @@ const CaseStudiesTestimonialsSection = () => {
 
         {/* Testimonials Grid */}
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"> */}
-          <div className="relative mt-10">
-            {/* Left Arrow */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg rounded-full p-3"
-            >
-              <FaChevronLeft />
-            </button>
+        <div className="relative mt-10">
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg rounded-full p-3"
+            aria-label="Left arrow button"
+          >
+            <FaChevronLeft />
+          </button>
 
-            {/* Cards Container */}
-            <div className="overflow-hidden w-full">
-              <div
-                className={`flex transition-transform duration-700 ease-in-out p-5`}
-              >
-                {getVisibleCards().map((card, index) => (
-                  <div
-                    key={index}
-                    className={`px-2 ${isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
-                      }`}
-                  >
-                    <div className="flex flex-col h-full ring-sky-200 ring-1 bg-[theme(color.background.gray)] rounded-lg p-5 gap-y-6 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200 hover:-translate-y-2">
-                      {card.icon}
-                      <p className="text-gray-500 italic text-sm md:text-base">
-                        {card.Comment}
-                      </p>
-                      <div className="flex flex-col xl:justify-between mt-auto gap-1">
-                        <div>
-                          <h3 className="text-base md:text-lg font-semibold">
-                            {card.clientName}
-                          </h3>
-                          <p className="text-sm text-gray-500">
-                            {card.designation}
-                          </p>
-                          <p className="text-sm text-gray-500 font-semibold">
-                            {card.company}
-                          </p>
-                        </div>
-                        <RatingStar />
+          {/* Cards Container */}
+          <div className="overflow-hidden w-full">
+            <div
+              className={`flex transition-transform duration-700 ease-in-out p-5`}
+            >
+              {getVisibleCards().map((card, index) => (
+                <div
+                  key={index}
+                  className={`px-2 ${isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
+                    }`}
+                >
+                  <div className="flex flex-col h-full ring-sky-200 ring-1 bg-[theme(color.background.gray)] rounded-lg p-5 gap-y-6 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200 hover:-translate-y-2">
+                    {card.icon}
+                    <p className="text-gray-500 italic text-sm md:text-base">
+                      {card.Comment}
+                    </p>
+                    <div className="flex flex-col xl:justify-between mt-auto gap-1">
+                      <div>
+                        <h3 className="text-base md:text-lg font-semibold">
+                          {card.clientName}
+                        </h3>
+                        <p className="text-sm text-gray-500">
+                          {card.designation}
+                        </p>
+                        <p className="text-sm text-gray-500 font-semibold">
+                          {card.company}
+                        </p>
                       </div>
+                      <RatingStar />
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
             {/* </div> */}
 
             {/* Right Arrow */}
             <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg rounded-full p-3"
+              aria-label="Right arrow button"
             >
               <FaChevronRight />
             </button>
@@ -288,11 +290,13 @@ const CaseStudiesTestimonialsSection = () => {
             quality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us#calendly-section">
-              <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:scale-98 transition-all">
-                Schedule Consultation
-              </button>
+            <Link
+              href="/contact-us#calendly-section"
+              className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:scale-98 transition-all inline-flex items-center justify-center min-h-[48px] min-w-[48px]"
+            >
+              Schedule Consultation
             </Link>
+
           </div>
         </div>
       </div>
