@@ -48,19 +48,21 @@ const PerformanceTestingHeroSection: React.FC = () => {
             <p className="text-xl text-gray-600 leading-relaxed">
               Ensure your applications perform flawlessly under any load with
               our comprehensive <Link href='blog/post/what-are-the-different-types-of-performance-testing-services'>performance testing services</Link>. We conduct <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load
-              testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, <Link href='blog/post/spike-testing-handling-sudden-traffic-surges'>spike testing</Link>, and <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>endurance testing</Link>{" "}
+                testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, <Link href='blog/post/spike-testing-handling-sudden-traffic-surges'>spike testing</Link>, and <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>endurance testing</Link>{" "}
               using <Link href='tools'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
               Gatling to guarantee optimal <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>application
-              performance, and scalability</Link> at scale.
+                performance, and scalability</Link> at scale.
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center">
-                  Get Started Today
-                  <FaArrowRight className="ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center min-h-[48px] min-w-[48px]"
+              >
+                Get Started Today
+                <FaArrowRight className="ml-2" />
               </Link>
+
               <button
                 onClick={openLightbox}
                 className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-orange-50 transition-colors duration-300 flex items-center justify-center"
@@ -105,9 +107,9 @@ const PerformanceTestingHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     Performance Monitor
-                  </h3>
+                  </h2>
                 </div>
                 <span className="text-sm text-orange-600 font-medium">
                   Load Testing
