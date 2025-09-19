@@ -178,6 +178,7 @@ const IoTProvenTestingProcess: React.FC = () => {
                             ? "bg-green-500 shadow-md"
                             : "bg-gray-400"
                           }`}
+                        aria-label={`Step ${step.number}: ${step.title}`}
                       >
                         {activeStep > index ? (
                           <FaCheckCircle className="w-5 h-5" />

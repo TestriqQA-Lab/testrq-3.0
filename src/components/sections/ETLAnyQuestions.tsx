@@ -17,10 +17,12 @@ const ETLAnyQuestions: React.FC = () => {
           unlock trusted, production-ready data.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/contact-us#calendly-section">
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-colors duration-300 cursor-pointer">
-              Schedule Consultation
-            </button>
+          <Link
+            href="/contact-us#calendly-section"
+            title="Schedule Consultation – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-blue transition-colors duration-300"
+          >
+            Schedule Consultation
           </Link>
         </div>
         <div className="mt-8 text-blue-100">

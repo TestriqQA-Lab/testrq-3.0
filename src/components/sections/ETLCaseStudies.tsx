@@ -141,9 +141,15 @@ const ETLCaseStudies: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover how our comprehensive ETL testing services have helped
-            companies achieve significant improvements in <Link href='blog/post/data-quality-testing-in-etl'>data quality</Link>,
-            processing speed, and <Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>regulatory compliance</Link> across diverse
-            industries and data ecosystems.
+            companies achieve significant improvements in{" "}
+            <Link href="blog/post/data-quality-testing-in-etl">
+              data quality
+            </Link>
+            , processing speed, and{" "}
+            <Link href="blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+              regulatory compliance
+            </Link>{" "}
+            across diverse industries and data ecosystems.
           </p>
         </div>
 
@@ -269,6 +275,7 @@ const ETLCaseStudies: React.FC = () => {
             <button
               onClick={prevCase}
               className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+              aria-label="Previous Case Study"
             >
               <FaChevronLeft className="w-4 h-4 mr-2" />
               Previous Case
@@ -279,9 +286,10 @@ const ETLCaseStudies: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveCase(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-5 h-5 rounded-full transition-all duration-300 ${
                     activeCase === index ? colorClasses.bg : "bg-gray-300"
                   }`}
+                  aria-label={`Select Case Study ${index + 1}`}
                 />
               ))}
             </div>
@@ -289,6 +297,7 @@ const ETLCaseStudies: React.FC = () => {
             <button
               onClick={nextCase}
               className="flex items-center px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300"
+              aria-label="Next Case Study"
             >
               Next Case
               <FaChevronRight className="w-4 h-4 ml-2" />
@@ -297,10 +306,12 @@ const ETLCaseStudies: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/case-studies">
-            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              View All Case Studies
-            </button>
+          <Link
+            href="/case-studies"
+            title="View All Case Studies – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+          >
+            View All Case Studies
           </Link>
         </div>
       </div>

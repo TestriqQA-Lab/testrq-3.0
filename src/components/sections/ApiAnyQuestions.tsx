@@ -66,11 +66,13 @@ const ApiAnyQuestions: React.FC = () => {
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
-              <Link href={method.action}>
-                <button className="cursor-pointer flex items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
-                  <span>{method.text}</span>
-                  <FaArrowRight className="w-4 h-4" />
-                </button>
+              <Link
+                href={method.action}
+                title={method.text + " – Testriq QA Lab"}
+                className="inline-flex items-center justify-center gap-2 w-full py-2 px-4 min-h-[44px] min-w-[44px] border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300"
+              >
+                <span>{method.text}</span>
+                <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ))}
@@ -86,11 +88,13 @@ const ApiAnyQuestions: React.FC = () => {
             customized solution for your project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/contact-us">
-              <button className="flex cursor-pointer items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg transition-colors duration-300">
-                <span>Schedule Free Consultation</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+            <Link
+              href="/contact-us"
+              title="Schedule Free Consultation – Testriq QA Lab"
+              className="inline-flex items-center gap-2 py-3 px-8 min-h-[44px] min-w-[44px] bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg transition-colors duration-300"
+            >
+              <span>Schedule Free Consultation</span>
+              <FaArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

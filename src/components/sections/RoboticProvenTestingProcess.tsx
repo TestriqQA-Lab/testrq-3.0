@@ -153,6 +153,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
                         ? getColorClasses(step.color)
                         : "bg-gray-300 text-gray-600"
                     }`}
+                    aria-label={`Step ${step.id}: ${step.title}`}
                   >
                     <span className="font-bold text-sm">{step.id}</span>
                   </button>
@@ -247,7 +248,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
                                     );
                                   }, 100);
                                 }}
-                                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${getColorClasses(
+                                className={`px-4 py-2 rounded-lg min-h-[44px] min-w-[44px] text-sm font-semibold transition-colors duration-300 ${getColorClasses(
                                   step.color
                                 )} hover:opacity-90`}
                               >

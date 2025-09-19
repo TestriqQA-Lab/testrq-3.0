@@ -128,9 +128,21 @@ const IoTWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">IoT Testing</span>?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine certified IoT QA expertise, <Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>real-world simulation</Link>, and
-            <Link href='tools'> advanced tools</Link> to deliver IoT testing services that ensure reliable
-            performance, <Link href='blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more'>secure connectivity</Link>, and <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>protocol-compliant</Link> IoT device ecosystems.
+            We combine certified IoT QA expertise,{" "}
+            <Link href="blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation">
+              real-world simulation
+            </Link>
+            , and
+            <Link href="tools"> advanced tools</Link> to deliver IoT testing
+            services that ensure reliable performance,{" "}
+            <Link href="blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">
+              secure connectivity
+            </Link>
+            , and{" "}
+            <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
+              protocol-compliant
+            </Link>{" "}
+            IoT device ecosystems.
           </p>
         </div>
 
@@ -139,15 +151,17 @@ const IoTWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
-                }`}
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${
+                hoveredCard === index ? "z-10" : ""
+              }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* IoT Device Card */}
               <div
-                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                  }`}
+                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
+                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                }`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -215,8 +229,14 @@ const IoTWhyChooseTestriq: React.FC = () => {
 
                 {/* Interactive Hover State */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient} flex items-center justify-center
-                              transition-opacity duration-500 ease-in-out ${hoveredCard === index ? "opacity-100 visible" : "opacity-0 invisible"}
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
+                    benefit.gradient
+                  } flex items-center justify-center
+                              transition-opacity duration-500 ease-in-out ${
+                                hoveredCard === index
+                                  ? "opacity-100 visible"
+                                  : "opacity-0 invisible"
+                              }
                             `}
                 >
                   <div className="text-center text-white p-6 transform transition-transform duration-500">
@@ -241,18 +261,22 @@ const IoTWhyChooseTestriq: React.FC = () => {
                       </div>
                     </div>
                     <div>
-                      <Link href="/contact-us" className={`flex justify-center items-center gap-2 mx-auto bg-white text-black px-4 py-2 rounded-lg font-semibold hover:bg-white/30 hover:text-white transition-colors duration-300 backdrop-blur-sm`}>
-                      <span>Explore IoT Testing</span>
-                      <FaArrowRight className="w-4 h-4" />
-                    </Link>
+                      <Link
+                        href="/contact-us"
+                        className={`flex justify-center items-center gap-2 mx-auto bg-white text-black px-4 py-2 rounded-lg font-semibold hover:bg-white/30 hover:text-white transition-colors duration-300 backdrop-blur-sm`}
+                      >
+                        <span>Explore IoT Testing</span>
+                        <FaArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>
 
                 {/* Connection Indicator */}
                 <div
-                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${hoveredCard === index ? "bg-white animate-pulse" : ""
-                    }`}
+                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${
+                    hoveredCard === index ? "bg-white animate-pulse" : ""
+                  }`}
                   style={{
                     backgroundColor:
                       hoveredCard === index ? "" : benefit.color || "#06b6d4", // default cyan-500
@@ -311,10 +335,12 @@ const IoTWhyChooseTestriq: React.FC = () => {
                 started with a comprehensive IoT device assessment and ensure
                 your connected ecosystem is reliable and secure.
               </p>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                  Get Started with IoT Testing
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Started with IoT Testing – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-brand-blue font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+              >
+                Get Started with IoT Testing
               </Link>
             </div>
 

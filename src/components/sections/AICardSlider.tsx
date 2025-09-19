@@ -7,7 +7,11 @@ import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 const AICardSlider: React.FC = () => {
   const testingTypes = [
     {
-      title: (<Link href='blog/post/model-validation-for-ai-applications'>Model Validation Testing</Link>),
+      title: (
+        <Link href="blog/post/model-validation-for-ai-applications">
+          Model Validation Testing
+        </Link>
+      ),
       description:
         "Comprehensive validation of AI model accuracy, performance, and reliability.",
       features: [
@@ -17,10 +21,14 @@ const AICardSlider: React.FC = () => {
         "Model robustness validation",
       ],
       highlight: "99.5% accuracy",
-      action: "/model-validation-for-ai-applications"
+      action: "/model-validation-for-ai-applications",
     },
     {
-      title: (<Link href='blog/post/bias-fairness-testing-for-ai'>Bias & Fairness Testing</Link>),
+      title: (
+        <Link href="blog/post/bias-fairness-testing-for-ai">
+          Bias & Fairness Testing
+        </Link>
+      ),
       description:
         "Advanced testing to ensure AI systems are fair and ethical across all user groups.",
       features: [
@@ -30,10 +38,12 @@ const AICardSlider: React.FC = () => {
         "Bias mitigation recommendations",
       ],
       highlight: "Zero bias tolerance",
-      action: "/bias-fairness-testing-for-ai"
+      action: "/bias-fairness-testing-for-ai",
     },
     {
-      title: (<Link href='blog/post/ai-security-testing'>AI Security Testing</Link>),
+      title: (
+        <Link href="blog/post/ai-security-testing">AI Security Testing</Link>
+      ),
       description:
         "Comprehensive security assessment to protect AI systems from threats and attacks.",
       features: [
@@ -43,7 +53,7 @@ const AICardSlider: React.FC = () => {
         "Privacy protection validation",
       ],
       highlight: "100% security coverage",
-      action: "/ai-security-testing"
+      action: "/ai-security-testing",
     },
   ];
 
@@ -59,7 +69,9 @@ const AICardSlider: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Our specialized testing approaches ensure your AI systems meet the
-            highest standards of <Link href='blog/post/data-extraction-testing'>accuracy</Link>, fairness, and <Link href='security-testing'>security</Link>.
+            highest standards of{" "}
+            <Link href="blog/post/data-extraction-testing">accuracy</Link>,
+            fairness, and <Link href="security-testing">security</Link>.
           </p>
         </div>
 
@@ -93,7 +105,10 @@ const AICardSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <Link href={`blog/post${type.action}`} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
+              <Link
+                href={`blog/post${type.action}`}
+                className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300"
+              >
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4 ml-2" />
               </Link>
@@ -101,13 +116,15 @@ const AICardSlider: React.FC = () => {
           ))}
         </div>
 
-        <Link href="/contact-us">
-          <div className="mt-12 text-center">
-            <button className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300">
-              Get Comprehensive AI Testing
-            </button>
-          </div>
-        </Link>
+        <div className="mt-12 text-center">
+          <Link
+            href="/contact-us"
+            title="Get Comprehensive AI Testing – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-300"
+          >
+            Get Comprehensive AI Testing
+          </Link>
+        </div>
       </div>
     </section>
   );
