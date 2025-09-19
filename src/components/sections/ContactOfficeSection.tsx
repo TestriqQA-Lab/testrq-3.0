@@ -36,7 +36,9 @@ const ContactOfficeSection: React.FC = () => {
               width="1230"
               height="450"
               loading="lazy"
+              title="Map showing TESTRIQ Software Testing and Quality Assurance Services Company location"
             ></iframe>
+
           </div>
         </div>
       </div>

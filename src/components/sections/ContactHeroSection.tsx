@@ -305,9 +305,9 @@ const ContactHeroSection: React.FC = () => {
 
             {/* Quick Contact Methods */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Quick Contact Options
-              </h3>
+              </h2>
               <div className="space-y-3">
                 {quickContactMethods.map((method, index) => (
                   <a
@@ -467,6 +467,7 @@ const ContactHeroSection: React.FC = () => {
                       className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
                         companyStageError ? "border-red-500" : "border-gray-300"
                       }`}
+                      aria-label="Select your company stage"
                     >
                       <option value="">Select your company stage</option>
                       <option value="early_stage_startup">
