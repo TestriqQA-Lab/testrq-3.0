@@ -128,9 +128,9 @@ const SecurityTestingHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     Security Command Center
-                  </h3>
+                  </h2>
                 </div>
                 <span className="text-sm text-red-600 font-medium">
                   Scanning
