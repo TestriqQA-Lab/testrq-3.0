@@ -124,9 +124,9 @@ const TelecomHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven QA Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Reliable results for telecom software
                 </p>
@@ -154,9 +154,9 @@ const TelecomHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-green-600" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Outcomes
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">

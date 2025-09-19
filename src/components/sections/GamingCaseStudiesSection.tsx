@@ -335,10 +335,14 @@ const GamingCaseStudiesSection: React.FC = () => {
               gaming platforms and genres.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Start Your Success Story
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your Success Story – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all duration-200"
+              >
+                Start Your Success Story
               </Link>
             </div>
           </div>

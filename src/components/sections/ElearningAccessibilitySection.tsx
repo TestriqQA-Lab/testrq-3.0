@@ -402,15 +402,24 @@ const ElearningAccessibilitySection: React.FC = () => {
           </p>
 
           <div className="flex flex-col text-brand-blue sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer  px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-gray-100 transition-all duration-200 ease-in-out shadow-lg">
-                Get Free Accessibility Audit
-              </button>
+            <Link
+              href="/contact-us"
+              title="Get Free Accessibility Audit – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white font-semibold text-lg rounded-2xl shadow-lg
+             hover:scale-98 hover:bg-gray-100 transition-all duration-200 ease-in-out"
+            >
+              Get Free Accessibility Audit
             </Link>
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-opacity-30 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                Learn About Compliance
-              </button>
+
+            <Link
+              href="/contact-us"
+              title="Learn About Compliance – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 font-semibold text-lg rounded-2xl border border-white border-opacity-30
+             hover:scale-98 hover:bg-opacity-30 transition-all duration-200 ease-in-out"
+            >
+              Learn About Compliance
             </Link>
           </div>
 

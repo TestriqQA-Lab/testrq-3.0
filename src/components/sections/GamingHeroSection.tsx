@@ -136,11 +136,16 @@ const GamingHeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <Link href="/contact-us">
-                <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2">
-                  <FaPlay className="w-5 h-5" />
-                  Start Game Testing
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Game Testing – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white
+             font-semibold text-lg rounded-2xl hover:shadow-lg hover:scale-105
+             transition-all duration-300"
+              >
+                <FaPlay className="w-5 h-5" />
+                Start Game Testing
               </Link>
             </div>
 
@@ -167,9 +172,9 @@ const GamingHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven Gaming Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Results that drive player engagement and success
                 </p>
@@ -197,9 +202,9 @@ const GamingHeroSection: React.FC = () => {
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-[theme(color.brand.blue)]" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Results
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">
@@ -237,9 +242,9 @@ const GamingHeroSection: React.FC = () => {
         {/* Bottom CTA Strip */}
         <div className="mt-20 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-3xl p-8 text-white text-center">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4">
               Ready to Launch Your Next Hit Game?
-            </h3>
+            </h2>
             <p className="text-blue-100 mb-6 text-lg">
               Join 50+ game studios that trust Testriq for{" "}
               <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
@@ -248,15 +253,24 @@ const GamingHeroSection: React.FC = () => {
               gaming QA testing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-6 py-3 rounded-2xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
-                  Get Free Game Analysis
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Free Game Analysis – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+             bg-white text-black rounded-2xl font-semibold hover:bg-gray-100 hover:scale-98
+             transition-all duration-200"
+              >
+                Get Free Game Analysis
               </Link>
-              <Link href="/case-studies">
-                <button className="bg-white cursor-pointer bg-opacity-20 px-6 py-3 rounded-2xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                  View Gaming Case Studies
-                </button>
+
+              <Link
+                href="/case-studies"
+                title="View Gaming Case Studies – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 text-black rounded-2xl font-semibold border border-white border-opacity-30
+             hover:bg-opacity-30 hover:scale-98 transition-all duration-200"
+              >
+                View Gaming Case Studies
               </Link>
             </div>
           </div>

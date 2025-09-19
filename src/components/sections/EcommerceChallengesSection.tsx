@@ -250,10 +250,12 @@ const EcommerceChallengesSection: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer text-red-600 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-                Prevent These Issues Now
-              </button>
+            <Link
+              href="/contact-us"
+              title="Prevent These Issues Now – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-red-600 rounded-2xl font-semibold text-lg shadow-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              Prevent These Issues Now
             </Link>
           </div>
         </div>
@@ -270,15 +272,19 @@ const EcommerceChallengesSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/case-studies">
-              <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-                See Our Solutions
-              </button>
+            <Link
+              href="/case-studies"
+              title="See Our Solutions – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              See Our Solutions
             </Link>
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                Get Free Audit
-              </button>
+            <Link
+              href="/contact-us"
+              title="Get Free Audit – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] bg-white bg-opacity-20 text-[theme(color.brand.blue)] rounded-2xl font-semibold text-lg border border-white border-opacity-30 hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              Get Free Audit
             </Link>
           </div>
         </div>

@@ -20,7 +20,7 @@ const EcommerceCaseStudiesSection: React.FC = () => {
           metric: "Mobile Conversions",
           improvement: "+52%",
           color: "text-green-600",
-        }
+        },
       ],
       testimonial:
         "Testriq's testing helped us identify critical issues in our checkout flow. The results exceeded our expectations.",
@@ -191,15 +191,19 @@ const EcommerceCaseStudiesSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:bg-gray-100 hover:scale-95 transition-all duration-300 ease-in-out">
-                Start Your Success Story
-              </button>
+            <Link
+              href="/contact-us"
+              title="Start Your Success Story – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] rounded-2xl font-semibold text-lg shadow-lg hover:bg-gray-100 hover:scale-95 transition-all duration-300 ease-in-out"
+            >
+              Start Your Success Story
             </Link>
-            <Link href="/case-studies">
-              <button className="bg-white cursor-pointer bg-opacity-20 text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-95 transition-all duration-300 ease-in-out border border-white border-opacity-30">
-                View More Case Studies
-              </button>
+            <Link
+              href="/case-studies"
+              title="View More Case Studies – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] bg-white bg-opacity-20 text-brand-blue rounded-2xl font-semibold text-lg border border-white border-opacity-30 hover:bg-opacity-30 hover:scale-95 transition-all duration-300 ease-in-out"
+            >
+              View More Case Studies
             </Link>
           </div>
         </div>

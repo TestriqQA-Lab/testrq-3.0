@@ -88,10 +88,14 @@ const ElearningPlatformsSection: React.FC = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Link href="/contact-us">
-            <button className="bg-gradient-to-r from-brand-blue to-sky-600 cursor-pointer text-white px-8 py-4 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out">
-              Get Platform Assessment
-            </button>
+          <Link
+            href="/contact-us"
+            title="Get Platform Assessment – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-gradient-to-r from-brand-blue to-sky-600 text-white font-semibold rounded-xl
+             hover:scale-98 transition-all duration-200 ease-in-out"
+          >
+            Get Platform Assessment
           </Link>
         </div>
       </div>

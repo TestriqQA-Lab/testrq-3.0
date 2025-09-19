@@ -519,6 +519,7 @@ const IoTApplianceContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateIotSolutionType(formData.iotSolutionType)}
                         required
+                        aria-label="IoT Solution Type"
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${iotSolutionTypeError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select IoT Solution Type</option>

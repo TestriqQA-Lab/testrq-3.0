@@ -25,8 +25,20 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "What types of games do you test?",
-          answer:
-            (<>We test all types of games including mobile games (iOS/Android), PC games (Windows/Mac/Linux), console games (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based games. Our game testing services cover all genres—from casual puzzle games to complex AAA titles, MMORPGs, and battle royale games, ensuring <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">cross-platform game compatibility</Link>, immersive gameplay, and flawless gaming experiences.</>),
+          answer: (
+            <>
+              We test all types of games including mobile games (iOS/Android),
+              PC games (Windows/Mac/Linux), console games
+              (PlayStation/Xbox/Nintendo Switch), VR/AR games, and web-based
+              games. Our game testing services cover all genres—from casual
+              puzzle games to complex AAA titles, MMORPGs, and battle royale
+              games, ensuring{" "}
+              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                cross-platform game compatibility
+              </Link>
+              , immersive gameplay, and flawless gaming experiences.
+            </>
+          ),
         },
         {
           question: "How long does game testing typically take?",
@@ -48,8 +60,17 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "How many devices do you test mobile games on?",
-          answer:
-            (<>We test on 500+ real devices covering iOS (iPhone/iPad) and Android phones/tablets. Our device lab includes popular models, different OS versions, various screen sizes, and different hardware configurations to ensure <Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">comprehensive compatibility testing.</Link></>),
+          answer: (
+            <>
+              We test on 500+ real devices covering iOS (iPhone/iPad) and
+              Android phones/tablets. Our device lab includes popular models,
+              different OS versions, various screen sizes, and different
+              hardware configurations to ensure{" "}
+              <Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">
+                comprehensive compatibility testing.
+              </Link>
+            </>
+          ),
         },
         {
           question: "Do you help with app store approval?",
@@ -58,8 +79,17 @@ const GamingFAQSection: React.FC = () => {
         },
         {
           question: "Can you test mobile game performance and battery usage?",
-          answer:
-            (<>Absolutely. We conduct comprehensive <Link href="/performance-testing-services">performance testing</Link> including frame rate analysis, loading time optimization, memory usage monitoring, battery consumption testing, and thermal performance evaluation across different device configurations.</>),
+          answer: (
+            <>
+              Absolutely. We conduct comprehensive{" "}
+              <Link href="/performance-testing-services">
+                performance testing
+              </Link>{" "}
+              including frame rate analysis, loading time optimization, memory
+              usage monitoring, battery consumption testing, and thermal
+              performance evaluation across different device configurations.
+            </>
+          ),
         },
       ],
     },
@@ -75,8 +105,17 @@ const GamingFAQSection: React.FC = () => {
         },
         {
           question: "Do you handle console certification testing?",
-          answer:
-            (<>Yes, we provide console certification support for PlayStation, Xbox, and Nintendo Switch. Our team is familiar with <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">platform-specific requirements</Link>, technical certification criteria, and submission processes to help you achieve platform approval.</>),
+          answer: (
+            <>
+              Yes, we provide console certification support for PlayStation,
+              Xbox, and Nintendo Switch. Our team is familiar with{" "}
+              <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                platform-specific requirements
+              </Link>
+              , technical certification criteria, and submission processes to
+              help you achieve platform approval.
+            </>
+          ),
         },
         {
           question:
@@ -93,13 +132,33 @@ const GamingFAQSection: React.FC = () => {
       faqs: [
         {
           question: "How do you test multiplayer games?",
-          answer:
-            (<>We conduct comprehensive <Link href="/blog/post/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking">multiplayer testing</Link> including network synchronization, matchmaking systems, chat/voice communication, social features, and <Link href="/blog/post/load-testing-in-performance-testing-complete-guide">server load testing</Link>. We simulate various network conditions and test with different player counts to ensure stable multiplayer experiences.</>),
+          answer: (
+            <>
+              We conduct comprehensive{" "}
+              <Link href="/blog/post/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking">
+                multiplayer testing
+              </Link>{" "}
+              including network synchronization, matchmaking systems, chat/voice
+              communication, social features, and{" "}
+              <Link href="/blog/post/load-testing-in-performance-testing-complete-guide">
+                server load testing
+              </Link>
+              . We simulate various network conditions and test with different
+              player counts to ensure stable multiplayer experiences.
+            </>
+          ),
         },
         {
           question: "Can you test games with large player counts?",
-          answer:
-            (<>Yes, we can simulate and test games supporting thousands of concurrent players. We use automated testing <Link href="/tools">tools</Link> and real player testing to validate server performance, database optimization, and network architecture under high load conditions.</>),
+          answer: (
+            <>
+              Yes, we can simulate and test games supporting thousands of
+              concurrent players. We use automated testing{" "}
+              <Link href="/tools">tools</Link> and real player testing to
+              validate server performance, database optimization, and network
+              architecture under high load conditions.
+            </>
+          ),
         },
         {
           question: "Do you test anti-cheat and security features?",
@@ -174,7 +233,10 @@ const GamingFAQSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Get answers to the most common questions about gaming software
-            testing, platform requirements, and our <Link href="/blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing</Link>
+            testing, platform requirements, and our{" "}
+            <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+              comprehensive testing
+            </Link>
             services.
           </p>
         </div>
@@ -257,10 +319,14 @@ const GamingFAQSection: React.FC = () => {
               requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Schedule Gaming Consultation
-                </button>
+              <Link
+                href="/contact-us"
+                title="Schedule Gaming Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all duration-200"
+              >
+                Schedule Gaming Consultation
               </Link>
             </div>
           </div>

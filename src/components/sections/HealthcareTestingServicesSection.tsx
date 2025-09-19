@@ -21,23 +21,47 @@ const HealthcareTestingServicesSection: React.FC = () => {
   const services = [
     {
       icon: FaHeartbeat,
-      title: (<><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR/EMR System Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
+            EHR/EMR System Testing
+          </Link>
+        </>
+      ),
       description:
         "Comprehensive testing of Electronic Health Records and Electronic Medical Records systems for data integrity, interoperability, and workflow optimization.",
       features: [
         "HL7 FHIR Compliance",
-        (<><Link href="/blog/post/etl-testing-case-studies">Data Migration Testing</Link></>),
+        <>
+          <Link href="/blog/post/etl-testing-case-studies">
+            Data Migration Testing
+          </Link>
+        </>,
         "Workflow Validation",
-        (<><Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">Integration Testing</Link></>),
+        <>
+          <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
+            Integration Testing
+          </Link>
+        </>,
       ],
     },
     {
       icon: FaShieldAlt,
       title: "HIPAA Compliance Testing",
-      description:
-        (<>Ensure complete HIPAA compliance with thorough <Link href="/security-testing">security testing</Link>, access control validation, audit trail verification, and patient data protection through our specialized healthcare QA services.</>),
+      description: (
+        <>
+          Ensure complete HIPAA compliance with thorough{" "}
+          <Link href="/security-testing">security testing</Link>, access control
+          validation, audit trail verification, and patient data protection
+          through our specialized healthcare QA services.
+        </>
+      ),
       features: [
-        (<><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">PHI Protection</Link></>),
+        <>
+          <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+            PHI Protection
+          </Link>
+        </>,
         "Access Control Testing",
         "Audit Trail Validation",
         "Risk Assessment",
@@ -51,8 +75,16 @@ const HealthcareTestingServicesSection: React.FC = () => {
       features: [
         "FDA 21 CFR Part 820",
         "IEC 62304 Compliance",
-        (<><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Device Connectivity</Link></>),
-        (<><Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">Safety Validation</Link></>),
+        <>
+          <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+            Device Connectivity
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+            Safety Validation
+          </Link>
+        </>,
       ],
     },
     {
@@ -74,9 +106,15 @@ const HealthcareTestingServicesSection: React.FC = () => {
         "End-to-end testing of telemedicine applications, video consultations, remote monitoring, and mobile health solutions.",
       features: [
         "Video Quality Testing",
-        (<><Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">Real-time Communication</Link></>),
+        <>
+          <Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">
+            Real-time Communication
+          </Link>
+        </>,
         "Mobile Compatibility",
-        (<><Link href="/security-testing">Security Testing</Link></>),
+        <>
+          <Link href="/security-testing">Security Testing</Link>
+        </>,
       ],
     },
     {
@@ -85,8 +123,16 @@ const HealthcareTestingServicesSection: React.FC = () => {
       description:
         "Cloud infrastructure testing for healthcare applications ensuring scalability, security, and compliance with healthcare regulations.",
       features: [
-        (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud Security</Link></>),
-        (<><Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">Scalability Testing</Link></>),
+        <>
+          <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">
+            Cloud Security
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            Scalability Testing
+          </Link>
+        </>,
         "Data Backup",
         "Disaster Recovery",
       ],
@@ -97,8 +143,16 @@ const HealthcareTestingServicesSection: React.FC = () => {
       description:
         "Advanced security testing specifically designed for healthcare environments to protect against cyber threats and data breaches.",
       features: [
-        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
-        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Vulnerability Assessment</Link></>),
+        <>
+          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
+            Penetration Testing
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Vulnerability Assessment
+          </Link>
+        </>,
         "Security Audits",
         "Threat Modeling",
       ],
@@ -109,7 +163,11 @@ const HealthcareTestingServicesSection: React.FC = () => {
       description:
         "Comprehensive testing to ensure compliance with FDA, HIPAA, HITECH, and other healthcare regulatory requirements.",
       features: [
-        (<><Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA Validation</Link></>),
+        <>
+          <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+            FDA Validation
+          </Link>
+        </>,
         "HITECH Compliance",
         "Quality Assurance",
         "Documentation",
@@ -122,9 +180,15 @@ const HealthcareTestingServicesSection: React.FC = () => {
         "Testing of clinical decision support systems, AI-powered diagnostics, and medical algorithms for accuracy and reliability.",
       features: [
         "Algorithm Testing",
-        (<><Link href="/blog/post/model-validation-for-ai-applications">AI Model Validation</Link></>),
+        <>
+          <Link href="/blog/post/model-validation-for-ai-applications">
+            AI Model Validation
+          </Link>
+        </>,
         "Clinical Accuracy",
-        (<><Link href="/performance-testing-services">Performance Testing</Link></>),
+        <>
+          <Link href="/performance-testing-services">Performance Testing</Link>
+        </>,
       ],
     },
     {
@@ -160,7 +224,11 @@ const HealthcareTestingServicesSection: React.FC = () => {
         "Emergency Workflows",
         "Real-time Systems",
         "Critical Care Testing",
-        (<><Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">Response Time Testing</Link></>),
+        <>
+          <Link href="/blog/post/final-reporting-in-desktop-app-testing-qa-metrics-benchmarks-continuous-improvement">
+            Response Time Testing
+          </Link>
+        </>,
       ],
     },
   ];
@@ -180,9 +248,18 @@ const HealthcareTestingServicesSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Specialized healthcare testing services designed for digital{" "}
-            <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">healthcare applications</Link>, ensuring patient safety, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA compliance</Link>,
-            FDA regulations, and optimal <Link href="/performance-testing-services">performance testing</Link> across all
-            healthcare software systems and medical applications.
+            <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+              healthcare applications
+            </Link>
+            , ensuring patient safety,{" "}
+            <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+              HIPAA compliance
+            </Link>
+            , FDA regulations, and optimal{" "}
+            <Link href="/performance-testing-services">
+              performance testing
+            </Link>{" "}
+            across all healthcare software systems and medical applications.
           </p>
         </div>
 
@@ -225,18 +302,31 @@ const HealthcareTestingServicesSection: React.FC = () => {
             <p className="mb-8 text-lg">
               Our healthcare testing experts are ready to help you achieve
               compliance, ensure patient safety, and optimize your medical{" "}
-              <Link href="/blog/post/performance-optimization-for-pre-launch-software-testing">software performance</Link>.
+              <Link href="/blog/post/performance-optimization-for-pre-launch-software-testing">
+                software performance
+              </Link>
+              .
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Get Healthcare Testing Quote
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Healthcare Testing Quote – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all"
+              >
+                Get Healthcare Testing Quote
               </Link>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
-                  Schedule Expert Consultation
-                </button>
+
+              <Link
+                href="/contact-us"
+                title="Schedule Expert Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 text-brand-blue font-semibold text-lg rounded-2xl
+             border border-white border-opacity-30
+             hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all duration-200"
+              >
+                Schedule Expert Consultation
               </Link>
             </div>
           </div>
