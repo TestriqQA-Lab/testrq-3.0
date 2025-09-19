@@ -368,10 +368,12 @@ const MobileCaseStudies: React.FC = () => {
               app store success with our comprehensive mobile testing services.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-                  Start Your Mobile Project
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your Mobile Project – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                Start Your Mobile Project
               </Link>
               <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-brand-blue transition-colors">
                 Download Case Studies

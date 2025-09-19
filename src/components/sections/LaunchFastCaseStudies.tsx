@@ -284,6 +284,7 @@ const LaunchFastCaseStudies: React.FC = () => {
           <button
             onClick={prevCase}
             className="bg-white border-2 border-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+            aria-label="Previous Case Study"
           >
             <FaChevronLeft />
           </button>
@@ -298,6 +299,7 @@ const LaunchFastCaseStudies: React.FC = () => {
           <button
             onClick={nextCase}
             className="bg-white border-2 border-gray-300 text-gray-600 w-12 h-12 rounded-full flex items-center justify-center hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+            aria-label="Next Case Study"
           >
             <FaChevronRight />
           </button>
@@ -311,10 +313,8 @@ const LaunchFastCaseStudies: React.FC = () => {
             Let LaunchFast QA help you achieve rapid, successful product
             launches that drive business growth.
           </p>
-          <Link href={"/contact-us"} title="Contact Us – Testriq QA Lab">
-            <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <Link href={"/contact-us"} title="Contact Us – Testriq QA Lab" className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
               Start Your Success Story
-            </button>
           </Link>
         </div>
       </div>

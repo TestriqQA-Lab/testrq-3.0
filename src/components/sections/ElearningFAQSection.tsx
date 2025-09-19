@@ -204,10 +204,14 @@ const ElearningFAQSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
-              <button className="border-2 cursor-pointer border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300">
-                Schedule Free Consultation
-              </button>
+            <Link
+              href="/contact-us"
+              title="Schedule Free Consultation – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             border-2 border-gray-300 text-gray-700 font-semibold text-lg rounded-2xl
+             hover:border-brand-blue hover:text-brand-blue transition-all duration-300"
+            >
+              Schedule Free Consultation
             </Link>
           </div>
 

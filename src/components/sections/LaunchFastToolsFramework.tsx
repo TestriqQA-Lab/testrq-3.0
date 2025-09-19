@@ -280,10 +280,8 @@ const LaunchFastToolsFramework: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link  href={"/tools"} title="Explore our full QA technology stack">
-            <button className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+          <Link  href={"/tools"} title="Explore our full QA technology stack" className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
               Explore Our Technology Stack
-            </button>
           </Link>
         </div>
       </div>

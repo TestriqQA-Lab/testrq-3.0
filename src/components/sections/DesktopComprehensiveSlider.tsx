@@ -171,6 +171,7 @@ const DesktopComprehensiveSlider: React.FC = () => {
           <button
             onClick={prevSlide}
             className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 sm:p-3 shadow-md"
+              aria-label="Previous Slide"
           >
             <FaChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
           </button>
@@ -178,6 +179,7 @@ const DesktopComprehensiveSlider: React.FC = () => {
           <button
             onClick={nextSlide}
             className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 sm:p-3 shadow-md"
+              aria-label="Next Slide"
           >
             <FaChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
           </button>

@@ -117,18 +117,26 @@ const EcommerceHeroSection: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200 shadow-lg">
-                  Start Free E-Commerce Audit
-                  <FaArrowRight className="ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Free E-Commerce Audit – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                 bg-brand-blue text-white font-semibold rounded-lg shadow-lg
+                 hover:shadow-xl transition-colors duration-200"
+              >
+                Start Free E-Commerce Audit
+                <FaArrowRight className="ml-2" />
               </Link>
 
-              <Link href="/contact-us">
-                <button className="w-full inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
-                  <FaPlay className="mr-2" />
-                  Schedule Consultation
-                </button>
+              <Link
+                href="/contact-us"
+                title="Schedule Consultation – Testriq QA Lab"
+                className="w-full inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue
+                 hover:bg-blue-50 transition-colors duration-200"
+              >
+                <FaPlay className="mr-2" />
+                Schedule Consultation
               </Link>
             </div>
 
@@ -155,9 +163,9 @@ const EcommerceHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven E-Commerce Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Results that drive business growth
                 </p>
@@ -185,9 +193,9 @@ const EcommerceHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-green-600" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Results
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">
@@ -235,15 +243,25 @@ const EcommerceHeroSection: React.FC = () => {
               solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-                  Get Free Testing Strategy
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Free Testing Strategy – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+                 bg-white text-[theme(color.brand.blue)] font-semibold rounded-xl
+                 hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out"
+              >
+                Get Free Testing Strategy
               </Link>
-              <Link href="/case-studies">
-                <button className="bg-white bg-opacity-20 cursor-pointer text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                  View Case Studies
-                </button>
+
+              <Link
+                href="/case-studies"
+                title="View Case Studies – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+                 bg-white bg-opacity-20 text-[theme(color.brand.blue)] font-semibold rounded-xl
+                 hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out
+                 border border-white border-opacity-30"
+              >
+                View Case Studies
               </Link>
             </div>
           </div>

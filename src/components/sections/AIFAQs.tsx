@@ -10,12 +10,19 @@ const AIFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of AI models can you test?",
-      answer:
-        (
-          <>
-            We test a wide range of AI models, including <Link href='blog/post/ai-testing-learning-guide'>machine learning models</Link> (e.g., regression, classification, clustering), deep learning models (e.g., neural networks, CNNs, RNNs), <Link href='blog/post/ai-testing-learning-guide'>generative AI</Link> (e.g., LLMs, GANs), and reinforcement learning models, across domains like NLP, computer vision, and predictive analytics.
-          </>
-        ),
+      answer: (
+        <>
+          We test a wide range of AI models, including{" "}
+          <Link href="blog/post/ai-testing-learning-guide">
+            machine learning models
+          </Link>{" "}
+          (e.g., regression, classification, clustering), deep learning models
+          (e.g., neural networks, CNNs, RNNs),{" "}
+          <Link href="blog/post/ai-testing-learning-guide">generative AI</Link>{" "}
+          (e.g., LLMs, GANs), and reinforcement learning models, across domains
+          like NLP, computer vision, and predictive analytics.
+        </>
+      ),
     },
     {
       question: "How do you test for AI bias and fairness?",
@@ -24,12 +31,18 @@ const AIFAQs: React.FC = () => {
     },
     {
       question: "What is AI explainability testing?",
-      answer:
-        (
-          <>
-            AI <Link href='blog/post/explainability-testing-in-ai'>explainability testing</Link> ensures model decisions are transparent and interpretable, using tools like SHAP, LIME, and InterpretML. We validate feature importance, decision pathways, and model outputs to provide clear explanations, meeting regulatory requirements like GDPR and ensuring user trust.
-          </>
-        ),
+      answer: (
+        <>
+          AI{" "}
+          <Link href="blog/post/explainability-testing-in-ai">
+            explainability testing
+          </Link>{" "}
+          ensures model decisions are transparent and interpretable, using tools
+          like SHAP, LIME, and InterpretML. We validate feature importance,
+          decision pathways, and model outputs to provide clear explanations,
+          meeting regulatory requirements like GDPR and ensuring user trust.
+        </>
+      ),
     },
     {
       question: "How long does AI model testing take?",
@@ -38,21 +51,34 @@ const AIFAQs: React.FC = () => {
     },
     {
       question: "Do you test AI security and robustness?",
-      answer:
-        (
-          <>
-            Yes, we conduct comprehensive <Link href='security-testing'>security testing</Link> using tools like Adversarial Robustness Toolbox and CleverHans to assess adversarial attacks, data poisoning, and model evasion. We also validate robustness against edge cases and ensure privacy compliance with tools like <Link href='blog/post/ai-security-testing'>Privacy Meter</Link>.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we conduct comprehensive{" "}
+          <Link href="security-testing">security testing</Link> using tools like
+          Adversarial Robustness Toolbox and CleverHans to assess adversarial
+          attacks, data poisoning, and model evasion. We also validate
+          robustness against edge cases and ensure privacy compliance with tools
+          like <Link href="blog/post/ai-security-testing">Privacy Meter</Link>.
+        </>
+      ),
     },
     {
       question: "Can you integrate AI testing into MLOps pipelines?",
-      answer:
-        (
-          <>
-            We integrate AI testing into MLOps pipelines using tools like Kubeflow, MLflow, and TFX, ensuring seamless validation within <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD</Link> workflows. Our automated testing frameworks support continuous monitoring, model retraining, and <Link href='blog/post/how-to-effectively-test-a-web-application-prior-to-deployment'>deployment</Link> validation for scalable AI operations.
-          </>
-        ),
+      answer: (
+        <>
+          We integrate AI testing into MLOps pipelines using tools like
+          Kubeflow, MLflow, and TFX, ensuring seamless validation within{" "}
+          <Link href="blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">
+            CI/CD
+          </Link>{" "}
+          workflows. Our automated testing frameworks support continuous
+          monitoring, model retraining, and{" "}
+          <Link href="blog/post/how-to-effectively-test-a-web-application-prior-to-deployment">
+            deployment
+          </Link>{" "}
+          validation for scalable AI operations.
+        </>
+      ),
     },
     {
       question: "What deliverables do you provide for AI testing?",
@@ -61,12 +87,18 @@ const AIFAQs: React.FC = () => {
     },
     {
       question: "Do you test generative AI applications?",
-      answer:
-        (
-          <>
-            Yes, we test generative AI applications (e.g., LLMs, GANs) for output quality, coherence, safety, and ethical compliance. We use <Link href='tools'>tools</Link> like TextAttack for adversarial testing and evaluate content generation against bias, toxicity, and <Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>regulatory standards</Link>.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we test generative AI applications (e.g., LLMs, GANs) for output
+          quality, coherence, safety, and ethical compliance. We use{" "}
+          <Link href="tools">tools</Link> like TextAttack for adversarial
+          testing and evaluate content generation against bias, toxicity, and{" "}
+          <Link href="blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+            regulatory standards
+          </Link>
+          .
+        </>
+      ),
     },
   ];
 
@@ -132,10 +164,12 @@ const AIFAQs: React.FC = () => {
                 accuracy and reliability. Get started with a comprehensive AI
                 model assessment today.
               </p>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                  Start Your AI Success Story
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your AI Success Story – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+              >
+                Start Your AI Success Story
               </Link>
             </div>
 

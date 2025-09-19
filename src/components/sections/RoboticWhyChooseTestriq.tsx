@@ -134,8 +134,14 @@ const RoboticWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We combine robotic expertise with testing excellence to deliver
-            <Link href='robotics-testing-services'>robotic testing services</Link> that ensure reliable, safe, and
-            high-performance <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> for your applications.
+            <Link href="robotics-testing-services">
+              robotic testing services
+            </Link>{" "}
+            that ensure reliable, safe, and high-performance{" "}
+            <Link href="blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
+              robotic systems
+            </Link>{" "}
+            for your applications.
           </p>
         </div>
 
@@ -227,12 +233,12 @@ const RoboticWhyChooseTestriq: React.FC = () => {
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  <Link href="/contact-us">
-                    <button
-                    className={`w-full py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r ${reason.bgGradient} text-white hover:shadow-lg transform hover:scale-105`}
+                  <Link
+                    href="/contact-us"
+                    title="Explore Robotic Testing – Testriq QA Lab"
+                    className={`inline-flex items-center justify-center w-full py-3 min-h-[44px] min-w-[44px] rounded-lg font-semibold text-white bg-gradient-to-r ${reason.bgGradient} hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
                   >
                     Explore Robotic Testing
-                  </button>
                   </Link>
                 </div>
               </div>
@@ -290,10 +296,12 @@ const RoboticWhyChooseTestriq: React.FC = () => {
               your robots are reliable and safe.
             </p>
           </div>
-          <Link href="/contact-us">
-            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              Get Started with Robotic Testing
-            </button>
+          <Link
+            href="/contact-us"
+            title="Get Started with Robotic Testing – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+          >
+            Get Started with Robotic Testing
           </Link>
         </div>
       </div>

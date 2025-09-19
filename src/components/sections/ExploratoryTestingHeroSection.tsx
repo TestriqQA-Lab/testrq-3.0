@@ -12,7 +12,7 @@ import {
   FaCloud,
 } from "react-icons/fa";
 import { FaArrowRight, FaPlay } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const ExploratoryTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -33,9 +33,7 @@ const ExploratoryTestingHeroSection: React.FC = () => {
           <div className="space-y-4">
             <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
               <FaSearch />
-              <span className="text-sm">
-                Exploratory Testing Specialists
-              </span>
+              <span className="text-sm">Exploratory Testing Specialists</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -47,17 +45,33 @@ const ExploratoryTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Uncover critical bugs and <Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>usability issues</Link> that traditional scripted testing often overlooks. Our systematic <Link href='exploratory-testing'>exploratory testing</Link> blends human intuition with structured investigation to deliver comprehensive quality validation and actionable <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>UX insights</Link> for exceptional user experiences.
+              Uncover critical bugs and{" "}
+              <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
+                usability issues
+              </Link>{" "}
+              that traditional scripted testing often overlooks. Our systematic{" "}
+              <Link href="exploratory-testing">exploratory testing</Link> blends
+              human intuition with structured investigation to deliver
+              comprehensive quality validation and actionable{" "}
+              <Link href="blog/post/usability-investigation-how-exploratory-testing-elevates-ux">
+                UX insights
+              </Link>{" "}
+              for exceptional user experiences.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={"/contact-us"}>
-                <button className="w-full bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
-                  Get Started Today
-                  <FaArrowRight className="inline ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Contact Us – Testriq QA Lab"
+                className="inline-flex items-center justify-center bg-brand-blue text-white min-h-[44px] min-w-[44px] px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer"
+              >
+                Get Started Today
+                <FaArrowRight className="ml-2" />
               </Link>
-              <button onClick={openLightbox} className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+              <button
+                onClick={openLightbox}
+                className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center"
+              >
                 <FaPlay className="w-4 h-4 mr-2" />
                 Watch Demo
               </button>
@@ -102,9 +116,9 @@ const ExploratoryTestingHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     Exploratory Testing Hub
-                  </h3>
+                  </h2>
                 </div>
                 <span className="text-sm text-green-600 font-medium">
                   Active Session
@@ -229,7 +243,11 @@ const ExploratoryTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

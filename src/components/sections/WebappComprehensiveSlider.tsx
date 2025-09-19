@@ -188,6 +188,7 @@ export default function ComprehensiveTestingSlider() {
           <button
             onClick={prev}
             className="w-10 h-10 flex items-center justify-center bg-black/20 rounded-full hover:bg-white/30"
+            aria-label="Previous"
           >
             <FaChevronLeft className="w-5 h-5" />
           </button>
@@ -206,6 +207,7 @@ export default function ComprehensiveTestingSlider() {
           <button
             onClick={next}
             className="w-10 h-10 flex items-center justify-center bg-black/20 rounded-full hover:bg-white/30"
+            aria-label="Next"
           >
             <FaChevronRight className="w-5 h-5" />
           </button>
@@ -241,7 +243,7 @@ export default function ComprehensiveTestingSlider() {
           {/* Right Column */}
           <div className="space-y-6 text-center">
             <div className="rounded-xl p-6 bg-white/10">
-              <h4 className="text-xl font-bold mb-4">Service Statistics</h4>
+              <h3 className="text-xl font-bold mb-4">Service Statistics</h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {current.stats.map((stat, i) => (

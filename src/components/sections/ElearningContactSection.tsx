@@ -547,6 +547,7 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() =>
                           validatePlatformType(formData.platformType)
                         }
+                        aria-label="Select Your Platform Type"
                         required
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
                           platformTypeError
@@ -588,6 +589,7 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() =>
                           validateNumberOfUsers(formData.numberOfUsers)
                         }
+                        aria-label="Select Number of Users"
                         required
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
                           numberOfUsersError

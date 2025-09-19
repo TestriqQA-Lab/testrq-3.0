@@ -21,7 +21,13 @@ const IoTTestingServicesSection: React.FC = () => {
   const services = [
     {
       icon: FaNetworkWired,
-      title: (<><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Device Connectivity Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+            Device Connectivity Testing
+          </Link>
+        </>
+      ),
       description:
         "Comprehensive testing of IoT device connectivity across protocols, networks, and edge conditions.",
       features: [
@@ -33,36 +39,78 @@ const IoTTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaShieldAlt,
-      title: (<><Link href="/blog/post/why-is-iot-security-testing-important">IoT Security Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/why-is-iot-security-testing-important">
+            IoT Security Testing
+          </Link>
+        </>
+      ),
       description:
         "Advanced security testing to protect IoT devices from cyber threats and ensure data privacy.",
       features: [
-        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
+        <>
+          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
+            Penetration Testing
+          </Link>
+        </>,
         "Vulnerability Assessment",
-        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Data Encryption</Link></>),
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Data Encryption
+          </Link>
+        </>,
         "Access Control",
       ],
     },
     {
       icon: FaCloud,
-      title: (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud Integration Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">
+            Cloud Integration Testing
+          </Link>
+        </>
+      ),
       description:
         "End-to-end testing of IoT device integration with cloud platforms and services.",
       features: [
-        (<><Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">API Integration</Link></>),
+        <>
+          <Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">
+            API Integration
+          </Link>
+        </>,
         "Data Pipeline Testing",
-        (<><Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">Cloud Scalability</Link></>),
+        <>
+          <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+            Cloud Scalability
+          </Link>
+        </>,
         "Service Reliability",
       ],
     },
     {
       icon: FaSync,
-      title: (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data Synchronization Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">
+            Data Synchronization Testing
+          </Link>
+        </>
+      ),
       description:
         "Validation of data flow and synchronization between devices, edge systems, and cloud platforms.",
       features: [
-        (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time Sync</Link></>),
-        (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data Integrity</Link></>),
+        <>
+          <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">
+            Real-time Sync
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">
+            Data Integrity
+          </Link>
+        </>,
         "Conflict Resolution",
         "Offline Capabilities",
       ],
@@ -81,19 +129,39 @@ const IoTTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCog,
-      title: (<><Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">Device Interoperability Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">
+            Device Interoperability Testing
+          </Link>
+        </>
+      ),
       description:
         "Testing compatibility and communication between different IoT devices and platforms.",
       features: [
-        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Platform Testing</Link></>),
+        <>
+          <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+            Cross-Platform Testing
+          </Link>
+        </>,
         "Protocol Compatibility",
-        (<><Link href="/blog/post/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys">Device Discovery</Link></>),
+        <>
+          <Link href="/blog/post/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys">
+            Device Discovery
+          </Link>
+        </>,
         "Communication Validation",
       ],
     },
     {
       icon: FaMobile,
-      title: (<><Link href="/blog/post/how-environment-setup-shapes-reliable-web-application-testing">Mobile App Integration Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/how-environment-setup-shapes-reliable-web-application-testing">
+            Mobile App Integration Testing
+          </Link>
+        </>
+      ),
       description:
         "Testing IoT device control and monitoring through mobile applications.",
       features: [
@@ -105,12 +173,26 @@ const IoTTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaChartLine,
-      title: (<><Link href="/performance-testing-services">Performance & Scalability Testing</Link></>),
+      title: (
+        <>
+          <Link href="/performance-testing-services">
+            Performance & Scalability Testing
+          </Link>
+        </>
+      ),
       description:
         "Load testing and performance validation for IoT systems at scale.",
       features: [
-        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing</Link></>),
-        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
+        <>
+          <Link href="/blog/post/load-testing-in-performance-testing-complete-guide">
+            Load Testing
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/stress-testing-applications-identifying-breaking-points">
+            Stress Testing
+          </Link>
+        </>,
         "Scalability Validation",
         "Performance Monitoring",
       ],
@@ -153,7 +235,13 @@ const IoTTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCheckCircle,
-      title: (<><Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">Compliance & Standards Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">
+            Compliance & Standards Testing
+          </Link>
+        </>
+      ),
       description:
         "Ensuring IoT devices meet industry standards and regulatory requirements.",
       features: [
@@ -180,7 +268,14 @@ const IoTTestingServicesSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Specialized testing services designed for IoT applications, ensuring
-            <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">reliable connectivity</Link>, <Link href="/blog/post/ai-security-testing">robust security</Link>, and <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">seamless integration</Link>
+            <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+              reliable connectivity
+            </Link>
+            , <Link href="/blog/post/ai-security-testing">robust security</Link>
+            , and{" "}
+            <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
+              seamless integration
+            </Link>
             across your entire IoT ecosystem.
           </p>
         </div>
@@ -223,9 +318,19 @@ const IoTTestingServicesSection: React.FC = () => {
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We test your IoT solutions across the entire ecosystem-from edge
-              devices to <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">cloud platforms</Link>-ensuring seamless integration,
-              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">cross-device compatibility</Link>, and <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">optimized IoT performance</Link> through
-              our end-to-end IoT testing services.
+              devices to{" "}
+              <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">
+                cloud platforms
+              </Link>
+              -ensuring seamless integration,
+              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                cross-device compatibility
+              </Link>
+              , and{" "}
+              <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">
+                optimized IoT performance
+              </Link>{" "}
+              through our end-to-end IoT testing services.
             </p>
           </div>
 
@@ -271,7 +376,9 @@ const IoTTestingServicesSection: React.FC = () => {
                 <FaCloud className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-2">
-                <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Cloud Platforms</Link>
+                <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">
+                  Cloud Platforms
+                </Link>
               </h4>
               <p className="text-gray-600 text-sm">
                 AWS IoT, Azure IoT, Google Cloud IoT, custom platforms
@@ -292,8 +399,13 @@ const IoTTestingServicesSection: React.FC = () => {
                     Security-First Approach
                   </h4>
                   <p className="text-blue-100 text-lg">
-                    Comprehensive <Link href="/security-testing">security testing</Link> to protect against
-                    <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT-specific threats</Link> and vulnerabilities.
+                    Comprehensive{" "}
+                    <Link href="/security-testing">security testing</Link> to
+                    protect against
+                    <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+                      IoT-specific threats
+                    </Link>{" "}
+                    and vulnerabilities.
                   </p>
                 </div>
               </div>
@@ -361,15 +473,23 @@ const IoTTestingServicesSection: React.FC = () => {
             </h3>
             <p className="mb-8 text-lg">
               Our IoT testing experts are ready to help you build reliable,
-              secure, and <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">scalable IoT solutions</Link> that perform flawlessly in
-              real-world conditions.
+              secure, and{" "}
+              <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">
+                scalable IoT solutions
+              </Link>{" "}
+              that perform flawlessly in real-world conditions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Get IoT Testing Quote
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get IoT Testing Quote – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px] 
+             bg-white text-black rounded-2xl font-semibold text-lg 
+             hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all"
+              >
+                Get IoT Testing Quote
               </Link>
+
               <Link href="/contact-us">
                 <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                   Schedule IoT Consultation

@@ -7,7 +7,7 @@ import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const MobileTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -39,21 +39,36 @@ const MobileTestingHeroSection: React.FC = () => {
           </h1>
 
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-            Ensure your mobile applications deliver seamless <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>{" "}
+            Ensure your mobile applications deliver seamless{" "}
+            <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              user experiences
+            </Link>{" "}
             and top performance across all platforms. From Android to iOS, our
-            mobile app testing services include <Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>functionality testing</Link>,{" "}
-            <Link href='performance-testing-services'>performance</Link>, <Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>usability</Link>, and mobile <Link href='security-testing'>security testing</Link> for every
-            device and scenario.
+            mobile app testing services include{" "}
+            <Link href="blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+              functionality testing
+            </Link>
+            , <Link href="performance-testing-services">performance</Link>,{" "}
+            <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
+              usability
+            </Link>
+            , and mobile <Link href="security-testing">security testing</Link>{" "}
+            for every device and scenario.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
-            <Link href="/contact-us">
-              <button className="flex items-center gap-2 py-3 px-5 bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-brand-blue hover:shadow-lg cursor-pointer w-full sm:w-auto">
-                <span className="text-base">Get Started Today</span>
-                <FaArrowRight className="w-4 h-5" />
-              </button>
+            <Link
+              href="/contact-us"
+              title="Get Started Today – Testriq QA Lab"
+              className="inline-flex items-center gap-2 py-3 px-5 min-h-[44px] min-w-[44px] bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-brand-blue hover:shadow-lg w-full sm:w-auto transition-colors"
+            >
+              <span className="text-base">Get Started Today</span>
+              <FaArrowRight className="w-4 h-5" />
             </Link>
-            <button onClick={openLightbox} className="flex justify-center items-center gap-2 py-2 px-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer sm:w-auto">
+            <button
+              onClick={openLightbox}
+              className="flex justify-center items-center gap-2 py-2 px-3 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold text-base md:text-lg rounded-md hover:cursor-pointer sm:w-auto"
+            >
               <FaPlay className="w-4 h-4" />
               Watch Demo
             </button>
@@ -162,7 +177,11 @@ const MobileTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

@@ -134,8 +134,14 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We combine smart device expertise with testing excellence to deliver{" "}
-            <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing services</Link> that ensure <Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>reliable</Link>, secure, and
-            high-performance connected devices for your users.
+            <Link href="blog/post/smart-device-testing-services-complete-guide">
+              smart device testing services
+            </Link>{" "}
+            that ensure{" "}
+            <Link href="blog/post/how-environment-setup-shapes-reliable-web-application-testing">
+              reliable
+            </Link>
+            , secure, and high-performance connected devices for your users.
           </p>
         </div>
 
@@ -227,12 +233,12 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
                       : "opacity-0 translate-y-4"
                   }`}
                 >
-                  <Link href="/contact-us">
-                    <button
-                      className={`w-full cursor-pointer py-3 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r ${reason.bgGradient} text-white hover:shadow-lg transform hover:scale-105`}
-                    >
-                      Explore Smart Device Testing
-                    </button>
+                  <Link
+                    href="/contact-us"
+                    title="Explore Smart Device Testing – Testriq QA Lab"
+                    className={`inline-flex items-center justify-center w-full py-3 min-h-[44px] min-w-[44px] rounded-lg font-semibold text-white bg-gradient-to-r ${reason.bgGradient} hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
+                  >
+                    Explore Smart Device Testing
                   </Link>
                 </div>
               </div>
@@ -297,10 +303,12 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
               ensure your connected devices are reliable and secure.
             </p>
           </div>
-          <Link href="/contact-us">
-            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              Get Started with Smart Device Testing
-            </button>
+          <Link
+            href="/contact-us"
+            title="Get Started with Smart Device Testing – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+          >
+            Get Started with Smart Device Testing
           </Link>
         </div>
       </div>

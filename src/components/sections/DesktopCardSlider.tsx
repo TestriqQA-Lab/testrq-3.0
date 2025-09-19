@@ -237,9 +237,9 @@ export default function CardSlider() {
             </p>
 
             <div className="flex flex-col leading-8 mt-5">
-              <h4 className="text-xl font-semibold mx-2">
+              <h3 className="text-xl font-semibold mx-2">
                 {cards[activeCard].keyTitle}
-              </h4>
+              </h3>
               <div>
                 {cards[activeCard].keys.map((item, idx) => (
                   <div key={idx} className="flex flex-row items-center">
@@ -274,7 +274,7 @@ export default function CardSlider() {
               <Link href={`blog/post${cards[activeCard].action}`}
               className={`mt-4 w-md bg-${
                 cards[activeCard].colordark
-              } text-white py-2 rounded-lg hover:bg-${cards[
+              } text-white min-h-[44px] min-w-[44px] py-2 rounded-lg hover:bg-${cards[
                 activeCard
               ].colordark.replace("500", "600")}`}
             >
@@ -311,9 +311,9 @@ export default function CardSlider() {
                 <p className="text-gray-600 text-lg mt-5">{card.content}</p>
 
                 <div className="flex flex-col md:leading-8 mt-5">
-                  <h4 className="text-xl font-semibold mx-2">
+                  <h3 className="text-xl font-semibold mx-2">
                     {card.keyTitle}
-                  </h4>
+                  </h3>
                   <div>
                     {cards[activeCard].keys.map((item, idx) => (
                       <div

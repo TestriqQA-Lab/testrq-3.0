@@ -7,7 +7,7 @@ import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const WebappTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -27,9 +27,7 @@ const WebappTestingHeroSection: React.FC = () => {
         <div className="flex flex-col items-center xl:items-start text-center xl:text-left mx-auto xl:mx-0">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaLaptopCode />
-            <span className="text-sm">
-              Web Application Testing Experts
-            </span>
+            <span className="text-sm">Web Application Testing Experts</span>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
@@ -43,19 +41,33 @@ const WebappTestingHeroSection: React.FC = () => {
           <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
             Ensure your web applications deliver exceptional user experiences
             with our systematic web application testing services. From
-            functionality and <Link href='performance-testing-services'>performance</Link> to <Link href='security-testing'>security</Link>, <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>usability</Link>, and <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>bug
-            detection</Link> - we test it all to ensure maximum quality, compliance,
-            and cross-platform compatibility.
+            functionality and{" "}
+            <Link href="performance-testing-services">performance</Link> to{" "}
+            <Link href="security-testing">security</Link>,{" "}
+            <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              usability
+            </Link>
+            , and{" "}
+            <Link href="blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing">
+              bug detection
+            </Link>{" "}
+            - we test it all to ensure maximum quality, compliance, and
+            cross-platform compatibility.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
-            <Link href={"/contact-us"}>
-              <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
-                Get Started Today
-                <FaArrowRight className="inline ml-2" />
-              </button>
+            <Link
+              href="/contact-us"
+              title="Contact Us – Testriq QA Lab"
+              className="inline-flex items-center justify-center bg-brand-blue text-white min-h-[44px] min-w-[44px] px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer"
+            >
+              Get Started Today
+              <FaArrowRight className="ml-2" />
             </Link>
-            <button onClick={openLightbox} className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+            <button
+              onClick={openLightbox}
+              className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center"
+            >
               <FaPlay className="w-4 h-4 mr-2" />
               Watch Demo
             </button>
@@ -126,7 +138,11 @@ const WebappTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://youtu.be/wAPCSnAhhC8?si=6yNo43V82w91LiPt" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://youtu.be/wAPCSnAhhC8?si=6yNo43V82w91LiPt"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

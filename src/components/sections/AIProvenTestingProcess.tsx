@@ -121,6 +121,7 @@ const AIProvenTestingProcess: React.FC = () => {
                           ? "bg-green-500 shadow-md"
                           : "bg-gray-400"
                       }`}
+                      aria-label={`Step ${step.number}: ${step.title}`}
                     >
                       {activeStep > index ? (
                         <FaCheckCircle className="w-6 h-6" />
@@ -193,6 +194,7 @@ const AIProvenTestingProcess: React.FC = () => {
                       ? `border-${step.color}-500 bg-${step.color}-50`
                       : "border-gray-200 bg-white hover:border-gray-300"
                   }`}
+                  aria-label={`Step ${step.number}: ${step.title}`}
                 >
                   <div className="flex items-center">
                     <div

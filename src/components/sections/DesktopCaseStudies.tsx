@@ -337,10 +337,8 @@ const DesktopCaseStudies: React.FC = () => {
               services.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue transition-colors hover:scale-105">
+              <Link href="/contact-us" className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue transition-colors hover:scale-105">
                   Start Your Project
-                </button>
               </Link>
             </div>
           </div>

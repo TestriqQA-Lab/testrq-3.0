@@ -23,7 +23,12 @@ const HealthcareComplianceSection: React.FC = () => {
       description:
         "Complete Health Insurance Portability and Accountability Act compliance validation",
       features: [
-        (<><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">PHI Protection</Link> & Encryption</>),
+        <>
+          <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+            PHI Protection
+          </Link>{" "}
+          & Encryption
+        </>,
         "Access Control Implementation",
         "Audit Trail Monitoring",
         "Business Associate Agreements",
@@ -42,7 +47,11 @@ const HealthcareComplianceSection: React.FC = () => {
         "Document Control",
         "Risk Management (ISO 14971)",
         "Software Lifecycle Processes",
-        (<><Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">Validation & Verification</Link></>),
+        <>
+          <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+            Validation & Verification
+          </Link>
+        </>,
         "Post-Market Surveillance",
       ],
       color: "from-red-500 to-red-600",
@@ -57,8 +66,16 @@ const HealthcareComplianceSection: React.FC = () => {
         "Software Development Planning",
         "Software Requirements Analysis",
         "Software Architecture Design",
-        (<><Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">Software Integration Testing</Link></>),
-        (<><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">Software System Testing</Link></>),
+        <>
+          <Link href="/blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
+            Software Integration Testing
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
+            Software System Testing
+          </Link>
+        </>,
       ],
       color: "from-green-500 to-green-600",
     },
@@ -71,8 +88,16 @@ const HealthcareComplianceSection: React.FC = () => {
         "Enhanced HIPAA Enforcement",
         "Breach Notification Rules",
         "Meaningful Use Requirements",
-        (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Security Risk Assessments</Link></>),
-        (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Encryption Standards</Link></>),
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Security Risk Assessments
+          </Link>
+        </>,
+        <>
+          <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+            Encryption Standards
+          </Link>
+        </>,
         "Audit Controls",
       ],
       color: "from-purple-500 to-purple-600",
@@ -87,7 +112,11 @@ const HealthcareComplianceSection: React.FC = () => {
         "Availability Monitoring",
         "Processing Integrity",
         "Confidentiality Measures",
-        (<><Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">Privacy Protection</Link></>),
+        <>
+          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
+            Privacy Protection
+          </Link>
+        </>,
         "Continuous Monitoring",
       ],
       color: "from-teal-500 to-teal-600",
@@ -127,7 +156,13 @@ const HealthcareComplianceSection: React.FC = () => {
     },
     {
       icon: FaKey,
-      title: (<><Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">Validation & Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+            Validation & Testing
+          </Link>
+        </>
+      ),
       description: "Thorough testing of compliance controls and measures",
     },
   ];
@@ -148,9 +183,23 @@ const HealthcareComplianceSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-           <Link href="/blog/post/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress">Comprehensive compliance</Link> testing and regulatory validation services
-            ensuring your healthcare software meets all <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA</Link>, <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA</Link>, and GDPR{" "}
-            <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory requirements</Link> and healthcare industry standards.
+            <Link href="/blog/post/scorm-compliance-and-learning-analytics-testing-ensuring-accurate-tracking-and-assessment-of-learner-progress">
+              Comprehensive compliance
+            </Link>{" "}
+            testing and regulatory validation services ensuring your healthcare
+            software meets all{" "}
+            <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+              HIPAA
+            </Link>
+            ,{" "}
+            <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+              FDA
+            </Link>
+            , and GDPR{" "}
+            <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+              regulatory requirements
+            </Link>{" "}
+            and healthcare industry standards.
           </p>
         </div>
 
@@ -195,7 +244,11 @@ const HealthcareComplianceSection: React.FC = () => {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A systematic healthcare QA approach to ensure your healthcare
               software meets all regulatory requirements, including HIPAA and
-              FDA compliance, and maintains ongoing <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">compliance testing</Link>.
+              FDA compliance, and maintains ongoing{" "}
+              <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+                compliance testing
+              </Link>
+              .
             </p>
           </div>
 
@@ -229,8 +282,11 @@ const HealthcareComplianceSection: React.FC = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Patient Safety</h4>
                   <p className="text-sm">
-                    Protect patient data and ensure <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">software reliability</Link> in
-                    critical healthcare environments.
+                    Protect patient data and ensure{" "}
+                    <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
+                      software reliability
+                    </Link>{" "}
+                    in critical healthcare environments.
                   </p>
                 </div>
               </div>
@@ -268,7 +324,10 @@ const HealthcareComplianceSection: React.FC = () => {
                 </div>
                 <div className="text-sm text-gray-600">
                   Average cost of healthcare data breach,{" "}
-                  <Link href="https://www.quodorbis.com/critical-condition-ransomware-is-hitting-healthcare-hard-ccm-is-the-antidote/#:~:text=IBM's%202023%20Cost%20of%20a,and%20long%2Dtail%20reputational%20damage." className="text-brand-blue underline">
+                  <Link
+                    href="https://www.quodorbis.com/critical-condition-ransomware-is-hitting-healthcare-hard-ccm-is-the-antidote/#:~:text=IBM's%202023%20Cost%20of%20a,and%20long%2Dtail%20reputational%20damage."
+                    className="text-brand-blue underline"
+                  >
                     View More
                   </Link>
                 </div>
@@ -305,11 +364,16 @@ const HealthcareComplianceSection: React.FC = () => {
               compliance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
-                  Start Compliance Assessment
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Compliance Assessment – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:bg-gray-100 hover:scale-98 transition-all duration-300"
+              >
+                Start Compliance Assessment
               </Link>
+
               {/* <button className="bg-white bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg  hover:scale-98 transition-all border border-white border-opacity-30">
                 Download Compliance Checklist
               </button> */}

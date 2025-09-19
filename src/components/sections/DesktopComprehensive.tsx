@@ -16,9 +16,21 @@ const DesktopComprehensive: React.FC = () => {
   const testingServices = [
     {
       icon: <FaDesktop className="w-8 h-8" />,
-      title: (<><Link href='blog/post/functional-regression-testing-for-desktop-apps-ensuring-quality-at-every-update'>Functional Testing</Link></>),
-      description:
-        (<>Comprehensive testing of all desktop application features, workflows, and user interactions to ensure everything works as intended. Our <Link href='software-testing-guide'>software testing</Link> for desktop apps ensures complete validation across modules.</>),
+      title: (
+        <>
+          <Link href="blog/post/functional-regression-testing-for-desktop-apps-ensuring-quality-at-every-update">
+            Functional Testing
+          </Link>
+        </>
+      ),
+      description: (
+        <>
+          Comprehensive testing of all desktop application features, workflows,
+          and user interactions to ensure everything works as intended. Our{" "}
+          <Link href="software-testing-guide">software testing</Link> for
+          desktop apps ensures complete validation across modules.
+        </>
+      ),
       features: [
         "Feature validation",
         "Workflow testing",
@@ -28,7 +40,11 @@ const DesktopComprehensive: React.FC = () => {
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: (<><Link href='security-testing'>Security Testing</Link></>),
+      title: (
+        <>
+          <Link href="security-testing">Security Testing</Link>
+        </>
+      ),
       description:
         "Thorough security assessment to protect your desktop applications from vulnerabilities and ensure data protection.",
       features: [
@@ -40,7 +56,11 @@ const DesktopComprehensive: React.FC = () => {
     },
     {
       icon: <FaCogs className="w-8 h-8" />,
-      title: (<><Link href='performance-testing-services'>Performance Testing</Link></>),
+      title: (
+        <>
+          <Link href="performance-testing-services">Performance Testing</Link>
+        </>
+      ),
       description:
         "Optimize your desktop application's performance under various load conditions and system configurations.",
       features: [
@@ -52,7 +72,13 @@ const DesktopComprehensive: React.FC = () => {
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      title: (<><Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>Usability Testing</Link></>),
+      title: (
+        <>
+          <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
+            Usability Testing
+          </Link>
+        </>
+      ),
       description:
         "Ensure your desktop application provides an intuitive and user-friendly experience across different user personas.",
       features: [
@@ -64,7 +90,13 @@ const DesktopComprehensive: React.FC = () => {
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: (<><Link href='blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa'>Compatibility Testing</Link></>),
+      title: (
+        <>
+          <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
+            Compatibility Testing
+          </Link>
+        </>
+      ),
       description:
         "Verify your desktop application works seamlessly across different operating systems, versions, and hardware configurations.",
       features: [
@@ -76,7 +108,13 @@ const DesktopComprehensive: React.FC = () => {
     },
     {
       icon: <FaSync className="w-8 h-8" />,
-      title: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Regression Testing</Link></>),
+      title: (
+        <>
+          <Link href="blog/post/risk-based-regression-testing-smarter-test-optimization">
+            Regression Testing
+          </Link>
+        </>
+      ),
       description:
         "Ensure new updates and changes don't break existing functionality with comprehensive regression testing suites.",
       features: [
@@ -112,8 +150,15 @@ const DesktopComprehensive: React.FC = () => {
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
             From functional validation to performance optimization, our
             comprehensive desktop testing services ensure your applications
-            deliver exceptional <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link> across all platforms and
-            environments, including enterprise <Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>desktop testing</Link> needs.
+            deliver exceptional{" "}
+            <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              user experiences
+            </Link>{" "}
+            across all platforms and environments, including enterprise{" "}
+            <Link href="blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
+              desktop testing
+            </Link>{" "}
+            needs.
           </p>
         </div>
 
@@ -164,10 +209,12 @@ const DesktopComprehensive: React.FC = () => {
               application&apos;s specific needs.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors">
-                  Start Free Consultation
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Free Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors cursor-pointer"
+              >
+                Start Free Consultation
               </Link>
               <button
                 onClick={scrollToProcess}

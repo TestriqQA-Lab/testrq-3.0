@@ -473,15 +473,25 @@ const ElearningPerformanceSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 text-brand-blue justify-center">
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-                Get Performance Audit
-              </button>
+            <Link
+              href="/contact-us"
+              title="Get Performance Audit – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold rounded-2xl
+             hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg"
+            >
+              Get Performance Audit
             </Link>
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                Schedule Consultation
-              </button>
+
+            <Link
+              href="/contact-us"
+              title="Schedule Consultation – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 text-brand-blue font-semibold rounded-2xl
+             border border-white border-opacity-30
+             hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              Schedule Consultation
             </Link>
           </div>
 

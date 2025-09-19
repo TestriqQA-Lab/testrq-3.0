@@ -21,32 +21,55 @@ const HealthcareChallengesSection: React.FC = () => {
       problem:
         "Healthcare data breaches cost an average of $10.93 million per incident",
       impact: "Legal penalties, reputation damage, and patient trust erosion",
-      solution:
-        (<>Comprehensive <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA compliance testing</Link> and security validation</>),
+      solution: (
+        <>
+          Comprehensive{" "}
+          <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+            HIPAA compliance testing
+          </Link>{" "}
+          and security validation
+        </>
+      ),
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
-      action: "/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps"
+      action:
+        "/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps",
     },
     {
       icon: FaDatabase,
-      title: (<><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR</Link> Integration Failures</>),
+      title: (
+        <>
+          <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
+            EHR
+          </Link>{" "}
+          Integration Failures
+        </>
+      ),
       problem: "70% of healthcare providers struggle with EHR interoperability",
       impact: "Fragmented patient care and inefficient clinical workflows",
       solution: "Rigorous HL7 FHIR and DICOM integration testing",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
-      action: "/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic"
+      action:
+        "/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic",
     },
     {
       icon: FaUserMd,
-      title: (<><Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">Medical Device Connectivity</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+            Medical Device Connectivity
+          </Link>
+        </>
+      ),
       problem:
         "IoMT devices often fail to integrate seamlessly with hospital systems",
       impact: "Delayed diagnoses and compromised patient monitoring",
       solution: "End-to-end medical device testing and validation",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
-      action: "/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance"
+      action:
+        "/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance",
     },
     {
       icon: FaClock,
@@ -54,21 +77,44 @@ const HealthcareChallengesSection: React.FC = () => {
       problem: "Healthcare IT downtime costs $8,000 per minute on average",
       impact:
         "Disrupted patient care and potential life-threatening situations",
-      solution: (<><Link href="/performance-testing-services">Performance testing</Link> and disaster recovery validation</>),
+      solution: (
+        <>
+          <Link href="/performance-testing-services">Performance testing</Link>{" "}
+          and disaster recovery validation
+        </>
+      ),
       color: "from-blue-500 to-cyan-600",
       bgColor: "bg-blue-50",
-      action: "/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability"
+      action:
+        "/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability",
     },
     {
       icon: FaLock,
-      title: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Patient Data Security</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Patient Data Security
+          </Link>
+        </>
+      ),
       problem:
         "Healthcare sector faces 2x more cyberattacks than other industries",
       impact: "Compromised patient privacy and regulatory violations",
-      solution: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced security testing</Link> and <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link></>),
+      solution: (
+        <>
+          <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
+            Advanced security testing
+          </Link>{" "}
+          and{" "}
+          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
+            penetration testing
+          </Link>
+        </>
+      ),
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
-      action: "/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats"
+      action:
+        "/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats",
     },
     {
       icon: FaClipboardCheck,
@@ -76,10 +122,18 @@ const HealthcareChallengesSection: React.FC = () => {
       problem:
         "Medical software requires extensive validation for FDA approval",
       impact: "Delayed product launches and increased development costs",
-      solution: (<><Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA-compliant testing</Link> documentation and validation processes</>),
+      solution: (
+        <>
+          <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+            FDA-compliant testing
+          </Link>{" "}
+          documentation and validation processes
+        </>
+      ),
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
-      action: "/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval"
+      action:
+        "/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval",
     },
   ];
 
@@ -100,9 +154,19 @@ const HealthcareChallengesSection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Healthcare software faces unique challenges that require specialized
-            healthcare testing approaches. <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Patient safety</Link>, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA compliance</Link>, and
-            healthcare <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data security</Link> are non-negotiable requirements for any
-            medical application.
+            healthcare testing approaches.{" "}
+            <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+              Patient safety
+            </Link>
+            ,{" "}
+            <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+              HIPAA compliance
+            </Link>
+            , and healthcare{" "}
+            <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+              data security
+            </Link>{" "}
+            are non-negotiable requirements for any medical application.
           </p>
         </div>
 
@@ -147,9 +211,11 @@ const HealthcareChallengesSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link href={`blog/post${challenge.action}`} className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors" aria-label={`Learn more about ${challenge.title}`}
+                <Link
+                  href={`blog/post${challenge.action}`}
+                  className="mt-6 flex items-center text-[theme(color.brand.blue)] font-semibold text-sm group-hover:text-blue-700 transition-colors"
                 >
-                  Learn More
+                  Learn More{" "}
                   <FaArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -165,15 +231,28 @@ const HealthcareChallengesSection: React.FC = () => {
             </h3>
             <p className="text-lg mb-8">
               Our specialized healthcare testing services address these critical
-              challenges, ensuring your <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">medical software</Link> meets the highest
-              standards of safety, <Link href="/security-testing">security</Link>, and <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">compliance</Link>.
+              challenges, ensuring your{" "}
+              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+                medical software
+              </Link>{" "}
+              meets the highest standards of safety,{" "}
+              <Link href="/security-testing">security</Link>, and{" "}
+              <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+                compliance
+              </Link>
+              .
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300">
-                  Get Healthcare Testing Audit
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Healthcare Testing Audit – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:shadow-xl hover:scale-98 hover:text-sky-700 transition-all duration-300"
+              >
+                Get Healthcare Testing Audit
               </Link>
+
               {/* <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:border-[theme(color.brand.blue)] hover:text-sky-700 hover:shadow-xl hover:scale-98 transition-all duration-300">
                 Download Compliance Checklist
               </button> */}
