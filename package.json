@@ -14,6 +14,7 @@
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.16",
+    "critters": "^0.0.23",
     "framer-motion": "^12.23.6",
     "googleapis": "^156.0.0",
     "html-react-parser": "^5.2.6",
