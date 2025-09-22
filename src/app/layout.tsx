@@ -1,9 +1,44 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import TawkToScript from "@/components/TawkToScript";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(
+  () => import("@/components/layout/Header"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const Footer = dynamic(
+  () => import("@/components/layout/Footer"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const TawkToScript = dynamic(
+  () => import("@/components/TawkToScript"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

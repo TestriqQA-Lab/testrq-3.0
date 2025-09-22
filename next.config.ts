@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
   swcMinify: true,       // ✅ Smaller, faster JS bundles
 
   experimental: {
-    esmExternals: "loose" // ✅ Reduces polyfills/legacy JS
+    esmExternals: "loose", // ✅ Reduces polyfills/legacy JS
+    inlineCss: true
   },
 
 

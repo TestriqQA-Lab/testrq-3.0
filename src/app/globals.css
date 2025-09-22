@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@tailwind utilities;
+
 
 @theme{
   --color-background-gray: #F5F5F5; 
@@ -24,13 +26,6 @@
     initial-value: 0deg;
     syntax: '<angle>';
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #0a0a0a;
-    --foreground: #ededed; */
-  /* } */
-/* } */ 
 
 body {
   background: var(--background);
@@ -155,14 +150,6 @@ body {
   padding-left: 0.5rem; /* Adjust as needed */
 }
 
-/* Ensure the dropdown for country selection is styled */
-.PhoneInputCountrySelect {
-  /* Add any specific styles for the dropdown here */
-}
 
-/* For the search input within the dropdown (if applicable) */
-.PhoneInputCountrySelectInput {
-  /* Add styles for the search input */
-}
 
 
