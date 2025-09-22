@@ -12,7 +12,9 @@ const nextConfig: NextConfig = {
 
   experimental: {
     esmExternals: "loose", // ✅ Reduces polyfills/legacy JS
-    inlineCss: true
+    cssChunking: true,     // Split + reorder CSS per route
+    optimizeCss: true,     // Inline critical CSS (Critters)
+    inlineCss: true        // Alternative inlining flag present in newer versions
   },
 
 
@@ -53,4 +55,4 @@ const nextConfig: NextConfig = {
 };
 
 export default withBundleAnalyzer(nextConfig);
-;
+
