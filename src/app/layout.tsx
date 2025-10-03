@@ -26,17 +26,17 @@ const Footer = dynamic(
   }
 );
 
-const TawkToScript = dynamic(
-  () => import("@/components/TawkToScript"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// const TawkToScript = dynamic(
+//   () => import("@/components/TawkToScript"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
 
 
 
@@ -140,7 +140,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
-        <TawkToScript />
+        {/* <TawkToScript /> */}
       </body>
     </html>
   );
