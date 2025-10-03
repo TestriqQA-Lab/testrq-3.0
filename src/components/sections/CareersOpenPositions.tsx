@@ -14,7 +14,7 @@ import {
   FaFileAlt,
   FaTrash,
 } from "react-icons/fa";
-import { jobOpenings } from "@/app/lib/openings";
+import { jobOpenings, JobOpening } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(null);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -31,6 +31,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
     email: "",
     phone: "",
     currentCompany: "",
+    currentCTC: "",
+    expectedCTC: "",
+    skillsToolsFramework: "",
+    domainKnowledge: [] as string[],
     experience: "",
     currentRole: "",
     location: "",
@@ -49,22 +53,13 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
     return matchesSearch;
   });
 
-  interface Position {
-    id: string;
-    title: string;
-    location: string;
-    color: string;
-  }
-
   const handleApplyClick = (
-    position: unknown,
+    position: JobOpening,
     e: React.MouseEvent<HTMLButtonElement>
   ) => {
     e.stopPropagation();
-    if (typeof position === "object" && position !== null) {
-      setSelectedPosition(position as Position);
-      setShowApplicationModal(true);
-    }
+    setSelectedPosition(position);
+    setShowApplicationModal(true);
   };
 
   const handleCloseModal = () => {
@@ -76,6 +71,10 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
       email: "",
       phone: "",
       currentCompany: "",
+      currentCTC: "",
+      expectedCTC: "",
+      skillsToolsFramework: "",
+      domainKnowledge: [],
       experience: "",
       currentRole: "",
       location: "",
@@ -108,12 +107,47 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      alert("Application submitted successfully! We'll get back to you soon.");
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("fullName", formData.fullName);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("currentCompany", formData.currentCompany);
+      formDataToSend.append("currentCTC", formData.currentCTC);
+      formDataToSend.append("expectedCTC", formData.expectedCTC);
+      formDataToSend.append("skillsToolsFramework", formData.skillsToolsFramework);
+      formDataToSend.append("domainKnowledge", JSON.stringify(formData.domainKnowledge)); // Send as JSON string
+      formDataToSend.append("experience", formData.experience);
+      formDataToSend.append("currentRole", formData.currentRole);
+      formDataToSend.append("location", formData.location);
+      formDataToSend.append("noticePeriod", formData.noticePeriod);
+      formDataToSend.append("coverLetter", formData.coverLetter);
+      if (resumeFile) {
+        formDataToSend.append("resume", resumeFile);
+      }
+      if (selectedPosition) {
+        formDataToSend.append("jobTitle", selectedPosition.title);
+        formDataToSend.append("jobId", selectedPosition.id.toString()); // Ensure jobId is a string
+      }
+
+      const response = await fetch("/api/apply-job", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        alert("Application submitted successfully! We'll get back to you soon.");
+        handleCloseModal();
+      } else {
+        const errorData = await response.json();
+        alert(`Application submission failed: ${errorData.message || response.statusText}`);
+      }
+    } catch (error) {
+      console.error("Error submitting application:", error);
+      alert("An unexpected error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      handleCloseModal();
-    }, 2000);
+    }
   };
 
   const handleInputChange = (
@@ -127,6 +161,17 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
       [name]: value,
     }));
   };
+
+  const handleDomainKnowledgeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOptions = Array.from(e.target.options)
+      .filter((option) => option.selected)
+      .map((option) => option.value);
+    setFormData((prev) => ({
+      ...prev,
+      domainKnowledge: selectedOptions,
+    }));
+  };
+
   const getBadgeStyle = (badge: string) => {
     switch (badge) {
       case "Urgent":
@@ -139,6 +184,31 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
         return "bg-gray-100 text-gray-700 border-gray-200";
     }
   };
+
+  const domainKnowledgeOptions = [
+    "Trading",
+    "Capital Markets",
+    "HR",
+    "Investment",
+    "Insurance",
+    "BFSI",
+    "Banking",
+    "Ecommerce",
+    "Healthcare",
+    "CRM",
+    "LegalTech",
+    "Gaming",
+    "Advertising, Media, Social Media",
+    "Project Management",
+    "AI",
+    "Finance",
+    "ELearning",
+    "Hospitality, Hotel, Resturant",
+    "Travel",
+    "Telecom",
+    "Real Estate",
+    "SalesForce",
+  ];
 
   return (
     <>
@@ -427,252 +497,308 @@ const [selectedPosition, setSelectedPosition] = useState<Position | null>(null);
           {/* No Results */}
           {filteredPositions.length === 0 && (
             <div className="text-center py-16">
-              <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FaSearch className="w-8 h-8 text-gray-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                No positions found
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Try adjusting your search criteria or check back later for new
-                opportunities.
+              <p className="text-xl text-gray-600">
+                No positions found matching your search criteria.
               </p>
-              <button
-                onClick={() => {
-                  setSearchTerm("");
-                }}
-                className="bg-[theme(color.brand.blue)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity"
-              >
-                Clear Filters
-              </button>
             </div>
           )}
-
-          {/* Don't See Your Role */}
-          <div className="mt-16 bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl p-8 text-white text-center">
-            <FaFire className="w-12 h-12 text-white mx-auto mb-4 opacity-80" />
-            <h3 className="text-2xl font-bold mb-4">
-              Don&apos;t See Your Perfect Role?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              We&apos;re always looking for exceptional talent! Send us your
-              resume and tell us about your QA expertise. We&apos;ll reach out
-              when a position matches your skills.
-            </p>
-          </div>
         </div>
 
-        {showApplicationModal && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black opacity-80"></div>
+        {/* Application Modal */}
+        {showApplicationModal && selectedPosition && (
+          <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 p-4 overflow-y-auto">
+            <div className="bg-white rounded-2xl shadow-xl w-full max-w-6xl p-8 relative my-8">
+              <button
+                onClick={handleCloseModal}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              >
+                <FaTimes className="w-6 h-6" />
+              </button>
+              <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                Apply for {selectedPosition.title}
+              </h3>
+              <p className="text-gray-600 mb-8">
+                Fill out the form below to submit your application.
+              </p>
 
-            {/* Modal */}
-            <div className="relative bg-white max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-lg">
-              {/* Modal Header */}
-              <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 rounded-t-2xl z-10">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      Submit Your Application
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">
-                      Applying for:{" "}
-                      <span className="font-medium">
-                        {selectedPosition?.title}
-                      </span>
-                    </p>
-                  </div>
-                  <button
-                    onClick={handleCloseModal}
-                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-                  >
-                    <FaTimes className="w-5 h-5 text-gray-500" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Modal Content */}
-              <form onSubmit={handleFormSubmit} className="p-6">
-                <div className="space-y-6">
-                  {/* Personal Information */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                      Personal Information
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="fullName"
-                          value={formData.fullName}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Enter your full name"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Phone Number *
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Enter your phone number"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Position
-                        </label>
-                        <input
-                          type="text"
-                          name="position"
-                          value={selectedPosition?.title || ""}
-                          readOnly
-                          disabled
-                          className="w-full px-4 py-3 border border-gray-300 bg-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Location *
-                        </label>
-                        <input
-                          type="text"
-                          name="location"
-                          value={formData.location}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="City, State/Country"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Professional Information */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                      Professional Information
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Total Experience *
-                        </label>
-                        <select
-                          name="experience"
-                          value={formData.experience}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        >
-                          <option value="">Select experience</option>
-                          <option value="0-1">0-1 years</option>
-                          <option value="1-3">1-3 years</option>
-                          <option value="3-5">3-5 years</option>
-                          <option value="5-8">5-8 years</option>
-                          <option value="8-10">8-10 years</option>
-                          <option value="10+">10+ years</option>
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Notice Period
-                        </label>
-                        <select
-                          name="noticePeriod"
-                          value={formData.noticePeriod}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                        >
-                          <option value="">Select notice period</option>
-                          <option value="immediate">Immediate</option>
-                          <option value="15-days">15 days</option>
-                          <option value="1-month">1 month</option>
-                          <option value="2-months">2 months</option>
-                          <option value="3-months">3 months</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Resume Upload */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                      Resume Upload
-                    </h4>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors">
-                      {!resumeFile ? (
-                        <>
-                          <FaUpload className="w-8 h-8 text-gray-400 mx-auto mb-4" />
-                          <p className="text-gray-600 mb-2">
-                            Click to upload or drag and drop your resume
-                          </p>
-                          <p className="text-xs text-gray-500 mb-4">
-                            PDF files only. Maximum file size: 5MB
-                          </p>
-                          <label className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
-                            <FaUpload className="w-4 h-4 mr-2" />
-                            Choose File
-                            <input
-                              type="file"
-                              accept=".pdf"
-                              onChange={handleFileUpload}
-                              className="hidden"
-                            />
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {/* Column 1: Personal & Professional Info */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Personal Information
+                      </h4>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Full Name *
                           </label>
-                        </>
-                      ) : (
-                        <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-4">
-                          <div className="flex items-center">
-                            <FaFileAlt className="w-5 h-5 text-green-600 mr-3" />
-                            <div>
-                              <p className="text-sm font-medium text-green-800">
-                                {resumeFile.name}
-                              </p>
-                              <p className="text-xs text-green-600">
-                                {(resumeFile.size / 1024 / 1024).toFixed(2)} MB
-                              </p>
-                            </div>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => setResumeFile(null)}
-                            className="text-red-600 hover:text-red-800 p-1"
-                          >
-                            <FaTrash className="w-4 h-4" />
-                          </button>
+                          <input
+                            type="text"
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="John Doe"
+                            required
+                          />
                         </div>
-                      )}
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Email *
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="john.doe@example.com"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Phone Number
+                          </label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="+1 (555) 123-4567"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Professional Information
+                      </h4>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Current Company
+                          </label>
+                          <input
+                            type="text"
+                            name="currentCompany"
+                            value={formData.currentCompany}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="Your current employer"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Current CTC (in LPA)
+                          </label>
+                          <input
+                            type="number"
+                            name="currentCTC"
+                            value={formData.currentCTC}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., 8.5"
+                            step="0.1"
+                            min="0"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Expected CTC (in LPA)
+                          </label>
+                          <input
+                            type="number"
+                            name="expectedCTC"
+                            value={formData.expectedCTC}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., 12.0"
+                            step="0.1"
+                            min="0"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column 2: Experience & Skills */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Experience & Skills
+                      </h4>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Total Experience *
+                          </label>
+                          <select
+                            name="experience"
+                            value={formData.experience}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            required
+                          >
+                            <option value="">Select Experience</option>
+                            <option value="0-1 years">0-1 years</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="3-5 years">3-5 years</option>
+                            <option value="5-8 years">5-8 years</option>
+                            <option value="8-10 years">8-10 years</option>
+                            <option value="10+ years">10+ years</option>
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Current Role
+                          </label>
+                          <input
+                            type="text"
+                            name="currentRole"
+                            value={formData.currentRole}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., QA Engineer"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Skills (Tools & Framework)
+                          </label>
+                          <input
+                            type="text"
+                            name="skillsToolsFramework"
+                            value={formData.skillsToolsFramework}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., Selenium, Playwright, Jira, Agile"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Domain Knowledge
+                          </label>
+                          <select
+                            multiple
+                            name="domainKnowledge"
+                            value={formData.domainKnowledge}
+                            onChange={handleDomainKnowledgeChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 h-40"
+                          >
+                            {domainKnowledgeOptions.map((option) => (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                          </select>
+                          <p className="text-xs text-gray-500 mt-1">Hold Ctrl/Cmd to select multiple options</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column 3: Location, Notice, Cover Letter & Resume */}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Additional Details
+                      </h4>
+                      <div className="space-y-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Location *
+                          </label>
+                          <input
+                            type="text"
+                            name="location"
+                            value={formData.location}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., New York, Remote"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Notice Period
+                          </label>
+                          <input
+                            type="text"
+                            name="noticePeriod"
+                            value={formData.noticePeriod}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="e.g., 1 month, Immediately"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Cover Letter
+                          </label>
+                          <textarea
+                            name="coverLetter"
+                            value={formData.coverLetter}
+                            onChange={handleInputChange}
+                            rows={4}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                            placeholder="Tell us about your interest in this role..."
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Resume Upload *
+                      </h4>
+                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors">
+                        {!resumeFile ? (
+                          <>
+                            <FaUpload className="w-8 h-8 text-gray-400 mx-auto mb-4" />
+                            <p className="text-gray-600 mb-2">
+                              Click to upload or drag and drop
+                            </p>
+                            <p className="text-xs text-gray-500 mb-4">
+                              PDF, max 5MB
+                            </p>
+                            <label className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
+                              <FaUpload className="w-4 h-4 mr-2" />
+                              Choose File
+                              <input
+                                type="file"
+                                accept=".pdf"
+                                onChange={handleFileUpload}
+                                className="hidden"
+                                required
+                              />
+                            </label>
+                          </>
+                        ) : (
+                          <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-4">
+                            <div className="flex items-center">
+                              <FaFileAlt className="w-5 h-5 text-green-600 mr-3" />
+                              <div>
+                                <p className="text-sm font-medium text-green-800">
+                                  {resumeFile.name}
+                                </p>
+                                <p className="text-xs text-green-600">
+                                  {(resumeFile.size / 1024 / 1024).toFixed(2)} MB
+                                </p>
+                              </div>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => setResumeFile(null)}
+                              className="text-red-600 hover:text-red-800 p-1"
+                            >
+                              <FaTrash className="w-4 h-4" />
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ const ApiTestingHeroSection: React.FC = () => {
               ["99.8%", "Bug Detection Rate"],
               ["24 hr", "Average Turnaround"],
               ["24/7", "Support Available"],
-            ].map(([value, label], i) => (
+            ].map(([value, label], i) => (  
               <div key={i} className="text-center xl:text-left">
                 <p className="text-[theme(color.brand.blue)] font-bold text-2xl md:text-3xl">
                   {value}
