@@ -190,70 +190,10 @@ const TeamMembersSection = () => {
   return (
     <section className="bg-white py-16 px-8 xl:px-24">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <FaUsers />
-            <span className="text-sm">
-              Our Team
-            </span>
-          </div>
-
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Specialized{" "}
-            <span className="text-[theme(color.brand.blue)]">Departments</span>
-          </h2>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our team is organized into specialized QA departments, each bringing
-            deep expertise in <Link title="automation testing" href='automation-testing-services'>automation testing</Link>, <Link title="manual testing" href='manual-testing'>manual testing</Link>,
-            <Link title="performance testing" href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
-          </p>
-        </div>
-
-        {/* Departments Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {departments.map((dept, index) => (
-            <Link title={dept.name} href={dept.action}
-              key={index}
-              className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
-            >
-              <div
-                className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <dept.icon className="text-white w-8 h-8" />
-              </div>
-
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {dept.name}
-              </h3>
-              <div className="text-[theme(color.brand.blue)] font-semibold mb-3">
-                {dept.memberCount} Team Members
-              </div>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                {dept.description}
-              </p>
-
-              <div className="space-y-2">
-                <div className="text-sm font-semibold text-gray-800">
-                  Key Skills:
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {dept.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
 
         {/* Featured Team Members */}
         <div className="bg-[theme(color.background.gray)] rounded-2xl p-8 md:p-12 mb-16">
+
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Featured{" "}
@@ -319,6 +259,152 @@ const TeamMembersSection = () => {
           </div>
 
           <div className=""></div>
+        </div>
+
+             <div className="text-center mb-16">
+
+<h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+            Specialized{" "}
+            <span className="text-[theme(color.brand.blue)]">Departments</span>
+          </h2>
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+            Our team is organized into specialized QA departments, each bringing
+            deep expertise in <Link title="automation testing" href='automation-testing-services'>automation testing</Link>, <Link title="manual testing" href='manual-testing'>manual testing</Link>,
+            <Link title="performance testing" href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
+          </p>
+
+             </div>
+
+                     {/* Departments Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {departments.map((dept, index) => (
+            <Link title={dept.name} href={dept.action}
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+            >
+              <div
+                className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <dept.icon className="text-white w-8 h-8" />
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {dept.name}
+              </h3>
+              <div className="text-[theme(color.brand.blue)] font-semibold mb-3">
+                {dept.memberCount} Team Members
+              </div>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {dept.description}
+              </p>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-gray-800">
+                  Key Skills:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {dept.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+                {/* Departments Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {departments.map((dept, index) => (
+            <Link title={dept.name} href={dept.action}
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+            >
+              <div
+                className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <dept.icon className="text-white w-8 h-8" />
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {dept.name}
+              </h3>
+              <div className="text-[theme(color.brand.blue)] font-semibold mb-3">
+                {dept.memberCount} Team Members
+              </div>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {dept.description}
+              </p>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-gray-800">
+                  Key Skills:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {dept.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+                {/* Leadership Philosophy */}
+        <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Our Leadership{" "}
+              <span className="text-[theme(color.brand.blue)]">Philosophy</span>
+            </h3>
+            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+              At Testriq, we lead by example and foster innovation in <Link title="software
+              testing" href='software-testing-guide'>software
+              testing</Link>, building a QA team culture where every member thrives and
+              drives collective success.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Empowerment",
+                description:
+                  "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
+              },
+              {
+                title: "Transparency",
+                description:
+                  "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
+              },
+              {
+                title: "Growth",
+                description:
+                  "We invest in continuous learning and development, helping our team members reach their full potential.",
+              },
+            ].map((principle, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl font-bold">
+                    {index + 1}
+                  </span>
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {principle.title}
+                </h4>
+                <p className="text-gray-700">{principle.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Team Stats */}

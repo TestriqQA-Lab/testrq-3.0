@@ -209,7 +209,7 @@ const TeamLeadershipSection = () => {
   ]
 
   return (
-    <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
+    <section className="bg-[theme(color.background.gray)] pt-16 pb-1 px-8 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -492,53 +492,7 @@ const TeamLeadershipSection = () => {
           ))}
         </div>
 
-        {/* Leadership Philosophy */}
-        <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Leadership{" "}
-              <span className="text-[theme(color.brand.blue)]">Philosophy</span>
-            </h3>
-            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              At Testriq, we lead by example and foster innovation in <Link title="software
-              testing" href='software-testing-guide'>software
-              testing</Link>, building a QA team culture where every member thrives and
-              drives collective success.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Empowerment",
-                description:
-                  "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
-              },
-              {
-                title: "Transparency",
-                description:
-                  "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
-              },
-              {
-                title: "Growth",
-                description:
-                  "We invest in continuous learning and development, helping our team members reach their full potential.",
-              },
-            ].map((principle, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl font-bold">
-                    {index + 1}
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  {principle.title}
-                </h4>
-                <p className="text-gray-700">{principle.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
