@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import path from 'path';
 import nodemailer from 'nodemailer';
 
 export async function POST(request: NextRequest) {
@@ -35,16 +33,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Missing required fields: fullName, email, jobTitle, resume' }, { status: 400 });
     }
 
-    // Save resume
-    let resumeFilePath: string | undefined;
+    // Convert resume to buffer for attachment
+    let resumeBuffer: Buffer | undefined;
     if (resume) {
-      const buffer = Buffer.from(await resume.arrayBuffer());
-      const filename = `${Date.now()}-${resume.name}`;
-      const uploadDir = path.join(process.cwd(), 'tmp/uploads');
-      await mkdir(uploadDir, { recursive: true });
-      resumeFilePath = path.join(uploadDir, filename);
-      await writeFile(resumeFilePath, buffer);
-      console.log(`Resume saved to ${resumeFilePath}`);
+      const arrayBuffer = await resume.arrayBuffer();
+      resumeBuffer = Buffer.from(arrayBuffer);
     }
 
     // Create email transporter
@@ -460,77 +453,9 @@ export async function POST(request: NextRequest) {
                         <span class="summary-value">${jobTitle}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Applicant Name:</span>
-                        <span class="summary-value">${fullName}</span>
+                        <span class="summary-label">Application Date:</span>
+                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Email:</span>
-                        <span class="summary-value">${email}</span>
-                    </div>
-                    ${phone ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Phone:</span>
-                        <span class="summary-value">${phone}</span>
-                    </div>
-                    ` : ''}
-                    ${currentCompany ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Current Company:</span>
-                        <span class="summary-value">${currentCompany}</span>
-                    </div>
-                    ` : ''}
-                    ${currentCTC ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Current CTC:</span>
-                        <span class="summary-value">${currentCTC} LPA</span>
-                    </div>
-                    ` : ''}
-                    ${expectedCTC ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Expected CTC:</span>
-                        <span class="summary-value">${expectedCTC} LPA</span>
-                    </div>
-                    ` : ''}
-                    ${skillsToolsFramework ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Skills & Tools:</span>
-                        <span class="summary-value">${skillsToolsFramework}</span>
-                    </div>
-                    ` : ''}
-                    ${domainKnowledge.length > 0 ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Domain Knowledge:</span>
-                        <span class="summary-value">
-                            <div class="skills-tags">
-                                ${domainKnowledge.map(domain => `<span class="skill-tag">${domain}</span>`).join('')}
-                            </div>
-                        </span>
-                    </div>
-                    ` : ''}
-                    ${experience ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Experience:</span>
-                        <span class="summary-value">${experience}</span>
-                    </div>
-                    ` : ''}
-                    ${currentRole ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Current Role:</span>
-                        <span class="summary-value">${currentRole}</span>
-                    </div>
-                    ` : ''}
-                    ${location ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Location:</span>
-                        <span class="summary-value">${location}</span>
-                    </div>
-                    ` : ''}
-                    ${noticePeriod ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Notice Period:</span>
-                        <span class="summary-value">${noticePeriod}</span>
-                    </div>
-                    ` : ''}
                 </div>
 
                 <div class="next-steps">
@@ -566,11 +491,11 @@ export async function POST(request: NextRequest) {
       to: process.env.ADMIN_EMAIL,
       subject: `New Job Application for ${jobTitle} - ${fullName}`,
       html: adminEmailHTML,
-      attachments: resumeFilePath
+      attachments: resumeBuffer
         ? [
             {
               filename: resume.name,
-              path: resumeFilePath,
+              content: resumeBuffer,
               contentType: resume.type,
             },
           ]
@@ -584,7 +509,7 @@ export async function POST(request: NextRequest) {
       html: userEmailHTML,
     };
 
-    await transporter.sendMail(adminMailOptions );
+    await transporter.sendMail(adminMailOptions  );
     await transporter.sendMail(userMailOptions);
 
     return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
