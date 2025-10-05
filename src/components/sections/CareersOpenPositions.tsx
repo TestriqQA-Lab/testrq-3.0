@@ -16,7 +16,7 @@ import {
   FaCheckCircle,
   FaCaretDown,
 } from "react-icons/fa";
-import { jobOpenings, JobOpening } from "@/app/lib/openings";
+import { jobOpenings, JobOpening } from "../../app/lib/openings"; // Corrected import path
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
@@ -25,14 +25,17 @@ const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(
+    null
+  );
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showDomainDropdown, setShowDomainDropdown] = useState(false);
   const [phoneError, setPhoneError] = useState("");
   const domainDropdownRef = useRef<HTMLDivElement>(null);
-  
+  const modalContentRef = useRef<HTMLDivElement>(null); // Ref for modal content
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -47,17 +50,17 @@ const CareersOpenPositions: React.FC = () => {
     location: "",
     noticePeriod: "",
   });
-  
+
   // Phone number validation regex - industry standard for detecting fake numbers
   const validatePhoneNumber = (phone: string): boolean => {
     // Remove all non-digit characters
-    const cleanPhone = phone.replace(/\D/g, '');
-    
+    const cleanPhone = phone.replace(/\D/g, "");
+
     // Check length (10-11 digits)
     if (cleanPhone.length < 10 || cleanPhone.length > 11) {
       return false;
     }
-    
+
     // Check for common fake patterns
     const fakePatterns = [
       /^0{10,11}$/, // All zeros
@@ -74,45 +77,58 @@ const CareersOpenPositions: React.FC = () => {
       /^0123456789$/, // Sequential starting with 0
       /^(\d)\1{9,10}$/, // Repeating digits
     ];
-    
+
     // Check against fake patterns
     for (const pattern of fakePatterns) {
       if (pattern.test(cleanPhone)) {
         return false;
       }
     }
-    
+
     // Additional validation for Indian numbers (if starts with country code)
-    if (cleanPhone.length === 11 && !cleanPhone.startsWith('91')) {
+    if (cleanPhone.length === 11 && !cleanPhone.startsWith("91")) {
       return false;
     }
-    
+
     // For 10-digit numbers, first digit should not be 0 or 1
-    if (cleanPhone.length === 10 && (cleanPhone.startsWith('0') || cleanPhone.startsWith('1'))) {
+    if (
+      cleanPhone.length === 10 &&
+      (cleanPhone.startsWith("0") || cleanPhone.startsWith("1"))
+    ) {
       return false;
     }
-    
+
     return true;
   };
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (domainDropdownRef.current && !domainDropdownRef.current.contains(event.target as Node)) {
+      if (
+        domainDropdownRef.current &&
+        !domainDropdownRef.current.contains(event.target as Node)
+      ) {
         setShowDomainDropdown(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
-  const filteredPositions = jobOpenings.filter((position) => {
+
+  // Scroll to top of modal on success message display
+  useEffect(() => {
+    if (showSuccessMessage && modalContentRef.current) {
+      modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [showSuccessMessage]);
+
+  const filteredPositions = jobOpenings.filter((position: JobOpening) => {
     const matchesSearch =
       position.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      position.skills.some((skill) =>
+      position.skills.some((skill: string) =>
         skill.toLowerCase().includes(searchTerm.toLowerCase())
       );
     return matchesSearch;
@@ -167,13 +183,13 @@ const CareersOpenPositions: React.FC = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate phone number if provided
     if (formData.phone && !validatePhoneNumber(formData.phone)) {
       setPhoneError("Please enter a valid 10-11 digit phone number");
       return;
     }
-    
+
     if (!resumeFile) {
       alert("Please upload your resume");
       return;
@@ -189,8 +205,14 @@ const CareersOpenPositions: React.FC = () => {
       formDataToSend.append("currentCompany", formData.currentCompany);
       formDataToSend.append("currentCTC", formData.currentCTC);
       formDataToSend.append("expectedCTC", formData.expectedCTC);
-      formDataToSend.append("skillsToolsFramework", formData.skillsToolsFramework);
-      formDataToSend.append("domainKnowledge", JSON.stringify(formData.domainKnowledge));
+      formDataToSend.append(
+        "skillsToolsFramework",
+        formData.skillsToolsFramework
+      );
+      formDataToSend.append(
+        "domainKnowledge",
+        JSON.stringify(formData.domainKnowledge)
+      );
       formDataToSend.append("experience", formData.experience);
       formDataToSend.append("currentRole", formData.currentRole);
       formDataToSend.append("location", formData.location);
@@ -210,12 +232,15 @@ const CareersOpenPositions: React.FC = () => {
 
       if (response.ok) {
         setShowSuccessMessage(true);
+        // The modal will scroll to top due to useEffect, then close after 3 seconds
         setTimeout(() => {
           handleCloseModal();
         }, 3000);
       } else {
         const errorData = await response.json();
-        alert(`Application submission failed: ${errorData.message || response.statusText}`);
+        alert(
+          `Application submission failed: ${errorData.message || response.statusText}`
+        );
       }
     } catch (error) {
       console.error("Error submitting application:", error);
@@ -231,12 +256,12 @@ const CareersOpenPositions: React.FC = () => {
     >
   ) => {
     const { name, value } = e.target;
-    
+
     // Clear phone error when user starts typing
     if (name === "phone") {
       setPhoneError("");
     }
-    
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -486,10 +511,22 @@ const CareersOpenPositions: React.FC = () => {
             </h2>
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore exciting opportunities to grow your <Link href="/blog/post/is-qa-a-good-career-software-tester">career in software
-              testing</Link>. We&apos;re hiring passionate QA professionals in
-              <Link href="/automation-testing-services"> automation testing</Link>, <Link href="/manual-testing">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and
-              <Link href="/security-testing"> security testing</Link> to join our world-class quality assurance team.
+              Explore exciting opportunities to grow your{" "}
+              <Link href="/blog/post/is-qa-a-good-career-software-tester">
+                career in software testing
+              </Link>
+              . We&apos;re hiring passionate QA professionals in
+              <Link href="/automation-testing-services">
+                {" "}
+                automation testing
+              </Link>
+              , <Link href="/manual-testing">manual testing</Link>,{" "}
+              <Link href="/performance-testing-services">
+                performance testing
+              </Link>
+              , and
+              <Link href="/security-testing"> security testing</Link> to join our
+              world-class quality assurance team.
             </p>
           </div>
 
@@ -498,7 +535,10 @@ const CareersOpenPositions: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {/* Search */}
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="search-positions"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Search Positions
                 </label>
                 <div className="relative">
@@ -517,9 +557,7 @@ const CareersOpenPositions: React.FC = () => {
             <div className="mt-6 flex items-center justify-between">
               <p className="text-sm text-gray-600">
                 Showing{" "}
-                <span className="font-semibold">
-                  {filteredPositions.length}
-                </span>{" "}
+                <span className="font-semibold">{filteredPositions.length}</span>{" "}
                 positions
               </p>
             </div>
@@ -527,14 +565,17 @@ const CareersOpenPositions: React.FC = () => {
 
           {/* Job Listings */}
           <div className="space-y-6">
-            {filteredPositions.map((position) => {
+            {filteredPositions.map((position: JobOpening) => {
               const isExpanded = expandedId === position.id;
               return (
                 <div
                   key={position.id}
                   className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
                 >
-                  <div onClick={() => setExpandedId(isExpanded ? null : position.id)} className="p-8 relative cursor-pointer">
+                  <div
+                    onClick={() => setExpandedId(isExpanded ? null : position.id)}
+                    className="p-8 relative cursor-pointer"
+                  >
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                       {/* Left Side - Job Info */}
                       <div className="flex-1">
@@ -553,7 +594,7 @@ const CareersOpenPositions: React.FC = () => {
                               <h3 className="text-xl font-bold text-gray-900">
                                 {position.title}
                               </h3>
-                              {position.badges?.map((badge, index) => (
+                              {position.badges?.map((badge: string, index: number) => (
                                 <span
                                   key={index}
                                   className={`px-2 py-1 text-xs flex flex-row font-semibold rounded-full border ${getBadgeStyle(
@@ -585,7 +626,7 @@ const CareersOpenPositions: React.FC = () => {
                                   0,
                                   isExpanded ? position.skills.length : 4
                                 )
-                                .map((skill, index) => (
+                                .map((skill: string, index: number) => (
                                   <span
                                     key={index}
                                     className="px-3 py-1 bg-[theme(color.brand.blue)] bg-opacity-10 text-white text-xs rounded-full font-medium"
@@ -621,7 +662,9 @@ const CareersOpenPositions: React.FC = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                           {/* Job Description */}
                           <div className="lg:col-span-2">
-                            <h4 className="text-xl font-bold text-gray-900 mb-4">Job Description</h4>
+                            <h4 className="text-xl font-bold text-gray-900 mb-4">
+                              Job Description
+                            </h4>
                             <div className="job-description prose prose-gray max-w-none">
                               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {position.description}
@@ -633,9 +676,12 @@ const CareersOpenPositions: React.FC = () => {
                           <div className="space-y-6">
                             {/* Apply Button */}
                             <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-600 rounded-xl p-6 text-white">
-                              <h5 className="font-semibold mb-2">Ready to Apply?</h5>
+                              <h5 className="font-semibold mb-2">
+                                Ready to Apply?
+                              </h5>
                               <p className="text-sm text-blue-100 mb-4">
-                                Join our team and make an impact in quality assurance.
+                                Join our team and make an impact in quality
+                                assurance.
                               </p>
                               <button
                                 onClick={(e) => handleApplyClick(position, e)}
@@ -652,21 +698,35 @@ const CareersOpenPositions: React.FC = () => {
                               </h5>
                               <div className="space-y-3">
                                 <div className="flex justify-between">
-                                  <span className="text-gray-600">Location:</span>
-                                  <span className="font-medium">{position.location}</span>
+                                  <span className="text-gray-600">
+                                    Location:
+                                  </span>
+                                  <span className="font-medium">
+                                    {position.location}
+                                  </span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span className="text-gray-600">Type:</span>
-                                  <span className="font-medium">{position.type}</span>
+                                  <span className="font-medium">
+                                    {position.type}
+                                  </span>
                                 </div>
                                 <div className="flex justify-between">
-                                  <span className="text-gray-600">Experience:</span>
-                                  <span className="font-medium">{position.experience}</span>
+                                  <span className="text-gray-600">
+                                    Experience:
+                                  </span>
+                                  <span className="font-medium">
+                                    {position.experience}
+                                  </span>
                                 </div>
                                 {position.salary && (
                                   <div className="flex justify-between">
-                                    <span className="text-gray-600">Salary:</span>
-                                    <span className="font-medium">{position.salary}</span>
+                                    <span className="text-gray-600">
+                                      Salary:
+                                    </span>
+                                    <span className="font-medium">
+                                      {position.salary}
+                                    </span>
                                   </div>
                                 )}
                               </div>
@@ -678,7 +738,7 @@ const CareersOpenPositions: React.FC = () => {
                                 Skills Required
                               </h5>
                               <div className="flex flex-wrap gap-2">
-                                {position.skills.map((skill, index) => (
+                                {position.skills.map((skill: string, index: number) => (
                                   <span
                                     key={index}
                                     className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border border-gray-200"
@@ -714,17 +774,28 @@ const CareersOpenPositions: React.FC = () => {
         {/* Application Modal - Updated with better viewport handling */}
         {showApplicationModal && selectedPosition && (
           <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-start justify-center z-50 p-4 overflow-y-auto">
-            <div className="bg-white rounded-2xl shadow-xl w-full max-w-4xl my-4 relative modal-content max-h-[calc(100vh-2rem)] overflow-y-auto">
+            <div
+              ref={modalContentRef}
+              className="bg-white rounded-2xl shadow-xl w-full max-w-4xl my-4 relative modal-content max-h-[calc(100vh-2rem)] overflow-y-auto"
+            >
               {/* Centered Success Message Overlay */}
               {showSuccessMessage && (
                 <div className="success-overlay">
                   <div className="success-message bg-white rounded-xl p-8 shadow-2xl max-w-md mx-4">
                     <div className="text-center">
                       <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted Successfully!</h3>
-                      <p className="text-gray-600 mb-4">We'll get back to you soon. This window will close automatically.</p>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        Application Submitted Successfully!
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        We\\\"ll get back to you soon. This window will close
+                        automatically.
+                      </p>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{width: '100%'}}></div>
+                        <div
+                          className="bg-green-500 h-2 rounded-full animate-pulse"
+                          style={{ width: "100%" }}
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -738,7 +809,7 @@ const CareersOpenPositions: React.FC = () => {
                 >
                   <FaTimes className="w-6 h-6" />
                 </button>
-                
+
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                   Apply for {selectedPosition.title}
                 </h3>
@@ -791,13 +862,13 @@ const CareersOpenPositions: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
-                            phoneError ? 'border-red-500' : 'border-gray-300'
-                          }`}
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${phoneError ? "border-red-500" : "border-gray-300"}`}
                           placeholder="+91 9876543210 or 9876543210"
                         />
                         {phoneError && (
-                          <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+                          <p className="text-red-500 text-sm mt-1">
+                            {phoneError}
+                          </p>
                         )}
                       </div>
                       <div>
@@ -813,84 +884,6 @@ const CareersOpenPositions: React.FC = () => {
                           placeholder="e.g., New York, Remote"
                           required
                         />
-                      </div>
-                      {/* Resume Upload moved here */}
-                      <div className="mt-6">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                          Resume Upload *
-                        </h4>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-blue-400 transition-colors">
-                          {!resumeFile ? (
-                            <>
-                              <FaUpload className="w-6 h-6 text-gray-400 mx-auto mb-3" />
-                              <p className="text-gray-600 text-sm mb-1">
-                                Click to upload or drag and drop
-                              </p>
-                              <p className="text-xs text-gray-500 mb-3">
-                                PDF, max 5MB
-                              </p>
-                              <label className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
-                                <FaUpload className="w-3 h-3 mr-2" />
-                                Choose File
-                                <input
-                                  type="file"
-                                  accept=".pdf"
-                                  onChange={handleFileUpload}
-                                  className="hidden"
-                                  required
-                                />
-                              </label>
-                            </>
-                          ) : (
-                            <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-3">
-                              <div className="flex items-center">
-                                <FaFileAlt className="w-4 h-4 text-green-600 mr-2" />
-                                <div>
-                                  <p className="text-sm font-medium text-green-800">
-                                    {resumeFile.name}
-                                  </p>
-                                  <p className="text-xs text-green-600">
-                                    {(resumeFile.size / 1024 / 1024).toFixed(2)} MB
-                                  </p>
-                                </div>
-                              </div>
-                              <button
-                                type="button"
-                                onClick={() => setResumeFile(null)}
-                                className="text-red-600 hover:text-red-800 p-1"
-                              >
-                                <FaTrash className="w-4 h-4" />
-                              </button>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Column 2: Professional Information & Skills */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                        Professional Information
-                      </h4>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Total Experience *
-                        </label>
-                        <select
-                          name="experience"
-                          value={formData.experience}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          required
-                        >
-                          <option value="">Select Experience</option>
-                          <option value="0-1 years">0-1 years</option>
-                          <option value="1-3 years">1-3 years</option>
-                          <option value="3-5 years">3-5 years</option>
-                          <option value="5-8 years">5-8 years</option>
-                          <option value="8-10 years">8-10 years</option>
-                          <option value="10+ years">10+ years</option>
-                        </select>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -915,18 +908,66 @@ const CareersOpenPositions: React.FC = () => {
                           value={formData.currentCompany}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Your current employer"
+                          placeholder="e.g., Tech Solutions Inc."
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Notice Period
+                          Total Experience (Years) *
+                        </label>
+                        <input
+                          type="text"
+                          name="experience"
+                          value={formData.experience}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          placeholder="e.g., 5 years"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Column 2: CTC, Skills, Domain Knowledge, Resume */}
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                        Professional Details
+                      </h4>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Current CTC (LPA)
+                        </label>
+                        <input
+                          type="text"
+                          name="currentCTC"
+                          value={formData.currentCTC}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          placeholder="e.g., 8 LPA"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Expected CTC (LPA)
+                        </label>
+                        <input
+                          type="text"
+                          name="expectedCTC"
+                          value={formData.expectedCTC}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          placeholder="e.g., 12 LPA"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Notice Period *
                         </label>
                         <select
                           name="noticePeriod"
                           value={formData.noticePeriod}
                           onChange={handleInputChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          required
                         >
                           <option value="">Select Notice Period</option>
                           {noticePeriodOptions.map((option) => (
@@ -938,62 +979,35 @@ const CareersOpenPositions: React.FC = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current CTC (in LPA)
+                          Skills, Tools, Frameworks
                         </label>
-                        <input
-                          type="number"
-                          name="currentCTC"
-                          value={formData.currentCTC}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., 8.5"
-                          step="0.1"
-                          min="0"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Expected CTC (in LPA)
-                        </label>
-                        <input
-                          type="number"
-                          name="expectedCTC"
-                          value={formData.expectedCTC}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., 12.0"
-                          step="0.1"
-                          min="0"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Skills (Tools & Framework)
-                        </label>
-                        <input
-                          type="text"
+                        <textarea
                           name="skillsToolsFramework"
                           value={formData.skillsToolsFramework}
                           onChange={handleInputChange}
+                          rows={3}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., Selenium, Playwright, Jira, Agile"
-                        />
+                          placeholder="e.g., Selenium, Cypress, Java, Python, Agile, JIRA"
+                        ></textarea>
                       </div>
-                      {/* Domain Knowledge Multi-select with Checkboxes */}
                       <div className="relative" ref={domainDropdownRef}>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Domain Knowledge
                         </label>
                         <div
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white cursor-pointer flex justify-between items-center focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          onClick={() => setShowDomainDropdown(!showDomainDropdown)}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white cursor-pointer flex items-center justify-between focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          onClick={() =>
+                            setShowDomainDropdown(!showDomainDropdown)
+                          }
                         >
-                          <span className="text-gray-700 truncate">
+                          <span className="text-gray-700">
                             {formData.domainKnowledge.length > 0
-                              ? `${formData.domainKnowledge.length} selected`
+                              ? formData.domainKnowledge.join(", ")
                               : "Select Domain Knowledge"}
                           </span>
-                          <FaCaretDown className={`w-4 h-4 text-gray-500 transform ${showDomainDropdown ? 'rotate-180' : 'rotate-0'} transition-transform duration-200`} />
+                          <FaCaretDown
+                            className={`w-4 h-4 text-gray-500 transform ${showDomainDropdown ? "rotate-180" : "rotate-0"} transition-transform duration-200`}
+                          />
                         </div>
                         {showDomainDropdown && (
                           <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto">
@@ -1005,15 +1019,59 @@ const CareersOpenPositions: React.FC = () => {
                                 <input
                                   type="checkbox"
                                   value={option}
-                                  checked={formData.domainKnowledge.includes(option)}
-                                  onChange={() => handleDomainKnowledgeChange(option)}
+                                  checked={formData.domainKnowledge.includes(
+                                    option
+                                  )}
+                                  onChange={() =>
+                                    handleDomainKnowledgeChange(option)
+                                  }
                                   className="form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out"
                                 />
-                                <span className="ml-2 text-gray-700">{option}</span>
+                                <span className="ml-2 text-gray-700">
+                                  {option}
+                                </span>
                               </label>
                             ))}
                           </div>
                         )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Upload Resume (PDF, Max 5MB) *
+                        </label>
+                        <div className="flex items-center space-x-4">
+                          <label
+                            htmlFor="resume-upload"
+                            className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 cursor-pointer hover:bg-gray-50 transition-colors duration-300"
+                          >
+                            <FaUpload className="w-5 h-5 mr-2" />
+                            <span>
+                              {resumeFile ? "Change File" : "Choose File"}
+                            </span>
+                            <input
+                              id="resume-upload"
+                              type="file"
+                              accept=".pdf"
+                              onChange={handleFileUpload}
+                              className="hidden"
+                            />
+                          </label>
+                          {resumeFile && (
+                            <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
+                              <FaFileAlt className="w-5 h-5 text-blue-500 mr-2" />
+                              <span className="text-sm text-gray-700 truncate max-w-[150px]">
+                                {resumeFile.name}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => setResumeFile(null)}
+                                className="ml-2 text-gray-500 hover:text-red-500"
+                              >
+                                <FaTrash className="w-4 h-4" />
+                              </button>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1053,3 +1111,4 @@ const CareersOpenPositions: React.FC = () => {
 };
 
 export default CareersOpenPositions;
+

@@ -1,3 +1,4 @@
+
 import { NextRequest, NextResponse } from 'next/server';
 import { writeFile } from 'fs/promises';
 import path from 'path';
@@ -460,43 +461,51 @@ export async function POST(request: NextRequest) {
                         <span class="summary-value">${jobTitle}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Application ID:</span>
-                        <span class="summary-value">#${jobId}</span>
+                        <span class="summary-label">Applicant Name:</span>
+                        <span class="summary-value">${fullName}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Submitted:</span>
-                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        })}</span>
+                        <span class="summary-label">Email:</span>
+                        <span class="summary-value">${email}</span>
                     </div>
+                    ${phone ? `
                     <div class="summary-item">
-                        <span class="summary-label">Experience Level:</span>
-                        <span class="summary-value">${experience}</span>
+                        <span class="summary-label">Phone:</span>
+                        <span class="summary-value">${phone}</span>
                     </div>
+                    ` : ''}
+                    ${location ? `
                     <div class="summary-item">
                         <span class="summary-label">Location:</span>
                         <span class="summary-value">${location}</span>
                     </div>
+                    ` : ''}
+                    ${experience ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Experience:</span>
+                        <span class="summary-value">${experience}</span>
+                    </div>
+                    ` : ''}
+                    ${noticePeriod ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Notice Period:</span>
+                        <span class="summary-value">${noticePeriod}</span>
+                    </div>
+                    ` : ''}
                 </div>
-                
+
                 <div class="next-steps">
-                    <h3>🚀 What Happens Next?</h3>
+                    <h3>What Happens Next?</h3>
                     <ul>
-                        <li><strong>Application Review:</strong> Our HR team will review your application within 2-3 business days</li>
-                        <li><strong>Initial Screening:</strong> If shortlisted, we'll contact you for a brief phone/video screening</li>
-                        <li><strong>Technical Assessment:</strong> You may be asked to complete a technical evaluation</li>
-                        <li><strong>Final Interview:</strong> Meet with our team leads and discuss your fit for the role</li>
-                        <li><strong>Decision:</strong> We'll notify you of our decision within 1 week of the final interview</li>
+                        <li>Our recruitment team will carefully review your application.</li>
+                        <li>If your profile matches our requirements, we will contact you for the next steps.</li>
+                        <li>You can expect to hear from us within 1-2 weeks.</li>
                     </ul>
                 </div>
-                
+
                 <div class="contact-info">
-                    <h4>📞 Need to Update Your Application?</h4>
-                    <p>If you need to make any changes or have questions, please reply to this email with your Application ID: #${jobId}</p>
+                    <h4>Questions?</h4>
+                    <p>If you have any questions regarding your application, please don't hesitate to contact us at <a href="mailto:hr@testriq.com" style="color: #a16207; text-decoration: underline;">hr@testriq.com</a>.</p>
                 </div>
             </div>
             
@@ -507,7 +516,7 @@ export async function POST(request: NextRequest) {
                 <div class="social-links">
                     <a href="https://www.testriq.com">🌐 Website</a>
                     <a href="https://linkedin.com/company/testriq">💼 LinkedIn</a>
-                    <a href="mailto:hr@testriq.com">📧 Contact</a>
+                    <a href="mailto:hr@testriq.com">📧 Contact - hr@testriq.com</a>
                 </div>
                 
                 <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
@@ -536,7 +545,7 @@ export async function POST(request: NextRequest) {
 
     // Send user confirmation email
     const userMailOptions = {
-      from: "hr@testriq.com",
+      from: "hr@testriq.com", // Changed from process.env.EMAIL_FROM
       to: email,
       subject: `✅ Application Received - ${jobTitle} Position at Testriq`,
       html: userEmailHTML,
@@ -556,3 +565,4 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }
+
