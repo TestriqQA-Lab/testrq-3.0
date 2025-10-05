@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
     const currentRole = formData.get('currentRole') as string;
     const location = formData.get('location') as string;
     const noticePeriod = formData.get('noticePeriod') as string;
-    const coverLetter = formData.get('coverLetter') as string;
     const jobTitle = formData.get('jobTitle') as string;
     const jobId = formData.get('jobId') as string;
     const resume = formData.get('resume') as File | null;
@@ -36,7 +35,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Missing required fields: fullName, email, jobTitle, resume' }, { status: 400 });
     }
 
-    // Save resume (as previously implemented)
+    // Save resume
     let resumeFilePath: string | undefined;
     if (resume) {
       const buffer = Buffer.from(await resume.arrayBuffer());
@@ -48,7 +47,7 @@ export async function POST(request: NextRequest) {
       console.log(`Resume saved to ${resumeFilePath}`);
     }
 
-    // Send email notification
+    // Create email transporter
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT || '587'),
@@ -59,39 +58,497 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    const mailOptions = {
+    // Modern Admin Email Template
+    const adminEmailHTML = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Job Application - ${jobTitle}</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f8fafc;
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 30px;
+                text-align: center;
+            }
+            .header h1 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 8px;
+            }
+            .header p {
+                opacity: 0.9;
+                font-size: 16px;
+            }
+            .content {
+                padding: 30px;
+            }
+            .job-info {
+                background: #f1f5f9;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 25px;
+                border-left: 4px solid #667eea;
+            }
+            .job-info h2 {
+                color: #1e293b;
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .job-info p {
+                color: #64748b;
+                margin: 0;
+            }
+            .applicant-details {
+                display: grid;
+                gap: 15px;
+            }
+            .detail-row {
+                display: flex;
+                padding: 12px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            .detail-row:last-child {
+                border-bottom: none;
+            }
+            .detail-label {
+                font-weight: 600;
+                color: #374151;
+                min-width: 140px;
+                flex-shrink: 0;
+            }
+            .detail-value {
+                color: #6b7280;
+                flex: 1;
+            }
+            .skills-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+                margin-top: 5px;
+            }
+            .skill-tag {
+                background: #e0e7ff;
+                color: #3730a3;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .footer {
+                background: #f8fafc;
+                padding: 20px 30px;
+                text-align: center;
+                border-top: 1px solid #e2e8f0;
+            }
+            .footer p {
+                color: #64748b;
+                font-size: 14px;
+            }
+            .cta-button {
+                display: inline-block;
+                background: #667eea;
+                color: white;
+                padding: 12px 24px;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: 600;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🎯 New Job Application Received</h1>
+                <p>A candidate has applied for a position at Testriq</p>
+            </div>
+            
+            <div class="content">
+                <div class="job-info">
+                    <h2>${jobTitle}</h2>
+                    <p>Application ID: #${jobId} • Received: ${new Date().toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })}</p>
+                </div>
+                
+                <div class="applicant-details">
+                    <div class="detail-row">
+                        <div class="detail-label">👤 Full Name:</div>
+                        <div class="detail-value">${fullName}</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">📧 Email:</div>
+                        <div class="detail-value"><a href="mailto:${email}" style="color: #667eea;">${email}</a></div>
+                    </div>
+                    ${phone ? `
+                    <div class="detail-row">
+                        <div class="detail-label">📱 Phone:</div>
+                        <div class="detail-value"><a href="tel:${phone}" style="color: #667eea;">${phone}</a></div>
+                    </div>
+                    ` : ''}
+                    <div class="detail-row">
+                        <div class="detail-label">📍 Location:</div>
+                        <div class="detail-value">${location}</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">💼 Experience:</div>
+                        <div class="detail-value">${experience}</div>
+                    </div>
+                    ${currentRole ? `
+                    <div class="detail-row">
+                        <div class="detail-label">🎯 Current Role:</div>
+                        <div class="detail-value">${currentRole}</div>
+                    </div>
+                    ` : ''}
+                    ${currentCompany ? `
+                    <div class="detail-row">
+                        <div class="detail-label">🏢 Current Company:</div>
+                        <div class="detail-value">${currentCompany}</div>
+                    </div>
+                    ` : ''}
+                    ${currentCTC ? `
+                    <div class="detail-row">
+                        <div class="detail-label">💰 Current CTC:</div>
+                        <div class="detail-value">${currentCTC} LPA</div>
+                    </div>
+                    ` : ''}
+                    ${expectedCTC ? `
+                    <div class="detail-row">
+                        <div class="detail-label">💸 Expected CTC:</div>
+                        <div class="detail-value">${expectedCTC} LPA</div>
+                    </div>
+                    ` : ''}
+                    ${noticePeriod ? `
+                    <div class="detail-row">
+                        <div class="detail-label">⏰ Notice Period:</div>
+                        <div class="detail-value">${noticePeriod}</div>
+                    </div>
+                    ` : ''}
+                    ${skillsToolsFramework ? `
+                    <div class="detail-row">
+                        <div class="detail-label">🛠️ Skills & Tools:</div>
+                        <div class="detail-value">${skillsToolsFramework}</div>
+                    </div>
+                    ` : ''}
+                    ${domainKnowledge.length > 0 ? `
+                    <div class="detail-row">
+                        <div class="detail-label">🎓 Domain Knowledge:</div>
+                        <div class="detail-value">
+                            <div class="skills-tags">
+                                ${domainKnowledge.map(domain => `<span class="skill-tag">${domain}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>📎 Resume attached to this email</p>
+                <p>Please review the application and respond to the candidate promptly.</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+
+    // Modern User Confirmation Email Template
+    const userEmailHTML = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Application Received - Testriq</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f8fafc;
+            }
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                color: white;
+                padding: 40px 30px;
+                text-align: center;
+            }
+            .header h1 {
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+            .header p {
+                opacity: 0.95;
+                font-size: 16px;
+            }
+            .content {
+                padding: 40px 30px;
+            }
+            .success-icon {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            .success-icon div {
+                width: 80px;
+                height: 80px;
+                background: #dcfce7;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 40px;
+            }
+            .message {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .message h2 {
+                color: #1f2937;
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+            .message p {
+                color: #6b7280;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            .application-summary {
+                background: #f9fafb;
+                border-radius: 8px;
+                padding: 25px;
+                margin: 25px 0;
+                border-left: 4px solid #10b981;
+            }
+            .application-summary h3 {
+                color: #1f2937;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            .summary-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 8px 0;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            .summary-item:last-child {
+                border-bottom: none;
+            }
+            .summary-label {
+                font-weight: 600;
+                color: #374151;
+            }
+            .summary-value {
+                color: #6b7280;
+            }
+            .next-steps {
+                background: #eff6ff;
+                border-radius: 8px;
+                padding: 25px;
+                margin: 25px 0;
+            }
+            .next-steps h3 {
+                color: #1e40af;
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            .next-steps ul {
+                color: #374151;
+                padding-left: 20px;
+            }
+            .next-steps li {
+                margin-bottom: 8px;
+            }
+            .footer {
+                background: #f8fafc;
+                padding: 30px;
+                text-align: center;
+                border-top: 1px solid #e2e8f0;
+            }
+            .footer p {
+                color: #64748b;
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            .social-links {
+                margin-top: 20px;
+            }
+            .social-links a {
+                display: inline-block;
+                margin: 0 10px;
+                color: #6b7280;
+                text-decoration: none;
+                font-size: 14px;
+            }
+            .contact-info {
+                background: #fef3c7;
+                border-radius: 8px;
+                padding: 20px;
+                margin: 20px 0;
+                text-align: center;
+            }
+            .contact-info h4 {
+                color: #92400e;
+                margin-bottom: 10px;
+            }
+            .contact-info p {
+                color: #a16207;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>✅ Application Received!</h1>
+                <p>Thank you for applying to Testriq</p>
+            </div>
+            
+            <div class="content">
+                <div class="success-icon">
+                    <div>🎉</div>
+                </div>
+                
+                <div class="message">
+                    <h2>Hi ${fullName}!</h2>
+                    <p>We've successfully received your application for the <strong>${jobTitle}</strong> position. Our team will review your profile and get back to you soon.</p>
+                </div>
+                
+                <div class="application-summary">
+                    <h3>📋 Application Summary</h3>
+                    <div class="summary-item">
+                        <span class="summary-label">Position:</span>
+                        <span class="summary-value">${jobTitle}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Application ID:</span>
+                        <span class="summary-value">#${jobId}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Submitted:</span>
+                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        })}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Experience Level:</span>
+                        <span class="summary-value">${experience}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Location:</span>
+                        <span class="summary-value">${location}</span>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3>🚀 What Happens Next?</h3>
+                    <ul>
+                        <li><strong>Application Review:</strong> Our HR team will review your application within 2-3 business days</li>
+                        <li><strong>Initial Screening:</strong> If shortlisted, we'll contact you for a brief phone/video screening</li>
+                        <li><strong>Technical Assessment:</strong> You may be asked to complete a technical evaluation</li>
+                        <li><strong>Final Interview:</strong> Meet with our team leads and discuss your fit for the role</li>
+                        <li><strong>Decision:</strong> We'll notify you of our decision within 1 week of the final interview</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-info">
+                    <h4>📞 Need to Update Your Application?</h4>
+                    <p>If you need to make any changes or have questions, please reply to this email with your Application ID: #${jobId}</p>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p><strong>Testriq QA Lab</strong> - Professional Software Testing Services</p>
+                <p>We're excited about the possibility of you joining our team!</p>
+                
+                <div class="social-links">
+                    <a href="https://www.testriq.com">🌐 Website</a>
+                    <a href="https://linkedin.com/company/testriq">💼 LinkedIn</a>
+                    <a href="mailto:hr@testriq.com">📧 Contact</a>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
+                    This is an automated message. Please do not reply directly to this email.
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
+    `;
+
+    // Send admin notification email
+    const adminMailOptions = {
       from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_TO,
-      subject: `New Job Application for ${jobTitle}`,
-      html: `
-        <h1>New Job Application</h1>
-        <p><strong>Job Title:</strong> ${jobTitle} (ID: ${jobId})</p>
-        <p><strong>Applicant Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Current Company:</strong> ${currentCompany}</p>
-        <p><strong>Current CTC (LPA):</strong> ${currentCTC}</p>
-        <p><strong>Expected CTC (LPA):</strong> ${expectedCTC}</p>
-        <p><strong>Skills (Tools & Framework):</strong> ${skillsToolsFramework}</p>
-        <p><strong>Domain Knowledge:</strong> ${domainKnowledge.join(', ')}</p>
-        <p><strong>Experience:</strong> ${experience}</p>
-        <p><strong>Current Role:</strong> ${currentRole}</p>
-        <p><strong>Location:</strong> ${location}</p>
-        <p><strong>Notice Period:</strong> ${noticePeriod}</p>
-        <p><strong>Cover Letter:</strong> ${coverLetter}</p>
-        ${resumeFilePath ? `<p>Resume attached.</p>` : ''}
-      `,
+      subject: `🎯 New Job Application: ${jobTitle} - ${fullName}`,
+      html: adminEmailHTML,
       attachments: resumeFilePath ? [
         {
           filename: resume.name,
           path: resumeFilePath,
-          contentType: resume.type || 'application/octet-stream',
+          contentType: resume.type || 'application/pdf',
         },
       ] : [],
     };
 
-    await transporter.sendMail(mailOptions);
-    console.log('Application email sent successfully!');
+    // Send user confirmation email
+    const userMailOptions = {
+      from: "hr@testriq.com",
+      to: email,
+      subject: `✅ Application Received - ${jobTitle} Position at Testriq`,
+      html: userEmailHTML,
+    };
+
+    // Send both emails
+    await Promise.all([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(userMailOptions)
+    ]);
+
+    console.log('Application emails sent successfully!');
 
     return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
   } catch (error) {

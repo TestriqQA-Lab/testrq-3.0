@@ -7,11 +7,12 @@ export interface JobOpening {
   location: string;
   type: string;
   experience: string;
-  fullDescription: string;
+  description: string;
   skills: string[];
   badges?: string[];
   icon?: IconType;
   color?: string;
+  salary?: string;
 }
 
 export const jobOpenings: JobOpening[] = [
@@ -21,7 +22,7 @@ export const jobOpenings: JobOpening[] = [
     location: "Hybrid (Mira Road, Mumbai)",
     type: "Full-time",
     experience: "3–5 Years",
-    fullDescription: `
+    description: `
 ### Key Responsibilities:
 - Actively attend all stand-ups and team meetings with pods.
 - Manage end-to-end QA for both backend and frontend applications.
@@ -58,6 +59,7 @@ export const jobOpenings: JobOpening[] = [
     badges: ["Urgent", "Featured"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
+    salary: "Competitive",
   },
   {
     id: 2,
@@ -65,7 +67,7 @@ export const jobOpenings: JobOpening[] = [
     location: "On-Site (Kurla, Mumbai)",
     type: "Full-time",
     experience: "2–4 Years",
-    fullDescription: `
+    description: `
 ### Key Responsibilities:
 - Analyze business requirements and prepare detailed test scenarios and test cases.
 - Perform manual testing of trading applications, order management systems, and related modules.
@@ -92,6 +94,7 @@ export const jobOpenings: JobOpening[] = [
     badges: ["Urgent", "Featured"],
     icon: FaBug,
     color: "from-yellow-400 to-yellow-600",
+    salary: "Competitive",
   },
   {
     id: 3,
@@ -99,7 +102,7 @@ export const jobOpenings: JobOpening[] = [
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
     experience: "2 – 3 years",
-    fullDescription: `
+    description: `
 ### Job Description:
 
 Role: Automation Test Engineer (Playwright + Javascript)  
@@ -139,6 +142,7 @@ Work Type: Full-time
     badges: ["Urgent", "Featured"],
     icon: FaCode,
     color: "from-green-500 to-green-700",
+    salary: "Competitive",
   },
   {
     id: 4,
@@ -146,7 +150,7 @@ Work Type: Full-time
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
     experience: "2 – 3 years",
-    fullDescription: `
+    description: `
 ### Job Description:
 
 Role: Automation Test Engineer (Selenium + Playwright)  
@@ -199,7 +203,7 @@ Work Type: Full-time
     location: "On-site (Western Mumbai)",
     type: "Full-time",
     experience: "2 years",
-    fullDescription: `
+    description: `
 ### Job Description:
 
 Role: Playwright Automation Tester  
@@ -253,7 +257,7 @@ Work Type: Full-time
     location: "On-site (Mira Road)",
     type: "Internship",
     experience: "3–6 months",
-    fullDescription: `
+    description: `
 ### Job Description:
 
 Role: QA / Automation Intern / Software Testing Intern (Java / JavaScript)  
@@ -309,7 +313,7 @@ Duration: 3–6 months
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Penetration Tester  
@@ -366,7 +370,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Data Processing Executive  
@@ -415,7 +419,7 @@ Timing: 8:30pm to 5:30am
     location: "Mumbai (Mira Road)",
     type: "Internship",
     experience: "Fresher / Training Provided",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Business Development Executive – Intern  
@@ -465,7 +469,7 @@ Internship Duration: 3 Months
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-2 Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: SOC Analyst  
@@ -518,7 +522,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "2 Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: SEO & Digital Marketing Expert  
@@ -578,7 +582,7 @@ Work Type: Full Time
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "5+ Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Front End Developer (Immediate Joiners Only)  
@@ -628,7 +632,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "Fresher – 1 Year",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Graphic Designer  
@@ -680,7 +684,7 @@ Work Type: Full Time
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Cypress Automation Tester  
@@ -737,6 +741,7 @@ Work Type: Full Time
     ],
     icon: FaCode,
     color: "from-green-400 to-green-600",
+    salary: "Competitive",
   },
   {
     id: 15,
@@ -744,7 +749,7 @@ Work Type: Full Time
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "5 to 10 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Business Development Manager  
@@ -795,7 +800,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "1 to 3 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Digital Marketing Executive  
@@ -837,6 +842,7 @@ Work Type: Full Time
     ],
     icon: FaCode,
     color: "from-green-500 to-green-700",
+    salary: "Competitive",
   },
 
   {
@@ -845,7 +851,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Social Media Manager  
@@ -892,7 +898,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "5 to 7 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: QA Test Lead  
@@ -940,7 +946,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Product Manager  
@@ -988,7 +994,7 @@ Work Type: Full Time
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
+    description: `
 ### Job Description
 
 Role: Tele Sales Executive  
