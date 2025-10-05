@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
+import { writeFile, mkdir } from 'fs/promises';
 import path from 'path';
 import nodemailer from 'nodemailer';
 
@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
       const buffer = Buffer.from(await resume.arrayBuffer());
       const filename = `${Date.now()}-${resume.name}`;
       const uploadDir = path.join(process.cwd(), 'tmp/uploads');
-      await require('fs').promises.mkdir(uploadDir, { recursive: true });
+      await mkdir(uploadDir, { recursive: true });
       resumeFilePath = path.join(uploadDir, filename);
       await writeFile(resumeFilePath, buffer);
       console.log(`Resume saved to ${resumeFilePath}`);
@@ -460,99 +460,136 @@ export async function POST(request: NextRequest) {
                         <span class="summary-value">${jobTitle}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Application ID:</span>
-                        <span class="summary-value">#${jobId}</span>
+                        <span class="summary-label">Applicant Name:</span>
+                        <span class="summary-value">${fullName}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Submitted:</span>
-                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        })}</span>
+                        <span class="summary-label">Email:</span>
+                        <span class="summary-value">${email}</span>
                     </div>
+                    ${phone ? `
                     <div class="summary-item">
-                        <span class="summary-label">Experience Level:</span>
+                        <span class="summary-label">Phone:</span>
+                        <span class="summary-value">${phone}</span>
+                    </div>
+                    ` : ''}
+                    ${currentCompany ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Current Company:</span>
+                        <span class="summary-value">${currentCompany}</span>
+                    </div>
+                    ` : ''}
+                    ${currentCTC ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Current CTC:</span>
+                        <span class="summary-value">${currentCTC} LPA</span>
+                    </div>
+                    ` : ''}
+                    ${expectedCTC ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Expected CTC:</span>
+                        <span class="summary-value">${expectedCTC} LPA</span>
+                    </div>
+                    ` : ''}
+                    ${skillsToolsFramework ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Skills & Tools:</span>
+                        <span class="summary-value">${skillsToolsFramework}</span>
+                    </div>
+                    ` : ''}
+                    ${domainKnowledge.length > 0 ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Domain Knowledge:</span>
+                        <span class="summary-value">
+                            <div class="skills-tags">
+                                ${domainKnowledge.map(domain => `<span class="skill-tag">${domain}</span>`).join('')}
+                            </div>
+                        </span>
+                    </div>
+                    ` : ''}
+                    ${experience ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Experience:</span>
                         <span class="summary-value">${experience}</span>
                     </div>
+                    ` : ''}
+                    ${currentRole ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Current Role:</span>
+                        <span class="summary-value">${currentRole}</span>
+                    </div>
+                    ` : ''}
+                    ${location ? `
                     <div class="summary-item">
                         <span class="summary-label">Location:</span>
                         <span class="summary-value">${location}</span>
                     </div>
+                    ` : ''}
+                    ${noticePeriod ? `
+                    <div class="summary-item">
+                        <span class="summary-label">Notice Period:</span>
+                        <span class="summary-value">${noticePeriod}</span>
+                    </div>
+                    ` : ''}
                 </div>
-                
+
                 <div class="next-steps">
-                    <h3>🚀 What Happens Next?</h3>
+                    <h3>What Happens Next?</h3>
                     <ul>
-                        <li><strong>Application Review:</strong> Our HR team will review your application within 2-3 business days</li>
-                        <li><strong>Initial Screening:</strong> If shortlisted, we'll contact you for a brief phone/video screening</li>
-                        <li><strong>Technical Assessment:</strong> You may be asked to complete a technical evaluation</li>
-                        <li><strong>Final Interview:</strong> Meet with our team leads and discuss your fit for the role</li>
-                        <li><strong>Decision:</strong> We'll notify you of our decision within 1 week of the final interview</li>
+                        <li>Our HR team will review your application within 3-5 business days.</li>
+                        <li>If your profile matches our requirements, you'll be contacted for an initial screening interview.</li>
+                        <li>You can expect to hear from us regarding the next steps in the process.</li>
                     </ul>
                 </div>
-                
+
                 <div class="contact-info">
-                    <h4>📞 Need to Update Your Application?</h4>
-                    <p>If you need to make any changes or have questions, please reply to this email with your Application ID: #${jobId}</p>
+                    <h4>Need Assistance?</h4>
+                    <p>If you have any questions about your application or the hiring process, feel free to contact our HR team at <a href="mailto:hr@testriq.com" style="color: #a16207; text-decoration: underline;">hr@testriq.com</a>.</p>
                 </div>
             </div>
             
             <div class="footer">
-                <p><strong>Testriq QA Lab</strong> - Professional Software Testing Services</p>
-                <p>We're excited about the possibility of you joining our team!</p>
-                
+                <p>&copy; ${new Date().getFullYear()} Testriq QA Lab. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://www.testriq.com">🌐 Website</a>
-                    <a href="https://linkedin.com/company/testriq">💼 LinkedIn</a>
-                    <a href="mailto:hr@testriq.com">📧 Contact</a>
+                    <a href="https://www.linkedin.com/company/testriq/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://twitter.com/TestriqQA" target="_blank" rel="noopener noreferrer">Twitter</a>
                 </div>
-                
-                <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
-                    This is an automated message. Please do not reply directly to this email.
-                </p>
             </div>
         </div>
     </body>
     </html>
     `;
 
-    // Send admin notification email
+    // Send emails
     const adminMailOptions = {
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `🎯 New Job Application: ${jobTitle} - ${fullName}`,
+      from: process.env.EMAIL_USER,
+      to: process.env.ADMIN_EMAIL,
+      subject: `New Job Application for ${jobTitle} - ${fullName}`,
       html: adminEmailHTML,
-      attachments: resumeFilePath ? [
-        {
-          filename: resume.name,
-          path: resumeFilePath,
-          contentType: resume.type || 'application/pdf',
-        },
-      ] : [],
+      attachments: resumeFilePath
+        ? [
+            {
+              filename: resume.name,
+              path: resumeFilePath,
+              contentType: resume.type,
+            },
+          ]
+        : [],
     };
 
-    // Send user confirmation email
     const userMailOptions = {
-      from: "hr@testriq.com",
+      from: process.env.EMAIL_USER,
       to: email,
-      subject: `✅ Application Received - ${jobTitle} Position at Testriq`,
+      subject: `Testriq: Application Received for ${jobTitle}`,
       html: userEmailHTML,
     };
 
-    // Send both emails
-    await Promise.all([
-      transporter.sendMail(adminMailOptions),
-      transporter.sendMail(userMailOptions)
-    ]);
-
-    console.log('Application emails sent successfully!');
+    await transporter.sendMail(adminMailOptions );
+    await transporter.sendMail(userMailOptions);
 
     return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
   } catch (error) {
-    console.error('Error processing job application:', error);
+    console.error('Error submitting application:', error);
     return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }

@@ -7,7 +7,6 @@ import {
   FaDatabase,
   FaGlobe,
   FaLinkedin,
-  FaUsers,
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
@@ -192,7 +191,7 @@ const TeamMembersSection = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Featured Team Members */}
-        <div className="bg-[theme(color.background.gray)] rounded-2xl p-8 md:p-12 mb-16">
+        <div className="bg-[theme(color.background.gray )] rounded-2xl p-8 md:p-12 mb-16">
 
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">

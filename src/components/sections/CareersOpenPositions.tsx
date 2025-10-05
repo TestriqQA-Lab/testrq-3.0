@@ -6,7 +6,6 @@ import {
   FaMapMarkerAlt,
   FaClock,
   FaUsers,
-  FaFire,
   FaChevronDown,
   FaChevronUp,
   FaTimes,

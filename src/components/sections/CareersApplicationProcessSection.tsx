@@ -96,7 +96,7 @@ const CareersApplicationProcessSection: React.FC = () => {
           offer, ensuring a thorough candidate evaluation across roles like
           <Link href="/manual-testing" className="text-brand-blue hover:underline"> manual testing</Link>, <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, and <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>. For
           urgent software testing roles, we can expedite the process to 1–2
-          weeks. You'll be kept informed of timelines, interview stages, and
+          weeks. You&apos;ll be kept informed of timelines, interview stages, and
           selection updates throughout your application journey at Testriq QA
           Lab.
         </>
@@ -356,7 +356,7 @@ const CareersApplicationProcessSection: React.FC = () => {
             <p>
               Questions about the process? Email us at{" "}
               <Link href="mailto:hr@testriq.com" className="font-semibold hover:underline">
-                contact@testriq.com
+                hr@testriq.com
               </Link>
             </p>
           </div>

@@ -8,10 +8,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
 
   reactStrictMode: true, // ✅ Helps catch performance issues in dev
-  swcMinify: true,       // ✅ Smaller, faster JS bundles
-
   experimental: {
-    esmExternals: "loose", // ✅ Reduces polyfills/legacy JS
     cssChunking: true,     // Split + reorder CSS per route
     optimizeCss: true,     // Inline critical CSS (Critters)
     inlineCss: true        // Alternative inlining flag present in newer versions
@@ -38,7 +35,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async redirects() {
+  async redirects( ) {
     return [
       {
         source: "/our-clients",
@@ -55,4 +52,3 @@ const nextConfig: NextConfig = {
 };
 
 export default withBundleAnalyzer(nextConfig);
-
