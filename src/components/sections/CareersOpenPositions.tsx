@@ -32,7 +32,7 @@ const CareersOpenPositions: React.FC = () => {
   const [showDomainDropdown, setShowDomainDropdown] = useState(false);
   const [phoneError, setPhoneError] = useState("");
   const domainDropdownRef = useRef<HTMLDivElement>(null);
-  const modalContentRef = useRef<HTMLDivElement>(null); // Ref for modal content
+  const modalContentRef = useRef<HTMLDivElement>(null);
   
   const [formData, setFormData] = useState({
     fullName: "",
@@ -127,6 +127,8 @@ const CareersOpenPositions: React.FC = () => {
     setSelectedPosition(position);
     setShowApplicationModal(true);
     setShowSuccessMessage(false);
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
   };
 
   const handleCloseModal = () => {
@@ -135,6 +137,8 @@ const CareersOpenPositions: React.FC = () => {
     setResumeFile(null);
     setShowSuccessMessage(false);
     setPhoneError("");
+    // Restore body scroll
+    document.body.style.overflow = 'unset';
     setFormData({
       fullName: "",
       email: "",
@@ -467,40 +471,51 @@ const CareersOpenPositions: React.FC = () => {
           z-index: 30;
           border-radius: 1rem;
         }
+
+        /* Mobile modal improvements */
+        @media (max-width: 768px) {
+          .modal-content {
+            margin: 0.5rem;
+            max-height: calc(100vh - 1rem);
+          }
+        }
       `}</style>
 
       <section
-        className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24"
+        className="py-12 sm:py-16 bg-gray-50 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24"
         id="open-positions-section"
       >
-        <div className="max-w-7xl mx-auto ">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-              <FaUsers className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-4 py-2 sm:px-6 sm:py-2 mb-4 sm:mb-6">
+              <FaUsers className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+              <span className="text-xs sm:text-sm font-medium text-white">
                 Open Positions
               </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               Find Your Perfect
               <span className="block text-[theme(color.brand.blue)]">
                 QA Role
               </span>
             </h2>
 
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Explore exciting opportunities to grow your <Link href="/blog/post/is-qa-a-good-career-software-tester">career in software
-              testing</Link>. We&apos;re hiring passionate QA professionals in
-              <Link href="/automation-testing-services"> automation testing</Link>, <Link href="/manual-testing">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and
-              <Link href="/security-testing"> security testing</Link> to join our world-class quality assurance team.
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+              Explore exciting opportunities to grow your{" "}
+              <Link href="/blog/post/is-qa-a-good-career-software-tester" className="text-brand-blue hover:underline">
+                career in software testing
+              </Link>
+              . We&apos;re hiring passionate QA professionals in
+              <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, <Link href="/manual-testing" className="text-brand-blue hover:underline">manual testing</Link>, <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>, and
+              <Link href="/security-testing" className="text-brand-blue hover:underline"> security testing</Link> to join our world-class quality assurance team.
             </p>
           </div>
 
-          {/* Search and Filters */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* Search and Filters - Mobile optimized */}
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 mb-8 sm:mb-12 border border-gray-100">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
               {/* Search */}
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -513,13 +528,13 @@ const CareersOpenPositions: React.FC = () => {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Search by title, skills, or keywords..."
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-between">
+            <div className="mt-4 sm:mt-6 flex items-center justify-between">
               <p className="text-sm text-gray-600">
                 Showing{" "}
                 <span className="font-semibold">
@@ -530,47 +545,50 @@ const CareersOpenPositions: React.FC = () => {
             </div>
           </div>
 
-          {/* Job Listings */}
-          <div className="space-y-6">
+          {/* Job Listings - Mobile optimized */}
+          <div className="space-y-4 sm:space-y-6">
             {filteredPositions.map((position) => {
               const isExpanded = expandedId === position.id;
               return (
                 <div
                   key={position.id}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
+                  className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
                 >
-                  <div onClick={() => setExpandedId(isExpanded ? null : position.id)} className="p-8 relative cursor-pointer">
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                  <div 
+                    onClick={() => setExpandedId(isExpanded ? null : position.id)} 
+                    className="p-4 sm:p-6 lg:p-8 relative cursor-pointer"
+                  >
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
                       {/* Left Side - Job Info */}
                       <div className="flex-1">
-                        <div className="md:flex items-start gap-4 mb-4">
+                        <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
                           <div
-                            className={`w-12 h-12 my-2 bg-gradient-to-r ${position.color} rounded-xl flex items-center justify-center flex-shrink-0`}
+                            className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${position.color} rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}
                           >
                             {position.icon &&
                               React.createElement(position.icon, {
-                                className: "w-6 h-6 text-white",
+                                className: "w-5 h-5 sm:w-6 sm:h-6 text-white",
                               })}
                           </div>
 
-                          <div className="flex-1">
-                            <div className="flex flex-col md:flex-row items-start gap-3 mb-2">
-                              <h3 className="text-xl font-bold text-gray-900">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3 mb-2">
+                              <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
                                 {position.title}
                               </h3>
                               {position.badges?.map((badge, index) => (
                                 <span
                                   key={index}
-                                  className={`px-2 py-1 text-xs flex flex-row font-semibold rounded-full border ${getBadgeStyle(
+                                  className={`px-2 py-1 text-xs font-semibold rounded-full border ${getBadgeStyle(
                                     badge
-                                  )}`}
+                                  )} whitespace-nowrap`}
                                 >
                                   {badge}
                                 </span>
                               ))}
                             </div>
 
-                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-600 mb-3">
                               <div className="flex items-center gap-1">
                                 <FaMapMarkerAlt className="w-3 h-3" />
                                 <span>{position.location}</span>
@@ -584,6 +602,7 @@ const CareersOpenPositions: React.FC = () => {
                                 <span>{position.experience}</span>
                               </div>
                             </div>
+                            
                             <div className="flex flex-wrap gap-2">
                               {position.skills
                                 .slice(
@@ -593,13 +612,13 @@ const CareersOpenPositions: React.FC = () => {
                                 .map((skill, index) => (
                                   <span
                                     key={index}
-                                    className="px-3 py-1 bg-[theme(color.brand.blue)] bg-opacity-10 text-white text-xs rounded-full font-medium"
+                                    className="px-2 sm:px-3 py-1 bg-[theme(color.brand.blue)] bg-opacity-10 text-white text-xs rounded-full font-medium"
                                   >
                                     {skill}
                                   </span>
                                 ))}
                               {!isExpanded && position.skills.length > 4 && (
-                                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
+                                <span className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
                                   +{position.skills.length - 4} more
                                 </span>
                               )}
@@ -610,24 +629,24 @@ const CareersOpenPositions: React.FC = () => {
                     </div>
 
                     {/* Expand / Collapse Arrow */}
-                    <div className="absolute bottom-8 right-8">
+                    <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8">
                       {isExpanded ? (
-                        <FaChevronUp className="w-5 h-5 text-gray-500" />
+                        <FaChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       ) : (
-                        <FaChevronDown className="w-5 h-5 text-gray-500" />
+                        <FaChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" />
                       )}
                     </div>
                   </div>
 
-                  {/* Expanded Content */}
+                  {/* Expanded Content - Mobile optimized */}
                   {isExpanded && (
-                    <div className="px-8 pb-8 border-t border-gray-100">
-                      <div className="pt-6">
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8 border-t border-gray-100">
+                      <div className="pt-4 sm:pt-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
                           {/* Job Description */}
-                          <div className="lg:col-span-2">
-                            <h4 className="text-xl font-bold text-gray-900 mb-4">Job Description</h4>
-                            <div className="job-description prose prose-gray max-w-none">
+                          <div className="lg:col-span-2 order-2 lg:order-1">
+                            <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Job Description</h4>
+                            <div className="job-description prose prose-gray max-w-none text-sm sm:text-base">
                               <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {position.description}
                               </ReactMarkdown>
@@ -635,41 +654,41 @@ const CareersOpenPositions: React.FC = () => {
                           </div>
 
                           {/* Sidebar */}
-                          <div className="space-y-6">
+                          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
                             {/* Apply Button */}
-                            <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-600 rounded-xl p-6 text-white">
-                              <h5 className="font-semibold mb-2">Ready to Apply?</h5>
-                              <p className="text-sm text-blue-100 mb-4">
+                            <div className="bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-600 rounded-lg sm:rounded-xl p-4 sm:p-6 text-white">
+                              <h5 className="font-semibold mb-2 text-sm sm:text-base">Ready to Apply?</h5>
+                              <p className="text-xs sm:text-sm text-blue-100 mb-3 sm:mb-4">
                                 Join our team and make an impact in quality assurance.
                               </p>
                               <button
                                 onClick={(e) => handleApplyClick(position, e)}
-                                className="w-full bg-white text-[theme(color.brand.blue)] font-semibold py-3 px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300"
+                                className="w-full bg-white text-[theme(color.brand.blue)] font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-gray-50 transition-colors duration-300 text-sm sm:text-base min-h-[44px] touch-manipulation"
                               >
                                 Apply Now
                               </button>
                             </div>
 
                             {/* Job Details */}
-                            <div className="bg-gray-50 rounded-xl p-6">
-                              <h5 className="font-semibold text-gray-900 mb-4">
+                            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                              <h5 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">
                                 Job Details
                               </h5>
-                              <div className="space-y-3">
-                                <div className="flex justify-between">
+                              <div className="space-y-2 sm:space-y-3">
+                                <div className="flex justify-between text-xs sm:text-sm">
                                   <span className="text-gray-600">Location:</span>
                                   <span className="font-medium">{position.location}</span>
                                 </div>
-                                <div className="flex justify-between">
+                                <div className="flex justify-between text-xs sm:text-sm">
                                   <span className="text-gray-600">Type:</span>
                                   <span className="font-medium">{position.type}</span>
                                 </div>
-                                <div className="flex justify-between">
+                                <div className="flex justify-between text-xs sm:text-sm">
                                   <span className="text-gray-600">Experience:</span>
                                   <span className="font-medium">{position.experience}</span>
                                 </div>
                                 {position.salary && (
-                                  <div className="flex justify-between">
+                                  <div className="flex justify-between text-xs sm:text-sm">
                                     <span className="text-gray-600">Salary:</span>
                                     <span className="font-medium">{position.salary}</span>
                                   </div>
@@ -678,15 +697,15 @@ const CareersOpenPositions: React.FC = () => {
                             </div>
 
                             {/* Skills Required */}
-                            <div className="bg-gray-50 rounded-xl p-6">
-                              <h5 className="font-semibold text-gray-900 mb-4">
+                            <div className="bg-gray-50 rounded-lg sm:rounded-xl p-4 sm:p-6">
+                              <h5 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">
                                 Skills Required
                               </h5>
                               <div className="flex flex-wrap gap-2">
                                 {position.skills.map((skill, index) => (
                                   <span
                                     key={index}
-                                    className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border border-gray-200"
+                                    className="px-2 sm:px-3 py-1 bg-white text-gray-700 text-xs sm:text-sm rounded-full border border-gray-200"
                                   >
                                     {skill}
                                   </span>
@@ -703,12 +722,12 @@ const CareersOpenPositions: React.FC = () => {
             })}
 
             {filteredPositions.length === 0 && (
-              <div className="text-center py-16">
-                <FaSearch className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <div className="text-center py-12 sm:py-16">
+                <FaSearch className="w-12 h-12 sm:w-16 sm:h-16 text-gray-300 mx-auto mb-4" />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                   No positions found
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm sm:text-base">
                   No positions found matching your search criteria.
                 </p>
               </div>
@@ -716,18 +735,21 @@ const CareersOpenPositions: React.FC = () => {
           </div>
         </div>
 
-        {/* Application Modal - Updated with better viewport handling */}
+        {/* Application Modal - Fully mobile optimized */}
         {showApplicationModal && selectedPosition && (
-          <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-start justify-center z-50 p-4 overflow-y-auto">
-            <div ref={modalContentRef} className="bg-white rounded-2xl shadow-xl w-full max-w-4xl my-4 relative modal-content max-h-[calc(100vh-2rem)] overflow-y-auto">
+          <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-start justify-center z-50 p-2 sm:p-4 overflow-y-auto">
+            <div 
+              ref={modalContentRef} 
+              className="bg-white rounded-xl sm:rounded-2xl shadow-xl w-full max-w-4xl my-2 sm:my-4 relative modal-content max-h-[calc(100vh-1rem)] sm:max-h-[calc(100vh-2rem)] overflow-y-auto"
+            >
               {/* Centered Success Message Overlay */}
               {showSuccessMessage && (
                 <div className="success-overlay">
-                  <div className="success-message bg-white rounded-xl p-8 shadow-2xl max-w-md mx-4">
+                  <div className="success-message bg-white rounded-xl p-6 sm:p-8 shadow-2xl max-w-sm mx-4">
                     <div className="text-center">
-                      <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Application Submitted Successfully!</h3>
-                      <p className="text-gray-600 mb-4">We&apos;ll get back to you soon. This window will close automatically.</p>
+                      <FaCheckCircle className="w-12 h-12 sm:w-16 sm:h-16 text-green-500 mx-auto mb-4" />
+                      <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2">Application Submitted Successfully!</h3>
+                      <p className="text-gray-600 mb-4 text-sm sm:text-base">We&apos;ll get back to you soon. This window will close automatically.</p>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{width: "100%"}}></div>
                       </div>
@@ -736,27 +758,27 @@ const CareersOpenPositions: React.FC = () => {
                 </div>
               )}
 
-              <div className="p-6 sm:p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 <button
                   onClick={handleCloseModal}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-20"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-500 hover:text-gray-700 z-20 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 touch-manipulation"
                 >
-                  <FaTimes className="w-6 h-6" />
+                  <FaTimes className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
                 
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 pr-8">
                   Apply for {selectedPosition.title}
                 </h3>
-                <p className="text-gray-600 mb-6 sm:mb-8">
+                <p className="text-gray-600 mb-4 sm:mb-6 lg:mb-8 text-sm sm:text-base">
                   Fill out the form below to submit your application.
                 </p>
 
-                <form onSubmit={handleFormSubmit} className="space-y-6">
-                  {/* Mobile-first responsive grid - single column on mobile, multi-column on larger screens */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-6">
+                  {/* Mobile-first responsive grid */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                     {/* Column 1: Personal Info & Resume Upload */}
                     <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                         Personal Information
                       </h4>
                       <div>
@@ -768,7 +790,7 @@ const CareersOpenPositions: React.FC = () => {
                           name="fullName"
                           value={formData.fullName}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                           placeholder="John Doe"
                           required
                         />
@@ -782,7 +804,7 @@ const CareersOpenPositions: React.FC = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                           placeholder="john.doe@example.com"
                           required
                         />
@@ -796,7 +818,7 @@ const CareersOpenPositions: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 ${
+                          className={`w-full px-3 py-2 sm:px-4 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
                             phoneError ? "border-red-500" : "border-gray-300"
                           }`}
                           placeholder="+91 9876543210 or 9876543210"
@@ -814,88 +836,71 @@ const CareersOpenPositions: React.FC = () => {
                           name="location"
                           value={formData.location}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., New York, Remote"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                          placeholder="City, Country"
                           required
                         />
                       </div>
-                      {/* Resume Upload moved here */}
-                      <div className="mt-6">
-                        <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                          Resume Upload *
-                        </h4>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center hover:border-blue-400 transition-colors">
-                          {!resumeFile ? (
-                            <>
-                              <FaUpload className="w-6 h-6 text-gray-400 mx-auto mb-3" />
-                              <p className="text-gray-600 text-sm mb-1">
-                                Click to upload or drag and drop
-                              </p>
-                              <p className="text-xs text-gray-500 mb-3">
-                                PDF, max 5MB
-                              </p>
-                              <label className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm rounded-lg cursor-pointer hover:bg-blue-700 transition-colors">
-                                <FaUpload className="w-3 h-3 mr-2" />
-                                Choose File
-                                <input
-                                  type="file"
-                                  accept=".pdf"
-                                  onChange={handleFileUpload}
-                                  className="hidden"
-                                  required
-                                />
-                              </label>
-                            </>
-                          ) : (
-                            <div className="flex items-center justify-between bg-green-50 border border-green-200 rounded-lg p-3">
-                              <div className="flex items-center">
-                                <FaFileAlt className="w-4 h-4 text-green-600 mr-2" />
-                                <div>
-                                  <p className="text-sm font-medium text-green-800">
-                                    {resumeFile.name}
-                                  </p>
-                                  <p className="text-xs text-green-600">
-                                    {(resumeFile.size / 1024 / 1024).toFixed(2)} MB
-                                  </p>
-                                </div>
+
+                      {/* Resume Upload - Mobile optimized */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Resume/CV * (PDF only, max 5MB)
+                        </label>
+                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-blue-400 transition-colors duration-300 cursor-pointer" onClick={() => document.getElementById('resume-upload-input')?.click()}>
+                          {resumeFile ? (
+                            <div className="flex items-center justify-between bg-green-50 p-3 rounded-lg">
+                              <div className="flex items-center gap-2">
+                                <FaFileAlt className="w-4 h-4 text-green-600" />
+                                <span className="text-sm text-green-700 font-medium truncate">
+                                  {resumeFile.name}
+                                </span>
                               </div>
                               <button
                                 type="button"
-                                onClick={() => setResumeFile(null)}
-                                className="text-red-600 hover:text-red-800 p-1"
+                                onClick={(e) => { e.stopPropagation(); setResumeFile(null); }}
+                                className="ml-1 text-red-500 hover:text-red-700 p-1"
                               >
-                                <FaTrash className="w-4 h-4" />
+                                <FaTrash className="w-3 h-3" />
                               </button>
                             </div>
+                          ) : (
+                            <div>
+                              <FaUpload className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
+                              <p className="text-gray-600 mb-2 text-sm sm:text-base">
+                                Click to upload or drag and drop
+                              </p>
+                              <p className="text-xs text-gray-500">PDF files only (max 5MB)</p>
+                            </div>
                           )}
+                          <input
+                            id="resume-upload-input"
+                            type="file"
+                            accept=".pdf"
+                            onChange={handleFileUpload}
+                            className="hidden"
+                          />
                         </div>
                       </div>
                     </div>
 
-                    {/* Column 2: Professional Information & Skills */}
+                    {/* Column 2: Professional Info */}
                     <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
                         Professional Information
                       </h4>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Total Experience *
+                          Current Company
                         </label>
-                        <select
-                          name="experience"
-                          value={formData.experience}
+                        <input
+                          type="text"
+                          name="currentCompany"
+                          value={formData.currentCompany}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          required
-                        >
-                          <option value="">Select Experience</option>
-                          <option value="0-1 years">0-1 years</option>
-                          <option value="1-3 years">1-3 years</option>
-                          <option value="3-5 years">3-5 years</option>
-                          <option value="5-8 years">5-8 years</option>
-                          <option value="8-10 years">8-10 years</option>
-                          <option value="10+ years">10+ years</option>
-                        </select>
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                          placeholder="Current Company Name"
+                        />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -906,23 +911,54 @@ const CareersOpenPositions: React.FC = () => {
                           name="currentRole"
                           value={formData.currentRole}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., QA Engineer"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                          placeholder="Your Current Job Title"
                         />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Company
+                          Total Experience *
                         </label>
                         <input
                           type="text"
-                          name="currentCompany"
-                          value={formData.currentCompany}
+                          name="experience"
+                          value={formData.experience}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="Your current employer"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                          placeholder="e.g., 3 years"
+                          required
                         />
                       </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Current CTC
+                          </label>
+                          <input
+                            type="text"
+                            name="currentCTC"
+                            value={formData.currentCTC}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                            placeholder="e.g., 8 LPA"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Expected CTC
+                          </label>
+                          <input
+                            type="text"
+                            name="expectedCTC"
+                            value={formData.expectedCTC}
+                            onChange={handleInputChange}
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                            placeholder="e.g., 12 LPA"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Notice Period */}
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Notice Period
@@ -931,7 +967,7 @@ const CareersOpenPositions: React.FC = () => {
                           name="noticePeriod"
                           value={formData.noticePeriod}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                         >
                           <option value="">Select Notice Period</option>
                           {noticePeriodOptions.map((option) => (
@@ -941,81 +977,62 @@ const CareersOpenPositions: React.FC = () => {
                           ))}
                         </select>
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current CTC (in LPA)
-                        </label>
-                        <input
-                          type="number"
-                          name="currentCTC"
-                          value={formData.currentCTC}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., 8.5"
-                          step="0.1"
-                          min="0"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Expected CTC (in LPA)
-                        </label>
-                        <input
-                          type="number"
-                          name="expectedCTC"
-                          value={formData.expectedCTC}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., 12.0"
-                          step="0.1"
-                          min="0"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Skills (Tools & Framework)
-                        </label>
-                        <input
-                          type="text"
-                          name="skillsToolsFramework"
-                          value={formData.skillsToolsFramework}
-                          onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          placeholder="e.g., Selenium, Playwright, Jira, Agile"
-                        />
-                      </div>
-                      {/* Domain Knowledge Multi-select with Checkboxes */}
-                      <div className="relative" ref={domainDropdownRef}>
+
+                      {/* Domain Knowledge - Mobile optimized dropdown */}
+                      <div ref={domainDropdownRef}>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Domain Knowledge
                         </label>
-                        <div
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white cursor-pointer flex justify-between items-center focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
-                          onClick={() => setShowDomainDropdown(!showDomainDropdown)}
-                        >
-                          <span className="text-gray-700 truncate">
-                            {formData.domainKnowledge.length > 0
-                              ? formData.domainKnowledge.join(", ")
-                              : "Select Domain Knowledge"}
-                          </span>
-                          <FaCaretDown className={`w-4 h-4 text-gray-500 transform ${showDomainDropdown ? "rotate-180" : "rotate-0"} transition-transform duration-200`} />
+                        <div className="relative">
+                          <button
+                            type="button"
+                            onClick={() => setShowDomainDropdown(!showDomainDropdown)}
+                            className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-left flex items-center justify-between text-sm sm:text-base min-h-[44px] touch-manipulation"
+                          >
+                            <span className="text-gray-500">
+                              {formData.domainKnowledge.length > 0
+                                ? `${formData.domainKnowledge.length} selected`
+                                : "Select domains"}
+                            </span>
+                            <FaCaretDown className="w-4 h-4 text-gray-400" />
+                          </button>
+                          
+                          {showDomainDropdown && (
+                            <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
+                              {domainKnowledgeOptions.map((option) => (
+                                <label
+                                  key={option}
+                                  className="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer text-sm touch-manipulation"
+                                >
+                                  <input
+                                    type="checkbox"
+                                    checked={formData.domainKnowledge.includes(option)}
+                                    onChange={() => handleDomainKnowledgeChange(option)}
+                                    className="mr-2 rounded"
+                                  />
+                                  {option}
+                                </label>
+                              ))}
+                            </div>
+                          )}
                         </div>
-                        {showDomainDropdown && (
-                          <div className="absolute z-10 w-full bg-white border border-gray-300 rounded-lg shadow-lg mt-1 max-h-60 overflow-y-auto">
-                            {domainKnowledgeOptions.map((option) => (
-                              <label
-                                key={option}
-                                className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        
+                        {formData.domainKnowledge.length > 0 && (
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {formData.domainKnowledge.map((domain) => (
+                              <span
+                                key={domain}
+                                className="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
                               >
-                                <input
-                                  type="checkbox"
-                                  value={option}
-                                  checked={formData.domainKnowledge.includes(option)}
-                                  onChange={() => handleDomainKnowledgeChange(option)}
-                                  className="form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out"
-                                />
-                                <span className="ml-2 text-gray-700">{option}</span>
-                              </label>
+                                {domain}
+                                <button
+                                  type="button"
+                                  onClick={() => handleDomainKnowledgeChange(domain)}
+                                  className="ml-1 text-blue-600 hover:text-blue-800"
+                                >
+                                  <FaTimes className="w-3 h-3" />
+                                </button>
+                              </span>
                             ))}
                           </div>
                         )}
@@ -1023,28 +1040,37 @@ const CareersOpenPositions: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Submit Button */}
-                  <div className="flex flex-col sm:flex-row items-center justify-end gap-4 mt-8 pt-6 border-t border-gray-200">
+                  {/* Skills and Tools - Full width */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Skills, Tools & Frameworks *
+                    </label>
+                    <textarea
+                      name="skillsToolsFramework"
+                      value={formData.skillsToolsFramework}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                      placeholder="List your technical skills, testing tools, frameworks, programming languages, etc."
+                      required
+                    />
+                  </div>
+
+                  {/* Submit Button - Mobile optimized */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex-1 bg-[theme(color.brand.blue)] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base min-h-[48px] touch-manipulation"
+                    >
+                      {isSubmitting ? "Submitting..." : "Submit Application"}
+                    </button>
                     <button
                       type="button"
                       onClick={handleCloseModal}
-                      className="w-full sm:w-auto px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-300"
+                      className="px-6 py-3 sm:px-8 sm:py-4 border border-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-50 transition-all duration-300 text-sm sm:text-base min-h-[48px] touch-manipulation"
                     >
                       Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting || showSuccessMessage}
-                      className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300 flex items-center justify-center gap-2"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Submitting...
-                        </>
-                      ) : (
-                        "Submit Application"
-                      )}
                     </button>
                   </div>
                 </form>
@@ -1058,3 +1084,4 @@ const CareersOpenPositions: React.FC = () => {
 };
 
 export default CareersOpenPositions;
+

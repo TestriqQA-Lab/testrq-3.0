@@ -94,9 +94,9 @@ const CareersApplicationProcessSection: React.FC = () => {
         <>
           Our typical QA hiring process takes 2–3 weeks from application to
           offer, ensuring a thorough candidate evaluation across roles like
-          <Link href="/manual-testing"> manual testing</Link>, <Link href="/automation-testing-services"> automation testing</Link>, and <Link href="/performance-testing-services">performance testing</Link>. For
+          <Link href="/manual-testing" className="text-brand-blue hover:underline"> manual testing</Link>, <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, and <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>. For
           urgent software testing roles, we can expedite the process to 1–2
-          weeks. You’ll be kept informed of timelines, interview stages, and
+          weeks. You'll be kept informed of timelines, interview stages, and
           selection updates throughout your application journey at Testriq QA
           Lab.
         </>
@@ -179,25 +179,25 @@ const CareersApplicationProcessSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 bg-white px-8 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto ">
+    <section className="py-12 sm:py-16 bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaTrophy className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-4 py-2 sm:px-6 sm:py-2 mb-4 sm:mb-6">
+            <FaTrophy className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            <span className="text-xs sm:text-sm font-medium text-white">
               Application Process
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Your Journey to
             <span className="block text-[theme(color.brand.blue)]">
               Joining Testriq
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             We&apos;ve designed our QA hiring process to be thorough,
             transparent, and respectful of your time. Here&apos;s what you can
             expect at each step of your application journey for software testing
@@ -206,47 +206,47 @@ const CareersApplicationProcessSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Process Steps - Improved mobile layout */}
+        <div className="mb-16 sm:mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative"
+                className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 relative"
               >
                 {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                <div className="absolute -top-3 -left-3 w-6 h-6 sm:w-8 sm:h-8 bg-[theme(color.brand.blue)] text-white rounded-full flex items-center justify-center font-bold text-xs sm:text-sm">
                   {step.step}
                 </div>
 
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${step.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}
                 >
-                  <step.icon className="w-8 h-8 text-white" />
+                  <step.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base">
                   {step.description}
                 </p>
 
                 <div className="flex items-center gap-2 mb-4">
-                  <FaClock className="w-4 h-4 text-[theme(color.brand.blue)]" />
-                  <span className="text-sm font-medium text-[theme(color.brand.blue)]">
+                  <FaClock className="w-3 h-3 sm:w-4 sm:h-4 text-[theme(color.brand.blue)]" />
+                  <span className="text-xs sm:text-sm font-medium text-[theme(color.brand.blue)]">
                     {step.duration}
                   </span>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
                   <div className="flex items-start gap-2">
-                    <FaLightbulb className="w-4 h-4 text-yellow-500 mt-1 flex-shrink-0" />
+                    <FaLightbulb className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 mt-1 flex-shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-gray-900 text-sm mb-1">
+                      <h4 className="font-semibold text-gray-900 text-xs sm:text-sm mb-1">
                         Pro Tip:
                       </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {step.tips}
                       </p>
                     </div>
@@ -257,28 +257,28 @@ const CareersApplicationProcessSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Interview Tips */}
-        <div className="bg-white rounded-3xl p-12 shadow-lg border border-gray-100 mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* Interview Tips - Mobile optimized */}
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-12 shadow-lg border border-gray-100 mb-16 sm:mb-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Interview Success Tips
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
               Make the most of your interview experience with these proven
               strategies.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {interviewTips.map((tip, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <tip.icon className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <tip.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-3">
+                <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">
                   {tip.title}
                 </h4>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   {tip.description}
                 </p>
               </div>
@@ -286,43 +286,43 @@ const CareersApplicationProcessSection: React.FC = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* FAQ Section - Mobile optimized */}
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Frequently Asked Questions
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
               Get answers to common questions about our hiring process.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
+                className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
+                  className="w-full px-4 py-4 sm:px-8 sm:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300 min-h-[60px] touch-manipulation"
                   aria-label={faq.question}
                 >
-                  <h4 className="text-lg font-semibold text-gray-900 pr-4">
+                  <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 pr-4 leading-tight">
                     {faq.question}
                   </h4>
                   {openFAQ === index ? (
-                    <FaChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <FaChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0" />
                   ) : (
-                    <FaChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+                    <FaChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0" />
                   )}
                 </button>
 
                 {openFAQ === index && (
-                  <div className="px-8 pb-6">
-                    <p className="text-gray-600 leading-relaxed">
+                  <div className="px-4 pb-4 sm:px-8 sm:pb-6">
+                    <div className="text-gray-600 leading-relaxed text-sm sm:text-base">
                       {faq.answer}
-                    </p>
+                    </div>
                   </div>
                 )}
               </div>
@@ -330,35 +330,32 @@ const CareersApplicationProcessSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-3xl p-12 text-white text-center">
-          <FaTrophy className="w-16 h-16 text-white mx-auto mb-6 opacity-80" />
-          <h3 className="text-3xl font-bold mb-4">
+        {/* Call to Action - Mobile optimized */}
+        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-white text-center">
+          <FaTrophy className="w-12 h-12 sm:w-16 sm:h-16 text-white mx-auto mb-4 sm:mb-6 opacity-80" />
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
             Ready to Start Your Application?
           </h3>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-blue-100 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-2 sm:px-0">
             Take the first step towards joining our world-class QA team.
             We&apos;re excited to learn about your experience and discuss how
             you can contribute to our mission of delivering exceptional software
             quality.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button
               onClick={scrollToOpenPostions}
-              className="bg-white text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-white text-[theme(color.brand.blue)] px-6 py-3 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-lg min-h-[48px] touch-manipulation"
             >
               Browse Open Positions
             </button>
-            {/* <button className="bg-white bg-opacity-20 text-[theme(color.brand.blue)] px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 transition-all border border-white border-opacity-30">
-              Submit General Application
-            </button> */}
           </div>
 
-          <div className="mt-8 text-blue-100 text-sm">
+          <div className="mt-6 sm:mt-8 text-blue-100 text-xs sm:text-sm">
             <p>
               Questions about the process? Email us at{" "}
-              <Link href="mailto:hr@testriq.com" className="font-semibold">
+              <Link href="mailto:hr@testriq.com" className="font-semibold hover:underline">
                 contact@testriq.com
               </Link>
             </p>
