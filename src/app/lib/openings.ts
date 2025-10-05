@@ -1,568 +1,1036 @@
+import { FaBug, FaCode } from "react-icons/fa";
+import { IconType } from "react-icons";
 
-import { NextRequest, NextResponse } from 'next/server';
-import { writeFile } from 'fs/promises';
-import path from 'path';
-import nodemailer from 'nodemailer';
-
-export async function POST(request: NextRequest) {
-  try {
-    const formData = await request.formData();
-
-    const fullName = formData.get('fullName') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
-    const currentCompany = formData.get('currentCompany') as string;
-    const currentCTC = formData.get('currentCTC') as string;
-    const expectedCTC = formData.get('expectedCTC') as string;
-    const skillsToolsFramework = formData.get('skillsToolsFramework') as string;
-    const domainKnowledgeString = formData.get('domainKnowledge') as string;
-    let domainKnowledge: string[] = [];
-    if (domainKnowledgeString) {
-      try {
-        domainKnowledge = JSON.parse(domainKnowledgeString);
-      } catch (e) {
-        console.error("Failed to parse domainKnowledge JSON string:", e);
-      }
-    }
-    const experience = formData.get('experience') as string;
-    const currentRole = formData.get('currentRole') as string;
-    const location = formData.get('location') as string;
-    const noticePeriod = formData.get('noticePeriod') as string;
-    const jobTitle = formData.get('jobTitle') as string;
-    const jobId = formData.get('jobId') as string;
-    const resume = formData.get('resume') as File | null;
-
-    if (!fullName || !email || !jobTitle || !resume) {
-      return NextResponse.json({ message: 'Missing required fields: fullName, email, jobTitle, resume' }, { status: 400 });
-    }
-
-    // Save resume
-    let resumeFilePath: string | undefined;
-    if (resume) {
-      const buffer = Buffer.from(await resume.arrayBuffer());
-      const filename = `${Date.now()}-${resume.name}`;
-      const uploadDir = path.join(process.cwd(), 'tmp/uploads');
-      await require('fs').promises.mkdir(uploadDir, { recursive: true });
-      resumeFilePath = path.join(uploadDir, filename);
-      await writeFile(resumeFilePath, buffer);
-      console.log(`Resume saved to ${resumeFilePath}`);
-    }
-
-    // Create email transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_SECURE === 'true',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    // Modern Admin Email Template
-    const adminEmailHTML = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>New Job Application - ${jobTitle}</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f8fafc;
-            }
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-                background: white;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                color: white;
-                padding: 30px;
-                text-align: center;
-            }
-            .header h1 {
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 8px;
-            }
-            .header p {
-                opacity: 0.9;
-                font-size: 16px;
-            }
-            .content {
-                padding: 30px;
-            }
-            .job-info {
-                background: #f1f5f9;
-                border-radius: 8px;
-                padding: 20px;
-                margin-bottom: 25px;
-                border-left: 4px solid #667eea;
-            }
-            .job-info h2 {
-                color: #1e293b;
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-            .job-info p {
-                color: #64748b;
-                margin: 0;
-            }
-            .applicant-details {
-                display: grid;
-                gap: 15px;
-            }
-            .detail-row {
-                display: flex;
-                padding: 12px 0;
-                border-bottom: 1px solid #e2e8f0;
-            }
-            .detail-row:last-child {
-                border-bottom: none;
-            }
-            .detail-label {
-                font-weight: 600;
-                color: #374151;
-                min-width: 140px;
-                flex-shrink: 0;
-            }
-            .detail-value {
-                color: #6b7280;
-                flex: 1;
-            }
-            .skills-tags {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                margin-top: 5px;
-            }
-            .skill-tag {
-                background: #e0e7ff;
-                color: #3730a3;
-                padding: 4px 8px;
-                border-radius: 4px;
-                font-size: 12px;
-                font-weight: 500;
-            }
-            .footer {
-                background: #f8fafc;
-                padding: 20px 30px;
-                text-align: center;
-                border-top: 1px solid #e2e8f0;
-            }
-            .footer p {
-                color: #64748b;
-                font-size: 14px;
-            }
-            .cta-button {
-                display: inline-block;
-                background: #667eea;
-                color: white;
-                padding: 12px 24px;
-                text-decoration: none;
-                border-radius: 6px;
-                font-weight: 600;
-                margin-top: 15px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>🎯 New Job Application Received</h1>
-                <p>A candidate has applied for a position at Testriq</p>
-            </div>
-            
-            <div class="content">
-                <div class="job-info">
-                    <h2>${jobTitle}</h2>
-                    <p>Application ID: #${jobId} • Received: ${new Date().toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })}</p>
-                </div>
-                
-                <div class="applicant-details">
-                    <div class="detail-row">
-                        <div class="detail-label">👤 Full Name:</div>
-                        <div class="detail-value">${fullName}</div>
-                    </div>
-                    <div class="detail-row">
-                        <div class="detail-label">📧 Email:</div>
-                        <div class="detail-value"><a href="mailto:${email}" style="color: #667eea;">${email}</a></div>
-                    </div>
-                    ${phone ? `
-                    <div class="detail-row">
-                        <div class="detail-label">📱 Phone:</div>
-                        <div class="detail-value"><a href="tel:${phone}" style="color: #667eea;">${phone}</a></div>
-                    </div>
-                    ` : ''}
-                    <div class="detail-row">
-                        <div class="detail-label">📍 Location:</div>
-                        <div class="detail-value">${location}</div>
-                    </div>
-                    <div class="detail-row">
-                        <div class="detail-label">💼 Experience:</div>
-                        <div class="detail-value">${experience}</div>
-                    </div>
-                    ${currentRole ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🎯 Current Role:</div>
-                        <div class="detail-value">${currentRole}</div>
-                    </div>
-                    ` : ''}
-                    ${currentCompany ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🏢 Current Company:</div>
-                        <div class="detail-value">${currentCompany}</div>
-                    </div>
-                    ` : ''}
-                    ${currentCTC ? `
-                    <div class="detail-row">
-                        <div class="detail-label">💰 Current CTC:</div>
-                        <div class="detail-value">${currentCTC} LPA</div>
-                    </div>
-                    ` : ''}
-                    ${expectedCTC ? `
-                    <div class="detail-row">
-                        <div class="detail-label">💸 Expected CTC:</div>
-                        <div class="detail-value">${expectedCTC} LPA</div>
-                    </div>
-                    ` : ''}
-                    ${noticePeriod ? `
-                    <div class="detail-row">
-                        <div class="detail-label">⏰ Notice Period:</div>
-                        <div class="detail-value">${noticePeriod}</div>
-                    </div>
-                    ` : ''}
-                    ${skillsToolsFramework ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🛠️ Skills & Tools:</div>
-                        <div class="detail-value">${skillsToolsFramework}</div>
-                    </div>
-                    ` : ''}
-                    ${domainKnowledge.length > 0 ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🎓 Domain Knowledge:</div>
-                        <div class="detail-value">
-                            <div class="skills-tags">
-                                ${domainKnowledge.map(domain => `<span class="skill-tag">${domain}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                    ` : ''}
-                </div>
-            </div>
-            
-            <div class="footer">
-                <p>📎 Resume attached to this email</p>
-                <p>Please review the application and respond to the candidate promptly.</p>
-            </div>
-        </div>
-    </body>
-    </html>
-    `;
-
-    // Modern User Confirmation Email Template
-    const userEmailHTML = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Application Received - Testriq</title>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f8fafc;
-            }
-            .container {
-                max-width: 600px;
-                margin: 0 auto;
-                background: white;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            .header {
-                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-                color: white;
-                padding: 40px 30px;
-                text-align: center;
-            }
-            .header h1 {
-                font-size: 28px;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-            .header p {
-                opacity: 0.95;
-                font-size: 16px;
-            }
-            .content {
-                padding: 40px 30px;
-            }
-            .success-icon {
-                text-align: center;
-                margin-bottom: 25px;
-            }
-            .success-icon div {
-                width: 80px;
-                height: 80px;
-                background: #dcfce7;
-                border-radius: 50%;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 40px;
-            }
-            .message {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-            .message h2 {
-                color: #1f2937;
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
-            .message p {
-                color: #6b7280;
-                font-size: 16px;
-                line-height: 1.6;
-            }
-            .application-summary {
-                background: #f9fafb;
-                border-radius: 8px;
-                padding: 25px;
-                margin: 25px 0;
-                border-left: 4px solid #10b981;
-            }
-            .application-summary h3 {
-                color: #1f2937;
-                font-size: 18px;
-                margin-bottom: 15px;
-            }
-            .summary-item {
-                display: flex;
-                justify-content: space-between;
-                padding: 8px 0;
-                border-bottom: 1px solid #e5e7eb;
-            }
-            .summary-item:last-child {
-                border-bottom: none;
-            }
-            .summary-label {
-                font-weight: 600;
-                color: #374151;
-            }
-            .summary-value {
-                color: #6b7280;
-            }
-            .next-steps {
-                background: #eff6ff;
-                border-radius: 8px;
-                padding: 25px;
-                margin: 25px 0;
-            }
-            .next-steps h3 {
-                color: #1e40af;
-                font-size: 18px;
-                margin-bottom: 15px;
-            }
-            .next-steps ul {
-                color: #374151;
-                padding-left: 20px;
-            }
-            .next-steps li {
-                margin-bottom: 8px;
-            }
-            .footer {
-                background: #f8fafc;
-                padding: 30px;
-                text-align: center;
-                border-top: 1px solid #e2e8f0;
-            }
-            .footer p {
-                color: #64748b;
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
-            .social-links {
-                margin-top: 20px;
-            }
-            .social-links a {
-                display: inline-block;
-                margin: 0 10px;
-                color: #6b7280;
-                text-decoration: none;
-                font-size: 14px;
-            }
-            .contact-info {
-                background: #fef3c7;
-                border-radius: 8px;
-                padding: 20px;
-                margin: 20px 0;
-                text-align: center;
-            }
-            .contact-info h4 {
-                color: #92400e;
-                margin-bottom: 10px;
-            }
-            .contact-info p {
-                color: #a16207;
-                font-size: 14px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>✅ Application Received!</h1>
-                <p>Thank you for applying to Testriq</p>
-            </div>
-            
-            <div class="content">
-                <div class="success-icon">
-                    <div>🎉</div>
-                </div>
-                
-                <div class="message">
-                    <h2>Hi ${fullName}!</h2>
-                    <p>We've successfully received your application for the <strong>${jobTitle}</strong> position. Our team will review your profile and get back to you soon.</p>
-                </div>
-                
-                <div class="application-summary">
-                    <h3>📋 Application Summary</h3>
-                    <div class="summary-item">
-                        <span class="summary-label">Position:</span>
-                        <span class="summary-value">${jobTitle}</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Applicant Name:</span>
-                        <span class="summary-value">${fullName}</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Email:</span>
-                        <span class="summary-value">${email}</span>
-                    </div>
-                    ${phone ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Phone:</span>
-                        <span class="summary-value">${phone}</span>
-                    </div>
-                    ` : ''}
-                    ${location ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Location:</span>
-                        <span class="summary-value">${location}</span>
-                    </div>
-                    ` : ''}
-                    ${experience ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Experience:</span>
-                        <span class="summary-value">${experience}</span>
-                    </div>
-                    ` : ''}
-                    ${noticePeriod ? `
-                    <div class="summary-item">
-                        <span class="summary-label">Notice Period:</span>
-                        <span class="summary-value">${noticePeriod}</span>
-                    </div>
-                    ` : ''}
-                </div>
-
-                <div class="next-steps">
-                    <h3>What Happens Next?</h3>
-                    <ul>
-                        <li>Our recruitment team will carefully review your application.</li>
-                        <li>If your profile matches our requirements, we will contact you for the next steps.</li>
-                        <li>You can expect to hear from us within 1-2 weeks.</li>
-                    </ul>
-                </div>
-
-                <div class="contact-info">
-                    <h4>Questions?</h4>
-                    <p>If you have any questions regarding your application, please don't hesitate to contact us at <a href="mailto:hr@testriq.com" style="color: #a16207; text-decoration: underline;">hr@testriq.com</a>.</p>
-                </div>
-            </div>
-            
-            <div class="footer">
-                <p><strong>Testriq QA Lab</strong> - Professional Software Testing Services</p>
-                <p>We're excited about the possibility of you joining our team!</p>
-                
-                <div class="social-links">
-                    <a href="https://www.testriq.com">🌐 Website</a>
-                    <a href="https://linkedin.com/company/testriq">💼 LinkedIn</a>
-                    <a href="mailto:hr@testriq.com">📧 Contact - hr@testriq.com</a>
-                </div>
-                
-                <p style="margin-top: 20px; font-size: 12px; color: #9ca3af;">
-                    This is an automated message. Please do not reply directly to this email.
-                </p>
-            </div>
-        </div>
-    </body>
-    </html>
-    `;
-
-    // Send admin notification email
-    const adminMailOptions = {
-      from: process.env.EMAIL_FROM,
-      to: process.env.EMAIL_TO,
-      subject: `🎯 New Job Application: ${jobTitle} - ${fullName}`,
-      html: adminEmailHTML,
-      attachments: resumeFilePath ? [
-        {
-          filename: resume.name,
-          path: resumeFilePath,
-          contentType: resume.type || 'application/pdf',
-        },
-      ] : [],
-    };
-
-    // Send user confirmation email
-    const userMailOptions = {
-      from: "hr@testriq.com", // Changed from process.env.EMAIL_FROM
-      to: email,
-      subject: `✅ Application Received - ${jobTitle} Position at Testriq`,
-      html: userEmailHTML,
-    };
-
-    // Send both emails
-    await Promise.all([
-      transporter.sendMail(adminMailOptions),
-      transporter.sendMail(userMailOptions)
-    ]);
-
-    console.log('Application emails sent successfully!');
-
-    return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
-  } catch (error) {
-    console.error('Error processing job application:', error);
-    return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
-  }
+export interface JobOpening {
+  id: number;
+  title: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  skills: string[];
+  badges?: string[];
+  icon?: IconType;
+  color?: string;
+  salary?: string;
 }
 
+export const jobOpenings: JobOpening[] = [
+  {
+    id: 1, // unique ID
+    title: "Manual Tester (API – Postman)",
+    location: "Hybrid (Mira Road, Mumbai)",
+    type: "Full-time",
+    experience: "3–5 Years",
+    description: `
+##### Key Responsibilities:
+- Actively attend all stand-ups and team meetings with pods.
+- Manage end-to-end QA for both backend and frontend applications.
+- Write, maintain and review detailed test cases.
+- Execute manual API testing using Postman.
+- Contribute to API automation efforts when required.
+- Perform database testing using SQL queries.
+- Track and manage bugs using JIRA.
+- Work with GitHub for version control and Jenkins for CI/CD integrations.
+
+##### Requirements:
+- 3–5 years of experience as a Manual Tester / QA Engineer.
+- Hands-on experience in API testing (Postman).
+- Exposure to API automation frameworks.
+- Strong understanding of frontend and backend QA processes.
+- Proficiency in writing and executing test cases.
+- Familiarity with GitHub, Jenkins, and JIRA.
+- Good knowledge of DB testing (SQL queries).
+- Strong communication and collaboration skills to work with cross-functional pods.
+  `,
+    skills: [
+      "Manual Testing",
+      "API Testing",
+      "Postman",
+      "API Automation",
+      "Frontend & Backend QA",
+      "Test Case Design",
+      "SQL (DB Testing)",
+      "JIRA",
+      "GitHub",
+      "Jenkins",
+      "CI/CD",
+    ],
+    badges: ["Urgent", "Featured"],
+    icon: FaBug,
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 2,
+    title: "Manual Tester (Trading Domain)",
+    location: "On-Site (Kurla, Mumbai)",
+    type: "Full-time",
+    experience: "2–4 Years",
+    description: `
+##### Key Responsibilities:
+- Analyze business requirements and prepare detailed test scenarios and test cases.
+- Perform manual testing of trading applications, order management systems, and related modules.
+- Validate trade workflows including order entry, execution, settlement and reporting.
+- Identify, log and track defects using bug-tracking tools.
+- Execute functional, regression, integration, and UAT testing.
+
+##### Requirements:
+- 2–4 years of experience in Manual Testing, preferably in the Trading/Finance domain.
+- Strong understanding of trading workflows, financial products (Equity, Derivatives, Commodities, etc.).
+- Hands-on experience with bug tracking and test management tools (e.g., JIRA, Bugzilla, TestRail).
+- Good understanding of SDLC & STLC processes.
+- Strong analytical, problem-solving, and communication skills.
+- Knowledge of SQL for basic data validation will be an added advantage.
+    `,
+    skills: [
+      "Manual Testing",
+      "Trading",
+      "Finance Domain",
+      "JIRA",
+      "TestRail",
+      "SQL",
+    ],
+    badges: ["Urgent", "Featured"],
+    icon: FaBug,
+    color: "from-yellow-400 to-yellow-600",
+    salary: "Competitive",
+  },
+  {
+    id: 3,
+    title: "Automation Test Engineer (Playwright + Javascript)",
+    location: "On-site (Prabhadevi, Mumbai)",
+    type: "Full-time",
+    experience: "2 – 3 years",
+    description: `
+##### Job Description:
+
+Role: Automation Test Engineer (Playwright + Javascript)  
+Experience: 2 – 3 years  
+Location: On-site (Prabhadevi, Mumbai)  
+Work Type: Full-time  
+
+---
+
+##### Key Responsibilities:
+
+- Develop and maintain automation test scripts using **Javascript** and **Playwright**.
+- Execute cross-browser and responsive testing.
+- Integrate automation tests with **CI/CD pipelines** (Jenkins, GitHub Actions).
+- Identify, log, and track defects using **JIRA** or similar tools.
+
+---
+
+##### Requirements:
+
+- At least **2 years of experience** in Automation.
+- Proficient in **Playwright**.
+- Strong programming knowledge of **JavaScript**.
+- Experience with frameworks like **TestNG, Mocha, Jest**, or similar.
+- Familiarity with **Git, Jenkins**, and other DevOps tools.
+    `,
+    skills: [
+      "Playwright",
+      "JavaScript",
+      "TestNG",
+      "Mocha",
+      "Jest",
+      "CI/CD (Jenkins/GitHub Actions)",
+      "Git",
+      "JIRA",
+    ],
+    badges: ["Urgent", "Featured"],
+    icon: FaCode,
+    color: "from-green-500 to-green-700",
+    salary: "Competitive",
+  },
+  {
+    id: 4,
+    title: "Automation Test Engineer (Selenium + Playwright)",
+    location: "On-site (Mira Road, Mumbai)",
+    type: "Full-time",
+    experience: "2 – 3 years",
+    description: `
+##### Job Description:
+
+Role: Automation Test Engineer (Selenium + Playwright)  
+Experience: 2 – 3 years  
+Location: On-site (Mira Road, Mumbai)  
+Work Type: Full-time  
+
+---
+
+##### Key Responsibilities:
+
+- Develop and maintain automation test scripts using **Selenium** and **Playwright**.
+- Execute cross-browser and responsive testing.
+- Integrate automation tests with **CI/CD pipelines** (Jenkins, GitHub Actions).
+- Identify, log, and track defects using **JIRA** or similar tools.
+
+---
+
+##### Requirements:
+
+- At least **1 year of experience** in Automation.
+- Proficient in **Selenium WebDriver** and **Playwright**.
+- Strong programming knowledge in **Java / Python / JavaScript / TypeScript**.
+- Experience with frameworks like **TestNG, Mocha, Jest**, or similar.
+- Familiarity with **Git, Jenkins**, and other DevOps tools.
+- Experience with **Performance Testing**.
+    `,
+    skills: [
+      "Selenium WebDriver",
+      "Playwright",
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "TestNG",
+      "Mocha",
+      "Jest",
+      "CI/CD (Jenkins/GitHub Actions)",
+      "Performance Testing",
+      "Git",
+      "JIRA",
+    ],
+    badges: ["Urgent", "Featured"],
+    icon: FaCode,
+    color: "from-blue-500 to-blue-700",
+  },
+  {
+    id: 5,
+    title: "Playwright Automation Tester",
+    location: "On-site (Western Mumbai)",
+    type: "Full-time",
+    experience: "2 years",
+    description: `
+##### Job Description:
+
+Role: Playwright Automation Tester  
+Experience: 2 years  
+Location: On-site (Western Mumbai)  
+Work Type: Full-time  
+
+---
+
+##### Key Responsibilities:
+
+- Develop and maintain automation test scripts using **Playwright**.
+- Execute cross-browser and responsive testing.
+- Maintain test suites and ensure integration with **CI/CD pipelines** (Jenkins, GitHub Actions).
+- Identify, log, and track defects using **JIRA** or similar tools.
+- Execute tests across different browsers (**Chromium, Firefox, WebKit**).
+
+---
+
+##### Requirements:
+
+- At least **2 years of experience** in Automation.
+- Proficient in **Selenium WebDriver**.
+- Strong programming knowledge in **Java / Python / JavaScript / TypeScript**.
+- Experience with frameworks like **TestNG, Mocha, Jest**, or similar.
+- Familiarity with **Git, Jenkins**, and other DevOps tools.
+- Experience with **Performance Testing**.
+    `,
+    skills: [
+      "Playwright",
+      "Selenium WebDriver",
+      "Java",
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "TestNG",
+      "Mocha",
+      "Jest",
+      "CI/CD (Jenkins/GitHub Actions)",
+      "Performance Testing",
+      "Git",
+      "JIRA",
+    ],
+    icon: FaCode,
+    color: "from-purple-500 to-purple-700",
+  },
+  {
+    id: 6,
+    title:
+      "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
+    location: "On-site (Mira Road)",
+    type: "Internship",
+    experience: "3–6 months",
+    description: `
+##### Job Description:
+
+Role: QA / Automation Intern / Software Testing Intern (Java / JavaScript)  
+Location: On-site (Mira Road)  
+Duration: 3–6 months  
+
+---
+
+##### Responsibilities:
+
+- Design, write, and execute manual and automated test cases for web/mobile applications.
+- Develop and maintain automation scripts using **Java (Selenium, TestNG/JUnit)** or **JavaScript (Playwright, Cypress, Jest)**.
+- Perform functional, regression, integration, and cross-browser/device testing.
+- Debug automation failures and report defects using **JIRA/Trello**.
+- Collaborate with developers to reproduce issues and verify fixes.
+- Contribute to test documentation (plans, cases, bug reports, execution results).
+
+---
+
+##### Requirements:
+
+- Basic understanding of **STLC, SDLC**, and defect lifecycle.
+- Strong knowledge of **Core Java** or **JavaScript (ES6+)**.
+- Familiarity with automation tools:  
+  - **Java:** Selenium, TestNG/JUnit  
+  - **JavaScript:** Playwright, Cypress, Jest/Mocha  
+- Understanding of APIs (**REST**) and tools like **Postman** is a plus.
+- Exposure to **Git/GitHub** for version control.
+    `,
+    skills: [
+      "Java",
+      "JavaScript",
+      "Selenium",
+      "Playwright",
+      "Cypress",
+      "TestNG",
+      "JUnit",
+      "Jest",
+      "Mocha",
+      "STLC/SDLC",
+      "REST APIs",
+      "Postman",
+      "Git",
+      "JIRA",
+      "Trello",
+    ],
+    icon: FaCode,
+    color: "from-orange-500 to-orange-700",
+  },
+  {
+    id: 7,
+    title: "Penetration Tester",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "1-3 Years",
+    description: `
+##### Job Description
+
+Role: Penetration Tester  
+Experience: 1-3 Years  
+Location: Mumbai (Mira Road)  
+Work Mode: Work from office  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Conduct penetration tests on networks, web apps, and IT infrastructure.
+- Identify and exploit vulnerabilities to assess risk.
+- Generate detailed reports with findings and remediation recommendations.
+- Develop custom tools and techniques for testing security.
+- Collaborate with internal teams to fix security issues.
+- Stay current on the latest threats, tools, and trends in cybersecurity.
+
+---
+
+##### Skills and Qualifications
+
+- Bachelor’s degree in Cybersecurity or related field, or equivalent experience.
+- 2-5 years of penetration testing or cybersecurity experience.
+- Certifications like CEH, OSCP, or GPEN are preferred.
+- Strong knowledge of networking, OS (Linux/Windows), and web app security.
+- Proficiency in tools like Kali Linux, Burp Suite, Metasploit, and scripting (Python, Bash, etc.).
+- Excellent communication skills for reporting and presenting findings.
+- Experience with mobile security, cloud environments (AWS, Azure), and red teaming.
+- Familiarity with common vulnerabilities (OWASP, SQL injection, XSS).
+    `,
+    skills: [
+      "Penetration Testing",
+      "Kali Linux",
+      "Burp Suite",
+      "Metasploit",
+      "Python",
+      "Bash",
+      "Networking",
+      "Linux",
+      "Windows",
+      "Web App Security",
+      "CEH",
+      "OSCP",
+      "GPEN",
+    ],
+    icon: FaCode,
+    color: "from-red-500 to-red-700",
+  },
+  {
+    id: 8,
+    title: "Data Processing Executive",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "1-3 Years",
+    description: `
+##### Job Description
+
+Role: Data Processing Executive  
+Experience: 1-3 Years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+Shift: Night Shift  
+Timing: 8:30pm to 5:30am  
+
+---
+
+##### Key Responsibilities
+
+- Ensure accurate and timely processing of data.
+- Maintain data integrity and quality.
+- Support various departments with high-quality data outputs.
+- Effective communication (verbal and written).
+- Attend to internal / client queries and requests.
+- Basic computer skills.
+- Participate in projects beyond core responsibilities.
+- Perform keyword optimization (SEO) of websites & web pages.
+- Data population in back sheets.
+- Data health check.
+- Data quality assurance.
+
+---
+
+##### Education
+
+- 12th passed or Higher Education in any field.
+    `,
+    skills: [
+      "Data Processing",
+      "Excel/Sheets",
+      "SEO Basics",
+      "Data Quality Assurance",
+      "Communication",
+    ],
+    icon: FaCode,
+    color: "from-indigo-500 to-indigo-700",
+  },
+  {
+    id: 9,
+    title: "Business Development Executive - Intern",
+    location: "Mumbai (Mira Road)",
+    type: "Internship",
+    experience: "Fresher / Training Provided",
+    description: `
+##### Job Description
+
+Role: Business Development Executive – Intern  
+Location: Mumbai (Mira Road)  
+Work Mode: Work from office  
+Internship Duration: 3 Months  
+
+---
+
+##### Key Responsibilities
+
+- Use LinkedIn Sales Navigator, Upwork, and other B2B platforms to connect with company representatives and business professionals.
+- Draft and send email proposals to potential clients, partners, and stakeholders.
+- Engage in professional conversations and pitch products/services to prospective clients.
+- Collaborate with the team to identify and pursue new business opportunities.
+- Assist in additional responsibilities as assigned.
+
+---
+
+##### Key Skills
+
+- Fluency in English.
+- Strong communication and presentation skills.
+
+---
+
+##### Qualifications
+
+- Strong oral and written English communication skills.
+- Hardworking, proactive, and eager to learn.
+- Ability to adapt and take on diverse tasks professionally.
+    `,
+    skills: [
+      "Business Development",
+      "LinkedIn Sales Navigator",
+      "Upwork",
+      "Email Drafting",
+      "Communication",
+      "Presentation Skills",
+    ],
+    icon: FaCode,
+    color: "from-pink-500 to-pink-700",
+  },
+  {
+    id: 10,
+    title: "SOC Analyst",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "1-2 Years",
+    description: `
+##### Job Description
+
+Role: SOC Analyst  
+Experience: 1-2 Years  
+Location: Mumbai (Mira Road)  
+Work Mode: Work from office  
+Work Type: Full Time  
+Shift: Day Shift (9 AM – 6 PM, Mon – Sat)  
+
+---
+
+##### Key Responsibilities
+
+- Conduct automated monitoring to detect potential threats in real-time.
+- Analyze alerts and incidents from security tools and prioritize actions.
+- Perform security mitigation and coordinate with teams for implementation.
+- Create actionable reports for ongoing vulnerability management, including threat and risk assessments.
+
+---
+
+##### Qualifications
+
+- Experience in cybersecurity operations or SOC environment.
+- Familiarity with security tools: WAF, OpenVPN, Rapid-7, Snyk.
+- Knowledge of Cloud Security principles and tools.
+- Knowledge of Pen-testing and Blue/Red Team strategies is a plus.
+- Relevant cybersecurity certifications (CompTIA Security+, CISSP, CEH, etc.).
+- Experience with automated incident response systems and security dashboards.
+    `,
+    skills: [
+      "SOC Analysis",
+      "Threat Monitoring",
+      "Security Dashboards",
+      "WAF",
+      "OpenVPN",
+      "Rapid-7",
+      "Snyk",
+      "Cloud Security",
+      "Penetration Testing",
+      "Blue Team",
+      "Red Team",
+      "Incident Response",
+    ],
+    icon: FaCode,
+    color: "from-teal-500 to-teal-700",
+  },
+  {
+    id: 11,
+    title: "SEO & Digital Marketing Expert",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "2 Years",
+    description: `
+##### Job Description
+
+Role: SEO & Digital Marketing Expert  
+Experience: 2 Years  
+Location: Mumbai (Mira Road)  
+Work Mode: On-Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Conduct keyword research and optimize website content (On-Page SEO).
+- Develop backlinks and increase domain authority (Off-Page SEO).
+- Write and deploy SEO-friendly content.
+- Track and optimize SEO performance using tools like Google Analytics, SEMrush, Ahrefs.
+- Develop, execute, and optimize digital marketing campaigns (Google Ads, Facebook Ads, LinkedIn Ads).
+- Implement organic and paid social media strategies to grow engagement.
+
+---
+
+##### KPIs
+
+- Increase organic website visits and keyword rankings.
+- Improve CTR and quality of backlinks.
+- Increase conversion rate by 5-10% per month.
+- Grow social media followers organically.
+- Increase leads per week across all channels.
+
+---
+
+##### Skills and Qualifications
+
+- Proven experience in SEO and Digital Marketing.
+- Certification in SEO & Digital Marketing.
+- In-depth understanding of search engine algorithms, social media trends, and AI platforms.
+- Experience with Meta, Google, Adobe Analytics.
+- Strong written and communication skills.
+    `,
+    skills: [
+      "SEO",
+      "Digital Marketing",
+      "Google Analytics",
+      "SEMrush",
+      "Ahrefs",
+      "Content Optimization",
+      "Social Media Marketing",
+      "PPC Campaigns",
+      "Analytics Reporting",
+    ],
+    icon: FaCode,
+    color: "from-orange-500 to-orange-700",
+  },
+  {
+    id: 12,
+    title: "Front End Developer (Immediate Joiners Only)",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "5+ Years",
+    description: `
+##### Job Description
+
+Role: Front End Developer (Immediate Joiners Only)  
+Experience: 5+ Years  
+Location: Mumbai (Mira Road)  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Responsibilities and Duties
+
+- Develop responsive front-end layout and UI using modern HTML, CSS, and JavaScript.
+- Test and validate features across browsers and devices.
+- Write clean, usable, and testable code.
+- Collaborate with developers, designers, and project managers.
+- Stay updated on UI design, cross-browser standards, and web development best practices.
+
+---
+
+##### Minimum Qualifications
+
+- 5+ years of verifiable experience in HTML, CSS, and JavaScript.
+- Strong knowledge of HTML semantics and W3C coding standards.
+- Solid understanding of modern CSS and responsive layouts.
+- Proficiency in JavaScript including reusable functions, loops, objects, and arrays.
+- Experience with Git/GitHub/BitBucket.
+- Ability to work night shifts (8:30pm – 5:30am IST).
+- Bachelor’s degree in IT, Computer Science, or related field.
+    `,
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Responsive Design",
+      "Git",
+      "Cross-Browser Testing",
+      "UI Development",
+      "Team Collaboration",
+    ],
+    icon: FaCode,
+    color: "from-blue-400 to-blue-600",
+  },
+  {
+    id: 13,
+    title: "Graphic Designer",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "Fresher – 1 Year",
+    description: `
+##### Job Description
+
+Role: Graphic Designer  
+Experience: Fresher – 1 Year  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Collaborate with teams/clients to strategize on web pages, presentations, signage, newsletters, and marketing collateral.
+- Translate strategic direction into high-quality designs aligned with brand identity.
+- Develop concepts and execute designs using software or hand-drawn methods.
+- Manage the design and uploading process for project materials.
+- Stay updated with design trends and market knowledge.
+
+---
+
+##### Qualifications
+
+- Bachelor’s degree in Fine Arts, Multimedia Arts, or related field OR specialization course in Graphic Designing.
+- Strong portfolio showcasing graphic design, video editing, web design, and presentation skills.
+- Proficiency in Adobe Creative Suite (Photoshop, Illustrator, Premiere Pro, After Effects).
+- Familiarity with web design tools: Sketch, Figma, Adobe XD.
+- Strong sense of typography, layout, and color theory.
+- Excellent communication, time management, and teamwork skills.
+- Attention to detail and commitment to high-quality work.
+    `,
+    skills: [
+      "Graphic Design",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe Premiere Pro",
+      "Adobe After Effects",
+      "Web Design",
+      "Figma",
+      "Sketch",
+      "Typography",
+      "Layout",
+    ],
+    icon: FaCode,
+    color: "from-purple-400 to-purple-600",
+  },
+  {
+    id: 14,
+    title: "Cypress Automation Tester",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "1-3 Years",
+    description: `
+##### Job Description
+
+Role: Cypress Automation Tester  
+Experience: 1-3 Years  
+Location: Mumbai (Mira Road)  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Develop, execute, and maintain automated test scripts using Cypress.
+- Collaborate with developers, QA engineers, and product managers.
+- Identify, document, and track software defects and inconsistencies.
+- Perform regression testing when bugs are resolved.
+- Analyze test results and debug issues.
+- Participate in test planning and creation of comprehensive test plans and cases.
+- Continuously improve the automated testing framework.
+- Document and report on test outcomes.
+- Stay current with industry trends and best practices.
+
+---
+
+##### Preferred Skills
+
+- 1 to 3 years of experience in automated testing for web apps.
+- Hands-on experience with Cypress.
+- Proficiency in JavaScript/TypeScript, HTML, CSS.
+- Experience with Git and CI/CD tools (Jenkins, GitLab CI/CD).
+- Familiarity with Selenium, WebDriverIO, BDD frameworks (Cucumber), Gherkin syntax.
+- Knowledge of API testing tools (Postman, RestAssured).
+- Understanding of containerization (Docker, Kubernetes) and Agile methodologies.
+- Strong analytical and problem-solving skills.
+- Effective communication skills.
+- Bachelor’s degree in Computer Science, IT, or related field.
+    `,
+    skills: [
+      "Cypress",
+      "Automation Testing",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Git",
+      "CI/CD",
+      "Selenium",
+      "WebDriverIO",
+      "BDD",
+      "Cucumber",
+      "API Testing",
+      "Docker",
+      "Kubernetes",
+    ],
+    icon: FaCode,
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 15,
+    title: "Business Development Manager",
+    location: "Mumbai (Mira Road)",
+    type: "Full-time",
+    experience: "5 to 10 years",
+    description: `
+##### Job Description
+
+Role: Business Development Manager  
+Experience: 5 to 10 years  
+Location: Mumbai (Mira Road)  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- New Client Acquisition: Identify and develop new business opportunities through proactive prospecting, lead generation, and strategic networking. Build and maintain a robust sales pipeline to ensure consistent revenue growth.
+- Client Relationship Management: Establish and cultivate long-term relationships with new and existing clients. Understand their unique needs and provide tailored solutions.
+- Revenue Growth: Set and achieve revenue targets and contribute to overall company growth.
+- Market Expansion: Explore domestic and international market opportunities and execute strategies for expansion.
+- Business Development: Develop strategic plans to drive company growth and identify potential partnerships.
+- Client Retention: Maintain strong relationships with existing clients and identify upsell opportunities.
+- Reporting and Analysis: Provide insights on sales activities, market trends, and client feedback.
+
+---
+
+##### Qualifications
+
+- Proven experience in business development or sales, minimum 5 years in B2B software/tech.
+- Successful track record acquiring clients and achieving sales targets.
+- Strong communication, negotiation, and analytical skills.
+- Proficiency in CRM systems and sales tools.
+- Bachelor's or Master's degree in Business Administration, Marketing, or related field.
+    `,
+    skills: [
+      "Business Development",
+      "Client Acquisition",
+      "Sales Strategy",
+      "Revenue Growth",
+      "CRM",
+      "Market Expansion",
+      "Client Retention",
+      "Reporting & Analysis",
+    ],
+    icon: FaCode,
+    color: "from-blue-500 to-blue-700",
+  },
+
+  {
+    id: 16,
+    title: "Digital Marketing Executive",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "1 to 3 years",
+    description: `
+##### Job Description
+
+Role: Digital Marketing Executive  
+Experience: 1 to 3 years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Develop, implement, and manage campaigns across social media, email, SEO, and display advertising.
+- Monitor and analyze campaign performance and optimize accordingly.
+- Manage organic and paid social media campaigns.
+- Conduct keyword research and manage Google Ads campaigns.
+- Collaborate with content team to produce engaging content.
+- Stay updated on digital marketing trends and best practices.
+
+---
+
+##### Qualifications
+
+- 1-3 years experience in digital marketing with measurable results.
+- Strong understanding of SEO, SEM, email, and social media marketing.
+- Experience with tools like Google Analytics, Facebook Ads Manager, MailChimp.
+- Excellent analytical, written, and verbal communication skills.
+- Bachelor’s degree in Marketing, Communications, or related field.
+    `,
+    skills: [
+      "SEO",
+      "SEM",
+      "Social Media Marketing",
+      "Email Marketing",
+      "Content Marketing",
+      "Google Analytics",
+      "Facebook Ads",
+      "Campaign Optimization",
+    ],
+    icon: FaCode,
+    color: "from-green-500 to-green-700",
+    salary: "Competitive",
+  },
+
+  {
+    id: 17,
+    title: "Social Media Manager",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "3 to 5 years",
+    description: `
+##### Job Description
+
+Role: Social Media Manager  
+Experience: 3 to 5 years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Develop and execute social media strategy aligned with marketing goals.
+- Create, curate, and manage content across platforms (Instagram, Facebook, Twitter, LinkedIn).
+- Grow followers and engagement; monitor trends and optimize content.
+- Provide analytics reports and performance recommendations.
+- Collaborate with teams to identify target personas and product highlights.
+- Identify opportunities for campaigns, partnerships, and influencer marketing.
+
+---
+
+##### Qualifications
+
+- 3+ years managing business-focused social media accounts.
+- Strong communication, creative flair, and analytical skills.
+- Familiarity with social media analytics and reporting.
+- Bachelor’s degree in Marketing, Communications, Business, or related field.
+    `,
+    skills: [
+      "Social Media Strategy",
+      "Content Creation",
+      "Engagement Growth",
+      "Analytics",
+      "Influencer Marketing",
+      "Campaign Management",
+    ],
+    icon: FaCode,
+    color: "from-pink-500 to-pink-700",
+  },
+
+  {
+    id: 18,
+    title: "QA Test Lead",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "5 to 7 years",
+    description: `
+##### Job Description
+
+Role: QA Test Lead  
+Experience: 5 to 7 years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Develop and implement test plans, strategies, and processes.
+- Lead and mentor QA testers.
+- Oversee creation and execution of test cases.
+- Manage defect identification, logging, and resolution.
+- Generate reports and communicate testing progress.
+- Continuously improve testing processes.
+
+---
+
+##### Qualifications
+
+- Proven experience as QA Test Lead or similar role.
+- Strong knowledge of software testing methodologies and tools.
+- Leadership, communication, and analytical skills.
+- Experience with test management tools.
+- Bachelor’s degree in Computer Science or related field.
+    `,
+    skills: [
+      "Test Planning",
+      "Team Leadership",
+      "Defect Management",
+      "QA Strategy",
+      "Test Execution",
+      "Reporting",
+    ],
+    icon: FaCode,
+    color: "from-purple-500 to-purple-700",
+  },
+
+  {
+    id: 19,
+    title: "Product Manager",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "3 to 5 years",
+    description: `
+##### Job Description
+
+Role: Product Manager  
+Experience: 3 to 5 years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Define and communicate product strategy aligned with company goals.
+- Conduct market research and competitive analysis.
+- Plan product roadmap and prioritize features.
+- Collaborate with development, design, marketing, and sales teams.
+- Lead product development from ideation to launch.
+- Monitor performance metrics and recommend improvements.
+
+---
+
+##### Qualifications
+
+- Experience as Product Manager in IT industry.
+- Strong understanding of software development processes.
+- Strategic thinking and problem-solving skills.
+- Effective communication and project management skills.
+- Bachelor’s degree in Business, CS, Engineering; MBA is a plus.
+    `,
+    skills: [
+      "Product Strategy",
+      "Roadmap Planning",
+      "Market Research",
+      "Cross-Functional Collaboration",
+      "Product Launch",
+      "KPI Analysis",
+    ],
+    icon: FaCode,
+    color: "from-orange-500 to-orange-700",
+  },
+
+  {
+    id: 20,
+    title: "Tele Sales Executive",
+    location: "Mumbai",
+    type: "Full-time",
+    experience: "3 to 5 years",
+    description: `
+##### Job Description
+
+Role: Tele Sales Executive  
+Experience: 3 to 5 years  
+Location: Mumbai  
+Work Mode: On Site  
+Work Type: Full Time  
+
+---
+
+##### Key Responsibilities
+
+- Client outreach and building sales pipeline.
+- Present solutions to clients via virtual presentations.
+- Build and maintain strong client relationships.
+- Meet and exceed monthly and quarterly sales targets.
+- Conduct market research and identify new opportunities.
+
+---
+
+##### Qualifications
+
+- Proven experience in tele sales, preferably in IT/software services.
+- Strong communication, negotiation, and presentation skills.
+- Familiarity with software testing concepts is advantageous.
+- Bachelor’s degree in Business, IT, or related field.
+    `,
+    skills: [
+      "Client Outreach",
+      "Tele Sales",
+      "Sales Target Achievement",
+      "Relationship Building",
+      "Market Research",
+      "Presentation Skills",
+    ],
+    icon: FaCode,
+    color: "from-teal-500 to-teal-700",
+  },
+];
