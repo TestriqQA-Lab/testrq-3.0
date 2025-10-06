@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script"; // Added
 import dynamic from "next/dynamic";
+import { RecaptchaProvider } from "@/lib/recaptcha/RecaptchaContext"; // Added
+
 const Navbar = dynamic(
   () => import("@/components/layout/Header"),
   {
@@ -25,20 +28,6 @@ const Footer = dynamic(
     ),
   }
 );
-
-// const TawkToScript = dynamic(
-//   () => import("@/components/TawkToScript"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
-
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -133,15 +122,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
-      >
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        {/* <TawkToScript /> */}
-      </body>
-    </html>
+    <RecaptchaProvider> {/* Added RecaptchaProvider */}
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
+        >
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          {/* <TawkToScript /> */}
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            strategy="afterInteractive"
+          />
+        </body>
+      </html>
+    </RecaptchaProvider>
   );
 }

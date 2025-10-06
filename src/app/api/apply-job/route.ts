@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,7 +9,6 @@ export async function POST(request: NextRequest) {
     const fullName = formData.get('fullName') as string;
     const email = formData.get('email') as string;
     const phone = formData.get('phone') as string;
-    const currentCompany = formData.get('currentCompany') as string;
     const currentCTC = formData.get('currentCTC') as string;
     const expectedCTC = formData.get('expectedCTC') as string;
     const skillsToolsFramework = formData.get('skillsToolsFramework') as string;
@@ -22,15 +22,40 @@ export async function POST(request: NextRequest) {
       }
     }
     const experience = formData.get('experience') as string;
-    const currentRole = formData.get('currentRole') as string;
     const location = formData.get('location') as string;
     const noticePeriod = formData.get('noticePeriod') as string;
     const jobTitle = formData.get('jobTitle') as string;
     const jobId = formData.get('jobId') as string;
     const resume = formData.get('resume') as File | null;
+    const recaptchaToken = formData.get('recaptchaToken') as string;
 
     if (!fullName || !email || !jobTitle || !resume) {
       return NextResponse.json({ message: 'Missing required fields: fullName, email, jobTitle, resume' }, { status: 400 });
+    }
+
+    if (!recaptchaToken) {
+      return NextResponse.json({ message: 'reCAPTCHA verification is required' }, { status: 400 });
+    }
+
+    // Verify reCAPTCHA
+    try {
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+      
+      if (!recaptchaResult.success) {
+        console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+        return NextResponse.json({ message: 'reCAPTCHA verification failed' }, { status: 400 });
+      }
+
+      // Check if the score is acceptable (you can adjust the threshold as needed)
+      if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+        console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+        return NextResponse.json({ message: 'Suspicious activity detected. Please try again.' }, { status: 400 });
+      }
+
+      console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+    } catch (error) {
+      console.error('Error verifying reCAPTCHA:', error);
+      return NextResponse.json({ message: 'reCAPTCHA verification error' }, { status: 500 });
     }
 
     // Convert resume to buffer for attachment
@@ -213,18 +238,6 @@ export async function POST(request: NextRequest) {
                         <div class="detail-label">💼 Experience:</div>
                         <div class="detail-value">${experience}</div>
                     </div>
-                    ${currentRole ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🎯 Current Role:</div>
-                        <div class="detail-value">${currentRole}</div>
-                    </div>
-                    ` : ''}
-                    ${currentCompany ? `
-                    <div class="detail-row">
-                        <div class="detail-label">🏢 Current Company:</div>
-                        <div class="detail-value">${currentCompany}</div>
-                    </div>
-                    ` : ''}
                     ${currentCTC ? `
                     <div class="detail-row">
                         <div class="detail-label">💰 Current CTC:</div>
@@ -432,51 +445,61 @@ export async function POST(request: NextRequest) {
     <body>
         <div class="container">
             <div class="header">
-                <h1>✅ Application Received!</h1>
-                <p>Thank you for applying to Testriq</p>
+                <h1>🎉 Application Received!</h1>
+                <p>Thank you for applying to Testriq. We've received your application for:</p>
             </div>
             
             <div class="content">
                 <div class="success-icon">
-                    <div>🎉</div>
+                    <div style="color: #10b981;">✔</div>
                 </div>
                 
                 <div class="message">
-                    <h2>Hi ${fullName}!</h2>
-                    <p>We've successfully received your application for the <strong>${jobTitle}</strong> position. Our team will review your profile and get back to you soon.</p>
+                    <h2>Hello ${fullName},</h2>
+                    <p>We're excited that you're interested in joining our team. This email confirms that we've successfully received your application for the position of:</p>
                 </div>
-                
+
                 <div class="application-summary">
-                    <h3>📋 Application Summary</h3>
+                    <h3>Application Summary</h3>
                     <div class="summary-item">
-                        <span class="summary-label">Position:</span>
+                        <span class="summary-label">Position Applied For:</span>
                         <span class="summary-value">${jobTitle}</span>
                     </div>
                     <div class="summary-item">
-                        <span class="summary-label">Application Date:</span>
-                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        <span class="summary-label">Application ID:</span>
+                        <span class="summary-value">#${jobId}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Date Submitted:</span>
+                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit'
+                        })}</span>
                     </div>
                 </div>
 
                 <div class="next-steps">
                     <h3>What Happens Next?</h3>
                     <ul>
-                        <li>Our HR team will review your application within 3-5 business days.</li>
-                        <li>If your profile matches our requirements, you'll be contacted for an initial screening interview.</li>
-                        <li>You can expect to hear from us regarding the next steps in the process.</li>
+                        <li>Our recruitment team will review your application carefully.</li>
+                        <li>If your profile matches our requirements, we will contact you for the next steps in the hiring process.</li>
+                        <li>This process may take some time, and we appreciate your patience.</li>
                     </ul>
                 </div>
 
                 <div class="contact-info">
-                    <h4>Need Assistance?</h4>
-                    <p>If you have any questions about your application or the hiring process, feel free to contact our HR team at <a href="mailto:hr@testriq.com" style="color: #a16207; text-decoration: underline;">hr@testriq.com</a>.</p>
+                    <h4>Questions?</h4>
+                    <p>If you have any questions, please do not hesitate to contact us at <a href="mailto:contact@testriq.com" style="color: #a16207;">contact@testriq.com</a>.</p>
                 </div>
             </div>
             
             <div class="footer">
-                <p>&copy; ${new Date().getFullYear()} Testriq QA Lab. All rights reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} Testriq. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/testriq/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://www.linkedin.com/company/testriq" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
                     <a href="https://twitter.com/TestriqQA" target="_blank" rel="noopener noreferrer">Twitter</a>
                 </div>
             </div>
@@ -509,7 +532,7 @@ export async function POST(request: NextRequest) {
       html: userEmailHTML,
     };
 
-    await transporter.sendMail(adminMailOptions  );
+    await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(userMailOptions);
 
     return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
@@ -518,3 +541,4 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
   }
 }
+

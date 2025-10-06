@@ -47,6 +47,16 @@ const CareersOpenPositions: React.FC = () => {
     location: "",
     noticePeriod: "",
   });
+
+   // Total Experience options as requested
+  const totalExperienceOptions = [
+    "Fresher",
+    "0-1 years",
+    "1-3 years",
+    "3-5 years",
+    "5-7 years",
+    "7-9 years",
+  ];
   
   // Phone number validation regex - industry standard for detecting fake numbers
   const validatePhoneNumber = (phone: string): boolean => {
@@ -840,47 +850,22 @@ const CareersOpenPositions: React.FC = () => {
                           required
                         />
                       </div>
-
-                      {/* Resume Upload - Mobile optimized */}
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Resume/CV * (PDF only, max 5MB)
-                        </label>
-                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 sm:p-6 text-center hover:border-blue-400 transition-colors duration-300 cursor-pointer" onClick={() => document.getElementById('resume-upload-input')?.click()}>
-                          {resumeFile ? (
-                            <div className="flex items-center justify-between bg-green-50 p-3 rounded-lg">
-                              <div className="flex items-center gap-2">
-                                <FaFileAlt className="w-4 h-4 text-green-600" />
-                                <span className="text-sm text-green-700 font-medium truncate">
-                                  {resumeFile.name}
-                                </span>
-                              </div>
-                              <button
-                                type="button"
-                                onClick={(e) => { e.stopPropagation(); setResumeFile(null); }}
-                                className="ml-1 text-red-500 hover:text-red-700 p-1"
-                              >
-                                <FaTrash className="w-3 h-3" />
-                              </button>
-                            </div>
-                          ) : (
-                            <div>
-                              <FaUpload className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
-                              <p className="text-gray-600 mb-2 text-sm sm:text-base">
-                                Click to upload or drag and drop
-                              </p>
-                              <p className="text-xs text-gray-500">PDF files only (max 5MB)</p>
-                            </div>
-                          )}
-                          <input
-                            id="resume-upload-input"
-                            type="file"
-                            accept=".pdf"
-                            onChange={handleFileUpload}
-                            className="hidden"
-                          />
-                        </div>
-                      </div>
+{/* Skills and Tools - Full width */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Skills, Tools & Frameworks *
+                    </label>
+                    <textarea
+                      name="skillsToolsFramework"
+                      value={formData.skillsToolsFramework}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                      placeholder="List your technical skills, testing tools, frameworks, programming languages, etc."
+                      required
+                    />
+                  </div>
+                      
                     </div>
 
                     {/* Column 2: Professional Info */}
@@ -890,43 +875,22 @@ const CareersOpenPositions: React.FC = () => {
                       </h4>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Company
-                        </label>
-                        <input
-                          type="text"
-                          name="currentCompany"
-                          value={formData.currentCompany}
-                          onChange={handleInputChange}
-                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                          placeholder="Current Company Name"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Current Role
-                        </label>
-                        <input
-                          type="text"
-                          name="currentRole"
-                          value={formData.currentRole}
-                          onChange={handleInputChange}
-                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                          placeholder="Your Current Job Title"
-                        />
-                      </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
                           Total Experience *
                         </label>
-                        <input
-                          type="text"
+                        <select
                           name="experience"
                           value={formData.experience}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                          placeholder="e.g., 3 years"
                           required
-                        />
+                        >
+                          <option value="">Select experience level</option>
+                          {totalExperienceOptions.map((option) => (
+                            <option key={option} value={option}>
+                              {option}
+                            </option>
+                          ))}
+                        </select>
                       </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
@@ -1036,24 +1000,52 @@ const CareersOpenPositions: React.FC = () => {
                           </div>
                         )}
                       </div>
+                      {/* Resume Upload - Mobile optimized */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Resume/CV * (PDF only, max 5MB)
+                        </label>
+                        <div className="border-2 border-dashed border-gray-300 rounded-lg p-2 sm:p-6 text-center hover:border-blue-400 transition-colors duration-300 cursor-pointer" onClick={() => document.getElementById('resume-upload-input')?.click()}>
+                          {resumeFile ? (
+                            <div className="flex items-center justify-between bg-green-50 p-2 rounded-lg">
+                              <div className="flex items-center gap-2">
+                                <FaFileAlt className="w-2 h-2 text-green-600" />
+                                <span className="text-sm text-green-700 font-medium truncate">
+                                  {resumeFile.name}
+                                </span>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={(e) => { e.stopPropagation(); setResumeFile(null); }}
+                                className="ml-1 text-red-500 hover:text-red-700 p-1"
+                              >
+                                <FaTrash className="w-3 h-3" />
+                              </button>
+                            </div>
+                          ) : (
+                            <div>
+                              <FaUpload className="w-4 h-4 sm:w-12 sm:h-12 text-gray-400 mx-auto mb-2 sm:mb-4" />
+                              <p className="text-gray-600 mb-2 text-sm sm:text-base">
+                                Click to upload or drag and drop
+                              </p>
+                              <p className="text-xs text-gray-500">PDF files only (max 5MB)</p>
+                            </div>
+                          )}
+                          <input
+                            id="resume-upload-input"
+                            type="file"
+                            accept=".pdf"
+                            onChange={handleFileUpload}
+                            className="hidden"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Skills and Tools - Full width */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Skills, Tools & Frameworks *
-                    </label>
-                    <textarea
-                      name="skillsToolsFramework"
-                      value={formData.skillsToolsFramework}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                      placeholder="List your technical skills, testing tools, frameworks, programming languages, etc."
-                      required
-                    />
-                  </div>
+                  
+
+                  
 
                   {/* Submit Button - Mobile optimized */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
