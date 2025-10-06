@@ -19,20 +19,22 @@ import { jobOpenings, JobOpening } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(
+    null
+  );
   const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showDomainDropdown, setShowDomainDropdown] = useState(false);
   const [phoneError, setPhoneError] = useState("");
   const domainDropdownRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -48,7 +50,22 @@ const CareersOpenPositions: React.FC = () => {
     noticePeriod: "",
   });
 
-   // Total Experience options as requested
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: "apply_job",
+    onSuccess: () => {
+      setShowSuccessMessage(true);
+      if (modalContentRef.current) {
+        modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setTimeout(() => {
+        handleCloseModal();
+      }, 3000);
+    },
+    onError: (error) => {
+      alert(`Application submission failed: ${error}`);
+    },
+  });
+
   const totalExperienceOptions = [
     "Fresher",
     "0-1 years",
@@ -57,68 +74,48 @@ const CareersOpenPositions: React.FC = () => {
     "5-7 years",
     "7-9 years",
   ];
-  
-  // Phone number validation regex - industry standard for detecting fake numbers
+
   const validatePhoneNumber = (phone: string): boolean => {
-    // Remove all non-digit characters
     const cleanPhone = phone.replace(/\D/g, "");
-    
-    // Check length (10-11 digits)
-    if (cleanPhone.length < 10 || cleanPhone.length > 11) {
-      return false;
-    }
-    
-    // Check for common fake patterns
+    if (cleanPhone.length < 10 || cleanPhone.length > 11) return false;
     const fakePatterns = [
-      /^0{10,11}$/, // All zeros
-      /^1{10,11}$/, // All ones
-      /^2{10,11}$/, // All twos
-      /^3{10,11}$/, // All threes
-      /^4{10,11}$/, // All fours
-      /^5{10,11}$/, // All fives
-      /^6{10,11}$/, // All sixes
-      /^7{10,11}$/, // All sevens
-      /^8{10,11}$/, // All eights
-      /^9{10,11}$/, // All nines
-      /^1234567890$/, // Sequential
-      /^0123456789$/, // Sequential starting with 0
-      /^(\d)\1{9,10}$/, // Repeating digits
+      /^0{10,11}$/,
+      /^1{10,11}$/,
+      /^2{10,11}$/,
+      /^3{10,11}$/,
+      /^4{10,11}$/,
+      /^5{10,11}$/,
+      /^6{10,11}$/,
+      /^7{10,11}$/,
+      /^8{10,11}$/,
+      /^9{10,11}$/,
+      /^1234567890$/,
+      /^0123456789$/,
+      /^(\d)\1{9,10}$/,
     ];
-    
-    // Check against fake patterns
     for (const pattern of fakePatterns) {
-      if (pattern.test(cleanPhone)) {
-        return false;
-      }
+      if (pattern.test(cleanPhone)) return false;
     }
-    
-    // Additional validation for Indian numbers (if starts with country code)
-    if (cleanPhone.length === 11 && !cleanPhone.startsWith("91")) {
-      return false;
-    }
-    
-    // For 10-digit numbers, first digit should not be 0 or 1
-    if (cleanPhone.length === 10 && (cleanPhone.startsWith("0") || cleanPhone.startsWith("1"))) {
-      return false;
-    }
-    
+    if (cleanPhone.length === 11 && !cleanPhone.startsWith("91")) return false;
+    if (cleanPhone.length === 10 && (cleanPhone.startsWith("0") || cleanPhone.startsWith("1"))) return false;
     return true;
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (domainDropdownRef.current && !domainDropdownRef.current.contains(event.target as Node)) {
+      if (
+        domainDropdownRef.current &&
+        !domainDropdownRef.current.contains(event.target as Node)
+      ) {
         setShowDomainDropdown(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
   const filteredPositions = jobOpenings.filter((position) => {
     const matchesSearch =
       position.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -136,8 +133,7 @@ const CareersOpenPositions: React.FC = () => {
     setSelectedPosition(position);
     setShowApplicationModal(true);
     setShowSuccessMessage(false);
-    // Prevent body scroll when modal is open
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const handleCloseModal = () => {
@@ -146,8 +142,7 @@ const CareersOpenPositions: React.FC = () => {
     setResumeFile(null);
     setShowSuccessMessage(false);
     setPhoneError("");
-    // Restore body scroll
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
     setFormData({
       fullName: "",
       email: "",
@@ -179,86 +174,64 @@ const CareersOpenPositions: React.FC = () => {
     }
   };
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate phone number if provided
-    if (formData.phone && !validatePhoneNumber(formData.phone)) {
+  const submitApplication = async (
+    data: typeof formData,
+    recaptchaToken: string
+  ) => {
+    if (data.phone && !validatePhoneNumber(data.phone)) {
       setPhoneError("Please enter a valid 10-11 digit phone number");
-      return;
+      throw new Error("Invalid phone number");
     }
-    
     if (!resumeFile) {
       alert("Please upload your resume");
-      return;
+      throw new Error("Resume file is missing");
     }
 
-    setIsSubmitting(true);
-
-    try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("fullName", formData.fullName);
-      formDataToSend.append("email", formData.email);
-      formDataToSend.append("phone", formData.phone);
-      formDataToSend.append("currentCompany", formData.currentCompany);
-      formDataToSend.append("currentCTC", formData.currentCTC);
-      formDataToSend.append("expectedCTC", formData.expectedCTC);
-      formDataToSend.append("skillsToolsFramework", formData.skillsToolsFramework);
-      formDataToSend.append("domainKnowledge", JSON.stringify(formData.domainKnowledge));
-      formDataToSend.append("experience", formData.experience);
-      formDataToSend.append("currentRole", formData.currentRole);
-      formDataToSend.append("location", formData.location);
-      formDataToSend.append("noticePeriod", formData.noticePeriod);
-      if (resumeFile) {
-        formDataToSend.append("resume", resumeFile);
-      }
-      if (selectedPosition) {
-        formDataToSend.append("jobTitle", selectedPosition.title);
-        formDataToSend.append("jobId", selectedPosition.id.toString());
-      }
-
-      const response = await fetch("/api/apply-job", {
-        method: "POST",
-        body: formDataToSend,
-      });
-
-      if (response.ok) {
-        setShowSuccessMessage(true);
-        // Scroll to top of modal to show success message
-        if (modalContentRef.current) {
-          modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
-        }
-        setTimeout(() => {
-          handleCloseModal();
-        }, 3000);
+    const formDataToSend = new FormData();
+    Object.keys(data).forEach((key) => {
+      const value = data[key as keyof typeof data];
+      if (key === 'domainKnowledge') {
+        formDataToSend.append(key, JSON.stringify(value));
       } else {
-        const errorData = await response.json();
-        alert(`Application submission failed: ${errorData.message || response.statusText}`);
+        formDataToSend.append(key, value as string);
       }
-    } catch (error) {
-      console.error("Error submitting application:", error);
-      alert("An unexpected error occurred. Please try again later.");
-    } finally {
-      setIsSubmitting(false);
+    });
+
+    if (resumeFile) {
+      formDataToSend.append("resume", resumeFile);
     }
+    if (selectedPosition) {
+      formDataToSend.append("jobTitle", selectedPosition.title);
+      formDataToSend.append("jobId", selectedPosition.id.toString());
+    }
+    formDataToSend.append("recaptchaToken", recaptchaToken);
+
+    const response = await fetch("/api/apply-job", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "An unknown server error occurred.");
+    }
+
+    return response.json();
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await submitWithRecaptcha(submitApplication, formData);
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    
-    // Clear phone error when user starts typing
     if (name === "phone") {
       setPhoneError("");
     }
-    
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleDomainKnowledgeChange = (option: string) => {
@@ -266,10 +239,7 @@ const CareersOpenPositions: React.FC = () => {
       const newDomainKnowledge = prev.domainKnowledge.includes(option)
         ? prev.domainKnowledge.filter((item) => item !== option)
         : [...prev.domainKnowledge, option];
-      return {
-        ...prev,
-        domainKnowledge: newDomainKnowledge,
-      };
+      return { ...prev, domainKnowledge: newDomainKnowledge };
     });
   };
 

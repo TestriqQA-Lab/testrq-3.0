@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       try {
         domainKnowledge = JSON.parse(domainKnowledgeString);
       } catch (e) {
-        console.error("Failed to parse domainKnowledge JSON string:", e);
+        console.error("[apply-job API] Failed to parse domainKnowledge JSON:", e);
       }
     }
     const experience = formData.get('experience') as string;
@@ -29,43 +29,45 @@ export async function POST(request: NextRequest) {
     const resume = formData.get('resume') as File | null;
     const recaptchaToken = formData.get('recaptchaToken') as string;
 
-    if (!fullName || !email || !jobTitle || !resume) {
-      return NextResponse.json({ message: 'Missing required fields: fullName, email, jobTitle, resume' }, { status: 400 });
-    }
+    console.log('[apply-job API] Received submission for:', email);
 
     if (!recaptchaToken) {
+      console.warn('[apply-job API] reCAPTCHA token is missing from the request.');
       return NextResponse.json({ message: 'reCAPTCHA verification is required' }, { status: 400 });
     }
 
-    // Verify reCAPTCHA
+    console.log('[apply-job API] Received reCAPTCHA token:', recaptchaToken.substring(0, 30) + '...');
+
     try {
       const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-      
+      console.log('[apply-job API] reCAPTCHA verification result:', recaptchaResult);
+
       if (!recaptchaResult.success) {
-        console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+        console.error('[apply-job API] reCAPTCHA verification failed with error codes:', recaptchaResult['error-codes']);
         return NextResponse.json({ message: 'reCAPTCHA verification failed' }, { status: 400 });
       }
 
-      // Check if the score is acceptable (you can adjust the threshold as needed)
       if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
-        console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+        console.warn(`[apply-job API] Low reCAPTCHA score: ${recaptchaResult.score} for action: ${recaptchaResult.action}`);
         return NextResponse.json({ message: 'Suspicious activity detected. Please try again.' }, { status: 400 });
       }
 
-      console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+      console.log(`[apply-job API] reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
     } catch (error) {
-      console.error('Error verifying reCAPTCHA:', error);
+      console.error('[apply-job API] An exception occurred during reCAPTCHA verification:', error);
       return NextResponse.json({ message: 'reCAPTCHA verification error' }, { status: 500 });
     }
 
-    // Convert resume to buffer for attachment
+    if (!fullName || !email || !jobTitle || !resume) {
+      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
+    }
+
     let resumeBuffer: Buffer | undefined;
     if (resume) {
       const arrayBuffer = await resume.arrayBuffer();
       resumeBuffer = Buffer.from(arrayBuffer);
     }
 
-    // Create email transporter
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
       port: parseInt(process.env.EMAIL_PORT || '587'),
@@ -535,10 +537,11 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail(adminMailOptions);
     await transporter.sendMail(userMailOptions);
 
-    return NextResponse.json({ message: 'Application submitted successfully!' }, { status: 200 });
+   return NextResponse.json({ message: 'Application submitted successfully!' });
+
   } catch (error) {
-    console.error('Error submitting application:', error);
-    return NextResponse.json({ message: 'Internal server error' }, { status: 500 });
+    console.error('[apply-job API] An unexpected error occurred:', error);
+    return NextResponse.json({ message: 'An unexpected error occurred.' }, { status: 500 });
   }
 }
 
