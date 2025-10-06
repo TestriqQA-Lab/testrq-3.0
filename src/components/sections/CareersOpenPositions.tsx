@@ -248,8 +248,6 @@ const CareersOpenPositions: React.FC = () => {
     switch (badge) {
       case "Urgent":
         return "bg-red-100 text-red-700 border-red-200";
-      case "Featured":
-        return "bg-blue-100 text-blue-700 border-blue-200";
       case "Leadership":
         return "bg-purple-100 text-purple-700 border-purple-200";
       default:
@@ -817,7 +815,7 @@ const CareersOpenPositions: React.FC = () => {
                           value={formData.location}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                          placeholder="City, Country"
+                          placeholder="City"
                           required
                         />
                       </div>

@@ -18,6 +18,57 @@ export interface JobOpening {
 export const jobOpenings: JobOpening[] = [
   {
     id: 1, // unique ID
+    title: "Business Development Executive (Sales)",
+    location: "Onsite (Mira Road, Mumbai)",
+    type: "Full-time",
+    experience: "2–4 Years",
+    description: `
+##### Key Responsibilities:
+- Generate qualified leads through online research, networking, and professional
+platforms.
+- Identify and approach potential clients in need of software testing and QA
+services.
+- Conduct client meetings (in-person and virtual) to present Testriq’s offerings and
+value proposition.
+- Understand client pain points related to software quality, performance, and
+testing needs, and suggest suitable service solutions.
+- Collaborate with the technical/QA team to prepare customized proposals and
+quotations.
+- Follow up consistently with prospects to drive deal closures and achieve revenue
+targets.
+- Maintain a strong sales pipeline and accurate records in CRM or tracking tools.
+
+
+##### Requirements:
+- Excellent communication and interpersonal skills (verbal and written).
+- Strong presentation, negotiation, and persuasion abilities.
+- Proven experience in IT service or B2B sales (experience in software testing or
+QA domain sales).
+- Ability to understand basic technical concepts related to software development
+and testing processes.
+- Proficient in using CRM tools, email outreach, and lead management systems
+- Familiarity with GitHub, Jenkins, and JIRA.
+- Good knowledge of DB testing (SQL queries).
+- Strong communication and collaboration skills to work with cross-functional pods.
+  `,
+    skills: [
+      "IT Service Sales",
+      "IT Sales",
+      "B2B Sales",
+      "Software Testing Sales",
+      "QA Services Sales",
+      "Technology Sales",
+      "Lead Generation",
+      "Client Acquisition",
+
+    ],
+    badges: ["Urgent"],
+    icon: FaBug,
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 2, // unique ID
     title: "Manual Tester (API – Postman)",
     location: "Hybrid (Mira Road, Mumbai)",
     type: "Full-time",
@@ -56,13 +107,13 @@ export const jobOpenings: JobOpening[] = [
       "Jenkins",
       "CI/CD",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
     salary: "Competitive",
   },
   {
-    id: 2,
+    id: 3,
     title: "Manual Tester (Trading Domain)",
     location: "On-Site (Kurla, Mumbai)",
     type: "Full-time",
@@ -76,7 +127,7 @@ export const jobOpenings: JobOpening[] = [
 - Execute functional, regression, integration, and UAT testing.
 
 ##### Requirements:
-- 2–4 years of experience in Manual Testing, preferably in the Trading/Finance domain.
+- 2–4 years of experience in Manual Testing, preferably in the Trading/Capital Market domain.
 - Strong understanding of trading workflows, financial products (Equity, Derivatives, Commodities, etc.).
 - Hands-on experience with bug tracking and test management tools (e.g., JIRA, Bugzilla, TestRail).
 - Good understanding of SDLC & STLC processes.
@@ -86,18 +137,18 @@ export const jobOpenings: JobOpening[] = [
     skills: [
       "Manual Testing",
       "Trading",
-      "Finance Domain",
+      "Capital Market Domain",
       "JIRA",
       "TestRail",
       "SQL",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaBug,
     color: "from-yellow-400 to-yellow-600",
     salary: "Competitive",
   },
   {
-    id: 3,
+    id: 4,
     title: "Automation Test Engineer (Playwright + Javascript)",
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
@@ -139,13 +190,13 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaCode,
     color: "from-green-500 to-green-700",
     salary: "Competitive",
   },
   {
-    id: 4,
+    id: 5,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
@@ -193,12 +244,12 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaCode,
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: 5,
+    id: 6,
     title: "Playwright Automation Tester",
     location: "On-site (Western Mumbai)",
     type: "Full-time",
@@ -251,7 +302,7 @@ Work Type: Full-time
     color: "from-purple-500 to-purple-700",
   },
   {
-    id: 6,
+    id: 7,
     title:
       "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
@@ -308,7 +359,7 @@ Duration: 3–6 months
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 7,
+    id: 8,
     title: "Penetration Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -365,7 +416,7 @@ Work Type: Full Time
     color: "from-red-500 to-red-700",
   },
   {
-    id: 8,
+    id: 9,
     title: "Data Processing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -414,7 +465,7 @@ Timing: 8:30pm to 5:30am
     color: "from-indigo-500 to-indigo-700",
   },
   {
-    id: 9,
+    id: 10,
     title: "Business Development Executive - Intern",
     location: "Mumbai (Mira Road)",
     type: "Internship",
@@ -464,7 +515,7 @@ Internship Duration: 3 Months
     color: "from-pink-500 to-pink-700",
   },
   {
-    id: 10,
+    id: 11,
     title: "SOC Analyst",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -517,7 +568,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     color: "from-teal-500 to-teal-700",
   },
   {
-    id: 11,
+    id: 12,
     title: "SEO & Digital Marketing Expert",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -577,7 +628,7 @@ Work Type: Full Time
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 12,
+    id: 13,
     title: "Front End Developer (Immediate Joiners Only)",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -627,7 +678,7 @@ Work Type: Full Time
     color: "from-blue-400 to-blue-600",
   },
   {
-    id: 13,
+    id: 14,
     title: "Graphic Designer",
     location: "Mumbai",
     type: "Full-time",
@@ -679,7 +730,7 @@ Work Type: Full Time
     color: "from-purple-400 to-purple-600",
   },
   {
-    id: 14,
+    id: 15,
     title: "Cypress Automation Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -744,7 +795,7 @@ Work Type: Full Time
     salary: "Competitive",
   },
   {
-    id: 15,
+    id: 16,
     title: "Business Development Manager",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -795,7 +846,7 @@ Work Type: Full Time
   },
 
   {
-    id: 16,
+    id: 17,
     title: "Digital Marketing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -846,7 +897,7 @@ Work Type: Full Time
   },
 
   {
-    id: 17,
+    id: 18,
     title: "Social Media Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -893,7 +944,7 @@ Work Type: Full Time
   },
 
   {
-    id: 18,
+    id: 19,
     title: "QA Test Lead",
     location: "Mumbai",
     type: "Full-time",
@@ -941,7 +992,7 @@ Work Type: Full Time
   },
 
   {
-    id: 19,
+    id: 20,
     title: "Product Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -989,7 +1040,7 @@ Work Type: Full Time
   },
 
   {
-    id: 20,
+    id: 21,
     title: "Tele Sales Executive",
     location: "Mumbai",
     type: "Full-time",
