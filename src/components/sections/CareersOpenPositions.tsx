@@ -19,7 +19,7 @@ import { jobOpenings, JobOpening } from "@/app/lib/openings";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
-import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
+
 
 const CareersOpenPositions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -50,21 +50,9 @@ const CareersOpenPositions: React.FC = () => {
     noticePeriod: "",
   });
 
-  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
-    action: "apply_job",
-    onSuccess: () => {
-      setShowSuccessMessage(true);
-      if (modalContentRef.current) {
-        modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
-      }
-      setTimeout(() => {
-        handleCloseModal();
-      }, 3000);
-    },
-    onError: (error) => {
-      alert(`Application submission failed: ${error}`);
-    },
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+
 
   const totalExperienceOptions = [
     "Fresher",
@@ -175,8 +163,7 @@ const CareersOpenPositions: React.FC = () => {
   };
 
   const submitApplication = async (
-    data: typeof formData,
-    recaptchaToken: string
+    data: typeof formData
   ) => {
     if (data.phone && !validatePhoneNumber(data.phone)) {
       setPhoneError("Please enter a valid 10-11 digit phone number");
@@ -204,7 +191,7 @@ const CareersOpenPositions: React.FC = () => {
       formDataToSend.append("jobTitle", selectedPosition.title);
       formDataToSend.append("jobId", selectedPosition.id.toString());
     }
-    formDataToSend.append("recaptchaToken", recaptchaToken);
+
 
     const response = await fetch("/api/apply-job", {
       method: "POST",
@@ -221,7 +208,21 @@ const CareersOpenPositions: React.FC = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await submitWithRecaptcha(submitApplication, formData);
+    setIsSubmitting(true);
+    try {
+      await submitApplication(formData);
+      setShowSuccessMessage(true);
+      if (modalContentRef.current) {
+        modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setTimeout(() => {
+        handleCloseModal();
+      }, 3000);
+    } catch (error: unknown) {
+      alert(`Application submission failed: ${(error as Error).message || "An unknown error occurred."}`);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (

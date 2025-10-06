@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from "next/script"; // Added
 import dynamic from "next/dynamic";
-import { RecaptchaProvider } from "@/lib/recaptcha/RecaptchaContext"; // Added
+
 
 const Navbar = dynamic(
   () => import("@/components/layout/Header"),
@@ -66,7 +65,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/" ),
   alternates: {
     canonical: "/",
   },
@@ -120,9 +119,8 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}> ) {
   return (
-    <RecaptchaProvider> {/* Added RecaptchaProvider */}
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
@@ -131,12 +129,8 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <Footer />
           {/* <TawkToScript /> */}
-          <Script
-            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-            strategy="afterInteractive"
-          />
+
         </body>
       </html>
-    </RecaptchaProvider>
   );
 }

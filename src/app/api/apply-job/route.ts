@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
+
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,36 +27,11 @@ export async function POST(request: NextRequest) {
     const jobTitle = formData.get('jobTitle') as string;
     const jobId = formData.get('jobId') as string;
     const resume = formData.get('resume') as File | null;
-    const recaptchaToken = formData.get('recaptchaToken') as string;
+
 
     console.log('[apply-job API] Received submission for:', email);
 
-    if (!recaptchaToken) {
-      console.warn('[apply-job API] reCAPTCHA token is missing from the request.');
-      return NextResponse.json({ message: 'reCAPTCHA verification is required' }, { status: 400 });
-    }
 
-    console.log('[apply-job API] Received reCAPTCHA token:', recaptchaToken.substring(0, 30) + '...');
-
-    try {
-      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-      console.log('[apply-job API] reCAPTCHA verification result:', recaptchaResult);
-
-      if (!recaptchaResult.success) {
-        console.error('[apply-job API] reCAPTCHA verification failed with error codes:', recaptchaResult['error-codes']);
-        return NextResponse.json({ message: 'reCAPTCHA verification failed' }, { status: 400 });
-      }
-
-      if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
-        console.warn(`[apply-job API] Low reCAPTCHA score: ${recaptchaResult.score} for action: ${recaptchaResult.action}`);
-        return NextResponse.json({ message: 'Suspicious activity detected. Please try again.' }, { status: 400 });
-      }
-
-      console.log(`[apply-job API] reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
-    } catch (error) {
-      console.error('[apply-job API] An exception occurred during reCAPTCHA verification:', error);
-      return NextResponse.json({ message: 'reCAPTCHA verification error' }, { status: 500 });
-    }
 
     if (!fullName || !email || !jobTitle || !resume) {
       return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
@@ -488,21 +463,27 @@ export async function POST(request: NextRequest) {
                     <ul>
                         <li>Our recruitment team will review your application carefully.</li>
                         <li>If your profile matches our requirements, we will contact you for the next steps in the hiring process.</li>
-                        <li>This process may take some time, and we appreciate your patience.</li>
+                        <li>You can expect to hear from us within 5-7 business days.</li>
                     </ul>
                 </div>
 
                 <div class="contact-info">
                     <h4>Questions?</h4>
-                    <p>If you have any questions, please do not hesitate to contact us at <a href="mailto:contact@testriq.com" style="color: #a16207;">contact@testriq.com</a>.</p>
+                    <p>If you have any questions regarding your application, please do not hesitate to contact our HR department at <a href="mailto:hr@testriq.com" style="color: #a16207;">hr@testriq.com</a>.</p>
+                </div>
+
+                <div class="message">
+                    <p>In the meantime, feel free to explore our website and learn more about our company culture and other career opportunities.</p>
+                    <a href="https://www.testriq.com/careers" class="cta-button" style="background: #10b981;">Explore Careers at Testriq</a>
                 </div>
             </div>
             
             <div class="footer">
-                <p>&copy; ${new Date().getFullYear()} Testriq. All rights reserved.</p>
+                <p>This is an automated email, please do not reply directly to this message.</p>
+                <p>&copy; ${new Date( ).getFullYear()} Testriq. All rights reserved.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/company/testriq" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-                    <a href="https://twitter.com/TestriqQA" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    <a href="https://www.linkedin.com/company/testriq-qa-lab" target="_blank">LinkedIn</a> |
+                    <a href="https://www.testriq.com" target="_blank">Website</a>
                 </div>
             </div>
         </div>
@@ -510,38 +491,33 @@ export async function POST(request: NextRequest) {
     </html>
     `;
 
-    // Send emails
-    const adminMailOptions = {
+    const mailOptionsAdmin = {
       from: process.env.EMAIL_USER,
       to: process.env.ADMIN_EMAIL,
-      subject: `New Job Application for ${jobTitle} - ${fullName}`,
+      subject: `New Job Application: ${jobTitle} - ${fullName}`,
       html: adminEmailHTML,
-      attachments: resumeBuffer
-        ? [
-            {
-              filename: resume.name,
-              content: resumeBuffer,
-              contentType: resume.type,
-            },
-          ]
-        : [],
+      attachments: resumeBuffer ? [
+        {
+          filename: resume.name,
+          content: resumeBuffer,
+          contentType: resume.type || 'application/octet-stream',
+        },
+      ] : [],
     };
 
-    const userMailOptions = {
+    const mailOptionsUser = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: `Testriq: Application Received for ${jobTitle}`,
+      subject: `Application Received: ${jobTitle} - Testriq`,
       html: userEmailHTML,
     };
 
-    await transporter.sendMail(adminMailOptions);
-    await transporter.sendMail(userMailOptions);
+    await transporter.sendMail(mailOptionsAdmin );
+    await transporter.sendMail(mailOptionsUser);
 
-   return NextResponse.json({ message: 'Application submitted successfully!' });
-
+    return NextResponse.json({ message: 'Application submitted successfully!' });
   } catch (error) {
-    console.error('[apply-job API] An unexpected error occurred:', error);
-    return NextResponse.json({ message: 'An unexpected error occurred.' }, { status: 500 });
+    console.error('Error submitting application:', error);
+    return NextResponse.json({ message: 'Error submitting application' }, { status: 500 });
   }
 }
-
