@@ -12,6 +12,18 @@ interface RecaptchaProviderProps {
   children: ReactNode;
 }
 
+interface GRecaptcha {
+  ready: (callback: () => void) => void;
+  execute: (siteKey: string, options: { action: string }) => Promise<string>;
+}
+
+interface CustomWindow extends Window {
+  grecaptcha?: GRecaptcha;
+  onloadCallback?: () => void;
+}
+
+declare const window: CustomWindow;
+
 export const RecaptchaProvider: React.FC<RecaptchaProviderProps> = ({ children }) => {
   const [isRecaptchaReady, setIsRecaptchaReady] = useState(false);
 
@@ -21,21 +33,21 @@ export const RecaptchaProvider: React.FC<RecaptchaProviderProps> = ({ children }
     };
 
     // Check if grecaptcha is already available (e.g., if script loaded before useEffect)
-    if (typeof window !== 'undefined' && (window as any).grecaptcha && (window as any).grecaptcha.ready) {
-      (window as any).grecaptcha.ready(handleRecaptchaLoad);
+    if (typeof window !== 'undefined' && window.grecaptcha && window.grecaptcha.ready) {
+      window.grecaptcha.ready(handleRecaptchaLoad);
     } else {
       // Fallback for when the script loads later
-      (window as any).onloadCallback = handleRecaptchaLoad;
+      window.onloadCallback = handleRecaptchaLoad;
     }
 
     return () => {
       // Clean up if necessary
-      delete (window as any).onloadCallback;
+      delete window.onloadCallback;
     };
   }, []);
 
   const executeRecaptcha = useCallback(async (action: string): Promise<string | null> => {
-    if (!isRecaptchaReady || typeof window === 'undefined' || !(window as any).grecaptcha) {
+    if (!isRecaptchaReady || typeof window === 'undefined' || !window.grecaptcha) {
       console.warn('reCAPTCHA is not ready or grecaptcha is not defined.');
       return null;
     }
@@ -47,7 +59,7 @@ export const RecaptchaProvider: React.FC<RecaptchaProviderProps> = ({ children }
     }
 
     try {
-      const token = await (window as any).grecaptcha.execute(siteKey, { action });
+      const token = await window.grecaptcha.execute(siteKey, { action });
       return token;
     } catch (error) {
       console.error('Error executing reCAPTCHA:', error);

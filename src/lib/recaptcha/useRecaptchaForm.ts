@@ -3,15 +3,15 @@ import { useRecaptcha } from './RecaptchaContext';
 
 interface UseRecaptchaFormOptions {
   action: string;
-  onSuccess?: (data: any) => void;
+  onSuccess?: (data: unknown) => void;
   onError?: (error: string) => void;
 }
 
 interface UseRecaptchaFormReturn {
   isSubmitting: boolean;
-  submitWithRecaptcha: (
-    submitFunction: (data: any, recaptchaToken: string) => Promise<any>,
-    formData: any
+  submitWithRecaptcha: <TFormData extends Record<string, unknown>, TResult>( // Use generics for better type safety
+    submitFunction: (data: TFormData, recaptchaToken: string) => Promise<TResult>,
+    formData: TFormData
   ) => Promise<void>;
 }
 
@@ -20,9 +20,9 @@ export function useRecaptchaForm(options: UseRecaptchaFormOptions): UseRecaptcha
   const { executeRecaptcha } = useRecaptcha();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const submitWithRecaptcha = useCallback(async (
-    submitFunction: (data: any, recaptchaToken: string) => Promise<any>,
-    formData: any
+  const submitWithRecaptcha = useCallback(async <TFormData extends Record<string, unknown>, TResult>(
+    submitFunction: (data: TFormData, recaptchaToken: string) => Promise<TResult>,
+    formData: TFormData
   ) => {
     if (isSubmitting) return;
 
