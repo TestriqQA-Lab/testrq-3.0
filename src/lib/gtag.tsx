@@ -1,14 +1,18 @@
 // lib/gtag.tsx
 
 declare global {
+  // Extend the Window interface to include gtag
   interface Window {
     gtag: (
       command: string,
       eventName: string,
-      params: Record<string, any>
+      params: Gtag.ControlParams | Gtag.EventParams | Gtag.ConfigParams | Gtag.CustomParams
     ) => void;
   }
 }
+
+// Ensure gtag is defined globally by including the Google Analytics script in your layout
+// The Gtag namespace is typically available after the gtag.js script loads.
 
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
