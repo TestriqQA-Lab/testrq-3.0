@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
-
+import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
 
 const Navbar = dynamic(
   () => import("@/components/layout/Header"),
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.testriq.com/" ),
+  metadataBase: new URL("https://www.testriq.com/"  ),
   alternates: {
     canonical: "/",
   },
@@ -119,12 +119,13 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}> ) {
+}>  ) {
   return (
       <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
         >
+          <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
