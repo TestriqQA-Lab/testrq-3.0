@@ -1,21 +1,31 @@
 import Script from 'next/script';
 
-
-interface SchemaData {
-  '@type': string;
-  [key: string]: any;
-}
+// Proper JSON-LD type (no `any` anywhere)
+type JsonLd = Record<string, unknown>;
 
 interface StructuredDataProps {
-  data: SchemaData;
+  data: JsonLd;
 }
 
+/**
+ * Renders structured data (JSON-LD) via Next.js <Script>
+ * Adds a unique ID based on the schema type + a hash of the content
+ * → avoids duplicate ID errors when the same schema appears multiple times
+ */
 export default function StructuredData({ data }: StructuredDataProps) {
+  // Create a stable but unique ID for this exact piece of JSON-LD
+  const type = (data['@type'] as string) || 'unknown';
+  const contentHash = JSON.stringify(data).slice(-12); // last 12 chars is enough for uniqueness
+  const id = `structured-data-${type}-${contentHash}`;
+
   return (
-    <Script key={data['@type']}
-      // id="structured-data" // Removed to prevent duplicate ID errors
+    <Script
+      id={id} // required by Next.js when using inline content
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      // Using children is slightly cleaner than dangerouslySetInnerHTML
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data, null, 2),
+      }}
     />
   );
 }
