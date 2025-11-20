@@ -1,14 +1,19 @@
 import Script from 'next/script';
 
 
+interface SchemaData {
+  '@type': string;
+  [key: string]: any;
+}
+
 interface StructuredDataProps {
-  data: object;
+  data: SchemaData;
 }
 
 export default function StructuredData({ data }: StructuredDataProps) {
   return (
-    <Script
-      id="structured-data"
+    <Script key={data['@type']}
+      // id="structured-data" // Removed to prevent duplicate ID errors
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
@@ -108,7 +113,8 @@ export const productServiceSchema = {
   "@type": "Product",
   "name": "Testriq QA Lab - Comprehensive Software Testing Services",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
-  "url": "https://www.testriq.com/",
+    "url": "https://www.testriq.com/",
+    "image": "https://www.testriq.com/logo.png", // Mandatory property for Product schema
   "brand": {
     "@type": "Organization",
     "name": "Testriq QA Lab"
