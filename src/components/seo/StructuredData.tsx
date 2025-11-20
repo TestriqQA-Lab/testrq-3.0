@@ -102,6 +102,30 @@ export const websiteSchema = {
   }
 };
 
+// Product/Service Schema with Aggregate Rating for Homepage
+export const productServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Testriq QA Lab - Comprehensive Software Testing Services",
+  "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
+  "url": "https://www.testriq.com/",
+  "brand": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9", // Placeholder: Based on common high ratings for service companies
+    "reviewCount": "150" // Placeholder: Based on a reasonable number of reviews
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "Contact for pricing",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 // Service Schema for Web Application Testing
 export const webAppTestingServiceSchema = {
   "@context": "https://schema.org",

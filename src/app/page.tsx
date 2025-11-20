@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData, { organizationSchema, websiteSchema } from "@/components/seo/StructuredData";
+import StructuredData, { organizationSchema, websiteSchema, productServiceSchema } from "@/components/seo/StructuredData";
 
 const HomeHeroSection = dynamic(
   () => import("@/components/sections/HomeHeroSection"),
@@ -140,6 +140,7 @@ export default function Home() {
     <div>
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
+      <StructuredData data={productServiceSchema} />
       <MainLayout>
         <HomeHeroSection />
         <HomeComprehensiveSoftwareTesting />

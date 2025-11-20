@@ -16,13 +16,16 @@ const Hero = () => {
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4 mt-3">
-          Independent{" "}
-          <span className="text-[theme(color.brand.blue)]">
-            Software Testing
-          </span>{" "}
-          Services
-        </h1>
+
+	        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4 mt-3">
+	          Testriq: Independent{" "}
+	          <span className="text-[theme(color.brand.blue)]">
+	            Software Testing
+	          </span>{" "}
+	          Services
+	        </h1>
+
+
 
         <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
           Accelerate your product launch with Independent <Link title="Software Testing Guide – Best Practices" href="/software-testing-guide">software testing
