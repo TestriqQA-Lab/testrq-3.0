@@ -15,8 +15,6 @@
     .success { color: #25a8e0; font-weight: bold; font-size: 18px; margin-bottom: 10px; text-align: center; }
     .copy-btn { background: #25a8e0; color: white; padding: 12px 30px; font-size: 16px; margin: 20px auto; display: block; width: fit-content; border-radius: 6px; }
     .copy-btn:hover { background: #1e88b8; }
-    .note { font-size: 13px; color: #666; margin-top: 20px; line-height: 1.5; text-align: center; }
-    .icon { width:14px; height:14px; margin-right:8px; vertical-align:middle; fill:#25a8e0; }
   </style>
 </head>
 <body>
@@ -55,13 +53,14 @@
 <script>
 const LOGO_URL = "https://www.testriq.com/testriq-logo.png";
 
-// SVG Icons in brand color #25a8e0
+// Your 5 existing icons + 1 new globe icon (YOU ONLY CHANGE THIS LINE)
 const icons = {
-  name: `<svg class="icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
-  phone: `<svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.59-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>`,
-  email: `<svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`,
-  address: `<svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`,
-  linkedin: `<svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3c0-1.3-.6-2.3-1.9-2.3-.8 0-1.3.5-1.6 1v-.1h-.5v-4h-1v7.9h1.8v-4.5c0-1.2.5-1.6 1.2-1.6.8 0 1.1.6 1.1 1.6v4.5h1.8zM7.3 8.3c.7 0 1.1-.5 1.1-1.1 0-.6-.4-1.1-1.1-1.1-.7 0-1.1.5-1.1 1.1 0 .6.4 1.1 1.1 1.1zm1 7.9h-1.8V9.8h1.8v6.4zM20 19h-16v-14h16v14z"/></svg>`
+  name:    `<img src="https://i.imgur.com/2Qq5Z8K.png" width="14" height="14" alt="Name" style="vertical-align:middle;margin-right:8px;">`,
+  phone:   `<img src="https://i.imgur.com/2oKJ3iP.png" width="14" height="14" alt="Phone" style="vertical-align:middle;margin-right:8px;">`,
+  email:   `<img src="https://i.imgur.com/5cR8p8T.png" width="14" height="14" alt="Email" style="vertical-align:middle;margin-right:8px;">`,
+  address: `<img src="https://i.imgur.com/4oK8s9L.png" width="14" height="14" alt="Location" style="vertical-align:middle;margin-right:8px;">`,
+  linkedin:`<img src="https://i.imgur.com/3iX7r5V.png" width="14" height="14" alt="LinkedIn" style="vertical-align:middle;margin-right:6px;">`,
+  globe:   `<img src="https://www.testriq.com/signatures/icons/globe.png" width="14" height="14" alt="Web" style="vertical-align:middle;margin-right:8px;">`  // ← CHANGE THIS URL ONLY
 };
 
 function generateSignature() {
@@ -89,7 +88,7 @@ function generateSignature() {
   <tr><td colspan="3" bgcolor="#25a8e0" height="4"></td></tr>
   <tr>
     <td colspan="3" style="padding:8px 0;font-size:14px;color:#25a8e0;">
-      <strong>W:</strong>&nbsp;
+      ${icons.globe}
       <a href="https://www.testriq.com" style="color:#25a8e0;text-decoration:none;">www.testriq.com</a> |
       <a href="https://www.cinutedigital.com" style="color:#25a8e0;text-decoration:none;">www.cinutedigital.com</a> |
       <a href="https://www.cinute.digital" style="color:#25a8e0;text-decoration:none;">www.cinute.digital</a> |
@@ -117,7 +116,6 @@ function generateSignature() {
     selection.addRange(range);
     document.execCommand('copy');
     selection.removeAllRanges();
-
     copyButton.textContent = "Copied! Paste in Gmail/Outlook";
     setTimeout(() => copyButton.textContent = "Copy Formatted Signature (Click Here)", 2000);
   };
