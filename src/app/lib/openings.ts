@@ -114,32 +114,34 @@ and testing processes.
   },
   {
     id: 3,
-    title: "Manual Tester (Trading Domain)",
+    title: "Automation Tester (Trading Domain)",
     location: "On-Site (Kurla, Mumbai)",
     type: "Full-time",
     experience: "2–4 Years",
     description: `
 ##### Key Responsibilities:
-- Analyze business requirements and prepare detailed test scenarios and test cases.
-- Perform manual testing of trading applications, order management systems, and related modules.
-- Validate trade workflows including order entry, execution, settlement and reporting.
-- Identify, log and track defects using bug-tracking tools.
-- Execute functional, regression, integration, and UAT testing.
+- Develop and maintain automation scripts using Selenium or similar tools.
+- Create, update, and maintain test plans, test cases, and test scripts.
+- Conduct API testing using Postman or REST Assured.
+- Identify, document, and track bugs using JIRA, Clickup, or similar tools.
+- Work with CI/CD pipelines to integrate automated tests for continuous testing.
 
 ##### Requirements:
-- 2–4 years of experience in Manual Testing, preferably in the Trading/Capital Market domain.
-- Strong understanding of trading workflows, financial products (Equity, Derivatives, Commodities, etc.).
-- Hands-on experience with bug tracking and test management tools (e.g., JIRA, Bugzilla, TestRail).
-- Good understanding of SDLC & STLC processes.
-- Strong analytical, problem-solving, and communication skills.
-- Knowledge of SQL for basic data validation will be an added advantage.
+- 3+ years of experience in software testing (automation).
+- Strong knowledge of testing methodologies, SDLC, and STLC.
+- Experience with Selenium or Similar tools for automation.
+- API testing experience using Postman, REST Assured, or similar tools.
+- Good understanding of SQL and database testing is plus.
+- Familiarity with CI/CD tools like Jenkins, GitHub Actions, or GitLab CI/CD is plus.
+-Experience with performance testing using JMeter or similar tools (nice to have).
+-Experience in mobile app testing (Android & iOS) is a plus.
     `,
     skills: [
-      "Manual Testing",
+      "Automation Testing",
       "Trading",
       "Capital Market Domain",
       "JIRA",
-      "TestRail",
+      "Selenium",
       "SQL",
     ],
     badges: ["Urgent"],
