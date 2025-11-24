@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Testriq Email Signature Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f7fa; padding: 30px; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    h1 { color: #25a8e0; text-align: center; margin-bottom: 10px; }
+    input { width: 100%; padding: 10px; margin: 8px 0 16px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+    label { font-weight: bold; color: #333; }
+    button { background: #25a8e0; color: white; padding: 14px 32px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; }
+    button:hover { background: #1e88b8; }
+    .preview-box { margin-top: 30px; padding: 20px; background: #f9f9f9; border: 2px dashed #25a8e0; border-radius: 8px; display: none; }
+    .success { color: #25a8e0; font-weight: bold; font-size: 18px; margin-bottom: 10px; text-align: center; }
+    .copy-btn { background: #25a8e0; color: white; padding: 12px 30px; font-size: 16px; margin: 20px auto; display: block; width: fit-content; border-radius: 6px; }
+    .copy-btn:hover { background: #1e88b8; }
+    .note { font-size: 13px; color: #666; margin-top: 20px; line-height: 1.5; text-align: center; }
+    .icon { width:14px; height:14px; margin-right:8px; vertical-align:middle; fill:#25a8e0; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>testriq Email Signature Generator</h1>
+  <p style="text-align:center;color:#555;">Fill details → Generate → Click blue button to copy formatted signature</p>
+
+  <label>Full Name</label>
+  <input type="text" id="name" placeholder="Enter Your Name">
+  <label>Designation</label>
+  <input type="text" id="title" placeholder="Enter Your Designation">
+  <label>Mobile</label>
+  <input type="text" id="mobile" placeholder="+91 70395 50278">
+  <label>Email</label>
+  <input type="text" id="email" placeholder="Your Business Email">
+  <label>LinkedIn URL</label>
+  <input type="text" id="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+
+  <br><br>
+  <button onclick="generateSignature()">Generate Signature</button>
+
+  <div id="preview" class="preview-box">
+    <div class="success">Your signature is ready!</div>
+    <div id="signature-preview" style="background:white; padding:20px; border:1px solid #eee; border-radius:6px;"></div>
+    
+    <button class="copy-btn" id="copyButton">
+      Copy Formatted Signature (Click Here)
+    </button>
+    
+    <p style="margin:15px 0 0; font-size:14px; text-align:center;">
+      After clicking → go to Gmail → Settings → Signature → Ctrl+V
+    </p>
+  </div>
+</div>
+
+<script>
+const LOGO_URL = "https://www.testriq.com/testriq-logo.png";
+
+// SVG Icons in brand color #25a8e0
+const icons = {
+  name: `<svg class="icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`,
+  phone: `<svg class="icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.59-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>`,
+  email: `<svg class="icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`,
+  address: `<svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`,
+  linkedin: `<svg class="icon" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-.5 15.5v-5.3c0-1.3-.6-2.3-1.9-2.3-.8 0-1.3.5-1.6 1v-.1h-.5v-4h-1v7.9h1.8v-4.5c0-1.2.5-1.6 1.2-1.6.8 0 1.1.6 1.1 1.6v4.5h1.8zM7.3 8.3c.7 0 1.1-.5 1.1-1.1 0-.6-.4-1.1-1.1-1.1-.7 0-1.1.5-1.1 1.1 0 .6.4 1.1 1.1 1.1zm1 7.9h-1.8V9.8h1.8v6.4zM20 19h-16v-14h16v14z"/></svg>`
+};
+
+function generateSignature() {
+  const name = document.getElementById('name').value.trim() || "Your Name";
+  const title = document.getElementById('title').value.trim() || "Your Designation";
+  const mobile = document.getElementById('mobile').value.trim() || "+91 ";
+  const email = document.getElementById('email').value.trim() || "your.email@testriq.com";
+  const linkedin = document.getElementById('linkedin').value.trim() || "https://linkedin.com/in/yourprofile";
+
+  const signatureHTML = `
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;max-width:700px;">
+  <tr>
+    <td valign="middle" style="padding-right:10px;"><img src="${LOGO_URL}" alt="testriq" width="180" style="display:block;border:0;height:auto;"></td>
+    <td width="4" bgcolor="#25a8e0"></td>
+    <td valign="middle" style="padding-left:15px;line-height:1.8;">
+      <strong style="font-size:16px;color:#000000;">${icons.name}${name}</strong><br>
+      <span style="color:#25a8e0;font-weight:bold;">${title}</span><br>
+      <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g,'')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
+      <span>${icons.email}<a href="mailto:${email}" style="color:#25a8e0;text-decoration:none;">${email}</a> | 
+      <a href="${linkedin}" style="color:#25a8e0;text-decoration:none;">${icons.linkedin}LinkedIn</a></span><br>
+      <span>${icons.address}Office No 2 & 3, Ashley Tower, Beverly Park, Mira Road (E), Thane 401107</span>
+    </td>
+  </tr>
+  <tr><td colspan="3" height="15"></td></tr>
+  <tr><td colspan="3" bgcolor="#25a8e0" height="4"></td></tr>
+  <tr>
+    <td colspan="3" style="padding:8px 0;font-size:14px;color:#25a8e0;">
+      <strong>W:</strong>&nbsp;
+      <a href="https://www.testriq.com" style="color:#25a8e0;text-decoration:none;">www.testriq.com</a> |
+      <a href="https://www.cinutedigital.com" style="color:#25a8e0;text-decoration:none;">www.cinutedigital.com</a> |
+      <a href="https://www.cinute.digital" style="color:#25a8e0;text-decoration:none;">www.cinute.digital</a> |
+      <a href="https://www.cinuteinfomedia.com" style="color:#25a8e0;text-decoration:none;">www.cinuteinfomedia.com</a>
+    </td>
+  </tr>
+  <tr><td colspan="3" bgcolor="#25a8e0" height="4"></td></tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="font-size:12px;color:#605757;line-height:1.5;font-style:italic;margin-top:12px;">
+  <tr><td style="padding:0 10px;">
+    This email and any attachments are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error, please notify the sender immediately by replying to this email and then delete it from your system. Any views or opinions expressed in this email are solely those of the author and do not necessarily represent those of TESTRIQ QA Lab. The recipient is responsible for checking this email and any attachments for the presence of viruses. TESTRIQ QA Lab accepts no liability for any damage caused by any virus transmitted by this email. Unauthorized use, dissemination, forwarding, printing, or copying of this email is strictly prohibited.
+  </td></tr>
+</table>`;
+
+  document.getElementById('signature-preview').innerHTML = signatureHTML;
+  document.getElementById('preview').style.display = 'block';
+
+  const copyButton = document.getElementById('copyButton');
+  copyButton.onclick = function() {
+    const range = document.createRange();
+    range.selectNode(document.getElementById('signature-preview'));
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('copy');
+    selection.removeAllRanges();
+
+    copyButton.textContent = "Copied! Paste in Gmail/Outlook";
+    setTimeout(() => copyButton.textContent = "Copy Formatted Signature (Click Here)", 2000);
+  };
+}
+</script>
+</body>
+</html>
