@@ -1,3 +1,5 @@
+//Blog categories
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -15,7 +17,7 @@ const useCountUp = (end: number, duration: number = 2000, start: number = 0) => 
 
     const increment = (end - start) / (duration / 16); // 60fps
     let current = start;
-    
+
     const timer = setInterval(() => {
       current += increment;
       if (current >= end) {
@@ -85,27 +87,26 @@ const AnimatedCategoryCard: React.FC<{
     <Link
       href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
       onClick={() => setActiveCategory(category.id)}
-      className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${
-        activeCategory === category.id
+      className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${activeCategory === category.id
           ? 'shadow-xl ring-2 ring-[theme(color.brand.blue)] ring-opacity-50'
           : 'shadow-lg hover:shadow-xl'
-      }`}
+        }`}
     >
       {/* Background Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`}></div>
-      
+
       {/* Content */}
       <div className="relative z-10 text-center">
         {/* Icon */}
         <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
           {getCategoryIcon(category.name)}
         </div>
-        
+
         {/* Category Name */}
         <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors">
           {category.name}
         </h3>
-        
+
         {/* Animated Post Count */}
         <div className="text-sm text-gray-500">
           <span className={`${isVisible ? 'animate-pulse' : ''}`}>
@@ -135,10 +136,10 @@ const BlogCategories: React.FC = () => {
         setLoading(true);
         const wpCategories = await getCategories();
         const adaptedCategories = wpCategories.map(adaptWordPressCategory);
-        
+
         // Calculate total posts for "All Posts" category
         const totalPosts = adaptedCategories.reduce((sum, cat) => sum + cat.postCount, 0);
-        
+
         // Add "All Posts" category at the beginning
         const allCategory: Category = {
           id: "all",
@@ -211,9 +212,9 @@ const BlogCategories: React.FC = () => {
             Explore Testing{" "}
             <span className="text-[theme(color.brand.blue)]">Categories</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Browse our comprehensive collection of software testing articles organized by testing types, 
-            tools, and methodologies to find exactly what you need.
+          <p className="text-gray-600 text-lg max-w-6xl mx-auto">
+            Browse our comprehensive collection of software testing articles organized by testing types,
+            tools, and methodologies to find exactly what you need. Our categories cover everything from basic principles to advanced techniques, helping you navigate the complex world of quality assurance with ease. Whether you're focusing on specific testing domains or exploring cross-cutting concerns, you'll find curated content to support your QA journey.
           </p>
         </div>
 
@@ -243,4 +244,3 @@ const BlogCategories: React.FC = () => {
 };
 
 export default BlogCategories;
-

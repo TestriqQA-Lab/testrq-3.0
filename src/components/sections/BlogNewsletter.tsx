@@ -1,3 +1,5 @@
+//Blog News Letter
+
 "use client";
 import Link from 'next/link'
 
@@ -22,22 +24,22 @@ const BlogNewsletter: React.FC = () => {
 
   const availableInterests = [
     "Test Automation",
-    "Performance Testing", 
+    "Performance Testing",
     "Security Testing",
     "Mobile Testing",
   ];
 
   const handleInterestChange = (interest: string) => {
-    setInterests(prev => 
-      prev.includes(interest) 
+    setInterests(prev =>
+      prev.includes(interest)
         ? prev.filter(i => i !== interest)
         : [...prev, interest]
     );
   };
 
-const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       setError("Email is required");
       return;
@@ -65,7 +67,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
         setSubscribed(true);
         setEmail("");
         setInterests([]);
-        
+
         setTimeout(() => {
           setSubscribed(false);
         }, 5000);
@@ -102,7 +104,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
 
             <p className="text-gray-200 text-lg mb-8 leading-relaxed">
               Get the latest software testing articles, tutorials, and insights
-              delivered to your inbox. Join 10,000+ QA professionals today.
+              delivered to your inbox. Join 10,000+ QA professionals today. Our newsletter features curated content on emerging testing trends, tool updates, and practical tips to enhance your QA processes and career development.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -221,8 +223,8 @@ const handleSubscribe = async (e: React.FormEvent) => {
 
                   <p className="text-gray-300 text-xs text-center">
                     By subscribing, you agree to our{" "}
-                    <Link 
-                    href="/privacy-policy" className="text-white underline"
+                    <Link
+                      href="/privacy-policy" className="text-white underline"
                     >
                       Privacy Policy
                     </Link>{" "}
@@ -275,11 +277,10 @@ const handleSubscribe = async (e: React.FormEvent) => {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );
 };
 
 export default BlogNewsletter;
-

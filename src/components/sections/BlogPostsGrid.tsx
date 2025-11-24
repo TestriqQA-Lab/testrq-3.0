@@ -1,3 +1,5 @@
+//Blog post grid
+
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
@@ -86,6 +88,7 @@ const BlogPostsGrid: React.FC = () => {
                 Featured Articles
               </h2>
             </div>
+            <p className="text-gray-600 mb-6">Our featured articles highlight the most important topics in software testing, providing deep insights and expert analysis. These carefully selected pieces offer comprehensive coverage of key QA concepts and emerging trends in the industry.</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredPosts.slice(0, 2).map((post) => (
@@ -171,6 +174,7 @@ const BlogPostsGrid: React.FC = () => {
               <FaFire className="w-6 h-6 text-red-500" />
               <h2 className="text-2xl font-bold text-gray-900">Trending Now</h2>
             </div>
+            <p className="text-gray-600 mb-6">Discover the hottest topics in software testing right now. Our trending posts cover the latest discussions, innovations, and challenges that are capturing the attention of QA professionals worldwide.</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {trendingPosts.slice(0, 3).map((post) => (
@@ -236,6 +240,7 @@ const BlogPostsGrid: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-8">
             All Articles
           </h2>
+          <p className="text-gray-600 mb-6">Browse our complete collection of software testing articles. From foundational concepts to advanced techniques, find in-depth coverage of all aspects of QA and testing methodologies to support your professional growth.</p>
 
           {blogPosts.length === 0 ? (
             <div className="text-center py-12">

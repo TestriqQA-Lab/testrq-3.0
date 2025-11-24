@@ -1,3 +1,5 @@
+//Hero section
+
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -116,8 +118,7 @@ const BlogHeroSection: React.FC = () => {
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-7xl mx-auto leading-relaxed">
-          Stay ahead in the evolving world of software testing with expert QA insights, best practices for automation, and up-to-date guidance on performance, security, and API testing. Our comprehensive blog covers test automation frameworks like Selenium and Appium, in-depth guides on mobile and web application QA, as well as strategies for integrating CI/CD and effective bug tracking.
-          Explore cutting-edge trends in AI-driven software testing, load and stress testing, cloud-native QA, and security vulnerabilities, empowering your development teams to deliver robust, scalable, and secure digital solutions.
+          Stay ahead in the evolving world of software testing with expert QA insights, best practices for automation, and up-to-date guidance on performance, security, and API testing. Our comprehensive blog covers test automation frameworks like Selenium and Appium, in-depth guides on mobile and web application QA, as well as strategies for integrating CI/CD and effective bug tracking. Explore cutting-edge trends in AI-driven software testing, load and stress testing, cloud-native QA, and security vulnerabilities, empowering your development teams to deliver robust, scalable, and secure digital solutions. Whether you're a beginner or an experienced professional, our content is designed to help you improve your testing skills and stay current with industry standards. Dive deeper into topics like regression testing, usability evaluation, and accessibility compliance to ensure your applications meet the highest quality benchmarks.
         </p>
 
         {/* Search Bar */}
