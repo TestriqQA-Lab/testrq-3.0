@@ -214,7 +214,7 @@ const BlogCategories: React.FC = () => {
           </h2>
           <p className="text-gray-600 text-lg max-w-6xl mx-auto">
             Browse our comprehensive collection of software testing articles organized by testing types,
-            tools, and methodologies to find exactly what you need. Our categories cover everything from basic principles to advanced techniques, helping you navigate the complex world of quality assurance with ease. Whether you're focusing on specific testing domains or exploring cross-cutting concerns, you'll find curated content to support your QA journey.
+            tools, and methodologies to find exactly what you need. Our categories cover everything from basic principles to advanced techniques, helping you navigate the complex world of quality assurance with ease. Whether you&lsquo;re focusing on specific testing domains or exploring cross-cutting concerns, you&lsquo;ll find curated content to support your QA journey.
           </p>
         </div>
 
