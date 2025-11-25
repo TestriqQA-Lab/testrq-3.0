@@ -53,14 +53,14 @@
 <script>
 const LOGO_URL = "https://www.testriq.com/testriq-logo.png";
 
-// Your 5 existing icons + 1 new globe icon (YOU ONLY CHANGE THIS LINE)
 const icons = {
-  name:    `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="Name" style="vertical-align:middle;margin-right:8px;">`,
-  phone:   `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="Phone" style="vertical-align:middle;margin-right:8px;">`,
-  email:   `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="Email" style="vertical-align:middle;margin-right:8px;">`,
-  address: `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="Location" style="vertical-align:middle;margin-right:8px;">`,
-  linkedin:`<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="LinkedIn" style="vertical-align:middle;margin-right:6px;">`,
-  globe:   `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="Web" style="vertical-align:middle;margin-right:8px;">`  // ← CHANGE THIS URL ONLY
+  name:       `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="Name" style="vertical-align:middle;margin-right:8px;">`,
+  designation:`<img src="https://www.testriq.com/signatures/icons/designation.png" width="20" height="20" alt="Designation" style="vertical-align:middle;margin-right:8px;">`,
+  phone:      `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="Phone" style="vertical-align:middle;margin-right:8px;">`,
+  email:      `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="Email" style="vertical-align:middle;margin-right:8px;">`,
+  address:    `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="Location" style="vertical-align:middle;margin-right:8px;">`,
+  linkedin:   `<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="LinkedIn" style="vertical-align:middle;margin-right:6px;">`,
+  globe:      `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="Web" style="vertical-align:middle;margin-right:8px;">`
 };
 
 function generateSignature() {
@@ -73,21 +73,21 @@ function generateSignature() {
   const signatureHTML = `
 <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;max-width:700px;">
   <tr>
-    <td valign="middle" style="padding-right:10px;"><img src="${LOGO_URL}" alt="testriq" width="180" style="display:block;border:0;height:auto;"></td>
-    <td width="4" bgcolor="#25a8e0"></td>
-    <td valign="middle" style="padding-left:15px;line-height:1.8;">
+    <td valign="top" style="padding-right:12px;"><img src="${LOGO_URL}" alt="testriq" width="180" style="display:block;border:0;height:auto;"></td>
+    <td width="2" bgcolor="#25a8e0"></td> <!-- Vertical line – exactly 2px -->
+    <td valign="top" style="padding-left:15px;line-height:1.8;">
       <strong style="font-size:16px;color:#000000;">${icons.name}${name}</strong><br>
-      <span style="color:#25a8e0;font-weight:bold;">${title}</span><br>
+      <span style="color:#25a8e0;font-weight:bold;">${icons.designation}${title}</span><br>
       <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g,'')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
       <span>${icons.email}<a href="mailto:${email}" style="color:#25a8e0;text-decoration:none;">${email}</a> | 
       <a href="${linkedin}" style="color:#25a8e0;text-decoration:none;">${icons.linkedin}LinkedIn</a></span><br>
       <span>${icons.address}Office No 2 & 3, Ashley Tower, Beverly Park, Mira Road (E), Thane 401107</span>
     </td>
   </tr>
-  <tr><td colspan="3" height="15"></td></tr>
-  <tr><td colspan="3" bgcolor="#25a8e0" height="4"></td></tr>
+  <tr><td colspan="3" height="10"></td></tr>
+  <tr><td colspan="3" bgcolor="#25a8e0" height="2"></td></tr> <!-- Top horizontal – 2px -->
   <tr>
-    <td colspan="3" style="padding:8px 0;font-size:14px;color:#25a8e0;">
+    <td colspan="3" style="padding:2px 0;font-size:14px;color:#25a8e0;">
       ${icons.globe}
       <a href="https://www.testriq.com" style="color:#25a8e0;text-decoration:none;">www.testriq.com</a> |
       <a href="https://www.cinutedigital.com" style="color:#25a8e0;text-decoration:none;">www.cinutedigital.com</a> |
@@ -95,7 +95,7 @@ function generateSignature() {
       <a href="https://www.cinuteinfomedia.com" style="color:#25a8e0;text-decoration:none;">www.cinuteinfomedia.com</a>
     </td>
   </tr>
-  <tr><td colspan="3" bgcolor="#25a8e0" height="4"></td></tr>
+  <tr><td colspan="3" bgcolor="#25a8e0" height="2"></td></tr> <!-- Bottom horizontal – 2px -->
 </table>
 
 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="font-size:12px;color:#605757;line-height:1.5;font-style:italic;margin-top:12px;">
