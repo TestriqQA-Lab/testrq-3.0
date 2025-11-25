@@ -248,7 +248,22 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-8">
+        <div className="flex flex-col items-center justify-center space-y-6 mt-8 p-6 bg-white rounded-lg shadow-inner border border-gray-200 max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 text-center font-medium">
+                We are proud to be featured on <Link href="https://www.designrush.com/agency/software-testing-companies" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DesignRush</Link> for our outstanding work.
+              </p>
+              <div className="flex justify-center">
+                <Image
+                  src="/DesignRush_Badge.png"
+                  alt="TESTRIQ QA LAB featured on DesignRush"
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-8 mt-8">
           {partners.map((partner, index) => (
             <Link
               key={index}
