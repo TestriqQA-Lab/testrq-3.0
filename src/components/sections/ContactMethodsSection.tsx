@@ -15,12 +15,12 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { InlineWidget } from "react-calendly";
+// import { InlineWidget } from "react-calendly"; // Replaced with Google Calendar link
 import Link from "next/link";
 
 
 const ContactMethodsSection: React.FC = () => {
-  const selectedMeetingUrl = "https://calendly.com/sandeepmaske/30min";
+  const googleCalendarBookingLink = "https://calendar.app.google/uUHn8prcXbdqcvVb6"; // actual Google Calendar booking link
 
   const contactMethods = [
     {
@@ -29,7 +29,7 @@ const ContactMethodsSection: React.FC = () => {
       description: "Book a personalized consultation with our QA experts",
       details: "Available slots: Mon-Fri, 9 AM - 6 PM IST",
       value: "Book Now",
-      action: "#calendly-section",
+      action: googleCalendarBookingLink,
       color: "from-purple-500 to-purple-700",
       highlight: true,
     },
@@ -59,7 +59,7 @@ const ContactMethodsSection: React.FC = () => {
       description: "Face-to-face meetings for complex project discussions",
       details: "30-60 min sessions • Screen sharing available",
       value: "Schedule Video Call",
-      action: "#calendly-section",
+      action: googleCalendarBookingLink,
       color: "from-red-500 to-red-700",
       highlight: false,
     },
@@ -118,12 +118,7 @@ const ContactMethodsSection: React.FC = () => {
     { day: "Sunday", hours: "Emergency Support Only", available: false },
   ];
 
-  const scrollToCalendly = () => {
-    document.querySelector("#calendly-section")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+
 
   return (
     <section className="py-20 bg-gray-50 px-8 md:px-12 lg:px-24">
@@ -179,12 +174,8 @@ const ContactMethodsSection: React.FC = () => {
 
                 <Link
                   href={method.action}
-                  onClick={(e) => {
-                    if (method.title === "Schedule a Meeting") {
-                      e.preventDefault(); // Prevent default link behavior
-                      scrollToCalendly(); // Trigger smooth scroll
-                    }
-                  }}
+                  target={method.title === "Schedule a Meeting" || method.title === "Video Consultation" ? "_blank" : undefined}
+                  rel={method.title === "Schedule a Meeting" || method.title === "Video Consultation" ? "noopener noreferrer" : undefined}
                   className={`cursor-pointer block text-center w-full bg-gradient-to-r ${method.color} text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-opacity`}
                 >
                   {method.value}
@@ -194,67 +185,34 @@ const ContactMethodsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Calendly Integration Section */}
-        <div
-          id="calendly-section"
-          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto"
-        >
-          {/* Header Section */}
-          <div className="text-center mb-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-              Book Your QA Consultation
-            </h3>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Connect with our QA experts to explore tailored solutions for your
-              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
-              performance testing. Pick a time that suits you!
-            </p>
-          </div>
-
-          {/* Meeting Type */}
-          <div className="grid grid-cols-1 gap-6 mb-12 max-w-5xl mx-auto">
-            <div
-              className="group relative text-center p-6 bg-white rounded-2xl shadow-md cursor-pointer hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100"
-              // onClick={() => window.location.href = 'https://calendly.com/your-link/deep-dive'} // Replace with actual URL
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300" />
-              <FaVideo className="w-10 h-10 text-blue-600 mx-auto mb-4" />
-              <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                Deep Dive Session
-              </h4>
-              <p className="text-sm text-gray-600 mb-2 font-medium">
-                30 minutes
-              </p>
-              <p className="text-sm text-gray-500">
-                In-depth discussion for your project needs
-              </p>
-              <div className="mt-4">
-                <button className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors duration-200">
-                  Schedule Now
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Calendly Widget and Image */}
-          <div className="flex flex-col lg:flex-row -gap-2 items-center">
-            <div className="w-full">
-              {selectedMeetingUrl && (
-                <div className="calendly-container w-full h-[600px] md:h-[1080px] lg:h-[700px] xl:h-[1110px] max-w-[1000px] mx-auto rounded-2xl lg:rounded-l-2xl lg:rounded-r-none overflow-hidden shadow-lg">
-                  <InlineWidget
-                    url={selectedMeetingUrl}
-                    styles={{
-                      height: "100%",
-                      width: "100%",
-                    }}
-                    className="w-full h-full"
-                  />
-                </div>
-              )}
-            </div>
-            
-          </div>
-        </div>
+	        {/* Google Calendar Booking Link Section */}
+	        <div
+	          id="google-calendar-section"
+	          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto text-center"
+	        >
+	          {/* Header Section */}
+	          <div className="text-center mb-10">
+	            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+	              Book Your QA Consultation
+	            </h3>
+	            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+	              Connect with our QA experts to explore tailored solutions for your
+	              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
+	              performance testing. Click the button below to schedule a time that suits you!
+	            </p>
+	          </div>
+	
+	          {/* Google Calendar Link */}
+	          <Link
+	            href={googleCalendarBookingLink}
+	            target="_blank"
+	            rel="noopener noreferrer"
+	            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+	          >
+	            <FaCalendarAlt className="w-5 h-5 mr-3" />
+	            Schedule a Meeting via Google Calendar
+	          </Link>
+	        </div>
 
         {/* Office Hours & Social Links */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
