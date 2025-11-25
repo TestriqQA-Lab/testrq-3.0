@@ -253,13 +253,16 @@ const Footer = () => {
                 We are proud to be featured on <Link href="https://www.designrush.com/agency/software-testing-companies" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DesignRush</Link> for our outstanding work.
               </p>
               <div className="flex justify-center">
+                <Link 
+                href="https://www.designrush.com/agency/software-testing-companies"
+                >
                 <Image
                   src="/DesignRush_Badge.png"
                   alt="TESTRIQ QA LAB featured on DesignRush"
                   width={150}
                   height={150}
                   className="object-contain"
-                />
+                /> </Link>
               </div>
             </div>
 
