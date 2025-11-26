@@ -54,13 +54,13 @@
 const LOGO_URL = "https://www.testriq.com/testriq-logo.png";
 
 const icons = {
-  name:       `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="Name" style="vertical-align:middle;margin-right:8px;">`,
-  designation:`<img src="https://www.testriq.com/signatures/icons/designation.png" width="20" height="20" alt="Designation" style="vertical-align:middle;margin-right:8px;">`,
-  phone:      `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="Phone" style="vertical-align:middle;margin-right:8px;">`,
-  email:      `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="Email" style="vertical-align:middle;margin-right:8px;">`,
-  address:    `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="Location" style="vertical-align:middle;margin-right:8px;">`,
-  linkedin:   `<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="LinkedIn" style="vertical-align:middle;margin-right:6px;">`,
-  globe:      `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="Web" style="vertical-align:middle;margin-right:8px;">`
+  name:       `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  designation:`<img src="https://www.testriq.com/signatures/icons/designation.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  phone:      `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  email:      `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  address:    `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  linkedin:   `<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+  globe:      `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`
 };
 
 function generateSignature() {
@@ -68,40 +68,70 @@ function generateSignature() {
   const title = document.getElementById('title').value.trim() || "Your Designation";
   const mobile = document.getElementById('mobile').value.trim() || "+91 ";
   const email = document.getElementById('email').value.trim() || "your.email@testriq.com";
-  const linkedin = document.getElementById('linkedin').value.trim() || "https://linkedin.com/in/yourprofile";
+  let linkedin = document.getElementById('linkedin').value.trim() || "https://linkedin.com/in/yourprofile";
+
+  // Extract clean URL for display (removes https://www. if present)
+  const displayLinkedin = linkedin
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .replace(/\/+$/, '');
 
   const signatureHTML = `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,sans-serif;font-size:14px;color:#333333;max-width:700px;">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:600px;font-family:Arial,sans-serif;font-size:14px;color:#333333;">
   <tr>
-    <td valign="middle" style="padding-right:12px;"><img src="${LOGO_URL}" alt="testriq" width="180" style="display:block;border:0;height:auto;"></td>
-    <td width="2" bgcolor="#25a8e0"></td>
-    <td valign="top" style="padding-left:15px;line-height:1.8;">
-      <strong style="font-size:16px;color:#000000;">${icons.name}${name}</strong><br>
-      <span style="color:#25a8e0;font-weight:bold;">${icons.designation}${title}</span><br>
-      <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g,'')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
-      <span>${icons.email}<a href="mailto:${email}" style="color:#25a8e0;text-decoration:none;">${email}</a> | 
-      <a href="${linkedin}" style="color:#25a8e0;text-decoration:none;">${icons.linkedin}LinkedIn</a></span><br>
-      <span>${icons.address}Office No 2 & 3, Ashley Tower, Beverly Park, Mira Road (E), Thane 401107</span>
+    <td style="padding-bottom:20px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td valign="middle" style="padding-right:15px;width:180px;">
+            <img src="${LOGO_URL}" alt="testriq" width="180" style="display:block;border:0;height:auto;max-width:100%;">
+          </td>
+          <td width="2" bgcolor="#25a8e0"></td>
+          <td valign="middle" style="padding-left:15px;line-height:1.9;">
+            <strong style="font-size:16px;color:#000000;">${icons.name}${name}</strong><br>
+            <span style="color:#25a8e0;font-weight:bold;">${icons.designation}${title}</span><br>
+            <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g,'')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
+            <span>${icons.email}<a href="mailto:${email}" style="color:#25a8e0;text-decoration:none;">${email}</a></span><br>
+            <span>${icons.linkedin}<a href="${linkedin}" style="color:#25a8e0;text-decoration:none;">${displayLinkedin}</a></span><br>
+            <span>${icons.address}Office No 2 & 3, Ashley Tower, Beverly Park, Mira Road (E), Thane 401107</span>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
-  <tr><td colspan="3" height="10"></td></tr>
-  <tr><td colspan="3" bgcolor="#25a8e0" height="2"></td></tr>
+
+  <!-- Top blue line -->
+  <tr><td bgcolor="#25a8e0" height="2" style="line-height:0;font-size:0;">&nbsp;</td></tr>
+
+  <!-- Websites – perfectly wrapped, no broken domains -->
   <tr>
-    <td colspan="3" style="padding:0px 0;font-size:14px;color:#25a8e0;">
-      ${icons.globe}
-      <a href="https://www.testriq.com" style="color:#25a8e0;text-decoration:none;">www.testriq.com</a>   <span style="color:#000000;">|</span>  
-      <a href="https://www.cinutedigital.com" style="color:#25a8e0;text-decoration:none;">www.cinutedigital.com</a>   <span style="color:#000000;">|</span>  
-      <a href="https://www.cinute.digital" style="color:#25a8e0;text-decoration:none;">www.cinute.digital</a>   <span style="color:#000000;">|</span>  
-      <a href="https://www.cinuteinfomedia.com" style="color:#25a8e0;text-decoration:none;">www.cinuteinfomedia.com</a>
+    <td style="padding:0 0;font-size:14px;color:#25a8e0;">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="white-space:nowrap;">${icons.globe}</td>
+          <td style="overflow-wrap:anywhere;word-break:normal;">
+            <a href="https://www.testriq.com" style="color:#25a8e0;text-decoration:none;white-space:nowrap;">www.testriq.com</a>
+            <span style="color:#000000;">|</span>
+            <a href="https://www.cinutedigital.com" style="color:#25a8e0;text-decoration:none;white-space:nowrap;">www.cinutedigital.com</a>
+            <span style="color:#000000;">|</span>
+            <a href="https://www.cinute.digital" style="color:#25a8e0;text-decoration:none;white-space:nowrap;">www.cinute.digital</a>
+            <span style="color:#000000;">|</span>
+            <a href="https://www.cinuteinfomedia.com" style="color:#25a8e0;text-decoration:none;white-space:nowrap;">www.cinuteinfomedia.com</a>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
-  <tr><td colspan="3" bgcolor="#25a8e0" height="2"></td></tr>
+
+  <!-- Bottom blue line -->
+  <tr><td bgcolor="#25a8e0" height="2" style="line-height:0;font-size:0;">&nbsp;</td></tr>
 </table>
 
-<table cellpadding="0" cellspacing="0" border="0" width="100%" style="font-size:12px;color:#605757;line-height:1.5;font-style:italic;margin-top:12px;">
-  <tr><td style="padding:0 10px;">
-    This email and any attachments are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error, please notify the sender immediately by replying to this email and then delete it from your system. Any views or opinions expressed in this email are solely those of the author and do not necessarily represent those of TESTRIQ QA Lab. The recipient is responsible for checking this email and any attachments for the presence of viruses. TESTRIQ QA Lab accepts no liability for any damage caused by any virus transmitted by this email. Unauthorized use, dissemination, forwarding, printing, or copying of this email is strictly prohibited.
-  </td></tr>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:15px;font-size:12px;color:#605757;line-height:1.5;font-style:italic;">
+  <tr>
+    <td style="padding:10px 0;">
+      This email and any attachments are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error, please notify the sender immediately by replying to this email and then delete it from your system. Any views or opinions expressed in this email are solely those of the author and do not necessarily represent those of TESTRIQ QA Lab. The recipient is responsible for checking this email and any attachments for the presence of viruses. TESTRIQ QA Lab accepts no liability for any damage caused by any virus transmitted by this email. Unauthorized use, dissemination, forwarding, printing, or copying of this email is strictly prohibited.
+    </td>
+  </tr>
 </table>`;
 
   document.getElementById('signature-preview').innerHTML = signatureHTML;
