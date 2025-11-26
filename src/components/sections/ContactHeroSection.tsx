@@ -255,7 +255,7 @@ const ContactHeroSection: React.FC = () => {
       icon: FaCalendarAlt,
       label: "Schedule Meeting",
       value: "Book a Call",
-      action: "#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "bg-purple-500",
     },
   ];

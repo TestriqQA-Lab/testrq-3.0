@@ -120,7 +120,7 @@ const EcommerceHeroSection: React.FC = () => {
               <Link
                 href="/contact-us"
                 title="Start Free E-Commerce Audit – Testriq QA Lab"
-                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                className="inline-flex items-center justify-center px-4 py-4 min-h-[44px] min-w-[44px]
                  bg-brand-blue text-white font-semibold rounded-lg shadow-lg
                  hover:shadow-xl transition-colors duration-200"
               >
@@ -129,9 +129,9 @@ const EcommerceHeroSection: React.FC = () => {
               </Link>
 
               <Link
-                href="/contact-us"
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
                 title="Schedule Consultation – Testriq QA Lab"
-                className="w-full inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                className=" inline-flex items-center justify-start px-4 py-4 min-h-[44px]
                  bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue
                  hover:bg-blue-50 transition-colors duration-200"
               >

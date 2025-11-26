@@ -240,7 +240,7 @@ const MobileFAQs: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/contact-us#calendly-section"
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
                 title="Schedule Mobile Consultation – Testriq QA Lab"
                 className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
               >

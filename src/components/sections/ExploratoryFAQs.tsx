@@ -245,7 +245,7 @@ const ExploratoryFAQs: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact-us#calendly-section"
+              href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
               className="bg-white cursor-pointer text-brand-blue font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors duration-200"
             >
               Schedule Consultation

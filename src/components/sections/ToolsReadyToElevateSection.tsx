@@ -15,7 +15,7 @@ const ToolsReadyToElevateSection = () => {
       description:
         "Book a free 30-minute consultation to discuss your testing needs",
       text: "Book Now",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       detail: "",
       highlight: true,
     },
@@ -119,7 +119,7 @@ const ToolsReadyToElevateSection = () => {
                 <h3 className="py-2">{option.detail}</h3>
 
                 <Link
-                  href={option.action}
+                  href={option.action} target={ "_blank" }
                   className="px-6 py-3 cursor-pointer rounded-lg font-semibold transition-colors bg-brand-blue text-white hover:bg-sky-700 inline-flex items-center justify-center min-h-[48px] min-w-[48px]"
                 >
                   {option.text}

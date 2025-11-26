@@ -252,7 +252,7 @@ const TelecomContactSection: React.FC = () => {
       title: "Telecom Strategy Session",
       description: "Book a tailored telecom software quality assessment",
       text: "Schedule Free Consultation",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "from-purple-500 to-indigo-600",
     },
   ];
