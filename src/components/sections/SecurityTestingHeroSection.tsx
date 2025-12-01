@@ -12,7 +12,7 @@ import {
   FaCloud,
   FaUserSecret,
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const SecurityTestingHeroSection: React.FC = () => {
@@ -27,8 +27,22 @@ const SecurityTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Security Testing
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">

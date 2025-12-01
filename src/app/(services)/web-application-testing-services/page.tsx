@@ -7,9 +7,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Web Application Testing Services - Comprehensive QA Solutions",
+  title: "Web Application Testing: Services & QA Solutions",
   description:
-    "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+    "Expert Web Application Testing services. We provide end-to-end coverage including functional, security, and performance testing to ensure bug-free web apps.",
   keywords: [
     "web application testing",
     "web app testing services",
@@ -19,10 +19,11 @@ export const metadata: Metadata = {
     "cross-browser testing",
     "responsive testing",
     "web QA services",
+    "web application QA",
     "web application quality assurance",
     "UI testing",
     "UX testing",
-    "web testing automation",
+    "web test automation"
   ],
   openGraph: {
     title:

@@ -7,12 +7,26 @@ import {
   FaChartLine,
   FaTools,
 } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 
 const CorporateQATrainingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Corporate QA Training
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
@@ -37,7 +51,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
               Elevate your organization&apos;s software quality with
               comprehensive QA training programs. Our expert-led corporate
               training covers <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation</Link> frameworks, <Link href="/performance-testing-services">performance
-              testing</Link>, and quality assurance best practices. Delivered by
+                testing</Link>, and quality assurance best practices. Delivered by
               ISTQB-certified professionals with hands-on experience and
               industry-proven methodologies to upskill your entire QA team.
             </p>

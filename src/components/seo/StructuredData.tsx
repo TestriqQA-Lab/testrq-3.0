@@ -41,11 +41,11 @@ export const organizationSchema = {
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-915-2929-343",
-      "contactType": "customer service",
-      "email": "contact@testriq.com",
-      "availableLanguage": "English"
+    "@type": "ContactPoint",
+    "telephone": "+91-915-2929-343",
+    "contactType": "customer service",
+    "email": "contact@testriq.com",
+    "availableLanguage": "English"
   },
   "address": {
     "@type": "PostalAddress",
@@ -123,8 +123,8 @@ export const productServiceSchema = {
   "@type": "Product",
   "name": "Testriq QA Lab - Comprehensive Software Testing Services",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
-    "url": "https://www.testriq.com/",
-    "image": "https://www.testriq.com/logo.png", // Mandatory property for Product schema
+  "url": "https://www.testriq.com/",
+  "image": "https://www.testriq.com/logo.png", // Mandatory property for Product schema
   "brand": {
     "@type": "Organization",
     "name": "Testriq QA Lab"
@@ -145,71 +145,129 @@ export const productServiceSchema = {
 // Service Schema for Web Application Testing
 export const webAppTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Web Application Testing Services",
-  "description": "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility testing.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Application Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Comprehensive functional testing to ensure web applications work as intended."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Web Application Testing Services",
+      "alternateName": "Web Application Testing",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Load testing, stress testing, and performance optimization for web applications."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Security Testing",
-          "description": "Vulnerability assessment and security testing for web applications."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cross-Browser Testing",
-          "description": "Compatibility testing across different browsers and devices."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Responsive Testing",
-          "description": "Mobile responsiveness and device compatibility testing."
-        }
+      "url": "https://www.testriq.com/web-application-testing-services",
+      "description": "Professional web application testing services including functional, performance, and security testing to ensure cross-browser compatibility and bug-free web apps.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Functional Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Usability Testing"
+            }
+          }
+        ]
       }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Web Application Testing",
+          "item": "https://www.testriq.com/web-application-testing-services"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of web applications do you test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We test all types of web applications, including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare apps, and custom web solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does web application testing typically take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web application testing typically takes 1-4 weeks, depending on the application's complexity. Simple applications may require 5-7 days, while complex platforms like SaaS or e-commerce may take 2-4 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What testing tools and technologies do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use industry-leading tools like Selenium, Cypress, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for security testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide automated testing for web applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide automated testing using tools like Selenium, Cypress, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenarios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure cross-browser compatibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs."
+          }
+        }
+      ]
     }
-  }
+  ]
+
 };
 
 
@@ -1223,48 +1281,48 @@ export const performanceTestingServiceSchema = {
 
 // Service Schema for security Testing Service
 export const securityTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Security Testing Services",
+  "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq",
+    "url": "www.testriq.com/"
+  },
+  "serviceType": "Software Testing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
     "name": "Security Testing Services",
-    "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Testriq",
-      "url": "www.testriq.com/"
-    },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Security Testing Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Penetration Testing"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Vulnerability Assessment"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Security Code Review"
-          }
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Penetration Testing"
         }
-      ]
-    }
-  };
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vulnerability Assessment"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security Code Review"
+        }
+      }
+    ]
+  }
+};
 
 // Service Schema for qa Documentation Service 
-  export const qaDocumentationServiceSchema = {
+export const qaDocumentationServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "QA Documentation Services",
@@ -2456,7 +2514,7 @@ export const smartDeviceTestingSchema = {
 
 
 // Breadcrumb Schema
-export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
+export const createBreadcrumbSchema = (items: Array<{ name: string, url: string }>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": items.map((item, index) => ({
@@ -2468,7 +2526,7 @@ export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>
 });
 
 // FAQ Schema
-export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
+export const createFAQSchema = (faqs: Array<{ question: string, answer: string }>) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
