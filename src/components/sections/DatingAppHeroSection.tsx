@@ -49,7 +49,7 @@ const DatingAppHeroSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6 justify-center">
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
           <Link
             href="/"
             className="flex items-center gap-2 hover:text-brand-blue transition-colors"

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCalendarAlt, FaIndustry, FaArrowLeft } from "react-icons/fa";
+import { FaCalendarAlt, FaIndustry, FaHome, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import { CaseStudy } from "@/app/lib/caseStudies";
 import Image from "next/image";
@@ -12,17 +12,28 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
   caseStudy,
 }) => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-12 px-8 md:px-12 lg:px-24">
+    <section className="bg-gradient-to-br from-gray-50 to-blue-50 pt-8 pb-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb Navigation */}
-        <div className="mb-6">
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
           <Link
             href="/case-studies"
-            className="inline-flex gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 transition-colors items-center"
+            className="hover:text-[theme(color.brand.blue)] transition-colors"
           >
-            <FaArrowLeft className="w-4 h-4" />
-            <span>Back to Case Studies</span>
+            Case Studies
           </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)] truncate max-w-[200px] sm:max-w-md">
+            {caseStudy.title}
+          </span>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -89,8 +100,8 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
           {/* Image */}
           <div className="relative">
             <div className={`rounded-2xl p-8 h-96 flex items-center justify-center ${caseStudy.id === 16
-                ? 'bg-gradient-to-br from-gray-800 to-gray-900'
-                : 'bg-gradient-to-br from-gray-100 to-gray-200'
+              ? 'bg-gradient-to-br from-gray-800 to-gray-900'
+              : 'bg-gradient-to-br from-gray-100 to-gray-200'
               }`}>
               <div className="flex justify-center flex-col text-center">
                 <Image
