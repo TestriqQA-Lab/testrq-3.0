@@ -670,79 +670,131 @@ export const mobileAppTestingSchema = {
 // Service Schema for IOT Testing Service
 export const iotDeviceTestingSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "IoT Device Testing Services",
-  "description": "End-to-end IoT testing services for smart devices, sensors, and connected ecosystems. Validate connectivity, interoperability, performance, and security across all protocols and layers.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "IoT Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "IoT Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Connectivity Testing",
-          "description": "Wireless protocol testing including WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/iot-device-testing-services/#service",
+      "name": "IoT Device Testing Services",
+      "serviceType": "Embedded & Firmware QA",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
       },
-      {
+      "areaServed": "Worldwide",
+      "description": "End-to-end IoT testing services including Firmware (OTA) validation, MQTT/Zigbee protocol testing, and Security Pen-testing for smart devices.",
+      "offers": {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Sensor Validation",
-          "description": "Validation of temperature, motion, humidity, pressure, and light sensors for accurate data capture."
-        }
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Power Management Testing",
-          "description": "Battery usage analysis, power efficiency optimization, and runtime validation."
-        }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IoT Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MQTT & Zigbee Protocol Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Firmware OTA Update Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "IoT Security Penetration Testing"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "IoT Security Testing",
-          "description": "Firmware security, encryption validation, and authentication testing for connected devices."
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Interoperability Testing",
-          "description": "Cross-device and third-party system compatibility testing across ecosystems."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cloud Integration Testing",
-          "description": "Testing cloud platform connectivity, data sync, and remote control across platforms like AWS IoT and Azure IoT Hub."
-        }
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Hamilton Housewares Pvt Ltd"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Testriq's rigorous testing ensured our MILTON Smart Stainless Steel Water Bottle met the highest quality standards, enhancing user experience and reliability."
       }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you test IoT device security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We perform comprehensive penetration testing on device firmware, mobile apps, and cloud APIs. This includes checking for unencrypted storage, weak authentication, and vulnerabilities in protocols like BLE and MQTT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What IoT protocols do you support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in testing major IoT protocols including MQTT, CoAP, Zigbee, Z-Wave, Bluetooth Low Energy (BLE), and LoRaWAN across various network conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you test OTA (Over-the-Air) firmware updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OTA testing is a core part of our service. We simulate interrupted updates, network failures, and version rollbacks to ensure your devices never 'brick' during a customer update."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "IoT Device Testing",
+          "item": "https://www.testriq.com/iot-device-testing-services"
+        }
+      ]
     }
-  }
+  ]
 };
 
 
@@ -906,157 +958,252 @@ export const etlTestingSchema = {
 // Service Schema for manual Testing Service
 export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Manual Testing Services",
-  "description": "Expert-led manual testing services including functional, usability, exploratory, compatibility, and accessibility testing to ensure exceptional software quality.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Manual Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validates application functionality against business requirements with 98% success rate."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/manual-testing/#service",
+      "name": "Manual & Exploratory Testing Services",
+      "serviceType": "Software Quality Assurance",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Usability Testing",
-          "description": "Evaluates user experience to identify intuitive design issues and improve user satisfaction."
-        }
+      "areaServed": "Worldwide",
+      "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Manual Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Exploratory Testing (Ad-hoc)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "User Acceptance Testing (UAT) Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WCAG 2.1 Accessibility Audits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Localization (L10n) Testing"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Exploratory Testing",
-          "description": "Unstructured, creative testing to identify edge cases and unexpected user behaviors."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "User Acceptance Testing (UAT)",
-          "description": "Validates that the software meets user expectations and is ready for production release."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Compatibility Testing",
-          "description": "Ensures proper functioning across different browsers, operating systems, and devices."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Accessibility Testing",
-          "description": "Evaluates compliance with accessibility standards like WCAG to ensure inclusive user experience."
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "800",
+        "bestRating": "5",
+        "worstRating": "1"
       }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should I choose manual testing over automated testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manual testing is essential for User Experience (UX), Exploratory testing, and finding visual or cultural issues that automation scripts miss. It is also the standard for User Acceptance Testing (UAT)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you perform Accessibility (WCAG) testing manually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While we use tools for basic checks, our expert testers manually validate screen reader navigation, keyboard traps, and color contrast to ensure full WCAG 2.1 compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Manual and Exploratory testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manual testing often follows a script. Exploratory testing is unscripted and relies on the tester's creativity to find 'edge cases'—unexpected scenarios that break the software."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Manual Testing",
+          "item": "https://www.testriq.com/manual-testing"
+        }
+      ]
     }
-  }
+  ]
 };
 
 // Service Schema for automation Testing Service
 export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Automation Testing Services",
-  "description": "Advanced automation testing services with intelligent frameworks, CI/CD integration, and expert support. Reduce testing time by 80% and improve software quality across web, mobile, and APIs.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Automation Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Web Automation",
-          "description": "Automated testing for web applications using Selenium, Playwright, and Cypress across browsers and platforms."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/automation-testing-services/#service",
+      "name": "Intelligent Automation Testing Services",
+      "serviceType": "Test Automation & QA Architecture",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
-      {
+      "areaServed": "Worldwide",
+      "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "offers": {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "API Automation",
-          "description": "Comprehensive automation of RESTful and SOAP APIs ensuring robust backend validation."
-        }
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile Automation",
-          "description": "Cross-device automation testing for Android and iOS apps ensuring smooth mobile experiences."
-        }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Automation Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Automation (Selenium & Playwright)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "API Automation Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Automation (Android & iOS)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CI/CD Pipeline Integration"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "CI/CD Integration",
-          "description": "Seamless integration of test automation in CI/CD pipelines using tools like Jenkins, GitHub Actions, and Azure DevOps."
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "300",
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cloud Automation",
-          "description": "Automation testing on cloud-based platforms for scalable, parallel, and remote test execution."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Performance Automation",
-          "description": "Load and stress testing using automation to ensure high-performing and scalable applications."
-        }
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Head of Quality Engineering",
+          "affiliation": {
+            "@type": "Organization",
+            "name": "Fortune 500 Technology Company"
+          }
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Testriq's Automation testing expertise delivered exceptional results, significantly improving our application quality and user satisfaction. We achieved 85% quality enhancement."
       }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Automation testing and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automation testing ensures your applications meet top quality standards by running tests automatically. It helps detect issues early, cut costs by up to 50%, and reduces testing time by 80%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools do you use for Automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use industry-leading tools including Selenium WebDriver, Playwright, Cypress, TestCafe, and Appium, integrated with CI/CD tools like Jenkins and Azure DevOps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I implement Automation testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automation is best implemented for regression testing, repetitive tasks, large-scale data-driven testing, and stable features where manual testing becomes a bottleneck."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Automation Testing",
+          "item": "https://www.testriq.com/automation-testing-services"
+        }
+      ]
     }
-  }
+  ]
 };
 
 
@@ -1279,46 +1426,245 @@ export const performanceTestingServiceSchema = {
   }
 };
 
+// Structured data for SEO
+export const toolsPageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA LAB LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com//testriq-logo.png"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "sales",
+        "areaServed": "Global",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar",
+        "addressLocality": "Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/testriq-qa-lab",
+        "https://www.facebook.com/testriq.lab"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/technology-stack/#webpage",
+      "url": "https://www.testriq.com/technology-stack",
+      "name": "Software Testing Tools & Frameworks Technology Stack",
+      "isPartOf": {
+        "@id": "https://www.testriq.com/#website"
+      },
+      "description": "Comprehensive suite of 50+ industry-leading testing tools and frameworks including Selenium, Cypress, Playwright, and JMeter for Enterprise QA automation.",
+      "breadcrumb": {
+        "@id": "https://www.testriq.com/technology-stack/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/technology-stack/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools & Technology Stack",
+          "item": "https://www.testriq.com/technology-stack"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "QA Automation & Testing Technology Services",
+      "provider": {
+        "@id": "https://www.testriq.com/#organization"
+      },
+      "serviceType": "Software Testing Services",
+      "areaServed": "Global",
+      "description": "Implementation of advanced QA automation frameworks using Selenium, Cypress, Appium, and JMeter for web, mobile, and API testing.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Testing Tools & Framework Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Testing",
+              "description": "Automation using Selenium WebDriver, Cypress, Playwright, and TestCafe."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Testing Frameworks",
+              "description": "Mobile automation using Appium, Espresso, XCUITest, and Detox."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Testing",
+              "description": "Load and stress testing using JMeter, LoadRunner, K6, and Gatling."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Testing",
+              "description": "Vulnerability assessment using OWASP ZAP, Burp Suite, and Veracode."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Healthcare Compliance Testing",
+              "description": "HIPAA and FDA compliance testing using specialized healthcare validation tools."
+            }
+          }
+        ]
+      }
+    }
+  ]
+};
+
 // Service Schema for security Testing Service
 export const securityTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Security Testing Services",
-  "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq",
-    "url": "www.testriq.com/"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Security Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Penetration Testing"
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/security-testing/#service",
+      "name": "VAPT & Security Testing Center of Excellence (TCoE)",
+      "serviceType": "Cybersecurity & Penetration Testing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Vulnerability Assessment"
-        }
+      "areaServed": "Worldwide",
+      "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vulnerability Assessment & Penetration Testing (VAPT)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Application Security (OWASP MASVS)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ISO 27001 & GDPR Compliance Audit"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SecureGuard™ Managed Security Service"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Security Code Review"
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Testriq SecureGuard™ Framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SecureGuard™ is our proprietary hybrid testing methodology that combines AI-driven automated scanning (SAST/DAST) with manual ethical hacking to uncover zero-day vulnerabilities with zero false positives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide a 'Safe-to-Host' Certificate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Upon successful remediation and re-testing of identified vulnerabilities, we issue a formal 'Safe-to-Host' certificate required for third-party audits, payment gateway integration, and regulatory compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does your Security TCoE (Center of Excellence) work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Security TCoE is a dedicated R&D unit staffed by CISSP and CEH certified researchers who monitor global CVE databases 24/7 to update our threat models against emerging cyber attacks."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Security Testing",
+          "item": "https://www.testriq.com/security-testing"
+        }
+      ]
+    }
+  ]
 };
 
 // Service Schema for qa Documentation Service 

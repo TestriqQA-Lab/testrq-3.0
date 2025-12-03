@@ -52,11 +52,11 @@ const AutomationTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Accelerate Testing with
               <span className="text-transparent bg-clip-text bg-brand-blue">
+                End-to-End
                 {" "}
-                Intelligent Automation
               </span>
+              Test Automation Services & Framework Architecture
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">

@@ -115,7 +115,7 @@ export interface CaseStudy {
 export const caseStudiesData: CaseStudy[] = [
   {
     id: 1,
-    slug: "canva-case-study",
+    slug: "canva-design-platform",
     title: "Testing Canva’s Design Platform",
     client: "Canva",
     industry: "Graphic design",
@@ -149,12 +149,12 @@ export const caseStudiesData: CaseStudy[] = [
       },
       metadataBase: new URL("https://www.testriq.com/"),
       alternates: {
-        canonical: "https://www.testriq.com/canva-case-study",
+        canonical: "https://www.testriq.com/canva-design-platform",
       },
       openGraph: {
         type: "article",
         locale: "en_US",
-        url: "https://www.testriq.com/canva-case-study",
+        url: "https://www.testriq.com/canva-design-platform",
         siteName: "Testriq - QA Case Studies",
         title:
           "Canva QA Case Study - Seamless Testing Across Platforms | Testriq",
@@ -354,7 +354,7 @@ export const caseStudiesData: CaseStudy[] = [
   },
   {
     id: 2,
-    slug: "ragnar-case-study",
+    slug: "ragnar-sports-platform",
     title: "Ragnar Sports Platform – QA by Testriq",
     client: "Ragnar",
     industry: "Sports and Fitness",
@@ -388,12 +388,12 @@ export const caseStudiesData: CaseStudy[] = [
       },
       metadataBase: new URL("https://www.testriq.com/"),
       alternates: {
-        canonical: "https://www.testriq.com/ragnar-case-study",
+        canonical: "https://www.testriq.com/ragnar-sports-platform",
       },
       openGraph: {
         type: "article",
         locale: "en_US",
-        url: "https://www.testriq.com/case-study/ragnar-case-study",
+        url: "https://www.testriq.com/case-study/ragnar-sports-platform",
         siteName: "Testriq - QA Case Studies",
         title:
           "Ragnar QA Case Study - Quality Testing for Sports Platforms | Testriq",
@@ -591,7 +591,7 @@ export const caseStudiesData: CaseStudy[] = [
   },
   {
     id: 3,
-    slug: "kanishka-software-case-study",
+    slug: "kanishka-mobile-app",
     title: "Testriq for Kanishka Mobile App Testing",
     client: "Kanishka Software",
     industry: "Software Solutions",
@@ -625,12 +625,12 @@ export const caseStudiesData: CaseStudy[] = [
       },
       metadataBase: new URL("https://www.testriq.com/"),
       alternates: {
-        canonical: "https://www.testriq.com/kanishka-software-case-study",
+        canonical: "https://www.testriq.com/kanishka-mobile-app",
       },
       openGraph: {
         type: "article",
         locale: "en_US",
-        url: "https://www.testriq.com/case-study/kanishka-software-case-study",
+        url: "https://www.testriq.com/case-study/kanishka-mobile-app",
         siteName: "Testriq - QA Case Studies",
         title:
           "Kanishka Software QA Case Study - Mobile App Testing by Testriq",
@@ -1214,13 +1214,13 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Software Quality Assurance", link: "#" },
-  { name: "Software Testing", link: "/software-testing-guide" },
-  { name: "Software Test Documentation", link: "/software-testing-guide" },
-  { name: "Postman", link: "#" },
-  { name: "MSSQL Server", link: "#" },
-  { name: "Cloud Migration", link: "/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core" },
-],
+      { name: "Software Quality Assurance", link: "#" },
+      { name: "Software Testing", link: "/software-testing-guide" },
+      { name: "Software Test Documentation", link: "/software-testing-guide" },
+      { name: "Postman", link: "#" },
+      { name: "MSSQL Server", link: "#" },
+      { name: "Cloud Migration", link: "/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core" },
+    ],
 
     testimonial: {
       quote:
@@ -1427,15 +1427,15 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Software Quality Assurance", link: "#" },
-  { name: "Software Testing", link: "#" },
-  { name: "Software Test Documentation", link: "/software-testing-guide" },
-  { name: "TestRail", link: "#" },
-  { name: "Postman", link: "#" },
-  { name: "Circle CI", link: "#" },
-  { name: "PostgreSQL", link: "#" },
-]
-,
+      { name: "Software Quality Assurance", link: "#" },
+      { name: "Software Testing", link: "#" },
+      { name: "Software Test Documentation", link: "/software-testing-guide" },
+      { name: "TestRail", link: "#" },
+      { name: "Postman", link: "#" },
+      { name: "Circle CI", link: "#" },
+      { name: "PostgreSQL", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "We have been working with Testriq for a while now and they have been a great partner in our QA efforts. Their team is knowledgeable, responsive, and always delivers high-quality work. They have helped us improve our platform's reliability and performance significantly.",
@@ -1631,11 +1631,11 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Bluetooth Sniffer/Analyzer", link: "#" },
-  { name: "Android Profiler", link: "/blog/post/performance-testing-for-mobile-apps-challenges-tools" },
-  { name: "Firebase performance monitoring", link: "#" },
-  { name: "Apache JMeter", link: "/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc" },
-],
+      { name: "Bluetooth Sniffer/Analyzer", link: "#" },
+      { name: "Android Profiler", link: "/blog/post/performance-testing-for-mobile-apps-challenges-tools" },
+      { name: "Firebase performance monitoring", link: "#" },
+      { name: "Apache JMeter", link: "/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc" },
+    ],
 
     testimonial: {
       quote:
@@ -1850,14 +1850,14 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Selenium", link: "/blog/post/getting-started-with-selenium-a-beginners-guide" },
-  { name: "Appium", link: "/blog/post/what-is-the-future-of-mobile-application-testing-appium" },
-  { name: "XCUITest", link: "#" },
-  { name: "Automated Functional Testing", link: "#" },
-  { name: "Cross-Platform Compatibility Testing", link: "/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices" },
-  { name: "Regression Test Automation", link: "/regression-testing" },
-]
-,
+      { name: "Selenium", link: "/blog/post/getting-started-with-selenium-a-beginners-guide" },
+      { name: "Appium", link: "/blog/post/what-is-the-future-of-mobile-application-testing-appium" },
+      { name: "XCUITest", link: "#" },
+      { name: "Automated Functional Testing", link: "#" },
+      { name: "Cross-Platform Compatibility Testing", link: "/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices" },
+      { name: "Regression Test Automation", link: "/regression-testing" },
+    ]
+    ,
     testimonial: {
       quote:
         "The partnership between Luep and TESTRIQ showcases the pivotal role that automated functional testing plays in ensuring high-quality software products. This case study highlights the importance of comprehensive testing in achieving business success in the digital era and solidifies Luep’s position as an industry leader.",
@@ -2055,13 +2055,13 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "OWASP ZAP", link: "/blog/post/top-10-security-vulnerabilities-based-on-owasp" },
-  { name: "Burp Suite", link: "/blog/post/using-burp-suite-for-security-testing-beginner-to-pro" },
-  { name: "Nmap", link: "#" },
-  { name: "Wireshark", link: "#" },
-  { name: "Metasploit", link: "#" },
-  { name: "Nikto", link: "#" },
-],
+      { name: "OWASP ZAP", link: "/blog/post/top-10-security-vulnerabilities-based-on-owasp" },
+      { name: "Burp Suite", link: "/blog/post/using-burp-suite-for-security-testing-beginner-to-pro" },
+      { name: "Nmap", link: "#" },
+      { name: "Wireshark", link: "#" },
+      { name: "Metasploit", link: "#" },
+      { name: "Nikto", link: "#" },
+    ],
 
     testimonial: {
       quote:
@@ -2256,16 +2256,16 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Selenium", link: "/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress" },
-  { name: "Java", link: "#" },
-  { name: "Manual Testing", link: "#" },
-  { name: "Automation Testing", link: "#" },
-  { name: "Usability Testing", link: "#" },
-  { name: "Functional Testing", link: "#" },
-  { name: "Compatibility Testing", link: "#" },
-  { name: "Regression Testing", link: "#" },
-]
-,
+      { name: "Selenium", link: "/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress" },
+      { name: "Java", link: "#" },
+      { name: "Manual Testing", link: "#" },
+      { name: "Automation Testing", link: "#" },
+      { name: "Usability Testing", link: "#" },
+      { name: "Functional Testing", link: "#" },
+      { name: "Compatibility Testing", link: "#" },
+      { name: "Regression Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "Our comprehensive testing services, encompassing manual and automation testing, significantly improved the quality, reliability, and user experience of Digiboxx's platform. The combination of thorough manual testing and automated testing with Selenium resulted in a more efficient development process and ensured that the platform continued to meet the highest standards of quality and performance. This case study highlights the value of a holistic testing approach in the software development life cycle.",
@@ -2451,12 +2451,12 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Redline13", link: "#" },
-  { name: "AWS", link: "/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core" },
-  { name: "Performance Testing", link: "#" },
-  { name: "Load Testing", link: "/blog/post/load-testing-in-performance-testing-complete-guide" },
-]
-,
+      { name: "Redline13", link: "#" },
+      { name: "AWS", link: "/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core" },
+      { name: "Performance Testing", link: "#" },
+      { name: "Load Testing", link: "/blog/post/load-testing-in-performance-testing-complete-guide" },
+    ]
+    ,
     testimonial: {
       quote:
         "TESTRIQ's partnership with RC Pets exemplifies the importance of comprehensive performance testing in e-commerce platforms. By conducting meticulous load testing, we ensured that RC Pets could meet the requirements of both existing and expected user loads, contributing to a seamless and reliable shopping experience for retailers. This case study underscores the significance of proactive performance testing in preparing digital platforms for growth and expansion.",
@@ -2663,13 +2663,13 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Apache JMeter", link: "/blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide" },
-  { name: "Manual Testing", link: "#" },
-  { name: "Functional Testing", link: "#" },
-  { name: "Performance Testing", link: "#" },
-  { name: "Compatibility Testing", link: "#" },
-]
-,
+      { name: "Apache JMeter", link: "/blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide" },
+      { name: "Manual Testing", link: "#" },
+      { name: "Functional Testing", link: "#" },
+      { name: "Performance Testing", link: "#" },
+      { name: "Compatibility Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "Our comprehensive testing services significantly contributed to enhancing the quality, performance, and compatibility of WorkSocial's software platform. By addressing functional, performance, and compatibility aspects, we ensured that the platform met the highest standards, providing a reliable and user-friendly environment for organizations seeking to enhance communication and collaboration. This case study underscores the importance of thorough testing in delivering a robust software solution to the market and promptly resolving performance limitations to meet client expectations.",
@@ -2876,17 +2876,17 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Apache JMeter", link: "/blog/post/how-is-jmeter-used-for-performance-testing" },
-  { name: "OWASP ZAP", link: "/blog/post/top-10-security-vulnerabilities-based-on-owasp" },
-  { name: "Jenkins", link: "#" },
-  { name: "Functional Testing", link: "#" },
-  { name: "Performance Testing", link: "#" },
-  { name: "Security Testing", link: "#" },
-  { name: "Compatibility Testing", link: "#" },
-  { name: "Usability Testing", link: "#" },
-  { name: "Regression Testing", link: "#" },
-]
-,
+      { name: "Apache JMeter", link: "/blog/post/how-is-jmeter-used-for-performance-testing" },
+      { name: "OWASP ZAP", link: "/blog/post/top-10-security-vulnerabilities-based-on-owasp" },
+      { name: "Jenkins", link: "#" },
+      { name: "Functional Testing", link: "#" },
+      { name: "Performance Testing", link: "#" },
+      { name: "Security Testing", link: "#" },
+      { name: "Compatibility Testing", link: "#" },
+      { name: "Usability Testing", link: "#" },
+      { name: "Regression Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "By partnering with TESTRIQ, LeadoConnect was able to refine their B2B lead generation automation software, providing a more reliable and valuable solution to their clients. This, in turn, helped LeadoConnect solidify its position as a leader in the B2B lead generation industry.",
@@ -3085,14 +3085,14 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Functional Specification Document (FSD)", link: "/blog/post/how-to-write-qa-documentation-a-complete-guide" },
-  { name: "Help Document", link: "#" },
-  { name: "Test Plan", link: "#" },
-  { name: "Requirements Traceability Matrix (RTM)", link: "/blog/post/requirement-analysis-in-desktop-testing-foundation-for-reliable-qa" },
-  { name: "Test Cases", link: "#" },
-  { name: "QA Testing", link: "#" },
-]
-,
+      { name: "Functional Specification Document (FSD)", link: "/blog/post/how-to-write-qa-documentation-a-complete-guide" },
+      { name: "Help Document", link: "#" },
+      { name: "Test Plan", link: "#" },
+      { name: "Requirements Traceability Matrix (RTM)", link: "/blog/post/requirement-analysis-in-desktop-testing-foundation-for-reliable-qa" },
+      { name: "Test Cases", link: "#" },
+      { name: "QA Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "The collaboration between Pro-ficiency and TESTRIQ not only met the client's immediate QA needs but also established a foundation for future projects. The seamless integration of documentation and testing activities significantly contributed to the successful development and launch of Pro-ficiency's upgraded application, enhancing the overall efficiency and reliability of their software offerings.",
@@ -3286,11 +3286,11 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "ReadyAPI", link: "#" },
-  { name: "API Testing", link: "#" },
-  { name: "Test Automation", link: "/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations" },
-]
-,
+      { name: "ReadyAPI", link: "#" },
+      { name: "API Testing", link: "#" },
+      { name: "Test Automation", link: "/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations" },
+    ]
+    ,
     testimonial: {
       quote:
         "Our API testing project for Phyllo underscores the critical role of thorough testing in delivering a robust and efficient API infra. By understanding the client's vision, selecting suitable tools, designing and executing comprehensive API tests, and automation, we successfully addressed their challenges and contributed to their goal of creating a powerful platform for API infra. This case study highlights our dedication to delivering quality testing services in complex and demanding environments, ensuring the infra efficiency and effectiveness in meeting the needs of our clients.",
@@ -3489,13 +3489,13 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Security Testing", link: "#" },
-  { name: "Performance Testing", link: "#" },
-  { name: "Encryption Validation", link: "/blog/post/iot-security-validation-protecting-devices-from-cyber-threats" },
-  { name: "APK Security Analysis", link: "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them-2" },
-  { name: "Compliance Testing", link: "#" },
-]
-,
+      { name: "Security Testing", link: "#" },
+      { name: "Performance Testing", link: "#" },
+      { name: "Encryption Validation", link: "/blog/post/iot-security-validation-protecting-devices-from-cyber-threats" },
+      { name: "APK Security Analysis", link: "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them-2" },
+      { name: "Compliance Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "Testriq's rigorous testing and partnership with Audix Technologies ensured our drone communication system was secure and ready for market.",
@@ -3709,17 +3709,17 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-  { name: "Functional Testing", link: "#" },
-  { name: "Performance Testing", link: "#" },
-  { name: "Security Testing", link: "#" },
-  { name: "Mobile App Testing", link: "#" },
-  { name: "API Testing", link: "#" },
-  { name: "Cloud Integration Testing", link: "/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation" },
-  { name: "Compatibility Testing", link: "#" },
-  { name: "Regression Testing", link: "#" },
-  { name: "Usability Testing", link: "#" },
-]
-,
+      { name: "Functional Testing", link: "#" },
+      { name: "Performance Testing", link: "#" },
+      { name: "Security Testing", link: "#" },
+      { name: "Mobile App Testing", link: "#" },
+      { name: "API Testing", link: "#" },
+      { name: "Cloud Integration Testing", link: "/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation" },
+      { name: "Compatibility Testing", link: "#" },
+      { name: "Regression Testing", link: "#" },
+      { name: "Usability Testing", link: "#" },
+    ]
+    ,
     testimonial: {
       quote:
         "Testriq’s thorough QA process ensured our smart doorbell app was reliable, secure, and ready for market launch.",

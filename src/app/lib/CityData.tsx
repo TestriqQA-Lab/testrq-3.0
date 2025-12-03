@@ -28546,6 +28546,8 @@ export const cityData: Record<string, CityData> = {
     },
     industries: ["Tourism", "Agriculture", "Education", "Tech"],
   },
+
+
 };
 
 export function getCityData(slug: string): CityData | undefined {

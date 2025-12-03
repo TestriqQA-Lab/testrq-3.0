@@ -1,15 +1,15 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData from "@/components/seo/StructuredData";
+import StructuredData, { toolsPageSchema } from "@/components/seo/StructuredData";
 import { Metadata } from "next";
 
 // SEO metadata for the Tools page
 export const metadata: Metadata = {
-  title: "Top Tools use in Software Testing Companies",
-  description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing. Expert QA automation solutions with Selenium, Cypress, Playwright, and more.",
+  title: "QA Automation Tools & Supported Frameworks | Testriq Services",
+  description: "Explore our comprehensive arsenal of 50+ QA tools. We leverage industry leaders like Selenium, Cypress, Playwright, and JMeter to build robust, scalable automation frameworks for your business.",
   keywords: [
     "testing tools",
-    "test automation frameworks", 
+    "test automation frameworks",
     "QA tools",
     "selenium testing",
     "cypress framework",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Testing Tools & Frameworks | Professional QA Automation Solutions", 
+    title: "Testing Tools & Frameworks | Professional QA Automation Solutions",
     description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing.",
-     images: ['/OG/Advance-Testing-tools-Twitter.webp'],
+    images: ['/OG/Advance-Testing-tools-Twitter.webp'],
   },
-   metadataBase: new URL('https://www.testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: "https://www.testriq.com/tools",
   },
@@ -144,39 +144,7 @@ const ToolsReadyToElevateSection = dynamic(
   }
 );
 
-// Structured data for SEO
-const toolsPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "Testing Tools & Frameworks",
-  "description": "Comprehensive suite of testing tools and frameworks for professional QA automation solutions",
-  "url": "/tools",
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Testing Tools and Frameworks",
-    "description": "Professional testing tools and frameworks used by Testriq for quality assurance",
-    "itemListElement": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "Selenium WebDriver",
-        "description": "Open-source web application testing framework",
-        "applicationCategory": "Testing Tool"
-      },
-      {
-        "@type": "SoftwareApplication", 
-        "name": "Cypress",
-        "description": "Modern end-to-end testing framework for web applications",
-        "applicationCategory": "Testing Framework"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "Playwright",
-        "description": "Cross-browser automation framework for modern web applications",
-        "applicationCategory": "Automation Framework"
-      }
-    ]
-  }
-};
+
 
 export default function ToolsPage() {
   return (

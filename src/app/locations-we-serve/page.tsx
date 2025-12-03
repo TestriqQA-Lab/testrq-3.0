@@ -527,11 +527,9 @@ const LocationsWeServe: React.FC = () => {
                                         </p>
                                         <div className="max-h-32 overflow-y-auto space-y-1">
                                           {urls.map((url, index) => (
-                                            <a
+                                            <Link
                                               key={index}
                                               href={url}
-                                              target="_blank"
-                                              rel="noopener noreferrer"
                                               className="flex items-center justify-between text-sm text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group p-2 rounded hover:bg-blue-50 transition-all duration-200"
                                             >
                                               <span className="truncate">
@@ -539,22 +537,20 @@ const LocationsWeServe: React.FC = () => {
                                                 {getLocationName(url)}
                                               </span>
                                               <FaExternalLinkAlt className="w-3 h-3 flex-shrink-0 ml-2 group-hover:opacity-100 transition-opacity" />
-                                            </a>
+                                            </Link>
                                           ))}
                                         </div>
                                       </div>
                                     ) : (
-                                      <a
-                                        href={urls}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                      <Link
+                                        href={urls as string}
                                         className="flex items-center justify-between text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group"
                                       >
                                         <span>
                                           Professional Software Testing Services in {city}
                                         </span>
                                         <FaExternalLinkAlt className="w-4 h-4 group-hover:opacity-100 transition-opacity" />
-                                      </a>
+                                      </Link>
                                     )}
                                   </div>
                                 ))}

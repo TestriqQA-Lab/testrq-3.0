@@ -11,295 +11,295 @@ export const locationData: LocationData = {
   India: {
     Assam: {
       Guwahati:
-        "https://www.testriq.com/software-qa-testing-services-in-guwahati",
+        "/software-qa-testing-services-in-guwahati",
     },
     Bihar: {
-      Patna: "https://www.testriq.com/software-qa-testing-services-in-patna",
+      Patna: "/software-qa-testing-services-in-patna",
     },
     "Chandigarh (Union Territory)": {
       Chandigarh:
-        "https://www.testriq.com/software-qa-testing-services-in-chandigarh",
+        "/software-qa-testing-services-in-chandigarh",
     },
     Chhattisgarh: {
       Raipur:
-        "https://www.testriq.com/software-qa-testing-services-in-raipur",
+        "/software-qa-testing-services-in-raipur",
     },
     "Delhi (Union Territory)": {
-      Delhi: "https://www.testriq.com/software-qa-testing-services-in-delhi",
+      Delhi: "/software-qa-testing-services-in-delhi",
     },
     Goa: {
-      Goa: "https://www.testriq.com/software-qa-testing-services-in-goa",
+      Goa: "/software-qa-testing-services-in-goa",
     },
     Gujarat: {
       Ahmedabad:
-        "https://www.testriq.com/software-qa-testing-services-in-ahmedabad",
+        "/software-qa-testing-services-in-ahmedabad",
       Gandhinagar:
-        "https://www.testriq.com/software-qa-testing-services-in-gandhinagar",
+        "/software-qa-testing-services-in-gandhinagar",
       Rajkot:
-        "https://www.testriq.com/software-qa-testing-services-in-rajkot",
-      Surat: "https://www.testriq.com/software-qa-testing-services-in-surat",
+        "/software-qa-testing-services-in-rajkot",
+      Surat: "/software-qa-testing-services-in-surat",
       Vadodara:
-        "https://www.testriq.com/software-qa-testing-services-in-vadodara",
+        "/software-qa-testing-services-in-vadodara",
     },
     Haryana: {
       Faridabad:
-        "https://www.testriq.com/software-qa-testing-services-in-faridabad",
+        "/software-qa-testing-services-in-faridabad",
       Gurgaon:
-        "https://www.testriq.com/software-qa-testing-services-in-gurgaon",
+        "/software-qa-testing-services-in-gurgaon",
     },
     "Himachal Pradesh": {
       Shimla:
-        "https://www.testriq.com/software-qa-testing-services-in-shimla",
+        "/software-qa-testing-services-in-shimla",
     },
     "Jammu & Kashmir": {
-      Jammu: "https://www.testriq.com/software-qa-testing-services-in-jammu",
+      Jammu: "/software-qa-testing-services-in-jammu",
     },
     Jharkhand: {
       Jamshedpur:
-        "https://www.testriq.com/software-qa-testing-services-in-jamshedpur",
+        "/software-qa-testing-services-in-jamshedpur",
       Ranchi:
-        "https://www.testriq.com/software-qa-testing-services-in-ranchi",
+        "/software-qa-testing-services-in-ranchi",
     },
     Karnataka: {
       Bengaluru:
-        "https://www.testriq.com/software-qa-testing-services-in-bengaluru",
+        "/software-qa-testing-services-in-bengaluru",
       Mangalore:
-        "https://www.testriq.com/software-qa-testing-services-in-mangalore",
+        "/software-qa-testing-services-in-mangalore",
     },
     Kerala: {
       Ernakulam:
-        "https://www.testriq.com/software-qa-testing-services-in-ernakulam",
-      Kochi: "https://www.testriq.com/software-qa-testing-services-in-kochi",
+        "/software-qa-testing-services-in-ernakulam",
+      Kochi: "/software-qa-testing-services-in-kochi",
       Trivandrum:
-        "https://www.testriq.com/software-qa-testing-services-in-trivandrum",
+        "/software-qa-testing-services-in-trivandrum",
     },
     "Madhya Pradesh": {
       Bhopal:
-        "https://www.testriq.com/software-qa-testing-services-in-bhopal",
+        "/software-qa-testing-services-in-bhopal",
       Gwalior:
-        "https://www.testriq.com/software-qa-testing-services-in-gwalior",
+        "/software-qa-testing-services-in-gwalior",
       Indore:
-        "https://www.testriq.com/software-qa-testing-services-in-indore",
+        "/software-qa-testing-services-in-indore",
     },
     Maharashtra: {
       Mumbai: [
-        "https://www.testriq.com/software-qa-testing-services-in-mumbai",
-        "https://www.testriq.com/software-qa-testing-services-in-andheri",
-        "https://www.testriq.com/software-qa-testing-services-in-bandra",
-        "https://www.testriq.com/software-qa-testing-services-in-bhandup",
-        "https://www.testriq.com/software-qa-testing-services-in-borivali",
-        "https://www.testriq.com/software-qa-testing-services-in-byculla",
-        "https://www.testriq.com/software-qa-testing-services-in-charni-road",
-        "https://www.testriq.com/software-qa-testing-services-in-chinchpokli",
-        "https://www.testriq.com/software-qa-testing-services-in-churchgate",
-        "https://www.testriq.com/software-qa-testing-services-in-cotton-green",
-        "https://www.testriq.com/software-qa-testing-services-in-cst",
-        "https://www.testriq.com/software-qa-testing-services-in-currey-road",
-        "https://www.testriq.com/software-qa-testing-services-in-dadar",
-        "https://www.testriq.com/software-qa-testing-services-in-dahisar",
-        "https://www.testriq.com/software-qa-testing-services-in-dockyard-road",
-        "https://www.testriq.com/software-qa-testing-services-in-ghatkopar",
-        "https://www.testriq.com/software-qa-testing-services-in-goregaon",
-        "https://www.testriq.com/software-qa-testing-services-in-grant-road",
-        "https://www.testriq.com/software-qa-testing-services-in-jogeshwari",
-        "https://www.testriq.com/software-qa-testing-services-in-kandivali",
-        "https://www.testriq.com/software-qa-testing-services-in-kanjurmarg",
-        "https://www.testriq.com/software-qa-testing-services-in-khar-road",
-        "https://www.testriq.com/software-qa-testing-services-in-kings-circle",
-        "https://www.testriq.com/software-qa-testing-services-in-kurla",
-        "https://www.testriq.com/software-qa-testing-services-in-lower-parel",
-        "https://www.testriq.com/software-qa-testing-services-in-mahalaxmi",
-        "https://www.testriq.com/software-qa-testing-services-in-mahim",
-        "https://www.testriq.com/software-qa-testing-services-in-malad",
-        "https://www.testriq.com/software-qa-testing-services-in-marine-lines",
-        "https://www.testriq.com/software-qa-testing-services-in-masjid-bandar",
-        "https://www.testriq.com/software-qa-testing-services-in-matunga-road",
-        "https://www.testriq.com/software-qa-testing-services-in-mumbai-central",
-        "https://www.testriq.com/software-qa-testing-services-in-mulund",
-        "https://www.testriq.com/software-qa-testing-services-in-nahur",
-        "https://www.testriq.com/software-qa-testing-services-in-prabhadevi",
-        "https://www.testriq.com/software-qa-testing-services-in-ram-mandir",
-        "https://www.testriq.com/software-qa-testing-services-in-reay-road",
-        "https://www.testriq.com/software-qa-testing-services-in-sandhurst-road",
-        "https://www.testriq.com/software-qa-testing-services-in-santacruz",
-        "https://www.testriq.com/software-qa-testing-services-in-sewri",
-        "https://www.testriq.com/software-qa-testing-services-in-sion",
-        "https://www.testriq.com/software-qa-testing-services-in-vidyavihar",
-        "https://www.testriq.com/software-qa-testing-services-in-vikhroli",
-        "https://www.testriq.com/software-qa-testing-services-in-vile-parle",
-        "https://www.testriq.com/software-qa-testing-services-in-wadala-road",
+        "/software-qa-testing-services-in-mumbai",
+        "/software-qa-testing-services-in-andheri",
+        "/software-qa-testing-services-in-bandra",
+        "/software-qa-testing-services-in-bhandup",
+        "/software-qa-testing-services-in-borivali",
+        "/software-qa-testing-services-in-byculla",
+        "/software-qa-testing-services-in-charni-road",
+        "/software-qa-testing-services-in-chinchpokli",
+        "/software-qa-testing-services-in-churchgate",
+        "/software-qa-testing-services-in-cotton-green",
+        "/software-qa-testing-services-in-cst",
+        "/software-qa-testing-services-in-currey-road",
+        "/software-qa-testing-services-in-dadar",
+        "/software-qa-testing-services-in-dahisar",
+        "/software-qa-testing-services-in-dockyard-road",
+        "/software-qa-testing-services-in-ghatkopar",
+        "/software-qa-testing-services-in-goregaon",
+        "/software-qa-testing-services-in-grant-road",
+        "/software-qa-testing-services-in-jogeshwari",
+        "/software-qa-testing-services-in-kandivali",
+        "/software-qa-testing-services-in-kanjurmarg",
+        "/software-qa-testing-services-in-khar-road",
+        "/software-qa-testing-services-in-kings-circle",
+        "/software-qa-testing-services-in-kurla",
+        "/software-qa-testing-services-in-lower-parel",
+        "/software-qa-testing-services-in-mahalaxmi",
+        "/software-qa-testing-services-in-mahim",
+        "/software-qa-testing-services-in-malad",
+        "/software-qa-testing-services-in-marine-lines",
+        "/software-qa-testing-services-in-masjid-bandar",
+        "/software-qa-testing-services-in-matunga-road",
+        "/software-qa-testing-services-in-mumbai-central",
+        "/software-qa-testing-services-in-mulund",
+        "/software-qa-testing-services-in-nahur",
+        "/software-qa-testing-services-in-prabhadevi",
+        "/software-qa-testing-services-in-ram-mandir",
+        "/software-qa-testing-services-in-reay-road",
+        "/software-qa-testing-services-in-sandhurst-road",
+        "/software-qa-testing-services-in-santacruz",
+        "/software-qa-testing-services-in-sewri",
+        "/software-qa-testing-services-in-sion",
+        "/software-qa-testing-services-in-vidyavihar",
+        "/software-qa-testing-services-in-vikhroli",
+        "/software-qa-testing-services-in-vile-parle",
+        "/software-qa-testing-services-in-wadala-road",
       ],
       "Extended Mumbai": [
-        "https://www.testriq.com/software-qa-testing-services-in-bhayandar",
-        "https://www.testriq.com/software-qa-testing-services-in-diva",
-        "https://www.testriq.com/software-qa-testing-services-in-dombivli",
-        "https://www.testriq.com/software-qa-testing-services-in-kalwa",
-        "https://www.testriq.com/software-qa-testing-services-in-kalyan",
-        "https://www.testriq.com/software-qa-testing-services-in-kopar",
-        "https://www.testriq.com/software-qa-testing-services-in-mira-road",
-        "https://www.testriq.com/software-qa-testing-services-in-mumbra",
-        "https://www.testriq.com/software-qa-testing-services-in-naigaon",
-        "https://www.testriq.com/software-qa-testing-services-in-nalasopara",
-        "https://www.testriq.com/software-qa-testing-services-in-navi-mumbai",
-        "https://www.testriq.com/software-qa-testing-services-in-thakurli",
-        "https://www.testriq.com/software-qa-testing-services-in-thane",
-        "https://www.testriq.com/software-qa-testing-services-in-vasai",
-        "https://www.testriq.com/software-qa-testing-services-in-virar",
+        "/software-qa-testing-services-in-bhayandar",
+        "/software-qa-testing-services-in-diva",
+        "/software-qa-testing-services-in-dombivli",
+        "/software-qa-testing-services-in-kalwa",
+        "/software-qa-testing-services-in-kalyan",
+        "/software-qa-testing-services-in-kopar",
+        "/software-qa-testing-services-in-mira-road",
+        "/software-qa-testing-services-in-mumbra",
+        "/software-qa-testing-services-in-naigaon",
+        "/software-qa-testing-services-in-nalasopara",
+        "/software-qa-testing-services-in-navi-mumbai",
+        "/software-qa-testing-services-in-thakurli",
+        "/software-qa-testing-services-in-thane",
+        "/software-qa-testing-services-in-vasai",
+        "/software-qa-testing-services-in-virar",
       ],
       Nagpur:
-        "https://www.testriq.com/software-qa-testing-services-in-nagpur",
+        "/software-qa-testing-services-in-nagpur",
       Nashik:
-        "https://www.testriq.com/software-qa-testing-services-in-nashik",
-      Pune: "https://www.testriq.com/software-qa-testing-services-in-pune",
+        "/software-qa-testing-services-in-nashik",
+      Pune: "/software-qa-testing-services-in-pune",
     },
     Odisha: {
       Bhubaneswar:
-        "https://www.testriq.com/software-qa-testing-services-in-bhubaneswar",
+        "/software-qa-testing-services-in-bhubaneswar",
     },
     Punjab: {
       Amritsar:
-        "https://www.testriq.com/software-qa-testing-services-in-amritsar",
+        "/software-qa-testing-services-in-amritsar",
       Jalandhar:
-        "https://www.testriq.com/software-qa-testing-services-in-jalandhar",
+        "/software-qa-testing-services-in-jalandhar",
       Ludhiana:
-        "https://www.testriq.com/software-qa-testing-services-in-ludhiana",
+        "/software-qa-testing-services-in-ludhiana",
     },
     Rajasthan: {
-      Ajmer: "https://www.testriq.com/software-qa-testing-services-in-ajmer",
+      Ajmer: "/software-qa-testing-services-in-ajmer",
       Jaipur:
-        "https://www.testriq.com/software-qa-testing-services-in-jaipur",
+        "/software-qa-testing-services-in-jaipur",
       Jodhpur:
-        "https://www.testriq.com/software-qa-testing-services-in-jodhpur",
+        "/software-qa-testing-services-in-jodhpur",
       Udaipur:
-        "https://www.testriq.com/software-qa-testing-services-in-udaipur",
+        "/software-qa-testing-services-in-udaipur",
     },
     "Tamil Nadu": {
       Chennai:
-        "https://www.testriq.com/software-qa-testing-services-in-chennai",
+        "/software-qa-testing-services-in-chennai",
       Coimbatore:
-        "https://www.testriq.com/software-qa-testing-services-in-coimbatore",
+        "/software-qa-testing-services-in-coimbatore",
       Madurai:
-        "https://www.testriq.com/software-qa-testing-services-in-madurai",
+        "/software-qa-testing-services-in-madurai",
     },
     Telangana: {
       Hyderabad:
-        "https://www.testriq.com/software-qa-testing-services-in-hyderabad",
+        "/software-qa-testing-services-in-hyderabad",
       Secunderabad:
-        "https://www.testriq.com/software-qa-testing-services-in-secunderabad",
+        "/software-qa-testing-services-in-secunderabad",
     },
     "Uttar Pradesh": {
-      Agra: "https://www.testriq.com/software-qa-testing-services-in-agra",
+      Agra: "/software-qa-testing-services-in-agra",
       Ghaziabad:
-        "https://www.testriq.com/software-qa-testing-services-in-ghaziabad",
+        "/software-qa-testing-services-in-ghaziabad",
       Gorakhpur:
-        "https://www.testriq.com/software-qa-testing-services-in-gorakhpur",
+        "/software-qa-testing-services-in-gorakhpur",
       "Greater Noida":
-        "https://www.testriq.com/software-qa-testing-services-in-greater-noida",
+        "/software-qa-testing-services-in-greater-noida",
       Kanpur:
-        "https://www.testriq.com/software-qa-testing-services-in-kanpur",
+        "/software-qa-testing-services-in-kanpur",
       Lucknow:
-        "https://www.testriq.com/software-qa-testing-services-in-lucknow",
+        "/software-qa-testing-services-in-lucknow",
       Meerut:
-        "https://www.testriq.com/software-qa-testing-services-in-meerut",
+        "/software-qa-testing-services-in-meerut",
       Moradabad:
-        "https://www.testriq.com/software-qa-testing-services-in-moradabad",
-      Noida: "https://www.testriq.com/software-qa-testing-services-in-noida",
+        "/software-qa-testing-services-in-moradabad",
+      Noida: "/software-qa-testing-services-in-noida",
     },
     Uttarakhand: {
       Dehradun:
-        "https://www.testriq.com/software-qa-testing-services-in-dehradun",
+        "/software-qa-testing-services-in-dehradun",
     },
     "West Bengal": {
       Kolkata:
-        "https://www.testriq.com/software-qa-testing-services-in-kolkata",
+        "/software-qa-testing-services-in-kolkata",
     },
   },
   "United Arab Emirates": {
     UAE: {
-      Ajman: "https://www.testriq.com/software-qa-testing-services-in-ajman",
+      Ajman: "/software-qa-testing-services-in-ajman",
       "Al Ain":
-        "https://www.testriq.com/software-qa-testing-services-in-al-ain",
+        "/software-qa-testing-services-in-al-ain",
       "Al Dhannah":
-        "https://www.testriq.com/software-qa-testing-services-in-al-dhannah",
+        "/software-qa-testing-services-in-al-dhannah",
       "Ar Rams":
-        "https://www.testriq.com/software-qa-testing-services-in-ar-rams",
+        "/software-qa-testing-services-in-ar-rams",
       "Dibba Al Fujairah":
-        "https://www.testriq.com/software-qa-testing-services-in-dibba-al-fujairah",
+        "/software-qa-testing-services-in-dibba-al-fujairah",
       "Dibba Al Hisn":
-        "https://www.testriq.com/software-qa-testing-services-in-dibba-al-hisn",
-      Dhaid: "https://www.testriq.com/software-qa-testing-services-in-dhaid",
+        "/software-qa-testing-services-in-dibba-al-hisn",
+      Dhaid: "/software-qa-testing-services-in-dhaid",
       Fujairah:
-        "https://www.testriq.com/software-qa-testing-services-in-fujairah",
+        "/software-qa-testing-services-in-fujairah",
       Ghayathi:
-        "https://www.testriq.com/software-qa-testing-services-in-ghayathi",
-      Hatta: "https://www.testriq.com/software-qa-testing-services-in-hatta",
+        "/software-qa-testing-services-in-ghayathi",
+      Hatta: "/software-qa-testing-services-in-hatta",
       "Jebel Ali":
-        "https://www.testriq.com/software-qa-testing-services-in-jebel-ali",
-      Kalba: "https://www.testriq.com/software-qa-testing-services-in-kalba",
+        "/software-qa-testing-services-in-jebel-ali",
+      Kalba: "/software-qa-testing-services-in-kalba",
       "Liwa Oasis":
-        "https://www.testriq.com/software-qa-testing-services-in-liwa-oasis",
+        "/software-qa-testing-services-in-liwa-oasis",
       "Madinat Zayed":
-        "https://www.testriq.com/software-qa-testing-services-in-madinat-zayed",
+        "/software-qa-testing-services-in-madinat-zayed",
       "Ras Al Khaimah":
-        "https://www.testriq.com/software-qa-testing-services-in-ras-al-khaimah",
+        "/software-qa-testing-services-in-ras-al-khaimah",
       Sharjah:
-        "https://www.testriq.com/software-qa-testing-services-in-sharjah",
+        "/software-qa-testing-services-in-sharjah",
       "Umm Al Quwain":
-        "https://www.testriq.com/software-qa-testing-services-in-umm-al-quwain",
+        "/software-qa-testing-services-in-umm-al-quwain",
 
     },
   },
   Canada: {
     Ontario: {
-      Toronto: "https://www.testriq.com/software-qa-testing-services-in-toronto",
+      Toronto: "/software-qa-testing-services-in-toronto",
     },
     "British Columbia": {
-      Vancouver: "https://www.testriq.com/software-qa-testing-services-in-vancouver",
+      Vancouver: "/software-qa-testing-services-in-vancouver",
     },
     Quebec: {
-      Montreal: "https://www.testriq.com/software-qa-testing-services-in-montreal",
+      Montreal: "/software-qa-testing-services-in-montreal",
     },
   },
   US: {
     "New York": {
-      "New York": "https://www.testriq.com/software-qa-testing-services-in-new-york",
+      "New York": "/software-qa-testing-services-in-new-york",
     },
     California: {
-      "Los Angeles": "https://www.testriq.com/software-qa-testing-services-in-los-angeles",
+      "Los Angeles": "/software-qa-testing-services-in-los-angeles",
     },
     Illinois: {
-      Chicago: "https://www.testriq.com/software-qa-testing-services-in-chicago",
+      Chicago: "/software-qa-testing-services-in-chicago",
     },
   },
   UK: {
     England: {
-      London: "https://www.testriq.com/software-qa-testing-services-in-london",
-      Manchester: "https://www.testriq.com/software-qa-testing-services-in-manchester",
+      London: "/software-qa-testing-services-in-london",
+      Manchester: "/software-qa-testing-services-in-manchester",
     },
     Scotland: {
-      Edinburgh: "https://www.testriq.com/software-qa-testing-services-in-edinburgh",
+      Edinburgh: "/software-qa-testing-services-in-edinburgh",
     },
   },
   Australia: {
     "New South Wales": {
-      Sydney: "https://www.testriq.com/software-qa-testing-services-in-sydney",
+      Sydney: "/software-qa-testing-services-in-sydney",
     },
     Victoria: {
-      Melbourne: "https://www.testriq.com/software-qa-testing-services-in-melbourne",
+      Melbourne: "/software-qa-testing-services-in-melbourne",
     },
     Queensland: {
-      Brisbane: "https://www.testriq.com/software-qa-testing-services-in-brisbane",
+      Brisbane: "/software-qa-testing-services-in-brisbane",
     },
   },
   "New Zealand": {
     "Auckland Region": {
-      Auckland: "https://www.testriq.com/software-qa-testing-services-in-auckland",
+      Auckland: "/software-qa-testing-services-in-auckland",
     },
     "Wellington Region": {
-      Wellington: "https://www.testriq.com/software-qa-testing-services-in-wellington",
+      Wellington: "/software-qa-testing-services-in-wellington",
     },
     "Canterbury Region": {
-      Christchurch: "https://www.testriq.com/software-qa-testing-services-in-christchurch",
+      Christchurch: "/software-qa-testing-services-in-christchurch",
     },
   }
 };

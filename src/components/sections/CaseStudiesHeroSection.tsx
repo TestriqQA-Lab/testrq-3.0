@@ -47,10 +47,10 @@ const CaseStudiesHeroSection = () => {
             </div>
 
             <h1 className="text-4xl hidden md:block md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Client{" "}
               <span className="text-[theme(color.brand.blue)]">
-                Success Stories <br />& Case Studies
+                Real-World Software Testing <br />
               </span>
+              Case Studies
             </h1>
             <h1 className="text-3xl md:hidden sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
               Client{" "}

@@ -43,7 +43,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
       title: "API Automation",
       icon: <FaCogs className="text-2xl" />,
       color: "purple",
-      description: "API testing automation tools for reliable service validation",
+      description: "Headless Rest Assured & Postman Automation. We test the backend logic before the UI is even built, ensuring your microservices handle high loads and data validation correctly.",
       tools: [
         { name: "REST Assured", description: "Java library for REST API testing", logo: "🔗" },
         { name: "Postman", description: "API development and testing platform", logo: "📮" },
@@ -125,7 +125,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Automation Testing <span className="text-brand-blue">Tools & Frameworks</span>
+            <span className="text-brand-blue">Tech Stack: </span>Python, Java & JavaScript Frameworks
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             We use <Link href='tools'>cutting-edge automation tools</Link> and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, <Link href='api-testing'>API</Link>, and <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD environments</Link>.
@@ -141,11 +141,10 @@ const AutomationTestingToolsFramework: React.FC = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`p-4 text-center transition-all duration-300 ${
-                    activeCategory === category.id
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : `text-gray-600 ${colors.hover}`
-                  }`}
+                  className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : `text-gray-600 ${colors.hover}`
+                    }`}
                 >
                   <div className="flex flex-col items-center space-y-2">
                     <span className={activeCategory === category.id ? colors.text : "text-gray-400"}>
@@ -226,7 +225,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
                 <span className="text-2xl">🔄</span>
               </div>
               <h4 className="font-semibold text-gray-900 mb-2">Continuous Integration</h4>
-              <p className="text-sm text-gray-600">Seamless integration with CI/CD pipelines for automated execution</p>
+              <p className="text-sm text-gray-600">We shift testing to the left. Our engineers integrate automated suites directly into Jenkins, Azure DevOps, or GitHub Actions. Every commit triggers a &apos;Smoke Test,&apos; preventing bugs from ever reaching the QA environment</p>
             </div>
 
             <div className="text-center">

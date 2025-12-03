@@ -4,29 +4,16 @@ import type { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, securityTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Security Testing Services | Penetration Testing ",
-  description: "We are one of the best Security Testing Services services companies in Mumbai. With expertise in Penetration Testing Services too. Protect your applications from cyber threats with advanced security validation.",
+  title: "Security Testing Company | VAPT Services & SecureGuard™ Framework",
+  description: "Leading Security Testing Company (TCoE). Our Certified Ethical Hackers (CEH/OSCP) perform VAPT, GDPR Audits, and Source Code Review using the Testriq SecureGuard™ methodology",
   keywords: [
-    "security testing",
-    "security testing services",
-    "penetration testing",
-    "vulnerability assessment",
-    "SAST testing",
-    "DAST testing",
-    "security code review",
-    "application security testing",
-    "web security testing",
-    "mobile security testing",
-    "API security testing",
-    "network security testing",
-    "compliance testing",
-    "OWASP testing",
-    "ethical hacking",
-    "security audit",
-    "cybersecurity testing",
-    "security scanning",
-    "threat modeling",
-    "security risk assessment"
+    "security testing company",
+    "vapt services",
+    "penetration testing service",
+    "security center of excellence",
+    "owasp top 10 testing",
+    "mobile app security testing",
+    "gdpr compliance audit"
   ],
   openGraph: {
     title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
@@ -95,8 +82,8 @@ const SecurityTestingComprehensiveSlider = dynamic(
   }
 );
 
-const SecurityTestingProvenTestingProcess = dynamic(
-  () => import("@/components/sections/SecurityTestingProvenTestingProcess"),
+const SecureGuardFramework = dynamic(
+  () => import("@/components/sections/SecureGuardFramework"),
   {
     ssr: true,
     loading: () => (
@@ -109,6 +96,18 @@ const SecurityTestingProvenTestingProcess = dynamic(
 
 const SecurityTestingWhyChooseTestriq = dynamic(
   () => import("@/components/sections/SecurityTestingWhyChooseTestriq"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const TestriqTCoE = dynamic(
+  () => import("@/components/sections/TestriqTCoE"),
   {
     ssr: true,
     loading: () => (
@@ -181,9 +180,10 @@ export default function SecurityTestingPage() {
       <MainLayout>
         <SecurityTestingHeroSection />
         <SecurityTestingComprehensiveSlider />
-        <SecurityTestingProvenTestingProcess />
-        <SecurityTestingROISection/>
+        <SecureGuardFramework />
+        <SecurityTestingROISection />
         <SecurityTestingWhyChooseTestriq />
+        <TestriqTCoE />
         <SecurityTestingToolsFramework />
         <SecurityTestingCaseStudies />
         <SecurityTestingFAQs />

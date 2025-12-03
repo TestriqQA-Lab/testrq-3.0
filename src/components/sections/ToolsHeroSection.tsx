@@ -47,7 +47,7 @@ const ToolsHeroSection = () => {
           </Link>
           <FaChevronRight className="text-xs text-gray-400" />
           <span className="text-[theme(color.brand.blue)]">
-            Tools & Frameworks
+            Technology Stack
           </span>
         </div>
 
@@ -60,10 +60,11 @@ const ToolsHeroSection = () => {
             </div>
 
             <h1 className="text-3xl  md:block sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4">
-              Cutting-Edge{" "}
+
               <span className="text-[theme(color.brand.blue)]">
-                Testing Tools <br />& Frameworks
+                Our Technology Stack:{" "}<br />
               </span>
+              World-Class Tools for World-Class QA
             </h1>
 
 

@@ -391,11 +391,10 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`p-4 rounded-xl text-center transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? `${colors.bg} ${colors.text} ${colors.border} border-2 shadow-lg`
-                    : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md"
-                }`}
+                className={`p-4 rounded-xl text-center transition-all duration-300 ${activeTab === tab.id
+                  ? `${colors.bg} ${colors.text} ${colors.border} border-2 shadow-lg`
+                  : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md"
+                  }`}
               >
                 <div className="flex flex-col items-center space-y-2">
                   <span
@@ -418,9 +417,8 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
             <div className="p-8 md:p-12">
               <div className="flex items-center space-x-4 mb-8">
                 <div
-                  className={`${
-                    getColorClasses(activeTabData.color).accent
-                  } w-16 h-16 px-2 rounded-full md:rounded-2xl flex items-center justify-center`}
+                  className={`${getColorClasses(activeTabData.color).accent
+                    } w-16 h-16 px-2 rounded-full md:rounded-2xl flex items-center justify-center`}
                 >
                   <span className="text-white">{activeTabData.icon}</span>
                 </div>
@@ -469,9 +467,8 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
 
               {/* Success Rate Display */}
               <div
-                className={`${
-                  getColorClasses(activeTabData.color).bg
-                } rounded-xl p-6 mt-8`}
+                className={`${getColorClasses(activeTabData.color).bg
+                  } rounded-xl p-6 mt-8`}
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -487,9 +484,8 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
                   </div>
                   <div className="text-right">
                     <div
-                      className={`${
-                        getColorClasses(activeTabData.color).text
-                      } text-3xl font-bold`}
+                      className={`${getColorClasses(activeTabData.color).text
+                        } text-3xl font-bold`}
                     >
                       98%
                     </div>
@@ -499,6 +495,26 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {activeTab === "vulnerability-assessment" && (
+                <section className="vulnerability-list mt-8 max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-xl overflow-hidden border border-blue-100">
+                  <h3 className="text-3xl font-bold mb-8 text-center text-blue-600" style={{ color: 'rgb(37, 168, 224)' }}>We Neutralize the OWASP Top 10 & Beyond</h3>
+                  <div className="vuln-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-blue-100">
+                      <strong className="text-blue-600" style={{ color: 'rgb(37, 168, 224)' }}>Injection Attacks:</strong> SQLi, NoSQLi, OS Command Injection.
+                    </div>
+                    <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-blue-100">
+                      <strong className="text-blue-600" style={{ color: 'rgb(37, 168, 224)' }}>Broken Authentication:</strong> Credential Stuffing, Session Hijacking.
+                    </div>
+                    <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-blue-100">
+                      <strong className="text-blue-600" style={{ color: 'rgb(37, 168, 224)' }}>Sensitive Data Exposure:</strong> PII Leakage, Weak Encryption (GDPR violations).
+                    </div>
+                    <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 border border-blue-100">
+                      <strong className="text-blue-600" style={{ color: 'rgb(37, 168, 224)' }}>Business Logic Flaws:</strong> Payment Bypasses, Privilege Escalation.
+                    </div>
+                  </div>
+                </section>
+              )}
             </div>
           )}
         </div>

@@ -41,14 +41,14 @@ const ManualTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Human-Centered Testing for
+              Human-Powered Manual &
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Perfect
+                Exploratory Testing
               </span>
               <span className="text-transparent block bg-clip-text bg-brand-blue">
                 {" "}
-                User Experience
+                Services
               </span>
             </h1>
 
