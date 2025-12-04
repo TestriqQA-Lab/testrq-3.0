@@ -253,7 +253,7 @@ const BankingTestingServicesSection: React.FC = () => {
                 Security First
               </h4>
               <p className="text-sm text-gray-600">
-               <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced security testing</Link> methodologies and tools to protect
+                <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced security testing</Link> methodologies and tools to protect
                 against evolving cyber threats and ensure <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">data protection</Link>{" "}
                 compliance.
               </p>
@@ -265,7 +265,7 @@ const BankingTestingServicesSection: React.FC = () => {
                 Proven Methodologies
               </h4>
               <p className="text-sm text-gray-600">
-                Industry-standard <Link href="/tools">testing frameworks</Link> and methodologies
+                Industry-standard <Link href="/technology-stack">testing frameworks</Link> and methodologies
                 specifically designed for banking applications and financial
                 systems.
               </p>
@@ -290,7 +290,7 @@ const BankingTestingServicesSection: React.FC = () => {
                 Start Your Security Assessment
               </button>
             </Link>
-            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
               <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
                 Schedule Expert Consultation
               </button>

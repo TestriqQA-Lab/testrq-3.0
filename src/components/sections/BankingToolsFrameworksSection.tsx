@@ -209,7 +209,7 @@ const BankingToolsFrameworksSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link href="/tools" className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link href="/technology-stack" className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Explore Tools
                   <FaArrowRight className="w-3 h-3" />
                 </Link>
@@ -225,7 +225,7 @@ const BankingToolsFrameworksSection: React.FC = () => {
               Why Our Tool Selection Matters
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our carefully curated banking QA <Link href="/tools">toolkit</Link> ensures comprehensive
+              Our carefully curated banking QA <Link href="/technology-stack">toolkit</Link> ensures comprehensive
               testing coverage while meeting the stringent, security,{" "}
               <Link href="/performance-testing-services">performance</Link>, and regulatory compliance requirements of the banking
               and financial services industry.
@@ -322,7 +322,7 @@ const BankingToolsFrameworksSection: React.FC = () => {
             Ready to Leverage Our Advanced Testing Toolkit?
           </h3>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Let our experts demonstrate how our comprehensive <Link href="/tools">toolkit</Link> can
+            Let our experts demonstrate how our comprehensive <Link href="/technology-stack">toolkit</Link> can
             enhance your banking testing capabilities and ensure regulatory
             compliance.
           </p>

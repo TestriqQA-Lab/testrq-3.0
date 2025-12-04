@@ -128,7 +128,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tech Stack: </span>Python, Java & JavaScript Frameworks
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We use <Link href='tools'>cutting-edge automation tools</Link> and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, <Link href='api-testing'>API</Link>, and <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD environments</Link>.
+            We use <Link href='/technology-stack'>cutting-edge automation tools</Link> and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, <Link href='api-testing'>API</Link>, and <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD environments</Link>.
           </p>
         </div>
 

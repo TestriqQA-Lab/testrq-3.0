@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt, FaGithub, FaDocker, FaPlayCircle,FaGitlab,FaDatabase, FaLock, FaJava, FaFileAlt, FaPython, FaJsSquare, FaNodeJs, FaRobot, FaMicrosoft, FaCircle, FaWifi, FaServer } from "react-icons/fa";
+import { FaTools, FaCode, FaRocket, FaShieldAlt, FaGithub, FaDocker, FaPlayCircle, FaGitlab, FaDatabase, FaLock, FaJava, FaFileAlt, FaPython, FaJsSquare, FaNodeJs, FaRobot, FaMicrosoft, FaCircle, FaWifi, FaServer } from "react-icons/fa";
 
 const ApiToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -71,7 +71,7 @@ const ApiToolsFramework: React.FC = () => {
             We Use
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage <Link href='tools'>industry-leading tools and frameworks</Link> to deliver
+            We leverage <Link href='/technology-stack'>industry-leading tools and frameworks</Link> to deliver
             comprehensive API testing solutions that ensure <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>reliability</Link>,{" "}
             <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>performance</Link>, and <Link href='security-testing'>security</Link>.
           </p>

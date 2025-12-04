@@ -286,7 +286,7 @@ const IoTToolsFramework: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage <Link href='tools'>cutting-edge tools</Link> and frameworks specifically designed
+            We leverage <Link href='/technology-stack'>cutting-edge tools</Link> and frameworks specifically designed
             for IoT testing to ensure <Link href='blog/post/how-does-validation-optimization-improve-web-application-quality'>comprehensive validation</Link> of your connected
             devices and systems across all layers of the IoT stack.
           </p>

@@ -133,7 +133,7 @@ const IoTWhyChooseTestriq: React.FC = () => {
               real-world simulation
             </Link>
             , and
-            <Link href="tools"> advanced tools</Link> to deliver IoT testing
+            <Link href="/technology-stack"> advanced tools</Link> to deliver IoT testing
             services that ensure reliable performance,{" "}
             <Link href="blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">
               secure connectivity
@@ -151,17 +151,15 @@ const IoTWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group transition-all duration-500 transform hover:scale-105 ${
-                hoveredCard === index ? "z-10" : ""
-              }`}
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* IoT Device Card */}
               <div
-                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
-                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                }`}
+                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                  }`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -229,14 +227,12 @@ const IoTWhyChooseTestriq: React.FC = () => {
 
                 {/* Interactive Hover State */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
-                    benefit.gradient
-                  } flex items-center justify-center
-                              transition-opacity duration-500 ease-in-out ${
-                                hoveredCard === index
-                                  ? "opacity-100 visible"
-                                  : "opacity-0 invisible"
-                              }
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient
+                    } flex items-center justify-center
+                              transition-opacity duration-500 ease-in-out ${hoveredCard === index
+                      ? "opacity-100 visible"
+                      : "opacity-0 invisible"
+                    }
                             `}
                 >
                   <div className="text-center text-white p-6 transform transition-transform duration-500">
@@ -274,9 +270,8 @@ const IoTWhyChooseTestriq: React.FC = () => {
 
                 {/* Connection Indicator */}
                 <div
-                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${
-                    hoveredCard === index ? "bg-white animate-pulse" : ""
-                  }`}
+                  className={`absolute top-4 left-4 w-3 h-3 rounded-full transition-all duration-500 ${hoveredCard === index ? "bg-white animate-pulse" : ""
+                    }`}
                   style={{
                     backgroundColor:
                       hoveredCard === index ? "" : benefit.color || "#06b6d4", // default cyan-500

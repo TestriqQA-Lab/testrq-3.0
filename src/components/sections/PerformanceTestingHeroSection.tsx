@@ -63,7 +63,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
               Ensure your applications perform flawlessly under any load with
               our comprehensive <Link href='blog/post/what-are-the-different-types-of-performance-testing-services'>performance testing services</Link>. We conduct <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load
                 testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, <Link href='blog/post/spike-testing-handling-sudden-traffic-surges'>spike testing</Link>, and <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>endurance testing</Link>{" "}
-              using <Link href='tools'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
+              using <Link href='/technology-stack'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
               Gatling to guarantee optimal <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>application
                 performance, and scalability</Link> at scale.
             </p>

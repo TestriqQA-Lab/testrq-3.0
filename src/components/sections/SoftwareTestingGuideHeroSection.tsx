@@ -48,7 +48,7 @@ const SoftwareTestingGuideHeroSection = () => {
               <p className="text-xl text-gray-600 leading-relaxed">
                 Everything you need to know about software testing services -
                 from fundamental QA concepts to <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">advanced testing</Link> methodologies.
-                Learn various testing types, <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">QA best practices</Link>, <Link href="/tools">testing tools</Link>,
+                Learn various testing types, <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">QA best practices</Link>, <Link href="/technology-stack">testing tools</Link>,
                 and <Link href="/automation-testing-services">automation</Link> frameworks used by leading quality assurance
                 companies and industry professionals.
               </p>

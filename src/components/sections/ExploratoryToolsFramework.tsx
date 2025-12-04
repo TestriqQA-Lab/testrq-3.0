@@ -141,7 +141,7 @@ const ExploratoryToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage specialized <Link href='tools'>tools and frameworks</Link> purpose-built for
+            We leverage specialized <Link href='/technology-stack'>tools and frameworks</Link> purpose-built for
             exploratory testing to enable <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link>,
             <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'> comprehensive documentation</Link>, and seamless collaboration throughout
             the exploration process.
@@ -193,7 +193,7 @@ const ExploratoryToolsFramework: React.FC = () => {
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
               Our systematic exploratory approach blends proven investigation
-              techniques with <Link href='tools'>modern testing tools</Link> to ensure comprehensive
+              techniques with <Link href='/technology-stack'>modern testing tools</Link> to ensure comprehensive
               coverage and <Link href='blog/post/why-discovery-analysis-matters-in-testing'>maximum issue discovery</Link> across your application.
             </p>
           </div>
@@ -262,7 +262,7 @@ const ExploratoryToolsFramework: React.FC = () => {
               Comprehensive Exploratory Testing Toolkit
             </h3>
             <p className="text-gray-600 mb-8">
-              Our <Link href='tools'>toolkit</Link> is specifically designed for effective exploratory
+              Our <Link href='/technology-stack'>toolkit</Link> is specifically designed for effective exploratory
               testing, ensuring <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link>, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'> comprehensive documentation</Link>, and actionable insights.
             </p>
 
@@ -297,7 +297,7 @@ const ExploratoryToolsFramework: React.FC = () => {
 
         <div className="text-center mt-12">
           <Link href="/contact-us" className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Explore Our Toolkit
+            Explore Our Toolkit
           </Link>
         </div>
       </div>

@@ -128,7 +128,7 @@ const RegressionTestingToolsFramework: React.FC = () => {
             Regression Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading <Link href='tools'>tools and frameworks</Link> to deliver efficient, comprehensive, and reliable regression testing solutions that ensure <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability</Link> with every release.
+            We leverage industry-leading <Link href='/technology-stack'>tools and frameworks</Link> to deliver efficient, comprehensive, and reliable regression testing solutions that ensure <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability</Link> with every release.
 
           </p>
         </div>
@@ -142,11 +142,10 @@ const RegressionTestingToolsFramework: React.FC = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`p-4 text-center transition-all duration-300 ${
-                    activeCategory === category.id
+                  className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
                       ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
                       : `text-gray-600 ${colors.hover}`
-                  }`}
+                    }`}
                 >
                   <div className="flex flex-col items-center space-y-2">
                     <span className={activeCategory === category.id ? colors.text : "text-gray-400"}>

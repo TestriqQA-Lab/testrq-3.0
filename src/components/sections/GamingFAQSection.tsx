@@ -154,7 +154,7 @@ const GamingFAQSection: React.FC = () => {
             <>
               Yes, we can simulate and test games supporting thousands of
               concurrent players. We use automated testing{" "}
-              <Link href="/tools">tools</Link> and real player testing to
+              <Link href="/technology-stack">tools</Link> and real player testing to
               validate server performance, database optimization, and network
               architecture under high load conditions.
             </>
@@ -320,7 +320,7 @@ const GamingFAQSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
               <Link
-                 href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
                 title="Schedule Gaming Consultation – Testriq QA Lab"
                 className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
              bg-white text-brand-blue font-semibold text-lg rounded-2xl

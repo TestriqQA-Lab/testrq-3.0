@@ -26,7 +26,7 @@ const QADocumentationToolsFramework = () => {
   const toolCategories = [
     {
       id: "documentation-tools",
-      title: (<><Link href="/tools">Documentation Tools</Link></>),
+      title: (<><Link href="/technology-stack">Documentation Tools</Link></>),
       icon: FaFileAlt,
       color: "blue",
       description:
@@ -543,7 +543,7 @@ const QADocumentationToolsFramework = () => {
             Professional QA Documentation Technology Stack
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We leverage industry-leading <Link href="/tools">tools</Link> and frameworks like <Link href="/blog/post/getting-started-with-selenium-a-beginners-guide">Selenium</Link>,{" "}
+            We leverage industry-leading <Link href="/technology-stack">tools</Link> and frameworks like <Link href="/blog/post/getting-started-with-selenium-a-beginners-guide">Selenium</Link>,{" "}
             <Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link>, <Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Cypress</Link>, and Postman to create, manage, and maintain
             comprehensive QA documentation-including test plans, <Link href="/blog/post/how-many-test-cases-have-you-automated-per-day">test cases</Link>, and
             traceability matrices-that enhance team productivity and ensure
@@ -562,11 +562,10 @@ const QADocumentationToolsFramework = () => {
               <button
                 key={index}
                 onClick={() => setActiveCategory(index)}
-                className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  isActive
-                    ? `${categoryColors.bg} ${categoryColors.text} ${categoryColors.border} border-2 shadow-md`
-                    : "bg-white text-gray-600 hover:bg-gray-50 border-2 border-gray-200"
-                }`}
+                className={`flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-200 ${isActive
+                  ? `${categoryColors.bg} ${categoryColors.text} ${categoryColors.border} border-2 shadow-md`
+                  : "bg-white text-gray-600 hover:bg-gray-50 border-2 border-gray-200"
+                  }`}
               >
                 <IconComponent className="mr-2 text-sm" />
                 <span className="text-sm">{category.title}</span>

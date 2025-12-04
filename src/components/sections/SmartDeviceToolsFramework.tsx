@@ -97,7 +97,7 @@ const SmartDeviceToolsFramework: React.FC = () => {
         {
           name: "Nmap",
           description: "Network discovery and security auditing",
-          icon: <FaNetworkWired  className="w-5 h-5 text-red-500" />,
+          icon: <FaNetworkWired className="w-5 h-5 text-red-500" />,
         },
         {
           name: "Metasploit",
@@ -147,7 +147,7 @@ const SmartDeviceToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage cutting-edge <Link href='tools'>tools and frameworks</Link> specifically designed
+            We leverage cutting-edge <Link href='/technology-stack'>tools and frameworks</Link> specifically designed
             for <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> to ensure comprehensive validation of your
             connected devices across all connectivity, security, and performance
             metrics.

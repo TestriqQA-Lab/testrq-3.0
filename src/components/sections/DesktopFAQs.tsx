@@ -13,7 +13,7 @@ const DesktopFAQs: React.FC = () => {
       answer: (
         <>
           We test all types of desktop applications including enterprise
-          software, productivity <Link href="tools">tools</Link>,{" "}
+          software, productivity <Link href="/technology-stack">tools</Link>,{" "}
           <Link href="gaming-app-testing-services">games</Link>, utilities, and
           specialized industry applications. Our expertise covers Windows (.NET,
           WPF, WinForms), macOS (Cocoa, Swift), and Linux (Qt, GTK) applications
@@ -216,7 +216,7 @@ const DesktopFAQs: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
                 className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors"
               >
                 Schedule Consultation

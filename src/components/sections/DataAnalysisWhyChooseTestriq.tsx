@@ -81,7 +81,7 @@ const DataAnalysisWhyChooseTestriq = () => {
             Why Choose Testriq for <span className='text-brand-blue'>Data Analytics</span>?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced <Link href="/tools">data analysis tools</Link>, and cutting-edge technologies like machine learning model building and <Link href="/blog/post/ai-testing-learning-guide">natural language processing</Link>.
+            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced <Link href="/technology-stack">data analysis tools</Link>, and cutting-edge technologies like machine learning model building and <Link href="/blog/post/ai-testing-learning-guide">natural language processing</Link>.
           </p>
         </div>
 
