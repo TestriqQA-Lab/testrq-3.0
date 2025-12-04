@@ -128,13 +128,6 @@ const TeamMembersSection = () => {
       src: "/aakash-yadav.webp",
     },
     {
-      name: "Ami Khambhatta",
-      role: "Quality Assurance Architect",
-      department: "Testriq QA Lab",
-      linkedin: "https://www.linkedin.com/in/amikhambhatta/",
-      src: "/ami-khambata.webp",
-    },
-    {
       name: "Neelam Chavan",
       role: "Financial Controller",
       department: "Testriq QA Lab",
@@ -168,7 +161,7 @@ const TeamMembersSection = () => {
       role: "Test Lead",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/pooja-katkar-737b3525a/",
-      src: "/Pooja.webp",
+      src: "/None.webp",
     },
     {
       name: "Sujay Ambelkar",
@@ -177,13 +170,13 @@ const TeamMembersSection = () => {
       linkedin: "https://www.linkedin.com/in/sujay-ambelkar-ab2770145/",
       src: "/Sujay Ambelkar.webp",
     },
-    {
-      name: "Ayushi Bansal",
-      role: "UI/UX Designer",
-      department: "Testriq QA Lab",
-      linkedin: "https://www.linkedin.com/in/bansal-ayushi/",
-      src: "/Ayushi Bansal.webp",
-    },
+    // {
+    //   name: "Jayesh Mistry",
+    //   role: "Software Developer",
+    //   department: "Testriq QA Lab",
+    //   linkedin: "https://www.linkedin.com/in/sujay-ambelkar-ab2770145/",
+    //   src: "/Jayesh Mistry.webp",
+    // },
   ];
 
   return (
@@ -213,7 +206,7 @@ const TeamMembersSection = () => {
                 <div className="text-center rounded-full">
                   <div className="w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Image
-                    title={member.name} 
+                      title={member.name}
                       src={member.src}
                       alt="Employees Photo"
                       width={200}
@@ -231,7 +224,7 @@ const TeamMembersSection = () => {
                     {member.department}
                   </div>
                   <Link
-                  title={member.name}
+                    title={member.name}
                     href={member.linkedin}
                     aria-label={`${member.name} linkedin`}
                     className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
@@ -260,9 +253,9 @@ const TeamMembersSection = () => {
           <div className=""></div>
         </div>
 
-             <div className="text-center mb-16">
+        <div className="text-center mb-16">
 
-<h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Specialized{" "}
             <span className="text-[theme(color.brand.blue)]">Departments</span>
           </h2>
@@ -272,9 +265,9 @@ const TeamMembersSection = () => {
             <Link title="performance testing" href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
           </p>
 
-             </div>
+        </div>
 
-                     {/* Departments Grid */}
+        {/* Departments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {departments.map((dept, index) => (
             <Link title={dept.name} href={dept.action}
@@ -316,7 +309,7 @@ const TeamMembersSection = () => {
           ))}
         </div>
 
-                {/* Departments Grid */}
+        {/* Departments Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {departments.map((dept, index) => (
             <Link title={dept.name} href={dept.action}
@@ -358,7 +351,7 @@ const TeamMembersSection = () => {
           ))}
         </div>
 
-                {/* Leadership Philosophy */}
+        {/* Leadership Philosophy */}
         <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -368,7 +361,7 @@ const TeamMembersSection = () => {
             <p className="text-gray-700 text-lg max-w-3xl mx-auto">
               At Testriq, we lead by example and foster innovation in <Link title="software
               testing" href='software-testing-guide'>software
-              testing</Link>, building a QA team culture where every member thrives and
+                testing</Link>, building a QA team culture where every member thrives and
               drives collective success.
             </p>
           </div>

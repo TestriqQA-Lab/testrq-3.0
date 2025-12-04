@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
+import StructuredData, { caseStudiesSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 const MainLayout = dynamic(
   () => import("@/components/layout/MainLayout"),
@@ -149,8 +150,15 @@ const CaseStudiesReadyToStartSection = dynamic(
 );
 
 export default function CaseStudiesPage() {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Case Studies", url: "https://www.testriq.com/case-studies" }
+  ];
+
   return (
     <div>
+      <StructuredData data={caseStudiesSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <CaseStudiesHeroSection />
         <CaseStudiesOverviewSection />

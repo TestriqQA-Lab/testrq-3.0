@@ -2471,65 +2471,115 @@ export const telecommunicationTestingSchema = {
 // Service Schema for about page
 export const aboutPageSchema = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About Us - Testriq QA Lab",
-  "url": "www.testriq.com/about",
-  "description": "Testriq QA Lab is a trusted software testing company with 14+ years of global experience. Our ISTQB-certified team delivers expert QA services with precision, innovation, and client satisfaction.",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
-    "foundingDate": "2010",
-    "founders": [
-      {
-        "@type": "Person",
-        "name": "Testriq QA Founders"
-      }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park",
-      "addressLocality": "Mira Road East",
-      "addressRegion": "Mira Bhayandar",
-      "postalCode": "401107",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-9152929343",
-      "contactType": "customer support",
-      "email": "contact@testriq.com",
-      "availableLanguage": ["English", "Hindi"]
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://www.twitter.com/testriq"
-    ],
-    "employee": {
-      "@type": "OrganizationRole",
-      "employee": {
-        "@type": "Person",
-        "name": "Certified QA Professionals"
+  "@graph": [
+    // ENTITY 1: The Organization (Who You Are)
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA Lab LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/images/logo.png",
+        "width": 112,
+        "height": 112
       },
-      "roleName": "Software Testing Engineer"
+      "foundingDate": "2010",
+      "description": "Testriq QA Lab LLP is a globally trusted software testing company with over 15 years of experience delivering expert-led QA solutions across the SDLC.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar",
+        "addressLocality": "Mira Road East, Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "sales",
+        "email": "contact@testriq.com",
+        "areaServed": "World"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/testriq-qa-lab",
+        "https://www.facebook.com/testriq",
+        "https://twitter.com/testriq"
+        // Add other social links found in your footer
+      ],
+      "awards": [
+        "ISO 9001 Certified",
+        "ISTQB Certified Team",
+        "Top 10 QA Companies",
+        "99.8% Project Success Rate"
+      ]
     },
-    "award": [
-      "Best QA Partner of the Year 2024",
-      "Innovation in Testing Award 2023",
-      "Client Choice Award 2022"
-    ],
-    "numberOfEmployees": "50+",
-    "knowsAbout": [
-      "ISTQB Certified Testing",
-      "Agile QA Practices",
-      "Automation Testing",
-      "Security Testing",
-      "Performance Testing"
-    ],
-    "slogan": "Pioneering Quality Assurance Excellence"
-  }
-};
+    // ENTITY 2: The FAQ Section (Matches your page content 1:1)
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes Testriq a trusted QA partner with over 15 years of experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Testriq combines over 15 years of experience with ISO 9001 processes and a team of ISTQB-certified professionals. We have executed over 500k test cases with a 99.8% success rate across 15+ countries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which industries does Testriq serve with its software testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve a wide range of industries including Fintech, Healthcare, SaaS, E-commerce, Drone Technology, and IoT. Our domain experts ensure compliance and performance for specific industry standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do startups and enterprises choose Testriq for software quality assurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Startups choose us for our agility and 'LaunchFast QA' services, while enterprises rely on our scalable teams, robust security testing, and ability to integrate seamlessly with existing DevOps pipelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Testriq ensure quality and transparency in testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain 100% transparency through real-time reporting, dedicated project managers, and open communication channels. Our 'Quality First' value ensures every bug is documented with precision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of testing does Testriq perform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We perform comprehensive testing including Manual, Automation (Selenium/Cypress), API, Mobile App, Performance, Security, and IoT Device Testing."
+          }
+        }
+      ]
+    },
+    // ENTITY 3: Breadcrumbs (Site Hierarchy)
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.testriq.com/about-us"
+        }
+      ]
+    }
+  ]
+};;
 
 // Service Schema for our Team Page
 export const ourTeamPageSchema = {
@@ -2601,125 +2651,1041 @@ export const ourTeamPageSchema = {
 // Service Schema for careers Page
 export const careersPageSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Testriq QA Lab",
-  "url": "www.testriq.com",
-  "logo": "www.testriq.com/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/testriq",
-    "https://twitter.com/testriq"
-  ],
-  "department": {
-    "@type": "Organization",
-    "name": "Testriq Careers",
-    "url": "www.testriq.com/careers"
-  },
-  "makesOffer": {
-    "@type": "OfferCatalog",
-    "name": "QA Career Opportunities at Testriq",
-    "itemListElement": [
-      {
-        "@type": "JobPosting",
-        "title": "Senior Test Automation Engineer",
-        "description": "Lead automation initiatives using Selenium, Cypress, and CI/CD. Design scalable test strategies for web/mobile.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28",
-        "hiringOrganization": {
-          "@type": "Organization",
-          "name": "Testriq QA Lab",
-          "sameAs": "www.testriq.com"
+  "@graph": [
+    // 1. The Page Itself (Breadcrumbs + Page Info)
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/careers/#webpage",
+      "url": "https://www.testriq.com/careers",
+      "name": "Careers in Software Testing & QA Automation | Testriq",
+      "description": "Join Testriq's global team. Hiring for 20+ Remote & On-site roles including Automation Engineers, Manual Testers, and Security Analysts.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.testriq.com/#website",
+        "url": "https://www.testriq.com",
+        "name": "Testriq QA Lab"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.testriq.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Careers"
+          }
+        ]
+      }
+    },
+
+    // 2. JOB 1: Business Development Executive (Sales) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Executive (Sales)",
+      "description": "<p>Urgent opening for a Business Development Executive focused on IT Service Sales, B2B Sales, and Software Testing Sales. Location: Mira Road, Mumbai. Experience: 2–4 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-001"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
         }
       },
-      {
-        "@type": "JobPosting",
-        "title": "QA Test Engineer",
-        "description": "Execute manual testing and ensure quality for web and mobile apps. Collaborate with developers and designers.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "New York",
-            "addressRegion": "NY",
-            "addressCountry": "US"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Performance Testing Specialist",
-        "description": "Use JMeter, LoadRunner for performance and load testing. Analyze system bottlenecks and optimize throughput.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Mobile QA Engineer",
-        "description": "Test iOS and Android apps using Appium and other tools. Focus on real device testing and user experience.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "London",
-            "addressCountry": "GB"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Security Testing Engineer",
-        "description": "Conduct penetration tests, vulnerability scans, OWASP compliance, and secure code assessments.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Junior QA Analyst",
-        "description": "Start your QA career with mentorship and hands-on experience in real projects. Open to freshers.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Lead QA Engineer",
-        "description": "Lead QA teams, define testing strategies, mentor juniors, and ensure delivery quality across projects.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "New York",
-            "addressRegion": "NY",
-            "addressCountry": "US"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "API Testing Specialist",
-        "description": "Test REST/GraphQL APIs using Postman/Newman. Build automated test suites and ensure backend reliability.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
       }
-    ]
-  }
+    },
+
+    // 3. JOB 2: Manual Tester (API – Postman) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Manual Tester (API – Postman)",
+      "description": "<p>Urgent opening for a Manual Tester skilled in API Testing, Postman, and API Automation. Location: Hybrid (Mira Road, Mumbai). Experience: 3–5 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-002"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 4. JOB 3: Automation Tester (Trading Domain) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Tester (Trading Domain)",
+      "description": "<p>Urgent opening for an Automation Tester experienced in Trading, Capital Market Domain, and JIRA. Location: Kurla, Mumbai. Experience: 2–4 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-003"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kurla, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 5. JOB 4: Automation Test Engineer (Playwright + Javascript) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Test Engineer (Playwright + Javascript)",
+      "description": "<p>Urgent opening for an Automation Test Engineer skilled in Playwright, JavaScript, and TestNG/Mocha. Location: Prabhadevi, Mumbai. Experience: 2–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-004"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Prabhadevi, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 6. JOB 5: Automation Test Engineer (Selenium + Playwright) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Test Engineer (Selenium + Playwright)",
+      "description": "<p>Urgent opening for an Automation Test Engineer proficient in Selenium WebDriver, Playwright, Java, and Python. Location: Mira Road, Mumbai. Experience: 2–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-005"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 7. JOB 6: Playwright Automation Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Playwright Automation Tester",
+      "description": "<p>Full-time role for a Playwright Automation Tester with skills in Selenium WebDriver, Java, and Python. Location: Western Mumbai. Experience: 2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-006"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Western Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 8. JOB 7: QA / Automation Intern / Software Testing Intern (Java / JavaScript) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
+      "description": "<p>Internship opportunity focusing on Java, JavaScript, Selenium, and Playwright. Location: Mira Road. Duration: 3–6 months.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-007"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "INTERNSHIP",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 9. JOB 8: Penetration Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Penetration Tester",
+      "description": "<p>Full-time role for a Penetration Tester experienced in Kali Linux, Burp Suite, and Metasploit. Location: Mira Road, Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-008"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 10. JOB 9: Data Processing Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Data Processing Executive",
+      "description": "<p>Full-time role for a Data Processing Executive with skills in Excel/Sheets, SEO Basics, and Data Quality Assurance. Location: Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-009"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 11. JOB 10: Business Development Executive - Intern (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Executive - Intern",
+      "description": "<p>Internship opportunity in Business Development, focusing on LinkedIn Sales Navigator, Upwork, and Email Drafting. Location: Mira Road, Mumbai. Training provided.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-010"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "INTERNSHIP",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 12. JOB 11: SOC Analyst (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "SOC Analyst",
+      "description": "<p>Full-time role for a SOC Analyst focusing on SOC Analysis, Threat Monitoring, Security Dashboards, and WAF. Location: Mira Road, Mumbai. Experience: 1–2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-011"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 13. JOB 12: SEO & Digital Marketing Expert (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "SEO & Digital Marketing Expert",
+      "description": "<p>Full-time role for an expert in SEO, Digital Marketing, Google Analytics, and SEMrush. Location: Mira Road, Mumbai. Experience: 2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-012"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 14. JOB 13: Front End Developer (Immediate Joiners Only) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Front End Developer (Immediate Joiners Only)",
+      "description": "<p>Full-time role for a developer skilled in HTML, CSS, JavaScript, and Responsive Design. Location: Mira Road, Mumbai. Experience: 5+ Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-013"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 15. JOB 14: Graphic Designer (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Graphic Designer",
+      "description": "<p>Full-time role for a Graphic Designer proficient in Adobe Photoshop, Adobe Illustrator, and Adobe Premiere Pro. Location: Mumbai. Experience: Fresher – 1 Year.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-014"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 16. JOB 15: Cypress Automation Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Cypress Automation Tester",
+      "description": "<p>Full-time role for a Cypress Automation Tester skilled in Cypress, JavaScript, and TypeScript. Location: Mira Road, Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-015"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 17. JOB 16: Business Development Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Manager",
+      "description": "<p>Full-time role focused on Business Development, Client Acquisition, Sales Strategy, and Revenue Growth. Location: Mira Road, Mumbai. Experience: 5 to 10 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-016"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 18. JOB 17: Digital Marketing Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Digital Marketing Executive",
+      "description": "<p>Full-time role for a Digital Marketing Executive specializing in SEO, SEM, Social Media Marketing, and Email Marketing. Location: Mumbai. Experience: 1 to 3 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-017"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 19. JOB 18: Social Media Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Social Media Manager",
+      "description": "<p>Full-time role for a Social Media Manager focusing on Social Media Strategy, Content Creation, Engagement Growth, and Analytics. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-018"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 20. JOB 19: QA Test Lead (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "QA Test Lead",
+      "description": "<p>Full-time role for a QA Test Lead focusing on Test Planning, Team Leadership, Defect Management, and QA Strategy. Location: Mumbai. Experience: 5 to 7 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-019"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 21. JOB 20: Product Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Product Manager",
+      "description": "<p>Full-time role for a Product Manager focused on Product Strategy, Roadmap Planning, Market Research, and Cross-Functional Collaboration. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-020"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 22. JOB 21: Tele Sales Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Tele Sales Executive",
+      "description": "<p>Full-time role for a Tele Sales Executive focusing on Client Outreach, Tele Sales, Sales Target Achievement, and Relationship Building. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-021"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    }
+  ]
+};
+
+export const caseStudiesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA LAB LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.testriq.com/#website",
+      "url": "https://www.testriq.com",
+      "name": "Testriq QA Lab",
+      "publisher": {
+        "@id": "https://www.testriq.com/#organization"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.testriq.com/case-studies/#webpage",
+      "url": "https://www.testriq.com/case-studies",
+      "name": "Software Testing & QA Case Studies | Testriq QA Lab",
+      "description": "Explore our library of software testing case studies. See how Testriq helps global enterprises like Canva and Ragnar achieve 99% bug-free releases through expert QA automation.",
+      "isPartOf": {
+        "@id": "https://www.testriq.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.testriq.com/case-studies/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.testriq.com/canva-design-platform",
+            "name": "Testing Canva’s Design Platform"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://www.testriq.com/ragnar-sports-platform",
+            "name": "Ragnar Sports Platform – QA by Testriq"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.testriq.com/kanishka-mobile-app",
+            "name": "Testriq for Kanishka Mobile App Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.testriq.com/home-facts-case-study",
+            "name": "Real Estate QA Case Study – Testriq"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://www.testriq.com/realtytrac-case-study",
+            "name": "RealtyTrac QA Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://www.testriq.com/brandify-case-study",
+            "name": "Brandify QA for Digital Marketing Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://www.testriq.com/milton-case-study",
+            "name": "Milton Smart Stainless Steel Water Bottle Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://www.testriq.com/luep-case-study",
+            "name": "Cross-Platform QA Case Study of Luep"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "url": "https://www.testriq.com/aalpha-information-systems",
+            "name": "Securing Aalpha Information Systems' HR Portal"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "url": "https://www.testriq.com/digiboxx-case-study",
+            "name": "Optimizing Digiboxx with Robust Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "url": "https://www.testriq.com/rc-pets-case-study",
+            "name": "Performance Testing for RC Pets' Growth"
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "url": "https://www.testriq.com/worksocial-case-study",
+            "name": "WorkSocial Software Optimized Through Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "url": "https://www.testriq.com/leadoconnect-case-study",
+            "name": "Refining LeadoConnect’s B2B Software with QA"
+          },
+          {
+            "@type": "ListItem",
+            "position": 14,
+            "url": "https://www.testriq.com/pro-ficiency-case-study",
+            "name": "Elevating Pro-ficiency’s Software with QA and Rigorous Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 15,
+            "url": "https://www.testriq.com/phyllo-case-study",
+            "name": "Optimizing Phyllo's API with Efficient Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 16,
+            "url": "https://www.testriq.com/indo-wings-case-study",
+            "name": "Security Testing for High-end Drone for Indo Wings"
+          },
+          {
+            "@type": "ListItem",
+            "position": 17,
+            "url": "https://www.testriq.com/smart-doorbell-case-study",
+            "name": "Comprehensive QA for Smart Video Doorbell App"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/case-studies/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "https://www.testriq.com/case-studies"
+        }
+      ]
+    }
+  ]
 };
 
 // Contact Us Page
