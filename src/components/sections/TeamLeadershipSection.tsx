@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const TeamLeadershipSection = () => {
   const leaders = [
-    
+
     {
       name: "Prashant Shukla",
       position: "Senior Advisor",
@@ -19,7 +19,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/shukp/",
       img: (
         <Image
-        title="Prashant Shukla"
+          title="Prashant Shukla"
           src="/prashant-shukla.png"
           alt="Prashant-shukla"
           width={350}
@@ -28,7 +28,7 @@ const TeamLeadershipSection = () => {
         />
       ),
     },
-    
+
     {
       name: "Sandeep Maske",
       position: "Founder & CEO",
@@ -45,7 +45,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/sandeepmaske",
       img: (
         <Image
-        title="Sandeep Maske"
+          title="Sandeep Maske"
           src="/sandeep-maske-img.webp"
           alt="Sandeep Maske"
           width={350}
@@ -70,7 +70,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
       img: (
         <Image
-        title="Santosh Kakade"
+          title="Santosh Kakade"
           src="/Santosh_Kakade.webp"
           alt="Santosh_Kakade"
           width={350}
@@ -81,7 +81,7 @@ const TeamLeadershipSection = () => {
     },
     {
       name: "Goutam Mishra",
-      position: "Head of QA and BD",
+      position: "VP of QA and BD",
       experience: "20+ Years",
       specialization: "Software Testing & BD ",
       bio: "Goutam Mishra, With 20+ years in tech, excel in QA, testing, and project management, mentoring QA professionals while ensuring top-tier software quality across platforms.",
@@ -95,7 +95,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
       img: (
         <Image
-        title="Goutam Mishra"
+          title="Goutam Mishra"
           src="/Goutam_Mishra.webp"
           alt="Goutam_Mishra"
           width={350}
@@ -120,7 +120,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
       img: (
         <Image
-        title="Rohan Maske"
+          title="Rohan Maske"
           src="/Rohan_Maske.png"
           alt="Rohan_Maske"
           width={350}
@@ -131,7 +131,7 @@ const TeamLeadershipSection = () => {
     },
     {
       name: "Aatish Jadhav",
-      position: "Senior Manager - Strategic Growth",
+      position: "VP Strategic Growth",
       experience: "16+ Years",
       specialization: "Strategic Innovation Alignment",
       bio: "Senior Manager at TESTRIQ QA Lab with 16 years of industry experience. Driving strategic growth, aligning projects with innovation & quality, and empowering teams through Agile excellence.",
@@ -145,7 +145,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
       img: (
         <Image
-        title="Aatish Jadhav"
+          title="Aatish Jadhav"
           src="/Aatish_Jadhav.webp"
           alt="Aatish_Jadhav"
           width={350}
@@ -173,7 +173,7 @@ const TeamLeadershipSection = () => {
       label: "Shoeb Shaikh linkedin",
       img: (
         <Image
-        title="Shoeb Shaikh"
+          title="Shoeb Shaikh"
           src="/ShoebShaikh.webp"
           alt="ShoebShaikh"
           width={350}
@@ -198,7 +198,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/profashishshetty/",
       label: "Ashish Shetty linkedin",
       img: <Image
-      title="Ashish Shetty"
+        title="Ashish Shetty"
         src="/AshishShetty.png"
         alt="ShoebShaikh"
         width={550}
@@ -312,7 +312,7 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
-                  title={leader.name}
+                    title={leader.name}
                     href={leader.linkedin}
                     aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
@@ -447,7 +447,7 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
-                  title={leader.name}
+                    title={leader.name}
                     href={leader.linkedin}
                     aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
