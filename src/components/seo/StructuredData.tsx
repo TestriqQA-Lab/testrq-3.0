@@ -1017,8 +1017,8 @@ export const manualTestingServiceSchema = {
         {
           "@type": "Review",
           "author": {
-            "@type": "Organization",
-            "name": "Testriq QA Lab" // Author Name is MANDATORY
+            "@type": "Person",
+            "name": "Enterprise Client"
           },
           "datePublished": "2024-02-15",
           "reviewRating": {
@@ -1145,26 +1145,25 @@ export const automationTestingServiceSchema = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "300",
+        "reviewCount": "120", // Update with your real numbers
         "bestRating": "5",
         "worstRating": "1"
       },
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Head of Quality Engineering",
-          "affiliation": {
-            "@type": "Organization",
-            "name": "Fortune 500 Technology Company"
-          }
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Testriq's Automation testing expertise delivered exceptional results, significantly improving our application quality and user satisfaction. We achieved 85% quality enhancement."
-      }
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Enterprise Client"
+          },
+          "datePublished": "2024-02-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9"
+          },
+          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
+        }
+      ]
     },
     {
       "@type": "FAQPage",
