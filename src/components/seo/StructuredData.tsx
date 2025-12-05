@@ -1008,11 +1008,11 @@ export const manualTestingServiceSchema = {
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "800",
+        "ratingValue": "4.9",
+        "reviewCount": "120", // Update with your real numbers
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
     },
     {
       "@type": "FAQPage",
