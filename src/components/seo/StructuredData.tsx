@@ -1009,10 +1009,25 @@ export const manualTestingServiceSchema = {
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "120", // Update with your real numbers
+        "reviewCount": "44", // Update with your real numbers
         "bestRating": "5",
         "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Organization",
+            "name": "Testriq QA Lab" // Author Name is MANDATORY
+          },
+          "datePublished": "2024-02-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9"
+          },
+          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
+        }
+      ]
     },
     {
       "@type": "FAQPage",
