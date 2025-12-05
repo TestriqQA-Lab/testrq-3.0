@@ -160,6 +160,10 @@ const Navbar = () => {
               label: "Corporate QA Training",
               link: "/corporate-qa-training",
             },
+            {
+              label: "SAP Testing",
+              link: "/sap-testing-services",
+            },
           ],
         },
         {
@@ -260,8 +264,8 @@ const Navbar = () => {
                 >
                   <div
                     className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${activeLink === item.link || activeParent === item.label
-                        ? "text-[theme(color.brand.blue)]"
-                        : ""
+                      ? "text-[theme(color.brand.blue)]"
+                      : ""
                       }`}
                   >
                     {item.label}
@@ -271,8 +275,8 @@ const Navbar = () => {
               ) : (
                 <div
                   className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${activeParent === item.label
-                      ? "text-[theme(color.brand.blue)]"
-                      : ""
+                    ? "text-[theme(color.brand.blue)]"
+                    : ""
                     }`}
                 >
                   {item.label}
@@ -303,8 +307,8 @@ const Navbar = () => {
                               >
                                 <h2
                                   className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${activeLink === column.link
-                                      ? "text-[theme(color.brand.blue)]"
-                                      : ""
+                                    ? "text-[theme(color.brand.blue)]"
+                                    : ""
                                     }`}
                                 >
                                   {column.label}
@@ -339,8 +343,8 @@ const Navbar = () => {
                                     >
                                       <span
                                         className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${activeLink === service.link
-                                            ? "text-[theme(color.brand.blue)]"
-                                            : ""
+                                          ? "text-[theme(color.brand.blue)]"
+                                          : ""
                                           }`}
                                       >
                                         {service.label}
@@ -376,9 +380,9 @@ const Navbar = () => {
                         >
                           <span
                             className={`block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer ${activeLink ===
-                                ("link" in subItem ? subItem.link : "#")
-                                ? "text-[theme(color.brand.blue)]"
-                                : ""
+                              ("link" in subItem ? subItem.link : "#")
+                              ? "text-[theme(color.brand.blue)]"
+                              : ""
                               }`}
                           >
                             {"label" in subItem
@@ -447,9 +451,9 @@ const Navbar = () => {
                     >
                       <span
                         className={`text-md font-medium ${activeLink === item.link ||
-                            activeParent === item.label
-                            ? "text-[theme(color.brand.blue)]"
-                            : ""
+                          activeParent === item.label
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
                           }`}
                       >
                         {item.label}
@@ -458,8 +462,8 @@ const Navbar = () => {
                   ) : (
                     <span
                       className={`text-md font-medium ${activeParent === item.label
-                          ? "text-[theme(color.brand.blue)]"
-                          : ""
+                        ? "text-[theme(color.brand.blue)]"
+                        : ""
                         }`}
                     >
                       {item.label}
@@ -491,8 +495,8 @@ const Navbar = () => {
                                 >
                                   <h3
                                     className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${activeLink === column.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
+                                      ? "text-[theme(color.brand.blue)]"
+                                      : ""
                                       }`}
                                   >
                                     {column.label}
@@ -518,8 +522,8 @@ const Navbar = () => {
                                   >
                                     <span
                                       className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${activeLink === service.link
-                                          ? "text-[theme(color.brand.blue)]"
-                                          : ""
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
                                         }`}
                                     >
                                       {service.label}
@@ -547,9 +551,9 @@ const Navbar = () => {
                             >
                               <span
                                 className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${activeLink ===
-                                    ("link" in subItem ? subItem.link : "#")
-                                    ? "text-[theme(color.brand.blue)]"
-                                    : ""
+                                  ("link" in subItem ? subItem.link : "#")
+                                  ? "text-[theme(color.brand.blue)]"
+                                  : ""
                                   }`}
                               >
                                 {"label" in subItem
@@ -606,9 +610,9 @@ const Navbar = () => {
                     >
                       <span
                         className={`text-base font-medium ${activeLink === item.link ||
-                            activeParent === item.label
-                            ? "text-[theme(color.brand.blue)]"
-                            : ""
+                          activeParent === item.label
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
                           }`}
                       >
                         {item.label}
@@ -617,8 +621,8 @@ const Navbar = () => {
                   ) : (
                     <span
                       className={`text-base font-medium ${activeParent === item.label
-                          ? "text-[theme(color.brand.blue)]"
-                          : ""
+                        ? "text-[theme(color.brand.blue)]"
+                        : ""
                         }`}
                     >
                       {item.label}
@@ -650,8 +654,8 @@ const Navbar = () => {
                                 >
                                   <h3
                                     className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${activeLink === column.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
+                                      ? "text-[theme(color.brand.blue)]"
+                                      : ""
                                       }`}
                                   >
                                     {column.label}
@@ -677,8 +681,8 @@ const Navbar = () => {
                                   >
                                     <span
                                       className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${activeLink === service.link
-                                          ? "text-[theme(color.brand.blue)]"
-                                          : ""
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
                                         }`}
                                     >
                                       {service.label}
@@ -706,9 +710,9 @@ const Navbar = () => {
                           >
                             <span
                               className={`block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md ${activeLink ===
-                                  ("link" in subItem ? subItem.link : "#")
-                                  ? "text-[theme(color.brand.blue)]"
-                                  : ""
+                                ("link" in subItem ? subItem.link : "#")
+                                ? "text-[theme(color.brand.blue)]"
+                                : ""
                                 }`}
                             >
                               {"label" in subItem

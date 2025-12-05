@@ -55,6 +55,7 @@ const specializedTesting = [
   { title: "Data Analysis", path: "/data-analysis-services" },
   { title: "Software Testing Guide", path: "/software-testing-guide" },
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
+  { title: "SAP Testing", path: "/sap-testing-services" },
 ];
 
 const company = [

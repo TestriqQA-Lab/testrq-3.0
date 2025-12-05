@@ -4186,3 +4186,133 @@ export const shoppingAppCertificationSchema = {
     bestRating: "5",
   },
 };
+
+// Service Schema for SAP Testing Service
+export const sapTestingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/sap-testing-services/#service",
+      "name": "SAP Testing Services",
+      "serviceType": "Enterprise Software QA",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
+      },
+      "areaServed": "Worldwide",
+      "description": "Comprehensive SAP testing services including S/4HANA migration validation, SAP Fiori testing, and automated regression testing for enterprise landscapes.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact-us"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SAP Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "S/4HANA Migration Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SAP Fiori UX Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SAP Test Automation (Tosca/Worksoft)"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "100",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Global Manufacturing Corp"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Testriq's rigorous testing strategy was crucial for our seamless transition to S/4HANA. We maintained full operational capability throughout the migration."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is SAP testing critical for S/4HANA migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SAP S/4HANA migration involves complex data transformation and process re-engineering. Comprehensive testing ensures business continuity and data integrity during the transition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you support SAP test automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we specialize in SAP automation using Tricentis Tosca, Worksoft Certify, and UFT One to accelerate regression cycles and reduce business risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle SAP integration testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We validate end-to-end data flow between SAP modules and non-SAP systems via middleware like SAP PO/PI and CPI, ensuring seamless enterprise connectivity."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SAP Testing",
+          "item": "https://www.testriq.com/sap-testing-services"
+        }
+      ]
+    }
+  ]
+};
