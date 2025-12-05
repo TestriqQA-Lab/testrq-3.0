@@ -190,7 +190,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Leverage specialized IoT testing <Link href="/tools">tools and frameworks</Link> designed for
+            Leverage specialized IoT testing <Link href="/technology-stack">tools and frameworks</Link> designed for
             IoT ecosystems, ensuring <Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">seamless device connectivity</Link>, robust IoT
             security, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">optimized performance</Link> across edge-to-cloud
             architectures and diverse connected environments.
@@ -221,7 +221,7 @@ const IoTToolsFrameworkSection: React.FC = () => {
                     key={toolIndex}
                     className="flex items-start gap-3 p-3 bg-gray-50 rounded-xl hover:bg-sky-100 transition-colors"
                   >
-                     {tool.icon}
+                    {tool.icon}
                     <div>
                       <h4 className="font-semibold text-gray-900">
                         {tool.name}

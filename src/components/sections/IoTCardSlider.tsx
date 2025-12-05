@@ -7,9 +7,9 @@ import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
 const IoTCardSlider: React.FC = () => {
   const testingTypes = [
     {
-      title: "Device Functionality Testing",
+      title: "Embedded Software & Firmware Testing",
       description:
-        "Comprehensive validation of IoT device functionality, features, and user interactions.",
+        <>Comprehensive validation of <strong>embedded firmware logic</strong>, sensor accuracy, and <strong>OTA (Over-the-Air) updates</strong> to ensure your device performs flawlessly without data loss.</>,
       features: [
         "Device feature validation",
         "User interface testing",
@@ -21,9 +21,9 @@ const IoTCardSlider: React.FC = () => {
         "blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices",
     },
     {
-      title: "Connectivity & Protocol Testing",
+      title: "Protocol Validation (MQTT, Zigbee, BLE)",
       description:
-        "Ensure your IoT devices communicate reliably across all supported protocols and networks.",
+        <>Ensure reliable communication across complex networks. We validate interoperability for <strong>MQTT</strong>, <strong>Zigbee</strong>, <strong>CoAP</strong>, and <strong>Bluetooth Low Energy (BLE)</strong> under varying latency conditions.</>,
       features: [
         "Wireless protocol testing",
         "Network connectivity validation",
@@ -35,9 +35,9 @@ const IoTCardSlider: React.FC = () => {
         "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more",
     },
     {
-      title: "Security & Privacy Testing",
+      title: "IoT Security & Penetration Testing",
       description:
-        "Comprehensive security assessment to protect your IoT devices from threats and vulnerabilities with robust encryption and privacy protocols.",
+        <>Advanced <strong>Vulnerability Assessment and Penetration Testing (VAPT)</strong> to protect against firmware hacking, side-channel attacks, and <strong>unencrypted data transmission</strong>.</>,
       features: [
         "Device authentication testing",
         "Data encryption validation",

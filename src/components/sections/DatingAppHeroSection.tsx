@@ -11,6 +11,7 @@ import {
   Eye,
 } from "lucide-react";
 import Link from "next/link";
+import { FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const DatingAppHeroSection = () => {
@@ -43,10 +44,24 @@ const DatingAppHeroSection = () => {
   const closeLightbox = () => setIsLightboxOpen(false);
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-8 pb-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(37,168,224,0.05)_50%,transparent_75%)] bg-[length:60px_60px]"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Dating Apps Certification
+          </span>
+        </div>
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

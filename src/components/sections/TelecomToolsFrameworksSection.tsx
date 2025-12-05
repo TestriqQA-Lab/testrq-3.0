@@ -170,7 +170,7 @@ const TelecomToolsFrameworksSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We use industry-leading <Link href="/tools">testing tools</Link> and frameworks to validate
+            We use industry-leading <Link href="/technology-stack">testing tools</Link> and frameworks to validate
             every aspect of telecom software, from mobile apps and portals to
             OSS/BSS platforms, ensuring <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">performance</Link>, reliability, and <Link href="/security-testing">security</Link>
             {" "}at scale.
@@ -217,7 +217,7 @@ const TelecomToolsFrameworksSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <Link href="/tools" className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
+                <Link href="/technology-stack" className="text-[theme(color.brand.blue)] font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
                   Explore Tools
                   <FaArrowRight className="w-3 h-3" />
                 </Link>
@@ -236,7 +236,7 @@ const TelecomToolsFrameworksSection: React.FC = () => {
               Our curated software QA toolkit enables us to validate telecom
               platforms with precision, covering <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">scalability</Link>, security,{" "}
               <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">performance</Link>, and integration in complex, <Link href="/blog/post/etl-testing-for-big-data">multi-system
-              environments</Link>.
+                environments</Link>.
             </p>
           </div>
 

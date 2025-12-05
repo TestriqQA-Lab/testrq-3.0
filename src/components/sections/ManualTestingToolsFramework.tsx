@@ -128,7 +128,7 @@ const ManualTestingToolsFramework: React.FC = () => {
             Manual Testing <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage <Link href='tools'>industry-leading tools and frameworks</Link> to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting-delivering reliable, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high-quality software assurance</Link>.
+            We leverage <Link href='/technology-stack'>industry-leading tools and frameworks</Link> to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting-delivering reliable, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high-quality software assurance</Link>.
           </p>
         </div>
 
@@ -141,11 +141,10 @@ const ManualTestingToolsFramework: React.FC = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`p-4 text-center transition-all duration-300 ${
-                    activeCategory === category.id
+                  className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
                       ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
                       : `text-gray-600 ${colors.hover}`
-                  }`}
+                    }`}
                 >
                   <div className="flex flex-col items-center space-y-2">
                     <span className={activeCategory === category.id ? colors.text : "text-gray-400"}>

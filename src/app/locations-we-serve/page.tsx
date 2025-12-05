@@ -10,6 +10,8 @@ import {
   FaExternalLinkAlt,
   FaCity,
   FaFlag,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 import { locationData, LocationData } from "../lib/LocationData"; // adjust path if needed
@@ -50,7 +52,7 @@ const structuredData = {
           "name": "India"
         },
         {
-          "@type": "Country", 
+          "@type": "Country",
           "name": "United Arab Emirates"
         }
       ],
@@ -116,28 +118,28 @@ const structuredData = {
               "@type": "State",
               "name": "Maharashtra",
               "containsPlace": [
-                {"@type": "City", "name": "Mumbai"},
-                {"@type": "City", "name": "Pune"},
-                {"@type": "City", "name": "Nashik"},
-                {"@type": "City", "name": "Nagpur"}
-              ]
-            },
-            {
-              "@type": "State", 
-              "name": "Karnataka",
-              "containsPlace": [
-                {"@type": "City", "name": "Bangalore"},
-                {"@type": "City", "name": "Mysore"},
-                {"@type": "City", "name": "Hubli"}
+                { "@type": "City", "name": "Mumbai" },
+                { "@type": "City", "name": "Pune" },
+                { "@type": "City", "name": "Nashik" },
+                { "@type": "City", "name": "Nagpur" }
               ]
             },
             {
               "@type": "State",
-              "name": "Tamil Nadu", 
+              "name": "Karnataka",
               "containsPlace": [
-                {"@type": "City", "name": "Chennai"},
-                {"@type": "City", "name": "Coimbatore"},
-                {"@type": "City", "name": "Madurai"}
+                { "@type": "City", "name": "Bangalore" },
+                { "@type": "City", "name": "Mysore" },
+                { "@type": "City", "name": "Hubli" }
+              ]
+            },
+            {
+              "@type": "State",
+              "name": "Tamil Nadu",
+              "containsPlace": [
+                { "@type": "City", "name": "Chennai" },
+                { "@type": "City", "name": "Coimbatore" },
+                { "@type": "City", "name": "Madurai" }
               ]
             }
           ]
@@ -150,16 +152,16 @@ const structuredData = {
               "@type": "State",
               "name": "Dubai",
               "containsPlace": [
-                {"@type": "City", "name": "Dubai"},
-                {"@type": "City", "name": "Sharjah"}
+                { "@type": "City", "name": "Dubai" },
+                { "@type": "City", "name": "Sharjah" }
               ]
             },
             {
               "@type": "State",
-              "name": "Abu Dhabi", 
+              "name": "Abu Dhabi",
               "containsPlace": [
-                {"@type": "City", "name": "Abu Dhabi"},
-                {"@type": "City", "name": "Al Ain"}
+                { "@type": "City", "name": "Abu Dhabi" },
+                { "@type": "City", "name": "Al Ain" }
               ]
             }
           ]
@@ -178,7 +180,7 @@ const structuredData = {
             }
           },
           {
-            "@type": "Offer", 
+            "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
               "name": "Automation Testing Services",
@@ -188,7 +190,7 @@ const structuredData = {
           {
             "@type": "Offer",
             "itemOffered": {
-              "@type": "Service", 
+              "@type": "Service",
               "name": "Performance Testing Services",
               "description": "Load, stress, and performance testing using JMeter, LoadRunner, and other tools"
             }
@@ -197,7 +199,7 @@ const structuredData = {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Security Testing Services", 
+              "name": "Security Testing Services",
               "description": "Application security testing including penetration testing and vulnerability assessment"
             }
           }
@@ -234,7 +236,7 @@ const structuredData = {
           "item": "https://www.testriq.com/"
         },
         {
-          "@type": "ListItem", 
+          "@type": "ListItem",
           "position": 2,
           "name": "Locations We Serve",
           "item": "https://www.testriq.com/locations-we-serve/"
@@ -347,9 +349,24 @@ const LocationsWeServe: React.FC = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      
-      <section className="py-16 bg-gray-50 px-8 md:px-12 lg:px-24">
+
+      <section className="pt-8 pb-16 bg-gray-50 px-8 md:px-12 lg:px-24">
         <div className="max-w-7xl mx-auto">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+            <Link
+              href="/"
+              className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+            >
+              <FaHome className="text-lg" />
+              Home
+            </Link>
+            <FaChevronRight className="text-xs text-gray-400" />
+            <span className="text-[theme(color.brand.blue)]">
+              Locations We Serve
+            </span>
+          </div>
+
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
@@ -510,11 +527,9 @@ const LocationsWeServe: React.FC = () => {
                                         </p>
                                         <div className="max-h-32 overflow-y-auto space-y-1">
                                           {urls.map((url, index) => (
-                                            <a
+                                            <Link
                                               key={index}
                                               href={url}
-                                              target="_blank"
-                                              rel="noopener noreferrer"
                                               className="flex items-center justify-between text-sm text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group p-2 rounded hover:bg-blue-50 transition-all duration-200"
                                             >
                                               <span className="truncate">
@@ -522,22 +537,20 @@ const LocationsWeServe: React.FC = () => {
                                                 {getLocationName(url)}
                                               </span>
                                               <FaExternalLinkAlt className="w-3 h-3 flex-shrink-0 ml-2 group-hover:opacity-100 transition-opacity" />
-                                            </a>
+                                            </Link>
                                           ))}
                                         </div>
                                       </div>
                                     ) : (
-                                      <a
-                                        href={urls}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                      <Link
+                                        href={urls as string}
                                         className="flex items-center justify-between text-[theme(color.brand.blue)] hover:text-blue-800 hover:underline group"
                                       >
                                         <span>
                                           Professional Software Testing Services in {city}
                                         </span>
                                         <FaExternalLinkAlt className="w-4 h-4 group-hover:opacity-100 transition-opacity" />
-                                      </a>
+                                      </Link>
                                     )}
                                   </div>
                                 ))}
@@ -582,7 +595,7 @@ const LocationsWeServe: React.FC = () => {
             </h3>
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               We&apos;re constantly expanding our software testing and QA services to new locations.
-              Contact us to discuss bringing our world-class <Link href='software-testing-guide'>software testing</Link>, <Link href='automation-testing-services'>automation testing</Link>, 
+              Contact us to discuss bringing our world-class <Link href='software-testing-guide'>software testing</Link>, <Link href='automation-testing-services'>automation testing</Link>,
               <Link href='performance-testing-services'>performance testing</Link>, and <Link href='api-testing'>API testing services</Link> to your area.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -452,7 +452,7 @@ const GamingTestingServicesSection: React.FC = () => {
               </Link>
 
               <Link
-                href="/contact-us"
+                 href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
                 title="Schedule Gaming Consultation – Testriq QA Lab"
                 className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
              bg-white bg-opacity-20 text-black rounded-2xl font-semibold text-lg

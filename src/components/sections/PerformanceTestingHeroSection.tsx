@@ -12,7 +12,7 @@ import {
   FaCloud,
   FaDatabase,
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const PerformanceTestingHeroSection: React.FC = () => {
@@ -27,8 +27,22 @@ const PerformanceTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Performance Testing
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
@@ -49,7 +63,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
               Ensure your applications perform flawlessly under any load with
               our comprehensive <Link href='blog/post/what-are-the-different-types-of-performance-testing-services'>performance testing services</Link>. We conduct <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load
                 testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, <Link href='blog/post/spike-testing-handling-sudden-traffic-surges'>spike testing</Link>, and <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>endurance testing</Link>{" "}
-              using <Link href='tools'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
+              using <Link href='/technology-stack'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
               Gatling to guarantee optimal <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>application
                 performance, and scalability</Link> at scale.
             </p>

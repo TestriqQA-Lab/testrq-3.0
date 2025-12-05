@@ -14,9 +14,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Software Testing Guide - Best Software Testing Company",
+  title: "QA Consulting Services & Software Testing Strategy",
   description:
-    "Explore a complete guide to software testing services including manual, automation, performance, security, and API testing. Testriq QA Lab delivers ISO-certified QA solutions for startups and enterprises.",
+    "ISO-certified Software Testing Services for Startups & Enterprises. From Manual & Automation to Security QA, Testriq Lab delivers scalable, bug-free solutions.",
   keywords: [
     "Software Testing Guide",
     "Manual Testing",

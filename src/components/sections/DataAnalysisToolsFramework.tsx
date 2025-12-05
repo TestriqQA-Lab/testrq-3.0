@@ -345,7 +345,7 @@ const DataAnalysisToolsFramework = () => {
             <span className="text-brand-blue">Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Leverage cutting-edge data analysis <Link href="/tools">tools</Link> and analytical frameworks
+            Leverage cutting-edge data analysis <Link href="/technology-stack">tools</Link> and analytical frameworks
             to unlock the full potential of your data. Our expertise spans the
             entire <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">data analytics</Link> technology stack, including statistical
             modeling, <Link href="/blog/post/ai-testing-learning-guide">machine learning</Link> model building, and natural language
@@ -361,11 +361,10 @@ const DataAnalysisToolsFramework = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(index)}
-                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeCategory === index
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                }`}
+                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeCategory === index
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  }`}
               >
                 {category.icon}
                 <span className="ml-2 hidden sm:inline">{category.title}</span>
@@ -498,7 +497,7 @@ const DataAnalysisToolsFramework = () => {
                 Presentation Layer
               </h4>
               <p className="text-gray-600 text-sm">
-                Interactive dashboards, reports, and <Link href="/tools">visualization tools</Link> for
+                Interactive dashboards, reports, and <Link href="/technology-stack">visualization tools</Link> for
                 actionable insights.
               </p>
             </div>

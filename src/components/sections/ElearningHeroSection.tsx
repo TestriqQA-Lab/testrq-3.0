@@ -16,6 +16,8 @@ import {
   FaGlobe,
   FaAccessibleIcon,
   FaArrowRight,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const ElearningHeroSection: React.FC = () => {
@@ -47,7 +49,7 @@ const ElearningHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto pt-8 pb-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -56,6 +58,21 @@ const ElearningHeroSection: React.FC = () => {
       </div>
 
       <div className="flex flex-col text-center md:text-start relative">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            E-Learning Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
           <div className="space-y-5">

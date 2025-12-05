@@ -7,20 +7,17 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Manual Testing Services for Software QA",
+  title: "Manual & Exploratory Testing Services | UAT & Usability Experts",
   description:
-    "We are one of the best Manual QA Testing Services Companies in Mumbai. With expertise in web manual testing and manual mobile app testing. Contact Us Now!",
+    "Don't let automation miss critical bugs. Our ISTQB-certified manual testers specialize in Exploratory Testing, UAT Management, and WCAG Accessibility Audits.",
   keywords: [
-    "manual testing services",
-    "functional testing",
-    "usability testing",
-    "exploratory testing",
-    "UAT testing",
-    "accessibility testing",
-    "QA testing solutions",
-    "human-centered testing",
-    "manual QA experts",
-    "software quality assurance",
+    "exploratory testing services",
+    "managed UAT",
+    "manual regression testing",
+    "usability audit",
+    "wcag accessibility testing",
+    "manual mobile app testing",
+    "ad-hoc testing"
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -115,6 +112,18 @@ const ManualTestingComprehensiveSlider = dynamic(
   }
 );
 
+const ManualTestingHumanAdvantage = dynamic(
+  () => import("@/components/sections/ManualTestingHumanAdvantage"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 const ManualTestingProvenTestingProcess = dynamic(
   () => import("@/components/sections/ManualTestingProvenTestingProcess"),
   {
@@ -189,6 +198,7 @@ export default function ManualTestingPage() {
       <MainLayout>
         <ManualTestingHeroSection />
         <ManualTestingComprehensiveSlider />
+        <ManualTestingHumanAdvantage />
         <ManualTestingProvenTestingProcess />
         <ManualTestingWhyChooseTestriq />
         <ManualTestingToolsFramework />

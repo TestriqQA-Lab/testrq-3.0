@@ -11,6 +11,8 @@ import {
   FaCheckCircle,
   FaNetworkWired,
   FaMicrochip,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const IoTHeroSection: React.FC = () => {
@@ -69,7 +71,22 @@ const IoTHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative pt-10 pb-20">
+      <div className="relative pt-8 pb-16">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            IoT Appliance Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">

@@ -4,153 +4,153 @@ import Link from "next/link";
 import React from "react";
 
 const LaunchFastToolsFramework: React.FC = () => {
-  const toolCategories : {
+  const toolCategories: {
     title: React.ReactNode;
     tools: {
       name: string;
       description: string;
     }[]
   }[] = [
-    {
-      title: "Rapid Testing Tools",
-      tools: [
-        {
-          name: "Selenium WebDriver",
-          description: "Fast automated web testing for rapid feedback cycles",
-        },
-        {
-          name: "Cypress",
-          description:
-            "Modern end-to-end testing with real-time browser testing",
-        },
-        {
-          name: "Playwright",
-          description: "Cross-browser automation for comprehensive coverage",
-        },
-        {
-          name: "TestCafe",
-          description: "Node.js-based testing with no WebDriver dependencies",
-        },
-      ],
-    },
-    {
-      title: "Agile CI/CD Integration",
-      tools: [
-        {
-          name: "Jenkins",
-          description: "Continuous integration for automated testing pipelines",
-        },
-        {
-          name: "GitHub Actions",
-          description: "Workflow automation integrated with development",
-        },
-        {
-          name: "GitLab CI/CD",
-          description: "Built-in continuous integration and deployment",
-        },
-        {
-          name: "Azure DevOps",
-          description: "End-to-end DevOps toolchain for rapid delivery",
-        },
-      ],
-    },
-    {
-      title: (
-        <>
-        <Link title="Performance Testing" href='performance-testing-services'>Performance Testing</Link>
-        </>
-      ),
-      tools: [
-        {
-          name: "JMeter",
-          description: "Load testing for performance validation at scale",
-        },
-        {
-          name: "K6",
-          description: "Modern load testing for developer-centric workflows",
-        },
-        {
-          name: "Artillery",
-          description: "Modern performance testing toolkit for APIs",
-        },
-        {
-          name: "WebPageTest",
-          description: "Real-world performance testing and optimization",
-        },
-      ],
-    },
-    {
-      title: (
-        <>
-        <Link title="Mobile Testing" href='mobile-application-testing'>Mobile Testing</Link>
-        </>
-      ),
-      tools: [
-        {
-          name: "Appium",
-          description: "Cross-platform mobile automation for iOS and Android",
-        },
-        {
-          name: "Detox",
-          description: "Gray box end-to-end testing for mobile apps",
-        },
-        {
-          name: "Espresso",
-          description: "Android UI testing framework for rapid feedback",
-        },
-        {
-          name: "XCUITest",
-          description: "iOS UI testing framework for native applications",
-        },
-      ],
-    },
-    {
-      title: (
-        <>
-        <Link title="API Testing" href='api-testing'>API Testing</Link>
-        </>
-      ),
-      tools: [
-        {
-          name: "Postman",
-          description: "API development and testing platform",
-        },
-        {
-          name: "REST Assured",
-          description: "Java-based REST API testing framework",
-        },
-        {
-          name: "Newman",
-          description: "Command-line collection runner for Postman",
-        },
-        {
-          name: "Insomnia",
-          description: "API client for REST and GraphQL testing",
-        },
-      ],
-    },
-    {
-      title: "Monitoring & Analytics",
-      tools: [
-        {
-          name: "Datadog",
-          description: "Real-time monitoring and analytics platform",
-        },
-        {
-          name: "New Relic",
-          description: "Application performance monitoring and optimization",
-        },
-        {
-          name: "Sentry",
-          description: "Error tracking and performance monitoring",
-        },
-        {
-          name: "LogRocket",
-          description: "Frontend monitoring and session replay",
-        },
-      ],
-    },
-  ];
+      {
+        title: "Rapid Testing Tools",
+        tools: [
+          {
+            name: "Selenium WebDriver",
+            description: "Fast automated web testing for rapid feedback cycles",
+          },
+          {
+            name: "Cypress",
+            description:
+              "Modern end-to-end testing with real-time browser testing",
+          },
+          {
+            name: "Playwright",
+            description: "Cross-browser automation for comprehensive coverage",
+          },
+          {
+            name: "TestCafe",
+            description: "Node.js-based testing with no WebDriver dependencies",
+          },
+        ],
+      },
+      {
+        title: "Agile CI/CD Integration",
+        tools: [
+          {
+            name: "Jenkins",
+            description: "Continuous integration for automated testing pipelines",
+          },
+          {
+            name: "GitHub Actions",
+            description: "Workflow automation integrated with development",
+          },
+          {
+            name: "GitLab CI/CD",
+            description: "Built-in continuous integration and deployment",
+          },
+          {
+            name: "Azure DevOps",
+            description: "End-to-end DevOps toolchain for rapid delivery",
+          },
+        ],
+      },
+      {
+        title: (
+          <>
+            <Link title="Performance Testing" href='performance-testing-services'>Performance Testing</Link>
+          </>
+        ),
+        tools: [
+          {
+            name: "JMeter",
+            description: "Load testing for performance validation at scale",
+          },
+          {
+            name: "K6",
+            description: "Modern load testing for developer-centric workflows",
+          },
+          {
+            name: "Artillery",
+            description: "Modern performance testing toolkit for APIs",
+          },
+          {
+            name: "WebPageTest",
+            description: "Real-world performance testing and optimization",
+          },
+        ],
+      },
+      {
+        title: (
+          <>
+            <Link title="Mobile Testing" href='mobile-application-testing'>Mobile Testing</Link>
+          </>
+        ),
+        tools: [
+          {
+            name: "Appium",
+            description: "Cross-platform mobile automation for iOS and Android",
+          },
+          {
+            name: "Detox",
+            description: "Gray box end-to-end testing for mobile apps",
+          },
+          {
+            name: "Espresso",
+            description: "Android UI testing framework for rapid feedback",
+          },
+          {
+            name: "XCUITest",
+            description: "iOS UI testing framework for native applications",
+          },
+        ],
+      },
+      {
+        title: (
+          <>
+            <Link title="API Testing" href='api-testing'>API Testing</Link>
+          </>
+        ),
+        tools: [
+          {
+            name: "Postman",
+            description: "API development and testing platform",
+          },
+          {
+            name: "REST Assured",
+            description: "Java-based REST API testing framework",
+          },
+          {
+            name: "Newman",
+            description: "Command-line collection runner for Postman",
+          },
+          {
+            name: "Insomnia",
+            description: "API client for REST and GraphQL testing",
+          },
+        ],
+      },
+      {
+        title: "Monitoring & Analytics",
+        tools: [
+          {
+            name: "Datadog",
+            description: "Real-time monitoring and analytics platform",
+          },
+          {
+            name: "New Relic",
+            description: "Application performance monitoring and optimization",
+          },
+          {
+            name: "Sentry",
+            description: "Error tracking and performance monitoring",
+          },
+          {
+            name: "LogRocket",
+            description: "Frontend monitoring and session replay",
+          },
+        ],
+      },
+    ];
 
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
@@ -214,7 +214,7 @@ const LaunchFastToolsFramework: React.FC = () => {
               Our curated tech stack supports rapid testing sprints, delivering
               maximum efficiency and test coverage for <Link title="agile QA testing" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, <Link title="fast
               product launches" href='blog/post/performance-optimization-for-pre-launch-software-testing'>fast
-              product launches</Link>, and seamless go-to-market QA execution
+                product launches</Link>, and seamless go-to-market QA execution
             </p>
           </div>
 
@@ -280,8 +280,8 @@ const LaunchFastToolsFramework: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link  href={"/tools"} title="Explore our full QA technology stack" className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Explore Our Technology Stack
+          <Link href={"/technology-stack"} title="Explore our full QA technology stack" className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+            Explore Our Technology Stack
           </Link>
         </div>
       </div>

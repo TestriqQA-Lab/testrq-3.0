@@ -263,7 +263,7 @@ const IoTFAQSection: React.FC = () => {
               to your specific IoT project questions and requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 text-[theme(color.brand.blue)] justify-center">
-              <Link href="/contact-us">
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
                 <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
                   Schedule IoT Consultation
                 </button>

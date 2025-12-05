@@ -37,7 +37,7 @@ const CaseStudiesReadyToStartSection = () => {
       icon: FaCalendarAlt,
       title: "Schedule a Call",
       description: "Book a free consultation at your convenience",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       text: "Schedule Now",
       primary: true,
     },
@@ -128,7 +128,7 @@ const CaseStudiesReadyToStartSection = () => {
                     {option.description}
                   </p>
 
-                  <Link key={index} href={`${option.action}`}
+                  <Link key={index} href={`${option.action}`} target={ "_blank" }
                     className="font-semibold bg-yellow-400 text-gray-900 p-2 rounded-xl hover:scale-105 cursor-pointer transition-colors"
                   >
                     {option.text}

@@ -3,8 +3,9 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaHome, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   getTotalPostCount,
   getTotalCategoryCount,
@@ -94,7 +95,7 @@ const BlogHeroSection: React.FC = () => {
   );
 
   return (
-    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white pt-8 pb-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blur Circles */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 bg-opacity-30 rounded-full blur-2xl" />
@@ -103,6 +104,22 @@ const BlogHeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
+        {/* Breadcrumb */}
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-500" />
+          <span className="text-cyan-400">
+            Blog
+          </span>
+        </div>
+
         {/* Tagline */}
         <span className="inline-block bg-blue-600/10 text-blue-300 text-sm px-6 py-2 rounded-full mb-6 border border-blue-500/20 tracking-wide">
           Expert QA Insights & Best Practices

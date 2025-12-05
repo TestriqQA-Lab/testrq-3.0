@@ -3,11 +3,11 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import StructuredData, {
   createBreadcrumbSchema,
-  webAppTestingServiceSchema,
+  iotDeviceTestingSchema,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "IoT Testing Services for Smart Devices",
+  title: "IoT Device Testing Services | Firmware, MQTT & Security QA | Testriq",
 
   description:
     "Testriq offers end-to-end IoT testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
@@ -201,7 +201,7 @@ export default function IoTDeviceTesting() {
 
   return (
     <div>
-      <StructuredData data={webAppTestingServiceSchema} />
+      <StructuredData data={iotDeviceTestingSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <IoTTestingHeroSection />

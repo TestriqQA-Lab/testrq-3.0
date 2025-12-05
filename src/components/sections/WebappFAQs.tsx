@@ -23,7 +23,7 @@ const faqs = [
     question: "Do you provide automated testing for web applications?",
     answer:
       (<>Yes, we provide automated testing using tools like <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link>, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenario
-      s. Automation is integrated with <Link href='manual-testing'>manual testing</Link> to maximize coverage and efficiency, tailored to your application’s needs and CI/CD pipeline.</>),
+        s. Automation is integrated with <Link href='manual-testing'>manual testing</Link> to maximize coverage and efficiency, tailored to your application’s needs and CI/CD pipeline.</>),
   },
   {
     question: "How do you ensure cross-browser compatibility?",
@@ -50,7 +50,7 @@ export default function WebappFAQs() {
         <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
           Common Questions About{" "}
           <span className="text-[theme(color.brand.blue)]">
-            Web App Testing Services
+            Web Application Testing
           </span>
         </h2>
         <p className="mt-4 text-gray-600 text-base sm:text-lg">
@@ -78,9 +78,8 @@ export default function WebappFAQs() {
               )}
             </button>
             <div
-              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${
-                activeIndex === index ? "block" : "hidden"
-              }`}
+              className={`px-6 pt-0 pb-5 text-gray-700 text-sm sm:text-base transition-all duration-300 ${activeIndex === index ? "block" : "hidden"
+                }`}
             >
               {item.answer}
             </div>

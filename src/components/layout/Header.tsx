@@ -160,6 +160,10 @@ const Navbar = () => {
               label: "Corporate QA Training",
               link: "/corporate-qa-training",
             },
+            {
+              label: "SAP Testing",
+              link: "/sap-testing-services",
+            },
           ],
         },
         {
@@ -218,7 +222,7 @@ const Navbar = () => {
         },
       ],
     },
-    { label: "Tools", link: "/tools" },
+    { label: "Tools", link: "/technology-stack" },
     { label: "Case Studies", link: "/case-studies" },
     { label: "Careers", link: "/careers" },
     { label: "Blog", link: "/blog" },
@@ -259,11 +263,10 @@ const Navbar = () => {
                   aria-label={item.label}
                 >
                   <div
-                    className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${
-                      activeLink === item.link || activeParent === item.label
-                        ? "text-[theme(color.brand.blue)]"
-                        : ""
-                    }`}
+                    className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${activeLink === item.link || activeParent === item.label
+                      ? "text-[theme(color.brand.blue)]"
+                      : ""
+                      }`}
                   >
                     {item.label}
                     {item.submenu && <MdKeyboardArrowDown />}
@@ -271,11 +274,10 @@ const Navbar = () => {
                 </Link>
               ) : (
                 <div
-                  className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${
-                    activeParent === item.label
-                      ? "text-[theme(color.brand.blue)]"
-                      : ""
-                  }`}
+                  className={`flex items-center gap-1 hover:text-[theme(color.brand.blue)] px-2 py-1 ${activeParent === item.label
+                    ? "text-[theme(color.brand.blue)]"
+                    : ""
+                    }`}
                 >
                   {item.label}
                   {item.submenu && <MdKeyboardArrowDown />}
@@ -304,11 +306,10 @@ const Navbar = () => {
                                 aria-label={column.label}
                               >
                                 <h2
-                                  className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${
-                                    activeLink === column.link
-                                      ? "text-[theme(color.brand.blue)]"
-                                      : ""
-                                  }`}
+                                  className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${activeLink === column.link
+                                    ? "text-[theme(color.brand.blue)]"
+                                    : ""
+                                    }`}
                                 >
                                   {column.label}
                                 </h2>
@@ -341,11 +342,10 @@ const Navbar = () => {
                                       aria-label={service.label}
                                     >
                                       <span
-                                        className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${
-                                          activeLink === service.link
-                                            ? "text-[theme(color.brand.blue)]"
-                                            : ""
-                                        }`}
+                                        className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${activeLink === service.link
+                                          ? "text-[theme(color.brand.blue)]"
+                                          : ""
+                                          }`}
                                       >
                                         {service.label}
                                       </span>
@@ -379,12 +379,11 @@ const Navbar = () => {
                           aria-label={"label" in subItem ? subItem.label : subItem.heading}
                         >
                           <span
-                            className={`block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer ${
-                              activeLink ===
+                            className={`block px-4 py-2 hover:bg-blue-50 hover:text-[theme(color.brand.blue)] text-sm xl:text-base text-gray-600 cursor-pointer ${activeLink ===
                               ("link" in subItem ? subItem.link : "#")
-                                ? "text-[theme(color.brand.blue)]"
-                                : ""
-                            }`}
+                              ? "text-[theme(color.brand.blue)]"
+                              : ""
+                              }`}
                           >
                             {"label" in subItem
                               ? subItem.label
@@ -451,32 +450,29 @@ const Navbar = () => {
                       aria-label={item.label}
                     >
                       <span
-                        className={`text-md font-medium ${
-                          activeLink === item.link ||
+                        className={`text-md font-medium ${activeLink === item.link ||
                           activeParent === item.label
-                            ? "text-[theme(color.brand.blue)]"
-                            : ""
-                        }`}
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
+                          }`}
                       >
                         {item.label}
                       </span>
                     </Link>
                   ) : (
                     <span
-                      className={`text-md font-medium ${
-                        activeParent === item.label
-                          ? "text-[theme(color.brand.blue)]"
-                          : ""
-                      }`}
+                      className={`text-md font-medium ${activeParent === item.label
+                        ? "text-[theme(color.brand.blue)]"
+                        : ""
+                        }`}
                     >
                       {item.label}
                     </span>
                   )}
                   {item.submenu && (
                     <MdKeyboardArrowDown
-                      className={`transition-transform ${
-                        activeTabletSubmenu === idx ? "rotate-180" : ""
-                      }`}
+                      className={`transition-transform ${activeTabletSubmenu === idx ? "rotate-180" : ""
+                        }`}
                     />
                   )}
                 </div>
@@ -498,11 +494,10 @@ const Navbar = () => {
                                   aria-label={column.label}
                                 >
                                   <h3
-                                    className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${
-                                      activeLink === column.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
-                                    }`}
+                                    className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${activeLink === column.link
+                                      ? "text-[theme(color.brand.blue)]"
+                                      : ""
+                                      }`}
                                   >
                                     {column.label}
                                   </h3>
@@ -526,11 +521,10 @@ const Navbar = () => {
                                     aria-label={service.label}
                                   >
                                     <span
-                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${
-                                        activeLink === service.link
-                                          ? "text-[theme(color.brand.blue)]"
-                                          : ""
-                                      }`}
+                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${activeLink === service.link
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
+                                        }`}
                                     >
                                       {service.label}
                                     </span>
@@ -556,12 +550,11 @@ const Navbar = () => {
                               aria-label={"label" in subItem ? subItem.label : subItem.heading}
                             >
                               <span
-                                className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${
-                                  activeLink ===
+                                className={`block px-3 py-2 hover:bg-blue-50 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer rounded-md ${activeLink ===
                                   ("link" in subItem ? subItem.link : "#")
-                                    ? "text-[theme(color.brand.blue)]"
-                                    : ""
-                                }`}
+                                  ? "text-[theme(color.brand.blue)]"
+                                  : ""
+                                  }`}
                               >
                                 {"label" in subItem
                                   ? subItem.label
@@ -616,32 +609,29 @@ const Navbar = () => {
                       aria-label={item.label}
                     >
                       <span
-                        className={`text-base font-medium ${
-                          activeLink === item.link ||
+                        className={`text-base font-medium ${activeLink === item.link ||
                           activeParent === item.label
-                            ? "text-[theme(color.brand.blue)]"
-                            : ""
-                        }`}
+                          ? "text-[theme(color.brand.blue)]"
+                          : ""
+                          }`}
                       >
                         {item.label}
                       </span>
                     </Link>
                   ) : (
                     <span
-                      className={`text-base font-medium ${
-                        activeParent === item.label
-                          ? "text-[theme(color.brand.blue)]"
-                          : ""
-                      }`}
+                      className={`text-base font-medium ${activeParent === item.label
+                        ? "text-[theme(color.brand.blue)]"
+                        : ""
+                        }`}
                     >
                       {item.label}
                     </span>
                   )}
                   {item.submenu && (
                     <MdKeyboardArrowDown
-                      className={`transition-transform ${
-                        activeSubmenu === idx ? "rotate-180" : ""
-                      }`}
+                      className={`transition-transform ${activeSubmenu === idx ? "rotate-180" : ""
+                        }`}
                     />
                   )}
                 </div>
@@ -663,11 +653,10 @@ const Navbar = () => {
                                   aria-label={column.label}
                                 >
                                   <h3
-                                    className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${
-                                      activeLink === column.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
-                                    }`}
+                                    className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${activeLink === column.link
+                                      ? "text-[theme(color.brand.blue)]"
+                                      : ""
+                                      }`}
                                   >
                                     {column.label}
                                   </h3>
@@ -691,11 +680,10 @@ const Navbar = () => {
                                     aria-label={service.label}
                                   >
                                     <span
-                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${
-                                        activeLink === service.link
-                                          ? "text-[theme(color.brand.blue)]"
-                                          : ""
-                                      }`}
+                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${activeLink === service.link
+                                        ? "text-[theme(color.brand.blue)]"
+                                        : ""
+                                        }`}
                                     >
                                       {service.label}
                                     </span>
@@ -721,12 +709,11 @@ const Navbar = () => {
                             aria-label={"label" in subItem ? subItem.label : subItem.heading}
                           >
                             <span
-                              className={`block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md ${
-                                activeLink ===
+                              className={`block text-sm text-gray-600 hover:text-[theme(color.brand.blue)] p-2 cursor-pointer hover:bg-white rounded-md ${activeLink ===
                                 ("link" in subItem ? subItem.link : "#")
-                                  ? "text-[theme(color.brand.blue)]"
-                                  : ""
-                              }`}
+                                ? "text-[theme(color.brand.blue)]"
+                                : ""
+                                }`}
                             >
                               {"label" in subItem
                                 ? subItem.label

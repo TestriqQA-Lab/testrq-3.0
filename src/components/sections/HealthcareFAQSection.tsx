@@ -258,7 +258,7 @@ const HealthcareFAQSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
               <Link
-                href="/contact-us"
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
                 title="Schedule Expert Consultation – Testriq QA Lab"
                 className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
              bg-white text-brand-blue font-semibold text-lg rounded-2xl

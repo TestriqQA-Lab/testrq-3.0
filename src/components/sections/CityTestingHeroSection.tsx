@@ -11,6 +11,7 @@ import {
   Clock,
   Award
 } from 'lucide-react';
+import { FaHome, FaChevronRight } from 'react-icons/fa';
 import { CityData } from '@/app/lib/CityData';
 import Link from 'next/link';
 
@@ -20,7 +21,7 @@ interface CityTestingHeroSectionProps {
 
 const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityData }) => {
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 bg-brand-blue rounded-full blur-3xl"></div>
@@ -28,6 +29,25 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-gray-600">
+            Software QA Testing Services
+          </span>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            {cityData.name}
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Content */}
           <div>
@@ -65,10 +85,10 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link href={"/contact-us"}>
-              <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold  transition-all duration-200 inline-flex items-center justify-center">
-                Get Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </button>
+                <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold  transition-all duration-200 inline-flex items-center justify-center">
+                  Get Free Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </button>
               </Link>
               <Link href="/contact-us#calendly-section" className="border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200">
                 Schedule Consultation
@@ -130,7 +150,7 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {(cityData.heroContent.landmarks || []).slice(0, 4).map((landmark, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="bg-blue-100 text-brand-blue px-3 py-1 rounded-full text-xs font-medium"
                     >
@@ -148,27 +168,27 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
                     <span className="text-gray-900 font-medium">95%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{width: '95%'}}></div>
+                    <div className="bg-green-500 h-2 rounded-full" style={{ width: '95%' }}></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-700">Automation Rate</span>
                     <span className="text-gray-900 font-medium">85%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{width: '85%'}}></div>
+                    <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
                   </div>
                 </div>
-                
+
                 <div>
                   <div className="flex justify-between text-sm mb-1">
                     <span className="text-gray-700">Client Satisfaction</span>
                     <span className="text-gray-900 font-medium">98%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-500 h-2 rounded-full" style={{width: '98%'}}></div>
+                    <div className="bg-purple-500 h-2 rounded-full" style={{ width: '98%' }}></div>
                   </div>
                 </div>
               </div>

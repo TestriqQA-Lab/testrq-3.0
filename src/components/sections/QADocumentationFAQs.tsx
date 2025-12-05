@@ -26,7 +26,7 @@ const QADocumentationFAQs = () => {
     {
       category: "Collaboration",
       question: "How do you collaborate with our existing development teams?",
-      answer: (<>We integrate seamlessly with your existing teams through your preferred collaboration <Link href="/tools">tools</Link> and processes. We can work with platforms like Slack, Microsoft Teams, JIRA, Confluence, and Azure DevOps. Our team participates in your regular meetings, follows your development methodologies (<Link href="/blog/post/automated-etl-testing">Agile</Link>, Scrum, Waterfall), and adapts to your existing workflows to ensure smooth collaboration.</>)
+      answer: (<>We integrate seamlessly with your existing teams through your preferred collaboration <Link href="/technology-stack">tools</Link> and processes. We can work with platforms like Slack, Microsoft Teams, JIRA, Confluence, and Azure DevOps. Our team participates in your regular meetings, follows your development methodologies (<Link href="/blog/post/automated-etl-testing">Agile</Link>, Scrum, Waterfall), and adapts to your existing workflows to ensure smooth collaboration.</>)
     },
     {
       category: "Quality",
@@ -66,7 +66,7 @@ const QADocumentationFAQs = () => {
     {
       category: "Security",
       question: "How do you ensure the security and confidentiality of our documentation?",
-      answer: (<>We maintain strict security protocols including signed NDAs, secure file transfer methods, access controls, and <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data encryption</Link>. Our team follows industry best practices for <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">data security</Link> and can work within your security requirements including VPN access, specific security <Link href="/tools">tools</Link>, and compliance with your organization&apos;s security policies. All documentation is stored securely and access is limited to authorized personnel only.</>)
+      answer: (<>We maintain strict security protocols including signed NDAs, secure file transfer methods, access controls, and <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data encryption</Link>. Our team follows industry best practices for <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">data security</Link> and can work within your security requirements including VPN access, specific security <Link href="/technology-stack">tools</Link>, and compliance with your organization&apos;s security policies. All documentation is stored securely and access is limited to authorized personnel only.</>)
     }
   ];
 
@@ -94,7 +94,7 @@ const QADocumentationFAQs = () => {
             Everything You Need to Know About QA Documentation Services
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Find answers to common questions about our <Link href="/blog/post/the-importance-of-qa-documentation-services-in-ensuring-quality">QA documentation services</Link>, processes, 
+            Find answers to common questions about our <Link href="/blog/post/the-importance-of-qa-documentation-services-in-ensuring-quality">QA documentation services</Link>, processes,
             and how we can help improve your software quality and team productivity.
           </p>
         </div>
@@ -108,11 +108,10 @@ const QADocumentationFAQs = () => {
                 setSelectedCategory(category);
                 setOpenFAQ(null); // close any open FAQ when switching category
               }}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${
-                selectedCategory === category
+              className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${selectedCategory === category
                   ? 'bg-blue-600 text-white border-blue-600'
                   : 'bg-white text-gray-600 hover:bg-gray-100 border-gray-200'
-              }`}
+                }`}
             >
               {category}
             </button>

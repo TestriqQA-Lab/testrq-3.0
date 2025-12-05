@@ -76,7 +76,7 @@ const GET_PAGES_QUERY = `
 // Helper function to make GraphQL requests for pages
 async function graphqlRequest<T>(query: string, variables: Record<string, unknown> = {}): Promise<T> {
   const GRAPHQL_URL = process.env.WORDPRESS_GRAPHQL_URL || process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL;
-  
+
   if (!GRAPHQL_URL) {
     throw new Error("WordPress GraphQL URL is not defined in environment variables");
   }
@@ -211,15 +211,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { slug: 'careers', title: 'Careers' },
       { slug: 'contact-us', title: 'Contact Us' },
       { slug: 'case-studies', title: 'Case Studies' },
-      { slug: 'tools', title: 'Tools' },
+      { slug: 'technology-stack', title: 'Tools' },
       { slug: 'roi-calculator', title: 'ROI Calculator' },
       { slug: 'locations-we-serve', title: 'Locations We Serve' },
-      
+
       // Legal pages
       { slug: 'privacy-policy', title: 'Privacy Policy' },
       { slug: 'terms-of-service', title: 'Terms of Service' },
       { slug: 'cookies-policy', title: 'Cookies Policy' },
-      
+
       // Blog pages
       { slug: 'blog', title: 'Blog' },
       { slug: 'blog/categories', title: 'Blog Categories' },
@@ -287,7 +287,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
       const allCities = getAllCities();
       console.log(`Found ${allCities.length} cities for sitemap`);
-      
+
       cityPages = allCities.map((city: CityData) => ({
         url: `${baseUrl}/${city.slug}`,
         lastModified: currentDate,
@@ -303,7 +303,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     try {
       const allCaseStudies = getAllCaseStudies();
       console.log(`Found ${allCaseStudies.length} case studies for sitemap`);
-      
+
       caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
         url: `${baseUrl}/${caseStudy.slug}`,
         lastModified: currentDate,
@@ -326,7 +326,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         allWordPressPages = allWordPressPages.concat(pages);
         hasNextPagePages = pageInfo.hasNextPage;
         endCursorPages = pageInfo.endCursor;
-        
+
         // Safety break to prevent infinite loops
         if (allWordPressPages.length > 1000) {
           console.warn('Reached 1000 WordPress pages, breaking to prevent infinite loop.');
@@ -357,7 +357,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         allPosts = allPosts.concat(posts);
         hasNextPagePosts = pageInfo.hasNextPage;
         endCursorPosts = pageInfo.endCursor;
-        
+
         // Safety break to prevent infinite loops
         if (allPosts.length > 10000) {
           console.warn('Reached 10000 blog posts, breaking to prevent infinite loop.');
@@ -444,7 +444,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
-    
+
     // Return minimal sitemap in case of error
     return [
       {

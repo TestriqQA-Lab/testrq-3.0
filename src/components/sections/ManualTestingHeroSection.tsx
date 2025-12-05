@@ -12,12 +12,26 @@ import {
   FaCloud,
   FaClipboardCheck,
 } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 
 const ManualTestingHeroSection: React.FC = () => {
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Manual Testing
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
@@ -27,14 +41,14 @@ const ManualTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Human-Centered Testing for
+              Human-Powered Manual &
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Perfect
+                Exploratory Testing
               </span>
               <span className="text-transparent block bg-clip-text bg-brand-blue">
                 {" "}
-                User Experience
+                Services
               </span>
             </h1>
 
@@ -43,8 +57,8 @@ const ManualTestingHeroSection: React.FC = () => {
               <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>usability issues</Link>, <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>edge cases</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> challenges that{" "}
               <Link href='automation-testing-services'>automated testing</Link> often misses. Our skilled <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>manual testers</Link> ensure
               your software delivers exceptional quality through <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>comprehensive
-              functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, and <Link href='exploratory-testing'>exploratory
-              testing</Link>-powered by ISTQB-certified professionals and real-world 
+                functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, and <Link href='exploratory-testing'>exploratory
+                  testing</Link>-powered by ISTQB-certified professionals and real-world
               insight.
             </p>
 

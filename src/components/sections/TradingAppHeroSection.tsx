@@ -11,6 +11,7 @@ import {
   Award,
 } from "lucide-react";
 import Link from "next/link";
+import { FaHome, FaChevronRight } from "react-icons/fa";
 
 const TradingAppHeroSection = () => {
   // Smooth scroll function
@@ -45,7 +46,7 @@ const TradingAppHeroSection = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50 pt-8 pb-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-brand-blue rounded-full opacity-10 blur-3xl"></div>
@@ -54,6 +55,20 @@ const TradingAppHeroSection = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Trading Apps Certification
+          </span>
+        </div>
         {/* Trust Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -11,6 +11,8 @@ import {
   FaBuilding,
   FaComments,
   FaCheckCircle,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -255,7 +257,7 @@ const ContactHeroSection: React.FC = () => {
       icon: FaCalendarAlt,
       label: "Schedule Meeting",
       value: "Book a Call",
-      action: "#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "bg-purple-500",
     },
   ];
@@ -270,7 +272,7 @@ const ContactHeroSection: React.FC = () => {
   return (
     <section
       id="form-section"
-      className="relative bg-white py-8 lg:py-16 px-8 md:px-12 lg:px-24 overflow-hidden"
+      className="relative bg-white pt-8 pb-16 px-8 md:px-12 lg:px-24 overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-60"></div>
@@ -278,6 +280,22 @@ const ContactHeroSection: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-blue-400 to-sky-600 opacity-10 rounded-full transform -translate-x-32 translate-y-32 animate-pulse"></div>
 
       <div className="relative max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            Contact Us
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Content */}
           <div>
@@ -392,9 +410,8 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateFullName(formData.fullName)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                        fullNameError ? "border-red-500" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-300"
+                        }`}
                       placeholder="John Doe"
                     />
                   </div>
@@ -416,9 +433,8 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateEmail(formData.businessEmail)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                        emailError ? "border-red-500" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-300"
+                        }`}
                       placeholder="john@company.com"
                     />
                   </div>
@@ -437,9 +453,8 @@ const ContactHeroSection: React.FC = () => {
                       value={formData.businessPhone}
                       onChange={handlePhoneChange}
                       onBlur={() => validatePhoneNumber(formData.businessPhone)}
-                      className={`w-full phone-input-container ${
-                        phoneError ? "border-red-500" : "border-gray-300"
-                      }`}
+                      className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-300"
+                        }`}
                       placeholder="Enter phone number"
                       inputprops={{
                         className:
@@ -464,9 +479,8 @@ const ContactHeroSection: React.FC = () => {
                       onChange={handleInputChange}
                       onBlur={() => validateCompanyStage(formData.companyStage)}
                       required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
-                        companyStageError ? "border-red-500" : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${companyStageError ? "border-red-500" : "border-gray-300"
+                        }`}
                       aria-label="Select your company stage"
                     >
                       <option value="">Select your company stage</option>
@@ -505,11 +519,10 @@ const ContactHeroSection: React.FC = () => {
                       }
                       required
                       maxLength={50}
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                        howDidYouHearError
-                          ? "border-red-500"
-                          : "border-gray-300"
-                      }`}
+                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError
+                        ? "border-red-500"
+                        : "border-gray-300"
+                        }`}
                       placeholder="Google, LinkedIn, Referral, etc."
                     />
                   </div>
@@ -531,9 +544,8 @@ const ContactHeroSection: React.FC = () => {
                     onBlur={() => validateMessage(formData.message)}
                     required
                     rows={4}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${
-                      messageError ? "border-red-500" : "border-gray-300"
-                    }`}
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-300"
+                      }`}
                     placeholder="Tell us about your project, testing needs, or any questions you have..."
                   />
                   {messageError && (

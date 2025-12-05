@@ -11,6 +11,8 @@ import {
   FaCheckCircle,
   FaArrowRight,
   FaPlay,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const EcommerceHeroSection: React.FC = () => {
@@ -29,7 +31,7 @@ const EcommerceHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto pt-8 pb-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -38,6 +40,21 @@ const EcommerceHeroSection: React.FC = () => {
       </div>
 
       <div className="relative">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            E-Commerce Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
           <div className="space-y-8">
@@ -120,7 +137,7 @@ const EcommerceHeroSection: React.FC = () => {
               <Link
                 href="/contact-us"
                 title="Start Free E-Commerce Audit – Testriq QA Lab"
-                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                className="inline-flex items-center justify-center px-4 py-4 min-h-[44px] min-w-[44px]
                  bg-brand-blue text-white font-semibold rounded-lg shadow-lg
                  hover:shadow-xl transition-colors duration-200"
               >
@@ -129,9 +146,9 @@ const EcommerceHeroSection: React.FC = () => {
               </Link>
 
               <Link
-                href="/contact-us"
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
                 title="Schedule Consultation – Testriq QA Lab"
-                className="w-full inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+                className=" inline-flex items-center justify-start px-4 py-4 min-h-[44px]
                  bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue
                  hover:bg-blue-50 transition-colors duration-200"
               >

@@ -279,7 +279,7 @@ const ElearningContactSection: React.FC = () => {
       title: "Educational Strategy Session",
       description: "Book a free consultation to discuss your testing needs",
       text: "Schedule Free Consultation",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "from-purple-500 to-indigo-600",
     },
   ];

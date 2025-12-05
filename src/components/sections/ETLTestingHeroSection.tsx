@@ -7,6 +7,8 @@ import {
   FaExchangeAlt,
   FaCloudUploadAlt,
   FaCheckCircle,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
@@ -22,13 +24,27 @@ const ETLTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative py-10 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
       {/* Background Elements */}
       <div className="hidden lg:block absolute top-20 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-bounce"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-25"></div>
 
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            ETL Testing
+          </span>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
           <div className="space-y-4">

@@ -202,7 +202,7 @@ const GamingToolsFrameworkSection: React.FC = () => {
             <span className="block text-brand-blue">Tools & Technologies</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Leverage cutting-edge game testing <Link href="/tools">tools</Link> and frameworks specifically
+            Leverage cutting-edge game testing <Link href="/technology-stack">tools</Link> and frameworks specifically
             designed for gaming applications, ensuring optimized game{" "}
             <Link href="/performance-testing-services">performance</Link>, immersive gameplay, and flawless gaming experiences
             across all platforms.
