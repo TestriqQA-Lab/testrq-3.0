@@ -129,11 +129,7 @@ export const productServiceSchema = {
     "@type": "Organization",
     "name": "Testriq QA Lab"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9", // Placeholder: Based on common high ratings for service companies
-    "reviewCount": "150" // Placeholder: Based on a reasonable number of reviews
-  },
+
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
@@ -204,23 +200,7 @@ export const webAppTestingServiceSchema = {
         ]
       }
     },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Web Application Testing",
-          "item": "https://www.testriq.com/web-application-testing-services"
-        }
-      ]
-    },
+
     {
       "@type": "FAQPage",
       "mainEntity": [
@@ -722,25 +702,7 @@ export const iotDeviceTestingSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Hamilton Housewares Pvt Ltd"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Testriq's rigorous testing ensured our MILTON Smart Stainless Steel Water Bottle met the highest quality standards, enhancing user experience and reliability."
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -771,29 +733,7 @@ export const iotDeviceTestingSchema = {
         }
       ]
     },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.testriq.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.testriq.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "IoT Device Testing",
-          "item": "https://www.testriq.com/iot-device-testing-services"
-        }
-      ]
-    }
+
   ]
 };
 

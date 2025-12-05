@@ -220,13 +220,7 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
       },
       "reviewBody": caseStudy.testimonial.quote
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": caseStudy.testimonial.rating,
-      "reviewCount": "1",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
+
   };
 }
 
@@ -300,13 +294,7 @@ function generateCitySchema(cityData: CityData) {
         }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
+
     "sameAs": [
       "https://www.linkedin.com/company/testriq",
       "https://twitter.com/testriq"
