@@ -95,13 +95,13 @@ const SapTestingHeroSection: React.FC = () => {
                             <Link
                                 href="/contact-us"
                                 title="Launch Your SAP Project Risk-Free"
-                                className="inline-flex items-center justify-center w-full px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+                                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
                             >
                                 Request a Free Consultation
                             </Link>
                             <button
                                 onClick={openLightbox}
-                                className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-300 flex items-center justify-center"
+                                className="inline-flex items-center justify-center w-full sm:w-auto border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors duration-300"
                             >
                                 <span className="mr-2">▶</span>
                                 Watch Demo
