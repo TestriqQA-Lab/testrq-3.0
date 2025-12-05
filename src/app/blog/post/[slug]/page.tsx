@@ -3,7 +3,9 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
+import StructuredData from "@/components/seo/StructuredData";
+
 const BlogPostHeader = dynamic(
   () => import("@/components/sections/BlogPostHeader"),
   {
@@ -51,25 +53,35 @@ const BlogPostSidebar = dynamic(
 );
 
 // Custom Structured Data Component for Individual Posts
-// function PostStructuredData({ structuredData }: { structuredData: unknown[] }) {
-//   if (!structuredData || structuredData.length === 0) {
-//     return null;
-//   }
+function PostStructuredData({ post }: { post: Post }) {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.seo.description,
+    "image": post.image ? [post.image] : [],
+    "datePublished": post.dateISO,
+    "dateModified": post.modifiedISO,
+    "author": [{
+      "@type": "Person",
+      "name": post.author,
+    }],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Testriq QA Lab",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.testriq.com/blog/post/${post.slug}`
+    }
+  };
 
-//   return (
-//     <>
-//       {structuredData.map((data, index) => (
-//         <script
-//           key={`structured-data-${index}`}
-//           type="application/ld+json"
-//           dangerouslySetInnerHTML={{
-//             __html: JSON.stringify(data, null, 0)
-//           }}
-//         />
-//       ))}
-//     </>
-//   );
-// }
+  return <StructuredData data={articleSchema} />;
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -164,8 +176,8 @@ export default async function BlogPostPage({ params }: Props) {
     <div className="min-h-screen bg-gray-50">
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
-        {/* <PostStructuredData structuredData={structuredData} /> */}
-        
+        <PostStructuredData post={post} />
+
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
         <div className="max-w-7xl mx-auto py-12">
@@ -174,7 +186,7 @@ export default async function BlogPostPage({ params }: Props) {
               <BlogPostContent post={post} />
               {/* <BlogPostComments postId={post.id} /> */}
             </div>
-            
+
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-8">
