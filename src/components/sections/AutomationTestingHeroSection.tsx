@@ -241,7 +241,7 @@ const AutomationTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox isOpen={isLightboxOpen} videoLink="https://youtu.be/4i5_1aKqwYg?si=GWrxFYuBeMk8SXzU" onClose={closeLightbox} />
     </section>
   );
 };
