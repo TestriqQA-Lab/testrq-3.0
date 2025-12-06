@@ -23,7 +23,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Navigation flow automation",
         "Data-driven test execution"
       ],
-      action: "/mobile-automation-testing-guide-android-ios-frameworks"
+      action: "/test-automation-web-applications"
     },
     {
       id: "api-automation",

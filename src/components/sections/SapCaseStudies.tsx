@@ -9,6 +9,7 @@ import {
     FaChevronLeft,
     FaChevronRight,
     FaTrophy,
+    FaHeartbeat,
 } from "react-icons/fa";
 
 const SapCaseStudies: React.FC = () => {
@@ -38,6 +39,30 @@ const SapCaseStudies: React.FC = () => {
                 "Go-Live Support",
             ],
             color: "blue",
+        },
+        {
+            id: 4,
+            company: "Pharma Innovations Inc",
+            industry: "Healthcare & Pharma",
+            icon: <FaHeartbeat className="w-6 h-6" />,
+            challenge: "S/4HANA & GxP Compliance",
+            solution:
+                "Validation of SAP modules for GxP compliance, ensuring data integrity and regulatory adherence during S/4HANA implementation.",
+            metrics: [
+                { label: "Compliance", value: "100% FDA", progress: 100 },
+                { label: "Validation Time", value: "-40%", progress: 90 },
+                { label: "Data Integrity", value: "100%", progress: 100 },
+                { label: "Audit Readiness", value: "Instant", progress: 95 },
+            ],
+            testimonial:
+                "Their validation framework helped us achieve FDA compliance in record time while modernizing our core SAP landscape.",
+            timeline: [
+                "GxP Assessment",
+                "Validation Master Plan",
+                "IQ/OQ/PQ Execution",
+                "Audit Support",
+            ],
+            color: "red",
         },
         {
             id: 2,
@@ -110,6 +135,11 @@ const SapCaseStudies: React.FC = () => {
                 bg: "bg-purple-500",
                 text: "text-purple-600",
                 border: "border-purple-500",
+            },
+            red: {
+                bg: "bg-red-500",
+                text: "text-red-600",
+                border: "border-red-500",
             },
         };
         return colors[color as keyof typeof colors];
