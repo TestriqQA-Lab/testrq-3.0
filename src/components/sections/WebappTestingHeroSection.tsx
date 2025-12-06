@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaLaptopCode, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
+import { FaArrowRight, FaLaptopCode, FaPlay } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const WebappTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -24,19 +25,7 @@ const WebappTestingHeroSection: React.FC = () => {
     <section className="bg-white text-black pt-8 pb-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
-          <Link
-            href="/"
-            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
-          >
-            <FaHome className="text-lg" />
-            Home
-          </Link>
-          <FaChevronRight className="text-xs text-gray-400" />
-          <span className="text-[theme(color.brand.blue)]">
-            Web Application Testing
-          </span>
-        </div>
+        <Breadcrumb items={[{ label: "Web Application Testing" }]} />
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-16">
           {/* Left Content */}
