@@ -103,11 +103,13 @@ const BlogPostsGrid: React.FC = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span
-                        className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}
-                      >
-                        {post.category}
-                      </span>
+                      <Link href={`/blog/category/${post.categorySlug}`}>
+                        <span
+                          className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                        >
+                          {post.category}
+                        </span>
+                      </Link>
                     </div>
                     <div className="absolute bottom-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                       FEATURED
@@ -189,11 +191,13 @@ const BlogPostsGrid: React.FC = () => {
                     />
 
                     <div className="absolute top-2 left-2">
-                      <span
-                        className={`px-2 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-xs font-semibold rounded-full`}
-                      >
-                        {post.category}
-                      </span>
+                      <Link href={`/blog/category/${post.categorySlug}`}>
+                        <span
+                          className={`px-2 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                        >
+                          {post.category}
+                        </span>
+                      </Link>
                     </div>
                     <div className="absolute bottom-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                       <FaFire className="w-2 h-2" />
@@ -267,11 +271,13 @@ const BlogPostsGrid: React.FC = () => {
                       />
 
                       <div className="absolute top-4 left-4">
-                        <span
-                          className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}
-                        >
-                          {post.category}
-                        </span>
+                        <Link href={`/blog/category/${post.categorySlug}`}>
+                          <span
+                            className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                          >
+                            {post.category}
+                          </span>
+                        </Link>
                       </div>
                       {post.trending && (
                         <div className="absolute bottom-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">

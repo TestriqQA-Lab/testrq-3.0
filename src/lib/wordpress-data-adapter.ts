@@ -25,6 +25,7 @@ export interface Post {
   excerpt: string;
   content: string;
   category: string;
+  categorySlug: string;
   categoryColor: string;
   author: string;
   authorImage: string;
@@ -213,6 +214,7 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
     excerpt: wpPost.excerpt || '',
     content: wpPost.content,
     category: categoryName,
+    categorySlug: primaryCategory?.slug || 'technology-stack',
     categoryColor,
     author: wpPost.author?.node?.name || 'Testriq Team',
     authorImage: wpPost.author?.node?.avatar?.url || '/api/placeholder/60/60',
