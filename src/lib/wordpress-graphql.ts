@@ -396,8 +396,8 @@ const GET_POSTS_BY_TAG_QUERY = `
 
 // GraphQL query for fetching categories
 const GET_CATEGORIES_QUERY = `
-  query GetCategories {
-    categories(first: 100, where: { hideEmpty: true }) {
+  query GetCategories($first: Int) {
+    categories(first: $first, where: { hideEmpty: true }) {
       nodes {
         id
         name
@@ -411,8 +411,8 @@ const GET_CATEGORIES_QUERY = `
 
 // GraphQL query for fetching tags
 const GET_TAGS_QUERY = `
-  query GetTags {
-    tags(first: 100, where: { hideEmpty: true }) {
+  query GetTags($first: Int) {
+    tags(first: $first, where: { hideEmpty: true }) {
       nodes {
         id
         name
@@ -763,9 +763,9 @@ export async function getRelatedPosts(
 }
 
 // Fetch all categories
-export async function getCategories(): Promise<WordPressCategory[]> {
+export async function getCategories(first: number = 100): Promise<WordPressCategory[]> {
   try {
-    const data = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY);
+    const data = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY, { first });
     return data.categories.nodes;
   } catch (error) {
     console.error('Error fetching categories:', error);
@@ -774,9 +774,9 @@ export async function getCategories(): Promise<WordPressCategory[]> {
 }
 
 // Fetch all tags
-export async function getTags(): Promise<WordPressTag[]> {
+export async function getTags(first: number = 100): Promise<WordPressTag[]> {
   try {
-    const data = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    const data = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY, { first });
     return data.tags.nodes;
   } catch (error) {
     console.error('Error fetching tags:', error);
@@ -846,7 +846,7 @@ export function getPostExcerpt(post: WordPressPost, maxLength: number = 160): st
   if (post.excerpt && post.excerpt.trim()) {
     return stripHtmlTags(post.excerpt);
   }
-  
+
   // If no excerpt, create one from content
   const cleanContent = stripHtmlTags(post.content);
   return truncateText(cleanContent, maxLength);
@@ -864,7 +864,7 @@ export async function getTotalPostCount(): Promise<number> {
       totalCount += data.posts.length;
       hasNextPage = data.pageInfo.hasNextPage;
       after = data.pageInfo.endCursor;
-      
+
       // Safety break to avoid infinite loops
       if (totalCount > 10000) break;
     }
