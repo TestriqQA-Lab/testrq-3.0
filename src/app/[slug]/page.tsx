@@ -153,12 +153,20 @@ interface PageProps {
 
 // Helper function to generate Case Study JSON-LD schema
 function generateCaseStudySchema(caseStudy: CaseStudy) {
-  return {
+  return { // <-- RETURNS A SINGLE OBJECT
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": caseStudy.title,
-    "description": caseStudy.description,
-    "image": caseStudy.image ? `https://www.testriq.com${caseStudy.image}` : "https://www.testriq.com/og-image.png",
+    "@type": ["TechArticle", "Product"], // Dual type allows for Review Stars
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.testriq.com/${caseStudy.slug}`
+    },
+    "headline": caseStudy.metadata.title || caseStudy.title,
+    "description": caseStudy.metadata.description || caseStudy.description,
+    "image": caseStudy.image
+      ? `https://www.testriq.com${caseStudy.image}`
+      : "https://www.testriq.com/og-image.png",
+
+    // TRUST SIGNALS (E-E-A-T)
     "author": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
@@ -167,26 +175,26 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
     "publisher": {
       "@type": "Organization",
       "name": "Testriq QA Lab",
-      "url": "https://www.testriq.com",
       "logo": {
         "@type": "ImageObject",
         "url": "https://www.testriq.com/logo.png"
       }
     },
+
+    // CONTENT SIGNALS
     "datePublished": "2024-01-01",
-    "dateModified": "2024-01-01",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://www.testriq.com/${caseStudy.slug}`
-    },
-    "articleSection": "Case Studies",
-    "keywords": caseStudy.metadata?.keywords || ["software testing", "QA", "case study"],
+    "dateModified": new Date().toISOString().split("T")[0],
+    "proficiencyLevel": "Expert",
+    "genre": "Case Study",
+    "keywords": caseStudy.metadata?.keywords?.join(", "),
+
+    // KNOWLEDGE GRAPH CONNECTIONS (Simplified mentions)
     "about": {
       "@type": "Thing",
-      "name": caseStudy.client,
-      "description": `Software testing case study for ${caseStudy.client} in ${caseStudy.industry} industry`
+      "name": "Software Testing",
+      "sameAs": "https://en.wikipedia.org/wiki/Software_testing"
     },
-    "mentions": [
+    "mentions": [ // <-- Replaced undefined variables
       {
         "@type": "Organization",
         "name": caseStudy.client
@@ -195,12 +203,29 @@ function generateCaseStudySchema(caseStudy: CaseStudy) {
         "@type": "Thing",
         "name": caseStudy.industry
       }
-    ]
+    ],
+
+    // VISUAL SNIPPETS (The Stars)
+    "name": caseStudy.title,
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": caseStudy.testimonial.rating,
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": caseStudy.testimonial.author
+      },
+      "reviewBody": caseStudy.testimonial.quote
+    },
+
   };
 }
 
 // Helper function to generate City Page JSON-LD schema
-function generateCitySchema(cityData: CityData ) {
+function generateCitySchema(cityData: CityData) {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -269,13 +294,7 @@ function generateCitySchema(cityData: CityData ) {
         }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "150",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
+
     "sameAs": [
       "https://www.linkedin.com/company/testriq",
       "https://twitter.com/testriq"
@@ -283,9 +302,9 @@ function generateCitySchema(cityData: CityData ) {
   };
 }
 
-export async function generateMetadata({ params }: PageProps ) {
+export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
-  
+
   // First check if it's a case study
   const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
   if (caseStudy) {
@@ -340,7 +359,7 @@ export async function generateMetadata({ params }: PageProps ) {
       },
     };
   }
-  
+
   // Fall back to city data
   const cityData = getCityData(resolvedParams.slug);
 
@@ -394,13 +413,13 @@ export async function generateMetadata({ params }: PageProps ) {
 export default async function SlugPage({ params }: PageProps) {
   const resolvedParams = await params;
   console.log("SlugPage resolvedParams:", resolvedParams);
-  
+
   // First check if it's a case study
   const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
   if (caseStudy) {
     console.log("SlugPage caseStudy:", caseStudy);
     const caseStudySchema = generateCaseStudySchema(caseStudy);
-    
+
     return (
       <div>
         <StructuredData data={caseStudySchema} />
@@ -420,7 +439,7 @@ export default async function SlugPage({ params }: PageProps) {
       </div>
     );
   }
-  
+
   // Fall back to city data
   const cityData = getCityData(resolvedParams.slug);
   console.log("SlugPage cityData:", cityData);
@@ -450,16 +469,16 @@ export default async function SlugPage({ params }: PageProps) {
 export async function generateStaticParams() {
   const cities = getAllCities();
   const caseStudies = getAllCaseStudies();
-  
+
   console.log("Generated city slugs:", cities.map((city) => city.slug));
   console.log("Generated case study slugs:", caseStudies.map((caseStudy) => caseStudy.slug));
-  
+
   // Combine both city and case study slugs
   const allSlugs = [
     ...cities.map((city) => ({ slug: city.slug })),
     ...caseStudies.map((caseStudy) => ({ slug: caseStudy.slug }))
   ];
-  
+
   return allSlugs;
 }
 

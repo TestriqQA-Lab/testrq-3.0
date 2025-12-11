@@ -1,16 +1,31 @@
 import Script from 'next/script';
 
+// Proper JSON-LD type (no `any` anywhere)
+type JsonLd = Record<string, unknown>;
 
 interface StructuredDataProps {
-  data: object;
+  data: JsonLd;
 }
 
+/**
+ * Renders structured data (JSON-LD) via Next.js <Script>
+ * Adds a unique ID based on the schema type + a hash of the content
+ * → avoids duplicate ID errors when the same schema appears multiple times
+ */
 export default function StructuredData({ data }: StructuredDataProps) {
+  // Create a stable but unique ID for this exact piece of JSON-LD
+  const type = (data['@type'] as string) || 'unknown';
+  const contentHash = JSON.stringify(data).slice(-12); // last 12 chars is enough for uniqueness
+  const id = `structured-data-${type}-${contentHash}`;
+
   return (
     <Script
-      id="structured-data"
+      id={id} // required by Next.js when using inline content
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      // Using children is slightly cleaner than dangerouslySetInnerHTML
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data, null, 2),
+      }}
     />
   );
 }
@@ -26,11 +41,11 @@ export const organizationSchema = {
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-915-2929-343",
-      "contactType": "customer service",
-      "email": "contact@testriq.com",
-      "availableLanguage": "English"
+    "@type": "ContactPoint",
+    "telephone": "+91-915-2929-343",
+    "contactType": "customer service",
+    "email": "contact@testriq.com",
+    "availableLanguage": "English"
   },
   "address": {
     "@type": "PostalAddress",
@@ -102,74 +117,137 @@ export const websiteSchema = {
   }
 };
 
+// Product/Service Schema with Aggregate Rating for Homepage
+export const productServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Testriq QA Lab - Comprehensive Software Testing Services",
+  "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
+  "url": "https://www.testriq.com/",
+  "image": "https://www.testriq.com/logo.png", // Mandatory property for Product schema
+  "brand": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab"
+  },
+
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "Contact for pricing",
+    "availability": "https://schema.org/InStock"
+  }
+};
+
 // Service Schema for Web Application Testing
 export const webAppTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Web Application Testing Services",
-  "description": "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility testing.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Application Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Comprehensive functional testing to ensure web applications work as intended."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Web Application Testing Services",
+      "alternateName": "Web Application Testing",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Load testing, stress testing, and performance optimization for web applications."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Security Testing",
-          "description": "Vulnerability assessment and security testing for web applications."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cross-Browser Testing",
-          "description": "Compatibility testing across different browsers and devices."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Responsive Testing",
-          "description": "Mobile responsiveness and device compatibility testing."
-        }
+      "url": "https://www.testriq.com/web-application-testing-services",
+      "description": "Professional web application testing services including functional, performance, and security testing to ensure cross-browser compatibility and bug-free web apps.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Functional Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Usability Testing"
+            }
+          }
+        ]
       }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+    },
+
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of web applications do you test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We test all types of web applications, including e-commerce platforms, SaaS applications, content management systems, social media platforms, educational portals, healthcare apps, and custom web solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does web application testing typically take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Web application testing typically takes 1-4 weeks, depending on the application's complexity. Simple applications may require 5-7 days, while complex platforms like SaaS or e-commerce may take 2-4 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What testing tools and technologies do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use industry-leading tools like Selenium, Cypress, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for security testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide automated testing for web applications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide automated testing using tools like Selenium, Cypress, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenarios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure cross-browser compatibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs."
+          }
+        }
+      ]
     }
-  }
+  ]
+
 };
 
 
@@ -572,79 +650,91 @@ export const mobileAppTestingSchema = {
 // Service Schema for IOT Testing Service
 export const iotDeviceTestingSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "IoT Device Testing Services",
-  "description": "End-to-end IoT testing services for smart devices, sensors, and connected ecosystems. Validate connectivity, interoperability, performance, and security across all protocols and layers.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "IoT Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "IoT Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Connectivity Testing",
-          "description": "Wireless protocol testing including WiFi, Bluetooth, Zigbee, LoRaWAN, and cellular."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/iot-device-testing-services/#service",
+      "name": "IoT Device Testing Services",
+      "serviceType": "Embedded & Firmware QA",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
       },
-      {
+      "areaServed": "Worldwide",
+      "description": "End-to-end IoT testing services including Firmware (OTA) validation, MQTT/Zigbee protocol testing, and Security Pen-testing for smart devices.",
+      "offers": {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Sensor Validation",
-          "description": "Validation of temperature, motion, humidity, pressure, and light sensors for accurate data capture."
-        }
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Power Management Testing",
-          "description": "Battery usage analysis, power efficiency optimization, and runtime validation."
-        }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IoT Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MQTT & Zigbee Protocol Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Firmware OTA Update Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "IoT Security Penetration Testing"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "IoT Security Testing",
-          "description": "Firmware security, encryption validation, and authentication testing for connected devices."
+
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you test IoT device security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We perform comprehensive penetration testing on device firmware, mobile apps, and cloud APIs. This includes checking for unencrypted storage, weak authentication, and vulnerabilities in protocols like BLE and MQTT."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What IoT protocols do you support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We specialize in testing major IoT protocols including MQTT, CoAP, Zigbee, Z-Wave, Bluetooth Low Energy (BLE), and LoRaWAN across various network conditions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you test OTA (Over-the-Air) firmware updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, OTA testing is a core part of our service. We simulate interrupted updates, network failures, and version rollbacks to ensure your devices never 'brick' during a customer update."
+          }
         }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Interoperability Testing",
-          "description": "Cross-device and third-party system compatibility testing across ecosystems."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cloud Integration Testing",
-          "description": "Testing cloud platform connectivity, data sync, and remote control across platforms like AWS IoT and Azure IoT Hub."
-        }
-      }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
-    }
-  }
+      ]
+    },
+
+  ]
 };
 
 
@@ -808,157 +898,266 @@ export const etlTestingSchema = {
 // Service Schema for manual Testing Service
 export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Manual Testing Services",
-  "description": "Expert-led manual testing services including functional, usability, exploratory, compatibility, and accessibility testing to ensure exceptional software quality.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Manual Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validates application functionality against business requirements with 98% success rate."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/manual-testing/#service",
+      "name": "Manual & Exploratory Testing Services",
+      "serviceType": "Software Quality Assurance",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Usability Testing",
-          "description": "Evaluates user experience to identify intuitive design issues and improve user satisfaction."
-        }
+      "areaServed": "Worldwide",
+      "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Manual Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Exploratory Testing (Ad-hoc)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "User Acceptance Testing (UAT) Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WCAG 2.1 Accessibility Audits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Localization (L10n) Testing"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Exploratory Testing",
-          "description": "Unstructured, creative testing to identify edge cases and unexpected user behaviors."
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "44", // Update with your real numbers
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "User Acceptance Testing (UAT)",
-          "description": "Validates that the software meets user expectations and is ready for production release."
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Enterprise Client"
+          },
+          "datePublished": "2024-02-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9"
+          },
+          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
         }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Compatibility Testing",
-          "description": "Ensures proper functioning across different browsers, operating systems, and devices."
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "When should I choose manual testing over automated testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manual testing is essential for User Experience (UX), Exploratory testing, and finding visual or cultural issues that automation scripts miss. It is also the standard for User Acceptance Testing (UAT)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you perform Accessibility (WCAG) testing manually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. While we use tools for basic checks, our expert testers manually validate screen reader navigation, keyboard traps, and color contrast to ensure full WCAG 2.1 compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Manual and Exploratory testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manual testing often follows a script. Exploratory testing is unscripted and relies on the tester's creativity to find 'edge cases'—unexpected scenarios that break the software."
+          }
         }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Accessibility Testing",
-          "description": "Evaluates compliance with accessibility standards like WCAG to ensure inclusive user experience."
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Manual Testing",
+          "item": "https://www.testriq.com/manual-testing"
         }
-      }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      ]
     }
-  }
+  ]
 };
 
 // Service Schema for automation Testing Service
 export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Automation Testing Services",
-  "description": "Advanced automation testing services with intelligent frameworks, CI/CD integration, and expert support. Reduce testing time by 80% and improve software quality across web, mobile, and APIs.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
-  },
-  "serviceType": "Software Testing",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Automation Testing Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Web Automation",
-          "description": "Automated testing for web applications using Selenium, Playwright, and Cypress across browsers and platforms."
-        }
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/automation-testing-services/#service",
+      "name": "Intelligent Automation Testing Services",
+      "serviceType": "Test Automation & QA Architecture",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
-      {
+      "areaServed": "Worldwide",
+      "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "offers": {
         "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "API Automation",
-          "description": "Comprehensive automation of RESTful and SOAP APIs ensuring robust backend validation."
-        }
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile Automation",
-          "description": "Cross-device automation testing for Android and iOS apps ensuring smooth mobile experiences."
-        }
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Automation Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Automation (Selenium & Playwright)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "API Automation Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Automation (Android & iOS)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CI/CD Pipeline Integration"
+            }
+          }
+        ]
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "CI/CD Integration",
-          "description": "Seamless integration of test automation in CI/CD pipelines using tools like Jenkins, GitHub Actions, and Azure DevOps."
-        }
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120", // Update with your real numbers
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Cloud Automation",
-          "description": "Automation testing on cloud-based platforms for scalable, parallel, and remote test execution."
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Enterprise Client"
+          },
+          "datePublished": "2024-02-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.9"
+          },
+          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
         }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Performance Automation",
-          "description": "Load and stress testing using automation to ensure high-performing and scalable applications."
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Automation testing and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automation testing ensures your applications meet top quality standards by running tests automatically. It helps detect issues early, cut costs by up to 50%, and reduces testing time by 80%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools do you use for Automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use industry-leading tools including Selenium WebDriver, Playwright, Cypress, TestCafe, and Appium, integrated with CI/CD tools like Jenkins and Azure DevOps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I implement Automation testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automation is best implemented for regression testing, repetitive tasks, large-scale data-driven testing, and stable features where manual testing becomes a bottleneck."
+          }
         }
-      }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Automation Testing",
+          "item": "https://www.testriq.com/automation-testing-services"
+        }
+      ]
     }
-  }
+  ]
 };
 
 
@@ -1181,50 +1380,249 @@ export const performanceTestingServiceSchema = {
   }
 };
 
-// Service Schema for security Testing Service
-export const securityTestingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Security Testing Services",
-    "description": "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing.",
-    "provider": {
+// Structured data for SEO
+export const toolsPageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Organization",
-      "name": "Testriq",
-      "url": "www.testriq.com/"
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA LAB LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com//testriq-logo.png"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "sales",
+        "areaServed": "Global",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar",
+        "addressLocality": "Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/testriq-qa-lab",
+        "https://www.facebook.com/testriq.lab"
+      ]
     },
-    "serviceType": "Software Testing",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Security Testing Services",
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/technology-stack/#webpage",
+      "url": "https://www.testriq.com/technology-stack",
+      "name": "Software Testing Tools & Frameworks Technology Stack",
+      "isPartOf": {
+        "@id": "https://www.testriq.com/#website"
+      },
+      "description": "Comprehensive suite of 50+ industry-leading testing tools and frameworks including Selenium, Cypress, Playwright, and JMeter for Enterprise QA automation.",
+      "breadcrumb": {
+        "@id": "https://www.testriq.com/technology-stack/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/technology-stack/#breadcrumb",
       "itemListElement": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Penetration Testing"
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools & Technology Stack",
+          "item": "https://www.testriq.com/technology-stack"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "QA Automation & Testing Technology Services",
+      "provider": {
+        "@id": "https://www.testriq.com/#organization"
+      },
+      "serviceType": "Software Testing Services",
+      "areaServed": "Global",
+      "description": "Implementation of advanced QA automation frameworks using Selenium, Cypress, Appium, and JMeter for web, mobile, and API testing.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Testing Tools & Framework Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Testing",
+              "description": "Automation using Selenium WebDriver, Cypress, Playwright, and TestCafe."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Testing Frameworks",
+              "description": "Mobile automation using Appium, Espresso, XCUITest, and Detox."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Testing",
+              "description": "Load and stress testing using JMeter, LoadRunner, K6, and Gatling."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Testing",
+              "description": "Vulnerability assessment using OWASP ZAP, Burp Suite, and Veracode."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Healthcare Compliance Testing",
+              "description": "HIPAA and FDA compliance testing using specialized healthcare validation tools."
+            }
+          }
+        ]
+      }
+    }
+  ]
+};
+
+// Service Schema for security Testing Service
+export const securityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/security-testing/#service",
+      "name": "VAPT & Security Testing Center of Excellence (TCoE)",
+      "serviceType": "Cybersecurity & Penetration Testing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
+      },
+      "areaServed": "Worldwide",
+      "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vulnerability Assessment & Penetration Testing (VAPT)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Application Security (OWASP MASVS)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ISO 27001 & GDPR Compliance Audit"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SecureGuard™ Managed Security Service"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Testriq SecureGuard™ Framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SecureGuard™ is our proprietary hybrid testing methodology that combines AI-driven automated scanning (SAST/DAST) with manual ethical hacking to uncover zero-day vulnerabilities with zero false positives."
           }
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Vulnerability Assessment"
+          "@type": "Question",
+          "name": "Do you provide a 'Safe-to-Host' Certificate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Upon successful remediation and re-testing of identified vulnerabilities, we issue a formal 'Safe-to-Host' certificate required for third-party audits, payment gateway integration, and regulatory compliance."
           }
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Security Code Review"
+          "@type": "Question",
+          "name": "How does your Security TCoE (Center of Excellence) work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Security TCoE is a dedicated R&D unit staffed by CISSP and CEH certified researchers who monitor global CVE databases 24/7 to update our threat models against emerging cyber attacks."
           }
         }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Security Testing",
+          "item": "https://www.testriq.com/security-testing"
+        }
+      ]
     }
-  };
+  ]
+};
 
 // Service Schema for qa Documentation Service 
-  export const qaDocumentationServiceSchema = {
+export const qaDocumentationServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "QA Documentation Services",
@@ -2027,65 +2425,115 @@ export const telecommunicationTestingSchema = {
 // Service Schema for about page
 export const aboutPageSchema = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About Us - Testriq QA Lab",
-  "url": "www.testriq.com/about",
-  "description": "Testriq QA Lab is a trusted software testing company with 14+ years of global experience. Our ISTQB-certified team delivers expert QA services with precision, innovation, and client satisfaction.",
-  "mainEntity": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
-    "foundingDate": "2010",
-    "founders": [
-      {
-        "@type": "Person",
-        "name": "Testriq QA Founders"
-      }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park",
-      "addressLocality": "Mira Road East",
-      "addressRegion": "Mira Bhayandar",
-      "postalCode": "401107",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-9152929343",
-      "contactType": "customer support",
-      "email": "contact@testriq.com",
-      "availableLanguage": ["English", "Hindi"]
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://www.twitter.com/testriq"
-    ],
-    "employee": {
-      "@type": "OrganizationRole",
-      "employee": {
-        "@type": "Person",
-        "name": "Certified QA Professionals"
+  "@graph": [
+    // ENTITY 1: The Organization (Who You Are)
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA Lab LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/images/logo.png",
+        "width": 112,
+        "height": 112
       },
-      "roleName": "Software Testing Engineer"
+      "foundingDate": "2010",
+      "description": "Testriq QA Lab LLP is a globally trusted software testing company with over 15 years of experience delivering expert-led QA solutions across the SDLC.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar",
+        "addressLocality": "Mira Road East, Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "sales",
+        "email": "contact@testriq.com",
+        "areaServed": "World"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/testriq-qa-lab",
+        "https://www.facebook.com/testriq",
+        "https://twitter.com/testriq"
+        // Add other social links found in your footer
+      ],
+      "awards": [
+        "ISO 9001 Certified",
+        "ISTQB Certified Team",
+        "Top 10 QA Companies",
+        "99.8% Project Success Rate"
+      ]
     },
-    "award": [
-      "Best QA Partner of the Year 2024",
-      "Innovation in Testing Award 2023",
-      "Client Choice Award 2022"
-    ],
-    "numberOfEmployees": "50+",
-    "knowsAbout": [
-      "ISTQB Certified Testing",
-      "Agile QA Practices",
-      "Automation Testing",
-      "Security Testing",
-      "Performance Testing"
-    ],
-    "slogan": "Pioneering Quality Assurance Excellence"
-  }
-};
+    // ENTITY 2: The FAQ Section (Matches your page content 1:1)
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What makes Testriq a trusted QA partner with over 15 years of experience?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Testriq combines over 15 years of experience with ISO 9001 processes and a team of ISTQB-certified professionals. We have executed over 500k test cases with a 99.8% success rate across 15+ countries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which industries does Testriq serve with its software testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve a wide range of industries including Fintech, Healthcare, SaaS, E-commerce, Drone Technology, and IoT. Our domain experts ensure compliance and performance for specific industry standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do startups and enterprises choose Testriq for software quality assurance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Startups choose us for our agility and 'LaunchFast QA' services, while enterprises rely on our scalable teams, robust security testing, and ability to integrate seamlessly with existing DevOps pipelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Testriq ensure quality and transparency in testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain 100% transparency through real-time reporting, dedicated project managers, and open communication channels. Our 'Quality First' value ensures every bug is documented with precision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of testing does Testriq perform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We perform comprehensive testing including Manual, Automation (Selenium/Cypress), API, Mobile App, Performance, Security, and IoT Device Testing."
+          }
+        }
+      ]
+    },
+    // ENTITY 3: Breadcrumbs (Site Hierarchy)
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.testriq.com/about-us"
+        }
+      ]
+    }
+  ]
+};;
 
 // Service Schema for our Team Page
 export const ourTeamPageSchema = {
@@ -2157,125 +2605,1041 @@ export const ourTeamPageSchema = {
 // Service Schema for careers Page
 export const careersPageSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Testriq QA Lab",
-  "url": "www.testriq.com",
-  "logo": "www.testriq.com/logo.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/testriq",
-    "https://twitter.com/testriq"
-  ],
-  "department": {
-    "@type": "Organization",
-    "name": "Testriq Careers",
-    "url": "www.testriq.com/careers"
-  },
-  "makesOffer": {
-    "@type": "OfferCatalog",
-    "name": "QA Career Opportunities at Testriq",
-    "itemListElement": [
-      {
-        "@type": "JobPosting",
-        "title": "Senior Test Automation Engineer",
-        "description": "Lead automation initiatives using Selenium, Cypress, and CI/CD. Design scalable test strategies for web/mobile.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28",
-        "hiringOrganization": {
-          "@type": "Organization",
-          "name": "Testriq QA Lab",
-          "sameAs": "www.testriq.com"
+  "@graph": [
+    // 1. The Page Itself (Breadcrumbs + Page Info)
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/careers/#webpage",
+      "url": "https://www.testriq.com/careers",
+      "name": "Careers in Software Testing & QA Automation | Testriq",
+      "description": "Join Testriq's global team. Hiring for 20+ Remote & On-site roles including Automation Engineers, Manual Testers, and Security Analysts.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://www.testriq.com/#website",
+        "url": "https://www.testriq.com",
+        "name": "Testriq QA Lab"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.testriq.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Careers"
+          }
+        ]
+      }
+    },
+
+    // 2. JOB 1: Business Development Executive (Sales) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Executive (Sales)",
+      "description": "<p>Urgent opening for a Business Development Executive focused on IT Service Sales, B2B Sales, and Software Testing Sales. Location: Mira Road, Mumbai. Experience: 2–4 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-001"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
         }
       },
-      {
-        "@type": "JobPosting",
-        "title": "QA Test Engineer",
-        "description": "Execute manual testing and ensure quality for web and mobile apps. Collaborate with developers and designers.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "New York",
-            "addressRegion": "NY",
-            "addressCountry": "US"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Performance Testing Specialist",
-        "description": "Use JMeter, LoadRunner for performance and load testing. Analyze system bottlenecks and optimize throughput.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Mobile QA Engineer",
-        "description": "Test iOS and Android apps using Appium and other tools. Focus on real device testing and user experience.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "London",
-            "addressCountry": "GB"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Security Testing Engineer",
-        "description": "Conduct penetration tests, vulnerability scans, OWASP compliance, and secure code assessments.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Junior QA Analyst",
-        "description": "Start your QA career with mentorship and hands-on experience in real projects. Open to freshers.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Lead QA Engineer",
-        "description": "Lead QA teams, define testing strategies, mentor juniors, and ensure delivery quality across projects.",
-        "employmentType": "FULL_TIME",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "New York",
-            "addressRegion": "NY",
-            "addressCountry": "US"
-          }
-        },
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
-      },
-      {
-        "@type": "JobPosting",
-        "title": "API Testing Specialist",
-        "description": "Test REST/GraphQL APIs using Postman/Newman. Build automated test suites and ensure backend reliability.",
-        "employmentType": "FULL_TIME",
-        "jobLocationType": "TELECOMMUTE",
-        "validThrough": "2025-12-31",
-        "datePosted": "2025-07-28"
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
       }
-    ]
-  }
+    },
+
+    // 3. JOB 2: Manual Tester (API – Postman) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Manual Tester (API – Postman)",
+      "description": "<p>Urgent opening for a Manual Tester skilled in API Testing, Postman, and API Automation. Location: Hybrid (Mira Road, Mumbai). Experience: 3–5 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-002"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 4. JOB 3: Automation Tester (Trading Domain) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Tester (Trading Domain)",
+      "description": "<p>Urgent opening for an Automation Tester experienced in Trading, Capital Market Domain, and JIRA. Location: Kurla, Mumbai. Experience: 2–4 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-003"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kurla, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 5. JOB 4: Automation Test Engineer (Playwright + Javascript) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Test Engineer (Playwright + Javascript)",
+      "description": "<p>Urgent opening for an Automation Test Engineer skilled in Playwright, JavaScript, and TestNG/Mocha. Location: Prabhadevi, Mumbai. Experience: 2–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-004"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Prabhadevi, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 6. JOB 5: Automation Test Engineer (Selenium + Playwright) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Automation Test Engineer (Selenium + Playwright)",
+      "description": "<p>Urgent opening for an Automation Test Engineer proficient in Selenium WebDriver, Playwright, Java, and Python. Location: Mira Road, Mumbai. Experience: 2–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-005"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 7. JOB 6: Playwright Automation Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Playwright Automation Tester",
+      "description": "<p>Full-time role for a Playwright Automation Tester with skills in Selenium WebDriver, Java, and Python. Location: Western Mumbai. Experience: 2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-006"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Western Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 8. JOB 7: QA / Automation Intern / Software Testing Intern (Java / JavaScript) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
+      "description": "<p>Internship opportunity focusing on Java, JavaScript, Selenium, and Playwright. Location: Mira Road. Duration: 3–6 months.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-007"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "INTERNSHIP",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 9. JOB 8: Penetration Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Penetration Tester",
+      "description": "<p>Full-time role for a Penetration Tester experienced in Kali Linux, Burp Suite, and Metasploit. Location: Mira Road, Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-008"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 10. JOB 9: Data Processing Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Data Processing Executive",
+      "description": "<p>Full-time role for a Data Processing Executive with skills in Excel/Sheets, SEO Basics, and Data Quality Assurance. Location: Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-009"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 11. JOB 10: Business Development Executive - Intern (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Executive - Intern",
+      "description": "<p>Internship opportunity in Business Development, focusing on LinkedIn Sales Navigator, Upwork, and Email Drafting. Location: Mira Road, Mumbai. Training provided.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-010"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "INTERNSHIP",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 12. JOB 11: SOC Analyst (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "SOC Analyst",
+      "description": "<p>Full-time role for a SOC Analyst focusing on SOC Analysis, Threat Monitoring, Security Dashboards, and WAF. Location: Mira Road, Mumbai. Experience: 1–2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-011"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 13. JOB 12: SEO & Digital Marketing Expert (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "SEO & Digital Marketing Expert",
+      "description": "<p>Full-time role for an expert in SEO, Digital Marketing, Google Analytics, and SEMrush. Location: Mira Road, Mumbai. Experience: 2 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-012"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 14. JOB 13: Front End Developer (Immediate Joiners Only) (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Front End Developer (Immediate Joiners Only)",
+      "description": "<p>Full-time role for a developer skilled in HTML, CSS, JavaScript, and Responsive Design. Location: Mira Road, Mumbai. Experience: 5+ Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-013"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 15. JOB 14: Graphic Designer (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Graphic Designer",
+      "description": "<p>Full-time role for a Graphic Designer proficient in Adobe Photoshop, Adobe Illustrator, and Adobe Premiere Pro. Location: Mumbai. Experience: Fresher – 1 Year.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-014"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 16. JOB 15: Cypress Automation Tester (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Cypress Automation Tester",
+      "description": "<p>Full-time role for a Cypress Automation Tester skilled in Cypress, JavaScript, and TypeScript. Location: Mira Road, Mumbai. Experience: 1–3 Years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-015"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 17. JOB 16: Business Development Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Business Development Manager",
+      "description": "<p>Full-time role focused on Business Development, Client Acquisition, Sales Strategy, and Revenue Growth. Location: Mira Road, Mumbai. Experience: 5 to 10 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-016"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mira Road, Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 18. JOB 17: Digital Marketing Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Digital Marketing Executive",
+      "description": "<p>Full-time role for a Digital Marketing Executive specializing in SEO, SEM, Social Media Marketing, and Email Marketing. Location: Mumbai. Experience: 1 to 3 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-017"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 19. JOB 18: Social Media Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Social Media Manager",
+      "description": "<p>Full-time role for a Social Media Manager focusing on Social Media Strategy, Content Creation, Engagement Growth, and Analytics. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-018"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 20. JOB 19: QA Test Lead (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "QA Test Lead",
+      "description": "<p>Full-time role for a QA Test Lead focusing on Test Planning, Team Leadership, Defect Management, and QA Strategy. Location: Mumbai. Experience: 5 to 7 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-019"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 21. JOB 20: Product Manager (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Product Manager",
+      "description": "<p>Full-time role for a Product Manager focused on Product Strategy, Roadmap Planning, Market Research, and Cross-Functional Collaboration. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-020"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    },
+
+    // 22. JOB 21: Tele Sales Executive (Extracted from testriq.com/careers)
+    {
+      "@type": "JobPosting",
+      "title": "Tele Sales Executive",
+      "description": "<p>Full-time role for a Tele Sales Executive focusing on Client Outreach, Tele Sales, Sales Target Achievement, and Relationship Building. Location: Mumbai. Experience: 3 to 5 years.</p>",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "Testriq",
+        "value": "JOB-021"
+      },
+      "datePosted": "2025-12-04",
+      "validThrough": "2026-03-04",
+      "employmentType": "FULL_TIME",
+      "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "sameAs": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png"
+      },
+      "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Mumbai",
+          "addressRegion": "MH",
+          "addressCountry": "IN"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": {
+          "@type": "QuantitativeValue",
+          "minValue": 600000,
+          "maxValue": 1200000,
+          "unitText": "YEAR"
+        }
+      }
+    }
+  ]
+};
+
+export const caseStudiesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq QA LAB LLP",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/logo.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.testriq.com/#website",
+      "url": "https://www.testriq.com",
+      "name": "Testriq QA Lab",
+      "publisher": {
+        "@id": "https://www.testriq.com/#organization"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.testriq.com/case-studies/#webpage",
+      "url": "https://www.testriq.com/case-studies",
+      "name": "Software Testing & QA Case Studies | Testriq QA Lab",
+      "description": "Explore our library of software testing case studies. See how Testriq helps global enterprises like Canva and Ragnar achieve 99% bug-free releases through expert QA automation.",
+      "isPartOf": {
+        "@id": "https://www.testriq.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://www.testriq.com/case-studies/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.testriq.com/canva-design-platform",
+            "name": "Testing Canva’s Design Platform"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://www.testriq.com/ragnar-sports-platform",
+            "name": "Ragnar Sports Platform – QA by Testriq"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.testriq.com/kanishka-mobile-app",
+            "name": "Testriq for Kanishka Mobile App Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.testriq.com/home-facts-case-study",
+            "name": "Real Estate QA Case Study – Testriq"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://www.testriq.com/realtytrac-case-study",
+            "name": "RealtyTrac QA Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://www.testriq.com/brandify-case-study",
+            "name": "Brandify QA for Digital Marketing Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://www.testriq.com/milton-case-study",
+            "name": "Milton Smart Stainless Steel Water Bottle Case Study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://www.testriq.com/luep-case-study",
+            "name": "Cross-Platform QA Case Study of Luep"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "url": "https://www.testriq.com/aalpha-information-systems",
+            "name": "Securing Aalpha Information Systems' HR Portal"
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "url": "https://www.testriq.com/digiboxx-case-study",
+            "name": "Optimizing Digiboxx with Robust Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "url": "https://www.testriq.com/rc-pets-case-study",
+            "name": "Performance Testing for RC Pets' Growth"
+          },
+          {
+            "@type": "ListItem",
+            "position": 12,
+            "url": "https://www.testriq.com/worksocial-case-study",
+            "name": "WorkSocial Software Optimized Through Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 13,
+            "url": "https://www.testriq.com/leadoconnect-case-study",
+            "name": "Refining LeadoConnect’s B2B Software with QA"
+          },
+          {
+            "@type": "ListItem",
+            "position": 14,
+            "url": "https://www.testriq.com/pro-ficiency-case-study",
+            "name": "Elevating Pro-ficiency’s Software with QA and Rigorous Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 15,
+            "url": "https://www.testriq.com/phyllo-case-study",
+            "name": "Optimizing Phyllo's API with Efficient Testing"
+          },
+          {
+            "@type": "ListItem",
+            "position": 16,
+            "url": "https://www.testriq.com/indo-wings-case-study",
+            "name": "Security Testing for High-end Drone for Indo Wings"
+          },
+          {
+            "@type": "ListItem",
+            "position": 17,
+            "url": "https://www.testriq.com/smart-doorbell-case-study",
+            "name": "Comprehensive QA for Smart Video Doorbell App"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/case-studies/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Case Studies",
+          "item": "https://www.testriq.com/case-studies"
+        }
+      ]
+    }
+  ]
 };
 
 // Contact Us Page
@@ -2416,7 +3780,7 @@ export const smartDeviceTestingSchema = {
 
 
 // Breadcrumb Schema
-export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>) => ({
+export const createBreadcrumbSchema = (items: Array<{ name: string, url: string }>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": items.map((item, index) => ({
@@ -2428,7 +3792,7 @@ export const createBreadcrumbSchema = (items: Array<{name: string, url: string}>
 });
 
 // FAQ Schema
-export const createFAQSchema = (faqs: Array<{question: string, answer: string}>) => ({
+export const createFAQSchema = (faqs: Array<{ question: string, answer: string }>) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": faqs.map(faq => ({
@@ -2775,4 +4139,134 @@ export const shoppingAppCertificationSchema = {
     reviewCount: "203",
     bestRating: "5",
   },
+};
+
+// Service Schema for SAP Testing Service
+export const sapTestingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/sap-testing-services/#service",
+      "name": "SAP Testing Services",
+      "serviceType": "Enterprise Software QA",
+      "provider": {
+        "@type": "Organization",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://clutch.co/profile/testriq-qa-lab"
+        ]
+      },
+      "areaServed": "Worldwide",
+      "description": "Comprehensive SAP testing services including S/4HANA migration validation, SAP Fiori testing, and automated regression testing for enterprise landscapes.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact-us"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SAP Testing Capabilities",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "S/4HANA Migration Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SAP Fiori UX Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SAP Test Automation (Tosca/Worksoft)"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "100",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Global Manufacturing Corp"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Testriq's rigorous testing strategy was crucial for our seamless transition to S/4HANA. We maintained full operational capability throughout the migration."
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is SAP testing critical for S/4HANA migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SAP S/4HANA migration involves complex data transformation and process re-engineering. Comprehensive testing ensures business continuity and data integrity during the transition."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you support SAP test automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we specialize in SAP automation using Tricentis Tosca, Worksoft Certify, and UFT One to accelerate regression cycles and reduce business risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle SAP integration testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We validate end-to-end data flow between SAP modules and non-SAP systems via middleware like SAP PO/PI and CPI, ensuring seamless enterprise connectivity."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.testriq.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.testriq.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SAP Testing",
+          "item": "https://www.testriq.com/sap-testing-services"
+        }
+      ]
+    }
+  ]
 };

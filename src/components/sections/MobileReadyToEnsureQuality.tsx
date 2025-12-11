@@ -31,9 +31,13 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
               Transform your mobile application with our comprehensive testing
-              approach. We ensure your app delivers exceptional <Link href='performance-testing-services'>performance</Link>,
-              <Link href='security-testing'>security</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> across all devices and platforms,
-              from iOS to Android.
+              approach. We ensure your app delivers exceptional{" "}
+              <Link href="performance-testing-services">performance</Link>,
+              <Link href="security-testing">security</Link>, and{" "}
+              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+                user experience
+              </Link>{" "}
+              across all devices and platforms, from iOS to Android.
             </p>
 
             {/* Benefits List */}
@@ -48,11 +52,13 @@ const MobileReadyToEnsureQuality: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="flex items-center cursor-pointer justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors">
-                  <span>Start Your Testing Project</span>
-                  <FaArrowRight className="w-4 h-4" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your Testing Project – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                <span>Start Your Testing Project</span>
+                <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

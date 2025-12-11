@@ -3,9 +3,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaWifi, FaBluetooth, FaMobile, FaShieldAlt } from "react-icons/fa";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import { MdDevicesOther } from "react-icons/md";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const SmartDeviceTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -19,8 +19,22 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-green-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gradient-to-br from-gray-50 to-green-50 pt-8 pb-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Smart Device Testing
+          </span>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
           <div className="space-y-6">
@@ -35,19 +49,40 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>smart devices</Link> deliver seamless connectivity, <Link href='performance-testing-services'>optimal
-              performance</Link>, and robust <Link href='security-testing'>security</Link> with our <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> services. From wearables to smart home devices – we validate every
-              aspect of your <Link href='blog/post/how-to-test-iot-devices-for-reliability-2'>IoT device</Link> and connected ecosystem.
+              Ensure your{" "}
+              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+                smart devices
+              </Link>{" "}
+              deliver seamless connectivity,{" "}
+              <Link href="performance-testing-services">
+                optimal performance
+              </Link>
+              , and robust <Link href="security-testing">security</Link> with
+              our{" "}
+              <Link href="blog/post/smart-device-testing-services-complete-guide">
+                smart device testing
+              </Link>{" "}
+              services. From wearables to smart home devices – we validate every
+              aspect of your{" "}
+              <Link href="blog/post/how-to-test-iot-devices-for-reliability-2">
+                IoT device
+              </Link>{" "}
+              and connected ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
-                  Get Started Today
-                  <FaArrowRight className="inline ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Started Today – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:bg-brand-blue transition-all duration-300"
+              >
+                <span>Get Started Today</span>
+                <FaArrowRight className="inline ml-2 w-4 h-4" />
               </Link>
-              <button onClick={openLightbox} className="border cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2">
+              <button
+                onClick={openLightbox}
+                className="border cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold transition-colors duration-300 flex items-center justify-center gap-2"
+              >
                 <FaPlay className="w-4 h-4" />
                 Watch Demo
               </button>
@@ -92,10 +127,10 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
               {/* Smart Device Testing Control Panel */}
               <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-gray-800 flex items-center">
+                  <h2 className="font-bold text-gray-800 flex items-center">
                     <FaMobile className="w-5 h-5 mr-2 text-green-500" />
                     Smart Device Testing Hub
-                  </h3>
+                  </h2>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                     <span className="text-sm text-green-600 font-semibold">
@@ -233,7 +268,11 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

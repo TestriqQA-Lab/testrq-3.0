@@ -100,7 +100,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                 {/* CTA */}
                 <Link href={service.link}>
                   <div className="mt-6 pt-6 border-t border-gray-100 ">
-                    <button className="cursor-pointer text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors duration-200 flex items-center">
+                    <button className="cursor-pointer text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors duration-200 flex items-center" aria-label={`Learn more about ${service.name}`}>
                       Learn More
                       <ArrowRight className="h-4 w-4 ml-2" />
                     </button>

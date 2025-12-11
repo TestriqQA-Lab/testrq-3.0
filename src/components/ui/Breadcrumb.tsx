@@ -1,49 +1,44 @@
-"use client";
-import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
+import Link from 'next/link';
+import { FaChevronRight, FaHome } from 'react-icons/fa';
 
 interface BreadcrumbItem {
-  label: string;
-  href?: string;
+    label: string;
+    href?: string;
 }
 
 interface BreadcrumbProps {
-  items: BreadcrumbItem[];
-  className?: string;
+    items: BreadcrumbItem[];
+    className?: string;
 }
 
-const Breadcrumb = ({ items, className = "" }: BreadcrumbProps) => {
-  return (
-    <nav 
-      className={`flex items-center space-x-2 text-sm text-gray-600 py-4 ${className}`}
-      aria-label="Breadcrumb"
-    >
-      <Link 
-        href="/" 
-        className="flex items-center hover:text-brand-blue transition-colors"
-        aria-label="Home"
-      >
-        <Home className="h-4 w-4" />
-      </Link>
-      
-      {items.map((item, index) => (
-        <div key={index} className="flex items-center space-x-2">
-          <ChevronRight className="h-4 w-4 text-gray-400" />
-          {item.href && index < items.length - 1 ? (
-            <Link 
-              href={item.href} 
-              className="hover:text-brand-blue transition-colors"
+export default function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
+    return (
+        <div className={`flex items-center gap-2 text-sm font-medium text-gray-600 mb-6 ${className}`}>
+            <Link
+                href="/"
+                className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
             >
-              {item.label}
+                <FaHome className="text-lg" />
+                Home
             </Link>
-          ) : (
-            <span className="text-gray-800 font-medium">{item.label}</span>
-          )}
+
+            {items.map((item, index) => (
+                <div key={index} className="flex items-center gap-2">
+                    <FaChevronRight className="text-xs text-gray-400" />
+                    {item.href ? (
+                        <Link
+                            href={item.href}
+                            className="hover:text-[theme(color.brand.blue)] transition-colors"
+                        >
+                            {item.label}
+                        </Link>
+                    ) : (
+                        <span className="text-[theme(color.brand.blue)]">
+                            {item.label}
+                        </span>
+                    )}
+                </div>
+            ))}
         </div>
-      ))}
-    </nav>
-  );
-};
-
-export default Breadcrumb;
-
+    );
+}

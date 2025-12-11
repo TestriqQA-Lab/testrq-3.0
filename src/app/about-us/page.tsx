@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import StructuredData, { aboutPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "About Us - Best Software Testing Company in India",
+  title: "About Testriq | ISO 9001 Certified Software Testing Company",
 
-  description: "Discover Testriq QA Lab LLP – 10+ years of expert software testing & QA. Explore our mission, core values, and commitment to testing excellence.",
+  description: "Testriq QA Lab is a globally trusted software testing company with 15+ years of experience. We provide ISTQB certified QA solutions, Automation, and Security testing.",
   keywords: [
     "about Testriq",
     "software testing company",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.testriq.com/about-us',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'About Us - Testriq QA Lab | Trusted Software Testing Company',
-    description: 'Learn about Testriq QA Lab – a globally trusted software testing company with 14+ years of experience. Discover our mission, values, journey, certifications, and why top companies trust our QA excellence.',
+    siteName: 'Testriq QA Lab',
+    title: 'About Testriq | ISO 9001 Certified Software Testing Company',
+    description: '15+ Years Experience. 500K+ Test Cases Executed. Partner with the world\'s most trusted QA experts.',
     images: [
       {
         url: '/OG/About-Us-og.webp',
@@ -160,7 +160,7 @@ const AboutFAQ = dynamic(
 );
 
 export default function AboutUs() {
-   const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "about Page", url: "https://www.testriq.com/about-us" }
   ];

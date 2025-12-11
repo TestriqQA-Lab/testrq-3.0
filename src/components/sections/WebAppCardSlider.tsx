@@ -8,7 +8,7 @@ export default function CardSlider() {
   const [autoHover, setAutoHover] = useState(true);
 
   const headings = {
-    title: "Systematic 6-Steps Testing Methodolgy",
+    title: "Systematic 6-Step Web Application Testing Methodology",
     info: (<>Our proven testing methodology ensures comprehensive coverage, efficient issue detection, and reliable web application performance through systematic execution, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>detailed bug reporting</Link>, and actionable QA insights.</>),
   };
 
@@ -227,11 +227,10 @@ export default function CardSlider() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className={`p-4 rounded-lg shadow-md cursor-pointer  ring ring-gray-300 transition-all duration-300 ${
-                  activeCard === index
+                className={`p-4 rounded-lg shadow-md cursor-pointer  ring ring-gray-300 transition-all duration-300 ${activeCard === index
                     ? `scale-105 transition-all duration-500 ease-in-out shadow-xl border-2 border-black bg-${cards[activeCard].colorlight}`
                     : `bg-white hover:shadow-lg hover:border-${cards[activeCard].colordark}`
-                }`}
+                  }`}
                 onMouseEnter={() => setActiveCard(index)}
                 onClick={() => handleCardClick(index)}
               >
@@ -243,11 +242,10 @@ export default function CardSlider() {
                 </div>
 
                 <p
-                  className={` ${
-                    activeCard === index
+                  className={` ${activeCard === index
                       ? `text-${cards[activeCard].colordark}`
                       : `hover:border-${card.colordark}`
-                  }`}
+                    }`}
                 >
                   {card.quote}
                 </p>
@@ -287,9 +285,9 @@ export default function CardSlider() {
             </p>
 
             <div className="flex flex-col leading-8 mt-5">
-              <h4 className="text-xl font-semibold mx-2">
+              <h3 className="text-xl font-semibold mx-2">
                 {cards[activeCard].keyTitle}
-              </h4>
+              </h3>
               <div>
                 {cards[activeCard].keys.map((item, idx) => (
                   <div key={idx} className="flex flex-row items-center">
@@ -359,9 +357,9 @@ export default function CardSlider() {
                 <p className="text-gray-600 text-lg mt-5">{card.content}</p>
 
                 <div className="flex flex-col md:leading-8 mt-5">
-                  <h4 className="text-xl font-semibold mx-2">
+                  <h3 className="text-xl font-semibold mx-2">
                     {card.keyTitle}
-                  </h4>
+                  </h3>
                   <div>
                     {cards[activeCard].keys.map((item, idx) => (
                       <div
@@ -396,11 +394,10 @@ export default function CardSlider() {
                   </div>
                 </div>
                 <button
-                  className={`mt-4 w-full bg-${
-                    card.colordark
-                  } text-white py-2 rounded-lg hover:bg-${cards[
-                    activeCard
-                  ].colordark.replace("500", "600")}`}
+                  className={`mt-4 w-full bg-${card.colordark
+                    } text-white py-2 rounded-lg hover:bg-${cards[
+                      activeCard
+                    ].colordark.replace("500", "600")}`}
                 >
                   Learn More About {card.title}
                 </button>

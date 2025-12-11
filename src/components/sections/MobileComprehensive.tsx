@@ -17,7 +17,11 @@ const MobileComprehensive: React.FC = () => {
   const testingServices = [
     {
       icon: <FaMobile className="w-8 h-8" />,
-      title: (<Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>Functional Testing</Link>),
+      title: (
+        <Link href="blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
+          Functional Testing
+        </Link>
+      ),
       description:
         "Comprehensive functionality testing of all mobile app features, user flows, and interactions across iOS and Android devices including software UI testing and API validation.",
       features: [
@@ -29,7 +33,7 @@ const MobileComprehensive: React.FC = () => {
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: (<Link href='security-testing'>Security Testing</Link>),
+      title: <Link href="security-testing">Security Testing</Link>,
       description:
         "Thorough security assessment to protect your mobile apps from vulnerabilities and ensure data protection compliance.",
       features: [
@@ -41,7 +45,9 @@ const MobileComprehensive: React.FC = () => {
     },
     {
       icon: <FaCogs className="w-8 h-8" />,
-      title: (<Link href='performance-testing-services'>Performance Testing</Link>),
+      title: (
+        <Link href="performance-testing-services">Performance Testing</Link>
+      ),
       description:
         "Optimize your mobile app's performance under various network conditions, device configurations, and user loads.",
       features: [
@@ -53,7 +59,11 @@ const MobileComprehensive: React.FC = () => {
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      title: (<Link href='blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates'>Usability Testing</Link>),
+      title: (
+        <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
+          Usability Testing
+        </Link>
+      ),
       description:
         "Ensure your mobile app delivers intuitive user journeys with usability testing, accessibility checks, and UI interaction validation across user personas and use cases.",
       features: [
@@ -65,7 +75,11 @@ const MobileComprehensive: React.FC = () => {
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: (<Link href='blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa'>Compatibility Testing</Link>),
+      title: (
+        <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
+          Compatibility Testing
+        </Link>
+      ),
       description:
         "Verify mobile app compatibility across devices, OS versions, screen sizes, and orientations with full-cycle testing for cross-platform mobile environments.",
       features: [
@@ -77,7 +91,7 @@ const MobileComprehensive: React.FC = () => {
     },
     {
       icon: <FaSync className="w-8 h-8" />,
-      title: (<Link href='automation-testing-services'>Automation Testing</Link>),
+      title: <Link href="automation-testing-services">Automation Testing</Link>,
       description:
         "Implement mobile test automation with CI/CD pipelines. Our QA team builds automated suites for iOS, Android, and cross-platform apps using tools like Appium.",
       features: [
@@ -111,10 +125,20 @@ const MobileComprehensive: React.FC = () => {
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            From <Link href='blog/post/learn-how-validation-optimization'>functional validation</Link> to <Link href='performance-testing-services'>performance optimization</Link>, our
-            comprehensive mobile testing services ensure your applications
-            deliver exceptional <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link> across all devices and
-            platforms.
+            From{" "}
+            <Link href="blog/post/learn-how-validation-optimization">
+              functional validation
+            </Link>{" "}
+            to{" "}
+            <Link href="performance-testing-services">
+              performance optimization
+            </Link>
+            , our comprehensive mobile testing services ensure your applications
+            deliver exceptional{" "}
+            <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+              user experiences
+            </Link>{" "}
+            across all devices and platforms.
           </p>
         </div>
 
@@ -170,7 +194,9 @@ const MobileComprehensive: React.FC = () => {
                   </span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">
-                  <Link href='blog/post/what-are-the-testing-tools-for-ios-app-testing'>iOS Testing</Link>
+                  <Link href="blog/post/what-are-the-testing-tools-for-ios-app-testing">
+                    iOS Testing
+                  </Link>
                 </h4>
               </div>
 
@@ -203,7 +229,9 @@ const MobileComprehensive: React.FC = () => {
                   <span className="text-white text-lg">🤖</span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">
-                  <Link href='blog/post/ios-vs-android-testing-key-differences-every-qa-should-know'>Android Testing</Link>
+                  <Link href="blog/post/ios-vs-android-testing-key-differences-every-qa-should-know">
+                    Android Testing
+                  </Link>
                 </h4>
               </div>
 
@@ -242,10 +270,12 @@ const MobileComprehensive: React.FC = () => {
               application&apos;s specific needs and target audience.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/contact-us">
-                <button className="px-8 py-3 cursor-pointer bg-[theme(color.brand.blue)] text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors">
-                  Start Free Consultation
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Free Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg hover:bg-brand-blue hover:shadow-lg transition-colors cursor-pointer"
+              >
+                Start Free Consultation
               </Link>
               <button
                 onClick={scrollToProcess}

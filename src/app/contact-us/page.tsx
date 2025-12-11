@@ -1,13 +1,58 @@
 import React from "react";
-import ContactHeroSection from "@/components/sections/ContactHeroSection";
-import ContactMethodsSection from "@/components/sections/ContactMethodsSection";
-import ContactFAQSection from "@/components/sections/ContactFAQSection";
-import ContactOfficeSection from "@/components/sections/ContactOfficeSection";
 import { Metadata } from "next";
 import StructuredData, {
   contactUsPageSchema,
   createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
+import dynamic from "next/dynamic";
+
+const ContactHeroSection = dynamic(
+  () => import("@/components/sections/ContactHeroSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const ContactMethodsSection = dynamic(
+  () => import("@/components/sections/ContactMethodsSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const ContactFAQSection = dynamic(
+  () => import("@/components/sections/ContactFAQSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const ContactOfficeSection = dynamic(
+  () => import("@/components/sections/ContactOfficeSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title: "Contact Us Testriq QA Lab | Software Testing Services",

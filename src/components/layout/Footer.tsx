@@ -1,12 +1,13 @@
 "use client";
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt
+} from "react-icons/fa";
+
 import { BsTwitterX } from "react-icons/bs";
 import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
@@ -19,11 +20,6 @@ interface coreService {
 }
 
 interface specializedTesting {
-  title: string;
-  path: Url;
-}
-
-interface blogCategory {
   title: string;
   path: Url;
 }
@@ -59,30 +55,18 @@ const specializedTesting = [
   { title: "Data Analysis", path: "/data-analysis-services" },
   { title: "Software Testing Guide", path: "/software-testing-guide" },
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
-];
-
-// Enhanced blog categories for better internal linking
-const blogCategories = [
-  { title: "Mobile Application Testing", path: "/blog/category/mobile-application-testing" },
-  { title: "API Testing", path: "/blog/category/api-testing" },
-  { title: "Performance Testing", path: "/blog/category/performance-testing-services" },
-  { title: "QA Testing", path: "/blog/category/qa-testing" },
-  { title: "Best Practices", path: "/blog/category/best-practices" },
-  { title: "Software Testing Tools", path: "/blog/category/software-testing-tools" },
-  { title: "Automation Testing", path: "/blog/category/automation-testing" },
-  { title: "IoT Device Testing", path: "/blog/category/iot-device-testing" },
+  { title: "SAP Testing", path: "/sap-testing-services" },
 ];
 
 const company = [
   { title: "About Us", path: "/about-us" },
   { title: "Our Team", path: "/our-team" },
-  { title: "Tools", path: "/tools" },
+  { title: "Tools", path: "/technology-stack" },
   { title: "Case Studies", path: "/case-studies" },
   { title: "Blogs", path: "/blog" },
   { title: "Careers", path: "/careers" },
   { title: "Locations We Serve", path: "/locations-we-serve" },
   { title: "Contact Us", path: "/contact-us" },
-  { title: "ROI Calculator", path: "/roi-calculator" },
 ];
 
 const partners = [
@@ -110,11 +94,11 @@ const Footer = () => {
   return (
     <footer className="bg-gray-100 border-t border-gray-200 py-16 px-8 md:px-12 lg:px-24">
       <div className="mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Information */}
-          <div className="space-y-4 xl:mr-10 lg:col-span-2">
+          <div className="space-y-4 xl:mr-10">
             <div className="flex items-center space-x-2">
-              <Image title="Testriq Logo" src={Logo} alt="Testriq_Logo" width={150} />
+              <Image title="Testriq Logo" src={Logo} alt="Testriq_logo" width={150} />
             </div>
             <p className="text-gray-800 text-sm leading-relaxed">
               Premium software testing services with over a decade of
@@ -125,7 +109,7 @@ const Footer = () => {
             {/* Contact Information */}
             <div className="space-y-2">
               <div className="flex space-x-2 text-sm text-gray-800">
-                <MapPin className="h-15 w-15 text-brand-blue" />
+                <FaMapMarkerAlt className="h-15 w-15 text-brand-blue" />
                 <p>
                   Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
                   Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
@@ -133,7 +117,7 @@ const Footer = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">
-                <Phone className="h-4 w-4 text-brand-blue" />
+                <FaPhoneAlt className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="tel:+919152929343"
                   className="hover:text-brand-blue transition-colors"
@@ -142,7 +126,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">
-                <Mail className="h-4 w-4 text-brand-blue" />
+                <FaEnvelope className="h-4 w-4 text-brand-blue" />
                 <Link
                   href="mailto:contact@testriq.com"
                   className="hover:text-brand-blue transition-colors"
@@ -170,30 +154,34 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
+                <FaLinkedinIn className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://www.facebook.com/testriq.lab/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Facebook"
               >
-                <Facebook className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
+                <FaFacebookF className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
                 href="https://instagram.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Instagram"
               >
-                <Instagram className="h-5 w-5 text-gray-800 group-hover:text-pink-600 transition-colors" />
+                <FaInstagram className="h-5 w-5 text-gray-800 group-hover:text-pink-600 transition-colors" />
               </Link>
               <Link
                 href="https://x.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
+                aria-label="Twitter"
               >
                 <BsTwitterX className="h-5 w-5 text-gray-800 group-hover:text-blue-400 transition-colors" />
               </Link>
@@ -211,6 +199,7 @@ const Footer = () => {
                   <Link
                     href={service.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={service.title}
                   >
                     {service.title}
                   </Link>
@@ -230,39 +219,13 @@ const Footer = () => {
                   <Link
                     href={service.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={service.title}
                   >
                     {service.title}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Blog Categories - NEW SECTION */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-800 border-b border-blue-200 pb-2">
-              Testing Insights
-            </h3>
-            <ul className="space-y-2">
-              {blogCategories.map((category) => (
-                <li key={category.title}>
-                  <Link
-                    href={category.path}
-                    className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
-                  >
-                    {category.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="pt-2">
-              <Link
-                href="/blog"
-                className="text-sm font-medium text-brand-blue hover:text-blue-700 transition-colors"
-              >
-                View All Articles →
-              </Link>
-            </div>
           </div>
 
           {/* Company Links */}
@@ -276,12 +239,31 @@ const Footer = () => {
                   <Link
                     href={link.path}
                     className="text-sm text-gray-800 hover:text-brand-blue transition-all duration-200 hover:translate-x-1 inline-block"
+                    aria-label={link.title}
                   >
                     {link.title}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center space-y-6 mt-8 p-6 bg-white rounded-lg shadow-inner border border-gray-200 max-w-4xl mx-auto">
+          <p className="text-lg text-gray-700 text-center font-medium">
+            We are proud to be featured on <Link href="https://www.designrush.com/agency/software-testing-companies" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DesignRush</Link> for our outstanding work.
+          </p>
+          <div className="flex justify-center">
+            <Link
+              href="https://www.designrush.com/agency/software-testing-companies"
+            >
+              <Image
+                src="/DesignRush_Badge.png"
+                alt="TESTRIQ QA LAB featured on DesignRush"
+                width={150}
+                height={150}
+                className="object-contain"
+              /> </Link>
           </div>
         </div>
 
@@ -293,6 +275,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
+              aria-label={partner.title}
             >
               <Image
                 title={partner.title}
@@ -332,7 +315,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="/sitemap.xml"
+                href="https://www.testriq.com/sitemap.xml"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap
@@ -346,4 +329,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

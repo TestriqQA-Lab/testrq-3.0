@@ -111,7 +111,6 @@ const ElearningCaseStudiesSection: React.FC = () => {
     },
   ];
 
-
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       <div className="mx-auto">
@@ -328,15 +327,24 @@ const ElearningCaseStudiesSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col text-brand-blue sm:flex-row gap-4 justify-center">
-            <Link href="/contact-us">
-              <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out shadow-lg">
-                Start Your Success Story
-              </button>
+            <Link
+              href="/contact-us"
+              title="Start Your Success Story – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white font-semibold text-lg rounded-2xl shadow-lg
+             hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              Start Your Success Story
             </Link>
-            <Link href="/case-studies">
-              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                View More Case Studies
-              </button>
+
+            <Link
+              href="/case-studies"
+              title="View More Case Studies – Testriq QA Lab"
+              className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 font-semibold text-lg rounded-2xl border border-white border-opacity-30
+             hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out"
+            >
+              View More Case Studies
             </Link>
           </div>
 

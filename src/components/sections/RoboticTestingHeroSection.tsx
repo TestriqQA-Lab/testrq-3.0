@@ -3,12 +3,26 @@
 import Link from "next/link";
 import React from "react";
 import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 
 const RoboticTestingHeroSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-16 px-8 md:px-12 lg:px-24">
+    <section className="bg-gradient-to-br from-gray-50 to-blue-50 pt-8 pb-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Robotic Testing
+          </span>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
           <div className="space-y-6">
@@ -23,18 +37,28 @@ const RoboticTestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your <Link href='blog/post/functional-testing-for-robotic-systems-precision-sensors-control'>robotic systems</Link> deliver precise, reliable, and safe{" "}
-              <Link href='performance-testing-services'>performance</Link> with our comprehensive <Link href='robotics-testing-services'>robotics testing</Link> services. From
-              industrial <Link href='automation-testing-services'>automation</Link> to service robots - we validate every aspect
-              of your robotic ecosystem.
+              Ensure your{" "}
+              <Link href="blog/post/functional-testing-for-robotic-systems-precision-sensors-control">
+                robotic systems
+              </Link>{" "}
+              deliver precise, reliable, and safe{" "}
+              <Link href="performance-testing-services">performance</Link> with
+              our comprehensive{" "}
+              <Link href="robotics-testing-services">robotics testing</Link>{" "}
+              services. From industrial{" "}
+              <Link href="automation-testing-services">automation</Link> to
+              service robots - we validate every aspect of your robotic
+              ecosystem.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg transform hover:scale-105">
-                  Get Started Today
-                  <FaArrowRight className="inline ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Started Today – Testriq QA Lab"
+                className="inline-flex items-center gap-2 px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:bg-brand-blue transition-all duration-300"
+              >
+                <span>Get Started Today</span>
+                <FaArrowRight className="inline ml-2 w-4 h-4" />
               </Link>
             </div>
 
@@ -61,10 +85,10 @@ const RoboticTestingHeroSection: React.FC = () => {
               {/* Robot Testing Control Panel */}
               <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-gray-800 flex items-center">
+                  <h2 className="font-bold text-gray-800 flex items-center">
                     <FaRobot className="w-5 h-5 mr-2 text-blue-500" />
                     Robot Testing Dashboard
-                  </h3>
+                  </h2>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                     <span className="text-sm text-green-600 font-semibold">

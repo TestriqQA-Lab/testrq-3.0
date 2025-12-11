@@ -257,12 +257,20 @@ const HealthcareFAQSection: React.FC = () => {
               answers to your specific healthcare software testing questions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 transition-all">
-                  Schedule Expert Consultation
-                </button>
+              <Link
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+                title="Schedule Expert Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-brand-blue font-semibold text-lg rounded-2xl
+             hover:bg-gray-100 hover:scale-98 transition-all duration-300"
+              >
+                Schedule Expert Consultation
               </Link>
-              <Link href="/contact-us" className="bg-white bg-opacity-20 cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
+
+              <Link
+                href="/contact-us"
+                className="bg-white bg-opacity-20 cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30"
+              >
                 Contact Healthcare Team
               </Link>
             </div>

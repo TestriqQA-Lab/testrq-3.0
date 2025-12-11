@@ -11,6 +11,8 @@ import {
   FaCheckCircle,
   FaArrowRight,
   FaPlay,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const EcommerceHeroSection: React.FC = () => {
@@ -29,7 +31,7 @@ const EcommerceHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto pt-8 pb-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -38,6 +40,21 @@ const EcommerceHeroSection: React.FC = () => {
       </div>
 
       <div className="relative">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            E-Commerce Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
           <div className="space-y-8">
@@ -117,18 +134,26 @@ const EcommerceHeroSection: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-brand-blue text-white font-semibold rounded-lg hover:shadow-lg transition-colors duration-200 shadow-lg">
-                  Start Free E-Commerce Audit
-                  <FaArrowRight className="ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Free E-Commerce Audit – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-4 py-4 min-h-[44px] min-w-[44px]
+                 bg-brand-blue text-white font-semibold rounded-lg shadow-lg
+                 hover:shadow-xl transition-colors duration-200"
+              >
+                Start Free E-Commerce Audit
+                <FaArrowRight className="ml-2" />
               </Link>
 
-              <Link href="/contact-us">
-                <button className="w-full inline-flex cursor-pointer items-center px-8 py-4 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue hover:bg-blue-50 transition-colors duration-200">
-                  <FaPlay className="mr-2" />
-                  Schedule Consultation
-                </button>
+              <Link
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
+                title="Schedule Consultation – Testriq QA Lab"
+                className=" inline-flex items-center justify-start px-4 py-4 min-h-[44px]
+                 bg-white text-brand-blue font-semibold rounded-lg border-2 border-brand-blue
+                 hover:bg-blue-50 transition-colors duration-200"
+              >
+                <FaPlay className="mr-2" />
+                Schedule Consultation
               </Link>
             </div>
 
@@ -155,9 +180,9 @@ const EcommerceHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven E-Commerce Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Results that drive business growth
                 </p>
@@ -185,9 +210,9 @@ const EcommerceHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-green-600" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Results
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">
@@ -235,15 +260,25 @@ const EcommerceHeroSection: React.FC = () => {
               solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out">
-                  Get Free Testing Strategy
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Free Testing Strategy – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+                 bg-white text-[theme(color.brand.blue)] font-semibold rounded-xl
+                 hover:bg-gray-100 hover:scale-98 transition-all duration-200 ease-in-out"
+              >
+                Get Free Testing Strategy
               </Link>
-              <Link href="/case-studies">
-                <button className="bg-white bg-opacity-20 cursor-pointer text-[theme(color.brand.blue)] px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-                  View Case Studies
-                </button>
+
+              <Link
+                href="/case-studies"
+                title="View Case Studies – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+                 bg-white bg-opacity-20 text-[theme(color.brand.blue)] font-semibold rounded-xl
+                 hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out
+                 border border-white border-opacity-30"
+              >
+                View Case Studies
               </Link>
             </div>
           </div>

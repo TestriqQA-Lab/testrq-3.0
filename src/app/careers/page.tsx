@@ -1,13 +1,80 @@
 import React from "react";
-import CareersHeroSection from "@/components/sections/CareersHeroSection";
-import CareersValuesSection from "@/components/sections/CareersValuesSection";
-import CareersOpenPositions from "@/components/sections/CareersOpenPositions";
-import CareersBenefitsSection from "@/components/sections/CareersBenefitsSection";
-import CareersApplicationProcessSection from "@/components/sections/CareersApplicationProcessSection";
-// import CareersCultureSection from "@/components/sections/CareersCultureSection";
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import StructuredData, { careersPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
+
+const CareersHeroSection = dynamic(
+  () => import("@/components/sections/CareersHeroSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const CareersValuesSection = dynamic(
+  () => import("@/components/sections/CareersValuesSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const CareersOpenPositions = dynamic(
+  () => import("@/components/sections/CareersOpenPositions"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const CareersBenefitsSection = dynamic(
+  () => import("@/components/sections/CareersBenefitsSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+// const CareersCultureSection = dynamic(
+//   () => import("@/components/sections/CareersCultureSection"),
+//   {
+//     ssr: true,
+//     loading: () => (
+//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+//         <p className="text-gray-500">Loading...</p>
+//       </div>
+//     ),
+//   }
+// );
+
+const CareersApplicationProcessSection = dynamic(
+  () => import("@/components/sections/CareersApplicationProcessSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
   title:"Careers | Join Our QA Testing Team at Testriq",

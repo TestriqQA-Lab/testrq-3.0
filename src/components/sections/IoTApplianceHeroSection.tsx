@@ -11,6 +11,8 @@ import {
   FaCheckCircle,
   FaNetworkWired,
   FaMicrochip,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const IoTHeroSection: React.FC = () => {
@@ -23,9 +25,17 @@ const IoTHeroSection: React.FC = () => {
 
   const trustBadges = [
     "Edge-to-Cloud Testing",
-    (<><Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT Security Validation</Link></>),
+    <>
+      <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+        IoT Security Validation
+      </Link>
+    </>,
     "Protocol Compliance",
-    (<><Link href="/blog/post/how-to-test-iot-devices-for-reliability">Industrial IoT Expertise</Link></>),
+    <>
+      <Link href="/blog/post/how-to-test-iot-devices-for-reliability">
+        Industrial IoT Expertise
+      </Link>
+    </>,
   ];
 
   return (
@@ -61,7 +71,22 @@ const IoTHeroSection: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative pt-10 pb-20">
+      <div className="relative pt-8 pb-16">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            IoT Appliance Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
@@ -80,8 +105,18 @@ const IoTHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure seamless <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">connectivity</Link>, robust IoT security, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">optimized
-              performance</Link> across your entire IoT ecosystem. From <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">smart devices</Link>{" "}
+              Ensure seamless{" "}
+              <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+                connectivity
+              </Link>
+              , robust IoT security, and{" "}
+              <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                optimized performance
+              </Link>{" "}
+              across your entire IoT ecosystem. From{" "}
+              <Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">
+                smart devices
+              </Link>{" "}
               to industrial IoT systems, we validate every connection in your
               edge-to-cloud architecture through advanced IoT testing services.
             </p>
@@ -91,13 +126,17 @@ const IoTHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Device Connectivity Testing</Link>
+                  <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+                    Device Connectivity Testing
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">IoT Security Validation</Link>
+                  <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">
+                    IoT Security Validation
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -147,9 +186,9 @@ const IoTHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven IoT Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Results that power connected innovation
                 </p>
@@ -177,15 +216,19 @@ const IoTHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl p-8 border border-cyan-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-cyan-600" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Results
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-700">
-                    Device <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Reliability</Link> Increase
+                    Device{" "}
+                    <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
+                      Reliability
+                    </Link>{" "}
+                    Increase
                   </span>
                   <span className="font-bold text-cyan-600">+55%</span>
                 </div>
@@ -221,11 +264,16 @@ const IoTHeroSection: React.FC = () => {
               connected device testing solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Get Free IoT Audit
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Free IoT Audit – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px] 
+             bg-white text-black rounded-xl font-semibold text-base 
+             hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all"
+              >
+                Get Free IoT Audit
               </Link>
+
               <Link href="/case-studies">
                 <button className="bg-white cursor-pointer bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
                   View IoT Case Studies

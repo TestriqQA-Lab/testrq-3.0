@@ -1,11 +1,23 @@
 import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
+import StructuredData, { caseStudiesSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+
+const MainLayout = dynamic(
+  () => import("@/components/layout/MainLayout"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 export const metadata: Metadata = {
-  title: "Case Studies & Success Stories | Testriq QA Testing Results",
+  title: "Software Testing & QA Case Studies | Testriq QA Lab",
   description:
-    "Explore our client success stories and case studies showcasing real results from our software testing services. See how we helped businesses achieve 99% bug reduction, 75% faster releases, and improved user satisfaction.",
+    "Explore our library of software testing case studies. See how Testriq helped Canva, Ragnar, and Fintech startups achieve 99% bug-free releases with our Manual & Automation testing strategies.",
   keywords:
     "client case studies, success stories, software testing results, QA case studies, testing testimonials, client testimonials, software quality results, testing ROI, QA success metrics",
   metadataBase: new URL("https://www.testriq.com/"),
@@ -138,8 +150,15 @@ const CaseStudiesReadyToStartSection = dynamic(
 );
 
 export default function CaseStudiesPage() {
+  const breadcrumbItems = [
+    { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Case Studies", url: "https://www.testriq.com/case-studies" }
+  ];
+
   return (
     <div>
+      <StructuredData data={caseStudiesSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <CaseStudiesHeroSection />
         <CaseStudiesOverviewSection />

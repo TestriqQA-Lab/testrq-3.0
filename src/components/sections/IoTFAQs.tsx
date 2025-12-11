@@ -10,27 +10,53 @@ const IoTFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What types of IoT devices can you test?",
-      answer:
-        (
-          <>
-            We test a wide range of IoT devices, including <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>smart home devices</Link> (e.g., lights, thermostats, locks), industrial IoT systems (e.g., sensors, actuators), wearable devices, <Link href='healthcare-testing-services'>healthcare monitors</Link>, and automotive IoT solutions. Our testing covers hardware, firmware, and software across consumer, industrial, and enterprise applications.
-          </>
-        ),
+      answer: (
+        <>
+          We test a wide range of IoT devices, including{" "}
+          <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
+            smart home devices
+          </Link>{" "}
+          (e.g., lights, thermostats, locks), industrial IoT systems (e.g.,
+          sensors, actuators), wearable devices,{" "}
+          <Link href="healthcare-testing-services">healthcare monitors</Link>,
+          and automotive IoT solutions. Our testing covers hardware, firmware,
+          and software across consumer, industrial, and enterprise applications.
+        </>
+      ),
     },
     {
       question: "How do you test IoT device security?",
-      answer:
-        (
-          <>
-            We conduct comprehensive <Link href='security-testing'>security testing</Link> using <Link href='tools'>tools</Link> like Nmap, Metasploit, and <Link href='blog/post/top-10-security-vulnerabilities-based-on-owasp'>OWASP ZAP</Link> to identify vulnerabilities. Our process includes device authentication testing, data encryption validation, penetration testing, and privacy protection assessments to ensure zero vulnerabilities and compliance with standards like GDPR and IoT Security Foundation guidelines.
-          </>
-        ),
+      answer: (
+        <>
+          We conduct comprehensive{" "}
+          <Link href="security-testing">security testing</Link> using{" "}
+          <Link href="tools">tools</Link> like Nmap, Metasploit, and{" "}
+          <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp">
+            OWASP ZAP
+          </Link>{" "}
+          to identify vulnerabilities. Our process includes device
+          authentication testing, data encryption validation, penetration
+          testing, and privacy protection assessments to ensure zero
+          vulnerabilities and compliance with standards like GDPR and IoT
+          Security Foundation guidelines.
+        </>
+      ),
     },
     {
       question: "What IoT protocols do you support?",
       answer: (
         <>
-          We support 15+ IoT protocols, <Link href='blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more'>including WiFi, Bluetooth LE, Zigbee, Z-Wave, MQTT, CoAP, LoRaWAN, and cellular</Link> (4G/5G). Our testing ensures protocol compliance, <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>interoperability</Link>, and reliable data transmission across diverse network environments using tools like Wireshark and MQTT.fx.
+          We support 15+ IoT protocols,{" "}
+          <Link href="blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">
+            including WiFi, Bluetooth LE, Zigbee, Z-Wave, MQTT, CoAP, LoRaWAN,
+            and cellular
+          </Link>{" "}
+          (4G/5G). Our testing ensures protocol compliance,{" "}
+          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
+            interoperability
+          </Link>
+          , and reliable data transmission across diverse network environments
+          using tools like Wireshark and MQTT.fx.
         </>
       ),
     },
@@ -41,18 +67,39 @@ const IoTFAQs: React.FC = () => {
     },
     {
       question: "Do you test IoT device interoperability?",
-      answer:
-        (
-          <>
-            Yes, we validate <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>interoperability</Link> across devices, protocols, and platforms using real-world scenarios and <Link href='blog/post/what-are-the-highly-used-testing-tools-in-2024'>simulation tools</Link>. Our testing ensures seamless communication between devices (e.g., hubs, sensors, apps) and compatibility with cloud platforms like AWS IoT and Azure IoT Hub.
-          </>
-        ),
+      answer: (
+        <>
+          Yes, we validate{" "}
+          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
+            interoperability
+          </Link>{" "}
+          across devices, protocols, and platforms using real-world scenarios
+          and{" "}
+          <Link href="blog/post/what-are-the-highly-used-testing-tools-in-2024">
+            simulation tools
+          </Link>
+          . Our testing ensures seamless communication between devices (e.g.,
+          hubs, sensors, apps) and compatibility with cloud platforms like AWS
+          IoT and Azure IoT Hub.
+        </>
+      ),
     },
     {
       question: "Can you test IoT devices at scale?",
       answer: (
         <>
-          We test IoT devices at scale using automated frameworks like Robot Framework and <Link href='blog/post/what-is-load-testing-in-software-engineering'>load testing</Link> tools like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>JMeter</Link> and Gatling. Our testing simulates thousands of concurrent devices, validates scalability, and ensures performance under high-traffic conditions for enterprise-grade IoT ecosystems.
+          We test IoT devices at scale using automated frameworks like Robot
+          Framework and{" "}
+          <Link href="blog/post/what-is-load-testing-in-software-engineering">
+            load testing
+          </Link>{" "}
+          tools like{" "}
+          <Link href="blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide">
+            JMeter
+          </Link>{" "}
+          and Gatling. Our testing simulates thousands of concurrent devices,
+          validates scalability, and ensures performance under high-traffic
+          conditions for enterprise-grade IoT ecosystems.
         </>
       ),
     },
@@ -60,7 +107,14 @@ const IoTFAQs: React.FC = () => {
       question: "What deliverables do you provide for IoT testing?",
       answer: (
         <>
-          Deliverables include detailed test reports, <Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>bug logs</Link> with reproduction steps, security vulnerability assessments, performance benchmarks, and actionable recommendations. We provide visual evidence (screenshots/videos) and integrate reports with tools like Jira or Azure DevOps for seamless collaboration.
+          Deliverables include detailed test reports,{" "}
+          <Link href="blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools">
+            bug logs
+          </Link>{" "}
+          with reproduction steps, security vulnerability assessments,
+          performance benchmarks, and actionable recommendations. We provide
+          visual evidence (screenshots/videos) and integrate reports with tools
+          like Jira or Azure DevOps for seamless collaboration.
         </>
       ),
     },
@@ -133,10 +187,12 @@ const IoTFAQs: React.FC = () => {
                 connectivity and reliability. Get started with a comprehensive
                 IoT device assessment today.
               </p>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-                  Start Your IoT Success Story
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Your IoT Success Story – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-brand-blue font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+              >
+                Start Your IoT Success Story
               </Link>
             </div>
 

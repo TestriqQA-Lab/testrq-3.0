@@ -93,7 +93,7 @@ const ApiCardSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <Link href={type.action} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300">
+              <Link href={type.action} className="flex items-center text-[theme(color.brand.blue)] font-semibold hover:text-blue-400 transition-colors duration-300" aria-label={`Learn more about ${type.title}`}>
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4 ml-2" />
               </Link>

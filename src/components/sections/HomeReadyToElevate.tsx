@@ -58,6 +58,7 @@ const HomeReadyToElevate = () => {
         title={ctaSection[0].title}
           href={ctaSection[0].primaryButton.href}
           className="inline-flex items-center gap-2 px-6 py-3 text-white bg-[theme(color.brand.blue)] transition rounded-md text-sm font-medium"
+          aria-label={ctaSection[0].primaryButton.label}
         >
           {ctaSection[0].primaryButton.label}
           <FaArrowRight className="text-xs" />
@@ -68,6 +69,7 @@ const HomeReadyToElevate = () => {
         title={ctaSection[0].title}
           href={ctaSection[0].secondaryButton.href}
           className="inline-flex items-center px-6 py-3 rounded-md ring-sky-300 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white text-sm font-medium"
+          aria-label={ctaSection[0].secondaryButton.label}
         >
           {ctaSection[0].secondaryButton.label}
         </Link>

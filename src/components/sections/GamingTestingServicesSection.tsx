@@ -27,15 +27,26 @@ const GamingTestingServicesSection: React.FC = () => {
       features: [
         "Game Mechanics Validation",
         "Control Responsiveness",
-        (<><Link href="/blog/post/best-practices-for-mobile-ui-ux-testing">UI/UX Testing</Link></>),
+        <>
+          <Link href="/blog/post/best-practices-for-mobile-ui-ux-testing">
+            UI/UX Testing
+          </Link>
+        </>,
         "Game Flow Testing",
       ],
     },
     {
       icon: FaMobile,
       title: "Mobile Game Testing",
-      description:
-        (<>Specialized testing for mobile games including touch controls, <Link href="/blog/post/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility">device compatibility</Link>, battery optimization, and app store compliance.</>),
+      description: (
+        <>
+          Specialized testing for mobile games including touch controls,{" "}
+          <Link href="/blog/post/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility">
+            device compatibility
+          </Link>
+          , battery optimization, and app store compliance.
+        </>
+      ),
       features: [
         "Touch Interface Testing",
         "Device Compatibility",
@@ -57,11 +68,21 @@ const GamingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaUsers,
-      title: (<><Link href="/blog/post/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking">Multiplayer Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/multiplayer-testing-ensuring-smooth-online-gameplay-and-seamless-matchmaking">
+            Multiplayer Testing
+          </Link>
+        </>
+      ),
       description:
         "Comprehensive multiplayer testing including network synchronization, matchmaking, chat systems, and social features.",
       features: [
-        (<><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">Network Synchronization</Link></>),
+        <>
+          <Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
+            Network Synchronization
+          </Link>
+        </>,
         "Matchmaking Systems",
         "Chat & Voice Testing",
         "Social Features",
@@ -69,26 +90,48 @@ const GamingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaChartLine,
-      title: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
+      title: (
+        <>
+          <Link href="/performance-testing-services">Performance Testing</Link>
+        </>
+      ),
       description:
         "Advanced performance testing to ensure optimal frame rates, loading times, and memory usage across all target platforms.",
       features: [
         "Frame Rate Optimization",
-        (<><Link href="/blog/post/performance-testing-for-robotics-load-handling-precision-uptime">Load Time Testing</Link></>),
+        <>
+          <Link href="/blog/post/performance-testing-for-robotics-load-handling-precision-uptime">
+            Load Time Testing
+          </Link>
+        </>,
         "Memory Management",
-        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
+        <>
+          <Link href="/blog/post/stress-testing-applications-identifying-breaking-points">
+            Stress Testing
+          </Link>
+        </>,
       ],
     },
     {
       icon: FaShieldAlt,
-      title: (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Game Security Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
+            Game Security Testing
+          </Link>
+        </>
+      ),
       description:
         "Security testing to prevent cheating, hacking, and data breaches while protecting player information and game integrity.",
       features: [
         "Anti-Cheat Validation",
         "Data Protection",
         "Server Security",
-        (<><Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">Payment Security</Link></>),
+        <>
+          <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
+            Payment Security
+          </Link>
+        </>,
       ],
     },
     {
@@ -105,19 +148,35 @@ const GamingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCloud,
-      title: (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cloud Gaming Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+            Cloud Gaming Testing
+          </Link>
+        </>
+      ),
       description:
         "Testing for cloud-based gaming platforms including streaming quality, latency optimization, and cross-device synchronization.",
       features: [
         "Streaming Quality",
         "Latency Optimization",
-        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Device Sync</Link></>),
+        <>
+          <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+            Cross-Device Sync
+          </Link>
+        </>,
         "Bandwidth Testing",
       ],
     },
     {
       icon: FaBug,
-      title: (<><Link href="/blog/post/launch-day-failures-preventing-critical-issues-on-game-release">Game Compatibility Testing</Link></>),
+      title: (
+        <>
+          <Link href="/blog/post/launch-day-failures-preventing-critical-issues-on-game-release">
+            Game Compatibility Testing
+          </Link>
+        </>
+      ),
       description:
         "Extensive compatibility testing across different operating systems, hardware configurations, and game engine versions.",
       features: [
@@ -129,12 +188,22 @@ const GamingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaCog,
-      title: (<><Link href="/automation-testing-services">Game Automation Testing</Link></>),
+      title: (
+        <>
+          <Link href="/automation-testing-services">
+            Game Automation Testing
+          </Link>
+        </>
+      ),
       description:
         "Automated testing solutions for repetitive game scenarios, regression testing, and continuous integration pipelines.",
       features: [
         "Automated Regression",
-        (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD Integration</Link></>),
+        <>
+          <Link href="/blog/post/ci-cd-integration-with-automated-tests">
+            CI/CD Integration
+          </Link>
+        </>,
         "Scenario Automation",
         "Performance Monitoring",
       ],
@@ -145,7 +214,11 @@ const GamingTestingServicesSection: React.FC = () => {
       description:
         "Comprehensive pre-launch testing including stress testing, day-one patch validation, and launch day monitoring.",
       features: [
-        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
+        <>
+          <Link href="/blog/post/stress-testing-applications-identifying-breaking-points">
+            Stress Testing
+          </Link>
+        </>,
         "Patch Validation",
         "Launch Monitoring",
         "Rollback Testing",
@@ -224,7 +297,9 @@ const GamingTestingServicesSection: React.FC = () => {
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We test your games across all major gaming platforms and devices
-              to ensure consistent <Link href="/performance-testing-services">performance</Link> and player experience everywhere.
+              to ensure consistent{" "}
+              <Link href="/performance-testing-services">performance</Link> and
+              player experience everywhere.
             </p>
           </div>
 
@@ -366,15 +441,25 @@ const GamingTestingServicesSection: React.FC = () => {
               launches across all platforms.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center text-[theme(color.brand.blue)]">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-98 hover:text-sky-700 transition-all">
-                  Get Gaming Testing Quote
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Gaming Testing Quote – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-black rounded-2xl font-semibold text-lg hover:bg-gray-100
+             hover:scale-98 hover:text-sky-700 transition-all"
+              >
+                Get Gaming Testing Quote
               </Link>
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all border border-white border-opacity-30">
-                  Schedule Gaming Consultation
-                </button>
+
+              <Link
+                 href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+                title="Schedule Gaming Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 text-black rounded-2xl font-semibold text-lg
+             hover:bg-opacity-30 hover:scale-98 hover:text-sky-700 transition-all
+             border border-white border-opacity-30"
+              >
+                Schedule Gaming Consultation
               </Link>
             </div>
           </div>

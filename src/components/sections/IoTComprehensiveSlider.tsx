@@ -192,7 +192,7 @@ const IoTComprehensiveSlider: React.FC = () => {
               </div>
 
               <Link href={testingTypes[activeTab].action}
-                className={`flex w-40 items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                className={`flex w-40 items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
               >
                 <span>Learn More</span>
                 <FaArrowRight className="w-4 h-4" />

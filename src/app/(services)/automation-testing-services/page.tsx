@@ -7,21 +7,18 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Automation Testing Services | Automated QA Testing",
+  title: "Test Automation Services | Selenium, Playwright & CI/CD Experts",
 
   description:
-    "We are one of the best Automation Testing Services and Automated QA Company services companies in Mumbai. We ensure faster releases with fewer bugs.",
+    "Accelerate releases with scalable Test Automation Frameworks. We build self-healing scripts using Selenium, Cypress, and Playwright integrated into your CI/CD.",
   keywords: [
-    "automation testing",
-    "test automation",
-    "QA automation services",
-    "selenium testing",
-    "API test automation",
-    "mobile automation testing",
-    "CI/CD testing integration",
-    "automated testing solutions",
-    "software quality assurance",
-    "continuous testing",
+    "test automation framework architecture",
+    "selenium webdriver services",
+    "playwright automation",
+    "api test automation",
+    "ci/cd pipeline testing",
+    "automated regression testing",
+    "mobile automation testing"
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -130,8 +127,8 @@ const AutomationTestingProvenTestingProcess = dynamic(
   }
 );
 
-const AutomationTestingWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/AutomationTestingWhyChooseTestriq"),
+const ManualTestingFrameworkArchitecture = dynamic(
+  () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
   {
     ssr: true,
     loading: () => (
@@ -199,7 +196,7 @@ export default function AutomationTestingPage() {
         <AutomationTestingHeroSection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
-        <AutomationTestingWhyChooseTestriq />
+        <ManualTestingFrameworkArchitecture />
         <AutomationTestingToolsFramework />
         <AutomationTestingCaseStudies />
         <AutomationTestingFAQs />

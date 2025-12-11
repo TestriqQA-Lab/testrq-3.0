@@ -272,7 +272,7 @@ const GamingContactSection: React.FC = () => {
       title: "Gaming Strategy Session",
       description: "Book a free consultation to discuss your game testing requirements",
       text: "Schedule Free Consultation",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "from-purple-500 to-indigo-600",
     },
   ];
@@ -533,6 +533,7 @@ const GamingContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateGameType(formData.gameType)}
                         required
+                        aria-label="Select Game Type"
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 appearance-none ${gameTypeError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Game Type</option>
@@ -565,6 +566,7 @@ const GamingContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateTargetPlatforms(formData.targetPlatforms)}
                         required
+                        aria-label="Select Target Platforms"
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-purple-500 focus:outline-none transition-all duration-300 appearance-none ${targetPlatformsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select Target Platforms</option>

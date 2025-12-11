@@ -7,14 +7,30 @@ import {
   FaCog,
   FaShieldAlt,
   FaArrowRight,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const SoftwareTestingGuideHeroSection = () => {
   return (
-    <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-16 px-8 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 pt-8 pb-16 px-8 md:px-12 lg:px-24 overflow-hidden">
       <div className="absolute inset-0 bg-white/60"></div>
 
       <div className="relative max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            Software Testing Guide
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 ">
           {/* Left Content */}
           <div className="space-y-4">
@@ -32,7 +48,7 @@ const SoftwareTestingGuideHeroSection = () => {
               <p className="text-xl text-gray-600 leading-relaxed">
                 Everything you need to know about software testing services -
                 from fundamental QA concepts to <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">advanced testing</Link> methodologies.
-                Learn various testing types, <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">QA best practices</Link>, <Link href="/tools">testing tools</Link>,
+                Learn various testing types, <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">QA best practices</Link>, <Link href="/technology-stack">testing tools</Link>,
                 and <Link href="/automation-testing-services">automation</Link> frameworks used by leading quality assurance
                 companies and industry professionals.
               </p>

@@ -37,7 +37,7 @@ const CaseStudiesReadyToStartSection = () => {
       icon: FaCalendarAlt,
       title: "Schedule a Call",
       description: "Book a free consultation at your convenience",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       text: "Schedule Now",
       primary: true,
     },
@@ -75,12 +75,14 @@ const CaseStudiesReadyToStartSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link href="/contact-us">
-              <button className="bg-yellow-400 cursor-pointer text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-colors flex items-center hover:scale-95 justify-center gap-2">
-                <span>Start Your Success Story</span>
-                <FaArrowRight className="w-5 h-5" />
-              </button>
+            <Link
+              href="/contact-us"
+              className="bg-yellow-400 cursor-pointer text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-colors flex items-center hover:scale-95 justify-center gap-2 min-h-[48px] min-w-[48px]"
+            >
+              <span>Start Your Success Story</span>
+              <FaArrowRight className="w-5 h-5" />
             </Link>
+
           </div>
         </div>
 
@@ -113,29 +115,28 @@ const CaseStudiesReadyToStartSection = () => {
             {contactOptions.map((option, index) => {
               const IconComponent = option.icon;
               return (
-                
-                  <div key={index}
-                    className={`bg-white/20 text-white rounded-lg p-6 text-center transition-transform`}
-                  >
-                    <IconComponent
-                      className={`w-8 h-8 mx-auto mb-4 ${
-                        option.primary ? "text-white" : "text-white"
+
+                <div key={index}
+                  className={`bg-white/20 text-white rounded-lg p-6 text-center transition-transform`}
+                >
+                  <IconComponent
+                    className={`w-8 h-8 mx-auto mb-4 ${option.primary ? "text-white" : "text-white"
                       }`}
-                    />
-                    <h4 className="font-semibold mb-2">{option.title}</h4>
-                    <p className={`text-sm mb-4 text-white`}>
-                      {option.description}
-                    </p>
+                  />
+                  <h4 className="font-semibold mb-2">{option.title}</h4>
+                  <p className={`text-sm mb-4 text-white`}>
+                    {option.description}
+                  </p>
 
-                    <Link key={index} href={`${option.action}`}
-                      className="font-semibold bg-yellow-400 text-gray-900 p-2 rounded-xl hover:scale-105 cursor-pointer transition-colors"
-                    >
-                      {option.text}
-                    </Link>
-                  </div>
+                  <Link key={index} href={`${option.action}`} target={ "_blank" }
+                    className="font-semibold bg-yellow-400 text-gray-900 p-2 rounded-xl hover:scale-105 cursor-pointer transition-colors"
+                  >
+                    {option.text}
+                  </Link>
+                </div>
 
-                  
-                
+
+
               );
             })}
           </div>
@@ -178,11 +179,13 @@ const CaseStudiesReadyToStartSection = () => {
             Don&apos;t let software bugs and quality issues hold your business
             back.
           </p>
-          <Link href="/contact-us">
-            <button className="bg-yellow-400 text-gray-900 px-12 py-4 rounded-lg font-bold text-xl cursor-pointer hover:scale-98 transition-all">
-              Get Started Today
-            </button>
+          <Link
+            href="/contact-us"
+            className="bg-yellow-400 text-gray-900 px-12 py-4 rounded-lg font-bold text-xl cursor-pointer hover:scale-98 transition-all inline-flex items-center justify-center min-h-[48px] min-w-[48px]"
+          >
+            Get Started Today
           </Link>
+
         </div>
       </div>
     </section>

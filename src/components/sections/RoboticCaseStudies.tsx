@@ -287,6 +287,7 @@ const RoboticCaseStudies: React.FC = () => {
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     activeCase === index ? colorClasses.bg : "bg-gray-300"
                   }`}
+                  aria-label={`Select case study ${index + 1}`}
                 />
               ))}
             </div>
@@ -302,10 +303,12 @@ const RoboticCaseStudies: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/case-studies">
-            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              View All Case Studies
-            </button>
+          <Link
+            href="/case-studies"
+            title="View All Case Studies – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+          >
+            View All Case Studies
           </Link>
         </div>
       </div>

@@ -199,6 +199,7 @@ const MobileComprehensiveSlider: React.FC = () => {
           <button
             onClick={prevSlide}
             className="absolute left-1 lg:left-4 top-10 lg:top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
+            aria-label="Previous Slide"
           >
             <FaChevronLeft className="w-5 h-5 text-gray-700" />
           </button>
@@ -206,6 +207,7 @@ const MobileComprehensiveSlider: React.FC = () => {
           <button
             onClick={nextSlide}
             className="absolute right-1 lg:right-4 top-10 lg:top-1/2 transform -translate-y-1/2 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-3 shadow-lg transition-all duration-200"
+            aria-label="Next Slide"
           >
             <FaChevronRight className="w-5 h-5 text-gray-700" />
           </button>
@@ -222,6 +224,7 @@ const MobileComprehensiveSlider: React.FC = () => {
                   ? "bg-[theme(color.brand.blue)] scale-125"
                   : "bg-gray-300 hover:bg-gray-400"
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>

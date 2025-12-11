@@ -30,6 +30,8 @@ export interface Post {
   authorImage: string;
   authorBio: string;
   date: string;
+  dateISO: string;
+  modifiedISO: string; // Added for SEO
   readTime: string;
   image: string;
   featured: boolean;
@@ -169,7 +171,7 @@ export function adaptWordPressCategory(wpCategory: WordPressCategory): Category 
   const color = getCategoryColor(wpCategory.name);
   const icon = getCategoryIcon(wpCategory.name);
   const tools = getCategoryTools(wpCategory.name);
-  
+
   // Generate consistent subscriber count based on post count
   const baseSubscribers = Math.max(wpCategory.count * 50, 100);
   const subscribers = baseSubscribers + generateConsistentValue(parseInt(wpCategory.id), 500);
@@ -197,13 +199,13 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
   const primaryCategory = wpPost.categories?.nodes?.[0];
   const categoryName = primaryCategory?.name || 'Testing';
   const categoryColor = getCategoryColor(categoryName);
-  
+
   // Generate consistent engagement metrics based on post ID
   const baseViews = generateConsistentValue(wpPost.databaseId, 50) * 100 + 1000;
   const views = baseViews > 10000 ? `${(baseViews / 1000).toFixed(1)}K` : baseViews.toString();
   const likes = generateConsistentValue(wpPost.databaseId * 2, 500) + 50;
   const shares = generateConsistentValue(wpPost.databaseId * 3, 100) + 10;
-  
+
   return {
     id: wpPost.slug, // Use slug for ID to match Next.js dynamic routes
     slug: wpPost.slug, // Explicit slug property for URL generation
@@ -220,6 +222,8 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
       month: 'short',
       day: 'numeric'
     }),
+    dateISO: wpPost.date, // Raw ISO date from WordPress
+    modifiedISO: wpPost.modified || wpPost.date,
     readTime: estimateReadTime(wpPost.content),
     image: wpPost.featuredImage?.node?.sourceUrl || '/api/placeholder/800/400',
     featured: generateConsistentValue(wpPost.databaseId, 10) < 2, // ~20% chance
@@ -240,7 +244,7 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
 export async function getAdaptedCategoryData(categorySlug: string, postCount: number = 50) {
   try {
     const wpCategoryData = await getPostsByCategory(categorySlug, postCount);
-    
+
     if (!wpCategoryData.category) {
       return null;
     }

@@ -194,6 +194,7 @@ const QADocumentationCaseStudies = () => {
             <button
               onClick={prevCase}
               className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+              aria-label="Left navigation button"
             >
               <FaChevronLeft className="text-gray-600" />
             </button>
@@ -203,6 +204,7 @@ const QADocumentationCaseStudies = () => {
                 <button
                   key={index}
                   onClick={() => setActiveCase(index)}
+                  aria-label="Navigation dots"
                   className={`w-3 h-3 rounded-full transition-colors duration-200 ${
                     activeCase === index ? "bg-blue-600" : "bg-gray-300"
                   }`}
@@ -213,6 +215,7 @@ const QADocumentationCaseStudies = () => {
             <button
               onClick={nextCase}
               className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+              aria-label="Right navigation button"
             >
               <FaChevronRight className="text-gray-600" />
             </button>

@@ -169,6 +169,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 ? `${getColorClasses(type.color)} border-2`
                 : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"
                 }`}
+                aria-label={type.title}
             >
               <span className={activeTab === index ? "" : "text-gray-400"}>
                 {type.icon}

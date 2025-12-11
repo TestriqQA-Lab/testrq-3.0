@@ -11,8 +11,8 @@ import {
   FaCloud,
 } from "react-icons/fa";
 import Link from "next/link";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
+import Lightbox from "../VideoLightBox";
 
 const LaunchFastQAHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -25,18 +25,30 @@ const LaunchFastQAHeroSection: React.FC = () => {
   const closeLightbox = () => {
     setIsLightboxOpen(false);
   };
-  
+
   return (
-    <section className="relative py-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            LaunchFast QA
+          </span>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
             <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
               <FaBolt />
-              <span className="text-sm">
-                LaunchFast QA Service
-              </span>
+              <span className="text-sm">LaunchFast QA Service</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -48,17 +60,44 @@ const LaunchFastQAHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Get your product to market faster with <Link title="LaunchFast QA" href='launchfast-qa'>LaunchFast QA</Link>. We deliver rapid testing sprints, <Link title="agile QA testing" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link>, on-demand QA services, and continuous QA for startups and fast-moving teams. Our MVP QA testing and pre-launch testing ensure <Link title="CI/CD integration" href='blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link>, early defect detection, and a bug-free product ready for go-to-market.
+              Get your product to market faster with{" "}
+              <Link title="LaunchFast QA" href="launchfast-qa">
+                LaunchFast QA
+              </Link>
+              . We deliver rapid testing sprints,{" "}
+              <Link
+                title="agile QA testing"
+                href="blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
+              >
+                agile QA testing
+              </Link>
+              , on-demand QA services, and continuous QA for startups and
+              fast-moving teams. Our MVP QA testing and pre-launch testing
+              ensure{" "}
+              <Link
+                title="CI/CD integration"
+                href="blog/post/ci-cd-integration-with-automated-tests"
+              >
+                CI/CD integration
+              </Link>
+              , early defect detection, and a bug-free product ready for
+              go-to-market.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link title="Contact Us – Testriq QA Lab" href={"/contact-us"}>
-                <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer">
-                  Get Started Today
-                  <FaArrowRight className="inline ml-2" />
-                </button>
+              <Link
+                href="/contact-us"
+                title="Contact Us – Testriq QA Lab"
+                className="inline-flex items-center justify-center bg-brand-blue text-white min-h-[44px] min-w-[44px] px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 cursor-pointer"
+              >
+                Get Started Today
+                <FaArrowRight className="ml-2" />
               </Link>
-              <button onClick={openLightbox} className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center">
+
+              <button
+                onClick={openLightbox}
+                className="cursor-pointer border-2 border-brand-blue text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center"
+              >
                 <FaPlay className="w-4 h-4 mr-2" />
                 Watch Demo
               </button>
@@ -99,9 +138,9 @@ const LaunchFastQAHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     LaunchFast QA Dashboard
-                  </h3>
+                  </h2>
                 </div>
                 <span className="text-sm text-green-600 font-medium">
                   Active
@@ -224,7 +263,11 @@ const LaunchFastQAHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

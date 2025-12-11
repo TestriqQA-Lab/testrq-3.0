@@ -252,7 +252,7 @@ const BankingContactSection: React.FC = () => {
       title: "Banking Strategy Session",
       description: "Book a free consultation to discuss your testing needs",
       text: "Schedule Free Consultation",
-      action: "/contact-us#calendly-section",
+      action: "https://calendar.app.google/uUHn8prcXbdqcvVb6",
       color: "from-purple-500 to-indigo-600",
     },
   ];
@@ -480,6 +480,7 @@ const BankingContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateTestingRequirements(formData.testingRequirements)}
                         required
+                        aria-label="Testing Requirements"
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${testingRequirementsError ? 'border-red-500' : 'border-gray-200'}`}
                       >
                         <option value="">Select your primary need</option>

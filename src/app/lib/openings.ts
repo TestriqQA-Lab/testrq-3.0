@@ -7,22 +7,74 @@ export interface JobOpening {
   location: string;
   type: string;
   experience: string;
-  fullDescription: string;
+  description: string;
   skills: string[];
   badges?: string[];
   icon?: IconType;
   color?: string;
+  salary?: string;
 }
 
 export const jobOpenings: JobOpening[] = [
   {
     id: 1, // unique ID
+    title: "Business Development Executive (Sales)",
+    location: "Onsite (Mira Road, Mumbai)",
+    type: "Full-time",
+    experience: "2–4 Years",
+    description: `
+##### Key Responsibilities:
+- Generate qualified leads through online research, networking, and professional
+platforms.
+- Identify and approach potential clients in need of software testing and QA
+services.
+- Conduct client meetings (in-person and virtual) to present Testriq’s offerings and
+value proposition.
+- Understand client pain points related to software quality, performance, and
+testing needs, and suggest suitable service solutions.
+- Collaborate with the technical/QA team to prepare customized proposals and
+quotations.
+- Follow up consistently with prospects to drive deal closures and achieve revenue
+targets.
+- Maintain a strong sales pipeline and accurate records in CRM or tracking tools.
+
+
+##### Requirements:
+- Excellent communication and interpersonal skills (verbal and written).
+- Strong presentation, negotiation, and persuasion abilities.
+- Proven experience in IT service or B2B sales (experience in software testing or
+QA domain sales).
+- Ability to understand basic technical concepts related to software development
+and testing processes.
+- Proficient in using CRM tools, email outreach, and lead management systems
+- Familiarity with GitHub, Jenkins, and JIRA.
+- Good knowledge of DB testing (SQL queries).
+- Strong communication and collaboration skills to work with cross-functional pods.
+  `,
+    skills: [
+      "IT Service Sales",
+      "IT Sales",
+      "B2B Sales",
+      "Software Testing Sales",
+      "QA Services Sales",
+      "Technology Sales",
+      "Lead Generation",
+      "Client Acquisition",
+
+    ],
+    badges: ["Urgent"],
+    icon: FaBug,
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 2, // unique ID
     title: "Manual Tester (API – Postman)",
     location: "Hybrid (Mira Road, Mumbai)",
     type: "Full-time",
     experience: "3–5 Years",
-    fullDescription: `
-### Key Responsibilities:
+    description: `
+##### Key Responsibilities:
 - Actively attend all stand-ups and team meetings with pods.
 - Manage end-to-end QA for both backend and frontend applications.
 - Write, maintain and review detailed test cases.
@@ -32,7 +84,7 @@ export const jobOpenings: JobOpening[] = [
 - Track and manage bugs using JIRA.
 - Work with GitHub for version control and Jenkins for CI/CD integrations.
 
-### Requirements:
+##### Requirements:
 - 3–5 years of experience as a Manual Tester / QA Engineer.
 - Hands-on experience in API testing (Postman).
 - Exposure to API automation frameworks.
@@ -55,52 +107,56 @@ export const jobOpenings: JobOpening[] = [
       "Jenkins",
       "CI/CD",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
-  },
-  {
-    id: 2,
-    title: "Manual Tester (Trading Domain)",
-    location: "On-Site (Kurla, Mumbai)",
-    type: "Full-time",
-    experience: "2–4 Years",
-    fullDescription: `
-### Key Responsibilities:
-- Analyze business requirements and prepare detailed test scenarios and test cases.
-- Perform manual testing of trading applications, order management systems, and related modules.
-- Validate trade workflows including order entry, execution, settlement and reporting.
-- Identify, log and track defects using bug-tracking tools.
-- Execute functional, regression, integration, and UAT testing.
-
-### Requirements:
-- 2–4 years of experience in Manual Testing, preferably in the Trading/Finance domain.
-- Strong understanding of trading workflows, financial products (Equity, Derivatives, Commodities, etc.).
-- Hands-on experience with bug tracking and test management tools (e.g., JIRA, Bugzilla, TestRail).
-- Good understanding of SDLC & STLC processes.
-- Strong analytical, problem-solving, and communication skills.
-- Knowledge of SQL for basic data validation will be an added advantage.
-    `,
-    skills: [
-      "Manual Testing",
-      "Trading",
-      "Finance Domain",
-      "JIRA",
-      "TestRail",
-      "SQL",
-    ],
-    badges: ["Urgent", "Featured"],
-    icon: FaBug,
-    color: "from-yellow-400 to-yellow-600",
+    salary: "Competitive",
   },
   {
     id: 3,
+    title: "Automation Tester (Trading Domain)",
+    location: "On-Site (Kurla, Mumbai)",
+    type: "Full-time",
+    experience: "2–4 Years",
+    description: `
+##### Key Responsibilities:
+- Develop and maintain automation scripts using Selenium or similar tools.
+- Create, update, and maintain test plans, test cases, and test scripts.
+- Conduct API testing using Postman or REST Assured.
+- Identify, document, and track bugs using JIRA, Clickup, or similar tools.
+- Work with CI/CD pipelines to integrate automated tests for continuous testing.
+
+##### Requirements:
+- 3+ years of experience in software testing (automation).
+- Strong knowledge of testing methodologies, SDLC, and STLC.
+- Experience with Selenium or Similar tools for automation.
+- API testing experience using Postman, REST Assured, or similar tools.
+- Good understanding of SQL and database testing is plus.
+- Familiarity with CI/CD tools like Jenkins, GitHub Actions, or GitLab CI/CD is plus.
+-Experience with performance testing using JMeter or similar tools (nice to have).
+-Experience in mobile app testing (Android & iOS) is a plus.
+    `,
+    skills: [
+      "Automation Testing",
+      "Trading",
+      "Capital Market Domain",
+      "JIRA",
+      "Selenium",
+      "SQL",
+    ],
+    badges: ["Urgent"],
+    icon: FaBug,
+    color: "from-yellow-400 to-yellow-600",
+    salary: "Competitive",
+  },
+  {
+    id: 4,
     title: "Automation Test Engineer (Playwright + Javascript)",
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
     experience: "2 – 3 years",
-    fullDescription: `
-### Job Description:
+    description: `
+##### Job Description:
 
 Role: Automation Test Engineer (Playwright + Javascript)  
 Experience: 2 – 3 years  
@@ -109,7 +165,7 @@ Work Type: Full-time
 
 ---
 
-### Key Responsibilities:
+##### Key Responsibilities:
 
 - Develop and maintain automation test scripts using **Javascript** and **Playwright**.
 - Execute cross-browser and responsive testing.
@@ -118,7 +174,7 @@ Work Type: Full-time
 
 ---
 
-### Required Skills:
+##### Requirements:
 
 - At least **2 years of experience** in Automation.
 - Proficient in **Playwright**.
@@ -136,18 +192,19 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaCode,
     color: "from-green-500 to-green-700",
+    salary: "Competitive",
   },
   {
-    id: 4,
+    id: 5,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
     experience: "2 – 3 years",
-    fullDescription: `
-### Job Description:
+    description: `
+##### Job Description:
 
 Role: Automation Test Engineer (Selenium + Playwright)  
 Experience: 2 – 3 years  
@@ -156,7 +213,7 @@ Work Type: Full-time
 
 ---
 
-### Key Responsibilities:
+##### Key Responsibilities:
 
 - Develop and maintain automation test scripts using **Selenium** and **Playwright**.
 - Execute cross-browser and responsive testing.
@@ -165,7 +222,7 @@ Work Type: Full-time
 
 ---
 
-### Required Skills:
+##### Requirements:
 
 - At least **1 year of experience** in Automation.
 - Proficient in **Selenium WebDriver** and **Playwright**.
@@ -189,18 +246,18 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent", "Featured"],
+    badges: ["Urgent"],
     icon: FaCode,
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: 5,
+    id: 6,
     title: "Playwright Automation Tester",
     location: "On-site (Western Mumbai)",
     type: "Full-time",
     experience: "2 years",
-    fullDescription: `
-### Job Description:
+    description: `
+##### Job Description:
 
 Role: Playwright Automation Tester  
 Experience: 2 years  
@@ -209,7 +266,7 @@ Work Type: Full-time
 
 ---
 
-### Key Responsibilities:
+##### Key Responsibilities:
 
 - Develop and maintain automation test scripts using **Playwright**.
 - Execute cross-browser and responsive testing.
@@ -219,7 +276,7 @@ Work Type: Full-time
 
 ---
 
-### Required Skills:
+##### Requirements:
 
 - At least **2 years of experience** in Automation.
 - Proficient in **Selenium WebDriver**.
@@ -247,14 +304,14 @@ Work Type: Full-time
     color: "from-purple-500 to-purple-700",
   },
   {
-    id: 6,
+    id: 7,
     title:
       "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
     type: "Internship",
     experience: "3–6 months",
-    fullDescription: `
-### Job Description:
+    description: `
+##### Job Description:
 
 Role: QA / Automation Intern / Software Testing Intern (Java / JavaScript)  
 Location: On-site (Mira Road)  
@@ -262,7 +319,7 @@ Duration: 3–6 months
 
 ---
 
-### Responsibilities:
+##### Responsibilities:
 
 - Design, write, and execute manual and automated test cases for web/mobile applications.
 - Develop and maintain automation scripts using **Java (Selenium, TestNG/JUnit)** or **JavaScript (Playwright, Cypress, Jest)**.
@@ -273,7 +330,7 @@ Duration: 3–6 months
 
 ---
 
-### Requirements:
+##### Requirements:
 
 - Basic understanding of **STLC, SDLC**, and defect lifecycle.
 - Strong knowledge of **Core Java** or **JavaScript (ES6+)**.
@@ -304,13 +361,13 @@ Duration: 3–6 months
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 7,
+    id: 8,
     title: "Penetration Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Penetration Tester  
 Experience: 1-3 Years  
@@ -320,7 +377,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Conduct penetration tests on networks, web apps, and IT infrastructure.
 - Identify and exploit vulnerabilities to assess risk.
@@ -331,7 +388,7 @@ Work Type: Full Time
 
 ---
 
-### Skills and Qualifications
+##### Skills and Qualifications
 
 - Bachelor’s degree in Cybersecurity or related field, or equivalent experience.
 - 2-5 years of penetration testing or cybersecurity experience.
@@ -361,13 +418,13 @@ Work Type: Full Time
     color: "from-red-500 to-red-700",
   },
   {
-    id: 8,
+    id: 9,
     title: "Data Processing Executive",
     location: "Mumbai",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Data Processing Executive  
 Experience: 1-3 Years  
@@ -379,7 +436,7 @@ Timing: 8:30pm to 5:30am
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Ensure accurate and timely processing of data.
 - Maintain data integrity and quality.
@@ -395,7 +452,7 @@ Timing: 8:30pm to 5:30am
 
 ---
 
-### Education
+##### Education
 
 - 12th passed or Higher Education in any field.
     `,
@@ -410,13 +467,13 @@ Timing: 8:30pm to 5:30am
     color: "from-indigo-500 to-indigo-700",
   },
   {
-    id: 9,
+    id: 10,
     title: "Business Development Executive - Intern",
     location: "Mumbai (Mira Road)",
     type: "Internship",
     experience: "Fresher / Training Provided",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Business Development Executive – Intern  
 Location: Mumbai (Mira Road)  
@@ -425,7 +482,7 @@ Internship Duration: 3 Months
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Use LinkedIn Sales Navigator, Upwork, and other B2B platforms to connect with company representatives and business professionals.
 - Draft and send email proposals to potential clients, partners, and stakeholders.
@@ -435,14 +492,14 @@ Internship Duration: 3 Months
 
 ---
 
-### Key Skills
+##### Key Skills
 
 - Fluency in English.
 - Strong communication and presentation skills.
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Strong oral and written English communication skills.
 - Hardworking, proactive, and eager to learn.
@@ -460,13 +517,13 @@ Internship Duration: 3 Months
     color: "from-pink-500 to-pink-700",
   },
   {
-    id: 10,
+    id: 11,
     title: "SOC Analyst",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-2 Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: SOC Analyst  
 Experience: 1-2 Years  
@@ -477,7 +534,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Conduct automated monitoring to detect potential threats in real-time.
 - Analyze alerts and incidents from security tools and prioritize actions.
@@ -486,7 +543,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Experience in cybersecurity operations or SOC environment.
 - Familiarity with security tools: WAF, OpenVPN, Rapid-7, Snyk.
@@ -513,13 +570,13 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     color: "from-teal-500 to-teal-700",
   },
   {
-    id: 11,
+    id: 12,
     title: "SEO & Digital Marketing Expert",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "2 Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: SEO & Digital Marketing Expert  
 Experience: 2 Years  
@@ -529,7 +586,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Conduct keyword research and optimize website content (On-Page SEO).
 - Develop backlinks and increase domain authority (Off-Page SEO).
@@ -540,7 +597,7 @@ Work Type: Full Time
 
 ---
 
-### KPIs
+##### KPIs
 
 - Increase organic website visits and keyword rankings.
 - Improve CTR and quality of backlinks.
@@ -550,7 +607,7 @@ Work Type: Full Time
 
 ---
 
-### Skills and Qualifications
+##### Skills and Qualifications
 
 - Proven experience in SEO and Digital Marketing.
 - Certification in SEO & Digital Marketing.
@@ -573,13 +630,13 @@ Work Type: Full Time
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 12,
+    id: 13,
     title: "Front End Developer (Immediate Joiners Only)",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "5+ Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Front End Developer (Immediate Joiners Only)  
 Experience: 5+ Years  
@@ -589,7 +646,7 @@ Work Type: Full Time
 
 ---
 
-### Responsibilities and Duties
+##### Responsibilities and Duties
 
 - Develop responsive front-end layout and UI using modern HTML, CSS, and JavaScript.
 - Test and validate features across browsers and devices.
@@ -599,7 +656,7 @@ Work Type: Full Time
 
 ---
 
-### Minimum Qualifications
+##### Minimum Qualifications
 
 - 5+ years of verifiable experience in HTML, CSS, and JavaScript.
 - Strong knowledge of HTML semantics and W3C coding standards.
@@ -623,13 +680,13 @@ Work Type: Full Time
     color: "from-blue-400 to-blue-600",
   },
   {
-    id: 13,
+    id: 14,
     title: "Graphic Designer",
     location: "Mumbai",
     type: "Full-time",
     experience: "Fresher – 1 Year",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Graphic Designer  
 Experience: Fresher – 1 Year  
@@ -639,7 +696,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Collaborate with teams/clients to strategize on web pages, presentations, signage, newsletters, and marketing collateral.
 - Translate strategic direction into high-quality designs aligned with brand identity.
@@ -649,7 +706,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Bachelor’s degree in Fine Arts, Multimedia Arts, or related field OR specialization course in Graphic Designing.
 - Strong portfolio showcasing graphic design, video editing, web design, and presentation skills.
@@ -675,13 +732,13 @@ Work Type: Full Time
     color: "from-purple-400 to-purple-600",
   },
   {
-    id: 14,
+    id: 15,
     title: "Cypress Automation Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "1-3 Years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Cypress Automation Tester  
 Experience: 1-3 Years  
@@ -691,7 +748,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Develop, execute, and maintain automated test scripts using Cypress.
 - Collaborate with developers, QA engineers, and product managers.
@@ -705,7 +762,7 @@ Work Type: Full Time
 
 ---
 
-### Preferred Skills
+##### Preferred Skills
 
 - 1 to 3 years of experience in automated testing for web apps.
 - Hands-on experience with Cypress.
@@ -737,15 +794,16 @@ Work Type: Full Time
     ],
     icon: FaCode,
     color: "from-green-400 to-green-600",
+    salary: "Competitive",
   },
   {
-    id: 15,
+    id: 16,
     title: "Business Development Manager",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
     experience: "5 to 10 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Business Development Manager  
 Experience: 5 to 10 years  
@@ -755,7 +813,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - New Client Acquisition: Identify and develop new business opportunities through proactive prospecting, lead generation, and strategic networking. Build and maintain a robust sales pipeline to ensure consistent revenue growth.
 - Client Relationship Management: Establish and cultivate long-term relationships with new and existing clients. Understand their unique needs and provide tailored solutions.
@@ -767,7 +825,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Proven experience in business development or sales, minimum 5 years in B2B software/tech.
 - Successful track record acquiring clients and achieving sales targets.
@@ -790,13 +848,13 @@ Work Type: Full Time
   },
 
   {
-    id: 16,
+    id: 17,
     title: "Digital Marketing Executive",
     location: "Mumbai",
     type: "Full-time",
     experience: "1 to 3 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Digital Marketing Executive  
 Experience: 1 to 3 years  
@@ -806,7 +864,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Develop, implement, and manage campaigns across social media, email, SEO, and display advertising.
 - Monitor and analyze campaign performance and optimize accordingly.
@@ -817,7 +875,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - 1-3 years experience in digital marketing with measurable results.
 - Strong understanding of SEO, SEM, email, and social media marketing.
@@ -837,16 +895,17 @@ Work Type: Full Time
     ],
     icon: FaCode,
     color: "from-green-500 to-green-700",
+    salary: "Competitive",
   },
 
   {
-    id: 17,
+    id: 18,
     title: "Social Media Manager",
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Social Media Manager  
 Experience: 3 to 5 years  
@@ -856,7 +915,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Develop and execute social media strategy aligned with marketing goals.
 - Create, curate, and manage content across platforms (Instagram, Facebook, Twitter, LinkedIn).
@@ -867,7 +926,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - 3+ years managing business-focused social media accounts.
 - Strong communication, creative flair, and analytical skills.
@@ -887,13 +946,13 @@ Work Type: Full Time
   },
 
   {
-    id: 18,
+    id: 19,
     title: "QA Test Lead",
     location: "Mumbai",
     type: "Full-time",
     experience: "5 to 7 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: QA Test Lead  
 Experience: 5 to 7 years  
@@ -903,7 +962,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Develop and implement test plans, strategies, and processes.
 - Lead and mentor QA testers.
@@ -914,7 +973,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Proven experience as QA Test Lead or similar role.
 - Strong knowledge of software testing methodologies and tools.
@@ -935,13 +994,13 @@ Work Type: Full Time
   },
 
   {
-    id: 19,
+    id: 20,
     title: "Product Manager",
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Product Manager  
 Experience: 3 to 5 years  
@@ -951,7 +1010,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Define and communicate product strategy aligned with company goals.
 - Conduct market research and competitive analysis.
@@ -962,7 +1021,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Experience as Product Manager in IT industry.
 - Strong understanding of software development processes.
@@ -983,13 +1042,13 @@ Work Type: Full Time
   },
 
   {
-    id: 20,
+    id: 21,
     title: "Tele Sales Executive",
     location: "Mumbai",
     type: "Full-time",
     experience: "3 to 5 years",
-    fullDescription: `
-### Job Description
+    description: `
+##### Job Description
 
 Role: Tele Sales Executive  
 Experience: 3 to 5 years  
@@ -999,7 +1058,7 @@ Work Type: Full Time
 
 ---
 
-### Key Responsibilities
+##### Key Responsibilities
 
 - Client outreach and building sales pipeline.
 - Present solutions to clients via virtual presentations.
@@ -1009,7 +1068,7 @@ Work Type: Full Time
 
 ---
 
-### Qualifications
+##### Qualifications
 
 - Proven experience in tele sales, preferably in IT/software services.
 - Strong communication, negotiation, and presentation skills.

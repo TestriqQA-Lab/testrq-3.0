@@ -14,7 +14,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
       icon: <FaCheckCircle className="text-2xl" />,
       percentage: "98%",
       color: "blue",
-      description: "Comprehensive validation of application functionality against business requirements",
+      description: "Rigorous Manual Functional Testing to validate complex business logic and edge cases that are too costly to automate. We focus on negative testing scenarios to weatherproof your application.",
       features: [
         "Business logic validation to ensure alignment with core requirements",
         "Feature functionality testing for end-to-end use case coverage",
@@ -61,11 +61,11 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
     },
     {
       id: "user-acceptance-testing",
-      title: "User Acceptance Testing",
+      title: "Managed User Acceptance Testing (UAT)",
       icon: <FaUser className="text-2xl" />,
       percentage: "97%",
       color: "orange",
-      description: "End-user validation to ensure software meets business requirements",
+      description: "We take the headache out of User Acceptance Testing (UAT). We act as the bridge between developers and stakeholders, creating realistic UAT scenarios and managing the sign-off process to ensure production readiness.",
       features: [
         "Business requirement validation",
         "End-user scenario testing",
@@ -95,7 +95,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
     },
     {
       id: "accessibility-testing",
-      title: "Accessibility Testing",
+      title: "Manual WCAG 2.2 Accessibility Audits",
       icon: <FaHandPaper className="text-2xl" />,
       percentage: "96%",
       color: "indigo",
@@ -135,7 +135,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Manual Testing <span className="text-brand-blue">Expertise</span>
+            <span className="text-brand-blue">Beyond Automation:</span> Our Manual Testing Capabilities
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our <Link href='blog/post/accessibility-testing-in-manual-testing-use-cases-techniques'>comprehensive manual testing services</Link> built to ensure <Link href='blog/post/the-future-of-software-testing-embracing-the-trends-of-2024-and-beyond'>exceptional software quality</Link> through <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>human-centered testing</Link> approaches, including <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, exploratory testing, and <Link href='blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques'>UAT-executed</Link> by ISTQB-certified experts.
@@ -151,11 +151,10 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
                 <button
                   key={type.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${
-                    activeTab === index
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
+                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
                 >
                   <div className="flex sm:flex-col flex-row items-center justify-center space-x-2">
                     <span className={activeTab === index ? colors.text : "text-gray-400"}>

@@ -12,6 +12,8 @@ import {
   FaCode,
   FaShieldAlt,
   FaMobile,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const CareersHeroSection: React.FC = () => {
@@ -48,7 +50,7 @@ const CareersHeroSection: React.FC = () => {
     { icon: FaMobile, position: "bottom-40 left-16", delay: "2s" },
     { icon: FaStar, position: "bottom-20 right-20", delay: "0.5s" },
   ];
-  
+
   const scrollToOpenPostions = () => {
     const element = document.getElementById("open-positions-section");
     if (element) {
@@ -58,7 +60,7 @@ const CareersHeroSection: React.FC = () => {
 
 
   return (
-    <section className="relative bg-white py-8 lg:py-16 overflow-hidden px-8 md:px-12 lg:px-24">
+    <section className="relative bg-white pt-8 pb-16 overflow-hidden px-8 md:px-12 lg:px-24">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-sky-50 to-white"></div>
 
@@ -81,6 +83,22 @@ const CareersHeroSection: React.FC = () => {
       ))}
 
       <div className="relative max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            Careers
+          </span>
+        </div>
+
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-8">

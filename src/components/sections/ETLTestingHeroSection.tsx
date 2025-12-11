@@ -7,8 +7,10 @@ import {
   FaExchangeAlt,
   FaCloudUploadAlt,
   FaCheckCircle,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
-import Lightbox from "../VideoLightBox"; 
+import Lightbox from "../VideoLightBox";
 
 const ETLTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -22,13 +24,27 @@ const ETLTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative py-10 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
+    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-green-50 overflow-hidden">
       {/* Background Elements */}
       <div className="hidden lg:block absolute top-20 right-10 w-32 h-32 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-green-200 rounded-full opacity-30 animate-bounce"></div>
       <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200 rounded-full opacity-25"></div>
 
       <div className="max-w-7xl mx-auto">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-brand-blue">
+            ETL Testing
+          </span>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Content */}
           <div className="space-y-4">
@@ -42,22 +58,50 @@ const ETLTestingHeroSection: React.FC = () => {
               Comprehensive <span className="text-brand-blue">ETL Testing</span>{" "}
               Services
             </h1>
-<p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-  Ensure your <Link href="/blog/post/data-loading-testing-etl-performance-testing">ETL Data Loading &amp; Performance Testing</Link>, complete, and{" "}
-  <Link href="/blog/post/data-quality-testing-in-etl">Data Quality Testing in ETL</Link> with our comprehensive ETL testing services. From{" "}
-  <Link href="/blog/post/data-extraction-testing">Data Extraction Testing &amp; Transformation Validation</Link>, and <Link href="/blog/post/data-loading-testing-etl-performance-testing">ETL Data Loading Validation</Link>, we validate every
-  layer of your ETL process to ensure seamless <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR/EMR Data Integration Testing</Link>,
-  <Link href="/blog/post/data-quality-testing-in-etl">ETL Data Quality Assurance</Link>, and <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Medical Device Compliance Testing</Link>.
-</p>
-
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              Ensure your{" "}
+              <Link href="/blog/post/data-loading-testing-etl-performance-testing">
+                ETL Data Loading &amp; Performance Testing
+              </Link>
+              , complete, and{" "}
+              <Link href="/blog/post/data-quality-testing-in-etl">
+                Data Quality Testing in ETL
+              </Link>{" "}
+              with our comprehensive ETL testing services. From{" "}
+              <Link href="/blog/post/data-extraction-testing">
+                Data Extraction Testing &amp; Transformation Validation
+              </Link>
+              , and{" "}
+              <Link href="/blog/post/data-loading-testing-etl-performance-testing">
+                ETL Data Loading Validation
+              </Link>
+              , we validate every layer of your ETL process to ensure seamless{" "}
+              <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
+                EHR/EMR Data Integration Testing
+              </Link>
+              ,
+              <Link href="/blog/post/data-quality-testing-in-etl">
+                ETL Data Quality Assurance
+              </Link>
+              , and{" "}
+              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+                Medical Device Compliance Testing
+              </Link>
+              .
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <button className="w-full bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-                  Get Started Today
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Started Today – Testriq QA Lab"
+                className="inline-flex items-center justify-center w-full px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+              >
+                Get Started Today
               </Link>
-              <button onClick={openLightbox} className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center">
+              <button
+                onClick={openLightbox}
+                className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center"
+              >
                 <span className="mr-2">▶</span>
                 Watch Demo
               </button>
@@ -101,9 +145,9 @@ const ETLTestingHeroSection: React.FC = () => {
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     ETL Testing Dashboard
-                  </h3>
+                  </h2>
                 </div>
                 <div className="text-sm text-green-600 font-semibold">
                   Active
@@ -271,7 +315,11 @@ const ETLTestingHeroSection: React.FC = () => {
         </div>
       </div>
       {/* Lightbox Modal */}
-      <Lightbox isOpen={isLightboxOpen} videoLink="https://yourvideolink.com" onClose={closeLightbox} />
+      <Lightbox
+        isOpen={isLightboxOpen}
+        videoLink="https://yourvideolink.com"
+        onClose={closeLightbox}
+      />
     </section>
   );
 };

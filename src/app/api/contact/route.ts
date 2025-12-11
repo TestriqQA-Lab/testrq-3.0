@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha'; // Added
 
 // Types for form data
 interface ContactFormData {
@@ -13,6 +14,7 @@ interface ContactFormData {
   companyName?: string; // Optional field for E-commerce form
   platform?: string; // Optional field for E-commerce form
   source?: string; // Hidden field for source tracking
+  recaptchaToken?: string; // Added
 }
 
 // Helper function to format company stage
@@ -61,7 +63,7 @@ export async function POST(request: NextRequest) {
     const body: ContactFormData = await request.json();
     
     // Validate required fields
-    const { fullName, businessEmail, businessPhone, message } = body;
+    const { fullName, businessEmail, businessPhone, message, recaptchaToken } = body; // Modified
     
     if (!fullName || !businessEmail || !businessPhone || !message) {
       return NextResponse.json(
@@ -76,6 +78,38 @@ export async function POST(request: NextRequest) {
         { error: 'Invalid email format' },
         { status: 400 }
       );
+    }
+
+    // Verify reCAPTCHA if token is provided (Added)
+    if (recaptchaToken) {
+      try {
+        const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+        
+        if (!recaptchaResult.success) {
+          console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+          return NextResponse.json(
+            { error: 'reCAPTCHA verification failed' },
+            { status: 400 }
+          );
+        }
+
+        // Check if the score is acceptable (you can adjust the threshold as needed)
+        if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+          console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+          return NextResponse.json(
+            { error: 'Suspicious activity detected. Please try again.' },
+            { status: 400 }
+          );
+        }
+
+        console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+      } catch (error) {
+        console.error('Error verifying reCAPTCHA:', error);
+        return NextResponse.json(
+          { error: 'reCAPTCHA verification error' },
+          { status: 500 }
+        );
+      }
     }
 
     // Add source field if not provided

@@ -5,20 +5,21 @@ import Link from "next/link";
 
 const TeamLeadershipSection = () => {
   const leaders = [
-    
+
     {
       name: "Prashant Shukla",
       position: "Senior Advisor",
       experience: "20+ Years",
       specialization: "IT Strategy & Leadership",
       bio: "Prashant Shukla, former Managing Director at Udemy (India & South Asia) and National Technology Officer at Microsoft India, has over 20 years of leadership experience in digital transformation, strategy, and innovation. As Senior Advisor at Testriq, he brings his expertise to drive growth, technology innovation, and strategic expansion.",
+      label: "Prashant Shukla linkedin",
       achievements: [
 
       ],
       linkedin: "https://www.linkedin.com/in/shukp/",
       img: (
         <Image
-        title="Prashant Shukla"
+          title="Prashant Shukla"
           src="/prashant-shukla.png"
           alt="Prashant-shukla"
           width={350}
@@ -27,13 +28,14 @@ const TeamLeadershipSection = () => {
         />
       ),
     },
-    
+
     {
       name: "Sandeep Maske",
       position: "Founder & CEO",
       experience: "20+ Years",
       specialization: "QA Strategy & Leadership",
       bio: "Sandeep Maske, Founder & CEO of TESTRIQ QA LAB & Cinute Digital, drives unparalleled excellence in software testing, empowering diverse industries with QA expertise.",
+      label: "Sandeep Maske linkedin",
       achievements: [
         "Founded Testriq in 2010",
         "Scaled company to 50+ employees",
@@ -43,7 +45,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/sandeepmaske",
       img: (
         <Image
-        title="Sandeep Maske"
+          title="Sandeep Maske"
           src="/sandeep-maske-img.webp"
           alt="Sandeep Maske"
           width={350}
@@ -58,6 +60,7 @@ const TeamLeadershipSection = () => {
       experience: "17+ Years",
       specialization: "QA & Digital Solutions",
       bio: "Santosh Kakade, With 17+ years in QA & digital solutions, lead TESTRIQ QA Lab & Cinute Digital, delivering top-tier testing services and upskilling professionals in tech.",
+      label: "Santosh Kakade linkedin",
       achievements: [
         "Led 100+ automation projects",
         "Expert in Selenium, Cypress, Playwright",
@@ -67,7 +70,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/santoshkakade/",
       img: (
         <Image
-        title="Santosh Kakade"
+          title="Santosh Kakade"
           src="/Santosh_Kakade.webp"
           alt="Santosh_Kakade"
           width={350}
@@ -78,10 +81,11 @@ const TeamLeadershipSection = () => {
     },
     {
       name: "Goutam Mishra",
-      position: "Head of QA and BD",
+      position: "VP of QA and BD",
       experience: "20+ Years",
       specialization: "Software Testing & BD ",
       bio: "Goutam Mishra, With 20+ years in tech, excel in QA, testing, and project management, mentoring QA professionals while ensuring top-tier software quality across platforms.",
+      label: "Goutam Mishra linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -91,7 +95,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/goutam-mishra-96194117/",
       img: (
         <Image
-        title="Goutam Mishra"
+          title="Goutam Mishra"
           src="/Goutam_Mishra.webp"
           alt="Goutam_Mishra"
           width={350}
@@ -106,6 +110,7 @@ const TeamLeadershipSection = () => {
       experience: "8+ Years",
       specialization: "Expertise in BD and QA testing",
       bio: "A results-driven leader with 8+ years of expertise in BD, QA testing, HR, data analysis, talent acquisition & performance marketing, excelling in strategy, resource optimization, and innovation to drive efficiency.",
+      label: "Rohan Maske linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -115,7 +120,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/rohan-maske/",
       img: (
         <Image
-        title="Rohan Maske"
+          title="Rohan Maske"
           src="/Rohan_Maske.png"
           alt="Rohan_Maske"
           width={350}
@@ -126,10 +131,11 @@ const TeamLeadershipSection = () => {
     },
     {
       name: "Aatish Jadhav",
-      position: "Senior Manager - Strategic Growth",
+      position: "VP Strategic Growth",
       experience: "16+ Years",
       specialization: "Strategic Innovation Alignment",
       bio: "Senior Manager at TESTRIQ QA Lab with 16 years of industry experience. Driving strategic growth, aligning projects with innovation & quality, and empowering teams through Agile excellence.",
+      label: "Aatish Jadhav linkedin",
       achievements: [
         "Designed QA processes for 200+ projects",
         "ISTQB Expert Level Certified",
@@ -139,7 +145,7 @@ const TeamLeadershipSection = () => {
       linkedin: "https://www.linkedin.com/in/aatishjadhav/",
       img: (
         <Image
-        title="Aatish Jadhav"
+          title="Aatish Jadhav"
           src="/Aatish_Jadhav.webp"
           alt="Aatish_Jadhav"
           width={350}
@@ -164,9 +170,10 @@ const TeamLeadershipSection = () => {
         "Led L&D initiatives in academic and corporate environments"
       ],
       linkedin: "https://www.linkedin.com/in/ishaikhshoeb/",
+      label: "Shoeb Shaikh linkedin",
       img: (
         <Image
-        title="Shoeb Shaikh"
+          title="Shoeb Shaikh"
           src="/ShoebShaikh.webp"
           alt="ShoebShaikh"
           width={350}
@@ -189,8 +196,9 @@ const TeamLeadershipSection = () => {
         "Advanced Data Science & Machine Learning certified"
       ],
       linkedin: "https://www.linkedin.com/in/profashishshetty/",
+      label: "Ashish Shetty linkedin",
       img: <Image
-      title="Ashish Shetty"
+        title="Ashish Shetty"
         src="/AshishShetty.png"
         alt="ShoebShaikh"
         width={550}
@@ -201,7 +209,7 @@ const TeamLeadershipSection = () => {
   ]
 
   return (
-    <section className="bg-[theme(color.background.gray)] py-16 px-8 xl:px-24">
+    <section className="bg-[theme(color.background.gray)] pt-16 pb-1 px-8 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -304,8 +312,9 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
-                  title={leader.name}
+                    title={leader.name}
                     href={leader.linkedin}
+                    aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
                     <FaLinkedin size={30} />
@@ -438,8 +447,9 @@ const TeamLeadershipSection = () => {
 
                   {/* Social Links */}
                   <Link
-                  title={leader.name}
+                    title={leader.name}
                     href={leader.linkedin}
+                    aria-label={leader.label}
                     className="flex justify-center w-25 bg-sky-100 p-2 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
                   >
                     <FaLinkedin size={30} />
@@ -482,53 +492,7 @@ const TeamLeadershipSection = () => {
           ))}
         </div>
 
-        {/* Leadership Philosophy */}
-        <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Our Leadership{" "}
-              <span className="text-[theme(color.brand.blue)]">Philosophy</span>
-            </h3>
-            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-              At Testriq, we lead by example and foster innovation in <Link title="software
-              testing" href='software-testing-guide'>software
-              testing</Link>, building a QA team culture where every member thrives and
-              drives collective success.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Empowerment",
-                description:
-                  "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
-              },
-              {
-                title: "Transparency",
-                description:
-                  "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
-              },
-              {
-                title: "Growth",
-                description:
-                  "We invest in continuous learning and development, helping our team members reach their full potential.",
-              },
-            ].map((principle, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl font-bold">
-                    {index + 1}
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                  {principle.title}
-                </h4>
-                <p className="text-gray-700">{principle.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

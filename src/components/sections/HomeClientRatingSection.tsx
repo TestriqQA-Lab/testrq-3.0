@@ -77,7 +77,7 @@ const ClientRatingSection = () => {
         <Image
           title="Canva Logo"
           src="/Canva_Logo.png"
-          alt="Canva_Logo"
+          alt="Canva logo"
           width={120}
           height={120}
           className="object-contain"
@@ -95,7 +95,7 @@ const ClientRatingSection = () => {
         <Image
           title="Ragnar Logo"
           src="/Ragnar_logo.webp"
-          alt="Ragnar_logo"
+          alt="Ragnar logo"
           width={120}
           height={120}
           className="object-contain"
@@ -113,7 +113,7 @@ const ClientRatingSection = () => {
         <Image
           title="Digiboxx Logo"
           src="/Digiboxx-Logo.webp"
-          alt="Digiboxx_logo"
+          alt="Digiboxx logo"
           width={120}
           height={120}
           className="object-contain"
@@ -131,7 +131,7 @@ const ClientRatingSection = () => {
         <Image
           title="Kanishka Software Logo"
           src="/Kanishka_Software_Logo.webp"
-          alt="Kanishka_Software_Logo"
+          alt="Kanishka software logo"
           width={120}
           height={120}
           className="object-contain"
@@ -149,7 +149,7 @@ const ClientRatingSection = () => {
         <Image
           title="Pro-ficiency Logo"
           src="/Pro-ficiency_Logo.webp"
-          alt="Pro-ficiency_Logo"
+          alt="Pro-ficiency logo"
           width={120}
           height={120}
           className="object-contain"
@@ -206,6 +206,7 @@ const ClientRatingSection = () => {
         <button
           onClick={prevSlide}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg rounded-full p-3"
+          aria-label="Previous Slide"
         >
           <FaChevronLeft />
         </button>
@@ -222,6 +223,7 @@ const ClientRatingSection = () => {
                 className={`px-2 ${
                   isMobile ? "min-w-full" : isTablet ? "min-w-1/2" : "min-w-1/4"
                 }`}
+                aria-label={`Read case study of ${card.company}`}
               >
                 <div className="flex flex-col h-full ring-sky-200 ring-1 bg-[theme(color.background.gray)] rounded-lg p-5 gap-y-6 transition duration-300 transform hover:shadow-lg hover:shadow-sky-200 hover:-translate-y-2">
                   {card.icon}
@@ -252,6 +254,7 @@ const ClientRatingSection = () => {
         <button
           onClick={nextSlide}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md hover:shadow-lg rounded-full p-3"
+          aria-label="Next Slide"
         >
           <FaChevronRight />
         </button>

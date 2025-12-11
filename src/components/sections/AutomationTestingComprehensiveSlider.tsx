@@ -10,7 +10,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
   const automationTypes = [
     {
       id: "web-automation",
-      title: "Web Automation",
+      title: "Cross-Browser Web Automation (Selenium/Playwright)",
       icon: <FaRobot className="text-2xl" />,
       percentage: "95%",
       color: "blue",
@@ -23,7 +23,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
         "Navigation flow automation",
         "Data-driven test execution"
       ],
-      action: "/mobile-automation-testing-guide-android-ios-frameworks"
+      action: "/test-automation-web-applications"
     },
     {
       id: "api-automation",
@@ -78,7 +78,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
     },
     {
       id: "cicd-integration",
-      title: "CI/CD Integration",
+      title: "DevOps & CI/CD Pipeline Integration",
       icon: <FaCode className="text-2xl" />,
       percentage: "94%",
       color: "teal",
@@ -135,7 +135,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Automation Testing <span className="text-brand-blue">Expertise</span>
+            <span className="text-brand-blue">Enterprise-Grade </span> Automation Capabilities
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our comprehensive automation testing services built to accelerate testing cycles, enhance test efficiency, and deliver superior software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, and <Link href='api-testing'>API platforms</Link>.
@@ -151,11 +151,10 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
                 <button
                   key={type.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${
-                    activeTab === index
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
+                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
                 >
                   <div className="flex flex-col items-center justify-center space-x-2">
                     <span className={activeTab === index ? colors.text : "text-gray-400"}>

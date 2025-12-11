@@ -115,6 +115,7 @@ const ETLProvenTestingProcess: React.FC = () => {
                       ? "bg-green-500 text-white border-green-500"
                       : "bg-white text-gray-400 border-gray-300 hover:border-blue-300"
                   }`}
+                  aria-label={`Step ${step.id}: ${step.title}`}
                 >
                   {activeStep > index ? "✓" : step.id}
                   {activeStep === index && (

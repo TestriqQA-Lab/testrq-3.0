@@ -159,8 +159,15 @@ const ETLWhyChooseTestriq: React.FC = () => {
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
             We combine ETL expertise with testing excellence to deliver ETL
             testing services that ensure reliable, accurate, and
-            high-performance <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipelines</Link> for your <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>business-critical
-            applications</Link>, data integration workflows, and analytics platforms.
+            high-performance{" "}
+            <Link href="blog/post/data-loading-testing-etl-performance-testing">
+              data pipelines
+            </Link>{" "}
+            for your{" "}
+            <Link href="blog/post/load-testing-in-performance-testing-complete-guide">
+              business-critical applications
+            </Link>
+            , data integration workflows, and analytics platforms.
           </p>
         </div>
 
@@ -234,7 +241,8 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Link href="/contact-us"
+                <Link
+                  href="/contact-us"
                   className={`flex justify-center w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
                     isHovered
                       ? `${colorClasses.bg} text-white shadow-lg`
@@ -299,15 +307,20 @@ const ETLWhyChooseTestriq: React.FC = () => {
             </h3>
             <p className="text-gray-600">
               Join 300+ companies that trust our ETL testing expertise. Start
-              with a comprehensive <Link href='blog/post/data-loading-testing-etl-performance-testing'>data pipeline assessment</Link> to ensure your ETL
-              processes are reliable, accurate, and optimized for performance
-              and compliance.
+              with a comprehensive{" "}
+              <Link href="blog/post/data-loading-testing-etl-performance-testing">
+                data pipeline assessment
+              </Link>{" "}
+              to ensure your ETL processes are reliable, accurate, and optimized
+              for performance and compliance.
             </p>
           </div>
-          <Link href="/contact-us">
-            <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-blue transition-colors duration-300 shadow-lg">
-              Get Started with ETL Testing
-            </button>
+          <Link
+            href="/contact-us"
+            title="Get Started with ETL Testing – Testriq QA Lab"
+            className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+          >
+            Get Started with ETL Testing
           </Link>
         </div>
       </div>

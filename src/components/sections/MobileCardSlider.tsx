@@ -170,7 +170,7 @@ export default function CardSlider() {
 
 
                         <div className="flex flex-col leading-8 mt-5">
-                            <h4 className="text-xl font-semibold mx-2">{cards[activeCard].keyTitle}</h4>
+                            <h3 className="text-xl font-semibold mx-2">{cards[activeCard].keyTitle}</h3>
                             <div>
                                 {cards[activeCard].keys.map((item, idx) => (
                                     <div key={idx} className="flex flex-row items-center">
@@ -197,7 +197,7 @@ export default function CardSlider() {
                         </div>
                         <div className="flex justify-center text-center">
                             <Link href={`blog/post${cards[activeCard].action}`}
-                                className={`mt-4 w-md bg-${cards[activeCard].colordark
+                                className={`mt-4 w-md min-h-[44px] min-w-[44px] bg-${cards[activeCard].colordark
                                     } text-white py-2 rounded-lg hover:bg-${cards[
                                         activeCard
                                     ].colordark.replace("500", "600")}`}
@@ -229,7 +229,7 @@ export default function CardSlider() {
 
 
                                 <div className="flex flex-col md:leading-8 mt-5">
-                                    <h4 className="text-xl font-semibold mx-2">{card.keyTitle}</h4>
+                                    <h3 className="text-xl font-semibold mx-2">{card.keyTitle}</h3>
                                     <div>
                                         {cards[activeCard].keys.map((item, idx) => (
                                             <div key={idx} className="flex flex-row items-center mt-2">
@@ -254,7 +254,7 @@ export default function CardSlider() {
                                     </div>
 
                                 </div>
-                                <button className={`mt-4 w-full bg-${card.colordark} text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
+                                <button className={`mt-4 w-full bg-${card.colordark} min-h-[44px] min-w-[44px] text-white py-2 rounded-lg hover:bg-${cards[activeCard].colordark.replace('500', '600')}`}>
                                     Learn More About {card.title}
                                 </button>
                             </div>

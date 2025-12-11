@@ -403,7 +403,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
             <span className="text-brand-blue">Tools & Frameworks</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading <Link href="/tools">security testing tools</Link> and frameworks
+            We leverage industry-leading <Link href="/technology-stack">security testing tools</Link> and frameworks
             such as <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link>, <Link href="/blog/post/using-burp-suite-for-security-testing-beginner-to-pro">Burp Suite</Link>, Metasploit, and Nessus to provide
             comprehensive vulnerability assessments, penetration testing, and
             security validation across all technology platforms and
@@ -419,11 +419,10 @@ const SecurityTestingToolsFramework: React.FC = () => {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`p-4 rounded-xl text-center transition-all duration-300 ${
-                  activeCategory === category.id
+                className={`p-4 rounded-xl text-center transition-all duration-300 ${activeCategory === category.id
                     ? `${colors.bg} ${colors.text} ${colors.border} border-2 shadow-lg`
                     : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md"
-                }`}
+                  }`}
               >
                 <div className="flex flex-col items-center space-y-2">
                   <span
@@ -448,9 +447,8 @@ const SecurityTestingToolsFramework: React.FC = () => {
             <div className="p-8 md:p-12">
               <div className="flex items-center space-x-4 mb-8">
                 <div
-                  className={`${
-                    getColorClasses(activeCategoryData.color).accent
-                  } w-16 h-16 px-2 rounded-2xl flex items-center justify-center`}
+                  className={`${getColorClasses(activeCategoryData.color).accent
+                    } w-16 h-16 px-2 rounded-2xl flex items-center justify-center`}
                 >
                   <span className="text-white">{activeCategoryData.icon}</span>
                 </div>

@@ -197,6 +197,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
           <button
             onClick={prevStudy}
             className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300"
+            aria-label="Left navigation button"
           >
             <FaChevronLeft className="text-gray-600" />
           </button>
@@ -206,6 +207,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
               <button
                 key={index}
                 onClick={() => setCurrentStudy(index)}
+                aria-label="Navigation dots"
                 className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                   index === currentStudy ? "bg-brand-blue" : "bg-gray-300"
                 }`}
@@ -216,6 +218,7 @@ const SecurityTestingCaseStudies: React.FC = () => {
           <button
             onClick={nextStudy}
             className="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300"
+            aria-label="Right navigation button"
           >
             <FaChevronRight className="text-gray-600" />
           </button>

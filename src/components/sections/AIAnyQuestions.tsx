@@ -42,9 +42,10 @@ const AIAnyQuestions: React.FC = () => {
             About AI Testing?
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our AI testing specialists are here to help. <Link href='contact-us'>Get in touch</Link> with us to
-            discuss your specific AI requirements and learn how we can ensure
-            your AI systems are accurate, fair, and reliable.
+            Our AI testing specialists are here to help.{" "}
+            <Link href="contact-us">Get in touch</Link> with us to discuss your
+            specific AI requirements and learn how we can ensure your AI systems
+            are accurate, fair, and reliable.
           </p>
         </div>
 
@@ -66,11 +67,13 @@ const AIAnyQuestions: React.FC = () => {
               <p className="text-[theme(color.brand.blue)] font-semibold mb-4">
                 {method.contact}
               </p>
-              <Link href={method.action}>
-                <button className="flex cursor-pointer items-center justify-center gap-2 w-full py-2 px-4 border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300">
-                  <span>{method.text}</span>
-                  <FaArrowRight className="w-4 h-4" />
-                </button>
+              <Link
+                href={method.action}
+                title={method.text + " – Testriq QA Lab"}
+                className="inline-flex items-center justify-center gap-2 w-full py-2 px-4 min-h-[44px] min-w-[44px] border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-md hover:bg-[theme(color.brand.blue)] hover:text-white transition-colors duration-300"
+              >
+                <span>{method.text}</span>
+                <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
           ))}
@@ -86,11 +89,13 @@ const AIAnyQuestions: React.FC = () => {
             customized solution for your AI project.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <Link href="/contact-us#calendly-section">
-              <button className="flex items-center gap-2 py-3 px-8 bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg cursor-pointer transition-colors duration-300">
-                <span>Schedule AI Consultation</span>
-                <FaArrowRight className="w-4 h-4" />
-              </button>
+            <Link
+              href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+              title="Schedule AI Consultation – Testriq QA Lab"
+              className="inline-flex items-center gap-2 py-3 px-8 min-h-[44px] min-w-[44px] bg-[theme(color.brand.blue)] text-white font-semibold text-lg rounded-md hover:shadow-lg transition-colors duration-300"
+            >
+              <span>Schedule AI Consultation</span>
+              <FaArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

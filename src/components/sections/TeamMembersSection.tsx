@@ -7,7 +7,6 @@ import {
   FaDatabase,
   FaGlobe,
   FaLinkedin,
-  FaUsers,
 } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
@@ -105,35 +104,28 @@ const TeamMembersSection = () => {
       role: "Automation Architect",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/siddharth-desai-852996201",
-      src: "/siddharth-desai.png",
+      src: "/siddharth-desai.webp",
     },
     {
       name: "Mandar Salkar",
       role: "Customer Success Manager",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/?_l=en_US",
-      src: "/Mandar_Salkar.png",
+      src: "/Mandar_Salkar.webp",
     },
     {
       name: "Prathamesh Maske",
       role: "IoT and Mobile QA Architect",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/prathameshmaske/",
-      src: "/prathmesh-maske.png",
+      src: "/prathmesh-maske.webp",
     },
     {
       name: "Aakash Yadav",
       role: "R&D Innovation Specialist",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/aakashyadav9890/",
-      src: "/aakash-yadav.png",
-    },
-    {
-      name: "Ami Khambhatta",
-      role: "Quality Assurance Architect",
-      department: "Testriq QA Lab",
-      linkedin: "https://www.linkedin.com/in/amikhambhatta/",
-      src: "/ami-khambata.png",
+      src: "/aakash-yadav.webp",
     },
     {
       name: "Neelam Chavan",
@@ -141,63 +133,127 @@ const TeamMembersSection = () => {
       department: "Testriq QA Lab",
       linkedin:
         "https://www.linkedin.com/in/neelamchavan9892/?original_referer=https%3A%2F%2Ftestriq.com%2F",
-      src: "/neelam-chavan.png",
+      src: "/neelam-chavan.webp",
     },
     {
       name: "Elvita Gomes",
       role: "HR Specialist",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/elvita07",
-      src: "/elvita-gomes.png",
+      src: "/elvita-gomes.webp",
     },
     {
       name: "Pravin Kodag",
       role: "IT Administrator",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/pravin-kodag-83a717189/",
-      src: "/Pravin Kodag.png",
+      src: "/Pravin Kodag.webp",
     },
     {
       name: "Prakash Mishra",
       role: "Lead Software Engineer",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/prakashmmishra/",
-      src: "/Prakash Mishra.png",
+      src: "/Prakash Mishra.webp",
     },
     {
       name: "Pooja Katkar",
       role: "Test Lead",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/pooja-katkar-737b3525a/",
-      src: "/Pooja.png",
+      src: "/None.webp",
     },
     {
       name: "Sujay Ambelkar",
       role: "Sr. QA Specialist",
       department: "Testriq QA Lab",
       linkedin: "https://www.linkedin.com/in/sujay-ambelkar-ab2770145/",
-      src: "/Sujay Ambelkar.png",
+      src: "/Sujay Ambelkar.webp",
     },
-    {
-      name: "Ayushi Bansal",
-      role: "UI/UX Designer",
-      department: "Testriq QA Lab",
-      linkedin: "https://www.linkedin.com/in/bansal-ayushi/",
-      src: "/Ayushi Bansal.png",
-    },
+    // {
+    //   name: "Jayesh Mistry",
+    //   role: "Software Developer",
+    //   department: "Testriq QA Lab",
+    //   linkedin: "https://www.linkedin.com/in/sujay-ambelkar-ab2770145/",
+    //   src: "/Jayesh Mistry.webp",
+    // },
   ];
 
   return (
     <section className="bg-white py-16 px-8 xl:px-24">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <FaUsers />
-            <span className="text-sm">
-              Our Team
-            </span>
+
+        {/* Featured Team Members */}
+        <div className="bg-[theme(color.background.gray )] rounded-2xl p-8 md:p-12 mb-16">
+
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              Featured{" "}
+              <span className="text-[theme(color.brand.blue)]">Team Leads</span>
+            </h3>
+            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
+              Meet some of our exceptional team leads who exemplify our
+              commitment to excellence and innovation in software testing.
+            </p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              >
+                <div className="text-center rounded-full">
+                  <div className="w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Image
+                      title={member.name}
+                      src={member.src}
+                      alt="Employees Photo"
+                      width={200}
+                      height={250}
+                    />
+                  </div>
+
+                  <h4 className="text-lg font-bold text-gray-900 mb-1">
+                    {member.name}
+                  </h4>
+                  <div className="text-[theme(color.brand.blue)] font-semibold mb-2">
+                    {member.role}
+                  </div>
+                  <div className="text-gray-600 text-sm mb-3">
+                    {member.department}
+                  </div>
+                  <Link
+                    title={member.name}
+                    href={member.linkedin}
+                    aria-label={`${member.name} linkedin`}
+                    className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
+                  >
+                    <FaLinkedin size={20} />
+                  </Link>
+
+                  {/* <div className="space-y-2">
+                    <div className="text-sm font-semibold text-gray-800">Specialties:</div>
+                    <div className="flex flex-wrap gap-1 justify-center">
+                      {member.specialties.map((specialty, specIndex) => (
+                        <span
+                          key={specIndex}
+                          className="bg-blue-100 text-[theme(color.brand.blue)] px-2 py-1 rounded-md text-xs"
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+                  </div> */}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className=""></div>
+        </div>
+
+        <div className="text-center mb-16">
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Specialized{" "}
@@ -208,6 +264,7 @@ const TeamMembersSection = () => {
             deep expertise in <Link title="automation testing" href='automation-testing-services'>automation testing</Link>, <Link title="manual testing" href='manual-testing'>manual testing</Link>,
             <Link title="performance testing" href='performance-testing-services'> performance testing</Link>, and digital solutions to deliver comprehensive quality assurance services.
           </p>
+
         </div>
 
         {/* Departments Grid */}
@@ -252,72 +309,94 @@ const TeamMembersSection = () => {
           ))}
         </div>
 
-        {/* Featured Team Members */}
-        <div className="bg-[theme(color.background.gray)] rounded-2xl p-8 md:p-12 mb-16">
-          <div className="text-center mb-12">
+        {/* Departments Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {departments.map((dept, index) => (
+            <Link title={dept.name} href={dept.action}
+              key={index}
+              className="bg-white rounded-xl p-6 shadow-sky-300 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
+            >
+              <div
+                className={`w-16 h-16 ${dept.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
+                <dept.icon className="text-white w-8 h-8" />
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {dept.name}
+              </h3>
+              <div className="text-[theme(color.brand.blue)] font-semibold mb-3">
+                {dept.memberCount} Team Members
+              </div>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {dept.description}
+              </p>
+
+              <div className="space-y-2">
+                <div className="text-sm font-semibold text-gray-800">
+                  Key Skills:
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {dept.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="bg-gray-100 text-gray-700 px-2 py-1 rounded-md text-xs"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Leadership Philosophy */}
+        <div className="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+          <div className="text-center mb-8">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Featured{" "}
-              <span className="text-[theme(color.brand.blue)]">Team Leads</span>
+              Our Leadership{" "}
+              <span className="text-[theme(color.brand.blue)]">Philosophy</span>
             </h3>
-            <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-              Meet some of our exceptional team leads who exemplify our
-              commitment to excellence and innovation in software testing.
+            <p className="text-gray-700 text-lg max-w-3xl mx-auto">
+              At Testriq, we lead by example and foster innovation in <Link title="software
+              testing" href='software-testing-guide'>software
+                testing</Link>, building a QA team culture where every member thrives and
+              drives collective success.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-              >
-                <div className="text-center rounded-full">
-                  <div className="w-50 h-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Image
-                    title={member.name} 
-                      src={member.src}
-                      alt="Employees Photo"
-                      width={200}
-                      height={250}
-                    />
-                  </div>
-
-                  <h4 className="text-lg font-bold text-gray-900 mb-1">
-                    {member.name}
-                  </h4>
-                  <div className="text-[theme(color.brand.blue)] font-semibold mb-2">
-                    {member.role}
-                  </div>
-                  <div className="text-gray-600 text-sm mb-3">
-                    {member.department}
-                  </div>
-                  <Link
-                  title={member.name}
-                    href={member.linkedin}
-                    className="flex justify-center bg-sky-100 p-2 mx-20 rounded-xl text-sky-700 hover:scale-110 hover:bg-sky-200 duration-300 ease-in-out cursor-pointer"
-                  >
-                    <FaLinkedin size={20} />
-                  </Link>
-
-                  {/* <div className="space-y-2">
-                    <div className="text-sm font-semibold text-gray-800">Specialties:</div>
-                    <div className="flex flex-wrap gap-1 justify-center">
-                      {member.specialties.map((specialty, specIndex) => (
-                        <span
-                          key={specIndex}
-                          className="bg-blue-100 text-[theme(color.brand.blue)] px-2 py-1 rounded-md text-xs"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Empowerment",
+                description:
+                  "We empower our team members to take ownership, make decisions, and drive innovation in their areas of expertise.",
+              },
+              {
+                title: "Transparency",
+                description:
+                  "Open communication and transparent processes ensure everyone is aligned with our goals and values.",
+              },
+              {
+                title: "Growth",
+                description:
+                  "We invest in continuous learning and development, helping our team members reach their full potential.",
+              },
+            ].map((principle, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl font-bold">
+                    {index + 1}
+                  </span>
                 </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {principle.title}
+                </h4>
+                <p className="text-gray-700">{principle.description}</p>
               </div>
             ))}
           </div>
-
-          <div className=""></div>
         </div>
 
         {/* Team Stats */}

@@ -30,7 +30,13 @@ const GamingPlatformsSection: React.FC = () => {
     {
       icon: FaMobile,
       title: "Mobile Gaming",
-      description: (<><Link href="/mobile-application-testing">Comprehensive testing for iOS and Android mobile games</Link></>),
+      description: (
+        <>
+          <Link href="/mobile-application-testing">
+            Comprehensive testing for iOS and Android mobile games
+          </Link>
+        </>
+      ),
       platforms: [
         "iOS (iPhone/iPad)",
         "Android Phones/Tablets",
@@ -51,7 +57,14 @@ const GamingPlatformsSection: React.FC = () => {
     {
       icon: FaDesktop,
       title: "PC Gaming",
-      description: (<><Link href="/desktop-application-testing-services">Desktop gaming testing</Link> across Windows, Mac, and Linux</>),
+      description: (
+        <>
+          <Link href="/desktop-application-testing-services">
+            Desktop gaming testing
+          </Link>{" "}
+          across Windows, Mac, and Linux
+        </>
+      ),
       platforms: ["Windows 10/11", "macOS", "Linux Distributions"],
       features: [
         "Hardware Compatibility",
@@ -76,7 +89,11 @@ const GamingPlatformsSection: React.FC = () => {
         "Achievement Systems",
         "Online Services",
         "Exclusive Features",
-        (<><Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">Performance Optimization</Link></>),
+        <>
+          <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+            Performance Optimization
+          </Link>
+        </>,
       ],
       stats: { devices: "15+", coverage: "100%", platforms: "3" },
       color: "from-purple-500 to-purple-600",
@@ -121,7 +138,14 @@ const GamingPlatformsSection: React.FC = () => {
     {
       icon: SiUnity,
       name: "Unity",
-      description: (<>Comprehensive Unity game testing and <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">optimization</Link></>),
+      description: (
+        <>
+          Comprehensive Unity game testing and{" "}
+          <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">
+            optimization
+          </Link>
+        </>
+      ),
       color: "from-gray-800 to-gray-900",
     },
     {
@@ -154,8 +178,12 @@ const GamingPlatformsSection: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive game testing across all major gaming platforms and
             devices, ensuring your game delivers exceptional player experiences,
-            seamless <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">cross-platform</Link> game <Link href="/performance-testing-services">performance</Link>, and reliable gameplay
-            everywhere your players want to play.
+            seamless{" "}
+            <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+              cross-platform
+            </Link>{" "}
+            game <Link href="/performance-testing-services">performance</Link>,
+            and reliable gameplay everywhere your players want to play.
           </p>
         </div>
 
@@ -253,10 +281,14 @@ const GamingPlatformsSection: React.FC = () => {
               Expertise in Leading Platforms
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              With deep expertise across major <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">gaming platforms</Link> and distribution
-              channels, we ensure your games meet platform-specific standards,
-              compliance requirements, and deliver exceptional experiences on
-              console, mobile, PC, and browser-based environments.
+              With deep expertise across major{" "}
+              <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                gaming platforms
+              </Link>{" "}
+              and distribution channels, we ensure your games meet
+              platform-specific standards, compliance requirements, and deliver
+              exceptional experiences on console, mobile, PC, and browser-based
+              environments.
             </p>
           </div>
 
@@ -329,8 +361,10 @@ const GamingPlatformsSection: React.FC = () => {
               Optimized Performance
             </h3>
             <p className="text-gray-600">
-              <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">Platform-specific optimization</Link> to ensure your game runs perfectly
-              on every target device.
+              <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">
+                Platform-specific optimization
+              </Link>{" "}
+              to ensure your game runs perfectly on every target device.
             </p>
           </div>
 
@@ -342,8 +376,11 @@ const GamingPlatformsSection: React.FC = () => {
               Cross-Platform Sync
             </h3>
             <p className="text-gray-600">
-              Seamless <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">cross-platform gameplay</Link> and data synchronization testing
-              and validation.
+              Seamless{" "}
+              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
+                cross-platform gameplay
+              </Link>{" "}
+              and data synchronization testing and validation.
             </p>
           </div>
         </div>
@@ -356,14 +393,21 @@ const GamingPlatformsSection: React.FC = () => {
             </h3>
             <p className="text-blue-100 mb-8 text-lg">
               Ensure your game delivers exceptional experiences on every
-              platform your players use. Our <Link href="/blog/post/test-execution-comprehensive-testing-implementation">comprehensive</Link> platform testing
-              covers everything from mobile to VR.
+              platform your players use. Our{" "}
+              <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
+                comprehensive
+              </Link>{" "}
+              platform testing covers everything from mobile to VR.
             </p>
             <div className="flex flex-col sm:flex-row text-[theme(color.brand.blue)] gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-gray-100 transition-all">
-                  Get Platform Testing Quote
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Platform Testing Quote – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-white text-black rounded-2xl font-semibold text-lg hover:scale-98 hover:bg-gray-100
+             transition-all"
+              >
+                Get Platform Testing Quote
               </Link>
             </div>
           </div>

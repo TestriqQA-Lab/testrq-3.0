@@ -178,62 +178,59 @@ const CareersBenefitsSection: React.FC = () => {
     },
   ];
 
-
-
   return (
-    <section className="py-16 bg-white px-8 md:px-12 lg:px-24">
+    <section className="py-12 sm:py-16 bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-            <FaHeart className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-4 py-2 sm:px-6 sm:py-2 mb-4 sm:mb-6">
+            <FaHeart className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            <span className="text-xs sm:text-sm font-medium text-white">
               Benefits & Perks
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Comprehensive Benefits
             <span className="block text-[theme(color.brand.blue)]">
               That Matter
             </span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
             We believe in supporting our QA professionals with competitive employee benefits, meaningful perks, and a collaborative work environment that fosters career growth, work-life balance, and long-term employee satisfaction in the software testing industry.
-
           </p>
         </div>
 
-        {/* Benefits Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+        {/* Benefits Categories - Improved mobile layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-16 sm:mb-20">
           {benefitCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className={`${category.bgColor} rounded-3xl p-8 border-2 border-opacity-20 hover:shadow-2xl transition-all duration-300`}
+              className={`${category.bgColor} rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-opacity-20 hover:shadow-2xl transition-all duration-300`}
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <div
-                  className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                  className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r ${category.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg`}
                 >
-                  <category.icon className="w-8 h-8 text-white" />
+                  <category.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                   {category.title}
                 </h3>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {category.benefits.map((benefit, benefitIndex) => (
-                  <div key={benefitIndex} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
-                      <benefit.icon className="w-5 h-5 text-gray-600" />
+                  <div key={benefitIndex} className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                      <benefit.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                      <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
                         {benefit.title}
                       </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed">
+                      <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                         {benefit.description}
                       </p>
                     </div>
@@ -244,31 +241,31 @@ const CareersBenefitsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Additional Perks */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* Additional Perks - Mobile optimized */}
+        <div className="mb-16 sm:mb-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Additional Perks
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
               Beyond the essentials, we offer unique perks that make working at
               Testriq special.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {additionalPerks.map((perk, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="bg-gray-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
-                <div className="w-12 h-12 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <perk.icon className="w-6 h-6 text-white" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-lg sm:rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <perk.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">
+                <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
                   {perk.title}
                 </h4>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   {perk.description}
                 </p>
               </div>
@@ -276,53 +273,53 @@ const CareersBenefitsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Company Stats */}
-        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-3xl p-12 text-white mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">
+        {/* Company Stats - Mobile optimized */}
+        <div className="bg-gradient-to-br from-[theme(color.brand.blue)] to-blue-700 rounded-2xl sm:rounded-3xl p-8 sm:p-12 text-white mb-16 sm:mb-20">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
               Why Our Team Loves Working Here
             </h3>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+            <p className="text-blue-100 text-base sm:text-lg max-w-2xl mx-auto px-2 sm:px-0">
               Our benefits aren&apos;t just competitive-they&apos;re designed around what
               our team actually values.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {companyStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2">
                   {stat.value}
                 </div>
-                <div className="text-lg font-semibold text-white mb-1">
+                <div className="text-sm sm:text-base lg:text-lg font-semibold text-white mb-1">
                   {stat.label}
                 </div>
-                <div className="text-sm text-blue-100">{stat.description}</div>
+                <div className="text-xs sm:text-sm text-blue-100">{stat.description}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Benefits Comparison */}
-        <div className="bg-gray-50 rounded-3xl p-12">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        {/* Benefits Comparison - Mobile optimized */}
+        <div className="bg-gray-50 rounded-2xl sm:rounded-3xl p-8 sm:p-12">
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               How We Compare
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
               See how our benefits stack up against industry standards.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">❌</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-xl sm:text-2xl">❌</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
                 Industry Standard
               </h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
                 <li>Basic health insurance</li>
                 <li>2-3% 401k match</li>
                 <li>2-3 weeks PTO</li>
@@ -331,13 +328,13 @@ const CareersBenefitsSection: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚠️</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-xl sm:text-2xl">⚠️</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
                 Most Competitors
               </h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
                 <li>Good health coverage</li>
                 <li>4-5% 401k match</li>
                 <li>3-4 weeks PTO</li>
@@ -346,25 +343,17 @@ const CareersBenefitsSection: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">✅</span>
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <span className="text-xl sm:text-2xl">✅</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Testriq</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Testriq</h4>
+              <ul className="text-xs sm:text-sm text-gray-600 space-y-1">
                 <li>Premium health + family</li>
                 <li>6% 401k match</li>
                 <li>Unlimited PTO</li>
                 <li>$5K learning budget</li>
               </ul>
             </div>
-          </div>
-
-          <div className="text-center mt-12">
-            {/* <button
-              onClick={scrollToOpenPostions}
-              className="bg-[theme(color.brand.blue)] cursor-pointer text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-90 transition-all duration-300 shadow-lg">
-              Join Our Team
-            </button> */}
           </div>
         </div>
       </div>

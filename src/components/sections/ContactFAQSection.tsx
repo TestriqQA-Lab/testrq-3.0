@@ -71,13 +71,6 @@ const ContactFAQSection: React.FC = () => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const scrollToCalendly = () => {
-    document.querySelector("#calendly-section")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
   const scrollToForm = () => {
     document.querySelector("#form-section")?.scrollIntoView({
       behavior: "smooth",
@@ -166,13 +159,17 @@ const ContactFAQSection: React.FC = () => {
             >
               Contact Support
             </button>
-
+           <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"}
+           target={ "_blank" }
+           
+           >
             <button
-              onClick={scrollToCalendly}
+              
               className="bg-white cursor-pointer bg-opacity-20 text-[theme(color.brand.blue)] px-6 py-3 rounded-lg font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30"
             >
-              Schedule a Call
+              Schedule Meeting
             </button>
+            </Link>
           </div>
         </div>
 

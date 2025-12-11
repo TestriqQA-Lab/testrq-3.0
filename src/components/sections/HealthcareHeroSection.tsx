@@ -13,13 +13,19 @@ import {
   FaCheckCircle,
   FaLock,
   FaClipboardCheck,
+  FaHome,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const HealthcareHeroSection: React.FC = () => {
   const keyStats = [
     { value: "100%", label: "HIPAA Compliance", icon: FaShieldAlt },
     { value: "200+", label: "Healthcare Apps Tested", icon: FaHeartbeat },
-    { value: "75%", label: "Reduced Response Time in Emergency Systems", icon: FaLock },
+    {
+      value: "75%",
+      label: "Reduced Response Time in Emergency Systems",
+      icon: FaLock,
+    },
     { value: "24/7", label: "Security Monitoring", icon: FaClipboardCheck },
   ];
 
@@ -31,7 +37,7 @@ const HealthcareHeroSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <section className="relative w-full mx-auto pt-8 pb-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
@@ -64,6 +70,21 @@ const HealthcareHeroSection: React.FC = () => {
       </div>
 
       <div className="relative">
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-400" />
+          <span className="text-[theme(color.brand.blue)]">
+            Healthcare Testing
+          </span>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Content */}
           <div className="space-y-6">
@@ -82,11 +103,21 @@ const HealthcareHeroSection: React.FC = () => {
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">patient safety</Link>, regulatory compliance, and healthcare data
-              security with our specialized healthcare testing services. From{" "}
-              <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">EHR system</Link> testing to medical software QA, we validate your
-              healthcare solutions meet <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA compliance</Link>, FDA regulations, and
-              other industry standards.
+              Ensure{" "}
+              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+                patient safety
+              </Link>
+              , regulatory compliance, and healthcare data security with our
+              specialized healthcare testing services. From{" "}
+              <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
+                EHR system
+              </Link>{" "}
+              testing to medical software QA, we validate your healthcare
+              solutions meet{" "}
+              <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
+                HIPAA compliance
+              </Link>
+              , FDA regulations, and other industry standards.
             </p>
 
             {/* Key Benefits */}
@@ -100,13 +131,18 @@ const HealthcareHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">FDA Validation</Link> Support
+                  <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">
+                    FDA Validation
+                  </Link>{" "}
+                  Support
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">Medical Device Testing</Link>
+                  <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+                    Medical Device Testing
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -119,17 +155,27 @@ const HealthcareHeroSection: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col lg:flex-col xl:flex-row gap-4 pt-4">
-              <Link href="/contact-us">
-                <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:scale-98 transition-all duration-300 flex items-center justify-center gap-2">
-                  <FaRocket className="w-5 h-5" />
-                  Start Healthcare Audit
-                </button>
+              <Link
+                href="/contact-us"
+                title="Start Healthcare Audit – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px]
+             bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white
+             font-semibold text-lg rounded-2xl
+             hover:shadow-2xl hover:scale-98 transition-all duration-300"
+              >
+                <FaRocket className="w-5 h-5" />
+                Start Healthcare Audit
               </Link>
-              <Link href="/contact-us">
-                <button className="ring-2 cursor-pointer ring-brand-blue text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-98 hover:ring-3 hover:text-sky-600 transition-all duration-300 flex items-center justify-center gap-2">
-                  <FaUsers className="w-5 h-5" />
-                  Schedule Consultation
-                </button>
+
+              <Link
+                href="/contact-us"
+                title="Schedule Consultation – Testriq QA Lab"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px]
+             ring-2 ring-brand-blue text-brand-blue font-semibold text-lg rounded-2xl
+             hover:scale-98 hover:ring-3 hover:text-sky-600 transition-all duration-300"
+              >
+                <FaUsers className="w-5 h-5" />
+                Schedule Consultation
               </Link>
             </div>
 
@@ -156,9 +202,9 @@ const HealthcareHeroSection: React.FC = () => {
             {/* Key Statistics */}
             <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Proven Healthcare Expertise
-                </h3>
+                </h2>
                 <p className="text-gray-600">
                   Results that ensure patient safety and compliance
                 </p>
@@ -183,9 +229,9 @@ const HealthcareHeroSection: React.FC = () => {
             <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl p-8 border border-green-100">
               <div className="flex items-center gap-3 mb-6">
                 <FaChartLine className="w-6 h-6 text-green-600" />
-                <h4 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900">
                   Average Client Results
-                </h4>
+                </h3>
               </div>
 
               <div className="space-y-4">
@@ -227,15 +273,24 @@ const HealthcareHeroSection: React.FC = () => {
               comprehensive medical software testing.
             </p>
             <div className="flex flex-col text-[theme(color.brand.blue)] sm:flex-row gap-4 justify-center">
-              <Link href="/contact-us">
-                <button className="bg-white cursor-pointer px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 hover:scale-98 transition-all">
-                  Get Free Security Assessment
-                </button>
+              <Link
+                href="/contact-us"
+                title="Get Free Security Assessment – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px] 
+             bg-white text-brand-blue font-semibold rounded-xl 
+             hover:bg-gray-100 hover:scale-98 transition-all"
+              >
+                Get Free Security Assessment
               </Link>
-              <Link href="/case-studies">
-                <button className="bg-white cursor-pointer bg-opacity-20 px-6 py-3 rounded-xl font-semibold hover:bg-opacity-30 hover:scale-98 transition-all border border-white border-opacity-30">
-                  View Healthcare Case Studies
-                </button>
+              <Link
+                href="/case-studies"
+                title="View Healthcare Case Studies – Testriq QA Lab"
+                className="inline-flex items-center justify-center px-6 py-3 min-h-[44px] min-w-[44px]
+             bg-white bg-opacity-20 text-brand-blue font-semibold rounded-xl
+             hover:bg-opacity-30 hover:scale-98 transition-all
+             border border-white border-opacity-30"
+              >
+                View Healthcare Case Studies
               </Link>
             </div>
           </div>

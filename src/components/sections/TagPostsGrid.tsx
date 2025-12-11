@@ -180,6 +180,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                   <Link
                     href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-sm transition-colors"
+                    aria-label={`Read more about ${post.title}`}
                   >
                     Read More
                     <FaArrowRight className="w-3 h-3" />

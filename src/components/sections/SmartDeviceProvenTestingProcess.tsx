@@ -245,9 +245,10 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
                                     );
                                   }, 100);
                                 }}
-                                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors duration-300 ${getColorClasses(
+                                className={`px-4 py-2 rounded-lg text-sm min-h-[44px] min-w-[44px] font-semibold transition-colors duration-300 ${getColorClasses(
                                   step.color
                                 )} hover:opacity-90`}
+                                aria-label={`Go to ${processSteps[index + 1].title}`}
                               >
                                 {processSteps[index + 1].title}
                               </button>

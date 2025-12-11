@@ -1,8 +1,32 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import dynamic from "next/dynamic";
+import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
+
+const Navbar = dynamic(
+  () => import("@/components/layout/Header"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const Footer = dynamic(
+  () => import("@/components/layout/Footer"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +65,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.testriq.com/"),
+  metadataBase: new URL("https://www.testriq.com/"  ),
   alternates: {
     canonical: "/",
   },
@@ -95,16 +119,19 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>  ) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
-      >
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
+        >
+          <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          {/* <TawkToScript /> */}
+
+        </body>
+      </html>
   );
 }

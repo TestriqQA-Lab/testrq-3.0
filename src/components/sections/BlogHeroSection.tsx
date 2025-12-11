@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaHome, FaChevronRight } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   getTotalPostCount,
   getTotalCategoryCount,
@@ -92,7 +93,7 @@ const BlogHeroSection: React.FC = () => {
   );
 
   return (
-    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-[#0B0F1C] via-[#112042] to-[#0B0F1C] text-white pt-8 pb-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Blur Circles */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 bg-opacity-30 rounded-full blur-2xl" />
@@ -101,6 +102,22 @@ const BlogHeroSection: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
+        {/* Breadcrumb */}
+        {/* Breadcrumb */}
+        <div className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+          >
+            <FaHome className="text-lg" />
+            Home
+          </Link>
+          <FaChevronRight className="text-xs text-gray-500" />
+          <span className="text-cyan-400">
+            Blog
+          </span>
+        </div>
+
         {/* Tagline */}
         <span className="inline-block bg-blue-600/10 text-blue-300 text-sm px-6 py-2 rounded-full mb-6 border border-blue-500/20 tracking-wide">
           Expert QA Insights & Best Practices
@@ -115,10 +132,9 @@ const BlogHeroSection: React.FC = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Discover expert insights on test automation, performance testing,
-          security testing, mobile app testing, and QA best practices to
-          accelerate your testing excellence.
+        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-7xl mx-auto leading-relaxed">
+          Stay ahead in the evolving world of software testing with expert QA insights, best practices for automation, and up-to-date guidance on performance, security, and API testing. Our comprehensive blog covers test automation frameworks like Selenium and Appium, in-depth guides on mobile and web application QA, as well as strategies for integrating CI/CD and effective bug tracking.
+          Explore cutting-edge trends in AI-driven software testing, load and stress testing, cloud-native QA, and security vulnerabilities, empowering your development teams to deliver robust, scalable, and secure digital solutions.
         </p>
 
         {/* Search Bar */}
@@ -164,9 +180,8 @@ const BlogHeroSection: React.FC = () => {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div
-                className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${
-                  stat.isAnimated && isLoaded ? "" : ""
-                }`}
+                className={`text-2xl md:text-3xl font-bold text-cyan-300 mb-1 ${stat.isAnimated && isLoaded ? "" : ""
+                  }`}
               >
                 {stat.number}
               </div>

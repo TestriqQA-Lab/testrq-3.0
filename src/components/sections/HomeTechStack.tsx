@@ -45,9 +45,9 @@ const techStack: {
           name: "Selenium WebDriver",
           icon: (
             <Image
-            title="Selenium Automation Logo"
+              title="Selenium Automation Logo"
               src="/Selenium_Logo.png"
-              alt="Selenium Logo"
+              alt="Selenium logo"
               width={20}
               height={20}
               className="object-contain"
@@ -58,9 +58,9 @@ const techStack: {
           name: "Cypress",
           icon: (
             <Image
-            title="Cypress Testing Logo"
+              title="Cypress Testing Logo"
               src="/Cypress_Logo.png"
-              alt="Cypress Logo"
+              alt="Cypress logo"
               width={20}
               height={20}
               className="object-contain"
@@ -71,9 +71,9 @@ const techStack: {
           name: "Playwright",
           icon: (
             <Image
-            title="Playwright Automation Logo"
+              title="Playwright Automation Logo"
               src="/Playwright_Logo.svg"
-              alt="Playwright Logo"
+              alt="Playwright logo"
               width={20}
               height={20}
               className="object-contain"
@@ -84,9 +84,9 @@ const techStack: {
           name: "Appium",
           icon: (
             <Image
-            title="Appium Mobile Automation Logo"
+              title="Appium Mobile Automation Logo"
               src="/Appium_Logo.svg"
-              alt="Appium Logo"
+              alt="Appium logo"
               width={20}
               height={20}
               className="object-contain"
@@ -97,9 +97,9 @@ const techStack: {
           name: "TestComplete",
           icon: (
             <Image
-            title="TestComplete Automation Logo"
+              title="TestComplete Automation Logo"
               src="/TestComplete_Logo.png"
-              alt="TestComplete Logo"
+              alt="TestComplete logo"
               width={20}
               height={20}
               className="object-contain"
@@ -110,15 +110,15 @@ const techStack: {
     },
     {
       title: "Performance Testing",
-      action:"/performance-testing-services",
+      action: "/performance-testing-services",
       items: [
         {
           name: "JMeter",
           icon: (
             <Image
-            title="Apache JMeter Load Testing Logo"
+              title="Apache JMeter Load Testing Logo"
               src="/JMeter_Logo.svg"
-              alt="JMeter Logo"
+              alt="JMeter logo"
               width={20}
               height={20}
               className="object-contain"
@@ -129,9 +129,9 @@ const techStack: {
           name: "LoadRunner",
           icon: (
             <Image
-            title="Micro Focus LoadRunner Logo"
+              title="Micro Focus LoadRunner Logo"
               src="/Loadrunner_Logo.png"
-              alt="LoadRunner Logo"
+              alt="LoadRunner logo"
               width={20}
               height={20}
               className="object-contain"
@@ -142,9 +142,9 @@ const techStack: {
           name: "K6",
           icon: (
             <Image
-            title="K6 Load Testing Tool Logo"
+              title="K6 Load Testing Tool Logo"
               src="/K6_Logo.png"
-              alt="K6 Logo"
+              alt="K6 logo"
               width={20}
               height={20}
               className="object-contain"
@@ -155,9 +155,9 @@ const techStack: {
           name: "Gatling",
           icon: (
             <Image
-            title="Gatling Performance Testing Logo"
+              title="Gatling Performance Testing Logo"
               src="/Gatling_Logo.png"
-              alt="Gatling Logo"
+              alt="Gatling logo"
               width={20}
               height={20}
               className="object-contain"
@@ -168,9 +168,9 @@ const techStack: {
           name: "BlazeMeter",
           icon: (
             <Image
-            title="BlazeMeter Load Testing Logo"
+              title="BlazeMeter Load Testing Logo"
               src="/BlazeMeter_Logo.png"
-              alt="BlazeMeter Logo"
+              alt="BlazeMeter logo"
               width={20}
               height={20}
               className="object-contain"
@@ -187,9 +187,9 @@ const techStack: {
           name: "Postman",
           icon: (
             <Image
-            title="Postman API Testing Logo"
+              title="Postman API Testing Logo"
               src="/Postman_Logo.png"
-              alt="Postman Logo"
+              alt="Postman logo"
               width={20}
               height={20}
               className="object-contain"
@@ -200,9 +200,9 @@ const techStack: {
           name: "REST Assured",
           icon: (
             <Image
-            title="REST Assured API Testing Logo"
+              title="REST Assured API Testing Logo"
               src="/RestAssured_Logo.png"
-              alt="REST Assured"
+              alt="REST Logo"
               width={20}
               height={20}
               className="object-contain"
@@ -213,9 +213,9 @@ const techStack: {
           name: "SoapUI",
           icon: (
             <Image
-            title="SoapUI API Testing Logo"
+              title="SoapUI API Testing Logo"
               src="/SoapUI_Logo.png"
-              alt="SoapUI Logo"
+              alt="SoapUI logo"
               width={20}
               height={20}
               className="object-contain"
@@ -226,9 +226,9 @@ const techStack: {
           name: "Insomnia",
           icon: (
             <Image
-            title="Insomnia API Testing Tool Logo"
+              title="Insomnia API Testing Tool Logo"
               src="/Insomnia_Logo.png"
-              alt="Insomnia Logo"
+              alt="Insomnia logo"
               width={20}
               height={20}
               className="object-contain"
@@ -239,9 +239,9 @@ const techStack: {
           name: "Newman",
           icon: (
             <Image
-            title="Newman API Test Runner Logo"
+              title="Newman API Test Runner Logo"
               src="/Newman_Logo.png"
-              alt="Newman Logo"
+              alt="Newman logo"
               width={20}
               height={20}
               className="object-contain"
@@ -258,9 +258,9 @@ const techStack: {
           name: "OWASP ZAP",
           icon: (
             <Image
-            title="OWASP ZAP Security Testing Logo"
+              title="OWASP ZAP Security Testing Logo"
               src="/Owasp_Zap_Logo.png"
-              alt="OWASP ZAP Logo"
+              alt="OWASP logo"
               width={20}
               height={20}
               className="object-contain"
@@ -271,9 +271,9 @@ const techStack: {
           name: "Burp Suite",
           icon: (
             <Image
-            title="Burp Suite Web Security Testing Logo"
+              title="Burp Suite Web Security Testing Logo"
               src="/BurpSuite_Logo.png"
-              alt="Burp Suite Logo"
+              alt="Burp Suite logo"
               width={20}
               height={20}
               className="object-contain"
@@ -284,9 +284,9 @@ const techStack: {
           name: "Nessus",
           icon: (
             <Image
-            title="Nessus Vulnerability Scanner Logo"
+              title="Nessus Vulnerability Scanner Logo"
               src="/Nessus_Logo.png"
-              alt="Nessus Logo"
+              alt="Nessus logo"
               width={20}
               height={20}
               className="object-contain"
@@ -297,9 +297,9 @@ const techStack: {
           name: "Veracode",
           icon: (
             <Image
-            title="Veracode Application Security Logo"
+              title="Veracode Application Security Logo"
               src="/VeraCode_Logo.png"
-              alt="Veracode Logo"
+              alt="Veracode logo"
               width={20}
               height={20}
               className="object-contain"
@@ -310,9 +310,9 @@ const techStack: {
           name: "Checkmarx",
           icon: (
             <Image
-            title="Checkmarx Static Code Analysis Logo"
+              title="Checkmarx Static Code Analysis Logo"
               src="/Checkmarx_Logo.png"
-              alt="Checkmarx Logo"
+              alt="Checkmarx logo"
               width={20}
               height={20}
               className="object-contain"
@@ -363,7 +363,7 @@ const HeroTechStack = () => {
       </div>
       {/* Button */}
       <div className="mt-10 text-center">
-        <Link href="/tools">
+        <Link href="/technology-stack">
           <button className="inline-flex items-center gap-2  px-5 py-2.5 rounded-md text-sm font-medium ring-sky-00 ring-2 hover:bg-[theme(color.brand.blue)] transition duration-300 cursor-pointer text-[theme(color.brand.blue)] hover:text-white">
             View All Tools
             <FaArrowRight className="text-xs" />

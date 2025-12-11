@@ -123,9 +123,10 @@ const BlogPostsGrid: React.FC = () => {
                       {cleanExcerpt(post.excerpt)}
                     </p>
 
-                    <div className="flex items-center justify-between">
-                      <div className="grid grid-cols-2 items-center gap-4 text-sm text-gray-500">
-                        <div className="flex items-center gap-2">
+
+                    <div className="flex justify-between gap-4 text-sm text-gray-500">
+                      <div className="flex flex-col gap-y-2">
+                        <div className="flex items-center gap-4">
                           <Image
                             title={post.author}
                             src={post.authorImage}
@@ -140,6 +141,8 @@ const BlogPostsGrid: React.FC = () => {
                           <FaCalendarAlt className="w-3 h-3" />
                           <span>{post.date}</span>
                         </div>
+                      </div>
+                      <div className="flex flex-col gap-y-4">
                         <div className="flex items-center gap-1">
                           <FaClock className="w-3 h-3" />
                           <span>{post.readTime}</span>
@@ -147,6 +150,7 @@ const BlogPostsGrid: React.FC = () => {
                         <Link
                           href={`/blog/post/${post.id}`}
                           className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
+                          aria-label={`Read more about ${post.title}`}
                         >
                           Read More
                           <FaArrowRight className="w-3 h-3" />
@@ -307,6 +311,7 @@ const BlogPostsGrid: React.FC = () => {
                         <Link
                           href={`/blog/post/${post.id}`}
                           className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
+                          aria-label={`Read more about ${post.title}`}
                         >
                           Read More →
                         </Link>
@@ -334,11 +339,10 @@ const BlogPostsGrid: React.FC = () => {
                       <button
                         key={index + 1}
                         onClick={() => setCurrentPage(index + 1)}
-                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${
-                          currentPage === index + 1
-                            ? "bg-[theme(color.brand.blue)] text-white"
-                            : "text-gray-600 hover:bg-gray-50"
-                        }`}
+                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${currentPage === index + 1
+                          ? "bg-[theme(color.brand.blue)] text-white"
+                          : "text-gray-600 hover:bg-gray-50"
+                          }`}
                       >
                         {index + 1}
                       </button>
