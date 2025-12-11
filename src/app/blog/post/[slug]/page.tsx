@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getPostBySlug } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
 import StructuredData from "@/components/seo/StructuredData";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 import { Suspense } from "react";
 import RelatedPosts from "@/components/sections/RelatedPosts";
@@ -180,6 +181,16 @@ export default async function BlogPostPage({ params }: Props) {
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
+
+        <div className="max-w-7xl mx-auto px-8 md:px-12 pt-8">
+          <Breadcrumb
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: post.category, href: `/blog/category/${post.categorySlug}` },
+              { label: post.title },
+            ]}
+          />
+        </div>
 
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
