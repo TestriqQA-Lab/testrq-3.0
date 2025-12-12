@@ -56,11 +56,17 @@ const CareersOpenPositions: React.FC = () => {
 
   const totalExperienceOptions = [
     "Fresher",
-    "0-1 years",
-    "1-3 years",
-    "3-5 years",
-    "5-7 years",
-    "7-9 years",
+    "1 year",
+    "2 years",
+    "3 years",
+    "4 years",
+    "5 years",
+    "6 years",
+    "7 years",
+    "8 years",
+    "9 years",
+    "10 years",
+
   ];
 
   const validatePhoneNumber = (phone: string): boolean => {
@@ -532,8 +538,8 @@ const CareersOpenPositions: React.FC = () => {
                   key={position.id}
                   className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
                 >
-                  <div 
-                    onClick={() => setExpandedId(isExpanded ? null : position.id)} 
+                  <div
+                    onClick={() => setExpandedId(isExpanded ? null : position.id)}
                     className="p-4 sm:p-6 lg:p-8 relative cursor-pointer"
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6">
@@ -580,7 +586,7 @@ const CareersOpenPositions: React.FC = () => {
                                 <span>{position.experience}</span>
                               </div>
                             </div>
-                            
+
                             <div className="flex flex-wrap gap-2">
                               {position.skills
                                 .slice(
@@ -716,8 +722,8 @@ const CareersOpenPositions: React.FC = () => {
         {/* Application Modal - Fully mobile optimized */}
         {showApplicationModal && selectedPosition && (
           <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-start justify-center z-50 p-2 sm:p-4 overflow-y-auto">
-            <div 
-              ref={modalContentRef} 
+            <div
+              ref={modalContentRef}
               className="bg-white rounded-xl sm:rounded-2xl shadow-xl w-full max-w-4xl my-2 sm:my-4 relative modal-content max-h-[calc(100vh-1rem)] sm:max-h-[calc(100vh-2rem)] overflow-y-auto"
             >
               {/* Centered Success Message Overlay */}
@@ -729,7 +735,7 @@ const CareersOpenPositions: React.FC = () => {
                       <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-2">Application Submitted Successfully!</h3>
                       <p className="text-gray-600 mb-4 text-sm sm:text-base">We&apos;ll get back to you soon. This window will close automatically.</p>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{width: "100%"}}></div>
+                        <div className="bg-green-500 h-2 rounded-full animate-pulse" style={{ width: "100%" }}></div>
                       </div>
                     </div>
                   </div>
@@ -743,7 +749,7 @@ const CareersOpenPositions: React.FC = () => {
                 >
                   <FaTimes className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
-                
+
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 pr-8">
                   Apply for {selectedPosition.title}
                 </h3>
@@ -796,9 +802,8 @@ const CareersOpenPositions: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className={`w-full px-3 py-2 sm:px-4 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${
-                            phoneError ? "border-red-500" : "border-gray-300"
-                          }`}
+                          className={`w-full px-3 py-2 sm:px-4 sm:py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base ${phoneError ? "border-red-500" : "border-gray-300"
+                            }`}
                           placeholder="+91 9876543210 or 9876543210"
                         />
                         {phoneError && (
@@ -819,22 +824,22 @@ const CareersOpenPositions: React.FC = () => {
                           required
                         />
                       </div>
-{/* Skills and Tools - Full width */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Skills, Tools & Frameworks *
-                    </label>
-                    <textarea
-                      name="skillsToolsFramework"
-                      value={formData.skillsToolsFramework}
-                      onChange={handleInputChange}
-                      rows={4}
-                      className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                      placeholder="List your technical skills, testing tools, frameworks, programming languages, etc."
-                      required
-                    />
-                  </div>
-                      
+                      {/* Skills and Tools - Full width */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Skills, Tools & Frameworks *
+                        </label>
+                        <textarea
+                          name="skillsToolsFramework"
+                          value={formData.skillsToolsFramework}
+                          onChange={handleInputChange}
+                          rows={4}
+                          className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                          placeholder="List your technical skills, testing tools, frameworks, programming languages, etc."
+                          required
+                        />
+                      </div>
+
                     </div>
 
                     {/* Column 2: Professional Info */}
@@ -928,7 +933,7 @@ const CareersOpenPositions: React.FC = () => {
                             </span>
                             <FaCaretDown className="w-4 h-4 text-gray-400" />
                           </button>
-                          
+
                           {showDomainDropdown && (
                             <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-48 overflow-y-auto">
                               {domainKnowledgeOptions.map((option) => (
@@ -948,7 +953,7 @@ const CareersOpenPositions: React.FC = () => {
                             </div>
                           )}
                         </div>
-                        
+
                         {formData.domainKnowledge.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1">
                             {formData.domainKnowledge.map((domain) => (
@@ -1012,9 +1017,9 @@ const CareersOpenPositions: React.FC = () => {
                     </div>
                   </div>
 
-                  
 
-                  
+
+
 
                   {/* Submit Button - Mobile optimized */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
