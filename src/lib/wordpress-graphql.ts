@@ -661,7 +661,7 @@ export async function getPostsByCategory(
 }> {
   try {
     // First, get the category information
-    const categoriesData = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY);
+    const categoriesData = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY, { first: 1000 });
     const category = categoriesData.categories.nodes.find(cat => cat.slug === categorySlug) || null;
 
     // Then fetch posts for this category
@@ -703,7 +703,7 @@ export async function getPostsByTag(
 }> {
   try {
     // First, get the tag information
-    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY, { first: 1000 });
     const tag = tagsData.tags.nodes.find(t => t.slug === tagSlug) || null;
 
     // Then fetch posts for this tag
