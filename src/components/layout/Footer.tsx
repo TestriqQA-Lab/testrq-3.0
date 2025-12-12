@@ -315,7 +315,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="https://www.testriq.com/sitemap.xml"
+                href="/sitemap"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap

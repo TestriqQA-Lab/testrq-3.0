@@ -103,7 +103,7 @@ const SearchInsights: React.FC = () => {
           including <strong>test automation best practices</strong>, <strong>Agile testing methodologies</strong>,
           and more. Explore suggested topics below to dive into Testriq&apos;s expert content.
         </p>
-        
+
         {/* Enhanced Introduction Section */}
         <div className="bg-white rounded-lg p-8 shadow-lg mb-12 text-left">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Your Gateway to Comprehensive QA Knowledge</h2>
@@ -129,7 +129,7 @@ const SearchInsights: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto bg-white/10 border border-cyan-300/20 rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden">
         {/* Decorative Element */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
@@ -139,11 +139,11 @@ const SearchInsights: React.FC = () => {
             Unlock QA Excellence with Testriq
           </h2>
         </div>
-        
+
         <p className="text-lg text-gray-700 mb-8 text-center leading-relaxed">
           Testriq&apos;s <strong className="text-cyan-600">software testing search</strong> hub is your go-to resource for <strong className="text-cyan-600">QA blog search</strong> and expert insights. Discover why our blog is trusted by professionals worldwide:
         </p>
-        
+
         {/* Enhanced Features Section */}
         <div className="grid md:grid-cols-2 gap-8 mb-10">
           <div className="bg-white/20 rounded-lg p-6">
@@ -167,7 +167,7 @@ const SearchInsights: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="bg-white/20 rounded-lg p-6">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Industry-Leading Expertise</h3>
             <ul className="space-y-3 text-gray-700 text-base">
@@ -190,7 +190,7 @@ const SearchInsights: React.FC = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* Search Tips Section */}
         <div className="bg-white/30 rounded-lg p-8 mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Maximize Your Search Results</h3>
@@ -206,7 +206,7 @@ const SearchInsights: React.FC = () => {
                 </p>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Search Operators</h4>
               <p className="text-gray-700 text-sm mb-3">
@@ -218,7 +218,7 @@ const SearchInsights: React.FC = () => {
                 </p>
               </div>
             </div>
-            
+
             <div>
               <h4 className="text-lg font-semibold text-gray-800 mb-3">Topic Categories</h4>
               <p className="text-gray-700 text-sm mb-3">
@@ -232,11 +232,11 @@ const SearchInsights: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <p className="text-lg text-gray-700 mb-8 text-center">
           Optimize your <strong className="text-cyan-600">QA blog search</strong> experience by combining specific keywords with our advanced filtering options. Whether you&apos;re looking for beginner tutorials, advanced techniques, or industry-specific solutions, our comprehensive search system will connect you with the most relevant and valuable content.
         </p>
-        
+
         {/* Popular Search Terms */}
         <div className="bg-white/20 rounded-lg p-6 mb-8">
           <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Popular Search Terms</h3>
@@ -265,7 +265,7 @@ const SearchInsights: React.FC = () => {
             ))}
           </div>
         </div>
-        
+
         <div className="text-center">
           <Link href="/blog" className="inline-block bg-cyan-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-cyan-600 transition-all duration-300 hover:shadow-lg mr-4">
             Explore More QA Insights
@@ -342,7 +342,7 @@ const SearchResults: React.FC = () => {
   );
 
   return (
-    <MainLayout>
+    <>
       <BlogStructuredData
         type="search"
         title={query ? `Search Results for "${query}" | Testriq Blog` : "Search Software Testing Insights | Testriq Blog"}
@@ -492,17 +492,19 @@ const SearchResults: React.FC = () => {
 
         {/* Search Insights - Unchanged */}
 
-        <SearchInsights />
       </div>
-    </MainLayout>
+    </>
   );
 };
 
 // Main component with Suspense wrapper
 export default function SearchPage() {
   return (
-    <Suspense fallback={<SearchResultsLoading />}>
-      <SearchResults />
-    </Suspense>
+    <MainLayout>
+      <Suspense fallback={<SearchResultsLoading />}>
+        <SearchResults />
+      </Suspense>
+      <SearchInsights />
+    </MainLayout>
   );
 }

@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 export const BlogHeroSection = dynamic(
   () => import("@/components/sections/BlogHeroSection"),
   {
-    ssr: false,
+    ssr: true,
     loading: () => (
       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>

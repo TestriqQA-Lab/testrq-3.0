@@ -4,6 +4,7 @@ import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAdaptedCategoryData } from "@/lib/wordpress-data-adapter";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const CategoryHeroSection = dynamic(
   () => import("@/components/sections/CategoryHeroSection"),
@@ -134,6 +135,14 @@ export default async function CategoryPage({ params }: Props) {
           categoryName={categoryName}
           postCount={categoryData.posts.length}
         />
+        <div className="max-w-7xl mx-auto px-8 md:px-12 pt-8">
+          <Breadcrumb
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: categoryName },
+            ]}
+          />
+        </div>
         <CategoryHeroSection category={categoryData.category} />
         <div className="max-w-7xl mx-auto px-8 md:px-12 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
