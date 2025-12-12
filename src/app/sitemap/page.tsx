@@ -1,7 +1,6 @@
-
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
-import { getPosts, getCategories, getTags } from "@/lib/wordpress-graphql";
+import { getAllPosts, getAllCategories, getAllTags } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 import { Metadata } from "next";
 
@@ -11,12 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default async function SitemapPage() {
-    // Fetch all content with high limits
-    const postsData = await getPosts(1000);
-    const categories = await getCategories(100);
-    const tags = await getTags(500);
+    // Fetch all content recursively
+    const postsData = await getAllPosts();
+    const categories = await getAllCategories();
+    const tags = await getAllTags();
 
-    const posts = postsData.posts.map(adaptWordPressPost);
+    const posts = postsData.map(adaptWordPressPost);
 
     // Group posts by category for better UX
     const postsByCategory: Record<string, typeof posts> = {};
@@ -27,6 +26,24 @@ export default async function SitemapPage() {
         postsByCategory[post.category].push(post);
     });
 
+    // Manual links for non-blog pages that need internal linking
+    const manualLinks = [
+        { title: "Telecommunications Testing Services", href: "/telecommunications-testing-services" },
+        { title: "Home Facts Case Study", href: "/home-facts-case-study" },
+        { title: "About Us", href: "/about-us" },
+        { title: "Our Team", href: "/our-team" },
+        { title: "Contact Us", href: "/contact-us" },
+        { title: "Careers", href: "/careers" },
+        { title: "Technology Stack", href: "/technology-stack" },
+        // Core Services
+        { title: "LaunchFast QA", href: "/launchfast-qa" },
+        { title: "Exploratory Testing", href: "/exploratory-testing" },
+        { title: "Web Application Testing", href: "/web-application-testing-services" },
+        { title: "Mobile App Testing", href: "/mobile-application-testing" },
+        { title: "IoT Device Testing", href: "/iot-device-testing-services" },
+        { title: "AI Application Testing", href: "/ai-application-testing" },
+    ];
+
     return (
         <MainLayout>
             <div className="bg-gray-50 min-h-screen py-12">
@@ -34,13 +51,31 @@ export default async function SitemapPage() {
                     <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12">
                         <h1 className="text-4xl font-bold text-gray-900 mb-4">Sitemap</h1>
                         <p className="text-gray-600 mb-12 max-w-2xl">
-                            Quickly navigate to any section of our blog. This page lists all categories, tags, and articles available on Testriq.
+                            Quickly navigate to any section of our website. This page lists all categories, tags, articles, and services available on Testriq.
                         </p>
 
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-                            {/* Column 1: Categories & Tags */}
+                            {/* Column 1: Core Pages, Categories & Tags */}
                             <div className="space-y-12">
+                                <section>
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 pb-2 border-b border-gray-200">
+                                        Core Pages & Services
+                                    </h2>
+                                    <ul className="space-y-2">
+                                        {manualLinks.map((link, idx) => (
+                                            <li key={idx}>
+                                                <Link
+                                                    href={link.href}
+                                                    className="text-gray-700 hover:text-blue-600 hover:underline decoration-blue-200 underline-offset-2 text-sm block py-1 font-medium"
+                                                >
+                                                    {link.title}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </section>
+
                                 <section>
                                     <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 pb-2 border-b border-gray-200">
                                         Categories

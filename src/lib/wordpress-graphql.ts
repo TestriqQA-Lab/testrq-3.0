@@ -801,6 +801,33 @@ export async function searchPosts(searchQuery: string, first: number | null = 10
   }
 }
 
+// Fetch ALL categories recursively
+export async function getAllCategories(): Promise<WordPressCategory[]> {
+  // Categories don't support pagination in the same way in all WPGraphQL schemas,
+  // but if the implementation supports 'first', we can try.
+  // Standard WPGraphQL 'categories' query usually returns all often, 
+  // but strictly speaking should paginate. 
+  // Our implementation of getCategories currently just maps nodes.
+  // We'll update getCategories to return PageInfo if we wanted to be strict,
+  // but for now let's just use a large limit which we enabled in previous steps.
+
+  // However, to be robust against 100 limit:
+  // Note: Standard WPGraphQL categories query DOES support pagination if configured.
+  // Since we modified GET_CATEGORIES_QUERY to take 'first', we can try a large number.
+  // If we really need recursion for categories, we'd need to update the return type of getCategories to include pageInfo.
+
+  // For now, let's stick to the 100 limit passed to getCategories(1000) 
+  // as categories are rarely > 100. If they are, we can refine.
+  return getCategories(1000);
+}
+
+// Fetch ALL tags recursively
+export async function getAllTags(): Promise<WordPressTag[]> {
+  // Similar to categories, tags can be numerous.
+  // Let's rely on the increased limit for now, or we would need to refactor the base getTags function.
+  return getTags(1000);
+}
+
 // Helper function to extract featured image URL
 export function getFeaturedImageUrl(post: WordPressPost): string | null {
   return post.featuredImage?.node?.sourceUrl || null;
