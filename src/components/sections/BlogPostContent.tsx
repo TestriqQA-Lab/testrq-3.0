@@ -23,6 +23,7 @@ interface BlogPost {
   likes: number;
   shares: number;
   slug: string;
+  tagsData?: { name: string; slug: string }[];
 }
 
 interface BlogPostContentProps {
@@ -239,6 +240,29 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
           </div>
         </div>
       </div>
+      {/* Tags Cloud */}
+      {post.tagsData && post.tagsData.length > 0 && (
+        <div className="my-8 pt-8 border-t border-gray-100">
+          <div className="flex items-center gap-2 mb-4">
+            <FaFont className="text-gray-400 w-4 h-4" />
+            <span className="text-sm font-semibold text-gray-500 uppercase tracking-wider">
+              Topics
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {post.tagsData.map((tag) => (
+              <a
+                key={tag.slug}
+                href={`/blog/tag/${tag.slug}`}
+                className="px-4 py-2 bg-gray-50 text-gray-600 rounded-full text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors border border-gray-100"
+              >
+                #{tag.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
     </article>
   );
 };
