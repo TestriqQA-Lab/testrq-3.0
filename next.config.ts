@@ -52,11 +52,6 @@ const nextConfig: NextConfig = {
         destination: "/technology-stack",
         permanent: true,
       },
-      {
-        source: "/home-facts-case-study",
-        destination: "/case-studies",
-        permanent: true,
-      },
     ];
   },
 };
