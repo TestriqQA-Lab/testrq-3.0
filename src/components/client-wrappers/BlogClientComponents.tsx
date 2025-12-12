@@ -15,17 +15,7 @@ export const BlogHeroSection = dynamic(
   }
 );
 
-export const BlogPostsGrid = dynamic(
-  () => import("@/components/sections/BlogPostsGrid"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+// BlogPostsGrid removed from here as it is now server-props driven and imported directly
 
 export const BlogCategories = dynamic(
   () => import("@/components/sections/BlogCategories"),
