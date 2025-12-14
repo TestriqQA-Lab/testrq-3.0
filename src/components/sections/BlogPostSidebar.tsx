@@ -66,12 +66,12 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         // Fetch related posts from the same category or with similar tags
         const postsResponse = await getPosts(20);
         const allPosts = postsResponse.posts.map(adaptWordPressPost);
-        
+
         // Filter related posts based on category or tags
         const related = allPosts
-          .filter(p => 
+          .filter(p =>
             p.id !== post.id && (
-              p.category === post.category || 
+              p.category === post.category ||
               p.tags.some(tag => post.tags.includes(tag))
             )
           )
@@ -87,10 +87,10 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
         setRelatedPosts(related);
 
         // Fetch all tags from WordPress GraphQL
-        const wpTags = await getTags();
+        const wpTags = await getTags(50);
         const sortedTags = wpTags
           .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
-          .slice(0, 10) // Take top 10 popular tags
+          .slice(0, 20) // Take top 20 popular tags
           .map(tag => ({
             name: tag.name,
             slug: tag.slug,
@@ -108,7 +108,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             count: cat.count,
             slug: cat.slug
           }))
-          .slice(0, 6);
+          .slice(0, 15);
 
         setCategories(adaptedCategories);
         setLoading(false);
@@ -123,7 +123,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       setError("Email is required");
       return;
@@ -148,7 +148,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
       if (response.ok) {
         setSubscribed(true);
         setEmail("");
-        
+
         setTimeout(() => {
           setSubscribed(false);
         }, 5000);

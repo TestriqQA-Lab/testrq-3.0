@@ -144,10 +144,10 @@ const SapToolsFramework: React.FC = () => {
                                         <div className="flex items-start">
                                             <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                                             <div className="flex-1">
-                                                <h4 className="font-semibold text-gray-900 mb-1 text-sm">
+                                                <h4 className="font-semibold text-gray-900 mb-1 text-base">
                                                     {tool.name}
                                                 </h4>
-                                                <p className="text-gray-500 text-xs leading-relaxed">
+                                                <p className="text-gray-500 text-sm leading-relaxed">
                                                     {tool.description}
                                                 </p>
                                             </div>

@@ -1,7 +1,10 @@
-import { BlogHeroSection, BlogPostsGrid, BlogCategories, BlogQAKnowledgeHub, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
+import { BlogHeroSection, BlogCategories, BlogQAKnowledgeHub, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
+import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
+import { getAllPosts } from "@/lib/wordpress-graphql";
+import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 
 export const metadata: Metadata = {
   title: "Software Testing Blog | QA Insights & Best Practices",
@@ -51,7 +54,39 @@ export const metadata: Metadata = {
   category: "Technology",
 };
 
-export default function BlogPage() {
+import { Post } from "@/lib/wordpress-data-adapter";
+
+// ... (existing code)
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+  const resolvedSearchParams = await searchParams;
+  const currentPage = Number(resolvedSearchParams.page) || 1;
+  const postsPerPage = 9;
+
+  let blogPosts: Post[] = []; // Fixed: Explicitly typed as Post[]
+  try {
+    const postsData = await getAllPosts();
+    blogPosts = postsData.map(adaptWordPressPost);
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+  }
+
+  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+
+  // Slice posts for current page
+  const currentPosts = blogPosts.slice(
+    (currentPage - 1) * postsPerPage,
+    currentPage * postsPerPage
+  );
+
+  // Filter featured and trending from ALL posts
+  const featuredPosts = blogPosts.filter((post) => post.featured);
+  const trendingPosts = blogPosts.filter((post) => post.trending);
+
   return (
     <MainLayout>
       <BlogStructuredData
@@ -61,9 +96,17 @@ export default function BlogPage() {
         url="https://www.testriq.com/blog"
       />
       <BlogHeroSection />
-      <BlogPostsGrid />
+
+      <BlogPostsGrid
+        initialPosts={currentPosts}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        featuredPosts={featuredPosts}
+        trendingPosts={trendingPosts}
+      />
+
       <BlogCategories />
-      <BlogQAKnowledgeHub/>
+      <BlogQAKnowledgeHub />
       <BlogNewsletter />
     </MainLayout>
   );

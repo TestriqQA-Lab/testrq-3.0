@@ -70,10 +70,10 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
         setRelatedCategories(sortedRelatedCategories);
 
         // Fetch all tags from WordPress GraphQL
-        const wpTags = await getTags();
+        const wpTags = await getTags(50);
         const sortedPopularTags = wpTags
           .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
-          .slice(0, 10) // Take top 10 popular tags
+          .slice(0, 20) // Take top 20 popular tags
           .map(tag => ({
             name: tag.name,
             slug: tag.slug,
@@ -93,7 +93,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       setError("Email is required");
       return;
@@ -118,7 +118,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
       if (response.ok) {
         setSubscribed(true);
         setEmail("");
-        
+
         setTimeout(() => {
           setSubscribed(false);
         }, 5000);
@@ -152,11 +152,11 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
   return (
     <aside className="space-y-8">
 
- {/* Newsletter Signup */}
+      {/* Newsletter Signup */}
       <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
         <div className="text-center">
           <div className="w-12 h-12 bg-gradient-to-br ${category.color} bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6"/>
+            <FaBell className="w-6 h-6" />
           </div>
           <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
           <p className="text-white text-opacity-90 text-sm mb-4">
@@ -246,7 +246,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
         </Link>
       </div>
 
-     
+
 
       {/* Popular Tags */}
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">

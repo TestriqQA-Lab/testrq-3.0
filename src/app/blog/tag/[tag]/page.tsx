@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPostsByTag } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const TagHeroSection = dynamic(
   () => import("@/components/sections/TagHeroSection"),
@@ -136,6 +137,14 @@ export default async function TagPage({ params }: Props) {
           tagName={tagName}
           postCount={adaptedPosts.length}
         />
+        <div className="max-w-7xl mx-auto px-8 md:px-12 pt-8">
+          <Breadcrumb
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: tagName },
+            ]}
+          />
+        </div>
         <TagHeroSection tag={tagData.tag} postCount={adaptedPosts.length} />
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

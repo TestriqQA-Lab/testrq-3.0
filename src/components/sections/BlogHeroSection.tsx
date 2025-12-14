@@ -85,7 +85,7 @@ const BlogHeroSection: React.FC = () => {
     [searchQuery, router]
   );
 
-  const handleKeyPress = useCallback(
+  const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === "Enter") {
         handleSearch(e);
@@ -133,6 +133,7 @@ const BlogHeroSection: React.FC = () => {
           </span>
         </h1>
 
+
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-7xl mx-auto leading-relaxed">
           Stay ahead in the evolving world of software testing with expert QA insights, best practices for automation, and up-to-date guidance on performance, security, and API testing. Our comprehensive blog covers test automation frameworks like Selenium and Appium, in-depth guides on mobile and web application QA, as well as strategies for integrating CI/CD and effective bug tracking. Explore cutting-edge trends in AI-driven software testing, load and stress testing, cloud-native QA, and security vulnerabilities, empowering your development teams to deliver robust, scalable, and secure digital solutions. Whether you&lsquo;re a beginner or an experienced professional, our content is designed to help you improve your testing skills and stay current with industry standards. Dive deeper into topics like regression testing, usability evaluation, and accessibility compliance to ensure your applications meet the highest quality benchmarks.
@@ -145,12 +146,8 @@ const BlogHeroSection: React.FC = () => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder={
-                window.innerWidth < 600
-                  ? "Search topics..."
-                  : "Search testing topics, tools, or best practices..."
-              }
+              onKeyDown={handleKeyDown}
+              placeholder="Search testing topics, tools, or best practices..."
               className="w-full pl-12 pr-32 py-4 rounded-xl bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
             />
             <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />

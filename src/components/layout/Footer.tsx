@@ -56,6 +56,7 @@ const specializedTesting = [
   { title: "Software Testing Guide", path: "/software-testing-guide" },
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
   { title: "SAP Testing", path: "/sap-testing-services" },
+  { title: "Telecom Testing", path: "/telecommunications-testing-services" },
 ];
 
 const company = [
@@ -315,7 +316,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="https://www.testriq.com/sitemap.xml"
+                href="/sitemap"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap

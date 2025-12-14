@@ -2,7 +2,7 @@
 
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
@@ -11,76 +11,37 @@ import {
   FaStar,
 } from "react-icons/fa";
 import Link from "next/link";
-import { getAllPosts } from "@/lib/wordpress-graphql"; // Changed to getAllPosts
-import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
-import { stripHtmlTags } from "@/lib/wordpress-graphql";
+import { Post } from "@/lib/wordpress-data-adapter";
+// Removed stripHtmlTags and getAllPosts imports as they are not needed in the display component
 
-const BlogPostsGrid: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [blogPosts, setBlogPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
-  const postsPerPage = 9;
+interface BlogPostsGridProps {
+  initialPosts: Post[];
+  currentPage: number;
+  totalPages: number;
+  featuredPosts: Post[];
+  trendingPosts: Post[];
+}
 
-  useEffect(() => {
-    async function fetchPosts() {
-      try {
-        setLoading(true);
-        const postsData = await getAllPosts(); // Fetch all posts
-        const adaptedPosts = postsData.map(adaptWordPressPost);
-        setBlogPosts(adaptedPosts);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-        // Fallback to empty array if WordPress is not available
-        setBlogPosts([]);
-      } finally {
-        setLoading(false);
-      }
-    }
+const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
+  initialPosts,
+  currentPage,
+  totalPages,
+  featuredPosts,
+  trendingPosts
+}) => {
+  // Use passed posts directly - no client-side filtering needed for the main grid as it's done server-side
+  const currentPosts = initialPosts;
 
-    fetchPosts();
-  }, []);
-
-  // Function to decode HTML entities
-  const decodeHtmlEntities = (html: string) => {
-    const textarea = document.createElement("textarea");
-    textarea.innerHTML = html;
-    return textarea.textContent;
-  };
-
-  // Helper function to clean excerpt and decode entities
+  // Helper function to clean excerpt and decode entities (simple version for client)
   const cleanExcerpt = (excerpt: string) => {
-    return decodeHtmlEntities(stripHtmlTags(excerpt));
+    return excerpt.replace(/<[^>]*>?/gm, '').replace(/&hellip;/g, '...').replace(/&nbsp;/g, ' ');
   };
-
-  if (loading) {
-    return (
-      <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading blog posts...</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-  const currentPosts = blogPosts.slice(
-    (currentPage - 1) * postsPerPage,
-    currentPage * postsPerPage
-  );
-
-  const featuredPosts = blogPosts.filter((post) => post.featured);
-  const trendingPosts = blogPosts.filter((post) => post.trending);
 
   return (
     <section className="bg-gray-50 py-16 px-8 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        {/* Featured Posts Section */}
-        {featuredPosts.length > 0 && (
+        {/* Featured Posts Section - Only show on page 1 */}
+        {currentPage === 1 && featuredPosts.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">
               <FaStar className="w-6 h-6 text-yellow-500" />
@@ -106,11 +67,13 @@ const BlogPostsGrid: React.FC = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span
-                        className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}
-                      >
-                        {post.category}
-                      </span>
+                      <Link href={`/blog/category/${post.categorySlug}`}>
+                        <span
+                          className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                        >
+                          {post.category}
+                        </span>
+                      </Link>
                     </div>
                     <div className="absolute bottom-4 right-4 bg-yellow-500 text-white px-2 py-1 rounded-full text-xs font-bold">
                       FEATURED
@@ -167,8 +130,8 @@ const BlogPostsGrid: React.FC = () => {
           </div>
         )}
 
-        {/* Trending Posts Section */}
-        {trendingPosts.length > 0 && (
+        {/* Trending Posts Section - Only show on page 1 */}
+        {currentPage === 1 && trendingPosts.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">
               <FaFire className="w-6 h-6 text-red-500" />
@@ -193,11 +156,13 @@ const BlogPostsGrid: React.FC = () => {
                     />
 
                     <div className="absolute top-2 left-2">
-                      <span
-                        className={`px-2 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-xs font-semibold rounded-full`}
-                      >
-                        {post.category}
-                      </span>
+                      <Link href={`/blog/category/${post.categorySlug}`}>
+                        <span
+                          className={`px-2 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-xs font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                        >
+                          {post.category}
+                        </span>
+                      </Link>
                     </div>
                     <div className="absolute bottom-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold flex items-center gap-1">
                       <FaFire className="w-2 h-2" />
@@ -242,7 +207,7 @@ const BlogPostsGrid: React.FC = () => {
           </h2>
           <p className="text-gray-600 mb-6">Browse our complete collection of software testing articles. From foundational concepts to advanced techniques, find in-depth coverage of all aspects of QA and testing methodologies to support your professional growth.</p>
 
-          {blogPosts.length === 0 ? (
+          {currentPosts.length === 0 ? (
             <div className="text-center py-12">
               <div className="text-gray-400 text-6xl mb-4">📝</div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -272,11 +237,13 @@ const BlogPostsGrid: React.FC = () => {
                       />
 
                       <div className="absolute top-4 left-4">
-                        <span
-                          className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full`}
-                        >
-                          {post.category}
-                        </span>
+                        <Link href={`/blog/category/${post.categorySlug}`}>
+                          <span
+                            className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-sm font-semibold rounded-full hover:opacity-90 transition-opacity cursor-pointer`}
+                          >
+                            {post.category}
+                          </span>
+                        </Link>
                       </div>
                       {post.trending && (
                         <div className="absolute bottom-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
@@ -326,42 +293,51 @@ const BlogPostsGrid: React.FC = () => {
                 ))}
               </div>
 
-              {/* Pagination */}
+              {/* Pagination with Links */}
               {totalPages > 1 && (
                 <div className="flex justify-center mt-8 sm:mt-12">
                   <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center">
-                    <button
-                      onClick={() =>
-                        setCurrentPage((prev) => Math.max(prev - 1, 1))
-                      }
-                      disabled={currentPage === 1}
-                      className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-                    >
-                      Previous
-                    </button>
-
-                    {[...Array(totalPages)].map((_, index) => (
-                      <button
-                        key={index + 1}
-                        onClick={() => setCurrentPage(index + 1)}
-                        className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base ${currentPage === index + 1
-                          ? "bg-[theme(color.brand.blue)] text-white"
-                          : "text-gray-600 hover:bg-gray-50"
-                          }`}
+                    {currentPage > 1 ? (
+                      <Link
+                        href={`/blog?page=${currentPage - 1}`}
+                        className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px]"
                       >
-                        {index + 1}
-                      </button>
-                    ))}
+                        Prev
+                      </Link>
+                    ) : (
+                      <span className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-300 bg-gray-50 cursor-not-allowed text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px]">
+                        Prev
+                      </span>
+                    )}
 
-                    <button
-                      onClick={() =>
-                        setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-                      }
-                      disabled={currentPage === totalPages}
-                      className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-                    >
-                      Next
-                    </button>
+                    {[...Array(totalPages)].map((_, index) => {
+                      const pageNum = index + 1;
+                      return (
+                        <Link
+                          key={pageNum}
+                          href={`/blog?page=${pageNum}`}
+                          className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px] ${currentPage === pageNum
+                              ? "bg-[theme(color.brand.blue)] text-white"
+                              : "text-gray-600 hover:bg-gray-50"
+                            }`}
+                        >
+                          {pageNum}
+                        </Link>
+                      );
+                    })}
+
+                    {currentPage < totalPages ? (
+                      <Link
+                        href={`/blog?page=${currentPage + 1}`}
+                        className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px]"
+                      >
+                        Next
+                      </Link>
+                    ) : (
+                      <span className="px-2 py-1 sm:px-4 sm:py-2 border border-gray-300 rounded-lg text-gray-300 bg-gray-50 cursor-not-allowed text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px]">
+                        Next
+                      </span>
+                    )}
                   </div>
                 </div>
               )}

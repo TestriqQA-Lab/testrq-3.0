@@ -1488,7 +1488,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 7,
     slug: "milton-case-study",
-    title: "Milton Smart Stainless Steel Water Bottle Case Study",
+    title: "Case Study: IoT Connectivity & Mobile App Testing for Milton Smart Bottle",
     client: "Hamilton Housewares Pvt Ltd.",
     industry: "Homewares",
     duration: "3 months",
@@ -1496,7 +1496,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Enhancing the Quality of ‘MILTON Smart Stainless Steel Water Bottle’ with Comprehensive Testing.",
     image: "/Milton_Logo.png",
     metadata: {
-      title: "Milton Smart Stainless Steel Water Bottle Case Study",
+      title: "IoT & Mobile App Testing Case Study: Milton Smart Bottle",
       description:
         "See how Testriq partnered with Hamilton Housewares to enhance the quality and reliability of Milton’s smart stainless steel bottle through comprehensive QA testing.",
       keywords: [
@@ -1915,7 +1915,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 9,
     slug: "aalpha-information-systems",
-    title: "Securing Aalpha Information Systems' HR Portal",
+    title: "Vulnerability Assessment & Penetration Testing: Aalpha Information Systems",
     client: "Aalpha Information Systems",
     industry: "IT company",
     duration: "Not specified",
@@ -1923,7 +1923,7 @@ export const caseStudiesData: CaseStudy[] = [
       "The primary objective of the penetration testing project was to assess the HR portal's vulnerability to cyberattacks and identify potential security weaknesses.",
     image: "/Aalpha_Information_System_Logo.webp",
     metadata: {
-      title: "Securing Aalpha Information Systems' HR Portal",
+      title: "Penetration Testing Case Study: Securing Aalpha's HR Portal",
       description:
         "Learn how Testriq conducted an in-depth penetration testing engagement to secure Aalpha’s HR portal, identifying vulnerabilities and strengthening cyber defense.",
       keywords: [
@@ -2118,7 +2118,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 10,
     slug: "digiboxx-case-study",
-    title: "Optimizing Digiboxx with Robust Testing",
+    title: "Case Study: End-to-End Automation & Manual Testing for Digiboxx",
     client: "Digiboxx",
     industry: "Cloud Storage",
     duration: "Not specified",
@@ -2126,7 +2126,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Implemented end-to-end testing strategies to boost usability, ensure stability, and improve automation. Enabled a reliable and scalable experience across Digiboxx’s digital ecosystem.",
     image: "/DigiboxxLogo.png",
     metadata: {
-      title: "Optimizing Digiboxx with Robust Testing",
+      title: "Cloud Storage Automation Testing Case Study: Digiboxx",
       description:
         "Discover how Testriq helped Digiboxx elevate cloud storage usability, security, and performance through strategic QA, automation, and cross-platform testing.",
       keywords: [
@@ -2524,7 +2524,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 12,
     slug: "worksocial-case-study",
-    title: "WorkSocial Software Optimized Through Testing",
+    title: "Case Study: Performance & Load Testing for WorkSocial Platform",
     client: "WorkSocial",
     industry: "Real estate",
     duration: "Not specified",
@@ -2532,7 +2532,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Implemented a thorough testing approach to boost quality, ensure reliability, and minimize defects. Enabled seamless performance and smoother user experiences across the platform.",
     image: "/Worksocial_logo.webp",
     metadata: {
-      title: "WorkSocial Software Optimized Through Testing",
+      title: "Coworking Software Performance Testing Case Study",
       description:
         "Testriq partnered with WorkSocial to elevate software quality through rigorous QA practices—covering functionality, usability, and performance for a seamless real estate experience.",
       keywords: [
@@ -2718,7 +2718,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 13,
     slug: "leadoconnect-case-study",
-    title: "Refining LeadoConnect’s B2B Software with QA",
+    title: "Case Study: Scaling LeadoConnect’s B2B Platform with Performance & Security QA",
     client: "LeadoConnect",
     industry: "Digital Marketing",
     duration: "Not specified",
@@ -2726,7 +2726,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Established a strategic QA approach to ensure performance, security, and reliability. Accelerated delivery cycles while boosting confidence in LeadoConnect’s automation software.",
     image: "/LeadoConnect_Logo.webp",
     metadata: {
-      title: "Refining LeadoConnect’s B2B Software with QA",
+      title: "B2B SaaS Performance & Security Testing Case Study",
       description:
         "Testriq ensured peak performance, security, and user experience for LeadoConnect’s B2B lead generation automation platform—strengthening its market leadership.",
       keywords: [
@@ -2944,7 +2944,7 @@ export const caseStudiesData: CaseStudy[] = [
   {
     id: 14,
     slug: "pro-ficiency-case-study",
-    title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
+    title: "Case Study: QA Documentation & Compliance for Healthcare Software WorkSocial",
     client: "Pro-ficiency | ProPatient | ProCT",
     industry: "Healthcare",
     duration: "45 Months",
@@ -2952,7 +2952,7 @@ export const caseStudiesData: CaseStudy[] = [
       "Implemented structured QA documentation and rigorous testing to enhance reliability, accelerate development, and streamline Pro-ficiency’s software upgrade process.",
     image: "/Pro-ficiency_Logo.webp",
     metadata: {
-      title: "Elevating Pro-ficiency’s Software with QA and Rigorous Testing",
+      title: "Healthcare QA Documentation & Compliance Case Study",
       description:
         "Testriq delivered 45 months of precision QA documentation and rigorous testing for Pro-ficiency’s upgraded healthcare platform—elevating software quality, reliability, and compliance.",
       keywords: [

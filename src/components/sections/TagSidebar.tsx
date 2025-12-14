@@ -32,7 +32,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
       try {
         // Fetch all tags
         const allTags = await getTags();
-        
+
         // Filter out current tag and get related/popular tags
         const otherTags = allTags
           .filter(t => t.slug !== tag.slug)
@@ -45,10 +45,10 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
         // Sort by count for popular tags
         const popular = otherTags
           .sort((a, b) => b.count - a.count)
-          .slice(0, 8);
+          .slice(0, 20);
 
         setPopularTags(popular);
-        setRelatedTags(popular.slice(0, 6)); // Use same as related for now
+        setRelatedTags(popular.slice(0, 8)); // Use same as related for now
         setLoading(false);
       } catch (error) {
         console.error("Error fetching sidebar data:", error);
@@ -61,7 +61,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       setError("Email is required");
       return;
@@ -86,7 +86,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
       if (response.ok) {
         setSubscribed(true);
         setEmail("");
-        
+
         setTimeout(() => {
           setSubscribed(false);
         }, 5000);
@@ -131,7 +131,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
           </div>
         </div>
         <p className="text-gray-600 text-sm">
-          This tag covers articles related to {tag.name} in software testing and quality assurance. 
+          This tag covers articles related to {tag.name} in software testing and quality assurance.
           Explore comprehensive guides, tutorials, and best practices.
         </p>
       </div>
