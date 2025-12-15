@@ -3,8 +3,9 @@ import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { getAllPosts } from "@/lib/wordpress-graphql";
+import { getPosts, getAllPostSlugs } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { Post } from "@/lib/wordpress-data-adapter";
 
 export const metadata: Metadata = {
   title: "Software Testing Blog | QA Insights & Best Practices",
@@ -54,10 +55,6 @@ export const metadata: Metadata = {
   category: "Technology",
 };
 
-import { Post } from "@/lib/wordpress-data-adapter";
-
-// ... (existing code)
-
 export default async function BlogPage({
   searchParams,
 }: {
@@ -67,25 +64,41 @@ export default async function BlogPage({
   const currentPage = Number(resolvedSearchParams.page) || 1;
   const postsPerPage = 9;
 
-  let blogPosts: Post[] = []; // Fixed: Explicitly typed as Post[]
+  let currentPosts: Post[] = [];
+  let totalPages = 0;
+  let featuredPosts: Post[] = [];
+  let trendingPosts: Post[] = [];
+
   try {
-    const postsData = await getAllPosts();
-    blogPosts = postsData.map(adaptWordPressPost);
+    // 1. Get total count using lightweight slug fetch
+    const allSlugs = await getAllPostSlugs();
+    totalPages = Math.ceil(allSlugs.length / postsPerPage);
+
+    // 2. Calculate offset
+    const offset = (currentPage - 1) * postsPerPage;
+
+    // 3. Fetch only the posts for the current page
+    const { posts } = await getPosts(postsPerPage, undefined, offset);
+    currentPosts = posts.map(adaptWordPressPost);
+
+    // 4. For Featured/Trending, we only try to fetch on Page 1 to save resources.
+    // Since we are not fetching ALL posts, we can't filter the entire dataset.
+    // A separate query for featured posts would be ideal, but for now we will
+    // strictly limit this to Page 1 and maybe just use the first few as featured 
+    // if no specific tag logic is implemented in the paginated query.
+    // Note: The previous logic filtered *local* arrays.
+
+    if (currentPage === 1) {
+      // Optional: explicit fetch for featured if we had a dedicated query.
+      // For now, we reuse the first few of the current page or fetch a small batch.
+      // Filter from the *currently fetched* batch as a fallback.
+      featuredPosts = currentPosts.filter(p => p.featured);
+      trendingPosts = currentPosts.filter(p => p.trending);
+    }
+
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error fetching paginated posts:", error);
   }
-
-  const totalPages = Math.ceil(blogPosts.length / postsPerPage);
-
-  // Slice posts for current page
-  const currentPosts = blogPosts.slice(
-    (currentPage - 1) * postsPerPage,
-    currentPage * postsPerPage
-  );
-
-  // Filter featured and trending from ALL posts
-  const featuredPosts = blogPosts.filter((post) => post.featured);
-  const trendingPosts = blogPosts.filter((post) => post.trending);
 
   return (
     <MainLayout>
