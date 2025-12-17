@@ -111,9 +111,9 @@ const Footer = () => {
               <div className="flex space-x-2 text-sm text-gray-800">
                 <FaMapMarkerAlt className="h-15 w-15 text-brand-blue" />
                 <p>
-                  Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
-                  Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
-                  Maharashtra 401107
+                  Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar,
+                  Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra
+                  401107
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">

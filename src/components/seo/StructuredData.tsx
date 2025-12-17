@@ -154,7 +154,7 @@ export const webAppTestingServiceSchema = {
         "telephone": "+91-915-2929-343",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
           "addressLocality": "Mira Bhayandar",
           "addressRegion": "Maharashtra",
           "postalCode": "401107",

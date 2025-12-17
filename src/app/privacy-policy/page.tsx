@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Company</strong> (referred to as either &quot;The Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to TESTRIQ QA Lab, Office No:- 2 & 3, 2nd Floor, Ashley Tower, Beverly Park, Kanakia Road, adj. to PVR Multiplex, Mira Road East, Thane – 401107.
+                <strong>Company</strong> (referred to as either &quot;The Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to TESTRIQ QA Lab, Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
@@ -530,7 +530,7 @@ const PrivacyPolicy = () => {
           <section className="bg-gray-50 p-6 rounded-lg">
             <div className="text-center">
               <p className="text-gray-700 mb-2">
-                <strong>Address:</strong> Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar, Maharashtra 401107
+                <strong>Address:</strong> Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107
               </p>
               <p className="text-gray-700 mb-2">
                 <strong>Phone:</strong> <Link href="tel:+919152929343" className="text-blue-600 hover:text-blue-800 underline">(+91) 915-2929-343</Link>
