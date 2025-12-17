@@ -10,9 +10,8 @@ const CaseStudiesFeaturedSection = () => {
   const INITIAL_VISIBLE_COUNT = 4;
   const [showAll, setShowAll] = useState(false);
 
-  const visibleCaseStudies = showAll
-    ? caseStudiesData
-    : caseStudiesData.slice(0, INITIAL_VISIBLE_COUNT);
+  // SEO Fix: We render ALL case studies to ensuring crawling, but hide extra ones visually
+  const visibleCaseStudies = caseStudiesData; // Render all
 
   return (
     <section id="case-studies-section" className="bg-white px-8 py-16 xl:px-24">
@@ -39,9 +38,9 @@ const CaseStudiesFeaturedSection = () => {
           {visibleCaseStudies.map((caseStudy, index) => (
             <div
               key={caseStudy.id}
-              className={`flex flex-col ${
-                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } gap-12 items-center ring-1 ring-gray-200 rounded-xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300`}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                } gap-12 items-center ring-1 ring-gray-200 rounded-xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 ${!showAll && index >= INITIAL_VISIBLE_COUNT ? "hidden" : ""
+                }`}
             >
               {/* Content */}
               <div className="flex-1">

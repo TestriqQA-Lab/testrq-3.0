@@ -41,6 +41,7 @@ export interface Post {
   likes: number;
   shares: number;
   tags: string[];
+  tagsData: { name: string; slug: string }[];
   seo: {
     title: string;
     description: string;
@@ -234,6 +235,10 @@ export function adaptWordPressPost(wpPost: WordPressPost): Post {
     likes,
     shares,
     tags: wpPost.tags?.nodes?.map(tag => tag.name) || [categoryName, 'Testing'],
+    tagsData: wpPost.tags?.nodes?.map(tag => ({
+      name: tag.name,
+      slug: tag.slug
+    })) || [{ name: categoryName, slug: primaryCategory?.slug || 'technology-stack' }, { name: 'Testing', slug: 'testing' }],
     seo: {
       title: wpPost.seo?.title || `${wpPost.title} | Testriq Blog`,
       description: wpPost.seo?.metaDesc || wpPost.excerpt || `Read this article about ${categoryName.toLowerCase()} on Testriq Blog`,

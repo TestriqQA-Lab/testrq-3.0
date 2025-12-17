@@ -172,8 +172,8 @@ async function graphqlRequest<T>(query: string, variables: Record<string, unknow
 
 // GraphQL query for fetching posts
 const GET_POSTS_QUERY = `
-  query GetPosts($first: Int, $after: String) {
-    posts(first: $first, after: $after, where: { status: PUBLISH }) {
+  query GetPosts($first: Int, $after: String, $offset: Int) {
+    posts(first: $first, after: $after, offset: $offset, where: { status: PUBLISH }) {
       nodes {
         id
         databaseId
@@ -217,6 +217,9 @@ const GET_POSTS_QUERY = `
         hasPreviousPage
         startCursor
         endCursor
+        offsetPagination {
+          total
+        }
       }
     }
   }
@@ -607,7 +610,7 @@ const GET_PAGE_BY_SLUG_QUERY = `
 `;
 
 // Fetch all posts with pagination support
-export async function getPosts(first: number = 10, after?: string): Promise<{
+export async function getPosts(first: number = 10, after?: string, offset?: number): Promise<{
   posts: WordPressPost[];
   pageInfo: WordPressPageInfo;
 }> {
@@ -615,6 +618,7 @@ export async function getPosts(first: number = 10, after?: string): Promise<{
     const data = await graphqlRequest<PostsResponse>(GET_POSTS_QUERY, {
       first,
       after,
+      offset,
     });
 
     return {
@@ -632,6 +636,58 @@ export async function getPosts(first: number = 10, after?: string): Promise<{
         endCursor: '',
       },
     };
+  }
+}
+
+// GraphQL query for fetching ALL post slugs (Lightweight)
+const GET_ALL_POST_SLUGS_QUERY = `
+  query GetAllPostSlugs($first: Int, $after: String) {
+    posts(first: $first, after: $after, where: { status: PUBLISH }) {
+      nodes {
+        slug
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
+
+interface PostSlugsResponse {
+  posts: {
+    nodes: Array<{
+      slug: string;
+    }>;
+    pageInfo: WordPressPageInfo;
+  };
+}
+
+// Fetch only slugs for all posts (to calculate total pages cheaply)
+export async function getAllPostSlugs(): Promise<string[]> {
+  let allSlugs: string[] = [];
+  let hasNextPage = true;
+  let after: string | undefined = undefined;
+
+  try {
+    while (hasNextPage) {
+      const slugsData: PostSlugsResponse = await graphqlRequest<PostSlugsResponse>(GET_ALL_POST_SLUGS_QUERY, {
+        first: 100, // Fetch 100 slugs at a time
+        after,
+      });
+
+      if (slugsData?.posts?.nodes) {
+        allSlugs = allSlugs.concat(slugsData.posts.nodes.map((node: { slug: string }) => node.slug));
+        hasNextPage = slugsData.posts.pageInfo.hasNextPage;
+        after = slugsData.posts.pageInfo.endCursor;
+      } else {
+        break;
+      }
+    }
+    return allSlugs;
+  } catch (error) {
+    console.error('Error fetching post slugs:', error);
+    return [];
   }
 }
 
@@ -661,7 +717,7 @@ export async function getPostsByCategory(
 }> {
   try {
     // First, get the category information
-    const categoriesData = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY);
+    const categoriesData = await graphqlRequest<CategoriesResponse>(GET_CATEGORIES_QUERY, { first: 1000 });
     const category = categoriesData.categories.nodes.find(cat => cat.slug === categorySlug) || null;
 
     // Then fetch posts for this category
@@ -703,7 +759,7 @@ export async function getPostsByTag(
 }> {
   try {
     // First, get the tag information
-    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY);
+    const tagsData = await graphqlRequest<TagsResponse>(GET_TAGS_QUERY, { first: 1000 });
     const tag = tagsData.tags.nodes.find(t => t.slug === tagSlug) || null;
 
     // Then fetch posts for this tag
