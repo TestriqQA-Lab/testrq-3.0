@@ -172,8 +172,8 @@ async function graphqlRequest<T>(query: string, variables: Record<string, unknow
 
 // GraphQL query for fetching posts
 const GET_POSTS_QUERY = `
-  query GetPosts($first: Int, $after: String, $offset: Int) {
-    posts(first: $first, after: $after, offset: $offset, where: { status: PUBLISH }) {
+  query GetPosts($first: Int, $after: String) {
+    posts(first: $first, after: $after, where: { status: PUBLISH }) {
       nodes {
         id
         databaseId
@@ -217,9 +217,6 @@ const GET_POSTS_QUERY = `
         hasPreviousPage
         startCursor
         endCursor
-        offsetPagination {
-          total
-        }
       }
     }
   }
@@ -609,8 +606,68 @@ const GET_PAGE_BY_SLUG_QUERY = `
   }
 `;
 
+// GraphQL query for fetching posts by a list of slugs
+const GET_POSTS_BY_SLUGS_QUERY = `
+  query GetPostsBySlugs($slugs: [String]) {
+    posts(where: { status: PUBLISH, nameIn: $slugs }) {
+      nodes {
+        id
+        databaseId
+        title
+        content
+        excerpt
+        slug
+        date
+        modified
+        status
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+            mediaDetails {
+              width
+              height
+            }
+          }
+        }
+        author {
+          node {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          nodes {
+            id
+            name
+            slug
+            count
+          }
+        }
+      }
+    }
+  }
+`;
+
+// Fetch posts by a list of slugs
+export async function getPostsBySlugs(slugs: string[]): Promise<WordPressPost[]> {
+  try {
+    const data = await graphqlRequest<PostsResponse>(GET_POSTS_BY_SLUGS_QUERY, {
+      slugs,
+    });
+    // Ensure we return an array
+    return data.posts?.nodes || [];
+  } catch (error) {
+    console.error('Error fetching posts by slugs:', error);
+    return [];
+  }
+}
+
 // Fetch all posts with pagination support
-export async function getPosts(first: number = 10, after?: string, offset?: number): Promise<{
+export async function getPosts(first: number = 10, after?: string): Promise<{
   posts: WordPressPost[];
   pageInfo: WordPressPageInfo;
 }> {
@@ -618,7 +675,6 @@ export async function getPosts(first: number = 10, after?: string, offset?: numb
     const data = await graphqlRequest<PostsResponse>(GET_POSTS_QUERY, {
       first,
       after,
-      offset,
     });
 
     return {

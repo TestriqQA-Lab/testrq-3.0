@@ -5,11 +5,10 @@ import React from "react";
 import {
   FaCalendarAlt,
   FaClock,
-  FaArrowLeft,
 } from "react-icons/fa";
-import Link from "next/link";
 import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
 import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
+import Breadcrumb from "../ui/Breadcrumb";
 
 interface BlogPost {
   id: string; // Changed from number to string
@@ -47,16 +46,15 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-blue-200 mb-8 text-sm">
-          <Link
-            href="/blog"
-            className="flex items-center gap-2 hover:text-white transition-colors"
-          >
-            <FaArrowLeft className="w-4 h-4" />
-            <span>Back to Blog</span>
-          </Link>
-          <span>/</span>
-          <span className="text-white/60">{post.category}</span>
+        <div>
+          <Breadcrumb
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: post.category, href: `/blog/category/${post.category}` },
+              { label: post.title },
+            ]}
+            className="text-white/80"
+          />
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
@@ -102,11 +100,11 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
                   <FaClock className="w-4 h-4" />
                   <span>{post.readTime}</span>
                 </div>
-                
+
               </div>
             </div>
 
-           
+
           </div>
 
           {/* Right - Image */}
@@ -122,17 +120,17 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
-                
+
               </div>
             </div>
 
           </div>
         </div>
 
-        
 
-       
-        
+
+
+
       </div>
     </section>
   );

@@ -11,9 +11,9 @@ interface BreadcrumbProps {
     className?: string;
 }
 
-export default function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className = 'text-gray-600' }: BreadcrumbProps) {
     return (
-        <div className={`flex items-center gap-2 text-sm font-medium text-gray-600 mb-6 ${className}`}>
+        <div className={`flex items-center gap-2 text-sm font-medium mb-6 ${className}`}>
             <Link
                 href="/"
                 className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"

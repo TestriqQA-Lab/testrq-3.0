@@ -3,7 +3,7 @@ import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { getPosts, getAllPostSlugs } from "@/lib/wordpress-graphql";
+import { getPostsBySlugs, getAllPostSlugs } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 import { Post } from "@/lib/wordpress-data-adapter";
 
@@ -74,11 +74,11 @@ export default async function BlogPage({
     const allSlugs = await getAllPostSlugs();
     totalPages = Math.ceil(allSlugs.length / postsPerPage);
 
-    // 2. Calculate offset
-    const offset = (currentPage - 1) * postsPerPage;
+    // 2. Get slugs for current page
+    const pageSlugs = allSlugs.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
-    // 3. Fetch only the posts for the current page
-    const { posts } = await getPosts(postsPerPage, undefined, offset);
+    // 3. Fetch posts by slugs
+    const posts = await getPostsBySlugs(pageSlugs);
     currentPosts = posts.map(adaptWordPressPost);
 
     // 4. For Featured/Trending, we only try to fetch on Page 1 to save resources.
