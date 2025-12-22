@@ -19,7 +19,7 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
   const trainingModules = [
     {
       id: 0,
-      title: (<><Link href="/manual-testing">Manual Testing Mastery</Link></>),
+      title: (<><Link href="/manual-testing-services">Manual Testing Mastery</Link></>),
       icon: <FaGraduationCap className="text-3xl text-blue-600" />,
       description:
         "Comprehensive manual testing methodologies and best practices",
@@ -142,11 +142,10 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
               <button
                 key={module.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  activeTab === index
+                className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeTab === index
                     ? "bg-brand-blue text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                  }`}
               >
                 {module.icon}
                 <span className="hidden sm:inline">{module.title}</span>

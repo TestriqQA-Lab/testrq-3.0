@@ -271,7 +271,7 @@ export const caseStudiesData: CaseStudy[] = [
       ],
     },
     technologies: [
-      { name: "Manual Testing", link: "/manual-testing" },
+      { name: "Manual Testing", link: "/manual-testing-services" },
       { name: "Automation Testing", link: "/automation-testing-services" },
       {
         name: "Cross-Browser Testing",
@@ -753,7 +753,7 @@ export const caseStudiesData: CaseStudy[] = [
         link: "/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa",
       },
       { name: "Security Testing", link: "/security-testing" },
-      { name: "Manual Testing", link: "/manual-testing" },
+      { name: "Manual Testing", link: "/manual-testing-services" },
       { name: "Regression Testing", link: "/regression-testing" },
     ],
 

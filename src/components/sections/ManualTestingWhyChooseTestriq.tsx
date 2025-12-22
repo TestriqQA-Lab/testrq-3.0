@@ -3,63 +3,37 @@
 import Link from "next/link";
 import React from "react";
 import {
-  FaAward,
-  FaUsers,
-  FaClock,
+  FaCertificate,
   FaShieldAlt,
-  FaChartLine,
-  FaHandshake,
+  FaGlobe,
+  FaAward,
 } from "react-icons/fa";
 
 const ManualTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
-      icon: <FaAward className="text-3xl" />,
-      title: "ISTQB Certified Experts",
+      icon: <FaCertificate className="text-3xl" />,
+      title: "ISO 29119 Standards",
       description:
-        "Our manual testing team consists of ISTQB certified professionals with extensive experience in various testing methodologies and domain expertise.",
-      stats: "100% Certified Team",
+        "We are a leading global QA provider that integrates the ISO 29119 framework. We follow Part 2 for a standard process model and Part 4 for advanced design techniques to spot bugs early.",
+      stats: "ISO 29119 Certified Path",
       color: "blue",
     },
     {
-      icon: <FaUsers className="text-3xl" />,
-      title: "Dedicated Testing Teams",
+      icon: <FaShieldAlt className="text-3xl" />,
+      title: "Certified Data Security",
       description:
-        "Experienced manual testers who become an extension of your team, understanding your unique requirements and business objectives.",
-      stats: "180+ Expert Testers",
+        "We meet SOC2 Type II and ISO 27001 standards for all testing. This framework protects your IP and customer data throughout the entire testing process.",
+      stats: "SOC2 Type II & ISO 27001",
       color: "purple",
     },
     {
-      icon: <FaClock className="text-3xl" />,
-      title: "Faster Time-to-Market",
+      icon: <FaGlobe className="text-3xl" />,
+      title: "Privacy & Global Compliance",
       description:
-        "Our efficient manual testing processes and parallel execution strategies help you launch products faster without compromising quality.",
-      stats: "40% Faster Delivery",
+        "We help you launch in the EU and Asia with expert local-market testing. Our team ensures your software meets all local data privacy laws (GDPR, etc.) and cultural fits.",
+      stats: "Global Market Ready",
       color: "green",
-    },
-    {
-      icon: <FaShieldAlt className="text-3xl" />,
-      title: "Comprehensive Coverage",
-      description:
-        "Thorough testing coverage including functional, usability, compatibility, and accessibility testing to ensure complete quality assurance.",
-      stats: "98% Test Coverage",
-      color: "orange",
-    },
-    {
-      icon: <FaChartLine className="text-3xl" />,
-      title: "Detailed Reporting",
-      description:
-        "Comprehensive test reports with actionable insights, quality metrics, and recommendations for continuous improvement.",
-      stats: "Real-time Dashboards",
-      color: "teal",
-    },
-    {
-      icon: <FaHandshake className="text-3xl" />,
-      title: "Flexible Engagement",
-      description:
-        "Adaptable engagement models including dedicated teams, project-based testing, and on-demand testing support to fit your needs.",
-      stats: "24/7 Support",
-      color: "indigo",
     },
   ];
 
@@ -99,18 +73,13 @@ const ManualTestingWhyChooseTestriq: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
-            <span className="text-sm">Why Choose Us</span>
+            <span className="text-sm">Standards & Compliance</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why Choose <span className="text-brand-blue">Testriq</span> for
-            Manual Testing?
+            Global Standards, <span className="text-brand-blue">Security</span>, and Compliance
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq stands out as a strategic manual testing partner, combining
-            deep domain expertise, ISTQB-certified professionals, and a proven
-            commitment to <Link href='blog/post/the-future-of-qa-trends-shaping-software-testing-in-2025'>exceptional software quality</Link> through <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>human-centered
-            testing</Link> approaches like <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>functional</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability</Link>, and <Link href='blog/post/what-are-the-principles-of-exploratory-testing'>exploratory
-            testing</Link>.
+            For companies in the US, UK, EU, and Asia, quality means security and compliance. Testriq manual testing services provide the international trust global enterprises require.
           </p>
         </div>
 
@@ -144,53 +113,7 @@ const ManualTestingWhyChooseTestriq: React.FC = () => {
           })}
         </div>
 
-        {/* Success Metrics */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Our Manual Testing Success Metrics
-            </h3>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Proven track record of delivering exceptional manual testing
-              results across diverse industries and project types.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-brand-blue mb-2">
-                800+
-              </div>
-              <div className="text-gray-600 font-medium">
-                Applications Tested
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
-                98%
-              </div>
-              <div className="text-gray-600 font-medium">
-                Bug Detection Rate
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
-                60,000+
-              </div>
-              <div className="text-gray-600 font-medium">
-                Test Cases Executed
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-                100%
-              </div>
-              <div className="text-gray-600 font-medium">
-                Client Satisfaction
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Industry Expertise */}
         <div className="grid md:grid-cols-2 gap-12 items-center">

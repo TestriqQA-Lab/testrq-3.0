@@ -310,7 +310,7 @@ const ContactHeroSection: React.FC = () => {
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Connect with our QA experts for software testing consultation,
                 support, or partnerships. Achieve quality excellence with our
-                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
+                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
               </p>
             </div>
 

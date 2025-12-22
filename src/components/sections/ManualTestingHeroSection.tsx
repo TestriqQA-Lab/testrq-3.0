@@ -41,25 +41,21 @@ const ManualTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Human-Powered Manual &
-              <span className="text-transparent bg-clip-text bg-brand-blue">
-                {" "}
-                Exploratory Testing
-              </span>
+              Global Manual Testing Services:
               <span className="text-transparent block bg-clip-text bg-brand-blue">
                 {" "}
-                Services
+                Strategic Software QA for 2025
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Leverage human intuition and testing expertise to uncover critical{" "}
-              <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>usability issues</Link>, <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>edge cases</Link>, and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experience</Link> challenges that{" "}
-              <Link href='automation-testing-services'>automated testing</Link> often misses. Our skilled <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>manual testers</Link> ensure
-              your software delivers exceptional quality through <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>comprehensive
-                functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, and <Link href='exploratory-testing'>exploratory
-                  testing</Link>-powered by ISTQB-certified professionals and real-world
-              insight.
+            <p className="text-xl text-gray-600 leading-relaxed font-semibold">
+              Use ISO 29119 Standards and Human Intelligence to navigate complex micro-services and rapid CI/CD releases.
+            </p>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              As we move into 2025, the role of manual software testing is undergoing a fundamental shift. Automation and AI testing are expanding, but the State of Testing™ report reveals a critical reality. Organizations now find that balancing automation with manual testing is the only way to achieve true quality in 2025.
+              <br /><br />
+              Automation is growing fast. By 2026, 30% of companies will automate over half of their QA, making manual testing harder to justify. Testriq solves this by using ISO 29119 standards. We put human insight where it matters most—focusing on the risky logic and complex paths that AI can’t handle yet.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

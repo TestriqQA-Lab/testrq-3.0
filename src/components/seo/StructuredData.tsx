@@ -901,7 +901,7 @@ export const manualTestingServiceSchema = {
   "@graph": [
     {
       "@type": "Service",
-      "@id": "https://www.testriq.com/manual-testing/#service",
+      "@id": "https://www.testriq.com/manual-testing-services/#service",
       "name": "Manual & Exploratory Testing Services",
       "serviceType": "Software Quality Assurance",
       "provider": {
@@ -1017,7 +1017,7 @@ export const manualTestingServiceSchema = {
           "@type": "ListItem",
           "position": 3,
           "name": "Manual Testing",
-          "item": "https://www.testriq.com/manual-testing"
+          "item": "https://www.testriq.com/manual-testing-services"
         }
       ]
     }

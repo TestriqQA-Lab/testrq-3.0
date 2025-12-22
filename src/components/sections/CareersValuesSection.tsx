@@ -119,7 +119,7 @@ const CareersValuesSection: React.FC = () => {
               automation
             </Link>
             ,{" "}
-            <Link href="/manual-testing" className="text-brand-blue hover:underline">
+            <Link href="/manual-testing-services" className="text-brand-blue hover:underline">
               manual QA
             </Link>
             ,{" "}

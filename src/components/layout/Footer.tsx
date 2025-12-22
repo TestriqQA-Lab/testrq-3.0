@@ -45,7 +45,7 @@ const coreService = [
 ];
 
 const specializedTesting = [
-  { title: "Manual Testing", path: "/manual-testing" },
+  { title: "Manual Testing", path: "/manual-testing-services" },
   { title: "Automation Testing", path: "/automation-testing-services" },
   { title: "API Testing", path: "/api-testing" },
   { title: "Regression Testing", path: "/regression-testing" },

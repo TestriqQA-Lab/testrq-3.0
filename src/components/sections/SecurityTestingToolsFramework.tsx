@@ -97,7 +97,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
             "Comprehensive web application security testing platform",
           features: [
             "Web vulnerability scanning",
-            (<><Link href="/manual-testing">Manual testing tools</Link></>),
+            (<><Link href="/manual-testing-services">Manual testing tools</Link></>),
             "Extension marketplaces",
             "Collaboration features",
           ],
@@ -420,8 +420,8 @@ const SecurityTestingToolsFramework: React.FC = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`p-4 rounded-xl text-center transition-all duration-300 ${activeCategory === category.id
-                    ? `${colors.bg} ${colors.text} ${colors.border} border-2 shadow-lg`
-                    : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md"
+                  ? `${colors.bg} ${colors.text} ${colors.border} border-2 shadow-lg`
+                  : "bg-white text-gray-600 border-2 border-gray-200 hover:border-gray-300 hover:shadow-md"
                   }`}
               >
                 <div className="flex flex-col items-center space-y-2">

@@ -40,7 +40,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
         {
           title: (
             <>
-              <Link href="/manual-testing">Manual Security Testing</Link>
+              <Link href="/manual-testing-services">Manual Security Testing</Link>
             </>
           ),
           description:

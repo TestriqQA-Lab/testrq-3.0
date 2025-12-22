@@ -9,61 +9,33 @@ const ManualTestingFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What is manual testing and why is it important?",
+      question: "Why is manual testing still important in 2025?",
       answer:
         (
           <>
-            <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>Manual testing</Link> is a software testing approach where human testers manually execute test cases without relying on <Link href='automation-testing-services'>automation tools</Link>. It&apos;s essential for identifying usability issues, user experience problems,
-            and edge cases that automated testing often overlooks. Manual testing brings a human perspective, ensuring applications are intuitive, accessible, and aligned with real-world user expectations.
+            AI is rising, but <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>manual testing</Link> remains vital. It handles exploratory work and complex logic. This is where &apos;human-in-the-loop&apos; intuition is vital for finding what scripts miss. It fills the &quot;coverage gaps&quot; that <Link href='automation-testing-services'>automation</Link> cannot reach in complex micro-services architectures.
           </>
         ),
     },
     {
-      question: "When should I choose manual testing over automated testing?",
+      question: "How does ISO/IEC/IEEE 29119 improve manual testing?",
       answer:
-        (<>Manual testing is ideal for <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>exploratory testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, ad-hoc testing, and scenarios requiring human judgment. Choose manual testing when you need to test user interfaces, evaluate user experience, perform accessibility testing, or when test cases are executed infrequently. It&apos;s also preferred for complex scenarios that require human intuition, creative thinking, or when the application is in early development stages with frequent changes.</>),
+        (<>This international standard provides a structured, risk-based framework. This standard ensures manual testing is never ad-hoc. It follows a repeatable process for planning, design, and reporting. This approach increases visibility for stakeholders and makes your software more reliable.</>),
     },
     {
-      question: "What types of manual testing services does Testriq offer?",
+      question: "Can manual testing fit into a CI/CD pipeline?",
       answer:
-        (<>Testriq offers comprehensive manual testing services including functional testing, usability testing, exploratory testing, user acceptance testing (UAT), accessibility testing, cross-browser testing, <Link href='mobile-application-testing'>mobile testing</Link>, <Link href='api-testing'>API testing</Link>, database testing, and compatibility testing. We also provide specialized services like localization testing, <Link href='security-testing'>security testing</Link>, and compliance testing tailored to your industry requirements.</>),
+        (<>Yes. We use the ISO 29119-2 standard to create repeatable test processes. This allows us to sync manual regression with your fast release cycles. You get high-quality results without losing speed.</>),
     },
     {
-      question: "How long does a typical manual testing project take?",
+      question: "What is the cost of outsourcing manual testing?",
       answer:
-        "The duration of manual testing projects varies based on application complexity, scope, and requirements. Simple applications may require 1-2 weeks, while complex enterprise applications can take 4-8 weeks or more. We provide detailed project timelines during our initial assessment, considering factors like the number of features, platforms to test, test case complexity, and your specific quality requirements.",
+        "Outsourcing manual testing is more cost-effective than building an in-house team. It removes the extra costs of tool licensing and specialized training. Plus, it makes it easier to scale during busy development periods.",
     },
     {
-      question: "What is the cost of manual testing services?",
+      question: "Does Testriq provide manual testing for mobile apps?",
       answer:
-        "Manual testing costs depend on project scope, complexity, duration, and resource requirements. We offer flexible pricing models including fixed-price projects, time and material contracts, and dedicated team arrangements. Our pricing is competitive and transparent, with detailed cost breakdowns provided during project planning. We also offer free initial assessments to help you understand the investment required.",
-    },
-    {
-      question: "How do you ensure the quality of manual testing?",
-      answer:
-        (<>We ensure quality through certified testing professionals, standardized testing processes, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>comprehensive test documentation</Link>, regular quality reviews, and continuous training programs. Our testers follow industry best practices, use proven testing methodologies, and maintain detailed test logs. We also implement peer reviews, quality checkpoints, and client feedback loops to maintain the highest testing standards.</>),
-    },
-    {
-      question:
-        "Can you integrate manual testing with our existing development process?",
-      answer:
-        (<>Yes, we seamlessly integrate with various development methodologies including <Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Agile</Link>, Scrum, <Link href='blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops'>DevOps</Link>, and <Link href='blog/post/agile-testing-vs-waterfall-testing-a-comparative-study'>Waterfall</Link>. Our team can work with your existing tools, processes, and timelines. We adapt our testing approach to fit your development cycles, participate in sprint planning, provide regular status updates, and ensure testing activities align with your release schedules and quality gates.</>),
-    },
-    {
-      question: "What deliverables do you provide after manual testing?",
-      answer:
-        "Our comprehensive deliverables include detailed test execution reports, defect reports with severity classifications, test case documentation, test coverage analysis, recommendations for improvements, and executive summary reports. We also provide screenshots, videos of issues found, retest reports, and final sign-off documentation. All deliverables are customized to meet your specific reporting requirements.",
-    },
-    {
-      question:
-        "How do you handle confidential and sensitive data during testing?",
-      answer:
-        (<>We maintain strict <Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>data security protocols</Link> including signed NDAs, secure testing environments, data encryption, access controls, and compliance with industry standards like GDPR, <Link href='blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps'>HIPAA</Link>, and SOC 2. Our team members undergo security training, and we use anonymized test data whenever possible. We also provide detailed security reports and maintain audit trails for all testing activities.</>),
-    },
-    {
-      question: "Do you provide manual testing for mobile applications?",
-      answer:
-        (<>Yes, we specialize in comprehensive <Link href='mobile-application-testing'>mobile application testing</Link> across iOS and Android platforms. Our services include functional testing, usability testing, compatibility testing across different devices and OS versions, <Link href='performance-testing-services'>performance testing</Link>, <Link href='security-testing'>security testing</Link>, and app store compliance testing. We test on real devices and emulators to ensure optimal performance across various mobile environments.</>),
+        (<>Yes, we offer <Link href='mobile-application-testing'>manual testing for both iOS and Android</Link>. We use real devices from our global farm to ensure your app works across all OS versions and screen sizes.</>),
     },
   ];
 

@@ -56,7 +56,7 @@ const SoftwareTestingGuideHeroSection = () => {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Whether you&apos;re a beginner starting your QA journey or an
                 experienced QA professional looking to enhance your skills, this{" "}
-                <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">comprehensive software testing</Link> guide covers <Link href="/manual-testing">manual testing</Link>,{" "}
+                <Link href="/blog/post/understanding-software-testing-a-comprehensive-guide-for-beginners">comprehensive software testing</Link> guide covers <Link href="/manual-testing-services">manual testing</Link>,{" "}
                 <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>,{" "}
                 <Link href="/api-testing">API testing</Link>, and more to help you deliver bug-free, scalable
                 software.
@@ -194,7 +194,7 @@ const SoftwareTestingGuideHeroSection = () => {
                 {/* Learning Topics */}
                 <div className="space-y-2">
                   <div className="flex justify-between items-center text-sm">
-                    <span><Link href="/manual-testing">Manual Testing</Link></span>
+                    <span><Link href="/manual-testing-services">Manual Testing</Link></span>
                     <span className="text-green-600 font-medium">
                       Completed
                     </span>

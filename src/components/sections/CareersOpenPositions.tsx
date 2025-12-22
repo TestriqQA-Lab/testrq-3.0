@@ -492,7 +492,7 @@ const CareersOpenPositions: React.FC = () => {
                 career in software testing
               </Link>
               . We&apos;re hiring passionate QA professionals in
-              <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, <Link href="/manual-testing" className="text-brand-blue hover:underline">manual testing</Link>, <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>, and
+              <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, <Link href="/manual-testing-services" className="text-brand-blue hover:underline">manual testing</Link>, <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>, and
               <Link href="/security-testing" className="text-brand-blue hover:underline"> security testing</Link> to join our world-class quality assurance team.
             </p>
           </div>

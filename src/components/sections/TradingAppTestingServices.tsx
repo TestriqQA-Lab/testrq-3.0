@@ -125,7 +125,7 @@ const TradingAppTestingServices = () => {
       step: "03",
       title: "Automated Test Execution",
       description:
-        (<>Systematic execution of <Link href="/automation-testing-services">automated</Link> and <Link href="/manual-testing">manual tests</Link> with real-time monitoring.</>),
+        (<>Systematic execution of <Link href="/automation-testing-services">automated</Link> and <Link href="/manual-testing-services">manual tests</Link> with real-time monitoring.</>),
     },
     {
       step: "04",
