@@ -62,13 +62,19 @@ const ElearningContactSection: React.FC = () => {
     }
 
     const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
+      for (let i = 0; i < num.length - 5; i++) {
+        const n = num.split("").map(Number);
         if (
-          (n2 === n1 + 1 && n3 === n2 + 1) ||
-          (n2 === n1 - 1 && n3 === n2 - 1)
+          (n[i + 1] === n[i] + 1 &&
+            n[i + 2] === n[i + 1] + 1 &&
+            n[i + 3] === n[i + 2] + 1 &&
+            n[i + 4] === n[i + 3] + 1 &&
+            n[i + 5] === n[i + 4] + 1) ||
+          (n[i + 1] === n[i] - 1 &&
+            n[i + 2] === n[i + 1] - 1 &&
+            n[i + 3] === n[i + 2] - 1 &&
+            n[i + 4] === n[i + 3] - 1 &&
+            n[i + 5] === n[i + 4] - 1)
         ) {
           return true;
         }
@@ -445,9 +451,8 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          fullNameError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Your Name"
                       />
                     </div>
@@ -471,9 +476,8 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          emailError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Email Address"
                       />
                     </div>
@@ -494,9 +498,8 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() =>
                           validatePhoneNumber(formData.businessPhone)
                         }
-                        className={`w-full phone-input-container ${
-                          phoneError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Enter phone number"
                         inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       />
@@ -519,11 +522,10 @@ const ElearningContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateInstitution(formData.institution)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          institutionError
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${institutionError
                             ? "border-red-500"
                             : "border-gray-200"
-                        }`}
+                          }`}
                         placeholder="Institution/Organization Name"
                       />
                     </div>
@@ -549,11 +551,10 @@ const ElearningContactSection: React.FC = () => {
                         }
                         aria-label="Select Your Platform Type"
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
-                          platformTypeError
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${platformTypeError
                             ? "border-red-500"
                             : "border-gray-200"
-                        }`}
+                          }`}
                       >
                         <option value="">Select Your Platform Type</option>
                         <option value="moodle">Moodle</option>
@@ -591,11 +592,10 @@ const ElearningContactSection: React.FC = () => {
                         }
                         aria-label="Select Number of Users"
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${
-                          numberOfUsersError
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${numberOfUsersError
                             ? "border-red-500"
                             : "border-gray-200"
-                        }`}
+                          }`}
                       >
                         <option value="">Number of Users</option>
                         <option value="small">Under 1,000 users</option>
@@ -624,9 +624,8 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() => validateMessage(formData.message)}
                         required
                         rows={4}
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${
-                          messageError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Tell us about your e-learning testing needs..."
                       />
                     </div>

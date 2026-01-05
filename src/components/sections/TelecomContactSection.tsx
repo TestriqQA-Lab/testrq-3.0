@@ -54,11 +54,20 @@ const TelecomContactSection: React.FC = () => {
     }
 
     const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
-        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+      for (let i = 0; i < num.length - 5; i++) {
+        const n = num.split("").map(Number);
+        if (
+          (n[i + 1] === n[i] + 1 &&
+            n[i + 2] === n[i + 1] + 1 &&
+            n[i + 3] === n[i + 2] + 1 &&
+            n[i + 4] === n[i + 3] + 1 &&
+            n[i + 5] === n[i + 4] + 1) ||
+          (n[i + 1] === n[i] - 1 &&
+            n[i + 2] === n[i + 1] - 1 &&
+            n[i + 3] === n[i + 2] - 1 &&
+            n[i + 4] === n[i + 3] - 1 &&
+            n[i + 5] === n[i + 4] - 1)
+        ) {
           return true;
         }
       }
@@ -363,8 +372,8 @@ const TelecomContactSection: React.FC = () => {
                 </h4>
               </div>
               <p className="text-orange-100 text-sm leading-relaxed">
-                Planning for a new telecom product launch or system upgrade? 
-                Contact us at least 6-8 weeks in advance to ensure your software 
+                Planning for a new telecom product launch or system upgrade?
+                Contact us at least 6-8 weeks in advance to ensure your software
                 is thoroughly tested, stable, and ready for deployment.
               </p>
             </div>
