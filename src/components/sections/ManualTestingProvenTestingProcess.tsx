@@ -3,11 +3,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-  FaClipboardList,
-  FaPlay,
-  FaBug,
-  FaFileAlt,
-  FaCheckCircle,
+  FaSitemap,
+  FaRoute,
+  FaPencilRuler,
+  FaServer,
+  FaRunning,
+  FaChartPie,
 } from "react-icons/fa";
 
 const ManualTestingProvenTestingProcess: React.FC = () => {
@@ -16,76 +17,91 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Test Planning & Strategy",
-      duration: "1-2 days",
-      icon: <FaClipboardList className="text-2xl" />,
+      title: "Smart Requirement Mapping",
+      duration: "Step 1",
+      icon: <FaSitemap className="text-2xl" />,
       description:
-        "Comprehensive test planning including requirement analysis, test strategy definition, and resource allocation.",
+        "We track every manual test back to your original requirements. Our matrix ensures we cover every feature, leaving no room for hidden bugs or gaps.",
       activities: [
-        "Requirement analysis and understanding to align test objectives with business needs",
-        "Test strategy and approach definition for structured manual testing execution",
-        "Test environment setup planning to mirror real-world conditions",
-        "Resource allocation and timeline planning to ensure efficient delivery and faster time-to-market",
+        "Requirement traceability matrix (RTM) setup",
+        "Feature-by-feature coverage mapping",
+        "Requirement ambiguity identification",
+        "Business-logic validation markers",
       ],
-      nextStep: "Test Case Design",
+      nextStep: "Strategic Test Planning",
     },
     {
       id: 2,
-      title: "Test Case Design & Preparation",
-      duration: "2-3 days",
-      icon: <FaFileAlt className="text-2xl" />,
+      title: "Strategic Test Planning",
+      duration: "Step 2",
+      icon: <FaRoute className="text-2xl" />,
       description:
-        "Detailed test case creation covering functional, usability, and edge case scenarios.",
+        "We target the areas where a bug would cause the most damage. This ISO-standard approach ensures we spend your testing budget where it provides the greatest value.",
       activities: [
-        "Test case design and documentation to ensure clear, repeatable manual test coverage",
-        "Test data preparation for accurate and context-aware scenario execution",
-        "Test scenario prioritization based on risk and business impact",
-        "Traceability matrix creation to link test cases with requirements and ensure complete validation",
+        "Risk-based testing prioritization",
+        "ISO 29119-2 standard strategy alignment",
+        "Budget and resource optimization",
+        "Critical path and dependency analysis",
       ],
-      nextStep: "Test Execution",
+      nextStep: "Structured Test Design",
     },
     {
       id: 3,
-      title: "Manual Test Execution",
-      duration: "3-5 days",
-      icon: <FaPlay className="text-2xl" />,
+      title: "Structured Test Design (ISO 29119-4)",
+      duration: "Step 3",
+      icon: <FaPencilRuler className="text-2xl" />,
       description:
-        "Systematic execution of test cases with real-time defect identification and documentation.",
+        "We use proven methods like \"Error Guessing\" and \"Boundary Testing.\" These techniques help our team find the hidden bugs that automated tools often miss.",
       activities: [
-        "Test case execution",
-        "Real-time defect logging",
-        "Exploratory testing sessions",
-        "User experience evaluation",
+        "Error Guessing & Boundary Testing implementation",
+        "ISO 29119-4 advanced design techniques",
+        "Complex user journey scenario building",
+        "UI/UX manual edge case documentation",
       ],
-      nextStep: "Defect Management",
+      nextStep: "Test Environment & Data Management",
     },
     {
       id: 4,
-      title: "Defect Management & Tracking",
-      duration: "Ongoing",
-      icon: <FaBug className="text-2xl" />,
+      title: "Test Environment & Data Management",
+      duration: "Step 4",
+      icon: <FaServer className="text-2xl" />,
       description:
-        "Comprehensive defect lifecycle management from discovery to resolution verification.",
+        "We simulate production-like micro-services and global user conditions to ensure reliability.",
       activities: [
-        "Defect classification and prioritization",
-        "Defect lifecycle tracking",
-        "Retest execution",
-        "Regression impact analysis",
+        "Production-like environment simulation",
+        "Micro-services interaction staging",
+        "Global production test data mimicking",
+        "Hardware and connectivity condition testing",
       ],
-      nextStep: "Reporting & Sign-off",
+      nextStep: "Structured Testing & Regression",
     },
     {
       id: 5,
-      title: "Test Reporting & Sign-off",
-      duration: "1 day",
-      icon: <FaCheckCircle className="text-2xl" />,
+      title: "Structured Testing & Regression",
+      duration: "Step 5",
+      icon: <FaRunning className="text-2xl" />,
       description:
-        "Comprehensive test reporting with quality metrics, recommendations, and formal sign-off.",
+        "We work in sprints to stay in sync with your Agile and DevOps teams. This approach ensures our manual execution never slows down your development.",
       activities: [
-        "Test execution summary",
-        "Quality metrics analysis",
-        "Risk assessment and recommendations",
-        "Formal test sign-off",
+        "Sprint-aligned manual execution",
+        "Agile & DevOps team synchronization",
+        "Continuous regression testing cycles",
+        "Exploratory session-based testing",
+      ],
+      nextStep: "Metric-Driven Reporting",
+    },
+    {
+      id: 6,
+      title: "Metric-Driven Reporting",
+      duration: "Step 6",
+      icon: <FaChartPie className="text-2xl" />,
+      description:
+        "Clear, standardized documentation on defect density, test progress, and risk assessment.",
+      activities: [
+        "Defect density and leakage metrics",
+        "ISO-standardized progress reporting",
+        "Stakeholder risk assessment data",
+        "Quality gate performance analysis",
       ],
       nextStep: "Process Complete",
     },
@@ -96,14 +112,10 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-blue">Proven</span> Manual Testing
-            Process
+            Our Step-by-Step <span className="text-brand-blue">Manual QA</span> Methodology
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic manual testing process ensures comprehensive test
-            coverage, <Link href='blog/post/test-execution-comprehensive-testing-implementation'>efficient execution</Link>, and <Link href='blog/post/mobile-testing-environment-setup'>reliable results</Link> by combining
-            structured testing methodologies with expert human insight and
-            ISTQB-certified practices.
+            Our approach extends far beyond basic bug detection. We follow a rigorous, technical methodology designed for high-difficulty software environments.
           </p>
         </div>
 
@@ -116,9 +128,8 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } flex-col lg:space-x-8`}
+                className={`relative flex items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } flex-col lg:space-x-8`}
                 onClick={() => setActiveStep(step.id)}
               >
                 {/* Step Number Circle */}
@@ -131,9 +142,8 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
                 {/* Step Content */}
                 <div className={`w-full lg:w-5/12`}>
                   <div
-                    className={`bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
-                      activeStep === step.id ? "ring-2 ring-brand-blue" : ""
-                    }`}
+                    className={`bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${activeStep === step.id ? "ring-2 ring-brand-blue" : ""
+                      }`}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="bg-brand-blue w-12 h-12 rounded-xl flex items-center justify-center">

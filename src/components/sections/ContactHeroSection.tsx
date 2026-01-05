@@ -262,13 +262,6 @@ const ContactHeroSection: React.FC = () => {
     },
   ];
 
-  const scrollToCalendly = () => {
-    const element = document.getElementById("calendly-section");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section
       id="form-section"
@@ -317,7 +310,7 @@ const ContactHeroSection: React.FC = () => {
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Connect with our QA experts for software testing consultation,
                 support, or partnerships. Achieve quality excellence with our
-                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
+                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
               </p>
             </div>
 
@@ -331,12 +324,6 @@ const ContactHeroSection: React.FC = () => {
                   <a
                     key={index}
                     href={method.action}
-                    onClick={(e) => {
-                      if (method.label === "Schedule Meeting") {
-                        e.preventDefault(); // Prevent default link behavior
-                        scrollToCalendly(); // Trigger smooth scroll
-                      }
-                    }}
                     className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                   >
                     <div

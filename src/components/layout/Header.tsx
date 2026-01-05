@@ -131,7 +131,7 @@ const Navbar = () => {
           services: [
             {
               label: "Manual Testing",
-              link: "/manual-testing",
+              link: "/manual-testing-services",
             },
             {
               label: "Automation Testing",

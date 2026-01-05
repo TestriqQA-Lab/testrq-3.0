@@ -44,7 +44,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
             Join thousands of QA professionals who have advanced their careers
             through our <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">comprehensive</Link> software testing education program. Start
             your journey to becoming a certified testing expert in{" "}
-            <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>,
+            <Link href="/manual-testing-services">manual testing</Link>, <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>,
             and more-guided by industry-recognized QA best practices and
             hands-on learning.
           </p>
@@ -178,7 +178,7 @@ const SoftwareTestingGuideReadyToEnsureQuality = () => {
               comprehensive training program.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                 <button className="border-2 border-white cursor-pointer text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
                   Schedule a Demo
                 </button>

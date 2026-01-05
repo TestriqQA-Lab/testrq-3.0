@@ -7,9 +7,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Manual & Exploratory Testing Services | UAT & Usability Experts",
+  title: "Manual Testing Services & Software QA | Testriq",
   description:
-    "Don't let automation miss critical bugs. Our ISTQB-certified manual testers specialize in Exploratory Testing, UAT Management, and WCAG Accessibility Audits.",
+    "Strategic manual testing for 2025. Use ISO 29119 standards and human intelligence to navigate complex micro-services and rapid CI/CD releases.",
   keywords: [
     "exploratory testing services",
     "managed UAT",
@@ -172,6 +172,18 @@ const ManualTestingCaseStudies = dynamic(
   }
 );
 
+const ManualTestingGlobalReach = dynamic(
+  () => import("@/components/sections/ManualTestingGlobalReach"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 const ManualTestingFAQs = dynamic(
   () => import("@/components/sections/ManualTestingFAQs"),
   {
@@ -202,6 +214,7 @@ export default function ManualTestingPage() {
         <ManualTestingProvenTestingProcess />
         <ManualTestingWhyChooseTestriq />
         <ManualTestingToolsFramework />
+        <ManualTestingGlobalReach />
         <ManualTestingCaseStudies />
         <ManualTestingFAQs />
         <ManualTestingReadyToEnsureQuality />

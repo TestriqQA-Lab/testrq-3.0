@@ -35,8 +35,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  async redirects( ) {
+  async redirects() {
     return [
+      {
+        source: "/manual-testing",
+        destination: "/manual-testing-services",
+        permanent: true,
+      },
       {
         source: "/our-clients",
         destination: "/case-studies",
@@ -45,6 +50,11 @@ const nextConfig: NextConfig = {
       {
         source: "/contact",
         destination: "/contact-us",
+        permanent: true,
+      },
+      {
+        source: "/tools",
+        destination: "/technology-stack",
         permanent: true,
       },
     ];

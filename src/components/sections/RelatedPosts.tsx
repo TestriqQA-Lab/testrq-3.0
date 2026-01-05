@@ -1,123 +1,75 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
-
-interface RelatedPost {
-  id: string;
-  title: string;
-  excerpt: string;
-  slug: string;
-  featuredImage?: string;
-  publishedAt: string;
-  readingTime?: string;
-  category: {
-    name: string;
-    slug: string;
-  };
-}
+import { FaClock, FaArrowRight } from "react-icons/fa";
+import { getRelatedPosts, WordPressPost } from "@/lib/wordpress-graphql";
+import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
 
 interface RelatedPostsProps {
-  posts: RelatedPost[];
-  currentPostId?: string;
-  title?: string;
-  className?: string;
+  currentPost: WordPressPost;
 }
 
-const RelatedPosts = ({ 
-  posts, 
-  currentPostId, 
-  title = "Related Articles",
-  className = "" 
-}: RelatedPostsProps) => {
-  // Filter out current post and limit to 3 posts
-  const filteredPosts = posts
-    .filter(post => post.id !== currentPostId)
-    .slice(0, 3);
+const RelatedPosts = async ({ currentPost }: RelatedPostsProps) => {
+  const relatedPostsRaw = await getRelatedPosts(currentPost, 3);
 
-  if (filteredPosts.length === 0) {
+  if (!relatedPostsRaw || relatedPostsRaw.length === 0) {
     return null;
   }
 
+  const relatedPosts = relatedPostsRaw.map(adaptWordPressPost);
+
   return (
-    <section className={`py-12 ${className}`}>
-      <div className="max-w-7xl mx-auto px-8 md:px-12">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-            {title}
-          </h2>
-          <Link 
-            href="/blog"
-            className="flex items-center text-brand-blue hover:text-blue-700 transition-colors group"
-          >
-            View All Articles
-            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+    <section className="bg-gray-50 py-12 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 border-l-4 border-[theme(color.brand.blue)] pl-4">
+          Related Articles
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post) => (
-            <article 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {relatedPosts.map((post) => (
+            <article
               key={post.id}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 group flex flex-col h-full"
             >
-              {post.featuredImage && (
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={post.featuredImage}
-                    alt={post.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              )}
-              
-              <div className="p-6">
-                <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
-                  <Link 
-                    href={`/blog/category/${post.category.slug}`}
-                    className="text-brand-blue hover:text-blue-700 transition-colors font-medium"
-                  >
-                    {post.category.name}
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 33vw"
+                />
+                <div className="absolute top-4 left-4">
+                  <Link href={`/blog/category/${post.categorySlug}`}>
+                    <span
+                      className={`px-3 py-1 bg-gradient-to-r ${post.categoryColor} text-white text-xs font-semibold rounded-full shadow-sm hover:opacity-90 transition-opacity`}
+                    >
+                      {post.category}
+                    </span>
                   </Link>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
-                    <time dateTime={post.publishedAt}>
-                      {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric'
-                      })}
-                    </time>
-                  </div>
-                  {post.readingTime && (
-                    <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{post.readingTime}</span>
-                    </div>
-                  )}
                 </div>
+              </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2">
-                  <Link 
-                    href={`/blog/post/${post.slug}`}
-                    className="hover:text-brand-blue transition-colors"
-                  >
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
+                  <Link href={`/blog/post/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
 
-                <p className="text-gray-600 text-sm line-clamp-3 mb-4">
-                  {post.excerpt}
-                </p>
+                <div className="mt-auto pt-4 flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center gap-1">
+                    <FaClock className="w-3 h-3 text-gray-400" />
+                    <span>{post.readTime}</span>
+                  </div>
 
-                <Link 
-                  href={`/blog/post/${post.slug}`}
-                  className="inline-flex items-center text-brand-blue hover:text-blue-700 transition-colors font-medium text-sm group"
-                >
-                  Read More
-                  <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                  <Link
+                    href={`/blog/post/${post.slug}`}
+                    className="flex items-center gap-1 text-[theme(color.brand.blue)] font-semibold group-hover:gap-2 transition-all"
+                  >
+                    Read
+                    <FaArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
               </div>
             </article>
           ))}
@@ -128,4 +80,3 @@ const RelatedPosts = ({
 };
 
 export default RelatedPosts;
-

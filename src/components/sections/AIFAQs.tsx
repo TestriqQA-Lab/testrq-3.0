@@ -9,96 +9,24 @@ const AIFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of AI models can you test?",
-      answer: (
-        <>
-          We test a wide range of AI models, including{" "}
-          <Link href="blog/post/ai-testing-learning-guide">
-            machine learning models
-          </Link>{" "}
-          (e.g., regression, classification, clustering), deep learning models
-          (e.g., neural networks, CNNs, RNNs),{" "}
-          <Link href="blog/post/ai-testing-learning-guide">generative AI</Link>{" "}
-          (e.g., LLMs, GANs), and reinforcement learning models, across domains
-          like NLP, computer vision, and predictive analytics.
-        </>
-      ),
-    },
-    {
-      question: "How do you test for AI bias and fairness?",
+      question: "What is the difference between traditional testing and AI testing?",
       answer:
-        "We use tools like Fairlearn, AI Fairness 360, and Aequitas to detect demographic bias, evaluate fairness metrics (e.g., demographic parity, equal opportunity), and validate ethical compliance. Our process includes bias mitigation recommendations and testing across diverse datasets to ensure fairness across all user groups.",
+        "Traditional software quality assurance relies on fixed, predictable logic. Conversely, machine learning testing evaluates variable outcomes, requiring statistical validation to ensure reasoning remains safe and accurate.",
     },
     {
-      question: "What is AI explainability testing?",
-      answer: (
-        <>
-          AI{" "}
-          <Link href="blog/post/explainability-testing-in-ai">
-            explainability testing
-          </Link>{" "}
-          ensures model decisions are transparent and interpretable, using tools
-          like SHAP, LIME, and InterpretML. We validate feature importance,
-          decision pathways, and model outputs to provide clear explanations,
-          meeting regulatory requirements like GDPR and ensuring user trust.
-        </>
-      ),
-    },
-    {
-      question: "How long does AI model testing take?",
+      question: "How does the EU AI Act affect AI testing services?",
       answer:
-        "AI model testing typically takes 2-4 weeks, depending on model complexity and testing scope. Our 4-step process (Analysis: 3-4 days, Validation: 5-7 days, Performance: 4-6 days, Delivery: 2-3 days) ensures efficient execution, with rapid 48-hour turnaround for urgent validations.",
+        "The EU AI Act (2025) mandates strict tests for high-risk AI. Companies must now prove their AI is safe and record their impact checks to stay compliant. Our services provide the necessary \"Declaration of Conformity\" and technical documentation for EU market entry.",
     },
     {
-      question: "Do you test AI security and robustness?",
-      answer: (
-        <>
-          Yes, we conduct comprehensive{" "}
-          <Link href="security-testing">security testing</Link> using tools like
-          Adversarial Robustness Toolbox and CleverHans to assess adversarial
-          attacks, data poisoning, and model evasion. We also validate
-          robustness against edge cases and ensure privacy compliance with tools
-          like <Link href="blog/post/ai-security-testing">Privacy Meter</Link>.
-        </>
-      ),
-    },
-    {
-      question: "Can you integrate AI testing into MLOps pipelines?",
-      answer: (
-        <>
-          We integrate AI testing into MLOps pipelines using tools like
-          Kubeflow, MLflow, and TFX, ensuring seamless validation within{" "}
-          <Link href="blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">
-            CI/CD
-          </Link>{" "}
-          workflows. Our automated testing frameworks support continuous
-          monitoring, model retraining, and{" "}
-          <Link href="blog/post/how-to-effectively-test-a-web-application-prior-to-deployment">
-            deployment
-          </Link>{" "}
-          validation for scalable AI operations.
-        </>
-      ),
-    },
-    {
-      question: "What deliverables do you provide for AI testing?",
+      question: "Why is AI model validation necessary for Gen-AI?",
       answer:
-        "Deliverables include detailed test reports, bias and fairness metrics, security vulnerability assessments, performance benchmarks, explainability reports, and actionable recommendations. We provide visual evidence and integrate with tools like Jira or Weights & Biases for collaboration.",
+        "AI models remain vulnerable to prompt injection and data errors. We use AI model validation and Red-Teaming to find these weak spots. We simulate attacks to stop hackers from stealing your data or breaking your safety rules.",
     },
     {
-      question: "Do you test generative AI applications?",
-      answer: (
-        <>
-          Yes, we test generative AI applications (e.g., LLMs, GANs) for output
-          quality, coherence, safety, and ethical compliance. We use{" "}
-          <Link href="tools">tools</Link> like TextAttack for adversarial
-          testing and evaluate content generation against bias, toxicity, and{" "}
-          <Link href="blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
-            regulatory standards
-          </Link>
-          .
-        </>
-      ),
+      question: "What is the NIST AI RMF?",
+      answer:
+        "The NIST AI RMF is a set of US rules for managing AI risks. Companies use it to prove their AI is fair, safe, and easy to explain. It helps build trust with users and clients.",
     },
   ];
 

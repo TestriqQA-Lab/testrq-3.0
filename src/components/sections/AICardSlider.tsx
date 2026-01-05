@@ -8,52 +8,54 @@ const AICardSlider: React.FC = () => {
   const testingTypes = [
     {
       title: (
-        <Link href="blog/post/model-validation-for-ai-applications">
-          Model Validation Testing
+        <Link href="blog/post/ai-security-testing">
+          Safe & Secure AI
         </Link>
       ),
       description:
-        "Comprehensive validation of AI model accuracy, performance, and reliability.",
+        "We test your models against malicious inputs to ensure they stay secure and reliable against modern security risks.",
       features: [
-        "Accuracy and precision testing",
-        "Cross-validation analysis",
-        "Performance benchmarking",
-        "Model robustness validation",
+        "Prompt Injection Testing",
+        "Data Threat Analysis",
+        "Adversarial Robustness",
+        "Security Compliance",
       ],
-      highlight: "99.5% accuracy",
-      action: "/model-validation-for-ai-applications",
+      highlight: "100% Security Coverage",
+      action: "/ai-security-testing",
     },
     {
       title: (
         <Link href="blog/post/bias-fairness-testing-for-ai">
-          Bias & Fairness Testing
+          Fair & Unbiased AI
         </Link>
       ),
       description:
-        "Advanced testing to ensure AI systems are fair and ethical across all user groups.",
+        "We use fairness toolkits to check AI models for demographic bias, ensuring your AI systems are ethical and inclusive.",
       features: [
-        "Demographic bias detection",
-        "Fairness metric evaluation",
-        "Ethical compliance validation",
-        "Bias mitigation recommendations",
+        "Demographic Bias Detection",
+        "Fairness Toolkits (AI Fairness 360)",
+        "Ethical Compliance Verification",
+        "Bias Mitigation",
       ],
-      highlight: "Zero bias tolerance",
+      highlight: "Zero Bias Tolerance",
       action: "/bias-fairness-testing-for-ai",
     },
     {
       title: (
-        <Link href="blog/post/ai-security-testing">AI Security Testing</Link>
+        <Link href="blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
+          Compliant & Auditable
+        </Link>
       ),
       description:
-        "Comprehensive security assessment to protect AI systems from threats and attacks.",
+        "We provide the clear tracking and documentation you need for high-stakes AI regulation compliance (EU AI Act, NIST).",
       features: [
-        "Adversarial attack testing",
-        "Data poisoning detection",
-        "Model evasion testing",
-        "Privacy protection validation",
+        "Regulation Compliance (EU AI Act)",
+        "NIST AI RMF Alignment",
+        "Technical Documentation",
+        "Governance & Traceability",
       ],
-      highlight: "100% security coverage",
-      action: "/ai-security-testing",
+      highlight: "Audit-Ready Reports",
+      action: "/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance",
     },
   ];
 

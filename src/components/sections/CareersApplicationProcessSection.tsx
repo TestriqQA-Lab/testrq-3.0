@@ -88,57 +88,57 @@ const CareersApplicationProcessSection: React.FC = () => {
     question: string;
     answer: React.ReactNode;
   }[] = [
-    {
-      question: "How long does the entire hiring process take?",
-      answer: (
-        <>
-          Our typical QA hiring process takes 2–3 weeks from application to
-          offer, ensuring a thorough candidate evaluation across roles like
-          <Link href="/manual-testing" className="text-brand-blue hover:underline"> manual testing</Link>, <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, and <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>. For
-          urgent software testing roles, we can expedite the process to 1–2
-          weeks. You&apos;ll be kept informed of timelines, interview stages, and
-          selection updates throughout your application journey at Testriq QA
-          Lab.
-        </>
-      ),
-    },
-    {
-      question: "What should I expect in the technical interview?",
-      answer:
-        "The technical interview focuses on your QA knowledge, problem-solving approach, and relevant experience. We'll discuss testing methodologies, tools you've used, and how you handle different testing scenarios. It's more conversational than interrogational - we want to understand your thought process.",
-    },
-    {
-      question: "Is the practical assessment mandatory for all roles?",
-      answer:
-        "Yes, all QA roles include a practical component, but it varies by position. Senior roles might involve system design or strategy discussions, while individual contributor roles focus on hands-on testing exercises. We provide clear instructions and reasonable timeframes for all assessments.",
-    },
-    {
-      question: "Can I interview remotely?",
-      answer:
-        "Absolutely! All our interviews can be conducted remotely via video call. Even for office-based positions, we accommodate remote interviews. We use standard video conferencing tools and will send you all necessary details in advance.",
-    },
-    {
-      question:
-        "What if I don't have experience with specific tools mentioned in the job posting?",
-      answer:
-        "Don't let that stop you from applying! We value learning ability and foundational QA knowledge over specific tool experience. If you have strong testing fundamentals and willingness to learn, we provide training and support for new tools and technologies.",
-    },
-    {
-      question: "Do you provide feedback if I'm not selected?",
-      answer:
-        "Yes, we provide constructive feedback to all candidates who complete our interview process. We believe feedback helps everyone grow, and we want to maintain positive relationships with talented professionals in the QA community.",
-    },
-    {
-      question: "Can I reapply if I'm not selected this time?",
-      answer:
-        "Definitely! We encourage candidates to reapply after gaining additional experience or skills. We typically suggest waiting 6 months before reapplying for the same role, but you can apply for different positions anytime. Your previous application won't negatively impact future applications.",
-    },
-    {
-      question: "What documents do I need to prepare?",
-      answer:
-        "You'll need an updated resume, cover letter (optional but recommended), and contact information for 2-3 professional references. For some roles, a portfolio of testing artifacts or automation scripts can be helpful. We'll let you know if anything specific is needed for your role.",
-    },
-  ];
+      {
+        question: "How long does the entire hiring process take?",
+        answer: (
+          <>
+            Our typical QA hiring process takes 2–3 weeks from application to
+            offer, ensuring a thorough candidate evaluation across roles like
+            <Link href="/manual-testing-services" className="text-brand-blue hover:underline"> manual testing</Link>, <Link href="/automation-testing-services" className="text-brand-blue hover:underline"> automation testing</Link>, and <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance testing</Link>. For
+            urgent software testing roles, we can expedite the process to 1–2
+            weeks. You&apos;ll be kept informed of timelines, interview stages, and
+            selection updates throughout your application journey at Testriq QA
+            Lab.
+          </>
+        ),
+      },
+      {
+        question: "What should I expect in the technical interview?",
+        answer:
+          "The technical interview focuses on your QA knowledge, problem-solving approach, and relevant experience. We'll discuss testing methodologies, tools you've used, and how you handle different testing scenarios. It's more conversational than interrogational - we want to understand your thought process.",
+      },
+      {
+        question: "Is the practical assessment mandatory for all roles?",
+        answer:
+          "Yes, all QA roles include a practical component, but it varies by position. Senior roles might involve system design or strategy discussions, while individual contributor roles focus on hands-on testing exercises. We provide clear instructions and reasonable timeframes for all assessments.",
+      },
+      {
+        question: "Can I interview remotely?",
+        answer:
+          "Absolutely! All our interviews can be conducted remotely via video call. Even for office-based positions, we accommodate remote interviews. We use standard video conferencing tools and will send you all necessary details in advance.",
+      },
+      {
+        question:
+          "What if I don't have experience with specific tools mentioned in the job posting?",
+        answer:
+          "Don't let that stop you from applying! We value learning ability and foundational QA knowledge over specific tool experience. If you have strong testing fundamentals and willingness to learn, we provide training and support for new tools and technologies.",
+      },
+      {
+        question: "Do you provide feedback if I'm not selected?",
+        answer:
+          "Yes, we provide constructive feedback to all candidates who complete our interview process. We believe feedback helps everyone grow, and we want to maintain positive relationships with talented professionals in the QA community.",
+      },
+      {
+        question: "Can I reapply if I'm not selected this time?",
+        answer:
+          "Definitely! We encourage candidates to reapply after gaining additional experience or skills. We typically suggest waiting 6 months before reapplying for the same role, but you can apply for different positions anytime. Your previous application won't negatively impact future applications.",
+      },
+      {
+        question: "What documents do I need to prepare?",
+        answer:
+          "You'll need an updated resume, cover letter (optional but recommended), and contact information for 2-3 professional references. For some roles, a portfolio of testing artifacts or automation scripts can be helpful. We'll let you know if anything specific is needed for your role.",
+      },
+    ];
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);

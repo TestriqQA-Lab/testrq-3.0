@@ -18,6 +18,122 @@ export interface JobOpening {
 export const jobOpenings: JobOpening[] = [
   {
     id: 1, // unique ID
+    title: "QA Engineer ( ETL + API )",
+    location: "Remote",
+    type: "Full-time",
+    experience: "2-3 Years",
+    description: `
+##### Key Responsibilities:
+- Translate business and technical requirements into detailed, executable test cases.
+- Validate data sources, extraction logic, transformation rules and end-to-end data
+loading accuracy.
+- Use AI-driven QA tools (JAM, Testsigma, AI accelerators) to improve automation,
+coverage, and productivity.
+- API Testing: Postman, Swagger, Apache JMeter, SoapUI, and related tools.
+- Design, document, and execute comprehensive test plans, automation suites, and test
+harnesses.
+- Testing Types: Functional, Non-Functional, Regression, Integration, Performance,
+Load and Stress testing across distributed systems.
+- Apply QA best practices across SDLC/STLC in Agile, Scrum, Waterfall, and hybrid
+models.
+- Manage defects with JIRA/Linear, providing clear reporting and root-cause analysis.
+- Use AI to generate, enhance, and maintain automated test scripts and test-data
+frameworks.
+
+
+##### Requirements:
+- Strong SQL skills with ability to write and optimize queries for advanced data
+validation, reconciliation, and diagnostics.
+- Hands-on testing experience across ETL workflows on Snowflake, GBQ,
+Postgres, Redshift, and other modern data warehouse platforms.
+- Deep experience in Data Warehousing and BI validation with strong
+understanding of ETL architecture and data quality frameworks.
+- Proficient in validating ETL pipelines, complex transformation logic, job
+orchestration, and end-to-end data lineage.
+- Strong command of QA methodologies, test design strategies, automation
+principles, and quality governance models.
+- Ability to create detailed functional, non-functional, and performance-focused
+test documentation.
+- Strong analytical and communication skills with clear articulation of findings.
+- Proven ability to work independently, unblock issues proactively, and
+collaborate effectively with minimal supervision.
+  `,
+    skills: [
+      "ETL",
+      "API",
+      "Automation",
+      "Performance Load",
+      "Data Warehouse",
+      "BI",
+      "AI",
+      "Postman",
+      "JAM",
+      "Jmeter",
+      "Agile",
+      "Snowflake",
+      "Informatica",
+      "GBO",
+      "Postgres",
+
+    ],
+    icon: FaBug,
+    badges: ["urgent"],
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 2, // unique ID
+    title: "Full Stack Developer ( .NET + AngularJS )",
+    location: "Remote",
+    type: "6 Months",
+    experience: "5 Years",
+    description: `
+##### Key Responsibilities:
+- Develop, implement, and maintain web applications using .NET (C#, ASP.NET,
+MVC, Web API) and AngularJS.
+- Design and build robust, scalable, and secure backend services and APIs.
+- Develop responsive front-end interfaces with AngularJS and modern UI
+practices.
+- Work closely with product managers, designers, and QA teams to deliver
+high-quality software.
+- Troubleshoot, debug, and optimize application performance.
+- Participate in code reviews and ensure adherence to coding standards.
+- Manage database operations using SQL Server and related technologies.
+- Stay updated with emerging technologies and apply best practices.
+
+##### Requirements:
+- Minimum 5 years of hands-on experience as a Full Stack Developer.
+- Strong proficiency in C#, ASP.NET, .NET Core, MVC, Web API.
+- Solid experience with AngularJS (1.x)
+- Strong understanding of HTML5, CSS3, JavaScript, jQuery.
+- Proficient in SQL Server, stored procedures, queries, and database design.
+- Experience with version control (Git, Bitbucket, etc.)
+- Strong problem-solving skills and ability to work independently.
+- Good communication and teamwork abilities.
+  `,
+    skills: [
+      ".NET",
+      "C#",
+      "Angular JS",
+      "Full Stack",
+      "ASP.NET",
+      "UI",
+      "SQL",
+      "API",
+      "MVC",
+      "HTML5",
+      "CSS3",
+      "Git",
+      "JavaScript",
+      "jQuery",
+      "Bitbucket",
+    ],
+    icon: FaBug,
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 3, // unique ID
     title: "Business Development Executive (Sales)",
     location: "Onsite (Mira Road, Mumbai)",
     type: "Full-time",
@@ -62,13 +178,12 @@ and testing processes.
       "Client Acquisition",
 
     ],
-    badges: ["Urgent"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
     salary: "Competitive",
   },
   {
-    id: 2, // unique ID
+    id: 4, // unique ID
     title: "Manual Tester (API – Postman)",
     location: "Hybrid (Mira Road, Mumbai)",
     type: "Full-time",
@@ -107,13 +222,12 @@ and testing processes.
       "Jenkins",
       "CI/CD",
     ],
-    badges: ["Urgent"],
     icon: FaBug,
     color: "from-green-400 to-green-600",
     salary: "Competitive",
   },
   {
-    id: 3,
+    id: 5,
     title: "Automation Tester (Trading Domain)",
     location: "On-Site (Kurla, Mumbai)",
     type: "Full-time",
@@ -144,13 +258,12 @@ and testing processes.
       "Selenium",
       "SQL",
     ],
-    badges: ["Urgent"],
     icon: FaBug,
     color: "from-yellow-400 to-yellow-600",
     salary: "Competitive",
   },
   {
-    id: 4,
+    id: 6,
     title: "Automation Test Engineer (Playwright + Javascript)",
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
@@ -192,13 +305,12 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent"],
     icon: FaCode,
     color: "from-green-500 to-green-700",
     salary: "Competitive",
   },
   {
-    id: 5,
+    id: 7,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
@@ -246,12 +358,11 @@ Work Type: Full-time
       "Git",
       "JIRA",
     ],
-    badges: ["Urgent"],
     icon: FaCode,
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: 6,
+    id: 8,
     title: "Playwright Automation Tester",
     location: "On-site (Western Mumbai)",
     type: "Full-time",
@@ -304,7 +415,7 @@ Work Type: Full-time
     color: "from-purple-500 to-purple-700",
   },
   {
-    id: 7,
+    id: 9,
     title:
       "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
@@ -361,7 +472,7 @@ Duration: 3–6 months
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 8,
+    id: 10,
     title: "Penetration Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -418,7 +529,7 @@ Work Type: Full Time
     color: "from-red-500 to-red-700",
   },
   {
-    id: 9,
+    id: 11,
     title: "Data Processing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -467,7 +578,7 @@ Timing: 8:30pm to 5:30am
     color: "from-indigo-500 to-indigo-700",
   },
   {
-    id: 10,
+    id: 12,
     title: "Business Development Executive - Intern",
     location: "Mumbai (Mira Road)",
     type: "Internship",
@@ -517,7 +628,7 @@ Internship Duration: 3 Months
     color: "from-pink-500 to-pink-700",
   },
   {
-    id: 11,
+    id: 13,
     title: "SOC Analyst",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -570,7 +681,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     color: "from-teal-500 to-teal-700",
   },
   {
-    id: 12,
+    id: 14,
     title: "SEO & Digital Marketing Expert",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -630,7 +741,7 @@ Work Type: Full Time
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 13,
+    id: 15,
     title: "Front End Developer (Immediate Joiners Only)",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -680,7 +791,7 @@ Work Type: Full Time
     color: "from-blue-400 to-blue-600",
   },
   {
-    id: 14,
+    id: 16,
     title: "Graphic Designer",
     location: "Mumbai",
     type: "Full-time",
@@ -732,7 +843,7 @@ Work Type: Full Time
     color: "from-purple-400 to-purple-600",
   },
   {
-    id: 15,
+    id: 17,
     title: "Cypress Automation Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -797,7 +908,7 @@ Work Type: Full Time
     salary: "Competitive",
   },
   {
-    id: 16,
+    id: 18,
     title: "Business Development Manager",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -848,7 +959,7 @@ Work Type: Full Time
   },
 
   {
-    id: 17,
+    id: 19,
     title: "Digital Marketing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -899,7 +1010,7 @@ Work Type: Full Time
   },
 
   {
-    id: 18,
+    id: 20,
     title: "Social Media Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -946,7 +1057,7 @@ Work Type: Full Time
   },
 
   {
-    id: 19,
+    id: 21,
     title: "QA Test Lead",
     location: "Mumbai",
     type: "Full-time",
@@ -994,7 +1105,7 @@ Work Type: Full Time
   },
 
   {
-    id: 20,
+    id: 22,
     title: "Product Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -1042,7 +1153,7 @@ Work Type: Full Time
   },
 
   {
-    id: 21,
+    id: 23,
     title: "Tele Sales Executive",
     location: "Mumbai",
     type: "Full-time",

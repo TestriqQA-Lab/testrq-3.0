@@ -118,7 +118,7 @@ const CareersHeroSection: React.FC = () => {
 
           {/* Subheading */}
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Join a passionate team of QA professionals who are revolutionizing software <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">quality assurance</Link>. Work on cutting-edge test <Link href="/automation-testing-services">automation</Link> projects, enhance your skills in <Link href="/manual-testing">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and <Link href="/security-testing">security testing</Link>, and make a real impact on product quality, regulatory compliance, and user experience across global software applications.
+            Join a passionate team of QA professionals who are revolutionizing software <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">quality assurance</Link>. Work on cutting-edge test <Link href="/automation-testing-services">automation</Link> projects, enhance your skills in <Link href="/manual-testing-services">manual testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, and <Link href="/security-testing">security testing</Link>, and make a real impact on product quality, regulatory compliance, and user experience across global software applications.
 
           </p>
 

@@ -4,11 +4,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
-  FaRocket,
   FaShieldAlt,
   FaChartLine,
   FaUsers,
-  FaClock,
   FaArrowRight,
   FaBrain,
   FaAward,
@@ -20,98 +18,82 @@ const AIWhyChooseTestriq: React.FC = () => {
   const benefits = [
     {
       icon: <FaCertificate className="w-8 h-8" />,
-      title: "AI Testing Experts",
-      shortTitle: "AI Experts",
+      title: "Global Standards",
+      shortTitle: "Global ISO",
       description:
-        "Our team consists of ISTQB-certified AI testing professionals with extensive experience in machine learning and AI technologies.",
-      stats: "10+ AI Models Tested",
+        "We use ISO/IEC/IEEE 29119. This is the gold standard for managing AI risks and validating models globally.",
+      stats: "ISO/IEC/IEEE 29119",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       features: [
-        "ML Model Testing",
-        "Neural Networks",
-        "Deep Learning",
-        "AI Ethics",
-      ],
-    },
-    {
-      icon: <FaRocket className="w-8 h-8" />,
-      title: "Faster AI Deployment",
-      shortTitle: "Faster Launch",
-      description:
-        "Accelerate your AI development cycle with our efficient testing processes and automated validation frameworks.",
-      stats: "50% Faster Deployment",
-      color: "blue",
-      gradient: "from-blue-500 to-blue-600",
-      features: [
-        "Automated Testing",
+        "Risk Management",
         "Model Validation",
-        "CI/CD Integration",
-        "Quick Feedback",
+        "Global Compliance",
+        "Standardized Testing",
       ],
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Ethical AI Assurance",
-      shortTitle: "Ethical AI",
+      title: "USA Standards",
+      shortTitle: "USA NIST",
       description:
-        "Advanced bias detection and fairness testing to ensure your AI systems are ethical and compliant with global regulations.",
-      stats: "99.5% Bias Detection",
-      color: "red",
-      gradient: "from-red-500 to-red-600",
+        "Our process implements the NIST AI RMF to guarantee high standards for AI risk management and safety.",
+      stats: "NIST AI RMF",
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
       features: [
-        "Bias Detection",
-        "Fairness Testing",
-        "Ethical Compliance",
-        "Regulatory Standards",
+        "Risk Management Framework",
+        "Safety Guarantee",
+        "Transparency",
+        "Accountability",
       ],
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: "Model Performance Optimization",
-      shortTitle: "Performance",
+      title: "Europe Standards",
+      shortTitle: "EU AI Act",
       description:
-        "Identify and resolve performance issues to ensure your AI models deliver accurate and reliable results.",
-      stats: "94% Average Accuracy",
-      color: "green",
-      gradient: "from-green-500 to-green-600",
+        "We secure regulatory alignment with the EU AI Act (2025). We execute mandatory validation for high-risk systems.",
+      stats: "EU AI Act Compliant",
+      color: "red",
+      gradient: "from-red-500 to-red-600",
       features: [
-        "Performance Tuning",
-        "Accuracy Testing",
-        "Model Optimization",
-        "Scalability",
+        "Regulatory Alignment",
+        "High-Risk Validation",
+        "Conformity Assessment",
+        "Monitoring Protocols",
       ],
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      title: "Dedicated AI Support",
-      shortTitle: "AI Support",
+      title: "Asia Standards",
+      shortTitle: "Asia Compliance",
       description:
-        "24/7 support from our AI testing specialists who understand your unique AI challenges and requirements.",
-      stats: "24/7 AI Support",
-      color: "indigo",
-      gradient: "from-indigo-500 to-indigo-600",
+        "We align your security with guidelines from Japan and Singapore, ensuring Gen-AI tools follow international ISO rules.",
+      stats: "Japan/Singapore ISO",
+      color: "green",
+      gradient: "from-green-500 to-green-600",
       features: [
-        "AI Consultation",
-        "Model Analysis",
-        "Expert Guidance",
-        "Technical Support",
+        "Regional Guidelines",
+        "Gen-AI Security",
+        "International Rules",
+        "Cross-Border Compliance",
       ],
     },
     {
-      icon: <FaClock className="w-8 h-8" />,
-      title: "Quick AI Validation",
-      shortTitle: "Quick Results",
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "Security Assurance",
+      shortTitle: "Security",
       description:
-        "Fast and efficient AI testing cycles with comprehensive reporting and actionable recommendations.",
-      stats: "48hr Average Response",
-      color: "orange",
-      gradient: "from-orange-500 to-orange-600",
+        "Testriq follows strict security rules. We align with SOC2 Type II, ISO 27001, and GDPR to protect sensitive data.",
+      stats: "SOC2 / ISO 27001",
+      color: "indigo",
+      gradient: "from-indigo-500 to-indigo-600",
       features: [
-        "Rapid Testing",
-        "Model Profiling",
-        "Quick Reports",
-        "Fast Validation",
+        "SOC2 Type II",
+        "ISO 27001 Certified",
+        "GDPR Compliant",
+        "Data Protection",
       ],
     },
   ];
@@ -122,20 +104,14 @@ const AIWhyChooseTestriq: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
-            <span className="text-sm">Why Choose Us</span>
+            <span className="text-sm">Global Compliance</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Testriq for{" "}
-            <span className="text-[theme(color.brand.blue)]">AI Testing</span>?
+            Meeting Global{" "}
+            <span className="text-[theme(color.brand.blue)]">AI Standards</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine certified AI QA expertise with testing excellence to
-            deliver <Link href="ai-application-testing">AI testing</Link>{" "}
-            services that ensure accurate, fair, and{" "}
-            <Link href="blog/post/stress-testing-applications-identifying-breaking-points">
-              reliable intelligent systems
-            </Link>
-            . for your applications.
+            Global market entry requires more than just functional code; it requires adherence to regional legal frameworks. Our services are benchmarked against key global frameworks.
           </p>
         </div>
 
@@ -144,17 +120,15 @@ const AIWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group transition-all duration-500 transform hover:scale-105 ${
-                hoveredCard === index ? "z-10" : ""
-              }`}
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* AI Neural Node Card */}
               <div
-                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${
-                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                }`}
+                className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                  }`}
               >
                 {/* Neural Node Header */}
                 <div
@@ -222,9 +196,8 @@ const AIWhyChooseTestriq: React.FC = () => {
                 {/* AI Interactive Hover State */}
                 {/* AI Interactive Hover State */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
-                    benefit.gradient
-                  } 
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient
+                    } 
      transition-opacity duration-500 ease-in-out flex items-center justify-center
      ${hoveredCard === index ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
@@ -264,26 +237,23 @@ const AIWhyChooseTestriq: React.FC = () => {
                   className={`absolute top-4 left-4 flex items-center space-x-1`}
                 >
                   <div
-                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white animate-pulse"
-                        : `bg-${benefit.color}-500`
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white animate-pulse"
+                      : `bg-${benefit.color}-500`
+                      }`}
                   ></div>
                   <div
-                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white/80 animate-pulse"
-                        : `bg-${benefit.color}-400`
-                    }`}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white/80 animate-pulse"
+                      : `bg-${benefit.color}-400`
+                      }`}
                     style={{ animationDelay: "0.2s" }}
                   ></div>
                   <div
-                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${
-                      hoveredCard === index
-                        ? "bg-white/60 animate-pulse"
-                        : `bg-${benefit.color}-300`
-                    }`}
+                    className={`w-1 h-1 rounded-full transition-colors duration-500 ${hoveredCard === index
+                      ? "bg-white/60 animate-pulse"
+                      : `bg-${benefit.color}-300`
+                      }`}
                     style={{ animationDelay: "0.4s" }}
                   ></div>
                 </div>

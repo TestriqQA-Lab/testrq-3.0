@@ -6,6 +6,9 @@ import { getPostBySlug } from "@/lib/wordpress-graphql";
 import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
 import StructuredData from "@/components/seo/StructuredData";
 
+import { Suspense } from "react";
+import RelatedPosts from "@/components/sections/RelatedPosts";
+
 const BlogPostHeader = dynamic(
   () => import("@/components/sections/BlogPostHeader"),
   {
@@ -195,6 +198,20 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         </div>
+
+        {/* Related Posts Section with Suspense */}
+        <Suspense fallback={
+          <div className="max-w-7xl mx-auto px-8 py-12">
+            <div className="h-8 bg-gray-200 rounded w-48 mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="h-96 bg-gray-100 rounded-xl animate-pulse"></div>
+              ))}
+            </div>
+          </div>
+        }>
+          <RelatedPosts currentPost={wpPost} />
+        </Suspense>
       </MainLayout>
     </div>
   );

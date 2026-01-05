@@ -135,7 +135,7 @@ const ContactMethodsSection: React.FC = () => {
             We understand that every client has different preferences. That’s
             why we offer multiple ways to connect with our QA experts - whether
             for a software testing consultation, project discussion, or quality
-            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
+            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
             services.
           </p>
         </div>
@@ -145,11 +145,10 @@ const ContactMethodsSection: React.FC = () => {
           {contactMethods.map((method, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${
-                method.highlight
-                  ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
-                  : ""
-              }`}
+              className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
+                ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
+                : ""
+                }`}
             >
               {method.highlight && (
                 <div className="absolute top-0 right-0 bg-[theme(color.brand.blue)] text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">
@@ -185,34 +184,34 @@ const ContactMethodsSection: React.FC = () => {
           ))}
         </div>
 
-	        {/* Google Calendar Booking Link Section */}
-	        <div
-	          id="google-calendar-section"
-	          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto text-center"
-	        >
-	          {/* Header Section */}
-	          <div className="text-center mb-10">
-	            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-	              Book Your QA Consultation
-	            </h3>
-	            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
-	              Connect with our QA experts to explore tailored solutions for your
-	              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
-	              performance testing. Click the button below to schedule a time that suits you!
-	            </p>
-	          </div>
-	
-	          {/* Google Calendar Link */}
-	          <Link
-	            href={googleCalendarBookingLink}
-	            target="_blank"
-	            rel="noopener noreferrer"
-	            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
-	          >
-	            <FaCalendarAlt className="w-5 h-5 mr-3" />
-	            Schedule a Meeting via Google Calendar
-	          </Link>
-	        </div>
+        {/* Google Calendar Booking Link Section */}
+        <div
+          id="google-calendar-section"
+          className="bg-gradient-to-br from-white to-blue-50 rounded-3xl shadow-2xl p-5 mb-20 border border-blue-100 max-w-7xl mx-auto text-center"
+        >
+          {/* Header Section */}
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              Book Your QA Consultation
+            </h3>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Connect with our QA experts to explore tailored solutions for your
+              software testing needs, including automation, manual, <Link href="/api-testing">API</Link>, and
+              performance testing. Click the button below to schedule a time that suits you!
+            </p>
+          </div>
+
+          {/* Google Calendar Link */}
+          <Link
+            href={googleCalendarBookingLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105"
+          >
+            <FaCalendarAlt className="w-5 h-5 mr-3" />
+            Schedule a Meeting via Google Calendar
+          </Link>
+        </div>
 
         {/* Office Hours & Social Links */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -238,11 +237,10 @@ const ContactMethodsSection: React.FC = () => {
                     </div>
                   </div>
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      schedule.available
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
-                    }`}
+                    className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
+                      }`}
                   >
                     {schedule.available ? "Available" : "Limited"}
                   </div>
@@ -312,8 +310,8 @@ const ContactMethodsSection: React.FC = () => {
                 </h4>
                 <div className="text-gray-600">
                   <p>
-                    Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
-                    Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
+                    Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad
+                    Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai,
                     Maharashtra 401107
                   </p>
                 </div>

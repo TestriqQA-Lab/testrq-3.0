@@ -119,7 +119,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Chennai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -307,7 +307,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bangalore businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -495,7 +495,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Delhi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -688,7 +688,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Agra businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -880,7 +880,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ahmedabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -1072,7 +1072,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ajmer businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -1264,7 +1264,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Amritsar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -1456,7 +1456,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Andheri businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -1648,7 +1648,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bandra businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -1840,7 +1840,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bengaluru businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2032,7 +2032,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bhandup businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2224,7 +2224,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bhayandar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2416,7 +2416,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bhopal businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2608,7 +2608,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Bhubaneswar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2800,7 +2800,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Borivali businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -2992,7 +2992,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Byculla businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -3184,7 +3184,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Chandigarh businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -3376,7 +3376,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Charni Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -3565,7 +3565,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Chinchpokli businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -3757,7 +3757,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Churchgate businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -3949,7 +3949,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Coimbatore businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -4141,7 +4141,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Cotton Green businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -4333,7 +4333,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for CST businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -4525,7 +4525,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dadar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -4717,7 +4717,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dahisar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -4909,7 +4909,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dehradun businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -5098,7 +5098,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dombivli businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -5290,7 +5290,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ernakulam businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -5482,7 +5482,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Faridabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -5674,7 +5674,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Gandhinagar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -5866,7 +5866,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ghaziabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -6058,7 +6058,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Goa businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -6250,7 +6250,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Gorakhpur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -6442,7 +6442,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Greater Noida businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -6634,7 +6634,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Gurgaon businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -6826,7 +6826,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Guwahati businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7018,7 +7018,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Gwalior businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7210,7 +7210,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Hyderabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7402,7 +7402,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Indore businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7594,7 +7594,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jaipur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7786,7 +7786,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jalandhar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -7978,7 +7978,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jammu businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -8170,7 +8170,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jamshedpur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -8362,7 +8362,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jodhpur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -8554,7 +8554,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kalyan businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -8746,7 +8746,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kanpur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -8938,7 +8938,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kochi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -9130,7 +9130,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kolkata businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -9322,7 +9322,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Lucknow businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -9514,7 +9514,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ludhiana businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -9706,7 +9706,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Madurai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -9898,7 +9898,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mangalore businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -10090,7 +10090,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Meerut businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -10282,7 +10282,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Moradabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -10474,7 +10474,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mumbai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -10666,7 +10666,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Nagpur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -10858,7 +10858,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Nashik businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -11050,7 +11050,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Navi Mumbai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -11242,7 +11242,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Noida businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -11434,7 +11434,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Patna businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -11626,7 +11626,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Pune businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -11818,7 +11818,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Raipur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12010,7 +12010,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Rajkot businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12202,7 +12202,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ranchi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12394,7 +12394,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Secunderabad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12586,7 +12586,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Shimla businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12778,7 +12778,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Surat businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -12970,7 +12970,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Thane businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -13162,7 +13162,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Udaipur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -13354,7 +13354,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vadodara businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -13545,7 +13545,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Currey Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -13737,7 +13737,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Diva businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -13929,7 +13929,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dockyard Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -14121,7 +14121,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ghatkopar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -14313,7 +14313,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Goregaon businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -14505,7 +14505,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Grant Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -14697,7 +14697,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Gurugram businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -14889,7 +14889,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jogeshwari businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -15081,7 +15081,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kalwa businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -15273,7 +15273,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kandivali businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -15465,7 +15465,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kanjurmarg businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -15657,7 +15657,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Khar Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -15849,7 +15849,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kings Circle businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -16041,7 +16041,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kopar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -16233,7 +16233,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kurla businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -16425,7 +16425,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Lower Parel businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -16617,7 +16617,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mahalaxmi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -16809,7 +16809,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mahim businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17001,7 +17001,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Malad businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17193,7 +17193,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Marine Lines businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17385,7 +17385,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Masjid Bandar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17577,7 +17577,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Matunga Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17769,7 +17769,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mira Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -17961,7 +17961,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mulund businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -18153,7 +18153,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mumbai Central businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -18345,7 +18345,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Mumbra businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -18537,7 +18537,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Nahur businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -18729,7 +18729,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Naigaon businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -18921,7 +18921,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Nalasopara businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -19113,7 +19113,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Prabhadevi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -19305,7 +19305,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ram Mandir businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -19497,7 +19497,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Reay Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -19689,7 +19689,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Sandhurst Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -19881,7 +19881,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Santacruz businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -20073,7 +20073,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Sewri businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -20265,7 +20265,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Sion businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -20457,7 +20457,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Thakurli businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -20649,7 +20649,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Trivandrum businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -20841,7 +20841,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vasai businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21033,7 +21033,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vidyavihar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21225,7 +21225,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vikhroli businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21417,7 +21417,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vile Parle businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21609,7 +21609,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Virar businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21801,7 +21801,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Wadala Road businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -21990,7 +21990,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Abu Dhabi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -22179,7 +22179,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Sharjah businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -22367,7 +22367,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Al Ain businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -22555,7 +22555,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ajman businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -22743,7 +22743,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ras Al Khaimah businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -22931,7 +22931,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Fujairah businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -23119,7 +23119,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Umm Al Quwain businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -23307,7 +23307,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Kalba businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -23495,7 +23495,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dibba Al-Fujairah businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -23683,7 +23683,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Madinat Zayed businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -23871,7 +23871,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Khor Fakkan businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24059,7 +24059,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Al Dhannah businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24247,7 +24247,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ghayathi businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24435,7 +24435,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dhaid businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24623,7 +24623,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Jebel Ali businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24811,7 +24811,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Liwa Oasis businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -24999,7 +24999,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Hatta businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -25187,7 +25187,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Ar-Rams businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -25375,7 +25375,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Dibba Al-Hisn businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -25563,7 +25563,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Al Jazirah Al Hamra businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -25753,7 +25753,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Toronto businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -25941,7 +25941,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Vancouver businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -26129,7 +26129,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Montreal businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -26317,7 +26317,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for New York businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -26505,7 +26505,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Los Angeles businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -26693,7 +26693,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Chicago businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -26881,7 +26881,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for London businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -27069,7 +27069,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Manchester businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -27257,7 +27257,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Edinburgh businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -27445,7 +27445,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Sydney businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -27633,7 +27633,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Melbourne businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -27821,7 +27821,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Brisbane businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -28009,7 +28009,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Auckland businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -28197,7 +28197,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Wellington businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },
@@ -28385,7 +28385,7 @@ export const cityData: Record<string, CityData> = {
       description: "Professional QA solutions tailored for Christchurch businesses",
       subtitle: "Explore our wide range of software testing services designed to meet your specific needs.",
       services: [
-        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing" },
+        { icon: "TestTube", trending: true, name: "Manual Testing", description: "Thorough manual testing to identify critical bugs and ensure user satisfaction.", features: ["Exploratory Testing", "Usability Testing", "Regression Testing"], link: "/manual-testing-services" },
         { icon: "Bot", trending: false, name: "Automation Testing", description: "Automated test suites for faster execution and consistent results.", features: ["Selenium Automation", "Cypress Automation", "API Automation"], link: "/automation-testing-services" },
         { icon: "Zap", trending: true, name: "Performance Testing", description: "Assess application speed, scalability, and stability under various loads.", features: ["Load Testing", "Stress Testing", "Scalability Testing"], link: "/performance-testing-services" },
         { icon: "Shield", trending: false, name: "Security Testing", description: "Identify vulnerabilities and protect your applications from cyber threats.", features: ["Penetration Testing", "Vulnerability Assessment", "Security Audits"], link: "/security-testing" },

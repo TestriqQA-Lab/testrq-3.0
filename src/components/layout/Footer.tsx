@@ -45,7 +45,7 @@ const coreService = [
 ];
 
 const specializedTesting = [
-  { title: "Manual Testing", path: "/manual-testing" },
+  { title: "Manual Testing", path: "/manual-testing-services" },
   { title: "Automation Testing", path: "/automation-testing-services" },
   { title: "API Testing", path: "/api-testing" },
   { title: "Regression Testing", path: "/regression-testing" },
@@ -56,6 +56,7 @@ const specializedTesting = [
   { title: "Software Testing Guide", path: "/software-testing-guide" },
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
   { title: "SAP Testing", path: "/sap-testing-services" },
+  { title: "Telecom Testing", path: "/telecommunications-testing-services" },
 ];
 
 const company = [
@@ -111,9 +112,9 @@ const Footer = () => {
               <div className="flex space-x-2 text-sm text-gray-800">
                 <FaMapMarkerAlt className="h-15 w-15 text-brand-blue" />
                 <p>
-                  Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd,
-                  Vagad Nagar, Beverly Park, Mira Road East, Mira Bhayandar,
-                  Maharashtra 401107
+                  Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar,
+                  Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra
+                  401107
                 </p>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-800">
@@ -251,19 +252,17 @@ const Footer = () => {
 
         <div className="flex flex-col items-center justify-center space-y-6 mt-8 p-6 bg-white rounded-lg shadow-inner border border-gray-200 max-w-4xl mx-auto">
           <p className="text-lg text-gray-700 text-center font-medium">
-            We are proud to be featured on <Link href="https://www.designrush.com/agency/software-testing-companies" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:underline">DesignRush</Link> for our outstanding work.
+            We are proud to be featured on <span className="text-brand-blue">DesignRush</span> for our outstanding work.
           </p>
           <div className="flex justify-center">
-            <Link
-              href="https://www.designrush.com/agency/software-testing-companies"
-            >
-              <Image
-                src="/DesignRush_Badge.png"
-                alt="TESTRIQ QA LAB featured on DesignRush"
-                width={150}
-                height={150}
-                className="object-contain"
-              /> </Link>
+
+            <Image
+              src="/DesignRush_Badge.png"
+              alt="TESTRIQ QA LAB featured on DesignRush"
+              width={150}
+              height={150}
+              className="object-contain"
+            />
           </div>
         </div>
 
@@ -315,7 +314,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="https://www.testriq.com/sitemap.xml"
+                href="/sitemap"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap

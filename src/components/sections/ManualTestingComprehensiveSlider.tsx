@@ -2,113 +2,96 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaUser, FaEye, FaCheckCircle, FaBug, FaClipboardCheck, FaHandPaper, FaFlask } from "react-icons/fa";
+import { FaLink, FaProjectDiagram, FaRocket, FaGraduationCap, FaFileSignature, FaFlask } from "react-icons/fa";
 
 const ManualTestingComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const testingTypes = [
     {
-      id: "functional-testing",
-      title: "Functional Testing",
-      icon: <FaCheckCircle className="text-2xl" />,
-      percentage: "98%",
+      id: "automation-ai-gap",
+      title: "Bridging the Automation-AI Gap",
+      icon: <FaLink className="text-2xl" />,
+      percentage: "2025 Focus",
       color: "blue",
-      description: "Rigorous Manual Functional Testing to validate complex business logic and edge cases that are too costly to automate. We focus on negative testing scenarios to weatherproof your application.",
+      description: "Many organizations struggle with skill gaps and the high cost of tooling when trying to increase automation. We use the ISO 29119 series to identify where manual testing is most effective. This lets us focus on exploratory testing. Here, our \"human-in-the-loop\" approach provides the intuition needed for complex decisions that AI simply cannot make.",
       features: [
-        "Business logic validation to ensure alignment with core requirements",
-        "Feature functionality testing for end-to-end use case coverage",
-        "Input/output verification to confirm accurate data handling",
-        "Error handling validation for robust system behavior",
-        "Workflow testing across user journeys and process flows",
-        "Data integrity checks to maintain consistency and reliability"
+        "ISO 29119-based strategic test allocation",
+        "Higher focus on exploratory testing intuition",
+        "Human-in-the-loop decision making",
+        "Skill gap assessment and mitigation",
+        "Tooling cost optimization strategy",
+        "AI-Manual hybrid testing strategy"
       ],
-      action: "blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices"
+      action: "blog/post/the-future-of-manual-testing-adapting-in-an-automated-world"
     },
     {
-      id: "usability-testing",
-      title: "Usability Testing",
-      icon: <FaEye className="text-2xl" />,
-      percentage: "95%",
+      id: "system-complexity",
+      title: "Managing Exploding System Complexity",
+      icon: <FaProjectDiagram className="text-2xl" />,
+      percentage: "High Priority",
       color: "purple",
-      description: "Human-centered evaluation of user interface design and user experience",
+      description: "Modern micro-services often create \"coverage gaps\" that automation misses. Our testers use ISO 29119-4 techniques to maintain consistency across thousands of services. This ensures your test data accurately mimics global production environments.",
       features: [
-        "Interface design evaluation",
-        "Navigation flow testing",
-        "User journey optimization",
-        "Accessibility compliance",
-        "Mobile responsiveness",
-        "User feedback analysis"
+        "ISO 29119-4 consistent testing techniques",
+        "Micro-services coverage gap analysis",
+        "Global production data simulation",
+        "Multi-service integration validation",
+        "Complex dependency mapping",
+        "Scalable manual regression models"
       ],
-      action: "blog/post/usability-testing-in-manual-testing-use-cases-techniques"
+      action: "blog/post/model-validation-for-ai-applications"
     },
     {
-      id: "exploratory-testing",
-      title: "Exploratory Testing",
-      icon: <FaBug className="text-2xl" />,
-      percentage: "92%",
+      id: "release-cadence",
+      title: "Boosting Release Cadence in CI/CD",
+      icon: <FaRocket className="text-2xl" />,
+      percentage: "Agile Ready",
       color: "green",
-      description: "Unscripted testing to discover unexpected issues and edge cases",
+      description: "Manual testing shouldn’t kill your momentum. Our team uses the ISO 29119-2 framework to keep testing structured and repeatable. We integrate with your CI/CD pipeline to provide traceable results while protecting your fast time-to-market.",
       features: [
-        "Creative test scenarios",
-        "Edge case discovery",
-        "Boundary value testing",
-        "Error condition exploration",
-        "User behavior simulation",
-        "Risk-based investigation"
+        "ISO 29119-2 structured test framework",
+        "Seamless CI/CD pipeline integration",
+        "Traceable manual testing results",
+        "Rapid sprint-based execution",
+        "Time-to-market optimization",
+        "Repeatable testing workflows"
       ],
-      action: "/exploratory-testing"
+      action: "blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
     },
     {
-      id: "user-acceptance-testing",
-      title: "Managed User Acceptance Testing (UAT)",
-      icon: <FaUser className="text-2xl" />,
-      percentage: "97%",
+      id: "upskilling-hybrid",
+      title: "Upskilling for Hybrid QA Roles",
+      icon: <FaGraduationCap className="text-2xl" />,
+      percentage: "Certified Team",
       color: "orange",
-      description: "We take the headache out of User Acceptance Testing (UAT). We act as the bridge between developers and stakeholders, creating realistic UAT scenarios and managing the sign-off process to ensure production readiness.",
+      description: "The \"manual tester\" of 2025 is a hybrid professional. Our team trains under the ISO process model to gain a shared standard terms. This allows them to work beside automation engineers and AI tools, effectively closing the global skill gap.",
       features: [
-        "Business requirement validation",
-        "End-user scenario testing",
-        "Acceptance criteria verification",
-        "Production readiness assessment",
-        "Stakeholder sign-off",
-        "Go-live preparation"
+        "ISO process model standardized training",
+        "Shared QA/Automation vocabulary",
+        "Collaboration with AI testing tools",
+        "Continuous professional development",
+        "Closed loop feedback with engineering",
+        "Expert role-based certification"
       ],
-      action: "blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques"
+      action: "blog/post/the-future-of-manual-testing-adapting-in-an-automated-world"
     },
     {
-      id: "compatibility-testing",
-      title: "Compatibility Testing",
-      icon: <FaClipboardCheck className="text-2xl" />,
-      percentage: "94%",
+      id: "standard-design",
+      title: "Standard Design and Reporting",
+      icon: <FaFileSignature className="text-2xl" />,
+      percentage: "New 2024 Standard",
       color: "teal",
-      description: "Cross-platform testing for consistent functionality across environments",
+      description: "Ad-hoc testing leads to inconsistent quality. We use the ISO 29119-5:2024 standard to guide our keyword-driven and model-based testing. This ensures manual reports give stakeholders clear, data-driven insight into project risk.",
       features: [
-        "Cross-browser testing",
-        "Operating system compatibility",
-        "Device compatibility",
-        "Version compatibility",
-        "Integration testing",
-        "Environment validation"
+        "ISO 29119-5:2024 keyword-driven testing",
+        "Model-based manual testing design",
+        "Data-driven risk assessment reports",
+        "Consistent cross-project metrics",
+        "Stakeholder transparency & visibility",
+        "Risk-based project insights"
       ],
-      action: "blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa"
-    },
-    {
-      id: "accessibility-testing",
-      title: "Manual WCAG 2.2 Accessibility Audits",
-      icon: <FaHandPaper className="text-2xl" />,
-      percentage: "96%",
-      color: "indigo",
-      description: "Comprehensive accessibility evaluation for inclusive user experiences",
-      features: [
-        "WCAG compliance testing",
-        "Screen reader compatibility",
-        "Keyboard navigation testing",
-        "Color contrast validation",
-        "Alternative text verification",
-        "Assistive technology support"
-      ],
-      action: "blog/post/accessibility-testing-in-manual-testing-use-cases-techniques"
+      action: "blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality"
     }
   ];
 
@@ -135,10 +118,10 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            <span className="text-brand-blue">Beyond Automation:</span> Our Manual Testing Capabilities
+            Navigating the <span className="text-brand-blue">5 Global Challenges</span> of Manual Testing in 2025
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our <Link href='blog/post/accessibility-testing-in-manual-testing-use-cases-techniques'>comprehensive manual testing services</Link> built to ensure <Link href='blog/post/the-future-of-software-testing-embracing-the-trends-of-2024-and-beyond'>exceptional software quality</Link> through <Link href='blog/post/the-future-of-manual-testing-adapting-in-an-automated-world'>human-centered testing</Link> approaches, including <Link href='blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices'>functional testing</Link>, <Link href='blog/post/usability-testing-in-manual-testing-use-cases-techniques'>usability testing</Link>, exploratory testing, and <Link href='blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques'>UAT-executed</Link> by ISTQB-certified experts.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            Our approach is designed to solve the specific bottlenecks currently plaguing global QA teams, balancing ISO standards with expert human intelligence.
           </p>
         </div>
 
