@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
-import { FaClipboardList, FaBug, FaChartLine, FaUsers, FaCloud, FaMobile, FaTools } from "react-icons/fa";
+import { FaClipboardList, FaBug, FaProjectDiagram, FaDesktop, FaChartLine, FaUsers, FaTools } from "react-icons/fa";
 
 const ManualTestingToolsFramework: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("test-management");
@@ -13,14 +12,12 @@ const ManualTestingToolsFramework: React.FC = () => {
       title: "Test Management",
       icon: <FaClipboardList className="text-2xl" />,
       color: "blue",
-      description: "Comprehensive test management and planning tools for organized testing workflows",
+      description: "Advanced test case management and planning for organized QA workflows",
       tools: [
-        { name: "Jira", description: "Project management and issue tracking", logo: "🔷" },
-        { name: "TestRail", description: "Test case management and reporting", logo: "🚂" },
-        { name: "Zephyr", description: "Test management for Jira integration", logo: "⚡" },
-        { name: "qTest", description: "Agile test management platform", logo: "📋" },
-        { name: "Azure DevOps", description: "End-to-end development lifecycle", logo: "🔵" },
-        { name: "Confluence", description: "Documentation and collaboration", logo: "📚" }
+        { name: "TestRail", description: "Comprehensive test case management", logo: "🚂" },
+        { name: "Zephyr", description: "Enterprise-grade test management", logo: "⚡" },
+        { name: "Xray", description: "Native Jira test management", logo: "🩻" },
+        { name: "Jira", description: "Industry-standard task tracking", logo: "🔷" }
       ]
     },
     {
@@ -28,74 +25,59 @@ const ManualTestingToolsFramework: React.FC = () => {
       title: "Defect Tracking",
       icon: <FaBug className="text-2xl" />,
       color: "red",
-      description: "Advanced defect tracking and lifecycle management systems",
+      description: "Meticulous bug tracking and lifecycle management tools",
       tools: [
-        { name: "Bugzilla", description: "Open-source bug tracking system", logo: "🐛" },
-        { name: "Mantis", description: "Web-based bug tracking system", logo: "🦗" },
-        { name: "Redmine", description: "Project management and issue tracking", logo: "📌" },
-        { name: "YouTrack", description: "Issue tracking and project management", logo: "🎯" },
-        { name: "Linear", description: "Modern issue tracking and project management", logo: "📐" },
-        { name: "GitHub Issues", description: "Integrated issue tracking for development", logo: "🐙" }
+        { name: "Jira", description: "Advanced issue and bug tracking", logo: "🔷" },
+        { name: "Mantis", description: "Efficient web-based bug tracking", logo: "🦗" },
+        { name: "Bugzilla", description: "Robust open-source defect tracking", logo: "🐛" }
       ]
     },
     {
-      id: "reporting-analytics",
-      title: "Reporting & Analytics",
+      id: "api-integration",
+      title: "API & Integration",
+      icon: <FaProjectDiagram className="text-2xl" />,
+      color: "purple",
+      description: "Technical validation of back-end services and connectivity",
+      tools: [
+        { name: "Postman", description: "Comprehensive API development & testing", logo: "🚀" },
+        { name: "Charles Proxy", description: "Web debugging proxy tool", logo: "🛡️" },
+        { name: "Swagger", description: "API documentation and validation", logo: "📖" }
+      ]
+    },
+    {
+      id: "compatibility",
+      title: "Compatibility",
+      icon: <FaDesktop className="text-2xl" />,
+      color: "orange",
+      description: "Cross-platform and multi-device validation platforms",
+      tools: [
+        { name: "BrowserStack", description: "Real device cloud testing", logo: "📱" },
+        { name: "Sauce Labs", description: "Scalable cloud testing platform", logo: "🧪" },
+        { name: "LambdaTest", description: "Cross-browser testing cloud", logo: "λ" }
+      ]
+    },
+    {
+      id: "performance-monitoring",
+      title: "Performance & Monitoring",
       icon: <FaChartLine className="text-2xl" />,
       color: "green",
-      description: "Comprehensive reporting and analytics tools for test insights",
+      description: "Ensuring application speed, stability, and health",
       tools: [
-        { name: "Tableau", description: "Advanced data visualization and analytics", logo: "📊" },
-        { name: "Power BI", description: "Business intelligence and reporting", logo: "📈" },
-        { name: "Grafana", description: "Monitoring and observability platform", logo: "📉" },
-        { name: "Kibana", description: "Data visualization and exploration", logo: "🔍" },
-        { name: "Custom Dashboards", description: "Tailored reporting solutions", logo: "📋" },
-        { name: "Excel/Google Sheets", description: "Spreadsheet-based reporting", logo: "📑" }
+        { name: "JMeter", description: "Open-source load testing", logo: "🏎️" },
+        { name: "New Relic", description: "Observability and APM platform", logo: "📊" },
+        { name: "Datadog", description: "Modern monitoring and security", logo: "🐕" }
       ]
     },
     {
       id: "collaboration",
       title: "Collaboration",
       icon: <FaUsers className="text-2xl" />,
-      color: "purple",
-      description: "Team collaboration and communication platforms",
-      tools: [
-        { name: "Slack", description: "Team communication and collaboration", logo: "💬" },
-        { name: "Microsoft Teams", description: "Unified communication platform", logo: "👥" },
-        { name: "Zoom", description: "Video conferencing and screen sharing", logo: "📹" },
-        { name: "Miro", description: "Visual collaboration and whiteboarding", logo: "🎨" },
-        { name: "Notion", description: "All-in-one workspace for documentation", logo: "📝" },
-        { name: "Loom", description: "Video messaging and screen recording", logo: "🎬" }
-      ]
-    },
-    {
-      id: "mobile-testing",
-      title: "Mobile Testing",
-      icon: <FaMobile className="text-2xl" />,
-      color: "orange",
-      description: "Specialized tools for mobile application testing",
-      tools: [
-        { name: "BrowserStack", description: "Real device cloud testing platform", logo: "📱" },
-        { name: "Sauce Labs", description: "Cross-platform mobile testing", logo: "🧪" },
-        { name: "Firebase Test Lab", description: "Google's mobile app testing service", logo: "🔥" },
-        { name: "AWS Device Farm", description: "Mobile app testing on real devices", logo: "☁️" },
-        { name: "Xamarin Test Cloud", description: "Mobile app testing in the cloud", logo: "📲" },
-        { name: "TestComplete Mobile", description: "Mobile test automation platform", logo: "✅" }
-      ]
-    },
-    {
-      id: "cloud-platforms",
-      title: "Cloud Platforms",
-      icon: <FaCloud className="text-2xl" />,
       color: "teal",
-      description: "Cloud-based testing platforms and environments",
+      description: "Unified communication for seamless client-tester sync",
       tools: [
-        { name: "AWS", description: "Amazon Web Services cloud platform", logo: "☁️" },
-        { name: "Azure", description: "Microsoft cloud computing platform", logo: "🔷" },
-        { name: "Google Cloud", description: "Google's cloud computing services", logo: "🌐" },
-        { name: "LambdaTest", description: "Cross-browser testing platform", logo: "λ" },
-        { name: "CrossBrowserTesting", description: "Cloud-based browser testing", logo: "🌍" },
-        { name: "Perfecto", description: "Cloud-based mobile testing platform", logo: "💎" }
+        { name: "Confluence", description: "Team documentation and workspace", logo: "📚" },
+        { name: "Slack", description: "Real-time team communication", logo: "💬" },
+        { name: "Microsoft Teams", description: "Enterprise communication hub", logo: "👥" }
       ]
     }
   ];
@@ -125,10 +107,10 @@ const ManualTestingToolsFramework: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Manual Testing <span className="text-brand-blue">Tools & Frameworks</span>
+            The Testriq <span className="text-brand-blue">Manual Testing Tech Stack</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage <Link href='/technology-stack'>industry-leading tools and frameworks</Link> to ensure efficient manual testing, comprehensive defect tracking, and detailed reporting-delivering reliable, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high-quality software assurance</Link>.
+            Our manual testing uses a modern tech stack to keep our work fast and transparent. We leverage industry-leading tools for test management, defect tracking, and performance monitoring.
           </p>
         </div>
 
@@ -142,8 +124,8 @@ const ManualTestingToolsFramework: React.FC = () => {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : `text-gray-600 ${colors.hover}`
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : `text-gray-600 ${colors.hover}`
                     }`}
                 >
                   <div className="flex flex-col items-center space-y-2">

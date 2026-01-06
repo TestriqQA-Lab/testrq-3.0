@@ -31,7 +31,7 @@ const CorporateQATrainingModules: React.FC = () => {
           ],
         },
         {
-          title: (<><Link href="/manual-testing">Manual Testing Mastery</Link></>),
+          title: (<><Link href="/manual-testing-services">Manual Testing Mastery</Link></>),
           duration: "24 hours",
           level: "Beginner to Intermediate",
           description:

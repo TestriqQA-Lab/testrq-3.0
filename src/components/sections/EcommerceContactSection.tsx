@@ -54,13 +54,19 @@ const EcommerceContactSection: React.FC = () => {
     }
 
     const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
+      for (let i = 0; i < num.length - 5; i++) {
+        const n = num.split("").map(Number);
         if (
-          (n2 === n1 + 1 && n3 === n2 + 1) ||
-          (n2 === n1 - 1 && n3 === n2 - 1)
+          (n[i + 1] === n[i] + 1 &&
+            n[i + 2] === n[i + 1] + 1 &&
+            n[i + 3] === n[i + 2] + 1 &&
+            n[i + 4] === n[i + 3] + 1 &&
+            n[i + 5] === n[i + 4] + 1) ||
+          (n[i + 1] === n[i] - 1 &&
+            n[i + 2] === n[i + 1] - 1 &&
+            n[i + 3] === n[i + 2] - 1 &&
+            n[i + 4] === n[i + 3] - 1 &&
+            n[i + 5] === n[i + 4] - 1)
         ) {
           return true;
         }
@@ -319,7 +325,7 @@ const EcommerceContactSection: React.FC = () => {
                       {method.description}
                     </p>
                     <Link
-                      href={method.action} target={ "_blank" }
+                      href={method.action} target={"_blank"}
                       className="text-sky-600 font-semibold flex items-center gap-2 group"
                     >
                       {method.text}
@@ -392,9 +398,8 @@ const EcommerceContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateFullName(formData.fullName)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          fullNameError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Your Name"
                       />
                     </div>
@@ -418,9 +423,8 @@ const EcommerceContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateEmail(formData.businessEmail)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          emailError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Email Address"
                       />
                     </div>
@@ -441,9 +445,8 @@ const EcommerceContactSection: React.FC = () => {
                         onBlur={() =>
                           validatePhoneNumber(formData.businessPhone)
                         }
-                        className={`w-full phone-input-container ${
-                          phoneError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-200"
+                          }`}
                         placeholder="Enter phone number"
                         inputclassname="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300"
                       />
@@ -467,11 +470,10 @@ const EcommerceContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validateCompanyName(formData.companyName)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          companyNameError
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyNameError
                             ? "border-red-500"
                             : "border-gray-200"
-                        }`}
+                          }`}
                       />
                     </div>
                     {companyNameError && (
@@ -493,9 +495,8 @@ const EcommerceContactSection: React.FC = () => {
                         onChange={handleInputChange}
                         onBlur={() => validatePlatform(formData.platform)}
                         required
-                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${
-                          platformError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${platformError ? "border-red-500" : "border-gray-200"
+                          }`}
                         aria-label="Select Your E-Commerce Platform"
                       >
                         <option value="">Select Your Platform</option>
@@ -528,9 +529,8 @@ const EcommerceContactSection: React.FC = () => {
                         placeholder="Tell us about your testing needs..."
                         rows={4}
                         required
-                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${
-                          messageError ? "border-red-500" : "border-gray-200"
-                        }`}
+                        className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-200"
+                          }`}
                       ></textarea>
                     </div>
                     {messageError && (

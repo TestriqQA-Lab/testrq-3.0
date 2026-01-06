@@ -61,11 +61,20 @@ const GamingContactSection: React.FC = () => {
     }
 
     const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
-        if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+      for (let i = 0; i < num.length - 5; i++) {
+        const n = num.split("").map(Number);
+        if (
+          (n[i + 1] === n[i] + 1 &&
+            n[i + 2] === n[i + 1] + 1 &&
+            n[i + 3] === n[i + 2] + 1 &&
+            n[i + 4] === n[i + 3] + 1 &&
+            n[i + 5] === n[i + 4] + 1) ||
+          (n[i + 1] === n[i] - 1 &&
+            n[i + 2] === n[i + 1] - 1 &&
+            n[i + 3] === n[i + 2] - 1 &&
+            n[i + 4] === n[i + 3] - 1 &&
+            n[i + 5] === n[i + 4] - 1)
+        ) {
           return true;
         }
       }
@@ -341,7 +350,7 @@ const GamingContactSection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards a successful game launch with comprehensive testing. 
+            Take the first step towards a successful game launch with comprehensive testing.
             Our gaming experts are ready to help you deliver exceptional player experiences across all platforms.
           </p>
         </div>

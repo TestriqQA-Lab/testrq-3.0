@@ -135,7 +135,7 @@ const ContactMethodsSection: React.FC = () => {
             We understand that every client has different preferences. That’s
             why we offer multiple ways to connect with our QA experts - whether
             for a software testing consultation, project discussion, or quality
-            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
+            assurance support across <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, or <Link href="/performance-testing-services">performance testing </Link>
             services.
           </p>
         </div>
@@ -146,8 +146,8 @@ const ContactMethodsSection: React.FC = () => {
             <div
               key={index}
               className={`relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden group ${method.highlight
-                  ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
-                  : ""
+                ? "ring-2 ring-[theme(color.brand.blue)] ring-opacity-50"
+                : ""
                 }`}
             >
               {method.highlight && (
@@ -238,8 +238,8 @@ const ContactMethodsSection: React.FC = () => {
                   </div>
                   <div
                     className={`px-3 py-1 rounded-full text-xs font-semibold ${schedule.available
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
                       }`}
                   >
                     {schedule.available ? "Available" : "Limited"}

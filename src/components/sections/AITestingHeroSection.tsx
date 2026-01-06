@@ -31,32 +31,15 @@ const AITestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
-              <span className="text-[theme(color.brand.blue)]">
-                AI Application Testing&nbsp;
-              </span>
-              Services
+              Global <span className="text-[theme(color.brand.blue)]">AI Testing Services</span>
+              <br />
+              <span className="text-2xl sm:text-3xl md:text-4xl text-gray-700">Reliable Systems for the Future</span>
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your AI applications deliver accurate, fair, and reliable
-              results with our systematic AI testing services. From{" "}
-              <Link href="blog/post/ai-testing-learning-guide">
-                machine learning
-              </Link>{" "}
-              models to{" "}
-              <Link href="blog/post/ai-testing-learning-guide">
-                generative AI
-              </Link>{" "}
-              - our QA for AI applications covers everything from functionality to{" "}
-              <Link href="blog/post/wcag-2-1-accessibility-compliance-ensuring-an-inclusive-learning-environment">
-                ethical compliance
-              </Link>{" "}
-              and{" "}
-              <Link href="blog/post/final-reporting-comprehensive-qa-summary">
-                end-to-end validation
-              </Link>
-              .
+              By 2025, the global AI testing market has grown to over $757 billion. The rise of Generative AI fuels this growth. As companies move from small pilots to full-scale use, traditional software quality assurance is no longer enough. The &quot;black box&quot; nature of AI means we must move from simple bug-hunting to advanced, risk-based validation.
+              <br /><br />
+              At Testriq, our <Link href="ai-application-testing" className="text-brand-blue font-semibold hover:underline">AI Application Testing Services</Link> help you make sure your models are safe, fair, and compliant. We connect ML Ops with Quality Assurance. This provides the clear tracking you need for high-stakes AI in sectors like Finance, Healthcare, and Critical Infrastructure.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

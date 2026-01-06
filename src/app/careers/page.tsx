@@ -77,7 +77,7 @@ const CareersApplicationProcessSection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title:"Careers | Join Our QA Testing Team at Testriq",
+  title: "Careers | Join Our QA Testing Team at Testriq",
 
   description: "Discover a workplace that values growth, collaboration, and excellence. Unleash your potential with testriq Careers.. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.",
   keywords: [
@@ -142,7 +142,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-   google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
     yandex: 'ff703971283d110e',
     yahoo: '0A67349B8CD11BF71173B38572028507',
   },
@@ -150,7 +150,7 @@ export const metadata: Metadata = {
 
 
 const CareersPage: React.FC = () => {
-   const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Careers Page", url: "https://www.testriq.com/careers" }
   ];
@@ -158,14 +158,14 @@ const CareersPage: React.FC = () => {
     <div>
       <StructuredData data={careersPageSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-    <main className="min-h-screen bg-gray-50">
-      <CareersHeroSection />
-      <CareersValuesSection />
-      <CareersOpenPositions />
-      <CareersBenefitsSection />
-      {/* <CareersCultureSection /> */}
-      <CareersApplicationProcessSection />
-    </main>
+      <main className="min-h-screen bg-gray-50">
+        <CareersHeroSection />
+        <CareersValuesSection />
+        <CareersOpenPositions />
+        <CareersBenefitsSection />
+        {/* <CareersCultureSection /> */}
+        <CareersApplicationProcessSection />
+      </main>
     </div>
   );
 };

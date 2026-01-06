@@ -7,10 +7,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "AI Application Testing Services |(10+ Yrs)",
-
+  title: "Global AI Testing Services | Reliable Systems for the Future",
   description:
-    "Comprehensive AI application testing services including model validation, bias detection, explainability, performance, and AI security testing. Ensure your intelligent systems are accurate, fair, and reliable.",
+    "At Testriq, our AI Application Testing Services help you make sure your models are safe, fair, and compliant. We connect ML Ops with Quality Assurance for high-stakes AI.",
   keywords: [
     "AI application testing",
     "AI testing services",

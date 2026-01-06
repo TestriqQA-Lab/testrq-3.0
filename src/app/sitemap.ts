@@ -250,7 +250,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'dating-app-certification',
       'exploratory-testing',
       'launchfast-qa',
-      'manual-testing',
+      'manual-testing-services',
       'matrimonial-apps-certification',
       'performance-testing-services',
       'qa-documentation-services',

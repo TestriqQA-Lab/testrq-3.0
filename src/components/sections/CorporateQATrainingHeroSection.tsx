@@ -50,7 +50,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Elevate your organization&apos;s software quality with
               comprehensive QA training programs. Our expert-led corporate
-              training covers <Link href="/manual-testing">manual testing</Link>, <Link href="/automation-testing-services">automation</Link> frameworks, <Link href="/performance-testing-services">performance
+              training covers <Link href="/manual-testing-services">manual testing</Link>, <Link href="/automation-testing-services">automation</Link> frameworks, <Link href="/performance-testing-services">performance
                 testing</Link>, and quality assurance best practices. Delivered by
               ISTQB-certified professionals with hands-on experience and
               industry-proven methodologies to upskill your entire QA team.
@@ -120,7 +120,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
                     <FaUsers className="text-blue-600 text-xl hidden md:block" />
                     <div>
                       <div className="font-semibold text-gray-900">
-                        <Link href="/manual-testing">Manual Testing Fundamentals</Link>
+                        <Link href="/manual-testing-services">Manual Testing Fundamentals</Link>
                       </div>
                       <div className="text-sm text-gray-600">
                         24 participants active

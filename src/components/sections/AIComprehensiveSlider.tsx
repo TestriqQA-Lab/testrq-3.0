@@ -6,10 +6,10 @@ import {
   FaBrain,
   FaShieldAlt,
   FaChartLine,
-  FaEye,
   FaDatabase,
   FaArrowRight,
   FaFlask,
+  FaRocket,
 } from "react-icons/fa";
 
 const AIComprehensiveSlider: React.FC = () => {
@@ -17,100 +17,84 @@ const AIComprehensiveSlider: React.FC = () => {
 
   const testingTypes = [
     {
-      icon: <FaBrain className="w-8 h-8" />,
-      title: (<Link href='blog/post/model-validation-for-ai-applications'>Model Validation</Link>),
+      icon: <FaDatabase className="w-8 h-8" />,
+      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality, Bias & Representativeness</Link>),
       description:
-        "Comprehensive testing of machine learning models including accuracy, precision, and performance validation to ensure robust AI outcomes.",
+        "AI performance is a direct reflection of its data. Gaps, noise, and label errors translate into catastrophic real-world failures. We move beyond simple data checks to perform bias and representativeness validation.",
       features: [
-        "Accuracy and precision testing",
-        "Cross-validation analysis",
-        "Performance benchmarking",
-        "Model robustness validation",
+        "Data Lineage Documentation",
+        "Bias & Fairness Validation",
+        "Label Error Detection",
+        "Representativeness Checks",
       ],
       color: "purple",
       gradientColor: "from-purple-500 to-purple-600",
-      metric: "94% Accuracy",
-      action: "/model-validation-for-ai-applications"
-    },
-    {
-      icon: <FaEye className="w-8 h-8" />,
-      title: (<Link href='blog/post/bias-fairness-testing-for-ai'>Bias Detection</Link>),
-      description:
-        "Advanced testing to ensure AI systems are fair and ethical across all user groups with robust fairness metrics.",
-      features: [
-        "Demographic bias detection",
-        "Fairness metric evaluation",
-        "Ethical compliance validation",
-        "Bias mitigation recommendations",
-      ],
-      color: "orange",
-      gradientColor: "from-orange-500 to-orange-600",
-      metric: "Zero Bias Tolerance",
-      action: "/bias-fairness-testing-for-ai"
-    },
-    {
-      icon: <FaEye className="w-8 h-8" />,
-      title: (<Link href='blog/post/explainability-testing-in-ai'>Explainability Testing</Link>),
-      description:
-        "Testing AI model interpretability and explainability to ensure transparent decision-making processes.",
-      features: [
-        "Model Interpretability",
-        "Decision Transparency",
-        "Feature Importance",
-        "Explanation Quality",
-      ],
-      color: "blue",
-      gradientColor: "from-blue-500 to-blue-600",
-      metric: "100% Transparency",
-      action: "/explainability-testing-in-ai"
-    },
-    {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: (<Link href='performance-testing-services'>Performance Testing</Link>),
-      description:
-        "Comprehensive performance evaluation including latency, throughput, and scalability testing.",
-      features: [
-        "Latency Testing",
-        "Throughput Analysis",
-        "Scalability Assessment",
-        "Resource Optimization",
-      ],
-      color: "green",
-      gradientColor: "from-green-500 to-green-600",
-      metric: "Sub-second Response",
-      action: "/performance-testing-for-ai-applications"
-    },
-    {
-      icon: <FaDatabase className="w-8 h-8" />,
-      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality Testing</Link>),
-      description:
-        "Comprehensive data validation including integrity, completeness, and quality assessment for AI training.",
-      features: [
-        "Data Integrity",
-        "Completeness Check",
-        "Quality Assessment",
-        "Validation Rules",
-      ],
-      color: "indigo",
-      gradientColor: "from-indigo-500 to-indigo-600",
-      metric: "100% Data Quality",
+      metric: "Structured Data Sheets",
       action: "/ai-testing-learning-guide"
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: (<Link href='blog/post/ai-security-testing'>AI Security Testing</Link>),
+      icon: <FaBrain className="w-8 h-8" />,
+      title: (<Link href='blog/post/model-validation-for-ai-applications'>Solving the &quot;Oracle Problem&quot;</Link>),
       description:
-        "Comprehensive security assessment to protect AI systems from threats and attacks with adversarial robustness validation.",
+        "Traditional QA uses fixed logic. AI works on likelihoods. We verify model reasoning using industry-standard tools and establish limits for incorrect AI outputs to ensure reliability.",
       features: [
-        "Adversarial attack testing",
-        "Data poisoning detection",
-        "Model evasion testing",
-        "Privacy protection validation",
+        "Model Reasoning Verification",
+        "Benefit-Driven Behavior",
+        "Output Limit Establishment",
+        "Likelihood Validation",
+      ],
+      color: "blue",
+      gradientColor: "from-blue-500 to-blue-600",
+      metric: "Reliable Generative AI",
+      action: "/model-validation-for-ai-applications"
+    },
+    {
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: (<Link href='blog/post/ai-security-testing'>Safety, Security, and AI Defense</Link>),
+      description:
+        "We test your models against malicious inputs to ensure they stay secure. Our security protocols follow global standards to ensure resilience against modern risks.",
+      features: [
+        "Prompt Injection Testing",
+        "Data Threat Analysis",
+        "Adversarial Attack Simulation",
+        "Global Security Standards",
       ],
       color: "red",
       gradientColor: "from-red-500 to-red-600",
-      metric: "100% Security Coverage",
+      metric: "Resilient AI Defense",
       action: "/ai-security-testing"
+    },
+    {
+      icon: <FaChartLine className="w-8 h-8" />,
+      title: (<Link href='blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance'>Lifecycle Governance & Compliance</Link>),
+      description:
+        "AI testing is a continuous lifecycle responsibility. We integrate drift monitoring, versioning, and regression testing to ensure updates don't impact performance.",
+      features: [
+        "Drift Monitoring",
+        "Versioning Control",
+        "AI Regression Testing",
+        "EU AI Act Compliance",
+      ],
+      color: "green",
+      gradientColor: "from-green-500 to-green-600",
+      metric: "Compliance Evidence",
+      action: "/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance"
+    },
+    {
+      icon: <FaRocket className="w-8 h-8" />,
+      title: (<Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>Seamless SDLC & CI/CD Integration</Link>),
+      description:
+        "We use intelligent automation testing to validate your AI workflows via custom data pipelines. These tools connect to your current CI/CD systems for quick results.",
+      features: [
+        "Intelligent Automation",
+        "Custom Data Pipelines",
+        "CI/CD Integration",
+        "Result Tracking",
+      ],
+      color: "orange",
+      gradientColor: "from-orange-500 to-orange-600",
+      metric: "Automated Workflows",
+      action: "/ci-cd-test-automation-integration-deliver-faster-with-confidence"
     },
   ];
   // Function to move to the next tab
@@ -124,18 +108,17 @@ const AIComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">Comprehensive Testing Solutions</span>
+            <span className="text-sm">5 Critical Challenges</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete{" "}
+            Addressing the{" "}
             <span className="text-[theme(color.brand.blue)]">
-              AI Testing Coverage
+              5 Critical Challenges
             </span>
+            {" "}of Machine Learning Testing
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive AI testing services cover every aspect of your AI
-            ecosystem, ensuring accuracy, fairness, and reliability across all
-            machine learning models and intelligent systems.
+            The complexity of modern AI requires solving challenges that traditional testing cannot reach. Our methodology is built to tackle the biggest global hurdles identified in 2025.
           </p>
         </div>
 
@@ -212,25 +195,25 @@ const AIComprehensiveSlider: React.FC = () => {
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold">
-                          Model Accuracy
+                          Data Quality Score
                         </span>
-                        <span className="text-purple-600 font-bold">94.2%</span>
+                        <span className="text-purple-600 font-bold">98.5%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3">
                         <div
                           className="bg-gradient-to-r from-purple-500 to-purple-600 h-3 rounded-full animate-pulse"
-                          style={{ width: "94%" }}
+                          style={{ width: "98%" }}
                         ></div>
                       </div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <div className="text-center">
-                        <div className="text-purple-600 text-3xl mb-2">🧠</div>
+                        <div className="text-purple-600 text-3xl mb-2">📊</div>
                         <div className="text-sm font-semibold text-gray-700">
-                          Neural Network
+                          Data Lineage
                         </div>
                         <div className="text-xs text-gray-500">
-                          Deep Learning Model
+                          Traceability Verified
                         </div>
                       </div>
                     </div>
@@ -240,27 +223,27 @@ const AIComprehensiveSlider: React.FC = () => {
                 {activeTab === 1 && (
                   <div className="space-y-4">
                     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-orange-600 text-4xl mb-3">⚖️</div>
+                      <div className="text-blue-600 text-4xl mb-3">🧠</div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Bias Detection
+                        Model Reasoning
                       </h4>
                       <div className="flex justify-center space-x-2">
                         <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
-                          Fair
+                          Logical
                         </span>
                         <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
-                          Ethical
+                          Consistent
                         </span>
                       </div>
                     </div>
                     <div className="bg-white p-3 rounded-lg shadow-md">
                       <div className="text-xs text-gray-600 mb-1">
-                        Demographic Parity
+                        Output Reliability
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-orange-500 h-2 rounded-full"
-                          style={{ width: "100%" }}
+                          className="bg-blue-500 h-2 rounded-full"
+                          style={{ width: "99%" }}
                         ></div>
                       </div>
                     </div>
@@ -270,29 +253,29 @@ const AIComprehensiveSlider: React.FC = () => {
                 {activeTab === 2 && (
                   <div className="space-y-4">
                     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-blue-600 text-4xl mb-3">🔍</div>
+                      <div className="text-red-600 text-4xl mb-3">🛡️</div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Model Explainability
+                        AI Defense
                       </h4>
                       <div className="text-xs text-gray-500">
-                        Feature Importance Analysis
+                        Adversarial Attack Resistance
                       </div>
                     </div>
                     <div className="space-y-2">
-                      {["Feature A", "Feature B", "Feature C"].map(
+                      {["Injection", "Poisoning", "Evasion"].map(
                         (feature, i) => (
                           <div
                             key={i}
                             className="bg-white p-2 rounded shadow-sm"
                           >
                             <div className="flex justify-between text-xs">
-                              <span>{feature}</span>
-                              <span>{85 - i * 15}%</span>
+                              <span>{feature} Blocked</span>
+                              <span>100%</span>
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-1 mt-1">
                               <div
-                                className="bg-blue-500 h-1 rounded-full"
-                                style={{ width: `${85 - i * 15}%` }}
+                                className="bg-red-500 h-1 rounded-full"
+                                style={{ width: "100%" }}
                               ></div>
                             </div>
                           </div>
@@ -307,24 +290,24 @@ const AIComprehensiveSlider: React.FC = () => {
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-semibold">
-                          Response Time
+                          Drift Detected
                         </span>
-                        <span className="text-green-600 font-bold">0.3s</span>
+                        <span className="text-green-600 font-bold">0%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-3">
                         <div
                           className="bg-green-500 h-3 rounded-full animate-pulse"
-                          style={{ width: "30%" }}
+                          style={{ width: "100%" }}
                         ></div>
                       </div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-green-600 text-3xl mb-2">⚡</div>
+                      <div className="text-green-600 text-3xl mb-2">⚖️</div>
                       <div className="text-sm font-semibold text-gray-700">
-                        High Performance
+                        EU AI Act
                       </div>
                       <div className="text-xs text-gray-500">
-                        Optimized Inference
+                        Fully Compliant
                       </div>
                     </div>
                   </div>
@@ -333,58 +316,28 @@ const AIComprehensiveSlider: React.FC = () => {
                 {activeTab === 4 && (
                   <div className="space-y-4">
                     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-indigo-600 text-4xl mb-3">📊</div>
+                      <div className="text-orange-600 text-4xl mb-3">🚀</div>
                       <h4 className="font-semibold text-gray-900 mb-2">
-                        Data Quality
+                        CI/CD Pipeline
                       </h4>
                       <div className="text-xs text-gray-500">
-                        Validation & Integrity
+                        Automated Integration
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       <div className="bg-white p-2 rounded shadow-sm text-center">
                         <div className="text-xs text-gray-600">
-                          Completeness
+                          Automation
                         </div>
-                        <div className="text-sm font-bold text-indigo-600">
+                        <div className="text-sm font-bold text-orange-600">
                           100%
                         </div>
                       </div>
                       <div className="bg-white p-2 rounded shadow-sm text-center">
-                        <div className="text-xs text-gray-600">Accuracy</div>
-                        <div className="text-sm font-bold text-indigo-600">
-                          98.5%
+                        <div className="text-xs text-gray-600">Velocity</div>
+                        <div className="text-sm font-bold text-orange-600">
+                          2x
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {activeTab === 5 && (
-                  <div className="space-y-4">
-                    <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-red-600 text-4xl mb-3">🛡️</div>
-                      <h4 className="font-semibold text-gray-900 mb-2">
-                        AI Security
-                      </h4>
-                      <div className="flex justify-center space-x-2">
-                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">
-                          Protected
-                        </span>
-                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">
-                          Secure
-                        </span>
-                      </div>
-                    </div>
-                    <div className="bg-white p-3 rounded-lg shadow-md">
-                      <div className="text-xs text-gray-600 mb-1">
-                        Adversarial Robustness
-                      </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div
-                          className="bg-red-500 h-2 rounded-full"
-                          style={{ width: "95%" }}
-                        ></div>
                       </div>
                     </div>
                   </div>

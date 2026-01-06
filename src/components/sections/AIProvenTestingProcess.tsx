@@ -17,70 +17,93 @@ const AIProvenTestingProcess: React.FC = () => {
     {
       number: "01",
       icon: <FaDatabase className="w-6 h-6" />,
-      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>Data & Model Analysis</Link>),
-      shortTitle: "Analysis",
+      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>Risk Assessment & Context</Link>),
+      shortTitle: "Risk Assessment",
       description:
-        "Comprehensive analysis of training data, model architecture, and AI requirements to create a tailored testing strategy for optimal AI performance.",
+        "We provide a risk profile for your system (Minimal or High-Risk) to ensure compliance with the EU AI Act and NIST AI RMF.",
       details: [
-        "Training data quality assessment",
-        "Model architecture review",
-        "AI requirements analysis",
-        "Bias risk evaluation",
+        "System Risk Profiling",
+        "Regulatory Context Analysis",
+        "Compliance Gap Assessment",
+        "Safety Criticality Check",
       ],
       color: "indigo",
       gradient: "from-indigo-500 to-indigo-600",
-      duration: "3-4 days",
+      duration: "1-2 days",
     },
     {
       number: "02",
-      icon: <FaBrain className="w-6 h-6" />,
-      title: (<Link href='blog/post/model-validation-for-ai-applications'>AI Model Validation</Link>),
-      shortTitle: "Validation",
+      icon: <FaDatabase className="w-6 h-6" />,
+      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality Audit</Link>),
+      shortTitle: "Data Audit",
       description:
-        "Thorough validation of model accuracy, bias detection, and performance across diverse datasets and scenarios.",
+        "Validating training/test data for bias, outliers, and quality issues using automated profiling tools to ensure foundational integrity.",
       details: [
-        "Model accuracy testing",
-        "Bias detection and analysis",
-        "Cross-validation testing",
-        "Edge case scenario testing",
+        "Bias Detection in Dataset",
+        "Outlier Identification",
+        "Data Distribution Check",
+        "Label Quality Verification",
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
-      duration: "5-7 days",
+      duration: "3-5 days",
     },
     {
       number: "03",
-      icon: <FaChartLine className="w-6 h-6" />,
-      title: (<Link href='performance-testing-services'>Performance & Security Testing</Link>),
-      shortTitle: "Performance",
+      icon: <FaBrain className="w-6 h-6" />,
+      title: (<Link href='blog/post/model-validation-for-ai-applications'>Model Strength Testing</Link>),
+      shortTitle: "Model Strength",
       description:
-        "Evaluate AI model performance, security vulnerabilities, and robustness against adversarial attacks.",
+        "We simulate real-world attacks and edge-case stress tests to reveal exactly where varying AI results could cause a failure.",
       details: [
-        "Performance benchmarking",
-        "Adversarial attack testing",
-        "Model robustness evaluation",
-        "Scalability assessment",
+        "Adversarial Attack Simulation",
+        "Edge-Case Stress Testing",
+        "Robustness Evaluation",
+        "Failure Mode Analysis",
       ],
-      color: "blue",
-      gradient: "from-blue-500 to-blue-600",
+      color: "red",
+      gradient: "from-red-500 to-red-600",
       duration: "4-6 days",
     },
     {
       number: "04",
-      icon: <FaCheckCircle className="w-6 h-6" />,
-      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Report & Optimization</Link>),
-      shortTitle: "Delivery",
+      icon: <FaChartLine className="w-6 h-6" />,
+      title: (<Link href='blog/post/explainability-testing-in-ai'>Explainability & Transparency</Link>),
+      shortTitle: "Explainability",
       description:
-        "Detailed reporting with actionable insights and recommendations for AI model improvements and ethical compliance.",
+        "Analyzing model decision-making processes (White-box/Black-box) to ensure results are interpretable for regulatory audits.",
+      features: [
+        "SHAP/LIME Analysis",
+        "Decision Logic Review",
+        "Transparency Reporting",
+        "Audit Trail Generation",
+      ],
       details: [
-        "Comprehensive AI test report",
-        "Bias mitigation recommendations",
-        "Performance optimization guide",
-        "Ethical compliance assessment",
+        "SHAP/LIME Analysis",
+        "Decision Logic Review",
+        "Transparency Reporting",
+        "Audit Trail Generation",
+      ],
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
+      duration: "3-4 days",
+    },
+    {
+      number: "05",
+      icon: <FaCheckCircle className="w-6 h-6" />,
+      title: (<Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>Real-Time Monitoring</Link>),
+      shortTitle: "Monitoring",
+      description:
+        "We plug intelligent automation testing checks into your CI/CD pipeline, including AI regression testing to catch data drift immediately.",
+      details: [
+        "CI/CD Pipeline Integration",
+        "Drift Detection Setup",
+        "Continuous Regression",
+        "Real-time Alerts",
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",
-      duration: "2-3 days",
+      duration: "Ongoing",
     },
   ];
 
@@ -89,13 +112,13 @@ const AIProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Proven{" "}
+            Step-by-Step{" "}
             <span className="text-[theme(color.brand.blue)]">
-              AI Testing Process
+              AI QA Methodology
             </span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures <Link href='blog/post/why-discovery-analysis-matters-in-testing'>end-to-end AI testing</Link> coverage, delivering accurate, fair, and <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>reliable intelligent systems</Link>.
+            Our systematic approach ensures <Link href='blog/post/why-discovery-analysis-matters-in-testing'>end-to-end</Link> coverage, from risk profiling to real-time monitoring and compliance.
           </p>
         </div>
 
@@ -114,13 +137,12 @@ const AIProvenTestingProcess: React.FC = () => {
                     {/* Neural Node */}
                     <button
                       onClick={() => setActiveStep(index)}
-                      className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 transform hover:scale-110 relative ${
-                        activeStep === index
-                          ? `bg-gradient-to-r ${step.gradient} shadow-lg`
-                          : activeStep > index
+                      className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold transition-all duration-300 transform hover:scale-110 relative ${activeStep === index
+                        ? `bg-gradient-to-r ${step.gradient} shadow-lg`
+                        : activeStep > index
                           ? "bg-green-500 shadow-md"
                           : "bg-gray-400"
-                      }`}
+                        }`}
                       aria-label={`Step ${step.number}: ${step.title}`}
                     >
                       {activeStep > index ? (
@@ -143,19 +165,16 @@ const AIProvenTestingProcess: React.FC = () => {
                       >
                         {/* Multiple connection lines for neural network effect */}
                         <div
-                          className={`h-1 w-full ${
-                            activeStep > index ? "bg-green-500" : "bg-gray-300"
-                          } transition-colors duration-300`}
+                          className={`h-1 w-full ${activeStep > index ? "bg-green-500" : "bg-gray-300"
+                            } transition-colors duration-300`}
                         ></div>
                         <div
-                          className={`h-px w-full absolute top-2 ${
-                            activeStep > index ? "bg-green-400" : "bg-gray-200"
-                          } transition-colors duration-300`}
+                          className={`h-px w-full absolute top-2 ${activeStep > index ? "bg-green-400" : "bg-gray-200"
+                            } transition-colors duration-300`}
                         ></div>
                         <div
-                          className={`h-px w-full absolute -top-2 ${
-                            activeStep > index ? "bg-green-400" : "bg-gray-200"
-                          } transition-colors duration-300`}
+                          className={`h-px w-full absolute -top-2 ${activeStep > index ? "bg-green-400" : "bg-gray-200"
+                            } transition-colors duration-300`}
                         ></div>
                       </div>
                     )}
@@ -163,11 +182,10 @@ const AIProvenTestingProcess: React.FC = () => {
                     {/* Step Label */}
                     <div className="mt-4 text-center">
                       <div
-                        className={`font-semibold text-sm ${
-                          activeStep === index
-                            ? `text-${step.color}-600`
-                            : "text-gray-600"
-                        }`}
+                        className={`font-semibold text-sm ${activeStep === index
+                          ? `text-${step.color}-600`
+                          : "text-gray-600"
+                          }`}
                       >
                         {step.shortTitle}
                       </div>
@@ -189,20 +207,18 @@ const AIProvenTestingProcess: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${
-                    activeStep === index
-                      ? `border-${step.color}-500 bg-${step.color}-50`
-                      : "border-gray-200 bg-white hover:border-gray-300"
-                  }`}
+                  className={`w-full p-4 rounded-lg border-2 transition-all duration-300 ${activeStep === index
+                    ? `border-${step.color}-500 bg-${step.color}-50`
+                    : "border-gray-200 bg-white hover:border-gray-300"
+                    }`}
                   aria-label={`Step ${step.number}: ${step.title}`}
                 >
                   <div className="flex items-center">
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center text-white mr-4 ${
-                        activeStep === index
-                          ? `bg-gradient-to-r ${step.gradient}`
-                          : "bg-gray-400"
-                      }`}
+                      className={`w-12 h-12 rounded-full flex items-center justify-center text-white mr-4 ${activeStep === index
+                        ? `bg-gradient-to-r ${step.gradient}`
+                        : "bg-gray-400"
+                        }`}
                     >
                       {step.icon}
                     </div>
@@ -272,7 +288,7 @@ const AIProvenTestingProcess: React.FC = () => {
 
                 {(
                   <button
-                    onClick={() => setActiveStep((activeStep + 1)%steps.length)}
+                    onClick={() => setActiveStep((activeStep + 1) % steps.length)}
                     className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${steps[activeStep].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
                   >
                     <span>Next Step</span>
@@ -391,6 +407,34 @@ const AIProvenTestingProcess: React.FC = () => {
                       </div>
                       <div className="text-sm text-gray-600">
                         Ethical AI recommendations
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeStep === 4 && (
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-md">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-semibold text-gray-700">
+                          Monitoring Active
+                        </span>
+                        <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          className="bg-green-500 h-3 rounded-full animate-pulse"
+                          style={{ width: "100%" }}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md text-center">
+                      <div className="text-green-600 text-3xl mb-2">📈</div>
+                      <div className="font-semibold text-gray-700">
+                        Drift Tracking
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        No anomalies detected
                       </div>
                     </div>
                   </div>

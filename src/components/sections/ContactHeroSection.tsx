@@ -60,13 +60,19 @@ const ContactHeroSection: React.FC = () => {
 
     // Check for sequential digits (e.g., 1234567890)
     const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 2; i++) {
-        const n1 = parseInt(num[i]);
-        const n2 = parseInt(num[i + 1]);
-        const n3 = parseInt(num[i + 2]);
+      for (let i = 0; i < num.length - 5; i++) {
+        const n = num.split("").map(Number);
         if (
-          (n2 === n1 + 1 && n3 === n2 + 1) ||
-          (n2 === n1 - 1 && n3 === n2 - 1)
+          (n[i + 1] === n[i] + 1 &&
+            n[i + 2] === n[i + 1] + 1 &&
+            n[i + 3] === n[i + 2] + 1 &&
+            n[i + 4] === n[i + 3] + 1 &&
+            n[i + 5] === n[i + 4] + 1) ||
+          (n[i + 1] === n[i] - 1 &&
+            n[i + 2] === n[i + 1] - 1 &&
+            n[i + 3] === n[i + 2] - 1 &&
+            n[i + 4] === n[i + 3] - 1 &&
+            n[i + 5] === n[i + 4] - 1)
         ) {
           return true;
         }
@@ -310,7 +316,7 @@ const ContactHeroSection: React.FC = () => {
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Connect with our QA experts for software testing consultation,
                 support, or partnerships. Achieve quality excellence with our
-                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
+                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
               </p>
             </div>
 
