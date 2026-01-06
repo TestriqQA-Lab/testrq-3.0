@@ -1,60 +1,63 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { JWT } from 'google-auth-library';
+import { google } from 'googleapis';
+import { Readable } from 'stream';
 
 
 export async function POST(request: NextRequest) {
-  try {
-    const formData = await request.formData();
+    try {
+        const formData = await request.formData();
 
-    const fullName = formData.get('fullName') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
-    const currentCTC = formData.get('currentCTC') as string;
-    const expectedCTC = formData.get('expectedCTC') as string;
-    const skillsToolsFramework = formData.get('skillsToolsFramework') as string;
-    const domainKnowledgeString = formData.get('domainKnowledge') as string;
-    let domainKnowledge: string[] = [];
-    if (domainKnowledgeString) {
-      try {
-        domainKnowledge = JSON.parse(domainKnowledgeString);
-      } catch (e) {
-        console.error("[apply-job API] Failed to parse domainKnowledge JSON:", e);
-      }
-    }
-    const experience = formData.get('experience') as string;
-    const location = formData.get('location') as string;
-    const noticePeriod = formData.get('noticePeriod') as string;
-    const jobTitle = formData.get('jobTitle') as string;
-    const jobId = formData.get('jobId') as string;
-    const resume = formData.get('resume') as File | null;
-
-
-    console.log('[apply-job API] Received submission for:', email);
+        const fullName = formData.get('fullName') as string;
+        const email = formData.get('email') as string;
+        const phone = formData.get('phone') as string;
+        const currentCTC = formData.get('currentCTC') as string;
+        const expectedCTC = formData.get('expectedCTC') as string;
+        const skillsToolsFramework = formData.get('skillsToolsFramework') as string;
+        const domainKnowledgeString = formData.get('domainKnowledge') as string;
+        let domainKnowledge: string[] = [];
+        if (domainKnowledgeString) {
+            try {
+                domainKnowledge = JSON.parse(domainKnowledgeString);
+            } catch (e) {
+                console.error("[apply-job API] Failed to parse domainKnowledge JSON:", e);
+            }
+        }
+        const experience = formData.get('experience') as string;
+        const location = formData.get('location') as string;
+        const noticePeriod = formData.get('noticePeriod') as string;
+        const jobTitle = formData.get('jobTitle') as string;
+        const jobId = formData.get('jobId') as string;
+        const resume = formData.get('resume') as File | null;
 
 
+        console.log('[apply-job API] Received submission for:', email);
 
-    if (!fullName || !email || !jobTitle || !resume) {
-      return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
-    }
 
-    let resumeBuffer: Buffer | undefined;
-    if (resume) {
-      const arrayBuffer = await resume.arrayBuffer();
-      resumeBuffer = Buffer.from(arrayBuffer);
-    }
+        if (!fullName || !email || !jobTitle || !resume) {
+            return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
+        }
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_SECURE === 'true',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+        let resumeBuffer: Buffer | undefined;
+        if (resume) {
+            const arrayBuffer = await resume.arrayBuffer();
+            resumeBuffer = Buffer.from(arrayBuffer);
+        }
 
-    // Modern Admin Email Template
-    const adminEmailHTML = `
+        const transporter = nodemailer.createTransport({
+            host: process.env.EMAIL_HOST,
+            port: parseInt(process.env.EMAIL_PORT || '587'),
+            secure: process.env.EMAIL_SECURE === 'true',
+            auth: {
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS,
+            },
+        });
+
+        // Modern Admin Email Template
+        const adminEmailHTML = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -114,6 +117,7 @@ export async function POST(request: NextRequest) {
             .job-info p {
                 color: #64748b;
                 margin: 0;
+                text-align: left;
             }
             .applicant-details {
                 display: grid;
@@ -183,13 +187,13 @@ export async function POST(request: NextRequest) {
             <div class="content">
                 <div class="job-info">
                     <h2>${jobTitle}</h2>
-                    <p>Application ID: #${jobId} • Received: ${new Date().toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    })}</p>
+                    <p>Application ID: #${jobId} • Received: ${new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        })}</p>
                 </div>
                 
                 <div class="applicant-details">
@@ -261,8 +265,8 @@ export async function POST(request: NextRequest) {
     </html>
     `;
 
-    // Modern User Confirmation Email Template
-    const userEmailHTML = `
+        // Modern User Confirmation Email Template
+        const userEmailHTML = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -448,13 +452,13 @@ export async function POST(request: NextRequest) {
                     </div>
                     <div class="summary-item">
                         <span class="summary-label">Date Submitted:</span>
-                        <span class="summary-value">${new Date().toLocaleDateString('en-US', { 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric',
-                            hour: '2-digit',
-                            minute: '2-digit'
-                        })}</span>
+                        <span class="summary-value">${new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        })}</span>
                     </div>
                 </div>
 
@@ -480,7 +484,7 @@ export async function POST(request: NextRequest) {
             
             <div class="footer">
                 <p>This is an automated email, please do not reply directly to this message.</p>
-                <p>&copy; ${new Date( ).getFullYear()} Testriq. All rights reserved.</p>
+                <p>&copy; ${new Date().getFullYear()} Testriq. All rights reserved.</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/company/testriq-qa-lab" target="_blank">LinkedIn</a> |
                     <a href="https://www.testriq.com" target="_blank">Website</a>
@@ -491,33 +495,175 @@ export async function POST(request: NextRequest) {
     </html>
     `;
 
-    const mailOptionsAdmin = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL,
-      subject: `New Job Application: ${jobTitle} - ${fullName}`,
-      html: adminEmailHTML,
-      attachments: resumeBuffer ? [
-        {
-          filename: resume.name,
-          content: resumeBuffer,
-          contentType: resume.type || 'application/octet-stream',
-        },
-      ] : [],
-    };
+        const mailOptionsAdmin = {
+            from: process.env.EMAIL_USER,
+            to: process.env.ADMIN_EMAIL,
+            subject: `New Job Application: ${jobTitle} - ${fullName}`,
+            html: adminEmailHTML,
+            attachments: resumeBuffer ? [
+                {
+                    filename: resume.name,
+                    content: resumeBuffer,
+                    contentType: resume.type || 'application/octet-stream',
+                },
+            ] : [],
+        };
 
-    const mailOptionsUser = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: `Application Received: ${jobTitle} - Testriq`,
-      html: userEmailHTML,
-    };
+        const mailOptionsUser = {
+            from: process.env.EMAIL_USER,
+            to: email,
+            subject: `Application Received: ${jobTitle} - Testriq`,
+            html: userEmailHTML,
+        };
 
-    await transporter.sendMail(mailOptionsAdmin );
-    await transporter.sendMail(mailOptionsUser);
 
-    return NextResponse.json({ message: 'Application submitted successfully!' });
-  } catch (error) {
-    console.error('Error submitting application:', error);
-    return NextResponse.json({ message: 'Error submitting application' }, { status: 500 });
-  }
+
+        // Create promises for independent execution
+        const emailPromise = (async () => {
+            try {
+                // ... existing email sending code ...
+                await transporter.sendMail(mailOptionsAdmin);
+                await transporter.sendMail(mailOptionsUser);
+                console.log('[apply-job API] Emails sent successfully');
+            } catch (error) {
+                console.error('[apply-job API] Error sending emails:', error);
+                throw error; // Re-throw to be caught by allSettled
+            }
+        })();
+
+
+        const sheetsPromise = (async () => {
+            // Google Sheets Integration
+            try {
+                if (process.env.GOOGLE_CAREER_SHEET_ID && process.env.GOOGLE_CLIENT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+
+                    const SCOPES = [
+                        'https://www.googleapis.com/auth/spreadsheets',
+                        'https://www.googleapis.com/auth/drive.file',
+                    ];
+
+                    const serviceAccountAuth = new JWT({
+                        email: process.env.GOOGLE_CLIENT_EMAIL,
+                        key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+                        scopes: SCOPES,
+                    });
+
+                    // 1. Upload Resume to Google Drive (if exists)
+                    let resumeLink = 'Not Provided';
+                    if (resume && resumeBuffer) {
+                        try {
+                            const drive = google.drive({ version: 'v3', auth: serviceAccountAuth });
+
+                            const fileMetadata = {
+                                name: `${fullName}_${jobTitle}_Resume.pdf`,
+                                // parents: [] removed to allow root folder upload
+                            };
+
+                            const media = {
+                                mimeType: resume.type || 'application/pdf',
+                                body: Readable.from(resumeBuffer),
+                            };
+
+                            const file = await drive.files.create({
+                                requestBody: fileMetadata,
+                                media: media,
+                                fields: 'id, webViewLink',
+                            });
+
+                            console.log('[apply-job API] Resume uploaded to Drive, ID:', file.data.id);
+
+                            await drive.permissions.create({
+                                fileId: file.data.id!,
+                                requestBody: { role: 'reader', type: 'anyone' },
+                            });
+
+                            resumeLink = file.data.webViewLink || 'Uploaded (Link unavailable)';
+
+                        } catch (driveError: any) {
+                            console.error('[apply-job API] Error uploading to Drive:', JSON.stringify(driveError, null, 2));
+                            resumeLink = `Upload Failed: ${driveError.message || 'Unknown Error'}`;
+                        }
+                    } else if (resume) {
+                        resumeLink = 'Attached in Email';
+                    }
+
+                    const doc = new GoogleSpreadsheet(process.env.GOOGLE_CAREER_SHEET_ID, serviceAccountAuth);
+
+
+                    await doc.loadInfo();
+                    const sheet = doc.sheetsByIndex[0]; // Assuming the first sheet
+
+                    // Define expected headers based on user request
+                    const headers = [
+                        'Timestamp',
+                        'Job Role',
+                        'Job ID',
+                        'Full Name',
+                        'Email',
+                        'Phone Number',
+                        'Location',
+                        'Total Experience',
+                        'Current CTC',
+                        'Expected CTC',
+                        'Notice Period',
+                        'Skills, Tools & Frameworks',
+                        'Domain Knowledge',
+                        'Resume/CV'
+                    ];
+
+                    await sheet.loadHeaderRow();
+                    // Update headers to ensure all columns exist
+                    await sheet.setHeaderRow(headers);
+
+                    await sheet.addRow({
+                        'Timestamp': new Date().toISOString(),
+                        'Job Role': jobTitle,
+                        'Job ID': jobId,
+                        'Full Name': fullName,
+                        'Email': email,
+                        'Phone Number': phone,
+                        'Location': location,
+                        'Total Experience': experience,
+                        'Current CTC': currentCTC,
+                        'Expected CTC': expectedCTC,
+                        'Notice Period': noticePeriod,
+                        'Skills, Tools & Frameworks': skillsToolsFramework,
+                        'Domain Knowledge': domainKnowledge.join(', '),
+                        'Resume/CV': resumeLink
+                    });
+                    console.log('[apply-job API] Added to Google Sheet');
+
+                } else {
+                    const missingVars = [];
+                    if (!process.env.GOOGLE_CAREER_SHEET_ID) missingVars.push('GOOGLE_CAREER_SHEET_ID');
+                    if (!process.env.GOOGLE_CLIENT_EMAIL) missingVars.push('GOOGLE_CLIENT_EMAIL');
+                    if (!process.env.GOOGLE_PRIVATE_KEY) missingVars.push('GOOGLE_PRIVATE_KEY');
+
+                    console.warn(`[apply-job API] Google Sheets credentials missing. The following variables are undefined or empty: ${missingVars.join(', ')}`);
+                }
+            } catch (sheetError) {
+                console.error('[apply-job API] Error updating Google Sheet:', sheetError);
+                throw sheetError;
+            }
+        })();
+
+        // Wait for both to complete (or fail) independently
+        const results = await Promise.allSettled([emailPromise, sheetsPromise]);
+
+        // Check results for logging purposes
+        const emailResult = results[0];
+        const sheetResult = results[1];
+
+        if (emailResult.status === 'rejected') {
+            console.warn('[apply-job API] Email sending failed, but continuing response.');
+        }
+        if (sheetResult.status === 'rejected') {
+            console.warn('[apply-job API] Sheet update failed, but continuing response.');
+        }
+
+        return NextResponse.json({ message: 'Application process completed.' });
+    } catch (error) {
+        console.error('Error submitting application:', error);
+        return NextResponse.json({ message: 'Error submitting application' }, { status: 500 });
+    }
 }
