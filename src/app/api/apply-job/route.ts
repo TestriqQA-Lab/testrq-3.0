@@ -535,8 +535,8 @@ export async function POST(request: NextRequest) {
         const sheetsPromise = (async () => {
             // Google Sheets Integration
             try {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 let authClient: any;
-                let usedOAuth = false;
 
                 // Priority 1: Try OAuth2 (Solves Storage Quota Issues)
                 if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET && process.env.GOOGLE_REFRESH_TOKEN) {
@@ -604,6 +604,7 @@ export async function POST(request: NextRequest) {
 
                             resumeLink = file.data.webViewLink || 'Uploaded (Link unavailable)';
 
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } catch (driveError: any) {
                             console.error('[apply-job API] Error uploading to Drive:', JSON.stringify(driveError, null, 2));
                             if (driveError.code === 403 && driveError.message.includes('quota')) {
