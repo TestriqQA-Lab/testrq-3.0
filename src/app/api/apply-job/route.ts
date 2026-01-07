@@ -535,28 +535,53 @@ export async function POST(request: NextRequest) {
         const sheetsPromise = (async () => {
             // Google Sheets Integration
             try {
-                if (process.env.GOOGLE_CAREER_SHEET_ID && process.env.GOOGLE_CLIENT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+                let authClient: any;
+                let usedOAuth = false;
 
+                // Priority 1: Try OAuth2 (Solves Storage Quota Issues)
+                if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET && process.env.GOOGLE_REFRESH_TOKEN) {
+                    const oauth2Client = new google.auth.OAuth2(
+                        process.env.GOOGLE_CLIENT_ID,
+                        process.env.GOOGLE_CLIENT_SECRET
+                    );
+                    oauth2Client.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH_TOKEN });
+                    authClient = oauth2Client;
+                    console.log('[apply-job API] Authenticating via OAuth2 (User Identity)');
+                }
+                // Priority 2: Service Account (Fallback)
+                else if (process.env.GOOGLE_CLIENT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
                     const SCOPES = [
                         'https://www.googleapis.com/auth/spreadsheets',
                         'https://www.googleapis.com/auth/drive.file',
                     ];
-
-                    const serviceAccountAuth = new JWT({
+                    authClient = new JWT({
                         email: process.env.GOOGLE_CLIENT_EMAIL,
                         key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
                         scopes: SCOPES,
                     });
+                    console.log(`[apply-job API] Authenticating via Service Account: '${process.env.GOOGLE_CLIENT_EMAIL}'`);
+                }
 
+                if (authClient) {
                     // 1. Upload Resume to Google Drive (if exists)
                     let resumeLink = 'Not Provided';
                     if (resume && resumeBuffer) {
                         try {
-                            const drive = google.drive({ version: 'v3', auth: serviceAccountAuth });
+                            const drive = google.drive({ version: 'v3', auth: authClient });
+
+                            // Check for configured folder ID
+                            const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
+                            if (folderId) {
+                                console.log(`[apply-job API] Using Folder ID: '${folderId}' (Length: ${folderId.length})`);
+                            }
+
+                            // If using Service Account and NO Shared Drive, this usually fails.
+                            // If using OAuth2, it works on "My Drive".
+                            const parents = folderId ? [folderId] : [];
 
                             const fileMetadata = {
                                 name: `${fullName}_${jobTitle}_Resume.pdf`,
-                                // parents: [] removed to allow root folder upload
+                                parents: parents
                             };
 
                             const media = {
@@ -581,13 +606,17 @@ export async function POST(request: NextRequest) {
 
                         } catch (driveError: any) {
                             console.error('[apply-job API] Error uploading to Drive:', JSON.stringify(driveError, null, 2));
-                            resumeLink = `Upload Failed: ${driveError.message || 'Unknown Error'}`;
+                            if (driveError.code === 403 && driveError.message.includes('quota')) {
+                                resumeLink = `Upload Failed: Storage Quota Exceeded via Service Account. Switch to OAuth2.`;
+                            } else {
+                                resumeLink = `Upload Failed: ${driveError.message || 'Unknown Error'}`;
+                            }
                         }
                     } else if (resume) {
                         resumeLink = 'Attached in Email';
                     }
 
-                    const doc = new GoogleSpreadsheet(process.env.GOOGLE_CAREER_SHEET_ID, serviceAccountAuth);
+                    const doc = new GoogleSpreadsheet(process.env.GOOGLE_CAREER_SHEET_ID as string, authClient);
 
 
                     await doc.loadInfo();
@@ -636,10 +665,12 @@ export async function POST(request: NextRequest) {
                 } else {
                     const missingVars = [];
                     if (!process.env.GOOGLE_CAREER_SHEET_ID) missingVars.push('GOOGLE_CAREER_SHEET_ID');
-                    if (!process.env.GOOGLE_CLIENT_EMAIL) missingVars.push('GOOGLE_CLIENT_EMAIL');
-                    if (!process.env.GOOGLE_PRIVATE_KEY) missingVars.push('GOOGLE_PRIVATE_KEY');
 
-                    console.warn(`[apply-job API] Google Sheets credentials missing. The following variables are undefined or empty: ${missingVars.join(', ')}`);
+                    if (!process.env.GOOGLE_CLIENT_ID && !process.env.GOOGLE_CLIENT_EMAIL) {
+                        missingVars.push('GOOGLE_CLIENT_ID (for OAuth) or GOOGLE_CLIENT_EMAIL (for Service Account)');
+                    }
+
+                    console.warn(`[apply-job API] Google credentials missing. The following variables are undefined or empty: ${missingVars.join(', ')}`);
                 }
             } catch (sheetError) {
                 console.error('[apply-job API] Error updating Google Sheet:', sheetError);
