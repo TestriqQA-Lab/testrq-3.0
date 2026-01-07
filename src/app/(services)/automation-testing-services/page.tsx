@@ -79,24 +79,14 @@ export const metadata: Metadata = {
   },
 };
 
-const AutomationTestingHeroSection = dynamic(
-  () => import("@/components/sections/AutomationTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import AutomationTestingHeroSection from "@/components/sections/AutomationTestingHeroSection"
 
 const AutomationTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[400px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -108,7 +98,7 @@ const AutomationTestingComprehensiveSlider = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[800px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -120,7 +110,7 @@ const AutomationTestingProvenTestingProcess = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -132,7 +122,7 @@ const ManualTestingFrameworkArchitecture = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[700px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -144,7 +134,7 @@ const AutomationTestingToolsFramework = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -156,7 +146,7 @@ const AutomationTestingCaseStudies = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),
@@ -168,7 +158,7 @@ const AutomationTestingFAQs = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
         <p className="text-gray-500">Loading...</p>
       </div>
     ),

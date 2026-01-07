@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import {
   FaRobot,
   FaCogs,
@@ -13,7 +14,8 @@ import {
   FaCode,
 } from "react-icons/fa";
 import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
-import Lightbox from "../VideoLightBox";
+
+const Lightbox = dynamic(() => import("../VideoLightBox"), { ssr: false });
 
 const AutomationTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);

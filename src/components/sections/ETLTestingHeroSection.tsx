@@ -100,7 +100,7 @@ const ETLTestingHeroSection: React.FC = () => {
               </Link>
               <button
                 onClick={openLightbox}
-                className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center"
+                className="inline-flex items-center justify-center w-full border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center"
               >
                 <span className="mr-2">▶</span>
                 Watch Demo

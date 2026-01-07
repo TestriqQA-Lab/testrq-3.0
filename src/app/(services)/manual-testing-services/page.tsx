@@ -76,17 +76,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ManualTestingHeroSection = dynamic(
-  () => import("@/components/sections/ManualTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import ManualTestingHeroSection from "@/components/sections/ManualTestingHeroSection"
 
 const ManualTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/ManualTestingReadyToEnsureQuality"),
