@@ -118,7 +118,7 @@ const AutomationTestingHeroSection: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse will-change-transform"></div>
                   <h2 className="text-lg font-semibold text-gray-900">
                     Automation Control Center
                   </h2>

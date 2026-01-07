@@ -84,17 +84,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ShoppingAppHeroSection = dynamic(
-  () => import("@/components/sections/ShoppingAppHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import ShoppingAppHeroSection from "@/components/sections/ShoppingAppHeroSection";
 
 const ShoppingAppCertificationPillars = dynamic(
   () => import("@/components/sections/ShoppingAppCertificationPillars"),

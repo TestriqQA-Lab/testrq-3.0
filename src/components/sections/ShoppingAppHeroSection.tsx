@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import {
   ShoppingCart,
   ArrowRight,
@@ -105,25 +104,15 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
           </span>
         </div>
         {/* Trust Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8"
-        >
+        <div className="text-center mb-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="inline-flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-full text-sm font-medium">
             <ShoppingCart className="w-4 h-4 hidden md:block" />
             Trusted E-Commerce Platform Certification
           </div>
-        </motion.div>
+        </div>
 
         {/* Main Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Shopping Apps <span className="text-brand-blue">Certification</span>
           </h1>
@@ -137,15 +126,10 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
             </Link>{" "}
             - so customers can shop with confidence.
           </p>
-        </motion.div>
+        </div>
 
         {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto"
-        >
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
           <Link href="/contact-us">
             <button className="bg-brand-blue cursor-pointer  text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               Get Certified Now
@@ -159,19 +143,14 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
             <CreditCard className="w-5 h-5" />
             View Certification Process
           </button>
-        </motion.div>
+        </div>
 
         {/* Highlights Section (Replacing Metrics) */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1"
             >
               <div className="mb-4 text-brand-blue">{item.icon}</div>
               <h2 className="text-lg font-bold text-gray-900 mb-2">
@@ -180,7 +159,7 @@ const ShoppingAppHeroSection: React.FC<ShoppingAppHeroSectionProps> = ({
               <p className="text-gray-600">{item.description}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

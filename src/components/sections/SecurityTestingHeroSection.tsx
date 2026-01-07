@@ -46,7 +46,7 @@ const SecurityTestingHeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Content */}
           <div className="space-y-4">
-            <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-medium">
+            <div className="hidden md:inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-sm font-medium">
               <FaShieldAlt className="mr-2" />
               Cybersecurity Testing Experts
             </div>
@@ -141,7 +141,7 @@ const SecurityTestingHeroSection: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse will-change-transform"></div>
                   <h2 className="text-lg font-semibold text-gray-900">
                     Security Command Center
                   </h2>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Shield,
   ArrowRight,
@@ -63,12 +62,7 @@ const DatingAppHeroSection = () => {
           </span>
         </div>
         <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
+          <div className="mb-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="inline-flex items-center bg-brand-blue text-white rounded-full text-base md:text-sm px-6 py-3 mb-6">
               <Shield className="w-4 h-4 mr-2 hidden md:block" />
               The New Standard in Dating App Trust & Safety
@@ -87,58 +81,42 @@ const DatingAppHeroSection = () => {
               certification helps you attract users, gain investor confidence,
               and meet the highest <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">safety</Link> standards from day one.
             </p>
-          </motion.div>
+          </div>
 
           {/* Trust Points */}
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             {trustMetrics.map((metric, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-white p-6 rounded-2xl shadow-lg border flex flex-col items-center border-gray-100"
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border flex flex-col items-center border-gray-100 hover:scale-105 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`${metric.color} mb-3`}>{metric.icon}</div>
                 <div className="text-lg font-semibold text-gray-800 leading-snug">
                   {metric.label}
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
             <Link href="/contact-us">
-              <motion.button
-                className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
+                className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:bg-[#1e90d4] transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95"
               >
                 Get Certified Now
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </motion.button>
+              </button>
             </Link>
 
-            <motion.button
-              className="border-2 border-brand-blue cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <button
+              className="border-2 border-brand-blue cursor-pointer text-brand-blue px-8 py-4 rounded-xl font-semibold text-lg hover:border-brand-blue hover:text-brand-blue transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95"
               onClick={openLightbox}
             >
               <Play className="mr-2 w-5 h-5 text-brand-blue" />
               Watch Demo
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         </div>
       </div>
 

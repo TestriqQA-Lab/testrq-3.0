@@ -45,17 +45,7 @@ export const metadata: Metadata = {
   },
 };
 
-const SecurityTestingHeroSection = dynamic(
-  () => import("@/components/sections/SecurityTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import SecurityTestingHeroSection from "@/components/sections/SecurityTestingHeroSection"
 
 
 const SecurityTestingReadyToEnsureQuality = dynamic(

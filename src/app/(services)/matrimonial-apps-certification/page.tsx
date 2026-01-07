@@ -10,8 +10,8 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title:  "Matrimonial App Certification  ",
-   
+  title: "Matrimonial App Certification  ",
+
   description: "Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.",
   keywords: [
     "Matrimonial App Certification",
@@ -81,17 +81,7 @@ export const metadata: Metadata = {
 
 
 
-const MatrimonialAppHeroSection = dynamic(
-  () => import("@/components/sections/MatrimonialAppHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import MatrimonialAppHeroSection from "@/components/sections/MatrimonialAppHeroSection";
 
 const MatrimonialAppCertificationPillars = dynamic(
   () => import("@/components/sections/MatrimonialAppCertificationPillars"),
@@ -223,7 +213,7 @@ const faqSchema = {
 };
 
 export default function MatrimonialAppsCertification() {
-    const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Services", url: "https://www.testriq.com/matrimonial-apps-certification" },
     { name: "Matrimonial App Certification", url: "https://www.testriq.com/matrimonial-apps-certification" }
@@ -233,7 +223,7 @@ export default function MatrimonialAppsCertification() {
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={matrimonialAppCertificationSchema} />
-       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <MatrimonialAppHeroSection />

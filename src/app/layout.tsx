@@ -4,27 +4,13 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
 
-const Navbar = dynamic(
-  () => import("@/components/layout/Header"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import Navbar from "@/components/layout/Header";
 
 const Footer = dynamic(
   () => import("@/components/layout/Footer"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => null,
   }
 );
 
@@ -65,7 +51,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.testriq.com/"  ),
+  metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
     canonical: "/",
   },
@@ -119,19 +105,19 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>  ) {
+}>) {
   return (
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
-        >
-          <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          {/* <TawkToScript /> */}
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} font-sans flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
+      >
+        <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+        {/* <TawkToScript /> */}
 
-        </body>
-      </html>
+      </body>
+    </html>
   );
 }

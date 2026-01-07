@@ -83,17 +83,7 @@ export const metadata: Metadata = {
   },
 };
 
-const DatingAppHeroSection = dynamic(
-  () => import("@/components/sections/DatingAppHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import DatingAppHeroSection from "@/components/sections/DatingAppHeroSection";
 const DatingAppSixPillars = dynamic(
   () => import("@/components/sections/DatingAppSixPillars"),
   {
