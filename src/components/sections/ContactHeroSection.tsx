@@ -16,7 +16,7 @@ import {
 } from "react-icons/fa";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import { isValidPhoneNumber } from "libphonenumber-js";
+import { isValidPhoneNumber, parsePhoneNumber } from "libphonenumber-js";
 
 const ContactHeroSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,44 +50,55 @@ const ContactHeroSection: React.FC = () => {
       return false;
     }
 
-    const digits = phone.replace(/\D/g, "");
-
-    // Check for repeating digits (e.g., 1111111111)
-    if (/^(\d)\1+$/.test(digits)) {
-      setPhoneError("Phone number cannot consist of repeating digits.");
-      return false;
-    }
-
-    // Check for sequential digits (e.g., 1234567890)
-    const isSequential = (num: string) => {
-      for (let i = 0; i < num.length - 5; i++) {
-        const n = num.split("").map(Number);
-        if (
-          (n[i + 1] === n[i] + 1 &&
-            n[i + 2] === n[i + 1] + 1 &&
-            n[i + 3] === n[i + 2] + 1 &&
-            n[i + 4] === n[i + 3] + 1 &&
-            n[i + 5] === n[i + 4] + 1) ||
-          (n[i + 1] === n[i] - 1 &&
-            n[i + 2] === n[i + 1] - 1 &&
-            n[i + 3] === n[i + 2] - 1 &&
-            n[i + 4] === n[i + 3] - 1 &&
-            n[i + 5] === n[i + 4] - 1)
-        ) {
-          return true;
-        }
+    try {
+      const phoneNumber = parsePhoneNumber(phone);
+      if (!phoneNumber) {
+        setPhoneError("Invalid phone number format.");
+        return false;
       }
-      return false;
-    };
-    if (isSequential(digits)) {
-      setPhoneError("Phone number cannot consist of sequential digits.");
-      return false;
-    }
+      const nationalNumber = phoneNumber.nationalNumber as string;
 
-    // Check for all zeros
-    if (/^0+$/.test(digits)) {
-      setPhoneError("Phone number cannot be all zeros.");
-      return false;
+      // Check for repeating digits (e.g., 9999999999) on the national number
+      if (/^(\d)\1+$/.test(nationalNumber)) {
+        setPhoneError("Phone number cannot consist of repeating digits.");
+        return false;
+      }
+
+      // Check for sequential digits (e.g., 1234567890)
+      const isSequential = (num: string) => {
+        for (let i = 0; i < num.length - 5; i++) {
+          const n = num.split("").map(Number);
+          if (
+            (n[i + 1] === n[i] + 1 &&
+              n[i + 2] === n[i + 1] + 1 &&
+              n[i + 3] === n[i + 2] + 1 &&
+              n[i + 4] === n[i + 3] + 1 &&
+              n[i + 5] === n[i + 4] + 1) ||
+            (n[i + 1] === n[i] - 1 &&
+              n[i + 2] === n[i + 1] - 1 &&
+              n[i + 3] === n[i + 2] - 1 &&
+              n[i + 4] === n[i + 3] - 1 &&
+              n[i + 5] === n[i + 4] - 1)
+          ) {
+            return true;
+          }
+        }
+        return false;
+      };
+      if (isSequential(nationalNumber)) {
+        setPhoneError("Phone number cannot consist of sequential digits.");
+        return false;
+      }
+
+      // Check for all zeros
+      if (/^0+$/.test(nationalNumber)) {
+        setPhoneError("Phone number cannot be all zeros.");
+        return false;
+      }
+
+    } catch (error) {
+      console.error("Phone validation error:", error);
+      // Fallback or treat as valid if parsing fails but isValidPhoneNumber passed
     }
 
     setPhoneError(null);
@@ -280,7 +291,6 @@ const ContactHeroSection: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Breadcrumb */}
-        {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
           <Link
             href="/"
@@ -290,35 +300,274 @@ const ContactHeroSection: React.FC = () => {
             Home
           </Link>
           <FaChevronRight className="text-xs text-gray-400" />
-          <span className="text-[theme(color.brand.blue)]">
-            Contact Us
-          </span>
+          <span className="text-[theme(color.brand.blue)]">Contact Us</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Content */}
-          <div>
-            <div>
-              <div className="inline-flex gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
-                <FaComments className="w-4 h-4 text-white" />
-                <span className="text-sm font-medium text-white">
-                  Get in Touch
-                </span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-[auto_1fr] gap-x-12 lg:gap-x-16 gap-y-8 lg:gap-y-0">
+          {/* Header Block: Order 1 Mobile / Col 1 Row 1 Desktop */}
+          <div className="order-1 lg:col-start-1 lg:row-start-1">
+            <div className="hidden md:inline-flex gap-2 bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
+              <FaComments className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">
+                Get in Touch
+              </span>
+            </div>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Let&apos;s Connect and
+              <span className="block text-[theme(color.brand.blue)]">
+                Build Together
+              </span>
+            </h1>
+          </div>
+
+          {/* Form Block: Order 2 Mobile / Col 2 Row 1-Span-2 Desktop */}
+          <div className="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  Let&apos;s Talk Business
+                </h2>
+                <p className="text-gray-600">
+                  Fill out the form below and we&apos;ll get back to you within 2
+                  hours.
+                </p>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Let&apos;s Connect and
-                <span className="block text-[theme(color.brand.blue)]">
-                  Build Together
-                </span>
-              </h1>
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-gray-600">
+                    Thank you for reaching out. We&apos;ll get back to you soon.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name *
+                    </label>
+                    <div className="relative">
+                      <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                        onBlur={() => validateFullName(formData.fullName)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-300"
+                          }`}
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    {fullNameError && (
+                      <p className="text-red-500 text-xs mt-1">{fullNameError}</p>
+                    )}
+                  </div>
 
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Connect with our QA experts for software testing consultation,
-                support, or partnerships. Achieve quality excellence with our
-                <Link href="/automation-testing-services"> automation</Link>, <Link href="/manual-testing-services">manual</Link>, and <Link href="/performance-testing-services">performance testing services</Link>.
-              </p>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Email *
+                    </label>
+                    <div className="relative">
+                      <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="email"
+                        name="businessEmail"
+                        value={formData.businessEmail}
+                        onChange={handleInputChange}
+                        onBlur={() => validateEmail(formData.businessEmail)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-300"
+                          }`}
+                        placeholder="john@company.com"
+                      />
+                    </div>
+                    {emailError && (
+                      <p className="text-red-500 text-xs mt-1">{emailError}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Business Phone *
+                    </label>
+                    <div className="relative">
+                      <PhoneInput
+                        international
+                        value={formData.businessPhone}
+                        onChange={handlePhoneChange}
+                        onBlur={() => validatePhoneNumber(formData.businessPhone)}
+                        className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-300"
+                          }`}
+                        placeholder="Enter phone number"
+                        inputProps={{
+                          className:
+                            "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
+                        }}
+                      />
+                    </div>
+                    {phoneError && (
+                      <p className="text-red-500 text-xs mt-1">{phoneError}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      What stage is your company? *
+                    </label>
+                    <div className="relative">
+                      <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+                      <select
+                        name="companyStage"
+                        value={formData.companyStage}
+                        onChange={handleInputChange}
+                        onBlur={() => validateCompanyStage(formData.companyStage)}
+                        required
+                        className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${companyStageError ? "border-red-500" : "border-gray-300"
+                          }`}
+                        aria-label="Select your company stage"
+                      >
+                        <option value="">Select your company stage</option>
+                        <option value="early_stage_startup">
+                          Early stage startup
+                        </option>
+                        <option value="mid_stage_startup">
+                          Mid stage startup
+                        </option>
+                        <option value="late_stage_startup">
+                          Late stage startup
+                        </option>
+                        <option value="enterprise">Enterprise</option>
+                      </select>
+                    </div>
+                    {companyStageError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {companyStageError}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      How did you hear of us? (Upto 50 characters) *
+                    </label>
+                    <div className="relative">
+                      <FaComments className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                      <input
+                        type="text"
+                        name="howDidYouHear"
+                        value={formData.howDidYouHear}
+                        onChange={handleInputChange}
+                        onBlur={() =>
+                          validateHowDidYouHear(formData.howDidYouHear)
+                        }
+                        required
+                        maxLength={50}
+                        className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError
+                          ? "border-red-500"
+                          : "border-gray-300"
+                          }`}
+                        placeholder="Google, LinkedIn, Referral, etc."
+                      />
+                    </div>
+                    {howDidYouHearError && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {howDidYouHearError}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      onBlur={() => validateMessage(formData.message)}
+                      required
+                      rows={4}
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-300"
+                        }`}
+                      placeholder="Tell us about your project, testing needs, or any questions you have..."
+                    />
+                    {messageError && (
+                      <p className="text-red-500 text-xs mt-1">{messageError}</p>
+                    )}
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                    ) : (
+                      <FaPaperPlane className="mr-2" />
+                    )}
+                    {isLoading ? "Sending..." : "Send Message"}
+                  </button>
+
+                  <p className="text-xs text-gray-500 text-center">
+                    By submitting this form, you agree to our{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="text-[theme(color.brand.blue)] hover:underline"
+                    >
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/terms-of-service"
+                      className="text-[theme(color.brand.blue)] hover:underline"
+                    >
+                      Terms of Service
+                    </Link>
+                    .
+                  </p>
+                </form>
+              )}
             </div>
+          </div>
+
+          {/* Details Block: Order 3 Mobile / Col 1 Row 2 Desktop */}
+          <div className="order-3 lg:col-start-1 lg:row-start-2">
+            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+              Connect with our QA experts for software testing consultation,
+              support, or partnerships. Achieve quality excellence with our
+              <Link href="/automation-testing-services"> automation</Link>,{" "}
+              <Link href="/manual-testing-services">manual</Link>, and{" "}
+              <Link href="/performance-testing-services">
+                performance testing services
+              </Link>
+              .
+            </p>
 
             {/* Quick Contact Methods */}
             <div className="space-y-4">
@@ -364,239 +613,6 @@ const ContactHeroSection: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Right Column - Contact Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                Let&apos;s Talk Business
-              </h2>
-              <p className="text-gray-600">
-                Fill out the form below and we&apos;ll get back to you within 2
-                hours.
-              </p>
-            </div>
-
-            {isSubmitted ? (
-              <div className="text-center py-8">
-                <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Message Sent!
-                </h3>
-                <p className="text-gray-600">
-                  Thank you for reaching out. We&apos;ll get back to you soon.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <div className="relative">
-                    <FaUser className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      onBlur={() => validateFullName(formData.fullName)}
-                      required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${fullNameError ? "border-red-500" : "border-gray-300"
-                        }`}
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  {fullNameError && (
-                    <p className="text-red-500 text-xs mt-1">{fullNameError}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Business Email *
-                  </label>
-                  <div className="relative">
-                    <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <input
-                      type="email"
-                      name="businessEmail"
-                      value={formData.businessEmail}
-                      onChange={handleInputChange}
-                      onBlur={() => validateEmail(formData.businessEmail)}
-                      required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${emailError ? "border-red-500" : "border-gray-300"
-                        }`}
-                      placeholder="john@company.com"
-                    />
-                  </div>
-                  {emailError && (
-                    <p className="text-red-500 text-xs mt-1">{emailError}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Business Phone *
-                  </label>
-                  <div className="relative">
-                    <PhoneInput
-                      international
-                      value={formData.businessPhone}
-                      onChange={handlePhoneChange}
-                      onBlur={() => validatePhoneNumber(formData.businessPhone)}
-                      className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-300"
-                        }`}
-                      placeholder="Enter phone number"
-                      inputprops={{
-                        className:
-                          "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
-                      }}
-                    />
-                  </div>
-                  {phoneError && (
-                    <p className="text-red-500 text-xs mt-1">{phoneError}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    What stage is your company? *
-                  </label>
-                  <div className="relative">
-                    <FaBuilding className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-                    <select
-                      name="companyStage"
-                      value={formData.companyStage}
-                      onChange={handleInputChange}
-                      onBlur={() => validateCompanyStage(formData.companyStage)}
-                      required
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${companyStageError ? "border-red-500" : "border-gray-300"
-                        }`}
-                      aria-label="Select your company stage"
-                    >
-                      <option value="">Select your company stage</option>
-                      <option value="early_stage_startup">
-                        Early stage startup
-                      </option>
-                      <option value="mid_stage_startup">
-                        Mid stage startup
-                      </option>
-                      <option value="late_stage_startup">
-                        Late stage startup
-                      </option>
-                      <option value="enterprise">Enterprise</option>
-                    </select>
-                  </div>
-                  {companyStageError && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {companyStageError}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear of us? (Upto 50 characters) *
-                  </label>
-                  <div className="relative">
-                    <FaComments className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <input
-                      type="text"
-                      name="howDidYouHear"
-                      value={formData.howDidYouHear}
-                      onChange={handleInputChange}
-                      onBlur={() =>
-                        validateHowDidYouHear(formData.howDidYouHear)
-                      }
-                      required
-                      maxLength={50}
-                      className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${howDidYouHearError
-                        ? "border-red-500"
-                        : "border-gray-300"
-                        }`}
-                      placeholder="Google, LinkedIn, Referral, etc."
-                    />
-                  </div>
-                  {howDidYouHearError && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {howDidYouHearError}
-                    </p>
-                  )}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    onBlur={() => validateMessage(formData.message)}
-                    required
-                    rows={4}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 resize-none ${messageError ? "border-red-500" : "border-gray-300"
-                      }`}
-                    placeholder="Tell us about your project, testing needs, or any questions you have..."
-                  />
-                  {messageError && (
-                    <p className="text-red-500 text-xs mt-1">{messageError}</p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center"
-                  disabled={isLoading}
-                >
-                  {isLoading ? (
-                    <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                  ) : (
-                    <FaPaperPlane className="mr-2" />
-                  )}
-                  {isLoading ? "Sending..." : "Send Message"}
-                </button>
-
-                <p className="text-xs text-gray-500 text-center">
-                  By submitting this form, you agree to our{" "}
-                  <Link
-                    href="/privacy-policy"
-                    className="text-[theme(color.brand.blue)] hover:underline"
-                  >
-                    Privacy Policy
-                  </Link>{" "}
-                  and{" "}
-                  <Link
-                    href="/terms-of-service"
-                    className="text-[theme(color.brand.blue)] hover:underline"
-                  >
-                    Terms of Service
-                  </Link>
-                  .
-                </p>
-              </form>
-            )}
           </div>
         </div>
       </div>

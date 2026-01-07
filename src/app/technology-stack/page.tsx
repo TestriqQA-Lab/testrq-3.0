@@ -48,17 +48,7 @@ export const metadata: Metadata = {
 };
 
 // Dynamic imports for better performance
-const ToolsHeroSection = dynamic(
-  () => import("@/components/sections/ToolsHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import ToolsHeroSection from "@/components/sections/ToolsHeroSection"
 
 const ToolsCategoriesSection = dynamic(
   () => import("@/components/sections/ToolsCategoriesSection"),
