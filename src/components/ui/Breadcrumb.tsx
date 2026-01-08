@@ -9,14 +9,21 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
     items: BreadcrumbItem[];
     className?: string;
+    variant?: 'light' | 'dark';
 }
 
-export default function Breadcrumb({ items, className = 'text-gray-600' }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className = '', variant = 'light' }: BreadcrumbProps) {
+    const isDark = variant === 'dark';
+    const baseTextColor = isDark ? 'text-white' : 'text-gray-600';
+    const separatorColor = isDark ? 'text-white/80' : 'text-gray-400';
+    const activeColor = isDark ? 'text-white font-semibold' : 'text-[theme(color.brand.blue)]';
+    const hoverColor = isDark ? 'hover:text-blue-200' : 'hover:text-[theme(color.brand.blue)]';
+
     return (
-        <div className={`flex items-center gap-2 text-sm font-medium mb-6 ${className}`}>
+        <div className={`flex items-center gap-2 text-sm font-medium mb-6 ${baseTextColor} ${className}`}>
             <Link
                 href="/"
-                className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
+                className={`flex items-center gap-2 ${hoverColor} transition-colors`}
             >
                 <FaHome className="text-lg" />
                 Home
@@ -24,16 +31,16 @@ export default function Breadcrumb({ items, className = 'text-gray-600' }: Bread
 
             {items.map((item, index) => (
                 <div key={index} className="flex items-center gap-2">
-                    <FaChevronRight className="text-xs text-gray-400" />
+                    <FaChevronRight className={`text-xs ${separatorColor}`} />
                     {item.href ? (
                         <Link
                             href={item.href}
-                            className="hover:text-[theme(color.brand.blue)] transition-colors"
+                            className={`${hoverColor} transition-colors`}
                         >
                             {item.label}
                         </Link>
                     ) : (
-                        <span className="text-[theme(color.brand.blue)]">
+                        <span className={activeColor}>
                             {item.label}
                         </span>
                     )}
