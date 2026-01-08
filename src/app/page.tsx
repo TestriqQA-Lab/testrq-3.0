@@ -2,17 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, { organizationSchema, websiteSchema, productServiceSchema } from "@/components/seo/StructuredData";
 
-const HomeHeroSection = dynamic(
-  () => import("@/components/sections/HomeHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+import HomeHeroSection from "@/components/sections/HomeHeroSection";
 
 
 const HomeComprehensiveSoftwareTesting = dynamic(
