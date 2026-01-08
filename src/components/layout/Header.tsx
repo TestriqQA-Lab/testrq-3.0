@@ -411,7 +411,11 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="hidden xl:flex items-center gap-3 2xl:gap-4">
-          <Link href="/contact-us">
+          <Link
+            href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1W3Eeyft1hJ_qD6g0x_G9lz_V9RUSlSxsz1G5jorkyssa8WxyvrQap44rv8CFFbGVpzUDHCjCl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="bg-[#25A8E0] text-white px-3 xl:px-4 py-2 rounded-xl hover:bg-[#057db0] cursor-pointer flex items-center gap-2">
               <span className="text-sm xl:text-base">Talk to Expert</span>
               <FaArrowRight className="w-3 h-3 xl:w-4 xl:h-5" />
@@ -573,8 +577,10 @@ const Navbar = () => {
 
           <div className="flex items-center justify-between pt-4 border-t">
             <Link
-              href="/contact-us"
-              onClick={() => handleLinkClick("/contact-us", "")}
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1W3Eeyft1hJ_qD6g0x_G9lz_V9RUSlSxsz1G5jorkyssa8WxyvrQap44rv8CFFbGVpzUDHCjCl"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleLinkClick("", "")}
             >
               <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center gap-2">
                 <span className="text-sm">Talk to Expert</span>
@@ -731,8 +737,10 @@ const Navbar = () => {
 
           <div className="mt-6 flex flex-col gap-4 pt-4 border-t">
             <Link
-              href="/contact-us"
-              onClick={() => handleLinkClick("/contact-us", "")}
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1W3Eeyft1hJ_qD6g0x_G9lz_V9RUSlSxsz1G5jorkyssa8WxyvrQap44rv8CFFbGVpzUDHCjCl"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => handleLinkClick("", "")}
             >
               <button className="bg-[#25A8E0] text-white px-4 py-2 rounded-xl hover:bg-blue-400 flex items-center justify-center gap-2">
                 <span className="text-sm">Talk to Expert</span>
