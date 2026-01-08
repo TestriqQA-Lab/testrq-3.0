@@ -18,6 +18,71 @@ export interface JobOpening {
 export const jobOpenings: JobOpening[] = [
   {
     id: 1, // unique ID
+    title: "Accountant ( Part-Time )",
+    location: "On-site",
+    type: "Part-time",
+    experience: "2-3 Years",
+    description: `
+##### Key Responsibilities:
+- Book Keeping: Record & maintain all the entries of day to day business
+transactions like sales, purchase, payments & receipts. Vendor payments and
+Payment follow up.
+- Tax Compliance: Prepare and file accurate and timely tax returns & payments,
+including income tax, GST, TDS, Profession Tax and Provident fund.
+- Financial Reporting: Prepare monthly MIS report. Generate various reports for
+management to support decision-making.
+- End to end payroll processing: Data entry in payroll, salary calculation, handling
+employees queries regarding their payroll. Stay updated with payroll regulations.
+- Design, document, and execute comprehensive test plans, automation suites, and test
+harnesses.
+- Account finalization. Assist CA in audit.
+- Keep up-to-date with changes in accounting and taxation laws & regulations
+
+
+##### Requirements:
+- Minimum 2 years of hands-on experience.
+- Proven experience in bookkeeping and day-to-day accounting, including sales,
+purchase, payments, receipts and vendor reconciliation.
+- Sound knowledge of Indian tax compliances including GST, TDS, Income Tax,
+Profession Tax and Provident Fund.
+- Experience in preparing and filing tax returns accurately and within statutory
+timelines.
+- Hands-on experience in end-to-end payroll processing, including payroll data
+entry, salary computation and employee payroll query resolution.
+- Experience in account finalization and coordination with Chartered Accountants
+for audits.
+- Working knowledge of accounting software (Tally/Zoho/QuickBooks or similar)
+and MS Excel.
+- Good communication, Ability to work independently and manage timelines in a
+part-time role.
+  `,
+    skills: [
+      "Book Keeping",
+      "Tax Compliance",
+      "Financial Reporting",
+      "Payroll Processing",
+      "Payroll Audit",
+      "GST",
+      "TDS",
+      "Income Tax",
+      "ITR Returns",
+      "PT",
+      "PF",
+      "Accounts",
+      "Laws",
+      "Taxation",
+      "Payments",
+      "Receipts",
+      "MIS Report",
+
+    ],
+    icon: FaBug,
+    badges: ["urgent"],
+    color: "from-green-400 to-green-600",
+    salary: "Competitive",
+  },
+  {
+    id: 2, // unique ID
     title: "QA Engineer ( ETL + API )",
     location: "Remote",
     type: "Full-time",
@@ -82,7 +147,7 @@ collaborate effectively with minimal supervision.
     salary: "Competitive",
   },
   {
-    id: 2, // unique ID
+    id: 3, // unique ID
     title: "Full Stack Developer ( .NET + AngularJS )",
     location: "Remote",
     type: "6 Months",
@@ -133,7 +198,7 @@ high-quality software.
     salary: "Competitive",
   },
   {
-    id: 3, // unique ID
+    id: 4, // unique ID
     title: "Business Development Executive (Sales)",
     location: "Onsite (Mira Road, Mumbai)",
     type: "Full-time",
@@ -183,7 +248,7 @@ and testing processes.
     salary: "Competitive",
   },
   {
-    id: 4, // unique ID
+    id: 5, // unique ID
     title: "Manual Tester (API – Postman)",
     location: "Hybrid (Mira Road, Mumbai)",
     type: "Full-time",
@@ -227,7 +292,7 @@ and testing processes.
     salary: "Competitive",
   },
   {
-    id: 5,
+    id: 6,
     title: "Automation Tester (Trading Domain)",
     location: "On-Site (Kurla, Mumbai)",
     type: "Full-time",
@@ -263,7 +328,7 @@ and testing processes.
     salary: "Competitive",
   },
   {
-    id: 6,
+    id: 7,
     title: "Automation Test Engineer (Playwright + Javascript)",
     location: "On-site (Prabhadevi, Mumbai)",
     type: "Full-time",
@@ -310,7 +375,7 @@ Work Type: Full-time
     salary: "Competitive",
   },
   {
-    id: 7,
+    id: 8,
     title: "Automation Test Engineer (Selenium + Playwright)",
     location: "On-site (Mira Road, Mumbai)",
     type: "Full-time",
@@ -362,7 +427,7 @@ Work Type: Full-time
     color: "from-blue-500 to-blue-700",
   },
   {
-    id: 8,
+    id: 9,
     title: "Playwright Automation Tester",
     location: "On-site (Western Mumbai)",
     type: "Full-time",
@@ -415,7 +480,7 @@ Work Type: Full-time
     color: "from-purple-500 to-purple-700",
   },
   {
-    id: 9,
+    id: 10,
     title:
       "QA / Automation Intern / Software Testing Intern (Java / JavaScript)",
     location: "On-site (Mira Road)",
@@ -472,7 +537,7 @@ Duration: 3–6 months
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 10,
+    id: 11,
     title: "Penetration Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -529,7 +594,7 @@ Work Type: Full Time
     color: "from-red-500 to-red-700",
   },
   {
-    id: 11,
+    id: 12,
     title: "Data Processing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -578,7 +643,7 @@ Timing: 8:30pm to 5:30am
     color: "from-indigo-500 to-indigo-700",
   },
   {
-    id: 12,
+    id: 13,
     title: "Business Development Executive - Intern",
     location: "Mumbai (Mira Road)",
     type: "Internship",
@@ -628,7 +693,7 @@ Internship Duration: 3 Months
     color: "from-pink-500 to-pink-700",
   },
   {
-    id: 13,
+    id: 14,
     title: "SOC Analyst",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -681,7 +746,7 @@ Shift: Day Shift (9 AM – 6 PM, Mon – Sat)
     color: "from-teal-500 to-teal-700",
   },
   {
-    id: 14,
+    id: 15,
     title: "SEO & Digital Marketing Expert",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -741,7 +806,7 @@ Work Type: Full Time
     color: "from-orange-500 to-orange-700",
   },
   {
-    id: 15,
+    id: 16,
     title: "Front End Developer (Immediate Joiners Only)",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -791,7 +856,7 @@ Work Type: Full Time
     color: "from-blue-400 to-blue-600",
   },
   {
-    id: 16,
+    id: 17,
     title: "Graphic Designer",
     location: "Mumbai",
     type: "Full-time",
@@ -843,7 +908,7 @@ Work Type: Full Time
     color: "from-purple-400 to-purple-600",
   },
   {
-    id: 17,
+    id: 18,
     title: "Cypress Automation Tester",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -908,7 +973,7 @@ Work Type: Full Time
     salary: "Competitive",
   },
   {
-    id: 18,
+    id: 19,
     title: "Business Development Manager",
     location: "Mumbai (Mira Road)",
     type: "Full-time",
@@ -959,7 +1024,7 @@ Work Type: Full Time
   },
 
   {
-    id: 19,
+    id: 20,
     title: "Digital Marketing Executive",
     location: "Mumbai",
     type: "Full-time",
@@ -1010,7 +1075,7 @@ Work Type: Full Time
   },
 
   {
-    id: 20,
+    id: 21,
     title: "Social Media Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -1057,7 +1122,7 @@ Work Type: Full Time
   },
 
   {
-    id: 21,
+    id: 22,
     title: "QA Test Lead",
     location: "Mumbai",
     type: "Full-time",
@@ -1105,7 +1170,7 @@ Work Type: Full Time
   },
 
   {
-    id: 22,
+    id: 23,
     title: "Product Manager",
     location: "Mumbai",
     type: "Full-time",
@@ -1153,7 +1218,7 @@ Work Type: Full Time
   },
 
   {
-    id: 23,
+    id: 24,
     title: "Tele Sales Executive",
     location: "Mumbai",
     type: "Full-time",
