@@ -8,9 +8,9 @@ import image3 from '../../public/Robot-AI.svg';
 
 
 const images = [
-  { title:"Launch Fast QA", src: image1, alt: 'Launch Fast QA', text: 'LaunchFast QA Start-Up Specials' },
-  { title:"Group Computers", src: image2, alt: 'Group Computers', text: 'Web and Mobile Applications' },
-  { title:"Robot AI", src: image3, alt: 'Robot AI', text: 'AI and ML Applications' },
+  { title: "Launch Fast QA", src: image1, alt: 'Launch Fast QA', text: 'LaunchFast QA Start-Up Specials' },
+  { title: "Group Computers", src: image2, alt: 'Group Computers', text: 'Web and Mobile Applications' },
+  { title: "Robot AI", src: image3, alt: 'Robot AI', text: 'AI and ML Applications' },
 ];
 
 const ImageSlider = () => {
@@ -62,21 +62,21 @@ const ImageSlider = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`flex flex-col justify-center text-center w-full h-full ${
-              index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
-            }`}
+            className={`flex flex-col justify-center text-center w-full h-full ${index === currentIdx ? 'slide-enter' : 'slide-exit hidden'
+              }`}
           >
             <Image
               title={image.title}
               src={image.src}
               alt={image.alt}
-            //   fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              //   fill
               style={{ objectFit: 'cover' }}
               priority={index === 0} // Prioritize first image for faster loading
             />
 
             <p className=' my-5 text-3xl font-semibold bg-linear-to-r from-zinc-500 via-stone-600 to-zinc-900 bg-clip-text text-transparent' >{image.text}</p>
-            
+
           </div>
         ))}
       </div>
