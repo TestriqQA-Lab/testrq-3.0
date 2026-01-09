@@ -4,6 +4,7 @@ import React from "react";
 import { FaTag, FaBookOpen, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
 import { WordPressTag } from "@/lib/wordpress-graphql";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 interface TagHeroSectionProps {
   tag: WordPressTag;
@@ -23,23 +24,13 @@ const TagHeroSection: React.FC<TagHeroSectionProps> = ({ tag, postCount }) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Breadcrumb */}
         <div className="mb-8">
-          <nav className="flex items-center gap-2 text-sm text-purple-200">
-            <Link 
-              href="/blog" 
-              className="hover:text-white transition-colors"
-            >
-              Blog
-            </Link>
-            <span>/</span>
-            <Link 
-              href="/blog/categories" 
-              className="hover:text-white transition-colors"
-            >
-              Categories
-            </Link>
-            <span>/</span>
-            <span className="text-white">#{tag.name}</span>
-          </nav>
+          <Breadcrumb
+            variant="dark"
+            items={[
+              { label: "Blog", href: "/blog" },
+              { label: tag.name },
+            ]}
+          />
         </div>
 
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
@@ -98,8 +89,8 @@ const TagHeroSection: React.FC<TagHeroSectionProps> = ({ tag, postCount }) => {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
             <p className="text-purple-100 leading-relaxed">
               Discover comprehensive guides, tutorials, and best practices related to{" "}
-              <span className="font-semibold text-white">{tag.name}</span>. 
-              Our expert-written articles cover everything from basic concepts to advanced techniques, 
+              <span className="font-semibold text-white">{tag.name}</span>.
+              Our expert-written articles cover everything from basic concepts to advanced techniques,
               helping you master this important aspect of software testing and quality assurance.
             </p>
           </div>
