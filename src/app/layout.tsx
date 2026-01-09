@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
 
 import Navbar from "@/components/layout/Header";
-import VisitorTracking from "@/components/VisitorTracking"; // Import the consolidated tracking component
 
 const Footer = dynamic(
   () => import("@/components/layout/Footer"),
@@ -115,7 +114,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
       >
         <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
-        <VisitorTracking />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
