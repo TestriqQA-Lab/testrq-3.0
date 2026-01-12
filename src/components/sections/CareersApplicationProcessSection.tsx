@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import {
   FaFileAlt,
   FaUserCheck,
@@ -20,6 +20,7 @@ import {
 
 const CareersApplicationProcessSection: React.FC = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+  const [, startTransition] = useTransition();
 
   const processSteps = [
     {
@@ -141,7 +142,9 @@ const CareersApplicationProcessSection: React.FC = () => {
     ];
 
   const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    startTransition(() => {
+      setOpenFAQ(openFAQ === index ? null : index);
+    });
   };
 
   const interviewTips = [
