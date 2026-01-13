@@ -6,6 +6,8 @@ import StructuredData, {
   createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
 
+export const revalidate = 3600; // ISR: Revalidate every hour
+
 export const metadata: Metadata = {
   title: "Test Automation Services | Selenium, Playwright & CI/CD Experts",
 
