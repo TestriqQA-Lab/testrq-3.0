@@ -27,18 +27,16 @@ const Hero = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-4 mt-3">
-              Independent{" "}
+              Global{" "}
               <span className="text-[theme(color.brand.blue)]">
                 Software Testing
               </span>{" "}
-              Services
+              Services & QA Solutions
             </h1>
 
-            <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-xl mx-auto">
-              Accelerate your product launch with Independent <Link title="Software Testing Guide – Best Practices" href="/software-testing-guide">software testing
-                services</Link> and QA solutions. With over a decade of experience, our ISTQB
-              Certified Experts deliver <Link title="software quality" href="blog/post/how-does-validation-optimization-improve-web-application-quality">software quality</Link>, <Link title="scalable QA services" href="blog/post/top-software-testing-services-to-elevate-your-software-2">scalable QA services</Link>, and
-              award-winning apps for startups and industry leaders.
+            <p className="text-gray-700 text-base md:text-lg xl:mx-0 mb-6 max-w-2xl mx-auto">
+              With global regulations tightening and AI evolving rapidly, software needs more than just basic testing. Testriq delivers end-to-end <Link title="Quality Assurance Solutions" href="/manual-testing-services">Quality Assurance</Link> to ensure your rapid development never compromises on reliability.
+              We use DevSecOps and advanced quality engineering to reduce risk for global enterprises. As an ISTQB Certified partner, we serve clients across the US, UK, EU, India, Asia, and the UAE.
             </p>
 
             {/* CTAs */}

@@ -5,74 +5,79 @@ import React from 'react'
 // import { LuShield, LuUsers, LuLightbulb } from "react-icons/lu";
 // import { FaArrowTrendUp } from "react-icons/fa6";
 
+import { Globe, Cpu, Users, Shield, Zap, Target } from "lucide-react";
+
 const HomeChooseTestriq = () => {
-
-    // Define the heading and card data
-    const heading: {
-        title: string;
-        info: React.ReactNode;
-    }[] = [
-            {
-                title: 'Why Choose Testriq?',
-                info: (
-                    <>
-                    Testriq stands out as a strategic QA partner with deep domain expertise, certified professionals, and a commitment to innovation. We help businesses of all sizes deliver secure,
-                    high-performing software through tailored testing solutions, <Link href="blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile methodologies</Link>, and technology-driven quality assurance at every stage.
-                    </>
-                )
-            }
-        ]
-
-    // Split the title into parts to style "Software Testing" in blue
-    const renderTitle = () => {
-        const titleParts = heading[0].title.split('Testriq');
-        return (
+    const heading = {
+        title: 'Specialized Industry Solutions & Global Reach',
+        info: (
             <>
-                {titleParts[0]}
-                <span className="text-[theme(color.brand.blue)]">Testriq</span>
-                {titleParts[1]}
+                Choosing a <Link href="/about-us">Software Testing Partner</Link> is a strategic decision. Testriq stands out by combining ISTQB Certified QA Experts with a proactive Software Quality Engineering mindset.
             </>
-        );
+        )
     };
 
-    const cardData = [
-        { icon: '🧿', title: 'Result-Oriented Approach', href: '#', detail: 'We focus on delivering measurable outcomes that directly impact your business goals and user satisfaction.' },
-        { icon: '🕓', title: 'Faster Time-to-Market', href: '#', detail: 'Our efficient testing processes and automation expertise help you launch products faster without compromising quality.' },
-        { icon: '🛡️', title: 'Risk Mitigation', href: '#', detail: 'Comprehensive testing strategies that identify and eliminate potential risks before they impact your users.' },
-        { icon: '👥', title: 'Dedicated Team', href: '#', detail: 'ISTQB certified professionals who become an extension of your team, understanding your unique requirements.' },
-        { icon: '📈', title: 'Scalable Solutions', href: '#', detail: 'Testing solutions that grow with your business, from startup MVP to enterprise-scale applications.' },
-        { icon: '💡', title: 'Innovation Focus', href: '#', detail: 'We stay ahead of technology trends, ensuring your applications are tested with the latest methodologies.' }
-    ]
+    const industrySolutions = [
+        {
+            icon: Zap,
+            title: 'B2B SaaS & Insurance Platforms',
+            detail: 'Expert system and API testing for multi-tenant architectures, ensuring 99.9% uptime, data integrity, and high-performance insurance software.'
+        },
+        {
+            icon: Cpu,
+            title: 'IoT & Connection Testing',
+            detail: 'Verifying firmware stability and network speed for smart devices. Ensuring hardware and software sync perfectly under any global condition.'
+        },
+        {
+            icon: Users,
+            title: 'Offshore QA & Augmentation',
+            detail: 'Leverage cost-effective Offshore QA Testing without sacrificing quality. Our 24/7 model seamlessly integrates with your local development teams.'
+        },
+    ];
+
+    const whyTestriq = [
+        { icon: Globe, title: 'Global Reach', detail: 'Localized expertise for US, UK, EU, and Middle Eastern markets.' },
+        { icon: Target, title: 'Technical Depth', detail: 'From Security Pen-testing to Autonomous Testing and AI validation.' },
+        { icon: Shield, title: 'Integrity', detail: 'Independent Software Testing Company providing unbiased, objective results.' },
+    ];
 
     return (
-        // Main section container
-        <section className='flex flex-col w-full bg-[theme(color.background.gray)] mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15'>
-            {/* Heading section */}
+        <section className='flex flex-col w-full bg-white mx-auto md:px-8 px-8 xl:px-24 py-16 gap-y-16'>
             <div className='flex flex-col gap-y-5 text-center'>
-                <h2 className='text-4xl font-semibold'>{renderTitle()}</h2>
-                <p className='text-lg text-gray-500 mx-auto max-w-3xl'>{heading[0].info}</p>
+                <h2 className='text-3xl md:text-4xl font-bold'>
+                    Specialized <span className="text-[theme(color.brand.blue)]">Industry Solutions</span>
+                </h2>
+                <p className='text-lg text-gray-600 mx-auto max-w-4xl'>{heading.info}</p>
             </div>
 
-            {/* Card grid layout */}
-            {/* Each card contains an icon, title, and detail text */}
-            <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-10'>
-                {
-                    cardData.map((card) => {
-                        // const Icon = card.icon;
-
-                        return <div key={card.title} className='flex flex-col justify-start items-start bg-white ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-58 md:h-55 gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2'>
-                            <span className='text-3xl bg-sky-100 p-2 rounded-xl'>{card.icon}</span>
-                            <h2 className='text-xl'>{card.title}</h2>
-                            <p className='text-gray-500 text-sm'>{card.detail}</p>
+            <div className='grid xl:grid-cols-3 md:grid-cols-2 gap-8'>
+                {industrySolutions.map((card, i) => (
+                    <div key={i} className='flex flex-col p-8 rounded-2xl bg-[theme(color.background.gray)] border border-transparent hover:border-sky-100 transition-all hover:shadow-lg'>
+                        <div className='w-12 h-12 flex items-center justify-center bg-white rounded-xl shadow-sm mb-6'>
+                            <card.icon className='text-[theme(color.brand.blue)]' size={24} />
                         </div>
-
-                    })
-                }
+                        <h3 className='text-xl font-bold text-gray-900 mb-4'>{card.title}</h3>
+                        <p className='text-gray-600 text-sm leading-relaxed'>{card.detail}</p>
+                    </div>
+                ))}
             </div>
 
-
+            <div className="bg-[theme(color.brand.blue)] rounded-3xl p-10 md:p-16 text-white text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-12">Why Testriq is your <span className="text-sky-200">Global QA Partner</span></h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    {whyTestriq.map((item, i) => (
+                        <div key={i} className="flex flex-col items-center">
+                            <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                                <item.icon className="w-8 h-8 text-white" />
+                            </div>
+                            <h4 className="text-xl font-bold mb-3">{item.title}</h4>
+                            <p className="text-sky-50 text-sm">{item.detail}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </section>
-    )
-}
+    );
+};
 
 export default HomeChooseTestriq

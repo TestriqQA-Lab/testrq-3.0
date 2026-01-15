@@ -1,6 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaApple, FaAndroid, FaMicrosoft } from "react-icons/fa";
+import {
+  SiTensorflow,
+  SiPytorch,
+  SiJenkins,
+  SiGitlab,
+  SiDocker,
+  SiSaucelabs
+} from "react-icons/si";
+import { TbScale, TbUserCheck, TbCircleCheck, TbLockCheck, TbDeviceMobileSearch, TbWorld } from "react-icons/tb";
 import Link from "next/link";
 
 const renderTitle = () => {
@@ -14,26 +23,11 @@ const renderTitle = () => {
   );
 };
 
-const techStack: {
-  title: string;
-  subtitle: React.ReactNode;
-  categories: {
-    title: string;
-    action: string;
-    items: {
-      name: string;
-      icon: React.ReactNode;
-    }[];
-  }[];
-} = {
-  title: "Our Technology Stack",
+const techStack = {
+  title: "The Testriq Tech Stack: Engineering Excellence Technology",
   subtitle: (
     <>
-      Testriq’s <Link href="/our-team">QA team</Link> leverages trusted tools like{" "}
-      <Link href="blog/post/getting-started-with-selenium-a-beginners-guide"><span className="font-semibold">Selenium</span></Link>,{" "}
-      <Link href="blog/post/how-is-jmeter-used-for-performance-testing"><span className="font-semibold">JMeter</span></Link>,{" "}
-      <span className="font-semibold">Postman</span>, and{" "}
-      <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp"><span className="font-semibold">OWASP</span></Link> to deliver reliable testing across automation, performance, API, and security for web and mobile platforms.
+      We don’t just use tools; we build <Link href="/automation-testing-services">Test Automation Frameworks</Link> that scale. From AI-driven validation to DevSecOps integration, we ensure your global infrastructure is robust.
     </>
   ),
   categories: [
@@ -45,9 +39,9 @@ const techStack: {
           name: "Selenium WebDriver",
           icon: (
             <Image
-              title="Selenium Automation Logo"
+              title="Selenium Automation"
               src="/Selenium_Logo.png"
-              alt="Selenium logo"
+              alt="Selenium"
               width={20}
               height={20}
               className="object-contain"
@@ -58,9 +52,9 @@ const techStack: {
           name: "Cypress",
           icon: (
             <Image
-              title="Cypress Testing Logo"
+              title="Cypress Testing"
               src="/Cypress_Logo.png"
-              alt="Cypress logo"
+              alt="Cypress"
               width={20}
               height={20}
               className="object-contain"
@@ -71,9 +65,9 @@ const techStack: {
           name: "Playwright",
           icon: (
             <Image
-              title="Playwright Automation Logo"
+              title="Playwright Automation"
               src="/Playwright_Logo.svg"
-              alt="Playwright logo"
+              alt="Playwright"
               width={20}
               height={20}
               className="object-contain"
@@ -84,9 +78,9 @@ const techStack: {
           name: "Appium",
           icon: (
             <Image
-              title="Appium Mobile Automation Logo"
+              title="Appium Mobile Automation"
               src="/Appium_Logo.svg"
-              alt="Appium logo"
+              alt="Appium"
               width={20}
               height={20}
               className="object-contain"
@@ -97,9 +91,9 @@ const techStack: {
           name: "TestComplete",
           icon: (
             <Image
-              title="TestComplete Automation Logo"
+              title="TestComplete Automation"
               src="/TestComplete_Logo.png"
-              alt="TestComplete logo"
+              alt="TestComplete"
               width={20}
               height={20}
               className="object-contain"
@@ -116,9 +110,9 @@ const techStack: {
           name: "JMeter",
           icon: (
             <Image
-              title="Apache JMeter Load Testing Logo"
+              title="Apache JMeter"
               src="/JMeter_Logo.svg"
-              alt="JMeter logo"
+              alt="JMeter"
               width={20}
               height={20}
               className="object-contain"
@@ -129,9 +123,9 @@ const techStack: {
           name: "LoadRunner",
           icon: (
             <Image
-              title="Micro Focus LoadRunner Logo"
+              title="LoadRunner"
               src="/Loadrunner_Logo.png"
-              alt="LoadRunner logo"
+              alt="LoadRunner"
               width={20}
               height={20}
               className="object-contain"
@@ -142,9 +136,9 @@ const techStack: {
           name: "K6",
           icon: (
             <Image
-              title="K6 Load Testing Tool Logo"
+              title="K6"
               src="/K6_Logo.png"
-              alt="K6 logo"
+              alt="K6"
               width={20}
               height={20}
               className="object-contain"
@@ -155,9 +149,9 @@ const techStack: {
           name: "Gatling",
           icon: (
             <Image
-              title="Gatling Performance Testing Logo"
+              title="Gatling"
               src="/Gatling_Logo.png"
-              alt="Gatling logo"
+              alt="Gatling"
               width={20}
               height={20}
               className="object-contain"
@@ -168,9 +162,9 @@ const techStack: {
           name: "BlazeMeter",
           icon: (
             <Image
-              title="BlazeMeter Load Testing Logo"
+              title="BlazeMeter"
               src="/BlazeMeter_Logo.png"
-              alt="BlazeMeter logo"
+              alt="BlazeMeter"
               width={20}
               height={20}
               className="object-contain"
@@ -181,15 +175,15 @@ const techStack: {
     },
     {
       title: "API Testing",
-      action: "api-testing",
+      action: "/api-testing",
       items: [
         {
           name: "Postman",
           icon: (
             <Image
-              title="Postman API Testing Logo"
+              title="Postman"
               src="/Postman_Logo.png"
-              alt="Postman logo"
+              alt="Postman"
               width={20}
               height={20}
               className="object-contain"
@@ -200,9 +194,9 @@ const techStack: {
           name: "REST Assured",
           icon: (
             <Image
-              title="REST Assured API Testing Logo"
+              title="REST Assured"
               src="/RestAssured_Logo.png"
-              alt="REST Logo"
+              alt="REST Assured"
               width={20}
               height={20}
               className="object-contain"
@@ -213,9 +207,9 @@ const techStack: {
           name: "SoapUI",
           icon: (
             <Image
-              title="SoapUI API Testing Logo"
+              title="SoapUI"
               src="/SoapUI_Logo.png"
-              alt="SoapUI logo"
+              alt="SoapUI"
               width={20}
               height={20}
               className="object-contain"
@@ -226,9 +220,9 @@ const techStack: {
           name: "Insomnia",
           icon: (
             <Image
-              title="Insomnia API Testing Tool Logo"
+              title="Insomnia"
               src="/Insomnia_Logo.png"
-              alt="Insomnia logo"
+              alt="Insomnia"
               width={20}
               height={20}
               className="object-contain"
@@ -239,9 +233,9 @@ const techStack: {
           name: "Newman",
           icon: (
             <Image
-              title="Newman API Test Runner Logo"
+              title="Newman"
               src="/Newman_Logo.png"
-              alt="Newman logo"
+              alt="Newman"
               width={20}
               height={20}
               className="object-contain"
@@ -252,15 +246,15 @@ const techStack: {
     },
     {
       title: "Security Testing",
-      action: "security-testing",
+      action: "/security-testing",
       items: [
         {
           name: "OWASP ZAP",
           icon: (
             <Image
-              title="OWASP ZAP Security Testing Logo"
+              title="OWASP ZAP"
               src="/Owasp_Zap_Logo.png"
-              alt="OWASP logo"
+              alt="OWASP ZAP"
               width={20}
               height={20}
               className="object-contain"
@@ -271,9 +265,9 @@ const techStack: {
           name: "Burp Suite",
           icon: (
             <Image
-              title="Burp Suite Web Security Testing Logo"
+              title="Burp Suite"
               src="/BurpSuite_Logo.png"
-              alt="Burp Suite logo"
+              alt="Burp Suite"
               width={20}
               height={20}
               className="object-contain"
@@ -284,9 +278,9 @@ const techStack: {
           name: "Nessus",
           icon: (
             <Image
-              title="Nessus Vulnerability Scanner Logo"
+              title="Nessus"
               src="/Nessus_Logo.png"
-              alt="Nessus logo"
+              alt="Nessus"
               width={20}
               height={20}
               className="object-contain"
@@ -297,9 +291,9 @@ const techStack: {
           name: "Veracode",
           icon: (
             <Image
-              title="Veracode Application Security Logo"
+              title="Veracode"
               src="/VeraCode_Logo.png"
-              alt="Veracode logo"
+              alt="Veracode"
               width={20}
               height={20}
               className="object-contain"
@@ -310,15 +304,48 @@ const techStack: {
           name: "Checkmarx",
           icon: (
             <Image
-              title="Checkmarx Static Code Analysis Logo"
+              title="Checkmarx"
               src="/Checkmarx_Logo.png"
-              alt="Checkmarx logo"
+              alt="Checkmarx"
               width={20}
               height={20}
               className="object-contain"
             />
           ),
         },
+      ],
+    },
+    {
+      title: "AI & Machine Learning",
+      action: "/ai-application-testing",
+      items: [
+        { name: "TensorFlow", icon: <SiTensorflow size={20} color="#FF6F00" /> },
+        { name: "Py-Torch", icon: <SiPytorch size={20} color="#EE4C2C" /> },
+        { name: "Bias Auditing", icon: <TbScale size={20} color="#6366F1" /> },
+        { name: "Fairness Testing", icon: <TbUserCheck size={20} color="#10B981" /> },
+        { name: "Model Validation", icon: <TbCircleCheck size={20} color="#3B82F6" /> },
+      ],
+    },
+    {
+      title: "CI/CD & DevOps",
+      action: "/automation-testing-services",
+      items: [
+        { name: "Jenkins", icon: <SiJenkins size={20} color="#D24939" /> },
+        { name: "GitLab CI", icon: <SiGitlab size={20} color="#FC6D26" /> },
+        { name: "Azure DevOps", icon: <FaMicrosoft size={20} color="#0078D4" /> },
+        { name: "DevSecOps", icon: <TbLockCheck size={20} color="#F59E0B" /> },
+        { name: "Docker", icon: <SiDocker size={20} color="#2496ED" /> },
+      ],
+    },
+    {
+      title: "Mobile QA",
+      action: "/mobile-application-testing",
+      items: [
+        { name: "Browser-Stack", icon: <TbWorld size={20} color="#0059B2" /> },
+        { name: "Sauce Labs", icon: <SiSaucelabs size={20} color="#E31B23" /> },
+        { name: "Real-Device Labs", icon: <TbDeviceMobileSearch size={20} color="#8B5CF6" /> },
+        { name: "iOS Testing", icon: <FaApple size={20} color="#555555" /> },
+        { name: "Android QA", icon: <FaAndroid size={20} color="#3DDC84" /> },
       ],
     },
   ],
@@ -330,7 +357,7 @@ const HeroTechStack = () => {
   return (
     <section className="py-16 px-8 sm:px-8 md:px-12 lg:px-24 bg-[theme(color.background.gray)] text-center">
       <div className="text-center max-w-3xl mx-auto mb-12">
-        <h2 className="text-4xl font-semibold">{renderTitle()}</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{renderTitle()}</h2>
         <p className="mt-4 text-gray-500 text-base sm:text-lg">
           {techStack.subtitle}
         </p>
@@ -351,7 +378,7 @@ const HeroTechStack = () => {
                   key={toolIdx}
                   className="flex items-center gap-2 text-gray-700 text-sm"
                 >
-                  <span className="text-[theme(color.brand.blue)] text-2xl">
+                  <span className="text-2xl flex-shrink-0">
                     {tool.icon}
                   </span>
                   <span className="text-base px-2">{tool.name}</span>

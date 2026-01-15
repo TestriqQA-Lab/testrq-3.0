@@ -138,6 +138,54 @@ export const productServiceSchema = {
   }
 };
 
+// Home Page FAQ Schema
+export const homeFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the benefits of Managed QA Services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Managed QA Services allow organizations to outsource their entire quality function to experts. Our approach cuts overhead and gives you access to advanced test automation. You get comprehensive testing without the costs of internal hiring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Testriq ensure security in Software Testing Services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We integrate Security at the heart of the SDLC through DevSecOps Integration. This includes risk-based testing, Pentesting, and regular Security Audits to ensure compliance with global standards like SOC2 and GDPR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is ISO/IEC/IEEE 29119 important for QA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ISO/IEC/IEEE 29119 is the international standard for software testing. Our approach uses a standard language and process for risk-based testing. This ensures all reports and bug tracking meet the highest global standards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer Mobile App QA Testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide mobile QA for both iOS and Android. Our testing includes cross-browser checks and UX validation to ensure your global rollout is seamless across all devices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle Generative AI Testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We specialize in Generative AI testing to protect your brand. We ensure your AI is reliable and secure. Our team audits agents for inaccurate data, prevents prompt injections, and guarantees model fairness."
+      }
+    }
+  ]
+};
+
 // Service Schema for Web Application Testing
 export const webAppTestingServiceSchema = {
   "@context": "https://schema.org",

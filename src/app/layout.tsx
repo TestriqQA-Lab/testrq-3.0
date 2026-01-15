@@ -28,22 +28,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Best Software Testing Company in Mumbai India | Testriq",
-    template: "%s",
+    default: "Pure-Play Software Testing Company & QA Outsourcing | Testriq",
+    template: "%s | Testriq",
   },
   description:
-    "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
+    "Testriq is a leading pure-play software testing company offering expert QA outsourcing. Specialized in AI/ML validation, DevSecOps, and ISTQB-certified testing for global enterprises in US, UK, EU, and UAE.",
   keywords: [
-    "software testing",
-    "QA services",
-    "web application testing",
-    "mobile app testing",
-    "API testing",
-    "automation testing",
-    "quality assurance",
-    "testing services",
-    "software quality",
-    "test automation",
+    "pure-play software testing company",
+    "QA outsourcing services",
+    "global software testing services",
+    "managed QA services",
+    "software quality engineering",
+    "ISTQB certified testing",
+    "independent software testing company",
+    "AI application testing",
+    "security penetration testing",
+    "test automation frameworks",
+    "offshore QA testing",
+    "compliance testing services",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -61,16 +63,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/",
-    siteName: "Testriq - Professional Software Testing Services",
-    title: "Testriq - Professional Software Testing Services | QA Solutions",
+    siteName: "Testriq - Global Software Testing Services",
+    title: "Pure-Play Software Testing Company & QA Outsourcing | Testriq",
     description:
-      "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
+      "ISTQB Certified partner providing end-to-end QA, DevSecOps, and AI-driven quality engineering. Global reach serving US, UK, EU, India, and UAE markets.",
     images: [
       {
         url: "/OG/testriq-qa-lab-llp-og-img.webp",
         width: 1200,
         height: 630,
-        alt: "Testriq - Professional Software Testing Services",
+        alt: "Testriq - Global Software Testing Services",
         type: "image/webp",
       },
     ],
@@ -80,9 +82,9 @@ export const metadata: Metadata = {
 
     site: "@testriq",
     creator: "@testriq",
-    title: "Testriq - Professional Software Testing Services | QA Solutions",
+    title: "Pure-Play Software Testing Company & QA Outsourcing | Testriq",
     description:
-      "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation. Ensure quality with expert testing solutions.",
+      "Expert QA outsourcing and risk-based testing for global enterprises. Serving US, UK, EU, and Asia with ISTQB certified experts.",
     images: ["/OG/testriq-qa-lab-llp-twitter-img.webp"],
   },
   robots: {

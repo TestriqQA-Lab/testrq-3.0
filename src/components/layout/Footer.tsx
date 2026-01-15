@@ -87,7 +87,6 @@ const partners = [
     title: "DesignRush Verified Agency Logo",
     src: "/DesignRush_Logo.png",
     alt: "DesignRush Logo",
-    href: "https://www.designrush.com",
   },
 ];
 
@@ -267,15 +266,8 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-8 mt-8">
-          {partners.map((partner, index) => (
-            <Link
-              key={index}
-              href={partner.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
-              aria-label={partner.title}
-            >
+          {partners.map((partner, index) => {
+            const ImageComponent = (
               <Image
                 title={partner.title}
                 src={partner.src}
@@ -284,8 +276,29 @@ const Footer = () => {
                 height={20}
                 className="object-contain h-8 w-auto filter grayscale hover:grayscale-0 transition duration-300"
               />
-            </Link>
-          ))}
+            );
+
+            return partner.href ? (
+              <Link
+                key={index}
+                href={partner.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                aria-label={partner.title}
+              >
+                {ImageComponent}
+              </Link>
+            ) : (
+              <div
+                key={index}
+                className="flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                aria-label={partner.title}
+              >
+                {ImageComponent}
+              </div>
+            );
+          })}
         </div>
 
         {/* Bottom Section */}

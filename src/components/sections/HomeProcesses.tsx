@@ -12,31 +12,32 @@ const processSteps: {
 }[] = [
     {
       id: "01",
-      title: "Analyze & Plan",
-      description:
-        (
-          <>
-            Understand requirements and create <Link title="comprehensive testing strategy" href="blog/post/test-execution-comprehensive-testing-implementation">comprehensive testing strategy</Link>.
-          </>
-        ),
-      progress: 25,
+      title: "QA Strategy & Consulting",
+      description: "We align testing with business ROI, evaluating SDLC visibility and methodology to ensure global readiness.",
+      progress: 20,
     },
     {
       id: "02",
-      title: "Execute & Test",
-      description: (<>Design and execute detailed <Link title="test cases" href="blog/post/checklist-20-essential-test-cases-for-mobile-apps">test cases</Link> with precision.</>),
-      progress: 50,
+      title: "Environment & Synthetic Data",
+      description: "Establishing secure protocols and generating realistic, GDPR-compliant synthetic test data for edge cases.",
+      progress: 40,
     },
     {
       id: "03",
-      title: "Report & Optimize",
-      description: "Provide insights and continuous improvement recommendations.",
-      progress: 75,
+      title: "Multi-Layered Execution",
+      description: "Rigorous regression, cross-browser, and software adaptation testing for global cultural accuracy.",
+      progress: 60,
     },
     {
       id: "04",
-      title: "Support & Deliver",
-      description: "Ensure smooth delivery and ongoing support.",
+      title: "Scalability Engineering",
+      description: "Stress testing for SaaS and enterprise platforms to ensure infrastructure handles global traffic spikes.",
+      progress: 80,
+    },
+    {
+      id: "05",
+      title: "AI & ML Validation",
+      description: "Expert validation of Gen-AI agents, bias detection, and securing models against modern threats.",
       progress: 100,
     }
   ]
@@ -44,42 +45,39 @@ const processSteps: {
 
 const HomeProcesses = () => {
   return (
-    <section className="py-12 px-6 sm:px-10 md:px-20 lg:px-32 bg-white">
+    <section className="py-16 px-6 sm:px-10 md:px-20 lg:px-24 bg-white">
       {/* Top Badge + Heading */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-5 py-2 rounded-full mb-5">
           <FaCogs />
-          <span className="text-sm">Our Process</span>
+          <span className="text-sm">The Testriq Blueprint</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-bold">
-          Simple.{" "}
-          <span className="text-[theme(color.brand.blue)]">Effective.</span>{" "}
-          Proven.
+          Step-by-Step{" "}
+          <span className="text-[theme(color.brand.blue)]">QA Methodology</span>
         </h2>
-        <p className="text-gray-500 mt-4 max-w-4xl mx-auto">
-          Our 4-step QA testing process ensures consistent software quality
-          through strategic planning, precise execution, detailed reporting, and
-          ongoing support across web, <Link title="test cases" href="mobile-application-testing">test cases</Link>, and <Link title="API testing" href="api-testing">API testing</Link> environments.
+        <p className="text-gray-600 mt-4 max-w-4xl mx-auto text-lg leading-relaxed">
+          Our methodology focuses on more than just findings bugs. We evaluate your SDLC Visibility and provide high-level Consulting to align testing with business ROI worldwide.
         </p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {processSteps.map((step, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl p-6 shadow-md flex flex-col justify-between transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl  hover:-translate-y-2"
+            className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm flex flex-col justify-between transition duration-300 transform hover:shadow-sky-100 hover:shadow-lg hover:-translate-y-1"
           >
             <div>
-              <div className="w-10 h-10 rounded-md bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-500 text-white flex items-center justify-center text-sm font-bold mb-4">
+              <div className="w-10 h-10 rounded-xl bg-sky-50 text-[theme(color.brand.blue)] flex items-center justify-center text-sm font-black mb-4 border border-sky-100">
                 {step.id}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-500 text-sm">{step.description}</p>
+              <h3 className="text-base font-bold text-gray-900 mb-2 leading-tight">{step.title}</h3>
+              <p className="text-gray-500 text-xs leading-relaxed">{step.description}</p>
             </div>
-            <div className="w-full h-1 mt-6 bg-gray-200 rounded-full overflow-hidden">
+            <div className="w-full h-1 mt-6 bg-gray-100 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-500"
+                className="h-full bg-[theme(color.brand.blue)]"
                 style={{ width: `${step.progress}%` }}
               />
             </div>
@@ -88,29 +86,19 @@ const HomeProcesses = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-12 w-full max-w-xl mx-auto bg-white px-4 py-6 sm:px-10 sm:py-8 rounded-2xl shadow-md flex flex-col sm:flex-row items-center sm:justify-between gap-4 sm:gap-6">
-        {/* Left Content */}
-        <div className="flex flex-col sm:flex-row items-center text-center sm:text-left">
-          {/* Icon */}
-          <div className="w-10 h-10 rounded-md bg-green-500 text-white flex items-center justify-center text-sm font-bold mb-2 sm:mb-0">
-            <FaRocket className="w-5 h-5" />
+      <div className="mt-16 w-full max-w-2xl mx-auto bg-[theme(color.background.gray)] p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-sky-50">
+        <div className="flex items-center gap-4 text-center sm:text-left">
+          <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center">
+            <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />
           </div>
-
-          {/* Text */}
-          <div className="sm:ml-4">
-            <h3 className="text-gray-700 text-lg font-semibold">
-              Ready to Get Started?
-            </h3>
-            <p className="text-gray-500 text-sm">
-              Experience our proven process today.
-            </p>
+          <div>
+            <h3 className="text-gray-900 text-xl font-bold">Ready to Scale?</h3>
+            <p className="text-gray-500 text-sm">Experience our global blueprint today.</p>
           </div>
         </div>
-
-        {/* CTA Button */}
-        <Link title="cta button" href="/contact-us">
-          <button className="w-full cursor-pointer sm:w-auto bg-gradient-to-r from-[theme(color.brand.blue)] to-blue-500 text-white px-6 py-2.5 rounded-xl text-sm font-semibold shadow hover:shadow-lg transition hover:-translate-y-1 duration-300">
-            Start Now
+        <Link title="Get Started" href="/contact-us">
+          <button className="whitespace-nowrap bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-xl font-bold hover:bg-sky-600 transition-all hover:scale-105">
+            Optimize My QA
           </button>
         </Link>
       </div>
