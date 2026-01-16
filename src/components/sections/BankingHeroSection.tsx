@@ -87,7 +87,7 @@ const BankingHeroSection: React.FC = () => {
               <Link href="/blog/post/etl-testing-case-studies">
                 finance testing services
               </Link>{" "}
-              help you build customer trust, meet GDPR, PCI DSS, and SOX
+              help you build customer trust, meet GDPR, PCI DSS and SOX
               compliance requirements, and stay ahead of evolving financial
               threats through robust BFSI testing solutions.
             </p>
