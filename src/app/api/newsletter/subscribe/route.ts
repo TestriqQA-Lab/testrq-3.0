@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
+
 import { MongoClient, ServerApiVersion, Db } from 'mongodb';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -14,7 +15,7 @@ const connectToMongoDB = async () => {
 
   try {
     const uri = process.env.MONGODB_URI;
-    
+
     if (!uri) {
       throw new Error('MONGODB_URI environment variable is not set');
     }
@@ -29,10 +30,10 @@ const connectToMongoDB = async () => {
 
     await client.connect();
     db = client.db('newsletter_db');
-    
+
     // Create indexes for better performance
     await db.collection('subscriptions').createIndex({ email: 1 }, { unique: true });
-    
+
     return { client, db };
   } catch (error) {
     console.error('MongoDB connection error:', error);
@@ -48,7 +49,8 @@ const isValidEmail = (email: string) => {
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, interests = [] } = await request.json();
+    const body = await request.json();
+    const { email, interests = [] } = body;
 
     // Validation
     // Verify reCAPTCHA
@@ -76,8 +78,8 @@ export async function POST(request: NextRequest) {
     const confirmationToken = uuidv4();
 
     // Check if email already exists
-    const existingSubscription = await db.collection('subscriptions').findOne({ 
-      email: normalizedEmail 
+    const existingSubscription = await db.collection('subscriptions').findOne({
+      email: normalizedEmail
     });
 
     if (existingSubscription) {
@@ -146,12 +148,12 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Subscription error:', error);
-    
+
     // Handle duplicate key error (email already exists)
     if (error && typeof error === 'object' && 'code' in error && error.code === 11000) {
       return NextResponse.json({ error: 'Email already subscribed' }, { status: 409 });
     }
-    
+
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

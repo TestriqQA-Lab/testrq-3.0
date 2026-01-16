@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link'
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 import React, { useState } from "react";
 import {
@@ -20,34 +21,44 @@ const BlogNewsletter: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: 'newsletter_subscribe',
+    onSuccess: () => {
+      setSubscribed(true);
+      setEmail("");
+      setInterests([]);
+    },
+    onError: (err) => {
+      setError(err || "Failed to subscribe");
+    }
+  });
+
   const availableInterests = [
     "Test Automation",
-    "Performance Testing", 
+    "Performance Testing",
     "Security Testing",
     "Mobile Testing",
   ];
 
   const handleInterestChange = (interest: string) => {
-    setInterests(prev => 
-      prev.includes(interest) 
+    setInterests(prev =>
+      prev.includes(interest)
         ? prev.filter(i => i !== interest)
         : [...prev, interest]
     );
   };
 
-const handleSubscribe = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       setError("Email is required");
       return;
     }
 
-    setLoading(true);
     setError("");
 
-    try {
-      // Always use the Next.js API route - this will work both locally and on Vercel
+    await submitWithRecaptcha(async (_, recaptchaToken) => {
       const response = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
         headers: {
@@ -55,29 +66,18 @@ const handleSubscribe = async (e: React.FormEvent) => {
         },
         body: JSON.stringify({
           email: email.trim(),
-          interests: interests
+          interests: interests,
+          recaptchaToken
         }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubscribed(true);
-        setEmail("");
-        setInterests([]);
-        
-        setTimeout(() => {
-          setSubscribed(false);
-        }, 5000);
-      } else {
-        setError(data.error || 'Subscription failed');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to subscribe");
       }
-    } catch (err) {
-      console.error('Subscription error:', err);
-      setError('Network error. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+
+      return response.json();
+    }, { email, interests });
   };
 
   return (
@@ -174,7 +174,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
                       placeholder="you@example.com"
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400"
                       required
-                      disabled={loading}
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -193,7 +193,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
                             checked={interests.includes(interest)}
                             onChange={() => handleInterestChange(interest)}
                             className="rounded border-white bg-white/20 text-cyan-500 focus:ring-cyan-300"
-                            disabled={loading}
+                            disabled={isSubmitting}
                           />
                           {interest}
                         </label>
@@ -203,26 +203,26 @@ const handleSubscribe = async (e: React.FormEvent) => {
 
                   <button
                     type="submit"
-                    disabled={loading}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-cyan-500 text-white font-semibold rounded-lg hover:bg-cyan-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                    className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold py-4 px-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3 disabled:opacity-50"
                   >
-                    {loading ? (
+                    {isSubmitting ? (
                       <>
-                        <FaSpinner className="w-4 h-4 animate-spin" />
-                        <span>Subscribing...</span>
+                        <FaSpinner className="animate-spin" />
+                        Subscribing...
                       </>
                     ) : (
                       <>
-                        <span>Subscribe Now</span>
-                        <FaArrowRight className="w-4 h-4" />
+                        Subscribe Now
+                        <FaArrowRight className="text-sm" />
                       </>
                     )}
                   </button>
 
                   <p className="text-gray-300 text-xs text-center">
                     By subscribing, you agree to our{" "}
-                    <Link 
-                    href="/privacy-policy" className="text-white underline"
+                    <Link
+                      href="/privacy-policy" className="text-white underline"
                     >
                       Privacy Policy
                     </Link>{" "}
@@ -275,7 +275,7 @@ const handleSubscribe = async (e: React.FormEvent) => {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );

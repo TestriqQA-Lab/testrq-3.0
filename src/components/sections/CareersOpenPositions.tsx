@@ -221,7 +221,36 @@ const CareersOpenPositions: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await submitWithRecaptcha(async (_, recaptchaToken) => { formDataToSend.append("recaptchaToken", recaptchaToken); return await submitApplication(formData); }, {});
+      const formDataToSend = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value instanceof File) {
+          formDataToSend.append(key, value);
+        } else if (Array.isArray(value)) {
+          formDataToSend.append(key, JSON.stringify(value));
+        } else if (value !== null && value !== undefined) {
+          formDataToSend.append(key, value.toString());
+        }
+      });
+      if (selectedPosition) {
+        formDataToSend.append("jobTitle", selectedPosition.title);
+        formDataToSend.append("jobId", selectedPosition.id.toString());
+      }
+
+      await submitWithRecaptcha(async (_, recaptchaToken) => {
+        formDataToSend.append("recaptchaToken", recaptchaToken);
+        const response = await fetch("/api/apply-job", {
+          method: "POST",
+          body: formDataToSend,
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || "An unknown server error occurred.");
+        }
+
+        return response.json();
+      }, {});
+
       setShowSuccessMessage(true);
       if (modalContentRef.current) {
         modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });

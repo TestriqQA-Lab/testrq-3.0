@@ -44,9 +44,9 @@ const IoTApplianceContactSection: React.FC = () => {
       setIsSubmitted(true);
       document.getElementById("iot-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
       setTimeout(() => setIsSubmitted(false), 5000);
-      setFormData({fullName: "", businessEmail: "", businessPhone: "", companyName: "", iotSolutionType: "", testingRequirements: [], projectDetails: ""});
+      setFormData({ fullName: "", businessEmail: "", businessPhone: "", companyName: "", iotSolutionType: "", testingRequirements: [], projectDetails: "" });
     },
-    onError: (error) => {console.error("Form submission failed:", error); alert(error || "Failed");}
+    onError: (error) => { console.error("Form submission failed:", error); alert(error || "Failed"); }
   });
 
   const validatePhoneNumber = (phone: string | undefined) => {
@@ -227,8 +227,24 @@ const IoTApplianceContactSection: React.FC = () => {
       isTestingRequirementsValid &&
       isProjectDetailsValid
     ) {
-      await submitWithRecaptcha(async (data, recaptchaToken) => {const dataToSend = {...data, testingRequirements: data.testingRequirements.join(", "), recaptchaToken, source: "IoT Appliance Testing Services Page"};const response = await fetch("/api/iotContact", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(dataToSend)});if (!response.ok) {const errorData = await response.json(); throw new Error(errorData.error || "Failed");}return response.json();}, formData);
-      }
+      await submitWithRecaptcha(async (data, recaptchaToken) => {
+        const dataToSend = {
+          ...data,
+          testingRequirements: data.testingRequirements.join(", "),
+          recaptchaToken,
+          source: "IoT Appliance Testing Services Page",
+        };
+        const response = await fetch("/api/iotContact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataToSend),
+        });
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || "Failed");
+        }
+        return response.json();
+      }, formData);
     } else {
       console.log("Form has errors.");
     }
@@ -238,8 +254,7 @@ const IoTApplianceContactSection: React.FC = () => {
     {
       icon: FaPhone,
       title: "Speak with IoT Experts",
-      description:
-        "Direct consultation with our IoT testing specialists",
+      description: "Direct consultation with our IoT testing specialists",
       text: "(+91) 915-2929-343",
       action: "tel:(+91) 915-2929-343",
       color: "from-blue-500 to-cyan-600",

@@ -38,74 +38,88 @@ export async function POST(request: NextRequest) {
       );
     }
 
-  }
-
     // Verify reCAPTCHA (REQUIRED)
     const { recaptchaToken } = body;
-  if (!recaptchaToken) {
-    console.error('reCAPTCHA token missing');
+    if (!recaptchaToken) {
+      console.error('reCAPTCHA token missing');
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification required' },
+        { status: 400 }
+      );
+    }
+
+    try {
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+      if (!recaptchaResult.success) {
+        console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+        return NextResponse.json(
+          { error: 'reCAPTCHA verification failed' },
+          { status: 400 }
+        );
+      }
+
+      if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+        console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+        return NextResponse.json(
+          { error: 'Suspicious activity detected. Please try again.' },
+          { status: 400 }
+        );
+      }
+
+      console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+    } catch (error) {
+      console.error('Error verifying reCAPTCHA:', error);
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification error' },
+        { status: 500 }
+      );
+    }
+
+    // Add source field if not provided
+    if (!body.source) {
+      body.source = 'E-learning Testing Services Page';
+    }
+
+    // Format the data for better readability
+    const formattedData: ElearningContactFormData = {
+      ...body,
+      source: body.source || 'E-learning Testing Services Page',
+    };
+
+    // Run all operations in parallel for better performance
+    const operations = [
+      storeInGoogleSheets(formattedData),
+      sendProfessionalNotification(formattedData),
+      sendClientConfirmation(formattedData)
+    ];
+
+    // Execute all operations concurrently
+    const results = await Promise.allSettled(operations);
+
+    // Log any failures but don't fail the entire request
+    results.forEach((result, index) => {
+      if (result.status === "rejected") {
+        const operationNames = [
+          "Google Sheets",
+          "Professional notification",
+          "Client confirmation",
+        ];
+        console.error(`${operationNames[index]} error:`, result.reason);
+      }
+    });
+
     return NextResponse.json(
-      { error: 'reCAPTCHA verification required' },
-      { status: 400 }
+      { message: 'Form submitted successfully' },
+      { status: 200 }
     );
-  }
-
-  try {
-    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-
-    if (!recaptchaResult.success) {
-      console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
-      return NextResponse.json(
-        { error: 'reCAPTCHA verification failed' },
-        { status: 400 }
-      );
-    }
-
-    if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
-      console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
-      return NextResponse.json(
-        { error: 'Suspicious activity detected. Please try again.' },
-        { status: 400 }
-      );
-    }
-
-    console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
   } catch (error) {
-    console.error('Error verifying reCAPTCHA:', error);
+    console.error('API error:', error);
     return NextResponse.json(
-      { error: 'reCAPTCHA verification error' },
+      { error: 'Internal server error' },
       { status: 500 }
     );
   }
-
-  // Add source field if not provided
-  if (!body.source) {
-    body.source = 'E-learning Testing Services Page';
-  }
-
-  // Format the data for better readability
-  const formattedData: ElearningContactFormData = {
-    ...body,
-    source: body.source || 'E-learning Testing Services Page',
-  };
-
-  // Run all operations in parallel for better performance
-  const operations = [
-    storeInGoogleSheets(formattedData),
-    sendProfessionalNotification(formattedData),
-    sendClientConfirmation(formattedData)
-  ];
-
-  // Execute all operations concurrently
-  const results = await Promise.allSettled(operations);
-
-  // Log any failures but don't fail the entire request
-  results.forEach((result, index) => {
-    if (result.status === 'rejected') {
-      const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
-      console.error(`${operationNames[index]} error:`, result.reason);
-    }
-  });
 }
 
 async function storeInGoogleSheets(data: ElearningContactFormData) {

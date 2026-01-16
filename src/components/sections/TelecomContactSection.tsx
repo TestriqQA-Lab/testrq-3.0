@@ -37,6 +37,27 @@ const TelecomContactSection: React.FC = () => {
   const [testingRequirementsError, setTestingRequirementsError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
 
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: 'telecom_contact',
+    onSuccess: () => {
+      setIsSubmitted(true);
+      document.getElementById("telecom-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({
+        fullName: "",
+        businessEmail: "",
+        businessPhone: "",
+        companyOrganization: "",
+        testingRequirements: "",
+        message: "",
+      });
+    },
+    onError: (error) => {
+      console.error("Form submission failed:", error);
+      alert(error || "Failed");
+    },
+  });
+
   const validatePhoneNumber = (phone: string | undefined) => {
     if (!phone) {
       setPhoneError("Business Phone is required.");
@@ -189,8 +210,19 @@ const TelecomContactSection: React.FC = () => {
       isTestingRequirementsValid &&
       isMessageValid
     ) {
-      await submitWithRecaptcha(async (data, recaptchaToken) => {const response = await fetch("/api/telecomContact", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({...data, recaptchaToken, source: "Telecom Testing Services"})});if (!response.ok) throw new Error("Failed");return response.json();}, formData);
-      }
+      await submitWithRecaptcha(async (data, recaptchaToken) => {
+        const response = await fetch("/api/telecomContact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...data,
+            recaptchaToken,
+            source: "Telecom Testing Services",
+          }),
+        });
+        if (!response.ok) throw new Error("Failed");
+        return response.json();
+      }, formData);
     } else {
       console.log("Form has errors.");
     }
@@ -200,8 +232,7 @@ const TelecomContactSection: React.FC = () => {
     {
       icon: FaPhone,
       title: "Speak with Telecom Experts",
-      description:
-        "Speak directly with our telecom software QA specialists",
+      description: "Speak directly with our telecom software QA specialists",
       text: "(+91) 915-2929-343",
       action: "tel:(+91) 915-2929-343",
       color: "from-blue-500 to-cyan-600",
