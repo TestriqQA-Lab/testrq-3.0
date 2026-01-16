@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 import { MongoClient, ServerApiVersion, Db } from 'mongodb';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -50,6 +51,16 @@ export async function POST(request: NextRequest) {
     const { email, interests = [] } = await request.json();
 
     // Validation
+    // Verify reCAPTCHA
+    const { recaptchaToken } = body;
+    if (!recaptchaToken) {
+      return NextResponse.json({ error: 'reCAPTCHA required' }, { status: 400 });
+    }
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaResult.success || !isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+      return NextResponse.json({ error: 'Suspicious activity detected' }, { status: 400 });
+    }
+
     if (!email) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }

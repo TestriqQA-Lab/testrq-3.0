@@ -33,7 +33,7 @@ function formatCompanyStage(stage: string | undefined): string {
     'non_profit': 'Non-profit',
     'other': 'Other'
   };
-  
+
   return stageMap[stage] || stage;
 }
 
@@ -54,24 +54,24 @@ function formatHowDidYouHear(source: string | undefined): string {
     'advertisement': 'Advertisement',
     'other': 'Other'
   };
-  
+
   return sourceMap[source] || source;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: ContactFormData = await request.json();
-    
+
     // Validate required fields
     const { fullName, businessEmail, businessPhone, message, recaptchaToken } = body; // Modified
-    
+
     if (!fullName || !businessEmail || !businessPhone || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
-    
+
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(businessEmail)) {
       return NextResponse.json(
@@ -80,36 +80,42 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify reCAPTCHA if token is provided (Added)
-    if (recaptchaToken) {
-      try {
-        const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-        
-        if (!recaptchaResult.success) {
-          console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
-          return NextResponse.json(
-            { error: 'reCAPTCHA verification failed' },
-            { status: 400 }
-          );
-        }
+    // Verify reCAPTCHA (REQUIRED)
+    if (!recaptchaToken) {
+      console.error('reCAPTCHA token missing');
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification required' },
+        { status: 400 }
+      );
+    }
 
-        // Check if the score is acceptable (you can adjust the threshold as needed)
-        if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
-          console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
-          return NextResponse.json(
-            { error: 'Suspicious activity detected. Please try again.' },
-            { status: 400 }
-          );
-        }
+    try {
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
 
-        console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
-      } catch (error) {
-        console.error('Error verifying reCAPTCHA:', error);
+      if (!recaptchaResult.success) {
+        console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
         return NextResponse.json(
-          { error: 'reCAPTCHA verification error' },
-          { status: 500 }
+          { error: 'reCAPTCHA verification failed' },
+          { status: 400 }
         );
       }
+
+      // Check if the score is acceptable (you can adjust the threshold as needed)
+      if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+        console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+        return NextResponse.json(
+          { error: 'Suspicious activity detected. Please try again.' },
+          { status: 400 }
+        );
+      }
+
+      console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+    } catch (error) {
+      console.error('Error verifying reCAPTCHA:', error);
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification error' },
+        { status: 500 }
+      );
     }
 
     // Add source field if not provided
@@ -142,7 +148,7 @@ export async function POST(request: NextRequest) {
 
     // Execute all operations concurrently
     const results = await Promise.allSettled(operations);
-    
+
     // Log any failures but don't fail the entire request
     results.forEach((result, index) => {
       if (result.status === 'rejected') {
@@ -182,7 +188,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    } );
+    });
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -248,7 +254,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL = process.env.FROM_EMAIL;
-    
+
     // Support multiple admin emails - comma separated
     const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
     const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
@@ -310,7 +316,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -326,7 +332,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC ) {
+    if (PROFESSIONAL_EMAIL_CC) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {

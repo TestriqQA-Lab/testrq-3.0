@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 
 // Types for form data
 interface BankingContactFormData {
@@ -11,27 +12,66 @@ interface BankingContactFormData {
   testingRequirements: string;
   message: string;
   source?: string;
+  recaptchaToken?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: BankingContactFormData = await request.json();
-    
+
     // Validate required fields
     const { fullName, businessEmail, businessPhone, companyInstitution, testingRequirements, message } = body;
-    
+
     if (!fullName || !businessEmail || !businessPhone || !companyInstitution || !testingRequirements || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
-    
+
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(businessEmail)) {
       return NextResponse.json(
         { error: 'Invalid email format' },
         { status: 400 }
+      );
+    }
+
+    // Verify reCAPTCHA (REQUIRED)
+    const { recaptchaToken } = body;
+    if (!recaptchaToken) {
+      console.error('reCAPTCHA token missing');
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification required' },
+        { status: 400 }
+      );
+    }
+
+    try {
+      const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+      if (!recaptchaResult.success) {
+        console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+        return NextResponse.json(
+          { error: 'reCAPTCHA verification failed' },
+          { status: 400 }
+        );
+      }
+
+      if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+        console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+        return NextResponse.json(
+          { error: 'Suspicious activity detected. Please try again.' },
+          { status: 400 }
+        );
+      }
+
+      console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+    } catch (error) {
+      console.error('Error verifying reCAPTCHA:', error);
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification error' },
+        { status: 500 }
       );
     }
 
@@ -55,7 +95,7 @@ export async function POST(request: NextRequest) {
 
     // Execute all operations concurrently
     const results = await Promise.allSettled(operations);
-    
+
     // Log any failures but don't fail the entire request
     results.forEach((result, index) => {
       if (result.status === 'rejected') {
@@ -192,7 +232,7 @@ async function sendProfessionalNotification(data: BankingContactFormData) {
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL = 'contact@testriq.com';
-    
+
     // Use the same environment variables as the main contact form
     const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
     const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;

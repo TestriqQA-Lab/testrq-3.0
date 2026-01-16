@@ -16,6 +16,7 @@ import {
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 const TelecomContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const TelecomContactSection: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
@@ -188,50 +189,7 @@ const TelecomContactSection: React.FC = () => {
       isTestingRequirementsValid &&
       isMessageValid
     ) {
-      setIsLoading(true);
-      try {
-        const dataToSend = {
-          fullName: formData.fullName,
-          businessEmail: formData.businessEmail,
-          businessPhone: formData.businessPhone,
-          companyOrganization: formData.companyOrganization,
-          testingRequirements: formData.testingRequirements,
-          message: formData.message,
-          source: "Telecom Testing Services Page",
-        };
-
-        const response = await fetch("/api/telecomContact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        });
-
-        if (response.ok) {
-          console.log("Form submitted successfully");
-          setIsSubmitted(true);
-          document.getElementById("telecom-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
-          setTimeout(() => setIsSubmitted(false), 5000);
-
-          setFormData({
-            fullName: "",
-            businessEmail: "",
-            businessPhone: "",
-            companyOrganization: "",
-            testingRequirements: "",
-            message: "",
-          });
-        } else {
-          const errorData = await response.json();
-          console.error("Form submission failed:", errorData.error);
-          alert("Form submission failed. Please try again.");
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("Network error. Please check your connection and try again.");
-      } finally {
-        setIsLoading(false);
+      await submitWithRecaptcha(async (data, recaptchaToken) => {const response = await fetch("/api/telecomContact", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({...data, recaptchaToken, source: "Telecom Testing Services"})});if (!response.ok) throw new Error("Failed");return response.json();}, formData);
       }
     } else {
       console.log("Form has errors.");
@@ -527,10 +485,10 @@ const TelecomContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? (
+                    {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                         Submitting...

@@ -14,6 +14,7 @@ import {
 import { jobOpenings, JobOpening } from "@/app/lib/openings";
 import Link from "next/link";
 import JobCardItem from "./JobCardItem";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 
 const CareersOpenPositions: React.FC = () => {
@@ -48,6 +49,7 @@ const CareersOpenPositions: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { submitWithRecaptcha } = useRecaptchaForm({ action: 'career_application', onSuccess: () => { }, onError: (error) => alert(error || 'Failed') });
 
 
 
@@ -219,7 +221,7 @@ const CareersOpenPositions: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await submitApplication(formData);
+      await submitWithRecaptcha(async (_, recaptchaToken) => { formDataToSend.append("recaptchaToken", recaptchaToken); return await submitApplication(formData); }, {});
       setShowSuccessMessage(true);
       if (modalContentRef.current) {
         modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
@@ -644,15 +646,39 @@ const CareersOpenPositions: React.FC = () => {
                         <label className="block text-sm font-medium text-gray-700 mb-2">
                           Location *
                         </label>
-                        <input
-                          type="text"
+                        <select
                           name="location"
                           value={formData.location}
                           onChange={handleInputChange}
                           className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                          placeholder="City"
                           required
-                        />
+                        >
+                          <option value="">Select Location</option>
+                          <option value="Western Mumbai">Western Mumbai</option>
+                          <option value="Central Mumbai">Central Mumbai</option>
+                          <option value="Harbour Mumbai">Harbour Mumbai</option>
+                          <option value="Delhi">Delhi</option>
+                          <option value="Bangalore">Bangalore</option>
+                          <option value="Chennai">Chennai</option>
+                          <option value="Hyderabad">Hyderabad</option>
+                          <option value="Kolkata">Kolkata</option>
+                          <option value="Noida">Noida</option>
+                          <option value="Ahmedabad">Ahmedabad</option>
+                          <option value="Aurangabad">Aurangabad</option>
+                          <option value="Jaipur">Jaipur</option>
+                          <option value="Surat">Surat</option>
+                          <option value="Lucknow">Lucknow</option>
+                          <option value="Pune">Pune</option>
+                          <option value="Nashik">Nashik</option>
+                          <option value="Nagpur">Nagpur</option>
+                          <option value="Gurgaon">Gurgaon</option>
+                          <option value="Indore">Indore</option>
+                          <option value="Bhubaneswar">Bhubaneswar</option>
+                          <option value="Bhopal">Bhopal</option>
+                          <option value="Ranchi">Ranchi</option>
+                          <option value="Kochi">Kochi</option>
+                          <option value="Chandigarh">Chandigarh</option>
+                        </select>
                       </div>
                       {/* Skills and Tools - Full width */}
                       <div>

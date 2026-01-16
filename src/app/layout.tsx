@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
+import { RecaptchaProvider } from "@/lib/recaptcha/RecaptchaContext";
 
 import Navbar from "@/components/layout/Header";
 
@@ -110,17 +112,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans flex min-h-screen flex-col antialiased bg-[theme(color.background.gray)]`}
       >
-        <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        {/* <TawkToScript /> */}
+        {/* Google reCAPTCHA v3 Script */}
+        {recaptchaSiteKey && (
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}&onload=onloadCallback`}
+            strategy="afterInteractive"
+          />
+        )}
 
+        <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
+
+        <RecaptchaProvider>
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          {/* <TawkToScript /> */}
+        </RecaptchaProvider>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 
 // Types for form data
 interface TelecomContactFormData {
@@ -11,6 +12,7 @@ interface TelecomContactFormData {
   testingRequirements: string;
   message: string;
   source?: string;
+  recaptchaToken?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -33,6 +35,15 @@ export async function POST(request: NextRequest) {
         { error: 'Invalid email format' },
         { status: 400 }
       );
+    }
+
+    const { recaptchaToken } = body;
+    if (!recaptchaToken) {
+      return NextResponse.json({ error: 'reCAPTCHA verification required' }, { status: 400 });
+    }
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaResult.success || !isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+      return NextResponse.json({ error: 'Suspicious activity detected' }, { status: 400 });
     }
 
     // Add source field if not provided

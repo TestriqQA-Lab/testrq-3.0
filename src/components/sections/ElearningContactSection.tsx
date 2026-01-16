@@ -17,6 +17,7 @@ import {
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 import Link from "next/link";
 
 const ElearningContactSection: React.FC = () => {
@@ -31,7 +32,6 @@ const ElearningContactSection: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
@@ -43,6 +43,28 @@ const ElearningContactSection: React.FC = () => {
     null
   );
   const [messageError, setMessageError] = useState<string | null>(null);
+
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: 'elearning_contact',
+    onSuccess: () => {
+      setIsSubmitted(true);
+      document.getElementById("elearning-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({
+        fullName: "",
+        businessEmail: "",
+        businessPhone: "",
+        institution: "",
+        platformType: "",
+        numberOfUsers: "",
+        message: "",
+      });
+    },
+    onError: (error) => {
+      console.error("Form submission failed:", error);
+      alert(error || "Form submission failed. Please try again.");
+    }
+  });
 
   const validatePhoneNumber = (phone: string | undefined) => {
     if (!phone) {
@@ -208,55 +230,31 @@ const ElearningContactSection: React.FC = () => {
       isNumberOfUsersValid &&
       isMessageValid
     ) {
-      setIsLoading(true);
-      try {
-        const dataToSend = {
-          fullName: formData.fullName,
-          businessEmail: formData.businessEmail,
-          businessPhone: formData.businessPhone,
-          institution: formData.institution,
-          platformType: formData.platformType,
-          numberOfUsers: formData.numberOfUsers,
-          message: formData.message,
-          source: "E-learning Testing Services Page",
-        };
+      await submitWithRecaptcha(
+        async (data, recaptchaToken) => {
+          const dataToSend = {
+            ...data,
+            recaptchaToken,
+            source: "E-learning Testing Services Page",
+          };
 
-        const response = await fetch("/api/elearningContact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        });
-
-        if (response.ok) {
-          console.log("Form submitted successfully");
-          setIsSubmitted(true);
-          document
-            .getElementById("elearning-form-section")
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-          setTimeout(() => setIsSubmitted(false), 5000);
-
-          setFormData({
-            fullName: "",
-            businessEmail: "",
-            businessPhone: "",
-            institution: "",
-            platformType: "",
-            numberOfUsers: "",
-            message: "",
+          const response = await fetch("/api/elearningContact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataToSend),
           });
-        } else {
-          const errorData = await response.json();
-          console.error("Form submission failed:", errorData.error);
-          alert("Form submission failed. Please try again.");
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("Network error. Please check your connection and try again.");
-      } finally {
-        setIsLoading(false);
-      }
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || "Form submission failed. Please try again.");
+          }
+
+          return response.json();
+        },
+        formData
+      );
     } else {
       console.log("Form has errors.");
     }
@@ -523,8 +521,8 @@ const ElearningContactSection: React.FC = () => {
                         onBlur={() => validateInstitution(formData.institution)}
                         required
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${institutionError
-                            ? "border-red-500"
-                            : "border-gray-200"
+                          ? "border-red-500"
+                          : "border-gray-200"
                           }`}
                         placeholder="Institution/Organization Name"
                       />
@@ -552,8 +550,8 @@ const ElearningContactSection: React.FC = () => {
                         aria-label="Select Your Platform Type"
                         required
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${platformTypeError
-                            ? "border-red-500"
-                            : "border-gray-200"
+                          ? "border-red-500"
+                          : "border-gray-200"
                           }`}
                       >
                         <option value="">Select Your Platform Type</option>
@@ -593,8 +591,8 @@ const ElearningContactSection: React.FC = () => {
                         aria-label="Select Number of Users"
                         required
                         className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 appearance-none ${numberOfUsersError
-                            ? "border-red-500"
-                            : "border-gray-200"
+                          ? "border-red-500"
+                          : "border-gray-200"
                           }`}
                       >
                         <option value="">Number of Users</option>
@@ -638,10 +636,10 @@ const ElearningContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-brand-blue to-sky-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? (
+                    {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                         Submitting...

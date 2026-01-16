@@ -21,6 +21,7 @@ import {
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 const HealthcareContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ const HealthcareContactSection: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
@@ -42,6 +43,28 @@ const HealthcareContactSection: React.FC = () => {
   const [healthcareSoftwareTypeError, setHealthcareSoftwareTypeError] = useState<string | null>(null);
   const [testingRequirementsError, setTestingRequirementsError] = useState<string | null>(null);
   const [projectDetailsError, setProjectDetailsError] = useState<string | null>(null);
+
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: 'healthcare_contact',
+    onSuccess: () => {
+      setIsSubmitted(true);
+      document.getElementById("healthcare-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({
+        fullName: "",
+        businessEmail: "",
+        businessPhone: "",
+        healthcareOrganization: "",
+        healthcareSoftwareType: "",
+        testingRequirements: "",
+        projectDetails: "",
+      });
+    },
+    onError: (error) => {
+      console.error("Form submission failed:", error);
+      alert(error || "Form submission failed. Please try again.");
+    }
+  });
 
   const validatePhoneNumber = (phone: string | undefined) => {
     if (!phone) {
@@ -611,10 +634,10 @@ const HealthcareContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isSubmitting}
                     className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold hover:scale-98 transition-all duration-200 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isLoading ? (
+                    {isSubmitting ? (
                       <>
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                         Submitting...

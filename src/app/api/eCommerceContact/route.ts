@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 
 // Types for form data
 interface ContactFormData {
@@ -13,6 +14,7 @@ interface ContactFormData {
   companyName?: string; // Optional field for E-commerce form
   platform?: string; // Optional field for E-commerce form
   source?: string; // Hidden field for source tracking
+  recaptchaToken?: string;
 }
 
 // Helper function to format company stage
@@ -31,7 +33,7 @@ function formatCompanyStage(stage: string | undefined): string {
     'non_profit': 'Non-profit',
     'other': 'Other'
   };
-  
+
   return stageMap[stage] || stage;
 }
 
@@ -52,24 +54,24 @@ function formatHowDidYouHear(source: string | undefined): string {
     'advertisement': 'Advertisement',
     'other': 'Other'
   };
-  
+
   return sourceMap[source] || source;
 }
 
 export async function POST(request: NextRequest) {
-  try {
+    try {
     const body: ContactFormData = await request.json();
-    
+
     // Validate required fields
     const { fullName, businessEmail, businessPhone, message } = body;
-    
+
     if (!fullName || !businessEmail || !businessPhone || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
-    
+
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(businessEmail)) {
       return NextResponse.json(
@@ -78,61 +80,99 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Add source field if not provided
-    if (!body.source) {
-      body.source = 'E-commerce Testing Services Page'; // Default for this specific route
+    // Verify reCAPTCHA (REQUIRED)
+    const { recaptchaToken } = body;
+    if (!recaptchaToken) {
+    console.error('reCAPTCHA token missing');
+    return NextResponse.json(
+      { error: 'reCAPTCHA verification required' },
+      { status: 400 }
+    );
+  }
+
+    try {
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+    if (!recaptchaResult.success) {
+      console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification failed' },
+        { status: 400 }
+      );
     }
 
-    const isEcommerce = (body.source || '').toLowerCase().includes('e-commerce testing services page');
+    if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+      console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+      return NextResponse.json(
+        { error: 'Suspicious activity detected. Please try again.' },
+        { status: 400 }
+      );
+    }
 
-    // Ensure companyName and platform are correctly captured, defaulting to N/A if not provided
-    const effectiveCompanyName = body.companyName || 'N/A';
-    const effectivePlatform = body.platform || 'N/A';
-
-    // Format the data for better readability
-    const formattedData: ContactFormData = {
-      ...body,
-      companyName: effectiveCompanyName,
-      platform: effectivePlatform,
-      companyStage: isEcommerce ? effectivePlatform : formatCompanyStage(body.companyStage),
-      howDidYouHear: isEcommerce ? '' : formatHowDidYouHear(body.howDidYouHear),
-      source: body.source || 'E-commerce Testing Services Page',
-    };
-
-    // Run all operations in parallel for better performance
-    const operations = [
-      storeInGoogleSheets(formattedData),
-      sendProfessionalNotification(formattedData),
-      sendClientConfirmation(formattedData)
-    ];
-
-    // Execute all operations concurrently
-    const results = await Promise.allSettled(operations);
-    
-    // Log any failures but don't fail the entire request
-    results.forEach((result, index) => {
-      if (result.status === 'rejected') {
-        const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
-        console.error(`${operationNames[index]} error:`, result.reason);
-      }
-    });
-
+    console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
+    } catch (error) {
+    console.error('Error verifying reCAPTCHA:', error);
     return NextResponse.json(
-      { message: 'Form submitted successfully' },
-      { status: 200 }
-    );
-
-  } catch (_error) {
-    console.error("API error:", _error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'reCAPTCHA verification error' },
       { status: 500 }
     );
   }
+
+    // Add source field if not provided
+  if (!body.source) {
+    body.source = 'E-commerce Testing Services Page'; // Default for this specific route
+  }
+
+  const isEcommerce = (body.source || '').toLowerCase().includes('e-commerce testing services page');
+
+  // Ensure companyName and platform are correctly captured, defaulting to N/A if not provided
+  const effectiveCompanyName = body.companyName || 'N/A';
+  const effectivePlatform = body.platform || 'N/A';
+
+  // Format the data for better readability
+  const formattedData: ContactFormData = {
+    ...body,
+    companyName: effectiveCompanyName,
+    platform: effectivePlatform,
+    companyStage: isEcommerce ? effectivePlatform : formatCompanyStage(body.companyStage),
+    howDidYouHear: isEcommerce ? '' : formatHowDidYouHear(body.howDidYouHear),
+    source: body.source || 'E-commerce Testing Services Page',
+  };
+
+  // Run all operations in parallel for better performance
+  const operations = [
+    storeInGoogleSheets(formattedData),
+    sendProfessionalNotification(formattedData),
+    sendClientConfirmation(formattedData)
+  ];
+
+  // Execute all operations concurrently
+  const results = await Promise.allSettled(operations);
+
+  // Log any failures but don't fail the entire request
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
+      console.error(`${operationNames[index]} error:`, result.reason);
+    }
+  });
+
+  return NextResponse.json(
+    { message: 'Form submitted successfully' },
+    { status: 200 }
+  );
+
+} catch (_error) {
+  console.error("API error:", _error);
+  return NextResponse.json(
+    { error: 'Internal server error' },
+    { status: 500 }
+  );
+}
 }
 
 async function storeInGoogleSheets(data: ContactFormData) {
-  try {
+    try {
     // Google Sheets configuration
     const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n');
     const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
@@ -148,7 +188,7 @@ async function storeInGoogleSheets(data: ContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    } );
+    });
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -200,21 +240,21 @@ async function storeInGoogleSheets(data: ContactFormData) {
     });
 
     console.log('Data stored in Google Sheets successfully');
-  } catch (_error) {
+    } catch (_error) {
     console.error("Google Sheets storage failed:", _error);
     throw _error;
   }
 }
 
 async function sendProfessionalNotification(data: ContactFormData) {
-  try {
+    try {
     // Email configuration from environment variables
     const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
     const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL = process.env.FROM_EMAIL;
-    
+
     // FIXED: Use the same environment variables as the main contact form
     // This ensures that the ecommerce form sends to the same recipients as the main contact form
     const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
@@ -277,7 +317,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -293,7 +333,7 @@ async function sendProfessionalNotification(data: ContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC ) {
+    if (PROFESSIONAL_EMAIL_CC) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
@@ -306,14 +346,14 @@ async function sendProfessionalNotification(data: ContactFormData) {
     if (mailOptions.cc) console.log('CC:', mailOptions.cc);
     if (mailOptions.bcc) console.log('BCC:', mailOptions.bcc);
 
-  } catch (_error) {
+    } catch (_error) {
     console.error("Professional notification failed:", _error);
     throw _error;
   }
 }
 
 async function sendClientConfirmation(data: ContactFormData) {
-  try {
+    try {
     // Email configuration from environment variables
     const SMTP_HOST = process.env.SMTP_HOST || 'smtp.gmail.com';
     const SMTP_PORT = parseInt(process.env.SMTP_PORT || '587');
@@ -421,7 +461,7 @@ async function sendClientConfirmation(data: ContactFormData) {
     await transporter.sendMail(mailOptions);
     console.log('Client confirmation sent successfully to:', mailOptions.to);
 
-  } catch (_error) {
+    } catch (_error) {
     console.error('Client confirmation failed:', _error);
     throw _error;
   }

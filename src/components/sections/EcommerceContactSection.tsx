@@ -16,6 +16,7 @@ import {
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 const EcommerceContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -28,13 +29,33 @@ const EcommerceContactSection: React.FC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [phoneError, setPhoneError] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [fullNameError, setFullNameError] = useState<string | null>(null);
   const [companyNameError, setCompanyNameError] = useState<string | null>(null);
   const [platformError, setPlatformError] = useState<string | null>(null);
   const [messageError, setMessageError] = useState<string | null>(null);
+
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: 'ecommerce_contact',
+    onSuccess: () => {
+      setIsSubmitted(true);
+      document.getElementById("ecommerce-form-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+      setFormData({
+        fullName: "",
+        businessEmail: "",
+        businessPhone: "",
+        companyName: "",
+        platform: "",
+        message: "",
+      });
+    },
+    onError: (error) => {
+      console.error("Form submission failed:", error);
+      alert(error || "Form submission failed. Please try again.");
+    }
+  });
 
   const validatePhoneNumber = (phone: string | undefined) => {
     if (!phone) {
@@ -188,55 +209,33 @@ const EcommerceContactSection: React.FC = () => {
       isPlatformValid &&
       isMessageValid
     ) {
-      setIsLoading(true);
-      try {
-        const dataToSend = {
-          fullName: formData.fullName,
-          businessEmail: formData.businessEmail,
-          businessPhone: formData.businessPhone,
-          companyName: formData.companyName,
-          platform: formData.platform,
-          companyStage: "e-commerce",
-          howDidYouHear: "e-commerce-testing-services",
-          message: formData.message,
-          source: "E-commerce Testing Services Page",
-        };
+      await submitWithRecaptcha(
+        async (data, recaptchaToken) => {
+          const dataToSend = {
+            ...data,
+            recaptchaToken,
+            companyStage: "e-commerce",
+            howDidYouHear: "e-commerce-testing-services",
+            source: "E-commerce Testing Services Page",
+          };
 
-        const response = await fetch("/api/eCommerceContact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(dataToSend),
-        });
-
-        if (response.ok) {
-          console.log("Form submitted successfully");
-          setIsSubmitted(true);
-          document
-            .getElementById("ecommerce-form-section")
-            ?.scrollIntoView({ behavior: "smooth", block: "start" });
-          setTimeout(() => setIsSubmitted(false), 5000);
-
-          setFormData({
-            fullName: "",
-            businessEmail: "",
-            businessPhone: "",
-            companyName: "",
-            platform: "",
-            message: "",
+          const response = await fetch("/api/eCommerceContact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(dataToSend),
           });
-        } else {
-          const errorData = await response.json();
-          console.error("Form submission failed:", errorData.error);
-          alert("Form submission failed. Please try again.");
-        }
-      } catch (error) {
-        console.error("Network error:", error);
-        alert("Network error. Please check your connection and try again.");
-      } finally {
-        setIsLoading(false);
-      }
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.error || "Form submission failed. Please try again.");
+          }
+
+          return response.json();
+        },
+        formData
+      );
     } else {
       console.log("Form has errors.");
     }
@@ -471,8 +470,8 @@ const EcommerceContactSection: React.FC = () => {
                         onBlur={() => validateCompanyName(formData.companyName)}
                         required
                         className={`w-full pl-10 pr-4 py-3 rounded-xl border focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300 ${companyNameError
-                            ? "border-red-500"
-                            : "border-gray-200"
+                          ? "border-red-500"
+                          : "border-gray-200"
                           }`}
                       />
                     </div>
@@ -542,11 +541,11 @@ const EcommerceContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={isLoading}
+                    disabled={isSubmitting}
                     className="w-full bg-[theme(color.brand.blue)] text-white py-3 px-6 cursor-pointer rounded-xl font-semibold hover:bg-opacity-90 hover:scale-97 transition-all flex items-center justify-center gap-2"
                     aria-label="Submit Contact Form"
                   >
-                    {isLoading ? (
+                    {isSubmitting ? (
                       <svg
                         className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                         xmlns="http://www.w3.org/2000/svg"
@@ -570,7 +569,7 @@ const EcommerceContactSection: React.FC = () => {
                     ) : (
                       <FaRocket className="w-4 h-4" />
                     )}
-                    {isLoading
+                    {isSubmitting
                       ? "Sending..."
                       : "Get Free E-Commerce Assessment"}
                   </button>

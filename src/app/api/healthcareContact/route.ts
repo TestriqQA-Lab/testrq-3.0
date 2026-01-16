@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { google } from 'googleapis';
+import { verifyRecaptcha, isValidRecaptchaScore } from '@/lib/recaptcha/verifyRecaptcha';
 
 // Types for form data
 interface HealthcareContactFormData {
@@ -12,22 +13,23 @@ interface HealthcareContactFormData {
   testingRequirements: string;
   projectDetails: string;
   source?: string;
+  recaptchaToken?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: HealthcareContactFormData = await request.json();
-    
+
     // Validate required fields
     const { fullName, businessEmail, businessPhone, healthcareOrganization, healthcareSoftwareType, testingRequirements, projectDetails } = body;
-    
+
     if (!fullName || !businessEmail || !businessPhone || !healthcareOrganization || !healthcareSoftwareType || !testingRequirements || !projectDetails) {
       return NextResponse.json(
         { error: 'All fields are required' },
         { status: 400 }
       );
     }
-    
+
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (!emailRegex.test(businessEmail)) {
       return NextResponse.json(
@@ -36,47 +38,85 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Add source field if not provided
-    if (!body.source) {
-      body.source = 'Healthcare Testing Services Page';
+    // Verify reCAPTCHA (REQUIRED)
+    const { recaptchaToken } = body;
+  if (!recaptchaToken) {
+    console.error('reCAPTCHA token missing');
+    return NextResponse.json(
+      { error: 'reCAPTCHA verification required' },
+      { status: 400 }
+    );
+  }
+
+  try {
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+
+    if (!recaptchaResult.success) {
+      console.error('reCAPTCHA verification failed:', recaptchaResult['error-codes']);
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification failed' },
+        { status: 400 }
+      );
     }
 
-    // Format the data for better readability
-    const formattedData: HealthcareContactFormData = {
-      ...body,
-      source: body.source || 'Healthcare Testing Services Page',
-    };
+    if (!isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+      console.warn(`Low reCAPTCHA score: ${recaptchaResult.score}`);
+      return NextResponse.json(
+        { error: 'Suspicious activity detected. Please try again.' },
+        { status: 400 }
+      );
+    }
 
-    // Run all operations in parallel for better performance
-    const operations = [
-      storeInGoogleSheets(formattedData),
-      sendProfessionalNotification(formattedData),
-      sendClientConfirmation(formattedData)
-    ];
-
-    // Execute all operations concurrently
-    const results = await Promise.allSettled(operations);
-    
-    // Log any failures but don't fail the entire request
-    results.forEach((result, index) => {
-      if (result.status === 'rejected') {
-        const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
-        console.error(`${operationNames[index]} error:`, result.reason);
-      }
-    });
-
-    return NextResponse.json(
-      { message: 'Form submitted successfully' },
-      { status: 200 }
-    );
-
+    console.log(`reCAPTCHA verification successful. Score: ${recaptchaResult.score}`);
   } catch (error) {
-    console.error('API error:', error);
+    console.error('Error verifying reCAPTCHA:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'reCAPTCHA verification error' },
       { status: 500 }
     );
   }
+
+  // Add source field if not provided
+  if (!body.source) {
+    body.source = 'Healthcare Testing Services Page';
+  }
+
+  // Format the data for better readability
+  const formattedData: HealthcareContactFormData = {
+    ...body,
+    source: body.source || 'Healthcare Testing Services Page',
+  };
+
+  // Run all operations in parallel for better performance
+  const operations = [
+    storeInGoogleSheets(formattedData),
+    sendProfessionalNotification(formattedData),
+    sendClientConfirmation(formattedData)
+  ];
+
+  // Execute all operations concurrently
+  const results = await Promise.allSettled(operations);
+
+  // Log any failures but don't fail the entire request
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      const operationNames = ['Google Sheets', 'Professional notification', 'Client confirmation'];
+      console.error(`${operationNames[index]} error:`, result.reason);
+    }
+  });
+
+  return NextResponse.json(
+    { message: 'Form submitted successfully' },
+    { status: 200 }
+  );
+
+} catch (error) {
+  console.error('API error:', error);
+  return NextResponse.json(
+    { error: 'Internal server error' },
+    { status: 500 }
+  );
+}
 }
 
 async function storeInGoogleSheets(data: HealthcareContactFormData) {
@@ -96,7 +136,7 @@ async function storeInGoogleSheets(data: HealthcareContactFormData) {
       email: GOOGLE_CLIENT_EMAIL,
       key: GOOGLE_PRIVATE_KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    } );
+    });
 
     // Initialize Google Sheets API
     const sheets = google.sheets({ version: 'v4', auth });
@@ -194,7 +234,7 @@ async function sendProfessionalNotification(data: HealthcareContactFormData) {
     const SMTP_USER = process.env.SMTP_USER;
     const SMTP_PASS = process.env.SMTP_PASS;
     const FROM_EMAIL = 'contact@testriq.com';
-    
+
     // Use the same environment variables as the main contact form
     const PROFESSIONAL_EMAIL_TO = process.env.PROFESSIONAL_EMAIL_TO || process.env.PROFESSIONAL_EMAIL || process.env.ADMIN_EMAILS;
     const PROFESSIONAL_EMAIL_CC = process.env.PROFESSIONAL_EMAIL_CC;
@@ -246,7 +286,7 @@ async function sendProfessionalNotification(data: HealthcareContactFormData) {
           
           <div style="background-color: #e0f2fe; padding: 15px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 0; color: #0369a1;">
-              <strong>Submitted at:</strong> ${new Date( ).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+              <strong>Submitted at:</strong> ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
             </p>
           </div>
 
@@ -262,7 +302,7 @@ async function sendProfessionalNotification(data: HealthcareContactFormData) {
       `,
     };
 
-    if (PROFESSIONAL_EMAIL_CC ) {
+    if (PROFESSIONAL_EMAIL_CC) {
       mailOptions.cc = PROFESSIONAL_EMAIL_CC.split(',').map(email => email.trim()).join(', ');
     }
     if (PROFESSIONAL_EMAIL_BCC) {
