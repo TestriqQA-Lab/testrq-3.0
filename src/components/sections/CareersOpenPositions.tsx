@@ -48,8 +48,21 @@ const CareersOpenPositions: React.FC = () => {
     noticePeriod: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { submitWithRecaptcha } = useRecaptchaForm({ action: 'career_application', onSuccess: () => { }, onError: (error) => alert(error || 'Failed') });
+  const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
+    action: "career_application",
+    onSuccess: () => {
+      setShowSuccessMessage(true);
+      if (modalContentRef.current) {
+        modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setTimeout(() => {
+        handleCloseModal();
+      }, 3000);
+    },
+    onError: (error) => {
+      alert(`Application submission failed: ${error || "An unknown error occurred."}`);
+    }
+  });
 
 
 
@@ -173,96 +186,55 @@ const CareersOpenPositions: React.FC = () => {
     }
   };
 
-  const submitApplication = async (
-    data: typeof formData
-  ) => {
-    if (data.phone && !validatePhoneNumber(data.phone)) {
-      setPhoneError("Please enter a valid 10-11 digit phone number");
-      throw new Error("Invalid phone number");
-    }
-    if (!resumeFile) {
-      alert("Please upload your resume");
-      throw new Error("Resume file is missing");
-    }
-
-    const formDataToSend = new FormData();
-    Object.keys(data).forEach((key) => {
-      const value = data[key as keyof typeof data];
-      if (key === 'domainKnowledge') {
-        formDataToSend.append(key, JSON.stringify(value));
-      } else {
-        formDataToSend.append(key, value as string);
-      }
-    });
-
-    if (resumeFile) {
-      formDataToSend.append("resume", resumeFile);
-    }
-    if (selectedPosition) {
-      formDataToSend.append("jobTitle", selectedPosition.title);
-      formDataToSend.append("jobId", selectedPosition.id.toString());
-    }
-
-
-    const response = await fetch("/api/apply-job", {
-      method: "POST",
-      body: formDataToSend,
-    });
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || "An unknown server error occurred.");
-    }
-
-    return response.json();
-  };
-
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    try {
+
+    if (formData.phone && !validatePhoneNumber(formData.phone)) {
+      setPhoneError("Please enter a valid 10-11 digit phone number");
+      return;
+    }
+
+    if (!resumeFile) {
+      alert("Please upload your resume");
+      return;
+    }
+
+    await submitWithRecaptcha(async (_, recaptchaToken) => {
       const formDataToSend = new FormData();
+
+      // Append form fields
       Object.entries(formData).forEach(([key, value]) => {
-        if (value instanceof File) {
-          formDataToSend.append(key, value);
-        } else if (Array.isArray(value)) {
+        if (key === "domainKnowledge") {
           formDataToSend.append(key, JSON.stringify(value));
         } else if (value !== null && value !== undefined) {
           formDataToSend.append(key, value.toString());
         }
       });
+
+      // Append resume file
+      formDataToSend.append("resume", resumeFile);
+
+      // Append position details
       if (selectedPosition) {
         formDataToSend.append("jobTitle", selectedPosition.title);
         formDataToSend.append("jobId", selectedPosition.id.toString());
       }
 
-      await submitWithRecaptcha(async (_, recaptchaToken) => {
-        formDataToSend.append("recaptchaToken", recaptchaToken);
-        const response = await fetch("/api/apply-job", {
-          method: "POST",
-          body: formDataToSend,
-        });
+      // Append reCAPTCHA token
+      formDataToSend.append("recaptchaToken", recaptchaToken);
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || "An unknown server error occurred.");
-        }
+      const response = await fetch("/api/apply-job", {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-        return response.json();
-      }, {});
-
-      setShowSuccessMessage(true);
-      if (modalContentRef.current) {
-        modalContentRef.current.scrollTo({ top: 0, behavior: "smooth" });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "An unknown server error occurred.");
       }
-      setTimeout(() => {
-        handleCloseModal();
-      }, 3000);
-    } catch (error: unknown) {
-      alert(`Application submission failed: ${(error as Error).message || "An unknown error occurred."}`);
-    } finally {
-      setIsSubmitting(false);
-    }
+
+      return response.json();
+    }, formData);
   };
 
   const handleInputChange = (
