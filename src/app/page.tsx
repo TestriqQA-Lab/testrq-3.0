@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData, { organizationSchema, websiteSchema, productServiceSchema, homeFAQSchema } from "@/components/seo/StructuredData";
+import StructuredData, { organizationSchema, websiteSchema, productServiceSchema, homeFAQSchema, professionalServiceSchema } from "@/components/seo/StructuredData";
 
 import HomeHeroSection from "@/components/sections/HomeHeroSection";
 
@@ -108,6 +108,7 @@ export default function Home() {
       <StructuredData data={websiteSchema} />
       <StructuredData data={productServiceSchema} />
       <StructuredData data={homeFAQSchema} />
+      <StructuredData data={professionalServiceSchema} />
       <MainLayout>
         <HomeHeroSection />
         <HomeComprehensiveSoftwareTesting />
