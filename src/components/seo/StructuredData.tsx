@@ -148,8 +148,8 @@ export const productServiceSchema = {
         "bestRating": "5"
       },
       "author": {
-        "@type": "Person",
-        "name": "Amit Shah"
+        "@type": "Organization",
+        "name": "Enterprise Client"
       },
       "reviewBody": "Testriq provided exceptional QA support for our fintech application. Their attention to detail is unmatched."
     }
