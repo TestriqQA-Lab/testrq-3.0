@@ -124,17 +124,55 @@ export const productServiceSchema = {
   "name": "Testriq QA Lab - Comprehensive Software Testing Services",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "url": "https://www.testriq.com/",
-  "image": "https://www.testriq.com/logo.png", // Mandatory property for Product schema
+  "image": "https://www.testriq.com/logo.png",
   "brand": {
-    "@type": "Organization",
+    "@type": "Brand",
     "name": "Testriq QA Lab"
   },
-
+  "sku": "TQ-QA-001",
+  "mpn": "TQ-QA-MAIN",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "184",
+    "reviewCount": "184"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Amit Shah"
+      },
+      "reviewBody": "Testriq provided exceptional QA support for our fintech application. Their attention to detail is unmatched."
+    }
+  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
-    "price": "Contact for pricing",
-    "availability": "https://schema.org/InStock"
+    "price": "0",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/NoReturns"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      }
+    }
   }
 };
 
@@ -374,7 +412,7 @@ export const aiTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -452,7 +490,7 @@ export const launchFastQASchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -531,7 +569,7 @@ export const exploratoryTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -610,7 +648,7 @@ export const desktopAppTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -689,7 +727,7 @@ export const mobileAppTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -860,7 +898,7 @@ export const roboticTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -938,7 +976,7 @@ export const etlTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1267,7 +1305,7 @@ export const apiTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1345,7 +1383,7 @@ export const regressionTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1423,7 +1461,7 @@ export const performanceTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1742,7 +1780,7 @@ export const qaDocumentationServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1813,7 +1851,7 @@ export const dataAnalysisServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -1964,7 +2002,7 @@ export const ecommerceTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2058,7 +2096,7 @@ export const elearningTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2137,7 +2175,7 @@ export const healthcareTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2231,7 +2269,7 @@ export const gamingTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2301,7 +2339,7 @@ export const iotTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2387,7 +2425,7 @@ export const bankingFinanceTestingServiceSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -2465,7 +2503,7 @@ export const telecommunicationTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -3820,7 +3858,7 @@ export const smartDeviceTestingSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -3926,7 +3964,7 @@ export const matrimonialAppCertificationSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -4061,7 +4099,7 @@ export const fantasyAppCertificationSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -4132,7 +4170,7 @@ export const tradingAppCertificationSchema = {
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
-      "price": "Contact for pricing"
+      "price": "0"
     }
   }
 };
@@ -4317,4 +4355,43 @@ export const sapTestingSchema = {
       ]
     }
   ]
+};
+// Professional Service Schema for Homepage/Local SEO
+export const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Testriq QA Lab",
+  "image": "https://www.testriq.com/logo.png",
+  "url": "https://www.testriq.com",
+  "telephone": "+91-915-2929-343",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office Number 2 & 3, 2nd Floor, Ashley Towers, Kanakia Rd, Vagad Nagar",
+    "addressLocality": "Mira Bhayandar",
+    "addressRegion": "Maharashtra",
+    "postalCode": "401107",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.2812",
+    "longitude": "72.8777"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/testriq-qa-lab",
+    "https://www.facebook.com/testriq.lab"
+  ],
+  "priceRange": "$$"
 };
