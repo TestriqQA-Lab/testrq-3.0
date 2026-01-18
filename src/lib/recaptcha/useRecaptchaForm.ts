@@ -31,24 +31,25 @@ export function useRecaptchaForm(options: UseRecaptchaFormOptions): UseRecaptcha
     try {
       // Execute reCAPTCHA
       const recaptchaToken = await executeRecaptcha(action);
-      
+
       if (!recaptchaToken) {
         throw new Error('Failed to generate reCAPTCHA token');
       }
 
       // Call the submit function with the reCAPTCHA token
       const result = await submitFunction(formData, recaptchaToken);
-      
+
       if (onSuccess) {
         onSuccess(result);
       }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'An error occurred';
       console.error('Form submission error:', error);
-      
+
       if (onError) {
         onError(errorMessage);
       }
+      throw error;
     } finally {
       setIsSubmitting(false);
     }

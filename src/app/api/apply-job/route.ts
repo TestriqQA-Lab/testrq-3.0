@@ -32,12 +32,25 @@ export async function POST(request: NextRequest) {
         const jobTitle = formData.get('jobTitle') as string;
         const jobId = formData.get('jobId') as string;
         const resume = formData.get('resume') as File | null;
+        const recaptchaToken = formData.get('recaptchaToken') as string;
 
 
         console.log('[apply-job API] Received submission for:', email);
 
+        // Verify reCAPTCHA
+        if (!recaptchaToken) {
+            return NextResponse.json({ message: 'reCAPTCHA verification required' }, { status: 400 });
+        }
+
+        const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+        if (!recaptchaResult.success || !isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+            console.warn('[apply-job API] reCAPTCHA verification failed:', recaptchaResult);
+            return NextResponse.json({ message: 'Suspicious activity detected' }, { status: 400 });
+        }
+
 
         if (!fullName || !email || !jobTitle || !resume) {
+            console.warn('[apply-job API] Missing required fields:', { fullName: !!fullName, email: !!email, jobTitle: !!jobTitle, resume: !!resume });
             return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });
         }
 
