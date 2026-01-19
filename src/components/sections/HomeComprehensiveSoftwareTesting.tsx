@@ -4,7 +4,6 @@ import { IoServerOutline } from "react-icons/io5";
 import { FaMicrochip } from "react-icons/fa6";
 import { LuSmartphone } from "react-icons/lu";
 import { GoLock } from "react-icons/go";
-import { AiOutlineThunderbolt } from "react-icons/ai";
 import Link from 'next/link';
 
 
