@@ -32,6 +32,7 @@ const CareersOpenPositions: React.FC = () => {
   const [phoneError, setPhoneError] = useState("");
   const domainDropdownRef = useRef<HTMLDivElement>(null);
   const modalContentRef = useRef<HTMLDivElement>(null);
+  const [customLocation, setCustomLocation] = useState("");
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -169,6 +170,7 @@ const CareersOpenPositions: React.FC = () => {
       location: "",
       noticePeriod: "",
     });
+    setCustomLocation("");
   };
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -194,6 +196,11 @@ const CareersOpenPositions: React.FC = () => {
       return;
     }
 
+    if (formData.location === "Others" && !customLocation.trim()) {
+      alert("Please enter your location");
+      return;
+    }
+
     if (!resumeFile) {
       alert("Please upload your resume");
       return;
@@ -204,7 +211,12 @@ const CareersOpenPositions: React.FC = () => {
 
       // Append form fields
       Object.entries(formData).forEach(([key, value]) => {
-        if (key === "domainKnowledge") {
+        if (key === "location" && value === "Others") {
+          // Capitalize first letter logic
+          const formattedLocation = customLocation.trim().charAt(0).toUpperCase() + customLocation.trim().slice(1);
+          formDataToSend.append(key, formattedLocation);
+        }
+        else if (key === "domainKnowledge") {
           formDataToSend.append(key, JSON.stringify(value));
         } else if (value !== null && value !== undefined) {
           formDataToSend.append(key, value.toString());
@@ -679,7 +691,20 @@ const CareersOpenPositions: React.FC = () => {
                           <option value="Ranchi">Ranchi</option>
                           <option value="Kochi">Kochi</option>
                           <option value="Chandigarh">Chandigarh</option>
+                          <option value="Others">Others</option>
                         </select>
+                        {formData.location === "Others" && (
+                          <div className="mt-2">
+                            <input
+                              type="text"
+                              value={customLocation}
+                              onChange={(e) => setCustomLocation(e.target.value)}
+                              className="w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                              placeholder="Enter your location"
+                              required
+                            />
+                          </div>
+                        )}
                       </div>
                       {/* Skills and Tools - Full width */}
                       <div>

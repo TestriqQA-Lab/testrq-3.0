@@ -18,7 +18,6 @@ const BlogNewsletter: React.FC = () => {
   const [email, setEmail] = useState("");
   const [interests, setInterests] = useState<string[]>([]);
   const [subscribed, setSubscribed] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const { isSubmitting, submitWithRecaptcha } = useRecaptchaForm({
