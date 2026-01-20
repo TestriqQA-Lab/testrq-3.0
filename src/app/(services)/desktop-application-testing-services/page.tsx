@@ -7,21 +7,23 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Desktop Application Testing Services Company",
+  title: "Desktop App Testing & QA Services | Testriq",
 
   description:
-    "We are one of the best desktop application testing services companies in Mumbai. With expertise in testing Web applications and mobile apps. Contact Us!",
+    "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
   keywords: [
-    "desktop application testing",
-    "Windows app testing",
-    "macOS app testing",
-    "Linux desktop testing",
-    "performance testing",
-    "cross-platform QA",
-    "usability testing",
-    "security testing",
-    "regression testing",
-    "functional desktop testing",
+    "Desktop Application Testing",
+    "Desktop App QA Services",
+    "Windows App Testing",
+    "macOS Application Testing",
+    "Linux Desktop Testing",
+    "Cross-Platform Desktop Testing",
+    "WPF and WinForms Testing",
+    "Desktop Performance Testing",
+    "EXE and MSI Installer Testing",
+    "Offline Functionality Testing",
+    "Desktop Security Testing",
+    "Enterprise Software QA",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -39,11 +41,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/desktop-application-testing-services",
-    siteName: "Testriq - Desktop Application Testing Services",
-    title:
-      "Desktop Application Testing Services - Secure & Reliable QA | Testriq",
+    siteName: "Testriq - Desktop Application Testing",
+    title: "Desktop App Testing & QA Services | Testriq",
     description:
-      "Desktop app QA experts. Ensure bug-free releases with security, performance, regression, and cross-platform compatibility testing for Windows, macOS, and Linux.",
+      "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
     images: [
       {
         url: "/OG/Desktop-Application-Service-OG.webp",
@@ -57,10 +58,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title:
-      "Desktop Application Testing Services - Secure & Reliable QA | Testriq",
+    title: "Desktop App Testing & QA Services | Testriq",
     description:
-      "Desktop app QA experts. Ensure bug-free releases with security, performance, regression, and cross-platform compatibility testing for Windows, macOS, and Linux.",
+      "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
     images: ["/OG/Desktop-Application-Service-Twitter.webp"],
   },
   robots: {
@@ -93,8 +93,8 @@ const DesktopTestingHeroSection = dynamic(
   }
 );
 
-const DesktopComprehensiveSection = dynamic(
-  () => import("@/components/sections/DesktopComprehensive"),
+const DesktopChallenges = dynamic(
+  () => import("@/components/sections/DesktopChallenges"),
   {
     ssr: true,
     loading: () => (
@@ -105,8 +105,20 @@ const DesktopComprehensiveSection = dynamic(
   }
 );
 
-const DesktopReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/DesktopReadyToEnsureQuality"),
+const DesktopCompliance = dynamic(
+  () => import("@/components/sections/DesktopCompliance"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DesktopTechStack = dynamic(
+  () => import("@/components/sections/DesktopTechStack"),
   {
     ssr: true,
     loading: () => (
@@ -129,18 +141,6 @@ const DesktopWhyChooseTestriq = dynamic(
   }
 );
 
-// const DesktopCaseStudies = dynamic(
-//   () => import("@/components/sections/DesktopCaseStudies"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
-
 const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
   ssr: true,
   loading: () => (
@@ -149,18 +149,6 @@ const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
     </div>
   ),
 });
-
-const DesktopComprehensiveSlider = dynamic(
-  () => import("@/components/sections/DesktopComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
 
 const DesktopCardSlider = dynamic(
   () => import("@/components/sections/DesktopCardSlider"),
@@ -193,12 +181,11 @@ export default function DesktopAppTesting() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <DesktopTestingHeroSection />
-        <DesktopComprehensiveSection />
-        <DesktopReadyToEnsureQuality />
-        <DesktopComprehensiveSlider />
+        <DesktopChallenges />
+        <DesktopCompliance />
+        <DesktopTechStack />
         <DesktopCardSlider />
         <DesktopWhyChooseTestriq />
-        {/* <DesktopCaseStudies /> */}
         <DesktopFAQs />
       </MainLayout>
     </div>
