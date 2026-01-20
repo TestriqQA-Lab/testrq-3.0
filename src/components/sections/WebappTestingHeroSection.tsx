@@ -38,26 +38,13 @@ const WebappTestingHeroSection: React.FC = () => {
 
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
               <span className="text-[theme(color.brand.blue)]">
-                Web Application Testing&nbsp;
+                Global Web Application Testing Services:&nbsp;
               </span>
-              Services - Comprehensive QA Solutions
+              Engineering Secure and Scalable Digital Experiences
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your web applications deliver exceptional user experiences
-              with our systematic web application testing. From
-              functionality and{" "}
-              <Link href="performance-testing-services">performance</Link> to{" "}
-              <Link href="security-testing">security</Link>,{" "}
-              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-                usability
-              </Link>
-              , and{" "}
-              <Link href="blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing">
-                bug detection
-              </Link>{" "}
-              - we test it all to ensure maximum quality, compliance, and
-              cross-platform compatibility.
+              In the <Link href="/blog/post/digital-assurance-trends-2026">digital-first economy of 2026</Link>, a web application is only as strong as its weakest line of code. At Testriq, we provide comprehensive <Link href="/web-application-testing-services">web application testing</Link>. Our manual specialists and automated frameworks ensure your platform stays secure, high-performing, and resilient. As a premier testing partner, we bridge the gap between <Link href="/launchfast-qa">rapid development</Link> and reliability through continuous software testing.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

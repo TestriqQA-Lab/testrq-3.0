@@ -7,29 +7,27 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Web Application Testing: Services & QA Solutions",
+  title: "Web Application Testing Services | QA Company | Testriq",
   description:
-    "Expert Web Application Testing services. We provide end-to-end coverage including functional, security, and performance testing to ensure bug-free web apps.",
+    "Secure your digital future with Testriq's global web application testing services. We specialize in Next.js, cross-browser compatibility, ISO 29119 compliance, and automated testing for scalable, secure web apps.",
   keywords: [
-    "web application testing",
-    "web app testing services",
-    "functional testing",
-    "performance testing",
-    "security testing",
-    "cross-browser testing",
-    "responsive testing",
-    "web QA services",
-    "web application QA",
-    "web application quality assurance",
-    "UI testing",
-    "UX testing",
-    "web test automation"
+    "Web Application Testing",
+    "Web QA Services",
+    "Cross-Browser Testing",
+    "Web App Security Testing",
+    "Next.js Testing",
+    "ISO 29119 Web Testing",
+    "SaaS Testing",
+    "E-commerce Testing",
+    "Playwright Automation",
+    "Cypress Automation",
+    "OWASP Top 10 Testing",
+    "Performance Testing Services",
   ],
   openGraph: {
-    title:
-      "Web Application Testing Services - Comprehensive QA Solutions | Testriq",
+    title: "Web Application Testing Services | QA Company | Testriq",
     description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+      "Secure your digital future with Testriq's global web application testing services. We specialize in Next.js, cross-browser compatibility, ISO 29119 compliance, and automated testing for scalable, secure web apps.",
     url: "https://www.testriq.com/web-application-testing-services",
     type: "website",
     images: [
@@ -43,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Application Testing Services Company ",
+    title: "Web Application Testing Services | QA Company | Testriq",
     description:
-      "Professional web application testing services including functional testing, performance testing, security testing, and cross-browser compatibility. Ensure your web apps deliver exceptional user experiences.",
+      "Secure your digital future with Testriq's global web application testing services. We specialize in Next.js, cross-browser compatibility, ISO 29119 compliance, and automated testing for scalable, secure web apps.",
     images: ["/OG/Web-Application_Testing_Twitter.webp"],
   },
   metadataBase: new URL("https://www.testriq.com/"),
@@ -82,8 +80,32 @@ const WebappTestingHeroSection = dynamic(
   }
 );
 
-const WebappProvenTestingProcess = dynamic(
-  () => import("@/components/sections/WebappProvenTestingProcess"),
+const WebappChallenges = dynamic(
+  () => import("@/components/sections/WebappChallenges"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const WebappCompliance = dynamic(
+  () => import("@/components/sections/WebappCompliance"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const WebappTechStack = dynamic(
+  () => import("@/components/sections/WebappTechStack"),
   {
     ssr: true,
     loading: () => (
@@ -106,18 +128,6 @@ const WebappWhyChooseTestriq = dynamic(
   }
 );
 
-// const WebappCaseStudies = dynamic(
-//   () => import("@/components/sections/WebappCaseStudies"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
-
 const WebappFAQs = dynamic(() => import("@/components/sections/WebappFAQs"), {
   ssr: true,
   loading: () => (
@@ -129,18 +139,6 @@ const WebappFAQs = dynamic(() => import("@/components/sections/WebappFAQs"), {
 
 const WebappAnyQuestions = dynamic(
   () => import("@/components/sections/WebappAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const WebappComprehensiveSlider = dynamic(
-  () => import("@/components/sections/WebappComprehensiveSlider"),
   {
     ssr: true,
     loading: () => (
@@ -182,11 +180,11 @@ export default function WebAppTesting() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <WebappTestingHeroSection />
-        <WebappComprehensiveSlider />
+        <WebappChallenges />
+        <WebappCompliance />
+        <WebappTechStack />
         <CardSlider />
-        <WebappProvenTestingProcess />
         <WebappWhyChooseTestriq />
-        {/* <WebappCaseStudies /> */}
         <WebappFAQs />
         <WebappAnyQuestions />
       </MainLayout>

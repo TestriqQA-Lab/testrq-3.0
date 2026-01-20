@@ -4,96 +4,105 @@ import Link from "next/link";
 import React, { JSX, useState } from "react";
 import {
   FaSearch,
-  FaRoute,
-  FaLightbulb,
-  FaBug,
+  FaTools,
+  FaClock,
   FaFileAlt,
+  FaComments,
+  FaSync,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const ExploratoryProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  const steps :{
-    id: number;
-    title: string;
-    duration: string;
-    icon: JSX.Element;
-    description: React.ReactNode;
-    activities: string[];
-    nextStep: string;
-  }[] = [
+  const steps = [
     {
       id: 1,
-      title: "Charter Definition & Planning",
-      duration: "30-60 minutes",
+      title: "Charter Definition",
+      duration: "1-2 Hours",
       icon: <FaSearch className="text-2xl" />,
       description:
-        (<>Define exploration objectives, scope, and testing charters to <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>guide systematic investigation</Link>.</>),
+        "We define the 'Mission' of the session. In exploratory testing, you might probe the checkout flow with various discount codes to uncover edge-case calculation errors.",
       activities: [
-        "Charter creation and refinement",
-        "Risk area identification",
-        "Testing persona selection",
-        "Session time allocation",
+        "Mission objective setup",
+        "Risk profile analysis",
+        "Scope boundary definition",
+        "Resource allocation",
       ],
-      nextStep: "Session Execution",
+      nextStep: "Technique Selection",
     },
     {
       id: 2,
-      title: "Exploratory Session Execution",
-      duration: "2-4 hours",
-      icon: <FaRoute className="text-2xl" />,
+      title: "Technique Selection",
+      duration: "30 Mins",
+      icon: <FaTools className="text-2xl" />,
       description:
-        (<>Conduct <Link href='blog/post/bug-discovery-find-hidden-defects-with-heuristic-exploratory-testing'>structured exploration sessions</Link> using defined charters and systematic investigation techniques.</>),
+        "Choosing between persona-based, touring, or heuristic testing approaches based on the feature's risk profile.",
       activities: [
-        "Charter-guided exploration",
-        "Real-time note taking",
-        "Bug discovery and documentation",
-        "User journey mapping",
+        "Heuristic selection",
+        "Persona modeling",
+        "Touring strategy",
+        "Tool preparation",
       ],
-      nextStep: "Analysis & Insights",
+      nextStep: "Time-Boxed Execution",
     },
     {
       id: 3,
-      title: "Analysis & Insights Generation",
-      duration: "1-2 hours",
-      icon: <FaLightbulb className="text-2xl" />,
+      title: "Time-Boxed Execution",
+      duration: "60-90 Mins",
+      icon: <FaClock className="text-2xl" />,
       description:
-        (<>Analyze findings, identify patterns, and generate <Link href='blog/post/what-are-the-principles-of-exploratory-testing'>actionable insights from exploration sessions</Link>.</>),
+        "We conduct intensive 60-90 minute sessions where testers simultaneously learn the application and identify defects using advanced hunting heuristics.",
       activities: [
-        "Session data analysis",
-        "Pattern identification",
-        "Risk assessment",
-        "Insight generation",
+        "Simultaneous learning",
+        "Defect identification",
+        "Heuristic application",
+        "Edge case probing",
       ],
-      nextStep: "Bug Reporting",
+      nextStep: "Documentation",
     },
     {
       id: 4,
-      title: "Bug Reporting & Documentation",
-      duration: "1-2 hours",
-      icon: <FaBug className="text-2xl" />,
+      title: "Documentation (Session Sheets)",
+      duration: "Real-time",
+      icon: <FaFileAlt className="text-2xl" />,
       description:
-        (<><Link href='blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools'>Document discovered issues</Link> with detailed reproduction steps and impact assessment.</>),
+        "Real-time recording of observations, setup data, and potential 'interest points.'",
       activities: [
-        "Bug report creation",
-        "Reproduction step documentation",
-        "Impact and severity assessment",
-        "Evidence collection",
+        "Observation recording",
+        "Setup data logging",
+        "Screenshot/video capture",
+        "Interest point tagging",
       ],
-      nextStep: "Recommendations",
+      nextStep: "Debriefing",
     },
     {
       id: 5,
-      title: "Recommendations & Follow-up",
-      duration: "30-60 minutes",
-      icon: <FaFileAlt className="text-2xl" />,
+      title: "Debriefing",
+      duration: "1 Hour",
+      icon: <FaComments className="text-2xl" />,
       description:
-        (<>Provide actionable recommendations and plan follow-up <Link href='blog/post/session-based-exploratory-testing-balancing-structure-with-creative-freedom'>exploration sessions</Link> if needed.</>),
+        "Our team collaborates with your stakeholders to verify discovered bugs and align on the subsequent testing strategy.",
       activities: [
-        "Improvement recommendations",
-        "Priority assessment",
-        "Follow-up planning",
-        "Knowledge sharing",
+        "Bug verification",
+        "Stakeholder collaboration",
+        "Strategy alignment",
+        "Impact analysis",
+      ],
+      nextStep: "Reporting & Sync",
+    },
+    {
+      id: 6,
+      title: "Reporting & Regression Sync",
+      duration: "Ongoing",
+      icon: <FaSync className="text-2xl" />,
+      description:
+        "We add every critical bug we find to your automated testing suite.",
+      activities: [
+        "Defect logging",
+        "Regression suite update",
+        "Test automation sync",
+        "Final reporting",
       ],
       nextStep: "Complete",
     },
@@ -120,11 +129,10 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
             <button
               key={step.id}
               onClick={() => setActiveStep(step.id)}
-              className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeStep === step.id
-                  ? "bg-green-600 text-white shadow-lg"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+              className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeStep === step.id
+                ? "bg-green-600 text-white shadow-lg"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
             >
               <span className="text-2xl">{step.id}</span>
               <span className="hidden sm:inline">{step.title}</span>
@@ -173,7 +181,7 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
                 <div className="flex items-center space-x-3 text-green-600">
                   <span className="font-medium">Next Step</span>
                   <span>{steps[activeStep - 1].nextStep}</span>
-                  <FaRoute className="text-sm" />
+                  <FaChevronRight className="text-sm" />
                 </div>
               )}
             </div>
@@ -190,22 +198,20 @@ const ExploratoryProvenTestingProcess: React.FC = () => {
                   <div
                     onClick={() => setActiveStep(step.id)}
                     key={step.id}
-                    className={`w-full flex items-center space-x-4 p-3 cursor-pointer rounded-lg transition-all duration-300 ${
-                      step.id === activeStep
-                        ? "bg-green-100 border-2 border-green-300"
-                        : step.id < activeStep
+                    className={`w-full flex items-center space-x-4 p-3 cursor-pointer rounded-lg transition-all duration-300 ${step.id === activeStep
+                      ? "bg-green-100 border-2 border-green-300"
+                      : step.id < activeStep
                         ? "bg-blue-50 border-2 border-blue-200"
                         : "bg-gray-50 border-2 border-gray-200"
-                    }`}
+                      }`}
                   >
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
-                        step.id === activeStep
-                          ? "bg-green-600 text-white"
-                          : step.id < activeStep
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step.id === activeStep
+                        ? "bg-green-600 text-white"
+                        : step.id < activeStep
                           ? "bg-blue-600 text-white"
                           : "bg-gray-300 text-gray-600"
-                      }`}
+                        }`}
                     >
                       {step.id < activeStep ? "✓" : step.id}
                     </div>

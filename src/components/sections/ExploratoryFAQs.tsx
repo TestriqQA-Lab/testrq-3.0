@@ -10,178 +10,59 @@ const ExploratoryFAQs: React.FC = () => {
   const faqs = [
     {
       question:
-        "What is exploratory testing and how does it differ from scripted testing?",
+        "What is the primary benefit of exploratory testing in agile development?",
       answer: (
         <>
-          Exploratory testing is a simultaneous learning, test design, and{" "}
-          <Link href="blog/post/test-execution-comprehensive-testing-implementation">
-            test execution
-          </Link>{" "}
-          approach where testers actively investigate the application to
-          discover issues. Unlike scripted testing that follows predetermined
-          test cases, exploratory testing combines human intuition, creativity,
-          and systematic investigation to uncover bugs,{" "}
-          <Link href="blog/post/usability-testing-in-manual-testing-use-cases-techniques">
-            usability issues
-          </Link>
-          , and edge cases that scripted tests often miss. It’s particularly
-          effective for finding unexpected behaviors and enhancing overall user
-          experience.
-        </>
-      ),
-    },
-    {
-      question:
-        "When should I use exploratory testing in my development process?",
-      answer: (
-        <>
-          Exploratory testing is ideal for early-stage development, pre-release
-          validation, or when validating complex user journeys and edge cases.
-          Use it during agile sprints,{" "}
-          <Link href="blog/post/security-validation-in-mvp-startup-qa-best-practices">
-            MVP testing
-          </Link>
-          , or post-automated testing to uncover issues missed by scripted
-          tests. It’s also valuable for usability-focused projects, new feature
-          validation, or when rapid feedback is needed to{" "}
-          <Link href="blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation">
-            refine user experience
-          </Link>
-          .
-        </>
-      ),
-    },
-    {
-      question: "How do you ensure systematic coverage in exploratory testing?",
-      answer: (
-        <>
-          We ensure systematic coverage through{" "}
-          <Link href="blog/post/session-based-exploratory-testing-balancing-structure-with-creative-freedom">
-            session-based test management
-          </Link>{" "}
-          (SBTM), charter-driven exploration, and coverage tracking. Our testers
-          define clear charters, prioritize high-risk areas, and use tools like
-          Session Tester and TestPad to monitor explored features and gaps.
-          Heuristic evaluations and{" "}
-          <Link href="blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation">
-            persona-based testing
-          </Link>{" "}
-          further ensure comprehensive investigation across all application
-          areas.
-        </>
-      ),
-    },
-    {
-      question:
-        "What types of issues does exploratory testing typically uncover?",
-      answer: (
-        <>
-          Exploratory testing uncovers usability issues, edge case failures,{" "}
-          <Link href="blog/post/usability-investigation-how-exploratory-testing-elevates-ux">
-            UX friction points
-          </Link>
-          , integration bugs,{" "}
-          <Link href="blog/post/performance-bottlenecks-in-web-apps-how-to-identify-them-2">
-            performance bottlenecks
-          </Link>
-          , and unexpected behaviors. It’s particularly effective for
-          identifying critical issues like navigation flaws, accessibility gaps,
-          checkout process errors, or complex scenario failures that automated
-          tests may miss.
-        </>
-      ),
-    },
-    {
-      question:
-        "How do you document and report findings from exploratory testing?",
-      answer: (
-        <>
-          We provide detailed session reports with{" "}
-          <Link href="blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">
-            bug descriptions
-          </Link>
-          , reproduction steps, screenshots, and videos (using tools like Loom
-          or Snagit). Findings are logged in tools like Jira or Azure DevOps,
-          with prioritized recommendations and UX insights. Summary reports
-          include coverage metrics,{" "}
-          <Link href="blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
-            risk assessments
-          </Link>
-          , and actionable improvement suggestions for developers.
-        </>
-      ),
-    },
-    {
-      question: "Can exploratory testing be integrated with automated testing?",
-      answer: (
-        <>
-          Yes, exploratory testing complements automated testing by identifying
-          issues automation misses. We integrate exploratory findings into
-          automated regression suites using tools like{" "}
-          <Link href="blog/post/getting-started-with-selenium-a-beginners-guide">
-            Selenium
-          </Link>{" "}
-          or{" "}
-          <Link href="blog/post/what-is-the-future-of-mobile-application-testing-appium">
-            Appium
-          </Link>{" "}
-          for future validation. Our team collaborates with developers to
-          automate reproducible scenarios, ensuring a hybrid approach that
-          maximizes coverage and efficiency.
-        </>
-      ),
-    },
-    {
-      question: "What skills and experience do your exploratory testers have?",
-      answer: (
-        <>
-          Our testers are ISTQB-certified with expertise in session-based
-          testing, heuristic evaluation, and risk-based investigation. They have
-          5+ years of experience across{" "}
-          <Link href="web-application-testing-services">web</Link>,{" "}
-          <Link href="mobile-application-testing">mobile</Link>,{" "}
-          <Link href="api-testing">API</Link>, and UX testing, with deep
-          knowledge of tools like Jira, TestPad, and accessibility frameworks.
-          Their creative and analytical skills ensure thorough exploration and
-          actionable insights.
-        </>
-      ),
-    },
-    {
-      question:
-        "How long does an exploratory testing engagement typically take?",
-      answer: (
-        <>
-          An exploratory testing engagement typically lasts 1-4 weeks, depending
-          on application complexity. Individual sessions are 2-4 hours, with
-          daily or weekly cycles for{" "}
+          The benefits of exploratory testing in{" "}
           <Link href="blog/post/why-exploratory-testing-is-essential-for-agile-teams">
-            agile projects
-          </Link>
-          . For urgent needs, we offer same-day exploration with rapid
-          reporting, completing targeted sessions in 4-8 hours.
+            agile development
+          </Link>{" "}
+          lie in its flexibility. Exploratory testing adapts to mid-sprint
+          changes better than scripted tests. This flexibility helps uncover
+          usability issues and logic flaws that standard &apos;passing&apos;
+          scripts often miss.
         </>
       ),
     },
     {
-      question: "What deliverables do you provide after exploratory testing?",
+      question: "How do you perform session-based exploratory testing (SBTM)?",
+      answer:
+        "Session-based exploratory testing begins with a specific charter and a 60–90 minute time-box. You then document every action and finding in a dedicated session sheet. The process concludes with a debriefing session to evaluate the 'information gain.'",
+    },
+    {
+      question: "What are some common exploratory testing examples?",
       answer: (
         <>
-          Deliverables include detailed bug reports, session logs,{" "}
-          <Link href="blog/post/heuristic-evaluation-in-testing-applying-ux-principles-to-find-flaws">
-            UX improvement recommendations
-          </Link>
-          , coverage reports, and risk assessments. We provide visual evidence
-          (screenshots/videos), prioritized issue lists, and actionable insights
-          in formats compatible with Jira, Azure DevOps, or Linear, tailored to
-          your team’s needs.
+          An exploratory testing example would be a tester &quot;touring&quot; a
+          new mobile app’s payment gateway. Exploratory testers ignore scripts
+          to find real-world bugs. They might trigger a low-battery alert or
+          switch from Wi-Fi to 5G mid-transaction. They also use &apos;error
+          guessing&apos; to test the CVV field with invalid data.
         </>
       ),
     },
     {
-      question: "How do you measure the effectiveness of exploratory testing?",
-      answer:
-        "Effectiveness is measured by issue discovery rate (95%), bug prevention rate (80%), UX improvement metrics (e.g., 75% user satisfaction increase), and coverage of critical user journeys and edge cases. We track findings against charters, monitor post-release bug rates, and assess client ROI to ensure impactful results.",
+      question:
+        "What are the best practices for documenting exploratory testing sessions?",
+      answer: (
+        <>
+          Effective documentation begins with time-stamped notes and visual
+          evidence. We use Rapid Reporter to capture session details and
+          summarize all findings in an ISO 29119-3 compliant report.
+        </>
+      ),
+    },
+    {
+      question: "Can you automate exploratory testing?",
+      answer: (
+        <>
+          AI tools enhance exploratory testing by crawling applications for
+          broken links and UI flaws. While they cannot replicate human
+          intuition, they efficiently handle repetitive discovery tasks.
+          However, these tools still require human &quot;oracles&quot; to
+          interpret the business impact of their findings.
+        </>
+      ),
     },
   ];
 
@@ -245,14 +126,14 @@ const ExploratoryFAQs: React.FC = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+              href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
               className="bg-white cursor-pointer text-brand-blue font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition-colors duration-200"
             >
               Schedule Consultation
             </Link>
           </div>
           <div className="mt-6 text-green-100 text-sm">
-            📞 Call us: (+91) 982-068-0665 | ✉️ Email: contact@testriq.com
+            📞 Call us: (+91) 915-2929-343 | ✉️ Email: contact@testriq.com
           </div>
         </div>
 
