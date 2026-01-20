@@ -53,7 +53,7 @@ const AIWhyChooseTestriq: React.FC = () => {
       title: "Europe Standards",
       shortTitle: "EU AI Act",
       description:
-        "We secure regulatory alignment with the EU AI Act (2025). We execute mandatory validation for high-risk systems.",
+        "We secure regulatory alignment with the EU AI Act (2026). We execute mandatory validation for high-risk systems.",
       stats: "EU AI Act Compliant",
       color: "red",
       gradient: "from-red-500 to-red-600",

@@ -16,7 +16,7 @@ const AIFAQs: React.FC = () => {
     {
       question: "How does the EU AI Act affect AI testing services?",
       answer:
-        "The EU AI Act (2025) mandates strict tests for high-risk AI. Companies must now prove their AI is safe and record their impact checks to stay compliant. Our services provide the necessary \"Declaration of Conformity\" and technical documentation for EU market entry.",
+        "The EU AI Act (2026) mandates strict tests for high-risk AI. Companies must now prove their AI is safe and record their impact checks to stay compliant. Our services provide the necessary \"Declaration of Conformity\" and technical documentation for EU market entry.",
     },
     {
       question: "Why is AI model validation necessary for Gen-AI?",

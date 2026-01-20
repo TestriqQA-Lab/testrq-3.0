@@ -118,7 +118,7 @@ const AIComprehensiveSlider: React.FC = () => {
             {" "}of Machine Learning Testing
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            The complexity of modern AI requires solving challenges that traditional testing cannot reach. Our methodology is built to tackle the biggest global hurdles identified in 2025.
+            The complexity of modern AI requires solving challenges that traditional testing cannot reach. Our methodology is built to tackle the biggest global hurdles identified in 2026.
           </p>
         </div>
 

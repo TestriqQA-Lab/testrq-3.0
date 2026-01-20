@@ -37,7 +37,7 @@ const AITestingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              By 2025, the global AI testing market has grown to over $757 billion. The rise of Generative AI fuels this growth. As companies move from small pilots to full-scale use, traditional software quality assurance is no longer enough. The &quot;black box&quot; nature of AI means we must move from simple bug-hunting to advanced, risk-based validation.
+              By 2026, the global AI testing market has grown to over $757 billion. The rise of Generative AI fuels this growth. As companies move from small pilots to full-scale use, traditional software quality assurance is no longer enough. The &quot;black box&quot; nature of AI means we must move from simple bug-hunting to advanced, risk-based validation.
               <br /><br />
               At Testriq, our <Link href="ai-application-testing" className="text-brand-blue font-semibold hover:underline">AI Application Testing Services</Link> help you make sure your models are safe, fair, and compliant. We connect ML Ops with Quality Assurance. This provides the clear tracking you need for high-stakes AI in sectors like Finance, Healthcare, and Critical Infrastructure.
             </p>

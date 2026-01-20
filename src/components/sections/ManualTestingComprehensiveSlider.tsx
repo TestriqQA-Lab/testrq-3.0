@@ -12,7 +12,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
       id: "automation-ai-gap",
       title: "Bridging the Automation-AI Gap",
       icon: <FaLink className="text-2xl" />,
-      percentage: "2025 Focus",
+      percentage: "2026 Focus",
       color: "blue",
       description: "Many organizations struggle with skill gaps and the high cost of tooling when trying to increase automation. We use the ISO 29119 series to identify where manual testing is most effective. This lets us focus on exploratory testing. Here, our \"human-in-the-loop\" approach provides the intuition needed for complex decisions that AI simply cannot make.",
       features: [
@@ -65,7 +65,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
       icon: <FaGraduationCap className="text-2xl" />,
       percentage: "Certified Team",
       color: "orange",
-      description: "The \"manual tester\" of 2025 is a hybrid professional. Our team trains under the ISO process model to gain a shared standard terms. This allows them to work beside automation engineers and AI tools, effectively closing the global skill gap.",
+      description: "The \"manual tester\" of 2026 is a hybrid professional. Our team trains under the ISO process model to gain a shared standard terms. This allows them to work beside automation engineers and AI tools, effectively closing the global skill gap.",
       features: [
         "ISO process model standardized training",
         "Shared QA/Automation vocabulary",
@@ -118,7 +118,7 @@ const ManualTestingComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Navigating the <span className="text-brand-blue">5 Global Challenges</span> of Manual Testing in 2025
+            Navigating the <span className="text-brand-blue">5 Global Challenges</span> of Manual Testing in 2026
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Our approach is designed to solve the specific bottlenecks currently plaguing global QA teams, balancing ISO standards with expert human intelligence.

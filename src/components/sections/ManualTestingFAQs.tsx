@@ -9,7 +9,7 @@ const ManualTestingFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "Why is manual testing still important in 2025?",
+      question: "Why is manual testing still important in 2026?",
       answer:
         (
           <>
