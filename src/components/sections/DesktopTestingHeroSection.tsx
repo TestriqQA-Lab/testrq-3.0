@@ -45,22 +45,20 @@ const DesktopTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
               <span className="text-[theme(color.brand.blue)]">
-                Desktop-App Testing&nbsp;
+                Desktop Application Testing Services:&nbsp;
               </span>
-              Services
+              Ensuring Performance Across Windows, macOS, & Linux
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your desktop applications deliver exceptional{" "}
-              <Link href="performance-testing-services">performance</Link> and
-              reliability with our comprehensive testing services. From
-              functionality to compatibility,{" "}
-              <Link href="security-testing">security</Link> to usability - we test
-              across all platforms and environments using{" "}
-              <Link href="manual-testing">manual</Link> desktop application
-              testing and exploratory desktop testing techniques.
+              In the high-stakes world of enterprise software, a desktop
+              application&apos;s failure can halt global operations. Testriq
+              provides <Link href="/desktop-application-testing-services">desktop application testing</Link> to ensure your
+              software is stable, secure, and resilient. As a leading desktop
+              testing services provider, we specialize in the unique
+              complexities of local hardware interactions, operating system (OS)
+              dependencies, and offline functionality.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

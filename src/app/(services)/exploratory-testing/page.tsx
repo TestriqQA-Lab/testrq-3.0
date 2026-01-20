@@ -1,7 +1,9 @@
 import React from "react";
 import ExploratoryTestingHeroSection from "@/components/sections/ExploratoryTestingHeroSection";
-import ExploratoryComprehensiveSlider from "@/components/sections/ExploratoryComprehensiveSlider";
+import ExploratoryChallenges from "@/components/sections/ExploratoryChallenges";
+import ExploratoryVsScripted from "@/components/sections/ExploratoryVsScripted";
 import ExploratoryProvenTestingProcess from "@/components/sections/ExploratoryProvenTestingProcess";
+import ExploratoryCompliance from "@/components/sections/ExploratoryCompliance";
 import ExploratoryWhyChooseTestriq from "@/components/sections/ExploratoryWhyChooseTestriq";
 import ExploratoryToolsFramework from "@/components/sections/ExploratoryToolsFramework";
 import ExploratoryCaseStudies from "@/components/sections/ExploratoryCaseStudies";
@@ -15,18 +17,18 @@ import StructuredData, {
 export const metadata: Metadata = {
   title: "Exploratory Testing Services | Testriq QA Lab",
   description:
-    "Empower your company with exploratory testing, our key to delivering flawless applications from day one. Gain a competitive edge with quality assurance.",
+    "Uncover critical risks with Testriq's exploratory testing services. We combine ISO 29119-2 standards, ISTQB-certified experts, and human intuition to find defects automated tests miss.",
   keywords: [
-    "exploratory testing",
+    "Exploratory Testing in Software Testing",
     "exploratory testing services",
-    "session-based testing",
-    "usability testing",
-    "user journey testing",
-    "heuristic evaluation",
-    "persona-based testing",
+    "Session-Based Testing Management",
+    "ISO 29119-2 Compliance",
     "manual exploratory testing",
-    "edge case testing",
-    "UX testing",
+    "Human intuition in testing",
+    "test design and execution",
+    "uncovering deep-seated defects",
+    "Agile exploratory testing",
+    "Rapid Reporter tools",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.testriq.com/exploratory-testing",
     siteName: "Testriq - Exploratory Testing Services",
-    title: "Exploratory Testing Services - Discover Hidden Issues | Testriq",
+    title: "Exploratory Testing Services | Testriq QA Lab",
     description:
-      "Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.",
+      "Uncover critical risks with Testriq's exploratory testing services. We combine ISO 29119-2 standards, ISTQB-certified experts, and human intuition to find defects automated tests miss.",
     images: [
       {
         url: "/OG/Exploratory-Testing-OG.webp",
@@ -61,9 +63,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title: "Exploratory Testing Services - Discover Hidden Issues | Testriq",
+    title: "Exploratory Testing Services | Testriq QA Lab",
     description:
-      "Explore your software like a real user. Our expert exploratory testing helps detect hidden issues, improve UX, and prevent post-release failures.",
+      "Uncover critical risks with Testriq's exploratory testing services. We combine ISO 29119-2 standards, ISTQB-certified experts, and human intuition to find defects automated tests miss.",
     images: ["/OG/Exploratory-Testing-Twitter.webp"],
   },
   robots: {
@@ -79,21 +81,18 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    yandex: "ff703971283d110e",
+    yahoo: "0A67349B8CD11BF71173B38572028507",
   },
 };
 
 export default function ExploratoryTestingPage() {
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
+    { name: "Services", url: "https://www.testriq.com/services" },
     {
-      name: "Services",
-      url: "https://www.testriq.com/web-application-testing-services",
-    },
-    {
-      name: "Web Application Testing",
-      url: "https://www.testriq.com/web-application-testing-services",
+      name: "Exploratory Testing",
+      url: "https://www.testriq.com/exploratory-testing",
     },
   ];
   return (
@@ -101,8 +100,10 @@ export default function ExploratoryTestingPage() {
       <StructuredData data={exploratoryTestingSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <ExploratoryTestingHeroSection />
-      <ExploratoryComprehensiveSlider />
+      <ExploratoryChallenges />
+      <ExploratoryVsScripted />
       <ExploratoryProvenTestingProcess />
+      <ExploratoryCompliance />
       <ExploratoryWhyChooseTestriq />
       <ExploratoryToolsFramework />
       <ExploratoryCaseStudies />

@@ -52,37 +52,29 @@ const LaunchFastQAHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Accelerate Your Launch with
+              Launch-Fast QA: Rapid QA Testing Services for
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Rapid QA Testing
+                Startup MVP Success
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Get your product to market faster with{" "}
-              <Link title="LaunchFast QA" href="launchfast-qa">
-                LaunchFast QA
-              </Link>
-              . We deliver rapid testing sprints,{" "}
-              <Link
-                title="agile QA testing"
-                href="blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
-              >
-                agile QA testing
-              </Link>
-              , on-demand QA services, and continuous QA for startups and
-              fast-moving teams. Our MVP QA testing and pre-launch testing
-              ensure{" "}
-              <Link
-                title="CI/CD integration"
-                href="blog/post/ci-cd-integration-with-automated-tests"
-              >
-                CI/CD integration
-              </Link>
-              , early defect detection, and a bug-free product ready for
-              go-to-market.
-            </p>
+            <div className="space-y-4 text-xl text-gray-600 leading-relaxed">
+              <p>
+                Speed is critical for 2026 startups, but moving too fast without quality creates technical debt. This often leads to investor skepticism during funding rounds. Testriq’s{" "}
+                <Link title="Launch-Fast QA" href="/launchfast-qa" className="text-brand-blue hover:underline font-medium">
+                  Launch-Fast QA
+                </Link>{" "}
+                provides the specialized testing your early-stage team needs. We ensure you maintain velocity without compromising your product’s integrity.
+              </p>
+              <p>
+                We don't just find bugs; we accelerate your software release cycle. Our{" "}
+                <Link title="agile QA testing" href="/blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa" className="text-brand-blue hover:underline">
+                  agile and continuous QA practices
+                </Link>{" "}
+                accelerate your journey from code commit to MVP launch. Whether you require on-demand testing for feature pivots or affordable sprints, Testriq provides essential "Quality Discipline." We ensure your startup has the structural integrity to scale rather than stall.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link

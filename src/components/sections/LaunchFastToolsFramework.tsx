@@ -12,141 +12,112 @@ const LaunchFastToolsFramework: React.FC = () => {
     }[]
   }[] = [
       {
-        title: "Rapid Testing Tools",
+        title: "Web Automation",
         tools: [
           {
-            name: "Selenium WebDriver",
-            description: "Fast automated web testing for rapid feedback cycles",
+            name: "Playwright",
+            description: "Next-generation browser automation for modern web apps",
           },
           {
             name: "Cypress",
-            description:
-              "Modern end-to-end testing with real-time browser testing",
+            description: "Developer-friendly end-to-end testing framework",
           },
           {
-            name: "Playwright",
-            description: "Cross-browser automation for comprehensive coverage",
-          },
-          {
-            name: "TestCafe",
-            description: "Node.js-based testing with no WebDriver dependencies",
-          },
-        ],
-      },
-      {
-        title: "Agile CI/CD Integration",
-        tools: [
-          {
-            name: "Jenkins",
-            description: "Continuous integration for automated testing pipelines",
-          },
-          {
-            name: "GitHub Actions",
-            description: "Workflow automation integrated with development",
-          },
-          {
-            name: "GitLab CI/CD",
-            description: "Built-in continuous integration and deployment",
-          },
-          {
-            name: "Azure DevOps",
-            description: "End-to-end DevOps toolchain for rapid delivery",
+            name: "Selenium",
+            description: "Industry-standard open-source web automation",
           },
         ],
       },
       {
         title: (
           <>
-            <Link title="Performance Testing" href='performance-testing-services'>Performance Testing</Link>
-          </>
-        ),
-        tools: [
-          {
-            name: "JMeter",
-            description: "Load testing for performance validation at scale",
-          },
-          {
-            name: "K6",
-            description: "Modern load testing for developer-centric workflows",
-          },
-          {
-            name: "Artillery",
-            description: "Modern performance testing toolkit for APIs",
-          },
-          {
-            name: "WebPageTest",
-            description: "Real-world performance testing and optimization",
-          },
-        ],
-      },
-      {
-        title: (
-          <>
-            <Link title="Mobile Testing" href='mobile-application-testing'>Mobile Testing</Link>
+            <Link title="Mobile Testing" href='/mobile-application-testing'>Mobile Testing</Link>
           </>
         ),
         tools: [
           {
             name: "Appium",
-            description: "Cross-platform mobile automation for iOS and Android",
+            description: "Native, hybrid, and mobile web app automation",
           },
           {
-            name: "Detox",
-            description: "Gray box end-to-end testing for mobile apps",
+            name: "Bit-Bar",
+            description: "Cloud-based real device testing for mobile and web",
           },
           {
-            name: "Espresso",
-            description: "Android UI testing framework for rapid feedback",
-          },
-          {
-            name: "XCUITest",
-            description: "iOS UI testing framework for native applications",
+            name: "Browser-Stack",
+            description: "Instant access to real mobile devices for app testing",
           },
         ],
       },
       {
         title: (
           <>
-            <Link title="API Testing" href='api-testing'>API Testing</Link>
+            <Link title="API Testing" href='/api-testing'>API Testing</Link>
           </>
         ),
         tools: [
           {
             name: "Postman",
-            description: "API development and testing platform",
+            description: "The world's most popular API platform",
           },
           {
-            name: "REST Assured",
-            description: "Java-based REST API testing framework",
+            name: "Super-test",
+            description: "High-level abstraction for testing HTTP",
           },
           {
-            name: "Newman",
-            description: "Command-line collection runner for Postman",
-          },
-          {
-            name: "Insomnia",
-            description: "API client for REST and GraphQL testing",
+            name: "k6",
+            description: "Developer-centric performance and API testing",
           },
         ],
       },
       {
-        title: "Monitoring & Analytics",
+        title: "CI/CD Integration",
+        tools: [
+          {
+            name: "GitHub Actions",
+            description: "Automate, customize, and execute workflows",
+          },
+          {
+            name: "Circle-CI",
+            description: "Modern CI/CD for high-speed software development",
+          },
+          {
+            name: "Jenkins",
+            description: "Powerful open-source automation server",
+          },
+        ],
+      },
+      {
+        title: "Monitoring & System Insights",
         tools: [
           {
             name: "Datadog",
-            description: "Real-time monitoring and analytics platform",
+            description: "Cloud-scale monitoring and security for apps",
           },
           {
             name: "New Relic",
-            description: "Application performance monitoring and optimization",
+            description: "Full-stack observability for performance",
           },
           {
             name: "Sentry",
-            description: "Error tracking and performance monitoring",
+            description: "Application monitoring and error tracking",
+          },
+        ],
+      },
+      {
+        title: "Bug Tracking",
+        tools: [
+          {
+            name: "Jira",
+            description: "The #1 project management tool for agile teams",
           },
           {
-            name: "LogRocket",
-            description: "Frontend monitoring and session replay",
+            name: "Linear",
+            description: "The issue tracker built for high-performance teams",
+          },
+          {
+            name: "Trello",
+            description: "Manage projects and organize tasks visually",
           },
         ],
       },

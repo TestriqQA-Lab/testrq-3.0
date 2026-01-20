@@ -8,17 +8,17 @@ export default function CardSlider() {
   const [autoHover, setAutoHover] = useState(true);
 
   const headings = {
-    title: "Systematic 6-Step Web Application Testing Methodology",
-    info: (<>Our proven testing methodology ensures comprehensive coverage, efficient issue detection, and reliable web application performance through systematic execution, <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>detailed bug reporting</Link>, and actionable QA insights.</>),
+    title: "Our Step-by-Step Web QA Methodology",
+    info: (<>We follow <Link href='https://www.iso.org/standard/81291.html' target='_blank'>ISO 29119</Link> to prioritize testing for high-risk modules. For example, we focus heavily on functional testing for critical checkout pages. Our security risk assessment dives deep into your application’s armor.</>),
   };
 
   const cards = [
     {
-      title: "Discovery & Analysis",
-      days: "1-2 days",
-      quote: "Understanding Your Requirements",
+      title: "Evaluate Requirements & DOM",
+      days: "Phase 1",
+      quote: "Architecture & Risk Analysis",
       content:
-        (<>We begin with a thorough analysis of your web application, aligning with business goals, user expectations, and technical specifications to craft a tailored testing strategy that ensures full coverage, compliance, and optimal <Link href='performance-testing-services'>performance</Link>.</>),
+        (<>We assess your application&apos;s architecture to identify specific <Link href='blog/post/front-end-testing-vs-back-end-testing-key-differences-and-integrations'>Front-end and Back-end</Link> testing requirements. Our security risk assessment identifies critical threats like SQL injection and XSS while verifying your HTTPS/SSL settings.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -30,22 +30,21 @@ export default function CardSlider() {
       ),
       colordark: "blue-500",
       colorlight: "blue-50",
-      progress: "15%",
+      progress: "25%",
       keyTitle: "Key Activities",
       keys: [
-        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
-        { key: "Technical architecture analysis" },
-        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
-        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
-        { key: "Testing scope definition" },
+        { key: "DOM Structure Analysis" },
+        { key: "Security Risk Assessment" },
+        { key: "Requirement Traceability" },
+        { key: "Test Strategy Definition" },
       ],
     },
     {
-      title: "Environment Setup",
-      days: "1-2 days",
-      quote: "Preparing Testing Infrastructure",
+      title: "Automated Regression Suite Build",
+      days: "Phase 2",
+      quote: "Stability & Speed",
       content:
-        (<>We configure robust testing environments that mirror your production setup, ensuring reliable, consistent test results across all web application testing scenarios, including functionality, <Link href='security-testing'>security</Link>, <Link href='performance-testing-services'>performance</Link>, and usability.</>),
+        (<>We create stable, run in parallel test suites using Cloud-based web testing. This ensures stability during <Link href='blog/post/agile-testing-methodology-guide-for-developers-and-qa'>Agile sprints</Link> and prevents regressions in dynamic environments.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -57,22 +56,21 @@ export default function CardSlider() {
       ),
       colordark: "green-500",
       colorlight: "green-50",
-      progress: "30%",
+      progress: "50%",
       keyTitle: "Key Activities",
       keys: [
-        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
-        { key: "Technical architecture analysis" },
-        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
-        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
-        { key: "Testing scope definition" },
+        { key: "Test Script Development" },
+        { key: "CI/CD Pipeline Integration" },
+        { key: "Parallel Execution" },
+        { key: "Self-Healing Scripts" },
       ],
     },
     {
-      title: "Test Execution",
-      days: "3-5 days",
-      quote: "Comprehensive Testing Implementation",
+      title: "Performance & Stress Testing",
+      days: "Phase 3",
+      quote: "Scalability Validation",
       content:
-        "We execute systematic testing across all defined scenarios using a blend of manual and automated testing approaches to ensure comprehensive coverage of functionality, performance, security, and usability.",
+        (<>Identifying bottlenecks by simulating thousands of concurrent users to test load and stress limits. We ensure your platform stays responsive under peak traffic conditions.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -84,22 +82,21 @@ export default function CardSlider() {
       ),
       colordark: "purple-500",
       colorlight: "purple-50",
-      progress: "60%",
+      progress: "75%",
       keyTitle: "Key Activities",
       keys: [
-        { key: (<>Requirement gathering and <Link href='blog/post/how-to-write-secure-test-cases-2'>documentation</Link></>) },
-        { key: "Technical architecture analysis" },
-        { key: (<><Link href='blog/post/persona-based-testing-enhancing-qa-with-real-user-simulation'>user persona</Link> and journey mapping</>) },
-        { key: (<><Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>Risk assessment</Link> and prioritization</>) },
-        { key: "Testing scope definition" },
+        { key: "Load Simulation" },
+        { key: "Stress Testing" },
+        { key: "Scalability Analysis" },
+        { key: "Bottleneck Identification" },
       ],
     },
     {
-      title: "Issue Documentation",
-      days: "1-2 days",
-      quote: "Detailed Bug Reporting",
+      title: "Real-User UAT & Sign-off",
+      days: "Phase 4",
+      quote: "Human-Centric Validation",
       content:
-        "We systematically identify, document, and prioritize issues with detailed reproduction steps, visual evidence, and actionable insights to facilitate efficient bug resolution and maintain high web application quality.",
+        "We conduct UAT with real users to ensure your application meets human expectations. This final step guarantees your product is ready for sign-off with confidence.",
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -111,68 +108,13 @@ export default function CardSlider() {
       ),
       colordark: "red-500",
       colorlight: "red-50",
-      progress: "80%",
+      progress: "100%",
       keyTitle: "Key Activities",
       keys: [
-        { key: "Requirement gathering and documentation" },
-        { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
-        { key: "Testing scope definition" },
-      ],
-    },
-    {
-      title: "Validation & Optimization",
-      days: "1-2 days",
-      quote: "Verifying Fixes & Enhancing Performance",
-      content:
-        "We validate bug fixes and optimize performance through retesting and fine-tuning, ensuring your web application meets quality standards and delivers seamless user experiences.",
-      icon: (
-        <svg
-          className="w-7 h-10 md:w-10 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-        </svg>
-      ),
-      colordark: "orange-500",
-      colorlight: "orange-50",
-      progress: "80%",
-      keyTitle: "Key Activities",
-      keys: [
-        { key: "Requirement gathering and documentation" },
-        { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
-        { key: "Testing scope definition" },
-      ],
-    },
-    {
-      title: "Final Reporting",
-      days: "1 day",
-      quote: "Comprehensive QA Summary",
-      content:
-        "We deliver a detailed final report with test coverage metrics, resolved issues, performance benchmarks, and recommendations for ongoing maintenance and quality assurance.",
-      icon: (
-        <svg
-          className="w-7 h-10 md:w-10 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" />
-        </svg>
-      ),
-      colordark: "yellow-500",
-      colorlight: "yellow-50",
-      progress: "80%",
-      keyTitle: "Key Activities",
-      keys: [
-        { key: "Requirement gathering and documentation" },
-        { key: "Technical architecture analysis" },
-        { key: "user persona and journey mapping" },
-        { key: "Risk assessment and prioritization" },
-        { key: "Testing scope definition" },
+        { key: "User Acceptance Testing" },
+        { key: "UX Feedback Loop" },
+        { key: "Final Sign-off" },
+        { key: "Go-Live Support" },
       ],
     },
   ];
@@ -192,13 +134,13 @@ export default function CardSlider() {
     setAutoHover(false);
   };
 
-  // Split the title into parts to style "6-Step" in blue
+  // Split the title into parts to style "Web QA Methodology" in blue
   const renderTitle = () => {
-    const titleParts = headings.title.split("6-Steps");
+    const titleParts = headings.title.split("Web QA Methodology");
     return (
       <>
         {titleParts[0]}
-        <span className="text-[theme(color.brand.blue)]">6-Steps</span>
+        <span className="text-[theme(color.brand.blue)]">Web QA Methodology</span>
         {titleParts[1]}
       </>
     );
@@ -228,8 +170,8 @@ export default function CardSlider() {
               <div
                 key={index}
                 className={`p-4 rounded-lg shadow-md cursor-pointer  ring ring-gray-300 transition-all duration-300 ${activeCard === index
-                    ? `scale-105 transition-all duration-500 ease-in-out shadow-xl border-2 border-black bg-${cards[activeCard].colorlight}`
-                    : `bg-white hover:shadow-lg hover:border-${cards[activeCard].colordark}`
+                  ? `scale-105 transition-all duration-500 ease-in-out shadow-xl border-2 border-black bg-${cards[activeCard].colorlight}`
+                  : `bg-white hover:shadow-lg hover:border-${cards[activeCard].colordark}`
                   }`}
                 onMouseEnter={() => setActiveCard(index)}
                 onClick={() => handleCardClick(index)}
@@ -243,8 +185,8 @@ export default function CardSlider() {
 
                 <p
                   className={` ${activeCard === index
-                      ? `text-${cards[activeCard].colordark}`
-                      : `hover:border-${card.colordark}`
+                    ? `text-${cards[activeCard].colordark}`
+                    : `hover:border-${card.colordark}`
                     }`}
                 >
                   {card.quote}

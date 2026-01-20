@@ -5,128 +5,79 @@ import React from "react";
 const ExploratoryToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      title: "Session Management Tools",
+      title: "Session Management",
       tools: [
         {
-          name: "Session Tester",
-          description: "Session-based test management and charter tracking",
-        },
-        {
           name: "Rapid Reporter",
-          description: "Real-time note taking and session documentation",
+          description: "Real-time session-based testing note-taking",
         },
         {
-          name: "TestPad",
-          description: "Exploratory testing checklist and session management",
+          name: "Session Tester",
+          description: "Structured session management and charter tracking",
         },
         {
-          name: "Exploratory Testing Chrome Extension",
-          description: "Browser-based exploration tracking",
+          name: "Xray",
+          description: "Native test management for Jira",
         },
       ],
     },
     {
-      title: "Bug Tracking & Documentation",
+      title: "Documentation & Traceability",
       tools: [
         {
           name: "Jira",
-          description: "Comprehensive bug tracking and project management",
+          description: "Issue tracking and project management",
         },
         {
           name: "Azure DevOps",
-          description: "Integrated development and testing workflow",
+          description: "Integrated CI/CD and test planning",
         },
         {
-          name: "Bugzilla",
-          description: "Open-source bug tracking and reporting",
-        },
-        {
-          name: "Linear",
-          description: "Modern issue tracking for development teams",
+          name: "Confluence",
+          description: "Knowledge sharing and documentation",
         },
       ],
     },
     {
-      title: "Screen Recording & Evidence",
+      title: "Capture & Annotation",
       tools: [
         {
           name: "Loom",
-          description: "Screen recording for bug reproduction and evidence",
-        },
-        {
-          name: "OBS Studio",
-          description: "Professional screen recording and streaming",
-        },
-        {
-          name: "CloudApp",
-          description: "Quick screen capture and annotation tools",
+          description: "Video messaging for bug reproduction",
         },
         {
           name: "Snagit",
-          description: "Advanced screen capture and editing capabilities",
+          description: "Advanced screen capture and image editing",
+        },
+        {
+          name: "Bug Magnet",
+          description: "Chrome extension for exploratory testing",
         },
       ],
     },
     {
-      title: "Mind Mapping & Planning",
+      title: "Automated Support",
       tools: [
         {
-          name: "XMind",
-          description: "Mind mapping for test planning and exploration",
+          name: "mabl",
+          description: "Intelligent test automation for regression",
         },
         {
-          name: "MindMeister",
-          description: "Collaborative mind mapping for test strategies",
-        },
-        {
-          name: "Coggle",
-          description: "Simple mind mapping for exploration planning",
-        },
-        {
-          name: "FreeMind",
-          description: "Open-source mind mapping for test design",
+          name: "Testim",
+          description: "AI-powered UI testing platform",
         },
       ],
     },
     {
-      title: "Heuristic Evaluation Tools",
+      title: "Environment Monitoring",
       tools: [
         {
-          name: "Nielsen's Heuristics Checklist",
-          description: "Usability heuristics evaluation framework",
+          name: "Datadog",
+          description: "Cloud monitoring and analytics",
         },
         {
-          name: "WAVE",
-          description: "Web accessibility evaluation and testing",
-        },
-        {
-          name: "axe DevTools",
-          description: "Accessibility testing and evaluation",
-        },
-        {
-          name: "Lighthouse",
-          description: "Performance and accessibility auditing",
-        },
-      ],
-    },
-    {
-      title: "Collaboration & Communication",
-      tools: [
-        {
-          name: "Slack",
-          description: "Real-time team communication and collaboration",
-        },
-        {
-          name: "Microsoft Teams",
-          description: "Integrated communication and file sharing",
-        },
-        {
-          name: "Miro",
-          description: "Collaborative whiteboarding and planning",
-        },
-        {
-          name: "Notion",
-          description: "Documentation and knowledge management",
+          name: "New Relic",
+          description: "Full-stack observability and APM",
         },
       ],
     },

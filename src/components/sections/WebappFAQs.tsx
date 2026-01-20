@@ -5,30 +5,29 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What types of web applications do you test?",
+    question: "Which web application testing frameworks offer the highest ROI for startups in the 2026 ecosystem?",
     answer:
-      (<>We test all types of web applications, including <Link href='e-commerce-testing-services'>e-commerce platforms</Link>, <Link href='software-testing-guide'>SaaS applications</Link>, content management systems, social media platforms, educational portals, <Link href='healthcare-testing-services'>healthcare apps</Link>, and custom web solutions. Our web application testing approach is tailored to each product’s specific requirements, technology stack, and user scenarios to ensure complete functionality, security, and performance validation.</>),
+      (<>We recommend a mix of <Link href='/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link> or Playwright for fast UI automation and OWASP ZAP for baseline security. These are the best web application testing tools for startups in 2026.</>),
   },
   {
-    question: "How long does web application testing typically take?",
+    question: "How do I automate web application testing for Next.js?",
     answer:
-      (<>Web application testing typically takes 1-4 weeks, depending on the application’s complexity, testing scope, and requirements. Simple applications may require 5-7 days, while complex platforms (e.g., <Link href='e-commerce-testing-services'>e-commerce</Link> or <Link href='software-testing-guide'>SaaS</Link> may take 2-4 weeks. Our systematic 6-step methodology ensures efficient execution, with rapid turnaround for urgent projects.</>),
+      (<>To automate web application testing for Next.js, We recommend using Playwright because of its excellent support for Server-Side Rendering (SSR) and <Link href='/web-application-testing-services'>React components</Link>.</>),
   },
   {
-    question: "What testing tools and technologies do you use?",
+    question: "What is the difference between Front-end and Back-end testing?",
     answer:
-      (<>We use industry-leading tools like <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link>, and Playwright for functional testing; JMeter and K6 for performance testing; OWASP ZAP and Burp Suite for <Link href='security-testing'>security testing</Link>; and WAVE and Lighthouse for usability and accessibility. Our ISTQB-certified team supports modern tech stacks (React, Angular, Node.js, etc.) and integrates with CI/CD platforms like Jenkins and GitLab CI.</>),
+      (<>Front-end testing focuses on the UI and browser compatibility. <Link href='/blog/post/front-end-testing-vs-back-end-testing-key-differences-and-integrations'>Back-end testing</Link> involves <Link href='/api-testing'>API testing</Link> for web apps, database validation, and server-side logic.</>),
   },
   {
-    question: "Do you provide automated testing for web applications?",
+    question: "Analyzing the Persistence: Why SQL Injection Remains a Critical Risk Assessment in 2026?",
     answer:
-      (<>Yes, we provide automated testing using tools like <Link href='blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>Cypress</Link>, and TestCafe to ensure rapid, repeatable validation of functionality, performance, and regression scenario
-        s. Automation is integrated with <Link href='manual-testing'>manual testing</Link> to maximize coverage and efficiency, tailored to your application’s needs and CI/CD pipeline.</>),
+      (<>Our <Link href='/security-testing'>web application penetration testing services</Link> specialize in identifying these vulnerabilities in legacy systems and rapid, unreviewed code pushes, ensuring your data remains secure.</>),
   },
   {
-    question: "How do you ensure cross-browser compatibility?",
+    question: "How does cross-browser compatibility testing impact SEO?",
     answer:
-      (<>We ensure cross-browser compatibility by testing on major browsers (Chrome, Firefox, Safari, Edge) and their versions using tools like BrowserStack and Sauce Labs. Our testing covers <Link href='blog/post/responsive-web-application-testing-ensuring-seamless-multi-device-compatibility'>responsive design</Link>, functionality, and performance across devices, ensuring consistent <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link> and compliance with accessibility standards like WCAG.</>),
+      (<>If your app has layout issues on Safari or Firefox, your bounce rate increases, hurting rankings. A robust checklist for <Link href='/blog/post/cross-browser-testing-checklist-web-app'>cross-browser compatibility testing</Link> is essential for SEO success.</>),
   },
 ];
 

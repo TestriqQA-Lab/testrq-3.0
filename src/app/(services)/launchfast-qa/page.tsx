@@ -1,7 +1,8 @@
-import React from "react";
 import LaunchFastQAHeroSection from "@/components/sections/LaunchFastQAHeroSection";
+import LaunchFastChallenges from "@/components/sections/LaunchFastChallenges";
 import LaunchFastComprehensiveSlider from "@/components/sections/LaunchFastComprehensiveSlider";
 import LaunchFastProvenTestingProcess from "@/components/sections/LaunchFastProvenTestingProcess";
+import LaunchFastCompliance from "@/components/sections/LaunchFastCompliance";
 import LaunchFastWhyChooseTestriq from "@/components/sections/LaunchFastWhyChooseTestriq";
 import LaunchFastToolsFramework from "@/components/sections/LaunchFastToolsFramework";
 import LaunchFastCaseStudies from "@/components/sections/LaunchFastCaseStudies";
@@ -13,21 +14,22 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Launch-Fast QA Services for Companies ",
+  title: "Launch-Fast QA Services for Companies",
 
   description:
-    "Empower your startup with LaunchFast QA, your key to delivering flawless applications from day one. Gain a competitive edge with robust quality assurance.",
+    "Testriq provides Launch-Fast QA services for startups and MVPs. Accelerate your software release cycle with agile QA, rapid testing sprints, and 24/7 support. Ensure investor-ready quality and global compliance.",
   keywords: [
-    "LaunchFast QA",
-    "rapid QA services",
-    "startup testing",
-    "agile QA",
-    "MVP testing",
-    "fast product testing",
-    "launch readiness",
-    "QA for startups",
-    "accelerated software testing",
-    "go-to-market QA",
+    "Launch-Fast QA",
+    "rapid QA testing services",
+    "startup MVP testing",
+    "agile QA practices",
+    "CI/CD integration for startups",
+    "ISO 29119-6 compliance",
+    "on-demand QA",
+    "24/7 software testing support",
+    "investor-ready QA reporting",
+    "automated smoke suite",
+    "startup quality assurance",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -47,10 +49,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.testriq.com/launchfast-qa",
     siteName: "Testriq - LaunchFast QA Services",
-    title:
-      "LaunchFast QA Services - Rapid Product Testing for Startups | Testriq",
+    title: "Launch-Fast QA Services for Companies | Testriq",
     description:
-      "Fast-track your product launch with LaunchFast QA. Rapid testing cycles, agile integration, and 24/7 support designed for startups and high-velocity dev teams.",
+      "Rapid QA testing designed for startup MVP success. Agile integration, 24/7 support, and investor-ready traceability to accelerate your launch.",
     images: [
       {
         url: "/OG/Launch-Fast-QA-Service-og.webp",
@@ -64,10 +65,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title:
-      "LaunchFast QA Services - Rapid Product Testing for Startups | Testriq",
+    title: "Launch-Fast QA Services for Companies | Testriq",
     description:
-      "Fast-track your product launch with LaunchFast QA. Rapid testing cycles, agile integration, and 24/7 support designed for startups and high-velocity dev teams.",
+      "Rapid QA testing designed for startup MVP success. Agile integration, 24/7 support, and investor-ready traceability to accelerate your launch.",
     images: ["/OG/Launch_Fast_QA-Twitter.webp"],
   },
   robots: {
@@ -92,15 +92,17 @@ export default function LaunchFastQAPage() {
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Services", url: "https://www.testriq.com/launchfast-qa" },
-    { name: "LanuchFast QA", url: "https://www.testriq.com/launchfast-qa" },
+    { name: "LaunchFast QA", url: "https://www.testriq.com/launchfast-qa" },
   ];
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={launchFastQASchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <LaunchFastQAHeroSection />
+      <LaunchFastChallenges />
       <LaunchFastComprehensiveSlider />
       <LaunchFastProvenTestingProcess />
+      <LaunchFastCompliance />
       <LaunchFastWhyChooseTestriq />
       <LaunchFastToolsFramework />
       <LaunchFastCaseStudies />

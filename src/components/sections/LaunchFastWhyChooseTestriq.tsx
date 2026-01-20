@@ -17,92 +17,92 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       id: 1,
-      title: "Rapid Testing Cycles",
-      metric: "48hr Turnaround",
+      title: "Affordable QA Sprints",
+      metric: "Tiered Pricing",
       icon: <FaBolt className="text-3xl" />,
       color: "blue",
       description:
-        "Lightning-fast testing cycles designed for agile development teams who need quality without delays.",
+        "Flexible pricing models that grow as your funding does, ensuring early-stage startups get premium QA without the high overhead.",
       capabilities: [
-        "Sprint-aligned testing",
-        "Continuous integration",
-        "Real-time feedback",
-        "Parallel test execution",
+        "Budget-friendly testing",
+        "Scale with funding",
+        "Resource optimization",
+        "Essential quality discipline",
       ],
     },
     {
       id: 2,
-      title: "Launch Acceleration",
-      metric: "3x Faster Launch",
+      title: "On-Demand QA Services",
+      metric: "Scalable Teams",
       icon: <FaRocket className="text-3xl" />,
       color: "green",
       description:
-        "Accelerate your time-to-market with optimized testing processes and agile methodologies.",
+        "Scale our involvement up or down based on your release calendar and feature pivots. Instant access to senior-level engineers.",
       capabilities: [
-        "MVP validation",
-        "Launch readiness assessment",
-        "Go-to-market support",
-        "Production monitoring",
+        "Instant scaling",
+        "Senior engineer access",
+        "Feature pivot support",
+        "Flexible engagement",
       ],
     },
     {
       id: 3,
-      title: "Quality Assurance",
-      metric: "99.5% Success Rate",
-      icon: <FaShieldAlt className="text-3xl" />,
+      title: "Critical Launch Window",
+      metric: "48-72hr Window",
+      icon: <FaClock className="text-3xl" />,
       color: "purple",
       description:
-        "Comprehensive quality assurance that ensures your product meets the highest standards at launch.",
+        "Our team specializes in the critical 48–72 hour window before your public reveal or investor demo to ensure a flawless first impression.",
       capabilities: [
-        "Risk-based testing",
-        "Quality metrics tracking",
-        "Defect prevention",
-        "Compliance validation",
+        "Pre-launch validation",
+        "Investor demo readiness",
+        "Go-to-market sign-off",
+        "Rapid bug resolution",
       ],
     },
     {
       id: 4,
-      title: "Agile Team Integration",
-      metric: "24/7 Support",
+      title: "Agile 24/7 Support",
+      metric: "Global Talent",
       icon: <FaUsers className="text-3xl" />,
       color: "orange",
       description:
-        "Seamless integration with your development team and agile processes for maximum efficiency.",
+        "Our 'follow-the-sun' model ensures we test your code while you sleep, with results ready for your morning stand-up.",
       capabilities: [
-        "Scrum integration",
-        "Daily standups",
-        "Sprint planning",
-        "Retrospective insights",
+        "24/7 testing support",
+        "Overnight regression",
+        "Global team alignment",
+        "Daily stand-up ready",
       ],
     },
     {
       id: 5,
-      title: "Scalable Solutions",
-      metric: "300+ Startups",
+      title: "Investor-Ready Quality",
+      metric: "Full Traceability",
       icon: <FaChartLine className="text-3xl" />,
       color: "teal",
       description:
-        "Testing solutions that scale with your growth from MVP to enterprise-level applications.",
+        "Demonstrate high-velocity 'Quality Discipline' to potential investors with real-time visibility into metrics and UAT status.",
       capabilities: [
-        "Flexible resource allocation",
-        "Technology adaptation",
-        "Growth-oriented testing",
-        "Enterprise readiness",
+        "Audit-ready docs",
+        "Quality metrics dashboard",
+        "Full test traceability",
+        "Investor-facing reports",
       ],
     },
     {
       id: 6,
-      title: "Continuous Optimization",
-      metric: "Real-time Insights",
-      icon: <FaClock className="text-3xl" />,
+      title: "Global Compliance",
+      metric: "ISO 29119 Aligned",
+      icon: <FaShieldAlt className="text-3xl" />,
       color: "indigo",
       description:
-        "Continuous testing optimization and real-time insights for sustained product excellence.",
+        "Maintain the speed of a startup with the reliability of a global consulting firm, meeting US, UK, and EU market benchmarks.",
       capabilities: [
-        "Performance monitoring",
-        "Automated reporting",
-        "Trend analysis",
-        "Predictive insights",
+        "ISO 29119-6 compliance",
+        "SOC2/GDPR readiness",
+        "Enterprise-level security",
+        "Regional market standards",
       ],
     },
   ];
@@ -148,11 +148,11 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span className="text-brand-blue">Why Choose Testriq</span> for
-            LaunchFast QA?
+            Business Impact: Why Launch-Fast is the{" "}
+            <span className="text-brand-blue">Best Choice for Startups</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We blend rapid testing sprint expertise with <Link title="agile QA" href='blog/post/integrating-qa-into-agile-a-step-by-step-guide'>agile QA</Link> methodologies to deliver <Link title="LaunchFast QA" href='launchfast-qa'>LaunchFast QA</Link> services that boost your go-to-market speed while ensuring exceptional quality, reliability, and investor-ready products.
+            Partnering with Testriq extends beyond acquiring billable hours. We provide a professional risk-mitigation strategy for your MVP launch, offering affordable testing sprints and 24/7 on-demand support that grows with your funding.
           </p>
         </div>
 
@@ -170,21 +170,19 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div
-                  className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${
-                    hoveredCard === advantage.id
-                      ? getColorClasses(advantage.color, true)
-                      : getIconBgColor(advantage.color)
-                  }`}
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center text-white transition-all duration-300 ${hoveredCard === advantage.id
+                    ? getColorClasses(advantage.color, true)
+                    : getIconBgColor(advantage.color)
+                    }`}
                 >
                   {advantage.icon}
                 </div>
                 <div className="text-right">
                   <div
-                    className={`text-2xl font-bold ${
-                      hoveredCard === advantage.id
-                        ? "text-white"
-                        : "text-gray-900"
-                    }`}
+                    className={`text-2xl font-bold ${hoveredCard === advantage.id
+                      ? "text-white"
+                      : "text-gray-900"
+                      }`}
                   >
                     {advantage.metric}
                   </div>
@@ -193,19 +191,17 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
 
               {/* Content */}
               <h3
-                className={`text-xl font-bold mb-4 ${
-                  hoveredCard === advantage.id ? "text-white" : "text-gray-900"
-                }`}
+                className={`text-xl font-bold mb-4 ${hoveredCard === advantage.id ? "text-white" : "text-gray-900"
+                  }`}
               >
                 {advantage.title}
               </h3>
 
               <p
-                className={`mb-6 leading-relaxed ${
-                  hoveredCard === advantage.id
-                    ? "text-white text-opacity-90"
-                    : "text-gray-600"
-                }`}
+                className={`mb-6 leading-relaxed ${hoveredCard === advantage.id
+                  ? "text-white text-opacity-90"
+                  : "text-gray-600"
+                  }`}
               >
                 {advantage.description}
               </p>
@@ -213,11 +209,10 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
               {/* Capabilities */}
               <div className="space-y-3">
                 <h4
-                  className={`font-semibold ${
-                    hoveredCard === advantage.id
-                      ? "text-white"
-                      : "text-gray-900"
-                  }`}
+                  className={`font-semibold ${hoveredCard === advantage.id
+                    ? "text-white"
+                    : "text-gray-900"
+                    }`}
                 >
                   Key Capabilities:
                 </h4>
@@ -225,18 +220,16 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
                   {advantage.capabilities.map((capability, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <div
-                        className={`w-2 h-2 rounded-full ${
-                          hoveredCard === advantage.id
-                            ? "bg-white bg-opacity-70"
-                            : getIconBgColor(advantage.color)
-                        }`}
+                        className={`w-2 h-2 rounded-full ${hoveredCard === advantage.id
+                          ? "bg-white bg-opacity-70"
+                          : getIconBgColor(advantage.color)
+                          }`}
                       ></div>
                       <span
-                        className={`text-sm ${
-                          hoveredCard === advantage.id
-                            ? "text-white text-opacity-90"
-                            : "text-gray-700"
-                        }`}
+                        className={`text-sm ${hoveredCard === advantage.id
+                          ? "text-white text-opacity-90"
+                          : "text-gray-700"
+                          }`}
                       >
                         {capability}
                       </span>
@@ -248,17 +241,16 @@ const LaunchFastWhyChooseTestriq: React.FC = () => {
               {/* CTA */}
               <div className="flex justify-center text-center mt-6">
                 <Link title="Contact Us – Testriq QA Lab" href="/contact-us"
-                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${
-                    hoveredCard === advantage.id
-                      ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
-                          advantage.color,
-                          false
-                        )} border-white border-opacity-30`
-                      : `${getColorClasses(
-                          advantage.color,
-                          false
-                        )} hover:shadow-lg`
-                  }`}
+                  className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-300 ${hoveredCard === advantage.id
+                    ? `bg-white bg-opacity-20 border-2 ${getColorClasses(
+                      advantage.color,
+                      false
+                    )} border-white border-opacity-30`
+                    : `${getColorClasses(
+                      advantage.color,
+                      false
+                    )} hover:shadow-lg`
+                    }`}
                 >
                   Explore LaunchFast QA
                 </Link>
