@@ -11,7 +11,7 @@ const LaunchFastFAQs: React.FC = () => {
     {
       question: "How can I speed up product launch with agile QA?",
       answer:
-        (<>The best way to speed up product launch with agile QA is to integrate testing early in the SDLC. We use <Link title="CI/CD integration" href='/blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link> and automated testing training to catch bugs at the 'commit' stage. This approach prevents expensive rework during the software release cycle.</>),
+        (<>The best way to speed up product launch with agile QA is to integrate testing early in the SDLC. We use <Link title="CI/CD integration" href='/blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link> and automated testing training to catch bugs at the &apos;commit&apos; stage. This approach prevents expensive rework during the software release cycle.</>),
     },
     {
       question: "What are the benefits of on-demand QA services for startups?",
@@ -21,7 +21,7 @@ const LaunchFastFAQs: React.FC = () => {
     {
       question: "Does Launch-Fast QA support 24/7 agile support for software testing?",
       answer:
-        (<>Yes. We offer 24/7 agile support for software testing by leveraging a global talent pool. Our 'follow-the-sun' model ensures we test your code while you sleep. Your results are ready for review before your morning stand-up begins.</>),
+        (<>Yes. We offer 24/7 agile support for software testing by leveraging a global talent pool. Our &apos;follow-the-sun&apos; model ensures we test your code while you sleep. Your results are ready for review before your morning stand-up begins.</>),
     },
     {
       question: "How many users do I need for MVP testing?",
@@ -31,7 +31,7 @@ const LaunchFastFAQs: React.FC = () => {
     {
       question: "What is the difference between Manual and Automation testing for startups?",
       answer:
-        (<>Manual testing is essential for exploratory, UX, and "human-centric" edge cases in new features. <Link title="Automation testing" href='/automation-testing-services'>Automation testing</Link> is ideal for regression cycles. It ensures that new updates don't break existing functionality within your CI/CD pipeline.</>),
+        (<>Manual testing is essential for exploratory, UX, and &quot;human-centric&quot; edge cases in new features. <Link title="Automation testing" href='/automation-testing-services'>Automation testing</Link> is ideal for regression cycles. It ensures that new updates don&apos;t break existing functionality within your CI/CD pipeline.</>),
     },
   ];
 

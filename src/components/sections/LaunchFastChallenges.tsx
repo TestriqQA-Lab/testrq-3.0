@@ -51,7 +51,7 @@ const LaunchFastChallenges: React.FC = () => {
                         <span className="text-brand-blue">5 Global Challenges for Startups</span>
                     </h2>
                     <p className="mt-6 text-xl text-gray-600 max-w-4xl mx-auto">
-                        The startup landscape has shifted toward "Hyper-Agility," but traditional testing models haven't kept pace. We have architected Launch-Fast QA to solve the five biggest hurdles facing global MVPs in 2026.
+                        The startup landscape has shifted toward &quot;Hyper-Agility,&quot; but traditional testing models haven&apos;t kept pace. We have architected Launch-Fast QA to solve the five biggest hurdles facing global MVPs in 2026.
                     </p>
                 </div>
 

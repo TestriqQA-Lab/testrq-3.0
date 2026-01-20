@@ -68,11 +68,11 @@ const LaunchFastQAHeroSection: React.FC = () => {
                 provides the specialized testing your early-stage team needs. We ensure you maintain velocity without compromising your product’s integrity.
               </p>
               <p>
-                We don't just find bugs; we accelerate your software release cycle. Our{" "}
+                We don&apos;t just find bugs; we accelerate your software release cycle. Our{" "}
                 <Link title="agile QA testing" href="/blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa" className="text-brand-blue hover:underline">
                   agile and continuous QA practices
                 </Link>{" "}
-                accelerate your journey from code commit to MVP launch. Whether you require on-demand testing for feature pivots or affordable sprints, Testriq provides essential "Quality Discipline." We ensure your startup has the structural integrity to scale rather than stall.
+                accelerate your journey from code commit to MVP launch. Whether you require on-demand testing for feature pivots or affordable sprints, Testriq provides essential &quot;Quality Discipline.&quot; We ensure your startup has the structural integrity to scale rather than stall.
               </p>
             </div>
 
