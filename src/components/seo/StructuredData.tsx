@@ -986,12 +986,12 @@ export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Service",
-      "@id": "https://www.testriq.com/manual-testing-services/#service",
+      "@type": "Product",
+      "@id": "https://www.testriq.com/manual-testing-services/#product",
       "name": "Manual & Exploratory Testing Services",
-      "serviceType": "Software Quality Assurance",
-      "provider": {
-        "@type": "Organization",
+      "category": "Software Quality Assurance",
+      "brand": {
+        "@type": "Brand",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
@@ -1115,12 +1115,12 @@ export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Service",
-      "@id": "https://www.testriq.com/automation-testing-services/#service",
+      "@type": "Product",
+      "@id": "https://www.testriq.com/automation-testing-services/#product",
       "name": "Intelligent Automation Testing Services",
-      "serviceType": "Test Automation & QA Architecture",
-      "provider": {
-        "@type": "Organization",
+      "category": "Test Automation & QA Architecture",
+      "brand": {
+        "@type": "Brand",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
@@ -1594,12 +1594,12 @@ export const securityTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Service",
-      "@id": "https://www.testriq.com/security-testing/#service",
+      "@type": "Product",
+      "@id": "https://www.testriq.com/security-testing/#product",
       "name": "VAPT & Security Testing Center of Excellence (TCoE)",
-      "serviceType": "Cybersecurity & Penetration Testing",
-      "provider": {
-        "@type": "Organization",
+      "category": "Cybersecurity & Penetration Testing",
+      "brand": {
+        "@type": "Brand",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
@@ -2746,8 +2746,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2786,8 +2788,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2826,8 +2830,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Kurla, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2866,8 +2872,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Prabhadevi, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2906,8 +2914,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2946,8 +2956,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Western Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -2986,8 +2998,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3026,8 +3040,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3066,8 +3082,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3106,8 +3124,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3146,8 +3166,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3186,8 +3208,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3226,8 +3250,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3266,8 +3292,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3972,22 +4000,17 @@ export const matrimonialAppCertificationSchema = {
 // Structured data for dating app certification service
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "Product",
   name: "Dating App Trust Certification",
   description:
     "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  provider: {
-    "@type": "Organization",
+  brand: {
+    "@type": "Brand",
     name: "TESTRIQ QA Lab",
     url: "www.testriq.com",
     logo: "www.testriq.com/logo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9004988859",
-      contactType: "customer service",
-    },
   },
-  serviceType: "Quality Assurance and Certification",
+  category: "Quality Assurance and Certification",
   areaServed: "Worldwide",
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -4232,12 +4255,12 @@ export const sapTestingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Service",
-      "@id": "https://www.testriq.com/sap-testing-services/#service",
+      "@type": "Product",
+      "@id": "https://www.testriq.com/sap-testing-services/#product",
       "name": "SAP Testing Services",
-      "serviceType": "Enterprise Software QA",
-      "provider": {
-        "@type": "Organization",
+      "category": "Enterprise Software QA",
+      "brand": {
+        "@type": "Brand",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
