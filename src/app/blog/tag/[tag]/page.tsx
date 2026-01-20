@@ -45,10 +45,14 @@ const TagSidebar = dynamic(
 
 type Props = {
   params: Promise<{ tag: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { tag } = await params;
+  const resolvedSearchParams = await searchParams;
+  const currentPage = Number(resolvedSearchParams.page) || 1;
+
   const tagData = await getPostsByTag(tag, 1);
 
   if (!tagData.tag) {
@@ -64,6 +68,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const tagName = tagData.tag.name;
   const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
+
+  const canonicalUrl = currentPage > 1
+    ? `https://www.testriq.com/blog/tag/${tag}?page=${currentPage}`
+    : `https://www.testriq.com/blog/tag/${tag}`;
 
   return {
     title: `${tagName}|Testriq Blog`,
@@ -108,7 +116,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@testriqlab",
     },
     alternates: {
-      canonical: `https://www.testriq.com/blog/tag/${tag}`,
+      canonical: canonicalUrl,
     },
     category: "Technology",
   };
