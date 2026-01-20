@@ -55,7 +55,7 @@ const LaunchFastQAHeroSection: React.FC = () => {
               Accelerate Your Launch with
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Rapid QA
+                Rapid QA Testing
               </span>
             </h1>
 
