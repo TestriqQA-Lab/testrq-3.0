@@ -115,7 +115,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                           className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
                           aria-label={`Read more about ${post.title}`}
                         >
-                          Read More
+                          Read Article
                           <FaArrowRight className="w-3 h-3" />
                         </Link>
                       </div>
@@ -280,7 +280,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                           className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                           aria-label={`Read more about ${post.title}`}
                         >
-                          Read More →
+                          Read Article →
                         </Link>
                       </div>
                     </div>
@@ -312,8 +312,8 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                           key={pageNum}
                           href={`/blog?page=${pageNum}`}
                           className={`px-2 py-1 sm:px-4 sm:py-2 rounded-lg font-semibold transition-colors text-sm sm:text-base flex items-center justify-center min-w-[32px] sm:min-w-[40px] ${currentPage === pageNum
-                              ? "bg-[theme(color.brand.blue)] text-white"
-                              : "text-gray-600 hover:bg-gray-50"
+                            ? "bg-[theme(color.brand.blue)] text-white"
+                            : "text-gray-600 hover:bg-gray-50"
                             }`}
                         >
                           {pageNum}
