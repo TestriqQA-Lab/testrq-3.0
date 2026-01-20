@@ -53,7 +53,7 @@ const LaunchFastCaseStudies: React.FC = () => {
       industry: "Retail & E-commerce",
       icon: <FaMobile className="text-2xl" />,
       challenge:
-        (<>An <Link title="e-commerce" href='e-commerce-testing-services'>e-commerce</Link> company needed to launch their <Link  title="mobile app" href='mobile-application-testing'>mobile app</Link> during Black Friday season with zero downtime and perfect performance.</>),
+        (<>An <Link title="e-commerce" href='e-commerce-testing-services'>e-commerce</Link> company needed to launch their <Link title="mobile app" href='mobile-application-testing'>mobile app</Link> during Black Friday season with zero downtime and perfect performance.</>),
       solution:
         (<>Deployed LaunchFast QA with <Link title="load testing" href='blog/post/load-testing-in-performance-testing-complete-guide'>load testing</Link>, device compatibility testing, and real-time performance monitoring.</>),
       results: [
@@ -88,7 +88,7 @@ const LaunchFastCaseStudies: React.FC = () => {
       challenge:
         (<>A <Link title="SaaS" href='sotware-testing-guide'>SaaS</Link> startup needed to launch their platform quickly to onboard their first enterprise client and validate their business model.</>),
       solution:
-        (<>Implemented LaunchFast QA with <Link  title="API testing" href='api-testing'>API testing</Link> automation, scalability validation, and enterprise security compliance testing.</>),
+        (<>Implemented LaunchFast QA with <Link title="API testing" href='api-testing'>API testing</Link> automation, scalability validation, and enterprise security compliance testing.</>),
       results: [
         {
           metric: "API Reliability",
@@ -154,13 +154,12 @@ const LaunchFastCaseStudies: React.FC = () => {
             <button
               key={study.id}
               onClick={() => setActiveCase(index)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                activeCase === index
+              className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeCase === index
                   ? "bg-blue-600 text-white shadow-lg"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                }`}
             >
-              Case {study.id}
+              Case Studies {study.id}
             </button>
           ))}
         </div>
@@ -314,7 +313,7 @@ const LaunchFastCaseStudies: React.FC = () => {
             launches that drive business growth.
           </p>
           <Link href={"/contact-us"} title="Contact Us – Testriq QA Lab" className="cursor-pointer bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Start Your Success Story
+            Start Your Success Story
           </Link>
         </div>
       </div>

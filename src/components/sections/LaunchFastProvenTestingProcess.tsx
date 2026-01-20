@@ -13,7 +13,7 @@ import {
 const LaunchFastProvenTestingProcess: React.FC = () => {
   const [activeStep, setActiveStep] = useState(1);
 
-  const steps : {
+  const steps: {
     id: number;
     title: string;
     duration: string;
@@ -22,110 +22,91 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
     activities: React.ReactNode[];
     nextStep: string;
   }[] = [
-    {
-      id: 1,
-      title: "Rapid Assessment & Planning",
-      duration: "4-6 hours",
-      icon: <FaSearch className="text-2xl" />,
-      description:
-        (
-          <>
-          Quick analysis of requirements, features, and launch timeline to create an <Link title="optimized testing strategy" href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>optimized testing strategy</Link>.
-          </>
-        ),
-      activities: [
-        "Feature prioritization analysis",
-        "Risk assessment",
-        "Testing scope definition",
-        "Resource allocation planning",
-      ],
-      nextStep: "Environment Setup",
-    },
-    {
-      id: 2,
-      title: "Agile Environment Setup",
-      duration: "2-4 hours",
-      icon: <FaCog className="text-2xl" />,
-      description:
-        (
-          <>
-          Rapid test environment configuration and <Link title="CI/CD integration" href='blog/post/ci-cd-integration-with-automated-tests'>CI/CD integration</Link> for continuous testing.
-          </>
-        ),
-      activities: [
-        "Test environment provisioning",
-        "CI/CD pipeline integration",
-        "Automation framework setup",
-        "Monitoring tools configuration",
-      ],
-      nextStep: "Sprint Testing",
-    },
-    {
-      id: 3,
-      title: "Sprint-Based Testing",
-      duration: "1-2 days",
-      icon: <FaBolt className="text-2xl" />,
-      description:
-        "Intensive testing cycles aligned with development sprints for rapid feedback and iteration.",
-      activities: [
-        (
-          <>
-          <Link title="Functional testing execution" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Functional testing execution</Link>
-          </>
-        ),
-        "Performance validation",
-        "Security testing",
-        "Cross-platform compatibility",
-      ],
-      nextStep: "Launch Validation",
-    },
-    {
-      id: 4,
-      title: "Launch Readiness Validation",
-      duration: "4-8 hours",
-      icon: <FaRocket className="text-2xl" />,
-      description:
-        (
-          <>
-          <Link title="Final validation" href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>Final validation</Link> and <Link title="launch readiness" href='blog/post/launch-day-failures-preventing-critical-issues-on-game-release'>launch readiness</Link> assessment to ensure successful product deployment.
-          </>
-        ),
-      activities: [
-        "Production environment testing",
-        "Load testing validation",
-        "Security final check",
-        "Launch checklist verification",
-      ],
-      nextStep: "Continuous Support",
-    },
-    {
-      id: 5,
-      title: "Post-Launch Support",
-      duration: "Ongoing",
-      icon: <FaCheckCircle className="text-2xl" />,
-      description:
-        "Continuous monitoring and rapid issue resolution to ensure sustained product success.",
-      activities: [
-        (
-          <>
-          <Link title="Real-time monitoring" href='blog/post/what-are-the-monitoring-tools-in-software-testing'>Real-time monitoring</Link>
-          </>
-        ),
-        (
-          <>
-          <Link title="Issue triage and resolution" href='blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow'>Issue triage and resolution</Link>
-          </>
-        ),
-        (
-          <>
-          <Link title="Performance optimization" href='performance-testing-services'>Performance optimization</Link>
-          </>
-        ),
-        "User feedback integration",
-      ],
-      nextStep: "Complete",
-    },
-  ];
+      {
+        id: 1,
+        title: "4-Hour Rapid Assessment",
+        duration: "4 hours",
+        icon: <FaSearch className="text-2xl" />,
+        description: "We analyze your MVP codebase and PRDs to identify 'Showstopper' risks and essential quality requirements.",
+        activities: [
+          "Codebase analysis",
+          "PRD review",
+          "High-priority risk mapping",
+          "Showstopper identification",
+        ],
+        nextStep: "Lean Test Planning",
+      },
+      {
+        id: 2,
+        title: "Lean Test Planning (ISO 29119-6)",
+        duration: "2-4 hours",
+        icon: <FaCog className="text-2xl" />,
+        description: "We create an iterative test plan that focuses on the Definition of Done (DoD) for each sprint, following ISO/IEC TR 29119-6 guidelines.",
+        activities: [
+          "Sprint goal alignment",
+          "Lean test strategy development",
+          "Definition of Done (DoD) setup",
+          "Iterative scope planning",
+        ],
+        nextStep: "Smoke Suite Setup",
+      },
+      {
+        id: 3,
+        title: "Automated Smoke Suite Setup",
+        duration: "2-6 hours",
+        icon: <FaBolt className="text-2xl" />,
+        description: "We deploy an 'Automated Smoke Suite' that runs in your CI/CD pipeline in under 5 minutes to catch critical issues early.",
+        activities: [
+          "CI/CD pipeline integration",
+          "Critical path automation",
+          "Rapid feedback loop setup",
+          "Real-time failure alerting",
+        ],
+        nextStep: "Agile Testing Sprints",
+      },
+      {
+        id: 4,
+        title: "Agile Testing Sprints",
+        duration: "Ongoing",
+        icon: <FaRocket className="text-2xl" />,
+        description: "We embed our testers directly into your team for 24/7 support, executing regression testing in real-time as you ship code.",
+        activities: [
+          "Continuous QA integration",
+          "Real-time bug reporting",
+          "Regression testing execution",
+          "Stand-up participation",
+        ],
+        nextStep: "Validation",
+      },
+      {
+        id: 5,
+        title: "Exploratory & UAT Validation",
+        duration: "1 day",
+        icon: <FaCheckCircle className="text-2xl" />,
+        description: "Automation covers the basics, but our experts perform deep User Acceptance Testing (UAT). This ensures your product is 'delightful' for early adopters.",
+        activities: [
+          "Persona-based testing",
+          "High-level UAT validation",
+          "Usability optimization",
+          "Exploratory edge-case detection",
+        ],
+        nextStep: "Launch Sign-off",
+      },
+      {
+        id: 6,
+        title: "Rapid Go-to-Market Sign-off",
+        duration: "2 hours",
+        icon: <FaCheckCircle className="text-2xl" />,
+        description: "A final Test Status Report providing the comprehensive data and confidence needed to hit 'Launch' into the global market.",
+        activities: [
+          "Final quality metrics review",
+          "Test Status Report (TSR)",
+          "Launch readiness check",
+          "Investor-ready documentation",
+        ],
+        nextStep: "Complete",
+      },
+    ];
 
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
@@ -148,11 +129,10 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
             <button
               key={step.id}
               onClick={() => setActiveStep(step.id)}
-              className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeStep === step.id
+              className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeStep === step.id
                   ? "bg-blue-600 text-white shadow-lg"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
+                }`}
             >
               <span className="text-2xl">{step.id}</span>
               <span className="hidden sm:inline">{step.title}</span>
@@ -218,22 +198,20 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
                   <div
                     key={step.id}
                     onClick={() => setActiveStep(step.id)}
-                    className={`flex items-center cursor-pointer space-x-4 p-3 rounded-lg transition-all duration-300 ${
-                      step.id === activeStep
+                    className={`flex items-center cursor-pointer space-x-4 p-3 rounded-lg transition-all duration-300 ${step.id === activeStep
                         ? "bg-blue-100 border-2 border-blue-300"
                         : step.id < activeStep
-                        ? "bg-green-50 border-2 border-green-200"
-                        : "bg-gray-50 border-2 border-gray-200"
-                    }`}
+                          ? "bg-green-50 border-2 border-green-200"
+                          : "bg-gray-50 border-2 border-gray-200"
+                      }`}
                   >
                     <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
-                        step.id === activeStep
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step.id === activeStep
                           ? "bg-blue-600 text-white"
                           : step.id < activeStep
-                          ? "bg-green-600 text-white"
-                          : "bg-gray-300 text-gray-600"
-                      }`}
+                            ? "bg-green-600 text-white"
+                            : "bg-gray-300 text-gray-600"
+                        }`}
                     >
                       {step.id < activeStep ? "✓" : step.id}
                     </div>
