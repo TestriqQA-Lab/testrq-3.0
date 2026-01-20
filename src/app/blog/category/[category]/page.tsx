@@ -44,10 +44,14 @@ const CategorySidebar = dynamic(
 
 type Props = {
   params: Promise<{ category: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: Props): Promise<Metadata> {
   const { category } = await params;
+  const resolvedSearchParams = await searchParams;
+  const currentPage = Number(resolvedSearchParams.page) || 1;
+
   const categoryData = await getAdaptedCategoryData(category, 1);
 
   if (!categoryData) {
@@ -63,6 +67,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const categoryName = categoryData.category.name;
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
+
+  const canonicalUrl = currentPage > 1
+    ? `https://www.testriq.com/blog/category/${category}?page=${currentPage}`
+    : `https://www.testriq.com/blog/category/${category}`;
 
   return {
     title: `${categoryName} | Insights & Best Practices`,
@@ -107,7 +115,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@testriqlab",
     },
     alternates: {
-      canonical: `https://www.testriq.com/blog/category/${category}`,
+      canonical: canonicalUrl,
     },
     category: "Technology",
   };
