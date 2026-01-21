@@ -15,7 +15,7 @@ const renderTitle = () => {
   );
 };
 
-const impactSection : {
+const impactSection: {
   title: string;
   subtitle: React.ReactNode;
   caseStudies: {
@@ -24,40 +24,40 @@ const impactSection : {
     description: string;
     action: string;
   }[];
-}[] = [ 
-  {
-  title: "Our Impact: Real-World Successes",
-  subtitle:
-    (
-      <>
-      Testriq’s enterprise <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA solutions</Link> deliver real-world success-accelerating performance, securing <Link href="banking-finance-industry-testing-services">fintech apps</Link>, and ensuring compatibility across web, mobile, and <Link href="iot-device-testing-services">IoT</Link> through proven software testing <Link href="case-studies">case studies</Link>.
-      </>
-    ),
-  caseStudies: [
+}[] = [
     {
-      title: "Testing Canva’s Design Platform",
-      badge: "Graphic design Success Story",
-      description:
-        "Ensured smooth UI updates and feature rollouts with a complete testing strategy across all devices and platforms.",
-      action: "/canva-case-study",
-    },
-    {
-      title: "Milton Smart Stainless Steel Water Bottle Case Study",
-      badge: "Homewares Success Story",
-      description:
-        "Tested key aspects like connectivity, functionality, measurement accuracy, and sample validation across the smart bottle and its app.",
-      action: "/milton-case-study",
-    },
-    {
-      title: "Brandify QA for Digital Marketing Case Study",
-      badge: "Digital Marketing Success Story",
-      description:
-        "Applied industry QA standards tailored to Brandify’s needs, writing and tracking test cases in TestRail while ensuring smooth integration of technologies like voice assist.",
-      action: "/brandify-case-study",
-    },
-  ],
-}
-]
+      title: "Our Impact: Real-World Successes",
+      subtitle:
+        (
+          <>
+            Testriq’s enterprise <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">QA solutions</Link> deliver real-world success-accelerating performance, securing <Link href="banking-finance-industry-testing-services">fintech apps</Link>, and ensuring compatibility across <Link href="/web-application-testing-services" className="hover:text-[theme(color.brand.blue)] hover:underline">web</Link>, <Link href="/mobile-application-testing" className="hover:text-[theme(color.brand.blue)] hover:underline">mobile</Link>, and <Link href="iot-device-testing-services">IoT</Link> through proven software testing <Link href="case-studies">case studies</Link>.
+          </>
+        ),
+      caseStudies: [
+        {
+          title: "Testing Canva’s Design Platform",
+          badge: "Graphic design Success Story",
+          description:
+            "Ensured smooth UI updates and feature rollouts with a complete testing strategy across all devices and platforms.",
+          action: "/canva-case-study",
+        },
+        {
+          title: "Milton Smart Stainless Steel Water Bottle Case Study",
+          badge: "Homewares Success Story",
+          description:
+            "Tested key aspects like connectivity, functionality, measurement accuracy, and sample validation across the smart bottle and its app.",
+          action: "/milton-case-study",
+        },
+        {
+          title: "Brandify QA for Digital Marketing Case Study",
+          badge: "Digital Marketing Success Story",
+          description:
+            "Applied industry QA standards tailored to Brandify’s needs, writing and tracking test cases in TestRail while ensuring smooth integration of technologies like voice assist.",
+          action: "/brandify-case-study",
+        },
+      ],
+    }
+  ]
 
 const HomeOurImpact = () => {
   return (

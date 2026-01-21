@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaRobot, FaSearch, FaCheckCircle, FaLightbulb } from "react-icons/fa";
+import Link from "next/link";
 
 const ExploratoryVsScripted: React.FC = () => {
     return (
@@ -35,7 +36,7 @@ const ExploratoryVsScripted: React.FC = () => {
                             </div>
                         </div>
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            Best for regression testing and ensuring that existing features
+                            Best for <Link href="/regression-testing" className="text-brand-blue hover:underline">regression testing</Link> and ensuring that existing features
                             don&apos;t break. This Alignment serves as your safety net.
                         </p>
                         <ul className="space-y-3">
@@ -84,7 +85,7 @@ const ExploratoryVsScripted: React.FC = () => {
                             </li>
                             <li className="flex items-start gap-3 text-gray-700">
                                 <FaLightbulb className="text-brand-blue mt-1 flex-shrink-0" />
-                                <span>Finds defects automation misses</span>
+                                <span>Finds defects <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automation</Link> misses</span>
                             </li>
                         </ul>
                     </div>

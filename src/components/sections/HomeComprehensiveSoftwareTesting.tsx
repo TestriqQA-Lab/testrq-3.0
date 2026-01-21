@@ -22,7 +22,7 @@ const HomeComprehensiveSoftwareTesting = () => {
         {
             icon: TbWorld,
             title: 'Bridging the Skilled Workforce Shortage',
-            detail: 'Talent gaps in AI and cyber-security often lead to defect leakage. Testriq offers QA team augmentation with experts in ISO/IEC/IEEE 29119-2 processes to ensure secure, on-time releases.'
+            detail: <>Talent gaps in <Link href="/ai-application-testing" className="text-[theme(color.brand.blue)] hover:underline">AI</Link> and <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline">cyber-security</Link> often lead to defect leakage. Testriq offers QA team augmentation with experts in ISO/IEC/IEEE 29119-2 processes to ensure secure, on-time releases.</>
         },
         {
             icon: IoServerOutline,
@@ -42,7 +42,7 @@ const HomeComprehensiveSoftwareTesting = () => {
         {
             icon: GoLock,
             title: 'Combatting Evolving Security & Compliance Pressures',
-            detail: 'Security is a top priority. Testriq provides advanced pen-testing for APIs and AI agents, protecting your product from modern threats like prompt injection and data breaches.'
+            detail: <>Security is a top priority. Testriq provides advanced pen-testing for <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline">APIs</Link> and AI agents, protecting your product from modern threats like prompt injection and data breaches.</>
         }
     ];
 

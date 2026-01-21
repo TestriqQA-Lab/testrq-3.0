@@ -69,7 +69,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
         title: "Agile Testing Sprints",
         duration: "Ongoing",
         icon: <FaRocket className="text-2xl" />,
-        description: "We embed our testers directly into your team for 24/7 support, executing regression testing in real-time as you ship code.",
+        description: <>We embed our testers directly into your team for 24/7 support, executing <Link href="/regression-testing" className="text-blue-600 hover:underline">regression testing</Link> in real-time as you ship code.</>,
         activities: [
           "Continuous QA integration",
           "Real-time bug reporting",
@@ -83,7 +83,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
         title: "Exploratory & UAT Validation",
         duration: "1 day",
         icon: <FaCheckCircle className="text-2xl" />,
-        description: "Automation covers the basics, but our experts perform deep User Acceptance Testing (UAT). This ensures your product is 'delightful' for early adopters.",
+        description: <>Automation covers the basics, but our experts perform deep <Link href="/manual-testing-services" className="text-blue-600 hover:underline">User Acceptance Testing (UAT)</Link>. This ensures your product is &apos;delightful&apos; for early adopters.</>,
         activities: [
           "Persona-based testing",
           "High-level UAT validation",
@@ -117,7 +117,7 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
             <span className="text-brand-blue">LaunchFast QA Process</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our streamlined approach enables rapid testing sprints and quality
+            Our streamlined approach enables <Link href="/exploratory-testing" className="text-brand-blue hover:underline">rapid testing sprints</Link> and quality
             delivery, seamlessly aligned with <Link title="agile QA testing" href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>agile QA testing</Link> and iterative
             development for a faster go-to-market.
           </p>
@@ -130,8 +130,8 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
               key={step.id}
               onClick={() => setActiveStep(step.id)}
               className={`flex items-center space-x-3 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeStep === step.id
-                  ? "bg-blue-600 text-white shadow-lg"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-blue-600 text-white shadow-lg"
+                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
             >
               <span className="text-2xl">{step.id}</span>
@@ -199,18 +199,18 @@ const LaunchFastProvenTestingProcess: React.FC = () => {
                     key={step.id}
                     onClick={() => setActiveStep(step.id)}
                     className={`flex items-center cursor-pointer space-x-4 p-3 rounded-lg transition-all duration-300 ${step.id === activeStep
-                        ? "bg-blue-100 border-2 border-blue-300"
-                        : step.id < activeStep
-                          ? "bg-green-50 border-2 border-green-200"
-                          : "bg-gray-50 border-2 border-gray-200"
+                      ? "bg-blue-100 border-2 border-blue-300"
+                      : step.id < activeStep
+                        ? "bg-green-50 border-2 border-green-200"
+                        : "bg-gray-50 border-2 border-gray-200"
                       }`}
                   >
                     <div
                       className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${step.id === activeStep
-                          ? "bg-blue-600 text-white"
-                          : step.id < activeStep
-                            ? "bg-green-600 text-white"
-                            : "bg-gray-300 text-gray-600"
+                        ? "bg-blue-600 text-white"
+                        : step.id < activeStep
+                          ? "bg-green-600 text-white"
+                          : "bg-gray-300 text-gray-600"
                         }`}
                     >
                       {step.id < activeStep ? "✓" : step.id}

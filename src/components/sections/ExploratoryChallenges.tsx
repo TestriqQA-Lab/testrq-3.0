@@ -8,6 +8,7 @@ import {
     FaClock,
     FaBalanceScale,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const challenges = [
     {
@@ -16,8 +17,9 @@ const challenges = [
         icon: <FaClipboardList className="text-3xl text-emerald-600" />,
         description:
             "Historically, exploratory testing was unscripted and often led to sparse notes. This made defect reproduction a nightmare for developers.",
-        solution:
-            "Our Solution: We follow ISO/IEC/IEEE 29119-2 standards, which require structured charters, session sheets, and incident reports. We use exploratory testing tools like Rapid Reporter and Session Tester. Our Jira integration ensures every 'aha!' moment is traceable and repeatable.",
+        solutionLabel: "Our Solution",
+        solutionContent:
+            "We follow ISO/IEC/IEEE 29119-2 standards, which require structured charters, session sheets, and incident reports. We use exploratory testing tools like Rapid Reporter and Session Tester. Our Jira integration ensures every 'aha!' moment is traceable and repeatable.",
     },
     {
         id: 2,
@@ -25,17 +27,19 @@ const challenges = [
         icon: <FaUserGraduate className="text-3xl text-red-600" />,
         description:
             "Success in exploratory testing requires two key skills. Testers must be able to apply heuristic approaches and expert error guessing. Amidst the 2026 talent shortage, identifying these skilled exploratory testing specialists has become a significant challenge.",
-        solution:
-            "Our Solution: Our testers are not just analysts; they are ISTQB-certified specialists trained in context-driven testing. We prioritize high-risk business logic by applying test oracles and persona-based models. This structured methodology allows our specialists to identify critical flaws in complex workflows.",
+        solutionLabel: "Our Solution",
+        solutionContent:
+            "Our testers are not just analysts; they are ISTQB-certified specialists trained in context-driven testing. We prioritize high-risk business logic by applying test oracles and persona-based models. This structured methodology allows our specialists to identify critical flaws in complex workflows.",
     },
     {
         id: 3,
         title: "Quantifying Coverage and ROI",
         icon: <FaChartBar className="text-3xl text-blue-600" />,
         description:
-            "Proving the value of manual QA exploration can be subjective if not quantified.",
-        solution:
-            "Our Solution: We leverage ISO/IEC/IEEE 29119-3 templates to track coverage. We use exploratory testing checklists and session metrics to provide tangible proof of our work. These reports clearly show how we uncover bugs that automated suites miss, demonstrating the value to your stakeholders.",
+            <>Proving the value of <Link href="/manual-testing-services" className="text-brand-blue hover:underline">manual QA</Link> exploration can be subjective if not quantified.</>,
+        solutionLabel: "Our Solution",
+        solutionContent:
+            <>We leverage <Link href="/qa-documentation-services" className="text-brand-blue hover:underline">ISO/IEC/IEEE 29119-3</Link> templates to track coverage. We use exploratory testing checklists and session metrics to provide tangible proof of our work. These reports clearly show how we uncover bugs that automated suites miss, demonstrating the value to your stakeholders.</>,
     },
     {
         id: 4,
@@ -43,17 +47,19 @@ const challenges = [
         icon: <FaClock className="text-3xl text-orange-600" />,
         description:
             "Time-boxed sessions can be resource-intensive, often clashing with the speed of modern agile development.",
-        solution:
-            "Our Solution: Our exploratory testing strategies utilize 30–60 minute time-boxed charters. This approach ensures scalability within your agile testing sprints. We integrate real-time reporting into Azure DevOps or GitHub without slowing down your release cycle.",
+        solutionLabel: "Our Solution",
+        solutionContent:
+            "Our exploratory testing strategies utilize 30–60 minute time-boxed charters. This approach ensures scalability within your agile testing sprints. We integrate real-time reporting into Azure DevOps or GitHub without slowing down your release cycle.",
     },
     {
         id: 5,
         title: "Balancing Creativity with ISO Structure",
         icon: <FaBalanceScale className="text-3xl text-indigo-600" />,
         description:
-            "Too much structure stifles intuition; too little breeds chaos. In 2026, the rise of automated exploratory testing requires a hybrid approach.",
-        solution:
-            "Our Solution: We act as the 29119-compliant bridge. Our exploratory testing methods include state transition and error guessing. These techniques allow our team to use their intuition while staying within a structured framework of planning and debriefing.",
+            <>Too much structure stifles intuition; too little breeds chaos. In 2026, the rise of <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automated exploratory testing</Link> requires a hybrid approach.</>,
+        solutionLabel: "Our Solution",
+        solutionContent:
+            "We act as the 29119-compliant bridge. Our exploratory testing methods include state transition and error guessing. These techniques allow our team to use their intuition while staying within a structured framework of planning and debriefing.",
     },
 ];
 
@@ -98,10 +104,10 @@ const ExploratoryChallenges: React.FC = () => {
 
                             <div className="pt-6 border-t border-gray-50">
                                 <p className="text-gray-900 font-semibold text-sm mb-2 italic">
-                                    {challenge.solution.split(":")[0]}:
+                                    {challenge.solutionLabel}:
                                 </p>
                                 <p className="text-gray-600 text-sm leading-relaxed">
-                                    {challenge.solution.split(":")[1]}
+                                    {challenge.solutionContent}
                                 </p>
                             </div>
                         </div>

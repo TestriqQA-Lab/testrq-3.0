@@ -17,13 +17,13 @@ const DesktopTechStack: React.FC = () => {
             icon: <FaLaptopCode className="text-3xl text-brand-blue" />,
         },
         {
-            category: "Visual AI Testing",
+            category: <Link href="/ai-application-testing" className="hover:text-[theme(color.brand.blue)] hover:underline">Visual AI Testing</Link>,
             tools: ["Applitools"],
             description: "(Visual AI for UI consistency across OS versions)",
             icon: <FaEye className="text-3xl text-purple-500" />,
         },
         {
-            category: "Performance Tools",
+            category: <Link href="/performance-testing-services" className="hover:text-[theme(color.brand.blue)] hover:underline">Performance Tools</Link>,
             tools: ["JMeter", "Intel VTune Profiler"],
             description: "(for memory leak detection)",
             icon: <FaTachometerAlt className="text-3xl text-orange-500" />,
