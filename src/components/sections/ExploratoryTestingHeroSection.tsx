@@ -32,7 +32,7 @@ const ExploratoryTestingHeroSection: React.FC = () => {
         <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
           <Link
             href="/"
-            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
           >
             <FaHome className="text-lg" />
             Home
@@ -64,7 +64,7 @@ const ExploratoryTestingHeroSection: React.FC = () => {
               testing is more than just &apos;clicking around.&apos; Exploratory
               testing combines learning, test design, and execution into a
               single, sophisticated process. At Testriq, our{" "}
-              <Link href="exploratory-testing">
+              <Link href="exploratory-testing" className="text-[theme(color.brand.blue)] hover:underline">
                 exploratory testing software
               </Link>{" "}
               solutions bridge the gap between scripted coverage and real-world

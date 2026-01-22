@@ -152,7 +152,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Exploratory Testing?
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We combine expert exploratory testing skills with <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux'>systematic investigation</Link> techniques to deliver comprehensive exploratory testing that uncovers <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>critical issues</Link> and provides actionable insights for continuous product improvement.
+            We combine expert exploratory testing skills with <Link href='blog/post/usability-investigation-how-exploratory-testing-elevates-ux' className="text-[theme(color.brand.blue)] hover:underline">systematic investigation</Link> techniques to deliver comprehensive exploratory testing that uncovers <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality' className="text-[theme(color.brand.blue)] hover:underline">critical issues</Link> and provides actionable insights for continuous product improvement.
           </p>
         </div>
 
@@ -299,7 +299,7 @@ const ExploratoryWhyChooseTestriq: React.FC = () => {
             Join 500+ companies who trust our exploratory testing expertise. Get started with systematic exploration and uncover critical issues that scripted testing misses.
           </p>
           <Link href={"/contact-us"} className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Get Started with Exploratory Testing
+            Get Started with Exploratory Testing
           </Link>
         </div>
       </div>

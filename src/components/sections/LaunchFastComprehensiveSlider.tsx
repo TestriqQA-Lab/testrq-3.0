@@ -16,111 +16,111 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const testingTypes = [
-      {
-        id: "rapid-functional",
-        title: "Rapid Functional Testing",
-        icon: <FaBolt className="text-2xl" />,
-        percentage: "98%",
-        color: "blue",
-        description:
-          "Lightning-fast functional validation for agile development cycles",
-        features: [
-          "Core feature testing",
-          "User flow validation",
-          "Critical path verification",
-          "Regression testing",
-          "Smoke testing",
-          "Sanity testing",
-        ],
-        action: "blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
-      },
-      {
-        id: "performance-optimization",
-        title: "Performance Optimization",
-        icon: <FaRocket className="text-2xl" />,
-        percentage: "95%",
-        color: "green",
-        description: "Speed and scalability testing for optimal user experience",
-        features: [
-          "Load testing",
-          "Stress testing",
-          "Performance bottleneck identification",
-          "Response time optimization",
-          "Scalability validation",
-          "Resource utilization testing",
-        ],
-        action: "blog/post/performance-optimization-for-pre-launch-software-testing#why-performance-optimization-matters-pre-launch"
-      },
-      {
-        id: "security-validation",
-        title: "Security Validation",
-        icon: <FaShieldAlt className="text-2xl" />,
-        percentage: "100%",
-        color: "purple",
-        description: "Essential security testing for secure product launches",
-        features: [
-          "Vulnerability assessment",
-          "Authentication testing",
-          "Data protection validation",
-          "Input validation testing",
-          "Session management testing",
-          "Security compliance verification",
-        ],
-        action: "blog/post/security-validation-in-mvp-startup-qa-best-practices"
-      },
-      {
-        id: "mobile-app-testing",
-        title: "Mobile App Testing",
-        icon: <FaMobile className="text-2xl" />,
-        percentage: "97%",
-        color: "orange",
-        description: "Comprehensive mobile testing for successful app launches",
-        features: [
-          "Device compatibility testing",
-          "OS version testing",
-          "App store optimization",
-          "Touch interface testing",
-          "Battery performance testing",
-          "Network connectivity testing",
-        ],
-        action: "/mobile-application-testing"
-      },
-      {
-        id: "web-application-testing",
-        title: "Web Application Testing",
-        icon: <FaDesktop className="text-2xl" />,
-        percentage: "99%",
-        color: "teal",
-        description:
-          "Cross-browser compatibility and responsive design validation",
-        features: [
-          "Cross-browser compatibility",
-          "Responsive design validation",
-          "Web performance testing",
-          "Accessibility testing",
-          "SEO optimization testing",
-          "Progressive web app testing",
-        ],
-        action: "/web-application-testing-services"
-      },
-      {
-        id: "api-integration-testing",
-        title: "API & Integration Testing",
-        icon: <FaCloud className="text-2xl" />,
-        percentage: "96%",
-        color: "indigo",
-        description: "Rapid API validation and integration testing",
-        features: [
-          "API endpoint testing",
-          "Third-party integration testing",
-          "Microservices communication",
-          "Data validation testing",
-          "Error handling testing",
-          "Performance testing",
-        ],
-        action: "/api-testing"
-      },
-    ];
+    {
+      id: "rapid-functional",
+      title: "Rapid Functional Testing",
+      icon: <FaBolt className="text-2xl" />,
+      percentage: "98%",
+      color: "blue",
+      description:
+        "Lightning-fast functional validation for agile development cycles",
+      features: [
+        "Core feature testing",
+        "User flow validation",
+        "Critical path verification",
+        "Regression testing",
+        "Smoke testing",
+        "Sanity testing",
+      ],
+      action: "blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa"
+    },
+    {
+      id: "performance-optimization",
+      title: "Performance Optimization",
+      icon: <FaRocket className="text-2xl" />,
+      percentage: "95%",
+      color: "green",
+      description: "Speed and scalability testing for optimal user experience",
+      features: [
+        "Load testing",
+        "Stress testing",
+        "Performance bottleneck identification",
+        "Response time optimization",
+        "Scalability validation",
+        "Resource utilization testing",
+      ],
+      action: "blog/post/performance-optimization-for-pre-launch-software-testing#why-performance-optimization-matters-pre-launch"
+    },
+    {
+      id: "security-validation",
+      title: "Security Validation",
+      icon: <FaShieldAlt className="text-2xl" />,
+      percentage: "100%",
+      color: "purple",
+      description: "Essential security testing for secure product launches",
+      features: [
+        "Vulnerability assessment",
+        "Authentication testing",
+        "Data protection validation",
+        "Input validation testing",
+        "Session management testing",
+        "Security compliance verification",
+      ],
+      action: "blog/post/security-validation-in-mvp-startup-qa-best-practices"
+    },
+    {
+      id: "mobile-app-testing",
+      title: "Mobile App Testing",
+      icon: <FaMobile className="text-2xl" />,
+      percentage: "97%",
+      color: "orange",
+      description: "Comprehensive mobile testing for successful app launches",
+      features: [
+        "Device compatibility testing",
+        "OS version testing",
+        "App store optimization",
+        "Touch interface testing",
+        "Battery performance testing",
+        "Network connectivity testing",
+      ],
+      action: "/mobile-application-testing"
+    },
+    {
+      id: "web-application-testing",
+      title: "Web Application Testing",
+      icon: <FaDesktop className="text-2xl" />,
+      percentage: "99%",
+      color: "teal",
+      description:
+        "Cross-browser compatibility and responsive design validation",
+      features: [
+        "Cross-browser compatibility",
+        "Responsive design validation",
+        "Web performance testing",
+        "Accessibility testing",
+        "SEO optimization testing",
+        "Progressive web app testing",
+      ],
+      action: "/web-application-testing-services"
+    },
+    {
+      id: "api-integration-testing",
+      title: "API & Integration Testing",
+      icon: <FaCloud className="text-2xl" />,
+      percentage: "96%",
+      color: "indigo",
+      description: "Rapid API validation and integration testing",
+      features: [
+        "API endpoint testing",
+        "Third-party integration testing",
+        "Microservices communication",
+        "Data validation testing",
+        "Error handling testing",
+        "Performance testing",
+      ],
+      action: "/api-testing"
+    },
+  ];
 
   const getColorClasses = (color: string) => {
     const colorMap = {
@@ -155,7 +155,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
             <span className="text-brand-blue">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our LaunchFast QA services cover every aspect of rapid product development, delivering quality, <Link title="performance" href='performance-testing-services'>performance</Link>, and <Link  title="security" href='security-testing'>security</Link> across all platforms with pre-launch testing, MVP QA, and go-to-market QA for successful launches.
+            Our LaunchFast QA services cover every aspect of rapid product development, delivering quality, <Link title="performance" href='performance-testing-services' className="text-[theme(color.brand.blue)] hover:underline">performance</Link>, and <Link title="security" href='security-testing' className="text-[theme(color.brand.blue)] hover:underline">security</Link> across all platforms with pre-launch testing, MVP QA, and go-to-market QA for successful launches.
           </p>
         </div>
 
@@ -169,7 +169,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 ? `${getColorClasses(type.color)} border-2`
                 : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"
                 }`}
-                aria-label={type.title}
+              aria-label={type.title}
             >
               <span className={activeTab === index ? "" : "text-gray-400"}>
                 {type.icon}
@@ -221,7 +221,7 @@ const LaunchFastComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <Link   title={testingTypes[activeTab].title}  href={testingTypes[activeTab].action} 
+              <Link title={testingTypes[activeTab].title} href={testingTypes[activeTab].action}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${getColorClasses(
                   testingTypes[activeTab].color
                 )} hover:shadow-lg`}

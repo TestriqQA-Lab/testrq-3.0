@@ -13,7 +13,7 @@ const HomeComprehensiveSoftwareTesting = () => {
         title: 'The Global Paradigm Shift: Solving the 5 Biggest Challenges in QA (2025-2026)',
         info: (
             <>
-                The software landscape has evolved. We designed our <Link title='Managed QA Services' href="/automation-testing-services">Managed QA Services</Link> to eliminate the five biggest obstacles currently blocking global digital progress.
+                The software landscape has evolved. We designed our <Link title='Managed QA Services' href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline">Managed QA Services</Link> to eliminate the five biggest obstacles currently blocking global digital progress.
             </>
         )
     };

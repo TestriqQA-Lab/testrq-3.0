@@ -33,7 +33,7 @@ const LaunchFastQAHeroSection: React.FC = () => {
         <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
           <Link
             href="/"
-            className="flex items-center gap-2 hover:text-brand-blue transition-colors"
+            className="flex items-center gap-2 hover:text-[theme(color.brand.blue)] transition-colors"
           >
             <FaHome className="text-lg" />
             Home
@@ -62,14 +62,14 @@ const LaunchFastQAHeroSection: React.FC = () => {
             <div className="space-y-4 text-xl text-gray-600 leading-relaxed">
               <p>
                 Speed is critical for 2026 startups, but moving too fast without quality creates technical debt. This often leads to investor skepticism during funding rounds. Testriq’s{" "}
-                <Link title="Launch-Fast QA" href="/launchfast-qa" className="text-brand-blue hover:underline font-medium">
+                <Link title="Launch-Fast QA" href="/launchfast-qa" className="text-[theme(color.brand.blue)] hover:underline font-medium">
                   Launch-Fast QA
                 </Link>{" "}
                 provides the specialized testing your early-stage team needs. We ensure you maintain velocity without compromising your product’s integrity.
               </p>
               <p>
                 We don&apos;t just find bugs; we accelerate your software release cycle. Our{" "}
-                <Link title="agile QA testing" href="/blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa" className="text-brand-blue hover:underline">
+                <Link title="agile QA testing" href="/blog/post/rapid-functional-testing-why-speed-mattes-in-agile-qa" className="text-[theme(color.brand.blue)] hover:underline">
                   agile and continuous QA practices
                 </Link>{" "}
                 accelerate your journey from code commit to MVP launch. Whether you require on-demand testing for feature pivots or affordable sprints, Testriq provides essential &quot;Quality Discipline.&quot; We ensure your startup has the structural integrity to scale rather than stall.

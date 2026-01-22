@@ -76,7 +76,7 @@ const HomeInsightSection = () => {
               <p className="text-gray-500 text-sm">{cleanExcerpt.substring(0, 100)}...</p>
               <Link
                 href={`/blog/post/${post.slug}`}
-                className="text-sm text-[theme(color.brand.blue)]"
+                className="text-sm text-[theme(color.brand.blue)] hover:underline"
               >
                 Read More <span>&#8594;</span>
               </Link>

@@ -21,9 +21,9 @@ const HomeIndustryExpert = () => {
                 title: 'Industry Expertise',
                 info: (
                     <>
-                        Testriq delivers specialized QA services for regulated and growth-focused industries-ensuring compliance, usability, and <Link href="performance-testing-services">performance</Link> across <Link href="e-commerce-testing-services">e-commerce</Link>,
-                         <Link href="banking-finance-industry-testing-services"> fintech</Link>, <Link href="healthcare-testing-services">healthcare</Link>, <Link href="software-testing-guide">SaaS</Link>,
-                          <Link href="e-learning-testing-services"> EdTech</Link>, <Link href="iot-device-testing-services">IoT</Link>, <Link href="mobile-application-testing">mobile apps</Link>, and <Link href="gaming-app-testing-services">gaming platforms</Link>.
+                        Testriq delivers specialized QA services for regulated and growth-focused industries-ensuring compliance, usability, and <Link href="performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline">performance</Link> across <Link href="e-commerce-testing-services" className="text-[theme(color.brand.blue)] hover:underline">e-commerce</Link>,
+                        <Link href="banking-finance-industry-testing-services" className="text-[theme(color.brand.blue)] hover:underline"> fintech</Link>, <Link href="healthcare-testing-services" className="text-[theme(color.brand.blue)] hover:underline">healthcare</Link>, <Link href="software-testing-guide" className="text-[theme(color.brand.blue)] hover:underline">SaaS</Link>,
+                        <Link href="e-learning-testing-services" className="text-[theme(color.brand.blue)] hover:underline"> EdTech</Link>, <Link href="iot-device-testing-services" className="text-[theme(color.brand.blue)] hover:underline">IoT</Link>, <Link href="mobile-application-testing" className="text-[theme(color.brand.blue)] hover:underline">mobile apps</Link>, and <Link href="gaming-app-testing-services" className="text-[theme(color.brand.blue)] hover:underline">gaming platforms</Link>.
                     </>
                 )
             }
