@@ -4418,3 +4418,47 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+// Pricing and Packages Service Schema
+export const pricingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Software Testing Service Packages",
+  "description": "Flexible and transparent software testing packages including monthly retainers and project-based audits for startups and global enterprises.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "QA Outsourcing",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "QA Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Managed QA Startup",
+          "description": "Dedicated part-time QA support for early-stage companies."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Professional Growth",
+          "description": "Full-time senior QA support with automation and CI/CD integration."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security & Compliance audit",
+          "description": "Fixed-scope vulnerability and compliance checks."
+        }
+      }
+    ]
+  }
+};

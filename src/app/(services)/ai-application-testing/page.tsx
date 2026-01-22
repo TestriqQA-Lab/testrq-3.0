@@ -94,11 +94,7 @@ const AIProvenTestingProcess = dynamic(
   () => import("@/components/sections/AIProvenTestingProcess"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -106,11 +102,7 @@ const AIWhyChooseTestriq = dynamic(
   () => import("@/components/sections/AIWhyChooseTestriq"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -118,32 +110,20 @@ const AICaseStudies = dynamic(
   () => import("@/components/sections/AICaseStudies"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
 const AIFAQs = dynamic(() => import("@/components/sections/AIFAQs"), {
   ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
+  loading: () => <FAQLoader />,
 });
 
 const AIAnyQuestions = dynamic(
   () => import("@/components/sections/AIAnyQuestions"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -182,6 +162,9 @@ const AIToolsFramework = dynamic(
     ),
   }
 );
+
+// Imports for loaders
+import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export default function AIApplicationTesting() {
   const breadcrumbItems = [

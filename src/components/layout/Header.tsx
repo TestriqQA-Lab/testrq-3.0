@@ -226,6 +226,7 @@ const Navbar = () => {
     { label: "Case Studies", link: "/case-studies" },
     { label: "Careers", link: "/careers" },
     { label: "Blog", link: "/blog" },
+    { label: "Pricing", link: "/pricing" },
     { label: "Contact", link: "/contact-us" },
   ];
 

@@ -16,8 +16,8 @@ const nextConfig: NextConfig = {
 
 
   images: {
-    // Disable all Next.js/Vercel image optimization globally
-    unoptimized: false, // images will be served as-is, no optimizer requests [1][13]
+    // Enable Next.js/Vercel image optimization
+    unoptimized: false, // images WILL be optimized (this is the default, explicitly set for clarity)
     // Keep remotePatterns if still using <Image> with external sources (safe to keep)
     remotePatterns: [
       {

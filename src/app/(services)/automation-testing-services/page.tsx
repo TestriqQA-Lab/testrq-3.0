@@ -87,11 +87,7 @@ const AutomationTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[400px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -99,11 +95,7 @@ const AutomationTestingComprehensiveSlider = dynamic(
   () => import("@/components/sections/AutomationTestingComprehensiveSlider"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[800px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <HeroLoader />,
   }
 );
 
@@ -111,11 +103,7 @@ const AutomationTestingProvenTestingProcess = dynamic(
   () => import("@/components/sections/AutomationTestingProvenTestingProcess"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -123,11 +111,7 @@ const ManualTestingFrameworkArchitecture = dynamic(
   () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[700px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -135,11 +119,7 @@ const AutomationTestingToolsFramework = dynamic(
   () => import("@/components/sections/AutomationTestingToolsFramework"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -147,11 +127,7 @@ const AutomationTestingCaseStudies = dynamic(
   () => import("@/components/sections/AutomationTestingCaseStudies"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <ContentLoader />,
   }
 );
 
@@ -159,13 +135,11 @@ const AutomationTestingFAQs = dynamic(
   () => import("@/components/sections/AutomationTestingFAQs"),
   {
     ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
+    loading: () => <FAQLoader />,
   }
 );
+
+import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export default function AutomationTestingPage() {
   const breadcrumbItems = [
