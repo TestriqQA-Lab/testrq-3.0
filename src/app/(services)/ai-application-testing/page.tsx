@@ -1,3 +1,4 @@
+
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
@@ -5,6 +6,7 @@ import StructuredData, {
   aiTestingServiceSchema,
   createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
+import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
   title: "Global AI Testing Services | Reliable Systems for the Future",
@@ -80,38 +82,22 @@ export const metadata: Metadata = {
 
 const AITestingHeroSection = dynamic(
   () => import("@/components/sections/AITestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <HeroLoader /> }
 );
 
 const AIProvenTestingProcess = dynamic(
   () => import("@/components/sections/AIProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AIWhyChooseTestriq = dynamic(
   () => import("@/components/sections/AIWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AICaseStudies = dynamic(
   () => import("@/components/sections/AICaseStudies"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AIFAQs = dynamic(() => import("@/components/sections/AIFAQs"), {
@@ -121,50 +107,23 @@ const AIFAQs = dynamic(() => import("@/components/sections/AIFAQs"), {
 
 const AIAnyQuestions = dynamic(
   () => import("@/components/sections/AIAnyQuestions"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AIComprehensiveSlider = dynamic(
   () => import("@/components/sections/AIComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AICardSlider = dynamic(
   () => import("@/components/sections/AICardSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AIToolsFramework = dynamic(
   () => import("@/components/sections/AIToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
-
-// Imports for loaders
-import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export default function AIApplicationTesting() {
   const breadcrumbItems = [

@@ -1,3 +1,4 @@
+
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
@@ -5,22 +6,23 @@ import StructuredData, {
   automationTestingServiceSchema,
   createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
-
-export const revalidate = 3600; // ISR: Revalidate every hour
+import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
-  title: "Test Automation Services | Selenium, Playwright & CI/CD Experts",
-
+  title: "Expert Test Automation Services | Speed and Accuracy for Every Release",
   description:
-    "Accelerate releases with scalable Test Automation Frameworks. We build self-healing scripts using Selenium, Cypress, and Playwright integrated into your CI/CD.",
+    "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
   keywords: [
-    "test automation framework architecture",
-    "selenium webdriver services",
+    "automation testing services",
+    "test automation company",
+    "selenium testing services",
     "playwright automation",
-    "api test automation",
-    "ci/cd pipeline testing",
-    "automated regression testing",
-    "mobile automation testing"
+    "appium mobile automation",
+    "CI/CD integration",
+    "regression automation",
+    "automated functional testing",
+    "quality assurance automation",
+    "software test automation",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -38,18 +40,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/automation-testing-services",
-    siteName: "Testriq - Professional Software Testing Services",
-    title:
-      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+    siteName: "Testriq - Automation Testing Services",
+    title: "Expert Test Automation Services - Speed and Accuracy for Every Release",
     description:
-      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
+      "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
     images: [
       {
-        url: "/OG/Automation-Testing-Service-Og.webp",
+        url: "/OG/Automation-Testing-Services-og.webp",
         width: 1200,
         height: 630,
         alt: "Automation Testing Services - Testriq",
-        type: "image/webp",
       },
     ],
   },
@@ -57,11 +57,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title:
-      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+    title: "Expert Test Automation Services - Speed and Accuracy for Every Release",
     description:
-      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
-    images: ["/OG/Automation-testing-Services-Twitter.webp"],
+      "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
+    images: ["/OG/Automation-Testing-Services-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -81,75 +80,55 @@ export const metadata: Metadata = {
   },
 };
 
-import AutomationTestingHeroSection from "@/components/sections/AutomationTestingHeroSection"
-
-const AutomationTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+const AutomationTestingHeroSection = dynamic(
+  () => import("@/components/sections/AutomationTestingHeroSection"),
+  { ssr: true, loading: () => <HeroLoader /> }
 );
 
 const AutomationTestingComprehensiveSlider = dynamic(
   () => import("@/components/sections/AutomationTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => <HeroLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingProvenTestingProcess = dynamic(
   () => import("@/components/sections/AutomationTestingProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
-);
-
-const ManualTestingFrameworkArchitecture = dynamic(
-  () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingToolsFramework = dynamic(
   () => import("@/components/sections/AutomationTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingCaseStudies = dynamic(
   () => import("@/components/sections/AutomationTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => <ContentLoader />,
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingFAQs = dynamic(
   () => import("@/components/sections/AutomationTestingFAQs"),
-  {
-    ssr: true,
-    loading: () => <FAQLoader />,
-  }
+  { ssr: true, loading: () => <FAQLoader /> }
 );
 
-import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
+const AutomationTestingReadyToEnsureQuality = dynamic(
+  () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
+  { ssr: true, loading: () => <ContentLoader /> }
+);
 
-export default function AutomationTestingPage() {
+const ManualTestingFrameworkArchitecture = dynamic(
+  () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
+  { ssr: true, loading: () => <ContentLoader /> }
+);
+
+export default function AutomationTestingServices() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
       url: "https://www.testriq.com/automation-testing-services",
     },
     {
-      name: "Automation Testing",
+      name: "Automation Testing Services",
       url: "https://www.testriq.com/automation-testing-services",
     },
   ];
@@ -160,13 +139,13 @@ export default function AutomationTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AutomationTestingHeroSection />
+        <AutomationTestingReadyToEnsureQuality />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
         <ManualTestingFrameworkArchitecture />
         <AutomationTestingToolsFramework />
         <AutomationTestingCaseStudies />
         <AutomationTestingFAQs />
-        <AutomationTestingReadyToEnsureQuality />
       </MainLayout>
     </div>
   );

@@ -1,71 +1,66 @@
 
 "use client";
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
-const faqs = [
+const pricingFaqs = [
     {
-        question: "How quickly can we start the testing engagement?",
-        answer: "For both Managed Retainer and Project-based models, we typically onboard and set up the testing infrastructure within 48 to 72 hours of contract signing."
+        question: "How long does it take to onboard a dedicated QA resource?",
+        answer: "Typically, we can have a dedicated QA specialist integrated into your team within 48 to 72 hours. For larger custom laboratory teams, onboarding takes 5 to 10 business days.",
     },
     {
-        question: "Is there a minimum contract duration?",
-        answer: "Our Managed QA Startup and Professional plans operate on a month-to-month basis with a 30-day notice period. Project-based models have no long-term commitment beyond the scope of work."
+        question: "Can I switch between monthly and project-based models?",
+        answer: "Absolutely. Many clients start with a project-based Audit to stabilize their current release and then transition to a monthly Managed QA model for long-term consistency.",
     },
     {
-        question: "Do you use your own testing tools or ours?",
-        answer: "We are flexible. We bring a proprietary suite of accelerators for rapid setup, but our engineers are experts in all major internal tools like JIRA, TestRail, Zephyr, Selenium, and Playwright."
+        question: "Do you offer a free trial for the Managed QA plans?",
+        answer: "Yes, we offer a 1-week risk-free trial period. If you're not satisfied with the quality and integration of our resource, you won't be charged for that week.",
     },
     {
-        question: "What happens if we need to scale the team quickly?",
-        answer: "Testriq maintains a pool of ISTQB-certified bench talent. We can scale your dedicated team from 1 to 5+ engineers within 1-2 weeks depending on the seniority required."
+        question: "Are there any hidden infrastructure or setup costs?",
+        answer: "No. Our pricing is inclusive of basic testing tools, standard cloud execution nodes, and reporting dashboards. If you require specialized hardware or paid enterprise tools, we will discuss those upfront.",
     },
     {
-        question: "Do you offer any discounts for long-term commitments?",
-        answer: "Yes, we offer structured discounts for 6-month and 12-month retainer commitments. These are typically negotiated at the Enterprise or high-growth level."
-    }
+        question: "How do you handle security and IP protection?",
+        answer: "Security is our top priority. All our engineers sign stringent NDAs, work on secure machines, and follow ISO/IEC 27001 standards. Data is always hosted on your servers or approved secure cloud providers.",
+    },
 ];
 
 const PricingFAQ = () => {
-    const [activeIndex, setActiveIndex] = useState<number | null>(0);
+    const [openIdx, setOpenIdx] = useState<number | null>(0);
 
     return (
-        <section className="py-20 px-8 md:px-12 lg:px-24 bg-gray-50/30">
-            <div className="max-w-4xl mx-auto">
+        <section className="py-24 bg-gray-50/50">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
-                    <p className="text-gray-600 text-lg">Everything you need to know about our service engagement models.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Pricing & Engagement FAQs</h2>
+                    <p className="mt-4 text-gray-600 italic">Everything you need to know about partnering with Testriq</p>
                 </div>
 
                 <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
-                        >
+                    {pricingFaqs.map((faq, idx) => (
+                        <div key={idx} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
                             <button
-                                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                                className="w-full px-8 py-6 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+                                aria-expanded={openIdx === idx}
                             >
-                                <span className="text-lg font-bold text-gray-900 pr-8">{faq.question}</span>
-                                {activeIndex === index ? (
-                                    <Minus className="w-5 h-5 text-brand-blue flex-shrink-0" />
-                                ) : (
-                                    <Plus className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                                )}
+                                <span className="font-bold text-gray-900 pr-8">{faq.question}</span>
+                                <span className="text-blue-500 flex-shrink-0">
+                                    {openIdx === idx ? <FaMinus /> : <FaPlus />}
+                                </span>
                             </button>
 
                             <AnimatePresence>
-                                {activeIndex === index && (
+                                {openIdx === idx && (
                                     <motion.div
                                         initial={{ height: 0, opacity: 0 }}
                                         animate={{ height: "auto", opacity: 1 }}
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">
+                                        <div className="px-8 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4">
                                             {faq.answer}
                                         </div>
                                     </motion.div>

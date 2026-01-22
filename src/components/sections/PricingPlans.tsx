@@ -154,8 +154,8 @@ const PricingPlans = () => {
                                 exit={{ opacity: 0, scale: 0.95 }}
                                 transition={{ duration: 0.3, delay: i * 0.1 }}
                                 className={`relative p-8 rounded-3xl border-2 flex flex-col transition-all duration-500 ${plan.popular
-                                        ? "bg-white border-brand-blue shadow-2xl scale-105 z-10"
-                                        : "bg-white border-transparent hover:border-gray-200 shadow-xl"
+                                    ? "bg-white border-brand-blue shadow-2xl scale-105 z-10"
+                                    : "bg-white border-transparent hover:border-gray-200 shadow-xl"
                                     }`}
                             >
                                 {plan.popular && (
@@ -196,8 +196,8 @@ const PricingPlans = () => {
                                 <Link
                                     href="/contact-us"
                                     className={`w-full py-4 rounded-xl flex items-center justify-center gap-2 font-bold transition-all duration-300 ${plan.popular
-                                            ? "bg-brand-blue text-white shadow-lg shadow-blue-200 hover:shadow-xl hover:bg-blue-600"
-                                            : "bg-gray-900 text-white hover:bg-black"
+                                        ? "bg-brand-blue text-white shadow-lg shadow-blue-200 hover:shadow-xl hover:bg-blue-600"
+                                        : "bg-gray-900 text-white hover:bg-black"
                                         }`}
                                 >
                                     {plan.cta}
@@ -212,7 +212,7 @@ const PricingPlans = () => {
                 <div className="mt-20 text-center">
                     <h4 className="text-2xl font-bold text-gray-900 mb-4">Need a Custom QA Model?</h4>
                     <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Sometimes standardized packages aren't enough. We specialize in building custom
+                        Sometimes standardized packages aren&apos;t enough. We specialize in building custom
                         Quality Engineering solutions for complex enterprise needs.
                     </p>
                     <Link
