@@ -68,36 +68,18 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Maximize Your
+              Global E-Commerce Testing Services:
               <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
-                E-Commerce Success
+                Optimizing Conversions and Security for 2026
               </span>
-              with Expert QA Testing
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure flawless online shopping experiences,{" "}
-              <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
-                secure payment gateway
-              </Link>{" "}
-              transactions, and optimal{" "}
-              <Link href="/performance-testing-services">performance</Link>{" "}
-              across all browsers, devices, and operating systems. Our
-              end-to-end{" "}
-              <Link href="/e-commerce-testing-services">
-                e-commerce testing{" "}
-              </Link>
-              services include{" "}
-              <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
-                functional testing
-              </Link>
-              , <Link href="/security-testing">security testing</Link>, and{" "}
-              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
-                cross-platform
-              </Link>{" "}
-              validation - helping you reduce cart abandonment, boost conversion
-              rates, and build trust in your e-commerce platform.
+              In 2026, a one-second delay or a checkout glitch can ruin your brand&apos;s reputation. Testriq provides enterprise-grade e-commerce testing that balances fast deployment with total reliability. We don&apos;t just check functions; we build a <span className="font-semibold text-brand-blue">&quot;Conversion-First&quot; strategy</span> to protect your global revenue.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+              We stop transaction failures with rigorous payment testing and slash cart abandonment through better usability. Testriq is your trusted commerce partner for scaling <span className="font-semibold text-brand-blue">US Black Friday sales</span> and meeting complex <span className="font-semibold text-brand-blue">EU GDPR requirements</span>.
             </p>
 
             {/* Key Benefits */}

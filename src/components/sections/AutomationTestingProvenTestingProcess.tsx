@@ -6,7 +6,6 @@ import {
   FaClipboardList,
   FaCogs,
   FaPlay,
-  FaChartLine,
   FaCheckCircle,
   FaDatabase,
 } from "react-icons/fa";

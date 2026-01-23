@@ -1,4 +1,5 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import SapTestingHeroSection from "@/components/sections/SapTestingHeroSection";
 import SapComprehensiveSlider from "@/components/sections/SapComprehensiveSlider";
 import SapProvenTestingProcess from "@/components/sections/SapProvenTestingProcess";
@@ -13,11 +14,16 @@ import StructuredData, {
     sapTestingSchema,
 } from "@/components/seo/StructuredData";
 
+const SapTestingChallenges = dynamic(
+    () => import("@/components/sections/SapTestingChallenges"),
+    { ssr: true }
+);
+
 export const metadata: Metadata = {
-    title: "SAP Testing Services: Accelerated QA for Seamless S/4HANA Migrations & Upgrades",
+    title: "SAP Testing Services: S/4HANA Migrations & Upgrades",
 
     description:
-        "Accelerate your SAP deployment and minimize risk with Testriq's ISTQB-certified SAP testing experts, leveraging intelligent automation for seamless S/4HANA migrations and upgrade stability.",
+        "Enterprise-grade SAP QA for S/4HANA transitions. End-to-end testing services for complex implementations, ensuring global compliance and zero-defect deployments.",
     keywords: [
         "SAP Testing Services",
         "SAP Quality Assurance",
@@ -99,6 +105,7 @@ export default function SapTestingPage() {
             <StructuredData data={sapTestingSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <SapTestingHeroSection />
+            <SapTestingChallenges />
             <SapComprehensiveSlider />
             <SapProvenTestingProcess />
             <SapWhyChooseTestriq />

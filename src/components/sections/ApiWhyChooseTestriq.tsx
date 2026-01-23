@@ -4,11 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
-  FaRocket,
   FaShieldAlt,
-  FaChartLine,
-  FaUsers,
-  FaClock,
   FaArrowRight,
   FaAward,
   FaLock,

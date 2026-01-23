@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaChartLine, FaClock, FaDollarSign, FaCheckCircle, FaRobot, FaCogs, FaUsers } from "react-icons/fa";
+import { FaChartLine, FaCheckCircle, FaRobot, FaCogs, FaUsers } from "react-icons/fa";
 
 const AutomationTestingROISection: React.FC = () => {
   return (

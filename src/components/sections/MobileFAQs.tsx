@@ -12,7 +12,7 @@ const MobileFAQs: React.FC = () => {
       question: "What are the best mobile app testing strategies for startups 2026?",
       answer: (
         <>
-          The best mobile app testing strategies for startups in 2026 involve a <Link href="/blog/post/how-environment-setup-shapes-reliable-web-application-testing" className="text-brand-blue hover:underline">&quot;Shift-Left&quot; approach</Link>. We integrate automated testing directly into your CI/CD pipeline and utilize our Real Device Cloud to maximize coverage while optimizing costs.
+          The best mobile app testing strategies for startups in 2026 involve a <Link href="/blog/post/the-role-of-automation-in-shift-left-and-shift-right-testing" className="text-brand-blue hover:underline">&quot;Shift-Left&quot; approach</Link>. We integrate automated testing directly into your CI/CD pipeline and utilize our Real Device Cloud to maximize coverage while optimizing costs.
         </>
       ),
     },
@@ -20,7 +20,7 @@ const MobileFAQs: React.FC = () => {
       question: "How to test mobile apps on multiple screen sizes and resolutions?",
       answer: (
         <>
-          To test mobile apps on multiple screen sizes and resolutions, we utilize <Link href="/blog/post/real-device-vs-emulator-testing-which-is-better" className="text-brand-blue hover:underline">real device cloud testing platforms</Link>. These allow us to run <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automated mobile testing</Link> using Appium across hundreds of physical devices simultaneously, identifying UI glitches that emulators miss.
+          To test mobile apps on multiple screen sizes and resolutions, we utilize <Link href="/blog/post/solving-the-top-5-challenges-in-mobile-application-testing" className="text-brand-blue hover:underline">real device cloud testing platforms</Link>. These allow us to run <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automated mobile testing</Link> using Appium across hundreds of physical devices simultaneously, identifying UI glitches that emulators miss.
         </>
       ),
     },
@@ -52,7 +52,7 @@ const MobileFAQs: React.FC = () => {
       question: "Do you follow global compliance standards like ISO 29119?",
       answer: (
         <>
-          Yes, Testriq adheres to <Link href="/blog/post/iso-29119-software-testing-standard-compliance-guide" className="text-brand-blue hover:underline">ISO/IEC/IEEE 29119 standards</Link> across our entire lifecycle. We also provide SOC2 Type II, GDPR, CCPA, and HIPAA validated quality assurance for highly regulated industries.
+          Yes, Testriq adheres to <Link href="/blog/post/what-is-mobile-application-testing-an-in-depth-guide" className="text-brand-blue hover:underline">ISO/IEC/IEEE 29119 standards</Link> across our entire lifecycle. We also provide SOC2 Type II, GDPR, CCPA, and HIPAA validated quality assurance for highly regulated industries.
         </>
       ),
     }
@@ -78,7 +78,7 @@ const MobileFAQs: React.FC = () => {
             Get expert answers to common questions about mobile application
             testing services, QA processes,{" "}
             <Link href="automation-testing-services">test automation</Link>,{" "}
-            <Link href="blog/post/real-device-vs-emulator-testing-which-is-better">
+            <Link href="/blog/post/solving-the-top-5-challenges-in-mobile-application-testing">
               real device
             </Link>{" "}
             testing, and app store compliance for iOS and Android apps.

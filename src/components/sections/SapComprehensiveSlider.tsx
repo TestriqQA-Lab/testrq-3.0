@@ -16,91 +16,91 @@ const SapComprehensiveSlider: React.FC = () => {
     const testingTypes = [
         {
             id: "s4hana",
-            title: "SAP S/4HANA Migration Testing",
+            title: "S/4HANA Migration Testing",
             icon: <FaServer className="w-6 h-6" />,
-            coverage: "100% Migration Success",
+            coverage: "ISO 29119 Aligned Success",
             description:
-                "Validate data migration, process compatibility, and system performance during the critical transition to S/4HANA. We ensure business continuity and stability.",
+                "Validate 'clean core' principles and custom Z-reports during the ECC to S/4HANA transition. We ensure 100% success by mapping critical paths via risk-based testing.",
             features: [
-                "Data Migration QA",
-                "Business process validation",
-                "System conversion testing",
-                "Fiori UX validation",
-                "Custom code remediation",
-                "Performance benchmarking",
+                "Clean Core Validation",
+                "Custom Z-Report Testing",
+                "Universal Journal Merging",
+                "Business Process QA",
+                "Data Conversion Integrity",
+                "Fiori UX Verification",
             ],
             metrics: [
-                { label: "Process Coverage", value: "100%" },
+                { label: "Migration Success", value: "100%" },
                 { label: "Data Integrity", value: "99.9%" },
-                { label: "Performance", value: "98%" },
+                { label: "Uptime", value: "98%" },
             ],
             action: "/sap-s4hana-testing-guide"
         },
         {
-            id: "regression",
-            title: "SAP Regression & Upgrade Testing",
-            icon: <FaSync className="w-6 h-6" />,
-            coverage: "Risk-Free Upgrades",
+            id: "data-testing",
+            title: "SAP Data Testing & Compliance",
+            icon: <FaFlask className="w-6 h-6" />,
+            coverage: "GDPR & CCPA Compliant",
             description:
-                "Automate and execute comprehensive regression tests following patches, support package stack (SPS), or major upgrades to ensure existing functionality remains intact.",
+                "Expert SAP data testing using TDMS and synthetic generation. We mask PII while maintaining referential integrity across complex global datasets.",
             features: [
-                "Automated regression suites",
-                "Patch impact analysis",
-                "SPS validation",
-                "End-to-end flow verification",
-                "Defect management",
-                "Release readiness check",
+                "PII Data Masking",
+                "SAP TDMS Integration",
+                "Synthetic Data Gen",
+                "ISO 29119-3 templates",
+                "Referential Integrity",
+                "Global Audit Ready",
             ],
             metrics: [
-                { label: "Automation Rate", value: "85%" },
-                { label: "Cycle Reduction", value: "70%" },
-                { label: "Defect Leakage", value: "0%" },
+                { label: "Compliance Rate", value: "100%" },
+                { label: "Data Realism", value: "High" },
+                { label: "Risk Mitigation", value: "Excellent" },
+            ],
+            action: "/api-testing"
+        },
+        {
+            id: "automation",
+            title: "Automation & Maintenance",
+            icon: <FaSync className="w-6 h-6" />,
+            coverage: "40% Faster Cycles",
+            description:
+                "Resilient, keyword-driven frameworks using Tricentis Tosca and Worksoft. Achieve 80% regression automation for long-term stability.",
+            features: [
+                "Tricentis Tosca Labs",
+                "Worksoft Certify",
+                "Keyword-Driven Design",
+                "80% Regression Cover",
+                "Patch Impact Analysis",
+                "Auto-healing Scripts",
+            ],
+            metrics: [
+                { label: "Automation Rate", value: "80%" },
+                { label: "Maintenance Drop", value: "50%" },
+                { label: "ROI", value: "Positive" },
             ],
             action: "/automation-testing-services"
         },
         {
             id: "performance",
-            title: "SAP Performance & Load Testing",
+            title: "Performance under Load",
             icon: <FaChartLine className="w-6 h-6" />,
-            coverage: "Scalability Assured",
+            coverage: "Zero Sizing Failures",
             description:
-                "Evaluate system capacity and stability under heavy load (e.g., peak transaction times) for critical modules like SD, MM, and FI/CO.",
+                "Simulating multi-region access and Fiori-based workloads. We benchmark OData APIs and background jobs to prevent system crashes.",
             features: [
-                "Peak load simulation",
-                "Stress testing",
-                "Scalability analysis",
-                "Month-end close simulation",
-                "HANA DB optimization",
-                "Bottleneck identification",
+                "OData API Spikes",
+                "Fiori Workload Sizing",
+                "Multi-region Simulation",
+                "Batch Overlap Check",
+                "HANA DB Optimization",
+                "ISO 29119-3 Specs",
             ],
             metrics: [
-                { label: "Throughput", value: "High" },
-                { label: "Response Time", value: "Fast" },
+                { label: "Throughput", value: "Zettabyte Scalable" },
+                { label: "Response", value: "Optimized" },
                 { label: "Stability", value: "100%" },
             ],
             action: "/performance-testing-services"
-        },
-        {
-            id: "integration",
-            title: "SAP Integration Testing",
-            icon: <FaExchangeAlt className="w-6 h-6" />,
-            coverage: "Seamless Connectivity",
-            description:
-                "Validate seamless data flow and process alignment between SAP modules (e.g., ECC/S/4HANA) and non-SAP external systems (CRMs, legacy tools).",
-            features: [
-                "Interface testing (IDoc, RFC, API)",
-                "Middleware validation (CPI, PO)",
-                "End-to-end data flow",
-                "Third-party integration",
-                "Error handling verification",
-                "Data consistency checks",
-            ],
-            metrics: [
-                { label: "Interface Uptime", value: "99.99%" },
-                { label: "Data Accuracy", value: "100%" },
-                { label: "Error Detection", value: "Early" },
-            ],
-            action: "/api-testing"
         },
     ];
 
@@ -125,11 +125,10 @@ const SapComprehensiveSlider: React.FC = () => {
                         <span className="text-sm">End-to-End SAP QA Solutions</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        End-to-End SAP QA Solutions{" "}
-                        <span className="text-brand-blue">Tailored to Your Business</span>
+                        SAP Quality Assurance <span className="text-brand-blue">for the 2026 Landscape</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                        From migration to maintenance, our comprehensive SAP testing services ensure your enterprise systems are robust, secure, and ready for business.
+                        Whether you are migrating to S/4HANA or comparing ERP testing partners, Testriq provides the technical depth you need. We deliver global compliance and zero-defect deployments based on ISO 29119 standards.
                     </p>
                 </div>
 

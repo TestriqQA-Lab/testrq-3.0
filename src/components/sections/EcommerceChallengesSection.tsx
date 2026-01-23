@@ -4,80 +4,66 @@ import Link from "next/link";
 import React from "react";
 import {
   FaExclamationTriangle,
-  FaShoppingCart,
-  FaCreditCard,
   FaMobile,
   FaUsers,
   FaChartLine,
   FaShieldAlt,
-  FaClock,
-  FaGlobe,
   FaArrowRight,
+  FaLink,
+  FaDatabase,
 } from "react-icons/fa";
 
 const EcommerceChallengesSection: React.FC = () => {
   const challenges = [
     {
-      icon: FaShoppingCart,
-      title: "Cart Abandonment Issues",
-      problem: "Average cart abandonment rate of 70% across e-commerce sites",
-      impact: "Lost revenue of $4.6 trillion annually worldwide",
-      solution: "Comprehensive checkout flow testing and UX optimization",
-      color: "from-red-500 to-pink-600",
-      bgColor: "bg-red-50",
-      action: "/reduce-cart-abandonment-with-checkout-testing",
+      icon: FaChartLine,
+      title: "Peak Traffic & Conversion Resilience",
+      problem: "Conversion Loss ≈ 7% × Second of Delay. The 'Stampede Effect' causes system crashes during Black Friday surges.",
+      impact: "Even a minor performance lag can ruin revenue during high-traffic events.",
+      solution: "ISO 29119-2 risk-based load testing using JMeter and k6 to simulate millions of concurrent users.",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+      action: "/performance-load-testing-for-e-commerce-sites",
     },
     {
-      icon: FaCreditCard,
-      title: "Payment Gateway Failures",
-      problem: "Payment processing errors cause 25% of transaction failures",
-      impact: "Direct revenue loss and damaged customer trust",
-      solution: "Rigorous payment integration testing across all gateways",
+      icon: FaLink,
+      title: "Complex Integration Reliability",
+      problem: "25% of all transaction failures stem from faulty external API handshakes (Shipping, CRM, Payments).",
+      impact: "Broken checkout flows lead to direct revenue loss and customer frustration.",
+      solution: "Rigorous API integration testing and sandbox checkout validation for Stripe, PayPal, and more.",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
       action: "/secure-payment-gateway-testing-for-e-commerce",
     },
     {
       icon: FaMobile,
-      title: "Mobile Commerce Gaps",
-      problem: "60% of e-commerce traffic is mobile, but conversion rates lag",
-      impact: "Missed opportunities in the fastest-growing segment",
-      solution:
-        "Mobile-first testing approach with device-specific optimization",
+      title: "Mobile-First Consistency",
+      problem: "Mobile drives 60% of traffic, but conversion rates lag due to visual regression on 2,000+ device combinations.",
+      impact: "Poor responsive UX is a major driver of revenue loss in the fastest-growing segment.",
+      solution: "ISO 29119-4 mobile testing optimized for thumb-reach and visual consistency across all viewports.",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
       action: "/mobile-commerce-optimization-testing-services",
     },
     {
-      icon: FaClock,
-      title: "Performance Bottlenecks",
-      problem: "1-second delay in page load time reduces conversions by 7%",
-      impact: "Significant revenue loss during peak shopping periods",
-      solution: "Load testing and performance optimization strategies",
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-      action: "/performance-load-testing-for-e-commerce-sites",
-    },
-    {
       icon: FaShieldAlt,
-      title: "Security Vulnerabilities",
-      problem: "E-commerce sites face 32% of all cyber attacks",
-      impact: "Data breaches cost an average of $4.45 million",
-      solution: "Comprehensive security testing and compliance validation",
+      title: "Security & PCI DSS 4.0",
+      problem: "Breaches cost brands an average of $4.45M. magecart attacks target outdated client-side scripts.",
+      impact: "Legal liabilities and complete loss of customer trust from data breaches.",
+      solution: "PCI DSS 4.0 compliance audits, SSL validation, and mandatory MFA check penetration testing.",
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
       action: "/e-commerce-security-testing-compliance-services",
     },
     {
-      icon: FaGlobe,
-      title: "Cross-Platform Inconsistencies",
-      problem: "Different user experiences across browsers and devices",
-      impact: "Confused customers and reduced brand credibility",
-      solution: "Comprehensive cross-platform compatibility testing",
+      icon: FaDatabase,
+      title: "High-Volume Data Integrity",
+      problem: "Inventory sync errors and price mismatches across millions of SKUs lead to customer distrust.",
+      impact: "Display errors and 'In-Stock' mismatches create massive legal and operational risks.",
+      solution: "ISO 29119-2 shopping cart testing and real-time database validation for taxes, stock, and pricing.",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
-      action:
-        "/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere",
+      action: "/cross-platform-e-commerce-testing-delivering-seamless-shopping-experiences-everywhere",
     },
   ];
 
@@ -96,33 +82,16 @@ const EcommerceChallengesSection: React.FC = () => {
           <div className="inline-flex items-center gap-2 bg-red-100 rounded-full px-6 py-2 mb-6">
             <FaExclamationTriangle className="w-4 h-4 text-red-600" />
             <span className="text-sm font-medium text-red-600">
-              E-Commerce Challenges
+              2026 Digital Commerce QA
             </span>
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-10 md:leading-14">
-            Common E-Commerce Issues
-            <span className="block text-[theme(color.brand.blue)]">
-              That Cost You Revenue
-            </span>
+            Solving the 2026 Global <span className="text-[theme(color.brand.blue)]">Challenges in Digital Commerce QA</span>
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            E-commerce platforms face unique challenges such as{" "}
-            <Link href="/performance-testing-services">performance</Link>{" "}
-            bottlenecks, payment failures, and{" "}
-            <Link href="/security-testing">security</Link> vulnerabilities that
-            can significantly impact revenue and customer satisfaction. Our{" "}
-            <Link href="/e-commerce-testing-services">e-commerce</Link> QA
-            testing solutions address these critical issues through{" "}
-            <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
-              functional testing
-            </Link>
-            , checkout validation, and cross-browser{" "}
-            <Link href="/blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
-              compatibility testing
-            </Link>{" "}
-            - ensuring risks are mitigated before they affect your bottom line.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            The e-commerce ecosystem of 2026 is defined by massive scale and fragmented integrations. As a leading e-commerce testing provider, we solve the five biggest hurdles facing global retailers today:
           </p>
         </div>
 

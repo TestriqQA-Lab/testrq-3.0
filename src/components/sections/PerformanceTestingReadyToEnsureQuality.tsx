@@ -15,15 +15,10 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-white mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to{" "}
-            <span className="text-yellow-300">Optimize Performance</span> with
-            Expert Testing?
+            Ready to <span className="text-yellow-300">Rescale</span> your application performance?
           </h2>
           <p className="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed">
-            Ensure your applications deliver exceptional speed, scalability, and
-            reliability under any load. Our comprehensive performance testing
-            services identify bottlenecks and optimize system performance for
-            superior user experiences.
+            Protect your revenue from peak traffic events. Partner with Testriq to implement a performance engineering strategy aligned with global standards. We act as an extension of your DevOps team, providing application performance testing that scales as your business grows.
           </p>
         </div>
 
@@ -31,7 +26,7 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
           {/* Left Content */}
           <div className="text-white">
             <h3 className="text-2xl font-bold mb-6">
-              What You Get with Our Performance Testing Services
+              Performance Testing for Specialized Industries
             </h3>
 
             <div className="space-y-4 mb-8">
@@ -41,11 +36,10 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">
-                    85% Performance Improvement
+                    E-Commerce Performance Testing
                   </h4>
                   <p className="text-orange-100 text-sm">
-                    Comprehensive performance optimization and bottleneck
-                    resolution
+                    Protect revenue during peak events like Black Friday. Checkout stability and low API latency optimization.
                   </p>
                 </div>
               </div>
@@ -56,50 +50,10 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">
-                    Advanced Load Simulation
+                    Outsourced Performance Testing for SaaS
                   </h4>
                   <p className="text-orange-100 text-sm">
-                    Realistic user load testing covering all performance
-                    scenarios
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-orange-900 text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Real-time Monitoring</h4>
-                  <p className="text-orange-100 text-sm">
-                    Continuous performance monitoring with advanced analytics
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-orange-900 text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Scalability Validation</h4>
-                  <p className="text-orange-100 text-sm">
-                    Comprehensive scalability testing for growing user demands
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-orange-900 text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">
-                    Detailed Performance Reports
-                  </h4>
-                  <p className="text-orange-100 text-sm">
-                    Comprehensive analytics with actionable optimization
-                    recommendations
+                    Multi-tenancy stability and API rate-limiting thresholds that scale with your MRR.
                   </p>
                 </div>
               </div>
@@ -107,32 +61,20 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h4 className="text-lg font-semibold mb-4">
-                Free Performance Assessment Includes:
+                Global Performance Assessment Includes:
               </h4>
               <div className="grid grid-cols-1 gap-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Current performance baseline analysis
-                  </span>
+                  <span className="text-sm">ISO 29119 Alignment Review</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Bottleneck identification and analysis
-                  </span>
+                  <span className="text-sm">Global Load Generation Strategy</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Load testing strategy recommendations
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Custom performance optimization roadmap
-                  </span>
+                  <span className="text-sm">Infrastructure Scalability Matrix</span>
                 </div>
               </div>
             </div>
@@ -159,7 +101,7 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
 
               {/* Contact Options */}
               <div className="grid grid-cols-1 gap-4">
-                <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+                <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                   <button className="flex w-full items-center cursor-pointer justify-center space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 group">
                     <FaCalendarAlt className="text-blue-600 group-hover:scale-110 transition-transform" />
                     <span className="font-medium text-gray-700">
@@ -237,9 +179,9 @@ const PerformanceTestingReadyToEnsureQuality: React.FC = () => {
                 </button>
               </Link>
               <Link href="/case-studies">
-              <button className="border-2 border-white cursor-pointer text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300">
-                View Performance Case Studies
-              </button>
+                <button className="border-2 border-white cursor-pointer text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-900 transition-all duration-300">
+                  View Performance Case Studies
+                </button>
               </Link>
             </div>
           </div>

@@ -7,21 +7,21 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Data Analysis Services for QA Teams ",
+  title: "Analyze QA Data & Testing Metrics | Testriq",
 
   description:
-    "Testriq offers expert data analysis services for QA teams—unlock trends, optimize testing, and drive strategic decisions with actionable insights.",
+    "Testriq drives prescriptive intelligence through advanced data evaluation. We bridge the gap between data silos and business goals with ISO 8000-aligned analytics and diagnostic modeling.",
   keywords: [
     "data analysis services",
-    "data analytics",
-    "predictive analytics",
-    "data insights",
-    "business intelligence",
-    "data visualization",
-    "machine learning models",
-    "analytics services",
-    "real-time analytics",
-    "descriptive analytics",
+    "QA data analytics",
+    "prescriptive intelligence",
+    "ISO 8000 data quality",
+    "testing metrics analysis",
+    "predictive modeling for QA",
+    "ETL process services",
+    "zebabtyte scalability analytics",
+    "machine learning integration",
+    "diagnostic analytics",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -84,6 +84,18 @@ export const metadata: Metadata = {
 
 const DataAnalysisHeroSection = dynamic(
   () => import("@/components/sections/DataAnalysisHeroSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const DataAnalysisChallenges = dynamic(
+  () => import("@/components/sections/DataAnalysisChallenges"),
   {
     ssr: true,
     loading: () => (
@@ -185,6 +197,7 @@ const DataAnalysisPage = () => {
       <StructuredData data={dataAnalysisServiceSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <DataAnalysisHeroSection />
+      <DataAnalysisChallenges />
       <DataAnalysisComprehensiveSlider />
       <DataAnalysisProvenTestingProcess />
       <DataAnalysisWhyChooseTestriq />

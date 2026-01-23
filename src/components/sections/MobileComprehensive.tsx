@@ -17,8 +17,19 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaChartLine className="w-8 h-8" />,
       title: "Mastering Device & OS Fragmentation",
-      description:
-        "As Android 15 rolls out alongside iOS 18/19, we validate your app across diverse hardware including foldables, wearables, and dual-screen devices to prevent 20-30% configuration crashes.",
+      description: (
+        <>
+          As Android 15 rolls out alongside{" "}
+          <Link href="/blog/post/ios-vs-android-testing-key-differences-every-qa-should-know" className="text-brand-blue hover:underline">
+            iOS 18/19
+          </Link>
+          , we validate your app across diverse hardware including foldables,{" "}
+          <Link href="/smart-device-testing-services" className="text-brand-blue hover:underline">
+            wearables
+          </Link>
+          , and dual-screen devices to prevent 20-30% configuration crashes.
+        </>
+      ),
       features: [
         "ISO 29119-3 Compliance",
         "Foldable & Wearable QA",
@@ -29,8 +40,19 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
       title: "Advanced Security & Pen Testing",
-      description:
-        "Mapping to OWASP Mobile Top 10, we defend against the 150% rise in mobile ransomware with deep APK/IPA file audits and biometric (FaceID) validation.",
+      description: (
+        <>
+          Mapping to{" "}
+          <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp" className="text-brand-blue hover:underline">
+            OWASP Mobile Top 10
+          </Link>
+          , we defend against the 150% rise in mobile ransomware with deep{" "}
+          <Link href="/security-testing" className="text-brand-blue hover:underline">
+            APK/IPA file audits
+          </Link>{" "}
+          and biometric (FaceID) validation.
+        </>
+      ),
       features: [
         "OWASP Mobile Top 10",
         "Biometric Identity Checks",
@@ -41,8 +63,15 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <BsLightningCharge className="w-8 h-8" />,
       title: "5G & Performance Optimization",
-      description:
-        "Testing real-world 5G/Wi-Fi 6 handovers. We replicate latency and throttling to prevent the 42% of crashes caused by network-edge connectivity shifts.",
+      description: (
+        <>
+          Testing real-world{" "}
+          <Link href="/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025" className="text-brand-blue hover:underline">
+            5G/Wi-Fi 6
+          </Link>{" "}
+          handovers. We replicate latency and throttling to prevent the 42% of crashes caused by network-edge connectivity shifts.
+        </>
+      ),
       features: [
         "5G Latency Simulation",
         "Thermal Throttling Checks",
@@ -53,8 +82,23 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaSync className="w-8 h-8" />,
       title: "AI-Driven Test Automation",
-      description:
-        "Utilizing Appium & Selenium with AI-driven self-healing tools and Model-Based Testing (MBT) to reduce scripting overhead and handle high-velocity UI updates.",
+      description: (
+        <>
+          Utilizing{" "}
+          <Link href="/blog/post/which-types-of-mobile-apps-can-be-tested-by-appium" className="text-brand-blue hover:underline">
+            Appium
+          </Link>{" "}
+          &{" "}
+          <Link href="/blog/post/web-application-automation-testing-tools-frameworks-best-practices" className="text-brand-blue hover:underline">
+            Selenium
+          </Link>{" "}
+          with{" "}
+          <Link href="/ai-application-testing" className="text-brand-blue hover:underline">
+            AI-driven self-healing tools
+          </Link>{" "}
+          and Model-Based Testing (MBT) to reduce scripting overhead and handle high-velocity UI updates.
+        </>
+      ),
       features: [
         "Self-Healing Frameworks",
         "Appium & XCUI Automation",
@@ -65,8 +109,15 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaUsers className="w-8 h-8" />,
       title: "Global Usability & UX Validation",
-      description:
-        "Facilitating mobile usability testing on real hardware to ensure touch gestures (swipe, pinch, zoom) and AR/VR features meet human expectations globally.",
+      description: (
+        <>
+          Facilitating{" "}
+          <Link href="/blog/post/what-is-mobile-application-testing-an-in-depth-guide" className="text-brand-blue hover:underline">
+            mobile usability testing
+          </Link>{" "}
+          on real hardware to ensure touch gestures (swipe, pinch, zoom) and AR/VR features meet human expectations globally.
+        </>
+      ),
       features: [
         "Gesture Responsiveness",
         "AR/VR UX Validation",
@@ -77,8 +128,19 @@ const MobileComprehensive: React.FC = () => {
     {
       icon: <FaFlask className="w-8 h-8" />,
       title: "Compliance-First QA",
-      description:
-        "Rigorous data privacy checks for high-stakes apps. Specialized QA for banking, healthcare, and fintech platforms requiring SOC2, GDPR, and HIPAA compliance.",
+      description: (
+        <>
+          Rigorous data privacy checks for high-stakes apps. Specialized QA for{" "}
+          <Link href="/banking-finance-industry-testing-services" className="text-brand-blue hover:underline">
+            banking
+          </Link>
+          ,{" "}
+          <Link href="/healthcare-testing-services" className="text-brand-blue hover:underline">
+            healthcare
+          </Link>
+          , and fintech platforms requiring SOC2, GDPR, and HIPAA compliance.
+        </>
+      ),
       features: [
         "SOC2 Type II Assurance",
         "GDPR & CCPA Audits",
@@ -202,7 +264,7 @@ const MobileComprehensive: React.FC = () => {
                   <span className="text-white text-lg font-bold">🤖</span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">
-                  <Link href="/blog/post/mobile-automation-testing-guide-android-ios-frameworks">
+                  <Link href="/blog/post/what-do-you-need-for-mobile-automation-testing">
                     Android & Fragmented OS
                   </Link>
                 </h4>

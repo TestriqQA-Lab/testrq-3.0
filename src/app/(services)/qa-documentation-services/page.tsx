@@ -1,5 +1,6 @@
 import React from 'react';
 import QADocumentationHeroSection from '@/components/sections/QADocumentationHeroSection';
+import QADocumentationChallenges from '@/components/sections/QADocumentationChallenges';
 import QADocumentationComprehensiveSlider from '@/components/sections/QADocumentationComprehensiveSlider';
 import QADocumentationProvenTestingProcess from '@/components/sections/QADocumentationProvenTestingProcess';
 import QADocumentationWhyChooseTestriq from '@/components/sections/QADocumentationWhyChooseTestriq';
@@ -11,19 +12,16 @@ import { Metadata } from 'next';
 import StructuredData, { createBreadcrumbSchema, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-  title:"QA Documentation Services | Test Case Writing Services",
-    
-  description: "Get expert QA documentation services from Testriq QA Lab—test plans, test cases, traceability matrix & more for complete software testing clarity and quality.",
+  title: "Analyze Data to Improve QA Team Performance",
+  description: "Testriq provides professional QA documentation services. We bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems aligning with ISO/IEC/IEEE 29119-3 standards.",
   keywords: [
     "QA documentation services",
-    "test case documentation",
-    "test plan writing",
-    "quality assurance documentation",
-    "requirements documentation",
-    "software QA docs",
-    "technical documentation",
+    "test management",
+    "ISO/IEC/IEEE 29119-3",
+    "test case writing",
+    "test plan strategy",
     "compliance documentation",
-    "UAT documentation",
+    "traceability gap",
     "Testriq QA documentation"
   ],
   authors: [{ name: "Testriq QA Lab" }],
@@ -43,8 +41,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.testriq.com/qa-documentation-services',
     siteName: 'Testriq - Professional Software Testing Services',
-    title: 'QA Documentation Services - Professional QA Docs | Testriq',
-    description: 'Professional QA documentation services including test plans, test cases, requirements docs, and compliance-ready deliverables. Ensure quality, streamline processes, and accelerate testing.',
+    title: 'Analyze Data to Improve QA Team Performance | Testriq',
+    description: 'Enterprise-grade QA documentation services. Bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems.',
     images: [
       {
         url: '/OG/QA-Documentation-Service-Og.webp',
@@ -59,8 +57,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@testriq',
     creator: '@testriq',
-    title: 'QA Documentation Services - Professional QA Docs | Testriq',
-    description: 'Professional QA documentation services including test plans, test cases, requirements docs, and compliance-ready deliverables. Ensure quality, streamline processes, and accelerate testing.',
+    title: 'Analyze Data to Improve QA Team Performance | Testriq',
+    description: 'Enterprise-grade QA documentation services. Bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems.',
     images: ['/OG/QA-Documentation-service-Twitter.webp'],
   },
   robots: {
@@ -84,7 +82,7 @@ export const metadata: Metadata = {
 
 
 const QADocumentationServicesPage = () => {
-   const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Services", url: "https://www.testriq.com/qa-documentation-services" },
     { name: "QA Documentation Services", url: "https://www.testriq.com/qa-documentation-services" }
@@ -94,6 +92,7 @@ const QADocumentationServicesPage = () => {
       <StructuredData data={qaDocumentationServiceSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <QADocumentationHeroSection />
+      <QADocumentationChallenges />
       <QADocumentationComprehensiveSlider />
       <QADocumentationProvenTestingProcess />
       <QADocumentationWhyChooseTestriq />

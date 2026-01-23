@@ -10,328 +10,86 @@ import {
   FaMobile,
   FaNetworkWired,
   FaTools,
+  FaMobileAlt,
 } from "react-icons/fa";
 
 const SecurityTestingToolsFramework: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(
-    "vulnerability-scanning"
-  );
+  const [activeCategory, setActiveCategory] = useState("static-testing");
 
   const toolCategories = [
     {
-      id: "vulnerability-scanning",
-      title: "Vulnerability Scanning",
-      icon: <FaShieldAlt className="text-2xl" />,
-      color: "red",
-      description:
-        "Advanced vulnerability scanning and assessment tools for comprehensive security evaluation",
-      tools: [
-        {
-          name: "Nessus Professional",
-          description:
-            "Industry-leading vulnerability scanner for comprehensive security assessment",
-          features: [
-            "50,000+ vulnerability checks",
-            "Compliance scanning",
-            "Asset discovery",
-            "Risk prioritization",
-          ],
-        },
-        {
-          name: "OpenVAS",
-          description:
-            "Open-source vulnerability assessment and management platform",
-          features: [
-            "Network vulnerability testing",
-            "Web application scanning",
-            "Authenticated scanning",
-            "Custom policies",
-          ],
-        },
-        {
-          name: "Qualys VMDR",
-          description:
-            (<><Link href="/blog/post/cloud-based-performance-testing-scaling-for-modern-architectures-2">Cloud-based</Link> vulnerability management and threat detection</>),
-          features: [
-            "Continuous monitoring",
-            "Asset inventory",
-            "Patch management",
-            "Threat intelligence",
-          ],
-        },
-        {
-          name: "Rapid7 Nexpose",
-          description:
-            "Vulnerability management solution with real-time risk analytics",
-          features: [
-            "Live vulnerability monitoring",
-            "Risk scoring",
-            "Remediation workflows",
-            "Integration capabilities",
-          ],
-        },
-      ],
-    },
-    {
-      id: "penetration-testing",
-      title: "Penetration Testing",
-      icon: <FaBug className="text-2xl" />,
-      color: "orange",
-      description:
-        "Professional penetration testing tools for ethical hacking and security validation",
-      tools: [
-        {
-          name: (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Metasploit Framework</Link></>),
-          description:
-            "Advanced penetration testing platform for exploit development and validation",
-          features: [
-            "Exploit database",
-            "Payload generation",
-            "Post-exploitation",
-            "Vulnerability validation",
-          ],
-        },
-        {
-          name: "Burp Suite Professional",
-          description:
-            "Comprehensive web application security testing platform",
-          features: [
-            "Web vulnerability scanning",
-            (<><Link href="/manual-testing-services">Manual testing tools</Link></>),
-            "Extension marketplaces",
-            "Collaboration features",
-          ],
-        },
-        {
-          name: "Kali Linux",
-          description:
-            "Specialized Linux distribution for penetration testing and security auditing",
-          features: [
-            "600+ security tools",
-            "Forensics capabilities",
-            "Wireless security",
-            "Digital forensics",
-          ],
-        },
-        {
-          name: "Cobalt Strike",
-          description:
-            "Advanced threat emulation and red team operations platform",
-          features: [
-            "Beacon payload",
-            "Team collaboration",
-            "Adversary simulation",
-            "Post-exploitation",
-          ],
-        },
-      ],
-    },
-    {
-      id: "code-analysis",
-      title: "Code Analysis",
+      id: "static-testing",
+      title: "Static Testing (SAST)",
       icon: <FaCode className="text-2xl" />,
       color: "blue",
-      description:
-        "Static and dynamic code analysis tools for secure software development",
+      description: "Analyzing source code to find SQL Injection (SQLi) and Cross-Site Scripting (XSS) before deployment.",
       tools: [
         {
-          name: "SonarQube",
-          description: "Continuous code quality and security analysis platform",
-          features: [
-            "Static code analysis",
-            "Security hotspots",
-            "Code coverage",
-            "Quality gates",
-          ],
+          name: "SonarQube & Snyk",
+          description: "Full scan results for code-level vulnerabilities and secure coding principles.",
+          features: ["SAST Analysis", "OWASP Top 10", "PII Exposure check", "Vulnerability Fix guidance"],
         },
         {
-          name: "Checkmarx SAST",
-          description:
-            "Static application security testing for source code analysis",
-          features: [
-            "Multi-language support",
-            "IDE integration",
-            "Custom rules",
-            "Compliance reporting",
-          ],
-        },
-        {
-          name: "Veracode",
-          description:
-            "Application security testing platform with SAST, DAST, and SCA",
-          features: [
-            "Binary analysis",
-            "Dynamic scanning",
-            "Dependency checking",
-            "Policy management",
-          ],
-        },
-        {
-          name: "Fortify Static Code Analyzer",
-          description:
-            "Enterprise-grade static code analysis for security vulnerabilities",
-          features: [
-            "Deep security analysis",
-            "Custom rules",
-            "IDE plugins",
-            "Audit workbench",
-          ],
-        },
+          name: "Checkmarx",
+          description: "Enterprise source code analysis for modern web and mobile applications.",
+          features: ["In-line remediation", "CI/CD integration", "Incremental scans", "Policy enforcement"],
+        }
       ],
     },
     {
-      id: "cloud-security",
-      title: (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">Cloud Security</Link></>),
-      icon: <FaCloud className="text-2xl" />,
-      color: "green",
-      description:
-        "Cloud security assessment and monitoring tools for multi-cloud environments",
+      id: "dynamic-testing",
+      title: "Dynamic Testing (DAST)",
+      icon: <FaShieldAlt className="text-2xl" />,
+      color: "red",
+      description: "Simulating real-world attacks on running applications to find system weaknesses in live environment.",
       tools: [
         {
-          name: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">AWS</Link> Security Hub</>),
-          description:
-            "Centralized security findings and compliance monitoring for AWS",
-          features: [
-            "Multi-account security",
-            "Compliance dashboards",
-            "Finding aggregation",
-            "Custom insights",
-          ],
+          name: "Burp Suite Professional",
+          description: "The industry standard for manual and automated dynamic security testing.",
+          features: ["Automated Scanning", "Manual Proxy Tools", "Repeater & Intruder", "Vulnerability validation"],
         },
         {
-          name: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Azure</Link> Security Center</>),
-          description:
-            "Unified security management and threat protection for Azure",
-          features: [
-            "Security posture",
-            (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Threat protection</Link></>),
-            "Compliance assessment",
-            "Security recommendations",
-          ],
-        },
-        {
-          name: "Google Cloud Security Command Center",
-          description: "Security and risk management platform for Google Cloud",
-          features: [
-            "Asset discovery",
-            "Vulnerability scanning",
-            "Threat detection",
-            "Compliance monitoring",
-          ],
-        },
-        {
-          name: "Prisma Cloud",
-          description: "Comprehensive cloud native security platform",
-          features: [
-            "Multi-cloud security",
-            "Container protection",
-            "Serverless security",
-            "Compliance automation",
-          ],
+          name: "Acunetix",
+          description: "Advanced web application security scanner for identifying live server gaps.",
+          features: ["Fast DAST scans", "IAST capabilities", "Network security audit", "Exploit verification"],
         },
       ],
     },
     {
       id: "mobile-security",
-      title: (<><Link href="/mobile-application-testing">Mobile Security</Link></>),
-      icon: <FaMobile className="text-2xl" />,
+      title: "Mobile Security",
+      icon: <FaMobileAlt className="text-2xl" />,
       color: "purple",
-      description:
-        "Mobile application security testing tools for iOS and Android platforms",
+      description: "Comparing automated tools like Quokka with manual ethical hacking depth for iOS security testing.",
       tools: [
         {
-          name: "MobSF (Mobile Security Framework)",
-          description:
-            "Automated mobile application security testing framework",
-          features: [
-            "Static analysis",
-            "Dynamic analysis",
-            (<><Link href="/api-testing">API testing</Link></>),
-            "Malware analysis",
-          ],
+          name: "Quokka & MobSF",
+          description: "Automated mobile security platforms for standard integration scans.",
+          features: ["APK/IPA Analysis", "Local storage review", "Malware detection", "Automated hardening"],
         },
         {
-          name: "QARK (Quick Android Review Kit)",
-          description: "Static code analysis tool for Android applications",
-          features: [
-            "APK analysis",
-            "Source code review",
-            "Vulnerability detection",
-            "Security recommendations",
-          ],
-        },
-        {
-          name: "iMAS (iOS Mobile Application Security)",
-          description: "Security framework for iOS application development",
-          features: [
-            "Runtime protection",
-            (<><Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">Data encryption</Link></>),
-            "Jailbreak detection",
-            "Certificate pinning",
-          ],
-        },
-        {
-          name: "Frida",
-          description:
-            "Dynamic instrumentation toolkit for mobile application testing",
-          features: [
-            "Runtime manipulation",
-            "API hooking",
-            "Memory analysis",
-            "Protocol analysis",
-          ],
+          name: "Manual Ethical Hacking",
+          description: "Human-led deep analysis of mobile logic flows and bypass techniques.",
+          features: ["Runtime manipulation", "Session hijacking", "Biometric bypass", "iOS Security Depth"],
         },
       ],
     },
     {
-      id: "network-security",
-      title: "Network Security",
-      icon: <FaNetworkWired className="text-2xl" />,
-      color: "indigo",
-      description:
-        "Network security assessment and monitoring tools for infrastructure protection",
+      id: "enterprise-power",
+      title: "Enterprise Power",
+      icon: <FaTools className="text-2xl" />,
+      color: "orange",
+      description: "Leveraging machine learning defense and AI security features for large-scale firms.",
       tools: [
         {
-          name: "Nmap",
-          description: "Network discovery and security auditing tool",
-          features: [
-            "Port scanning",
-            "Service detection",
-            "OS fingerprinting",
-            "Vulnerability scripts",
-          ],
+          name: "Fortify AI",
+          description: "AI security features for large-scale firms protecting legacy and modern code.",
+          features: ["Machine Learning defense", "Critical risk prioritization", "Enterprise scalability", "Evolving threat guard"],
         },
         {
-          name: "Wireshark",
-          description:
-            "Network protocol analyzer for traffic analysis and troubleshooting",
-          features: [
-            "Packet capture",
-            "Protocol analysis",
-            "Network forensics",
-            "Real-time monitoring",
-          ],
-        },
-        {
-          name: "Nessus Network Monitor",
-          description:
-            "Continuous network monitoring for security and compliance",
-          features: [
-            "Real-time monitoring",
-            "Anomaly detection",
-            "Compliance reporting",
-            "Asset tracking",
-          ],
-        },
-        {
-          name: "Snort",
-          description: "Open-source intrusion detection and prevention system",
-          features: [
-            "Real-time analysis",
-            "Packet logging",
-            "Protocol analysis",
-            "Content matching",
-          ],
+          name: "WhiteHat Security",
+          description: "Continuous dynamic application security testing as a service.",
+          features: ["Sentry monitoring", "Expert manual verified", "Asset discovery", "Always-on DAST"],
         },
       ],
     },
@@ -399,20 +157,15 @@ const SecurityTestingToolsFramework: React.FC = () => {
             <span className="text-sm">Tools & Frameworks</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Security Testing{" "}
-            <span className="text-brand-blue">Tools & Frameworks</span>
+            Our Specialized Tech Stack <span className="text-brand-blue">& Tools</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading <Link href="/technology-stack">security testing tools</Link> and frameworks
-            such as <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link>, <Link href="/blog/post/using-burp-suite-for-security-testing-beginner-to-pro">Burp Suite</Link>, Metasploit, and Nessus to provide
-            comprehensive vulnerability assessments, penetration testing, and
-            security validation across all technology platforms and
-            environments.
+            Our team employs a multi-layered tool stack to provide total security coverage. We integrate industry-leading platforms involving a layered defense strategy involving platforms like <span className="font-bold text-brand-blue">Fortify</span>, <span className="font-bold text-brand-blue">Quokka</span>, and dedicated ethical hacking deep analysis.
           </p>
         </div>
 
         {/* Category Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {toolCategories.map((category) => {
             const colors = getColorClasses(category.color);
             return (

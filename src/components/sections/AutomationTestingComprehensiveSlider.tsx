@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaRobot, FaCogs, FaMobileAlt, FaCloud, FaCode, FaChartLine, FaFlask } from "react-icons/fa";
+import { FaRobot, FaCogs, FaMobileAlt, FaCloud, FaChartLine, FaFlask } from "react-icons/fa";
 
 const AutomationTestingComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);

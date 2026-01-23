@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt, FaGithub, FaDocker, FaPlayCircle, FaGitlab, FaDatabase, FaLock, FaJava, FaFileAlt, FaPython, FaJsSquare, FaNodeJs, FaRobot, FaMicrosoft, FaCircle, FaWifi, FaServer, FaNetworkWired } from "react-icons/fa";
+import { FaTools, FaCode, FaRocket, FaShieldAlt, FaPlayCircle, FaLock, FaFileAlt, FaNetworkWired } from "react-icons/fa";
 
 const ApiToolsFramework: React.FC = () => {
   const toolCategories = [

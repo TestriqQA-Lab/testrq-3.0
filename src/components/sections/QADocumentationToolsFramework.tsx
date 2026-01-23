@@ -18,6 +18,8 @@ import {
   FaDatabase,
   FaFilePdf,
   FaCircleNotch,
+  FaClipboardList,
+  FaProjectDiagram,
 } from "react-icons/fa";
 
 const QADocumentationToolsFramework = () => {
@@ -25,462 +27,116 @@ const QADocumentationToolsFramework = () => {
 
   const toolCategories = [
     {
-      id: "documentation-tools",
-      title: (<><Link href="/technology-stack">Documentation Tools</Link></>),
-      icon: FaFileAlt,
+      id: "management-collaboration",
+      title: "Management & Collaboration",
+      icon: FaUsers,
       color: "blue",
-      description:
-        (<>Professional documentation creation and management tools for <Link href="/blog/post/how-to-write-qa-documentation-a-complete-guide">comprehensive QA documentation.</Link></>),
+      description: "Enterprise-grade tools for project management and team collaboration, ensuring a single source of truth.",
       tools: [
         {
+          name: "Jira",
+          description: "Leading project tracking tool for Agile teams.",
+          features: ["Backlog management", "Sprint planning", "Workflow automation", "Custom reporting"],
+          useCases: ["Task tracking", "Bug management", "Agile orchestration"],
+          icon: <FaCog className="w-6 h-6" />,
+        },
+        {
           name: "Confluence",
-          description:
-            "Enterprise wiki and collaboration platform for team documentation",
-          features: [
-            "Real-time collaboration",
-            "Template management",
-            "Version control",
-            "Integration capabilities",
-          ],
-          useCases: [
-            "Knowledge base creation",
-            "Process documentation",
-            "Team collaboration",
-          ],
+          description: "Collaboration platform for team documentation.",
+          features: ["Real-time editing", "Page versioning", "Template library", "Team wikis"],
+          useCases: ["Knowledge base", "SOP storage", "Strategy definition"],
           icon: <FaFileAlt className="w-6 h-6" />,
         },
         {
-          name: "Microsoft SharePoint",
-          description:
-            "Document management and collaboration platform with enterprise features",
-          features: [
-            "Document libraries",
-            "Workflow automation",
-            "Access control",
-            "Search capabilities",
-          ],
-          useCases: [
-            "Document management",
-            "Team sites",
-            "Compliance documentation",
-          ],
-          icon: <FaMicrosoft className="w-6 h-6" />,
-        },
-        {
           name: "Notion",
-          description:
-            "All-in-one workspace for notes, docs, and project management",
-          features: [
-            "Block-based editing",
-            "Database integration",
-            "Template library",
-            "Real-time sync",
-          ],
-          useCases: [
-            "Project documentation",
-            "Knowledge management",
-            "Team wikis",
-          ],
-          icon: <FaFilePdf className="w-6 h-6" />,
+          description: "All-in-one workspace for notes and data.",
+          features: ["Database integration", "Hierarchical docs", "Template sharing", "AI assistance"],
+          useCases: ["Internal wikis", "Onboarding docs", "Roadmap tracking"],
+          icon: <FaFileAlt className="w-6 h-6" />,
         },
         {
-          name: "GitBook",
-          description: "Modern documentation platform with Git integration",
-          features: [
-            "Git synchronization",
-            (<><Link href="/blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation">API</Link> documentation</>),
-            "Custom domains",
-            "Analytics",
-          ],
-          useCases: ["Technical documentation", "API docs", "User guides"],
-          icon: <FaGithub className="w-6 h-6" />,
-        },
+          name: "SharePoint",
+          description: "Microsoft's document management system.",
+          features: ["Access control", "File versioning", "Enterprise search", "Team sites"],
+          useCases: ["Document storage", "Compliance audits", "Internal portals"],
+          icon: <FaMicrosoft className="w-6 h-6" />,
+        }
       ],
     },
     {
-      id: "collaboration-platforms",
-      title: "Collaboration Platforms",
-      icon: FaUsers,
+      id: "test-management",
+      title: "Test Management Tools",
+      icon: FaClipboardList,
       color: "green",
-      description:
-        "Team collaboration and communication tools for effective documentation workflows.",
+      description: "Dedicated platforms for managing test cases, execution, and results tracking.",
       tools: [
         {
-          name: "Microsoft Teams",
-          description:
-            "Integrated collaboration platform with chat, video, and file sharing",
-          features: [
-            "Team channels",
-            "File collaboration",
-            "Video conferencing",
-            "App integration",
-          ],
-          useCases: [
-            "Team communication",
-            "Document review",
-            "Virtual meetings",
-          ],
-          icon: <FaMicrosoft className="w-6 h-6" />,
+          name: "TestRail",
+          description: "Comprehensive test case management tool.",
+          features: ["Test case hierarchy", "Execution tracking", "Milestone planning", "Reporting API"],
+          useCases: ["Case organization", "Result tracking", "Team productivity"],
+          icon: <FaClipboardList className="w-6 h-6" />,
         },
         {
-          name: "Slack",
-          description:
-            "Business communication platform with extensive integration capabilities",
-          features: [
-            "Channel organization",
-            "File sharing",
-            "Workflow automation",
-            "Third-party integrations",
-          ],
-          useCases: [
-            "Team messaging",
-            "Notification management",
-            "Workflow coordination",
-          ],
-          icon: <FaUsers className="w-6 h-6" />,
+          name: "Xray",
+          description: "The leading quality management app for Jira.",
+          features: ["Native Jira integration", "Step-level tracking", "Requirement linkage", "Automated tests"],
+          useCases: ["Testing in Jira", "Traceability gap fix", "Audit readiness"],
+          icon: <FaProjectDiagram className="w-6 h-6" />,
         },
         {
-          name: "Miro",
-          description:
-            "Online collaborative whiteboard platform for visual collaboration",
-          features: [
-            "Visual brainstorming",
-            "Template library",
-            "Real-time collaboration",
-            "Integration support",
-          ],
-          useCases: [
-            "Process mapping",
-            "Brainstorming sessions",
-            "Visual documentation",
-          ],
-          icon: <FaCircleNotch className="w-6 h-6" />,
-        },
-        {
-          name: "Figma",
-          description:
-            "Collaborative design tool for creating visual documentation and prototypes",
-          features: [
-            "Real-time collaboration",
-            "Component libraries",
-            "Prototyping",
-            "Design systems",
-          ],
-          useCases: [
-            "UI documentation",
-            "Process diagrams",
-            "Visual specifications",
-          ],
-          icon: <FaPlayCircle className="w-6 h-6" />,
-        },
+          name: "Zephyr",
+          description: "High-performance test management for enterprise Jira.",
+          features: ["Scale readiness", "Metrics dashboards", "One-click automation", "Planning cycles"],
+          useCases: ["Enterprise QA", "Large scale testing", "Dashboards"],
+          icon: <FaChartLine className="w-6 h-6" />,
+        }
       ],
     },
     {
       id: "version-control",
-      title: "Version Control & Management",
-      icon: FaCog,
+      title: "Version Control",
+      icon: FaCode,
       color: "purple",
-      description:
-        "Version control systems and document management tools for maintaining documentation integrity.",
+      description: "Maintaining documentation integrity and 'Documentation-as-Code' practices.",
       tools: [
         {
-          name: "Git",
-          description:
-            "Distributed version control system for tracking changes in documentation",
-          features: [
-            "Branching and merging",
-            "Change tracking",
-            "Collaboration support",
-            "History management",
-          ],
-          useCases: [
-            "Document versioning",
-            "Change management",
-            "Collaborative editing",
-          ],
-          icon: <FaCode className="w-6 h-6" />,
-        },
-        {
-          name: "GitHub",
-          description:
-            "Web-based Git repository hosting with collaboration features",
-          features: [
-            "Pull requests",
-            "Issue tracking",
-            "Project management",
-            (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD integration</Link></>),
-          ],
-          useCases: [
-            "Documentation hosting",
-            "Review workflows",
-            "Project coordination",
-          ],
+          name: "Git-Book",
+          description: "Modern documentation platform with Git sync.",
+          features: ["Git-sync", "Version branch docs", "Review workflows", "Static hosting"],
+          useCases: ["Technical guides", "User manuals", "Developer docs"],
           icon: <FaGithub className="w-6 h-6" />,
         },
         {
-          name: "GitLab",
-          description:
-            "Complete DevOps platform with integrated documentation features",
-          features: [
-            "Built-in CI/CD",
-            "Wiki functionality",
-            "Issue management",
-            "Merge requests",
-          ],
-          useCases: [
-            (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">DevOps</Link> documentation</>),
-            "Technical specs",
-            "Process automation",
-          ],
+          name: "GitHub",
+          description: "The world's leading AI-powered developer platform.",
+          features: ["Doc revisioning", "PR for reviews", "Wiki support", "GitHub Actions"],
+          useCases: ["Doc-as-code", "CI/CD integration", "Knowledge base"],
+          icon: <FaGithub className="w-6 h-6" />,
+        }
+      ],
+    },
+    {
+      id: "knowledge-bases",
+      title: "Knowledge Bases",
+      icon: FaDatabase,
+      color: "teal",
+      description: "Personal and team knowledge hubs for structured information retrieval.",
+      tools: [
+        {
+          name: "Obsidian",
+          description: "Markdown-based local knowledge base.",
+          features: ["Graph view", "Bi-directional links", "Offline access", "Custom plugins"],
+          useCases: ["Personal QA notes", "Tech specs link", "Logic mapping"],
           icon: <FaCode className="w-6 h-6" />,
         },
         {
-          name: "Azure DevOps",
-          description:
-            "Microsoft DevOps platform with comprehensive project management",
-          features: [
-            "Work item tracking",
-            "Repository management",
-            "Build pipelines",
-            "Test management",
-          ],
-          useCases: [
-            "Enterprise documentation",
-            "Project tracking",
-            "Quality management",
-          ],
-          icon: <FaMicrosoft className="w-6 h-6" />,
-        },
-      ],
-    },
-    {
-      id: "automation-tools",
-      title: (<><Link href="/automation-testing-services">Automation & Integration</Link></>),
-      icon: FaCode,
-      color: "orange",
-      description:
-        "Automation tools and integration platforms for streamlined documentation workflows.",
-      tools: [
-        {
-          name: "Zapier",
-          description:
-            "Automation platform connecting different apps and services",
-          features: [
-            "Workflow automation",
-            "App integrations",
-            "Trigger-based actions",
-            (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Data synchronization</Link></>),
-          ],
-          useCases: [
-            "Document automation",
-            "Notification workflows",
-            "Data integration",
-          ],
-          icon: <FaCircle className="w-6 h-6" />,
-        },
-        {
-          name: "Microsoft Power Automate",
-          description: "Cloud-based service for creating automated workflows",
-          features: [
-            "Template library",
-            "Approval workflows",
-            "Data connectors",
-            (<><Link href="/blog/post/ai-testing-learning-guide">AI capabilities</Link></>),
-          ],
-          useCases: [
-            "Approval processes",
-            "Document routing",
-            "Data collection",
-          ],
-          icon: <FaMicrosoft className="w-6 h-6" />,
-        },
-        {
-          name: "IFTTT",
-          description:
-            "Simple automation platform for connecting apps and devices",
-          features: [
-            "Simple triggers",
-            "Multi-platform support",
-            "Mobile integration",
-            "Location-based actions",
-          ],
-          useCases: [
-            "Simple automations",
-            "Mobile workflows",
-            "IoT integration",
-          ],
-          icon: <FaLock className="w-6 h-6" />,
-        },
-        {
-          name: "Jenkins",
-          description: "Open-source automation server for CI/CD pipelines",
-          features: [
-            "Pipeline automation",
-            "Plugin ecosystem",
-            "Distributed builds",
-            "Integration support",
-          ],
-          useCases: [
-            "Documentation deployment",
-            "Automated testing",
-            "Build automation",
-          ],
+          name: "ReadMe.io",
+          description: "Interactive API documentation platform.",
+          features: ["API explorers", "Real-time sync", "Versioning", "User metrics"],
+          useCases: ["API documentation", "Developer hubs", "User guides"],
           icon: <FaPlayCircle className="w-6 h-6" />,
-        },
-      ],
-    },
-    {
-      id: "analytics-reporting",
-      title: "Analytics & Reporting",
-      icon: FaChartLine,
-      color: "teal",
-      description:
-        "Analytics and reporting tools for measuring documentation effectiveness and usage.",
-      tools: [
-        {
-          name: "Google Analytics",
-          description:
-            "Web analytics service for tracking documentation usage and engagement",
-          features: [
-            "User behavior tracking",
-            "Content analytics",
-            "Custom reports",
-            (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time data</Link></>),
-          ],
-          useCases: [
-            "Usage analytics",
-            "Content optimization",
-            "User insights",
-          ],
-          icon: <FaSearchPlus className="w-6 h-6" />,
-        },
-        {
-          name: "Hotjar",
-          description:
-            "Behavior analytics tool with heatmaps and user recordings",
-          features: [
-            "Heatmap analysis",
-            "User recordings",
-            "Feedback polls",
-            "Conversion funnels",
-          ],
-          useCases: [
-            (<><Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">User experience analysis</Link></>),
-            "Content optimization",
-            (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability testing</Link></>),
-          ],
-          icon: <FaWifi className="w-6 h-6" />,
-        },
-        {
-          name: "Mixpanel",
-          description:
-            "Advanced analytics platform for tracking user interactions",
-          features: [
-            "Event tracking",
-            "Funnel analysis",
-            "Cohort analysis",
-            "A/B testing",
-          ],
-          useCases: [
-            "User engagement",
-            "Feature adoption",
-            (<><Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">Performance metrics</Link></>),
-          ],
-          icon: <FaDatabase className="w-6 h-6" />,
-        },
-        {
-          name: "Tableau",
-          description:
-            "Data visualization platform for creating interactive dashboards",
-          features: [
-            "Interactive dashboards",
-            "Data connections",
-            "Visual analytics",
-            "Collaboration features",
-          ],
-          useCases: [
-            "Data visualization",
-            "Executive reporting",
-            "Trend analysis",
-          ],
-          icon: <FaChartLine className="w-6 h-6" />,
-        },
-      ],
-    },
-    {
-      id: "cloud-platforms",
-      title: (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">Cloud Platforms</Link></>),
-      icon: FaCloud,
-      color: "indigo",
-      description:
-        "Cloud-based platforms and services for scalable documentation infrastructure.",
-      tools: [
-        {
-          name: "Microsoft 365",
-          description:
-            "Comprehensive cloud productivity suite with documentation tools",
-          features: [
-            "Office applications",
-            "Cloud storage",
-            "Collaboration tools",
-            "Security features",
-          ],
-          useCases: [
-            "Document creation",
-            "Team collaboration",
-            "File management",
-          ],
-          icon: <FaMicrosoft className="w-6 h-6" />,
-        },
-        {
-          name: "Google Workspace",
-          description: "Cloud-based productivity and collaboration tools",
-          features: [
-            "Real-time collaboration",
-            (<><Link href="/blog/post/cloud-based-performance-testing-scaling-for-modern-architectures-2">Cloud storage</Link></>),
-            "Communication tools",
-            "Admin controls",
-          ],
-          useCases: [
-            "Document collaboration",
-            "Team communication",
-            "File sharing",
-          ],
-          icon: <FaCloud className="w-6 h-6" />,
-        },
-        {
-          name: "AWS",
-          description:
-            "Amazon Web Services cloud platform for hosting and infrastructure",
-          features: [
-            "Scalable infrastructure",
-            "Storage services",
-            "Content delivery",
-            "Security services",
-          ],
-          useCases: [
-            "Documentation hosting",
-            "Content delivery",
-            "Backup solutions",
-          ],
-          icon: <FaCloud className="w-6 h-6" />,
-        },
-        {
-          name: "Azure",
-          description: "Microsoft's cloud computing platform and services",
-          features: [
-            "Virtual machines",
-            "Storage solutions",
-            "AI services",
-            "DevOps tools",
-          ],
-          useCases: [
-            "Enterprise hosting",
-            "AI integration",
-            (<><Link href="/blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops">DevOps workflows</Link></>),
-          ],
-          icon: <FaCloud className="w-6 h-6" />,
-        },
+        }
       ],
     },
   ];

@@ -55,10 +55,10 @@ const SapTestingHeroSection: React.FC = () => {
                         </div>
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            <span className="text-brand-blue">SAP Testing Services:</span> Accelerated QA for Seamless S/4HANA Migrations & Upgrades
+                            SAP Testing Services: <span className="text-brand-blue">Enterprise-Grade QA</span> for S/4HANA Transitions
                         </h1>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            SAP deployments and upgrades are complex. A single integration failure or patch error can halt your entire business. Testriq provides independent, end-to-end SAP Quality Assurance to ensure your mission-critical applications are stable, compliant, and performant from day one.
+                            The SAP ECC support deadline (2026–2027) is rapidly approaching. At Testriq, we provide end-to-end SAP testing services for complex implementations. We ensure your S/4HANA transition is more than a technical upgrade—it is a catalyst for digital excellence.
                         </p>
 
                         {/* Key Differentiators */}

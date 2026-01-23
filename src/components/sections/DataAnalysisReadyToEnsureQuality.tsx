@@ -66,13 +66,10 @@ const DataAnalysisReadyToEnsureQuality = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            <span className="text-brand-blue">Ready to Unlock</span> Your
-            Data&apos;s Potential?
+            Technical Depth for a <span className="text-brand-blue">Data-First Economy</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Transform your raw data into strategic business advantages with our
-            comprehensive analytics services. Join industry leaders who trust us
-            with their most critical data initiatives.
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We provide the technical depth you need to win in 2026. Whether you are a small startup or a global firm, our certified scientists deliver ISO-aligned insights that drive measurable outcomes.
           </p>
         </div>
 
@@ -80,30 +77,21 @@ const DataAnalysisReadyToEnsureQuality = () => {
           {/* Left Column - Benefits */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Why Choose Our Analytics Services?
+              Bridge the 77% Analytics Talent Gap
             </h3>
 
             <div className="space-y-4 mb-8">
-              {benefits.map((benefit, index) => (
+              {[
+                "Certified Data Scientists with 10+ years experience",
+                "ISO 8000-1:2022 Aligned Quality Protocols",
+                "Zettabyte Scalability without Performance Trade-offs",
+                "Python & R Modeling for Prescriptive Intelligence",
+                "ETL Process Optimization to Break Data Silos",
+                "Detailed Strategic Roadmaps for Global Enterprise"
+              ].map((benefit, index) => (
                 <div key={index} className="flex items-center">
                   <FaCheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-gray-700">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 gap-4">
-              {serviceHighlights.map((service, index) => (
-                <div key={index} className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="flex items-center mb-2">
-                    {service.icon}
-                    <h4 className="text-lg font-semibold text-gray-900 ml-3">
-                      {service.title}
-                    </h4>
-                  </div>
-                  <p className="text-gray-600 text-sm ml-9">
-                    {service.description}
-                  </p>
+                  <span className="text-gray-700 font-medium">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -265,7 +253,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
               new heights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                 <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Schedule Free Demo
                 </button>

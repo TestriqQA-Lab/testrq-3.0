@@ -12,89 +12,60 @@ import {
   FaUniversity,
   FaGavel,
   FaDatabase,
-  FaMobile,
-  FaCode,
 } from "react-icons/fa";
 
 const BankingChallengesSection: React.FC = () => {
   const challenges = [
     {
       icon: FaShieldAlt,
-      title: "Cybersecurity Threats",
-      problem:
-        (<>Financial institutions face 300x more <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats">cyber attacks</Link> than other industries</>),
-      impact: "Average data breach costs $5.85 million for financial services",
-      solution:
-        (<>Multi-layered <Link href="/security-testing">security testing</Link> including <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link> and vulnerability assessments</>),
+      title: "Escalating Cyber-security Threats & Shift-Left Security",
+      problem: "Banks face 300x more cyber attacks than other sectors. Traditional reactive security is no longer sufficient.",
+      impact: "Average data breach costs $5.85 million. Structural weaknesses must be uncovered during the design phase.",
+      solution: "Continuous Security Testing, Shift-Left protocols, VAPT simulations for web/mobile/APIs, and MFA biometrics validation.",
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
-      link : "/blog/post/iot-security-validation-protecting-devices-from-cyber-threats",
+      link: "/security-testing",
     },
     {
       icon: FaGavel,
-      title: "Regulatory Compliance",
-      problem:
-        "Complex regulations like PCI DSS, SOX, GDPR, and Basel III require constant adherence",
-      impact:
-        "Non-compliance fines can reach $100+ million and damage reputation",
-      solution:
-        (<><Link href="/blog/post/test-execution-comprehensive-testing-implementation">Comprehensive compliance testing</Link> frameworks and automated audit trails</>),
+      title: "Global Regulatory & Compliance Complexity",
+      problem: "Navigating the web of PCI DSS, GDPR, Basel III, SOX, and FFIEC guidelines is a zero-failure game.",
+      impact: "Penalties for PCI DSS non-compliance can reach $100,000/month, plus severe reputational damage.",
+      solution: "Regulatory Compliance Testing, Data Masking & Encryption (GDPR/CCPA), and stringent capital adequacy reporting audits.",
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
-      link : "/blog/post/test-execution-comprehensive-testing-implementation",
+      link: "/blog/post/test-execution-comprehensive-testing-implementation",
     },
     {
       icon: FaDatabase,
-      title: "Legacy System Integration",
-      problem:
-        "60% of banks still rely on COBOL systems that are difficult to test and integrate",
-      impact:
-        (<><Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">System failures</Link> during peak hours cause millions in lost revenue</>),
-      solution:
-        "Specialized legacy testing tools and gradual modernization strategies",
+      title: "Bridging Legacy Core Systems & Modern Digital Channels",
+      problem: "60% of banks rely on COBOL-based systems, making Legacy System Migration high-risk.",
+      impact: "Integration failures between modern APIs and nightly batch processes can lead to multi-million dollar outages.",
+      solution: "Inter-operability Testing ensuring seamless communication between cloud-native services and legacy mainframes.",
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
-      link : "/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently",
+      link: "/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently",
     },
     {
       icon: FaClock,
-      title: (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-Time Processing</Link></>),
-      problem:
-        "Modern banking requires instant transactions and real-time fraud detection",
-      impact:
-        "Millisecond delays can result in failed transactions and customer dissatisfaction",
-      solution:
-        (<>Performance testing under <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently">extreme loads</Link> and latency optimization</>),
+      title: "Real-Time, Always-On Digital Experience",
+      problem: "80% of banking customers migrate to mobile, demanding instant payments and real-time reconciliation.",
+      impact: "Millisecond latency delays lead to transaction failures and mass customer churn in the digital-first era.",
+      solution: "Performance testing Labs for milisecond latency optimization and Open Banking API Security (OAuth/Rate Limiting).",
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
-      link : "/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently",
+      link: "/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently",
     },
     {
-      icon: FaMobile,
-      title: (<><Link href="/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them-2">Mobile Banking Security</Link></>),
-      problem:
-        "80% of banking customers use mobile apps, creating new attack vectors",
-      impact:
-        "Mobile security breaches can compromise millions of customer accounts",
-      solution:
-        "Comprehensive mobile security testing and device-specific validation",
-      color: "from-green-500 to-teal-600",
-      bgColor: "bg-green-50",
-      link : "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them-2",
-    },
-    {
-      icon: FaCode,
-      title: (<><Link href="/api-testing">API Security & Integration</Link></>),
-      problem:
-        "Open banking APIs expose financial data to third-party applications",
-      impact:
-        "Unsecured APIs can lead to data breaches and unauthorized access",
-      solution:
-        "Rigorous API security testing and OAuth implementation validation",
+      icon: FaChartLine,
+      title: "Structured Test Governance (ISO/IEC/IEEE 29119)",
+      problem: "Lack of a scalable framework for Risk-Based Testing leads to rising QA costs and inefficiency.",
+      impact: "Manual effort without governance costs mid-sized banks millions; annual QA costs often exceed $1.1M.",
+      solution: "ISO 29119 implementation and Automated Regression Testing delivering 300% ROI and slashing QA costs to $260k.",
       color: "from-indigo-500 to-purple-600",
       bgColor: "bg-indigo-50",
-      link : "/api-testing",
-    },
+      link: "/blog/post/test-execution-comprehensive-testing-implementation",
+    }
   ];
 
   const industryStats = [
@@ -130,7 +101,7 @@ const BankingChallengesSection: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Banking and financial institutions face unprecedented challenges in
             today&apos;s digital landscape, from regulatory compliance risks to <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data
-            breaches</Link> and transaction failures. Our specialized banking app
+              breaches</Link> and transaction failures. Our specialized banking app
             testing solutions proactively address these critical <Link href="/blog/post/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities">vulnerabilities</Link>{" "}
             before they impact your financial operations, customer trust, or{" "}
             <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">platform performance</Link>.
@@ -202,10 +173,10 @@ const BankingChallengesSection: React.FC = () => {
 
               <div className="mt-6 pt-4 border-t border-gray-200">
                 <Link href={challenge.link}>
-                <button className="text-[theme(color.brand.blue)] cursor-pointer font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300" aria-label={`Learn more about ${challenge.title}`}>
-                  Learn More
-                  <FaArrowRight className="w-3 h-3" />
-                </button></Link>
+                  <button className="text-[theme(color.brand.blue)] cursor-pointer font-semibold text-sm hover:underline flex items-center gap-2 group-hover:gap-3 transition-all duration-300" aria-label={`Learn more about ${challenge.title}`}>
+                    Learn More
+                    <FaArrowRight className="w-3 h-3" />
+                  </button></Link>
               </div>
             </div>
           ))}

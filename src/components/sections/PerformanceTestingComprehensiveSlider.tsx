@@ -18,55 +18,73 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
   const performanceTypes = [
     {
       id: "load-testing",
-      title: "Load Testing",
+      title: "Load Testing Services",
       icon: <FaTachometerAlt className="text-2xl" />,
       percentage: "95%",
       color: "blue",
       description:
-        "Simulating expected user loads to assess application behavior and response times.",
+        "Our website load testing simulates expected concurrent user traffic to verify response times and system behavior under normal conditions. This ensures your application performance testing services deliver a seamless user experience.",
       features: [
-        "Baseline performance measurement",
-        "Response time analysis",
-        "Throughput and concurrency testing",
-        "Resource utilization monitoring",
-        "Scalability assessment",
-        "Capacity planning",
+        "Concurrent User Traffic Simulation",
+        "Response Time Verification",
+        "Normal Load System Behavior",
+        "SLA Compliance Check",
+        "Baseline Performance Analysis",
+        "Capacity Assessment",
       ],
       action: "/load-testing-in-performance-testing-complete-guide",
     },
     {
       id: "stress-testing",
-      title: "Stress Testing",
+      title: "Stress Testing Solutions",
       icon: <FaUsers className="text-2xl" />,
       percentage: "98%",
       color: "purple",
       description:
-        "Pushing the application beyond its normal operational limits to determine its breaking point.",
+        "We push your system beyond its limits to find the break point. Our stress testing solutions identify how the system recovers from failure, ensuring 'graceful degradation' during extreme traffic spikes.",
       features: [
-        "Peak load simulation",
-        "Error rate analysis",
-        "System stability under extreme load",
-        "Recovery time measurement",
-        "Bottleneck identification",
-        "Failure point analysis",
+        "Breaking Point Identification",
+        "Failure Recovery Analysis",
+        "Graceful Degradation Check",
+        "Extreme Traffic Spike Simulation",
+        "System Stability Limits",
+        "Resource Exhaustion Stress",
       ],
       action: "/stress-testing-applications-identifying-breaking-points",
     },
     {
+      id: "endurance-testing",
+      title: "Endurance & Soak Testing",
+      icon: <FaCloud className="text-2xl" />,
+      percentage: "94%",
+      color: "teal",
+      description:
+        "To catch memory leaks and resource exhaustion, we perform endurance testing. By maintaining a consistent load over long periods, we ensure your infrastructure stays stable during sustained high-usage events.",
+      features: [
+        "Memory Leak Detection",
+        "Resource Exhaustion Monitoring",
+        "Sustained Load Verification",
+        "Long-term Stability Analysis",
+        "System Reliability over Time",
+        "Infrastructure Durability Check",
+      ],
+      action: "/endurance-testing-validating-long-term-application-stability",
+    },
+    {
       id: "scalability-testing",
-      title: "Scalability Testing",
+      title: "Spike & Scalability Testing",
       icon: <FaChartLine className="text-2xl" />,
       percentage: "92%",
       color: "green",
       description:
-        "Evaluating the application's ability to scale up or down to handle increasing user demands efficiently.",
+        "We evaluate your system’s vertical and horizontal scalability. Our team verifies how your infrastructure handles increased load by adding resources or expanding nodes. Our scalability testing services evaluate how resource usage changes as user volume increases, providing a clear map for infrastructure investment.",
       features: [
-        "Vertical and horizontal scaling assessment",
-        "Performance under growing user base",
-        "Resource provisioning optimization",
-        "Database scalability testing",
-        "Network scalability analysis",
-        "Cloud infrastructure scaling",
+        "Vertical & Horizontal Scaling",
+        "Expanding Nodes Verification",
+        "Resource Usage vs Volume",
+        "Infrastructure Investment Mapping",
+        "Elasticity Assessment",
+        "Auto-scaling Policy Validation",
       ],
       action: "/scalability-testing-ensuring-growth-ready-applications",
     },
@@ -77,52 +95,16 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
       percentage: "96%",
       color: "orange",
       description:
-        "Assessing the application's performance with large volumes of data in the database or during extensive data processing.",
+        "Our team measures system performance using ISO 29119-1 protocols. We verify that your backend database remains responsive while processing massive data volumes and heavy queries.",
       features: [
-        "Database performance with large data sets",
-        "Data processing efficiency",
-        "Storage capacity testing",
-        "Data retrieval and manipulation speed",
-        "Impact of data growth on performance",
-        "Data integrity under high volume",
+        "ISO 29119-1 Protocol Testing",
+        "Backend Database Responsiveness",
+        "Massive Data Volume Processing",
+        "Heavy Query Performance",
+        "Data Growth Impact Analysis",
+        "Storage Capacity Validation",
       ],
       action: "/volume-testing-managing-high-data-loads-efficiently",
-    },
-    {
-      id: "endurance-testing",
-      title: "Endurance Testing",
-      icon: <FaCloud className="text-2xl" />,
-      percentage: "94%",
-      color: "teal",
-      description:
-        "Monitoring application performance over an extended period to detect memory leaks, resource exhaustion, or degradation.",
-      features: [
-        "Memory leak detection",
-        "Resource utilization over time",
-        "Performance degradation analysis",
-        "System stability over long runs",
-        "Garbage collection efficiency",
-        "Connection pool management",
-      ],
-      action: "/endurance-testing-validating-long-term-application-stability",
-    },
-    {
-      id: "spike-testing",
-      title: "Spike Testing",
-      icon: <FaBolt className="text-2xl" />,
-      percentage: "93%",
-      color: "indigo",
-      description:
-        "Testing the application's behavior under sudden, sharp increases and decreases in user load to ensure stability.",
-      features: [
-        "Sudden load increase simulation",
-        "Recovery from load spikes",
-        "System responsiveness during spikes",
-        "Error handling under sudden load",
-        "Resource allocation during spikes",
-        "Concurrency management",
-      ],
-      action: "/spike-testing-handling-sudden-traffic-surges",
     },
   ];
 
@@ -180,7 +162,7 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
             Explore our comprehensive performance testing services designed to
             ensure your applications are fast, scalable, and stable under any
             load. Our solutions focus on application <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>performance, scalability
-            testing</Link>, and load simulation to deliver high-speed, reliable digital
+              testing</Link>, and load simulation to deliver high-speed, reliable digital
             experiences.
           </p>
         </div>
@@ -194,11 +176,10 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
                 <button
                   key={type.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${
-                    activeTab === index
+                  className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
                       ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <div className="flex flex-col items-center justify-center space-x-2">
                     <span
@@ -222,9 +203,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
               return (
                 <div
                   key={type.id}
-                  className={`${
-                    activeTab === index ? "block" : "hidden"
-                  } transition-all duration-300`}
+                  className={`${activeTab === index ? "block" : "hidden"
+                    } transition-all duration-300`}
                 >
                   <div className="grid lg:grid-cols-2 gap-8">
                     <div>

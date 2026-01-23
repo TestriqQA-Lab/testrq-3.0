@@ -46,13 +46,11 @@ const CorporateQATrainingReadyToTransform: React.FC = () => {
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
               Ready to Elevate Your
-              <span className="block">Software Quality?</span>
+              <span className="block">Team&apos;s Technical Depth?</span>
             </h2>
 
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Join hundreds of companies that have already transformed their QA
-              capabilities with our comprehensive training programs. Start your
-              journey to QA excellence today.
+              By following ISO 29119 standards, our clients often reduce post-release bugs by 30-60%. Align your learning objectives with real-world business outcomes today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -62,7 +60,7 @@ const CorporateQATrainingReadyToTransform: React.FC = () => {
                   <FaArrowRight className="ml-2" />
                 </button>
               </Link>
-              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                 <button className="border-2 cursor-pointer border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300">
                   Schedule Free Consultation
                 </button>

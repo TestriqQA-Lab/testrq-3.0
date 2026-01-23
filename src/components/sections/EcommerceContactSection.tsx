@@ -287,15 +287,12 @@ const EcommerceContactSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:leading-14">
-            Ready to Optimize Your
-            <span className="block">E-Commerce Platform?</span>
+            Maximize Conversions & Secure Your
+            <span className="block">Global Revenue in 2026</span>
           </h2>
 
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-            Take the first step towards higher conversion rates, enhanced
-            e-commerce user experience, and increased revenue. Our e-commerce
-            testing experts are ready to ensure your platform is secure,
-            scalable, and successful.
+          <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+            Take the first step towards a <span className="font-semibold">&quot;Conversion-First&quot;</span> strategy. Our e-commerce testing experts are ready to ensure your platform is PCI DSS 4.0 compliant, scalable for Black Friday surges, and successful globally.
           </p>
         </div>
 

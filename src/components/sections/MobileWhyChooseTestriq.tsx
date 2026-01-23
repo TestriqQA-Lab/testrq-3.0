@@ -9,37 +9,85 @@ const MobileWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
       title: "Global Compliance First",
-      description: "Adhering to ISO/IEC/IEEE 29119, SOC2 Type II, and GDPR for enterprise-grade security and regulated industry requirements.",
+      description: (
+        <>
+          Adhering to{" "}
+          <Link href="/blog/post/what-is-mobile-application-testing-an-in-depth-guide" className="text-brand-blue hover:underline">
+            ISO/IEC/IEEE 29119
+          </Link>
+          , SOC2 Type II, and GDPR for enterprise-grade security and regulated industry requirements.
+        </>
+      ),
       stats: "ISO 29119 Standardized"
     },
     {
       icon: <FaAward className="w-8 h-8" />,
       title: "Singapore Hub Architecture",
-      description: "Delivering global Android and iOS QA from our specialized hubs, utilizing international benchmarks for software excellence.",
+      description: (
+        <>
+          Delivering global{" "}
+          <Link href="/automation-testing-services" className="text-brand-blue hover:underline">
+            Android and iOS QA
+          </Link>{" "}
+          from our specialized hubs, utilizing international benchmarks for software excellence.
+        </>
+      ),
       stats: "Global Delivery Model"
     },
     {
       icon: <FaClock className="w-8 h-8" />,
       title: "2026 Readiness",
-      description: "Specialized in testing for 5G, edge computing, AR/VR, and the latest iOS 19/Android 15 features across 24,000+ devices.",
+      description: (
+        <>
+          Specialized in testing for{" "}
+          <Link href="/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025" className="text-brand-blue hover:underline">
+            5G
+          </Link>
+          , edge computing, AR/VR, and the latest iOS 19/Android 15 features across 24,000+ devices.
+        </>
+      ),
       stats: "5G & XR Optimized"
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
       title: "Real Device Cloud",
-      description: "Exhaustive coverage using BrowserStack and AWS Device Farm, ensuring UI consistency that emulators often miss.",
+      description: (
+        <>
+          Exhaustive coverage using{" "}
+          <Link href="/blog/post/solving-the-top-5-challenges-in-mobile-application-testing" className="text-brand-blue hover:underline">
+            BrowserStack and AWS Device Farm
+          </Link>
+          , ensuring UI consistency that emulators often miss.
+        </>
+      ),
       stats: "24,000+ Device Combos"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
       title: "Performance Benchmarking",
-      description: "In-depth CPU, RAM, and battery usage analysis to prevent thermal throttling and ensure smooth mid-range performance.",
+      description: (
+        <>
+          In-depth CPU, RAM, and battery usage analysis to prevent thermal throttling and ensure smooth{" "}
+          <Link href="/performance-testing-services" className="text-brand-blue hover:underline">
+            mid-range performance
+          </Link>
+          .
+        </>
+      ),
       stats: "Deep Diagnostics"
     },
     {
       icon: <FaHeadset className="w-8 h-8" />,
       title: "Penetration Testing",
-      description: "Elite mobile application security mapped to OWASP Mobile Top 10, protecting against the rise in ransomware.",
+      description: (
+        <>
+          Elite{" "}
+          <Link href="/security-testing" className="text-brand-blue hover:underline">
+            mobile application security
+          </Link>{" "}
+          mapped to OWASP Mobile Top 10, protecting against the rise in ransomware.
+        </>
+      ),
       stats: "OWASP Standardized"
     }
   ];
@@ -60,7 +108,7 @@ const MobileWhyChooseTestriq: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Mobile Testing?</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            We combine mobile QA expertise, <Link href='/technology-stack'>industry-leading tools</Link>, and proven testing methodologies to deliver full-cycle mobile application testing services that ensure faster <Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>time-to-market</Link> and app store success.
+            We combine mobile QA expertise, <Link href='/technology-stack'>industry-leading tools</Link>, and proven testing methodologies to deliver full-cycle mobile application testing services that ensure faster <Link href='/blog/post/mobile-testing-environment-setup' className="text-brand-blue hover:underline">time-to-market</Link> and app store success.
           </p>
         </div>
 

@@ -4,11 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCode,
-  FaShieldAlt,
   FaChartLine,
-  FaCogs,
   FaNetworkWired,
-  FaCloud,
   FaArrowRight,
   FaFlask,
 } from "react-icons/fa";
@@ -89,8 +86,8 @@ const ApiComprehensiveSlider: React.FC = () => {
               key={index}
               onClick={() => setActiveTab(index)}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === index
-                  ? `bg-${type.color}-500 text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100"
+                ? `bg-${type.color}-500 text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100"
                 }`}
             >
               {type.title}

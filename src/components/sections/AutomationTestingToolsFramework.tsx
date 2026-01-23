@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
-import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode, FaTools } from "react-icons/fa";
+import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode } from "react-icons/fa";
 
 const AutomationTestingToolsFramework: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("web-automation");

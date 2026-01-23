@@ -12,8 +12,11 @@ import {
   FaDesktop,
   FaCloud,
   FaCode,
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 
 const Lightbox = dynamic(() => import("../VideoLightBox"), { ssr: false });
 

@@ -2,50 +2,9 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import { } from "react-icons/fa";
 
 const ApiCardSlider: React.FC = () => {
-  const testingTypes = [
-    {
-      title: "Functional Testing",
-      description:
-        "Comprehensive validation of API functionality, endpoints, and business logic.",
-      action: "blog/post/rest-api-testing-guide-endpoints-methods-best-practices",
-      features: [
-        "Request/Response validation",
-        "Data integrity testing",
-        "Error handling verification",
-        "Business logic validation",
-      ],
-      highlight: "99.8% accuracy",
-    },
-    {
-      title: "Performance Testing",
-      description:
-        "Ensure your APIs perform optimally under various load conditions.",
-      action: "performance-testing-services",
-      features: [
-        "Load testing",
-        "Stress testing",
-        "Scalability assessment",
-        "Response time optimization",
-      ],
-      highlight: "Sub-second response",
-    },
-    {
-      title: "Security Testing",
-      description:
-        "Comprehensive security assessment to protect your APIs from threats.",
-      action: "security-testing",
-      features: [
-        "Authentication testing",
-        "Authorization validation",
-        "Vulnerability assessment",
-        "Data encryption verification",
-      ],
-      highlight: "Zero vulnerabilities",
-    },
-  ];
 
   return (
     <section className="bg-white py-16 px-8 md:px-12 lg:px-24">

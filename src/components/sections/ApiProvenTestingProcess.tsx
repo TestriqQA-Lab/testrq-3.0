@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import {
   FaSearch,
   FaCode,
-  FaChartLine,
   FaCheckCircle,
   FaArrowRight,
   FaPlay,

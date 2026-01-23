@@ -30,7 +30,7 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             </h2>
 
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-              Transform your mobile application with our 2026-ready testing architecture. We ensure your app delivers exceptional performance on 5G, bulletproof security against ransomware, and ISO-compliant quality globally.
+              Transform your mobile application with our 2026-ready testing architecture. We ensure your app delivers exceptional <Link href="/performance-testing-services" className="text-blue-200 hover:underline">performance</Link> on 5G, bulletproof <Link href="/security-testing" className="text-blue-200 hover:underline">security</Link> against ransomware, and <Link href="/blog/post/what-is-mobile-application-testing-an-in-depth-guide" className="text-blue-200 hover:underline">ISO-compliant</Link> quality globally.
             </p>
 
             {/* Benefits List */}
@@ -106,9 +106,9 @@ const MobileReadyToEnsureQuality: React.FC = () => {
               {/* Progress Bars */}
               <div className="space-y-4">
                 {[
-                  { label: "Functional Testing", percentage: 99 },
-                  { label: "Performance Testing", percentage: 96 },
-                  { label: "Security Testing", percentage: 98 },
+                  { label: <Link href="/manual-testing-services" className="hover:underline">Functional Testing</Link>, percentage: 99 },
+                  { label: <Link href="/performance-testing-services" className="hover:underline">Performance Testing</Link>, percentage: 96 },
+                  { label: <Link href="/security-testing" className="hover:underline">Security Testing</Link>, percentage: 98 },
                 ].map((item, index) => (
                   <div key={index}>
                     <div className="flex justify-between text-sm text-blue-700 mb-1">
