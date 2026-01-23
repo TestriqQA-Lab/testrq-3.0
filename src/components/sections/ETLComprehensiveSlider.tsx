@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import {
   FaDatabase,
   FaExchangeAlt,
-  FaCloudUploadAlt,
   FaCheckCircle,
   FaChartLine,
   FaShieldAlt,
@@ -17,136 +16,114 @@ const ETLComprehensiveSlider: React.FC = () => {
 
   const testingTypes = [
     {
-      id: "extraction",
-      title: "Data Extraction Testing",
-      icon: <FaDatabase className="w-6 h-6" />,
-      coverage: "99.8% data accuracy",
-      description:
-        "Comprehensive validation of data extraction processes from diverse source systems and file formats, ensuring data completeness, accuracy, and seamless integration into your ETL pipeline.",
-      features: [
-        "Source system connectivity validation",
-        "Data completeness verification",
-        "Extraction accuracy testing",
-        "Source data profiling",
-        "Data type validation",
-        "Incremental extraction testing",
-      ],
-      metrics: [
-        { label: "Source connectivity", value: "100%" },
-        { label: "Data completeness", value: "99.8%" },
-        { label: "Extraction accuracy", value: "99.9%" },
-      ],
-      action: "/data-extraction-testing"
-    },
-    {
-      id: "transformation",
-      title: "Data Transformation Testing",
-      icon: <FaExchangeAlt className="w-6 h-6" />,
-      coverage: "100% business rule validation",
-      description:
-        "Thorough testing of data transformation logic, business rules, and data mapping accuracy.",
-      features: [
-        "Business rule validation",
-        "Data mapping verification",
-        "Transformation logic testing",
-        "Data type conversion testing",
-        "Aggregation and calculation validation",
-        "Data cleansing verification",
-      ],
-      metrics: [
-        { label: "Business rules", value: "100%" },
-        { label: "Data mapping", value: "99.7%" },
-        { label: "Transformation accuracy", value: "99.9%" },
-      ],
-      action: "/data-transformation-testing"
-    },
-    {
-      id: "loading",
-      title: "Data Loading Testing",
-      icon: <FaCloudUploadAlt className="w-6 h-6" />,
-      coverage: "99.9% loading success",
-      description:
-        "End-to-end validation of data loading processes into target systems and data warehouses.",
-      features: [
-        "Target system integration testing",
-        "Data integrity verification",
-        "Loading performance testing",
-        "Duplicate data detection",
-        "Referential integrity validation",
-        "Load failure recovery testing",
-      ],
-      metrics: [
-        { label: "Loading success", value: "99.9%" },
-        { label: "Data integrity", value: "100%" },
-        { label: "Performance", value: "98.5%" },
-      ],
-      action: "/data-loading-testing-etl-performance-testing"
-    },
-    {
       id: "quality",
-      title: "Data Quality Testing",
+      title: "Data Quality and Integrity Validation (ISO 8000-1:2022)",
       icon: <FaCheckCircle className="w-6 h-6" />,
-      coverage: "100% quality assurance",
+      coverage: "ISO 8000-1:2022 Aligned",
       description:
-        "Comprehensive data quality assessment across all dimensions of data quality and governance.",
+        "Poor data quality is the leading cause of ETL failures. Gartner reports that bad data costs organizations an average of $15 million every year. Challenge: Validating completeness and accuracy across billions of records. Our Solution: We align our ETL quality assurance with the ISO 8000-1:2022 benchmark. We use Query-Surge and i-CEDQ to automate checks at every ETL stage, ensuring your data remains accurate, timely, and portable.",
       features: [
-        "Data completeness testing",
-        "Data accuracy validation",
-        "Data consistency verification",
-        "Data validity testing",
-        "Data uniqueness validation",
-        "Data timeliness assessment",
+        "ISO 8000-1:2022 Benchmark",
+        "QuerySurge Automation",
+        "iCEDQ Validation Checks",
+        "Record Completeness QA",
+        "Data Portability Audits",
+        "Accuracy Validation"
       ],
       metrics: [
-        { label: "Data completeness", value: "99.8%" },
-        { label: "Data accuracy", value: "99.9%" },
-        { label: "Data consistency", value: "100%" },
+        { label: "Accuracy Rate", value: "99.9%" },
+        { label: "Timeliness", value: "99.8%" },
+        { label: "Completeness", value: "100%" },
       ],
       action: "/data-quality-testing-in-etl"
     },
     {
-      id: "performance",
-      title: "Performance Testing",
-      icon: <FaChartLine className="w-6 h-6" />,
-      coverage: "98% performance optimization",
+      id: "transformation",
+      title: "Complex Data Transformations and Mapping",
+      icon: <FaExchangeAlt className="w-6 h-6" />,
+      coverage: "Zero Data Loss Guarantee",
       description:
-        "ETL pipeline performance testing including throughput, latency, and scalability validation.",
+        "Complex business rules and diverse data sources cause errors in 70% of ETL projects. Challenge: Incremental loads and complex schema evolutions often break mapping logic. Our Solution: We provide rigorous business rules validation and standardized transformation mapping. We use Informatica and Talend to manage complex 'Source-to-Target' logic, guaranteeing perfect accuracy across every pipeline.",
       features: [
-        "Throughput testing",
-        "Latency analysis",
-        "Scalability validation",
-        "Resource utilization testing",
-        "Bottleneck identification",
-        "Performance optimization",
+        "Business Rule Validation",
+        "Source-to-Target Mapping",
+        "Informatica/Talend Optimization",
+        "Schema Evolution QA",
+        "Incremental Load Testing",
+        "Transformation Accuracy"
       ],
       metrics: [
-        { label: "Throughput", value: "98%" },
-        { label: "Latency", value: "95%" },
-        { label: "Scalability", value: "97%" },
+        { label: "Mapping Accuracy", value: "100%" },
+        { label: "Logic Validation", value: "99.9%" },
+        { label: "Schema Stability", value: "99.7%" },
+      ],
+      action: "/data-transformation-testing"
+    },
+    {
+      id: "performance",
+      title: "Performance Testing for High-Volume Data",
+      icon: <FaChartLine className="w-6 h-6" />,
+      coverage: "Strict SLA Compliance",
+      description:
+        "With zettabytes of data now the norm, pipelines often suffer from high latency and cloud-native 'throttling.' Challenge: 48% of teams simplify tests to cut costs, missing performance bottlenecks. Our Solution: Our ETL performance testing utilizes a high-performance stack including JMeter and Gatling. We stress-test your pipelines under realistic loads to meet strict SLAs for real-time analytics.",
+      features: [
+        "JMeter Stress Testing",
+        "Gatling Load Validation",
+        "High-Volume Latency Audit",
+        "Throttling Prevention",
+        "SLA Compliance Testing",
+        "Bottleneck Identification"
+      ],
+      metrics: [
+        { label: "Throughput", value: "98.5%" },
+        { label: "Latency Reduction", value: "95%" },
+        { label: "Peak Load Cap", value: "99.9%" },
       ],
       action: "/etl-performance-testing"
     },
     {
-      id: "security",
-      title: "Data Security Testing",
+      id: "compliance",
+      title: "Regulatory Compliance and Data Security",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      coverage: "100% security compliance",
+      coverage: "SOC2, ISO & GDPR Integrated",
       description:
-        "Advanced security testing including encryption, access control, and compliance verification.",
+        "In 2026, data privacy is a multi-billion euro concern. Challenge: Healthcare and Finance sectors face average breach costs exceeding $10M. Our Solution: We integrate SOC2, ISO, and GDPR compliance into the ETL flow. Our security protocols include data masking, encryption validation, and audit logging. We ensure your migrations comply with HIPAA, SOX, and the EU Data Act.",
       features: [
-        "Data encryption validation",
-        "Access control testing",
-        "Compliance verification",
-        "Data masking validation",
-        "Audit trail testing",
-        "Security vulnerability assessment",
+        "Data Masking Protocols",
+        "Encryption Validation",
+        "Audit Trail Logging",
+        "HIPAA/SOX Compliance",
+        "GDPR/CCPA Safeguards",
+        "EU Data Act Alignment"
       ],
       metrics: [
-        { label: "Encryption", value: "100%" },
-        { label: "Access control", value: "100%" },
-        { label: "Compliance", value: "100%" },
+        { label: "Security Pass", value: "100%" },
+        { label: "Audit Integrity", value: "100%" },
+        { label: "Privacy Protection", value: "100%" },
       ],
       action: "/etl-security-testing"
+    },
+    {
+      id: "automation",
+      title: "Automation Scalability in DevOps Cycles",
+      icon: <FaDatabase className="w-6 h-6" />,
+      coverage: "Shortened Regression Cycles",
+      description:
+        "Global talent shortage affects 77% of teams, yet only 30% of ETL processes are automated. Challenge: Manual testing creates bottlenecks in modern CI/CD/Data-Ops pipelines. Our Solution: We offer ETL testing automation services using Datagaps and QuerySurge. We use ISO/IEC 29119-3 templates to ensure your data warehouse testing scales alongside your development speed.",
+      features: [
+        "Datagaps Automation",
+        "QuerySurge Integration",
+        "ISO/IEC 29119-3 Templates",
+        "CI/CD/DataOps Flow",
+        "Regression Cycle QA",
+        "DevOps Scalability"
+      ],
+      metrics: [
+        { label: "Automation Cycle", value: "80% Faster" },
+        { label: "Manual Effort Reduc", value: "70%" },
+        { label: "Scalability Rate", value: "99.9%" },
+      ],
+      action: "/data-loading-testing-etl-performance-testing"
     },
   ];
 
@@ -162,17 +139,13 @@ const ETLComprehensiveSlider: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">Comprehensive Testing Solutions</span>
+            <span className="text-sm">Solving Global Challenges</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete ETL Testing{" "}
-            <span className="text-brand-blue">Coverage</span>
+            Solving the 2026 <span className="text-brand-blue">Global Challenges</span> in ETL Quality Assurance
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Our comprehensive ETL testing services cover every aspect of your
-            data pipeline ecosystem, ensuring data reliability, accuracy, and
-            optimal performance across all ETL processes and data workflows,
-            including extraction, transformation, and loading.
+            The data landscape of 2026 is defined by volume and complexity. As a leading <Link href="/etl-testing-services" className="text-brand-blue font-semibold hover:underline">ETL partner</Link>, we eliminate the <span className="font-semibold text-brand-blue">five main hurdles</span> to enterprise data success.
           </p>
         </div>
 

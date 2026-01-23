@@ -7,40 +7,40 @@ import { FaAward, FaUsers, FaClock, FaShieldAlt, FaChartLine, FaHeadset } from "
 const MobileWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
-      icon: <FaAward className="w-8 h-8" />,
-      title: (<Link href='mobile-application-testing'>Mobile Testing Expertise</Link>),
-      description: "Over 8+ years of specialized experience in mobile application testing across iOS, Android, and cross-platform technologies.",
-      stats: "1000+ Mobile Apps Tested"
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "Global Compliance First",
+      description: "Adhering to ISO/IEC/IEEE 29119, SOC2 Type II, and GDPR for enterprise-grade security and regulated industry requirements.",
+      stats: "ISO 29119 Standardized"
     },
     {
-      icon: <FaUsers className="w-8 h-8" />,
-      title: (<Link href='our-team'>Expert Mobile QA Team</Link>),
-      description: "Certified mobile testing professionals with deep knowledge of iOS and Android ecosystems, app store requirements, and mobile UX.",
-      stats: "50+ Mobile QA Specialists"
+      icon: <FaAward className="w-8 h-8" />,
+      title: "Singapore Hub Architecture",
+      description: "Delivering global Android and iOS QA from our specialized hubs, utilizing international benchmarks for software excellence.",
+      stats: "Global Delivery Model"
     },
     {
       icon: <FaClock className="w-8 h-8" />,
-      title: "Rapid Mobile Testing",
-      description: "Efficient testing processes optimized for mobile development cycles, delivering comprehensive results in record time.",
-      stats: "12-24 Hour Delivery"
+      title: "2026 Readiness",
+      description: "Specialized in testing for 5G, edge computing, AR/VR, and the latest iOS 19/Android 15 features across 24,000+ devices.",
+      stats: "5G & XR Optimized"
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: (<Link href='security-testing'>Mobile Security First</Link>),
-      description: "Advanced mobile security testing methodologies to protect your apps from vulnerabilities and ensure data privacy compliance.",
-      stats: "99.9% Security Coverage"
+      icon: <FaUsers className="w-8 h-8" />,
+      title: "Real Device Cloud",
+      description: "Exhaustive coverage using BrowserStack and AWS Device Farm, ensuring UI consistency that emulators often miss.",
+      stats: "24,000+ Device Combos"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: (<Link href='performance-testing-services'>Performance Excellence</Link>),
-      description: "Comprehensive performance testing ensuring your mobile apps run smoothly across all devices and network conditions.",
-      stats: "95% Performance Improvement"
+      title: "Performance Benchmarking",
+      description: "In-depth CPU, RAM, and battery usage analysis to prevent thermal throttling and ensure smooth mid-range performance.",
+      stats: "Deep Diagnostics"
     },
     {
       icon: <FaHeadset className="w-8 h-8" />,
-      title: (<Link href='contact-us'>24/7 Mobile Support</Link>),
-      description: "Round-the-clock support throughout your mobile testing project with dedicated mobile testing specialists and project managers.",
-      stats: "24/7 Availability"
+      title: "Penetration Testing",
+      description: "Elite mobile application security mapped to OWASP Mobile Top 10, protecting against the rise in ransomware.",
+      stats: "OWASP Standardized"
     }
   ];
 
@@ -104,28 +104,28 @@ const MobileWhyChooseTestriq: React.FC = () => {
               <div className="space-y-6">
                 {[
                   {
-                    feature: (<Link href='blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa'>Testing Speed</Link>),
-                    testriq: "12-24 hours",
-                    traditional: "3-5 days",
-                    advantage: "5x faster"
+                    feature: "Testing Precision",
+                    testriq: "ISO 29119 Compliant",
+                    traditional: "Unstructured Ad-hoc",
+                    advantage: "Regulated Quality"
                   },
                   {
-                    feature: (<Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>Device Coverage</Link>),
-                    testriq: "50+ real devices",
-                    traditional: "10-15 devices",
-                    advantage: "3x more coverage"
+                    feature: "OS & Device Support",
+                    testriq: "iOS 19 & Android 15",
+                    traditional: "Legacy Versions Only",
+                    advantage: "Next-Gen Ready"
                   },
                   {
-                    feature: "App Store Success Rate",
-                    testriq: "99.5%",
-                    traditional: "85-90%",
-                    advantage: "15% higher"
+                    feature: "Security Framework",
+                    testriq: "OWASP & SOC2",
+                    traditional: "Basic OWASP Only",
+                    advantage: "Enterprise Secure"
                   },
                   {
-                    feature: (<Link href='blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud'>Cost Efficiency</Link>),
-                    testriq: "50% less cost",
-                    traditional: "Standard pricing",
-                    advantage: "50% savings"
+                    feature: "Network Testing",
+                    testriq: "5G & Edge Simulation",
+                    traditional: "Basic Wi-Fi Only",
+                    advantage: "42% Less Crashes"
                   }
                 ].map((comparison, index) => (
                   <div key={index} className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm">
@@ -151,21 +151,21 @@ const MobileWhyChooseTestriq: React.FC = () => {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="text-center mb-6">
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    App Store Success Rate
+                    Global QA Benchmarks
                   </h4>
                   <div className="text-4xl font-bold text-[theme(color.brand.blue)] mb-2">
-                    99.5%
+                    99.8%
                   </div>
-                  <div className="text-gray-600">First Submission Approval</div>
+                  <div className="text-gray-600">Cross-Platform Stability Rate</div>
                 </div>
 
                 {/* Success Metrics */}
                 <div className="space-y-4">
                   {[
-                    { label: "iOS App Store", percentage: 99 },
-                    { label: "Google Play Store", percentage: 100 },
-                    { label: "Performance Score", percentage: 98 },
-                    { label: "User Satisfaction", percentage: 97 }
+                    { label: "ISO 29119 Compliance", percentage: 100 },
+                    { label: "Android 15 Compatibility", percentage: 100 },
+                    { label: "Security Vetting (OWASP)", percentage: 99 },
+                    { label: "5G UX Performance", percentage: 98 }
                   ].map((rating, index) => (
                     <div key={index}>
                       <div className="flex justify-between text-sm text-gray-600 mb-1">
@@ -185,18 +185,17 @@ const MobileWhyChooseTestriq: React.FC = () => {
                 {/* Mobile Testimonial */}
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-gray-700 italic mb-2">
-                    &quot;Testriq&apos;s mobile testing helped us achieve a 5-star rating on both app stores.
-                    Their thorough approach caught issues we never would have found.&quote;
+                    &quot;Testriq&apos;s 2026-ready frameworks helped us scale our 5G-native app across 40 countries without a single network-related crash.&quot;
                   </p>
                   <div className="text-xs text-gray-600">
-                    - Mobile App Developer, Tech Startup
+                    - Principal Architect, Global Fintech Leader
                   </div>
                 </div>
               </div>
 
               {/* Floating Badge */}
               <div className="absolute -top-4 -right-4 bg-[theme(color.brand.blue)] text-white px-4 py-2 rounded-full text-sm font-semibold">
-                App Store Certified
+                Global Standards
               </div>
             </div>
           </div>
@@ -205,29 +204,29 @@ const MobileWhyChooseTestriq: React.FC = () => {
         {/* Device Lab Showcase */}
         <div className="mt-16 bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Our Mobile Device Testing Lab
+            Global Mobile Device Lab
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
             <div className="p-6 bg-gray-50 rounded-xl">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">50+</div>
-              <div className="text-gray-600 text-sm">Real Devices</div>
-              <div className="text-xs text-gray-500 mt-1">iPhone, iPad, Android</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">24k+</div>
+              <div className="text-gray-600 text-sm">Device Combos</div>
+              <div className="text-xs text-gray-500 mt-1">Real Hardware Cloud</div>
             </div>
             <div className="p-6 bg-gray-50 rounded-xl">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">15+</div>
-              <div className="text-gray-600 text-sm">OS Versions</div>
-              <div className="text-xs text-gray-500 mt-1">iOS 12+ & Android 7+</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">ISO</div>
+              <div className="text-gray-600 text-sm">29119 Standard</div>
+              <div className="text-xs text-gray-500 mt-1">Verified Process</div>
             </div>
             <div className="p-6 bg-gray-50 rounded-xl">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">100+</div>
-              <div className="text-gray-600 text-sm">Screen Sizes</div>
-              <div className="text-xs text-gray-500 mt-1">Phones, Tablets, Foldables</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">5G</div>
+              <div className="text-gray-600 text-sm">Native Simulation</div>
+              <div className="text-xs text-gray-500 mt-1">Latency & Throttling</div>
             </div>
             <div className="p-6 bg-gray-50 rounded-xl">
-              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">24/7</div>
-              <div className="text-gray-600 text-sm">Lab Access</div>
-              <div className="text-xs text-gray-500 mt-1">Remote & On-site</div>
+              <div className="text-3xl font-bold text-[theme(color.brand.blue)] mb-2">OWASP</div>
+              <div className="text-gray-600 text-sm">Penetration Testing</div>
+              <div className="text-xs text-gray-500 mt-1">Mobile Top 10</div>
             </div>
           </div>
         </div>

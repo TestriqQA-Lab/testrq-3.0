@@ -6,12 +6,12 @@ import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
 const MobileReadyToEnsureQuality: React.FC = () => {
   const benefits = [
-    "Cross-platform iOS & Android testing",
-    "Real device testing lab access",
-    "Automated regression testing suites",
-    "Performance testing & battery optimization",
-    "App store compliance validation",
-    "24/7 testing environment support",
+    "iOS 19 & Android 15 ready",
+    "24,000+ real device combinations",
+    "AI-driven self-healing automation",
+    "5G latency & thermal stress testing",
+    "ISO 29119 compliance certification",
+    "SOC2 & GDPR data privacy audits",
   ];
 
   return (
@@ -21,23 +21,16 @@ const MobileReadyToEnsureQuality: React.FC = () => {
           {/* Left Content */}
           <div>
             <span className="inline-block bg-blue-500 bg-opacity-30 text-blue-100 text-sm px-4 py-2 rounded-full mb-6">
-              Mobile Quality Assurance Excellence
+              Global Quality Assurance 2026
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-              Ready to Ensure Your Mobile Application&apos;s{" "}
-              <span className="text-blue-200">Quality & Performance?</span>
+              Ready to Scale Your Mobile Application{" "}
+              <span className="text-blue-200">Across Global Markets?</span>
             </h2>
 
             <p className="text-blue-100 text-lg mb-8 leading-relaxed">
-              Transform your mobile application with our comprehensive testing
-              approach. We ensure your app delivers exceptional{" "}
-              <Link href="performance-testing-services">performance</Link>,
-              <Link href="security-testing">security</Link>, and{" "}
-              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-                user experience
-              </Link>{" "}
-              across all devices and platforms, from iOS to Android.
+              Transform your mobile application with our 2026-ready testing architecture. We ensure your app delivers exceptional performance on 5G, bulletproof security against ransomware, and ISO-compliant quality globally.
             </p>
 
             {/* Benefits List */}
@@ -54,10 +47,10 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact-us"
-                title="Start Your Testing Project – Testriq QA Lab"
+                title="Start Your Global Project – Testriq"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 min-h-[44px] min-w-[44px] bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
               >
-                <span>Start Your Testing Project</span>
+                <span>Start Your Global Project</span>
                 <FaArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -68,43 +61,45 @@ const MobileReadyToEnsureQuality: React.FC = () => {
             {/* Main Card */}
             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-blue-500 mb-2">
-                  Mobile Testing Excellence
+                <h3 className="text-2xl font-bold text-brand-blue mb-2">
+                  Global QA Standards
                 </h3>
-                <p className="text-blue-500">Comprehensive Quality Assurance</p>
+                <p className="text-blue-600 font-medium tracking-wide">ISO/IEC/IEEE 29119 Compliant</p>
               </div>
 
               {/* Device Icons */}
               <div className="flex justify-center gap-6 mb-6">
-                <div className="w-16 h-24 bg-gray-900 rounded-xl p-1">
-                  <div className="w-full h-full bg-blue-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">iOS</span>
+                <div className="w-16 h-24 bg-gray-900 rounded-xl p-1 shadow-2xl">
+                  <div className="w-full h-full bg-blue-500 rounded-lg flex flex-col items-center justify-center">
+                    <span className="text-white text-[10px] uppercase font-bold mb-1 tracking-tighter">Latest</span>
+                    <span className="text-white text-xs font-bold font-mono">iOS 19</span>
                   </div>
                 </div>
-                <div className="w-16 h-24 bg-gray-800 rounded-xl p-1">
-                  <div className="w-full h-full bg-green-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xs">Android</span>
+                <div className="w-16 h-24 bg-gray-800 rounded-xl p-1 shadow-2xl">
+                  <div className="w-full h-full bg-green-500 rounded-lg flex flex-col items-center justify-center">
+                    <span className="text-white text-[10px] uppercase font-bold mb-1 tracking-tighter">Latest</span>
+                    <span className="text-white text-xs font-bold font-mono">Android 15</span>
                   </div>
                 </div>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mb-6">
-                <div className="text-center text-blue-500">
-                  <div className="text-3xl font-bold mb-1">1000+</div>
-                  <div className="text-sm">Mobile Apps Tested</div>
+                <div className="text-center text-brand-blue">
+                  <div className="text-3xl font-bold mb-1">24k+</div>
+                  <div className="text-xs text-blue-600 uppercase tracking-widest font-semibold">Device Combos</div>
                 </div>
-                <div className="text-center text-blue-500">
-                  <div className="text-3xl font-bold mb-1">99.9%</div>
-                  <div className="text-sm">Bug Detection Rate</div>
+                <div className="text-center text-brand-blue">
+                  <div className="text-3xl font-bold mb-1">99.8%</div>
+                  <div className="text-xs text-blue-600 uppercase tracking-widest font-semibold">Stability Score</div>
                 </div>
-                <div className="text-center text-blue-500">
-                  <div className="text-3xl font-bold mb-1">50+</div>
-                  <div className="text-sm">Device Models</div>
+                <div className="text-center text-brand-blue">
+                  <div className="text-3xl font-bold mb-1">5G</div>
+                  <div className="text-xs text-blue-600 uppercase tracking-widest font-semibold">Optimized</div>
                 </div>
-                <div className="text-center text-blue-500">
-                  <div className="text-3xl font-bold mb-1">12hr</div>
-                  <div className="text-sm">Average Turnaround</div>
+                <div className="text-center text-brand-blue">
+                  <div className="text-3xl font-bold mb-1">OWASP</div>
+                  <div className="text-xs text-blue-600 uppercase tracking-widest font-semibold">Verified</div>
                 </div>
               </div>
 

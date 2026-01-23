@@ -18,93 +18,63 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
   const reasons = [
     {
       icon: <FaMobile className="w-8 h-8" />,
-      title: "Smart Device Experts",
+      title: "Mass Device Compatibility",
       description:
-        "Our team consists of certified smart device testing professionals with extensive experience in connected device technologies.",
-      achievement: "800+ Smart Devices Tested",
+        "We ensure global compatibility beyond flagship models, validating your application across hundreds of unique hardware and OS configurations using our real device cloud.",
+      achievement: "1000+ Configurations",
       capabilities: [
-        "Wearable Devices",
-        "Smart Home",
-        "Mobile Devices",
-        "Audio Devices",
+        "Real Device Cloud",
+        "Hardware Mapping",
+        "OS Dependency QA",
+        "Screen Size Audit",
       ],
       color: "green",
       bgGradient: "from-green-500 to-green-600",
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Security Excellence",
+      icon: <FaAward className="w-8 h-8" />,
+      title: "Compliance-First Methodology",
       description:
-        "Advanced security testing protocols to ensure your smart devices meet the highest security standards and protect user data.",
-      achievement: "Zero Security Breaches",
+        "Mapping all hardware documentation to ISO 29119-3. We ensure integrity for health tech (HIPAA) and smart home devices (GDPR/SOC2) through rigorous auditing.",
+      achievement: "ISO 29119-3 Certified",
       capabilities: [
-        "Data Protection",
-        "Encryption Testing",
-        "Privacy Validation",
-        "Vulnerability Assessment",
-      ],
-      color: "red",
-      bgGradient: "from-red-500 to-red-600",
-    },
-    {
-      icon: <FaWifi className="w-8 h-8" />,
-      title: "Connectivity Mastery",
-      description:
-        "Comprehensive connectivity testing across all protocols to ensure seamless device communication and integration.",
-      achievement: "99.4% Connectivity",
-      capabilities: [
-        "WiFi Testing",
-        "Bluetooth Validation",
-        "NFC Testing",
-        "Cellular Connectivity",
-      ],
-      color: "blue",
-      bgGradient: "from-blue-500 to-blue-600",
-    },
-    {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Optimization",
-      description:
-        "Advanced performance testing and optimization to ensure your smart devices deliver exceptional user experiences.",
-      achievement: "50% Performance Boost",
-      capabilities: [
-        "Speed Optimization",
-        "Battery Testing",
-        "Resource Management",
-        "UX Enhancement",
+        "HIPAA Compliance",
+        "SOC2 Type II Audit",
+        "GDPR/CCPA Data QA",
+        "Result Logging Auth",
       ],
       color: "purple",
       bgGradient: "from-purple-500 to-purple-600",
     },
     {
-      icon: <FaUsers className="w-8 h-8" />,
-      title: "Dedicated Support",
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "Advanced IoT Security",
       description:
-        "24/7 support from our smart device testing specialists who understand your unique device challenges and requirements.",
-      achievement: "24/7 Support",
+        "IoT security protocols aligned with ISO 27001 and NTIA baselines. Deep penetration testing using OWASP ZAP and Burp Suite to protect unpatched firmware.",
+      achievement: "Zero Firmware Risks",
       capabilities: [
-        "Expert Consultation",
-        "Technical Support",
-        "Device Guidance",
-        "Testing Training",
+        "OWASP ZAP Audits",
+        "NTIA Baseline Security",
+        "Penetration Testing",
+        "Firmware Hardening",
       ],
-      color: "orange",
-      bgGradient: "from-orange-500 to-orange-600",
+      color: "red",
+      bgGradient: "from-red-500 to-red-600",
     },
     {
-      icon: <FaClock className="w-8 h-8" />,
-      title: "Rapid Testing Cycles",
+      icon: <FaChartLine className="w-8 h-8" />,
+      title: "Scalable Performance",
       description:
-        "Fast and efficient smart device testing processes with comprehensive reporting and quick turnaround times.",
-      achievement: "48hr Turnaround",
+        "Systems architected to scale without degradation. End-to-end validation for high-density device deployments and edge computing using JMeter and Gatling.",
+      achievement: "1M+ Concurrent Syncs",
       capabilities: [
-        "Rapid Testing",
-        "Quick Reports",
-        "Fast Validation",
-        "Efficient Processes",
+        "Edge Computing QA",
+        "JMeter Performance",
+        "High-density Loads",
+        "Low Latency Audits",
       ],
-      color: "indigo",
-      bgGradient: "from-indigo-500 to-indigo-600",
+      color: "blue",
+      bgGradient: "from-blue-500 to-blue-600",
     },
   ];
 
@@ -145,7 +115,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {reasons.map((reason, index) => (
             <div
               key={index}
@@ -155,32 +125,28 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
             >
               {/* Card */}
               <div
-                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${
-                  hoveredCard === index
-                    ? `scale-105 shadow-2xl ${
-                        getColorClasses(reason.color).split(" ")[2]
-                      }`
-                    : "border-gray-200 hover:shadow-xl"
-                }`}
+                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${hoveredCard === index
+                  ? `scale-105 shadow-2xl ${getColorClasses(reason.color).split(" ")[2]
+                  }`
+                  : "border-gray-200 hover:shadow-xl"
+                  }`}
               >
                 {/* Icon and Achievement Badge */}
                 <div className="flex items-start justify-between mb-6">
                   <div
-                    className={`p-4 rounded-xl transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`p-4 rounded-xl transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.icon}
                   </div>
 
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.achievement}
                   </div>
@@ -197,11 +163,10 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
 
                 {/* Capabilities */}
                 <div
-                  className={`transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 max-h-40"
-                      : "opacity-0 max-h-0 overflow-hidden"
-                  }`}
+                  className={`transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 max-h-40"
+                    : "opacity-0 max-h-0 overflow-hidden"
+                    }`}
                 >
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                     <span
@@ -227,11 +192,10 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
 
                 {/* CTA Button */}
                 <div
-                  className={`mt-6 transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
-                  }`}
+                  className={`mt-6 transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                    }`}
                 >
                   <Link
                     href="/contact-us"
@@ -272,22 +236,22 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-green-500 mb-2">800+</div>
-              <div className="text-gray-600">Smart Devices</div>
+              <div className="text-3xl font-bold text-green-500 mb-2">1000+</div>
+              <div className="text-gray-600">Configurations</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-500 mb-2">99.4%</div>
-              <div className="text-gray-600">Connectivity Rate</div>
+              <div className="text-3xl font-bold text-blue-500 mb-2">99.8%</div>
+              <div className="text-gray-600">Uptime Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-500 mb-2">50%</div>
-              <div className="text-gray-600">Performance Boost</div>
+              <div className="text-3xl font-bold text-purple-500 mb-2">1M+</div>
+              <div className="text-gray-600">Concurrent Syncs</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-orange-500 mb-2">
-                48hr
+                ISO
               </div>
-              <div className="text-gray-600">Turnaround</div>
+              <div className="text-gray-600">29119-3 Standard</div>
             </div>
           </div>
         </div>

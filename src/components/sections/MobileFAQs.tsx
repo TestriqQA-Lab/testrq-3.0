@@ -9,159 +9,53 @@ const MobileFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of mobile applications do you test?",
+      question: "What are the best mobile app testing strategies for startups 2026?",
       answer: (
         <>
-          We test all types of mobile applications including native iOS and
-          Android apps,{" "}
-          <Link href="blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
-            cross-platform apps
-          </Link>{" "}
-          (React Native, Flutter, Xamarin), hybrid apps (Ionic, Cordova), mobile
-          games, enterprise apps,{" "}
-          <Link href="e-commerce-testing-services">e-commerce apps</Link>, and
-          progressive web apps (PWAs). Our expertise covers consumer apps,
-          business applications, and specialized industry solutions.
+          The best mobile app testing strategies for startups in 2026 involve a <Link href="/blog/post/how-environment-setup-shapes-reliable-web-application-testing" className="text-brand-blue hover:underline">&quot;Shift-Left&quot; approach</Link>. We integrate automated testing directly into your CI/CD pipeline and utilize our Real Device Cloud to maximize coverage while optimizing costs.
         </>
       ),
     },
     {
-      question: "Which devices and operating systems do you support?",
+      question: "How to test mobile apps on multiple screen sizes and resolutions?",
       answer: (
         <>
-          We support over 50{" "}
-          <Link href="blog/post/real-device-vs-emulator-testing-which-is-better">
-            real devices
-          </Link>
-          , including iPhone (6s to 15 Pro Max), iPad, Samsung Galaxy, Google
-          Pixel, OnePlus, Xiaomi, Huawei, tablets, and foldables. OS versions
-          include iOS 12.0-17.x, iPadOS 13.0-17.x, watchOS 6.0-10.x, tvOS
-          13.0-17.x, and Android 7.0-14.0, plus Wear OS and Android TV.
+          To test mobile apps on multiple screen sizes and resolutions, we utilize <Link href="/blog/post/real-device-vs-emulator-testing-which-is-better" className="text-brand-blue hover:underline">real device cloud testing platforms</Link>. These allow us to run <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automated mobile testing</Link> using Appium across hundreds of physical devices simultaneously, identifying UI glitches that emulators miss.
         </>
       ),
     },
     {
-      question: "How long does mobile application testing typically take?",
-      answer:
-        "Testing typically takes 7-14 days, with test execution spanning 3-5 days. Rapid turnaround options deliver results in 12-24 hours for urgent projects, depending on app complexity.",
-    },
-    {
-      question: "Do you provide automated testing for mobile applications?",
+      question: "Why is mobile application security testing services critical for Fintech?",
       answer: (
         <>
-          Yes, we implement{" "}
-          <Link href="automation-testing-services">automated testing</Link>{" "}
-          using tools like Appium, integrating with CI/CD pipelines for{" "}
-          <Link href="regression-testing">regression testing</Link>,
-          cross-platform automation, and continuous testing to accelerate
-          release cycles.
+          A security testing checklist for fintech mobile applications is vital because these apps handle PII and financial transactions. Our <Link href="/security-testing" className="text-brand-blue hover:underline">mobile application penetration testing service</Link> ensures that encryption, biometric login, and API endpoints are bulletproof.
         </>
       ),
     },
     {
-      question: (
-        <>
-          What <Link href="security-testing">security testing</Link> do you
-          perform on mobile applications?
-        </>
-      ),
+      question: "How do you perform performance testing for mobile apps under poor network conditions?",
       answer: (
         <>
-          We conduct{" "}
-          <Link href="blog/post/how-to-perform-penetration-testing-for-web-applications">
-            penetration testing
-          </Link>
-          , data encryption validation, authentication testing, and OWASP
-          compliance checks to protect apps from vulnerabilities and ensure data
-          privacy.
+          We use network simulation tools to replicate latency, jitter, and packet loss. We test app performance on weak networks to prevent crashes, ensuring a smooth move between 5G, 4G, and <Link href="/blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc" className="text-brand-blue hover:underline">offline modes</Link>.
         </>
       ),
     },
     {
-      question: "Do you ensure app store compliance?",
+      question: "What is the difference between APK and IPA file testing?",
       answer: (
         <>
-          Yes, we validate apps against App Store and Google Play guidelines,
-          including TestFlight beta testing for{" "}
-          <Link href="blog/post/ios-vs-android-testing-key-differences-every-qa-should-know">
-            iOS
-          </Link>{" "}
-          and Google Play Store compliance, achieving a 99.5% first-submission
-          approval rate.
+          APK and IPA file testing refers to the binary validation of Android and iOS apps, respectively. We audit file integrity and permissions before launch, finding security flaws in the code before your app hits the store using our <Link href="/qa-documentation-services" className="text-brand-blue hover:underline">standardized risk reporting</Link>.
         </>
       ),
     },
     {
-      question: "Can you test mobile apps with backend integrations and APIs?",
+      question: "Do you follow global compliance standards like ISO 29119?",
       answer: (
         <>
-          Yes, we test mobile apps with backend integrations, validating{" "}
-          <Link href="api-testing">APIs</Link>, data synchronization, payment
-          gateways, push notifications, and{" "}
-          <Link href="blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc">
-            connectivity
-          </Link>{" "}
-          with cloud or on-premise servers.
+          Yes, Testriq adheres to <Link href="/blog/post/iso-29119-software-testing-standard-compliance-guide" className="text-brand-blue hover:underline">ISO/IEC/IEEE 29119 standards</Link> across our entire lifecycle. We also provide SOC2 Type II, GDPR, CCPA, and HIPAA validated quality assurance for highly regulated industries.
         </>
       ),
-    },
-    {
-      question: "Do you provide performance testing for mobile applications?",
-      answer: (
-        <>
-          Yes, we conduct comprehensive mobile{" "}
-          <Link href="performance-testing-services">performance testing</Link>{" "}
-          including{" "}
-          <Link href="blog/post/load-testing-in-performance-testing-complete-guide">
-            load testing
-          </Link>
-          , battery usage analysis, memory optimization, CPU performance,
-          network performance testing, and app startup time optimization. We
-          test under various device conditions and provide detailed performance
-          reports with optimization recommendations.
-        </>
-      ),
-    },
-    {
-      question: "What deliverables do you provide after mobile testing?",
-      answer: (
-        <>
-          We provide detailed test reports, including{" "}
-          <Link href="blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools">
-            bug logs
-          </Link>{" "}
-          with reproduction steps, screenshots, performance metrics, security
-          findings, compatibility results, and{" "}
-          <Link href="blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices">
-            optimization recommendations
-          </Link>
-          .
-        </>
-      ),
-    },
-    {
-      question: "Do you offer post-launch support and monitoring?",
-      answer: (
-        <>
-          Yes, we offer post-launch support, including maintenance testing,{" "}
-          <Link href="regression-testing">regression testing</Link> for updates,
-          crash monitoring, and 24/7 support to ensure ongoing app performance.
-        </>
-      ),
-    },
-    {
-      question: "How do you ensure app data confidentiality?",
-      answer: (
-        <>
-          We ensure confidentiality through NDAs, secure testing environments,
-          encrypted data handling, and compliance with standards like{" "}
-          <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp">
-            OWASP
-          </Link>{" "}
-          and GDPR.
-        </>
-      ),
-    },
+    }
   ];
 
   const toggleFAQ = (index: number) => {
@@ -240,7 +134,7 @@ const MobileFAQs: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }
+                href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}
                 title="Schedule Mobile Consultation – Testriq QA Lab"
                 className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] border border-[theme(color.brand.blue)] text-[theme(color.brand.blue)] font-semibold rounded-lg hover:bg-brand-blue hover:text-white transition-colors"
               >

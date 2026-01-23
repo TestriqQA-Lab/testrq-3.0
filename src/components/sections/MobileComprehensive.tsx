@@ -3,105 +3,91 @@
 import Link from "next/link";
 import React from "react";
 import {
-  FaMobile,
   FaShieldAlt,
-  FaCogs,
   FaUsers,
   FaChartLine,
   FaSync,
   FaApple,
   FaFlask,
 } from "react-icons/fa";
+import { BsLightningCharge } from "react-icons/bs";
 
 const MobileComprehensive: React.FC = () => {
   const testingServices = [
     {
-      icon: <FaMobile className="w-8 h-8" />,
-      title: (
-        <Link href="blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
-          Functional Testing
-        </Link>
-      ),
+      icon: <FaChartLine className="w-8 h-8" />,
+      title: "Mastering Device & OS Fragmentation",
       description:
-        "Comprehensive functionality testing of all mobile app features, user flows, and interactions across iOS and Android devices including software UI testing and API validation.",
+        "As Android 15 rolls out alongside iOS 18/19, we validate your app across diverse hardware including foldables, wearables, and dual-screen devices to prevent 20-30% configuration crashes.",
       features: [
-        "Feature validation",
-        "User flow testing",
-        "Data synchronization",
-        "API integration testing",
+        "ISO 29119-3 Compliance",
+        "Foldable & Wearable QA",
+        "Dynamic Resolution Testing",
+        "Risk-Based Device Matrix",
       ],
     },
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: <Link href="security-testing">Security Testing</Link>,
+      title: "Advanced Security & Pen Testing",
       description:
-        "Thorough security assessment to protect your mobile apps from vulnerabilities and ensure data protection compliance.",
+        "Mapping to OWASP Mobile Top 10, we defend against the 150% rise in mobile ransomware with deep APK/IPA file audits and biometric (FaceID) validation.",
       features: [
-        "Penetration testing",
-        "Data encryption validation",
-        "Authentication testing",
-        "OWASP compliance",
+        "OWASP Mobile Top 10",
+        "Biometric Identity Checks",
+        "API Endpoint Audits",
+        "ISO 29119 Incident Reports",
       ],
     },
     {
-      icon: <FaCogs className="w-8 h-8" />,
-      title: (
-        <Link href="performance-testing-services">Performance Testing</Link>
-      ),
+      icon: <BsLightningCharge className="w-8 h-8" />,
+      title: "5G & Performance Optimization",
       description:
-        "Optimize your mobile app's performance under various network conditions, device configurations, and user loads.",
+        "Testing real-world 5G/Wi-Fi 6 handovers. We replicate latency and throttling to prevent the 42% of crashes caused by network-edge connectivity shifts.",
       features: [
-        "Load testing",
-        "Battery usage analysis",
-        "Memory optimization",
-        "Network performance",
-      ],
-    },
-    {
-      icon: <FaUsers className="w-8 h-8" />,
-      title: (
-        <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
-          Usability Testing
-        </Link>
-      ),
-      description:
-        "Ensure your mobile app delivers intuitive user journeys with usability testing, accessibility checks, and UI interaction validation across user personas and use cases.",
-      features: [
-        "UX/UI testing",
-        "Accessibility compliance",
-        "User journey optimization",
-        "Touch interaction testing",
-      ],
-    },
-    {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: (
-        <Link href="blog/post/a-complete-guide-to-compatibility-testing-in-manual-software-qa">
-          Compatibility Testing
-        </Link>
-      ),
-      description:
-        "Verify mobile app compatibility across devices, OS versions, screen sizes, and orientations with full-cycle testing for cross-platform mobile environments.",
-      features: [
-        "Device compatibility",
-        "OS version testing",
-        "Screen resolution testing",
-        "Orientation testing",
+        "5G Latency Simulation",
+        "Thermal Throttling Checks",
+        "4G/5G/Offline Handovers",
+        "Battery Consumption Benchmarks",
       ],
     },
     {
       icon: <FaSync className="w-8 h-8" />,
-      title: <Link href="automation-testing-services">Automation Testing</Link>,
+      title: "AI-Driven Test Automation",
       description:
-        "Implement mobile test automation with CI/CD pipelines. Our QA team builds automated suites for iOS, Android, and cross-platform apps using tools like Appium.",
+        "Utilizing Appium & Selenium with AI-driven self-healing tools and Model-Based Testing (MBT) to reduce scripting overhead and handle high-velocity UI updates.",
       features: [
-        "Automated regression",
-        "CI/CD integration",
-        "Cross-platform automation",
-        "Continuous testing",
+        "Self-Healing Frameworks",
+        "Appium & XCUI Automation",
+        "Model-Based Testing (MBT)",
+        "CI/CD Pipeline Integration",
+      ],
+    },
+    {
+      icon: <FaUsers className="w-8 h-8" />,
+      title: "Global Usability & UX Validation",
+      description:
+        "Facilitating mobile usability testing on real hardware to ensure touch gestures (swipe, pinch, zoom) and AR/VR features meet human expectations globally.",
+      features: [
+        "Gesture Responsiveness",
+        "AR/VR UX Validation",
+        "Accessibility Compliance",
+        "Real-Device UAT Sessions",
+      ],
+    },
+    {
+      icon: <FaFlask className="w-8 h-8" />,
+      title: "Compliance-First QA",
+      description:
+        "Rigorous data privacy checks for high-stakes apps. Specialized QA for banking, healthcare, and fintech platforms requiring SOC2, GDPR, and HIPAA compliance.",
+      features: [
+        "SOC2 Type II Assurance",
+        "GDPR & CCPA Audits",
+        "HIPAA Health-Tech QA",
+        "Fintech Security Checklist",
       ],
     },
   ];
+
   const scrollToProcess = () => {
     document.querySelector("#mobile-process-section")?.scrollIntoView({
       behavior: "smooth",
@@ -116,29 +102,16 @@ const MobileComprehensive: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
-            <span className="text-sm">Comprehensive Testing Solutions</span>
+            <span className="text-sm">Engineering Global Trust</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Complete Mobile Application{" "}
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
+            Navigating the 2026 Mobile QA Landscape:{" "}
             <span className="text-[theme(color.brand.blue)]">
-              Testing Services
+              5 Global Challenges
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            From{" "}
-            <Link href="blog/post/learn-how-validation-optimization">
-              functional validation
-            </Link>{" "}
-            to{" "}
-            <Link href="performance-testing-services">
-              performance optimization
-            </Link>
-            , our comprehensive mobile testing services ensure your applications
-            deliver exceptional{" "}
-            <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-              user experiences
-            </Link>{" "}
-            across all devices and platforms.
+            Testriq delivers global testing excellence across the US, UK, EU, and Asia through our &apos;Compliance-First&apos; methodology and ISO 29119 standardized frameworks.
           </p>
         </div>
 
@@ -181,7 +154,7 @@ const MobileComprehensive: React.FC = () => {
         {/* Platform Support */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Platform & Device Coverage
+            Advanced Platform & Device Coverage (2026)
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -190,12 +163,12 @@ const MobileComprehensive: React.FC = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
                   <span className="text-white text-lg">
-                    <FaApple width={4} height={4} />
+                    <FaApple className="w-6 h-6" />
                   </span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">
-                  <Link href="blog/post/what-are-the-testing-tools-for-ios-app-testing">
-                    iOS Testing
+                  <Link href="/blog/post/what-are-the-testing-tools-for-ios-app-testing">
+                    iOS & Apple Ecosystem
                   </Link>
                 </h4>
               </div>
@@ -204,19 +177,19 @@ const MobileComprehensive: React.FC = () => {
                 <div>
                   <strong>Devices:</strong>
                   <ul className="mt-2 space-y-1">
-                    <li>• iPhone (6s to 15 Pro Max)</li>
-                    <li>• iPad (Air, Pro, Mini)</li>
-                    <li>• Apple Watch</li>
-                    <li>• Apple TV</li>
+                    <li>• iPhone 13 to 17 Pro Max</li>
+                    <li>• iPad Pro (M2/M3 chips)</li>
+                    <li>• Apple Watch Ultra</li>
+                    <li>• Vision Pro (Extended Reality)</li>
                   </ul>
                 </div>
                 <div>
-                  <strong>iOS Versions:</strong>
+                  <strong>OS Versions:</strong>
                   <ul className="mt-2 space-y-1">
-                    <li>• iOS 12.0 - 17.x</li>
-                    <li>• iPadOS 13.0 - 17.x</li>
-                    <li>• watchOS 6.0 - 10.x</li>
-                    <li>• tvOS 13.0 - 17.x</li>
+                    <li>• iOS 15.0 - 19.x</li>
+                    <li>• iPadOS 15.0 - 19.x</li>
+                    <li>• watchOS 8.0 - 11.x</li>
+                    <li>• visionOS (Latest)</li>
                   </ul>
                 </div>
               </div>
@@ -226,11 +199,11 @@ const MobileComprehensive: React.FC = () => {
             <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                  <span className="text-white text-lg">🤖</span>
+                  <span className="text-white text-lg font-bold">🤖</span>
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900">
-                  <Link href="blog/post/ios-vs-android-testing-key-differences-every-qa-should-know">
-                    Android Testing
+                  <Link href="/blog/post/mobile-automation-testing-guide-android-ios-frameworks">
+                    Android & Fragmented OS
                   </Link>
                 </h4>
               </div>
@@ -239,19 +212,19 @@ const MobileComprehensive: React.FC = () => {
                 <div>
                   <strong>Devices:</strong>
                   <ul className="mt-2 space-y-1">
-                    <li>• Samsung Galaxy Series</li>
-                    <li>• Google Pixel Series</li>
-                    <li>• OnePlus, Xiaomi, Huawei</li>
-                    <li>• Tablets & Foldables</li>
+                    <li>• Samsung Z Fold/Flip 6</li>
+                    <li>• Google Pixel 8 & 9 Pro</li>
+                    <li>• Xiaomi & OnePlus (Global)</li>
+                    <li>• 24,000+ Device Combinations</li>
                   </ul>
                 </div>
                 <div>
-                  <strong>Android Versions:</strong>
+                  <strong>OS Versions:</strong>
                   <ul className="mt-2 space-y-1">
-                    <li>• Android 7.0 - 14.0</li>
-                    <li>• Custom ROMs</li>
-                    <li>• Wear OS</li>
-                    <li>• Android TV</li>
+                    <li>• Android 11.0 - 15.0</li>
+                    <li>• Custom UI (OneUI, HyperOS)</li>
+                    <li>• Wear OS 4.0/5.0</li>
+                    <li>• Android Automotive OS</li>
                   </ul>
                 </div>
               </div>

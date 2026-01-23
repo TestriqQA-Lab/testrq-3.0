@@ -22,6 +22,8 @@ import {
   FaCrosshairs,
   FaCodeBranch,
   FaCheckCircle,
+  FaWifi,
+  FaHome,
   FaShieldAlt as FaShield, // for Nessus
 } from "react-icons/fa";
 
@@ -54,218 +56,117 @@ import Link from "next/link";
 const IoTToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      category: (<Link href='blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems'>IoT Testing Platforms</Link>),
-      icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
-      tools: [
-        {
-          name: "AWS IoT Device Tester",
-          description: "Automated testing for IoT devices",
-          icon: <FaAws className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Azure IoT Hub",
-          description: "Cloud-based IoT testing platform",
-          icon: <FaMicrosoft className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Google Cloud IoT Core",
-          description: "Secure device connection and management",
-          icon: <SiGooglecloud className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "ThingWorx",
-          description: "Industrial IoT platform testing",
-          icon: <FaCogs className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Particle Console",
-          description: "IoT device fleet management",
-          icon: <FaMicrochip className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "IBM Watson IoT",
-          description: "AI-powered IoT testing solutions",
-          icon: <FaBrain className="w-5 h-5 text-brand-blue" />,
-        },
-      ],
-    },
-    {
-      category: "Network & Protocol Testing",
-      icon: <MdDevices className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      category: "Connection & Protocols",
+      icon: <FaNetworkWired className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
           name: "Wireshark",
-          description: "Network protocol analyzer",
+          description: "Advanced protocol sniffing & packet analysis",
           icon: <SiWireshark className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "MQTT.fx",
-          description: "MQTT client testing tool",
+          name: "MQTT Spy",
+          description: "In-depth MQTT message validation",
           icon: <FaSatelliteDish className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "CoAP Client",
-          description: "CoAP protocol testing",
-          icon: <FaExchangeAlt className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Bluetooth LE Explorer",
-          description: "BLE device testing",
-          icon: <FaBluetooth className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Zigbee Test Tool",
-          description: "Zigbee protocol validation",
+          name: "Zigbee Sniffer",
+          description: "Real-time Zigbee signal analysis",
           icon: <FaProjectDiagram className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "WiFi Analyzer",
-          description: "Wireless network testing",
-          icon: <SiMozilla className="w-5 h-5 text-brand-blue" />,
+          name: "LoRaWAN Gateways",
+          description: "LPWAN range & connectivity testing",
+          icon: <FaWifi className="w-5 h-5 text-brand-blue" />,
         },
       ],
     },
     {
-      category: (<Link href='blog/post/performance-load-testing-for-e-commerce-sites'>Performance & Load Testing</Link>),
-      icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
-      tools: [
-        {
-          name: "JMeter",
-          description: "Load testing for IoT endpoints",
-          icon: <SiApachejmeter className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Gatling",
-          description: "High-performance load testing",
-          icon: <FaBolt className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Artillery",
-          description: "Modern load testing toolkit",
-          icon: <FaCrosshairs className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "K6",
-          description: "Developer-centric load testing",
-          icon: <FaCodeBranch className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "LoadRunner",
-          description: "Enterprise load testing",
-          icon: <FaNetworkWired className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "BlazeMeter",
-          description: "Cloud-based performance testing",
-          icon: <SiBlazemeter className="w-5 h-5 text-brand-blue" />,
-        },
-      ],
-    },
-    {
-      category: (<Link href='blog/post/web-app-security-testing-complete-guide-to-tools-techniques-common-vulnerabilities'>Security Testing Tools</Link>),
+      category: "Security & Pen Testing",
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
+          name: "OWASP ZAP",
+          description: "Security scanning for IoT cloud APIs",
+          icon: <SiOwasp className="w-5 h-5 text-brand-blue" />,
+        },
+        {
           name: "Nmap",
-          description: "Network discovery and security auditing",
+          description: "Network discovery & attack surface mapping",
           icon: <FaRunning className="w-5 h-5 text-brand-blue" />,
         },
         {
           name: "Metasploit",
-          description: "Penetration testing framework",
+          description: "Industrial control system penetration",
           icon: <SiMetasploit className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "OWASP ZAP",
-          description: "Web application security scanner",
-          icon: <SiOwasp className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Burp Suite",
-          description: "Web vulnerability scanner",
-          icon: <SiBurpsuite className="w-5 h-5 text-brand-blue" />,
-        },
-        {
           name: "Nessus",
-          description: "Vulnerability assessment",
+          description: "Firmware reverse engineering & vulnerability assessment",
           icon: <FaShield className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "OpenVAS",
-          description: "Open-source vulnerability scanner",
-          icon: <SiOpenvpn className="w-5 h-5 text-brand-blue" />,
         },
       ],
     },
     {
-      category: (<Link href='blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Automation Frameworks</Link>),
+      category: "Performance & Load",
+      icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      tools: [
+        {
+          name: "k6",
+          description: "Developer-centric load testing for MQTT/HTTP",
+          icon: <FaProjectDiagram className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "Artillery",
+          description: "Performance stress for zettabyte scale data",
+          icon: <FaCrosshairs className="w-5 h-5 text-brand-blue" />,
+        },
+        {
+          name: "JMeter",
+          description: "Legacy & MQTT extension load testing",
+          icon: <SiApachejmeter className="w-5 h-5 text-brand-blue" />,
+        },
+      ],
+    },
+    {
+      category: "Automation & DevOps",
       icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
-          name: "Robot Framework",
-          description: "Generic automation framework",
-          icon: <SiRobotframework className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Selenium",
-          description: "Web-based IoT interface testing",
-          icon: <SiSelenium className="w-5 h-5 text-brand-blue" />,
-        },
-        {
           name: "Appium",
-          description: "Mobile IoT app testing",
+          description: "Mobile-IoT interaction automation",
           icon: <SiAppium className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "TestComplete",
-          description: "Automated testing platform",
-          icon: <FaCheckCircle className="w-5 h-5 text-brand-blue" />,
+          name: "GitHub Actions",
+          description: "CI/CD for FOTA updates testing",
+          icon: <FaCodeBranch className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "Cucumber",
-          description: "BDD testing framework",
-          icon: <SiCucumber className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "PyTest",
-          description: "Python testing framework",
-          icon: <SiPython className="w-5 h-5 text-brand-blue" />,
+          name: "Jenkins",
+          description: "Automated firmware regression pipelines",
+          icon: <FaCogs className="w-5 h-5 text-brand-blue" />,
         },
       ],
     },
     {
-      category: (<Link href='blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core'>Cloud & Edge Testing</Link>),
-      icon: <MdCloud className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      category: "Hardware & RF Lab",
+      icon: <FaMicrochip className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
-          name: "Docker",
-          description: "Containerized testing environments",
-          icon: <SiDocker className="w-5 h-5 text-brand-blue" />,
+          name: "Oscilloscopes",
+          description: "Signal integrity & power ripple analysis",
+          icon: <FaBolt className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "Kubernetes",
-          description: "Container orchestration testing",
-          icon: <SiKubernetes className="w-5 h-5 text-brand-blue" />,
+          name: "RF Shield Boxes",
+          description: "Isolated interference simulation",
+          icon: <FaSatelliteDish className="w-5 h-5 text-brand-blue" />,
         },
         {
-          name: "Terraform",
-          description: "Infrastructure as code testing",
-          icon: <SiTerraform className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Ansible",
-          description: "Configuration management testing",
-          icon: <SiAnsible className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Prometheus",
-          description: "Monitoring and alerting",
-          icon: <SiPrometheus className="w-5 h-5 text-brand-blue" />,
-        },
-        {
-          name: "Grafana",
-          description: "Metrics visualization",
-          icon: <SiGrafana className="w-5 h-5 text-brand-blue" />,
+          name: "Programmable Power",
+          description: "Battery life & consumption profiling",
+          icon: <FaHome className="w-5 h-5 text-brand-blue" />,
         },
       ],
     },

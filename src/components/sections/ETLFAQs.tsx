@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -9,72 +8,29 @@ const ETLFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What is ETL testing and why is it important?",
+      question: "How to perform ETL testing step by step?",
       answer:
-        (
-          <>
-            ETL testing is the process of validating <Link href='blog/post/data-extraction-testing'>data accuracy</Link>, completeness, and quality as it moves through the <Link href='blog/post/etl-performance-testing'>Extract, Transform, Load (ETL) pipeline.</Link> It is essential for maintaining data integrity, enforcing business rule compliance, and supporting reliable analytics. By identifying issues early, ETL testing prevents data quality problems from reaching production environments, ensuring your data-driven decisions are based on trusted, accurate information.
-          </>
-        ),
+        "To perform ETL testing, start by analyzing the source-to-target mapping and validating source data. Next, test the transformation logic in the staging area before finally reconciling the data in the target system. Our methodology follows this ISO 8000 aligned flow to ensure 100% data integrity.",
     },
     {
-      question: "What types of ETL testing do you perform?",
+      question: "What are the best automated ETL testing tools in 2026?",
       answer:
-        (
-          <>
-            We perform comprehensive ETL testing including data extraction validation, transformation logic testing, data loading verification, data quality assessment, <Link href='performance-testing-services'>performance testing</Link>, <Link href='security-testing'>security testing</Link>, and end-to-end integration testing. Our testing covers all aspects of the ETL pipeline from source systems to target data warehouses.
-          </>
-        ),
+        "Different ETL tools excel at different tasks. In 2026, Query-Surge dominated high-volume data warehouse testing, while iceDQ specialized in real-time, in-memory validation. For visual test case building, Datagaps ETL Validator remains the top choice. These tools reduce manual effort by up to 80% and are essential for modern DataOps.",
     },
     {
-      question: "How do you ensure data quality during ETL testing?",
+      question: "What is the difference between ETL testing and database testing?",
       answer:
-        (
-          <>
-            Our data quality testing includes completeness <Link href='blog/post/learn-how-validation-optimization'>validation</Link> (ensuring all expected data is extracted), accuracy verification (validating transformation rules), consistency checks (ensuring data uniformity), validity testing (checking data formats and constraints), and uniqueness validation (identifying duplicates). We use <Link href='automation-testing-services'>automated tools</Link> and custom scripts for comprehensive quality assessment.
-          </>
-        ),
+        "The difference between ETL testing and database testing lies in the scope. Database testing verifies static storage elements like tables and stored procedures. ETL testing ensures data stays accurate as it transforms and flows from multiple sources into a central warehouse.",
     },
     {
-      question: "Can you test ETL processes with large data volumes?",
+      question: "What technical challenges define ETL testing within massive-scale data environments?",
       answer:
-        (
-          <>
-            Yes, we specialize in testing ETL processes with large data volumes and big data environments. Our testing approach includes volume testing, <Link href='blog/post/performance-optimization-for-pre-launch-software-testing'>performance optimization</Link>, scalability validation, and resource utilization analysis. We use distributed testing frameworks and cloud-based solutions to handle massive datasets efficiently.
-          </>
-        ),
+        "Testing high-volume data pipelines presents challenges across three core dimensions: volume, variety, and velocity. To validate billions of real-time records, teams must deploy scalable ETL frameworks. This automation eliminates the \"sampling errors\" that often compromise manual data re-conciliation.",
     },
     {
-      question: "How do you handle ETL testing for real-time data pipelines?",
+      question: "Why is an ETL testing checklist for data migration important?",
       answer:
-        (
-          <>
-            For real-time ETL testing, we implement continuous validation processes, <Link href='blog/post/etl-testing-for-big-data'>streaming data quality checks</Link>, latency testing, and <Link href='blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems'>real-time monitoring</Link>. We use specialized tools for stream processing validation and ensure data accuracy and timeliness in real-time scenarios while maintaining system performance.
-          </>
-        ),
-    },
-    {
-      question: "What ETL tools and platforms do you support?",
-      answer:
-        "We support all major ETL platforms including Informatica PowerCenter, Talend, Microsoft SSIS, IBM DataStage, Oracle Data Integrator, Apache NiFi, AWS Glue, Azure Data Factory, and custom ETL solutions. Our team has expertise across cloud-based and on-premises ETL environments.",
-    },
-    {
-      question: "How do you ensure compliance and security in ETL testing?",
-      answer:
-        (
-          <>
-            We implement comprehensive <Link href='security-testing'>security testing</Link> including data encryption validation, access control verification, audit trail testing, and compliance checks for regulations like GDPR, HIPAA, and SOX. Our testing ensures sensitive data is properly masked, encrypted, and handled according to regulatory requirements throughout the ETL process.
-          </>
-        ),
-    },
-    {
-      question: "What is your approach to ETL performance testing?",
-      answer:
-        (
-          <>
-            Our ETL <Link href='blog/post/etl-performance-testing'>performance testing</Link> includes throughput analysis, latency measurement, resource utilization monitoring, bottleneck identification, and scalability testing. We optimize ETL processes for maximum efficiency, validate performance under various load conditions, and provide recommendations for performance improvements and capacity planning.
-          </>
-        ),
+        "An ETL testing checklist provides complete migration coverage. It systematically tracks every phase, from initial metadata validation to final production support. It serves as a guide for ensuring data quality assurance and regulatory compliance during large-scale enterprise transitions.",
     },
   ];
 

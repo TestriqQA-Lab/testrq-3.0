@@ -31,30 +31,27 @@ const RoboticTestingHeroSection: React.FC = () => {
               <span className="text-sm">Robotic Testing Specialists</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Comprehensive{" "}
-              <span className="text-brand-blue">Robotic Testing</span> Services
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Robotics Testing Services:{" "}
+              <span className="text-brand-blue">
+                Engineering Safety & Performance
+              </span>{" "}
+              for the 2026 Automation Era
             </h1>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your{" "}
-              <Link href="blog/post/functional-testing-for-robotic-systems-precision-sensors-control">
-                robotic systems
-              </Link>{" "}
-              deliver precise, reliable, and safe{" "}
-              <Link href="performance-testing-services">performance</Link> with
-              our comprehensive{" "}
-              <Link href="robotics-testing-services">robotics testing</Link>{" "}
-              services. From industrial{" "}
-              <Link href="automation-testing-services">automation</Link> to
-              service robots - we validate every aspect of your robotic
-              ecosystem.
-            </p>
+            <div className="space-y-4">
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                As robotics transforms the global economy, Testriq ensures your autonomous systems stay ahead. We provide specialized testing to guarantee safety and compliance in even the most un-predictable environments. From industrial co-bots to service-oriented humanoids, our <Link href="/robotics-testing-services" className="text-brand-blue font-semibold hover:underline">robotic testing</Link> methodology bridges the gap between digital simulation and physical deployment.
+              </p>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed italic font-medium">
+                &quot;Companies must analyze robotics rigorously as the industry moves toward &apos;Physical AI&apos; and advanced automation. Our team of specialized robotics technicians leverages decades of experience to deliver testing solutions that satisfy both technical performance and stringent international safety standards.&quot;
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact-us"
-                title="Get Started Today – Testriq QA Lab"
+                title="Start Your Robotics Project – Testriq"
                 className="inline-flex items-center gap-2 px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg transform hover:scale-105 hover:bg-brand-blue transition-all duration-300"
               >
                 <span>Get Started Today</span>
@@ -63,18 +60,30 @@ const RoboticTestingHeroSection: React.FC = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-purple-500">
-                  72 hr
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 text-center xl:text-left">
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-brand-blue">
+                  ISO
                 </div>
-                <div className="text-gray-600 text-sm">Average Turnaround</div>
+                <div className="text-gray-600 text-xs font-semibold">10218-1:2026</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-orange-500">
-                  24/7
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-purple-500">
+                  99.8%
                 </div>
-                <div className="text-gray-600 text-sm">Support Available</div>
+                <div className="text-gray-600 text-xs font-semibold">Deployment Success</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-orange-500">
+                  Physical
+                </div>
+                <div className="text-gray-600 text-xs font-semibold">AI Driven QA</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-bold text-green-500">
+                  HAZOP
+                </div>
+                <div className="text-gray-600 text-xs font-semibold">Risk Validated</div>
               </div>
             </div>
           </div>

@@ -17,75 +17,90 @@ const RoboticProvenTestingProcess: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      title: (<Link href='blog/post/why-discovery-analysis-matters-in-testing'>System & Requirements Analysis</Link>),
+      title: "Find Risks and Set Goals",
       description:
-        "Comprehensive analysis of robotic systems, specifications, and safety requirements to create a detailed testing strategy.",
+        "We use FMEA to find hazards like crashes or battery overheating. We then finalize the required testing metrics for your project.",
       icon: <FaSearch className="w-6 h-6" />,
       activities: [
-        "Robotic system specification review",
-        "Safety requirements analysis",
-        "Performance criteria assessment",
-        "Integration requirements evaluation",
+        "FMEA Hazard Identification",
+        "Battery Thermal Profiling",
+        "Mechanical Stress Analysis",
+        "Project Metric Finalization",
       ],
       duration: "3-4 days",
       color: "blue",
     },
     {
       id: 2,
-      title: (<Link href='blog/post/how-environment-setup-shapes-reliable-web-application-testing'>Test Environment Setup</Link>),
+      title: "Virtual Simulation (Digital Twin)",
       description:
-        "Setting up controlled testing environments with safety protocols and monitoring systems for comprehensive robotic testing.",
+        "Testing scenarios virtually to identify hardware-software latency and AI pathing errors before physical builds.",
       icon: <FaCog className="w-6 h-6" />,
       activities: [
-        "Testing environment configuration",
-        "Safety protocol implementation",
-        "Monitoring system setup",
-        "Test data preparation",
+        "Digital Twin Configuration",
+        "Sim2Real Gap Analysis",
+        "AI Pathing Error Check",
+        "HW-SW Latency Baseline",
       ],
-      duration: "2-3 days",
+      duration: "4-5 days",
       color: "green",
     },
     {
       id: 3,
-      title: (<Link href='blog/post/functional-testing-for-robotic-systems-precision-sensors-control'>Functional & Safety Testing</Link>),
+      title: "Proximity & Force Interaction Testing",
       description:
-        "Executing comprehensive functional tests and critical safety validations to ensure robotic systems meet all requirements.",
+        "Measuring stopping distances and contact forces to satisfy ISO 10218 collaborative safety limits.",
       icon: <FaShieldAlt className="w-6 h-6" />,
       activities: [
-        "Functional testing execution",
-        "Safety mechanism validation",
-        "Emergency protocol testing",
-        "Performance benchmarking",
+        "Stopping Distance Measurement",
+        "Contact Force Validation",
+        "ISO 10218 Safety Audit",
+        "Sensor Proximity Calibration",
       ],
-      duration: "5-7 days",
+      duration: "3-4 days",
       color: "purple",
     },
     {
       id: 4,
-      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Performance & Integration Testing</Link>),
+      title: "Verify Hardware Reliability",
       description:
-        "Advanced performance testing, test automation for robotics, and system integration validation to ensure optimal operation in real-world scenarios.",
+        "We test robots under extreme heat, noise, and vibration. These tests help identify early signs of wear or sensor damage.",
       icon: <FaChartLine className="w-6 h-6" />,
       activities: [
-        "Performance optimization testing",
-        "Integration testing execution",
-        "Load and stress testing",
-        "Endurance validation",
+        "Extreme Heat & Noise Stress",
+        "Joint Torque Diagnostics",
+        "Vibration Wear Analysis",
+        "Structural Fatigue Testing",
       ],
       duration: "4-6 days",
       color: "orange",
     },
     {
       id: 5,
-      title: "Validation & Delivery",
+      title: "Ensure System Accuracy",
       description:
-        "Final validation, end-user validation for robotics platforms, and delivery of certified systems with documentation.",
+        "Our team automates QA to sync sensor data with your enterprise systems. This confirms that all information is correct and consistent across your ERP and CRM.",
       icon: <FaCheckCircle className="w-6 h-6" />,
       activities: [
-        "Final validation testing",
-        "Comprehensive report generation",
-        "Certification documentation",
-        "Knowledge transfer & support",
+        "Enterprise System Sync",
+        "ERP/CRM Data Validation",
+        "Sensor Accuracy Audits",
+        "Automated QA Pipelinies",
+      ],
+      duration: "3-4 days",
+      color: "indigo",
+    },
+    {
+      id: 6,
+      title: "Audit Safety and Compliance",
+      description:
+        "We conduct a final 24/7 stress test on your system. This ensures that emergency stops and power modes meet UL and CE safety standards.",
+      icon: <FaCheckCircle className="w-6 h-6" />,
+      activities: [
+        "24/7 Stress Test Cycles",
+        "Emergency Stop Validation",
+        "UL & CE Standards Audit",
+        "Final Certification Review",
       ],
       duration: "2-3 days",
       color: "red",
@@ -98,6 +113,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
       green: "bg-green-500 text-white",
       purple: "bg-purple-500 text-white",
       orange: "bg-orange-500 text-white",
+      indigo: "bg-indigo-500 text-white",
       red: "bg-red-500 text-white",
     };
     return colors[color as keyof typeof colors];
@@ -109,6 +125,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
       green: "border-green-500",
       purple: "border-purple-500",
       orange: "border-orange-500",
+      indigo: "border-indigo-500",
       red: "border-red-500",
     };
     return colors[color as keyof typeof colors];
@@ -148,11 +165,10 @@ const RoboticProvenTestingProcess: React.FC = () => {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
                   <button
                     onClick={() => setActiveStep(index)}
-                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${
-                      activeStep === index
-                        ? getColorClasses(step.color)
-                        : "bg-gray-300 text-gray-600"
-                    }`}
+                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${activeStep === index
+                      ? getColorClasses(step.color)
+                      : "bg-gray-300 text-gray-600"
+                      }`}
                     aria-label={`Step ${step.id}: ${step.title}`}
                   >
                     <span className="font-bold text-sm">{step.id}</span>
@@ -161,22 +177,19 @@ const RoboticProvenTestingProcess: React.FC = () => {
 
                 {/* Content */}
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                    index % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 0 ? "" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Left/Right Content */}
                   <div
-                    className={`${
-                      index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
-                    }`}
+                    className={`${index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
+                      }`}
                   >
                     <div
-                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${
-                        activeStep === index
-                          ? `${getColorClasses(step.color)} shadow-lg scale-105`
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
+                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${activeStep === index
+                        ? `${getColorClasses(step.color)} shadow-lg scale-105`
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
                       onClick={() => setActiveStep(index)}
                     >
                       {step.icon}
@@ -191,11 +204,10 @@ const RoboticProvenTestingProcess: React.FC = () => {
                     </p>
 
                     <div
-                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
-                        activeStep === index
-                          ? getColorClasses(step.color)
-                          : "bg-gray-200 text-gray-600"
-                      }`}
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${activeStep === index
+                        ? getColorClasses(step.color)
+                        : "bg-gray-200 text-gray-600"
+                        }`}
                     >
                       Duration: {step.duration}
                     </div>
@@ -213,9 +225,8 @@ const RoboticProvenTestingProcess: React.FC = () => {
                       >
                         <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                           <span
-                            className={`w-3 h-3 rounded-full mr-2 ${
-                              getColorClasses(step.color).split(" ")[0]
-                            }`}
+                            className={`w-3 h-3 rounded-full mr-2 ${getColorClasses(step.color).split(" ")[0]
+                              }`}
                           ></span>
                           Key Activities:
                         </h4>
@@ -224,9 +235,8 @@ const RoboticProvenTestingProcess: React.FC = () => {
                           {step.activities.map((activity, actIndex) => (
                             <li key={actIndex} className="flex items-start">
                               <div
-                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${
-                                  getColorClasses(step.color).split(" ")[0]
-                                }`}
+                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${getColorClasses(step.color).split(" ")[0]
+                                  }`}
                               ></div>
                               <span className="text-gray-600">{activity}</span>
                             </li>
@@ -294,7 +304,7 @@ const RoboticProvenTestingProcess: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             {processSteps.map((step, index) => (
               <div key={step.id} className="text-center">
                 <div
