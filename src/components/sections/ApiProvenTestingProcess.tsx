@@ -9,6 +9,7 @@ import {
   FaCheckCircle,
   FaArrowRight,
   FaPlay,
+  FaPlug,
 } from "react-icons/fa";
 
 const ApiProvenTestingProcess: React.FC = () => {
@@ -18,15 +19,15 @@ const ApiProvenTestingProcess: React.FC = () => {
     {
       number: "01",
       icon: <FaSearch className="w-6 h-6" />,
-      title: "API Analysis & Planning",
+      title: "Plan & Analyze Risks",
       shortTitle: "Analysis",
       description:
-        "Comprehensive analysis of API specifications, endpoints, and requirements to create a detailed testing strategy.",
+        "We analyze risks to identify critical endpoints. This follows the risk-based approach defined in ISO 29119 Part 2.",
       details: [
-        "API specification review and analysis",
-        "Endpoint mapping and documentation",
-        "Test strategy development",
-        "Risk assessment and prioritization",
+        "Risk Assessment (ISO 29119-2)",
+        "Critical Endpoint Identification",
+        "Business Logic Mapping",
+        "Threat Modeling",
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -35,61 +36,66 @@ const ApiProvenTestingProcess: React.FC = () => {
     {
       number: "02",
       icon: <FaCode className="w-6 h-6" />,
-      title: "Test Design & Execution",
-      shortTitle: "Testing",
+      title: "Test Design",
+      shortTitle: "Design",
       description:
-        (
-          <>
-            Design and <Link href='blog/post/test-execution-comprehensive-testing-implementation'>execute comprehensive test</Link> cases covering functional, performance, and security aspects of your APIs.
-          </>
-        ),
+        "We use combination testing to cover every parameter. Our design includes boundary checks and complex schema validation to ensure full coverage (Part 4).",
       details: [
-        "Test case design and development",
-        "Automated test script creation",
-        "Manual testing execution",
-        "Continuous integration setup",
+        "Combination Testing (Part 4)",
+        "Boundary Value Analysis",
+        "Schema Validation Design",
+        "Negative Scenario Mapping",
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",
-      duration: "5-7 days",
+      duration: "3-5 days",
     },
     {
       number: "03",
-      icon: <FaChartLine className="w-6 h-6" />,
-      title: "Performance & Load Testing",
-      shortTitle: "Performance",
+      icon: <FaPlug className="w-6 h-6" />,
+      title: "Implementation",
+      shortTitle: "Build",
       description:
-        (
-          <>
-            Evaluate <Link href='blog/post/performance-load-testing-for-e-commerce-sites'>API performance under various load</Link> conditions and identify bottlenecks and optimization opportunities.
-          </>
-        ),
+        "We build API testing frameworks using Rest-Assured, Postman, or Cypress based on your tech stack.",
       details: [
-        "Load testing and stress testing",
-        "Performance bottleneck identification",
-        "Scalability assessment",
-        "Response time optimization",
+        "Framework Scaffolding",
+        "Rest-Assured/Postman Setup",
+        "Scripting & Reusable Libraries",
+        "Data Masking Protocols",
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
-      duration: "3-4 days",
+      duration: "4-6 days",
     },
     {
       number: "04",
+      icon: <FaPlay className="w-6 h-6" />,
+      title: "Continuous Execution",
+      shortTitle: "Execution",
+      description:
+        "Integration into CI/CD pipelines (Jenkins, GitHub Actions) for real-time feedback and regression validation.",
+      details: [
+        "CI/CD Pipeline Integration",
+        "Real-time Feedback Loops",
+        "Automated Smoke Testing",
+        "Environmental Consistency Checks",
+      ],
+      color: "teal",
+      gradient: "from-teal-500 to-teal-600",
+      duration: "Continuous",
+    },
+    {
+      number: "05",
       icon: <FaCheckCircle className="w-6 h-6" />,
-      title: "Report & Optimization",
+      title: "Completion & Reporting",
       shortTitle: "Delivery",
       description:
-        (
-          <>
-            Detailed <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>reporting with actionable insights</Link> and recommendations for API improvements and optimization.
-          </>
-        ),
+        "Detailed logs of status codes, response times, and compliance benchmarks for total visibility.",
       details: [
-        "Comprehensive test report generation",
-        "Issue prioritization and categorization",
-        "Optimization recommendations",
-        "Documentation and handover",
+        "Status Code Logging",
+        "Response Time Analysis",
+        "Compliance Benchmarking",
+        "Executive Summary Reports",
       ],
       color: "orange",
       gradient: "from-orange-500 to-orange-600",
@@ -102,12 +108,10 @@ const ApiProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Proven API Testing{" "}
-            <span className="text-[theme(color.brand.blue)]">Process</span>
+            Standard-Aligned <span className="text-[theme(color.brand.blue)]">QA Methodology</span>: The Testriq Way
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our systematic approach ensures comprehensive API testing coverage,
-            delivering reliable and secure integrations for your applications.
+            Our API testing follows the ISO 29119 series. Global firms recognize and trust this traceable process model.
           </p>
         </div>
 
@@ -379,12 +383,28 @@ const ApiProvenTestingProcess: React.FC = () => {
           </div>
         </div>
 
+        {/* MBT Section */}
+        <div className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Keyword-Driven & Model-Based Testing (MBT)</h3>
+            <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              We implement Keyword-Driven and Model-Based Testing (MBT). This approach follows the new <span className="font-semibold text-brand-blue">ISO 29119-5:2024 standard</span> to ensure your automation remains scalable. This allows for structured automated test generation, ensuring your suite remains maintainable as your API portfolio grows.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm text-sm font-medium text-blue-700 border border-blue-200">
+              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+              ISO 29119-5:2024 Evaluation Standard
+            </div>
+          </div>
+        </div>
+
         {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <Link href="/contact-us">
             <button className="flex items-center cursor-pointer gap-2 mx-auto bg-[theme(color.brand.blue)] text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300 shadow-lg">
               <FaPlay className="w-4 h-4" />
-              <span>Learn More About Our Process</span>
+              <span>Scale Your API Automation Now</span>
             </button>
           </Link>
         </div>

@@ -8,46 +8,25 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       icon: <FaShieldAlt className="text-3xl" />,
-      title: "Comprehensive Quality Assurance",
-      description: "Our regression testing ensures that new changes don't break existing functionality, maintaining software stability and user satisfaction across all releases.",
-      stats: "99.8% Stability Rate",
+      title: "ISO 29119 Part 2 & 3",
+      description: "We follow the ISO 29119 standard for our testing model. Using Part 2 for processes and Part 3 for documentation ensures your QA is traceable and globally recognized.",
+      stats: "Standard Aligned",
       color: "blue"
     },
     {
-      icon: <FaCogs className="text-3xl" />,
-      title: "Intelligent Test Optimization",
-      description: "Advanced impact analysis and risk-based testing approaches optimize regression test suites, reducing execution time while maintaining comprehensive coverage.",
-      stats: "60% Faster Execution",
-      color: "purple"
-    },
-    {
-      icon: <FaChartLine className="text-3xl" />,
-      title: "Advanced Analytics & Insights",
-      description: "Detailed regression testing analytics provide actionable insights into software quality trends, helping you make informed decisions about releases.",
-      stats: "Real-time Dashboards",
+      icon: <FaAward className="text-3xl" />,
+      title: "SOC2 Compliance",
+      description: "Our testing environments and data handling procedures meet rigorous security and privacy audits to protect your intellectual property.",
+      stats: "SOC2 Audited",
       color: "green"
     },
     {
       icon: <FaUsers className="text-3xl" />,
-      title: "Expert Testing Team",
-      description: "Our certified regression testing specialists bring deep expertise in various domains and technologies, ensuring thorough validation of your software.",
-      stats: "40+ Certified Experts",
-      color: "orange"
+      title: "GDPR Data Privacy",
+      description: "We use strict data masking and privacy rules for the EU market. This protects all personal data during manual and automated regression runs.",
+      stats: "PII Masked",
+      color: "purple"
     },
-    {
-      icon: <FaClock className="text-3xl" />,
-      title: "Rapid Feedback Cycles",
-      description: "Automated regression testing integrated with CI/CD pipelines provides immediate feedback on code changes, accelerating development cycles.",
-      stats: "15-min Feedback",
-      color: "teal"
-    },
-    {
-      icon: <FaCheckCircle className="text-3xl" />,
-      title: "Proven Methodologies",
-      description: "Industry-proven regression testing methodologies and best practices ensure consistent, reliable, and effective testing across all your projects.",
-      stats: "500+ Projects",
-      color: "indigo"
-    }
   ];
 
   const getColorClasses = (color: string) => {
@@ -55,9 +34,6 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
       blue: { bg: "bg-blue-50", text: "text-blue-600", iconBg: "bg-blue-600" },
       purple: { bg: "bg-purple-50", text: "text-purple-600", iconBg: "bg-purple-600" },
       green: { bg: "bg-green-50", text: "text-green-600", iconBg: "bg-green-600" },
-      orange: { bg: "bg-orange-50", text: "text-orange-600", iconBg: "bg-orange-600" },
-      teal: { bg: "bg-teal-50", text: "text-teal-600", iconBg: "bg-teal-600" },
-      indigo: { bg: "bg-indigo-50", text: "text-indigo-600", iconBg: "bg-indigo-600" }
     };
     return colorMap[color] || colorMap.blue;
   };
@@ -69,14 +45,14 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
             <span className="text-sm">
-              Why Choose Us
+              Engineering Trust
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why Choose <span className="text-brand-blue">Testriq</span> for Regression Testing?
+            Global Standards & <span className="text-brand-blue">Compliance</span>: Engineering Trust
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive regression testing solutions that ensure <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability</Link>, maintain <Link href='blog/post/the-importance-of-qa-documentation-services-in-ensuring-quality'>quality standards</Link>, and provide confidence in every release through proven <Link href='blog/post/top-5-reasons-to-choose-our-ai-testing-services-the-best-api-testing-company-and-qa-experts'>methodologies and expert</Link> execution.
+            To rank as a leader in outsourced regression testing, we adhere to the highest international benchmarks. Our processes ensure your data remains secure while your software remains stable.
           </p>
         </div>
 

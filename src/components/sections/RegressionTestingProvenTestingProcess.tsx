@@ -10,71 +10,71 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Impact Analysis & Planning",
-      duration: "1-2 days",
+      title: "Plan and Analyze Risks",
+      duration: "Foundational",
       icon: <FaClipboardList className="text-2xl" />,
-      description: "Comprehensive analysis of code changes and their potential impact on existing functionalities to determine regression testing scope.",
+      description: "We begin by identifying critical endpoints and business-critical flows. Following ISO 29119-2, we analyze the impact of recent code changes to define the optimal regression scope.",
       activities: [
-        "Change impact assessment",
-        "Risk analysis and prioritization",
-        "Test case selection strategy",
-        "Resource allocation planning"
+        "Identify Critical Endpoints",
+        "Business-Critical Flow Analysis",
+        "ISO 29119-2 Impact Assessment",
+        "Optimal Scope Definition"
       ],
-      nextStep: "Test Suite Preparation"
+      nextStep: "Test Case Priorities"
     },
     {
       id: 2,
-      title: "Test Suite Preparation",
-      duration: "2-3 days",
+      title: "Test Case set priorities & Selection",
+      duration: "Strategic",
       icon: <FaCodeBranch className="text-2xl" />,
-      description: "Preparation and optimization of regression test suites based on impact analysis and risk assessment.",
+      description: "Using Regression Test Selection (RTS) techniques, we categorize cases into high, medium, and low priority. We test the most vital features first in every cycle.",
       activities: [
-        "Test case review and update",
-        "Test data preparation",
-        "Environment setup",
-        "Automation script validation"
+        "RTS Categorization",
+        "High/Medium/Low Triage",
+        "Critical Path Prioritization",
+        "Optimized Suite Selection"
       ],
-      nextStep: "Test Execution"
+      nextStep: "Script Maintenance"
     },
     {
       id: 3,
-      title: "Regression Test Execution",
-      duration: "3-5 days",
+      title: "Automated Script Maintenance",
+      duration: "Technical",
       icon: <FaPlay className="text-2xl" />,
-      description: "Systematic execution of regression tests using both automated and manual approaches for comprehensive coverage.",
+      description: "One of the biggest hurdles is test script maintenance. We utilize modular frameworks to ensure that when your UI changes, your automated regression testing scripts don't break.",
       activities: [
-        "Automated test execution",
-        "Manual regression testing",
-        "Cross-platform validation",
-        "Real-time defect logging"
+        "Modular Framework Setup",
+        "UI Change Impact Check",
+        "Script Resilience Updates",
+        "Self-Healing Mechanisms"
       ],
-      nextStep: "Analysis & Reporting"
+      nextStep: "Execution & CI/CD"
     },
     {
       id: 4,
-      title: "Analysis & Reporting",
-      duration: "1-2 days",
+      title: "Execution & CI/CD Integration",
+      duration: "Continuous",
       icon: <FaChartLine className="text-2xl" />,
-      description: "Comprehensive analysis of test results with detailed reporting and recommendations for quality improvement.",
+      description: "We integrate directly into your CI/CD pipelines (Jenkins, GitHub Actions, Azure DevOps). This enables continuous regression testing, providing instant feedback to developers.",
       activities: [
-        "Test result analysis",
-        "Defect impact assessment",
-        "Regression report generation",
-        "Quality metrics compilation"
+        "Pipeline Integration (Jenkins/GH)",
+        "Automated Execution Triggers",
+        "Real-time Developer Feedback",
+        "Continuous Quality Gates"
       ],
-      nextStep: "Validation & Sign-off"
+      nextStep: "Defect Re-testing"
     },
     {
       id: 5,
-      title: "Validation & Sign-off",
-      duration: "1 day",
+      title: "Defect Re-testing & Reporting",
+      duration: "Finalization",
       icon: <FaCheckCircle className="text-2xl" />,
-      description: "Final validation of fixes and formal sign-off to ensure all regression issues are resolved before release.",
+      description: "Our team re-tests every defect to confirm the fix. We then execute a wider regression run to guarantee that the repair caused no unintended side effects.",
       activities: [
-        "Fix validation testing",
-        "Final regression verification",
-        "Quality gate assessment",
-        "Release readiness sign-off"
+        "Bug Fix Confirmation",
+        "Wider Regression Run",
+        "Side-Effect Analysis",
+        "Detailed Quality Reports"
       ],
       nextStep: "Process Complete"
     }
@@ -85,10 +85,10 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-blue">Proven</span> Regression Testing Process
+            Step-by-Step <span className="text-brand-blue">QA Methodology</span>: The Testriq Way
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our <Link href='blog/post/manual-regression-testing-which-to-choose'>systematic regression testing</Link> process ensures comprehensive validation of <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability and quality</Link> with every release, minimizing risks and <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>maintaining user satisfaction</Link>.
+            Our regression process follows the latest industry best practices. This ensures system stability as your code and requirements evolve.
           </p>
         </div>
 
@@ -168,8 +168,8 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
             </p>
             <Link href="/contact-us">
               <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Start Your Regression Testing
-            </button>
+                Start Your Regression Testing
+              </button>
             </Link>
           </div>
         </div>

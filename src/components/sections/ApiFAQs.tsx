@@ -9,71 +9,48 @@ const ApiFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of APIs can you test?",
+      question: "What is API testing in software testing?",
+      answer:
+        "API testing involves verifying that the communication between different software systems (Application Programming Interfaces) is secure, reliable, and performs as expected. Unlike UI testing, it focuses on the business logic layer.",
+    },
+    {
+      question: "What are the primary API testing techniques?",
       answer:
         (
-          <>
-            We test all types of APIs including <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'></Link>, <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>SOAP</Link>, <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>GraphQL</Link>, GRPC, and WebSocket APIs. <Link href='our-team'>Our team</Link> has experience with various protocols, authentication methods, and data formats to ensure comprehensive testing coverage.
-          </>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>Unit Testing:</strong> Validating individual endpoints.</li>
+            <li><strong>Integration Testing:</strong> Checking how multiple APIs work together.</li>
+            <li><strong>Security Testing:</strong> Ensuring identity and access rights are robust.</li>
+            <li><strong>Fuzz Testing:</strong> Sending unexpected or random data to find crashes.</li>
+          </ul>
         ),
     },
     {
-      question: "How long does API testing typically take?",
-      answer:
-        "The duration depends on the complexity and scope of your APIs. Simple API testing can be completed in 1-2 weeks, while comprehensive testing for complex systems may take 4-6 weeks. We provide detailed timelines during the planning phase.",
-    },
-    {
-      question: "Do you provide automated API testing?",
+      question: "Can you provide an API testing checklist?",
       answer:
         (
-          <>
-            Yes, we specialize in automated API testing using industry-leading tools like Postman, <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'>REST Assured</Link>, and custom frameworks. Automation helps ensure consistent testing, faster feedback, and continuous validation in <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipelines</Link>.
-          </>
+          <div className="space-y-3">
+            <p>A professional API testing checklist should include:</p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Verify HTTP status codes (200, 201, 400, 401, 404, 500).</li>
+              <li>Validate JSON/XML schema and data types.</li>
+              <li>Test for negative scenarios (invalid inputs).</li>
+              <li>Check response headers and performance latency.</li>
+            </ul>
+            <p className="mt-2 italic">Our team validates JWT and OAuth2 tokens to ensure strict access control across your systems.</p>
+          </div>
         ),
     },
     {
-      question: "What security testing do you perform on APIs?",
+      question: "What are common API testing interview questions for testers?",
       answer:
         (
-          <>
-            Our security testing includes <Link href='blog/post/security-testing-checklist-before-go-live-2'>authentication and authorization testing</Link>, input validation, SQL injection testing, XSS prevention, rate limiting validation, and data encryption verification. We follow <Link href='blog/post/top-10-security-vulnerabilities-based-on-owasp'>OWASP API Security</Link> guidelines.
-          </>
-        ),
-    },
-    {
-      question: "Can you integrate API testing into our CI/CD pipeline?",
-      answer:
-        (
-          <>
-            Absolutely! We can integrate automated API tests into your existing <Link href='blog/post/devsecops-integrating-security-in-your-ci-cd-pipeline-2'>CI/CD pipeline</Link> using tools like Jenkins, GitLab CI, GitHub Actions, or Azure <Link href='blog/post/integrating-performance-testing-into-ci-cd-for-devops-success'>DevOps</Link>. This ensures continuous validation of your APIs with every deployment.
-          </>
-        ),
-    },
-    {
-      question: "What deliverables do you provide?",
-      answer:
-        (
-          <>
-            We provide comprehensive test reports, automated test scripts, performance benchmarks, <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>security assessment reports</Link>, and <Link href='blog/post/how-to-write-qa-documentation-a-complete-guide'>detailed documentation</Link>. All deliverables include actionable recommendations for improvement.
-          </>
-        ),
-    },
-    {
-      question: "Do you test third-party API integrations?",
-      answer:
-        (
-          <>
-            Yes, we test integrations with <Link href='blog/post/api-integration-testing-ensuring-seamless-system-communication'>third-party APIs</Link> including payment gateways, social media APIs, <Link href='blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation'>cloud services</Link>, and other external systems. We ensure proper error handling, data mapping, and performance optimization.
-          </>
-        ),
-    },
-    {
-      question: "What tools do you use for API testing?",
-      answer:
-        (
-          <>
-            We use a comprehensive toolkit including Postman, SoapUI, <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'>REST Assured</Link>, <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>JMeter</Link>, Karate, Newman, and custom frameworks. Tool selection depends on your specific requirements and <Link href='blog/post/what-are-the-monitoring-tools-in-software-testing'>technology stack</Link>.
-          </>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>How do you test a REST API without any documentation?</li>
+            <li>Technical Comparison: SOAP vs. REST API Architectures?</li>
+            <li>How do you handle dynamic data in automated API testing?</li>
+            <li>Explain the importance of Contract Testing in micro-services.</li>
+          </ul>
         ),
     },
   ];
