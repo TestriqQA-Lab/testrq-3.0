@@ -34,11 +34,39 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "02",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: (
-        <Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>
-          Security & Protocol Testing
-        </Link>
-      ),
+      title: "Firmware-Over-The-Air (FOTA) Validation",
+      shortTitle: "FOTA",
+      description: "Testing the reliability and security of remote updates to prevent 'bricking' during automated firmware regression tests.",
+      details: [
+        { id: 'ota-reliability', content: "Remote Update Reliability" },
+        { id: 'bricking-prevention', content: "Firmware Rollback Testing" },
+        { id: 'automated-regression', content: "Automated Regression Suites" },
+        { id: 'secure-boot', content: "Secure Boot Validation" },
+      ],
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
+      duration: "3-4 days",
+    },
+    {
+      number: "03",
+      icon: <FaNetworkWired className="w-6 h-6" />,
+      title: "Connection & RF Interference Testing",
+      shortTitle: "RF/Signal",
+      description: "Simulating crowded signal environments to ensure Radio Frequency (RF) interference does not disrupt mission-critical data.",
+      details: [
+        { id: 'signal-crowding', content: "Crowded Signal Simulation" },
+        { id: 'rf-isolation', content: "RF Shield Box Testing" },
+        { id: 'packet-loss', content: "Latency & Packet Loss Checks" },
+        { id: 'handover-test', content: "Satellite/Cellular Handovers" },
+      ],
+      color: "indigo",
+      gradient: "from-indigo-500 to-indigo-600",
+      duration: "2-3 days",
+    },
+    {
+      number: "04",
+      icon: <FaShieldAlt className="w-6 h-6" />,
+      title: "Security Penetration & Gap Assessment",
       shortTitle: "Security",
       description: (
         <>
@@ -53,16 +81,10 @@ const IoTProvenTestingProcess: React.FC = () => {
         </>
       ),
       details: [
-        { id: 'device-auth', content: "Device authentication testing" },
-        { id: 'encryption-validation', content: "Encryption protocol validation" },
-        { id: 'comm-assessment', content: "Communication security assessment" },
-        {
-          id: 'penetration-testing', content: (
-            <Link href='blog/post/device-penetration-testing'>
-              Vulnerability penetration testing
-            </Link>
-          )
-        },
+        { id: 'hardcoded-creds', content: "Credential Exposure Audits" },
+        { id: 'data-encryption', content: "Data-at-Rest Validation" },
+        { id: 'api-security', content: "Cloud API Penetration" },
+        { id: 'pii-protection', content: "PII & GDPR Compliance" },
       ],
       color: "red",
       gradient: "from-red-500 to-red-600",
@@ -80,18 +102,10 @@ const IoTProvenTestingProcess: React.FC = () => {
       description:
         "Evaluate IoT system performance under various load conditions and network scenarios.",
       details: [
-        { id: 'benchmarking', content: "Device performance benchmarking" },
-        {
-          id: 'network-load-testing', content: (
-            <>Network{' '}
-              <Link href='blog/post/what-is-load-testing-in-software-engineering'>
-                load testing
-              </Link>
-            </>
-          )
-        },
-        { id: 'scalability', content: "Scalability assessment" },
-        { id: 'battery-optimization', content: "Battery life optimization" },
+        { id: 'battery-profiling', content: "Battery Drain Optimization" },
+        { id: 'edge-latency', content: "Edge Computing Benchmarks" },
+        { id: 'thermal-stress', content: "Thermal Throttling Analysis" },
+        { id: 'load-scalability', content: "High-Transaction Stress" },
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -109,16 +123,10 @@ const IoTProvenTestingProcess: React.FC = () => {
       description:
         "Detailed reporting with actionable insights and recommendations for IoT system improvements.",
       details: [
-        { id: 'comprehensive-report', content: "Comprehensive IoT test report" },
-        {
-          id: 'security-vuln-assessment', content: (
-            <Link href='blog/post/ai-security-testing'>
-              Security vulnerability assessment
-            </Link>
-          )
-        },
-        { id: 'performance-guide', content: "Performance optimization guide" },
-        { id: 'deployment-recommendations', content: "Deployment recommendations" },
+        { id: 'etsi-readiness', content: "ETSI EN 303 645 Audit" },
+        { id: 'cra-mapping', content: "Cyber Resilience Act Prep" },
+        { id: 'cert-docs', content: "Standardized Documentation" },
+        { id: 'market-entry', content: "Global Market Certification" },
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaWifi, FaShieldAlt, FaChartLine, FaMobile, FaCloud, FaFlask } from "react-icons/fa";
+import { FaWifi, FaShieldAlt, FaChartLine, FaMobile, FaFlask, FaCloud } from "react-icons/fa";
 import { FaBatteryFull } from "react-icons/fa";
 
 const SmartDeviceComprehensiveSlider: React.FC = () => {

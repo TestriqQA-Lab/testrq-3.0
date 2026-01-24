@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaShieldAlt, FaCogs, FaChartLine, FaUsers, FaClock, FaCheckCircle, FaAward } from "react-icons/fa";
+import { FaShieldAlt, FaUsers, FaAward, FaCogs, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
 
 const RegressionTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [

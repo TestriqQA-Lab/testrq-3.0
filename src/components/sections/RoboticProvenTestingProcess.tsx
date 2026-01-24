@@ -148,11 +148,10 @@ const RoboticProvenTestingProcess: React.FC = () => {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
                   <button
                     onClick={() => setActiveStep(index)}
-                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${
-                      activeStep === index
-                        ? getColorClasses(step.color)
-                        : "bg-gray-300 text-gray-600"
-                    }`}
+                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${activeStep === index
+                      ? getColorClasses(step.color)
+                      : "bg-gray-300 text-gray-600"
+                      }`}
                     aria-label={`Step ${step.id}: ${step.title}`}
                   >
                     <span className="font-bold text-sm">{step.id}</span>
@@ -161,22 +160,19 @@ const RoboticProvenTestingProcess: React.FC = () => {
 
                 {/* Content */}
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                    index % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 0 ? "" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Left/Right Content */}
                   <div
-                    className={`${
-                      index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
-                    }`}
+                    className={`${index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
+                      }`}
                   >
                     <div
-                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${
-                        activeStep === index
-                          ? `${getColorClasses(step.color)} shadow-lg scale-105`
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
+                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${activeStep === index
+                        ? `${getColorClasses(step.color)} shadow-lg scale-105`
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
                       onClick={() => setActiveStep(index)}
                     >
                       {step.icon}
@@ -191,11 +187,10 @@ const RoboticProvenTestingProcess: React.FC = () => {
                     </p>
 
                     <div
-                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
-                        activeStep === index
-                          ? getColorClasses(step.color)
-                          : "bg-gray-200 text-gray-600"
-                      }`}
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${activeStep === index
+                        ? getColorClasses(step.color)
+                        : "bg-gray-200 text-gray-600"
+                        }`}
                     >
                       Duration: {step.duration}
                     </div>
@@ -213,9 +208,8 @@ const RoboticProvenTestingProcess: React.FC = () => {
                       >
                         <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                           <span
-                            className={`w-3 h-3 rounded-full mr-2 ${
-                              getColorClasses(step.color).split(" ")[0]
-                            }`}
+                            className={`w-3 h-3 rounded-full mr-2 ${getColorClasses(step.color).split(" ")[0]
+                              }`}
                           ></span>
                           Key Activities:
                         </h4>
@@ -224,9 +218,8 @@ const RoboticProvenTestingProcess: React.FC = () => {
                           {step.activities.map((activity, actIndex) => (
                             <li key={actIndex} className="flex items-start">
                               <div
-                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${
-                                  getColorClasses(step.color).split(" ")[0]
-                                }`}
+                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${getColorClasses(step.color).split(" ")[0]
+                                  }`}
                               ></div>
                               <span className="text-gray-600">{activity}</span>
                             </li>

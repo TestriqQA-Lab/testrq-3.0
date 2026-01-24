@@ -7,20 +7,20 @@ import {
   FaShieldAlt,
   FaChartLine,
   FaTools,
-  FaBug,
   FaBatteryHalf,
   FaSearch,
   FaNetworkWired,
+  FaBug,
 } from "react-icons/fa";
 
 import {
   SiAppium,
   SiAndroid,
-  SiApple,
   SiApachejmeter,
   SiGatling,
   SiOwasp,
   SiBurpsuite,
+  SiApple,
 } from "react-icons/si";
 
 import { MdInsights } from "react-icons/md";

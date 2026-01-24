@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import {
   FaMobile,
   FaShieldAlt,
-  FaWifi,
   FaChartLine,
+  FaAward,
+  FaWifi,
   FaUsers,
   FaClock,
-  FaAward,
 } from "react-icons/fa";
 
 const SmartDeviceWhyChooseTestriq: React.FC = () => {
@@ -155,32 +155,28 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
             >
               {/* Card */}
               <div
-                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${
-                  hoveredCard === index
-                    ? `scale-105 shadow-2xl ${
-                        getColorClasses(reason.color).split(" ")[2]
-                      }`
-                    : "border-gray-200 hover:shadow-xl"
-                }`}
+                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${hoveredCard === index
+                  ? `scale-105 shadow-2xl ${getColorClasses(reason.color).split(" ")[2]
+                  }`
+                  : "border-gray-200 hover:shadow-xl"
+                  }`}
               >
                 {/* Icon and Achievement Badge */}
                 <div className="flex items-start justify-between mb-6">
                   <div
-                    className={`p-4 rounded-xl transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`p-4 rounded-xl transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.icon}
                   </div>
 
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.achievement}
                   </div>
@@ -197,11 +193,10 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
 
                 {/* Capabilities */}
                 <div
-                  className={`transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 max-h-40"
-                      : "opacity-0 max-h-0 overflow-hidden"
-                  }`}
+                  className={`transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 max-h-40"
+                    : "opacity-0 max-h-0 overflow-hidden"
+                    }`}
                 >
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                     <span
@@ -227,11 +222,10 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
 
                 {/* CTA Button */}
                 <div
-                  className={`mt-6 transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
-                  }`}
+                  className={`mt-6 transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                    }`}
                 >
                   <Link
                     href="/contact-us"

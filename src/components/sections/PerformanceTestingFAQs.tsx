@@ -1,6 +1,4 @@
-"use client";
 
-import React from "react";
 
 const PerformanceTestingFAQs: React.FC = () => {
   return (

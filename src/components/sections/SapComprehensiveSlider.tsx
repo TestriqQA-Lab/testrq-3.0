@@ -3,8 +3,8 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-    FaExchangeAlt,
     FaChartLine,
+    FaExchangeAlt,
     FaFlask,
     FaServer,
     FaSync,

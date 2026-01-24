@@ -12,15 +12,7 @@ const IoTFAQs: React.FC = () => {
       question: "What types of IoT devices can you test?",
       answer: (
         <>
-          We test a wide range of IoT devices, including{" "}
-          <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-            smart home devices
-          </Link>{" "}
-          (e.g., lights, thermostats, locks), industrial IoT systems (e.g.,
-          sensors, actuators), wearable devices,{" "}
-          <Link href="healthcare-testing-services">healthcare monitors</Link>,
-          and automotive IoT solutions. Our testing covers hardware, firmware,
-          and software across consumer, industrial, and enterprise applications.
+          The most critical challenge is device diversity and <Link href="/blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction" className="text-[theme(color.brand.blue)] hover:underline">interoperability</Link>. To ensure your product works across various protocols (Zigbee, MQTT) and firmware versions, we use a standardized <Link href="/blog/post/iso-iec-29119-as-a-standardized-framework-for-modern-software-testing" className="text-[theme(color.brand.blue)] hover:underline">ISO/IEC 29119</Link> approach for consistent test design.
         </>
       ),
     },
@@ -46,17 +38,7 @@ const IoTFAQs: React.FC = () => {
       question: "What IoT protocols do you support?",
       answer: (
         <>
-          We support 15+ IoT protocols,{" "}
-          <Link href="blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">
-            including WiFi, Bluetooth LE, Zigbee, Z-Wave, MQTT, CoAP, LoRaWAN,
-            and cellular
-          </Link>{" "}
-          (4G/5G). Our testing ensures protocol compliance,{" "}
-          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
-            interoperability
-          </Link>
-          , and reliable data transmission across diverse network environments
-          using tools like Wireshark and MQTT.fx.
+          Security testing for medical IoT devices is vital because a breach can directly impact patient safety. Adhering to <Link href="/healthcare-testing-services" className="text-[theme(color.brand.blue)] hover:underline">HIPAA</Link> and the <span className="font-semibold">Cyber Resilience Act (CRA)</span> ensures we encrypt patient data and harden devices against OT ransomware and unauthorized firmware tampering.
         </>
       ),
     },
@@ -69,18 +51,7 @@ const IoTFAQs: React.FC = () => {
       question: "Do you test IoT device interoperability?",
       answer: (
         <>
-          Yes, we validate{" "}
-          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
-            interoperability
-          </Link>{" "}
-          across devices, protocols, and platforms using real-world scenarios
-          and{" "}
-          <Link href="blog/post/what-are-the-highly-used-testing-tools-in-2024">
-            simulation tools
-          </Link>
-          . Our testing ensures seamless communication between devices (e.g.,
-          hubs, sensors, apps) and compatibility with cloud platforms like AWS
-          IoT and Azure IoT Hub.
+          Automating firmware regression tests ensures that every new update (<Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks" className="text-[theme(color.brand.blue)] hover:underline">FOTA</Link>) does not break existing features. Automation slashes testing cycles from weeks to hours, speeding up development and getting your IoT products to market faster.
         </>
       ),
     },
@@ -88,18 +59,7 @@ const IoTFAQs: React.FC = () => {
       question: "Can you test IoT devices at scale?",
       answer: (
         <>
-          We test IoT devices at scale using automated frameworks like Robot
-          Framework and{" "}
-          <Link href="blog/post/what-is-load-testing-in-software-engineering">
-            load testing
-          </Link>{" "}
-          tools like{" "}
-          <Link href="blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide">
-            JMeter
-          </Link>{" "}
-          and Gatling. Our testing simulates thousands of concurrent devices,
-          validates scalability, and ensures performance under high-traffic
-          conditions for enterprise-grade IoT ecosystems.
+          We simulate a connected device environment where multiple <Link href="/smart-device-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">smart devices</Link> (lights, thermostats, cameras) interact simultaneously. We measure <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline">edge computing latency</Link> and the cloud backend&apos;s ability to handle data spikes without service degradation under peak workloads.
         </>
       ),
     },
@@ -190,7 +150,7 @@ const IoTFAQs: React.FC = () => {
               <Link
                 href="/contact-us"
                 title="Start Your IoT Success Story – Testriq QA Lab"
-                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-brand-blue font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
               >
                 Start Your IoT Success Story
               </Link>

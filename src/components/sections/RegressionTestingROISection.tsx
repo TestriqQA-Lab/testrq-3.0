@@ -5,9 +5,9 @@ import React from "react";
 import {
   FaBug,
   FaClock,
-  FaDollarSign,
   FaCheckCircle,
   FaChartLine,
+  FaDollarSign,
 } from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
@@ -25,8 +25,8 @@ const RegressionTestingROISection: React.FC = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Regression testing is a critical investment that ensures <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software
-            stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
-            reducing risks</Link>, it delivers significant returns and maintains user
+              stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
+                reducing risks</Link>, it delivers significant returns and maintains user
             satisfaction.
           </p>
         </div>

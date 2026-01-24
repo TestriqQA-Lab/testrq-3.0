@@ -6,11 +6,11 @@ import {
   FaWifi,
   FaShieldAlt,
   FaChartLine,
-  FaCogs,
   FaNetworkWired,
-  FaCloud,
   FaArrowRight,
   FaFlask,
+  FaCogs,
+  FaCloud,
 } from "react-icons/fa";
 
 const IoTComprehensiveSlider: React.FC = () => {
@@ -124,7 +124,7 @@ const IoTComprehensiveSlider: React.FC = () => {
             <span className="text-[theme(color.brand.blue)]">Coverage</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive IoT device testing services cover every layer of your connected ecosystem, ensuring device reliability, <Link href='blog/post/iot-security-validation-protecting-devices-from-cyber-threats'>security compliance</Link>, <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>protocol interoperability</Link>, and <Link href='performance-testing-services'>performance</Link> validation across real-world conditions and all supported IoT protocols.
+            Our specialized IoT testing approaches are engineered for the 2026 ecosystem, countering <Link href="/performance-testing-services" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">latency</Link>, <Link href="/blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">5G interference</Link>, and <Link href="/security-testing" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">firmware vulnerabilities</Link> to protect your industrial and consumer assets.
           </p>
         </div>
 
@@ -135,15 +135,15 @@ const IoTComprehensiveSlider: React.FC = () => {
               key={index}
               onClick={() => setActiveTab(index)}
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${activeTab === index
-                  ? `bg-${type.color}-500 text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                ? `bg-${type.color}-500 text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
                 }`}
             >
               <div className="flex items-center gap-2">
                 <div
                   className={`${activeTab === index
-                      ? "text-white"
-                      : `text-${type.color}-500`
+                    ? "text-white"
+                    : `text-${type.color}-500`
                     }`}
                 >
                   {React.cloneElement(type.icon, { className: "w-4 h-4" })}

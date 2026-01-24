@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaSearch, FaEdit, FaCheckCircle, FaRocket, FaUsers, FaChartLine } from 'react-icons/fa';
+import { FaSearch, FaEdit, FaCheckCircle, FaUsers, FaChartLine, FaRocket } from 'react-icons/fa';
 
 const QADocumentationProvenTestingProcess = () => {
   const processSteps = [
@@ -154,12 +154,12 @@ const QADocumentationProvenTestingProcess = () => {
             {processSteps.map((step, index) => {
               const IconComponent = step.icon;
               const isEven = index % 2 === 0;
-              
+
               return (
                 <div key={step.id} className={`relative ${isEven ? 'lg:pr-8' : 'lg:pl-16'}`}>
                   {/* Timeline Dot */}
-                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-500 rounded-full hidden lg:block" style={{top: '2rem'}}></div>
-                  
+                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-500 rounded-full hidden lg:block" style={{ top: '2rem' }}></div>
+
                   {/* Content Card */}
                   <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 ${isEven ? 'lg:ml-16' : 'lg:mr-16'}`}>
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -255,7 +255,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Proven Methodology</h4>
               <p className="text-gray-600">
-                Our 6-step process has been refined through 150+ successful documentation projects, 
+                Our 6-step process has been refined through 150+ successful documentation projects,
                 ensuring consistent quality and efficient delivery.
               </p>
             </div>
@@ -266,7 +266,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Collaborative Approach</h4>
               <p className="text-gray-600">
-                Continuous stakeholder involvement and feedback <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">integration</Link> ensures documentation 
+                Continuous stakeholder involvement and feedback <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">integration</Link> ensures documentation
                 meets your specific needs and requirements.
               </p>
             </div>
@@ -277,7 +277,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Measurable Results</h4>
               <p className="text-gray-600">
-                Our process delivers measurable improvements in team efficiency, <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">quality consistency</Link>, 
+                Our process delivers measurable improvements in team efficiency, <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">quality consistency</Link>,
                 and project delivery timelines.
               </p>
             </div>
@@ -294,8 +294,8 @@ const QADocumentationProvenTestingProcess = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
                 <button className="px-8 py-4 cursor-pointer border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200">
-                Schedule Consultation
-              </button>
+                  Schedule Consultation
+                </button>
               </Link>
             </div>
           </div>

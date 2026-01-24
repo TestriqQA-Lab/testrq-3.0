@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaShieldAlt, FaCertificate, FaUsers, FaChartLine, FaClock, FaCheckCircle, FaAward } from "react-icons/fa";
+import { FaShieldAlt, FaChartLine, FaAward, FaCertificate, FaUsers, FaClock, FaCheckCircle } from "react-icons/fa";
 
 const SecurityTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
@@ -92,13 +92,13 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
                 <div className={`${colors.iconBg} w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <span className="text-white">{advantage.icon}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {advantage.description}
                 </p>
-                
+
                 <div className={`${colors.text} font-bold text-lg`}>
                   {advantage.stats}
                 </div>
@@ -144,7 +144,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
             <p className="text-gray-600 leading-relaxed mb-6">
               Our security testing team holds industry-leading certifications such as CEH, CISSP, and OSCP, and follows established security frameworks and secure development lifecycle practices to ensure comprehensive protection, compliance validation, and alignment with regulatory standards.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2 bg-red-600 rounded-full"></div>
@@ -175,7 +175,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
 
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
             <h4 className="text-xl font-bold text-gray-900 mb-6">Security Testing Excellence</h4>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="bg-red-600 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">

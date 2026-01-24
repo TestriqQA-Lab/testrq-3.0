@@ -6,9 +6,9 @@ import {
     FaShieldAlt,
     FaChartLine,
     FaUsers,
-    FaRocket,
-    FaCogs,
     FaHandshake,
+    FaCogs,
+    FaRocket,
     FaBriefcase,
 } from "react-icons/fa";
 

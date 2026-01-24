@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaAward, FaClock, FaUsers, FaShieldAlt, FaChartLine, FaCog, FaGlobe, FaHandshake } from 'react-icons/fa';
+import { FaAward, FaShieldAlt, FaCog, FaClock, FaUsers, FaChartLine, FaGlobe, FaHandshake } from 'react-icons/fa';
 
 const QADocumentationWhyChooseTestriq = () => {
+
   const advantages = [
     {
       icon: FaAward,

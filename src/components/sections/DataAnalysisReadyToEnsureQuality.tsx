@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 
 const DataAnalysisReadyToEnsureQuality = () => {
+
   const benefits = [
     (<><Link href="/blog/post/ai-testing-learning-guide">Advanced machine learning and AI capabilities</Link></>),
     "Real-time analytics and automated insights",
@@ -18,26 +19,6 @@ const DataAnalysisReadyToEnsureQuality = () => {
     "Scalable cloud-based infrastructure",
     "Industry-specific domain expertise",
     (<>Comprehensive data <Link href="/security-testing">security</Link> and compliance</>),
-  ];
-
-  const testimonials = [
-    {
-      content:
-        "Testriq's analytics team transformed our customer insights strategy. The predictive models increased our sales conversion by 40%.",
-      rating: 5,
-    },
-    {
-      content:
-        "Outstanding data visualization and real-time analytics implementation. The dashboards provide actionable insights that drive our business decisions.",
-      rating: 5,
-    },
-  ];
-
-  const stats = [
-    { number: "500+", label: "Analytics Projects" },
-    { number: "98%", label: "Client Satisfaction" },
-    { number: "4.9/5", label: "Average Rating" },
-    { number: "95%", label: "Model Accuracy" },
   ];
 
   const serviceHighlights = [
@@ -59,6 +40,27 @@ const DataAnalysisReadyToEnsureQuality = () => {
       description:
         "Get actionable recommendations for optimal business decisions",
     },
+  ];
+
+
+  const testimonials = [
+    {
+      content:
+        "Testriq's analytics team transformed our customer insights strategy. The predictive models increased our sales conversion by 40%.",
+      rating: 5,
+    },
+    {
+      content:
+        "Outstanding data visualization and real-time analytics implementation. The dashboards provide actionable insights that drive our business decisions.",
+      rating: 5,
+    },
+  ];
+
+  const stats = [
+    { number: "500+", label: "Analytics Projects" },
+    { number: "98%", label: "Client Satisfaction" },
+    { number: "4.9/5", label: "Average Rating" },
+    { number: "95%", label: "Model Accuracy" },
   ];
 
   return (
@@ -265,7 +267,7 @@ const DataAnalysisReadyToEnsureQuality = () => {
               new heights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                 <button className="bg-white cursor-pointer text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Schedule Free Demo
                 </button>

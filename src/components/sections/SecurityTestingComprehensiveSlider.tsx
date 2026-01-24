@@ -4,12 +4,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaShieldAlt,
+  FaCode,
+  FaFlask,
   FaBug,
   FaLock,
   FaUserShield,
   FaNetworkWired,
-  FaCode,
-  FaFlask,
 } from "react-icons/fa";
 
 const SecurityTestingComprehensiveSlider: React.FC = () => {

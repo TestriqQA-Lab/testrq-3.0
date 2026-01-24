@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaTachometerAlt, FaChartLine, FaServer, FaCloud, FaCogs, FaNetworkWired, FaTools } from "react-icons/fa";
+import { FaTachometerAlt, FaChartLine, FaCloud, FaCogs, FaTools, FaServer, FaNetworkWired } from "react-icons/fa";
 
 const PerformanceTestingToolsFramework: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("load-testing-tools");
@@ -143,8 +143,8 @@ const PerformanceTestingToolsFramework: React.FC = () => {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : `text-gray-600 ${colors.hover}`
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : `text-gray-600 ${colors.hover}`
                     }`}
                 >
                   <div className="flex flex-col items-center space-y-2">
