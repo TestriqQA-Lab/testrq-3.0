@@ -7,7 +7,8 @@ import {
   FaUsers,
   FaCheckCircle,
   FaCalculator,
-  FaChartLine as FaTrendingUp
+  FaChartLine as FaTrendingUp,
+  FaRocket
 } from "react-icons/fa";
 
 const EcommerceROISection: React.FC = () => {
