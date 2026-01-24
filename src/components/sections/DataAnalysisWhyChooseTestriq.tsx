@@ -1,7 +1,6 @@
 import React from 'react';
 import { Award, Users, BarChart3, TrendingUp, Shield, Zap, CheckCircle, Star, Brain } from 'lucide-react';
 import { FaAward } from 'react-icons/fa';
-import Link from 'next/link';
 
 const DataAnalysisWhyChooseTestriq = () => {
   const advantages = [

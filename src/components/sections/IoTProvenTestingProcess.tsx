@@ -38,9 +38,9 @@ const IoTProvenTestingProcess: React.FC = () => {
       shortTitle: "FOTA",
       description: "Testing the reliability and security of remote updates to prevent 'bricking' during automated firmware regression tests.",
       details: [
-        { id: 'ota-reliability', content: "Remote Update Reliability" },
+        { id: 'ota-reliability', content: <span><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Remote Update</Link> Reliability</span> },
         { id: 'bricking-prevention', content: "Firmware Rollback Testing" },
-        { id: 'automated-regression', content: "Automated Regression Suites" },
+        { id: 'automated-regression', content: <span><Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Automated Regression</Link> Suites</span> },
         { id: 'secure-boot', content: "Secure Boot Validation" },
       ],
       color: "blue",
@@ -83,7 +83,7 @@ const IoTProvenTestingProcess: React.FC = () => {
       details: [
         { id: 'hardcoded-creds', content: "Credential Exposure Audits" },
         { id: 'data-encryption', content: "Data-at-Rest Validation" },
-        { id: 'api-security', content: "Cloud API Penetration" },
+        { id: 'api-security', content: <span><Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Cloud API</Link> Penetration</span> },
         { id: 'pii-protection', content: "PII & GDPR Compliance" },
       ],
       color: "red",
@@ -105,7 +105,7 @@ const IoTProvenTestingProcess: React.FC = () => {
         { id: 'battery-profiling', content: "Battery Drain Optimization" },
         { id: 'edge-latency', content: "Edge Computing Benchmarks" },
         { id: 'thermal-stress', content: "Thermal Throttling Analysis" },
-        { id: 'load-scalability', content: "High-Transaction Stress" },
+        { id: 'load-scalability', content: <span><Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">High-Transaction Stress</Link></span> },
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -125,7 +125,7 @@ const IoTProvenTestingProcess: React.FC = () => {
       details: [
         { id: 'etsi-readiness', content: "ETSI EN 303 645 Audit" },
         { id: 'cra-mapping', content: "Cyber Resilience Act Prep" },
-        { id: 'cert-docs', content: "Standardized Documentation" },
+        { id: 'cert-docs', content: <span><Link href="/qa-documentation-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Standardized Docs</Link></span> },
         { id: 'market-entry', content: "Global Market Certification" },
       ],
       color: "green",

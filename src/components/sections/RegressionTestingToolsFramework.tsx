@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import { FaSyncAlt, FaBug, FaCodeBranch, FaChartLine, FaCloud, FaCogs, FaTools } from "react-icons/fa";
 
