@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { FileCheck, Download, AlertTriangle, Loader2, FileText, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -11,6 +11,9 @@ function CertificateContent() {
     const [isValid, setIsValid] = useState<boolean | null>(null);
     const [loading, setLoading] = useState(true);
 
+    const pdfUrl = `/certificates/${certId}.pdf`;
+    const pdfUrlWithCache = useMemo(() => `${pdfUrl}?v=${Date.now()}`, [pdfUrl]);
+
     useEffect(() => {
         if (!certId) {
             setIsValid(false);
@@ -20,7 +23,6 @@ function CertificateContent() {
 
         const checkCertificate = async () => {
             try {
-                // Use a HEAD request to check if the file exists without downloading it
                 const response = await fetch(`/certificates/${certId}.pdf`, { method: "HEAD" });
                 setIsValid(response.ok);
             } catch (_error) {
@@ -80,14 +82,11 @@ function CertificateContent() {
         );
     }
 
-    const pdfUrl = `/certificates/${certId}.pdf`;
-
     return (
         <div className="max-w-5xl mx-auto px-4 sm:px-6 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden border border-gray-100">
                 {/* Modern Header Section */}
                 <div className="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 p-8 md:p-12 text-white relative overflow-hidden">
-                    {/* Decorative background elements */}
                     <div className="absolute -top-10 -right-10 opacity-5">
                         <FileCheck size={400} />
                     </div>
@@ -111,14 +110,23 @@ function CertificateContent() {
                             </p>
                         </div>
 
-                        <div className="flex shrink-0">
+                        <div className="flex flex-wrap shrink-0 gap-4">
+                            <a
+                                href={pdfUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-4 bg-blue-500/20 border border-white/30 text-white font-bold rounded-2xl hover:bg-blue-500/40 transition-all"
+                            >
+                                <FileText size={20} />
+                                VIEW PDF
+                            </a>
                             <a
                                 href={pdfUrl}
                                 download={`${certId}.pdf`}
-                                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-700 font-black rounded-2xl hover:bg-blue-50 transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.2)] transform hover:-translate-y-1.5 active:scale-95"
+                                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-700 font-black rounded-2xl hover:bg-blue-50 transition-all duration-500 shadow-lg"
                             >
                                 <Download size={22} className="group-hover:bounce-y" />
-                                DOWNLOAD CERTIFICATE
+                                DOWNLOAD
                             </a>
                         </div>
                     </div>
@@ -128,18 +136,37 @@ function CertificateContent() {
                 <div className="p-4 md:p-10 bg-[#f8fafc]">
                     <div className="bg-white p-2 md:p-4 rounded-3xl shadow-xl border border-gray-200">
                         <div className="relative aspect-[1/1.414] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-50 border border-gray-100">
+
+                            {/* Primary Viewer: Iframe (Standard) */}
                             <iframe
-                                src={`${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0`}
-                                className="absolute inset-0 w-full h-full border-0"
+                                src={pdfUrlWithCache}
+                                className="absolute inset-0 w-full h-full border-0 rounded-2xl z-20"
                                 title={`Certificate ${certId}`}
                             />
 
-                            {/* Mobile Overlay Hint */}
-                            <div className="absolute top-4 left-4 lg:hidden">
-                                <div className="bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                                    Interactive Preview
-                                </div>
+                            {/* Help Text for Local Dev Environment (Visible if preview fails/is transparent) */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-12 text-center z-10 bg-gray-100">
+                                <FileText className="w-16 h-16 text-gray-300 mb-4" />
+                                <h3 className="text-xl font-bold text-gray-800 mb-2">Security Notice</h3>
+                                <p className="text-gray-500 max-w-xs mx-auto mb-6">
+                                    If the preview is blocked or blank, please click below to open the certificate.
+                                </p>
+                                <a
+                                    href={pdfUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-6 py-3 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all"
+                                >
+                                    OPEN PREVIEW MANUALLY
+                                </a>
                             </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 flex flex-col items-center gap-4">
+                        <div className="flex items-center gap-3 px-4 py-2 bg-yellow-50 border border-yellow-200 rounded-full">
+                            <AlertTriangle size={16} className="text-yellow-600" />
+                            <span className="text-xs font-bold text-yellow-800 uppercase tracking-widest">Notice: Browser settings may block embedded previews.</span>
                         </div>
                     </div>
 
