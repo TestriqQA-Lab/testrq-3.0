@@ -89,7 +89,11 @@ const RoboticToolsFramework: React.FC = () => {
         },
         {
           name: "Selenium/Appium",
-          description: "Integration testing for robotic UI systems",
+          description: (
+            <>
+              <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Integration testing</Link> for robotic UI systems
+            </>
+          ),
           icon: <FaDesktop className="w-5 h-5 text-red-500" />,
         },
       ],
@@ -160,7 +164,7 @@ const RoboticToolsFramework: React.FC = () => {
             The Testriq <span className="text-brand-blue">Robotics & RPA Tech Stack</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We utilize a <span className="font-semibold text-brand-blue">hybrid stack</span> of physical diagnostics and digital automation to provide enterprise robotics and <Link href='/robotics-testing-services' className="hover:underline text-brand-blue">RPA testing services</Link> specifically designed for the 2026 automation era.
+            We utilize a <span className="font-semibold text-brand-blue">hybrid stack</span> of physical diagnostics and digital automation to provide enterprise robotics and <span className="text-brand-blue font-semibold">RPA testing services</span> specifically designed for the 2026 automation era.
           </p>
         </div>
 
@@ -176,7 +180,7 @@ const RoboticToolsFramework: React.FC = () => {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 {category.tools.map((tool, toolIndex) => (
                   <div
                     key={toolIndex}

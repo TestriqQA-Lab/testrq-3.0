@@ -93,8 +93,11 @@ const AIProvenTestingProcess: React.FC = () => {
       icon: <FaCheckCircle className="w-6 h-6" />,
       title: (<Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>Real-Time Monitoring</Link>),
       shortTitle: "Monitoring",
-      description:
-        "We plug intelligent automation testing checks into your CI/CD pipeline, including AI regression testing to catch data drift immediately.",
+      description: (
+        <>
+          We plug intelligent <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">automation testing</Link> checks into your <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">CI/CD pipeline</Link>, including AI regression testing to catch data drift immediately.
+        </>
+      ),
       details: [
         "CI/CD Pipeline Integration",
         "Drift Detection Setup",

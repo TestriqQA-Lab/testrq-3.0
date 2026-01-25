@@ -60,7 +60,11 @@ const SmartDeviceToolsFramework: React.FC = () => {
       tools: [
         {
           name: "OWASP ZAP",
-          description: "Application security vulnerability testing",
+          description: (
+            <>
+              <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Application security</Link> vulnerability testing
+            </>
+          ),
           icon: <SiOwasp className="w-5 h-5 text-red-500" />,
         },
         {
@@ -86,7 +90,11 @@ const SmartDeviceToolsFramework: React.FC = () => {
       tools: [
         {
           name: "Apache JMeter",
-          description: "High-tier device performance and load testing",
+          description: (
+            <>
+              High-tier device <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">performance and load testing</Link>
+            </>
+          ),
           icon: <SiApachejmeter className="w-5 h-5 text-purple-500" />,
         },
         {
@@ -138,7 +146,11 @@ const SmartDeviceToolsFramework: React.FC = () => {
       tools: [
         {
           name: "Appium",
-          description: "Automated testing for smart home ecosystems",
+          description: (
+            <>
+              <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Automated testing</Link> for smart home ecosystems
+            </>
+          ),
           icon: <SiAppium className="w-5 h-5 text-green-500" />,
         },
         {
@@ -198,7 +210,7 @@ const SmartDeviceToolsFramework: React.FC = () => {
             Technical <span className="text-brand-blue">Tech Stack</span> (2026 Trends)
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We utilize the most advanced <Link href='/technology-stack' className="text-brand-blue hover:underline">app testing tools</Link> and diagnostic platforms to provide exhaustive <Link href='/smart-device-testing-services' className="text-brand-blue hover:underline">smart device validation</Link>, ensuring performance and security at every layer.
+            We utilize the most advanced <Link href='/technology-stack' className="text-brand-blue hover:underline">app testing tools</Link> and diagnostic platforms to provide exhaustive <span className="text-brand-blue font-semibold">smart device validation</span>, ensuring performance and security at every layer.
           </p>
         </div>
 

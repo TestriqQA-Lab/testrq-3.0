@@ -141,15 +141,7 @@ const ETLCaseStudies: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover how our comprehensive ETL testing services have helped
-            companies achieve significant improvements in{" "}
-            <Link href="blog/post/data-quality-testing-in-etl">
-              data quality
-            </Link>
-            , processing speed, and{" "}
-            <Link href="blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
-              regulatory compliance
-            </Link>{" "}
-            across diverse industries and data ecosystems.
+            companies achieve significant improvements in <span className="text-brand-blue font-semibold">data quality</span>, processing speed, and <span className="text-brand-blue font-semibold">regulatory compliance</span> across diverse industries and data ecosystems.
           </p>
         </div>
 
@@ -159,15 +151,12 @@ const ETLCaseStudies: React.FC = () => {
             <button
               key={caseStudy.id}
               onClick={() => setActiveCase(index)}
-              className={`flex items-center px-6 py-3 rounded-xl border-2 transition-all duration-300 ${
-                activeCase === index
-                  ? `${
-                      getColorClasses(caseStudy.color).bg
-                    } text-white border-transparent shadow-lg`
-                  : `bg-white ${getColorClasses(caseStudy.color).text} ${
-                      getColorClasses(caseStudy.color).border
-                    } hover:bg-gray-50`
-              }`}
+              className={`flex items-center px-6 py-3 rounded-xl border-2 transition-all duration-300 ${activeCase === index
+                  ? `${getColorClasses(caseStudy.color).bg
+                  } text-white border-transparent shadow-lg`
+                  : `bg-white ${getColorClasses(caseStudy.color).text} ${getColorClasses(caseStudy.color).border
+                  } hover:bg-gray-50`
+                }`}
             >
               <div className="mr-3">{caseStudy.icon}</div>
               <div className="text-left">
@@ -286,9 +275,8 @@ const ETLCaseStudies: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveCase(index)}
-                  className={`w-5 h-5 rounded-full transition-all duration-300 ${
-                    activeCase === index ? colorClasses.bg : "bg-gray-300"
-                  }`}
+                  className={`w-5 h-5 rounded-full transition-all duration-300 ${activeCase === index ? colorClasses.bg : "bg-gray-300"
+                    }`}
                   aria-label={`Select Case Study ${index + 1}`}
                 />
               ))}

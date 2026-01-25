@@ -13,7 +13,11 @@ const RoboticComprehensiveSlider: React.FC = () => {
       title: "ISO 10218:2026 Compliance",
       icon: <FaShieldAlt className="w-6 h-6" />,
       coverage: "Traceable Functional Safety",
-      description: "Unlike traditional software QA (which follows ISO/IEC 29119), robotics has historically lacked a unified testing framework. This often leads to inconsistent validation across multi-vendor co-bot integrations. Our Fix: To ensure global compliance, we test according to ISO 10218-1:2026 (Manufacturers) and ISO 10218-2:2026 (Integrators). We provide structured test case specifications that go beyond implied safety, making functional requirements explicit and traceable.",
+      description: (
+        <>
+          Unlike <Link href="/manual-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">traditional software QA</Link> (which follows ISO/IEC 29119), robotics has historically lacked a unified testing framework. This often leads to inconsistent validation across multi-vendor co-bot integrations. Our Fix: To ensure global compliance, we test according to ISO 10218-1:2026 (Manufacturers) and ISO 10218-2:2026 (Integrators). We provide structured test case specifications that go beyond implied safety, making functional requirements explicit and traceable.
+        </>
+      ),
       features: [
         "ISO 10218-1 Manufacturers QA",
         "ISO 10218-2 Integrators Audit",
@@ -58,7 +62,11 @@ const RoboticComprehensiveSlider: React.FC = () => {
       title: "AI/ML Path Consistency",
       icon: <FaRobot className="w-6 h-6" />,
       coverage: "Deterministic AI Behavior",
-      description: "AI-driven path planning (via Move It) is often non-deterministic, complicating traditional regression testing. Our Fix: Our methodology classifies robots as autonomous AI agents. To guarantee collaborative safety, we test speed and distance to keep system behavior within ISO 13482:2014 limits.",
+      description: (
+        <>
+          AI-driven path planning (via Move It) is often non-deterministic, complicating traditional regression testing. Our Fix: Our methodology classifies robots as <Link href="/ai-application-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">autonomous AI agents</Link>. To guarantee collaborative safety, we test speed and distance to keep system behavior within ISO 13482:2014 limits.
+        </>
+      ),
       features: [
         "Move It Path Validation",
         "ISO 13482 Personal Care Safety",
@@ -172,9 +180,26 @@ const RoboticComprehensiveSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <Link href={`blog/post${testingTypes[activeTab].action}`} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
+              <Link
+                href={`blog/post${testingTypes[activeTab].action}`}
+                className={`
+    mt-4 sm:mt-6
+    px-4 sm:px-6 md:px-8
+    py-2.5 sm:py-3
+    rounded-lg
+    text-sm sm:text-base md:text-lg
+    font-semibold
+    inline-flex items-center justify-center
+    w-full sm:w-auto
+    transition-all duration-300
+    ${getColorClasses(testingTypes[activeTab].color, true)}
+    hover:opacity-90
+    active:scale-95
+  `}
+              >
                 Explore {testingTypes[activeTab].title}
               </Link>
+
             </div>
 
             {/* Visual Representation */}

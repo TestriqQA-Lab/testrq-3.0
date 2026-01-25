@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState, useRef } from "react";
 import {
   FaSearch,
@@ -77,8 +78,11 @@ const RoboticProvenTestingProcess: React.FC = () => {
     {
       id: 5,
       title: "Ensure System Accuracy",
-      description:
-        "Our team automates QA to sync sensor data with your enterprise systems. This confirms that all information is correct and consistent across your ERP and CRM.",
+      description: (
+        <>
+          Our team <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">automates QA</Link> to sync sensor data with your enterprise systems. This confirms that all information is correct and consistent across your <Link href="/sap-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">ERP</Link> and CRM.
+        </>
+      ),
       icon: <FaCheckCircle className="w-6 h-6" />,
       activities: [
         "Enterprise System Sync",

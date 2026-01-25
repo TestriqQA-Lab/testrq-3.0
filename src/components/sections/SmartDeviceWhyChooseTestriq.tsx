@@ -20,7 +20,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
         "We ensure global compatibility beyond flagship models, validating your application across hundreds of unique hardware and OS configurations using our real device cloud.",
       achievement: "1000+ Configurations",
       capabilities: [
-        "Real Device Cloud",
+        (<Link key={1} href="/mobile-application-testing" className="text-gray-600 hover:text-brand-blue hover:underline">Real Device Cloud</Link>),
         "Hardware Mapping",
         "OS Dependency QA",
         "Screen Size Audit",
@@ -36,7 +36,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
       achievement: "ISO 29119-3 Certified",
       capabilities: [
         "HIPAA Compliance",
-        "SOC2 Type II Audit",
+        (<Link key={2} href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline">SOC2 Type II Audit</Link>),
         "GDPR/CCPA Data QA",
         "Result Logging Auth",
       ],
@@ -50,7 +50,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
         "IoT security protocols aligned with ISO 27001 and NTIA baselines. Deep penetration testing using OWASP ZAP and Burp Suite to protect unpatched firmware.",
       achievement: "Zero Firmware Risks",
       capabilities: [
-        "OWASP ZAP Audits",
+        (<Link key={3} href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">OWASP ZAP Audits</Link>),
         "NTIA Baseline Security",
         "Penetration Testing",
         "Firmware Hardening",
@@ -66,7 +66,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
       achievement: "1M+ Concurrent Syncs",
       capabilities: [
         "Edge Computing QA",
-        "JMeter Performance",
+        (<Link key={4} href="/performance-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline">JMeter Performance</Link>),
         "High-density Loads",
         "Low Latency Audits",
       ],
@@ -101,9 +101,7 @@ const SmartDeviceWhyChooseTestriq: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             We combine smart device expertise with testing excellence to deliver{" "}
-            <Link href="blog/post/smart-device-testing-services-complete-guide">
-              smart device testing services
-            </Link>{" "}
+            <span className="text-brand-blue font-semibold">smart device testing services</span>{" "}
             that ensure{" "}
             <Link href="blog/post/how-environment-setup-shapes-reliable-web-application-testing">
               reliable

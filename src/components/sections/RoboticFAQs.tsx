@@ -13,12 +13,7 @@ const RoboticFAQs: React.FC = () => {
       answer: (
         <>
           The differences between{" "}
-          <Link
-            href="/robotics-testing-services"
-            className="text-brand-blue hover:underline font-medium"
-          >
-            RPA
-          </Link>{" "}
+          <span className="text-brand-blue font-medium">RPA</span>{" "}
           and traditional test automation lie in their integration level. RPA
           copies human actions directly through the user interface, making it
           perfect for legacy systems. Traditional{" "}
@@ -56,12 +51,7 @@ const RoboticFAQs: React.FC = () => {
       answer: (
         <>
           The updated{" "}
-          <Link
-            href="/robotics-testing-services"
-            className="text-brand-blue hover:underline font-medium"
-          >
-            ISO 10218-1:2026
-          </Link>{" "}
+          <span className="text-brand-blue font-medium">ISO 10218-1:2026</span>{" "}
           standard makes functional safety requirements explicit rather than
           implied. This process prepares your robots for global export and
           reduces the risk of expensive recalls and safety incidents.

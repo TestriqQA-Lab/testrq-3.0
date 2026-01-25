@@ -23,7 +23,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
       description:
         "Our team includes certified ETL testing professionals with deep expertise in data integration, pipeline validation, and ensuring data accuracy, quality assurance, and compliance across complex ETL workflows.",
       capabilities: [
-        "Data Pipeline Testing",
+        (<Link key={1} href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline">Data Pipeline Testing</Link>),
         "ETL Process Validation",
         "Data Quality Assurance",
         "Performance Optimization",
@@ -40,7 +40,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
         "Data Encryption Testing",
         "Access Control Validation",
         "Compliance Verification",
-        "Security Auditing",
+        (<Link key={2} href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">Security Auditing</Link>),
       ],
       color: "green",
     },
@@ -157,7 +157,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
             Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We combine expert-led ETL validation with high-velocity automation to ensure your <Link href="/etl-testing-services" className="text-brand-blue hover:underline font-semibold">data pipelines</Link> are accurate, scalable, and audit-ready in the 2026 zettabyte era.
+            We combine expert-led ETL validation with high-velocity automation to ensure your <span className="text-brand-blue font-semibold">data pipelines</span> are accurate, scalable, and audit-ready in the 2026 zettabyte era.
           </p>
         </div>
 

@@ -144,8 +144,8 @@ const SmartDeviceCaseStudies: React.FC = () => {
             <span className="text-brand-blue">Success Stories</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Discover how our comprehensive <Link href='blog/post/smart-device-testing-services-complete-guide'>smart device testing</Link> services have
-            helped companies achieve remarkable improvements in <Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>connectivity</Link>,
+            Discover how our comprehensive <span className="text-brand-blue font-semibold">smart device testing</span> services have
+            helped companies achieve remarkable improvements in <span className="text-brand-blue font-semibold">connectivity</span>,
             performance, and user satisfaction across various device categories.
           </p>
         </div>
@@ -156,15 +156,12 @@ const SmartDeviceCaseStudies: React.FC = () => {
             <button
               key={caseStudy.id}
               onClick={() => setActiveCase(index)}
-              className={`flex items-center px-6 py-3 rounded-xl border-2 transition-all duration-300 ${
-                activeCase === index
-                  ? `${
-                      getColorClasses(caseStudy.color).bg
-                    } text-white border-transparent shadow-lg`
-                  : `bg-white ${getColorClasses(caseStudy.color).text} ${
-                      getColorClasses(caseStudy.color).border
-                    } hover:bg-gray-50`
-              }`}
+              className={`flex items-center px-6 py-3 rounded-xl border-2 transition-all duration-300 ${activeCase === index
+                  ? `${getColorClasses(caseStudy.color).bg
+                  } text-white border-transparent shadow-lg`
+                  : `bg-white ${getColorClasses(caseStudy.color).text} ${getColorClasses(caseStudy.color).border
+                  } hover:bg-gray-50`
+                }`}
             >
               <div className="mr-3">{caseStudy.icon}</div>
               <div className="text-left">
@@ -282,9 +279,8 @@ const SmartDeviceCaseStudies: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setActiveCase(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    activeCase === index ? colorClasses.bg : "bg-gray-300"
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${activeCase === index ? colorClasses.bg : "bg-gray-300"
+                    }`}
                   aria-label={`Select case study ${index + 1}`}
                 />
               ))}

@@ -8,7 +8,11 @@ const RoboticRPAServices: React.FC = () => {
     const rpaFeatures = [
         {
             title: "Automated Bot Testing",
-            description: "We ensure your software bots handle UI fragility and minor interface changes without breaking.",
+            description: (
+                <>
+                    We ensure your <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">software bots</Link> handle UI fragility and minor interface changes without breaking.
+                </>
+            ),
             icon: <FaRobot className="w-8 h-8 text-blue-500" />,
         },
         {
@@ -35,7 +39,7 @@ const RoboticRPAServices: React.FC = () => {
                         Scaling the <span className="text-brand-blue">Virtual Workforce</span>
                     </h2>
                     <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-                        Beyond physical robots, Testriq is a leader in <Link href="/robotics-testing-services" className="text-brand-blue hover:underline">RPA Testing Services</Link>. While traditional automation works at the backend (scripts/APIs), RPA mimics human-mimicking interactions at the UI level.
+                        Beyond physical robots, Testriq is a leader in <span className="text-brand-blue font-semibold">RPA Testing Services</span>. While traditional automation works at the backend (scripts/<Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">APIs</Link>), RPA mimics human-mimicking interactions at the UI level.
                     </p>
                 </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronRight, FaPlay } from "react-icons/fa";
 
@@ -28,7 +29,7 @@ const ETLProvenTestingProcess: React.FC = () => {
         "Provisioning compliant, high-integrity data for data migration testing.",
       duration: "3-4 days",
       activities: [
-        "PII Data Masking",
+        (<Link key={1} href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">PII Data Masking</Link>),
         "Data Subset Creation",
         "Synthetic Data Gen",
         "Compliance Scrubbing",
@@ -80,8 +81,11 @@ const ETLProvenTestingProcess: React.FC = () => {
     {
       id: 6,
       title: "Performance & Scalability Optimization",
-      description:
-        "Our team identifies bottlenecks through pipeline stress-testing to guarantee we meet your ETL performance benchmarks.",
+      description: (
+        <>
+          Our team identifies bottlenecks through <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">pipeline stress-testing</Link> to guarantee we meet your ETL performance benchmarks.
+        </>
+      ),
       duration: "4-5 days",
       activities: [
         "Pipeline Stress Tests",
@@ -96,7 +100,7 @@ const ETLProvenTestingProcess: React.FC = () => {
   const currentStep = processSteps[activeStep];
 
   return (
-    <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+    <section className="py-16 px-4 md:px-8 lg:px-12 xl:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -108,8 +112,8 @@ const ETLProvenTestingProcess: React.FC = () => {
         </div>
 
         {/* Interactive Timeline */}
-        <div className="mb-12">
-          <div className="flex flex-col lg:flex-row items-center justify-between">
+        <div className="mb-12 overflow-x-auto pb-4">
+          <div className="flex flex-col lg:flex-row items-center justify-between min-w-max lg:min-w-0">
             {processSteps.map((step, index) => (
               <div
                 key={step.id}
@@ -133,7 +137,7 @@ const ETLProvenTestingProcess: React.FC = () => {
 
                 {index < processSteps.length - 1 && (
                   <div
-                    className={`w-2 h-8 lg:w-24 lg:h-2 mx-0 my-2 lg:mx-4 lg:my-0 rounded transition-colors duration-300 ${activeStep > index ? "bg-green-500" : "bg-gray-300"
+                    className={`w-2 h-8 lg:w-12 lg:h-2 mx-0 my-2 lg:mx-2 lg:my-0 rounded transition-colors duration-300 ${activeStep > index ? "bg-green-500" : "bg-gray-300"
                       }`}
                   ></div>
                 )}

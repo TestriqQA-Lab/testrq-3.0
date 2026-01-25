@@ -63,8 +63,11 @@ const AICaseStudies: React.FC = () => {
       company: "Autonomous Vehicle Systems",
       industry: "Automotive Technology",
       challenge: (<Link href='blog/post/ai-security-testing'>AI Safety & Reliability Testing</Link>),
-      solution:
-        "End-to-end AI model validation for autonomous driving systems with comprehensive safety and performance testing.",
+      solution: (
+        <>
+          End-to-end AI model validation for <Link href="/robotics-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">autonomous driving systems</Link> with comprehensive safety and performance testing.
+        </>
+      ),
       results: {
         safety: "99.99% safety validation",
         performance: "Sub-millisecond response time",
@@ -104,8 +107,11 @@ const AICaseStudies: React.FC = () => {
       company: "Medical Diagnosis AI",
       industry: "Healthcare Technology",
       challenge: (<Link href='blog/post/explainability-testing-in-ai'>Medical AI Accuracy & Explainability</Link>),
-      solution:
-        "Specialized medical AI testing with FDA compliance validation and explainability assessment for diagnostic algorithms.",
+      solution: (
+        <>
+          Specialized medical AI testing with <Link href="/healthcare-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">FDA compliance</Link> validation and explainability assessment for diagnostic algorithms.
+        </>
+      ),
       results: {
         accuracy: "98.5% diagnostic accuracy",
         explainability: "100% decision transparency",
@@ -160,7 +166,7 @@ const AICaseStudies: React.FC = () => {
             Discover how our comprehensive AI testing services have helped
             companies achieve remarkable improvements in accuracy, fairness, and
             reliability of their <Link href='blog/post/testing-ai-powered-applications-navigating-the-maze-with-a-smile'>intelligent
-            systems</Link>.
+              systems</Link>.
           </p>
         </div>
 
@@ -170,20 +176,18 @@ const AICaseStudies: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${
-                activeCase === index
-                  ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-              }`}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 relative ${activeCase === index
+                ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
+                }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{study.icon}</span>
                 <div className="text-left">
                   <div className="text-sm font-bold">{study.company}</div>
                   <div
-                    className={`text-xs ${
-                      activeCase === index ? "text-white/80" : "text-gray-500"
-                    }`}
+                    className={`text-xs ${activeCase === index ? "text-white/80" : "text-gray-500"
+                      }`}
                   >
                     {study.industry}
                   </div>
@@ -193,26 +197,23 @@ const AICaseStudies: React.FC = () => {
               {/* AI Neural Activity Indicator */}
               <div className="absolute top-2 right-2 flex space-x-1">
                 <div
-                  className={`w-1 h-1 rounded-full ${
-                    activeCase === index
-                      ? "bg-white animate-pulse"
-                      : `bg-${study.color}-500`
-                  }`}
+                  className={`w-1 h-1 rounded-full ${activeCase === index
+                    ? "bg-white animate-pulse"
+                    : `bg-${study.color}-500`
+                    }`}
                 ></div>
                 <div
-                  className={`w-1 h-1 rounded-full ${
-                    activeCase === index
-                      ? "bg-white/80 animate-pulse"
-                      : `bg-${study.color}-400`
-                  }`}
+                  className={`w-1 h-1 rounded-full ${activeCase === index
+                    ? "bg-white/80 animate-pulse"
+                    : `bg-${study.color}-400`
+                    }`}
                   style={{ animationDelay: "0.2s" }}
                 ></div>
                 <div
-                  className={`w-1 h-1 rounded-full ${
-                    activeCase === index
-                      ? "bg-white/60 animate-pulse"
-                      : `bg-${study.color}-300`
-                  }`}
+                  className={`w-1 h-1 rounded-full ${activeCase === index
+                    ? "bg-white/60 animate-pulse"
+                    : `bg-${study.color}-300`
+                    }`}
                   style={{ animationDelay: "0.4s" }}
                 ></div>
               </div>
@@ -221,7 +222,7 @@ const AICaseStudies: React.FC = () => {
         </div>
 
         {/* Active AI Case Study Display */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-8 border border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Side - AI Case Study Content */}
             <div className="space-y-6">
@@ -273,7 +274,7 @@ const AICaseStudies: React.FC = () => {
                 {caseStudies[activeCase].metrics.map((metric, index) => (
                   <div
                     key={index}
-                    className={`p-4 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
+                    className={`p-2 md:p-4 bg-gradient-to-r from-${caseStudies[activeCase].color}-50 to-${caseStudies[activeCase].color}-100 rounded-lg border border-${caseStudies[activeCase].color}-200 relative`}
                   >
                     <div className="flex items-center mb-2">
                       <div

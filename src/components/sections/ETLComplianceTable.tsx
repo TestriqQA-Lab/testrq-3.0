@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaShieldAlt } from "react-icons/fa";
 
@@ -12,12 +13,12 @@ const ETLComplianceTable: React.FC = () => {
         },
         {
             standard: "SOC2 Type II",
-            focus: "Processing Integrity",
+            focus: (<>Processing <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Integrity</Link></>),
             relevance: "Ensuring the security, availability, and integrity of private data systems.",
         },
         {
             standard: "GDPR & CCPA",
-            focus: "Data Privacy & PII",
+            focus: (<Link href="/data-analysis-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Data Privacy & PII</Link>),
             relevance: "Specialized data cleansing and masking validation for international data protection.",
         },
         {

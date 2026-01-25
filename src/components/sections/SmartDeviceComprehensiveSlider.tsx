@@ -14,7 +14,11 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
       title: "Mass Device Fragmentation",
       icon: <FaMobile className="w-6 h-6" />,
       coverage: "ISO 29119-3 Compliant",
-      description: "The exponential growth of wearables, home appliances, and sensors has created a fragmentation crisis. To ensure global compatibility, organizations must expand their validation scope beyond a limited selection of flagship devices. Our Fix: We implement ISO/IEC/IEEE 29119-3 standardized test design. Our team maps coverage across hundreds of hardware configurations using a real device cloud, preventing failures before you launch.",
+      description: (
+        <>
+          The exponential growth of wearables, home appliances, and sensors has created a fragmentation crisis. To ensure global compatibility, organizations must expand their validation scope beyond a limited selection of flagship devices. Our Fix: We implement <Link href="/qa-documentation-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">ISO/IEC/IEEE 29119-3</Link> standardized test design. Our team maps coverage across hundreds of hardware configurations using a real device cloud, preventing failures before you launch.
+        </>
+      ),
       features: [
         "ISO 29119-3 Test Design",
         "Real Device Cloud Mapping",
@@ -29,7 +33,11 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
       title: "Cyber-security Defense",
       icon: <FaShieldAlt className="w-6 h-6" />,
       coverage: "ISO 27001 & NTIA Baselines",
-      description: "Security is the top restraint for IoT growth in 2026. With unpatched firmware and weak encryption being the primary attack vectors, distributed networks are more vulnerable than ever. Our Fix: Our IoT security protocols align with ISO/IEC 27001 and emerging NTIA baselines. We identify vulnerabilities using OWASP ZAP, Burp Suite, and Nmap, performing deep penetration testing on your hardware.",
+      description: (
+        <>
+          Security is the top restraint for IoT growth in 2026. With unpatched firmware and weak encryption being the primary attack vectors, distributed networks are more vulnerable than ever. Our Fix: Our IoT security protocols align with ISO/IEC 27001 and emerging NTIA baselines. We identify vulnerabilities using OWASP ZAP, Burp Suite, and Nmap, performing deep <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">penetration testing</Link> on your hardware.
+        </>
+      ),
       features: [
         "Firmware Hardening Audits",
         "OWASP ZAP Penetration Testing",
@@ -145,7 +153,7 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
         </div>
 
         {/* Active Tab Content */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-100">
+        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 border-2 border-gray-100">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 ${getColorClasses(testingTypes[activeTab].color, false)}`}>
@@ -175,9 +183,30 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
                 </ul>
               </div>
 
-              <Link href={testingTypes[activeTab].action} className={`mt-6 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 ${getColorClasses(testingTypes[activeTab].color, true)} hover:opacity-90`}>
+              <Link
+                href={testingTypes[activeTab].action}
+                className={`
+    mt-4 sm:mt-6
+    w-full sm:w-auto
+    inline-flex items-center justify-center
+
+    px-4 sm:px-6 md:px-8
+    py-2.5 sm:py-3 md:py-3.5
+
+    text-sm sm:text-base md:text-lg
+    font-semibold
+
+    rounded-lg
+    transition-all duration-300
+
+    ${getColorClasses(testingTypes[activeTab].color, true)}
+    hover:opacity-90
+    active:scale-95
+  `}
+              >
                 Explore {testingTypes[activeTab].title}
               </Link>
+
             </div>
 
             {/* Visual Representation */}

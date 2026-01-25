@@ -35,7 +35,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
         "We reduce performance drops by 40% with our Digital Twin and Physical AI-driven testing, ensuring reliability from simulation to deployment.",
       achievement: "40% Reliability Boost",
       capabilities: [
-        "Digital Twin Testing",
+        (<Link key={1} href="/performance-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline">Digital Twin Testing</Link>),
         "Physical AI Modeling",
         "Environmental Stress",
         "Cycle Validation",
@@ -50,7 +50,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
         "We ensure your products are ready for the USA and EU markets with rigorous UL 3100 and CE audits, meeting all regional safety requirements.",
       achievement: "Market Entry Ready",
       capabilities: [
-        "UL 3100 Certification",
+        (<Link key={2} href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">UL 3100 Certification</Link>),
         "CE Compliance Audit",
         "Regional Safety Laws",
         "Global Launch Support",
@@ -100,10 +100,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
             <span className="text-brand-blue">Robotic Testing</span>?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We combine robotic expertise with testing excellence to deliver
-            <Link href="robotics-testing-services">
-              robotic testing services
-            </Link>{" "}
+            We combine robotic expertise with testing excellence to deliver <span className="text-brand-blue font-semibold">robotic testing services</span>{" "}
             that ensure reliable, safe, and high-performance{" "}
             <Link href="blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation">
               robotic systems

@@ -109,7 +109,7 @@ const ETLTestingHeroSection: React.FC = () => {
                   SOC2
                 </div>
                 <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">
-                  Compliance Ready
+                  <Link href="/security-testing" className="text-gray-600 font-semibold hover:text-brand-blue hover:underline">Compliance Ready</Link>
                 </div>
               </div>
               <div className="text-center">

@@ -18,7 +18,7 @@ const AIComprehensiveSlider: React.FC = () => {
   const testingTypes = [
     {
       icon: <FaDatabase className="w-8 h-8" />,
-      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality, Bias & Representativeness</Link>),
+      title: (<Link href='blog/post/ai-testing-learning-guide'>Data Quality, Bias & Representative</Link>),
       description:
         "AI performance is a direct reflection of its data. Gaps, noise, and label errors translate into catastrophic real-world failures. We move beyond simple data checks to perform bias and representativeness validation.",
       features: [
@@ -35,8 +35,11 @@ const AIComprehensiveSlider: React.FC = () => {
     {
       icon: <FaBrain className="w-8 h-8" />,
       title: (<Link href='blog/post/model-validation-for-ai-applications'>Solving the &quot;Oracle Problem&quot;</Link>),
-      description:
-        "Traditional QA uses fixed logic. AI works on likelihoods. We verify model reasoning using industry-standard tools and establish limits for incorrect AI outputs to ensure reliability.",
+      description: (
+        <>
+          <Link href="/qa-documentation-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Traditional QA</Link> uses fixed logic. AI works on likelihoods. We verify model reasoning using industry-standard tools and establish limits for incorrect AI outputs to ensure reliability.
+        </>
+      ),
       features: [
         "Model Reasoning Verification",
         "Benefit-Driven Behavior",
@@ -83,8 +86,11 @@ const AIComprehensiveSlider: React.FC = () => {
     {
       icon: <FaRocket className="w-8 h-8" />,
       title: (<Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>Seamless SDLC & CI/CD Integration</Link>),
-      description:
-        "We use intelligent automation testing to validate your AI workflows via custom data pipelines. These tools connect to your current CI/CD systems for quick results.",
+      description: (
+        <>
+          We use intelligent <Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">automation testing</Link> to validate your AI workflows via custom data pipelines. These tools connect to your current CI/CD systems for quick results.
+        </>
+      ),
       features: [
         "Intelligent Automation",
         "Custom Data Pipelines",
@@ -118,7 +124,7 @@ const AIComprehensiveSlider: React.FC = () => {
             {" "}of Machine Learning Testing
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            The complexity of modern AI requires solving challenges that traditional testing cannot reach. Our methodology is built to tackle the biggest global hurdles identified in 2026.
+            The complexity of modern AI requires solving challenges that <Link href="/manual-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">traditional testing</Link> cannot reach. Our methodology is built to tackle the biggest global hurdles identified in 2026.
           </p>
         </div>
 
@@ -165,7 +171,7 @@ const AIComprehensiveSlider: React.FC = () => {
                 ))}
               </div>
 
-              <div className="mt-6 flex justify-between items-center">
+              <div className="mt-6 md:flex justify-between items-center">
                 <Link href={`blog/post${testingTypes[activeTab].action}`}
                   className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradientColor} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
                 >
@@ -175,7 +181,7 @@ const AIComprehensiveSlider: React.FC = () => {
 
                 {/* Next Button */}
                 <button
-                  className="px-6 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  className="w-full mt-4 md:mt-0 md:w-auto px-6 py-3 cursor-pointer bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                   onClick={nextTab}
                 >
                   Next

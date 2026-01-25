@@ -118,7 +118,11 @@ const AIToolsFramework: React.FC = () => {
       tools: [
         {
           name: "AWS SageMaker",
-          description: "Cloud-native ML testing",
+          description: (
+            <>
+              <Link href="/web-application-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Cloud-native</Link> ML testing
+            </>
+          ),
           icon: <FaDatabase className="w-5 h-5 text-brand-blue" />,
         },
         {

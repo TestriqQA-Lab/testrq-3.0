@@ -40,7 +40,8 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
         "Low-level Software Testing",
         "OTA Failure Prevention",
         "Chipset Logic Validation",
-        "Firmware Security Audits",
+        "Chipset Logic Validation",
+        (<Link key={1} href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">Firmware Security Audits</Link>),
       ],
       duration: "3-4 days",
       color: "red",
@@ -48,8 +49,11 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
     {
       id: 3,
       title: "Sensor and Edge Computing Validation",
-      description:
-        "We test the accuracy of motion, light, and temperature sensors while confirming precise and efficient edge-level data processing.",
+      description: (
+        <>
+          We test the accuracy of motion, light, and temperature sensors while confirming precise and efficient <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">edge-level data processing</Link>.
+        </>
+      ),
       icon: <FaCog className="w-6 h-6" />,
       activities: [
         "Sensor Accuracy Benchmarks",

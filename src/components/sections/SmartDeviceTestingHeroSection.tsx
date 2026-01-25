@@ -81,9 +81,7 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
                 <div className="text-2xl md:text-3xl font-bold text-green-500">
                   ISO
                 </div>
-                <div className="text-gray-600 text-sm font-semibold">
-                  29119-3 Compliant
-                </div>
+                <Link href="/qa-documentation-services" className="text-gray-600 text-sm font-semibold hover:text-brand-blue hover:underline">29119-3 Compliant</Link>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-500">

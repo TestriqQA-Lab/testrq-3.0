@@ -20,8 +20,11 @@ const ETLComprehensiveSlider: React.FC = () => {
       title: "Data Quality and Integrity Validation (ISO 8000-1:2022)",
       icon: <FaCheckCircle className="w-6 h-6" />,
       coverage: "ISO 8000-1:2022 Aligned",
-      description:
-        "Poor data quality is the leading cause of ETL failures. Gartner reports that bad data costs organizations an average of $15 million every year. Challenge: Validating completeness and accuracy across billions of records. Our Solution: We align our ETL quality assurance with the ISO 8000-1:2022 benchmark. We use Query-Surge and i-CEDQ to automate checks at every ETL stage, ensuring your data remains accurate, timely, and portable.",
+      description: (
+        <>
+          Poor <Link href="/data-analysis-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">data quality</Link> is the leading cause of ETL failures. Gartner reports that bad data costs organizations an average of $15 million every year. Challenge: Validating completeness and accuracy across billions of records. Our Solution: We align our ETL quality assurance with the ISO 8000-1:2022 benchmark. We use Query-Surge and i-CEDQ to automate checks at every ETL stage, ensuring your data remains accurate, timely, and portable.
+        </>
+      ),
       features: [
         "ISO 8000-1:2022 Benchmark",
         "QuerySurge Automation",
@@ -186,12 +189,15 @@ const ETLComprehensiveSlider: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center">
-                <Link href={`blog/post${activeTestingType.action}`} className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-300">
-                  Explore Data Extraction Testing
+              <div className="mt-8 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+                <Link
+                  href={`blog/post${activeTestingType.action}`}
+                  className="inline-flex items-center justify-center w-full md:w-auto px-6 py-3.5 text-base font-semibold text-white bg-blue-500 rounded-lg transition-all duration-300 hover:bg-blue-600 active:scale-95 shadow-sm hover:shadow-md"
+                >
+                  {`Explore ${activeTestingType.title}`}
                 </Link>
                 <button
-                  className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center justify-center w-full md:w-auto px-8 py-3.5 text-base font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                   onClick={nextTab}
                 >
                   Next
