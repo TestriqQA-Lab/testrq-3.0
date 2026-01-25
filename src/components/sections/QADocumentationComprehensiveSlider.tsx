@@ -68,7 +68,11 @@ const QADocumentationComprehensiveSlider = () => {
       description:
         "Detailed test case documentation with step-by-step instructions, expected results, and comprehensive traceability.",
       features: [
-        "Detailed Test Case Design",
+        <>
+          <Link href="/manual-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">
+            Detailed Test Case Design
+          </Link>
+        </>,
         "Step-by-Step Instructions",
         "Expected Results Definition",
         "Traceability Matrix Creation",
@@ -184,7 +188,7 @@ const QADocumentationComprehensiveSlider = () => {
         "Dashboard Templates",
         "Progress Reporting",
         "KPI Tracking Systems",
-        "Trend Analysis",
+        <><Link href="/data-analysis-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Trend Analysis</Link></>,
         "Executive Summaries",
       ],
       benefits: [

@@ -35,7 +35,7 @@ const DataAnalysisToolsFramework = () => {
       tools: [
         {
           name: "Python",
-          description: "Pandas, NumPy, Scikit-learn for heavy data lifting.",
+          description: <>Pandas, NumPy, Scikit-learn for <Link href="/technology-stack" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">heavy data lifting</Link>.</>,
           level: "Certified Scientist",
           popularity: "98%",
           icon: <FaPython className="h-6 w-6" />,
@@ -101,7 +101,7 @@ const DataAnalysisToolsFramework = () => {
         {
           name: "Apache Spark",
           description: "Distributed engine for massive data sets.",
-          level: "Zettabyte Scale",
+          level: <><Link href="/performance-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Zettabyte Scale</Link></>,
           popularity: "95%",
           icon: <FaCloud className="h-6 w-6" />,
         },

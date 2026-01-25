@@ -52,7 +52,7 @@ const RegressionTestingHeroSection: React.FC = () => {
               In 2026, the digital landscape is defined by rapid-fire release cycles and hyper-complex architectures. Traditional &quot;run-everything&quot; approaches to software regression testing are no longer sustainable. At Testriq, we transform regression from a bottleneck into a competitive advantage.
             </p>
             <p className="text-xl text-gray-600 leading-relaxed">
-              We use the <span className="font-semibold text-brand-blue">ISO 29119 risk-based framework</span> for our automated regression testing. This ensures your new code never breaks existing features. By analyzing code impact, we help global firms reduce test times and keep CI/CD pipelines moving fast.
+              We use the <span className="font-semibold text-brand-blue">ISO 29119 risk-based framework</span> for our <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">automated regression testing</Link>. This ensures your new code never breaks existing features. By analyzing code impact, we help global firms reduce test times and keep <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">CI/CD pipelines</Link> moving fast.
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">

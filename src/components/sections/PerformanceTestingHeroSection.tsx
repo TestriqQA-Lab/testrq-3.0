@@ -55,7 +55,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Global Performance Testing Services:
+              Global <Link href="/" className="hover:underline decoration-brand-blue">Performance Testing Services</Link>:
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
                 Software Load, Stress, and Scalability Solutions
@@ -66,7 +66,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
               A 100-millisecond delay can cost millions in revenue. Consequently, performance testing is now a core requirement rather than a luxury. Testriq ensures your platforms remain resilient, responsive, and ready for global scale.
             </p>
             <p className="text-xl text-gray-600 leading-relaxed">
-              As an independent performance testing laboratory, we help enterprises in the USA, UK, EU, and Asia transition from reactive tuning to <span className="font-semibold text-brand-blue">proactive performance engineering</span>. Our methodology leverages modern automation frameworks and ensures full compliance with <span className="font-semibold text-brand-blue">ISO 29119 standards</span> during all non-functional testing.
+              As an <Link href="/about-us" className="text-brand-blue hover:underline decoration-brand-blue">independent performance testing laboratory</Link>, we help enterprises in the USA, UK, EU, and Asia transition from reactive tuning to <span className="font-semibold text-brand-blue"><Link href="/performance-testing-services" className="hover:underline decoration-brand-blue">proactive performance engineering</Link></span>. Our methodology leverages modern automation frameworks and ensures full compliance with <span className="font-semibold text-brand-blue"><Link href="/qa-documentation-services" className="hover:underline decoration-brand-blue">ISO 29119 standards</Link></span> during all non-functional testing.
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
@@ -249,7 +249,7 @@ const PerformanceTestingHeroSection: React.FC = () => {
         videoLink="https://yourvideolink.com"
         onClose={closeLightbox}
       />
-    </section>
+    </section >
   );
 };
 

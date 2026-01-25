@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React from "react";
 import { FaExclamationTriangle, FaLink, FaSync, FaTools, FaCheckCircle, FaProjectDiagram } from "react-icons/fa";
 
@@ -7,7 +8,7 @@ const QADocumentationChallenges = () => {
         {
             id: 1,
             title: "Fixing Ad-Hoc Inconsistency",
-            description: "Teams suffer from 'Consistency Decay' that hinders onboarding. We implement ISO/IEC/IEEE 29119-3:2021 templates for standardized policies.",
+            description: <>Teams suffer from &apos;Consistency Decay&apos; that hinders onboarding. We implement <Link href="/manual-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">ISO/IEC/IEEE 29119-3:2021 templates</Link> for standardized policies.</>,
             solution: "Standardized template library across Agile, Waterfall, or Hybrid models.",
             icon: <FaProjectDiagram className="text-blue-600" />,
             tag: "ISO Standards"
@@ -23,7 +24,7 @@ const QADocumentationChallenges = () => {
         {
             id: 3,
             title: "Scaling at AI & CI/CD Speed",
-            description: "Documentation often lags behind the codebase in 90% of organizations utilizing CI/CD pipelines.",
+            description: <>Documentation often lags behind the codebase in 90% of organizations utilizing <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">CI/CD pipelines</Link>.</>,
             solution: "6-step maintenance process evolving with code via usage analytics to eliminate debt.",
             icon: <FaSync className="text-purple-600" />,
             tag: "Pipeline Maintenance"
@@ -31,7 +32,7 @@ const QADocumentationChallenges = () => {
         {
             id: 4,
             title: "Overcoming Tooling Chaos",
-            description: "Data scattered across wikis and Notion makes compliance evidence impossible to assemble.",
+            description: <>Data scattered across wikis and Notion makes compliance evidence impossible to assemble. We organize centralized artifacts within a single <Link href="/technology-stack" className="text-brand-blue hover:underline decoration-brand-blue">integrated system</Link>.</>,
             solution: "Centralized artifacts within a single integrated system (Jira, Confluence, Git-Book).",
             icon: <FaTools className="text-orange-600" />,
             tag: "Artifact Centralization"
@@ -39,7 +40,7 @@ const QADocumentationChallenges = () => {
         {
             id: 5,
             title: "Zero-Finding Regulatory Audits",
-            description: "For MedTech & FinTech, documentation is a legal mandate (FDA 21 CFR Part 11, HIPAA).",
+            description: <>For MedTech & FinTech, documentation is a legal mandate <Link href="/healthcare-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">(FDA 21 CFR Part 11, HIPAA)</Link>.</>,
             solution: "Rigorous validation protocols achieving 100% first-time FDA compliance.",
             icon: <FaCheckCircle className="text-green-600" />,
             tag: "Legal Compliance"

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaTachometerAlt, FaCheckCircle, FaAward } from "react-icons/fa";
 
@@ -8,21 +9,21 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaTachometerAlt className="text-3xl" />,
       title: "ISO/IEC/IEEE 29119 Alignment",
-      description: "We utilize Part 2 for test processes and Part 3 for standardized documentation. This ensures testing is risk-based, documented, and follows repeatable processes.",
+      description: <>We utilize Part 2 for test processes and <Link href="/qa-documentation-services" className="text-brand-blue hover:underline decoration-brand-blue">Part 3</Link> for standardized documentation. This ensures testing is risk-based, documented, and follows repeatable processes.</>,
       stats: "ISO Aligned",
       color: "blue"
     },
     {
       icon: <FaAward className="text-3xl" />,
       title: "GDPR & Data Privacy",
-      description: "We mask or scrub all performance test data to protect PII. This ensures total security during global load generation across USA, UK, EU, and Asia.",
+      description: <>We mask or scrub all performance test data to <Link href="/privacy-policy" className="text-brand-blue hover:underline decoration-brand-blue">protect PII</Link>. This ensures total security during global load generation across USA, UK, EU, and Asia.</>,
       stats: "PII Masked",
       color: "purple"
     },
     {
       icon: <FaCheckCircle className="text-3xl" />,
       title: "SOC2 & ISO 27001",
-      description: "Our testing laboratories follow strict security protocols to protect your intellectual property and source code throughout the performance engineering lifecycle.",
+      description: <>Our testing laboratories follow strict <Link href="/security-testing" className="text-brand-blue hover:underline decoration-brand-blue">security protocols</Link> to protect your intellectual property and source code throughout the performance engineering lifecycle.</>,
       stats: "Secure Lab",
       color: "green"
     },
@@ -167,7 +168,7 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-gray-900 mb-1">Advanced Analytics</h5>
-                  <p className="text-sm text-gray-600">Deep performance insights with actionable optimization recommendations</p>
+                  <p className="text-sm text-gray-600"><Link href="/data-analysis-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Deep performance insights</Link> with actionable optimization recommendations</p>
                 </div>
               </div>
 

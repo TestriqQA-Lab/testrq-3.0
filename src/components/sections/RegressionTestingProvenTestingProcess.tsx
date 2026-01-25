@@ -41,7 +41,7 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
       title: "Automated Script Maintenance",
       duration: "Technical",
       icon: <FaPlay className="text-2xl" />,
-      description: "One of the biggest hurdles is test script maintenance. We utilize modular frameworks to ensure that when your UI changes, your automated regression testing scripts don't break.",
+      description: <>One of the biggest hurdles is test script maintenance. We utilize modular frameworks to ensure that when your UI changes, your <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">automated regression testing scripts</Link> don&apos;t break.</>,
       activities: [
         "Modular Framework Setup",
         "UI Change Impact Check",
@@ -55,7 +55,7 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
       title: "Execution & CI/CD Integration",
       duration: "Continuous",
       icon: <FaChartLine className="text-2xl" />,
-      description: "We integrate directly into your CI/CD pipelines (Jenkins, GitHub Actions, Azure DevOps). This enables continuous regression testing, providing instant feedback to developers.",
+      description: <>We integrate directly into your <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">CI/CD pipelines</Link> (Jenkins, GitHub Actions, Azure DevOps). This enables continuous regression testing, providing instant feedback to developers.</>,
       activities: [
         "Pipeline Integration (Jenkins/GH)",
         "Automated Execution Triggers",
@@ -179,4 +179,3 @@ const RegressionTestingProvenTestingProcess: React.FC = () => {
 };
 
 export default RegressionTestingProvenTestingProcess;
-

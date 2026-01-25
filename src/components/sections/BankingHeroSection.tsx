@@ -16,10 +16,10 @@ import {
 } from "react-icons/fa";
 const BankingHeroSection: React.FC = () => {
   const keyStats = [
-    { value: "99.99%", label: "Security Compliance", icon: FaShieldAlt },
+    { value: "99.99%", label: (<><Link href="/security-testing" className="hover:text-brand-blue hover:underline">Security Compliance</Link></>), icon: FaShieldAlt },
     { value: "10+", label: "Fintech Platforms", icon: FaUniversity },
     { value: "1M+", label: "Secure Transactions", icon: FaCreditCard },
-    { value: "24/7", label: "Monitoring Support", icon: FaRocket },
+    { value: "24/7", label: (<><Link href="/automation-testing-services" className="hover:text-brand-blue hover:underline">Monitoring Support</Link></>), icon: FaRocket },
   ];
 
   const trustBadges = [

@@ -13,7 +13,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       title: "Strategy & Risk Mapping",
       duration: "Strategic",
       icon: <FaClipboardList className="text-2xl" />,
-      description: "We define Performance Metrics (Response Time, Throughput, Latency) and User Profiles. Following ISO/IEC/IEEE 29119-3, we create a detailed Test Plan mapping scenarios to business-critical flows.",
+      description: <>We define Performance Metrics (Response Time, Throughput, Latency) and User Profiles. Following <Link href="/qa-documentation-services" className="text-brand-blue hover:underline decoration-brand-blue">ISO/IEC/IEEE 29119-3</Link>, we create a detailed Test Plan mapping scenarios to business-critical flows.</>,
       activities: [
         "Response Time/Throughput Metrics",
         "User Profile Modeling",
@@ -27,7 +27,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       title: "Infrastructure & Tool Selection",
       duration: "Technical",
       icon: <FaCogs className="text-2xl" />,
-      description: "We choose the best performance testing tools, such as JMeter, k6, or Gatling. Our selection depends on your specific tech stack and protocol requirements.",
+      description: <>We choose the best <Link href="/technology-stack" className="text-brand-blue hover:underline decoration-brand-blue">performance testing tools</Link>, such as JMeter, k6, or Gatling. Our selection depends on your specific tech stack and protocol requirements.</>,
       activities: [
         "JMeter/k6/Gatling Evaluation",
         "Protocol Requirement Analysis",
@@ -41,7 +41,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       title: "Scripting & Think Time Modeling",
       duration: "Development",
       icon: <FaPlay className="text-2xl" />,
-      description: "We develop realistic scripts using 'Think Time' and dynamic data. This approach mimics actual human behavior instead of creating 'robotic' traffic.",
+      description: <>We develop <Link href="/manual-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">realistic scripts</Link> using &apos;Think Time&apos; and dynamic data. This approach mimics actual human behavior instead of creating &apos;robotic&apos; traffic.</>,
       activities: [
         "Realistic 'Think Time' Modeling",
         "Dynamic Data Parameterization",
@@ -55,7 +55,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       title: "Execution & Distributed Load Generation",
       duration: "Continuous",
       icon: <FaChartLine className="text-2xl" />,
-      description: "We run tests across cloud-based environments to simulate global traffic from the USA, EU, and Asia simultaneously.",
+      description: <>We run tests across <Link href="/technology-stack" className="text-brand-blue hover:underline decoration-brand-blue">cloud-based environments</Link> to simulate global traffic from the USA, EU, and Asia simultaneously.</>,
       activities: [
         "Cloud-based Load Generation",
         "USA/EU/Asia Traffic Simulation",
@@ -69,7 +69,7 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       title: "Optimize and Analyze Performance",
       duration: "Finalization",
       icon: <FaCheckCircle className="text-2xl" />,
-      description: "We do more than just report failures. Our team identifies bottlenecks and monitors resource usage to optimize your system, offering tips for code and infrastructure tuning.",
+      description: <>We do more than just report failures. Our team identifies bottlenecks and monitors resource usage to optimize your system, offering <Link href="/data-analysis-services" className="text-brand-blue hover:underline decoration-brand-blue">tips for code</Link> and infrastructure tuning.</>,
       activities: [
         "Bottleneck Identification",
         "Resource Usage Monitoring",

@@ -25,7 +25,7 @@ const PerformanceTestingToolsFramework: React.FC = () => {
       title: "Developer-Centric Tools",
       icon: <FaCogs className="text-2xl" />,
       color: "purple",
-      description: "Modern tools designed for CI/CD and developer workflows.",
+      description: <>Modern tools designed for <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">CI/CD</Link> and developer workflows.</>,
       tools: [
         { name: "k6", description: "Grafana-backed modern load testing", logo: "📊" },
         { name: "Locust", description: "Python-based distributed user test", logo: "🦗" },
@@ -37,7 +37,7 @@ const PerformanceTestingToolsFramework: React.FC = () => {
       title: "Cloud Load Generation",
       icon: <FaCloud className="text-2xl" />,
       color: "orange",
-      description: "Global load generation using leading cloud laboratories.",
+      description: <>Global load generation using leading <Link href="/technology-stack" className="text-brand-blue hover:underline decoration-brand-blue">cloud laboratories</Link>.</>,
       tools: [
         { name: "AWS", description: "Scalable cloud infrastructure load", logo: "☁️" },
         { name: "Browser-Stack", description: "Real-device performance grid", logo: "📱" },

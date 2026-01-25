@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FaChevronRight, FaPlay } from "react-icons/fa";
 
+
 const SapProvenTestingProcess: React.FC = () => {
     const [activeStep, setActiveStep] = useState(0);
 
@@ -10,7 +11,7 @@ const SapProvenTestingProcess: React.FC = () => {
             id: 1,
             title: "System Readiness Assessment",
             description:
-                "We use SAP Readiness Checks and Custom Code Migration Guides to evaluate your current ECC landscape before the move.",
+                "We use SAP <Link href=\"/qa-documentation-services\" className=\"text-blue-600 hover:underline\">Readiness Checks</Link> and Custom Code Migration Guides to evaluate your current ECC landscape before the move.",
             duration: "Phase 1",
             activities: [
                 "ECC Landscape audit",
@@ -38,7 +39,7 @@ const SapProvenTestingProcess: React.FC = () => {
             id: 3,
             title: "Test Data Setup & Masking",
             description:
-                "Provisioning compliant, high-integrity data for SAP functional testing using automated masking.",
+                "Provisioning compliant, high-integrity data for SAP functional testing using <Link href=\"/data-analysis-services\" className=\"text-blue-600 hover:underline\">Test Data Setup</Link> and automated masking.",
             duration: "Phase 3",
             activities: [
                 "Data provisioning",
@@ -52,7 +53,7 @@ const SapProvenTestingProcess: React.FC = () => {
             id: 4,
             title: "Automated Regression Suite Build",
             description:
-                "Deploying cost-effective SAP test automation solutions for B2B to cover core business processes.",
+                "Deploying cost-effective SAP <Link href=\"/automation-testing-services\" className=\"text-blue-600 hover:underline\">Automated Regression</Link> solutions for B2B to cover core business processes.",
             duration: "Phase 4",
             activities: [
                 "B2B core process mapping",
@@ -66,7 +67,7 @@ const SapProvenTestingProcess: React.FC = () => {
             id: 5,
             title: "Integration & Performance Validation",
             description:
-                "Running performance testing on OData services and middleware (SAP CPI) for high-scale validation.",
+                "Running <Link href=\"/performance-testing-services\" className=\"text-blue-600 hover:underline\">Performance Validation</Link> on OData services and middleware (SAP CPI) for high-scale validation.",
             duration: "Phase 5",
             activities: [
                 "OData service stress testing",

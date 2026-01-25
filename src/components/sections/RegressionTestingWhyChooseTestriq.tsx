@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaShieldAlt, FaUsers, FaAward } from "react-icons/fa";
 
@@ -15,14 +16,14 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaAward className="text-3xl" />,
       title: "SOC2 Compliance",
-      description: "Our testing environments and data handling procedures meet rigorous security and privacy audits to protect your intellectual property.",
+      description: <>Our testing environments and data handling procedures meet rigorous <Link href="/security-testing" className="text-brand-blue hover:underline decoration-brand-blue">security</Link> and privacy audits to protect your intellectual property.</>,
       stats: "SOC2 Audited",
       color: "green"
     },
     {
       icon: <FaUsers className="text-3xl" />,
       title: "GDPR Data Privacy",
-      description: "We use strict data masking and privacy rules for the EU market. This protects all personal data during manual and automated regression runs.",
+      description: <>We use strict <Link href="/security-testing" className="text-brand-blue hover:underline decoration-brand-blue">data masking</Link> and privacy rules for the EU market. This protects all personal data during manual and automated regression runs.</>,
       stats: "PII Masked",
       color: "purple"
     },
@@ -166,7 +167,7 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
                   <span className="text-white text-sm">✓</span>
                 </div>
                 <div>
-                  <h5 className="font-semibold text-gray-900 mb-1">Intelligent Automation</h5>
+                  <h5 className="font-semibold text-gray-900 mb-1"><Link href="/ai-application-testing" className="text-brand-blue hover:underline decoration-brand-blue">Intelligent Automation</Link></h5>
                   <p className="text-sm text-gray-600">Smart automation strategies that adapt to application changes and minimize maintenance</p>
                 </div>
               </div>
@@ -189,4 +190,3 @@ const RegressionTestingWhyChooseTestriq: React.FC = () => {
 };
 
 export default RegressionTestingWhyChooseTestriq;
-

@@ -16,7 +16,7 @@ const CorporateQATrainingProvenProcess: React.FC = () => {
       title: "Assessment & Planning",
       icon: <FaClipboardList className="text-2xl text-blue-600" />,
       description:
-        "We analyze your team's current skill level and create a customized training roadmap.",
+        (<>We analyze your team&apos;s current skill level and create a <Link href="/software-testing-guide" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">customized training roadmap</Link>.</>),
       details: [
         "Skills gap analysis",
         "Learning objectives definition",
@@ -42,10 +42,10 @@ const CorporateQATrainingProvenProcess: React.FC = () => {
       title: "Hands-on Practice",
       icon: <FaLaptopCode className="text-2xl text-purple-600" />,
       description:
-        "Practical exercises and projects to reinforce learning and build confidence.",
+        (<>Deploying learned skills in a safe, guided sandbox. <Link href="/" className="text-blue-600 hover:underline">Real project simulations</Link> to build confidence before live deployment.</>),
       details: [
-        "Real project simulations",
-        "Tool-based exercises",
+        (<><Link href="/" className="text-blue-600 hover:underline">Real project simulations</Link></>),
+        (<><Link href="/technology-stack" className="text-gray-500 hover:text-brand-blue hover:underline decoration-brand-blue">Tool-based exercises</Link></>),
         "Peer collaboration",
         "Mentored practice",
       ],
@@ -124,16 +124,14 @@ const CorporateQATrainingProvenProcess: React.FC = () => {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Step Content */}
                 <div className="flex-1 lg:max-w-md">
                   <div
-                    className={`bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 ${
-                      index % 2 === 0 ? "lg:text-right" : "lg:text-left"
-                    }`}
+                    className={`bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"
+                      }`}
                   >
                     <div className="flex items-center justify-center lg:justify-start space-x-4 mb-4">
                       {index % 2 !== 0 && (
@@ -197,7 +195,7 @@ const CorporateQATrainingProvenProcess: React.FC = () => {
               organization.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+              <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                 <button className="bg-brand-blue cursor-pointer text-white px-8 py-3 rounded-lg font-semiboldtransition-colors">
                   Schedule Consultation
                 </button>

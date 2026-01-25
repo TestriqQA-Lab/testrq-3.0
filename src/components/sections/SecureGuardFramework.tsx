@@ -1,5 +1,6 @@
 // components/sections/SecureGuardFramework.tsx
 
+import Link from "next/link";
 import React from "react";
 
 
@@ -20,7 +21,7 @@ const SecureGuardFramework = () => {
       id: 2,
       title: "Weakness Scanning",
       icon: <FaShieldAlt className="text-xl text-white" />,
-      description: "Automated tools scan for known weaknesses, including open-source vulnerabilities found in 86% of audited applications.",
+      description: <><Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">Automated tools</Link> scan for known weaknesses, including open-source vulnerabilities found in 86% of audited applications.</>,
       activities: ["Automated Scan Engine", "CVE Database Match", "SCA Scanning", "Infrastructure Audit"],
       color: "bg-red-600"
     },
@@ -28,7 +29,7 @@ const SecureGuardFramework = () => {
       id: 3,
       title: "Manual Penetration Testing",
       icon: <FaBug className="text-xl text-white" />,
-      description: "Our Certified Ethical Hackers (CEH, OSCP) attempt to bypass your System Security using creative exploit chains.",
+      description: <>Our Certified Ethical Hackers (CEH, OSCP) attempt to bypass your <Link href="/manual-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">System Security</Link> using creative exploit chains.</>,
       activities: ["Ethical Hacking Depth", "Logic Flow Bypassing", "Manual Exploit Chains", "Privilege Escalation"],
       color: "bg-orange-600"
     },

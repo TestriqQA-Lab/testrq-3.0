@@ -12,15 +12,15 @@ const SapToolsFramework: React.FC = () => {
             description: "Resilient, keyword-driven frameworks to jumpstart your S/4HANA journey.",
             tools: [
                 {
-                    name: "Tricentis Tosca",
+                    name: (<><Link href="/technology-stack" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Tricentis Tosca</Link></>),
                     description: "Model-based automation for rapid script maintenance",
                 },
                 {
-                    name: "Worksoft Certify",
+                    name: (<><Link href="/automation-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Worksoft Certify</Link></>),
                     description: "Business process automation for end-to-end validation",
                 },
                 {
-                    name: "Selenium for Fiori",
+                    name: (<><Link href="/automation-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Selenium for Fiori</Link></>),
                     description: "Script-based framework for customized Fiori UI validation",
                 },
             ],
@@ -31,11 +31,11 @@ const SapToolsFramework: React.FC = () => {
             description: "Benchmarking OData services and infrastructure sizing for global rollouts.",
             tools: [
                 {
-                    name: "Micro Focus LoadRunner",
+                    name: (<><Link href="/performance-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Micro Focus LoadRunner</Link></>),
                     description: "Industry standard for high-volume transaction testing",
                 },
                 {
-                    name: "Apache JMeter",
+                    name: (<><Link href="/performance-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Apache JMeter</Link></>),
                     description: "Cost-effective validation for web-based SAP services",
                 },
                 {
@@ -50,11 +50,11 @@ const SapToolsFramework: React.FC = () => {
             description: "Integrating SAP quality assurance into modern Agile and DevOps pipelines.",
             tools: [
                 {
-                    name: "SAP Solution Manager",
+                    name: (<><Link href="/qa-documentation-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">SAP Solution Manager</Link></>),
                     description: "Integrated SolMan (7.2+) for test lifecycle management",
                 },
                 {
-                    name: "Jira / Xray / Azure DevOps",
+                    name: (<><Link href="/technology-stack" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Jira / Xray / Azure DevOps</Link></>),
                     description: "Agile management and defect tracking for enterprise",
                 },
                 {
@@ -69,7 +69,7 @@ const SapToolsFramework: React.FC = () => {
             description: "Automated provisioning of compliant, high-integrity datasets.",
             tools: [
                 {
-                    name: "SAP TDMS",
+                    name: (<><Link href="/data-analysis-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">SAP TDMS</Link></>),
                     description: "Test Data Migration Server for efficient data refresh",
                 },
                 {
@@ -77,7 +77,7 @@ const SapToolsFramework: React.FC = () => {
                     description: "Data virtualization and masking across global landscapes",
                 },
                 {
-                    name: "Synthetic Generation",
+                    name: (<><Link href="/data-analysis-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Synthetic Generation</Link></>),
                     description: "ISO 29119-3 compliant mock data for GDPR privacy",
                 },
             ],

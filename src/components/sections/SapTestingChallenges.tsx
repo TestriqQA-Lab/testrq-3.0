@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 import { FaExclamationTriangle, FaDatabase, FaCogs, FaChartLine, FaUsers, FaCheckCircle } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ const SapTestingChallenges = () => {
             title: "S/4HANA Migration Testing Gaps",
             description: "Nearly 60% of companies undergoing migrations face significant delays because of incomplete business process validation and data conversion failures.",
             challengeText: "Custom code resolving issues and pricing discrepancies often obstruct the month-end closing process.",
-            solution: "Our SAP S/4HANA migration strategy follows the ISO 29119-2 standard. We use a risk-based approach to identify your project's critical paths, validating 'clean core' principles and custom Z-reports.",
+            solution: (<>Our SAP S/4HANA migration strategy follows the <Link href="/qa-documentation-services" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">ISO 29119-2 standard</Link>. We use a risk-based approach to identify your project&apos;s critical paths, validating &apos;clean core&apos; principles and custom Z-reports.</>),
             icon: <FaExclamationTriangle className="h-8 w-8 text-red-600" />
         },
         {
@@ -16,7 +17,7 @@ const SapTestingChallenges = () => {
             title: "Test Data Management (TDM) & Global Compliance",
             description: "Managing SAP’s complex data structures while adhering to GDPR is a primary blocker for 70% of global projects.",
             challengeText: "Masking PII for dev/test environments often breaks referential integrity.",
-            solution: "We provide expert sap data testing using SAP TDMS and synthetic data generation. Aligned with ISO/IEC/IEEE 29119-3, our datasets remain realistic and compliant across the US, UK, and EU.",
+            solution: (<>We provide expert sap data testing using SAP TDMS and synthetic data generation. Aligned with ISO/IEC/IEEE 29119-3, our datasets remain realistic and compliant across the US, UK, and <Link href="/security-testing" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">EU (GDPR)</Link>.</>),
             icon: <FaDatabase className="h-8 w-8 text-blue-600" />
         },
         {
@@ -24,7 +25,7 @@ const SapTestingChallenges = () => {
             title: "Scaling SAP Test Automation & Maintenance",
             description: "Manual regression testing still dominates the landscape, with under 30% of teams achieving meaningful automation.",
             challengeText: "Brittle scripts often fail post-update, leading to massive maintenance overhead.",
-            solution: "We leverage tools like Tricentis Tosca and Worksoft to build resilient, keyword-driven frameworks. Our pre-built tools enable 80% regression automation, delivering 40% faster cycles.",
+            solution: (<>We leverage tools like <Link href="/technology-stack" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">Tricentis Tosca</Link> and Worksoft to build resilient, keyword-driven frameworks. Our pre-built tools enable 80% regression automation, delivering 40% faster cycles.</>),
             icon: <FaCogs className="h-8 w-8 text-purple-600" />
         },
         {
@@ -32,7 +33,7 @@ const SapTestingChallenges = () => {
             title: "SAP Performance Testing under High Loads",
             description: "As organizations consolidate global instances, sizing infrastructure for Fiori-based workloads becomes a 50% failure point.",
             challengeText: "Batch overlap and OData API spikes can crash systems during peak transaction volumes.",
-            solution: "Our team uses LoadRunner and JMeter to simulate multi-region access according to ISO 29119-3 specifications, benchmarking Fiori tiles and background jobs.",
+            solution: (<>Our team uses <Link href="/performance-testing-services" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">LoadRunner and JMeter</Link> to simulate multi-region access according to ISO 29119-3 specifications, benchmarking Fiori tiles and background jobs.</>),
             icon: <FaChartLine className="h-8 w-8 text-green-600" />
         },
         {
@@ -40,7 +41,7 @@ const SapTestingChallenges = () => {
             title: "Cross-Functional Expertise & Silo Breakdown",
             description: "The end of SAP ECC support has created a significant skill gap and demand for cross-module integration experts.",
             challengeText: "Siloed teams often miss data integrity issues that only appear during User Acceptance Testing (UAT).",
-            solution: "Our ISTQB-certified experts operate under a QAAAS model, defining a strategy based on ISO 29119-1 to ensure end-to-end coverage across your entire SAP landscape.",
+            solution: (<>Our ISTQB-certified experts operate under a QAAAS model, defining a strategy based on ISO 29119-1 to ensure end-to-end coverage across your entire SAP landscape, including <Link href="/manual-testing-services" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">User Acceptance Testing (UAT)</Link>.</>),
             icon: <FaUsers className="h-8 w-8 text-orange-600" />
         }
     ];

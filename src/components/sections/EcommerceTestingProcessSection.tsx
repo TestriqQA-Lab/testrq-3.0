@@ -9,27 +9,27 @@ const EcommerceTestingProcessSection: React.FC = () => {
     {
       icon: FaSearch,
       title: "Plan & Analyze Requirements",
-      description: "Mapping the order lifecycle, SKU management logic, and specific shipping API requirements.",
+      description: (<>Mapping the order lifecycle, SKU management logic, and specific <Link href="/api-testing" className="text-white underline hover:text-gray-200">shipping API requirements</Link>.</>),
     },
     {
       icon: FaCheckCircle,
       title: "Functional & Checkout Validation",
-      description: "Testing core 'Add to Cart' and checkout flows, including guest checkouts and discount code logic.",
+      description: (<>Testing core &apos;Add to Cart&apos; and <Link href="/manual-testing-services" className="text-white underline hover:text-gray-200">checkout flows</Link>, including guest checkouts and discount code logic.</>),
     },
     {
       icon: FaShieldAlt,
       title: "Payment Gateway & Security Audit",
-      description: "Validating PCI DSS compliance in a sandbox environment and performing SSL certification checks.",
+      description: (<>Validating PCI DSS compliance in a sandbox environment and performing <Link href="/security-testing" className="text-white underline hover:text-gray-200">SSL certification checks</Link>.</>),
     },
     {
       icon: FaMobile,
       title: "Omnichannel Compatibility Testing",
-      description: "Running parallel tests across iOS, Android, and Desktop browsers to ensure visual and functional parity.",
+      description: (<>Running parallel tests across iOS, Android, and <Link href="/desktop-application-testing-services" className="text-white underline hover:text-gray-200">Desktop browsers</Link> to ensure visual and functional parity.</>),
     },
     {
       icon: FaChartLine,
       title: "Inventory & High-Volume Load Testing",
-      description: "Simulating peak traffic events (Black Friday style) and validating inventory updates correctly.",
+      description: (<>Simulating peak traffic events (Black Friday style) and validating <Link href="/performance-testing-services" className="text-white underline hover:text-gray-200">inventory updates</Link> correctly.</>),
     },
     {
       icon: FaRocket,

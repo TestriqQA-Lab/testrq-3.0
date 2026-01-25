@@ -32,7 +32,7 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
           "Test Case Design Techniques",
           "Defect Life Cycle Management",
           (<><Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">Testing Documentation</Link></>),
-          "Quality Metrics and KPIs",
+          (<><Link href="/data-analysis-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Quality Metrics and KPIs</Link></>),
         ],
         benefits: [
           "Understand testing fundamentals thoroughly",
@@ -57,7 +57,7 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
           (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">User Acceptance Testing (UAT)</Link></>),
           (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability Testing Methods</Link></>),
           (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser Testing</Link></>),
-          "Mobile Testing Strategies",
+          (<><Link href="/mobile-application-testing" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Mobile Testing Strategies</Link></>),
           (<><Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">Accessibility Testing</Link></>),
         ],
         benefits: [
@@ -203,8 +203,8 @@ const SoftwareTestingGuideComprehensiveSlider = () => {
                 key={methodology.id}
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeTab === index
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-gray-600 hover:bg-gray-100"
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-white text-gray-600 hover:bg-gray-100"
                   }`}
               >
                 {methodology.icon}

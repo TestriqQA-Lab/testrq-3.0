@@ -38,7 +38,7 @@ const EcommerceTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaMobile,
-      title: "Mobile Commerce Testing",
+      title: (<><Link href="/mobile-application-testing" className="hover:text-brand-blue hover:underline">Mobile Commerce Testing</Link></>),
       description:
         "Mobile-responsive design, touch interfaces, and mobile payment optimization",
     },
@@ -85,17 +85,17 @@ const EcommerceTestingServicesSection: React.FC = () => {
                 <tr>
                   <td className="px-8 py-6 font-bold text-gray-900">PCI DSS 4.0</td>
                   <td className="px-8 py-6 text-gray-600">The global benchmark for secure payment processing; mandatory for all modern checkouts.</td>
-                  <td className="px-8 py-6 text-green-600 font-medium">Transaction Security</td>
+                  <td className="px-8 py-6 text-green-600 font-medium"><Link href="/security-testing" className="hover:underline">Transaction Security</Link></td>
                 </tr>
                 <tr>
                   <td className="px-8 py-6 font-bold text-gray-900">ISO/IEC/IEEE 29119</td>
                   <td className="px-8 py-6 text-gray-600">Bedrock of our QA methodology; mapping every artifact from Test Policy to results.</td>
-                  <td className="px-8 py-6 text-green-600 font-medium">Global Audit-Ready</td>
+                  <td className="px-8 py-6 text-green-600 font-medium"><Link href="/qa-documentation-services" className="hover:underline">Global Audit-Ready</Link></td>
                 </tr>
                 <tr>
                   <td className="px-8 py-6 font-bold text-gray-900">GDPR / CCPA</td>
                   <td className="px-8 py-6 text-gray-600">Testing consent managers and data deletion workflows to ensure total user privacy.</td>
-                  <td className="px-8 py-6 text-green-600 font-medium">Privacy Integrity</td>
+                  <td className="px-8 py-6 text-green-600 font-medium"><Link href="/privacy-policy" className="hover:underline">Privacy Integrity</Link></td>
                 </tr>
               </tbody>
             </table>

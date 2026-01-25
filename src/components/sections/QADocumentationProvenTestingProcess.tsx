@@ -93,11 +93,11 @@ const QADocumentationProvenTestingProcess = () => {
       activities: [
         "Test script skeleton design",
         "Manual script development",
-        "Automated script frameworking",
+        <><Link href="/automation-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Automated script frameworking</Link></>,
         "Reusability mapping"
       ],
       deliverables: [
-        "Test Script Repository",
+        <><Link href="/technology-stack" className="text-gray-800 hover:text-brand-blue hover:underline decoration-brand-blue">Test Script Repository</Link></>,
         "Automation Skeletons",
         "Scalable Script Framework",
         "Maintenance Guidelines"

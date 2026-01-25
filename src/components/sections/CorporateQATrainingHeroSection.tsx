@@ -48,8 +48,7 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              In an era of rapid digital transformation, the gap between software complexity and team capability is widening. At Testriq, we provide enterprise-grade <Link href="/corporate-qa-training">corporate QA training</Link> and software QA training programs designed to bridge this divide. Our curriculum strategically responds to the global shift toward AI, hyper-automation, and continuous delivery.
-              By leveraging ISTQB-certified programs and customized roadmaps, we help organizations transition from traditional testing to advanced quality engineering. We offer online corporate QA training for remote teams and customized bootcamps for software companies.
+              Upskill your QA team with Testriq’s corporate training programs. From manual testing fundamentals to <Link href="/software-testing-guide" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">software QA training</Link>, <Link href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">advanced quality engineering</Link>, and <Link href="/ai-application-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">AI, hyper-automation</Link>, we customize curriculums to align with your business goals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

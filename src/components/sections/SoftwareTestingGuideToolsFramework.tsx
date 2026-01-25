@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Smartphone, Shield, Zap, Database, Globe, CheckCircle } from 'lucide-react';
-import { FaTools, FaPython, FaJava, FaNodeJs, FaGithub, FaAndroid, FaApple, FaLinux, FaDocker,FaShieldAlt, FaCloud, FaDatabase, FaChrome } from 'react-icons/fa';
+import { FaTools, FaPython, FaJava, FaNodeJs, FaGithub, FaAndroid, FaApple, FaLinux, FaDocker, FaShieldAlt, FaCloud, FaDatabase, FaChrome } from 'react-icons/fa';
 import Link from 'next/link';
 
 const SoftwareTestingGuideToolsFramework = () => {
@@ -15,8 +15,8 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <FaTools className="h-6 w-6" />,
       description: 'Comprehensive automation testing tools and frameworks',
       tools: [
-        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>), description: 'Web application automation', level: 'Beginner to Advanced', popularity: '95%', icon: <FaJava className="h-6 w-6" /> },
-        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Cypress</Link></>), description: 'Modern web testing framework', level: 'Intermediate', popularity: '88%', icon: <FaNodeJs className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>), description: (<><Link href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Web application automation</Link></>), level: 'Beginner to Advanced', popularity: '95%', icon: <FaJava className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Cypress</Link></>), description: (<><Link href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Modern web testing framework</Link></>), level: 'Intermediate', popularity: '88%', icon: <FaNodeJs className="h-6 w-6" /> },
         { name: 'Playwright', description: (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser automation</Link></>), level: 'Intermediate', popularity: '82%', icon: <FaGithub className="h-6 w-6" /> },
         { name: 'TestComplete', description: 'Commercial automation tool', level: 'Beginner', popularity: '75%', icon: <FaDocker className="h-6 w-6" /> },
         { name: 'Katalon Studio', description: 'All-in-one automation solution', level: 'Beginner', popularity: '78%', icon: <FaLinux className="h-6 w-6" /> },
@@ -29,7 +29,7 @@ const SoftwareTestingGuideToolsFramework = () => {
       icon: <Smartphone className="h-6 w-6" />,
       description: 'Mobile application testing tools and frameworks',
       tools: [
-        { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link></>), description: 'Cross-platform mobile automation', level: 'Intermediate', popularity: '90%', icon: <FaAndroid className="h-6 w-6" /> },
+        { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link></>), description: (<><Link href="/mobile-application-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Cross-platform mobile automation</Link></>), level: 'Intermediate', popularity: '90%', icon: <FaAndroid className="h-6 w-6" /> },
         { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Espresso</Link></>), description: 'Android UI testing framework', level: 'Intermediate', popularity: '85%', icon: <FaAndroid className="h-6 w-6" /> },
         { name: (<><Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">XCUITest</Link></>), description: 'iOS native testing framework', level: 'Intermediate', popularity: '80%', icon: <FaApple className="h-6 w-6" /> },
         { name: 'Detox', description: 'React Native testing framework', level: 'Advanced', popularity: '72%', icon: <FaApple className="h-6 w-6" /> },
@@ -121,8 +121,8 @@ const SoftwareTestingGuideToolsFramework = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(index)}
                 className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeCategory === index
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
               >
                 {category.icon}
@@ -186,7 +186,7 @@ const SoftwareTestingGuideToolsFramework = () => {
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[ 'Video Tutorials', 'Hands-on Labs', 'Practice Projects', 'Certification Prep' ].map((resource, index) => (
+              {['Video Tutorials', 'Hands-on Labs', 'Practice Projects', 'Certification Prep'].map((resource, index) => (
                 <div key={index} className="flex items-center bg-white rounded-lg p-3">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                   <span className="text-sm text-gray-700">{resource}</span>

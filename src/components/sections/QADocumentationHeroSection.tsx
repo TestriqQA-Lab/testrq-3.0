@@ -59,11 +59,14 @@ const QADocumentationHeroSection = () => {
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                As software complexity accelerates in 2026, we bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems. Every artifact we produce aligns with the <span className="font-bold text-brand-blue">ISO/IEC/IEEE 29119-3</span> standard.
+                As software complexity accelerates in 2026, we bridge the gap between rapid deployment and quality assurance with audit-ready, <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">scalable systems</Link>. Every artifact we produce aligns with the <span className="font-bold text-brand-blue">ISO/IEC/IEEE 29119-3</span> standard.
               </p>
 
+              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                In highly regulated industries like Healthcare, Finance, and Automotive, documentation is not just paperwork—it is your license to operate. We align your <Link href="/" className="hover:text-brand-blue hover:underline decoration-brand-blue">software testing</Link> lifecycle with global standards, ensuring your products are audit-ready from day one.
+              </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our team replaces simple spreadsheets with a single source of truth for global engineering teams, delivering precision-engineered QA documentation for software testing and regulatory audits.
+                Our team replaces simple spreadsheets with a single source of truth for global engineering teams, delivering precision-engineered QA documentation for <Link href="/" className="text-brand-blue hover:underline decoration-brand-blue">software testing</Link> and <Link href="/security-testing" className="text-brand-blue hover:underline decoration-brand-blue">regulatory audits</Link>.
               </p>
             </div>
 

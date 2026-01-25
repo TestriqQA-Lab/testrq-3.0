@@ -35,7 +35,7 @@ const ApiTestingHeroSection: React.FC = () => {
               <span className="text-[theme(color.brand.blue)]">
                 API Testing&nbsp;
               </span>
-              Services: <Link href="/speed-test-services" className="hover:underline">High-Velocity REST</Link>, Graph-QL, and <Link href="/automation-testing-services" className="hover:underline">Automated QA Solutions</Link>
+              Services: <Link href="/performance-testing-services" className="hover:underline">High-Velocity REST</Link>, Graph-QL, and <Link href="/automation-testing-services" className="hover:underline">Automated QA Solutions</Link>
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">

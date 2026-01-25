@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import React from 'react';
 import { FaExclamationTriangle, FaUserTie, FaCloudUploadAlt, FaSitemap, FaRobot } from 'react-icons/fa';
 
@@ -98,7 +99,19 @@ const DataAnalysisChallenges = () => {
                                 </div>
                                 <div className="pt-4 border-t border-gray-200">
                                     <h4 className="text-sm font-bold text-brand-blue uppercase tracking-widest mb-2">Our Solution:</h4>
-                                    <p className="text-gray-700 text-sm font-medium leading-relaxed">{challenge.solution}</p>
+                                    <p className="text-gray-700 text-sm font-medium leading-relaxed">
+                                        {challenge.id === 2 ? (
+                                            <>Hire certified data analysts from Testriq with over 10 years of experience. We use the <Link href="/qa-documentation-services" className="text-brand-blue hover:underline decoration-brand-blue">ISO/IEC 25012 model</Link> to ensure your data is timely and usable.</>
+                                        ) : challenge.id === 3 ? (
+                                            <>We analyze enterprise-scale data without compromise. We build on a Spark, Snowflake, and <Link href="/technology-stack" className="text-brand-blue hover:underline decoration-brand-blue">AWS stack</Link> to ensure your infrastructure grows with your business.</>
+                                        ) : challenge.id === 4 ? (
+                                            <>Our systematic data gathering utilizes a robust <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">ETL Process</Link> (Extract, Transform, Load). We use ISO 8000 to help your systems talk to each other.</>
+                                        ) : challenge.id === 5 ? (
+                                            <>We focus on the 15 quality characteristics of ISO/IEC 25012. Our <Link href="/ai-application-testing" className="text-brand-blue hover:underline decoration-brand-blue">Machine Learning Integration</Link> focuses on clear logic and robustness.</>
+                                        ) : (
+                                            challenge.solution
+                                        )}
+                                    </p>
                                 </div>
                             </div>
                         </div>

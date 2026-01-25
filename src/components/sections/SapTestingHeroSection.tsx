@@ -55,10 +55,10 @@ const SapTestingHeroSection: React.FC = () => {
                         </div>
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            SAP Testing Services: <span className="text-brand-blue">Enterprise-Grade QA</span> for S/4HANA Transitions
+                            <Link href="/" className="hover:text-brand-blue hover:underline decoration-brand-blue">SAP Testing Services</Link>: <span className="text-brand-blue">Enterprise-Grade QA</span> for S/4HANA Transitions
                         </h1>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            The SAP ECC support deadline (2026–2027) is rapidly approaching. At Testriq, we provide end-to-end SAP testing services for complex implementations. We ensure your S/4HANA transition is more than a technical upgrade—it is a catalyst for digital excellence.
+                            The SAP ECC support deadline (2026–2027) is rapidly approaching. At Testriq, we provide end-to-end SAP testing services for complex implementations. We ensure your <Link href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">S/4HANA transition</Link> is more than a technical upgrade—it is a catalyst for digital excellence.
                         </p>
 
                         {/* Key Differentiators */}

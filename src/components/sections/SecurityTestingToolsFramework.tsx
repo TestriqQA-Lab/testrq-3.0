@@ -56,7 +56,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
       title: "Mobile Security",
       icon: <FaMobileAlt className="text-2xl" />,
       color: "purple",
-      description: "Comparing automated tools like Quokka with manual ethical hacking depth for iOS security testing.",
+      description: <>Comparing automated tools like Quokka with manual ethical hacking depth for <Link href="/mobile-application-testing" className="text-brand-blue hover:underline decoration-brand-blue">iOS security testing</Link>.</>,
       tools: [
         {
           name: "Quokka & MobSF",
@@ -65,7 +65,7 @@ const SecurityTestingToolsFramework: React.FC = () => {
         },
         {
           name: "Manual Ethical Hacking",
-          description: "Human-led deep analysis of mobile logic flows and bypass techniques.",
+          description: <>Human-led <Link href="/manual-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">deep analysis</Link> of mobile logic flows and bypass techniques.</>,
           features: ["Runtime manipulation", "Session hijacking", "Biometric bypass", "iOS Security Depth"],
         },
       ],

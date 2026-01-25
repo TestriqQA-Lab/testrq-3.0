@@ -24,7 +24,7 @@ const SapComprehensiveSlider: React.FC = () => {
                 "Clean Core Validation",
                 "Custom Z-Report Testing",
                 "Universal Journal Merging",
-                "Business Process QA",
+                (<><Link href="/manual-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Business Process QA</Link></>),
                 "Data Conversion Integrity",
                 "Fiori UX Verification",
             ],
@@ -33,7 +33,7 @@ const SapComprehensiveSlider: React.FC = () => {
                 { label: "Data Integrity", value: "99.9%" },
                 { label: "Uptime", value: "98%" },
             ],
-            action: "/sap-s4hana-testing-guide"
+            action: "/sap-testing-services"
         },
         {
             id: "data-testing",
@@ -44,7 +44,7 @@ const SapComprehensiveSlider: React.FC = () => {
                 "Expert SAP data testing using TDMS and synthetic generation. We mask PII while maintaining referential integrity across complex global datasets.",
             features: [
                 "PII Data Masking",
-                "SAP TDMS Integration",
+                (<><Link href="/data-analysis-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">SAP TDMS Integration</Link></>),
                 "Synthetic Data Gen",
                 "ISO 29119-3 templates",
                 "Referential Integrity",
@@ -65,7 +65,7 @@ const SapComprehensiveSlider: React.FC = () => {
             description:
                 "Resilient, keyword-driven frameworks using Tricentis Tosca and Worksoft. Achieve 80% regression automation for long-term stability.",
             features: [
-                "Tricentis Tosca Labs",
+                (<><Link href="/technology-stack" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Tricentis Tosca Labs</Link></>),
                 "Worksoft Certify",
                 "Keyword-Driven Design",
                 "80% Regression Cover",
@@ -87,8 +87,8 @@ const SapComprehensiveSlider: React.FC = () => {
             description:
                 "Simulating multi-region access and Fiori-based workloads. We benchmark OData APIs and background jobs to prevent system crashes.",
             features: [
-                "OData API Spikes",
-                "Fiori Workload Sizing",
+                (<><Link href="/api-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">OData API Spikes</Link></>),
+                (<><Link href="/performance-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Fiori Workload Sizing</Link></>),
                 "Multi-region Simulation",
                 "Batch Overlap Check",
                 "HANA DB Optimization",

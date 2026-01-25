@@ -16,8 +16,9 @@ const SapWhyChooseTestriq: React.FC = () => {
             icon: <FaShieldAlt className="w-8 h-8" />,
             metric: "ISO 29119 Aligned",
             title: "Global Standards",
-            description:
-                "We are among the few SAP testing services globally to follow the ISO 29119 standard, mapping every test artifact to international requirements.",
+            description: (
+                <>We are among the few SAP testing services globally to follow the <Link href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">ISO 29119 standard</Link>, mapping every test artifact to international requirements.</>
+            ),
             capabilities: [
                 "Technical Depth",
                 "ISO Compliance",
@@ -30,8 +31,9 @@ const SapWhyChooseTestriq: React.FC = () => {
             icon: <FaChartLine className="w-8 h-8" />,
             metric: "60% Bug Reduction",
             title: "S/4HANA Specialists",
-            description:
-                "Our migration strategies often reduce post-release bugs by 60%, focusing on the unique challenges of Universal Journal merging and Fiori UX.",
+            description: (
+                <>Our migration strategies often reduce <Link href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">post-release bugs by 60%</Link>, focusing on the unique challenges of Universal Journal merging and Fiori UX.</>
+            ),
             capabilities: [
                 "ECC to S/4HANA",
                 "Universal Journal",
@@ -44,8 +46,9 @@ const SapWhyChooseTestriq: React.FC = () => {
             icon: <FaUsers className="w-8 h-8" />,
             metric: "Module Experts",
             title: "Functional Depth",
-            description:
-                "Our team includes functional consultants for core modules (FI/CO, MM, SD, PP), ensuring integration integrity across the entire landscape.",
+            description: (
+                <>Our team includes <Link href="/manual-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">functional consultants</Link> for core modules (FI/CO, MM, SD, PP), ensuring integration integrity across the entire landscape.</>
+            ),
             capabilities: [
                 "Cross-Module Flow",
                 "Functional Smarts",

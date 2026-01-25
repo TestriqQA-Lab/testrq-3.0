@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import {
   FaChartLine,
@@ -66,7 +67,7 @@ const EcommerceROISection: React.FC = () => {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our comprehensive e-commerce testing approach delivers quantifiable results through performance optimization and checkout validation that directly impact your bottom line. See the average returns our clients achieve.
+            Our comprehensive e-commerce testing approach delivers quantifiable results through <Link href="/performance-testing-services" className="text-brand-blue hover:underline">performance optimization</Link> and <Link href="/manual-testing-services" className="text-brand-blue hover:underline">checkout validation</Link> that directly impact your bottom line. See the average returns our clients achieve.
 
           </p>
         </div>

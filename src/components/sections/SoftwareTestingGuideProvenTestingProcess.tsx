@@ -36,7 +36,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
       description: "Master fundamental testing principles and methodologies",
       details: [
         (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">Software Testing Life Cycle (STLC)</Link></>),
-        "Test planning and strategy",
+        (<><Link href="/qa-documentation-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Test planning and strategy</Link></>),
         (<><Link href="/blog/post/checklist-20-essential-test-cases-for-mobile-apps">Test case design techniques</Link></>),
         "Defect management processes",
       ],
@@ -52,7 +52,7 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
       details: [
         "Interactive testing exercises",
         "Real application testing",
-        "Tool-based practice sessions",
+        (<><Link href="/technology-stack" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Tool-based practice sessions</Link></>),
         "Peer review and feedback",
       ],
       duration: "3-4 weeks",
@@ -153,15 +153,13 @@ const SoftwareTestingGuideProvenTestingProcess = () => {
             {learningSteps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Card */}
                 <div
-                  className={`w-full lg:w-5/12 ${
-                    index % 2 === 0 ? "lg:pr-8" : "lg:pl-8"
-                  }`}
+                  className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:pr-8" : "lg:pl-8"
+                    }`}
                 >
                   <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
                     <div className="flex items-center mb-4">

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaShieldAlt, FaSkull, FaTools } from "react-icons/fa";
 
@@ -8,7 +9,7 @@ const SecurityTestingChallenges: React.FC = () => {
         {
             icon: <FaShieldAlt className="text-xl text-white" />,
             title: "Defending Against Rapidly Evolving Threats",
-            description: "Attack targets are shifting faster than traditional security programs can adapt. Research shows that 99% of organizations faced an API security incident last year.",
+            description: <>Attack targets are shifting faster than traditional security programs can adapt. Research shows that 99% of organizations faced an incident last year.</>,
             details: [
                 "API Security Testing: Addressing the 10% YoY rise in vulnerabilities.",
                 "Cloud Audits targeting container and SaaS mis-configurations.",
@@ -22,7 +23,7 @@ const SecurityTestingChallenges: React.FC = () => {
             title: "End Tool Sprawl with SDLC Integration",
             description: "Stitching together SAST, DAST, and SCA scans often leads to late findings and development bottlenecks.",
             details: [
-                "Shift-Left Security: Real-time feedback in CI/CD pipelines.",
+                <>Shift-Left Security: Real-time feedback in <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">CI/CD pipelines</Link>.</>,
                 "Unified Reporting: Prioritized reports ranked by CVSS and business impact."
             ],
             color: "bg-blue-600",

@@ -16,7 +16,7 @@ const BankingTestingServicesSection: React.FC = () => {
   const services = [
     {
       icon: FaShieldAlt,
-      title: "Payment Gateway Testing",
+      title: (<><Link href="/e-commerce-testing-services" className="hover:text-brand-blue hover:underline">Payment Gateway Testing</Link></>),
       description: "Validating the entire transaction lifecycle, from Biometric MFA approval to Real-time Reconciliation and settlement.",
       features: ["Biometric MFA", "Real-time Re-conciliation", "Sandbox APIs", "Card-not-present flows"],
       color: "from-red-500 to-pink-600",
@@ -32,7 +32,7 @@ const BankingTestingServicesSection: React.FC = () => {
     },
     {
       icon: FaRocket,
-      title: "AI Agent Validation",
+      title: (<><Link href="/ai-application-testing" className="hover:text-brand-blue hover:underline">AI Agent Validation</Link></>),
       description: "Ensuring banking AI for fraud detection and customer service remains secure, compliant, and factually accurate.",
       features: ["Fraud Detection AI", "Conversational Accuracy", "Compliance Guardrails", "Data Privacy"],
       color: "from-green-500 to-teal-600",

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 import { FaGraduationCap, FaShieldAlt, FaClock, FaRobot, FaChartLine, FaCheckCircle } from "react-icons/fa";
 
@@ -7,28 +8,28 @@ const CorporateQATrainingChallenges = () => {
             id: 1,
             title: "Ending the Acute Skills Shortage",
             description: "Recent reports indicate a staggering 77% of organizations lack professionals skilled in automation, AI testing, and DevOps. With global tester density sitting at a mere 5.2 per 100,000 people, the talent war is real.",
-            fix: "We turn generalists into specialist quality engineers through an fast-track path. We achieve this by using the ISO 29119-2 risk-based standard.",
+            fix: (<>We turn generalists into specialist quality engineers through an fast-track path. We achieve this by using the <Link href="/qa-documentation-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">ISO 29119-2 risk-based standard</Link>.</>),
             icon: <FaGraduationCap className="h-8 w-8 text-blue-600" />
         },
         {
             id: 2,
             title: "Standardizing the Training Framework (ISO 29119 Alignment)",
             description: "Most QA training programs lack a unified structure. This delay causes new hires to require up to six months to reach full productivity.",
-            fix: "We implement the ISO 29119 framework. This provides globally recognized templates for your test design and documentation. This ensures QA certification for teams that is consistent across your global offices.",
+            fix: (<>We implement the <Link href="/qa-documentation-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">ISO 29119 framework</Link>. This provides globally recognized templates for your test design and documentation. This ensures QA certification for teams that is consistent across your global offices.</>),
             icon: <FaShieldAlt className="h-8 w-8 text-purple-600" />
         },
         {
             id: 3,
             title: "Solving Time and Resource Constraints",
             description: "Under-resourced teams often abandon training because of the 'pressure cooker' environment of rapid releases. Statistics show that 48% of projects fail because of these internal skills gaps.",
-            fix: "We provide small-group QA workshops limited to 15 seats. Our curriculum utilizes ISO 29119 risk-prioritization. This allows employees to master high-impact skills without slowing down the CI/CD pipeline.",
+            fix: (<>We provide small-group QA workshops limited to 15 seats. Our curriculum utilizes ISO 29119 risk-prioritization. This allows employees to master high-impact skills without slowing down the <Link href="/automation-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">CI/CD pipeline</Link>.</>),
             icon: <FaClock className="h-8 w-8 text-green-600" />
         },
         {
             id: 4,
             title: "Navigating the AI and Automation Shift",
             description: "The rise of non-deterministic Gen-AI testing and low-code tools is causing 'automation anxiety.'",
-            fix: "Our advanced Selenium training and specialized AI modules map directly to ISO 29119-4 techniques. We teach your team to maintain 'human empathy' while mastering hyper-automation.",
+            fix: (<>Our advanced Selenium training and specialized AI modules map directly to <Link href="/technology-stack" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">ISO 29119-4 techniques</Link>. We teach your team to maintain &apos;human empathy&apos; while mastering hyper-automation.</>),
             icon: <FaRobot className="h-8 w-8 text-orange-600" />
         },
         {

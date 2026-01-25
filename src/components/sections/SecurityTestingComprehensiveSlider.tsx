@@ -77,7 +77,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       title: "Mobile Security Reviews",
       icon: <FaMobileAlt className="text-2xl" />,
       color: "purple",
-      description: "Deep ethical hacking for iOS and Android, providing more insight than standard integration scans.",
+      description: <>Deep ethical hacking for iOS and Android, providing more insight than standard integration scans. Our <Link href="/mobile-application-testing" className="text-brand-blue hover:underline decoration-brand-blue">Mobile Security Reviews</Link> ensure app safety.</>,
       features: [
         {
           title: "iOS Security Testing",
@@ -106,7 +106,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
       title: "API Security Testing",
       icon: <FaShieldAlt className="text-2xl" />,
       color: "green",
-      description: "Securing the primary attack vector of modern micro-services against rising global threats.",
+      description: <>Securing the primary attack vector of modern micro-services against rising global threats. Our <Link href="/api-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">API Security Testing</Link> protects your data.</>,
       features: [
         {
           title: "OWASP API Top 10",

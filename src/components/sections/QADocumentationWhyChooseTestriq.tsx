@@ -39,15 +39,15 @@ const QADocumentationWhyChooseTestriq = () => {
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="p-6 font-bold text-gray-900 bg-blue-50/50">SOC2 Type II</td>
-                <td className="p-6 text-gray-600">Ensuring the data security of your private software requirements and test assets.</td>
+                <td className="p-6 text-gray-600">Ensuring the <Link href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">data security</Link> of your private software requirements and test assets.</td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="p-6 font-bold text-gray-900 bg-blue-50/50">GDPR / CCPA</td>
-                <td className="p-6 text-gray-600">Documentation protocols for PII (Personally Identifiable Information) in test data management.</td>
+                <td className="p-6 text-gray-600">Documentation protocols for PII (<Link href="/privacy-policy" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Personally Identifiable Information</Link>) in test data management.</td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="p-6 font-bold text-gray-900 bg-blue-50/50">FDA 21 CFR Part 11</td>
-                <td className="p-6 text-gray-600">Mandatory for medical device software requiring electronic records and signatures.</td>
+                <td className="p-6 text-gray-600">Mandatory for <Link href="/healthcare-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">medical device software</Link> requiring electronic records and signatures.</td>
               </tr>
               <tr className="hover:bg-gray-50 transition-colors">
                 <td className="p-6 font-bold text-gray-900 bg-blue-50/50">ISO 9001</td>

@@ -60,7 +60,7 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
         "Bug Fix Verification",
         "Logic Change Validation",
         "Stability Pre-checks",
-        "System-Wide Stability",
+        <Link key={1} href="/performance-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">System-Wide Stability</Link>,
         "Rapid Feedback Loops",
         "Subset Selection",
       ],
@@ -77,7 +77,7 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
       features: [
         "End-User Journey Mapping",
         "Business Flow Validation",
-        "User Acceptance Testing",
+        <Link key={2} href="/manual-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">User Acceptance Testing</Link>,
         "Technical Stability checks",
         "Persona-Based Testing",
         "Flow-Aligned Suites",

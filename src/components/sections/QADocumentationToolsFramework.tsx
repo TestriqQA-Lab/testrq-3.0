@@ -29,7 +29,7 @@ const QADocumentationToolsFramework = () => {
       tools: [
         {
           name: "Jira",
-          description: "Leading project tracking tool for Agile teams.",
+          description: <>Leading <Link href="/technology-stack" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">project tracking tool</Link> for Agile teams.</>,
           features: ["Backlog management", "Sprint planning", "Workflow automation", "Custom reporting"],
           useCases: ["Task tracking", "Bug management", "Agile orchestration"],
           icon: <FaCog className="w-6 h-6" />,
@@ -52,7 +52,7 @@ const QADocumentationToolsFramework = () => {
           name: "SharePoint",
           description: "Microsoft's document management system.",
           features: ["Access control", "File versioning", "Enterprise search", "Team sites"],
-          useCases: ["Document storage", "Compliance audits", "Internal portals"],
+          useCases: ["Document storage", <><Link href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Compliance audits</Link></>, "Internal portals"],
           icon: <FaMicrosoft className="w-6 h-6" />,
         }
       ],
@@ -105,7 +105,7 @@ const QADocumentationToolsFramework = () => {
           name: "GitHub",
           description: "The world's leading AI-powered developer platform.",
           features: ["Doc revisioning", "PR for reviews", "Wiki support", "GitHub Actions"],
-          useCases: ["Doc-as-code", "CI/CD integration", "Knowledge base"],
+          useCases: ["Doc-as-code", <><Link href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">CI/CD integration</Link></>, "Knowledge base"],
           icon: <FaGithub className="w-6 h-6" />,
         }
       ],

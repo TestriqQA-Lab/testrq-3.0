@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaChartLine, FaServer, FaCogs, FaProjectDiagram, FaGlobe } from "react-icons/fa";
 
@@ -15,28 +16,28 @@ const PerformanceTestingChallenges: React.FC = () => {
         {
             icon: <FaProjectDiagram className="text-xl text-white" />,
             title: "Structural Complexity",
-            description: "Modern micro-services are unpredictable. We use globally distributed load generation to mimic real-world traffic patterns across various geographies.",
+            description: <>Modern <Link href="/api-testing" className="text-brand-blue hover:underline decoration-brand-blue">micro-services</Link> are unpredictable. We use globally distributed load generation to mimic real-world traffic patterns across various geographies.</>,
             color: "bg-green-600",
             gradient: "from-green-50 to-green-100"
         },
         {
             icon: <FaChartLine className="text-xl text-white" />,
             title: "Actionable Data Insights",
-            description: "We move beyond raw metrics to find the 'why' behind bottlenecks using real-time analytics and AI to detect patterns and fix issues before impact.",
+            description: <>We move beyond raw metrics to find the &apos;why&apos; behind bottlenecks using <Link href="/data-analysis-services" className="text-brand-blue hover:underline decoration-brand-blue">real-time analytics</Link> and AI to detect patterns and fix issues before impact.</>,
             color: "bg-purple-600",
             gradient: "from-purple-50 to-purple-100"
         },
         {
             icon: <FaCogs className="text-xl text-white" />,
             title: "CI/CD Performance Integration",
-            description: "We stop performance issues from blocking your DevOps pipeline by weaving continuous testing into your workflow, following growing market trends.",
+            description: <>We stop performance issues from blocking your <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">DevOps pipeline</Link> by weaving continuous testing into your workflow, following growing market trends.</>,
             color: "bg-orange-600",
             gradient: "from-orange-50 to-orange-100"
         },
         {
             icon: <FaGlobe className="text-xl text-white" />,
             title: "Global Standards",
-            description: "We align every project with the ISO 29119-2 standard. This ensures a risk-based approach that global regulatory bodies recognize and trust.",
+            description: <>We align every project with the <Link href="/qa-documentation-services" className="text-brand-blue hover:underline decoration-brand-blue">ISO 29119-2 standard</Link>. This ensures a risk-based approach that global regulatory bodies recognize and trust.</>,
             color: "bg-teal-600",
             gradient: "from-teal-50 to-teal-100"
         }

@@ -50,7 +50,7 @@ const DataAnalysisHeroSection = () => {
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                We analyze your data to provide everything from initial trends to <span className="font-bold underline decoration-brand-blue">prescriptive insights</span>. Our team of certified scientists uses an ISO-aligned framework to ensure your data is accurate and globally compliant. Whether you are a startup or a global firm, Testriq delivers the technical depth you need. We help you win in a data-first economy.
+                We analyze your data to provide everything from initial trends to <span className="font-bold underline decoration-brand-blue">prescriptive insights</span>. Our team of certified scientists uses an <Link href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">ISO-aligned framework</Link> to ensure your data is accurate and <Link href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">globally compliant</Link>. Whether you are a startup or a global firm, Testriq delivers the <Link href="/technology-stack" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">technical depth</Link> you need. We help you win in a data-first economy.
               </p>
             </div>
 
