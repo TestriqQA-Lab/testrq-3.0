@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
-import { FaMobile, FaApple, FaHome, FaChevronRight } from "react-icons/fa";
+import { FaArrowRight, FaPlay, FaMobile, FaApple, FaHome, FaChevronRight } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
@@ -45,31 +44,22 @@ const MobileTestingHeroSection: React.FC = () => {
               <span className="text-sm">Mobile Application Testing Experts</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 text-left">
+              Global{" "}
               <span className="text-[theme(color.brand.blue)]">
                 Mobile-App Testing&nbsp;
               </span>
-              Services
+              Services: Ensuring Cross-Platform Excellence in 2026
             </h1>
 
-            <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your mobile applications deliver seamless{" "}
-              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-                user experiences
-              </Link>{" "}
-              and top performance across all platforms. From Android to iOS, our
-              mobile app testing services include{" "}
-              <Link href="blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
-                functionality testing
-              </Link>
-              , <Link href="performance-testing-services">performance</Link>,{" "}
-              <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
-                usability
-              </Link>
-              , and mobile <Link href="security-testing">security testing</Link>{" "}
-              for every device and scenario.
-            </p>
+            <div className="space-y-4 mb-6 text-left">
+              <p className="text-gray-700 text-base md:text-lg">
+                In the hyper-competitive mobile landscape of 2026, a single crash can lead to an <span className="font-semibold">88% uninstall rate</span> within the first 72 hours. At Testriq, we provide comprehensive <Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest" className="text-brand-blue hover:underline">mobile app testing</Link> and <Link href="/automation-testing-services" className="text-brand-blue hover:underline">application quality assurance</Link> designed to safeguard your digital presence. Our team specializes in mobile app QA for a global market, managing the testing challenges of over 24,000 <Link href="/blog/post/solving-the-top-5-challenges-in-mobile-application-testing" className="text-brand-blue hover:underline">Android device combinations</Link> alongside the <Link href="/blog/post/ios-vs-android-testing-key-differences-every-qa-should-know" className="text-brand-blue hover:underline">newest iOS 18/19 versions</Link>.
+              </p>
+              <p className="text-gray-700 text-base md:text-lg">
+                Testriq uses global benchmarks to deliver secure, <Link href="/performance-testing-services" className="text-brand-blue hover:underline">high-performance</Link> mobile apps. Our methodology defends against the 150% rise in mobile ransomware and optimizes software for <Link href="/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025" className="text-brand-blue hover:underline">5G</Link> and edge computing. From our Singapore hub, we deliver global <Link href="/security-testing" className="text-brand-blue hover:underline">Android security and penetration testing</Link>. Our strategies ensure a flawless launch in any market.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
               <Link

@@ -10,71 +10,71 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Performance Requirements Analysis",
-      duration: "1-2 days",
+      title: "Strategy & Risk Mapping",
+      duration: "Strategic",
       icon: <FaClipboardList className="text-2xl" />,
-      description: "Comprehensive analysis of performance requirements, user expectations, and system constraints to define testing objectives.",
+      description: "We define Performance Metrics (Response Time, Throughput, Latency) and User Profiles. Following ISO/IEC/IEEE 29119-3, we create a detailed Test Plan mapping scenarios to business-critical flows.",
       activities: [
-        "Performance criteria definition",
-        "User load pattern analysis",
-        "System architecture review",
-        "Performance baseline establishment"
+        "Response Time/Throughput Metrics",
+        "User Profile Modeling",
+        "ISO 29119-3 Test Planning",
+        "Business-Critical Flow Mapping"
       ],
-      nextStep: "Test Environment Setup"
+      nextStep: "Infrastructure & Tools"
     },
     {
       id: 2,
-      title: "Test Environment Setup",
-      duration: "2-3 days",
+      title: "Infrastructure & Tool Selection",
+      duration: "Technical",
       icon: <FaCogs className="text-2xl" />,
-      description: "Setting up realistic test environments that mirror production systems for accurate performance testing.",
+      description: "We choose the best performance testing tools, such as JMeter, k6, or Gatling. Our selection depends on your specific tech stack and protocol requirements.",
       activities: [
-        "Test environment configuration",
-        "Performance monitoring tools setup",
-        "Test data preparation",
-        "Network and infrastructure setup"
+        "JMeter/k6/Gatling Evaluation",
+        "Protocol Requirement Analysis",
+        "Infrastructure Compatibility",
+        "Environment Ready Readiness"
       ],
-      nextStep: "Test Script Development"
+      nextStep: "Scripting & Modeling"
     },
     {
       id: 3,
-      title: "Test Script Development",
-      duration: "3-5 days",
+      title: "Scripting & Think Time Modeling",
+      duration: "Development",
       icon: <FaPlay className="text-2xl" />,
-      description: "Development of comprehensive performance test scripts covering various load scenarios and user workflows.",
+      description: "We develop realistic scripts using 'Think Time' and dynamic data. This approach mimics actual human behavior instead of creating 'robotic' traffic.",
       activities: [
-        "Load test script creation",
-        "User scenario modeling",
-        "Data parameterization",
-        "Script validation and debugging"
+        "Realistic 'Think Time' Modeling",
+        "Dynamic Data Parameterization",
+        "Human Behavior Emulation",
+        "Script Debugging & Validation"
       ],
-      nextStep: "Test Execution"
+      nextStep: "Global Execution"
     },
     {
       id: 4,
-      title: "Performance Test Execution",
-      duration: "3-7 days",
+      title: "Execution & Distributed Load Generation",
+      duration: "Continuous",
       icon: <FaChartLine className="text-2xl" />,
-      description: "Systematic execution of performance tests with real-time monitoring and data collection.",
+      description: "We run tests across cloud-based environments to simulate global traffic from the USA, EU, and Asia simultaneously.",
       activities: [
-        "Load, stress, and scalability testing",
-        "Real-time performance monitoring",
-        "Resource utilization tracking",
-        "Performance metrics collection"
+        "Cloud-based Load Generation",
+        "USA/EU/Asia Traffic Simulation",
+        "Concurrent User Scaling",
+        "Real-time Metric Tracking"
       ],
-      nextStep: "Analysis & Optimization"
+      nextStep: "Optimization & Analysis"
     },
     {
       id: 5,
-      title: "Analysis & Optimization",
-      duration: "2-3 days",
+      title: "Optimize and Analyze Performance",
+      duration: "Finalization",
       icon: <FaCheckCircle className="text-2xl" />,
-      description: "Comprehensive analysis of test results with performance optimization recommendations and validation.",
+      description: "We do more than just report failures. Our team identifies bottlenecks and monitors resource usage to optimize your system, offering tips for code and infrastructure tuning.",
       activities: [
-        "Performance bottleneck identification",
-        "Root cause analysis",
-        "Optimization recommendations",
-        "Performance report generation"
+        "Bottleneck Identification",
+        "Resource Usage Monitoring",
+        "Code/Infras Tuning Support",
+        "Detailed Performance Data Analysis"
       ],
       nextStep: "Process Complete"
     }
@@ -85,10 +85,10 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-blue">Proven</span> Performance Testing Process
+            Step-by-Step <span className="text-brand-blue">QA Methodology</span>: The Testriq Performance Framework
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic performance testing process ensures comprehensive evaluation of application performance, scalability, and system reliability under various <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, and performance <Link href='regression-testing'>regression testing</Link> scenarios. We identify <Link href='blog/post/performance-bottlenecks-in-web-apps-how-to-identify-them-2'>performance bottlenecks</Link>, simulate real-world traffic conditions, and apply <Link href='automation-testing-services'>automated performance testing</Link> to deliver optimal <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link> at scale.
+            Our system performance evaluation follows a rigorous, five-stage process designed for maximum transparency and technical depth.
           </p>
         </div>
 
@@ -168,8 +168,8 @@ const PerformanceTestingProvenTestingProcess: React.FC = () => {
             </p>
             <Link href="/contact-us">
               <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-              Start Performance Testing
-            </button>
+                Start Performance Testing
+              </button>
             </Link>
           </div>
         </div>

@@ -11,8 +11,11 @@ import {
   FaDesktop,
   FaCloud,
   FaUserSecret,
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const SecurityTestingHeroSection: React.FC = () => {
@@ -52,42 +55,27 @@ const SecurityTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Fortify Your Applications with
+              Security Testing & Penetration Testing Services for
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Advanced Security Testing
+                Global Enterprises
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Protect your applications from{" "}
-              <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">
-                cybersecurity threats
-              </Link>{" "}
-              with our{" "}
-              <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
-                comprehensive
-              </Link>{" "}
-              security testing services. Our expert team conducts{" "}
-              <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
-                penetration testing
-              </Link>
-              , vulnerability assessments,{" "}
-              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
-                static application security testing (SAST), dynamic application
-                security testing (DAST)
-              </Link>
-              , and{""}
-              <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">
-                compliance testing
-              </Link>{" "}
-              to identify and eliminate risks like SQL injection, cross-site
-              scripting (XSS), and{" "}
-              <Link href="/blog/post/api-integration-testing-ensuring-seamless-system-communication">
-                insecure APIs
-              </Link>{" "}
-              before they become critical.
-            </p>
+            <div className="space-y-4">
+              <p className="text-xl text-gray-600 leading-relaxed font-bold">
+                The Digital Resilience Mandate
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                In 2026, digital resilience is no longer a luxury. It has become a vital regulatory and core business mandate for every organization. Ensuring your systems can withstand modern cyber attacks is essential for maintaining trust and compliance.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                At Testriq, we provide end-to-end Security Testing Services designed to identify vulnerabilities before they become breaches. Our security experts deliver comprehensive system weaknesses Assessment and Penetration Testing (VAPT) and Application Security Testing (AST) to protect your critical data.
+              </p>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                We specialize in protecting high-growth SaaS platforms and complex cloud infrastructure. We secure your digital assets against rising global threats. This ensures your business remains stable and resilient in a high-risk environment.
+              </p>
+            </div>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">
               <Link href="/contact-us">

@@ -9,94 +9,79 @@ const RoboticComprehensiveSlider: React.FC = () => {
 
   const testingTypes = [
     {
-      id: "functional",
-      title: "Functional Testing",
-      icon: <FaCog className="w-6 h-6" />,
-      coverage: "99.5% functionality coverage",
-      description: "Comprehensive validation of robotic functionality, movement precision, and operational capabilities.",
+      id: "compliance",
+      title: "ISO 10218:2026 Compliance",
+      icon: <FaShieldAlt className="w-6 h-6" />,
+      coverage: "Traceable Functional Safety",
+      description: "Unlike traditional software QA (which follows ISO/IEC 29119), robotics has historically lacked a unified testing framework. This often leads to inconsistent validation across multi-vendor co-bot integrations. Our Fix: To ensure global compliance, we test according to ISO 10218-1:2026 (Manufacturers) and ISO 10218-2:2026 (Integrators). We provide structured test case specifications that go beyond implied safety, making functional requirements explicit and traceable.",
       features: [
-        "Movement precision testing",
-        "Sensor accuracy validation",
-        "Actuator response testing",
-        "Control system verification"
+        "ISO 10218-1 Manufacturers QA",
+        "ISO 10218-2 Integrators Audit",
+        "Traceable Test Specifications",
+        "Co-bot Multi-Vendor Integration"
       ],
       color: "blue",
-      action: "/functional-testing-for-robotic-systems-precision-sensors-control",
+      action: "/robotic-safety-testing-meeting-iso-10218-13482-and-beyond",
     },
     {
-      id: "safety",
-      title: "Safety Testing",
-      icon: <FaShieldAlt className="w-6 h-6" />,
-      coverage: "Zero safety incidents",
-      description: "Critical safety validation to ensure human-robot interaction safety and emergency protocols.",
+      id: "sim2real",
+      title: "Sim2Real Gap Validation",
+      icon: <FaChartLine className="w-6 h-6" />,
+      coverage: "40-60% Reliability Gain",
+      description: "Standard simulations like Gazebo or We-bots fail to account for un-predictable lighting and human movement. This causes a 40–60% performance drop in real-world deployments. Our Fix: We implement \"Physical AI\" training using Digital Twin technology. By modeling environmental stress factors as per ISO 10218, we identify potential mechanical failures virtually before they occur in the physical test environment setup.",
       features: [
-        "Emergency stop validation",
-        "Collision detection testing",
-        "Fail-safe mechanism testing",
-        "Safety protocol verification"
+        "Digital Twin Stress Modeling",
+        "Physical AI Predictive QA",
+        "Real-world Lighting Simulation",
+        "Unpredictable Movement Logic"
       ],
       color: "green",
-      action: "/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
-    },
-    {
-      id: "performance",
-      title: "Performance Testing",
-      icon: <FaChartLine className="w-6 h-6" />,
-      coverage: "100% performance optimization",
-      description: "Comprehensive performance evaluation including speed, precision, and endurance testing.",
-      features: [
-        "Speed optimization testing",
-        "Load capacity validation",
-        "Endurance testing",
-        "Precision measurement"
-      ],
-      color: "purple",
-      action: "/performance-testing-for-robotics-load-handling-precision-uptime"
-    },
-    {
-      id: "integration",
-      title: "Integration Testing",
-      icon: <FaNetworkWired className="w-6 h-6" />,
-      coverage: "100% system integration",
-      description: "End-to-end testing of robotic systems integration with existing infrastructure and software.",
-      features: [
-        "System integration testing",
-        "Infrastructure compatibility",
-        "Software integration",
-        "Communication protocol testing"
-      ],
-      color: "orange",
-      action: "/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
-    },
-    {
-      id: "software",
-      title: "Software Testing",
-      icon: <FaCode className="w-6 h-6" />,
-      coverage: "100% code coverage",
-      description: "Comprehensive testing of robotic software including algorithms and control logic.",
-      features: [
-        "Algorithm validation",
-        "Control logic testing",
-        "Software reliability testing",
-        "Code quality assessment"
-      ],
-      color: "red",
       action: "/robotic-software-testing-ros2-gazebo-and-motion-planning-validation"
     },
     {
-      id: "autonomous",
-      title: "Autonomous Testing",
-      icon: <FaRobot className="w-6 h-6" />,
-      coverage: "100% autonomy validation",
-      description: "Advanced testing of autonomous capabilities including navigation and decision-making.",
+      id: "hw-sw",
+      title: "HW-SW Integration",
+      icon: <FaNetworkWired className="w-6 h-6" />,
+      coverage: "Zero Sensor Drift",
+      description: "Synchronizing sensors, actuators, and ROS/ROS2 middleware introduces latency issues that affect 25% of all robotic tests. Our Fix: We use FMEA and HAZOP frameworks to prevent risks like sensor drift and timer failures. Our services ensure that software-to-hardware communication is smooth and reliable.",
       features: [
-        "Navigation testing",
-        "Path planning validation",
-        "Obstacle avoidance testing",
-        "Decision-making verification"
+        "ROS/ROS2 Middleware Audits",
+        "FMEA Risk Mitigation",
+        "HAZOP Framework Security",
+        "Sensor-to-Actuator Sync"
       ],
-      color: "indigo",
+      color: "purple",
+      action: "/system-integration-testing-for-robotic-systems-ensuring-seamless-operation"
+    },
+    {
+      id: "ai-consistency",
+      title: "AI/ML Path Consistency",
+      icon: <FaRobot className="w-6 h-6" />,
+      coverage: "Deterministic AI Behavior",
+      description: "AI-driven path planning (via Move It) is often non-deterministic, complicating traditional regression testing. Our Fix: Our methodology classifies robots as autonomous AI agents. To guarantee collaborative safety, we test speed and distance to keep system behavior within ISO 13482:2014 limits.",
+      features: [
+        "Move It Path Validation",
+        "ISO 13482 Personal Care Safety",
+        "Autonomous Agent Classification",
+        "Speed & Distance Monitoring"
+      ],
+      color: "orange",
       action: "/testing-autonomous-robots-navigation-perception-and-real-world-qa"
+    },
+    {
+      id: "regulatory",
+      title: "Global Regulatory Safety",
+      icon: <FaFlask className="w-6 h-6" />,
+      coverage: "ANSI/UL 3100 Certified",
+      description: "With robotics incidents rising 15% in regulated sectors, meeting updated safety mandates is no longer optional. Our Fix: Our safety-first protocols include proximity and force interaction testing. We ensure your system meets ANSI/RIA R15.06 and UL 3100 standards immediately. Our team validates all safety hardware, including Emergency Stops, Light Curtains, and Force-Torque Sensors.",
+      features: [
+        "Emergency Stop Precision",
+        "Light Curtain Validation",
+        "Force-Torque Sensor Audits",
+        "3D Vision Safety Interlocks"
+      ],
+      color: "red",
+      action: "/robotic-safety-testing-meeting-iso-10218-13482-and-beyond"
     }
   ];
 
@@ -107,7 +92,6 @@ const RoboticComprehensiveSlider: React.FC = () => {
       purple: isActive ? "bg-purple-500 text-white" : "bg-purple-50 text-purple-600 hover:bg-purple-100",
       orange: isActive ? "bg-orange-500 text-white" : "bg-orange-50 text-orange-600 hover:bg-orange-100",
       red: isActive ? "bg-red-500 text-white" : "bg-red-50 text-red-600 hover:bg-red-100",
-      indigo: isActive ? "bg-indigo-500 text-white" : "bg-indigo-50 text-indigo-600 hover:bg-indigo-100"
     };
     return colors[color as keyof typeof colors];
   };
@@ -119,7 +103,6 @@ const RoboticComprehensiveSlider: React.FC = () => {
       purple: "border-purple-200",
       orange: "border-orange-200",
       red: "border-red-200",
-      indigo: "border-indigo-200"
     };
     return colors[color as keyof typeof colors];
   };
@@ -135,16 +118,15 @@ const RoboticComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete Robotic Testing <span className="text-brand-blue">Coverage</span>
+            Navigating 2026 <span className="text-brand-blue">Global Robotics Hurdles</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our comprehensive <Link href='robotics-testing-services'>robotic testing services</Link> cover every aspect of your <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic ecosystem</Link>,
-            ensuring reliability, safety, and <Link href='blog/post/etl-performance-testing'>optimal performance</Link> across all robotic systems and applications.
+            The complexity of robotic systems has reached a critical point where traditional software QA is no longer sufficient. Testriq addresses the <span className="font-semibold text-brand-blue">five biggest global hurdles</span> in robotics testing.
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
           {testingTypes.map((type, index) => (
             <button
               key={type.id}

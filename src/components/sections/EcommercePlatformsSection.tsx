@@ -41,7 +41,7 @@ const EcommercePlatformsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {platforms.map((platform, index) => (
             <div
               key={index}
@@ -58,6 +58,64 @@ const EcommercePlatformsSection: React.FC = () => {
                 />
               </div>
               <h3 className="font-semibold text-gray-900">{platform.title}</h3>
+            </div>
+          ))}
+        </div>
+
+        {/* Tech Stack Sections */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Testriq&apos;s E-Commerce <span className="text-brand-blue">Technical Tech Stack</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            We use a specific set of e-commerce tools to ensure your entire tech stack is fast and accurate.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              category: "UI Automation",
+              tools: ["Selenium", "Playwright", "Test-Sigma (Codeless)"],
+              icon: "🚀"
+            },
+            {
+              category: "Performance & Load",
+              tools: ["Apache JMeter", "k6", "Blaze-Meter"],
+              icon: "📊"
+            },
+            {
+              category: "Security & Pen Testing",
+              tools: ["OWASP ZAP", "Burp Suite", "Astra Pentest"],
+              icon: "🛡️"
+            },
+            {
+              category: "Cloud Testing Platforms",
+              tools: ["Browser-Stack", "Sauce Labs", "Lambda-Test"],
+              icon: "☁️"
+            },
+            {
+              category: "Monitoring & Analytics",
+              tools: ["Datadog", "New Relic", "Google Page-Speed Insights"],
+              icon: "📈"
+            },
+            {
+              category: "A/B Testing & Optimization",
+              tools: ["Optimizely", "VWO"],
+              icon: "⚡"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all">
+              <div className="text-3xl mb-4">{item.icon}</div>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">{item.category}</h4>
+              <ul className="space-y-2">
+                {item.tools.map((tool, tIdx) => (
+                  <li key={tIdx} className="text-gray-600 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-brand-blue rounded-full"></span>
+                    {tool}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

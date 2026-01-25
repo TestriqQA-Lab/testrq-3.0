@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Users, BarChart3, TrendingUp, Shield, Zap, CheckCircle, Star, Brain } from 'lucide-react';
+import { BarChart3, TrendingUp, CheckCircle, Brain } from 'lucide-react';
 import { FaAward } from 'react-icons/fa';
 import Link from 'next/link';
 
@@ -7,64 +7,41 @@ const DataAnalysisWhyChooseTestriq = () => {
   const advantages = [
     {
       icon: <Brain className="h-8 w-8 text-blue-600" />,
-      title: 'Advanced Analytics Expertise',
-      description: 'Our team of certified data scientists and analysts brings 10+ years of experience in advanced analytics, machine learning, and statistical modeling.',
-      metrics: '50+ Data Scientists & Analysts'
+      title: 'Prescriptive Intelligence',
+      description: 'We go beyond descriptive reports to provide actionable strategies that grow small businesses and optimize global firms.',
+      metrics: 'ISO 8000-1:2022 Aligned'
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-purple-600" />,
-      title: 'Comprehensive Tool Mastery',
-      description: (<>Proficiency across all major analytics platforms including Python, R, SQL, Tableau, Power BI, and <Link href="/blog/post/cloud-based-performance-testing-scaling-for-modern-architectures-2">cloud-based</Link> analytics solutions.</>),
-      metrics: '25+ Analytics Tools & Platforms'
+      title: 'Python & R Mastery',
+      description: 'Our certified scientists use Python (Pandas, Scikit-learn) and R to build advanced statistical models and predictive frameworks.',
+      metrics: 'Certified Data Scientists'
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-green-600" />,
-      title: 'Proven Business Impact',
-      description: 'Delivered measurable business value with average ROI of 4.2x and helped clients achieve significant performance improvements.',
-      metrics: (<>4.2x Average <Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI</Link> Delivered</>)
-    },
-    {
-      icon: <Users className="h-8 w-8 text-indigo-600" />,
-      title: 'Industry Specialization',
-      description: (<>Deep domain expertise across multiple industries including <Link href="/blog/post/etl-testing-case-studies">finance, healthcare, retail, manufacturing, and technology sectors</Link>.</>),
-      metrics: '15+ Industry Verticals'
-    },
-    {
-      icon: <Shield className="h-8 w-8 text-red-600" />,
-      title: 'Data Security & Compliance',
-      description: (<>Enterprise-grade security protocols and compliance with GDPR, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA</Link>, SOX, and other regulatory requirements for data protection.</>),
-      metrics: '99.9% Data Security Standard'
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-orange-600" />,
-      title: 'Rapid Deployment',
-      description: (<>Accelerated project delivery with <Link href="/blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile methodologies</Link> and pre-built frameworks that reduce time-to-insight by up to 60%.</>),
-      metrics: '60% Faster Time-to-Insight'
+      title: 'Zettabyte Scalability',
+      description: 'We handle enterprise-scale datasets without performance reduction, utilizing Spark, Snowflake, and AWS Redshift.',
+      metrics: 'No infrastructure caps'
     }
   ];
 
-  const testimonials = [
+  const complianceStandards = [
     {
-      content: 'Testriq\'s data analytics team transformed our risk assessment models, resulting in a 35% improvement in fraud detection accuracy through advanced predictive analytics and machine learning model building.',
-      rating: 5
+      standard: "ISO 8000-1:2022",
+      application: "The global benchmark for data quality and industrial data management."
     },
     {
-      content: 'The predictive analytics models developed by Testriq helped us optimize our supply chain operations, enabling data-driven decisions and reducing costs by $2.3M annually.',
-      rating: 5
+      standard: "GDPR & CCPA",
+      application: "Strict protocols for PII (Personally Identifiable Information) in both Structured vs. Unstructured Data."
     },
     {
-      content: 'Outstanding data visualization and dashboard development using cutting-edge data analysis tools. The insights have been crucial for our strategic decisions and business performance improvement.',
-      rating: 5
+      standard: "SOC2 Type II",
+      application: "Ensuring enterprise-grade security for private data assets during the ETL process."
+    },
+    {
+      standard: "ISO/IEC 25102",
+      application: "Defining the quality model for data in a computer system, crucial for predictive analytics services."
     }
-  ];
-
-  const certifications = [
-    (<><Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">AWS</Link> Certified Data Analytics</>),
-    'Google Cloud Professional Data Engineer',
-    'Microsoft Azure Data Scientist Associate',
-    'Tableau Desktop Certified Professional',
-    'SAS Certified Advanced Analytics Professional',
-    'IBM Data Science Professional Certificate'
   ];
 
   return (
@@ -73,118 +50,73 @@ const DataAnalysisWhyChooseTestriq = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
-            <span className="text-sm">
-              Why Choose Us
-            </span>
+            <span className="text-sm">Why Choose Testriq</span>
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Why Choose Testriq for <span className='text-brand-blue'>Data Analytics</span>?
+            Global Data Analytics <span className='text-brand-blue'>Excellence</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Partner with industry-leading data analysis experts who transform complex datasets into strategic business advantages through proven analytical frameworks, advanced <Link href="/technology-stack">data analysis tools</Link>, and cutting-edge technologies like machine learning model building and <Link href="/blog/post/ai-testing-learning-guide">natural language processing</Link>.
+            Testriq delivers technical depth and prescriptive insights through field-tested frameworks and senior architects with over 10 years of experience.
           </p>
         </div>
 
-        {/* Advantages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {advantages.map((advantage, index) => (
-            <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
+            <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100">
               <div className="flex items-center mb-4">
                 {advantage.icon}
-                <h3 className="text-xl font-semibold text-gray-900 ml-3">{advantage.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 ml-3">{advantage.title}</h3>
               </div>
-
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {advantage.description}
-              </p>
-
-              <div className="bg-white rounded-lg p-3 border-l-4 border-blue-500">
-                <span className="text-sm font-semibold text-blue-600">{advantage.metrics}</span>
+              <p className="text-gray-600 mb-4 leading-relaxed">{advantage.description}</p>
+              <div className="bg-white rounded-lg p-3 border-l-4 border-brand-blue">
+                <span className="text-sm font-bold text-brand-blue uppercase tracking-wider">{advantage.metrics}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Success Statistics */}
-        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 mb-16">
-          <div className="text-center text-white mb-8">
-            <h3 className="text-2xl font-bold mb-4">Proven Track Record</h3>
-            <p className="text-blue-100 max-w-2xl mx-auto">
-              Our data analytics solutions have delivered measurable business impact across Fortune 500 companies worldwide.
-            </p>
+        {/* Global Standards Table */}
+        <div className="mb-20">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Standards & Compliance</h3>
+            <p className="text-gray-600">Operating across US, UK, EU, and Asia requiring high security standards.</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white">
-            <div>
-              <div className="text-3xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">98%</div>
-              <div className="text-blue-100">Client Satisfaction</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">24/7</div>
-              <div className="text-blue-100">Support Available</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Professional Certifications & Expertise
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 flex items-center">
-                <Award className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0" />
-                <span className="text-gray-700 font-medium">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Testimonials */}
-        <div>
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            What Our Clients Say
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-
-                <p className="text-gray-600 mb-4 italic leading-relaxed">
-                  &quot;{testimonial.content}&quot;
-                </p>
-              </div>
-            ))}
+          <div className="overflow-x-auto rounded-xl shadow-xl">
+            <table className="w-full text-left bg-white">
+              <thead className="bg-brand-blue text-white">
+                <tr>
+                  <th className="px-8 py-4 font-bold uppercase tracking-wider">Standard</th>
+                  <th className="px-8 py-4 font-bold uppercase tracking-wider">Strategic Application</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                {complianceStandards.map((item, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50 transition-colors">
+                    <td className="px-8 py-6 font-bold text-gray-900">{item.standard}</td>
+                    <td className="px-8 py-6 text-gray-600 leading-relaxed text-sm">{item.application}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
         {/* Key Differentiators */}
-        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
             What Sets Us Apart
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              'End-to-end analytics solutions from data collection to insights',
-              'Custom machine learning models tailored to your business needs',
-              'Real-time analytics and automated reporting capabilities',
-              'Scalable cloud-based infrastructure and deployment',
-              'Comprehensive data governance and security protocols',
-              'Ongoing support and model maintenance services',
-              'Integration with existing business systems and workflows',
-              'Training and knowledge transfer for internal teams'
+              'Prescriptive intelligence focused on actionable growth',
+              'Custom Python/R machine learning models with high fidelity',
+              'Real-time analytics for e-commerce and retail optimization',
+              'Zettabyte-scale cloud infrastructure on AWS/Snowflake',
+              'ISO 8000-1:2022 aligned data quality protocols',
+              'Certified senior data scientists with 10+ years experience',
+              'Seamless integration with existing business silos via ETL',
+              'Rigorous statistical validation and Information Gain audits'
             ].map((differentiator, index) => (
               <div key={index} className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-3 flex-shrink-0" />

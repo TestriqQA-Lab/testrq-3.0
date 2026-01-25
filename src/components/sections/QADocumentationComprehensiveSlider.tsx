@@ -284,6 +284,11 @@ const QADocumentationComprehensiveSlider = () => {
         text: "text-indigo-600",
         border: "border-indigo-200",
       },
+      red: {
+        bg: "bg-red-50",
+        text: "text-red-600",
+        border: "border-red-200",
+      },
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
@@ -301,23 +306,10 @@ const QADocumentationComprehensiveSlider = () => {
             Documentation Types & Services
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Comprehensive QA Documentation Solutions
+            Our Core QA Documentation Results
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Explore our complete range of{" "}
-            <Link href="/blog/post/how-to-write-secure-test-cases-2">
-              QA documentation
-            </Link>{" "}
-            services designed to streamline your{" "}
-            <Link href="/blog/post/ai-testing-learning-guide">
-              testing roadmap
-            </Link>
-            , ensure requirements traceability and{" "}
-            <Link href="/blog/post/security-validation-in-mvp-startup-qa-best-practices">
-              QA best practices
-            </Link>
-            , and maintain consistent quality assurance documentation standards
-            across all your projects.
+            Our outsourced QA documentation services cover the entire software testing life cycle (STLC), ensuring technical depth and audit-ready outputs.
           </p>
         </div>
 
@@ -332,11 +324,10 @@ const QADocumentationComprehensiveSlider = () => {
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  isActive
-                    ? `${tabColors.bg} ${tabColors.text} ${tabColors.border} border-2 shadow-md`
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200 border-2 border-transparent"
-                }`}
+                className={`flex items-center px-4 md:px-6 py-3 rounded-lg font-medium transition-all duration-200 ${isActive
+                  ? `${tabColors.bg} ${tabColors.text} ${tabColors.border} border-2 shadow-md`
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200 border-2 border-transparent"
+                  }`}
               >
                 <IconComponent className="mr-2 text-sm" />
                 <span className="text-sm">{doc.title}</span>
@@ -457,7 +448,7 @@ const QADocumentationComprehensiveSlider = () => {
                       "bg-"
                     )} text-white cursor-pointer font-medium rounded-lg hover:opacity-90 transition-opacity duration-200`}
                   >
-                  Contact Us
+                    Contact Us
                   </button>
                 </Link>
               </div>

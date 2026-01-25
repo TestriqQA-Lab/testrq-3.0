@@ -31,19 +31,18 @@ const ApiTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
+              Elite{" "}
               <span className="text-[theme(color.brand.blue)]">
                 API Testing&nbsp;
               </span>
-              Services
+              Services: High-Velocity REST, Graph-QL, and Automated QA Solutions
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Guarantee robust, secure, and high-performance API integrations with
-              our end-to-end API testing services. From RESTful and <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>SOAP APIs</Link> to{" "}
-              <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>GraphQL</Link> and microservices, we perform functional, <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load</Link>, and <Link href='security-testing'>security
-                testing</Link> to ensure reliable data exchange and seamless system
-              communication.
+              As digital ecosystems transition toward decentralized micro-services, the API (Application Programming Interface) has become the most critical component of the modern software stack. Testriq provides elite API testing for your &apos;invisible&apos; layer. We ensure your systems are secure, scalable, and meet all global standards.
+            </p>
+            <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
+              Our strategy follows the <span className="font-semibold text-brand-blue">ISO 29119 framework</span> to ensure technical excellence. We help you manage complex architectures and embed automated API testing into your CI/CD pipeline.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

@@ -17,88 +17,46 @@ const SapWhyChooseTestriq: React.FC = () => {
 
     const advantages = [
         {
-            icon: <FaChartLine className="w-8 h-8" />,
-            metric: "99.8% Stability",
-            title: "Proven Success",
+            icon: <FaShieldAlt className="w-8 h-8" />,
+            metric: "ISO 29119 Aligned",
+            title: "Global Standards",
             description:
-                "Achieving 99.8% stability during a global SAP ECC to S/4HANA migration for a Fortune 500 retailer. We deliver results that speak for themselves.",
+                "We are among the few SAP testing services globally to follow the ISO 29119 standard, mapping every test artifact to international requirements.",
             capabilities: [
-                "Global Migration Success",
-                "Zero Critical Defects",
-                "On-Time Delivery",
-                "Business Continuity",
+                "Technical Depth",
+                "ISO Compliance",
+                "Audit-Ready Result",
+                "Process Integrity",
             ],
             color: "blue",
         },
         {
-            icon: <FaUsers className="w-8 h-8" />,
-            metric: "Certified Experts",
-            title: "Expert Team",
+            icon: <FaChartLine className="w-8 h-8" />,
+            metric: "60% Bug Reduction",
+            title: "S/4HANA Specialists",
             description:
-                "Our SAP QA engineers are certified and have hands-on deployment experience across Finance (FICO), Logistics (SD/MM), HCM, and CRM modules.",
+                "Our migration strategies often reduce post-release bugs by 60%, focusing on the unique challenges of Universal Journal merging and Fiori UX.",
             capabilities: [
-                "ISTQB Certified",
-                "SAP Module Experts",
-                "Domain Knowledge",
-                "Technical Architects",
+                "ECC to S/4HANA",
+                "Universal Journal",
+                "Fiori Validation",
+                "Clean Core QA",
             ],
             color: "green",
         },
         {
-            icon: <FaHandshake className="w-8 h-8" />,
-            metric: "Flexible Models",
-            title: "Flexible Engagement",
+            icon: <FaUsers className="w-8 h-8" />,
+            metric: "Module Experts",
+            title: "Functional Depth",
             description:
-                "We offer engagement models tailored to your needs: Staff Augmentation for scaling teams, Managed Services for end-to-end ownership, or QA as a Service.",
+                "Our team includes functional consultants for core modules (FI/CO, MM, SD, PP), ensuring integration integrity across the entire landscape.",
             capabilities: [
-                "Staff Augmentation",
-                "Managed Services",
-                "QA as a Service",
-                "On-Demand Testing",
+                "Cross-Module Flow",
+                "Functional Smarts",
+                "Integration QA",
+                "Silo Breakdown",
             ],
             color: "purple",
-        },
-        {
-            icon: <FaShieldAlt className="w-8 h-8" />,
-            metric: "Risk Mitigation",
-            title: "Risk-Based Approach",
-            description:
-                "We prioritize testing based on business risk, ensuring your most critical transactions are validated first to prevent costly production failures.",
-            capabilities: [
-                "Risk Analysis",
-                "Critical Path Testing",
-                "Compliance Checks",
-                "Security Validation",
-            ],
-            color: "orange",
-        },
-        {
-            icon: <FaCogs className="w-8 h-8" />,
-            metric: "80% Automation",
-            title: "Automation Excellence",
-            description:
-                "Leverage our pre-built accelerators and expertise in Tosca/Worksoft to automate up to 80% of your regression suite, drastically reducing cycle times.",
-            capabilities: [
-                "Test Accelerators",
-                "CI/CD Integration",
-                "Self-Healing Scripts",
-                "Rapid Feedback",
-            ],
-            color: "red",
-        },
-        {
-            icon: <FaRocket className="w-8 h-8" />,
-            metric: "3x Faster",
-            title: "Accelerated Delivery",
-            description:
-                "Our agile testing methodologies and automation frameworks enable 3x faster releases, helping you keep pace with business demands.",
-            capabilities: [
-                "Agile QA",
-                "Shift-Left Testing",
-                "Continuous Delivery",
-                "Faster Time-to-Market",
-            ],
-            color: "indigo",
         },
     ];
 
@@ -122,42 +80,61 @@ const SapWhyChooseTestriq: React.FC = () => {
                 border: "border-purple-500",
                 light: "bg-purple-50",
             },
-            orange: {
-                bg: "bg-orange-500",
-                text: "text-orange-600",
-                border: "border-orange-500",
-                light: "bg-orange-50",
-            },
-            red: {
-                bg: "bg-red-500",
-                text: "text-red-600",
-                border: "border-red-500",
-                light: "bg-red-50",
-            },
-            indigo: {
-                bg: "bg-indigo-500",
-                text: "text-indigo-600",
-                border: "border-indigo-500",
-                light: "bg-indigo-50",
-            },
         };
         return colors[color as keyof typeof colors];
     };
 
     return (
-        <section className="py-16 px-6 sm:px-6 md:px-12 lg:px-24 bg-gray-50">
+        <section className="py-20 px-6 sm:px-6 md:px-12 lg:px-24 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-12">
+                {/* Section Header */}
+                <div className="text-center mb-16">
                     <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-                        <FaBriefcase />
-                        <span className="text-sm">Strategic Partner</span>
+                        <FaShieldAlt />
+                        <span className="text-sm">Why Choose Testriq</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Beyond Testing: Your <span className="text-brand-blue">Strategic Partner</span> in SAP Quality
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Enterprise-Grade <span className="text-brand-blue">SAP Quality Engineering</span>
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                        We don&apos;t just find bugs; we ensure your SAP investment delivers business value. From expert teams to flexible engagement models, we are committed to your success.
+                    <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        To serve the world&apos;s leading enterprises, Testriq adheres to a &quot;Compliance-First&quot; philosophy. We design our SAP validation processes to pass the most rigorous audits.
                     </p>
+                </div>
+
+                {/* Global Standards & Compliance Table */}
+                <div className="mb-20 overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
+                    <div className="bg-gradient-to-r from-brand-blue to-blue-700 px-8 py-6">
+                        <h3 className="text-2xl font-bold text-white">Engineering Trust: Global Standards & Compliance</h3>
+                        <p className="text-blue-100 mt-2">Enterprise-grade SAP validation aligning with international regulatory benchmarks.</p>
+                    </div>
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-left bg-white">
+                            <thead>
+                                <tr className="bg-gray-50 border-b border-gray-200">
+                                    <th className="px-8 py-4 font-bold text-gray-900">Standard / Law</th>
+                                    <th className="px-8 py-4 font-bold text-gray-900">SAP Application</th>
+                                    <th className="px-8 py-4 font-bold text-gray-900">Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100">
+                                <tr>
+                                    <td className="px-8 py-6 font-bold text-gray-900">ISO/IEC/IEEE 29119</td>
+                                    <td className="px-8 py-6 text-gray-600">Bedrock of our SAP QA methodology; mapping every artifact from Policy to Results.</td>
+                                    <td className="px-8 py-6 text-green-600 font-medium">International Consistency</td>
+                                </tr>
+                                <tr>
+                                    <td className="px-8 py-6 font-bold text-gray-900">SOC2 Type II</td>
+                                    <td className="px-8 py-6 text-gray-600">Ensuring business logic and sensitive financial data remain secure and confidential.</td>
+                                    <td className="px-8 py-6 text-green-600 font-medium">Data Privacy Security</td>
+                                </tr>
+                                <tr>
+                                    <td className="px-8 py-6 font-bold text-gray-900">GDPR / CCPA</td>
+                                    <td className="px-8 py-6 text-gray-600">Automated data masking to protect user privacy across international borders.</td>
+                                    <td className="px-8 py-6 text-green-600 font-medium">Compliance-Ready Labs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

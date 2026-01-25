@@ -125,11 +125,10 @@ const RegressionTestingToolsFramework: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Regression Testing <span className="text-brand-blue">Tools & Frameworks</span>
+            Our Advanced <span className="text-brand-blue">Tech Stack</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We leverage industry-leading <Link href='/technology-stack'>tools and frameworks</Link> to deliver efficient, comprehensive, and reliable regression testing solutions that ensure <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software stability</Link> with every release.
-
+            We leverage a world-class tech stack to deliver scalable regression testing. Our team uses leading frameworks like <span className="font-bold">Selenium</span> and <span className="font-bold">Playwright</span>. We integrate these with CI/CD tools, including <span className="font-bold">Jenkins</span> and <span className="font-bold">GitHub Actions</span>, for seamless delivery. To ensure global reach, we utilize cloud labs like <span className="font-bold">Browser Stack</span> and <span className="font-bold">AWS Device Farm</span>.
           </p>
         </div>
 
@@ -143,8 +142,8 @@ const RegressionTestingToolsFramework: React.FC = () => {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : `text-gray-600 ${colors.hover}`
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : `text-gray-600 ${colors.hover}`
                     }`}
                 >
                   <div className="flex flex-col items-center space-y-2">

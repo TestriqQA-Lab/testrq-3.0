@@ -14,120 +14,73 @@ import {
 const CorporateQATrainingModules: React.FC = () => {
   const modules = [
     {
-      category: "Foundation Modules",
-      icon: <FaGraduationCap className="text-2xl text-blue-600" />,
+      category: "Automation Frameworks",
+      icon: <FaLaptopCode className="text-2xl text-blue-600" />,
       courses: [
         {
-          title: "QA Fundamentals",
-          duration: "16 hours",
-          level: "Beginner",
-          description:
-            "Essential concepts of software testing and quality assurance principles.",
+          title: "Web & Mobile Automation",
+          duration: "40 hours",
+          level: "Intermediate",
+          description: "Moving beyond theory to hands-on mastery of modern frameworks.",
           topics: [
-            (<><Link href="/blog/post/understanding-the-sdlc-and-stlc-in-qa">SDLC & STLC</Link></>),
-            (<><Link href="/blog/post/robotic-software-testing-ros2-gazebo-and-motion-planning-validation">Test Planning</Link></>),
-            "Test Design",
-            "Defect Management",
-          ],
-        },
-        {
-          title: (<><Link href="/manual-testing-services">Manual Testing Mastery</Link></>),
-          duration: "24 hours",
-          level: "Beginner to Intermediate",
-          description:
-            "Comprehensive manual testing techniques and methodologies.",
-          topics: [
-            "Test Case Design",
-            "Exploratory Testing",
-            (<><Link href="/blog/post/usability-testing-in-manual-testing-use-cases-techniques">Usability Testing</Link></>),
-            (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-browser Testing</Link></>),
+            "Advanced Selenium",
+            "Playwright",
+            "Cypress",
+            "Appium Mastery",
           ],
         },
       ],
     },
     {
-      category: "Automation Modules",
-      icon: <FaLaptopCode className="text-2xl text-purple-600" />,
-      courses: [
-        {
-          title: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>),
-          duration: "32 hours",
-          level: "Intermediate",
-          description: "Master web automation testing with Selenium WebDriver.",
-          topics: [
-            "WebDriver Basics",
-            "Page Object Model",
-            "TestNG Framework",
-            "Data-Driven Testing",
-          ],
-        },
-        {
-          title: "API Testing Automation",
-          duration: "20 hours",
-          level: "Intermediate",
-          description: "Automated testing of REST APIs and web services.",
-          topics: [
-            (<><Link href="/api-testing">REST API Testing</Link></>),
-            "Postman",
-            "RestAssured",
-            (<><Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">API Security Testing</Link></>),
-          ],
-        },
-      ],
-    },
-    {
-      category: "Specialized Testing",
+      category: "Performance & API",
       icon: <FaChartLine className="text-2xl text-green-600" />,
       courses: [
         {
-          title: (<><Link href="/performance-testing-services">Performance Testing</Link></>),
-          duration: "28 hours",
+          title: "High-Scale Validation",
+          duration: "32 hours",
           level: "Advanced",
-          description: "Load, stress, and performance testing methodologies.",
+          description: "Performance testing and automated endpoint validation.",
           topics: [
-            (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link></>),
-            (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">LoadRunner</Link></>),
-            "Performance Monitoring",
-            "Bottleneck Analysis",
-          ],
-        },
-        {
-          title: (<Link href="/security-testing">Security Testing</Link>),
-          duration: "24 hours",
-          level: "Advanced",
-          description:
-            "Security testing principles and vulnerability assessment.",
-          topics: [
-            (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP Top 10</Link></>),
-            (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
-            "Security Tools",
-            "Compliance Testing",
+            "JMeter & K6",
+            "Postman & Rest-Assured",
+            "SoapUI Automation",
+            "LoadRunner Labs",
           ],
         },
       ],
     },
     {
-      category: "Modern QA Practices",
-      icon: <FaRocket className="text-2xl text-orange-600" />,
+      category: "CI/CD & DevOps",
+      icon: <FaRocket className="text-2xl text-purple-600" />,
       courses: [
         {
-          title: (<><Link href="/blog/post/automated-etl-testing">DevOps & CI/CD</Link></>),
-          duration: "20 hours",
-          level: "Intermediate to Advanced",
-          description:
-            "Integration of testing in DevOps and continuous delivery pipelines.",
-          topics: ["Jenkins", "Docker", "Kubernetes", "Pipeline Testing"],
-        },
-        {
-          title: (<><Link href="/blog/post/agile-testing-vs-waterfall-testing-a-comparative-study">Agile Testing</Link></>),
-          duration: "16 hours",
-          level: "All Levels",
-          description: "Testing in Agile environments and methodologies.",
+          title: "Modern QA Pipelines",
+          duration: "24 hours",
+          level: "Advanced",
+          description: "Integrating testing into continuous delivery pipelines.",
           topics: [
-            (<><Link href="/blog/post/agile-testing-vs-waterfall-testing-a-comparative-study">Scrum Testing</Link></>),
-            "BDD/TDD",
-            "Sprint Testing",
-            "Continuous Testing",
+            "Jenkins & GitLab CI",
+            "CircleCI Integration",
+            "Docker for QA",
+            "Pipeline Optimization",
+          ],
+        },
+      ],
+    },
+    {
+      category: "Defect & Agile",
+      icon: <FaTools className="text-2xl text-orange-600" />,
+      courses: [
+        {
+          title: "Enterprise Management",
+          duration: "20 hours",
+          level: "All Levels",
+          description: "Mastering Jira and enterprise defect tracking systems.",
+          topics: [
+            "Jira & Xray Mastery",
+            "Zephyr Integration",
+            "Azure DevOps",
+            "Agile Testing Flow",
           ],
         },
       ],

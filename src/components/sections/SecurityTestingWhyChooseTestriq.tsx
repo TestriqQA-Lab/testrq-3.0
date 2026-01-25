@@ -2,51 +2,51 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaShieldAlt, FaCertificate, FaUsers, FaChartLine, FaClock, FaCheckCircle, FaAward } from "react-icons/fa";
+import { FaShieldAlt, FaCertificate, FaUsers, FaChartLine, FaClock, FaCheckCircle, FaAward, FaGlobe } from "react-icons/fa";
 
 const SecurityTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
-      icon: <FaShieldAlt className="text-3xl" />,
-      title: (<><Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">Advanced Security Expertise</Link></>),
-      description: "Our certified security professionals bring deep expertise in cybersecurity, ethical hacking, and compliance testing to ensure comprehensive protection against evolving threats.",
-      stats: "CISSP & CEH Certified",
-      color: "red"
-    },
-    {
-      icon: <FaCertificate className="text-3xl" />,
-      title: "Industry Compliance Specialists",
-      description: "Extensive experience in regulatory compliance including OWASP, PCI DSS, HIPAA, SOX, and GDPR ensuring your applications meet all security standards.",
-      stats: "100% Compliance Rate",
+      icon: <FaAward className="text-3xl" />,
+      title: "ISO/IEC/IEEE 29119 Alignment",
+      description: "Part 2 management for risk-based security and Part 4 for advanced design techniques finding 'Zero-Day' gaps.",
+      stats: "Global Framework",
       color: "blue"
     },
     {
-      icon: <FaUsers className="text-3xl" />,
-      title: "Dedicated Security Teams",
-      description: (<>Specialized security testing teams with expertise in <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link>, vulnerability assessment, and security architecture review.</>),
-      stats: "25+ Security Experts",
+      icon: <FaShieldAlt className="text-3xl" />,
+      title: "Certified Compliance Testing",
+      description: "Specialized audits for GDPR, HIPAA, and PCI-DSS ensuring sensitive patient and payment data protection.",
+      stats: "PII Masked Audit",
+      color: "purple"
+    },
+    {
+      icon: <FaAward className="text-3xl" />,
+      title: "SOC2 Compliance Documentation",
+      description: "Providing the rigorous documentation required for Service Organization Control compliance as an independent lab.",
+      stats: "Service Control Audit",
       color: "green"
     },
     {
       icon: <FaChartLine className="text-3xl" />,
-      title: "Proven Security Results",
-      description: "Track record of identifying critical vulnerabilities and helping organizations strengthen their security posture with measurable improvements.",
-      stats: "98% Vulnerability Detection",
-      color: "purple"
-    },
-    {
-      icon: <FaClock className="text-3xl" />,
-      title: "Rapid Security Assessment",
-      description: "Efficient security testing processes that deliver comprehensive results quickly without compromising thoroughness or accuracy.",
-      stats: "50% Faster Assessment",
+      title: "Certified Ethical Hackers",
+      description: "Our team holds CISSP, OSCP, and CEH certifications to support your security needs worldwide.",
+      stats: "OSCP & CEH Certified",
       color: "orange"
     },
     {
-      icon: <FaCheckCircle className="text-3xl" />,
-      title: "Comprehensive Security Coverage",
-      description: (<><Link href="/blog/post/user-journey-exploration-discovering-bugs-across-end-to-end-scenarios">End-to-end</Link> security testing covering web applications, <Link href="/api-testing">APIs</Link>, <Link href="/mobile-application-testing">mobile apps</Link>, <Link href="/blog/post/cloud-enabled-or-on-premise-for-performance-testing">cloud infrastructure</Link>, and network security.</>),
-      stats: "360° Security Testing",
+      icon: <FaGlobe className="text-3xl" />,
+      title: "Global Security Assessment",
+      description: "Network Security audits in London and Cloud Security Assessments in Singapore with global reach.",
+      stats: "Worldwide Support",
       color: "indigo"
+    },
+    {
+      icon: <FaAward className="text-3xl" />,
+      title: "Human-Centric Security",
+      description: "Recognizing and addressing human error through knowledge-sharing and culture-building.",
+      stats: "Engagement-Led",
+      color: "red"
     }
   ];
 
@@ -92,13 +92,13 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
                 <div className={`${colors.iconBg} w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <span className="text-white">{advantage.icon}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {advantage.description}
                 </p>
-                
+
                 <div className={`${colors.text} font-bold text-lg`}>
                   {advantage.stats}
                 </div>
@@ -144,7 +144,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
             <p className="text-gray-600 leading-relaxed mb-6">
               Our security testing team holds industry-leading certifications such as CEH, CISSP, and OSCP, and follows established security frameworks and secure development lifecycle practices to ensure comprehensive protection, compliance validation, and alignment with regulatory standards.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2.5 h-2 bg-red-600 rounded-full"></div>
@@ -175,7 +175,7 @@ const SecurityTestingWhyChooseTestriq: React.FC = () => {
 
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
             <h4 className="text-xl font-bold text-gray-900 mb-6">Security Testing Excellence</h4>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="bg-red-600 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">

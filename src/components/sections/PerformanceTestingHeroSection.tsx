@@ -11,8 +11,11 @@ import {
   FaDesktop,
   FaCloud,
   FaDatabase,
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const PerformanceTestingHeroSection: React.FC = () => {
@@ -52,20 +55,18 @@ const PerformanceTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Optimize Performance with
+              Global Performance Testing Services:
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Advanced Load Testing
+                Software Load, Stress, and Scalability Solutions
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ensure your applications perform flawlessly under any load with
-              our comprehensive <Link href='blog/post/what-are-the-different-types-of-performance-testing-services'>performance testing services</Link>. We conduct <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load
-                testing</Link>, <Link href='blog/post/stress-testing-applications-identifying-breaking-points'>stress testing</Link>, <Link href='blog/post/spike-testing-handling-sudden-traffic-surges'>spike testing</Link>, and <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>endurance testing</Link>{" "}
-              using <Link href='/technology-stack'>industry-leading tools</Link> like <Link href='blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide'>Apache JMeter</Link>, <Link href='blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc'>LoadRunner</Link>, and
-              Gatling to guarantee optimal <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>application
-                performance, and scalability</Link> at scale.
+              A 100-millisecond delay can cost millions in revenue. Consequently, performance testing is now a core requirement rather than a luxury. Testriq ensures your platforms remain resilient, responsive, and ready for global scale.
+            </p>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              As an independent performance testing laboratory, we help enterprises in the USA, UK, EU, and Asia transition from reactive tuning to <span className="font-semibold text-brand-blue">proactive performance engineering</span>. Our methodology leverages modern automation frameworks and ensures full compliance with <span className="font-semibold text-brand-blue">ISO 29119 standards</span> during all non-functional testing.
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">

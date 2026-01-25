@@ -8,56 +8,25 @@ const CorporateQATrainingFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of training programs do you offer?",
-      answer:
-        (<>We offer comprehensive training programs covering <Link href="/manual-testing-services">manual testing</Link>, <Link href="/automation-testing-services">automation testing</Link>, <Link href="/performance-testing-services">performance testing</Link>, <Link href="/security-testing">security testing</Link>, <Link href="/api-testing">API testing</Link>, <Link href="/mobile-application-testing">mobile testing</Link>, and specialized industry-specific QA training. All programs can be customized to meet your organization&apos;s specific needs and skill levels.</>),
+      question: "What is the best way to set up a QA training program for your organization?",
+      answer: "Setting up a successful program starts with a technical workforce development audit. First, identify specific gaps in your CI/CD pipeline integration. Then, choose a provider that offers customized QA bootcamps instead of generic courses."
     },
     {
-      question: "How long are the training programs?",
-      answer:
-        "Training duration varies based on the program and customization level. Our standard modules range from 16 to 60 hours, typically delivered over 2-8 weeks. We offer flexible scheduling options including intensive bootcamps, part-time evening sessions, and weekend programs to accommodate your team's availability.",
+      question: "How do you measure the ROI of corporate software QA training?",
+      answer: "We measure ROI through 'Defect Detection Efficiency' and 'Time-to-Market' metrics. By following ISO 29119 standards, companies often reduce post-release bugs by 30-60%. This results in significantly lower maintenance costs."
     },
     {
-      question: "Do you provide certifications upon completion?",
-      answer:
-        "Yes, we provide industry-recognized certifications upon successful completion of our training programs. Our certifications are aligned with ISTQB standards and are valued by employers worldwide. Participants also receive detailed completion certificates and skill assessment reports.",
+      question: "Do you offer ISTQB certification for teams?",
+      answer: "Yes. Our QA courses prepare teams for ISTQB Foundation and Advanced certifications. This creates a 'common language' of testing across your entire organization."
     },
     {
-      question:
-        "Can the training be customized for our specific industry or technology stack?",
-      answer:
-        "Absolutely! We specialize in creating customized training programs tailored to your industry requirements, technology stack, and business objectives. Our experts will work with you to develop a curriculum that addresses your specific challenges and use cases.",
+      question: "Is online corporate QA training effective for remote teams?",
+      answer: "Absolutely. We use interactive virtual labs and real-time collaboration tools for our remote QA training. This ensures our online sessions are just as rigorous and hands-on as our on-site workshops."
     },
     {
-      question: "What is the maximum batch size for training sessions?",
-      answer:
-        "We maintain small batch sizes of maximum 15 participants per session to ensure personalized attention and effective learning. For larger teams, we can conduct multiple batches or design special programs with additional instructors to maintain quality.",
-    },
-    {
-      question: "Do you offer both online and on-site training?",
-      answer:
-        "Yes, we offer flexible delivery options including online virtual training, on-site training at your location, and hybrid models. Our online sessions are interactive with hands-on labs, while on-site training provides face-to-face interaction and can be customized to your infrastructure.",
-    },
-    {
-      question: "What kind of ongoing support is provided after training?",
-      answer:
-        "We provide comprehensive post-training support including 24/7 access to learning resources, community forums, mentoring sessions, refresher workshops, and continuous learning materials. Our support team is available to help with implementation challenges and questions.",
-    },
-    {
-      question: "How do you measure the effectiveness of the training?",
-      answer:
-        "We use multiple assessment methods including pre and post-training evaluations, hands-on project assessments, practical skill demonstrations, and feedback surveys. We also provide detailed progress reports and ROI metrics to track the impact on your organization's quality processes.",
-    },
-    {
-      question: "What are the prerequisites for joining the training programs?",
-      answer:
-        "Prerequisites vary by program level. Basic programs require no prior QA experience, while advanced modules may require some testing background. We conduct initial assessments to recommend the most suitable program level and provide preparatory materials when needed.",
-    },
-    {
-      question: "Do you provide training materials and resources?",
-      answer:
-        "Yes, we provide comprehensive training materials including course manuals, practical exercises, tool setups, sample projects, reference guides, and access to our online learning portal. All materials are updated regularly to reflect industry best practices and latest technologies.",
-    },
+      question: "What is the difference between Manual vs. Automation testing training?",
+      answer: "Manual testing training focuses on exploratory techniques, UX, and human-centric edge cases. Our training focuses on building scalable test automation frameworks. We then help you integrate them into your CI/CD pipeline for rapid feedback."
+    }
   ];
 
   const toggleFAQ = (index: number) => {

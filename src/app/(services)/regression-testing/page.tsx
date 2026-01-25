@@ -4,19 +4,18 @@ import type { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, regressionTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Best Regression Testing Services Company",
-  description: "Ensure your app's reliability with Testriq's Regression Testing Services. Catch bugs early and maintain stability across every release cycle.",
+  title: "Software Regression Testing Services & QA Automation | Testriq",
+  description: "Transform regression from a bottleneck into a competitive advantage. Elite software regression testing using ISO 29119 for 2026 rapid-fire release cycles.",
   keywords: [
-    "regression testing",
-    "regression test suite",
-    "automated regression testing",
-    "manual regression testing",
-    "CI/CD regression testing",
-    "software stability testing",
-    "test optimization",
-    "quality assurance services",
-    "risk-based testing",
-    "software quality assurance"
+    "Software Regression Testing Services",
+    "QA Automation 2026",
+    "ISO 29119 Regression Testing",
+    "Selective Regression Testing",
+    "Impact Analysis QA",
+    "CI/CD Regression Automation",
+    "Enterprise Regression Strategy",
+    "Testriq QA Lab",
+    "Risk-Based Regression Scope"
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
- metadataBase: new URL('https://www.testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/regression-testing',
   },
@@ -194,13 +193,13 @@ export default function RegressionTestingPage() {
       <MainLayout>
         <RegressionTestingHeroSection />
         <RegressionTestingComprehensiveSlider />
-        <RegressionTestingROISection/>
+        <RegressionTestingROISection />
         <RegressionTestingProvenTestingProcess />
         <RegressionTestingWhyChooseTestriq />
         <RegressionTestingToolsFramework />
-        <RegressionTestingCaseStudies/>
+        <RegressionTestingCaseStudies />
         <RegressionTestingReadyToEnsureQuality />
-        <RegressionTestingFAQs/>
+        <RegressionTestingFAQs />
       </MainLayout>
     </div>
   );

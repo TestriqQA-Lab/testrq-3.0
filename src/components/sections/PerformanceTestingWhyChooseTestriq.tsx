@@ -8,46 +8,25 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [
     {
       icon: <FaTachometerAlt className="text-3xl" />,
-      title: "Comprehensive Performance Analysis",
-      description: "Our performance testing covers all aspects from load and stress testing to scalability and endurance testing, ensuring your applications perform optimally under any conditions.",
-      stats: "99.9% Uptime Achieved",
+      title: "ISO/IEC/IEEE 29119 Alignment",
+      description: "We utilize Part 2 for test processes and Part 3 for standardized documentation. This ensures testing is risk-based, documented, and follows repeatable processes.",
+      stats: "ISO Aligned",
       color: "blue"
     },
     {
-      icon: <FaCogs className="text-3xl" />,
-      title: "Advanced Testing Tools & Automation",
-      description: "Leveraging industry-leading performance testing tools and automation frameworks to deliver accurate, repeatable, and efficient testing processes.",
-      stats: "50+ Testing Tools",
+      icon: <FaAward className="text-3xl" />,
+      title: "GDPR & Data Privacy",
+      description: "We mask or scrub all performance test data to protect PII. This ensures total security during global load generation across USA, UK, EU, and Asia.",
+      stats: "PII Masked",
       color: "purple"
     },
     {
-      icon: <FaChartLine className="text-3xl" />,
-      title: "Real-time Performance Insights",
-      description: "Advanced monitoring and analytics provide real-time insights into application performance, helping you identify bottlenecks and optimize system efficiency.",
-      stats: "Real-time Dashboards",
+      icon: <FaCheckCircle className="text-3xl" />,
+      title: "SOC2 & ISO 27001",
+      description: "Our testing laboratories follow strict security protocols to protect your intellectual property and source code throughout the performance engineering lifecycle.",
+      stats: "Secure Lab",
       color: "green"
     },
-    {
-      icon: <FaUsers className="text-3xl" />,
-      title: "Expert Performance Engineers",
-      description: "Our certified performance testing specialists bring deep expertise in various technologies and domains, ensuring thorough and effective testing strategies.",
-      stats: "30+ Certified Engineers",
-      color: "orange"
-    },
-    {
-      icon: <FaClock className="text-3xl" />,
-      title: "Rapid Performance Optimization",
-      description: "Quick identification and resolution of performance issues through systematic testing and optimization recommendations, reducing time-to-market.",
-      stats: "70% Faster Optimization",
-      color: "teal"
-    },
-    {
-      icon: <FaCheckCircle className="text-3xl" />,
-      title: "Proven Performance Methodologies",
-      description: "Industry-proven performance testing methodologies and best practices ensure consistent, reliable, and effective testing across all your applications.",
-      stats: "600+ Projects",
-      color: "indigo"
-    }
   ];
 
   const getColorClasses = (color: string) => {
@@ -55,9 +34,6 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
       blue: { bg: "bg-blue-50", text: "text-blue-600", iconBg: "bg-blue-600" },
       purple: { bg: "bg-purple-50", text: "text-purple-600", iconBg: "bg-purple-600" },
       green: { bg: "bg-green-50", text: "text-green-600", iconBg: "bg-green-600" },
-      orange: { bg: "bg-orange-50", text: "text-orange-600", iconBg: "bg-orange-600" },
-      teal: { bg: "bg-teal-50", text: "text-teal-600", iconBg: "bg-teal-600" },
-      indigo: { bg: "bg-indigo-50", text: "text-indigo-600", iconBg: "bg-indigo-600" }
     };
     return colorMap[color] || colorMap.blue;
   };
@@ -69,14 +45,14 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
             <span className="text-sm">
-              Why Choose Us
+              Global Standards & Compliance
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Why Choose <span className="text-brand-blue">Testriq</span> for Performance Testing?
+            Global Standards & <span className="text-brand-blue">Compliance</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Testriq delivers comprehensive performance testing solutions that ensure your applications are fast, scalable, and stable under any <Link href='blog/post/load-testing-in-performance-testing-complete-guide'>load testing</Link> or infrastructure <Link href='blog/post/etl-performance-testing'>performance testing scenario</Link>. <Link href='our-team'>Our expert team</Link> and advanced methodologies guarantee optimal performance, enterprise-grade QA, and exceptional <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>user experiences</Link>, while helping you achieve faster time-to-market.
+            For companies operating in regulated markets, compliance is non-negotiable. Our performance engineering services are designed to meet the world’s strictest data and process standards.
           </p>
         </div>
 
@@ -91,13 +67,13 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
                 <div className={`${colors.iconBg} w-20 h-20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <span className="text-white">{advantage.icon}</span>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {advantage.description}
                 </p>
-                
+
                 <div className={`${colors.text} font-bold text-lg`}>
                   {advantage.stats}
                 </div>
@@ -140,10 +116,10 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Advanced Performance Testing Methodology</h3>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Our performance testing approach combines comprehensive load simulation, real-time monitoring, 
+              Our performance testing approach combines comprehensive load simulation, real-time monitoring,
               and detailed analysis to ensure maximum application performance and scalability under all conditions.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-brand-blue rounded-full"></div>
@@ -174,7 +150,7 @@ const PerformanceTestingWhyChooseTestriq: React.FC = () => {
 
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
             <h4 className="text-xl font-bold text-gray-900 mb-6">Performance Testing Excellence</h4>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="bg-green-600 w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">

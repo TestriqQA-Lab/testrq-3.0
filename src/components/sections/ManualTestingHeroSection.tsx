@@ -11,8 +11,10 @@ import {
   FaDesktop,
   FaCloud,
   FaClipboardCheck,
+  FaArrowRight,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 
 const ManualTestingHeroSection: React.FC = () => {
   return (

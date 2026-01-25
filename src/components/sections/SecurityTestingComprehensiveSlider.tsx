@@ -10,294 +10,156 @@ import {
   FaNetworkWired,
   FaCode,
   FaFlask,
+  FaMobileAlt,
+  FaCloud,
 } from "react-icons/fa";
 
 const SecurityTestingComprehensiveSlider: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("vulnerability-assessment");
+  const [activeTab, setActiveTab] = useState("vapt-services");
 
   const securityTabs = [
     {
-      id: "vulnerability-assessment",
-      title: "Vulnerability Assessment",
+      id: "vapt-services",
+      title: "VAPT Services",
       icon: <FaShieldAlt className="text-2xl" />,
       color: "red",
-      description: (
-        <>
-          Comprehensive{" "}
-          <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">
-            vulnerability
-          </Link>{" "}
-          scanning and assessment to identify security weaknesses
-        </>
-      ),
+      description: "End-to-end Vulnerability Assessment and Penetration Testing (VAPT) to identify and fix system weaknesses before breaches occur.",
       features: [
         {
-          title: "Automated Vulnerability Scanning",
-          description:
-            "Advanced automated tools to scan for known vulnerabilities, misconfigurations, and security weaknesses across your entire application infrastructure.",
-          metrics: "500+ Vulnerability Types Detected",
+          title: "Infrastructure Penetration Testing",
+          description: "Simulating real-world attacks to identify and exploit vulnerabilities across your network and servers.",
+          metrics: "CEH & OSCP Certified",
         },
         {
-          title: (
-            <>
-              <Link href="/manual-testing-services">Manual Security Testing</Link>
-            </>
-          ),
-          description:
-            "Expert security professionals conduct thorough manual testing to identify complex vulnerabilities that automated tools might miss.",
-          metrics: "95% Critical Vulnerability Detection",
+          title: "System Weakness Scanning",
+          description: "Automated and manual assessments to find known vulnerabilities, including open-source flaws.",
+          metrics: "99.8% Threat Detection",
         },
         {
-          title: "Risk Assessment & Prioritization",
-          description:
-            "Comprehensive risk analysis with CVSS scoring and business impact assessment to prioritize remediation efforts effectively.",
-          metrics: "CVSS 3.1 Compliant Scoring",
+          title: "Risk-Based Prioritization",
+          description: "Ranking security gaps based on CVSS scores and business impact for prioritized remediation.",
+          metrics: "Actionable Insights",
         },
         {
-          title: "Compliance Validation",
-          description:
-            "Ensure your applications meet industry security standards including OWASP Top 10, PCI DSS, HIPAA, and other regulatory requirements.",
-          metrics: "100% Compliance Coverage",
+          title: "Re-testing & Verification",
+          description: "Verifying that all high-risk gaps are closed after security repairs are implemented.",
+          metrics: "Certified Closure",
         },
       ],
     },
     {
-      id: "penetration-testing",
-      title: (
-        <>
-          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
-            Penetration Testing
-          </Link>
-        </>
-      ),
-      icon: <FaBug className="text-2xl" />,
-      color: "orange",
-      description:
-        "Ethical hacking and penetration testing to simulate real-world attack scenarios",
-      features: [
-        {
-          title: "Web Application Penetration Testing",
-          description:
-            "Comprehensive testing of web applications including authentication bypass, injection attacks, and business logic flaws.",
-          metrics: (
-            <>
-              <Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">
-                OWASP Top 10 Coverage
-              </Link>
-            </>
-          ),
-        },
-        {
-          title: "Network Penetration Testing",
-          description:
-            "Network infrastructure testing to identify vulnerabilities in firewalls, routers, switches, and network protocols.",
-          metrics: "Layer 2-7 Network Testing",
-        },
-        {
-          title: (
-            <>
-              <Link href="/api-testing">API Security Testing</Link>
-            </>
-          ),
-          description: (
-            <>
-              Specialized testing for <Link href="/api-testing">REST</Link>,{" "}
-              <Link href="/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance">
-                GraphQL
-              </Link>
-              , and{" "}
-              <Link href="/blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability">
-                SOAP APIs
-              </Link>{" "}
-              including authentication, authorization, and data validation
-              vulnerabilities.
-            </>
-          ),
-          metrics: "API Security Best Practices",
-        },
-        {
-          title: "Social Engineering Assessment",
-          description:
-            "Human factor security testing including phishing simulations and security awareness evaluation.",
-          metrics: "Real-world Attack Simulation",
-        },
-      ],
-    },
-    {
-      id: "authentication-security",
-      title: "Authentication & Authorization",
-      icon: <FaLock className="text-2xl" />,
-      color: "blue",
-      description: (
-        <>
-          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
-            Comprehensive testing
-          </Link>{" "}
-          of authentication and authorization mechanisms
-        </>
-      ),
-      features: [
-        {
-          title: "Multi-Factor Authentication Testing",
-          description:
-            "Thorough testing of MFA implementations including SMS, TOTP, hardware tokens, and biometric authentication methods.",
-          metrics: "All MFA Methods Supported",
-        },
-        {
-          title: "Session Management Testing",
-          description:
-            "Comprehensive evaluation of session handling, token management, and session security controls.",
-          metrics: "Session Security Validation",
-        },
-        {
-          title: "Role-Based Access Control",
-          description:
-            "Testing of RBAC implementations, privilege escalation vulnerabilities, and access control bypass attempts.",
-          metrics: "RBAC Security Validation",
-        },
-        {
-          title: "Single Sign-On Security",
-          description:
-            "Security testing of SSO implementations including SAML, OAuth, OpenID Connect, and federation protocols.",
-          metrics: "SSO Protocol Security",
-        },
-      ],
-    },
-    {
-      id: "data-protection",
-      title: "Data Protection",
-      icon: <FaUserShield className="text-2xl" />,
-      color: "green",
-      description: "Comprehensive data security and privacy protection testing",
-      features: [
-        {
-          title: (
-            <>
-              <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">
-                Data Encryption Testing
-              </Link>
-            </>
-          ),
-          description:
-            "Validation of encryption implementations including data at rest, in transit, and in processing encryption mechanisms.",
-          metrics: "AES-256 & TLS 1.3 Validation",
-        },
-        {
-          title: "Privacy Compliance Testing",
-          description:
-            "Comprehensive testing for GDPR, CCPA, and other privacy regulation compliance including data handling and user rights.",
-          metrics: "GDPR & CCPA Compliant",
-        },
-        {
-          title: "Data Loss Prevention",
-          description:
-            "Testing of DLP controls, data classification, and sensitive data handling procedures to prevent unauthorized data exposure.",
-          metrics: "PII & PHI Protection",
-        },
-        {
-          title: "Database Security Testing",
-          description:
-            "Comprehensive database security assessment including SQL injection, privilege escalation, and data access controls.",
-          metrics: "Database Security Hardening",
-        },
-      ],
-    },
-    {
-      id: "infrastructure-security",
-      title: "Infrastructure Security",
-      icon: <FaNetworkWired className="text-2xl" />,
-      color: "purple",
-      description: "Comprehensive infrastructure and network security testing",
-      features: [
-        {
-          title: (
-            <>
-              <Link href="/blog/post/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud">
-                Cloud Security Assessment
-              </Link>
-            </>
-          ),
-          description: (
-            <>
-              Comprehensive security testing for{" "}
-              <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">
-                AWS, Azure, GCP
-              </Link>
-              , and hybrid cloud environments including misconfigurations and
-              access controls.
-            </>
-          ),
-          metrics: "Multi-Cloud Security",
-        },
-        {
-          title: "Container Security Testing",
-          description:
-            "Security assessment of Docker containers, Kubernetes clusters, and container orchestration platforms.",
-          metrics: "Container Runtime Security",
-        },
-        {
-          title: "Network Security Testing",
-          description:
-            "Comprehensive network security assessment including firewall rules, network segmentation, and intrusion detection systems.",
-          metrics: "Network Perimeter Security",
-        },
-        {
-          title: (
-            <>
-              <Link href="/blog/post/devsecops-integrating-security-in-your-ci-cd-pipeline-2">
-                DevSecOps Integration
-              </Link>
-            </>
-          ),
-          description:
-            "Security testing integration into CI/CD pipelines with automated security scanning and continuous monitoring.",
-          metrics: "Shift-Left Security",
-        },
-      ],
-    },
-    {
-      id: "secure-coding",
-      title: "Secure Code Review",
+      id: "application-security",
+      title: "Application Security Testing (AST)",
       icon: <FaCode className="text-2xl" />,
-      color: "indigo",
-      description:
-        "Comprehensive source code security analysis and secure coding practices",
+      color: "blue",
+      description: "Comprehensive protection for web and SaaS platforms against OWASP Top 10 and evolving digital threats.",
       features: [
         {
-          title: (
-            <>
-              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
-                Static Code Analysis
-              </Link>
-            </>
-          ),
-          description:
-            "Automated and manual source code review to identify security vulnerabilities, coding flaws, and insecure patterns.",
-          metrics: "SAST & Manual Review",
+          title: "SAST & Source Code Review",
+          description: "Analyzing source code to find SQL Injection (SQLi) and XSS vulnerabilities before deployment.",
+          metrics: "Code-level Security",
         },
         {
-          title: (
-            <>
-              <Link href="/blog/post/static-vs-dynamic-application-security-testing-sast-vs-dast">
-                Dynamic Code Analysis
-              </Link>
-            </>
-          ),
-          description:
-            "Runtime security testing to identify vulnerabilities that manifest during application execution and user interaction.",
-          metrics: "DAST & IAST Testing",
+          title: "DAST & Dynamic Testing",
+          description: "Simulating attacks on running applications to identify security gaps in a live environment.",
+          metrics: "Real-world Simulation",
         },
         {
-          title: "Secure Architecture Review",
-          description:
-            "Comprehensive review of application architecture, design patterns, and security controls implementation.",
-          metrics: "Architecture Security",
+          title: "SCA & Dependency Check",
+          description: "Evaluating open-source libraries and third-party components for known vulnerabilities.",
+          metrics: "Supply Chain Security",
         },
         {
-          title: "Third-Party Component Security",
-          description:
-            "Security assessment of open-source libraries, dependencies, and third-party integrations for known vulnerabilities.",
-          metrics: "SCA & Dependency Check",
+          title: "Business Logic Analysis",
+          description: "Identifying flaws in functional workflows that could be exploited for unauthorized access.",
+          metrics: "Logic Gap Neutralization",
+        },
+      ],
+    },
+    {
+      id: "mobile-security",
+      title: "Mobile Security Reviews",
+      icon: <FaMobileAlt className="text-2xl" />,
+      color: "purple",
+      description: "Deep ethical hacking for iOS and Android, providing more insight than standard integration scans.",
+      features: [
+        {
+          title: "iOS Security Testing",
+          description: "Specialized reviews for Apple platforms, including manual ethical hacking depth.",
+          metrics: "Beyond Auto-scans",
+        },
+        {
+          title: "Android Vulnerability Audit",
+          description: "Comprehensive analysis of Android app security, including intent and permission reviews.",
+          metrics: "Device-specific Experts",
+        },
+        {
+          title: "Local Data Exposure review",
+          description: "Ensuring PII and sensitive data are not leaked through local storage or logs.",
+          metrics: "GDPR Compliant",
+        },
+        {
+          title: "Reverse Engineering Defense",
+          description: "Evaluating how your application stands up against automated exploitation and side-loading.",
+          metrics: "Hardened Reliability",
+        },
+      ],
+    },
+    {
+      id: "api-security",
+      title: "API Security Testing",
+      icon: <FaShieldAlt className="text-2xl" />,
+      color: "green",
+      description: "Securing the primary attack vector of modern micro-services against rising global threats.",
+      features: [
+        {
+          title: "OWASP API Top 10",
+          description: "Targeting the specific vulnerabilities that affect REST, SOAP, and GraphQL APIs.",
+          metrics: "99% Incident Defense",
+        },
+        {
+          title: "Broken Object Level Auth",
+          description: "Ensuring users can only access their own data through API endpoints.",
+          metrics: "Auth & AuthZ Validation",
+        },
+        {
+          title: "Rate-limiting Thresholds",
+          description: "Testing API resilience against automated social engineering and exploitation.",
+          metrics: "AI-Driven Attack Defense",
+        },
+        {
+          title: "Sensitive Data Filtering",
+          description: "Verifying that APIs do not expose excessive data in their responses.",
+          metrics: "PII Masking",
+        },
+      ],
+    },
+    {
+      id: "cloud-security",
+      title: "Cloud & SaaS Audit",
+      icon: <FaCloud className="text-2xl" />,
+      color: "teal",
+      description: "Securing high-growth SaaS platforms and complex cloud infrastructure against mis-configurations.",
+      features: [
+        {
+          title: "Container & Kubernetes Audit",
+          description: "Securing the orchestration layer to prevent lateral movement after an initial breach.",
+          metrics: "Modern Stack Security",
+        },
+        {
+          title: "Cloud Mis-configuration Check",
+          description: "Identifying open S3 buckets, insecure IAM roles, and VPC configuration flaws.",
+          metrics: "Infrastructure Hardening",
+        },
+        {
+          title: "Multi-tenancy Stability",
+          description: "Ensuring data isolation between customers in complex SaaS environments.",
+          metrics: "SaaS Resilience",
+        },
+        {
+          title: "Shift-Left Security",
+          description: "Integrating automated security testing into Jenkins, GitLab, or GitHub workflows.",
+          metrics: "CI/CD Ready",
         },
       ],
     },
@@ -384,7 +246,7 @@ const SecurityTestingComprehensiveSlider: React.FC = () => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {securityTabs.map((tab) => {
             const colors = getColorClasses(tab.color);
             return (

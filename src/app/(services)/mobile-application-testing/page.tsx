@@ -7,20 +7,20 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Mobile Automation Application Testing Services Company",
+  title: "Ship Faster with Expert Mobile Test Automation | Testriq",
   description:
-    "A thorough guide on mobile app testing strategies, tools, platforms, and best practices. Learn how to ensure quality across Android and iOS devices.",
+    "Expert-led global mobile app testing services for iOS and Android. Specialized in 5G optimization, security penetration testing, and ISO 29119 compliance for the 2026 mobile landscape.",
   keywords: [
-    "mobile app testing",
-    "iOS testing",
-    "Android testing",
-    "cross-platform app testing",
-    "mobile performance testing",
-    "mobile security testing",
-    "mobile usability testing",
-    "app store compliance",
-    "automated mobile testing",
-    "mobile regression testing",
+    "Global Mobile Application Testing Services",
+    "Mobile App QA 2026",
+    "iOS 19 Testing",
+    "Android 15 Testing",
+    "5G Mobile Performance Testing",
+    "Mobile App Security Penetration Testing",
+    "ISO 29119-3 Compliance",
+    "Automated Mobile Testing Appium",
+    "Fintech Mobile QA Checklist",
+    "OWASP Mobile Top 10",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -38,16 +38,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/mobile-application-testing",
-    siteName: "Testriq - Mobile App Testing Services",
-    title: "Mobile Application Testing Services - iOS & Android QA | Testriq",
+    siteName: "Testriq - Global Mobile App Testing",
+    title: "Ship Faster with Expert Mobile Test Automation | Testriq",
     description:
-      "Get expert-led mobile app testing for iOS and Android. Validate your app’s performance, usability, and security before launch. Trusted by 500+ clients worldwide.",
+      "Safeguard your digital presence with comprehensive mobile app quality assurance. Expert JS/Android testing for 24,000+ device combinations.",
     images: [
       {
         url: "/OG/Mobile_Application-Services-og.webp",
         width: 1200,
         height: 630,
-        alt: "Mobile App Testing Services - Testriq",
+        alt: "Global Mobile App Testing Services - Testriq",
       },
     ],
   },
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title: "Mobile Application Testing Services - iOS & Android QA | Testriq",
+    title: "Ship Faster with Expert Mobile Test Automation | Testriq",
     description:
-      "Get expert-led mobile app testing for iOS and Android. Validate your app’s performance, usability, and security before launch. Trusted by 500+ clients worldwide.",
+      "Expert-led mobile app testing for the 2026 landscape. Specialized in 5G, Security, and ISO 29119 compliance.",
     images: ["/OG/Mobile_Application-Services-Twitter.webp"],
   },
   robots: {

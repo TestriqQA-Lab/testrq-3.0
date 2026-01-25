@@ -658,65 +658,57 @@ export const desktopAppTestingSchema = {
 export const mobileAppTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Mobile Application Testing Services",
-  "description": "End-to-end mobile app testing services across iOS and Android platforms, covering functionality, performance, security, usability, compatibility, and automation.",
+  "name": "Global Mobile Application Testing Services 2026",
+  "description": "Expert-led mobile app testing across iOS 19 and Android 15. Specialized in 5G optimization, security penetration testing, and ISO 29119 compliance for 24,000+ device combinations.",
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
-  "serviceType": "Mobile Testing",
+  "serviceType": "Mobile Quality Assurance",
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Mobile QA Services",
+    "name": "Advanced Mobile QA Solutions",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validating mobile features, user flows, and API integrations on iOS and Android."
+          "name": "5G & Performance Stress Testing",
+          "description": "Optimizing software for 5G and edge computing, preventing crashes during network-edge connectivity shifts."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Security Testing",
-          "description": "Mobile security testing including penetration, encryption, authentication, and OWASP validation."
+          "name": "ISO 29119-3 Compliance Mapping",
+          "description": "Standardized Test Environment Requirements and Test Design Specifications following international benchmarks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Battery usage, memory optimization, and load handling across devices and networks."
+          "name": "Elite Security Penetration Testing",
+          "description": "Mobile security audits mapped to OWASP Mobile Top 10 with biometric identity validation."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Usability Testing",
-          "description": "UI/UX assessment, accessibility checks, and user journey validation for mobile apps."
+          "name": "AI-Driven Automation (Appium)",
+          "description": "Self-healing AI tools and Model-Based Testing (MBT) for rapid iOS and Android release cycles."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Compatibility Testing",
-          "description": "Cross-device and OS version compatibility checks across 50+ iOS and Android devices."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Automation Testing",
-          "description": "Automated testing for regression, CI/CD integration, and fast release cycles."
+          "name": "Real Device Cloud Testing",
+          "description": "Exhaustive validation across over 24,000 Android device combinations and newest iOS versions."
         }
       }
     ]
@@ -795,26 +787,26 @@ export const iotDeviceTestingSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you test IoT device security?",
+          "name": "What is the most critical challenge in testing IoT devices in 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We perform comprehensive penetration testing on device firmware, mobile apps, and cloud APIs. This includes checking for unencrypted storage, weak authentication, and vulnerabilities in protocols like BLE and MQTT."
+            "text": "The most critical challenge is device diversity and interoperability across 21.1 billion active devices. We use ISO/IEC 29119 to ensure flawless Multi-Vendor Connectivity."
           }
         },
         {
           "@type": "Question",
-          "name": "What IoT protocols do you support?",
+          "name": "How to test IoT connection in remote locations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We specialize in testing major IoT protocols including MQTT, CoAP, Zigbee, Z-Wave, Bluetooth Low Energy (BLE), and LoRaWAN across various network conditions."
+            "text": "We use network conditioners to simulate satellite/cellular handovers and signal jammers to test device performance in 'dead zones' and high-interference environments."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you test OTA (Over-the-Air) firmware updates?",
+          "name": "Why is security testing for medical IoT devices so important?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, OTA testing is a core part of our service. We simulate interrupted updates, network failures, and version rollbacks to ensure your devices never 'brick' during a customer update."
+            "text": "Medical IoT breaches directly impact patient safety. Compliance with the Cyber Resilience Act (CRA) and HIPAA is essential for ransomware defense and data privacy."
           }
         }
       ]
@@ -828,65 +820,65 @@ export const iotDeviceTestingSchema = {
 export const roboticTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Robotic Testing Services",
-  "description": "Expert robotic testing services covering safety validation, software logic, sensor precision, actuator accuracy, and performance for industrial and service robots.",
+  "name": "Enterprise RPA & Robotics Testing Services 2026",
+  "description": "Comprehensive robotics and RPA QA for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, AI-driven path planning, and enterprise RPA bot validation.",
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
-  "serviceType": "Robotic QA",
+  "serviceType": "Robotics Quality Assurance",
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Comprehensive Robotic QA Services",
+    "name": "Global Robotics & Automation Testing Solutions",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validation of robotic movements, precision control, sensors, and actuators."
+          "name": "ISO 10218-1:2026 Compliance",
+          "description": "Functional safety validation for industrial co-bots and integrators following international 2026 benchmarks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Safety Validation",
-          "description": "Testing of safety features such as collision detection, emergency stops, and human-robot interaction protocols."
+          "name": "Sim2Real Gap Validation",
+          "description": "Bridging simulation-to-reality gaps using Digital Twin technology and Physical AI predictive modeling."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Speed, load, endurance, and accuracy testing for robotic efficiency and optimization."
+          "name": "HW-SW Integration (ROS2)",
+          "description": "Synchronizing sensors, actuators, and ROS/ROS2 middleware using FMEA and HAZOP frameworks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Integration Testing",
-          "description": "Validation of robotic system communication with software platforms, PLCs, and control systems."
+          "name": "AI/ML Path Consistency",
+          "description": "Validating non-deterministic AI path planning (Move It) and human-robot collaborative safety (ISO 13482)."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Software Testing",
-          "description": "Validation of control algorithms, automation logic, sensor data handling, and decision engines."
+          "name": "Global Regulatory Safety (UL 3100)",
+          "description": "Stringent safety compliance audits including force interaction, proximity testing, and ANSI/RIA R15.06 standards."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Autonomous Testing",
-          "description": "Testing autonomous navigation, AI-driven actions, obstacle avoidance, and environment adaptability."
+          "name": "Enterprise RPA Testing Services",
+          "description": "Automated UI-level testing for virtual workforces (UiPath, Blue Prism) on legacy enterprise systems."
         }
       }
     ]

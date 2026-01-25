@@ -94,69 +94,53 @@ const QADocumentationWhyChooseTestriq = () => {
           </p>
         </div>
 
-        {/* Advantages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
-          {advantages.map((advantage, index) => {
-            const IconComponent = advantage.icon;
-            const colors = getColorClasses(advantage.color);
-
-            return (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-gray-200 group"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className={`flex-shrink-0 w-12 h-12 rounded-lg ${colors.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>
-                    <IconComponent className={`text-xl ${colors.text}`} />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
-                      {advantage.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
-                      {advantage.description}
-                    </p>
-                    <div className={`inline-flex items-center px-3 py-1 ${colors.bg} ${colors.text} rounded-full text-sm font-medium`}>
-                      {advantage.metrics}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        {/* Global Standards Table */}
+        <div className="mb-20 overflow-x-auto">
+          <table className="w-full text-left border-collapse bg-white shadow-lg rounded-2xl overflow-hidden">
+            <thead className="bg-brand-blue text-white">
+              <tr>
+                <th className="p-6 text-xl font-bold">Standard</th>
+                <th className="p-6 text-xl font-bold">Application in QA Documentation</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="p-6 font-bold text-gray-900 bg-blue-50/50 w-1/3">ISO/IEC/IEEE 29119-3</td>
+                <td className="p-6 text-gray-600">The bedrock of our template structure and documentation hierarchy.</td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="p-6 font-bold text-gray-900 bg-blue-50/50">SOC2 Type II</td>
+                <td className="p-6 text-gray-600">Ensuring the data security of your private software requirements and test assets.</td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="p-6 font-bold text-gray-900 bg-blue-50/50">GDPR / CCPA</td>
+                <td className="p-6 text-gray-600">Documentation protocols for PII (Personally Identifiable Information) in test data management.</td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="p-6 font-bold text-gray-900 bg-blue-50/50">FDA 21 CFR Part 11</td>
+                <td className="p-6 text-gray-600">Mandatory for medical device software requiring electronic records and signatures.</td>
+              </tr>
+              <tr className="hover:bg-gray-50 transition-colors">
+                <td className="p-6 font-bold text-gray-900 bg-blue-50/50">ISO 9001</td>
+                <td className="p-6 text-gray-600">General quality management systems ensuring consistent service delivery.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        {/* Success Metrics */}
-        <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-2xl p-8 lg:p-12 text-white mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold mb-4">Proven Track Record of Success</h3>
-            <p className="text-xl opacity-90 max-w-2xl mx-auto">
-              Our comprehensive QA documentation services have helped organizations worldwide improve their
-              testing processes and achieve measurable results.
-            </p>
+        {/* Why Choose Testriq Section */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-blue-600">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Templates for QA</h4>
+            <p className="text-gray-600 text-center">No need to reinvent the wheel; use our field-tested frameworks for comprehensive documentation.</p>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">150+</div>
-              <div className="text-lg opacity-90">Projects Documented</div>
-              <div className="text-sm opacity-75 mt-1">Across 25+ industries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">99%</div>
-              <div className="text-lg opacity-90"><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Accuracy</Link> Rate</div>
-              <div className="text-sm opacity-75 mt-1">Quality assured delivery</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">60%</div>
-              <div className="text-lg opacity-90">Time Reduction</div>
-              <div className="text-sm opacity-75 mt-1">Faster documentation</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold mb-2">95%</div>
-              <div className="text-lg opacity-90">Client Retention</div>
-              <div className="text-sm opacity-75 mt-1">Long-term partnerships</div>
-            </div>
+          <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-purple-600">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Expert Authors</h4>
+            <p className="text-gray-600 text-center">Senior QA Architects with 10+ years of experience review all content for technical rigor.</p>
+          </div>
+          <div className="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-green-600">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4 text-center">Global Scalability</h4>
+            <p className="text-gray-600 text-center">We support localized testing documentation for the US, UK, EU, and Asian markets.</p>
           </div>
         </div>
 

@@ -67,29 +67,16 @@ const BankingHeroSection: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Strengthen
+              Banking & Financial Services (BFSI)
               <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
-                Financial Systems
+                Testing Services
               </span>
-              with Expert BFSI Testing
+              Ensuring Security and Compliance
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure bulletproof <Link href="/security-testing">security</Link>,{" "}
-              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
-                regulatory compliance
-              </Link>
-              , and flawless{" "}
-              <Link href="/performance-testing-services">performance</Link>{" "}
-              across all your banking and financial platforms. Our comprehensive
-              banking and{" "}
-              <Link href="/blog/post/etl-testing-case-studies">
-                finance testing services
-              </Link>{" "}
-              help you build customer trust, meet GDPR, PCI DSS, and SOX
-              compliance requirements, and stay ahead of evolving financial
-              threats through robust BFSI testing solutions.
+              Threat actors target financial services at <span className="font-semibold">300x the rate</span> of other industries. With data breaches costing an average of <span className="font-semibold">5.85 million USD</span>, our QA strategies are designed to safeguard multi-billion dollar transaction ecosystems and ensure <span className="font-semibold">100% audit pass rates</span> for your institution.
             </p>
 
             {/* Key Benefits */}

@@ -17,99 +17,116 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
   const processSteps = [
     {
       id: 1,
-      title: (<Link href='blog/post/discovery-analysis-in-mobile-app-testing-defining-qa-scope-user-journeys'>Device & Requirements Analysis</Link>),
+      title: "Requirement Analysis & Mapping",
       description:
-        "Comprehensive analysis of smart device specifications, connectivity requirements, and user scenarios to create a detailed testing strategy.",
+        "We analyze device requirements by mapping OS dependencies, hardware specifications, and compatibility standards.",
       icon: <FaSearch className="w-6 h-6" />,
       activities: [
-        "Device specification review",
-        "Connectivity requirements analysis",
-        "User scenario assessment",
-        "Security requirements evaluation",
+        "OS Dependency Mapping",
+        "Hardware Specs Audit",
+        "Compatibility Benchmarking",
+        "Market Entry Research",
       ],
       duration: "2-3 days",
-      color: "green",
-    },
-    {
-      id: 2,
-      title: (<Link href='blog/post/environment-setup-in-desktop-testing-why-its-the-foundation-of-reliable-qa'>Test Environment Setup</Link>),
-      description:
-        "Setting up comprehensive testing environments with various network conditions and device configurations for thorough validation.",
-      icon: <FaCog className="w-6 h-6" />,
-      activities: [
-        "Testing environment configuration",
-        "Network simulation setup",
-        "Device configuration management",
-        "Test data preparation",
-      ],
-      duration: "1-2 days",
       color: "blue",
     },
     {
-      id: 3,
-      title: (<Link href='blog/post/security-testing-checklist-before-go-live-2'>Connectivity & Security Testing</Link>),
+      id: 2,
+      title: "Firmware Validation & Hardening",
       description:
-        "Executing comprehensive connectivity tests and smart device security testing validations to ensure reliable and secure device operation.",
+        "Testing the low-level software on the chip to prevent OTA (Over-the-Air) update failures and secure the device foundation.",
       icon: <FaShieldAlt className="w-6 h-6" />,
       activities: [
-        "Connectivity testing execution",
-        "Security vulnerability assessment",
-        "Protocol compliance testing",
-        "Data protection validation",
+        "Low-level Software Testing",
+        "OTA Failure Prevention",
+        "Chipset Logic Validation",
+        "Firmware Security Audits",
       ],
-      duration: "4-5 days",
+      duration: "3-4 days",
       color: "red",
     },
     {
-      id: 4,
-      title: (<Link href='blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance'>Performance & UX Testing</Link>),
+      id: 3,
+      title: "Sensor and Edge Computing Validation",
       description:
-        "Advanced performance testing and user experience validation to ensure optimal device performance and usability.",
+        "We test the accuracy of motion, light, and temperature sensors while confirming precise and efficient edge-level data processing.",
+      icon: <FaCog className="w-6 h-6" />,
+      activities: [
+        "Sensor Accuracy Benchmarks",
+        "Edge Logic Verification",
+        "Data Processing Efficiency",
+        "Calibration Validation",
+      ],
+      duration: "4-5 days",
+      color: "green",
+    },
+    {
+      id: 4,
+      title: "Protocol & Network Validation",
+      description:
+        "Stress-testing MQTT, CoAP, and HTTP protocols over 5G and Wi-Fi 6 to ensure stable and rapid device communication.",
       icon: <FaChartLine className="w-6 h-6" />,
       activities: [
-        "Performance benchmarking",
-        "Battery life testing",
-        "User experience validation",
-        "Accessibility testing",
+        "MQTT/CoAP Stress Testing",
+        "5G Connectivity Audits",
+        "Wi-Fi 6 Bandwidth Tests",
+        "M2M Protocol Validation",
       ],
       duration: "3-4 days",
       color: "purple",
     },
     {
       id: 5,
-      title: (<Link href='blog/post/learn-how-validation-optimization'>Validation & Delivery</Link>),
+      title: "Performance & Battery Life Optimization",
       description:
-        "Final validation, comprehensive reporting, and delivery of certified smart devices with detailed documentation.",
+        "Profiling latency and throughput while measuring thermal throttling under high-load scenarios.",
+      icon: <FaChartLine className="w-6 h-6" />,
+      activities: [
+        "Latency & Throughput Profiling",
+        "Thermal Throttling Assessment",
+        "Battery drain monitoring",
+        "High-load Power Profiling",
+      ],
+      duration: "4-5 days",
+      color: "orange",
+    },
+    {
+      id: 6,
+      title: "Simulated Real-World Conditions",
+      description:
+        "Our team simulates real-world conditions to test your product's usability. We confirm that your device's 'smart' functionality translates into a seamless experience for every user.",
       icon: <FaCheckCircle className="w-6 h-6" />,
       activities: [
-        "Final validation testing",
-        "Comprehensive report generation",
-        "Certification documentation",
-        "Knowledge transfer & support",
+        "Usability Simulation",
+        "UX Accessibility Audits",
+        "Seamless UX Validation",
+        "Real-world Scenario QA",
       ],
-      duration: "1-2 days",
-      color: "orange",
+      duration: "2-3 days",
+      color: "indigo",
     },
   ];
 
   const getColorClasses = (color: string) => {
     const colors = {
-      green: "bg-green-500 text-white",
       blue: "bg-blue-500 text-white",
       red: "bg-red-500 text-white",
+      green: "bg-green-500 text-white",
       purple: "bg-purple-500 text-white",
       orange: "bg-orange-500 text-white",
+      indigo: "bg-indigo-500 text-white",
     };
     return colors[color as keyof typeof colors];
   };
 
   const getBorderColor = (color: string) => {
     const colors = {
-      green: "border-green-500",
       blue: "border-blue-500",
       red: "border-red-500",
+      green: "border-green-500",
       purple: "border-purple-500",
       orange: "border-orange-500",
+      indigo: "border-indigo-500",
     };
     return colors[color as keyof typeof colors];
   };
@@ -146,11 +163,10 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
                   <button
                     onClick={() => setActiveStep(index)}
-                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${
-                      activeStep === index
-                        ? getColorClasses(step.color)
-                        : "bg-gray-300 text-gray-600"
-                    }`}
+                    className={`w-12 h-12 rounded-full border-4 border-white shadow-lg flex items-center justify-center transition-all duration-300 ${activeStep === index
+                      ? getColorClasses(step.color)
+                      : "bg-gray-300 text-gray-600"
+                      }`}
                   >
                     <span className="font-bold text-sm">{step.id}</span>
                   </button>
@@ -158,22 +174,19 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
 
                 {/* Content */}
                 <div
-                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${
-                    index % 2 === 0 ? "" : "md:flex-row-reverse"
-                  }`}
+                  className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${index % 2 === 0 ? "" : "md:flex-row-reverse"
+                    }`}
                 >
                   {/* Left/Right Content */}
                   <div
-                    className={`${
-                      index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
-                    }`}
+                    className={`${index % 2 === 0 ? "md:text-right md:pr-16" : "md:pl-16"
+                      }`}
                   >
                     <div
-                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${
-                        activeStep === index
-                          ? `${getColorClasses(step.color)} shadow-lg scale-105`
-                          : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
+                      className={`inline-block p-4 rounded-xl mb-4 cursor-pointer transition-all duration-300 ${activeStep === index
+                        ? `${getColorClasses(step.color)} shadow-lg scale-105`
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
                       onClick={() => setActiveStep(index)}
                     >
                       {step.icon}
@@ -188,11 +201,10 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
                     </p>
 
                     <div
-                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${
-                        activeStep === index
-                          ? getColorClasses(step.color)
-                          : "bg-gray-200 text-gray-600"
-                      }`}
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${activeStep === index
+                        ? getColorClasses(step.color)
+                        : "bg-gray-200 text-gray-600"
+                        }`}
                     >
                       Duration: {step.duration}
                     </div>
@@ -210,9 +222,8 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
                       >
                         <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
                           <span
-                            className={`w-3 h-3 rounded-full mr-2 ${
-                              getColorClasses(step.color).split(" ")[0]
-                            }`}
+                            className={`w-3 h-3 rounded-full mr-2 ${getColorClasses(step.color).split(" ")[0]
+                              }`}
                           ></span>
                           Key Activities:
                         </h4>
@@ -221,9 +232,8 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
                           {step.activities.map((activity, actIndex) => (
                             <li key={actIndex} className="flex items-start">
                               <div
-                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${
-                                  getColorClasses(step.color).split(" ")[0]
-                                }`}
+                                className={`w-2 h-2 rounded-full mt-2 mr-3 ${getColorClasses(step.color).split(" ")[0]
+                                  }`}
                               ></div>
                               <span className="text-gray-600">{activity}</span>
                             </li>
@@ -292,7 +302,7 @@ const SmartDeviceProvenTestingProcess: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
             {processSteps.map((step, index) => (
               <div key={step.id} className="text-center">
                 <div

@@ -286,33 +286,33 @@ const IoTWhyChooseTestriq: React.FC = () => {
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8 border border-gray-100">
           <div className="text-center mb-6">
             <h3 className="text-xl font-bold text-gray-900 mb-2">
-              IoT Testing Network
+              Global IoT Testing Network
             </h3>
             <p className="text-gray-600">
-              Connected devices and protocols we&apos;ve successfully tested
+              Trusted for quality assurance in the 21.1 Billion connected device ecosystem.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="relative">
-              <div className="text-3xl font-bold text-teal-600 mb-2">30+</div>
-              <div className="text-gray-700 text-sm">IoT Devices</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">21.1B+</div>
+              <div className="text-gray-700 text-sm">Global Ecosystem</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-blue-600 mb-2">99.7%</div>
-              <div className="text-gray-700 text-sm">Issue Detection</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">99.8%</div>
+              <div className="text-gray-700 text-sm">Stability Score</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
             </div>
             <div className="relative">
               <div className="text-3xl font-bold text-purple-600 mb-2">
                 36hr
               </div>
-              <div className="text-gray-700 text-sm">Avg Response</div>
+              <div className="text-gray-700 text-sm">Target Sprint</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-green-600 mb-2">15+</div>
-              <div className="text-gray-700 text-sm">IoT Protocols</div>
+              <div className="text-3xl font-bold text-green-600 mb-2">ISO</div>
+              <div className="text-gray-700 text-sm">29119 Verified</div>
               <div className="absolute top-0 right-0 w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             </div>
           </div>
