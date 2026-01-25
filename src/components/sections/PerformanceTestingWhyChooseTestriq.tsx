@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
-import { FaTachometerAlt, FaCheckCircle, FaAward, FaCogs, FaChartLine, FaUsers, FaClock } from "react-icons/fa";
+import { FaTachometerAlt, FaCheckCircle, FaAward } from "react-icons/fa";
 
 const PerformanceTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [

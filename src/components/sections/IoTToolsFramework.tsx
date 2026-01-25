@@ -7,7 +7,6 @@ import {
   FaCode,
   FaRocket,
   FaShieldAlt,
-  FaNetworkWired,
   FaRunning,
   FaCogs,
   FaSatelliteDish,
@@ -18,8 +17,6 @@ import {
   FaWifi,
   FaHome,
   FaShieldAlt as FaShield,
-  FaExchangeAlt,
-  FaBluetooth,
   FaMicrochip, // for Nessus
 } from "react-icons/fa";
 
@@ -29,15 +26,10 @@ import {
   SiMetasploit,
   SiWireshark,
   SiOwasp,
-  SiBlazemeter,
-  SiBurpsuite,
-  SiMozilla,
-  SiRobotframework,
-  SiSelenium,
 } from "react-icons/si";
 
 import Link from "next/link";
-import { MdCloud, MdDevices } from "react-icons/md";
+import { MdDevices } from "react-icons/md";
 
 const IoTToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -74,22 +66,22 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "Wireshark",
           description: "Advanced protocol sniffing & packet analysis",
-          icon: <SiWireshark className="w-5 h-5 text-brand-blue" />,
+          icon: <SiWireshark className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "MQTT Spy",
           description: "In-depth MQTT message validation",
-          icon: <FaSatelliteDish className="w-5 h-5 text-brand-blue" />,
+          icon: <FaSatelliteDish className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Zigbee Sniffer",
           description: "Real-time Zigbee signal analysis",
-          icon: <FaProjectDiagram className="w-5 h-5 text-brand-blue" />,
+          icon: <FaProjectDiagram className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "LoRaWAN Gateways",
           description: "LPWAN range & connectivity testing",
-          icon: <FaWifi className="w-5 h-5 text-brand-blue" />,
+          icon: <FaWifi className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
       ],
     },
@@ -141,17 +133,17 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "k6",
           description: "Developer-centric load testing for MQTT/HTTP",
-          icon: <FaProjectDiagram className="w-5 h-5 text-brand-blue" />,
+          icon: <FaProjectDiagram className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Artillery",
           description: "Performance stress for zettabyte scale data",
-          icon: <FaCrosshairs className="w-5 h-5 text-brand-blue" />,
+          icon: <FaCrosshairs className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "JMeter",
           description: "Legacy & MQTT extension load testing",
-          icon: <SiApachejmeter className="w-5 h-5 text-brand-blue" />,
+          icon: <SiApachejmeter className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
       ],
     },

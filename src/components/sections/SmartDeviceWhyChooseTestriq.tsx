@@ -7,9 +7,6 @@ import {
   FaShieldAlt,
   FaChartLine,
   FaAward,
-  FaWifi,
-  FaUsers,
-  FaClock,
 } from "react-icons/fa";
 
 const SmartDeviceWhyChooseTestriq: React.FC = () => {

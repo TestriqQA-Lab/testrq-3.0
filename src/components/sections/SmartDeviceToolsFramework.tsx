@@ -21,7 +21,6 @@ import {
   SiGatling,
   SiOwasp,
   SiBurpsuite,
-  SiApple,
 } from "react-icons/si";
 
 import { MdInsights } from "react-icons/md";

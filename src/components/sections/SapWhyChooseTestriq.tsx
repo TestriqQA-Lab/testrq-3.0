@@ -6,10 +6,6 @@ import {
     FaShieldAlt,
     FaChartLine,
     FaUsers,
-    FaHandshake,
-    FaCogs,
-    FaRocket,
-    FaBriefcase,
 } from "react-icons/fa";
 
 const SapWhyChooseTestriq: React.FC = () => {

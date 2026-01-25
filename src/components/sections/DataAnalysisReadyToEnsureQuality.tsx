@@ -12,35 +12,6 @@ import {
 
 const DataAnalysisReadyToEnsureQuality = () => {
 
-  const benefits = [
-    (<><Link href="/blog/post/ai-testing-learning-guide">Advanced machine learning and AI capabilities</Link></>),
-    "Real-time analytics and automated insights",
-    "Expert data scientists and analysts",
-    "Scalable cloud-based infrastructure",
-    "Industry-specific domain expertise",
-    (<>Comprehensive data <Link href="/security-testing">security</Link> and compliance</>),
-  ];
-
-  const serviceHighlights = [
-    {
-      icon: <FaChartBar className="h-6 w-6 text-purple-600" />,
-      title: "Descriptive Analytics",
-      description:
-        "Understand what happened with comprehensive reporting and visualization",
-    },
-    {
-      icon: <FaBrain className="h-6 w-6 text-blue-600" />,
-      title: "Predictive Analytics",
-      description:
-        "Forecast future trends with machine learning and statistical models",
-    },
-    {
-      icon: <FaChartBar className="h-6 w-6 text-green-600" />,
-      title: "Prescriptive Analytics",
-      description:
-        "Get actionable recommendations for optimal business decisions",
-    },
-  ];
 
 
   const testimonials = [

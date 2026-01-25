@@ -1,81 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaAward, FaShieldAlt, FaCog, FaClock, FaUsers, FaChartLine, FaGlobe, FaHandshake } from 'react-icons/fa';
+import { FaAward, FaShieldAlt, FaCog } from 'react-icons/fa';
 
 const QADocumentationWhyChooseTestriq = () => {
 
-  const advantages = [
-    {
-      icon: FaAward,
-      title: "Industry Expertise",
-      description: (<>15+ years of experience in QA documentation across diverse industries including <Link href="/blog/post/etl-testing-case-studies">healthcare, fintech, e-commerce, and enterprise software.</Link></>),
-      metrics: "150+ Projects Documented",
-      color: "blue"
-    },
-    {
-      icon: FaClock,
-      title: "Faster Delivery",
-      description: "Our proven templates and standardized processes reduce documentation time by 60% while maintaining the highest quality standards.",
-      metrics: "60% Faster Delivery",
-      color: "green"
-    },
-    {
-      icon: FaUsers,
-      title: "Expert Team",
-      description: "Certified technical writers and QA professionals with deep domain expertise in software testing and quality assurance methodologies.",
-      metrics: "50+ Certified Experts",
-      color: "purple"
-    },
-    {
-      icon: FaShieldAlt,
-      title: "Compliance Assurance",
-      description: "Documentation that meets industry standards including ISO 9001, FDA, HIPAA, SOX, and other regulatory requirements.",
-      metrics: "100% Compliance Rate",
-      color: "red"
-    },
-    {
-      icon: FaChartLine,
-      title: "Quality Metrics",
-      description: "Comprehensive quality tracking and metrics that provide visibility into documentation effectiveness and team productivity.",
-      metrics: "98% Quality Score",
-      color: "orange"
-    },
-    {
-      icon: FaCog,
-      title: "Process Optimization",
-      description: "Continuous improvement approach that optimizes your documentation processes and enhances team efficiency over time.",
-      metrics: "40% Efficiency Gain",
-      color: "teal"
-    },
-    {
-      icon: FaGlobe,
-      title: "Global Standards",
-      description: "Documentation that follows international best practices and can be easily adapted for global teams and distributed organizations.",
-      metrics: "25+ Countries Served",
-      color: "indigo"
-    },
-    {
-      icon: FaHandshake,
-      title: "Partnership Approach",
-      description: "We work as an extension of your team, providing ongoing support, training, and knowledge transfer for long-term success.",
-      metrics: "95% Client Retention",
-      color: "pink"
-    }
-  ];
-
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
-      green: { bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
-      purple: { bg: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-200' },
-      red: { bg: 'bg-red-50', text: 'text-red-600', border: 'border-red-200' },
-      orange: { bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' },
-      teal: { bg: 'bg-teal-50', text: 'text-teal-600', border: 'border-teal-200' },
-      indigo: { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' },
-      pink: { bg: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' }
-    };
-    return colorMap[color as keyof typeof colorMap] || colorMap.blue;
-  };
 
   return (
     <section className="py-20 bg-white">

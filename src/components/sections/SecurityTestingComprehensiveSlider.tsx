@@ -6,10 +6,6 @@ import {
   FaShieldAlt,
   FaCode,
   FaFlask,
-  FaBug,
-  FaLock,
-  FaUserShield,
-  FaNetworkWired,
   FaMobileAlt,
   FaCloud,
 } from "react-icons/fa";

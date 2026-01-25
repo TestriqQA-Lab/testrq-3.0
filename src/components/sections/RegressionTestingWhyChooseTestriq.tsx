@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
-import { FaShieldAlt, FaUsers, FaAward, FaCogs, FaChartLine, FaClock, FaCheckCircle } from "react-icons/fa";
+import { FaShieldAlt, FaUsers, FaAward } from "react-icons/fa";
 
 const RegressionTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [

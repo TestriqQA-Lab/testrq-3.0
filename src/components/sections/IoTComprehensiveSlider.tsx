@@ -9,8 +9,6 @@ import {
   FaNetworkWired,
   FaArrowRight,
   FaFlask,
-  FaCogs,
-  FaCloud,
 } from "react-icons/fa";
 
 const IoTComprehensiveSlider: React.FC = () => {

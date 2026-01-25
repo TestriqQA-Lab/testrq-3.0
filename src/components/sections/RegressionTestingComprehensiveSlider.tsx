@@ -7,9 +7,6 @@ import {
   FaCheckCircle,
   FaChartLine,
   FaFlask,
-  FaCloud,
-  FaCodeBranch,
-  FaBug,
 } from "react-icons/fa";
 
 const RegressionTestingComprehensiveSlider: React.FC = () => {

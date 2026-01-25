@@ -7,9 +7,6 @@ import {
   FaChartLine,
   FaUsers,
   FaAward,
-  FaRobot,
-  FaCog,
-  FaClock,
 } from "react-icons/fa";
 
 const RoboticWhyChooseTestriq: React.FC = () => {

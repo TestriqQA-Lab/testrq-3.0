@@ -9,7 +9,6 @@ import {
   FaServer,
   FaCloud,
   FaFlask,
-  FaBolt,
 } from "react-icons/fa";
 
 const PerformanceTestingComprehensiveSlider: React.FC = () => {
