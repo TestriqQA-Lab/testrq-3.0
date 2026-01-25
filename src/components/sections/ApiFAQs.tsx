@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -19,7 +20,7 @@ const ApiFAQs: React.FC = () => {
           <ul className="list-disc pl-5 space-y-2">
             <li><strong>Unit Testing:</strong> Validating individual endpoints.</li>
             <li><strong>Integration Testing:</strong> Checking how multiple APIs work together.</li>
-            <li><strong>Security Testing:</strong> Ensuring identity and access rights are robust.</li>
+            <li><strong><Link href="/security-testing" className="hover:underline">Security Testing</Link>:</strong> Ensuring identity and access rights are robust.</li>
             <li><strong>Fuzz Testing:</strong> Sending unexpected or random data to find crashes.</li>
           </ul>
         ),

@@ -16,7 +16,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
   const benefits = [
     {
       icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "GDPR Compliance",
+      title: (<Link href="/security-testing" className="hover:underline text-inherit">GDPR Compliance</Link>),
       shortTitle: "GDPR Ready",
       description:
         "All tests involving PII follow strict data masking and privacy protocols for the EU market.",
@@ -32,7 +32,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
     },
     {
       icon: <FaLock className="w-8 h-8" />,
-      title: "SOC2 Type II",
+      title: (<Link href="/security-testing" className="hover:underline text-inherit">SOC2 Type II</Link>),
       shortTitle: "SOC2 Certified",
       description:
         "Our environments and data handling meet rigorous security standards to protect your IP.",
@@ -67,7 +67,7 @@ const ApiWhyChooseTestriq: React.FC = () => {
       title: "Proficiency Testing",
       shortTitle: "Paperless Tests",
       description:
-        "Specialized API paperless proficiency testing to ensure systems meet certification rules.",
+        (<>Specialized API <Link href="/qa-documentation-services" className="hover:underline text-white">paperless proficiency testing</Link> to ensure systems meet certification rules.</>),
       stats: "Certified Status",
       color: "orange",
       gradient: "from-orange-500 to-orange-600",

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaClipboardList, FaBug, FaProjectDiagram, FaDesktop, FaChartLine, FaUsers, FaTools } from "react-icons/fa";
 
@@ -39,7 +40,7 @@ const ManualTestingToolsFramework: React.FC = () => {
       color: "purple",
       description: "Technical validation of back-end services and connectivity",
       tools: [
-        { name: "Postman", description: "Comprehensive API development & testing", logo: "🚀" },
+        { name: "Postman", description: (<>Comprehensive <Link href="/api-testing" className="hover:underline text-purple-600">API development & testing</Link></>), logo: "🚀" },
         { name: "Charles Proxy", description: "Web debugging proxy tool", logo: "🛡️" },
         { name: "Swagger", description: "API documentation and validation", logo: "📖" }
       ]
@@ -61,7 +62,7 @@ const ManualTestingToolsFramework: React.FC = () => {
       title: "Performance & Monitoring",
       icon: <FaChartLine className="text-2xl" />,
       color: "green",
-      description: "Ensuring application speed, stability, and health",
+      description: (<>Ensuring application <Link href="/performance-testing-services" className="hover:underline text-green-600">speed, stability</Link>, and health</>),
       tools: [
         { name: "JMeter", description: "Open-source load testing", logo: "🏎️" },
         { name: "New Relic", description: "Observability and APM platform", logo: "📊" },

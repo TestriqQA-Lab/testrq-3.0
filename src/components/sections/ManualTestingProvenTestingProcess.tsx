@@ -23,7 +23,7 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
       description:
         "We track every manual test back to your original requirements. Our matrix ensures we cover every feature, leaving no room for hidden bugs or gaps.",
       activities: [
-        "Requirement traceability matrix (RTM) setup",
+        (<Link key="rtm" href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline">Requirement traceability matrix (RTM) setup</Link>),
         "Feature-by-feature coverage mapping",
         "Requirement ambiguity identification",
         "Business-logic validation markers",
@@ -84,7 +84,7 @@ const ManualTestingProvenTestingProcess: React.FC = () => {
         "We work in sprints to stay in sync with your Agile and DevOps teams. This approach ensures our manual execution never slows down your development.",
       activities: [
         "Sprint-aligned manual execution",
-        "Agile & DevOps team synchronization",
+        (<Link key="agile" href="/automation-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline">Agile & DevOps team synchronization</Link>),
         "Continuous regression testing cycles",
         "Exploratory session-based testing",
       ],

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode } from "react-icons/fa";
 
@@ -9,7 +10,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
   const toolCategories = [
     {
       id: "web-automation",
-      title: "WebView Automation",
+      title: (<Link href="/web-application-testing-services" className="hover:underline hover:text-blue-700">WebView Automation</Link>),
       icon: <FaRobot className="text-2xl" />,
       color: "blue",
       description: "Our framework utilizes Selenium, Playwright, and Cypress for robust browser testing.",
@@ -22,7 +23,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
     },
     {
       id: "mobile-automation",
-      title: "Mobile Platform Testing",
+      title: (<Link href="/mobile-application-testing" className="hover:underline hover:text-green-700">Mobile Platform Testing</Link>),
       icon: <FaMobileAlt className="text-2xl" />,
       color: "green",
       description: "We implement Appium, Espresso, and XCUITest to ensure cross-device compatibility.",
@@ -35,7 +36,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
     },
     {
       id: "api-automation",
-      title: "API Verification",
+      title: (<Link href="/api-testing" className="hover:underline hover:text-purple-700">API Verification</Link>),
       icon: <FaCogs className="text-2xl" />,
       color: "purple",
       description: "Our team deploys Postman and Rest-Assured for rigorous protocol and data validation.",
@@ -48,7 +49,7 @@ const AutomationTestingToolsFramework: React.FC = () => {
     },
     {
       id: "performance-automation",
-      title: "Performance",
+      title: (<Link href="/performance-testing-services" className="hover:underline hover:text-orange-700">Performance</Link>),
       icon: <FaChartLine className="text-2xl" />,
       color: "orange",
       description: "Utilizing JMeter and k6, we evaluate system stability under high-load conditions.",

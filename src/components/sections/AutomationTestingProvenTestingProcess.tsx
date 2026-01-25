@@ -22,7 +22,7 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
       description:
         "We align automation goals with business risk. Our team ranks tests based on impact to select smoke and regression suites with the highest ROI.",
       activities: [
-        "Risk-Based Prioritization",
+        (<Link key={1} href="/manual-testing-services" className="text-gray-600 hover:text-brand-blue hover:underline">Risk-Based Prioritization</Link>),
         "Business Goal Alignment",
         "ROI-Focused Case Selection",
         "Strategy Formalization",
@@ -37,7 +37,7 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
       description:
         "Using ISO 29119-4 standards <span className='italic'>(formal design techniques, boundary values, decision tables)</span>, we build modular, reusable testware and select the optimal tools for your infrastructure.",
       activities: [
-        "ISO 29119-4 Design Standards",
+        (<Link key={2} href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline">ISO 29119-4 Design Standards</Link>),
         "Toolchain Selection",
         "Modular Component Building",
         "Reusable Library Setup",
@@ -70,7 +70,7 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
         "CI/CD Integration Pipeline",
         "Immediate Feedback Loops",
         "Scheduled Nightly Builds",
-        "Automated Failover Checks",
+        (<Link key="failover" href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline">Automated Failover Checks</Link>),
       ],
       nextStep: "Completion & Reporting",
     },

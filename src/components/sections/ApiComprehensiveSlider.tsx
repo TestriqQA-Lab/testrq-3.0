@@ -27,7 +27,7 @@ const ApiComprehensiveSlider: React.FC = () => {
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
-      action: "blog/post/rest-api-testing-guide-endpoints-methods-best-practices"
+      action: "/blog/post/rest-api-testing-guide-endpoints-methods-best-practices"
     },
     {
       icon: <FaNetworkWired className="w-8 h-8" />,
@@ -42,7 +42,7 @@ const ApiComprehensiveSlider: React.FC = () => {
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
-      action: "blog/post/graphql-api-testing-strategies-for-queries-mutations-performance"
+      action: "/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance"
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,
@@ -75,7 +75,7 @@ const ApiComprehensiveSlider: React.FC = () => {
             End-to-End <span className="text-[theme(color.brand.blue)]">API QA</span> for Global Markets
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-            We provide specialized API testing tailored for global markets, including the US, UK, and EU, ensuring your services are secure and high-performing.
+            We provide specialized API testing tailored for <Link href="/locations-we-serve" className="text-brand-blue hover:underline">global markets</Link>, including the US, UK, and EU, ensuring your services are secure and high-performing.
           </p>
         </div>
 

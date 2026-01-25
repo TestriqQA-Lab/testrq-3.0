@@ -121,7 +121,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
             <span className="text-brand-blue">Enterprise-Grade </span> Automation Capabilities
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our comprehensive automation testing services built to accelerate testing cycles, enhance test efficiency, and deliver superior software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, and <Link href='api-testing'>API platforms</Link>.
+            Explore our comprehensive automation testing services built to accelerate testing cycles, enhance test efficiency, and deliver superior software quality across <Link href="/web-application-testing-services" className="text-brand-blue hover:underline">web</Link>, <Link href="/mobile-application-testing" className="text-brand-blue hover:underline">mobile</Link>, and <Link href="/api-testing" className="text-brand-blue hover:underline">API platforms</Link>.
           </p>
         </div>
 
@@ -176,7 +176,7 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
                       <p className="text-gray-600 text-lg leading-relaxed mb-6">
                         {type.description}
                       </p>
-                      <Link href={`blog/post${automationTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                      <Link href={`/blog/post${automationTypes[activeTab].action}`} className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
                         Explore {automationTypes[activeTab].title}
                       </Link>
                     </div>

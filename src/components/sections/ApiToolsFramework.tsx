@@ -26,8 +26,8 @@ const ApiToolsFramework: React.FC = () => {
       category: "Infrastructure & Security",
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "CI/CD Pipelines", description: "Jenkins, GitLab CI, Azure DevOps", icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Security Testing", description: "OWASP ZAP, Burp Suite, 42Crunch", icon: <FaLock className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: (<Link href="/automation-testing-services" className="hover:underline hover:text-blue-700">CI/CD Pipelines</Link>), description: "Jenkins, GitLab CI, Azure DevOps", icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: (<Link href="/security-testing" className="hover:underline hover:text-blue-700">Security Testing</Link>), description: "OWASP ZAP, Burp Suite, 42Crunch", icon: <FaLock className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
   ];
@@ -44,7 +44,7 @@ const ApiToolsFramework: React.FC = () => {
             Technical <span className="text-[theme(color.brand.blue)]">Tech Stack</span>: Instruments of Precision
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            To deliver automated API testing at scale, we utilize a multi-layered stack tailored to your infrastructure. Our instruments are selected for technical precision and global compatibility.
+            To deliver <Link href="/automation-testing-services" className="text-brand-blue hover:underline">automated API testing</Link> at scale, we utilize a multi-layered stack tailored to your infrastructure. Our instruments are selected for technical precision and global compatibility.
           </p>
         </div>
 

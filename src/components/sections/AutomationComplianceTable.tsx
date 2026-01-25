@@ -1,27 +1,28 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaShieldAlt } from "react-icons/fa";
 
 const AutomationComplianceTable: React.FC = () => {
     const standards = [
         {
-            standard: "ISO/IEC/IEEE 29119-5:2024",
+            standard: (<Link href="/qa-documentation-services" className="hover:underline text-brand-blue-600">ISO/IEC/IEEE 29119-5:2024</Link>),
             focus: "Keyword-Driven & Model-Based Testing",
             relevance: "The highest global standard for scalable and maintainable automation frameworks.",
         },
         {
-            standard: "ISO/IEC/IEEE 29119-2",
+            standard: (<Link href="/qa-documentation-services" className="hover:underline text-brand-blue-600">ISO/IEC/IEEE 29119-2</Link>),
             focus: "Generic Test Process",
             relevance: "Ensuring repeatability and traceability across the entire CI/CD pipeline.",
         },
         {
-            standard: "SOC2 Type II",
+            standard: (<Link href="/security-testing" className="hover:underline text-brand-blue-600">SOC2 Type II</Link>),
             focus: "Security & Processing Integrity",
             relevance: "Protecting sensitive customer data and intellectual property in test environments.",
         },
         {
-            standard: "GDPR & ISO 27001",
+            standard: (<Link href="/security-testing" className="hover:underline text-brand-blue-600">GDPR & ISO 27001</Link>),
             focus: "Data Privacy & Information Security",
             relevance: "Strict PII masking and redaction protocols for secure international testing operations.",
         },

@@ -35,14 +35,14 @@ const ApiTestingHeroSection: React.FC = () => {
               <span className="text-[theme(color.brand.blue)]">
                 API Testing&nbsp;
               </span>
-              Services: High-Velocity REST, Graph-QL, and Automated QA Solutions
+              Services: <Link href="/speed-test-services" className="hover:underline">High-Velocity REST</Link>, Graph-QL, and <Link href="/automation-testing-services" className="hover:underline">Automated QA Solutions</Link>
             </h1>
 
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              As digital ecosystems transition toward decentralized micro-services, the API (Application Programming Interface) has become the most critical component of the modern software stack. Testriq provides elite API testing for your &apos;invisible&apos; layer. We ensure your systems are secure, scalable, and meet all global standards.
+              As digital ecosystems transition toward decentralized <Link href="/automation-testing-services" className="text-brand-blue hover:underline">micro-services</Link>, the API (Application Programming Interface) has become the most critical component of the modern software stack. Testriq provides elite API testing for your &apos;invisible&apos; layer. We ensure your systems are secure, scalable, and meet all global standards.
             </p>
             <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Our strategy follows the <span className="font-semibold text-brand-blue">ISO 29119 framework</span> to ensure technical excellence. We help you manage complex architectures and embed automated API testing into your CI/CD pipeline.
+              Our strategy follows the <Link href="/qa-documentation-services" className="font-semibold text-brand-blue hover:underline">ISO 29119 framework</Link> to ensure technical excellence. We help you manage complex architectures and embed automated API testing into your CI/CD pipeline.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">

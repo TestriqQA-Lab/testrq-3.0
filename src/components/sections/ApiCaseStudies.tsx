@@ -23,7 +23,7 @@ const ApiCaseStudies: React.FC = () => {
       industry: "Financial Technology",
       challenge: "Payment API Security & Performance",
       solution:
-        "Comprehensive API security testing and performance optimization for payment processing systems.",
+        (<>Comprehensive <Link href="/security-testing" className="text-blue-600 hover:underline">API security testing</Link> and performance optimization for payment processing systems.</>),
       results: {
         security: "100% vulnerability resolution",
         performance: "75% faster response times",
@@ -65,7 +65,7 @@ const ApiCaseStudies: React.FC = () => {
       industry: "Retail Technology",
       challenge: "Microservices API Integration",
       solution:
-        "End-to-end testing of microservices architecture with comprehensive API integration validation.",
+        (<>End-to-end testing of <Link href="/api-testing" className="text-green-600 hover:underline">microservices architecture</Link> with comprehensive API integration validation.</>),
       results: {
         integration: "99.8% API compatibility",
         deployment: "60% faster releases",
@@ -107,7 +107,7 @@ const ApiCaseStudies: React.FC = () => {
       industry: "Healthcare Technology",
       challenge: "HIPAA Compliant API Testing",
       solution:
-        "Specialized healthcare API testing with HIPAA compliance validation and data security assessment.",
+        (<>Specialized healthcare API testing with <Link href="/qa-documentation-services" className="text-red-600 hover:underline">HIPAA compliance validation</Link> and data security assessment.</>),
       results: {
         compliance: "100% HIPAA compliance",
         security: "Zero data breaches",
@@ -162,8 +162,8 @@ const ApiCaseStudies: React.FC = () => {
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
             Discover how our comprehensive API testing services have helped
-            companies achieve remarkable improvements in <Link href='blog/post/iot-security-validation-protecting-devices-from-cyber-threats'>security</Link>, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>performance</Link>,{" "}
-            and <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>reliability</Link>.
+            companies achieve remarkable improvements in <Link href="/blog/post/iot-security-validation-protecting-devices-from-cyber-threats" className="text-brand-blue hover:underline">security</Link>, <Link href="/blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently" className="text-brand-blue hover:underline">performance</Link>,{" "}
+            and <Link href="/blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability" className="text-brand-blue hover:underline">reliability</Link>.
           </p>
         </div>
 
@@ -173,20 +173,18 @@ const ApiCaseStudies: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveCase(index)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                activeCase === index
-                  ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
-              }`}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${activeCase === index
+                ? `bg-gradient-to-r ${study.gradient} text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200 shadow-md"
+                }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{study.icon}</span>
                 <div className="text-left">
                   <div className="text-sm font-bold">{study.company}</div>
                   <div
-                    className={`text-xs ${
-                      activeCase === index ? "text-white/80" : "text-gray-500"
-                    }`}
+                    className={`text-xs ${activeCase === index ? "text-white/80" : "text-gray-500"
+                      }`}
                   >
                     {study.industry}
                   </div>
@@ -378,8 +376,8 @@ const ApiCaseStudies: React.FC = () => {
             </p>
             <Link href="/contact-us">
               <button className="bg-white text-[theme(color.brand.blue)] cursor-pointer px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg transform hover:scale-105">
-              Start Your Success Story
-            </button>
+                Start Your Success Story
+              </button>
             </Link>
           </div>
         </div>

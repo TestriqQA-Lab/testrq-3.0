@@ -1,6 +1,7 @@
 // components/sections/ManualTestingHumanAdvantage.tsx
 
 import { Inter } from 'next/font/google';
+import Link from "next/link";
 import React from "react";
 
 const inter = Inter({ subsets: ['latin'] });
@@ -21,7 +22,7 @@ const ManualTestingHumanAdvantage = () => {
                         <span className="text-gray-700">Validating that every feature works exactly as intended under various conditions to ensure core reliability.</span>
                     </div>
                     <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-100">
-                        <strong className="text-brand-blue text-lg font-semibold block mb-2">Regression Testing Services:</strong>
+                        <strong className="text-brand-blue text-lg font-semibold block mb-2"><Link href="/regression-testing" className="hover:underline">Regression Testing Services</Link>:</strong>
                         <span className="text-gray-700">Ensuring that new code deployments do not break existing functionality through systematic manual validation.</span>
                     </div>
                     <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-100">

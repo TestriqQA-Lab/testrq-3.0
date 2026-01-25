@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaChartLine, FaCheckCircle, FaRobot, FaCogs, FaUsers } from "react-icons/fa";
 
 const AutomationTestingROISection: React.FC = () => {
@@ -32,7 +33,7 @@ const AutomationTestingROISection: React.FC = () => {
             <p className="text-gray-600 leading-relaxed text-sm">
               We implement keyword-driven and model-based testing (MBT) to reduce script fragility and ensure stability.
             </p>
-            <div className="mt-4 text-brand-blue font-bold text-sm">ISO 29119-5:2024 Compliance</div>
+            <div className="mt-4 text-brand-blue font-bold text-sm"><Link href="/qa-documentation-services" className="hover:underline">ISO 29119-5:2024 Compliance</Link></div>
           </div>
 
           {/* System Complexity */}
@@ -44,7 +45,7 @@ const AutomationTestingROISection: React.FC = () => {
             <p className="text-gray-600 leading-relaxed text-sm">
               End-to-end automation for micro-services that tracks data across all integrations and closes coverage gaps.
             </p>
-            <div className="mt-4 text-green-600 font-bold text-sm">Micro-services Optimized</div>
+            <div className="mt-4 text-green-600 font-bold text-sm"><Link href="/api-testing" className="hover:underline">Micro-services Optimized</Link></div>
           </div>
 
           {/* AI-Augmented Testing */}
@@ -56,7 +57,7 @@ const AutomationTestingROISection: React.FC = () => {
             <p className="text-gray-600 leading-relaxed text-sm">
               Using Agentic AI and machine learning to generate test cases and predict failure points before they occur.
             </p>
-            <div className="mt-4 text-purple-600 font-bold text-sm">Agentic AI Driven</div>
+            <div className="mt-4 text-purple-600 font-bold text-sm"><Link href="/ai-application-testing" className="hover:underline">Agentic AI Driven</Link></div>
           </div>
 
           {/* Skill Gap Bridge */}
@@ -68,14 +69,16 @@ const AutomationTestingROISection: React.FC = () => {
             <p className="text-gray-600 leading-relaxed text-sm">
               We help upskill manual teams by providing expert-led training and intelligent automation tools.
             </p>
-            <div className="mt-4 text-orange-600 font-bold text-sm">Expert Automation Skills</div>
+            <div className="mt-4 text-orange-600 font-bold text-sm"><Link href="/manual-testing-services" className="hover:underline">Expert Automation Skills</Link></div>
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-            Calculate Your Automation ROI
-          </button>
+          <Link href="/roi-calculator">
+            <button className="bg-brand-blue text-white cursor-pointer px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+              Calculate Your Automation ROI
+            </button>
+          </Link>
         </div>
       </div>
     </section>
