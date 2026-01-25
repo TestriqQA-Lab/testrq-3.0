@@ -102,7 +102,7 @@ function CertificateContent() {
                     </div>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20"></div>
 
-                    <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                    <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
                         <div className="flex-grow">
                             <div className="flex flex-wrap items-center gap-4 mb-6">
                                 {/* GREEN VERIFIED BADGE */}
@@ -110,7 +110,7 @@ function CertificateContent() {
                                     <CheckCircle2 size={18} className="text-white" />
                                     <span className="text-[11px] font-black tracking-widest uppercase text-white">Official Verification</span>
                                 </div>
-                                <span className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase">
+                                <span className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full text-[10px] font-bold tracking-widest uppercase text-white">
                                     ID: {certId}
                                 </span>
                             </div>
@@ -122,7 +122,7 @@ function CertificateContent() {
                             </p>
                         </div>
 
-                        <div className="flex flex-wrap shrink-0 gap-4">
+                        <div className="flex flex-wrap shrink-0 gap-4 lg:mb-1">
                             <a
                                 href={pdfUrl}
                                 target="_blank"
@@ -184,53 +184,41 @@ function CertificateContent() {
                         </div>
                     </div>
 
-                    {/* Trust Footer */}
-                    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-gray-200 text-gray-500">
-                        <div className="flex items-center gap-4 group">
-                            <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                                <FileText size={22} />
+                    {/* Trust Footer - CENTERED */}
+                    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10 py-10 border-t border-gray-100 text-gray-500">
+                        <div className="flex flex-col items-center text-center group">
+                            <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm mb-4">
+                                <FileText size={24} />
                             </div>
                             <div>
-                                <h4 className="text-gray-900 font-bold text-sm leading-tight">Secure Format</h4>
+                                <h4 className="text-gray-900 font-bold text-sm leading-tight mb-1">Secure Format</h4>
                                 <p className="text-xs font-medium">Original PDF Document</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4 group">
-                            <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                                <FileCheck size={22} />
+                        <div className="flex flex-col items-center text-center group">
+                            <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shadow-sm mb-4">
+                                <FileCheck size={24} />
                             </div>
                             <div>
-                                <h4 className="text-gray-900 font-bold text-sm leading-tight">Official Seal</h4>
+                                <h4 className="text-gray-900 font-bold text-sm leading-tight mb-1">Official Seal</h4>
                                 <p className="text-xs font-medium">Identity Verified & Signed</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-4 md:justify-end">
-                            <div className="text-right">
-                                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-tight">Authenticity Guaranteed</p>
-                                <p className="text-sm font-black text-blue-600 mt-1">TESTRIQ QA LABS</p>
+                        <div className="flex flex-col items-center text-center group">
+                            <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-600 group-hover:bg-green-600 group-hover:text-white transition-all duration-300 shadow-sm mb-4">
+                                <CheckCircle2 size={24} />
                             </div>
-                            <div className="w-12 h-12 rounded-full border-2 border-blue-100 p-1">
-                                <div className="w-full h-full rounded-full bg-blue-50 flex items-center justify-center">
-                                    <span className="text-[10px] font-black text-blue-700">TQL</span>
-                                </div>
+                            <div>
+                                <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-tight mb-1">Authenticity Guaranteed</p>
+                                <p className="text-xl font-black text-blue-600">TESTRIQ</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Bottom Legal/Info */}
-            <div className="mt-8 text-center">
-                <p className="text-sm text-gray-400 font-medium tracking-wide">
-                    © {new Date().getFullYear()} Testriq QA Lab LLP. All certificates are subject to verification via our central registry.
-                </p>
-                <div className="mt-4 flex justify-center gap-6">
-                    <Link href="/privacy-policy" className="text-xs text-blue-500 hover:text-blue-700 font-bold uppercase tracking-widest">Privacy Policy</Link>
-                    <Link href="/terms-conditions" className="text-xs text-blue-500 hover:text-blue-700 font-bold uppercase tracking-widest">Terms of Service</Link>
-                </div>
-            </div>
         </div>
     );
 }
