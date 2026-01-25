@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaShieldAlt, FaSkull, FaTools, FaCode, FaChartBar, FaLock } from "react-icons/fa";
+import { FaShieldAlt, FaSkull, FaTools } from "react-icons/fa";
 
 const SecurityTestingChallenges: React.FC = () => {
     const challenges = [

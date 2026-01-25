@@ -8,8 +8,8 @@ import {
   FaChartLine,
   FaServer,
   FaCloud,
-  FaBolt,
   FaFlask,
+  FaBolt,
 } from "react-icons/fa";
 
 const PerformanceTestingComprehensiveSlider: React.FC = () => {
@@ -177,8 +177,8 @@ const PerformanceTestingComprehensiveSlider: React.FC = () => {
                   key={type.id}
                   onClick={() => setActiveTab(index)}
                   className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                     }`}
                 >
                   <div className="flex flex-col items-center justify-center space-x-2">

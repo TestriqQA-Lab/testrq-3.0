@@ -5,10 +5,9 @@ import React from "react";
 import {
   FaBug,
   FaClock,
-  FaDollarSign,
   FaCheckCircle,
   FaChartLine,
-  FaShieldAlt,
+  FaDollarSign,
 } from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
@@ -24,7 +23,10 @@ const RegressionTestingROISection: React.FC = () => {
             The 2026 <span className="text-brand-blue">Regression Challenge</span>: Why Smart Strategy Matters
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Regression testing in 2026 faces unprecedented hurdles. Enterprise test suites often exceed 100,000 cases, with median execution times stretching to 18 hours. Our services address the five core challenges of modern QA:
+            Regression testing is a critical investment that ensures <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software
+              stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
+                reducing risks</Link>, it delivers significant returns and maintains user
+            satisfaction.
           </p>
         </div>
 
@@ -76,7 +78,7 @@ const RegressionTestingROISection: React.FC = () => {
           {/* Risk-Based Scope */}
           <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
             <div className="bg-teal-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <FaShieldAlt className="text-xl text-white" />
+              <FaDollarSign className="text-xl text-white" />
             </div>
             <h3 className="text-lg font-bold text-gray-900 mb-2">Risk-Based Scope</h3>
             <p className="text-gray-600 text-sm leading-relaxed">

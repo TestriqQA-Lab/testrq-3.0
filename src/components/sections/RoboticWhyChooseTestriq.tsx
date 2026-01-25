@@ -3,13 +3,13 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-  FaRobot,
   FaShieldAlt,
-  FaCog,
   FaChartLine,
   FaUsers,
-  FaClock,
   FaAward,
+  FaRobot,
+  FaCog,
+  FaClock,
 } from "react-icons/fa";
 
 const RoboticWhyChooseTestriq: React.FC = () => {

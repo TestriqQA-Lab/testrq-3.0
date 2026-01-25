@@ -4,12 +4,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaShieldAlt,
-  FaBug,
   FaCode,
+  FaTools,
+  FaBug,
   FaCloud,
   FaMobile,
   FaNetworkWired,
-  FaTools,
   FaMobileAlt,
 } from "react-icons/fa";
 

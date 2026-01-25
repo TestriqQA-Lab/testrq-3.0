@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaRobot, FaShieldAlt, FaCog, FaChartLine, FaNetworkWired, FaCode, FaFlask } from "react-icons/fa";
+import { FaRobot, FaShieldAlt, FaChartLine, FaNetworkWired, FaFlask, FaCog, FaCode } from "react-icons/fa";
 
 const RoboticComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);

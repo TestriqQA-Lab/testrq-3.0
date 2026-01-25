@@ -11,15 +11,13 @@ import {
   FaGithub,
   FaMicrosoft,
   FaPlayCircle,
-  FaCircle,
-  FaSearchPlus,
-  FaLock,
-  FaWifi,
   FaDatabase,
   FaFilePdf,
   FaCircleNotch,
-  FaClipboardList,
-  FaProjectDiagram,
+  FaCircle,
+  FaSearchPlus,
+  FaWifi,
+  FaLock,
 } from "react-icons/fa";
 
 const QADocumentationToolsFramework = () => {

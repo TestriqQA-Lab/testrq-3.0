@@ -7,57 +7,69 @@ import {
   FaCode,
   FaRocket,
   FaShieldAlt,
-  FaAws,
-  FaMicrosoft,
-  FaBrain,
   FaNetworkWired,
   FaRunning,
   FaCogs,
-  FaMicrochip,
   FaSatelliteDish,
-  FaExchangeAlt,
-  FaBluetooth,
   FaProjectDiagram,
   FaBolt,
   FaCrosshairs,
   FaCodeBranch,
-  FaCheckCircle,
   FaWifi,
   FaHome,
-  FaShieldAlt as FaShield, // for Nessus
+  FaShieldAlt as FaShield,
+  FaExchangeAlt,
+  FaBluetooth,
+  FaMicrochip, // for Nessus
 } from "react-icons/fa";
 
 import {
-  SiGooglecloud,
-  SiDocker,
-  SiKubernetes,
-  SiTerraform,
-  SiAnsible,
-  SiPrometheus,
-  SiGrafana,
   SiApachejmeter,
-  SiSelenium,
   SiAppium,
-  SiCucumber,
-  SiPython,
   SiMetasploit,
   SiWireshark,
-  SiBurpsuite,
   SiOwasp,
-  SiOpenvpn,
   SiBlazemeter,
-  SiRobotframework,
+  SiBurpsuite,
   SiMozilla,
+  SiRobotframework,
+  SiSelenium,
 } from "react-icons/si";
 
-import { MdDevices, MdCloud } from "react-icons/md";
 import Link from "next/link";
+import { MdCloud, MdDevices } from "react-icons/md";
 
 const IoTToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      category: "Connection & Protocols",
-      icon: <FaNetworkWired className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      category: (<Link href='blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems'>IoT Testing Platforms</Link>),
+      icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      tools: [
+        {
+          name: "Wireshark",
+          description: "Advanced protocol sniffing & packet analysis",
+          icon: <SiWireshark className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "MQTT Spy",
+          description: "In-depth MQTT message validation",
+          icon: <FaSatelliteDish className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "Zigbee Sniffer",
+          description: "Real-time Zigbee signal analysis",
+          icon: <FaProjectDiagram className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "LoRaWAN Gateways",
+          description: "LPWAN range & connectivity testing",
+          icon: <FaWifi className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+      ],
+    },
+    {
+      category: "Network & Protocol Testing",
+      icon: <MdDevices className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
         {
           name: "Wireshark",
@@ -87,23 +99,38 @@ const IoTToolsFramework: React.FC = () => {
       tools: [
         {
           name: "OWASP ZAP",
-          description: "Security scanning for IoT cloud APIs",
-          icon: <SiOwasp className="w-5 h-5 text-brand-blue" />,
+          description: <span>Security scanning for IoT <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">cloud APIs</Link></span>,
+          icon: <SiOwasp className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Nmap",
           description: "Network discovery & attack surface mapping",
-          icon: <FaRunning className="w-5 h-5 text-brand-blue" />,
+          icon: <FaRunning className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Metasploit",
           description: "Industrial control system penetration",
-          icon: <SiMetasploit className="w-5 h-5 text-brand-blue" />,
+          icon: <SiMetasploit className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Nessus",
-          description: "Firmware reverse engineering & vulnerability assessment",
-          icon: <FaShield className="w-5 h-5 text-brand-blue" />,
+          description: <span><Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Firmware Security</Link> & vulnerability assessment</span>,
+          icon: <FaShield className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "k6",
+          description: <span>Developer-centric <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">load testing</Link> for MQTT/HTTP</span>,
+          icon: <FaProjectDiagram className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "Artillery",
+          description: "Performance stress for zettabyte scale data",
+          icon: <FaCrosshairs className="w-5 h-5 text-[theme(color.brand.blue)]" />,
+        },
+        {
+          name: "JMeter",
+          description: "Legacy & MQTT extension load testing",
+          icon: <SiApachejmeter className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
       ],
     },
@@ -134,18 +161,18 @@ const IoTToolsFramework: React.FC = () => {
       tools: [
         {
           name: "Appium",
-          description: "Mobile-IoT interaction automation",
-          icon: <SiAppium className="w-5 h-5 text-brand-blue" />,
+          description: <span><Link href="/mobile-application-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Mobile-IoT</Link> interaction automation</span>,
+          icon: <SiAppium className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "GitHub Actions",
           description: "CI/CD for FOTA updates testing",
-          icon: <FaCodeBranch className="w-5 h-5 text-brand-blue" />,
+          icon: <FaCodeBranch className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Jenkins",
           description: "Automated firmware regression pipelines",
-          icon: <FaCogs className="w-5 h-5 text-brand-blue" />,
+          icon: <FaCogs className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
       ],
     },
@@ -156,17 +183,17 @@ const IoTToolsFramework: React.FC = () => {
         {
           name: "Oscilloscopes",
           description: "Signal integrity & power ripple analysis",
-          icon: <FaBolt className="w-5 h-5 text-brand-blue" />,
+          icon: <FaBolt className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "RF Shield Boxes",
           description: "Isolated interference simulation",
-          icon: <FaSatelliteDish className="w-5 h-5 text-brand-blue" />,
+          icon: <FaSatelliteDish className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
         {
           name: "Programmable Power",
           description: "Battery life & consumption profiling",
-          icon: <FaHome className="w-5 h-5 text-brand-blue" />,
+          icon: <FaHome className="w-5 h-5 text-[theme(color.brand.blue)]" />,
         },
       ],
     },

@@ -10,10 +10,9 @@ import {
   FaTools,
   FaDesktop,
   FaDatabase,
-  FaFileCode,
 } from "react-icons/fa";
 
-import { SiRos, SiTrello } from "react-icons/si";
+import { SiRos } from "react-icons/si";
 
 const RoboticToolsFramework: React.FC = () => {
   const toolCategories = [

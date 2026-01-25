@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaSearch, FaEdit, FaCheckCircle, FaRocket, FaUsers, FaChartLine, FaCog, FaFileAlt } from 'react-icons/fa';
+import { FaSearch, FaEdit, FaCheckCircle, FaUsers, FaChartLine, FaRocket, FaCog, FaFileAlt } from 'react-icons/fa';
 
 const QADocumentationProvenTestingProcess = () => {
   const processSteps = [

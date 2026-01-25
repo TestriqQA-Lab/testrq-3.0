@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaQuestionCircle } from "react-icons/fa";
 
 const PerformanceTestingFAQs: React.FC = () => {

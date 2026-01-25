@@ -37,10 +37,74 @@ const IoTProvenTestingProcess: React.FC = () => {
       shortTitle: "FOTA",
       description: "Testing the reliability and security of remote updates to prevent 'bricking' during automated firmware regression tests.",
       details: [
-        { id: 'ota-reliability', content: "Remote Update Reliability" },
+        { id: 'ota-reliability', content: <span><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Remote Update</Link> Reliability</span> },
         { id: 'bricking-prevention', content: "Firmware Rollback Testing" },
-        { id: 'automated-regression', content: "Automated Regression Suites" },
+        { id: 'automated-regression', content: <span><Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Automated Regression</Link> Suites</span> },
         { id: 'secure-boot', content: "Secure Boot Validation" },
+      ],
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
+      duration: "3-4 days",
+    },
+    {
+      number: "03",
+      icon: <FaNetworkWired className="w-6 h-6" />,
+      title: "Connection & RF Interference Testing",
+      shortTitle: "RF/Signal",
+      description: "Simulating crowded signal environments to ensure Radio Frequency (RF) interference does not disrupt mission-critical data.",
+      details: [
+        { id: 'signal-crowding', content: "Crowded Signal Simulation" },
+        { id: 'rf-isolation', content: "RF Shield Box Testing" },
+        { id: 'packet-loss', content: "Latency & Packet Loss Checks" },
+        { id: 'handover-test', content: "Satellite/Cellular Handovers" },
+      ],
+      color: "indigo",
+      gradient: "from-indigo-500 to-indigo-600",
+      duration: "2-3 days",
+    },
+    {
+      number: "04",
+      icon: <FaShieldAlt className="w-6 h-6" />,
+      title: "Security Penetration & Gap Assessment",
+      shortTitle: "Security",
+      description: (
+        <>
+          Thorough testing of device security,{' '}
+          <Link href='blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices'>
+            communication protocols
+          </Link>, and{' '}
+          <Link href='blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches'>
+            data transmission
+          </Link>{' '}
+          integrity.
+        </>
+      ),
+      details: [
+        { id: 'hardcoded-creds', content: "Credential Exposure Audits" },
+        { id: 'data-encryption', content: "Data-at-Rest Validation" },
+        { id: 'api-security', content: <span><Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Cloud API</Link> Penetration</span> },
+        { id: 'pii-protection', content: "PII & GDPR Compliance" },
+      ],
+      color: "red",
+      gradient: "from-red-500 to-red-600",
+      duration: "4-6 days",
+    },
+    {
+      number: "03",
+      icon: <FaChartLine className="w-6 h-6" />,
+      title: (
+        <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>
+          Performance & Scalability Testing
+        </Link>
+      ),
+      shortTitle: "Performance",
+      description:
+        "Evaluate IoT system performance under various load conditions and network scenarios.",
+      details: [
+        { id: 'battery-profiling', content: "Battery Drain Optimization" },
+        { id: 'edge-latency', content: "Edge Computing Benchmarks" },
+        { id: 'thermal-stress', content: "Thermal Throttling Analysis" },
+        { id: 'load-scalability', content: <span><Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">High-Transaction Stress</Link></span> },
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -69,41 +133,9 @@ const IoTProvenTestingProcess: React.FC = () => {
       shortTitle: "Security",
       description: "Conducting deep-dive IoT penetration testing to expose hardcoded credentials and unencrypted data at rest.",
       details: [
-        { id: 'hardcoded-creds', content: "Credential Exposure Audits" },
-        { id: 'data-encryption', content: "Data-at-Rest Validation" },
-        { id: 'api-security', content: "Cloud API Penetration" },
-        { id: 'pii-protection', content: "PII & GDPR Compliance" },
-      ],
-      color: "red",
-      gradient: "from-red-500 to-red-600",
-      duration: "4-5 days",
-    },
-    {
-      number: "05",
-      icon: <FaChartLine className="w-6 h-6" />,
-      title: "Performance & Battery Stress Testing",
-      shortTitle: "Performance",
-      description: "Profiling battery life optimization and measuring edge computing latency under high-transaction loads.",
-      details: [
-        { id: 'battery-profiling', content: "Battery Drain Optimization" },
-        { id: 'edge-latency', content: "Edge Computing Benchmarks" },
-        { id: 'thermal-stress', content: "Thermal Throttling Analysis" },
-        { id: 'load-scalability', content: "High-Transaction Stress" },
-      ],
-      color: "orange",
-      gradient: "from-orange-500 to-orange-600",
-      duration: "3-4 days",
-    },
-    {
-      number: "06",
-      icon: <FaCheckCircle className="w-6 h-6" />,
-      title: "Compliance Audit & Certification Readiness",
-      shortTitle: "Compliance",
-      description: "Final review against ETSI EN 303 645, CRA, and regional standards to prepare for global market entry.",
-      details: [
         { id: 'etsi-readiness', content: "ETSI EN 303 645 Audit" },
         { id: 'cra-mapping', content: "Cyber Resilience Act Prep" },
-        { id: 'cert-docs', content: "Standardized Documentation" },
+        { id: 'cert-docs', content: <span><Link href="/qa-documentation-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Standardized Docs</Link></span> },
         { id: 'market-entry', content: "Global Market Certification" },
       ],
       color: "green",

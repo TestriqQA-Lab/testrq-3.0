@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaShieldAlt, FaCertificate, FaUsers, FaChartLine, FaClock, FaCheckCircle, FaAward, FaGlobe } from "react-icons/fa";
+import { FaShieldAlt, FaChartLine, FaAward, FaCertificate, FaUsers, FaClock, FaCheckCircle, FaGlobe } from "react-icons/fa";
 
 const SecurityTestingWhyChooseTestriq: React.FC = () => {
   const advantages = [

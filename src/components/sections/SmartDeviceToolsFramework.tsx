@@ -7,22 +7,21 @@ import {
   FaShieldAlt,
   FaChartLine,
   FaTools,
-  FaBug,
   FaBatteryHalf,
   FaSearch,
   FaNetworkWired,
-  FaCog,
+  FaBug,
   FaCloud,
 } from "react-icons/fa";
 
 import {
   SiAppium,
   SiAndroid,
-  SiApple,
   SiApachejmeter,
   SiGatling,
   SiOwasp,
   SiBurpsuite,
+  SiApple,
 } from "react-icons/si";
 
 import { MdInsights } from "react-icons/md";
@@ -146,17 +145,17 @@ const SmartDeviceToolsFramework: React.FC = () => {
         {
           name: "Jenkins / GitLab",
           description: "Automated pipeline for device verification",
-          icon: <FaCog className="w-5 h-5 text-green-500" />,
+          icon: <FaBug className="w-5 h-5 text-green-500" />,
         },
         {
           name: "Appium Server",
           description: "Cross-platform device orchestration",
-          icon: <FaCog className="w-5 h-5 text-green-500" />,
+          icon: <FaBug className="w-5 h-5 text-green-500" />,
         },
         {
           name: "CI/CD Integration",
           description: "Faster builds and regression cycles",
-          icon: <FaCog className="w-5 h-5 text-green-500" />,
+          icon: <FaBug className="w-5 h-5 text-green-500" />,
         },
       ],
     },

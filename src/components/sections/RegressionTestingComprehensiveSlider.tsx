@@ -4,12 +4,12 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaSyncAlt,
-  FaBug,
   FaCheckCircle,
-  FaCodeBranch,
   FaChartLine,
-  FaCloud,
   FaFlask,
+  FaCloud,
+  FaCodeBranch,
+  FaBug,
 } from "react-icons/fa";
 
 const RegressionTestingComprehensiveSlider: React.FC = () => {
@@ -143,8 +143,8 @@ const RegressionTestingComprehensiveSlider: React.FC = () => {
                   key={type.id}
                   onClick={() => setActiveTab(index)}
                   className={`flex-1 min-w-0 px-4 py-4 text-sm font-medium transition-all duration-300 ${activeTab === index
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                     }`}
                 >
                   <div className="flex flex-col items-center justify-center space-x-2">

@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import {
   FaMobile,
   FaShieldAlt,
-  FaWifi,
   FaChartLine,
+  FaAward,
+  FaWifi,
   FaUsers,
   FaClock,
-  FaAward,
 } from "react-icons/fa";
 
 const SmartDeviceWhyChooseTestriq: React.FC = () => {

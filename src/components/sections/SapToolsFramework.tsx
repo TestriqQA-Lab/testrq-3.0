@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaRocket, FaMobileAlt, FaDatabase, FaChartLine } from "react-icons/fa";
+import { FaTools, FaRocket, FaDatabase, FaMobileAlt, FaChartLine } from "react-icons/fa";
 
 const SapToolsFramework: React.FC = () => {
     const toolCategories = [

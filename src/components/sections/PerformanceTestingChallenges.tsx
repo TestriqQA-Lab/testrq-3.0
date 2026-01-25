@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaChartLine, FaNetworkWired, FaServer, FaBug, FaGavel, FaDatabase, FaMicrochip, FaCogs, FaProjectDiagram, FaGlobe } from "react-icons/fa";
+import { FaChartLine, FaServer, FaCogs, FaProjectDiagram, FaGlobe } from "react-icons/fa";
 
 const PerformanceTestingChallenges: React.FC = () => {
     const challenges = [

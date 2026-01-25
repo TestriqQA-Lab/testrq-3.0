@@ -6,11 +6,11 @@ import {
   FaWifi,
   FaShieldAlt,
   FaChartLine,
-  FaCogs,
   FaNetworkWired,
-  FaCloud,
   FaArrowRight,
   FaFlask,
+  FaCogs,
+  FaCloud,
 } from "react-icons/fa";
 
 const IoTComprehensiveSlider: React.FC = () => {
@@ -108,7 +108,7 @@ const IoTComprehensiveSlider: React.FC = () => {
             Solving 2026 <span className="text-[theme(color.brand.blue)]">Global IoT Hurdles</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our specialized IoT testing approaches are engineered for the 2026 ecosystem, countering <span className="font-semibold text-brand-blue">latency</span>, <span className="font-semibold text-brand-blue">5G interference</span>, and <span className="font-semibold text-brand-blue">firmware vulnerabilities</span> to protect your industrial and consumer assets.
+            Our specialized IoT testing approaches are engineered for the 2026 ecosystem, countering <Link href="/performance-testing-services" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">latency</Link>, <Link href="/blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">5G interference</Link>, and <Link href="/security-testing" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">firmware vulnerabilities</Link> to protect your industrial and consumer assets.
           </p>
         </div>
 
