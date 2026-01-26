@@ -2,96 +2,79 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaRobot, FaCogs, FaMobileAlt, FaCloud, FaCode, FaChartLine, FaFlask } from "react-icons/fa";
+import { FaRobot, FaCogs, FaMobileAlt, FaCloud, FaChartLine, FaFlask } from "react-icons/fa";
 
 const AutomationTestingComprehensiveSlider: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const automationTypes = [
     {
-      id: "web-automation",
-      title: "Cross-Browser Web Automation (Selenium/Playwright)",
+      id: "selenium-automation",
+      title: "Selenium Automation Testing Services",
       icon: <FaRobot className="text-2xl" />,
       percentage: "95%",
       color: "blue",
-      description: "Automated testing for web applications across browsers and platforms",
+      description: "Industry standard for web applications. We build robust Selenium frameworks using Java, Python, or C# supporting cross-browser testing at scale.",
       features: [
-        "Cross-browser compatibility testing",
-        "Responsive design validation",
-        "User interface automation",
-        "Form validation testing",
-        "Navigation flow automation",
-        "Data-driven test execution"
+        "Java/Python/C# Support",
+        "Cross-Browser Scaling",
+        "Sturdy Web Frameworks",
+        "Grid Execution",
+        "Legacy App Support",
+        "Maven/PyTest Integration"
       ],
       action: "/test-automation-web-applications"
     },
     {
-      id: "api-automation",
-      title: "API Automation",
+      id: "playwright-cypress",
+      title: "Playwright & Cypress Automation",
       icon: <FaCogs className="text-2xl" />,
       percentage: "98%",
       color: "purple",
-      description: "Comprehensive API testing automation for reliable service communication",
+      description: "Modern automation for React, Vue, and Angular. These tools deliver faster execution and superior debugging for modern web stacks.",
       features: [
-        "REST API testing automation",
-        "SOAP service validation",
-        "GraphQL testing",
-        "Authentication testing",
-        "Data validation",
-        "Performance benchmarking"
+        "React/Vue/Angular Ready",
+        "Auto-Waiting & Resilience",
+        "Time-Travel Debugging",
+        "Fast Parallel Runs",
+        "Shadow DOM Support",
+        "Zero Flakiness Goals"
       ],
       action: "/api-test-automation-strategy-faster-releases-reliable-integrations"
     },
     {
-      id: "mobile-automation",
-      title: "Mobile Automation",
+      id: "appium-mobile",
+      title: "Appium Mobile Automation",
       icon: <FaMobileAlt className="text-2xl" />,
       percentage: "92%",
       color: "green",
-      description: "Automated testing for native, hybrid, and web mobile applications",
+      description: "Ensure your apps work across thousands of device combinations. We provide high-fidelity testing for both iOS and Android.",
       features: [
-        "Native app automation",
-        "Hybrid app testing",
-        "Cross-platform validation",
-        "Device compatibility testing",
-        "Gesture automation",
-        "Performance monitoring"
+        "iOS & Android Coverage",
+        "Real Device Testing",
+        "Cloud Hub Integration",
+        "Native & Hybrid Apps",
+        "Gesture Validation",
+        "OS Version Testing"
       ],
       action: "/mobile-automation-testing-guide-android-ios-frameworks"
     },
     {
-      id: "cloud-automation",
-      title: "Cloud Automation",
+      id: "api-regression",
+      title: "API & Regression Automation",
       icon: <FaCloud className="text-2xl" />,
       percentage: "96%",
       color: "orange",
-      description: "Scalable cloud-based automation for efficient test execution",
+      description: "Automating the 'invisible' layer to ensure business logic remains stable and new code doesn't break existing features.",
       features: [
-        "Parallel test execution",
-        "Scalable infrastructure",
-        "Multi-environment testing",
-        "Resource optimization",
-        "Cost-effective scaling",
-        "Global test distribution"
+        "Business Logic Stability",
+        "Regression Protection",
+        "Security Layer QA",
+        "Protocol Validation",
+        "Schema Integrity",
+        "Rapid Feedback Loops"
       ],
       action: "/cloud-automation-testing-scalable-cost-effective-qa-in-the-cloud"
-    },
-    {
-      id: "cicd-integration",
-      title: "DevOps & CI/CD Pipeline Integration",
-      icon: <FaCode className="text-2xl" />,
-      percentage: "94%",
-      color: "teal",
-      description: "Seamless integration with development and deployment pipelines",
-      features: [
-        "Pipeline integration",
-        "Automated triggers",
-        "Build validation",
-        "Deployment testing",
-        "Rollback automation",
-        "Quality gates"
-      ],
-      action: "/ci-cd-test-automation-integration-deliver-faster-with-confidence"
     },
     {
       id: "performance-automation",
@@ -99,14 +82,14 @@ const AutomationTestingComprehensiveSlider: React.FC = () => {
       icon: <FaChartLine className="text-2xl" />,
       percentage: "93%",
       color: "indigo",
-      description: "Automated performance testing for optimal application responsiveness",
+      description: "Automated performance testing for optimal application responsiveness and stability under high-load conditions.",
       features: [
-        "Load testing automation",
-        "Stress testing",
-        "Spike testing",
-        "Volume testing",
-        "Endurance testing",
-        "Real-time monitoring"
+        "Load & Stress Tests",
+        "ISO 29119-5 MBT",
+        "k6 & JMeter Scripts",
+        "Throughput Monitoring",
+        "Latency Benchmarks",
+        "Resource Profiling"
       ],
       action: "/automation-performance-testing-load-speed-and-continuous-validation"
     }

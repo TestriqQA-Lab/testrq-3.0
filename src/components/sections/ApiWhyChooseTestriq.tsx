@@ -4,13 +4,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCertificate,
-  FaRocket,
   FaShieldAlt,
-  FaChartLine,
-  FaUsers,
-  FaClock,
   FaArrowRight,
   FaAward,
+  FaLock,
 } from "react-icons/fa";
 
 const ApiWhyChooseTestriq: React.FC = () => {
@@ -18,99 +15,67 @@ const ApiWhyChooseTestriq: React.FC = () => {
 
   const benefits = [
     {
-      icon: <FaCertificate className="w-8 h-8" />,
-      title: "ISTQB Certified Experts",
-      shortTitle: "Certified Experts",
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "GDPR Compliance",
+      shortTitle: "GDPR Ready",
       description:
-        "Our team consists of certified API testing professionals with extensive experience in modern API technologies.",
-      stats: "50+ Certified Testers",
+        "All tests involving PII follow strict data masking and privacy protocols for the EU market.",
+      stats: "100% PII Masked",
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       features: [
-        "REST API Specialists",
-        "GraphQL Experts",
-        "SOAP Testing Masters",
-        "Microservices Pros",
+        "Strict Data Masking",
+        "Privacy Rule Mapping",
+        "EU Market Alignment",
+        "Secure Hub Access",
       ],
     },
     {
-      icon: <FaRocket className="w-8 h-8" />,
-      title: "Faster Time-to-Market",
-      shortTitle: "Faster Delivery",
+      icon: <FaLock className="w-8 h-8" />,
+      title: "SOC2 Type II",
+      shortTitle: "SOC2 Certified",
       description:
-        "Accelerate your API development cycle with our efficient testing processes and automation expertise.",
-      stats: "60% Faster Deployment",
+        "Our environments and data handling meet rigorous security standards to protect your IP.",
+      stats: "SOC2 Audited",
       color: "green",
       gradient: "from-green-500 to-green-600",
       features: [
-        "Automated Testing",
-        "CI/CD Integration",
-        "Parallel Execution",
-        "Quick Feedback",
+        "Certified Environments",
+        "IP Protection",
+        "Audited Workflows",
+        "Vendor Management",
       ],
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Comprehensive Security",
-      shortTitle: "Security First",
+      icon: <FaAward className="w-8 h-8" />,
+      title: "ISO 27001",
+      shortTitle: "Security Standard",
       description:
-        "Advanced security testing to protect your APIs from vulnerabilities and ensure data protection.",
-      stats: "100% Security Coverage",
-      color: "red",
-      gradient: "from-red-500 to-red-600",
-      features: [
-        "Penetration Testing",
-        "Vulnerability Scanning",
-        "Authentication Testing",
-        "Data Protection",
-      ],
-    },
-    {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Optimization",
-      shortTitle: "Performance",
-      description:
-        "Identify and resolve performance bottlenecks to ensure your APIs scale efficiently under load.",
-      stats: "99.9% Uptime Achieved",
+        "Global security standards to protect your data with the highest level of integrity.",
+      stats: "ISO Approved",
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       features: [
-        "Load Testing",
-        "Stress Testing",
-        "Bottleneck Analysis",
-        "Optimization Tips",
+        "Data Integrity",
+        "Security Governance",
+        "Risk Mitigation",
+        "Global Compliance",
       ],
     },
     {
-      icon: <FaUsers className="w-8 h-8" />,
-      title: "Dedicated Support",
-      shortTitle: "24/7 Support",
+      icon: <FaCertificate className="w-8 h-8" />,
+      title: "Proficiency Testing",
+      shortTitle: "Paperless Tests",
       description:
-        "24/7 support from our API testing specialists who understand your unique requirements and challenges.",
-      stats: "24/7 Availability",
+        "Specialized API paperless proficiency testing to ensure systems meet certification rules.",
+      stats: "Certified Status",
       color: "orange",
       gradient: "from-orange-500 to-orange-600",
       features: [
-        "Expert Consultation",
-        "Real-time Support",
-        "Issue Resolution",
-        "Best Practices",
-      ],
-    },
-    {
-      icon: <FaClock className="w-8 h-8" />,
-      title: "Quick Turnaround",
-      shortTitle: "Quick Results",
-      description:
-        "Fast and efficient testing cycles with detailed reporting and actionable recommendations.",
-      stats: "24hr Average Response",
-      color: "teal",
-      gradient: "from-teal-500 to-teal-600",
-      features: [
-        "Rapid Testing",
-        "Quick Reports",
-        "Fast Feedback",
-        "Agile Process",
+        "Skill Verification",
+        "Certification Prep",
+        "Adaptive Assessments",
+        "Automated Grading",
       ],
     },
   ];
@@ -122,15 +87,14 @@ const ApiWhyChooseTestriq: React.FC = () => {
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaAward />
             <span className="text-sm">
-              Why Choose Us
+              Global Standards & Compliance
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Testriq for{" "}
-            <span className="text-[theme(color.brand.blue)]">API Testing</span>?
+            Security & <span className="text-[theme(color.brand.blue)]">Compliance</span> is Non-Negotiable
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We combine technical expertise with business understanding to deliver API testing services that ensure reliable, secure, and high-performance integrations for your applications.
+            We engineer our services to meet the highest global benchmarks. In the global market, we handle your information with the highest level of integrity.
           </p>
         </div>
 
@@ -139,17 +103,15 @@ const ApiWhyChooseTestriq: React.FC = () => {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className={`relative group transition-all duration-500 transform hover:scale-105 ${
-                hoveredCard === index ? "z-10" : ""
-              }`}
+              className={`relative group transition-all duration-500 transform hover:scale-105 ${hoveredCard === index ? "z-10" : ""
+                }`}
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Main Card */}
               <div
-                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 group ${
-                  hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
-                }`}
+                className={`relative bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-500 group ${hoveredCard === index ? "shadow-2xl" : "hover:shadow-xl"
+                  }`}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
@@ -206,9 +168,8 @@ const ApiWhyChooseTestriq: React.FC = () => {
 
                 {/* Hover Overlay */}
                 <div
-                  className={`absolute inset-0 z-10 bg-gradient-to-r ${
-                    benefit.gradient
-                  }
+                  className={`absolute inset-0 z-10 bg-gradient-to-r ${benefit.gradient
+                    }
       transition-opacity duration-500 ease-in-out flex items-center justify-center
       ${hoveredCard === index ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 >
@@ -277,8 +238,8 @@ const ApiWhyChooseTestriq: React.FC = () => {
             </p>
             <Link href="/contact-us">
               <button className="bg-white text-[theme(color.brand.blue)] cursor-pointer px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
-              Get Started with API Testing
-            </button>
+                Get Started with API Testing
+              </button>
             </Link>
           </div>
         </div>

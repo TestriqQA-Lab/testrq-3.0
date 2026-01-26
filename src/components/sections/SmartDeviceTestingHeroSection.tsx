@@ -43,32 +43,19 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
               <span className="text-sm">Smart Device Testing Experts</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Comprehensive{" "}
-              <span className="text-brand-blue">Smart Device Testing</span>{" "}
-              Services
+              Global Smart Device Testing Services:{" "}
+              <span className="text-brand-blue">Engineering Trust</span> in the
+              IoT Era
             </h1>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Ensure your{" "}
-              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-                smart devices
-              </Link>{" "}
-              deliver seamless connectivity,{" "}
-              <Link href="performance-testing-services">
-                optimal performance
-              </Link>
-              , and robust <Link href="security-testing">security</Link> with
-              our{" "}
-              <Link href="blog/post/smart-device-testing-services-complete-guide">
-                smart device testing
-              </Link>{" "}
-              services. From wearables to smart home devices – we validate every
-              aspect of your{" "}
-              <Link href="blog/post/how-to-test-iot-devices-for-reliability-2">
-                IoT device
-              </Link>{" "}
-              and connected ecosystem.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                In 2026, <Link href="blog/post/how-to-test-iot-devices-for-reliability-2" className="text-brand-blue font-semibold hover:underline">smart device testing</Link> is a requirement for market entry, not a luxury. Testriq provides the quality assurance needed to navigate today’s connected world. We ensure your hardware—from sensors to chips—works perfectly to deliver a seamless user experience.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed italic border-l-4 border-brand-blue pl-4">
+                &quot;Secure global certifications with our expert smart device validation. At Testriq, we validate everything from long-life health wearables to industrial IoT sensors. Our testing ensures your hardware is reliable and market-ready.&quot;
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -92,31 +79,31 @@ const SmartDeviceTestingHeroSection: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-500">
-                  10+
+                  ISO
                 </div>
-                <div className="text-gray-600 text-sm">
-                  Smart Devices Tested
+                <div className="text-gray-600 text-sm font-semibold">
+                  29119-3 Compliant
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-500">
-                  99.4%
+                  99.8%
                 </div>
-                <div className="text-gray-600 text-sm">
-                  Connectivity Success Rate
+                <div className="text-gray-600 text-sm font-semibold">
+                  Uptime Reliability
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-500">
-                  48 hr
+                  $2.17B
                 </div>
-                <div className="text-gray-600 text-sm">Average Turnaround</div>
+                <div className="text-gray-600 text-sm font-semibold">IoT QA Market</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-orange-500">
-                  24/7
+                  Global
                 </div>
-                <div className="text-gray-600 text-sm">Support Available</div>
+                <div className="text-gray-600 text-sm font-semibold">Expert Validation</div>
               </div>
             </div>
           </div>

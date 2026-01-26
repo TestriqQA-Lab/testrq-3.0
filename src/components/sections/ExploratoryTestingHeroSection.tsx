@@ -10,8 +10,11 @@ import {
   FaMobile,
   FaDesktop,
   FaCloud,
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
 
 const ExploratoryTestingHeroSection: React.FC = () => {

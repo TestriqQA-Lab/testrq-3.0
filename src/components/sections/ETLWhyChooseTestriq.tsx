@@ -157,17 +157,7 @@ const ETLWhyChooseTestriq: React.FC = () => {
             Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We combine ETL expertise with testing excellence to deliver ETL
-            testing services that ensure reliable, accurate, and
-            high-performance{" "}
-            <Link href="blog/post/data-loading-testing-etl-performance-testing">
-              data pipelines
-            </Link>{" "}
-            for your{" "}
-            <Link href="blog/post/load-testing-in-performance-testing-complete-guide">
-              business-critical applications
-            </Link>
-            , data integration workflows, and analytics platforms.
+            We combine expert-led ETL validation with high-velocity automation to ensure your <Link href="/etl-testing-services" className="text-brand-blue hover:underline font-semibold">data pipelines</Link> are accurate, scalable, and audit-ready in the 2026 zettabyte era.
           </p>
         </div>
 
@@ -181,11 +171,10 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 key={index}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${
-                  isHovered
-                    ? `${colorClasses.border} shadow-2xl transform -translate-y-2`
-                    : "border-gray-200 shadow-lg hover:shadow-xl"
-                }`}
+                className={`relative bg-white rounded-2xl p-6 border-2 transition-all duration-300 ${isHovered
+                  ? `${colorClasses.border} shadow-2xl transform -translate-y-2`
+                  : "border-gray-200 shadow-lg hover:shadow-xl"
+                  }`}
               >
                 {/* Background Pattern */}
                 <div
@@ -195,9 +184,8 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 {/* Icon and Metric */}
                 <div className="relative z-10 mb-4">
                   <div
-                    className={`w-16 h-16 ${
-                      isHovered ? colorClasses.bg : colorClasses.light
-                    } rounded-xl flex items-center justify-center mb-3 transition-all duration-300`}
+                    className={`w-16 h-16 ${isHovered ? colorClasses.bg : colorClasses.light
+                      } rounded-xl flex items-center justify-center mb-3 transition-all duration-300`}
                   >
                     <div
                       className={isHovered ? "text-white" : colorClasses.text}
@@ -243,11 +231,10 @@ const ETLWhyChooseTestriq: React.FC = () => {
                 {/* CTA Button */}
                 <Link
                   href="/contact-us"
-                  className={`flex justify-center w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${
-                    isHovered
-                      ? `${colorClasses.bg} text-white shadow-lg`
-                      : `${colorClasses.light} ${colorClasses.text} hover:${colorClasses.bg} hover:text-white`
-                  }`}
+                  className={`flex justify-center w-full py-2 px-4 rounded-lg font-semibold text-sm transition-all duration-300 ${isHovered
+                    ? `${colorClasses.bg} text-white shadow-lg`
+                    : `${colorClasses.light} ${colorClasses.text} hover:${colorClasses.bg} hover:text-white`
+                    }`}
                 >
                   Explore ETL Testing
                 </Link>
@@ -278,24 +265,24 @@ const ETLWhyChooseTestriq: React.FC = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-              <div className="text-gray-600">ETL Pipelines</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">800+</div>
+              <div className="text-gray-600">Pipelines Validated</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-green-600 mb-2">
-                99.8%
+                Zero
               </div>
-              <div className="text-gray-600">Data Accuracy</div>
+              <div className="text-gray-600">Data Loss Target</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600 mb-2">60%</div>
-              <div className="text-gray-600">Performance Boost</div>
+              <div className="text-3xl font-bold text-purple-600 mb-2">ISO</div>
+              <div className="text-gray-600">8000-1 Standard</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-orange-600 mb-2">
-                36hr
+                Audit
               </div>
-              <div className="text-gray-600">Turnaround</div>
+              <div className="text-gray-600">Ready Accuracy</div>
             </div>
           </div>
         </div>

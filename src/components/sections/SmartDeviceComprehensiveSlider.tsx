@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaWifi, FaShieldAlt, FaChartLine, FaMobile, FaCloud, FaFlask } from "react-icons/fa";
+import { FaWifi, FaShieldAlt, FaChartLine, FaMobile, FaFlask } from "react-icons/fa";
 import { FaBatteryFull } from "react-icons/fa";
 
 const SmartDeviceComprehensiveSlider: React.FC = () => {
@@ -10,94 +10,79 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
 
   const testingTypes = [
     {
-      id: "connectivity",
-      title: "Connectivity Testing",
-      icon: <FaWifi className="w-6 h-6" />,
-      coverage: "99.4% connectivity success",
-      description: "Comprehensive testing of wireless protocols and network connectivity for reliable device communication.",
+      id: "fragmentation",
+      title: "Mass Device Fragmentation",
+      icon: <FaMobile className="w-6 h-6" />,
+      coverage: "ISO 29119-3 Compliant",
+      description: "The exponential growth of wearables, home appliances, and sensors has created a fragmentation crisis. To ensure global compatibility, organizations must expand their validation scope beyond a limited selection of flagship devices. Our Fix: We implement ISO/IEC/IEEE 29119-3 standardized test design. Our team maps coverage across hundreds of hardware configurations using a real device cloud, preventing failures before you launch.",
       features: [
-        "WiFi protocol testing",
-        "Bluetooth connectivity validation",
-        "NFC communication testing",
-        "Cellular network testing"
+        "ISO 29119-3 Test Design",
+        "Real Device Cloud Mapping",
+        "Hardware-Level Validation",
+        "Niche Device Compatibility"
       ],
       color: "green",
-      action: "blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc"
+      action: "blog/post/user-experience-testing-for-smart-devices-usability-accessibility"
     },
     {
       id: "security",
-      title: "Security Testing",
+      title: "Cyber-security Defense",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      coverage: "Zero security vulnerabilities",
-      description: "Advanced security assessment to protect smart devices from threats and ensure data protection.",
+      coverage: "ISO 27001 & NTIA Baselines",
+      description: "Security is the top restraint for IoT growth in 2026. With unpatched firmware and weak encryption being the primary attack vectors, distributed networks are more vulnerable than ever. Our Fix: Our IoT security protocols align with ISO/IEC 27001 and emerging NTIA baselines. We identify vulnerabilities using OWASP ZAP, Burp Suite, and Nmap, performing deep penetration testing on your hardware.",
       features: [
-        "Data encryption validation",
-        "Authentication testing",
-        "Vulnerability assessment",
-        "Privacy protection testing"
+        "Firmware Hardening Audits",
+        "OWASP ZAP Penetration Testing",
+        "NTIA Baseline Compliance",
+        "Deep Local Attack Defense"
       ],
       color: "red",
       action: "/security-testing"
     },
     {
-      id: "battery",
-      title: "Battery & Power Testing",
-      icon: <FaBatteryFull className="w-6 h-6" />,
-      coverage: "100% power optimization",
-      description: "Comprehensive battery life and power consumption testing to maximize device operational efficiency.",
+      id: "network",
+      title: "Multi-Protocol Stability",
+      icon: <FaWifi className="w-6 h-6" />,
+      coverage: "5G & Wi-Fi 6 Optimized",
+      description: "99.8% uptime targets are difficult to hit as 5G, Wi-Fi 6, Bluetooth, and Zigbee compete for bandwidth. Stability testing must account for latency, interference, and handoffs. Our Fix: Using Wireshark and iPerf3, we validate Machine-to-Machine (M2M) communication stability. We simulate 'noisy' real-world environments to guarantee your hardware remains connected.",
       features: [
-        "Battery life testing",
-        "Power consumption analysis",
-        "Energy efficiency optimization",
-        "Charging performance testing"
-      ],
-      color: "orange",
-      action: "blog/post/battery-power-testing-for-smart-devices-optimization-guide"
-    },
-    {
-      id: "performance",
-      title: "Performance Testing",
-      icon: <FaChartLine className="w-6 h-6" />,
-      coverage: "100% performance optimization",
-      description: "Comprehensive performance evaluation including speed, responsiveness, and resource utilization.",
-      features: [
-        "Response time testing",
-        "Processing speed validation",
-        "Memory usage optimization",
-        "Resource utilization testing"
+        "Wireshark Protocol Analysis",
+        "M2M Stability Validation",
+        "Noisy Environment Simulation",
+        "Latency & Handoff Testing"
       ],
       color: "blue",
+      action: "blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc"
+    },
+    {
+      id: "scalability",
+      title: "Massive Scalability",
+      icon: <FaChartLine className="w-6 h-6" />,
+      coverage: "Millions of Connections",
+      description: "Analysts project the IoT testing market will hit $2.17B as demand for seamless compatibility surges. Systems must scale to support millions of concurrent connections without performance degradation. Our Fix: We leverage JMeter and Gatling for high-tier performance testing. Our end-to-end validation ensures that data processing remains stable under maximum load at both device and edge levels.",
+      features: [
+        "JMeter Scaling Validation",
+        "Edge Computing Stress Tests",
+        "High-density Connection QA",
+        "Concurrent Performance Audits"
+      ],
+      color: "indigo",
       action: "/performance-testing-services"
     },
     {
-      id: "ux",
-      title: "User Experience Testing",
-      icon: <FaMobile className="w-6 h-6" />,
-      coverage: "100% usability validation",
-      description: "Interface usability and user interaction testing to ensure optimal device experience.",
+      id: "battery",
+      title: "Battery & Env Durability",
+      icon: <FaBatteryFull className="w-6 h-6" />,
+      coverage: "Long-life Optimization",
+      description: "For wearables and battery-powered sensors, power management is the ultimate KPI. Inefficient firmware validation can drain a 7-day battery in hours. Our Fix: Using Battery Historian and Instruments, we perform deep-dive battery life optimization. We validate device durability under extreme heat, humidity, and vibration to guarantee sensor precision in the field.",
       features: [
-        "Interface usability testing",
-        "Accessibility validation",
-        "User interaction testing",
-        "Experience optimization"
+        "Battery Historian Analysis",
+        "Extreme Condition Durability",
+        "Firmware Power Profile QA",
+        "Thermal Throttling Audits"
       ],
-      color: "purple",
-      action: "blog/post/user-experience-testing-for-smart-devices-usability-accessibility"
-    },
-    {
-      id: "cloud",
-      title: "Cloud Integration Testing",
-      icon: <FaCloud className="w-6 h-6" />,
-      coverage: "100% cloud connectivity",
-      description: "End-to-end testing of cloud services integration and data synchronization capabilities.",
-      features: [
-        "Cloud connectivity testing",
-        "Data synchronization validation",
-        "Remote management testing",
-        "API integration testing"
-      ],
-      color: "indigo",
-      action: "blog/post/cloud-integration-testing-for-smart-devices-api-sync-validation"
+      color: "orange",
+      action: "blog/post/battery-power-testing-for-smart-devices-optimization-guide"
     }
   ];
 
@@ -136,15 +121,15 @@ const SmartDeviceComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete Smart Device Testing <span className="text-brand-blue">Coverage</span>
+            Navigating the 2026 <span className="text-brand-blue">Global Challenges</span> in Smart Device QA
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our <Link href='blog/post/user-experience-testing-for-smart-devices-usability-accessibility'>smart product testing services</Link> cover every aspect of your connected device ecosystem, ensuring <Link href='blog/post/performance-testing-for-ai-applications'>reliability</Link>, <Link href='security-testing'>security</Link>, and <Link href='performance-testing-services'>optimal performance</Link> across all smart devices and smart appliances.
+            To ensure top-tier performance, we address the <span className="font-semibold text-brand-blue">five critical barriers</span> to global IoT success, facilitating smooth market entry and building consumer trust.
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           {testingTypes.map((type, index) => (
             <button
               key={type.id}

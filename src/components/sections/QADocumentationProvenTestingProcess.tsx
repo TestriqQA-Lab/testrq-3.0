@@ -1,128 +1,128 @@
 import Link from 'next/link';
 import React from 'react';
-import { FaSearch, FaEdit, FaCheckCircle, FaRocket, FaUsers, FaChartLine } from 'react-icons/fa';
+import { FaSearch, FaEdit, FaCheckCircle, FaUsers, FaChartLine, FaCog, FaFileAlt } from 'react-icons/fa';
 
 const QADocumentationProvenTestingProcess = () => {
   const processSteps = [
     {
       id: 1,
       icon: FaSearch,
-      title: (<><Link href="/blog/post/why-discovery-analysis-matters-in-testing">Requirements Analysis & Discovery</Link></>),
+      title: "Evaluate Requirements",
       duration: "2-3 days",
-      description: "Comprehensive analysis of project requirements, stakeholder interviews, and documentation audit to understand current state and documentation needs.",
+      description: "Our team scrutinizes your PRDs to remove vague details and clarify ambiguity before development begins.",
       activities: [
-        "Stakeholder interviews and requirement gathering",
-        "Current documentation audit and gap analysis",
-        "Project scope and objectives definition",
-        (<><Link href="/blog/post/how-to-write-qa-documentation-a-complete-guide">Documentation standards</Link> and templates selection</>)
+        "PRD scrutiny and gap analysis",
+        "Ambiguity removal sessions",
+        "Requirement refinement workshops",
+        "Technical feasibility check"
       ],
       deliverables: [
-        "Requirements Analysis Report",
-        "Documentation Gap Assessment",
-        "Project Scope Document",
-        (<><Link href="/blog/post/testing-and-debugging-your-web-application-a-complete-guide">Documentation Standards Guide</Link></>)
+        "Refined Requirement Specs",
+        "Clarification Log",
+        "Technical Audit Report",
+        "Refined PRD Feedback"
       ],
-      nextStep: "Documentation Planning & Strategy"
+      nextStep: "Definition of Done (DoD)"
     },
     {
       id: 2,
-      icon: FaEdit,
-      title: "Documentation Planning & Strategy",
+      icon: FaCheckCircle,
+      title: "Definition of Done (DoD)",
       duration: "1-2 days",
-      description: "Development of comprehensive documentation strategy, template creation, and resource allocation planning for efficient documentation delivery.",
+      description: "We work with your stakeholders to define exactly what 'Quality' looks like for each sprint and release.",
       activities: [
-        (<><Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">Documentation strategy and approach definition</Link></>),
-        "Template design and standardization",
-        "Resource allocation and timeline planning",
-        (<><Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">Quality assurance</Link> framework establishment</>)
+        "Stakeholder quality alignment",
+        "Sprint exit criteria definition",
+        "Release readiness mapping",
+        "Quality threshold setting"
       ],
       deliverables: [
-        "Documentation Strategy Document",
-        "Standardized Templates Library",
-        "Resource Allocation Plan",
-        "Quality Framework Guidelines"
+        "DoD Framework Document",
+        "Quality Metrics Baseline",
+        "Stakeholder Sign-off Matrix",
+        "Sprint Quality Gates"
       ],
-      nextStep: "Content Creation & Development"
+      nextStep: "Entry & Exit Criteria"
     },
     {
       id: 3,
-      icon: FaCheckCircle,
-      title: "Content Creation & Development",
-      duration: "5-10 days",
-      description: "Systematic creation of all documentation deliverables using established templates and standards, with continuous quality checks and stakeholder feedback integration.",
+      icon: FaEdit,
+      title: "Entry & Exit Criteria",
+      duration: "1-2 days",
+      description: "Defining specific conditions required to start and stop testing phases, preventing 'Scope Creep'.",
       activities: [
-        "Document creation using standardized templates",
-        "Content development and technical writing",
-        "Stakeholder review and feedback integration",
-        (<><Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">Quality assurance and consistency checks</Link></>)
+        "Testing phase boundary definition",
+        "Resource availability check",
+        "Stop-Testing threshold setting",
+        "Scope creep prevention mapping"
       ],
       deliverables: [
-        "Complete Documentation Suite",
-        "Review and Feedback Reports",
-        "Quality Assurance Checklists",
-        "Version Control Documentation"
+        "Phase Boundary Docs",
+        "Entry/Exit Checklists",
+        "Scope Management Plan",
+        "Resource Readiness Report"
       ],
-      nextStep: "Review & Quality Assurance"
+      nextStep: "Standard Operating Procedures (SOPs)"
     },
     {
       id: 4,
-      icon: FaUsers,
-      title: "Review & Quality Assurance",
-      duration: "2-3 days",
-      description: "Comprehensive review process involving multiple stakeholders, quality assurance checks, and final validation to ensure documentation meets all requirements and standards.",
+      icon: FaCog,
+      title: "Standard Operating Procedures (SOPs)",
+      duration: "2-4 days",
+      description: "We draft SOPs for your internal team to ensure long-term documentation health and consistency.",
       activities: [
-        "Multi-level review process execution",
-        (<>Quality assurance and <Link href="/blog/post/fda-validation-support-for-healthcare-software-ensuring-compliance-medical-software-approval">compliance validation</Link></>),
-        "Stakeholder approval and sign-off",
-        (<><Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">Final documentation refinement</Link></>)
+        "Operational workflow drafting",
+        "Tool usage guidelines",
+        "Internal team training skeleton",
+        "Maintenance protocol creation"
       ],
       deliverables: [
-        "Review Summary Reports",
-        "Quality Assurance Certificates",
-        "Stakeholder Approval Records",
-        "Final Documentation Package"
+        "QA SOP Handbook",
+        "Framework Guidelines",
+        "Maintenance Protocols",
+        "Team Onboarding Docs"
       ],
-      nextStep: "Deployment & Training"
+      nextStep: "Test Script Documentation"
     },
     {
       id: 5,
-      icon: FaRocket,
-      title: "Deployment & Training",
-      duration: "1-2 days",
-      description: "Documentation deployment to designated platforms, team training on new processes and procedures, and knowledge transfer to ensure successful adoption.",
+      icon: FaFileAlt,
+      title: "Test Script Documentation",
+      duration: "5-8 days",
+      description: "We provide manual and automated test script skeletons that are scalable and easy to maintain.",
       activities: [
-        "Documentation deployment and distribution",
-        "Team training and knowledge transfer",
-        "Process implementation guidance",
-        "Initial support and troubleshooting"
+        "Test script skeleton design",
+        "Manual script development",
+        "Automated script frameworking",
+        "Reusability mapping"
       ],
       deliverables: [
-        "Deployed Documentation System",
-        "Training Materials and Sessions",
-        "Implementation Guidelines",
-        (<><Link href="/blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow">Support Documentation</Link></>)
+        "Test Script Repository",
+        "Automation Skeletons",
+        "Scalable Script Framework",
+        "Maintenance Guidelines"
       ],
-      nextStep: "Monitoring & Maintenance"
+      nextStep: "Continuous Monitoring"
     },
     {
       id: 6,
       icon: FaChartLine,
-      title: "Monitoring & Maintenance",
+      title: "Continuous Monitoring",
       duration: "Ongoing",
-      description: "Continuous monitoring of documentation usage, regular updates based on feedback and changes, and ongoing maintenance to ensure documentation remains current and effective.",
+      description: "Monthly audits of your documentation to ensure it hasn't drifted from the current build.",
       activities: [
-        "Usage monitoring and analytics tracking",
-        "Regular updates and maintenance",
-        "Feedback collection and analysis",
-        (<><Link href="/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence">Continuous improvement implementation</Link></>)
+        "Monthly documentation audits",
+        "Build-drift analysis",
+        "Version control sync-check",
+        "Continuous feedback loops"
       ],
       deliverables: [
-        "Usage Analytics Reports",
-        "Maintenance Schedule",
-        "Feedback Analysis",
-        "Improvement Recommendations"
+        "Monthly Audit Reports",
+        "Maintenance Logs",
+        "Drift Analysis Summary",
+        "Optimization Roadmap"
       ],
-      nextStep: "Continuous Improvement"
+      nextStep: "Documentation Lifecycle"
     }
   ];
 
@@ -154,12 +154,12 @@ const QADocumentationProvenTestingProcess = () => {
             {processSteps.map((step, index) => {
               const IconComponent = step.icon;
               const isEven = index % 2 === 0;
-              
+
               return (
                 <div key={step.id} className={`relative ${isEven ? 'lg:pr-8' : 'lg:pl-16'}`}>
                   {/* Timeline Dot */}
-                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-500 rounded-full hidden lg:block" style={{top: '2rem'}}></div>
-                  
+                  <div className="absolute left-6 w-4 h-4 bg-white border-4 border-blue-500 rounded-full hidden lg:block" style={{ top: '2rem' }}></div>
+
                   {/* Content Card */}
                   <div className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 ${isEven ? 'lg:ml-16' : 'lg:mr-16'}`}>
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -255,7 +255,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Proven Methodology</h4>
               <p className="text-gray-600">
-                Our 6-step process has been refined through 150+ successful documentation projects, 
+                Our 6-step process has been refined through 150+ successful documentation projects,
                 ensuring consistent quality and efficient delivery.
               </p>
             </div>
@@ -266,7 +266,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Collaborative Approach</h4>
               <p className="text-gray-600">
-                Continuous stakeholder involvement and feedback <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">integration</Link> ensures documentation 
+                Continuous stakeholder involvement and feedback <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">integration</Link> ensures documentation
                 meets your specific needs and requirements.
               </p>
             </div>
@@ -277,7 +277,7 @@ const QADocumentationProvenTestingProcess = () => {
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">Measurable Results</h4>
               <p className="text-gray-600">
-                Our process delivers measurable improvements in team efficiency, <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">quality consistency</Link>, 
+                Our process delivers measurable improvements in team efficiency, <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">quality consistency</Link>,
                 and project delivery timelines.
               </p>
             </div>
@@ -294,8 +294,8 @@ const QADocumentationProvenTestingProcess = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">
                 <button className="px-8 py-4 cursor-pointer border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-600 transition-colors duration-200">
-                Schedule Consultation
-              </button>
+                  Schedule Consultation
+                </button>
               </Link>
             </div>
           </div>

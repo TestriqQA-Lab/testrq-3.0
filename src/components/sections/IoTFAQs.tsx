@@ -9,119 +9,44 @@ const IoTFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of IoT devices can you test?",
+      question: "What is the most critical challenge in testing IoT devices in 2026?",
       answer: (
         <>
-          We test a wide range of IoT devices, including{" "}
-          <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-            smart home devices
-          </Link>{" "}
-          (e.g., lights, thermostats, locks), industrial IoT systems (e.g.,
-          sensors, actuators), wearable devices,{" "}
-          <Link href="healthcare-testing-services">healthcare monitors</Link>,
-          and automotive IoT solutions. Our testing covers hardware, firmware,
-          and software across consumer, industrial, and enterprise applications.
+          The most critical challenge is device diversity and <Link href="/blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction" className="text-[theme(color.brand.blue)] hover:underline">interoperability</Link>. To ensure your product works across various protocols (Zigbee, MQTT) and firmware versions, we use a standardized <Link href="/blog/post/iso-iec-29119-as-a-standardized-framework-for-modern-software-testing" className="text-[theme(color.brand.blue)] hover:underline">ISO/IEC 29119</Link> approach for consistent test design.
         </>
       ),
     },
     {
-      question: "How do you test IoT device security?",
+      question: "How to test IoT connection in remote locations?",
       answer: (
         <>
-          We conduct comprehensive{" "}
-          <Link href="security-testing">security testing</Link> using{" "}
-          <Link href="tools">tools</Link> like Nmap, Metasploit, and{" "}
-          <Link href="blog/post/top-10-security-vulnerabilities-based-on-owasp">
-            OWASP ZAP
-          </Link>{" "}
-          to identify vulnerabilities. Our process includes device
-          authentication testing, data encryption validation, penetration
-          testing, and privacy protection assessments to ensure zero
-          vulnerabilities and compliance with standards like GDPR and IoT
-          Security Foundation guidelines.
+          To test IoT connection in remote locations, we use network simulators to inject packet loss, jitter, and high latency. We also perform field testing to validate how the device handles Radio Frequency (RF) interference and satellite/cellular handovers using advanced network analyzers.
         </>
       ),
     },
     {
-      question: "What IoT protocols do you support?",
+      question: "Why is security testing for medical IoT devices so important?",
       answer: (
         <>
-          We support 15+ IoT protocols,{" "}
-          <Link href="blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more">
-            including WiFi, Bluetooth LE, Zigbee, Z-Wave, MQTT, CoAP, LoRaWAN,
-            and cellular
-          </Link>{" "}
-          (4G/5G). Our testing ensures protocol compliance,{" "}
-          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
-            interoperability
-          </Link>
-          , and reliable data transmission across diverse network environments
-          using tools like Wireshark and MQTT.fx.
+          Security testing for medical IoT devices is vital because a breach can directly impact patient safety. Adhering to <Link href="/healthcare-testing-services" className="text-[theme(color.brand.blue)] hover:underline">HIPAA</Link> and the <span className="font-semibold">Cyber Resilience Act (CRA)</span> ensures we encrypt patient data and harden devices against OT ransomware and unauthorized firmware tampering.
         </>
       ),
     },
     {
-      question: "How long does IoT device testing take?",
-      answer:
-        "IoT device testing typically takes 2-4 weeks, depending on device complexity and testing scope. Our 4-step process (Analysis: 2-3 days, Security: 4-6 days, Performance: 3-5 days, Delivery: 2-3 days) ensures efficient execution, with rapid 36-hour turnaround for urgent validations.",
-    },
-    {
-      question: "Do you test IoT device interoperability?",
+      question: "What are the benefits of automating firmware regression tests for smart sensors?",
       answer: (
         <>
-          Yes, we validate{" "}
-          <Link href="blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction">
-            interoperability
-          </Link>{" "}
-          across devices, protocols, and platforms using real-world scenarios
-          and{" "}
-          <Link href="blog/post/what-are-the-highly-used-testing-tools-in-2024">
-            simulation tools
-          </Link>
-          . Our testing ensures seamless communication between devices (e.g.,
-          hubs, sensors, apps) and compatibility with cloud platforms like AWS
-          IoT and Azure IoT Hub.
+          Automating firmware regression tests ensures that every new update (<Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks" className="text-[theme(color.brand.blue)] hover:underline">FOTA</Link>) does not break existing features. Automation slashes testing cycles from weeks to hours, speeding up development and getting your IoT products to market faster.
         </>
       ),
     },
     {
-      question: "Can you test IoT devices at scale?",
+      question: "How do you perform performance testing for smart home ecosystems?",
       answer: (
         <>
-          We test IoT devices at scale using automated frameworks like Robot
-          Framework and{" "}
-          <Link href="blog/post/what-is-load-testing-in-software-engineering">
-            load testing
-          </Link>{" "}
-          tools like{" "}
-          <Link href="blog/post/how-to-use-jmeter-for-performance-testing-step-by-step-guide">
-            JMeter
-          </Link>{" "}
-          and Gatling. Our testing simulates thousands of concurrent devices,
-          validates scalability, and ensures performance under high-traffic
-          conditions for enterprise-grade IoT ecosystems.
+          We simulate a connected device environment where multiple <Link href="/smart-device-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">smart devices</Link> (lights, thermostats, cameras) interact simultaneously. We measure <Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline">edge computing latency</Link> and the cloud backend&apos;s ability to handle data spikes without service degradation under peak workloads.
         </>
       ),
-    },
-    {
-      question: "What deliverables do you provide for IoT testing?",
-      answer: (
-        <>
-          Deliverables include detailed test reports,{" "}
-          <Link href="blog/post/bug-logging-reporting-in-desktop-testing-best-practices-tools">
-            bug logs
-          </Link>{" "}
-          with reproduction steps, security vulnerability assessments,
-          performance benchmarks, and actionable recommendations. We provide
-          visual evidence (screenshots/videos) and integrate reports with tools
-          like Jira or Azure DevOps for seamless collaboration.
-        </>
-      ),
-    },
-    {
-      question: "Do you test edge computing and IoT analytics?",
-      answer:
-        "Yes, we test edge computing and IoT analytics using tools like Docker, Kubernetes, and Prometheus. Our testing validates edge device performance, data processing, and analytics accuracy, ensuring seamless integration with cloud platforms and real-time data insights.",
     },
   ];
 
@@ -190,7 +115,7 @@ const IoTFAQs: React.FC = () => {
               <Link
                 href="/contact-us"
                 title="Start Your IoT Success Story – Testriq QA Lab"
-                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-brand-blue font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-3 min-h-[44px] min-w-[44px] bg-white text-[theme(color.brand.blue)] font-semibold rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300"
               >
                 Start Your IoT Success Story
               </Link>

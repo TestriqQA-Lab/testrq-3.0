@@ -12,8 +12,11 @@ import {
   FaDesktop,
   FaCloud,
   FaCode,
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 
 const Lightbox = dynamic(() => import("../VideoLightBox"), { ssr: false });
 
@@ -53,22 +56,18 @@ const AutomationTestingHeroSection: React.FC = () => {
               Test Automation Experts
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              <span className="text-transparent bg-clip-text bg-brand-blue">
-                End-to-End
-                {" "}
-              </span>
-              Test Automation Services & Framework Architecture
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight text-left">
+              Scalable <span className="text-brand-blue">Test Automation</span> Services: Global QA Solutions for 2026
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Transform your testing strategy with cutting-edge automation
-              testing frameworks, seamless <Link href='/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
-              intelligent test execution. Our advanced test automation solutions
-              using <Link href='/blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='/blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Mobile Automation Testing for Android &amp; iOS</Link>{" "}
-              reduce testing time by up to 80%, while significantly improving test
-              coverage, reliability, and overall software quality.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed text-left">
+                The demand for fast software testing is peaking. By 2026, many firms will automate over half of their QA. However, <span className="font-semibold text-brand-blue">process complexities for global teams make it hard to show ROI or manage flaky tests</span>. At Testriq, we provide test automation services that go <span className="italic">beyond simple script writing</span>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed text-left">
+                We align our automated testing frameworks with the latest international standards, including <span className="font-semibold text-brand-blue">ISO 29119-5:2024</span>. This ensures our solutions are scalable, easy to maintain, and built for complex micro-services across the <span className="font-semibold">US, UK, EU, and Asia</span>.
+              </p>
+            </div>
 
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4 w-full sm:w-auto">
@@ -85,30 +84,30 @@ const AutomationTestingHeroSection: React.FC = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-600">
-                  10,000+
+                  50%
                 </div>
-                <div className="text-sm text-gray-600">Automated Tests</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">Automated by 2026</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-indigo-600">
-                  80%
+                  ISO
                 </div>
-                <div className="text-sm text-gray-600">Time Reduction</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">29119-5:2024</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-600">
-                  300+
+                  High
                 </div>
-                <div className="text-sm text-gray-600">Projects Automated</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">Performance Results</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-600">
-                  24/7
+                  Global
                 </div>
-                <div className="text-sm text-gray-600">Continuous Testing</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">QA Standards</div>
               </div>
             </div>
           </div>

@@ -8,7 +8,6 @@ import {
   FaRocket,
   FaDatabase,
   FaMobile,
-  FaCloud,
   FaCheckCircle,
   FaArrowRight,
   FaTools,
@@ -18,100 +17,63 @@ import {
 const BankingToolsFrameworksSection: React.FC = () => {
   const toolCategories = [
     {
-      icon: FaShieldAlt,
-      title: "Security Testing Tools",
-      description:
-        "Advanced security testing tools for comprehensive vulnerability assessment and penetration testing.",
-      tools: [
-        { name: (<><Link href="/blog/post/top-10-security-vulnerabilities-based-on-owasp">OWASP ZAP</Link></>), description: "Web application security scanner" },
-        {
-          name: (<><Link href="/blog/post/using-burp-suite-for-security-testing-beginner-to-pro">Burp Suite</Link></>),
-          description: "Professional web security testing",
-        },
-        { name: "Nessus", description: "Vulnerability assessment platform" },
-        { name: "Metasploit", description: "Penetration testing framework" },
-      ],
-      color: "from-red-500 to-pink-600",
-      bgColor: "bg-red-50",
-    },
-    {
-      icon: FaRocket,
-      title: "Performance Testing Tools",
-      description:
-        "Load testing and performance optimization tools for high-volume banking transactions.",
-      tools: [
-        { name: (<Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">LoadRunner</Link>), description: "Enterprise load testing platform" },
-        { name: (<Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter</Link>), description: "Open-source performance testing" },
-        { name: "BlazeMeter", description: "Cloud-based load testing" },
-        { name: "Gatling", description: "High-performance load testing" },
-      ],
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-blue-50",
-    },
-    {
       icon: FaCode,
-      title: "Automation Frameworks",
-      description:
-        "Robust automation frameworks for continuous testing in banking environments.",
+      title: "Automation Engines",
+      description: "Driving efficiency through high-performance automation frameworks.",
       tools: [
-        {
-          name: (<><Link href="/blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress">Selenium WebDriver</Link></>),
-          description: "Web application automation",
-        },
-        { name: "TestComplete", description: "Desktop and web automation" },
-        { name: "Cucumber", description: "BDD testing framework" },
-        {
-          name: "Robot Framework",
-          description: "Generic automation framework",
-        },
+        { name: "Selenium", description: "Open-source web automation" },
+        { name: "Appium", description: "Mobile application testing" },
+        { name: "Playwright", description: "Next-gen web testing" },
+        { name: "RPA Tools", description: "UiPath / BluePrism for banking bots" },
       ],
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
     },
     {
-      icon: FaMobile,
-      title: "Mobile Testing Tools",
-      description:
-        "Specialized tools for testing mobile banking applications across different platforms.",
+      icon: FaRocket,
+      title: "Performance & Load",
+      description: "Managing heavy transaction volumes for global financial leaders.",
       tools: [
-        { name: (<Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest">Appium</Link>), description: "Cross-platform mobile automation" },
-        {
-          name: "Xamarin Test Cloud",
-          description: "Cloud-based mobile testing",
-        },
-        { name: "Perfecto", description: "Mobile testing platform" },
-        { name: "BrowserStack", description: "Real device testing cloud" },
+        { name: "Apache JMeter", description: "Load and stress testing" },
+        { name: "Locust", description: "Scalable user simulation" },
+        { name: "Gatling", description: "High-concurrency performance" },
       ],
-      color: "from-purple-500 to-indigo-600",
-      bgColor: "bg-purple-50",
+      color: "from-blue-500 to-cyan-500",
+      bgColor: "bg-blue-50",
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Security & Compliance",
+      description: "Protecting blockchain assets and core financial data.",
+      tools: [
+        { name: "Burp Suite", description: "VAPT depth assessments" },
+        { name: "OWASP ZAP", description: "Dynamic security scanning" },
+        { name: "Smart Contract Auditing", description: "Blockchain security tools" },
+      ],
+      color: "from-red-500 to-pink-600",
+      bgColor: "bg-red-50",
     },
     {
       icon: FaDatabase,
-      title: (<Link href="/api-testing">API Testing Tools</Link>),
-      description:
-        "Comprehensive API testing tools for banking integrations and microservices.",
+      title: "Data Management",
+      description: "Ensuring environment integrity without risking customer info.",
       tools: [
-        { name: "Postman", description: "API development and testing" },
-        { name: (<><Link href="/blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability">SoapUI</Link></>), description: "API functional testing" },
-        { name: "REST Assured", description: "Java-based API testing" },
-        { name: "Insomnia", description: "API design and testing" },
+        { name: "Synthetic Data Gen", description: "Mimicking real-world loads" },
+        { name: "Data Masking", description: "PII protection for GDPR/CCPA" },
       ],
       color: "from-orange-500 to-red-500",
       bgColor: "bg-orange-50",
     },
     {
-      icon: FaCloud,
-      title: "DevOps & CI/CD Tools",
-      description:
-        "Integration tools for continuous testing and deployment in banking environments.",
+      icon: FaMobile,
+      title: "Infrastructure",
+      description: "Cross-device validation for digital-first banking.",
       tools: [
-        { name: "Jenkins", description: "Continuous integration server" },
-        { name: "GitLab CI", description: "Integrated CI/CD platform" },
-        { name: "Docker", description: "Containerization platform" },
-        { name: "Kubernetes", description: "Container orchestration" },
+        { name: "BrowserStack", description: "Real device cloud apps" },
+        { name: "Sauce Labs", description: "Continuous mobile testing" },
       ],
-      color: "from-indigo-500 to-purple-600",
-      bgColor: "bg-indigo-50",
+      color: "from-purple-500 to-indigo-600",
+      bgColor: "bg-purple-50",
     },
   ];
 

@@ -122,16 +122,10 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
             <span className="text-sm">Comprehensive Training Programs</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Master Every Aspect of
-            <span className="bg-clip-text text-brand-blue">
-              {" "}
-              Quality Assurance
-            </span>
+            Future-Proof Your Workforce for <span className="bg-clip-text text-brand-blue">2026 & Beyond</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our structured training modules are designed to transform your team
-            into QA experts. From fundamentals to advanced techniques, we cover
-            everything your organization needs.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Our enterprise-grade modules move beyond simple instruction to drive workforce transformation. We align with ISO 29119 to ensure global consistency and measurable code quality.
           </p>
         </div>
 
@@ -143,8 +137,8 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
                 key={module.id}
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeTab === index
-                    ? "bg-brand-blue text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-brand-blue text-white shadow-lg"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
               >
                 {module.icon}

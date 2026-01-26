@@ -7,21 +7,20 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "IoT Device Testing Services | Firmware, MQTT & Security QA | Testriq",
-
+  title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
   description:
-    "Testriq offers end-to-end IoT testing services for connected devices, ensuring secure, scalable, and high-performance applications across ecosystems.",
+    "Expert IoT testing services for the 2026 connected ecosystem. Specialized in 5G-edge resilience, firmware security (ISO 27404), and protocol compatibility (MQTT/Zigbee) for 21.1B+ devices.",
   keywords: [
-    "IoT device testing",
-    "IoT testing services",
-    "smart device testing",
-    "IoT performance testing",
-    "IoT security testing",
-    "connected device QA",
-    "protocol testing",
-    "sensor validation",
-    "cloud integration testing",
-    "industrial IoT testing",
+    "IoT Testing Services",
+    "Firmware Security Testing",
+    "MQTT Protocol Testing",
+    "5G-Edge IoT Resilience",
+    "ISO/IEC 27404 Compliance",
+    "ETSI EN 303 645 IoT Security",
+    "Smart Device Quality Assurance",
+    "Industrial IoT Penetration Testing",
+    "FOTA Update Validation",
+    "Zettabyte Scale Performance Testing",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -39,17 +38,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/iot-device-testing-services",
-    siteName: "Testriq - IoT Device Testing Services",
-    title:
-      "IoT Device Testing Services - Secure & Reliable QA for Connected Devices | Testriq",
+    siteName: "Testriq - Global IoT Testing Services",
+    title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
     description:
-      "Ensure your IoT devices deliver seamless connectivity and robust security. Get expert testing across WiFi, Bluetooth, Zigbee, sensors, and cloud integrations.",
+      "Ensuring reliability in a 21.1 Billion connected ecosystem. Expert smart device QA, firmware audits, and 5G-edge performance stress testing.",
     images: [
       {
         url: "/OG/IoT-Testing-Services-og.webp",
         width: 1200,
         height: 630,
-        alt: "IoT Device Testing Services - Testriq",
+        alt: "Global IoT Testing Services - Testriq",
       },
     ],
   },
@@ -57,10 +55,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title:
-      "IoT Device Testing Services - Secure & Reliable QA for Connected Devices | Testriq",
+    title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
     description:
-      "Ensure your IoT devices deliver seamless connectivity and robust security. Get expert testing across WiFi, Bluetooth, Zigbee, sensors, and cloud integrations.",
+      "Expert IoT QA for the 2026 landscape. Specialized in Firmware, Protocols, and Cyber Resilience Act compliance.",
     images: ["/OG/Iot-Testing_services-twitter.webp"],
   },
   robots: {
@@ -186,6 +183,18 @@ const IoTToolsFramework = dynamic(
   }
 );
 
+const IoTComplianceTable = dynamic(
+  () => import("@/components/sections/IoTComplianceTable"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
 export default function IoTDeviceTesting() {
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
@@ -208,6 +217,7 @@ export default function IoTDeviceTesting() {
         <IoTComprehensiveSlider />
         <IoTCardSlider />
         <IoTProvenTestingProcess />
+        <IoTComplianceTable />
         <IoTWhyChooseTestriq />
         <IoTToolsFramework />
         <IoTCaseStudies />

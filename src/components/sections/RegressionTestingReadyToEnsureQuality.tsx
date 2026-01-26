@@ -15,14 +15,10 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center text-white mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to <span className="text-yellow-300">Ensure Quality</span>{" "}
-            with Comprehensive Regression Testing?
+            Ready to <span className="text-yellow-300">stabilize</span> your release cycle?
           </h2>
           <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
-            Maintain software stability and quality with every release through
-            our expert regression testing services. Prevent defects, reduce
-            risks, and ensure user satisfaction with our proven testing
-            methodologies.
+            Ensure your software remains stable as you scale. Partner with Testriq to implement an API and regression testing strategy aligned with global standards. We provide a scalable model that grows with your business.
           </p>
         </div>
 
@@ -30,7 +26,7 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
           {/* Left Content */}
           <div className="text-white">
             <h3 className="text-2xl font-bold mb-6">
-              What You Get with Our Regression Testing Services
+              The Benefits of Partnering with Testriq
             </h3>
 
             <div className="space-y-4 mb-8">
@@ -40,10 +36,10 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">
-                    99.8% Software Stability
+                    Reduced Time-to-Market
                   </h4>
                   <p className="text-blue-100 text-sm">
-                    Comprehensive regression testing ensuring stable releases
+                    Automated suites cut execution time from days to minutes.
                   </p>
                 </div>
               </div>
@@ -54,35 +50,10 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">
-                    Intelligent Test Optimization
+                    Cost-Efficiency
                   </h4>
                   <p className="text-blue-100 text-sm">
-                    Risk-based testing and impact analysis for efficient
-                    coverage
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-green-900 text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">CI/CD Integration</h4>
-                  <p className="text-blue-100 text-sm">
-                    Seamless integration with your development pipeline
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-green-900 text-sm font-bold">✓</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Rapid Feedback Cycles</h4>
-                  <p className="text-blue-100 text-sm">
-                    Fast execution and immediate quality insights
+                    Vital for startups, focusing on high-risk areas first.
                   </p>
                 </div>
               </div>
@@ -93,10 +64,24 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">
-                    Comprehensive Reporting
+                    Boost Confidence
                   </h4>
                   <p className="text-blue-100 text-sm">
-                    Detailed analytics and actionable quality insights
+                    Eliminating &apos;flaky&apos; tests with data-driven strategy.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4">
+                <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-green-900 text-sm font-bold">✓</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-1">
+                    Scalability
+                  </h4>
+                  <p className="text-blue-100 text-sm">
+                    Frameworks grow with your cases (up to 100,000+ scenarios).
                   </p>
                 </div>
               </div>
@@ -104,32 +89,23 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <h4 className="text-lg font-semibold mb-4">
-                Free Regression Testing Assessment Includes:
+                Specialized Regression Solutions:
               </h4>
               <div className="grid grid-cols-1 gap-3">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Current testing process evaluation
-                  </span>
+                  <span className="text-sm font-semibold">E-commerce:</span>
+                  <span className="text-sm">Checkout, Payment & Inventory sync protection.</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Risk assessment and impact analysis
-                  </span>
+                  <span className="text-sm font-semibold">Mobile Apps:</span>
+                  <span className="text-sm">iOS/Android backward compatibility matrix.</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Test optimization recommendations
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <span className="text-sm">
-                    Custom regression testing strategy
-                  </span>
+                  <span className="text-sm font-semibold">End-to-End Suites:</span>
+                  <span className="text-sm">Frontend UI, API, and Backend database journey.</span>
                 </div>
               </div>
             </div>
@@ -156,7 +132,7 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
 
               {/* Contact Options */}
               <div className="grid grid-cols-1 gap-4">
-                <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+                <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
                   <button className="flex w-full items-center cursor-pointer justify-center space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 group">
                     <FaCalendarAlt className="text-blue-600 group-hover:scale-110 transition-transform" />
                     <span className="font-medium text-gray-700">
@@ -218,12 +194,10 @@ const RegressionTestingReadyToEnsureQuality: React.FC = () => {
         <div className="mt-16 text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <h3 className="text-xl font-bold text-white mb-4">
-              Ready to Maintain Quality with Expert Regression Testing?
+              Ready to stabilize your release cycle?
             </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              Join industry leaders who trust Testriq for comprehensive
-              regression testing solutions. Let&apos;s discuss how we can ensure
-              your software stability and quality with every release.
+            <p className="text-blue-100 mb-6 max-w-4xl mx-auto">
+              Ensure your software remains stable as you scale. Partner with Testriq to implement an API and regression testing strategy aligned with global standards. We provide a scalable model that grows with your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us">

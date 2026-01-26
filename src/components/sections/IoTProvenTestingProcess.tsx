@@ -17,28 +17,55 @@ const IoTProvenTestingProcess: React.FC = () => {
     {
       number: "01",
       icon: <FaNetworkWired className="w-6 h-6" />,
-      title: "Device & Network Analysis",
+      title: "Analyze Protocols and Interfaces",
       shortTitle: "Analysis",
-      description:
-        "Comprehensive analysis of IoT devices, protocols, and network infrastructure to create a tailored testing strategy for optimal coverage.",
+      description: "We map compatibility standards (Zigbee, Z-Wave, MQTT) and physical interfaces (JTAG, UART) to create a tailored strategy.",
       details: [
-        { id: 'spec-review', content: "IoT device specification review" },
-        { id: 'topology-analysis', content: "Network topology analysis" },
-        { id: 'protocol-assessment', content: "Protocol compatibility assessment" },
-        { id: 'security-evaluation', content: "Security requirements evaluation" },
+        { id: 'zigbee-zwave', content: "Zigbee & Z-Wave Mapping" },
+        { id: 'mqtt-analysis', content: "MQTT/CoAP Protocol Review" },
+        { id: 'physical-interfaces', content: "JTAG & UART Interface Audits" },
+        { id: 'strategy-creation', content: "Tailored Standardized Strategy" },
       ],
       color: "teal",
       gradient: "from-teal-500 to-teal-600",
-      duration: "2-3 days",
+      duration: "1-2 days",
     },
     {
       number: "02",
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: (
-        <Link href='blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance'>
-          Security & Protocol Testing
-        </Link>
-      ),
+      title: "Firmware-Over-The-Air (FOTA) Validation",
+      shortTitle: "FOTA",
+      description: "Testing the reliability and security of remote updates to prevent 'bricking' during automated firmware regression tests.",
+      details: [
+        { id: 'ota-reliability', content: <span><Link href="/blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Remote Update</Link> Reliability</span> },
+        { id: 'bricking-prevention', content: "Firmware Rollback Testing" },
+        { id: 'automated-regression', content: <span><Link href="/automation-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Automated Regression</Link> Suites</span> },
+        { id: 'secure-boot', content: "Secure Boot Validation" },
+      ],
+      color: "blue",
+      gradient: "from-blue-500 to-blue-600",
+      duration: "3-4 days",
+    },
+    {
+      number: "03",
+      icon: <FaNetworkWired className="w-6 h-6" />,
+      title: "Connection & RF Interference Testing",
+      shortTitle: "RF/Signal",
+      description: "Simulating crowded signal environments to ensure Radio Frequency (RF) interference does not disrupt mission-critical data.",
+      details: [
+        { id: 'signal-crowding', content: "Crowded Signal Simulation" },
+        { id: 'rf-isolation', content: "RF Shield Box Testing" },
+        { id: 'packet-loss', content: "Latency & Packet Loss Checks" },
+        { id: 'handover-test', content: "Satellite/Cellular Handovers" },
+      ],
+      color: "indigo",
+      gradient: "from-indigo-500 to-indigo-600",
+      duration: "2-3 days",
+    },
+    {
+      number: "04",
+      icon: <FaShieldAlt className="w-6 h-6" />,
+      title: "Security Penetration & Gap Assessment",
       shortTitle: "Security",
       description: (
         <>
@@ -53,16 +80,10 @@ const IoTProvenTestingProcess: React.FC = () => {
         </>
       ),
       details: [
-        { id: 'device-auth', content: "Device authentication testing" },
-        { id: 'encryption-validation', content: "Encryption protocol validation" },
-        { id: 'comm-assessment', content: "Communication security assessment" },
-        {
-          id: 'penetration-testing', content: (
-            <Link href='blog/post/device-penetration-testing'>
-              Vulnerability penetration testing
-            </Link>
-          )
-        },
+        { id: 'hardcoded-creds', content: "Credential Exposure Audits" },
+        { id: 'data-encryption', content: "Data-at-Rest Validation" },
+        { id: 'api-security', content: <span><Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Cloud API</Link> Penetration</span> },
+        { id: 'pii-protection', content: "PII & GDPR Compliance" },
       ],
       color: "red",
       gradient: "from-red-500 to-red-600",
@@ -80,45 +101,42 @@ const IoTProvenTestingProcess: React.FC = () => {
       description:
         "Evaluate IoT system performance under various load conditions and network scenarios.",
       details: [
-        { id: 'benchmarking', content: "Device performance benchmarking" },
-        {
-          id: 'network-load-testing', content: (
-            <>Network{' '}
-              <Link href='blog/post/what-is-load-testing-in-software-engineering'>
-                load testing
-              </Link>
-            </>
-          )
-        },
-        { id: 'scalability', content: "Scalability assessment" },
-        { id: 'battery-optimization', content: "Battery life optimization" },
+        { id: 'battery-profiling', content: "Battery Drain Optimization" },
+        { id: 'edge-latency', content: "Edge Computing Benchmarks" },
+        { id: 'thermal-stress', content: "Thermal Throttling Analysis" },
+        { id: 'load-scalability', content: <span><Link href="/performance-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">High-Transaction Stress</Link></span> },
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
-      duration: "3-5 days",
+      duration: "3-4 days",
+    },
+    {
+      number: "03",
+      icon: <FaNetworkWired className="w-6 h-6" />,
+      title: "Connection & RF Interference Testing",
+      shortTitle: "RF/Signal",
+      description: "Simulating crowded signal environments to ensure Radio Frequency (RF) interference does not disrupt mission-critical data.",
+      details: [
+        { id: 'signal-crowding', content: "Crowded Signal Simulation" },
+        { id: 'rf-isolation', content: "RF Shield Box Testing" },
+        { id: 'packet-loss', content: "Latency & Packet Loss Checks" },
+        { id: 'handover-test', content: "Satellite/Cellular Handovers" },
+      ],
+      color: "indigo",
+      gradient: "from-indigo-500 to-indigo-600",
+      duration: "2-3 days",
     },
     {
       number: "04",
-      icon: <FaCheckCircle className="w-6 h-6" />,
-      title: (
-        <Link href='blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary'>
-          Report & Optimization
-        </Link>
-      ),
-      shortTitle: "Delivery",
-      description:
-        "Detailed reporting with actionable insights and recommendations for IoT system improvements.",
+      icon: <FaShieldAlt className="w-6 h-6" />,
+      title: "Security Penetration & Gap Assessment",
+      shortTitle: "Security",
+      description: "Conducting deep-dive IoT penetration testing to expose hardcoded credentials and unencrypted data at rest.",
       details: [
-        { id: 'comprehensive-report', content: "Comprehensive IoT test report" },
-        {
-          id: 'security-vuln-assessment', content: (
-            <Link href='blog/post/ai-security-testing'>
-              Security vulnerability assessment
-            </Link>
-          )
-        },
-        { id: 'performance-guide', content: "Performance optimization guide" },
-        { id: 'deployment-recommendations', content: "Deployment recommendations" },
+        { id: 'etsi-readiness', content: "ETSI EN 303 645 Audit" },
+        { id: 'cra-mapping', content: "Cyber Resilience Act Prep" },
+        { id: 'cert-docs', content: <span><Link href="/qa-documentation-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Standardized Docs</Link></span> },
+        { id: 'market-entry', content: "Global Market Certification" },
       ],
       color: "green",
       gradient: "from-green-500 to-green-600",
@@ -144,7 +162,7 @@ const IoTProvenTestingProcess: React.FC = () => {
         {/* Interactive IoT Network Timeline */}
         <div className="relative mb-12">
           {/* Desktop Timeline with IoT Network Visualization */}
-          <div className="hidden lg:block mb-32 py-10">
+          <div className="hidden lg:block mb-32 py-32">
             <div className="relative">
               {/* Central Hub */}
               <div className="flex justify-center">
@@ -156,8 +174,8 @@ const IoTProvenTestingProcess: React.FC = () => {
               {/* Steps arranged in a circle around the hub */}
               <div className="relative">
                 {steps.map((step, index) => {
-                  const angle = index * 90 - 45; // Distribute in 4 quadrants
-                  const radius = 120;
+                  const angle = index * (360 / steps.length) - 90; // Distribute evenly around the circle, starting from the top
+                  const radius = 160; // Slightly larger radius for more steps
                   const x = Math.cos((angle * Math.PI) / 180) * radius;
                   const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -188,17 +206,17 @@ const IoTProvenTestingProcess: React.FC = () => {
                       </button>
 
                       {/* Connection Line to Center */}
-                      <div
-                        className={`absolute top-1/2 left-1/2 w-px h-24 origin-bottom transform -translate-x-1/2 -translate-y-full ${activeStep >= index
+                      {/* <div
+                        className={`absolute top-1/2 left-1/2 w-px h-32 origin-bottom transform -translate-x-1/2 -translate-y-full ${activeStep >= index
                           ? `bg-${step.color}-500`
                           : "bg-gray-300"
                           } transition-colors duration-300`}
                         style={{
-                          transform: `translate(-50%, -100%) rotate(${angle + 180
+                          transform: `translate(-50%, -100%) rotate(${angle + 90
                             }deg)`,
                           transformOrigin: "bottom center",
                         }}
-                      ></div>
+                      ></div> */}
 
                       {/* Step Label */}
                       <div className="mt-4 text-center">
@@ -408,26 +426,52 @@ const IoTProvenTestingProcess: React.FC = () => {
                   </div>
                 )}
 
-                {activeStep === 3 && (
+                {activeStep === 4 && (
                   <div className="space-y-4">
                     <div className="bg-white p-4 rounded-lg shadow-md">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-semibold text-gray-700">
-                          IoT Report
-                        </span>
-                        <FaCheckCircle className="text-green-500" />
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm font-semibold">Battery Life</span>
+                        <span className="text-orange-600 font-bold">94%</span>
                       </div>
-                      <div className="text-sm text-gray-600">
-                        Comprehensive analysis ready
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div
+                          className="bg-orange-500 h-2 rounded-full animate-pulse"
+                          style={{ width: "94%" }}
+                        ></div>
                       </div>
                     </div>
                     <div className="bg-white p-4 rounded-lg shadow-md text-center">
-                      <div className="text-green-600 text-3xl mb-2">📊</div>
+                      <div className="text-orange-600 text-3xl mb-2">🔋</div>
                       <div className="font-semibold text-gray-700">
-                        Optimization Guide
+                        Edge Latency
+                      </div>
+                      <div className="text-sm text-gray-600 font-bold">
+                        8ms
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {activeStep === 5 && (
+                  <div className="space-y-4">
+                    <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="font-semibold text-gray-700">
+                          ETSI EN 303 645
+                        </span>
+                        <FaCheckCircle className="text-green-500" />
+                      </div>
+                      <div className="text-xs text-green-600 font-bold uppercase">
+                        Audit Passed
+                      </div>
+                    </div>
+                    <div className="bg-white p-4 rounded-lg shadow-md text-center">
+                      <div className="text-green-600 text-3xl mb-2">📜</div>
+                      <div className="font-semibold text-gray-700">
+                        Certification Ready
                       </div>
                       <div className="text-sm text-gray-600">
-                        Performance & Security
+                        CRA 2026 Compliant
                       </div>
                     </div>
                   </div>

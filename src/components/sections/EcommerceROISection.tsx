@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { 
-  FaChartLine, 
-  FaDollarSign, 
-  FaUsers, 
-  FaRocket,
+import {
+  FaChartLine,
+  FaDollarSign,
+  FaUsers,
   FaCheckCircle,
-  FaCalculator,
-  FaChartLine as FaTrendingUp
+  FaChartLine as FaTrendingUp,
+  FaRocket,
+  FaCalculator
 } from "react-icons/fa";
 
 const EcommerceROISection: React.FC = () => {
@@ -59,12 +59,12 @@ const EcommerceROISection: React.FC = () => {
             <FaChartLine className="w-4 h-4" />
             <span className="text-sm font-medium">Return on Investment</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 md:leading-14">
             Measurable ROI from
             <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] via-sky-600 to-blue-800 bg-clip-text text-transparent">E-Commerce Testing</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Our comprehensive e-commerce testing approach delivers quantifiable results through performance optimization and checkout validation that directly impact your bottom line. See the average returns our clients achieve.
 
@@ -199,7 +199,7 @@ const EcommerceROISection: React.FC = () => {
           <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
             Get a personalized ROI projection based on your current e-commerce metrics and business goals.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-brand-blue px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 hover:scale-95 transition-all shadow-lg">
               Get Free ROI Analysis

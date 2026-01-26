@@ -9,18 +9,21 @@ import StructuredData, {
 export const revalidate = 3600; // ISR: Revalidate every hour
 
 export const metadata: Metadata = {
-  title: "Test Automation Services | Selenium, Playwright & CI/CD Experts",
+  title: "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
 
   description:
-    "Accelerate releases with scalable Test Automation Frameworks. We build self-healing scripts using Selenium, Cypress, and Playwright integrated into your CI/CD.",
+    "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA for enterprise software across the US, UK, EU, and Asia.",
   keywords: [
-    "test automation framework architecture",
-    "selenium webdriver services",
-    "playwright automation",
-    "api test automation",
-    "ci/cd pipeline testing",
-    "automated regression testing",
-    "mobile automation testing"
+    "Automation Testing Services",
+    "ISO 29119-5:2024 Compliance",
+    "SOC2 Certified QA Automation",
+    "Selenium Automation Frameworks",
+    "Playwright Testing Experts",
+    "Cypress QA Automation",
+    "AI-Augmented Testing Solutions",
+    "Enterprise Test Automation Strategy",
+    "Mobile Automation Appium",
+    "Continuous Testing CI/CD",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -38,11 +41,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/automation-testing-services",
-    siteName: "Testriq - Professional Software Testing Services",
+    siteName: "Testriq - Global Automation & QA",
     title:
-      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+      "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
     description:
-      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
+      "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
     images: [
       {
         url: "/OG/Automation-Testing-Service-Og.webp",
@@ -58,9 +61,9 @@ export const metadata: Metadata = {
     site: "@testriq",
     creator: "@testriq",
     title:
-      "Automation Testing Services - Advanced Test Automation Solutions | Testriq",
+      "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
     description:
-      "Accelerate your QA process with advanced automation testing services from Testriq. Our test automation experts deliver 80% faster cycles, high coverage, and CI/CD integration using Selenium, API, and mobile frameworks.",
+      "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
     images: ["/OG/Automation-testing-Services-Twitter.webp"],
   },
   robots: {
@@ -82,6 +85,30 @@ export const metadata: Metadata = {
 };
 
 import AutomationTestingHeroSection from "@/components/sections/AutomationTestingHeroSection"
+
+const AutomationTestingROISection = dynamic(
+  () => import("@/components/sections/AutomationTestingROISection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const AutomationComplianceTable = dynamic(
+  () => import("@/components/sections/AutomationComplianceTable"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-[400px] bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 const AutomationTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
@@ -186,6 +213,8 @@ export default function AutomationTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AutomationTestingHeroSection />
+        <AutomationComplianceTable />
+        <AutomationTestingROISection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
         <ManualTestingFrameworkArchitecture />

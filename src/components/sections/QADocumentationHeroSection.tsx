@@ -54,23 +54,16 @@ const QADocumentationHeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Professional{" "}
-                <span className="text-brand-blue">QA Documentation</span>{" "}
-                Services
+                Global QA Documentation Services:{" "}
+                <span className="text-brand-blue">Enterprise-Grade Test Management</span>
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Comprehensive quality assurance documentation services to
-                streamline your <Link href="/blog/post/a-step-by-step-guide-to-the-qa-documentation-services-process">QA process</Link> documentation, ensure requirements
-                traceability, and maintain consistent QA standards documentation
-                across all <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">software development</Link> projects.
+                As software complexity accelerates in 2026, we bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems. Every artifact we produce aligns with the <span className="font-bold text-brand-blue">ISO/IEC/IEEE 29119-3</span> standard.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert technical writers and QA professionals create
-                detailed <Link href="/blog/post/test-execution-comprehensive-testing-implementation">test plans</Link>, test cases, requirements <Link href="/blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow">documentation</Link>, and
-                QA deliverables that enhance client collaboration, reduce
-                errors, and accelerate project delivery.
+                Our team replaces simple spreadsheets with a single source of truth for global engineering teams, delivering precision-engineered QA documentation for software testing and regulatory audits.
               </p>
             </div>
 

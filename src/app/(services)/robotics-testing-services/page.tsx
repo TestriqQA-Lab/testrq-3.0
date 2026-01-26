@@ -6,6 +6,8 @@ import RoboticWhyChooseTestriq from "@/components/sections/RoboticWhyChooseTestr
 import RoboticToolsFramework from "@/components/sections/RoboticToolsFramework";
 import RoboticFAQs from "@/components/sections/RoboticFAQs";
 import RoboticAnyQuestions from "@/components/sections/RoboticAnyQuestions";
+import RoboticComplianceTable from "@/components/sections/RoboticComplianceTable";
+import RoboticRPAServices from "@/components/sections/RoboticRPAServices";
 import { Metadata } from "next";
 import StructuredData, {
   createBreadcrumbSchema,
@@ -13,21 +15,21 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Robotic Process Automation Testing Services Company",
+  title: "Enterprise RPA Testing & QA Services USA | Testriq",
 
   description:
-    "We are one of the best Robotic Process Automation Testing Services Companies in Mumbai. With expertise in testing Web applications and mobile apps..",
+    "Expert robotics and RPA testing for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, and AI-driven path planning for autonomous systems.",
   keywords: [
-    "robotic testing services",
-    "robot safety testing",
-    "industrial robot testing",
-    "robot arm validation",
-    "autonomous robot QA",
-    "performance testing for robots",
-    "robot software testing",
-    "precision movement testing",
-    "robot integration testing",
-    "cobot testing",
+    "Enterprise RPA Testing Services",
+    "Robotic Quality Assurance USA",
+    "ISO 10218-1:2026 Compliance",
+    "RPA Testing Services Company",
+    "Physical AI Testing",
+    "Sim2Real Robotics Validation",
+    "ROS2 Middleware Testing",
+    "Autonomous Agent QA",
+    "Collaborative Robot Safety Testing",
+    "UIPATH & Blue Prism Validation",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -45,11 +47,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/robotics-testing-services",
-    siteName: "Testriq - Robotic Testing Services",
+    siteName: "Testriq - Enterprise RPA & Robotics Testing",
     title:
-      "Robotic Testing Services - Safety, Precision & Performance Validation | Testriq",
+      "Enterprise RPA Testing & QA Services USA | Testriq",
     description:
-      "Get expert-led robotic testing across safety systems, movement accuracy, AI logic, and integration. Trusted by 200+ companies for robotic QA validation.",
+      "Expert robotics and RPA testing for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, and AI path planning.",
     images: [
       {
         url: "/OG/Robotics-Testing-Service-Og.webp",
@@ -64,9 +66,9 @@ export const metadata: Metadata = {
     site: "@testriq",
     creator: "@testriq",
     title:
-      "Robotic Testing Services - Safety, Precision & Performance Validation | Testriq",
+      "Enterprise RPA Testing & QA Services USA | Testriq",
     description:
-      "Get expert-led robotic testing across safety systems, movement accuracy, AI logic, and integration. Trusted by 200+ companies for robotic QA validation.",
+      "Expert robotics and RPA testing for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, and AI path planning.",
     images: ["/OG/Robotics-Testing-service-twitter.webp"],
   },
   robots: {
@@ -101,8 +103,10 @@ export default function RoboticTestingPage() {
       <StructuredData data={roboticTestingSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <RoboticTestingHeroSection />
+      <RoboticComplianceTable />
       <RoboticComprehensiveSlider />
       <RoboticProvenTestingProcess />
+      <RoboticRPAServices />
       <RoboticWhyChooseTestriq />
       <RoboticToolsFramework />
       <RoboticFAQs />

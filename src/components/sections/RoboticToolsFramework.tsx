@@ -10,114 +10,139 @@ import {
   FaTools,
   FaDesktop,
   FaDatabase,
-  FaFileCode,
 } from "react-icons/fa";
 
-import { SiRos, SiTrello } from "react-icons/si";
+import { SiRos } from "react-icons/si";
 
 const RoboticToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      title: "Testing Tools",
-      icon: <FaTools className="w-6 h-6 text-blue-500" />,
+      title: "Simulators",
+      icon: <FaDesktop className="w-6 h-6 text-blue-500" />,
       tools: [
         {
-          name: "Robot Framework",
-          description: "Open-source automation framework for robotic testing",
-          icon: <FaRobot className="w-5 h-5 text-blue-500" />,
-        },
-        {
-          name: "ROS Testing",
-          description: "Robot Operating System testing tools",
-          icon: <SiRos className="w-5 h-5 text-blue-500" />,
-        },
-        {
-          name: "Gazebo Simulator",
-          description: "3D robotic simulation and testing environment",
+          name: "Gazebo",
+          description: "3D multi-robot simulator with physics engines",
           icon: <FaDesktop className="w-5 h-5 text-blue-500" />,
         },
         {
-          name: "MoveIt Testing",
-          description: "Motion planning framework testing tools",
+          name: "NVIDIA Isaac Sim",
+          description: "Photorealistic Physical AI training simulator",
+          icon: <FaRobot className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Webots",
+          description: "Professional simulator for industrial & service robots",
+          icon: <FaDesktop className="w-5 h-5 text-blue-500" />,
+        },
+        {
+          name: "Digital Twin",
+          description: "Modeling environmental stress factors virtually",
           icon: <FaCog className="w-5 h-5 text-blue-500" />,
         },
       ],
     },
     {
-      title: "Frameworks",
+      title: "Middleware & Frameworks",
       icon: <FaCode className="w-6 h-6 text-green-500" />,
       tools: [
         {
-          name: "ROS/ROS2",
-          description: "Robot Operating System framework",
+          name: "ROS",
+          description: "Robot Operating System messaging middleware",
           icon: <SiRos className="w-5 h-5 text-green-500" />,
         },
         {
-          name: "OpenRAVE",
-          description: "Open Robotics Automation Virtual Environment",
-          icon: <SiTrello className="w-5 h-5 text-green-500" />,
+          name: "ROS2",
+          description: "Industrial strength real-time robotics framework",
+          icon: <SiRos className="w-5 h-5 text-green-500" />,
         },
         {
-          name: "PyBullet",
-          description: "Python robotics simulation framework",
-          icon: <FaFileCode className="w-5 h-5 text-green-500" />,
-        },
-        {
-          name: "DART",
-          description: "Dynamic Animation and Robotics Toolkit",
+          name: "Move It",
+          description: "Advanced motion planning for robotic arms",
           icon: <FaCog className="w-5 h-5 text-green-500" />,
+        },
+        {
+          name: "OpenCV",
+          description: "Computer vision for robotic perception systems",
+          icon: <FaCode className="w-5 h-5 text-green-500" />,
         },
       ],
     },
     {
-      title: "Safety Testing",
-      icon: <FaShieldAlt className="w-6 h-6 text-red-500" />,
+      title: "RPA & UI Automation Tools",
+      icon: <FaRobot className="w-6 h-6 text-red-500" />,
       tools: [
         {
-          name: "ISO 10218",
-          description: "Industrial robot safety standard testing",
-          icon: <FaShieldAlt className="w-5 h-5 text-red-500" />,
+          name: "UiPath",
+          description: "Enterprise RPA platform for business processes",
+          icon: <FaRobot className="w-5 h-5 text-red-500" />,
         },
         {
-          name: "ISO 13482",
-          description: "Personal care robot safety testing",
-          icon: <FaShieldAlt className="w-5 h-5 text-red-500" />,
+          name: "Blue Prism",
+          description: "Robotic process automation for digital workforces",
+          icon: <FaRobot className="w-5 h-5 text-red-500" />,
+        },
+        {
+          name: "Automation Anywhere",
+          description: "Cognitive automation for complex UI workflows",
+          icon: <FaRobot className="w-5 h-5 text-red-500" />,
+        },
+        {
+          name: "Selenium/Appium",
+          description: "Integration testing for robotic UI systems",
+          icon: <FaDesktop className="w-5 h-5 text-red-500" />,
+        },
+      ],
+    },
+    {
+      title: "Safety Hardware",
+      icon: <FaShieldAlt className="w-6 h-6 text-purple-500" />,
+      tools: [
+        {
+          name: "Force-Torque Sensors",
+          description: "Measuring contact forces for ISO compliance",
+          icon: <FaShieldAlt className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "Laser Scanners",
+          description: "3D vision & proximity safety interlocks",
+          icon: <FaShieldAlt className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "Light Curtains",
+          description: "Opto-electronic presence sensing for safety",
+          icon: <FaShieldAlt className="w-5 h-5 text-purple-500" />,
+        },
+        {
+          name: "3D Vision Systems",
+          description: "Advanced environmental mapping and safety",
+          icon: <FaDatabase className="w-5 h-5 text-purple-500" />,
+        },
+      ],
+    },
+    {
+      title: "Analyze and Diagnose Systems",
+      icon: <FaTools className="w-6 h-6 text-orange-500" />,
+      tools: [
+        {
+          name: "Vibration Analyzers",
+          description: "Diagnostic tools for mechanical reliability",
+          icon: <FaCog className="w-5 h-5 text-orange-500" />,
+        },
+        {
+          name: "Joint Torque Diagnostics",
+          description: "Monitoring actuator performance and wear",
+          icon: <FaCog className="w-5 h-5 text-orange-500" />,
+        },
+        {
+          name: "Telemetry Dashboards",
+          description: "Real-time monitoring of robotic performance",
+          icon: <FaDatabase className="w-5 h-5 text-orange-500" />,
         },
         {
           name: "FMEA Tools",
-          description: "Failure Mode and Effects Analysis",
-          icon: <FaCog className="w-5 h-5 text-red-500" />,
-        },
-        {
-          name: "HAZOP",
-          description: "Hazard and Operability Study tools",
-          icon: <FaShieldAlt className="w-5 h-5 text-red-500" />,
-        },
-      ],
-    },
-    {
-      title: "Performance Tools",
-      icon: <FaRobot className="w-6 h-6 text-purple-500" />,
-      tools: [
-        {
-          name: "Robotics Toolbox",
-          description: "MATLAB/Python robotics analysis tools",
-          icon: <FaDatabase className="w-5 h-5 text-purple-500" />,
-        },
-        {
-          name: "V-REP",
-          description: "Virtual robot experimentation platform",
-          icon: <FaDesktop className="w-5 h-5 text-purple-500" />,
-        },
-        {
-          name: "Webots",
-          description: "Professional robot simulation software",
-          icon: <FaDesktop className="w-5 h-5 text-purple-500" />,
-        },
-        {
-          name: "CasADi",
-          description: "Optimal control and robotics optimization",
-          icon: <FaCog className="w-5 h-5 text-purple-500" />,
+          description: "Failure mode tracking and risk analysis",
+          icon: <FaTools className="w-5 h-5 text-orange-500" />,
         },
       ],
     },
@@ -129,20 +154,17 @@ const RoboticToolsFramework: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaTools />
-            <span className="text-sm">Tools & Frameworks</span>
+            <span className="text-sm">Robot & RPA Tech Stack</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Robotic Testing{" "}
-            <span className="text-brand-blue">Tools & Frameworks</span>
+            The Testriq <span className="text-brand-blue">Robotics & RPA Tech Stack</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We leverage cutting-edge <Link href='/technology-stack'>tools and frameworks</Link> specifically designed for robotic testing to ensure comprehensive validation of your{" "}
-            <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> across all performance, safety, and functionality
-            metrics.
+            We utilize a <span className="font-semibold text-brand-blue">hybrid stack</span> of physical diagnostics and digital automation to provide enterprise robotics and <Link href='/robotics-testing-services' className="hover:underline text-brand-blue">RPA testing services</Link> specifically designed for the 2026 automation era.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {toolCategories.map((category, index) => (
             <div key={index} className="bg-gray-50 rounded-2xl p-8">
               <div className="flex items-center mb-6">

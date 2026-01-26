@@ -6,8 +6,8 @@ import {
   FaClipboardList,
   FaCogs,
   FaPlay,
-  FaChartLine,
   FaCheckCircle,
+  FaDatabase,
 } from "react-icons/fa";
 
 const AutomationTestingProvenTestingProcess: React.FC = () => {
@@ -16,76 +16,76 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Automation Strategy & Planning",
+      title: "Test Planning & Strategy",
       duration: "2-3 days",
       icon: <FaClipboardList className="text-2xl" />,
       description:
-        "Comprehensive automation strategy development including tool selection, framework design, and ROI analysis.",
+        "We align automation goals with business risk. Our team ranks tests based on impact to select smoke and regression suites with the highest ROI.",
       activities: [
-        "Automation feasibility analysis",
-        "Tool and framework selection",
-        "Test automation strategy design",
-        "ROI calculation and planning",
+        "Risk-Based Prioritization",
+        "Business Goal Alignment",
+        "ROI-Focused Case Selection",
+        "Strategy Formalization",
       ],
-      nextStep: "Framework Setup",
+      nextStep: "Test Design & Implementation",
     },
     {
       id: 2,
-      title: "Framework Setup & Configuration",
+      title: "Test Design & Implementation",
       duration: "3-5 days",
       icon: <FaCogs className="text-2xl" />,
       description:
-        "Setting up robust automation frameworks with proper architecture and configuration for scalable testing.",
+        "Using ISO 29119-4 standards <span className='italic'>(formal design techniques, boundary values, decision tables)</span>, we build modular, reusable testware and select the optimal tools for your infrastructure.",
       activities: [
-        "Test automation framework setup",
-        "Environment configuration",
-        "CI/CD pipeline integration",
-        "Reporting mechanism setup",
+        "ISO 29119-4 Design Standards",
+        "Toolchain Selection",
+        "Modular Component Building",
+        "Reusable Library Setup",
       ],
-      nextStep: "Script Development",
+      nextStep: "Environment & Data Management",
     },
     {
       id: 3,
-      title: "Test Script Development",
-      duration: "5-10 days",
-      icon: <FaPlay className="text-2xl" />,
+      title: "Environment & Data Management",
+      duration: "3-4 days",
+      icon: <FaDatabase className="text-2xl" />,
       description:
-        "Development of maintainable and reusable test scripts covering critical application functionalities.",
+        "We establish production-like test environments to mitigate flaky tests caused by service dependencies and inconsistent data.",
       activities: [
-        "Test script creation",
-        "Data-driven test development",
-        "Page object model implementation",
-        "Reusable component library",
+        "Production-Like Replication",
+        "Dependency Mapping",
+        "Mock Service Implementation",
+        "Data Integrity Controls",
       ],
-      nextStep: "Execution & Monitoring",
+      nextStep: "Test Execution & Feedback",
     },
     {
       id: 4,
-      title: "Execution & Monitoring",
-      duration: "Ongoing",
-      icon: <FaChartLine className="text-2xl" />,
+      title: "Test Execution & Continuous Testing",
+      duration: "Continuous",
+      icon: <FaPlay className="text-2xl" />,
       description:
-        "Continuous test execution with real-time monitoring and intelligent failure analysis.",
+        "Integrating suites into your CI/CD pipeline for immediate developer feedback <span className='italic'>(continuous testing)</span> and scheduled nightly runs.",
       activities: [
-        "Automated test execution",
-        "Real-time monitoring",
-        "Failure analysis and reporting",
-        "Performance metrics tracking",
+        "CI/CD Integration Pipeline",
+        "Immediate Feedback Loops",
+        "Scheduled Nightly Builds",
+        "Automated Failover Checks",
       ],
-      nextStep: "Maintenance & Optimization",
+      nextStep: "Completion & Reporting",
     },
     {
       id: 5,
-      title: "Maintenance & Optimization",
-      duration: "Continuous",
+      title: "Test Completion & Reporting",
+      duration: "Automated",
       icon: <FaCheckCircle className="text-2xl" />,
       description:
-        "Ongoing maintenance and optimization of automation scripts for maximum efficiency and reliability.",
+        "Automated result synthesis <span className='italic'>(Automate combining results)</span> providing stakeholders with real-time visibility into software health and overall risk.",
       activities: [
-        "Script maintenance and updates",
-        "Performance optimization",
-        "Framework enhancement",
-        "Knowledge transfer and training",
+        "Automated Result Synthesis",
+        "Real-Time Health Dashboard",
+        "Risk Assessment Reports",
+        "Stakeholder Visibility",
       ],
       nextStep: "Process Complete",
     },
@@ -96,14 +96,10 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Our <span className="text-brand-blue">Proven</span> Automation
-            Testing Process
+            Global QA <span className="text-brand-blue">Automation Methodology</span>: The ISO 29119-2 Framework
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Our systematic automation testing process ensures streamlined
-            implementation, dependable execution, and ongoing optimization to
-            maximize ROI, <Link href='blog/post/automated-etl-testing'>accelerate testing cycles</Link>, and ensure <Link href='blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality'>high software
-            quality</Link>.
+            We utilize the <Link href="/blog/post/automated-etl-testing" className="text-brand-blue font-semibold hover:underline">ISO/IEC/IEEE 29119-2</Link> generic test process to ensure your automation is repeatable, traceable, and integrates seamlessly into your CI/CD pipeline.
           </p>
         </div>
 
@@ -116,9 +112,8 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
             {steps.map((step, index) => (
               <div
                 key={step.id}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } flex-col lg:space-x-8`}
+                className={`relative flex items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } flex-col lg:space-x-8`}
                 onClick={() => setActiveStep(step.id)}
               >
                 {/* Step Number Circle */}
@@ -131,9 +126,8 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
                 {/* Step Content */}
                 <div className={`w-full lg:w-5/12`}>
                   <div
-                    className={`bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${
-                      activeStep === step.id ? "ring-2 ring-brand-blue" : ""
-                    }`}
+                    className={`bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer ${activeStep === step.id ? "ring-2 ring-brand-blue" : ""
+                      }`}
                   >
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="bg-brand-blue w-12 h-12 rounded-xl flex items-center justify-center">
@@ -197,16 +191,14 @@ const AutomationTestingProvenTestingProcess: React.FC = () => {
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Accelerate Your Testing with Automation?
+              Ready to Accelerate Your Release Cycle?
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Our proven automation process delivers faster testing cycles,
-              improved coverage, and reliable results for your software
-              projects.
+            <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+              Don&apos;t let manual bottlenecks or flaky scripts slow down your time-to-market. Partner with our <span className="font-semibold text-brand-blue uppercase">Lead Global SEO Consultant</span> and QA expert to transform your testing strategy. Our <span className="italic font-medium">a1qa automation testing services comparisons</span> show that Testriq is ready to scale with you globally.
             </p>
             <Link href="/contact-us">
               <button className="bg-brand-blue cursor-pointer text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                Start Your Automation Journey
+                Transform Your Strategy Now
               </button>
             </Link>
           </div>

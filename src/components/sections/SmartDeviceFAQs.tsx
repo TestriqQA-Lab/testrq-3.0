@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -9,65 +8,29 @@ const SmartDeviceFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of smart devices can you test?",
+      question: "What are the best practices for IoT security testing in 2026?",
       answer:
-        "We test a comprehensive range of smart devices including smartphones, tablets, wearables (smartwatches, fitness trackers), smart home devices (thermostats, security cameras, smart speakers), IoT sensors, smart appliances, and connected audio devices. Our testing covers both consumer and enterprise smart devices.",
+        "To meet 2026 security standards, you must implement m-TLS device identities and secure all OTA updates. Additionally, regular penetration testing is essential to find and patch firmware vulnerabilities before they can be exploited in the field.",
     },
     {
-      question: "How do you test connectivity across different protocols?",
+      question: "How to test compatibility between Alexa and smart plugs?",
       answer:
-        (
-          <>
-            We conduct comprehensive <Link href='blog/post/connectivity-testing-for-smart-devices-wifi-bluetooth-nfc'>connectivity testing</Link> across WiFi (802.11 a/b/g/n/ac/ax), Bluetooth (Classic and BLE), NFC, cellular networks (3G/4G/5G), Zigbee, Z-Wave, and other IoT protocols. Our testing includes signal strength analysis, range testing, interference testing, and protocol compliance validation.
-          </>
-        ),
+        "To validate Alexa and smart plug integration, we model the link between the smart home hub and the hardware. We ensure commands trigger without delay and that the companion app always reflects the real-time state of the device, even under poor network conditions.",
     },
     {
-      question: "What security testing do you perform on smart devices?",
+      question: "Why is battery life optimization critical for wearable health trackers?",
       answer:
-        (
-          <>
-            Our <Link href='security-testing'>security testing</Link> includes <Link href='blog/post/ai-security-testing'>data encryption validation</Link>, authentication protocol testing, vulnerability assessments, penetration testing, privacy protection validation, secure communication testing, and compliance with security standards like OWASP IoT Top 10 and industry-specific security requirements.
-          </>
-        ),
+        "Performance testing for wearable health trackers is vital because users expect a 'set it and forget it' experience. Inefficient sensor polling frequency or background syncs can cause battery consumption issues that lead to high product return rates and brand dissatisfaction.",
     },
     {
-      question: "How do you test battery life and power consumption?",
+      question: "What is the role of Digital Twin Simulation in IoT testing?",
       answer:
-        (
-          <>
-            We perform comprehensive <Link href='blog/post/battery-power-testing-for-smart-devices-optimization-guide'>battery testing</Link> including battery life measurement under various usage scenarios, power consumption analysis, charging performance testing, thermal testing, and energy efficiency optimization. We use specialized equipment to measure precise power consumption patterns.
-          </>
-        ),
+        "Digital Twin Simulation allows us to create a virtual replica of your device and its environment. This approach is essential for scalability testing. We provide rigorous design validation to ensure your cloud backend meets the demands of high-density device deployments, modeling up to one million concurrent connections before hardware launch.",
     },
     {
-      question: "Can you test smart devices that are still in development?",
+      question: "How do you perform sensor accuracy testing?",
       answer:
-        "Yes, we can test smart devices at any stage of development from prototypes to production-ready devices. We work with development teams to identify issues early, provide feedback for improvements, and ensure devices meet requirements before market launch.",
-    },
-    {
-      question: "Do you provide testing for smart device apps and software?",
-      answer:
-        (
-          <>
-            Absolutely. We test companion <Link href='mobile-application-testing'>mobile apps</Link>, device firmware, cloud connectivity, <Link href='api-testing'>API integrations</Link>, user interfaces, and software updates. Our testing covers functionality, performance, security, and user experience across iOS and Android platforms.
-          </>
-        ),
-    },
-    {
-      question:
-        "How do you ensure smart devices work in real-world conditions?",
-      answer:
-        "We conduct testing in various real-world scenarios including different network conditions, environmental factors (temperature, humidity), interference scenarios, and usage patterns. We also perform field testing and simulate real user behaviors to ensure devices perform reliably in actual use cases.",
-    },
-    {
-      question: "What compliance and certification testing do you offer?",
-      answer:
-        (
-          <>
-            We provide testing for various <Link href='blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps'>compliance standards</Link> including FCC, CE, IC, Bluetooth SIG, WiFi Alliance, and industry-specific certifications. We help ensure your smart devices meet regulatory requirements for target markets and can assist with certification processes.
-          </>
-        ),
+        "Sensor accuracy testing involves comparing device data (motion, heart rate, temperature) against 'Gold Standard' medical or industrial equipment. We test devices across various high-intensity scenarios, such as workouts for wearables, ensuring that data variance remains within a strict 5% margin.",
     },
   ];
 

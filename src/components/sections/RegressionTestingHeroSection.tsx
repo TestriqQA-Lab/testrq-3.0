@@ -41,19 +41,18 @@ const RegressionTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Safeguard Your Software with
+              Strategic Overview:
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Comprehensive Regression Testing
+                Software Regression Testing Services
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ensure your <Link href='blog/post/the-future-of-qa-trends-shaping-software-testing-in-2025'>software updates</Link> don&apos;t break existing
-              functionality with our <Link href='blog/post/risk-based-regression-testing-smarter-test-optimization'>comprehensive regression testing services</Link>.
-              We use selective, progressive, and <Link href='blog/post/automated-regression-testing-faster-smarter-qa-cycles'>automated regression testing</Link>{" "}
-              strategies-supported by <Link href='blog/post/how-to-write-maintainable-test-scripts-in-selenium-or-cypress'>robust test scripts</Link>, <Link href='blog/post/continuous-regression-testing-ensuring-quality-in-agile-devops'>continuous regression</Link> testing, and <Link href='blog/post/regression-impact-analysis-optimizing-test-coverage'>impact analysis</Link>-to maintain software stability while
-              accelerating your <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipelines</Link> and <Link href='blog/post/automated-regression-testing-faster-smarter-qa-cycles'>reducing production defects.</Link>
+              In 2026, the digital landscape is defined by rapid-fire release cycles and hyper-complex architectures. Traditional &quot;run-everything&quot; approaches to software regression testing are no longer sustainable. At Testriq, we transform regression from a bottleneck into a competitive advantage.
+            </p>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              We use the <span className="font-semibold text-brand-blue">ISO 29119 risk-based framework</span> for our automated regression testing. This ensures your new code never breaks existing features. By analyzing code impact, we help global firms reduce test times and keep CI/CD pipelines moving fast.
             </p>
 
             <div className="flex flex-col items-center lg:items-start sm:flex-row gap-4">

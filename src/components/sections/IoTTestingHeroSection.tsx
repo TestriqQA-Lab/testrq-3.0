@@ -1,7 +1,6 @@
 "use client";
-import { FaNetworkWired, FaWifi } from "react-icons/fa";
+import { FaNetworkWired, FaWifi, FaArrowRight, FaPlay, FaCertificate, FaHome, FaChevronRight } from "react-icons/fa";
 import React, { useState } from "react";
-import { FaArrowRight, FaPlay, FaCertificate, FaHome, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
 
@@ -42,33 +41,26 @@ const IoTTestingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
+              Global{" "}
               <span className="text-[theme(color.brand.blue)]">
-                IoT Device Testing&nbsp;
+                IoT Testing Services:&nbsp;
               </span>
-              Services
+              Ensuring Reliability in a 21.1 Billion Connected Ecosystem
             </h1>
 
-            <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your IoT devices deliver seamless{" "}
-              <Link href="blog/post/device-connectivity-testing-ensuring-reliable-iot-connections-across-networks">
-                connectivity
-              </Link>
-              , high <Link href="performance-testing-services">performance</Link>,
-              and secure communication with our systematic{" "}
-              <Link href="iot-appliances-and-apps-testing-services">
-                IoT testing
-              </Link>{" "}
-              services. From smart home devices to industrial IoT systems, we
-              validate every layer, including hardware, protocols, and cloud
-              integrations for end-to-end reliability and{" "}
-              <Link href="security-testing">security</Link>.
-            </p>
+            <div className="space-y-4 mb-6">
+              <p className="text-gray-700 text-base md:text-lg">
+                The Internet of Things (IoT) landscape has reached a critical inflection point in 2026. As the number of global connected devices reaches <span className="font-semibold">21.1 billion</span>, providing seamless integrated testing services has become increasingly difficult. At Testriq, we offer expert <Link href="/iot-appliances-and-apps-testing-services" className="text-[theme(color.brand.blue)] hover:underline">IoT testing</Link> to stop device failures and network lag, securing your hardware against major security breaches.
+              </p>
+              <p className="text-gray-700 text-base md:text-lg italic font-medium">
+                &quot;Our smart device testing methodology goes beyond simple functional checks. From firmware & protocols to <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">cloud APIs</Link> & edge computing, we deliver deep technical expertise across consumer wearables and industrial systems.&quot;
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
               <Link
                 href="/contact-us"
-                title="Get Started Today – Testriq QA Lab"
+                title="Start Your IoT Project – Testriq"
                 className="inline-flex items-center gap-2 py-3 px-5 min-h-[44px] min-w-[44px] bg-[theme(color.brand.blue)] text-white font-semibold text-base md:text-lg rounded-md hover:bg-brand-blue hover:shadow-lg w-full sm:w-auto transition-colors"
               >
                 <span className="text-base">Get Started Today</span>
@@ -86,16 +78,16 @@ const IoTTestingHeroSection: React.FC = () => {
             {/* Stats */}
             <div className="flex flex-wrap justify-center xl:justify-start gap-6">
               {[
-                ["30+", "IoT Devices Tested"],
-                ["99.7%", "Issue Detection Rate"],
-                ["36 hr", "Average Turnaround"],
-                ["24/7", "Support Available"],
+                ["21.1B+", "Connected Devices"],
+                ["99.8%", "Stability Rate"],
+                ["36 hr", "Turnaround Cycle"],
+                ["ISO", "29119 Standards"],
               ].map(([value, label], i) => (
                 <div key={i} className="text-center xl:text-left">
                   <p className="text-[theme(color.brand.blue)] font-bold text-2xl md:text-3xl">
                     {value}
                   </p>
-                  <p className="text-gray-700 text-base">{label}</p>
+                  <p className="text-gray-700 text-sm font-medium">{label}</p>
                 </div>
               ))}
             </div>

@@ -4,11 +4,7 @@ import Link from "next/link";
 import React from "react";
 import {
   FaShieldAlt,
-  FaGavel,
   FaRocket,
-  FaMobile,
-  FaDatabase,
-  FaCode,
   FaUsers,
   FaChartLine,
   FaLock,
@@ -20,116 +16,36 @@ const BankingTestingServicesSection: React.FC = () => {
   const services = [
     {
       icon: FaShieldAlt,
-      title: "Security Testing",
-      description:
-        "Comprehensive security assessments including penetration testing, vulnerability scanning, and threat modeling to protect against cyber attacks.",
-      features: [
-        (<><Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">Penetration Testing</Link></>),
-        "Vulnerability Assessment",
-        "Security Code Review",
-        "Threat Modeling",
-      ],
+      title: "Payment Gateway Testing",
+      description: "Validating the entire transaction lifecycle, from Biometric MFA approval to Real-time Reconciliation and settlement.",
+      features: ["Biometric MFA", "Real-time Re-conciliation", "Sandbox APIs", "Card-not-present flows"],
       color: "from-red-500 to-pink-600",
       bgColor: "bg-red-50",
     },
     {
-      icon: FaGavel,
-      title: (<><Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">Compliance Testing</Link></>),
-      description:
-        "Ensure adherence to financial regulations including PCI DSS, SOX, GDPR, Basel III, and other industry standards.",
-      features: [
-        "PCI DSS Compliance",
-        "SOX Testing",
-        "GDPR Validation",
-        "Basel III Requirements",
-      ],
+      icon: FaChartLine,
+      title: "LMS for Financial Services",
+      description: "Testing Loan Management Systems for interest calculation accuracy and credit scoring algorithm validation.",
+      features: ["Interest Logic", "Repayment Schedules", "Credit Scoring", "Delinquency Tracking"],
       color: "from-blue-500 to-cyan-500",
       bgColor: "bg-blue-50",
     },
     {
       icon: FaRocket,
-      title: "Performance Testing",
-      description:
-        "Load testing and performance optimization to ensure your banking systems can handle peak transaction volumes.",
-      features: [
-        (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing</Link></>),
-        (<><Link href="/blog/post/stress-testing-applications-identifying-breaking-points">Stress Testing</Link></>),
-        (<><Link href="/blog/post/volume-testing-managing-high-data-loads-efficiently">Volume Testing</Link></>),
-        "Scalability Analysis",
-      ],
+      title: "AI Agent Validation",
+      description: "Ensuring banking AI for fraud detection and customer service remains secure, compliant, and factually accurate.",
+      features: ["Fraud Detection AI", "Conversational Accuracy", "Compliance Guardrails", "Data Privacy"],
       color: "from-green-500 to-teal-600",
       bgColor: "bg-green-50",
     },
     {
-      icon: FaMobile,
-      title: "Mobile Banking QA",
-      description:
-        "Specialized testing for mobile banking applications across iOS and Android platforms with focus on security and usability.",
-      features: [
-        (<><Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">Cross-Platform Testing</Link></>),
-        "Mobile Security",
-        "Biometric Authentication",
-        "Offline Functionality",
-      ],
+      icon: FaUsers,
+      title: "QA Outsourcing",
+      description: "Scale your team instantly with expert testers specializing in the complex landscape of Banking and Financial Testing.",
+      features: ["On-demand Teams", "Domain Experts", "Hybrid Delivery", "24/7 Support"],
       color: "from-purple-500 to-indigo-600",
       bgColor: "bg-purple-50",
-    },
-    {
-      icon: FaDatabase,
-      title: "Core Banking Testing",
-      description:
-        "End-to-end testing of core banking systems including account management, transaction processing, and customer data integrity.",
-      features: [
-        "Transaction Validation",
-        (<><Link href="/blog/post/data-quality-testing-in-etl">Data Integrity</Link></>),
-        "Account Management",
-        "Batch Processing",
-      ],
-      color: "from-orange-500 to-red-500",
-      bgColor: "bg-orange-50",
-    },
-    {
-      icon: FaCode,
-      title: (<><Link href="/api-testing">API Testing</Link></>),
-      description:
-        "Comprehensive API testing for open banking, payment gateways, and third-party integrations with security focus.",
-      features: [
-        "REST API Testing",
-        "OAuth Validation",
-        "Rate Limiting",
-        "Data Encryption",
-      ],
-      color: "from-indigo-500 to-purple-600",
-      bgColor: "bg-indigo-50",
-    },
-    {
-      icon: FaCog,
-      title: (<><Link href="/automation-testing-services">Automation Testing</Link></>),
-      description:
-        "Automated testing frameworks for continuous integration and deployment in banking environments.",
-      features: [
-        "CI/CD Integration",
-        (<><Link href="/regression-testing">Regression Testing</Link></>),
-        "Test Data Management",
-        "Automated Reporting",
-      ],
-      color: "from-teal-500 to-green-600",
-      bgColor: "bg-teal-50",
-    },
-    {
-      icon: FaUsers,
-      title: (<><Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">User Acceptance Testing</Link></>),
-      description:
-        "Business user validation and acceptance testing to ensure banking applications meet business requirements.",
-      features: [
-        "Business Validation",
-        "User Journey Testing",
-        (<><Link href="/blog/post/accessibility-testing-in-manual-testing-use-cases-techniques">Accessibility Testing</Link></>),
-        "Training Support",
-      ],
-      color: "from-pink-500 to-red-600",
-      bgColor: "bg-pink-50",
-    },
+    }
   ];
 
   const serviceStats = [
@@ -150,18 +66,18 @@ const BankingTestingServicesSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Comprehensive{" "}
+            Safeguarding{" "}
             <span className="text-[theme(color.brand.blue)]">
-              Banking & Finance
+              Multi-Billion Dollar
             </span>
-            <span className="block">Testing Solutions</span>
+            <span className="block">Transaction Ecosystems</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            End-to-end banking and <Link href="/blog/post/etl-testing-case-studies">finance testing services</Link> designed
+            End-to-end banking and finance testing services designed
             specifically for the banking and financial services industry,
-            ensuring <Link href="/mobile-application-testing">application security</Link>, regulatory compliance (including PCI
-            DSS, GDPR, and SOX), and optimal <Link href="/performance-testing-services">performance</Link> across all your
+            ensuring application security, regulatory compliance (including PCI
+            DSS, GDPR, and SOX), and optimal performance across all your
             financial platforms and transactional systems.
           </p>
         </div>

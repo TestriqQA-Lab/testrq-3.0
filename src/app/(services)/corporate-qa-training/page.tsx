@@ -6,10 +6,9 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:
-    "Corporate QA Training Services - Professional Software Testing",
+  title: "Corporate QA Training Services Professional Software Testing",
   description:
-    "Transform your team with comprehensive Corporate QA Training services. Expert-led training programs covering manual testing, automation, performance testing, and quality assurance best practices.",
+    "Future-proof your team for 2026 with Testriq's enterprise-grade corporate QA training. Specialist quality engineering programs aligning with ISO 29119 and ISTQB standards.",
   keywords: [
     "corporate qa training",
     "software testing training",
@@ -21,6 +20,8 @@ export const metadata: Metadata = {
     "performance testing training",
     "qa certification training",
     "corporate training programs",
+    "ISO 29119 training",
+    "ISTQB corporate certification",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -83,6 +84,18 @@ export const metadata: Metadata = {
 
 const CorporateQATrainingHeroSection = dynamic(
   () => import("@/components/sections/CorporateQATrainingHeroSection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const CorporateQATrainingChallenges = dynamic(
+  () => import("@/components/sections/CorporateQATrainingChallenges"),
   {
     ssr: true,
     loading: () => (
@@ -228,6 +241,7 @@ export default function CorporateQATrainingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <CorporateQATrainingHeroSection />
+        <CorporateQATrainingChallenges />
         <CorporateQATrainingComprehensiveSlider />
         <CorporateQATrainingProvenProcess />
         <CorporateQATrainingWhyChooseTestriq />

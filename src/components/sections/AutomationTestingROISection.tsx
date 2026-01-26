@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaChartLine, FaClock, FaDollarSign, FaCheckCircle } from "react-icons/fa";
+import { FaChartLine, FaCheckCircle, FaRobot, FaCogs, FaUsers } from "react-icons/fa";
 
 const AutomationTestingROISection: React.FC = () => {
   return (
@@ -15,60 +15,60 @@ const AutomationTestingROISection: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Realizing the <span className="text-brand-blue">ROI of Automation</span> Testing
+            Strategic Automation Solutions: <span className="text-brand-blue">Solving the 2026 ROI Gap</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Automation testing delivers high ROI by speeding up development, enhancing software quality, and cutting long-term costs. Discover how Testriq helps maximize your returns.
+            <span className="font-semibold italic text-brand-blue">Industry data shows</span> only 25% of firms report immediate ROI. Testriq solves maintenance overhead and script fragility through standardized, resilient frameworks.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Faster Time-to-Market */}
+          {/* Maintenance & Flaky Tests */}
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
             <div className="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaClock className="text-2xl text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Faster Time-to-Market</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Automated tests run quickly and frequently, enabling faster feedback loops and accelerating product releases.
-            </p>
-            <div className="mt-4 text-brand-blue font-bold text-lg">Up to 80% Faster Releases</div>
-          </div>
-
-          {/* Cost Reduction */}
-          <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaDollarSign className="text-2xl text-white" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Significant Cost Reduction</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Reduce manual effort, minimize defect leakage to production, and lower overall testing expenditures.
-            </p>
-            <div className="mt-4 text-green-600 font-bold text-lg">30% - 50% Cost Savings</div>
-          </div>
-
-          {/* Improved Quality */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <FaCheckCircle className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Enhanced Software Quality</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Achieve higher test coverage, detect defects earlier in the cycle, and ensure a more stable and reliable product.
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Fixing Flaky Tests</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              We implement keyword-driven and model-based testing (MBT) to reduce script fragility and ensure stability.
             </p>
-            <div className="mt-4 text-purple-600 font-bold text-lg">99% Defect Detection</div>
+            <div className="mt-4 text-brand-blue font-bold text-sm">ISO 29119-5:2024 Compliance</div>
           </div>
 
-          {/* Optimized Resource Utilization */}
+          {/* System Complexity */}
+          <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaCogs className="text-2xl text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Managing Complexity</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              End-to-end automation for micro-services that tracks data across all integrations and closes coverage gaps.
+            </p>
+            <div className="mt-4 text-green-600 font-bold text-sm">Micro-services Optimized</div>
+          </div>
+
+          {/* AI-Augmented Testing */}
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <FaRobot className="text-2xl text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Bridging the Skill Gap with AI-Augmented Testing</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              Using Agentic AI and machine learning to generate test cases and predict failure points before they occur.
+            </p>
+            <div className="mt-4 text-purple-600 font-bold text-sm">Agentic AI Driven</div>
+          </div>
+
+          {/* Skill Gap Bridge */}
           <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
             <div className="bg-orange-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaChartLine className="text-2xl text-white" />
+              <FaUsers className="text-2xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Optimized Resource Utilization</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Free up manual testers to focus on complex exploratory testing and new feature development.
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Bridging the Gap</h3>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              We help upskill manual teams by providing expert-led training and intelligent automation tools.
             </p>
-            <div className="mt-4 text-orange-600 font-bold text-lg">Boost Team Productivity by 2x</div>
+            <div className="mt-4 text-orange-600 font-bold text-sm">Expert Automation Skills</div>
           </div>
         </div>
 

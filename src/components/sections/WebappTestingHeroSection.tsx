@@ -92,7 +92,7 @@ const WebappTestingHeroSection: React.FC = () => {
         {/* Lightbox Modal */}
         <Lightbox
           isOpen={isLightboxOpen}
-          videoLink="https://youtu.be/wAPCSnAhhC8?si=6yNo43V82w91LiPt"
+          videoLink="https://yourvideolink.com"
           onClose={closeLightbox}
         />
       </div>

@@ -9,73 +9,98 @@ const RoboticFAQs: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of robotic systems can you test?",
-      answer:
-        (
-          <>
-            We test a wide range of <Link href='blog/post/system-integration-testing-for-robotic-systems-ensuring-seamless-operation'>robotic systems</Link> including industrial robots, service robots, <Link href='blog/post/testing-autonomous-robots-navigation-perception-and-real-world-qa'>autonomous vehicles</Link>, robotic arms, surgical robots, and collaborative robots (cobots). Our testing covers both hardware and software components across various industries.
-          </>
-        ),
+      question: "What is the difference between RPA and traditional test automation?",
+      answer: (
+        <>
+          The differences between{" "}
+          <Link
+            href="/robotics-testing-services"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            RPA
+          </Link>{" "}
+          and traditional test automation lie in their integration level. RPA
+          copies human actions directly through the user interface, making it
+          perfect for legacy systems. Traditional{" "}
+          <Link
+            href="/automation-testing-services"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            automation
+          </Link>{" "}
+          integrates directly into backend APIs and scripts for long-term
+          stability in the SDLC.
+        </>
+      ),
     },
     {
-      question: "How do you ensure safety during robotic testing?",
-      answer:
-        (
-          <>
-            Safety is our top priority. We follow strict safety protocols including <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 10218</Link> and <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 13482</Link> standards, implement comprehensive risk assessments, use controlled testing environments, and conduct thorough emergency stop and fail-safe mechanism testing.
-          </>
-        ),
+      question: "How do you implement robotic testing for legacy enterprise systems?",
+      answer: (
+        <>
+          When implementing robotic testing for legacy enterprise systems, we
+          use RPA bots to interact with the presentation layer. We provide
+          complete workflow automation and{" "}
+          <Link
+            href="/api-testing"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            data validation
+          </Link>{" "}
+          for your systems. This approach avoids the high cost and risk of
+          changing your backend code.
+        </>
+      ),
     },
     {
-      question: "What is the typical duration for robotic testing projects?",
-      answer:
-        (
-          <>
-            Project duration varies based on complexity, but typically ranges from 2-8 weeks. Simple <Link href='blog/post/functional-testing-for-robotic-systems-precision-sensors-control'>functional testing</Link> may take 2-3 weeks, while comprehensive testing including safety validation, performance optimization, and integration testing can take 6-8 weeks.
-          </>
-        ),
+      question: "What are the benefits of ISO 10218-1:2026 for my business?",
+      answer: (
+        <>
+          The updated{" "}
+          <Link
+            href="/robotics-testing-services"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            ISO 10218-1:2026
+          </Link>{" "}
+          standard makes functional safety requirements explicit rather than
+          implied. This process prepares your robots for global export and
+          reduces the risk of expensive recalls and safety incidents.
+        </>
+      ),
     },
     {
-      question: "Do you provide testing for autonomous robotic systems?",
-      answer:
-        (
-          <>
-            Yes, we specialize in <Link href='blog/post/testing-autonomous-robots-navigation-perception-and-real-world-qa'>autonomous system</Link> testing including navigation algorithms, path planning, obstacle avoidance, decision-making systems, and <Link href='blog/post/ai-testing-learning-guide'>machine learning</Link> model validation. We test both simulated and real-world scenarios.
-          </>
-        ),
+      question: "Can robotic testing validate data from end to end?",
+      answer: (
+        <>
+          Yes. To validate data from end to end, we configure bots to extract
+          information from emails, ERPs, and spreadsheets, then verify that the
+          data remains consistent across all your software systems. Our{" "}
+          <Link
+            href="/database-testing-services"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            data validation
+          </Link>{" "}
+          protocols ensure 100% integrity.
+        </>
+      ),
     },
     {
-      question: "Can you test robotic systems that are already in production?",
-      answer:
-        (
-          <>
-            Absolutely. We can perform testing on existing production systems through controlled testing environments, <Link href='regression-testing'>regression testing</Link>, performance optimization, and safety audits without disrupting your operations.
-          </>
-        ),
-    },
-    {
-      question: "What testing standards and certifications do you follow?",
-      answer:
-        (
-          <>
-            We follow international standards including <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 10218</Link> (Industrial robots), <Link href='blog/post/robotic-safety-testing-meeting-iso-10218-13482-and-beyond'>ISO 13482</Link> (Personal care robots), IEC 61508 (Functional safety), and industry-specific standards. We can help achieve certifications required for your market.
-          </>
-        ),
-    },
-    {
-      question: "Do you provide testing for robotic software and algorithms?",
-      answer:
-        (
-          <>
-            Yes, we provide comprehensive <Link href='software-testing-guide'>software testing</Link> including control algorithms, motion planning software, sensor fusion algorithms, machine learning models, and robotic operating system (ROS) applications.
-          </>
-        ),
-    },
-    {
-      question:
-        "How do you handle testing of custom or proprietary robotic systems?",
-      answer:
-        "We work closely with your engineering team to understand proprietary systems, sign comprehensive NDAs, develop custom testing protocols, and adapt our methodologies to your specific requirements while maintaining confidentiality.",
+      question: 'What is "Physical AI" in 2026 robotics?',
+      answer: (
+        <>
+          Physical AI refers to the trend where robots use{" "}
+          <Link
+            href="/blog/post/ai-testing-learning-guide"
+            className="text-brand-blue hover:underline font-medium"
+          >
+            Generative AI
+          </Link>{" "}
+          and simulation to &quot;train&quot; themselves in virtual
+          environments. Fixed code is replaced by learned experience, making
+          robots much more adaptable in changing, real-world environments.
+        </>
+      ),
     },
   ];
 

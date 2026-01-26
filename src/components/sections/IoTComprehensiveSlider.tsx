@@ -6,9 +6,7 @@ import {
   FaWifi,
   FaShieldAlt,
   FaChartLine,
-  FaCogs,
   FaNetworkWired,
-  FaCloud,
   FaArrowRight,
   FaFlask,
 } from "react-icons/fa";
@@ -19,93 +17,78 @@ const IoTComprehensiveSlider: React.FC = () => {
   const testingTypes = [
     {
       icon: <FaWifi className="w-8 h-8" />,
-      title: "Connectivity Testing",
+      title: "Device Diversity & Protocol Inter-operability",
       description:
-        "Comprehensive testing of wireless protocols including WiFi, Bluetooth, Zigbee, and cellular connectivity to ensure seamless communication.",
+        "With 21.1 billion devices now active, the mix of Wi-Fi, Bluetooth, Zigbee, and 5G leads to critical failures in multi-vendor environments.",
       features: [
-        "WiFi Protocol Testing",
-        "Bluetooth LE Validation",
-        "Zigbee Communication",
-        "Cellular Connectivity",
+        "ISO/IEC 29119 Standards",
+        "Wireshark Protocol Audits",
+        "Mosquitto MQTT Validation",
+        "Multi-Vendor Connectivity",
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
       action: "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Security Testing",
+      icon: <FaNetworkWired className="w-8 h-8" />,
+      title: "5G Edge Resilience & RF Interference",
       description:
-        "Advanced security assessment including device authentication, data encryption, and vulnerability testing.",
+        "High latency and RF interference cause packet loss and dead zone signal drops. We simulate Edge computing latency with network conditioners and jammers.",
       features: [
-        "Device Authentication",
-        "Data Encryption",
-        "Firmware Security",
-        "Vulnerability Assessment",
+        "Jitter & Signal Drop Simulation",
+        "Bandwidth Throttling Audits",
+        "5G Edge Resilience Checks",
+        "RF Signal Jamming Defense",
+      ],
+      color: "green",
+      gradient: "from-green-500 to-green-600",
+      action: "/performance-testing-services"
+    },
+    {
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "Security Threats & Firmware Integrity",
+      description:
+        "IoT devices face 820,000 daily attacks. We conduct deep penetration testing for industrial OT/ICS platforms following ISO/IEC 27404:2026.",
+      features: [
+        "Firmware Vulnerability Audit",
+        "OT Ransomware Defense",
+        "ISO 27404 Framework",
+        "Hardcoded Credential Scan",
       ],
       color: "red",
       gradient: "from-red-500 to-red-600",
       action: "/security-testing"
     },
     {
-      icon: <FaNetworkWired className="w-8 h-8" />,
-      title: "Protocol Testing",
+      icon: <FaFlask className="w-8 h-8" />,
+      title: "CRA 2026 & Regulatory Compliance",
       description:
-        "Testing of IoT communication protocols including MQTT, CoAP, HTTP/HTTPS, and proprietary protocols.",
+        "Preparing products for the EU Cyber Resilience Act (CRA) mandatory in 2026 and EN 303 645 benchmarks for global market entry.",
       features: [
-        "MQTT Protocol",
-        "CoAP Testing",
-        "HTTP/HTTPS Validation",
-        "Custom Protocols",
-      ],
-      color: "green",
-      gradient: "from-green-500 to-green-600",
-      action: "blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more"
-    },
-    {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Testing",
-      description:
-        "Comprehensive performance evaluation including latency, throughput, and scalability testing.",
-      features: [
-        "Latency Testing",
-        "Throughput Analysis",
-        "Scalability Assessment",
-        "Resource Optimization",
+        "ETSI EN 303 645 Compliance",
+        "NIST Privacy Baseline",
+        "FDA & HIPAA Health-Tech QA",
+        "Cyber Resilience Act (CRA)",
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
-      action: "/performance-testing-services"
+      action: "blog/post/iot-security-validation-protecting-devices-from-cyber-threats"
     },
     {
-      icon: <FaCogs className="w-8 h-8" />,
-      title: "Interoperability Testing",
+      icon: <FaChartLine className="w-8 h-8" />,
+      title: "Zettabyte Scale Performance",
       description:
-        "Testing device compatibility and integration with different platforms and ecosystems.",
+        "Stress testing industrial fleets and smart home ecosystems for battery life optimization and thermal throttling under mass data spikes.",
       features: [
-        "Platform Compatibility",
-        "Device Integration",
-        "Ecosystem Testing",
-        "Cross-platform Validation",
+        "k6 & Artillery Load Testing",
+        "36hr Stress Test Cycles",
+        "Battery Life Optimization",
+        "Thermal Throttling Analysis",
       ],
       color: "orange",
       gradient: "from-orange-500 to-orange-600",
-      action: "blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction"
-    },
-    {
-      icon: <FaCloud className="w-8 h-8" />,
-      title: "Cloud Integration Testing",
-      description:
-        "End-to-end testing of IoT device integration with cloud platforms and edge computing systems.",
-      features: [
-        "Cloud Connectivity",
-        "Edge Computing",
-        "Data Synchronization",
-        "Service Integration",
-      ],
-      color: "teal",
-      gradient: "from-teal-500 to-teal-600",
-      action: "blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core-2"
+      action: "blog/post/load-testing-in-performance-testing-complete-guide"
     },
   ];
 
@@ -120,11 +103,10 @@ const IoTComprehensiveSlider: React.FC = () => {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete IoT Testing{" "}
-            <span className="text-[theme(color.brand.blue)]">Coverage</span>
+            Solving 2026 <span className="text-[theme(color.brand.blue)]">Global IoT Hurdles</span>
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our comprehensive IoT device testing services cover every layer of your connected ecosystem, ensuring device reliability, <Link href='blog/post/iot-security-validation-protecting-devices-from-cyber-threats'>security compliance</Link>, <Link href='blog/post/interoperability-testing-for-iot-ensuring-seamless-protocol-device-interaction'>protocol interoperability</Link>, and <Link href='performance-testing-services'>performance</Link> validation across real-world conditions and all supported IoT protocols.
+            Our specialized IoT testing approaches are engineered for the 2026 ecosystem, countering <Link href="/performance-testing-services" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">latency</Link>, <Link href="/blog/post/connectivity-protocol-testing-for-iot-wifi-ble-zigbee-mqtt-more" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">5G interference</Link>, and <Link href="/security-testing" className="font-semibold text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">firmware vulnerabilities</Link> to protect your industrial and consumer assets.
           </p>
         </div>
 
@@ -135,15 +117,15 @@ const IoTComprehensiveSlider: React.FC = () => {
               key={index}
               onClick={() => setActiveTab(index)}
               className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105 ${activeTab === index
-                  ? `bg-${type.color}-500 text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
+                ? `bg-${type.color}-500 text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
                 }`}
             >
               <div className="flex items-center gap-2">
                 <div
                   className={`${activeTab === index
-                      ? "text-white"
-                      : `text-${type.color}-500`
+                    ? "text-white"
+                    : `text-${type.color}-500`
                     }`}
                 >
                   {React.cloneElement(type.icon, { className: "w-4 h-4" })}

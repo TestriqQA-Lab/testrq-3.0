@@ -8,11 +8,10 @@ const SapAnyQuestions: React.FC = () => {
         <section className="py-16 px-6 sm:px-6 md:px-12 lg:px-24 bg-gradient-to-r from-brand-blue to-indigo-600">
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                    Ready to talk about your SAP testing roadmap?
+                    Ready to talk about your <span className="text-blue-200">SAP Quality Engineering</span> roadmap?
                 </h2>
                 <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Ensure a flawless S/4HANA migration and robust SAP operations with our
-                    expert testing services.
+                    Ensure a flawless S/4HANA migration and maximize ROI with our expert testing services. Align your learning objectives with real-world business outcomes today.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link

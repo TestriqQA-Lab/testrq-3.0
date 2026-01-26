@@ -4,11 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaCode,
-  FaShieldAlt,
   FaChartLine,
-  FaCogs,
   FaNetworkWired,
-  FaCloud,
   FaArrowRight,
   FaFlask,
 } from "react-icons/fa";
@@ -21,12 +18,12 @@ const ApiComprehensiveSlider: React.FC = () => {
       icon: <FaCode className="w-8 h-8" />,
       title: "REST API Testing",
       description:
-        "Complete validation of RESTful services including endpoint testing, HTTP methods, and response validation.",
+        "Our industry-standard REST testing validates HTTP methods and ensures precise JSON or XML data. We verify that every endpoint meets your business logic and performance goals.",
       features: [
-        "Endpoint Validation",
-        "HTTP Method Testing",
-        "Response Verification",
-        "Status Code Validation",
+        "HTTP Method Validation",
+        "JSON/XML Precision Checks",
+        "Business Logic Mapping",
+        "Performance Benchmarking",
       ],
       color: "blue",
       gradient: "from-blue-500 to-blue-600",
@@ -34,78 +31,33 @@ const ApiComprehensiveSlider: React.FC = () => {
     },
     {
       icon: <FaNetworkWired className="w-8 h-8" />,
-      title: "SOAP Testing",
+      title: "Graph-QL & SOAP Testing",
       description:
-        "Comprehensive SOAP web service testing with WSDL validation and XML schema verification.",
+        "We test complex Graph-QL queries and mutations to prevent over-fetching. For legacy systems, we provide rigorous SOAP/XML testing following all protocol rules.",
       features: [
-        "WSDL Validation",
-        "XML Schema Testing",
-        "Protocol Compliance",
-        "Message Validation",
-      ],
-      color: "green",
-      gradient: "from-green-500 to-green-600",
-      action: "blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability"
-    },
-    {
-      icon: <FaCogs className="w-8 h-8" />,
-      title: "GraphQL Testing",
-      description:
-        "Advanced GraphQL API testing including query validation, mutation testing, and schema verification.",
-      features: [
-        "Query Validation",
-        "Mutation Testing",
-        "Schema Verification",
-        "Subscription Handling",
+        "Query & Mutation Security",
+        "Legacy SOAP/XML Integrity",
+        "Over-fetching Prevention",
+        "Protocol Rule Adherence",
       ],
       color: "purple",
       gradient: "from-purple-500 to-purple-600",
       action: "blog/post/graphql-api-testing-strategies-for-queries-mutations-performance"
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Security Testing",
-      description:
-        "Comprehensive security assessment including authentication, authorization, and vulnerability testing.",
-      features: [
-        "Authentication Testing",
-        "Authorization Validation",
-        "Vulnerability Assessment",
-        "Data Encryption",
-      ],
-      color: "red",
-      gradient: "from-red-500 to-red-600",
-      action: "/security-testing"
-    },
-    {
       icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Testing",
+      title: "API Performance & Load",
       description:
-        "Load testing, stress testing, and scalability assessment for optimal API performance.",
+        "Using JMeter and k6, we simulate high-traffic events to find latency and throughput issues before they impact your global users.",
       features: [
-        "Load Testing",
-        "Stress Testing",
-        "Scalability Assessment",
-        "Response Optimization",
+        "JMeter Traffic Simulation",
+        "k6 Scalability Testing",
+        "Latency Bottleneck Discovery",
+        "Throughput Optimization",
       ],
       color: "orange",
       gradient: "from-orange-500 to-orange-600",
       action: "/performance-testing-services"
-    },
-    {
-      icon: <FaCloud className="w-8 h-8" />,
-      title: "Integration Testing",
-      description:
-        "End-to-end testing of API integrations with third-party services and microservices.",
-      features: [
-        "Third-party Integration",
-        "Microservices Testing",
-        "Data Flow Validation",
-        "Service Communication",
-      ],
-      color: "teal",
-      gradient: "from-teal-500 to-teal-600",
-      action: "blog/post/api-integration-testing-ensuring-seamless-system-communication"
     },
   ];
 
@@ -116,17 +68,14 @@ const ApiComprehensiveSlider: React.FC = () => {
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaFlask />
             <span className="text-sm">
-              Comprehensive Testing Solutions
+              Our Comprehensive API Testing Services
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Complete{" "}
-            <span className="text-[theme(color.brand.blue)]">
-              API Testing Coverage
-            </span>
+            End-to-End <span className="text-[theme(color.brand.blue)]">API QA</span> for Global Markets
           </h2>
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            Our full-spectrum <Link href='blog/post/api-integration-testing-ensuring-seamless-system-communication'>API testing services</Link> validate every component of your API ecosystem-ensuring seamless integration, <Link href='blog/post/performance-scalability-testing-ensuring-iot-systems-handle-high-load-efficiently'>performance scalability</Link>, low-latency responses, and strong <Link href='blog/post/e-commerce-security-testing-compliance-services'>security compliance</Link> across <Link href='blog/post/rest-api-testing-guide-endpoints-methods-best-practices'>REST</Link>, <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>SOAP</Link>, and microservices architectures.
+          <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
+            We provide specialized API testing tailored for global markets, including the US, UK, and EU, ensuring your services are secure and high-performing.
           </p>
         </div>
 
@@ -136,11 +85,10 @@ const ApiComprehensiveSlider: React.FC = () => {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === index
-                  ? `bg-${type.color}-500 text-white shadow-lg`
-                  : "bg-white text-gray-600 hover:bg-gray-100"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeTab === index
+                ? `bg-${type.color}-500 text-white shadow-lg`
+                : "bg-white text-gray-600 hover:bg-gray-100"
+                }`}
             >
               {type.title}
             </button>
@@ -179,11 +127,11 @@ const ApiComprehensiveSlider: React.FC = () => {
 
               <div className="w-40">
                 <Link href={testingTypes[activeTab].action}
-                className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
-              >
-                <span>Learn More</span>
-                <FaArrowRight className="w-4 h-4" />
-              </Link>
+                  className={`flex items-center gap-2 px-6 py-3 bg-gradient-to-r ${testingTypes[activeTab].gradient} text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300`} aria-label={`Learn more about ${testingTypes[activeTab].title}`}
+                >
+                  <span>Learn More</span>
+                  <FaArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 

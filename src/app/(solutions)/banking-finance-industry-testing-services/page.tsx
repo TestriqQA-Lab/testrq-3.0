@@ -11,8 +11,8 @@ import { Metadata } from "next";
 import StructuredData, { bankingFinanceTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Banking App Testing Services ",
-  description: "Get secure, scalable, and compliant banking app testing with TESTRIQ QA Lab. Ensure performance, security, and regulatory compliance in finance applications..",
+  title: "Banking & Financial Application Testing Services | testriq",
+  description: "Protect your financial ecosystem with Testriq’s BFSI testing services. We ensure 100% audit pass rates, SOC2 Type II compliance, and security that withstands 300x more threats than other sectors.",
   keywords: [
     "banking testing solutions",
     "BFSI QA services",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
     yandex: 'ff703971283d110e',
     yahoo: '0A67349B8CD11BF71173B38572028507',
-}
+  }
 };
 
 
@@ -90,19 +90,19 @@ const BankingFinanceTestingPage: React.FC = () => {
   ];
   return (
     <div>
-           <StructuredData data={bankingFinanceTestingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-    <main className="min-h-screen bg-white">
-      <BankingHeroSection />
-      <BankingChallengesSection />
-      <BankingTestingServicesSection />
-      <BankingToolsFrameworksSection />
-      <BankingComplianceSection />
-      {/* <BankingCaseStudiesSection /> */}
-      <BankingROISection />
-      <BankingFAQSection />
-      <BankingContactSection />
-    </main>
+      <StructuredData data={bankingFinanceTestingServiceSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <main className="min-h-screen bg-white">
+        <BankingHeroSection />
+        <BankingChallengesSection />
+        <BankingTestingServicesSection />
+        <BankingToolsFrameworksSection />
+        <BankingComplianceSection />
+        {/* <BankingCaseStudiesSection /> */}
+        <BankingROISection />
+        <BankingFAQSection />
+        <BankingContactSection />
+      </main>
     </div>
   );
 };

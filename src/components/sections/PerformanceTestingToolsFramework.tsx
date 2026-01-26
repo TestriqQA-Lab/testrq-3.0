@@ -2,100 +2,60 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaTachometerAlt, FaChartLine, FaServer, FaCloud, FaCogs, FaNetworkWired, FaTools } from "react-icons/fa";
+import { FaTachometerAlt, FaChartLine, FaCloud, FaCogs, FaTools } from "react-icons/fa";
 
 const PerformanceTestingToolsFramework: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("load-testing-tools");
+  const [activeCategory, setActiveCategory] = useState("protocol-testing");
 
   const toolCategories = [
     {
-      id: "load-testing-tools",
-      title: "Load Testing Tools",
+      id: "protocol-testing",
+      title: "Protocol-Based Testing",
       icon: <FaTachometerAlt className="text-2xl" />,
       color: "blue",
-      description: "Advanced load testing tools for comprehensive performance validation",
+      description: "Enterprise-grade tools for protocol-heavy performance validation.",
       tools: [
-        { name: "Apache JMeter", description: "Open-source load testing tool", logo: "⚡" },
-        { name: "LoadRunner", description: "Enterprise performance testing platform", logo: "🏃" },
-        { name: "Gatling", description: "High-performance load testing framework", logo: "🎯" },
-        { name: "K6", description: "Modern load testing tool for developers", logo: "📊" },
-        { name: "BlazeMeter", description: "Cloud-based performance testing", logo: "🔥" },
-        { name: "WebLOAD", description: "Enterprise load testing solution", logo: "🌐" }
+        { name: "Apache JMeter", description: "Open-source protocol testing", logo: "⚡" },
+        { name: "LoadRunner Pro", description: "Lead enterprise performance platform", logo: "🏃" },
+        { name: "Gatling", description: "High-performance Scala/Java testing", logo: "🎯" }
       ]
     },
     {
-      id: "monitoring-tools",
-      title: "Monitoring & Analytics",
-      icon: <FaChartLine className="text-2xl" />,
-      color: "green",
-      description: "Real-time monitoring and performance analytics tools",
-      tools: [
-        { name: "New Relic", description: "Application performance monitoring", logo: "📈" },
-        { name: "AppDynamics", description: "Business performance monitoring", logo: "📊" },
-        { name: "Dynatrace", description: "AI-powered performance monitoring", logo: "🤖" },
-        { name: "Datadog", description: "Cloud monitoring and analytics", logo: "🐕" },
-        { name: "Splunk", description: "Machine data analytics platform", logo: "🔍" },
-        { name: "Grafana", description: "Open-source monitoring and observability", logo: "📋" }
-      ]
-    },
-    {
-      id: "infrastructure-tools",
-      title: "Infrastructure Testing",
-      icon: <FaServer className="text-2xl" />,
+      id: "developer-centric",
+      title: "Developer-Centric Tools",
+      icon: <FaCogs className="text-2xl" />,
       color: "purple",
-      description: "Infrastructure and system performance testing tools",
+      description: "Modern tools designed for CI/CD and developer workflows.",
       tools: [
-        { name: "Nagios", description: "Infrastructure monitoring system", logo: "🖥️" },
-        { name: "Zabbix", description: "Enterprise monitoring solution", logo: "👁️" },
-        { name: "PRTG", description: "Network monitoring software", logo: "🌐" },
-        { name: "SolarWinds", description: "IT infrastructure monitoring", logo: "☀️" },
-        { name: "Pingdom", description: "Website performance monitoring", logo: "📡" },
-        { name: "Site24x7", description: "Full-stack monitoring platform", logo: "🔧" }
+        { name: "k6", description: "Grafana-backed modern load testing", logo: "📊" },
+        { name: "Locust", description: "Python-based distributed user test", logo: "🦗" },
+        { name: "Playwright", description: "Browser-based performance validation", logo: "🎭" }
       ]
     },
     {
-      id: "cloud-platforms",
-      title: "Cloud Performance",
+      id: "cloud-generation",
+      title: "Cloud Load Generation",
       icon: <FaCloud className="text-2xl" />,
       color: "orange",
-      description: "Cloud-based performance testing and monitoring platforms",
+      description: "Global load generation using leading cloud laboratories.",
       tools: [
-        { name: "AWS CloudWatch", description: "Amazon cloud monitoring service", logo: "☁️" },
-        { name: "Azure Monitor", description: "Microsoft cloud monitoring", logo: "🔷" },
-        { name: "Google Cloud Monitoring", description: "Google cloud observability", logo: "🌐" },
-        { name: "LoadNinja", description: "Cloud-based load testing", logo: "🥷" },
-        { name: "Flood.io", description: "Performance testing in the cloud", logo: "🌊" },
-        { name: "Loader.io", description: "Cloud-based load testing service", logo: "⚡" }
+        { name: "AWS", description: "Scalable cloud infrastructure load", logo: "☁️" },
+        { name: "Browser-Stack", description: "Real-device performance grid", logo: "📱" },
+        { name: "Sauce Labs", description: "Continuous testing cloud grid", logo: "🧪" },
+        { name: "Blaze Meter", description: "Continuous performance lab", logo: "🔥" }
       ]
     },
     {
-      id: "automation-frameworks",
-      title: "Automation Frameworks",
-      icon: <FaCogs className="text-2xl" />,
-      color: "teal",
-      description: "Performance test automation and CI/CD integration frameworks",
+      id: "monitoring-visibility",
+      title: "Monitoring & Visibility",
+      icon: <FaChartLine className="text-2xl" />,
+      color: "green",
+      description: "APM tools for deep-dive performance metrics and visibility.",
       tools: [
-        { name: "Jenkins", description: "CI/CD automation server", logo: "👨‍💼" },
-        { name: "GitLab CI", description: "Built-in CI/CD for GitLab", logo: "🦊" },
-        { name: "Azure DevOps", description: "Microsoft DevOps platform", logo: "🔷" },
-        { name: "TeamCity", description: "JetBrains CI/CD server", logo: "🏗️" },
-        { name: "Bamboo", description: "Atlassian CI/CD solution", logo: "🎋" },
-        { name: "CircleCI", description: "Continuous integration platform", logo: "⭕" }
-      ]
-    },
-    {
-      id: "network-tools",
-      title: "Network Performance",
-      icon: <FaNetworkWired className="text-2xl" />,
-      color: "indigo",
-      description: "Network performance testing and analysis tools",
-      tools: [
-        { name: "Wireshark", description: "Network protocol analyzer", logo: "🦈" },
-        { name: "iperf3", description: "Network bandwidth testing tool", logo: "📶" },
-        { name: "NetWorx", description: "Network usage monitoring", logo: "📊" },
-        { name: "PRTG Network Monitor", description: "Network monitoring solution", logo: "🌐" },
-        { name: "SolarWinds NPM", description: "Network performance monitor", logo: "☀️" },
-        { name: "ThousandEyes", description: "Network intelligence platform", logo: "👁️" }
+        { name: "New Relic", description: "Full-stack observability platform", logo: "📈" },
+        { name: "Dynatrace", description: "AI-powered APM and observability", logo: "🤖" },
+        { name: "AppDynamics", description: "Real-time application performance", logo: "📊" },
+        { name: "Datadog", description: "Cloud-scale monitoring and security", logo: "🐕" }
       ]
     }
   ];
@@ -135,7 +95,7 @@ const PerformanceTestingToolsFramework: React.FC = () => {
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Category Navigation */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-b border-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 border-b border-gray-200">
             {toolCategories.map((category) => {
               const colors = getColorClasses(category.color);
               return (
@@ -143,8 +103,8 @@ const PerformanceTestingToolsFramework: React.FC = () => {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`p-4 text-center transition-all duration-300 ${activeCategory === category.id
-                      ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
-                      : `text-gray-600 ${colors.hover}`
+                    ? `${colors.bg} ${colors.text} border-b-2 ${colors.border}`
+                    : `text-gray-600 ${colors.hover}`
                     }`}
                 >
                   <div className="flex flex-col items-center space-y-2">

@@ -145,29 +145,23 @@ const BankingROISection: React.FC = () => {
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-      <div className="mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
             <FaChartLine className="w-4 h-4" />
-            <span className="text-sm">Return on Investment</span>
+            <span className="text-sm">Strategic ROI</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Measurable{" "}
-            <span className="text-[theme(color.brand.blue)]">
-              ROI & Business
+            Maximizing ROI in
+            <span className="block text-[theme(color.brand.blue)]">
+              BFSI Quality Assurance
             </span>
-            <span className="block">Impact</span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our banking and finance testing solutions deliver quantifiable <Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI</Link>{" "}
-            through cost savings, risk reduction, and operational efficiency
-            improvements, directly impacting your bottom line by enhancing
-            regulatory compliance, financial application stability, and <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms
-            ">platform
-            performance</Link>.
+            Transitioning from manual effort to Automated Regression Testing delivers an <span className="font-semibold text-[theme(color.brand.blue)]">ROI of over 300%</span> for mid-sized banks. Our strategies withstand <span className="font-semibold">tens of thousands of daily automated attacks</span>, slashing annual QA costs from <span className="text-red-600">$1.1M to just $260k</span>.
           </p>
         </div>
 
@@ -450,9 +444,9 @@ const BankingROISection: React.FC = () => {
               </button>
             </Link>
             <Link href={"/contact-us"}>
-            <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
-              Request Cost Analysis
-            </button>
+              <button className="bg-white cursor-pointer bg-opacity-20 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-opacity-30 hover:scale-98 transition-all duration-200 ease-in-out border border-white border-opacity-30">
+                Request Cost Analysis
+              </button>
             </Link>
           </div>
         </div>

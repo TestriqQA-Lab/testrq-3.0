@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
-import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode, FaTools } from "react-icons/fa";
+import { FaRobot, FaMobileAlt, FaCogs, FaCloud, FaChartLine, FaCode } from "react-icons/fa";
 
 const AutomationTestingToolsFramework: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("web-automation");
@@ -10,77 +9,67 @@ const AutomationTestingToolsFramework: React.FC = () => {
   const toolCategories = [
     {
       id: "web-automation",
-      title: "Web Automation",
+      title: "WebView Automation",
       icon: <FaRobot className="text-2xl" />,
       color: "blue",
-      description: "Advanced web automation tools for comprehensive browser testing",
+      description: "Our framework utilizes Selenium, Playwright, and Cypress for robust browser testing.",
       tools: [
         { name: "Selenium WebDriver", description: "Industry-standard web automation framework", logo: "🌐" },
         { name: "Playwright", description: "Modern web testing for all browsers", logo: "🎭" },
         { name: "Cypress", description: "Fast, easy and reliable testing for web apps", logo: "🌲" },
         { name: "TestCafe", description: "Node.js tool to automate end-to-end web testing", logo: "☕" },
-        { name: "Puppeteer", description: "Chrome DevTools Protocol automation", logo: "🎪" },
-        { name: "WebDriverIO", description: "Next-gen browser automation framework", logo: "🚗" }
       ]
     },
     {
       id: "mobile-automation",
-      title: "Mobile Automation",
+      title: "Mobile Platform Testing",
       icon: <FaMobileAlt className="text-2xl" />,
       color: "green",
-      description: "Comprehensive mobile testing automation tools and frameworks",
+      description: "We implement Appium, Espresso, and XCUITest to ensure cross-device compatibility.",
       tools: [
         { name: "Appium", description: "Cross-platform mobile automation framework", logo: "📱" },
         { name: "Espresso", description: "Android UI testing framework", logo: "☕" },
         { name: "XCUITest", description: "iOS automation testing framework", logo: "🍎" },
         { name: "Detox", description: "Gray box end-to-end testing for mobile apps", logo: "🧪" },
-        { name: "Calabash", description: "Automated acceptance testing for mobile apps", logo: "🥒" },
-        { name: "Robot Framework", description: "Generic automation framework for mobile", logo: "🤖" }
       ]
     },
     {
       id: "api-automation",
-      title: "API Automation",
+      title: "API Verification",
       icon: <FaCogs className="text-2xl" />,
       color: "purple",
-      description: "Headless Rest Assured & Postman Automation. We test the backend logic before the UI is even built, ensuring your microservices handle high loads and data validation correctly.",
+      description: "Our team deploys Postman and Rest-Assured for rigorous protocol and data validation.",
       tools: [
         { name: "REST Assured", description: "Java library for REST API testing", logo: "🔗" },
         { name: "Postman", description: "API development and testing platform", logo: "📮" },
-        { name: "Newman", description: "Command-line collection runner for Postman", logo: "🏃" },
         { name: "SoapUI", description: "Comprehensive API testing tool", logo: "🧼" },
         { name: "Karate", description: "Open-source API testing framework", logo: "🥋" },
-        { name: "Insomnia", description: "API design and testing platform", logo: "😴" }
       ]
     },
     {
       id: "performance-automation",
-      title: "Performance Testing",
+      title: "Performance",
       icon: <FaChartLine className="text-2xl" />,
       color: "orange",
-      description: "Performance testing automation tools for scalability validation",
+      description: "Utilizing JMeter and k6, we evaluate system stability under high-load conditions.",
       tools: [
         { name: "JMeter", description: "Open-source performance testing tool", logo: "⚡" },
-        { name: "LoadRunner", description: "Enterprise performance testing platform", logo: "🏃‍♂️" },
         { name: "K6", description: "Modern load testing tool for developers", logo: "📊" },
+        { name: "LoadRunner", description: "Enterprise performance testing platform", logo: "🏃‍♂️" },
         { name: "Gatling", description: "High-performance load testing framework", logo: "🔫" },
-        { name: "Artillery", description: "Modern, powerful load testing toolkit", logo: "💥" },
-        { name: "BlazeMeter", description: "Continuous testing platform", logo: "🔥" }
       ]
     },
     {
       id: "cicd-tools",
-      title: "CI/CD Integration",
+      title: "Infrastructure & CI/CD",
       icon: <FaCode className="text-2xl" />,
       color: "teal",
-      description: "Continuous integration and deployment automation tools",
+      description: "We integrate with Jenkins, GitLab CI, and Azure DevOps to facilitate continuous delivery.",
       tools: [
         { name: "Jenkins", description: "Open-source automation server", logo: "👨‍💼" },
         { name: "GitHub Actions", description: "CI/CD platform integrated with GitHub", logo: "🐙" },
-        { name: "Azure DevOps", description: "Microsoft's DevOps platform", logo: "🔷" },
         { name: "GitLab CI", description: "Built-in CI/CD for GitLab", logo: "🦊" },
-        { name: "CircleCI", description: "Continuous integration and delivery platform", logo: "⭕" },
-        { name: "TeamCity", description: "JetBrains CI/CD server", logo: "🏗️" }
+        { name: "Azure DevOps", description: "Microsoft's DevOps platform", logo: "🔷" },
       ]
     },
     {
@@ -88,14 +77,12 @@ const AutomationTestingToolsFramework: React.FC = () => {
       title: "Cloud Platforms",
       icon: <FaCloud className="text-2xl" />,
       color: "indigo",
-      description: "Cloud-based testing platforms for scalable automation",
+      description: "Cloud-based testing platforms for scalable automation in the zettabyte era.",
       tools: [
         { name: "BrowserStack", description: "Real device cloud for testing", logo: "☁️" },
         { name: "Sauce Labs", description: "Continuous testing cloud", logo: "🧪" },
         { name: "LambdaTest", description: "Cross-browser testing platform", logo: "λ" },
         { name: "AWS Device Farm", description: "Mobile app testing service", logo: "📱" },
-        { name: "Firebase Test Lab", description: "Google's mobile testing infrastructure", logo: "🔥" },
-        { name: "Perfecto", description: "Continuous testing platform", logo: "💎" }
       ]
     }
   ];
@@ -118,17 +105,11 @@ const AutomationTestingToolsFramework: React.FC = () => {
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
-            <FaTools />
-            <span className="text-sm">
-              Tools & Frameworks
-            </span>
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span className="text-brand-blue">Tech Stack: </span>Python, Java & JavaScript Frameworks
+            Our <span className="text-brand-blue">Technical</span> Tech Stack
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We use <Link href='/technology-stack'>cutting-edge automation tools</Link> and scalable frameworks to ensure reliable, efficient testing that accelerates development cycles and boosts software quality across <Link href='web-application-testing-services'>web</Link>, <Link href='mobile-application-testing'>mobile</Link>, <Link href='api-testing'>API</Link>, and <Link href='blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD environments</Link>.
+            Our team delivers elite automation using Selenium, Playwright, and Cypress. We implement a layered tech stack built for your specific infrastructure to maintain professional authority.
           </p>
         </div>
 
@@ -224,8 +205,8 @@ const AutomationTestingToolsFramework: React.FC = () => {
               <div className="bg-white w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <span className="text-2xl">🔄</span>
               </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Continuous Integration</h4>
-              <p className="text-sm text-gray-600">We shift testing to the left. Our engineers integrate automated suites directly into Jenkins, Azure DevOps, or GitHub Actions. Every commit triggers a &apos;Smoke Test,&apos; preventing bugs from ever reaching the QA environment</p>
+              <h4 className="font-semibold text-gray-900 mb-2">CI/CD Shift-Left</h4>
+              <p className="text-sm text-gray-600">We shift testing to the left. Our engineers integrate automated suites directly into Jenkins, GitLab CI, or GitHub Actions to prevent bugs from ever reaching the QA environment.</p>
             </div>
 
             <div className="text-center">

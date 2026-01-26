@@ -36,24 +36,20 @@ const CorporateQATrainingHeroSection: React.FC = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Transform Your Team with
+              Global Corporate QA Training:
               <span className="text-transparent bg-clip-text bg-brand-blue">
                 {" "}
-                Expert
+                Future-Proofing Teams
               </span>
               <span className="text-transparent block bg-clip-text bg-brand-blue">
                 {" "}
-                QA Training
+                for 2026 & Beyond
               </span>
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Elevate your organization&apos;s software quality with
-              comprehensive QA training programs. Our expert-led corporate
-              training covers <Link href="/manual-testing-services">manual testing</Link>, <Link href="/automation-testing-services">automation</Link> frameworks, <Link href="/performance-testing-services">performance
-                testing</Link>, and quality assurance best practices. Delivered by
-              ISTQB-certified professionals with hands-on experience and
-              industry-proven methodologies to upskill your entire QA team.
+              In an era of rapid digital transformation, the gap between software complexity and team capability is widening. At Testriq, we provide enterprise-grade <Link href="/corporate-qa-training">corporate QA training</Link> and software QA training programs designed to bridge this divide. Our curriculum strategically responds to the global shift toward AI, hyper-automation, and continuous delivery.
+              By leveraging ISTQB-certified programs and customized roadmaps, we help organizations transition from traditional testing to advanced quality engineering. We offer online corporate QA training for remote teams and customized bootcamps for software companies.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

@@ -7,88 +7,128 @@ import { FaTools } from "react-icons/fa";
 const ETLToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      title: <Link href="/technology-stack">ETL Testing Tools</Link>,
+      title: "ETL Test Automation",
       tools: [
         {
           name: "QuerySurge",
-          description: "Comprehensive ETL testing and data validation platform",
+          description: "High-volume data warehouse validation platform",
         },
         {
-          name: "Datagaps ETL Validator",
-          description: "Automated ETL testing with AI-powered validation",
+          name: "iCEDQ (iceDQ)",
+          description: "In-memory data testing for real-time pipelines",
         },
         {
-          name: "iCEDQ",
-          description: "Data testing and monitoring platform for ETL pipelines",
+          name: "ETL Validator",
+          description: "Datagaps visual test case building & QA",
         },
         {
           name: "RightData",
-          description: "Data validation and ETL testing automation tool",
+          description: "Automated data reconciliation & profiling",
         },
       ],
     },
     {
-      title: "ETL Platforms",
+      title: "Data Integration Platforms",
       tools: [
         {
           name: "Informatica PowerCenter",
-          description: "Enterprise data integration and ETL platform",
+          description: "Enterprise source-to-target mapping validation",
         },
         {
-          name: "Talend Data Integration",
-          description: "Open-source and enterprise ETL solution",
+          name: "Talend",
+          description: "Open-source data integration & cleansing",
         },
         {
-          name: "Microsoft SSIS",
-          description: "SQL Server Integration Services for data integration",
+          name: "Matillion",
+          description: "Cloud-native ETL for modern data stacks",
         },
         {
-          name: "Apache NiFi",
-          description: "Data flow automation and ETL processing",
+          name: "AWS Glue",
+          description: "Serverless data integration and discovery",
         },
       ],
     },
     {
-      title: "Data Quality Tools",
-      tools: [
-        {
-          name: "Informatica Data Quality",
-          description: "Comprehensive data quality and profiling solution",
-        },
-        {
-          name: "Talend Data Quality",
-          description: "Data profiling and quality assessment tools",
-        },
-        {
-          name: "IBM InfoSphere QualityStage",
-          description: "Enterprise data quality and standardization",
-        },
-        {
-          name: "SAS Data Management",
-          description: "Data quality and governance platform",
-        },
-      ],
-    },
-    {
-      title: (
-        <Link href="performance-testing-services">Performance Testing</Link>
-      ),
+      title: "Performance & Load",
       tools: [
         {
           name: "Apache JMeter",
-          description: "Load testing and performance measurement for ETL",
+          description: "ETL pipeline performance profiling at scale",
         },
         {
           name: "LoadRunner",
-          description: "Enterprise performance testing for data pipelines",
+          description: "Enterprise load testing for data estate",
         },
         {
           name: "Gatling",
-          description: "High-performance load testing framework",
+          description: "High-density concurrent connection testing",
         },
         {
-          name: "Apache Spark",
-          description: "Big data processing and performance optimization",
+          name: "k6",
+          description: "Modern load testing for cloud pipelines",
+        },
+      ],
+    },
+    {
+      title: "Cloud Warehousing",
+      tools: [
+        {
+          name: "Snowflake",
+          description: "Validation for cloud-native data migrations",
+        },
+        {
+          name: "Databricks",
+          description: "Lakehouse architecture and Delta Lake QA",
+        },
+        {
+          name: "Azure Data Factory",
+          description: "Orchestration & data movement validation",
+        },
+        {
+          name: "Google BigQuery",
+          description: "High-velocity data warehouse stress tests",
+        },
+      ],
+    },
+    {
+      title: "Enterprise Databases",
+      tools: [
+        {
+          name: "PostgreSQL / Oracle",
+          description: "Structured data storage and schema audits",
+        },
+        {
+          name: "MongoDB",
+          description: "NoSQL document store validation & testing",
+        },
+        {
+          name: "Microsoft SQL Server",
+          description: "Relational database integrity and logic QA",
+        },
+        {
+          name: "Redis",
+          description: "In-memory data structure store validation",
+        },
+      ],
+    },
+    {
+      title: "Validation Engines",
+      tools: [
+        {
+          name: "Python Frameworks",
+          description: "Custom backend testing and SQL verification",
+        },
+        {
+          name: "AI Anomaly Detection",
+          description: "Automated identification of data outliers",
+        },
+        {
+          name: "Pandas / NumPy",
+          description: "Advanced data manipulation and validation",
+        },
+        {
+          name: "Great Expectations",
+          description: "Standardized data quality and testing",
         },
       ],
     },
@@ -103,19 +143,14 @@ const ETLToolsFramework: React.FC = () => {
             <span className="text-sm">Tools & Frameworks</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            ETL Testing{" "}
-            <span className="text-brand-blue">Tools & Frameworks</span>
+            Testriq&apos; s ETL Technical <span className="text-brand-blue">Tech Stack</span> (2026 Trends)
           </h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            We leverage cutting-edge <Link href="/technology-stack">ETL testing tools</Link>{" "}
-            and frameworks to ensure comprehensive validation of your data
-            pipelines across all extraction, transformation, and loading
-            stages—ensuring data accuracy, quality assurance, and pipeline
-            reliability.
+            We utilize a curated selection of <Link href="/technology-stack" className="text-brand-blue font-semibold hover:underline">etl testing tools</Link> to provide exhaustive validation across your entire data estate, ensuring performance and security at every layer.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {toolCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}

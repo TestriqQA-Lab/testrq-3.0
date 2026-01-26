@@ -3,12 +3,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-  FaRobot,
   FaShieldAlt,
-  FaCog,
   FaChartLine,
   FaUsers,
-  FaClock,
   FaAward,
 } from "react-icons/fa";
 
@@ -17,94 +14,64 @@ const RoboticWhyChooseTestriq: React.FC = () => {
 
   const reasons = [
     {
-      icon: <FaRobot className="w-8 h-8" />,
-      title: "Robotic Testing Experts",
+      icon: <FaUsers className="w-8 h-8" />,
+      title: "Specialized Robotics Technicians",
       description:
-        "Our team includes certified experts in robotic quality assurance and testing professionals with extensive experience in industrial and service robotics.",
-      achievement: "300+ Robots Tested",
+        "Our team has decades of experience working with precision robotics and high-end automation setups, providing expert oversight for complex deployments.",
+      achievement: "Expert Led QA",
       capabilities: [
-        "Industrial Robotics",
-        "Service Robots",
-        "Autonomous Systems",
-        "Robotic Arms",
+        "Precision Robotics",
+        "High-end Automation",
+        "Expert Oversight",
+        "Legacy Integrations",
       ],
       color: "blue",
       bgGradient: "from-blue-500 to-blue-600",
     },
     {
-      icon: <FaShieldAlt className="w-8 h-8" />,
-      title: "Safety First Approach",
+      icon: <FaChartLine className="w-8 h-8" />,
+      title: "Sim2Real Expertise",
       description:
-        "Advanced safety testing protocols to ensure your robotic systems meet the highest safety standards and regulations.",
-      achievement: "Zero Safety Incidents",
+        "We reduce performance drops by 40% with our Digital Twin and Physical AI-driven testing, ensuring reliability from simulation to deployment.",
+      achievement: "40% Reliability Boost",
       capabilities: [
-        "Safety Validation",
-        "Risk Assessment",
-        "Compliance Testing",
-        "Emergency Protocols",
+        "Digital Twin Testing",
+        "Physical AI Modeling",
+        "Environmental Stress",
+        "Cycle Validation",
       ],
       color: "green",
       bgGradient: "from-green-500 to-green-600",
     },
     {
-      icon: <FaCog className="w-8 h-8" />,
-      title: "Precision Testing",
+      icon: <FaAward className="w-8 h-8" />,
+      title: "Global Export Readiness",
       description:
-        "State-of-the-art testing equipment and methodologies to validate robotic precision and performance.",
-      achievement: "±0.1mm Precision",
+        "We ensure your products are ready for the USA and EU markets with rigorous UL 3100 and CE audits, meeting all regional safety requirements.",
+      achievement: "Market Entry Ready",
       capabilities: [
-        "Movement Precision",
-        "Sensor Accuracy",
-        "Performance Testing",
-        "Quality Validation",
+        "UL 3100 Certification",
+        "CE Compliance Audit",
+        "Regional Safety Laws",
+        "Global Launch Support",
       ],
       color: "purple",
       bgGradient: "from-purple-500 to-purple-600",
     },
     {
-      icon: <FaChartLine className="w-8 h-8" />,
-      title: "Performance Optimization",
+      icon: <FaShieldAlt className="w-8 h-8" />,
+      title: "100% Safety Compliance",
       description:
-        "Comprehensive performance analysis and optimization to ensure your robots operate at peak efficiency.",
-      achievement: "40% Performance Boost",
+        "Mapped to ISO 10218 and ISO 13482 for guaranteed collaborative safety and risk-free human-robot interaction.",
+      achievement: "Zero Liability Risk",
       capabilities: [
-        "Speed Optimization",
-        "Efficiency Testing",
-        "Load Analysis",
-        "Endurance Testing",
+        "ISO 10218 Mapping",
+        "ISO 13482 Validation",
+        "Collaborative Safety",
+        "Hazard Analysis",
       ],
       color: "orange",
       bgGradient: "from-orange-500 to-orange-600",
-    },
-    {
-      icon: <FaUsers className="w-8 h-8" />,
-      title: "Dedicated Support",
-      description:
-        "24/7 support from our robotic testing specialists who understand your unique robotic challenges.",
-      achievement: "24/7 Support",
-      capabilities: [
-        "Expert Consultation",
-        "Technical Support",
-        "Maintenance Guidance",
-        "Training Programs",
-      ],
-      color: "red",
-      bgGradient: "from-red-500 to-red-600",
-    },
-    {
-      icon: <FaClock className="w-8 h-8" />,
-      title: "Rapid Testing Cycles",
-      description:
-        "Fast and efficient robotic testing processes with comprehensive reporting and quick turnaround times.",
-      achievement: "72hr Turnaround",
-      capabilities: [
-        "Rapid Testing",
-        "Quick Reports",
-        "Fast Validation",
-        "Efficient Processes",
-      ],
-      color: "teal",
-      bgGradient: "from-teal-500 to-teal-600",
     },
   ];
 
@@ -145,7 +112,7 @@ const RoboticWhyChooseTestriq: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {reasons.map((reason, index) => (
             <div
               key={index}
@@ -155,32 +122,28 @@ const RoboticWhyChooseTestriq: React.FC = () => {
             >
               {/* Card */}
               <div
-                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${
-                  hoveredCard === index
-                    ? `scale-105 shadow-2xl ${
-                        getColorClasses(reason.color).split(" ")[2]
-                      }`
-                    : "border-gray-200 hover:shadow-xl"
-                }`}
+                className={`bg-white rounded-2xl p-8 shadow-lg border-2 transition-all duration-500 transform ${hoveredCard === index
+                  ? `scale-105 shadow-2xl ${getColorClasses(reason.color).split(" ")[2]
+                  }`
+                  : "border-gray-200 hover:shadow-xl"
+                  }`}
               >
                 {/* Icon and Achievement Badge */}
                 <div className="flex items-start justify-between mb-6">
                   <div
-                    className={`p-4 rounded-xl transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`p-4 rounded-xl transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white shadow-lg`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.icon}
                   </div>
 
                   <div
-                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${
-                      hoveredCard === index
-                        ? `bg-gradient-to-r ${reason.bgGradient} text-white`
-                        : getColorClasses(reason.color)
-                    }`}
+                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${hoveredCard === index
+                      ? `bg-gradient-to-r ${reason.bgGradient} text-white`
+                      : getColorClasses(reason.color)
+                      }`}
                   >
                     {reason.achievement}
                   </div>
@@ -197,11 +160,10 @@ const RoboticWhyChooseTestriq: React.FC = () => {
 
                 {/* Capabilities */}
                 <div
-                  className={`transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 max-h-40"
-                      : "opacity-0 max-h-0 overflow-hidden"
-                  }`}
+                  className={`transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 max-h-40"
+                    : "opacity-0 max-h-0 overflow-hidden"
+                    }`}
                 >
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                     <span
@@ -227,11 +189,10 @@ const RoboticWhyChooseTestriq: React.FC = () => {
 
                 {/* CTA Button */}
                 <div
-                  className={`mt-6 transition-all duration-500 ${
-                    hoveredCard === index
-                      ? "opacity-100 translate-y-0"
-                      : "opacity-0 translate-y-4"
-                  }`}
+                  className={`mt-6 transition-all duration-500 ${hoveredCard === index
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                    }`}
                 >
                   <Link
                     href="/contact-us"

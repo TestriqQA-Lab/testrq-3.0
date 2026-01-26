@@ -2,56 +2,32 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaCode, FaRocket, FaShieldAlt, FaGithub, FaDocker, FaPlayCircle, FaGitlab, FaDatabase, FaLock, FaJava, FaFileAlt, FaPython, FaJsSquare, FaNodeJs, FaRobot, FaMicrosoft, FaCircle, FaWifi, FaServer } from "react-icons/fa";
+import { FaTools, FaCode, FaRocket, FaShieldAlt, FaPlayCircle, FaLock, FaFileAlt, FaNetworkWired } from "react-icons/fa";
 
 const ApiToolsFramework: React.FC = () => {
   const toolCategories = [
     {
-      category: "Testing Tools",
+      category: "Frameworks & Tools",
       icon: <FaTools className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "Postman", description: "API development and testing platform", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "SoapUI", description: "Comprehensive API testing tool", icon: <FaFileAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "JMeter", description: "Performance and load testing", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Rest-Assured", description: "Java-based REST API testing", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Karate", description: "Open-source API test automation", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Newman", description: "Command-line Postman collection runner", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Frameworks", description: "Rest-Assured, Karate, PyTest, Cypress", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Core Tools", description: "Postman, SoapUI, Swagger (OpenAPI)", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
     {
-      category: "Frameworks",
-      icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" />,
+      category: "Protocols & Formats",
+      icon: <FaNetworkWired className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "PyTest", description: "Python testing framework", icon: <FaPython className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Jest", description: "JavaScript testing framework", icon: <FaJsSquare className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "TestNG", description: "Java testing framework", icon: <FaJava className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Mocha", description: "Node.js testing framework", icon: <FaNodeJs className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Cucumber", description: "BDD testing framework", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Robot Framework", description: "Generic automation framework", icon: <FaRobot className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Protocols", description: "REST, SOAP, GraphQL, gRPC", icon: <FaCode className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Data Formats", description: "JSON, XML, Protocol Buffers", icon: <FaFileAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
     {
-      category: "CI/CD Integration",
-      icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" />,
-      tools: [
-        { name: "Jenkins", description: "Continuous integration server", icon: <FaPlayCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "GitLab CI", description: "Built-in CI/CD platform", icon: <FaGitlab className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "GitHub Actions", description: "Workflow automation", icon: <FaGithub className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Azure DevOps", description: "Microsoft DevOps platform", icon: <FaMicrosoft className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "CircleCI", description: "Cloud-based CI/CD platform", icon: <FaCircle className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Docker", description: "Containerization platform", icon: <FaDocker className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-      ],
-    },
-    {
-      category: "Security Tools",
+      category: "Infrastructure & Security",
       icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" />,
       tools: [
-        { name: "OWASP ZAP", description: "Security testing proxy", icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Burp Suite", description: "Web application security testing", icon: <FaLock className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Nessus", description: "Vulnerability scanner", icon: <FaShieldAlt className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Wireshark", description: "Network protocol analyzer", icon: <FaWifi className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "SQLMap", description: "SQL injection testing tool", icon: <FaDatabase className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
-        { name: "Nikto", description: "Web server scanner", icon: <FaServer className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "CI/CD Pipelines", description: "Jenkins, GitLab CI, Azure DevOps", icon: <FaRocket className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
+        { name: "Security Testing", description: "OWASP ZAP, Burp Suite, 42Crunch", icon: <FaLock className="w-6 h-6 text-[theme(color.brand.blue)]" /> },
       ],
     },
   ];
@@ -65,15 +41,10 @@ const ApiToolsFramework: React.FC = () => {
             <span className="text-sm">Tools & Frameworks</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            <span className="text-[theme(color.brand.blue)]">
-              Tools & Frameworks
-            </span>{" "}
-            We Use
+            Technical <span className="text-[theme(color.brand.blue)]">Tech Stack</span>: Instruments of Precision
           </h2>
           <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            We leverage <Link href='/technology-stack'>industry-leading tools and frameworks</Link> to deliver
-            comprehensive API testing solutions that ensure <Link href='blog/post/soap-api-testing-methodology-ensuring-legacy-system-reliability'>reliability</Link>,{" "}
-            <Link href='blog/post/graphql-api-testing-strategies-for-queries-mutations-performance'>performance</Link>, and <Link href='security-testing'>security</Link>.
+            To deliver automated API testing at scale, we utilize a multi-layered stack tailored to your infrastructure. Our instruments are selected for technical precision and global compatibility.
           </p>
         </div>
 

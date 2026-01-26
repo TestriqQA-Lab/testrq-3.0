@@ -55,52 +55,31 @@ const ETLTestingHeroSection: React.FC = () => {
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-brand-blue rounded-full text-base md:text-sm"></div>
 
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Comprehensive <span className="text-brand-blue">ETL Testing</span>{" "}
-              Services
+              Global ETL Testing Services:{" "}
+              <span className="text-brand-blue">Ensuring Data Integrity</span> in
+              a Zettabyte Era
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Ensure your{" "}
-              <Link href="/blog/post/data-loading-testing-etl-performance-testing">
-                ETL Data Loading &amp; Performance Testing
-              </Link>
-              , complete, and{" "}
-              <Link href="/blog/post/data-quality-testing-in-etl">
-                Data Quality Testing in ETL
-              </Link>{" "}
-              with our comprehensive ETL testing services. From{" "}
-              <Link href="/blog/post/data-extraction-testing">
-                Data Extraction Testing &amp; Transformation Validation
-              </Link>
-              , and{" "}
-              <Link href="/blog/post/data-loading-testing-etl-performance-testing">
-                ETL Data Loading Validation
-              </Link>
-              , we validate every layer of your ETL process to ensure seamless{" "}
-              <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">
-                EHR/EMR Data Integration Testing
-              </Link>
-              ,
-              <Link href="/blog/post/data-quality-testing-in-etl">
-                ETL Data Quality Assurance
-              </Link>
-              , and{" "}
-              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
-                Medical Device Compliance Testing
-              </Link>
-              .
-            </p>
+
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed">
+                With the ETL market hitting <span className="font-semibold text-brand-blue">$8.8 billion</span> this year, data integrity is more critical than ever. At Testriq, we provide <Link href="/blog/post/data-quality-testing-in-etl" className="text-brand-blue hover:underline">enterprise ETL testing</Link> to ensure your data pipelines are accurate, scalable, and audit-ready. We go beyond simple record counts to validate complex business logic through deep <Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability" className="text-brand-blue hover:underline">data integration testing</Link>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                Testriq bridges the gap between raw data and actionable intelligence. We specialize in high-velocity <Link href="/blog/post/data-loading-testing-etl-performance-testing" className="text-brand-blue hover:underline">ETL automation</Link> and complex cloud migrations like <span className="font-semibold">Snowflake</span>. Whether you&apos;re focused on scalability or global compliance, we ensure your data is zero-defect and always audit-ready.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact-us"
                 title="Get Started Today – Testriq QA Lab"
-                className="inline-flex items-center justify-center w-full px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3 min-h-[44px] min-w-[44px] bg-brand-blue text-white font-semibold rounded-lg shadow-lg hover:bg-brand-blue transition-colors duration-300"
               >
                 Get Started Today
               </Link>
               <button
                 onClick={openLightbox}
-                className="inline-flex items-center justify-center w-full border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-300 flex items-center justify-center"
+                className="inline-flex items-center justify-center w-full sm:w-auto border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 flex items-center justify-center"
               >
                 <span className="mr-2">▶</span>
                 Watch Demo
@@ -111,29 +90,35 @@ const ETLTestingHeroSection: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-500">
-                  500+
+                  $8.8B
                 </div>
-                <div className="text-sm text-gray-600">
-                  ETL Pipelines Tested
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">
+                  ETL Market 2026
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-500">
-                  99.8%
+                  Zero
                 </div>
-                <div className="text-sm text-gray-600">Data Accuracy Rate</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">
+                  Defect Data Flow
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-500">
-                  36 hr
+                  SOC2
                 </div>
-                <div className="text-sm text-gray-600">Average Turnaround</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">
+                  Compliance Ready
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-orange-500">
-                  24/7
+                  Audit
                 </div>
-                <div className="text-sm text-gray-600">Support Available</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">
+                  Airtight Accuracy
+                </div>
               </div>
             </div>
           </div>

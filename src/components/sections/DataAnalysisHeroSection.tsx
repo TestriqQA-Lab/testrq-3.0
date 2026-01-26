@@ -41,25 +41,16 @@ const DataAnalysisHeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Transform Data into{" "}
-                <span className="text-brand-blue">Actionable Insights</span>
+                Global Data Analytics: Driving{" "}
+                <span className="text-brand-blue">Prescriptive Intelligence</span> Through Advanced Data Evaluation
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Professional <Link href="/blog/post/why-discovery-analysis-matters-in-testing">data analysis services</Link> that transform your raw data
-                into powerful business insights. From descriptive analytics to
-                predictive modeling, we empower you to make data-driven
-                decisions that steer your business ahead and drive measurable
-                growth.
+                Accuracy is the new competitive edge in 2026. We analyze complex data sets to help you make smarter business decisions. Our <Link href="/blog/post/how-does-validation-optimization-improve-web-application-quality">data analytics services</Link> bridge the gap between your data silos and your long-term business goals.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our dedicated data team of expert data scientists and analysts
-                leverages advanced statistical modeling, <Link href="/blog/post/ai-testing-learning-guide">machine learning</Link> model
-                building, and cutting-edge data analysis tools to uncover hidden
-                patterns, trends, and strategic opportunities within your
-                data-turning complex information into realistic, actionable
-                insights.
+                We analyze your data to provide everything from initial trends to <span className="font-bold underline decoration-brand-blue">prescriptive insights</span>. Our team of certified scientists uses an ISO-aligned framework to ensure your data is accurate and globally compliant. Whether you are a startup or a global firm, Testriq delivers the technical depth you need. We help you win in a data-first economy.
               </p>
             </div>
 

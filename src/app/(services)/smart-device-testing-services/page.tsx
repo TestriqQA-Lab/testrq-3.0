@@ -7,6 +7,7 @@ import SmartDeviceToolsFramework from "@/components/sections/SmartDeviceToolsFra
 import SmartDeviceCaseStudies from "@/components/sections/SmartDeviceCaseStudies";
 import SmartDeviceFAQs from "@/components/sections/SmartDeviceFAQs";
 import SmartDeviceAnyQuestions from "@/components/sections/SmartDeviceAnyQuestions";
+import SmartDeviceComplianceTable from "@/components/sections/SmartDeviceComplianceTable";
 import { Metadata } from "next";
 import StructuredData, {
   createBreadcrumbSchema,
@@ -14,22 +15,22 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Smart Mobile Device Testing Services Company",
+  title: "Enterprise Smart Device & IoT Testing Services USA | Testriq",
 
   description:
-    "We are one of the best Smart Mobile Device Testing Services Company in Mumbai. With expertise in testing Web applications and mobile apps. Contact Us Now!",
+    "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization for wearables and IoT ecosystems.",
   keywords: [
-    "smart device testing",
-    "IoT device testing",
-    "wearable device testing",
-    "smart home QA",
-    "connected device testing",
-    "smart appliance testing",
-    "Bluetooth testing",
-    "NFC testing",
-    "device performance testing",
-    "QA for smart devices",
-    "smart device automation testing",
+    "Enterprise Smart Device Testing Services",
+    "IoT Device Testing USA",
+    "ISO 29119-3 Compliance",
+    "Wearable Device QA",
+    "Smart Home Device Validation",
+    "5G & Protocol Testing",
+    "IoT Security Penetration Testing",
+    "Battery Life Optimization",
+    "Digital Twin IoT Simulation",
+    "Machine-to-Machine Communication Testing",
+    "Zigbee & MQTT Validation",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -47,11 +48,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/smart-device-testing-services",
-    siteName: "Testriq - Professional Software Testing Services",
+    siteName: "Testriq - Enterprise Smart Device Testing",
     title:
-      "Smart Device Testing Services | IoT, Wearables, Smart Home QA - Testriq",
+      "Enterprise Smart Device & IoT Testing Services USA | Testriq",
     description:
-      "Comprehensive smart device testing services for wearables, smart home devices, and IoT ecosystems. Validate connectivity, performance, security, and user experience with Testriq's expert QA services.",
+      "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
     images: [
       {
         url: "/OG/Smart-Device-Testing-Service-Og.webp",
@@ -66,9 +67,9 @@ export const metadata: Metadata = {
     site: "@testriq",
     creator: "@testriq",
     title:
-      "Smart Device Testing Services | IoT, Wearables, Smart Home QA - Testriq",
+      "Enterprise Smart Device & IoT Testing Services USA | Testriq",
     description:
-      "Comprehensive smart device testing services for wearables, smart home devices, and IoT ecosystems. Validate connectivity, performance, security, and user experience with Testriq's expert QA services.",
+      "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
     images: ["/OG/Telecommunication-Testing-Service-Twitter.webp"],
   },
   robots: {
@@ -106,6 +107,7 @@ export default function SmartDeviceTestingPage() {
       <StructuredData data={smartDeviceTestingSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <SmartDeviceTestingHeroSection />
+      <SmartDeviceComplianceTable />
       <SmartDeviceComprehensiveSlider />
       <SmartDeviceProvenTestingProcess />
       <SmartDeviceWhyChooseTestriq />
