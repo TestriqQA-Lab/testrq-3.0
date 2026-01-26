@@ -7,6 +7,7 @@ import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
+import MobileTestingAnimation from "./MobileTestingAnimation";
 
 const MobileTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -99,62 +100,7 @@ const MobileTestingHeroSection: React.FC = () => {
           {/* Right Content - Visual Elements */}
           <div className="flex justify-center xl:justify-end">
             <div className="relative w-full max-w-lg">
-              {/* Main Mobile Devices */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 shadow-lg">
-                <div className="flex justify-center items-center gap-8 mb-6">
-                  {/* iPhone */}
-                  <div className="relative">
-                    <div className="w-20 h-36 bg-gray-900 rounded-2xl p-1">
-                      <div className="w-full h-full bg-blue-500 rounded-xl flex items-center justify-center">
-                        <FaMobile className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-xs">
-                        <FaApple className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Android */}
-                  <div className="relative">
-                    <div className="w-20 h-36 bg-gray-800 rounded-2xl p-1">
-                      <div className="w-full h-full bg-green-500 rounded-xl flex items-center justify-center">
-                        <FaMobile className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-xs">🤖</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Icons */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <MdOutlineSecurity className="w-8 h-8 text-green-500" />
-                </div>
-
-                <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <BsLightningCharge className="w-8 h-8 text-yellow-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <FaUsers className="w-8 h-8 text-purple-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <div className="w-8 h-8 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">QA</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Background Elements */}
-              <div className="absolute inset-0 -z-10">
-                <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"></div>
-                <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-300 rounded-full opacity-30"></div>
-                <div className="absolute top-1/2 left-0 w-12 h-12 bg-blue-400 rounded-full opacity-25"></div>
-              </div>
+              <MobileTestingAnimation />
             </div>
           </div>
         </div>
