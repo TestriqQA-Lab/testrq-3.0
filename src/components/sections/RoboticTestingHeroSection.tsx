@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
 import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
+import RoboticTestingAnimation from "./RoboticTestingAnimation";
 
 const RoboticTestingHeroSection: React.FC = () => {
   return (
@@ -90,145 +91,7 @@ const RoboticTestingHeroSection: React.FC = () => {
 
           {/* Right Side - Robotic Testing Illustration */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 shadow-xl">
-              {/* Robot Testing Control Panel */}
-              <div className="bg-white rounded-xl p-6 shadow-lg mb-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="font-bold text-gray-800 flex items-center">
-                    <FaRobot className="w-5 h-5 mr-2 text-blue-500" />
-                    Robot Testing Dashboard
-                  </h2>
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                    <span className="text-sm text-green-600 font-semibold">
-                      Active
-                    </span>
-                  </div>
-                </div>
-
-                <div className="text-sm text-gray-600 mb-4">
-                  Real-time validation & monitoring
-                </div>
-
-                {/* Robot Status Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                  <div className="bg-blue-50 p-3 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">
-                        Arm Movement
-                      </span>
-                      <FaCog className="w-4 h-4 text-blue-500 animate-spin hidden md:block" />
-                    </div>
-                    <div className="text-sm md:text-lg md:font-bold  text-blue-600">
-                      Operational
-                    </div>
-                  </div>
-
-                  <div className="bg-green-50 p-3 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">
-                        Safety Systems
-                      </span>
-                      <FaShieldAlt className="w-4 h-4 text-green-500 hidden md:block" />
-                    </div>
-                    <div className="text-sm md:text-lg md:font-bold text-green-600">
-                      99.8% Pass
-                    </div>
-                  </div>
-
-                  <div className="bg-purple-50 p-3 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">
-                        Performance
-                      </span>
-                      <FaChartLine className="w-4 h-4 text-purple-500 hidden md:block" />
-                    </div>
-                    <div className="text-sm md:text-lg md:font-bold text-purple-600">
-                      Optimal
-                    </div>
-                  </div>
-
-                  <div className="bg-orange-50 p-3 rounded-lg">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-700">
-                        Precision
-                      </span>
-                      <div className="w-4 h-4 bg-orange-500 rounded-full hidden md:block"></div>
-                    </div>
-                    <div className="text-sm md:text-lg md:font-bold text-orange-600">
-                      ±0.1mm
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Robot Testing Progress */}
-              <div className="bg-white rounded-xl p-4 shadow-lg">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-semibold text-gray-800">
-                    Robot Testing Progress
-                  </span>
-                  <span className="text-blue-600 font-bold">87% Complete</span>
-                </div>
-
-                <div className="space-y-3">
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Functional Testing</span>
-                      <span className="text-green-600">100%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-green-500 h-2 rounded-full w-full"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Safety Validation</span>
-                      <span className="text-blue-600">92%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-blue-500 h-2 rounded-full w-11/12 animate-pulse"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between text-sm mb-1">
-                      <span className="text-gray-600">Performance Testing</span>
-                      <span className="text-purple-600">78%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-purple-500 h-2 rounded-full w-3/4 animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Robot Types */}
-              <div className="grid grid-cols-4 gap-3 mt-6">
-                <div className="text-center">
-                  <div className="text-2xl mb-1">🤖</div>
-                  <div className="text-xs text-gray-600">Industrial</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl mb-1">🦾</div>
-                  <div className="text-xs text-gray-600">Robotic Arm</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl mb-1">🚗</div>
-                  <div className="text-xs text-gray-600">Autonomous</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl mb-1">🏠</div>
-                  <div className="text-xs text-gray-600">Service</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-500 rounded-full animate-bounce opacity-70"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-500 rounded-full animate-pulse opacity-70"></div>
-            <div className="absolute top-1/2 -left-6 w-4 h-4 bg-green-500 rounded-full animate-ping opacity-50"></div>
+            <RoboticTestingAnimation />
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { MdOutlineSecurity } from "react-icons/md";
 import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
+import DesktopTestingAnimation from "./DesktopTestingAnimation";
 
 const DesktopTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -100,43 +101,7 @@ const DesktopTestingHeroSection: React.FC = () => {
           {/* Right Content - Visual Elements */}
           <div className="flex justify-center xl:justify-end">
             <div className="relative w-full max-w-lg">
-              {/* Main Desktop Icon */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 shadow-lg flex justify-center">
-                <Image
-                  title="Desktop App Testing Image"
-                  src="/Desktop_App_Testing_Image.webp"
-                  alt="Desktop app testing image"
-                  width={300}
-                  height={200}
-                  className="object-contain"
-                />
-
-                {/* Floating Icons */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <MdOutlineSecurity className="w-8 h-8 text-green-500" />
-                </div>
-
-                <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <BsLightningCharge className="w-8 h-8 text-yellow-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <FaUsers className="w-8 h-8 text-purple-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <div className="w-8 h-8 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">QA</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Background Elements */}
-              <div className="absolute inset-0 -z-10">
-                <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"></div>
-                <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-300 rounded-full opacity-30"></div>
-                <div className="absolute top-1/2 left-0 w-12 h-12 bg-blue-400 rounded-full opacity-25"></div>
-              </div>
+              <DesktopTestingAnimation />
             </div>
           </div>
         </div>

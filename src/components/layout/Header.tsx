@@ -153,10 +153,6 @@ const Navbar = () => {
             },
             { label: "Data Analysis", link: "/data-analysis-services" },
             {
-              label: "Software Testing Guide",
-              link: "/software-testing-guide",
-            },
-            {
               label: "Corporate QA Training",
               link: "/corporate-qa-training",
             },

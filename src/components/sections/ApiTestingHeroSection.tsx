@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaArrowRight, FaPlug, FaHome, FaChevronRight } from "react-icons/fa";
+import APITestingAnimation from "./APITestingAnimation";
 
 const ApiTestingHeroSection: React.FC = () => {
   return (
@@ -74,112 +75,7 @@ const ApiTestingHeroSection: React.FC = () => {
 
           {/* Right Content - API Testing Illustration */}
           <div className="relative">
-            {/* API Network Visualization */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-3xl shadow-2xl border border-blue-200">
-              {/* Central API Hub */}
-              <div className="relative flex items-center justify-center mb-8">
-                <div className="w-24 h-24 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">API</span>
-                </div>
-
-                {/* Animated Connection Lines */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 border-2 border-blue-300 rounded-full animate-pulse opacity-50"></div>
-                  <div className="absolute w-40 h-40 border-2 border-blue-200 rounded-full animate-pulse opacity-30"></div>
-                </div>
-              </div>
-
-              {/* API Endpoints Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-700">
-                      GET /users
-                    </span>
-                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">
-                      200
-                    </span>
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">Response: 45ms</div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-700">
-                      POST /auth
-                    </span>
-                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
-                      201
-                    </span>
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">Response: 32ms</div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-purple-500">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-700">
-                      PUT /data
-                    </span>
-                    <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">
-                      200
-                    </span>
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">Response: 28ms</div>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-orange-500">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-700">
-                      DELETE /item
-                    </span>
-                    <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded">
-                      204
-                    </span>
-                  </div>
-                  <div className="text-xs text-gray-500 mt-1">Response: 19ms</div>
-                </div>
-              </div>
-
-              {/* Testing Status Bar */}
-              <div className="bg-white p-4 rounded-lg shadow-md">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-gray-700">
-                    API Test Suite
-                  </span>
-                  <span className="text-xs text-green-600 font-semibold">
-                    98% Passed
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div
-                    className="bg-gradient-to-r from-green-500 to-green-400 h-2 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: "98%" }}
-                  />
-                </div>
-                <div className="flex justify-between text-xs text-gray-500 mt-1">
-                  <span>156 Tests</span>
-                  <span>3 Failed</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Test Badges */}
-            <div className="absolute -top-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-xs font-semibold text-gray-700">Security</div>
-              <div className="text-lg font-bold text-green-600">✓</div>
-            </div>
-
-            <div className="absolute -top-4 -right-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-xs font-semibold text-gray-700">
-                Performance
-              </div>
-              <div className="text-lg font-bold text-blue-600">⚡</div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-gray-200">
-              <div className="text-xs font-semibold text-gray-700">Load Test</div>
-              <div className="text-lg font-bold text-purple-600">📊</div>
-            </div>
+            <APITestingAnimation />
           </div>
         </div>
       </div>
