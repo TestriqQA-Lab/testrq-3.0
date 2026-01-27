@@ -2,18 +2,12 @@
 
 import React, { useState } from "react";
 import {
-  FaRocket,
-  FaCheckCircle,
   FaBolt,
-  FaCode,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
 } from "react-icons/fa";
 import Link from "next/link";
 import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
-import LaunchFast3DIllustration from "./LaunchFast3DIllustration";
+import LaunchFastQAAnimation from "./LaunchFastQAAnimation";
 
 const LaunchFastQAHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -125,9 +119,9 @@ const LaunchFastQAHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - LaunchFast QA Dashboard */}
+          {/* Right Content - LaunchFast QA Animation */}
           <div className="relative flex justify-center items-center">
-            <LaunchFast3DIllustration />
+            <LaunchFastQAAnimation />
           </div>
         </div>
       </div>

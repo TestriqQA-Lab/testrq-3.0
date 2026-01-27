@@ -5,10 +5,6 @@ import React from "react";
 import {
   FaGraduationCap,
   FaLaptop,
-  FaMobile,
-  FaUsers,
-  FaChartLine,
-  FaShieldAlt,
   FaRocket,
   FaCheckCircle,
   FaPlay,
@@ -19,6 +15,8 @@ import {
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa6";
+import ElearningTestingAnimation from "./ElearningTestingAnimation";
 
 const ElearningHeroSection: React.FC = () => {
   const keyStats = [
@@ -205,101 +203,9 @@ const ElearningHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats & Visual */}
-          <div className="space-y-8">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  E-Learning Testing Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Delivering quality education technology
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-brand-blue to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Learning Impact Metrics */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-green-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Impact
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Course Completion Rate</span>
-                  <span className="font-bold text-green-600">+45%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">User Engagement Score</span>
-                  <span className="font-bold text-green-600">+38%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Platform Performance</span>
-                  <span className="font-bold text-green-600">+52%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Accessibility Compliance
-                  </span>
-                  <span className="font-bold text-green-600">100%</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Learning Modalities */}
-            <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-3xl p-8 border border-purple-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">
-                Testing Coverage
-              </h3>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 bg-white bg-opacity-70 rounded-xl">
-                  <FaLaptop className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
-                  <div className="text-sm font-semibold text-gray-900">
-                    Desktop LMS
-                  </div>
-                </div>
-                <div className="text-center p-4 bg-white bg-opacity-70 rounded-xl">
-                  <FaMobile className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                  <div className="text-sm font-semibold text-gray-900">
-                    Mobile Learning
-                  </div>
-                </div>
-                <div className="text-center p-4 bg-white bg-opacity-70 rounded-xl">
-                  <FaPlay className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                  <div className="text-sm font-semibold text-gray-900">
-                    Video Content
-                  </div>
-                </div>
-                <div className="text-center p-4 bg-white bg-opacity-70 rounded-xl">
-                  <FaShieldAlt className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                  <div className="text-sm font-semibold text-gray-900">
-                    Security & Privacy
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - E-Learning Testing Animation */}
+          <div className="flex items-center justify-center">
+            <ElearningTestingAnimation />
           </div>
         </div>
 

@@ -9,13 +9,13 @@ import {
   FaUserMd,
   FaRocket,
   FaUsers,
-  FaChartLine,
   FaCheckCircle,
   FaLock,
   FaClipboardCheck,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import HealthcareTestingAnimation from "./HealthcareTestingAnimation";
 
 const HealthcareHeroSection: React.FC = () => {
   const keyStats = [
@@ -197,68 +197,9 @@ const HealthcareHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Visual & Stats */}
-          <div className="space-y-8">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven Healthcare Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Results that ensure patient safety and compliance
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl p-8 border border-green-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-green-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Results
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Compliance Achievement Rate
-                  </span>
-                  <span className="font-bold text-green-600">100%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Security Vulnerability Reduction
-                  </span>
-                  <span className="font-bold text-green-600">-95%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Time to Market Acceleration
-                  </span>
-                  <span className="font-bold text-green-600">-40%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Patient Safety Score</span>
-                  <span className="font-bold text-green-600">4.9/5</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Healthcare Testing Animation */}
+          <div className="flex items-center justify-center">
+            <HealthcareTestingAnimation />
           </div>
         </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 import {
     FaRocket,
@@ -12,6 +11,7 @@ import {
     FaCertificate,
 } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
+import SapTestingAnimation from "./SapTestingAnimation";
 
 const SapTestingHeroSection: React.FC = () => {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -104,19 +104,9 @@ const SapTestingHeroSection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Side - Hero Image */}
-                    <div className="relative flex justify-center lg:justify-center items-start animate-float">
-                        {/* Removed card styling (border, shadow, rounded container) for better blending */}
-                        <div className="relative w-full h-auto">
-                            <Image
-                                src="/services/sap-testing-hero.png"
-                                alt="SAP Testing Services Dashboard"
-                                width={600}
-                                height={400}
-                                className="w-full h-auto object-contain"
-                                priority
-                            />
-                        </div>
+                    {/* Right Side - Animated SAP Dashboard */}
+                    <div className="relative flex justify-center lg:justify-center items-start">
+                        <SapTestingAnimation />
                     </div>
                 </div>
             </div>
