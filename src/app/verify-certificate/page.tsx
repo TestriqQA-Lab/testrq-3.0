@@ -305,7 +305,7 @@ function CertificateContent() {
                                             className="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2"
                                         >
                                             <Download size={16} />
-                                            If it doesn't, click here to download
+                                            If it doesn&apos;t, click here to download
                                         </a>
                                         <button
                                             onClick={() => setShowDownloadForm(false)}

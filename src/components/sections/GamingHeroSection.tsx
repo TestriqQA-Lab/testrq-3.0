@@ -7,22 +7,14 @@ import {
   FaMobile,
   FaDesktop,
   FaTrophy,
-  FaUsers,
-  FaChartLine,
   FaCheckCircle,
   FaPlay,
-  FaCog,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import GamingTestingAnimation from "./GamingTestingAnimation";
 
 const GamingHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "99.9%", label: "Bug-Free Launches", icon: FaTrophy },
-    { value: "50+", label: "Games Tested", icon: FaGamepad },
-    { value: "10M+", label: "Players Reached", icon: FaUsers },
-    { value: "24/7", label: "Performance Monitoring", icon: FaCog },
-  ];
 
   const trustBadges = [
     "Unity Certified Testing",
@@ -184,75 +176,9 @@ const GamingHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Visual & Stats */}
-          <div className="space-y-8">
-            {/* Key Statistics */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven Gaming Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Results that drive player engagement and success
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-[theme(color.brand.blue)]" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Results
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Player Retention Increase
-                  </span>
-                  <span className="font-bold text-[theme(color.brand.blue)]">
-                    +45%
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Bug Reduction Rate</span>
-                  <span className="font-bold text-[theme(color.brand.blue)]">
-                    -85%
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Performance Improvement</span>
-                  <span className="font-bold text-[theme(color.brand.blue)]">
-                    +60%
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">App Store Rating</span>
-                  <span className="font-bold text-[theme(color.brand.blue)]">
-                    4.8/5
-                  </span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Visual & Animation */}
+          <div className="relative">
+            <GamingTestingAnimation />
           </div>
         </div>
 

@@ -7,21 +7,14 @@ import {
   FaCog,
   FaCloud,
   FaRocket,
-  FaChartLine,
   FaCheckCircle,
-  FaNetworkWired,
   FaMicrochip,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import IoTApplianceTestingAnimation from "./IoTApplianceTestingAnimation";
 
 const IoTHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "99.9%", label: "Device Connectivity", icon: FaWifi },
-    { value: "30+", label: "IoT Devices Tested", icon: FaCog },
-    { value: "150+", label: "Connected Endpoints", icon: FaNetworkWired },
-    { value: "24/7", label: "Edge Monitoring", icon: FaCloud },
-  ];
 
   const trustBadges = [
     "Edge-to-Cloud Testing",
@@ -181,75 +174,9 @@ const IoTHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Visual & Stats */}
-          <div className="space-y-8">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven IoT Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Results that power connected innovation
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl p-8 border border-cyan-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-cyan-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Results
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Device{" "}
-                    <Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">
-                      Reliability
-                    </Link>{" "}
-                    Increase
-                  </span>
-                  <span className="font-bold text-cyan-600">+55%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Security Vulnerability Reduction
-                  </span>
-                  <span className="font-bold text-cyan-600">-90%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Network Latency Improvement
-                  </span>
-                  <span className="font-bold text-cyan-600">-35%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">System Uptime</span>
-                  <span className="font-bold text-cyan-600">99.9%</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Visual & Animation */}
+          <div className="relative">
+            <IoTApplianceTestingAnimation />
           </div>
         </div>
 

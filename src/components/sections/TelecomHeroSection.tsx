@@ -5,21 +5,14 @@ import React from "react";
 import {
   FaWifi,
   FaSignal,
-  FaNetworkWired,
   FaRocket,
-  FaChartLine,
   FaCheckCircle,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import TelecomTestingAnimation from "./TelecomTestingAnimation";
 
 const TelecomHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "99%", label: (<><Link href="/blog/post/performance-testing-for-healthcare-systems-ensuring-scalability-and-reliability-during-peak-traffic">Software Reliability</Link></>), icon: FaNetworkWired },
-    { value: "30+", label: "Telecom Apps Tested", icon: FaWifi },
-    { value: "1M+", label: "Test Scenarios Executed", icon: FaSignal },
-    { value: "24/7", label: "Continuous QA Support", icon: FaRocket },
-  ];
 
   const trustBadges = [
     "Telecom App QA Specialists",
@@ -136,67 +129,9 @@ const TelecomHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="space-y-8 py-10">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven QA Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Reliable results for telecom software
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-green-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Outcomes
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Bug Detection Rate</span>
-                  <span className="font-bold text-green-600">+65%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Release Cycle Acceleration
-                  </span>
-                  <span className="font-bold text-green-600">-40%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Post-Release Issues</span>
-                  <span className="font-bold text-green-600">-75%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">End-User Satisfaction</span>
-                  <span className="font-bold text-green-600">4.9/5</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Visual & Animation */}
+          <div className="relative py-10">
+            <TelecomTestingAnimation />
           </div>
         </div>
       </div>
