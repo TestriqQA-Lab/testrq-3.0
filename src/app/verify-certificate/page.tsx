@@ -86,7 +86,7 @@ function CertificateContent() {
             } else {
                 setFormError("Something went wrong. Please try again.");
             }
-        } catch (error) {
+        } catch (_error) {
             setFormError("Failed to connect. Please check your internet.");
         } finally {
             setIsSubmitting(false);

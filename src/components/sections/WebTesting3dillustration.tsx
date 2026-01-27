@@ -12,7 +12,6 @@ import {
     FaFirefox,
     FaSafari,
     FaCheckCircle,
-    FaSearch,
     FaMobileAlt,
     FaTabletAlt,
     FaBug

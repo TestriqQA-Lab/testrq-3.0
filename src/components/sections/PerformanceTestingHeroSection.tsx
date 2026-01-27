@@ -4,13 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaTachometerAlt,
-  FaChartLine,
-  FaServer,
-  FaFire,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaDatabase,
   FaArrowRight,
   FaPlay,
   FaHome,

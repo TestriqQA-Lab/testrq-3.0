@@ -4,13 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaShieldAlt,
-  FaLock,
-  FaBug,
-  FaEye,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaUserSecret,
   FaArrowRight,
   FaPlay,
   FaHome,

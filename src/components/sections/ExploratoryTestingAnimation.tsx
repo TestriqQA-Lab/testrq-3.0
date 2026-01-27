@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation, useReducedMotion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const ExploratoryTestingAnimation = () => {
-    const shouldReduceMotion = useReducedMotion();
     const controls = useAnimation();
     const [mounted, setMounted] = useState(false);
 

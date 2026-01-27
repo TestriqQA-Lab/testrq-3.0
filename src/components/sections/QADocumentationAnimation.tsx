@@ -23,14 +23,6 @@ const QADocumentationAnimation = () => {
         textSecondary: "#64748b",
     };
 
-    // Documents
-    const documents = [
-        { name: "Test Plan v2.1", type: "Plan", status: "approved" },
-        { name: "TC-001 Login Suite", type: "TestCase", status: "approved" },
-        { name: "REQ-42 Payment", type: "Requirement", status: "review" },
-        { name: "Bug Report #87", type: "Report", status: "approved" },
-    ];
-
     // Animation Sequence
     useEffect(() => {
         if (!mounted) return;

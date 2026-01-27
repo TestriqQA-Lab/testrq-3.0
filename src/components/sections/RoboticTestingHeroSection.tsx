@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaRobot, FaCog, FaShieldAlt, FaChartLine } from "react-icons/fa";
+import { FaRobot } from "react-icons/fa";
 import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 import RoboticTestingAnimation from "./RoboticTestingAnimation";
 
