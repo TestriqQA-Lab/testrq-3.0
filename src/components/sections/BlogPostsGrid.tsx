@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { Post } from "@/lib/wordpress-data-adapter";
+import { decodeHtmlEntities } from "@/lib/utils";
 // Removed stripHtmlTags and getAllPosts imports as they are not needed in the display component
 
 interface BlogPostsGridProps {
@@ -32,7 +33,10 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
 
   // Helper function to clean excerpt and decode entities (simple version for client)
   const cleanExcerpt = (excerpt: string) => {
-    return excerpt.replace(/<[^>]*>?/gm, '').replace(/&hellip;/g, '...').replace(/&nbsp;/g, ' ');
+    // First remove HTML tags
+    const textOnly = excerpt.replace(/<[^>]*>?/gm, '');
+    // Then decode HTML entities
+    return decodeHtmlEntities(textOnly);
   };
 
   return (

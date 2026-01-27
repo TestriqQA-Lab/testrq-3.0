@@ -88,7 +88,7 @@ const RoboticToolsFramework: React.FC = () => {
           icon: <FaRobot className="w-5 h-5 text-red-500" />,
         },
         {
-          name: "Selenium/Appium",
+          name: (<>Selenium/<br />Appium</>),
           description: (
             <>
               <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Integration testing</Link> for robotic UI systems

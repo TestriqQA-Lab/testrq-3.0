@@ -2,6 +2,7 @@
 import React from 'react';
 import { BarChart3, TrendingUp, CheckCircle, Brain } from 'lucide-react';
 import { FaAward } from 'react-icons/fa';
+import Link from 'next/link';
 
 const DataAnalysisWhyChooseTestriq = () => {
   const advantages = [
@@ -28,19 +29,19 @@ const DataAnalysisWhyChooseTestriq = () => {
   const complianceStandards = [
     {
       standard: "ISO 8000-1:2022",
-      application: "The global benchmark for <Link href=\"/qa-documentation-services\" className=\"text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue\">data quality</Link> and industrial data management."
+      application: (<>The global benchmark for <Link href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">data quality</Link> and industrial data management.</>)
     },
     {
       standard: "GDPR & CCPA",
-      application: "Strict protocols for PII (<Link href=\"/privacy-policy\" className=\"text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue\">Personally Identifiable Information</Link>) in both Structured vs. Unstructured Data."
+      application: (<>Strict protocols for PII (<Link href="/privacy-policy" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">Personally Identifiable Information</Link>) in both Structured vs. Unstructured Data.</>)
     },
     {
       standard: "SOC2 Type II",
-      application: "Ensuring enterprise-grade security for private data assets during the <Link href=\"/security-testing\" className=\"text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue\">ETL process</Link>."
+      application: (<>Ensuring enterprise-grade security for private data assets during the <Link href="/security-testing" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">ETL process</Link>.</>)
     },
     {
       standard: "ISO/IEC 25102",
-      application: "Defining the quality model for data in a computer system, crucial for <Link href=\"/ai-application-testing\" className=\"text-brand-blue hover:underline decoration-brand-blue\">predictive analytics services</Link>."
+      application: (<>Defining the quality model for data in a computer system, crucial for <Link href="/ai-application-testing" className="text-brand-blue hover:underline decoration-brand-blue">predictive analytics services</Link>.</>)
     }
   ];
 
