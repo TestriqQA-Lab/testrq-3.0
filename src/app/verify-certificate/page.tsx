@@ -16,8 +16,10 @@ function CertificateContent() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [formError, setFormError] = useState("");
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         const checkMobile = () => {
             const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
             const mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
@@ -178,15 +180,6 @@ function CertificateContent() {
                         </div>
 
                         <div className="flex flex-wrap shrink-0 gap-4 lg:mb-1">
-                            <a
-                                href={pdfUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-4 bg-white/10 border border-white/20 text-white font-bold rounded-2xl hover:bg-white/20 transition-all backdrop-blur-sm"
-                            >
-                                <FileText size={20} />
-                                VIEW PDF
-                            </a>
                             <button
                                 onClick={() => setShowDownloadForm(true)}
                                 className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-700 font-black rounded-2xl hover:bg-blue-50 transition-all duration-500 shadow-xl"
@@ -206,7 +199,9 @@ function CertificateContent() {
                     <div className="hidden lg:block h-8 w-px bg-gray-200"></div>
                     <div className="flex items-center gap-2">
                         <span className="text-[10px] uppercase tracking-tighter text-gray-400 font-bold">Verified On</span>
-                        <span className="text-xs font-bold text-gray-700">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                        <span className="text-xs font-bold text-gray-700">
+                            {mounted ? new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : "--"}
+                        </span>
                     </div>
                 </div>
 
@@ -264,16 +259,17 @@ function CertificateContent() {
                             <p className="text-sm font-medium text-gray-400">Identity Verified & Signed</p>
                         </div>
 
-                        <div className="flex flex-col items-center text-center group">
-                            <div className="relative w-36 h-12 mb-4 grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                        <div className="flex flex-col items-center text-center">
+                            <CheckCircle2 size={32} className="text-blue-600 mb-3" />
+                            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest leading-tight mb-4">Authenticity Guaranteed</p>
+                            <div className="relative w-32 h-10">
                                 <Image
                                     src="/images/testriq_logo.webp"
                                     alt="Testriq Logo"
                                     fill
-                                    className="object-contain"
+                                    className="object-contain opacity-90"
                                 />
                             </div>
-                            <p className="text-xs font-black text-gray-500 uppercase tracking-widest leading-tight">Authenticity Guaranteed</p>
                         </div>
                     </div>
                 </div>
