@@ -3,10 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-  FaDatabase,
   FaExchangeAlt,
-  FaCloudUploadAlt,
-  FaCheckCircle,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";

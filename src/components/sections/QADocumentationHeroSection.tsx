@@ -3,10 +3,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaFileAlt,
-  FaClipboardList,
-  FaChartLine,
-  FaCog,
-  FaShieldAlt,
   FaArrowRight,
   FaPlay,
   FaHome,

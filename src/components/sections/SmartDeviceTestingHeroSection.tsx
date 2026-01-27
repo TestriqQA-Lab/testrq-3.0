@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaWifi, FaBluetooth, FaMobile, FaShieldAlt } from "react-icons/fa";
 import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import { MdDevicesOther } from "react-icons/md";
 import Lightbox from "../VideoLightBox";

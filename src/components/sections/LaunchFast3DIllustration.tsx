@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCode, FaBug, FaRocket, FaCheck, FaBolt, FaDatabase, FaServer, FaShieldAlt } from "react-icons/fa";
+import { FaCode, FaRocket, FaCheck, FaBolt, FaDatabase, FaServer, FaShieldAlt } from "react-icons/fa";
 
 const LaunchFast3DIllustration = () => {
     return (

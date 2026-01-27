@@ -5,13 +5,7 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import {
   FaRobot,
-  FaCogs,
-  FaRocket,
-  FaBolt,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaCode,
+
   FaArrowRight,
   FaPlay,
   FaHome,

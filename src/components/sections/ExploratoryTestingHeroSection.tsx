@@ -4,12 +4,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaSearch,
-  FaLightbulb,
-  FaEye,
-  FaBug,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
   FaArrowRight,
   FaPlay,
   FaHome,

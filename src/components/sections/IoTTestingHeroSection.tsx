@@ -1,5 +1,5 @@
 "use client";
-import { FaNetworkWired, FaWifi, FaArrowRight, FaPlay, FaCertificate, FaHome, FaChevronRight } from "react-icons/fa";
+import { FaNetworkWired, FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 import React, { useState } from "react";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";

@@ -4,13 +4,6 @@ import Link from "next/link";
 import React from "react";
 import {
   FaShieldAlt,
-  FaSync,
-  FaCheckDouble,
-  FaBug,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaHistory,
 } from "react-icons/fa";
 import { FaArrowRight, FaHome, FaChevronRight } from "react-icons/fa";
 import RegressionTestingAnimation from "./RegressionTestingAnimation";

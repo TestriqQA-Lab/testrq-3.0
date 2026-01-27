@@ -10,24 +10,14 @@ import {
   FaRocket,
   FaUsers,
   FaCheckCircle,
-  FaLock,
-  FaClipboardCheck,
+
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
 import HealthcareTestingAnimation from "./HealthcareTestingAnimation";
 
 const HealthcareHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "100%", label: "HIPAA Compliance", icon: FaShieldAlt },
-    { value: "200+", label: "Healthcare Apps Tested", icon: FaHeartbeat },
-    {
-      value: "75%",
-      label: "Reduced Response Time in Emergency Systems",
-      icon: FaLock,
-    },
-    { value: "24/7", label: "Security Monitoring", icon: FaClipboardCheck },
-  ];
+
 
   const trustBadges = [
     "HIPAA Compliant Testing",

@@ -4,13 +4,11 @@ import Link from "next/link";
 import React from "react";
 import {
   FaGraduationCap,
-  FaLaptop,
-  FaRocket,
+
   FaCheckCircle,
   FaPlay,
   FaBook,
   FaGlobe,
-  FaAccessibleIcon,
   FaArrowRight,
   FaHome,
   FaChevronRight,
@@ -19,16 +17,6 @@ import { FaUsers } from "react-icons/fa6";
 import ElearningTestingAnimation from "./ElearningTestingAnimation";
 
 const ElearningHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "4.5/5", label: "Average User Satisfaction Score", icon: FaUsers },
-    { value: "50+", label: "LMS Platforms", icon: FaLaptop },
-    { value: "99.9%", label: "Uptime Achieved", icon: FaRocket },
-    {
-      value: "WCAG 2.1",
-      label: "Accessibility Compliant",
-      icon: FaAccessibleIcon,
-    },
-  ];
 
   const learningTypes = [
     { icon: FaBook, label: "Online Courses", color: "text-blue-500" },

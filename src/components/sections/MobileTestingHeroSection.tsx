@@ -1,10 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaPlay, FaMobile, FaApple, FaHome, FaChevronRight } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa6";
-import { MdOutlineSecurity } from "react-icons/md";
-import { BsLightningCharge } from "react-icons/bs";
+import { FaArrowRight, FaPlay, FaMobile, FaHome, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
 import MobileTestingAnimation from "./MobileTestingAnimation";

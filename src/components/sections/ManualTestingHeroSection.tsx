@@ -4,13 +4,6 @@ import Link from "next/link";
 import React from "react";
 import {
   FaUser,
-  FaEye,
-  FaCheckCircle,
-  FaBug,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaClipboardCheck,
   FaArrowRight,
   FaHome,
   FaChevronRight
