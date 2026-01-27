@@ -77,16 +77,12 @@ function CertificateContent() {
                     const link = document.createElement('a');
                     link.href = pdfUrl;
                     link.download = `${certId}.pdf`;
+                    link.target = "_blank";
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
 
-                    // Reset showDownloadForm after download
-                    setTimeout(() => {
-                        setShowDownloadForm(false);
-                        setSubmitSuccess(false);
-                    }, 2000);
-                }, 1500);
+                }, 1000);
             } else {
                 setFormError("Something went wrong. Please try again.");
             }
@@ -96,6 +92,8 @@ function CertificateContent() {
             setIsSubmitting(false);
         }
     };
+
+    const pdfUrl = `/certificates/${certId}.pdf`;
 
     if (loading) {
         return (
@@ -110,9 +108,6 @@ function CertificateContent() {
             </div>
         );
     }
-
-    const pdfUrl = `/certificates/${certId}.pdf`;
-
     if (!certId || !isValid) {
         return (
             <div className="max-w-2xl mx-auto my-12 md:my-20 px-4">
@@ -302,7 +297,23 @@ function CertificateContent() {
                                         <CheckCircle2 size={40} className="text-green-500" />
                                     </div>
                                     <h4 className="text-2xl font-black text-gray-900 mb-2">Thank you!</h4>
-                                    <p className="text-gray-500 mb-0">Your request has been received. Your download will start momentarily.</p>
+                                    <p className="text-gray-500 mb-6">Your request has been received. Your download should start automatically.</p>
+                                    <div className="flex flex-col gap-3 items-center">
+                                        <a
+                                            href={pdfUrl}
+                                            download={`${certId}.pdf`}
+                                            className="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2"
+                                        >
+                                            <Download size={16} />
+                                            If it doesn't, click here to download
+                                        </a>
+                                        <button
+                                            onClick={() => setShowDownloadForm(false)}
+                                            className="mt-4 px-6 py-2 border border-gray-200 rounded-lg text-xs font-bold text-gray-400 hover:bg-gray-50 hover:text-gray-600 transition-all"
+                                        >
+                                            Close Window
+                                        </button>
+                                    </div>
                                 </div>
                             ) : (
                                 <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -320,7 +331,7 @@ function CertificateContent() {
                                                 required
                                                 name="name"
                                                 type="text"
-                                                placeholder="John Doe"
+                                                placeholder="Enter your full name"
                                                 className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm font-medium"
                                             />
                                             <User className="absolute left-3 top-3.5 text-gray-400" size={16} />
@@ -334,7 +345,7 @@ function CertificateContent() {
                                                 required
                                                 name="email"
                                                 type="email"
-                                                placeholder="john@company.com"
+                                                placeholder="Enter your business email address"
                                                 className="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-100 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm font-medium"
                                             />
                                             <Mail className="absolute left-3 top-3.5 text-gray-400" size={16} />
