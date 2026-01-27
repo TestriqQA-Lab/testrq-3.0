@@ -2,6 +2,7 @@
 
 import React from "react";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 interface Category {
   id: string;
@@ -22,7 +23,8 @@ interface CategoryHeroSectionProps {
 // Function to clean and render HTML content properly
 const renderContent = (content: string) => {
   // Clean up the content and fix common WordPress issues
-  const cleanContent = content
+  const cleanContent = decodeHtmlEntities(content)
+    // Remove excessive line breaks and normalize spacing
     // Remove excessive line breaks and normalize spacing
     .replace(/\n\s*\n\s*\n/g, '\n\n')
     // Fix image tags to ensure proper src attributes

@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import CustomImageRenderer from "../client-wrappers/CustomImageRenderer";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 interface BlogPost {
   id: string;
@@ -176,7 +177,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
       <div
         className={`prose prose-lg px-6 max-w-none text-gray-800 ${fontSize}`}
       >
-        <CustomImageRenderer content={post.content} />
+        <CustomImageRenderer content={decodeHtmlEntities(post.content)} />
       </div>
 
       {/* Author Bio */}
