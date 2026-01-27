@@ -2,14 +2,10 @@
 
 import React, { useState } from "react";
 import { FaArrowRight, FaLaptopCode, FaPlay } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa6";
-import { MdOutlineSecurity } from "react-icons/md";
-import { BsLightningCharge } from "react-icons/bs";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import WebTesting3dillustration from "@/components/sections/WebTesting3dillustration";
+import WebAppTestingAnimation from "@/components/sections/WebAppTestingAnimation";
 
 const WebappTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -84,9 +80,9 @@ const WebappTestingHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Content - Mock UI */}
+          {/* Right Content - Web App Testing Animation */}
           <div className="hidden lg:block p-6">
-            <WebTesting3dillustration />
+            <WebAppTestingAnimation />
           </div>
         </div>
         {/* Lightbox Modal */}
