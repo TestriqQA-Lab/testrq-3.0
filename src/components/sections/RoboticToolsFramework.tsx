@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 
 import { SiRos } from "react-icons/si";
+import Image from "next/image";
 
 const RoboticToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -23,12 +24,12 @@ const RoboticToolsFramework: React.FC = () => {
         {
           name: "Gazebo",
           description: "3D multi-robot simulator with physics engines",
-          icon: <FaDesktop className="w-5 h-5 text-blue-500" />,
+          icon: <Image src="/Gazebo_Logo.png" alt="Gazebo Logo" width={80} height={60} className="object-contain" />,
         },
         {
           name: "NVIDIA Isaac Sim",
           description: "Photorealistic Physical AI training simulator",
-          icon: <FaRobot className="w-5 h-5 text-blue-500" />,
+          icon: <Image src="/NVIDIA_Isaac_Sim_Logo.png" alt="NVIDIA Isaac Sim Logo" width={80} height={60} className="object-contain" />,
         },
         {
           name: "Webots",
@@ -59,12 +60,12 @@ const RoboticToolsFramework: React.FC = () => {
         {
           name: "Move It",
           description: "Advanced motion planning for robotic arms",
-          icon: <FaCog className="w-5 h-5 text-green-500" />,
+          icon: <Image src="/MoveIt_Logo.png" alt="Move It Logo" width={80} height={20} className="object-contain" />,
         },
         {
           name: "OpenCV",
           description: "Computer vision for robotic perception systems",
-          icon: <FaCode className="w-5 h-5 text-green-500" />,
+          icon: <Image src="/OpenCV_Logo.png" alt="OpenCV Logo" width={90} height={20} className="object-contain" />,
         },
       ],
     },
@@ -75,17 +76,17 @@ const RoboticToolsFramework: React.FC = () => {
         {
           name: "UiPath",
           description: "Enterprise RPA platform for business processes",
-          icon: <FaRobot className="w-5 h-5 text-red-500" />,
+          icon: <Image src="/UiPath_Logo.png" alt="UiPath Logo" width={80} height={60} className="object-contain" />,
         },
         {
           name: "Blue Prism",
           description: "Robotic process automation for digital workforces",
-          icon: <FaRobot className="w-5 h-5 text-red-500" />,
+          icon: <Image src="/Blue_Prism_Logo.png" alt="Blue Prism Logo" width={80} height={60} className="object-contain" />,
         },
         {
           name: "Automation Anywhere",
           description: "Cognitive automation for complex UI workflows",
-          icon: <FaRobot className="w-5 h-5 text-red-500" />,
+          icon: <Image src="/Automation_Anywhere_Logo.png" alt="Automation Anywhere Logo" width={80} height={60} className="object-contain" />,
         },
         {
           name: (<>Selenium/<br />Appium</>),
@@ -94,7 +95,7 @@ const RoboticToolsFramework: React.FC = () => {
               <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Integration testing</Link> for robotic UI systems
             </>
           ),
-          icon: <FaDesktop className="w-5 h-5 text-red-500" />,
+          icon: <Image src="/Appium_Logo.svg" alt="Appium Logo" width={80} height={20} className="object-contain" />,
         },
       ],
     },

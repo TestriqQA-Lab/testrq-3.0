@@ -25,6 +25,7 @@ import {
 
 import { MdInsights } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 
 const SmartDeviceToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -35,12 +36,12 @@ const SmartDeviceToolsFramework: React.FC = () => {
         {
           name: "Wireshark",
           description: "Network protocol analyzer and M2M validator",
-          icon: <FaSearch className="w-5 h-5 text-blue-500" />,
+          icon: <Image src="/Wireshark_Logo.png" alt="Wireshark Logo" width={20} height={20} className="object-contain" />,
         },
         {
           name: "iperf3",
           description: "Network bandwidth and stability testing",
-          icon: <FaNetworkWired className="w-5 h-5 text-blue-500" />,
+          icon: <Image src="/iperf3_Logo.png" alt="iperf3 Logo" width={20} height={20} className="object-contain" />,
         },
         {
           name: "MQTT Spy / CoAP",
@@ -65,7 +66,7 @@ const SmartDeviceToolsFramework: React.FC = () => {
               <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Application security</Link> vulnerability testing
             </>
           ),
-          icon: <SiOwasp className="w-5 h-5 text-red-500" />,
+          icon: <Image src="/OWASP_ZAP_Logo.png" alt="OWASP ZAP Logo" width={20} height={20} className="object-contain" />,
         },
         {
           name: "Burp Suite",
