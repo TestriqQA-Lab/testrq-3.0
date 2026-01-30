@@ -1,6 +1,80 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
+import {
+  SiJira,
+  SiConfluence,
+  SiLoom,
+  SiDatadog,
+  SiNewrelic,
+} from "react-icons/si";
+import { VscAzureDevops } from "react-icons/vsc";
+import { TbTestPipe } from "react-icons/tb";
+
+// Tool icons mapping
+const toolIcons: Record<string, React.ReactNode> = {
+  // Session Management
+  "Rapid Reporter": (
+    <svg role="img" aria-label="Rapid Reporter Logo" viewBox="0 0 24 24" className="w-5 h-5" fill="#4A90A4">
+      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+    </svg>
+  ),
+  "Session Tester": (
+    <TbTestPipe size={20} color="#5C6BC0" aria-label="Session Tester Logo" />
+  ),
+  "Xray": (
+    <Image
+      src="/Xray_Logo.png"
+      alt="Xray Logo"
+      width={20}
+      height={20}
+      className="object-contain"
+    />
+  ),
+  // Documentation & Traceability
+  "Jira": <SiJira size={20} color="#0052CC" aria-label="Jira Logo" />,
+  "Azure DevOps": <VscAzureDevops size={20} color="#0078D7" aria-label="Azure DevOps Logo" />,
+  "Confluence": <SiConfluence size={20} color="#172B4D" aria-label="Confluence Logo" />,
+  // Capture & Annotation
+  "Loom": <SiLoom size={20} color="#625DF5" aria-label="Loom Logo" />,
+  "Snagit": (
+    <svg role="img" aria-label="Snagit Logo" viewBox="0 0 24 24" className="w-5 h-5" fill="#00B388">
+      <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12zM8 15l2.5-3.21 1.79 2.15 2.5-3.22L19 15H5l3 0z" />
+    </svg>
+  ),
+  "Bug Magnet": (
+    <Image
+      src="/BugMagnet_Logo.png"
+      alt="Bug Magnet Logo"
+      width={20}
+      height={20}
+      className="object-contain"
+    />
+  ),
+  // Automated Support
+  "mabl": (
+    <Image
+      src="/Mabl_Logo.png"
+      alt="mabl Logo"
+      width={20}
+      height={20}
+      className="object-contain"
+    />
+  ),
+  "Testim": (
+    <Image
+      src="/Testim_Logo.png"
+      alt="Testim Logo"
+      width={20}
+      height={20}
+      className="object-contain"
+    />
+  ),
+  // Environment Monitoring
+  "Datadog": <SiDatadog size={20} color="#632CA6" aria-label="Datadog Logo" />,
+  "New Relic": <SiNewrelic size={20} color="#008C99" aria-label="New Relic Logo" />,
+};
 
 const ExploratoryToolsFramework: React.FC = () => {
   const toolCategories = [
@@ -119,8 +193,8 @@ const ExploratoryToolsFramework: React.FC = () => {
                     className="bg-white p-4 rounded-lg border border-gray-100 hover:border-green-200 transition-all duration-300 group"
                   >
                     <div className="flex items-center space-x-3 mb-2">
-                      <div className="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                        {tool.name.charAt(0)}
+                      <div title={tool.name} className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm border border-gray-100">
+                        {toolIcons[tool.name]}
                       </div>
                       <h4 className="font-semibold text-gray-900 group-hover:text-brand-blue transition-colors duration-300">
                         {tool.name}
