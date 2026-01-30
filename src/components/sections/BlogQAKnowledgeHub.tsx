@@ -1,207 +1,454 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import {
+    FaArrowRight,
+    FaLightbulb,
+    FaShieldAlt,
+    FaRocket,
+    FaCode,
+    FaMobile,
+    FaChartLine,
+    FaBookOpen,
+    FaUsers,
+    FaClock,
+    FaStar,
+    FaFire,
+    FaDownload,
+    FaPlay,
+    FaBell,
+    FaCheckCircle
+} from 'react-icons/fa';
 
 const QAKnowledgeHub: React.FC = () => {
-    const scrollToCategory = () => {
-        document.querySelector("#blog-categories")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
+    const [selectedPath, setSelectedPath] = useState<number | null>(null);
+    const [email, setEmail] = useState('');
+
+    const learningPaths = [
+        {
+            id: 1,
+            title: 'Automation Mastery',
+            level: 'Beginner to Advanced',
+            duration: '8 weeks',
+            modules: 24,
+            icon: <FaCode className="w-6 h-6" />,
+            gradient: 'from-blue-500 via-blue-600 to-indigo-600',
+            topics: ['Selenium', 'Cypress', 'Playwright', 'CI/CD'],
+            students: '12.5K',
+        },
+        {
+            id: 2,
+            title: 'Security Expert Path',
+            level: 'Intermediate',
+            duration: '6 weeks',
+            modules: 18,
+            icon: <FaShieldAlt className="w-6 h-6" />,
+            gradient: 'from-emerald-500 via-teal-600 to-cyan-600',
+            topics: ['OWASP', 'Penetration Testing', 'Vulnerability Assessment'],
+            students: '8.3K',
+        },
+        {
+            id: 3,
+            title: 'Performance Pro',
+            level: 'Advanced',
+            duration: '5 weeks',
+            modules: 15,
+            icon: <FaRocket className="w-6 h-6" />,
+            gradient: 'from-violet-500 via-purple-600 to-fuchsia-600',
+            topics: ['JMeter', 'K6', 'Load Testing', 'Scalability'],
+            students: '9.7K',
+        },
+        {
+            id: 4,
+            title: 'Mobile Testing Pro',
+            level: 'Intermediate',
+            duration: '7 weeks',
+            modules: 21,
+            icon: <FaMobile className="w-6 h-6" />,
+            gradient: 'from-amber-500 via-orange-600 to-red-600',
+            topics: ['Appium', 'iOS Testing', 'Android', 'Cross-Platform'],
+            students: '10.2K',
+        },
+    ];
+
+    const trendingTopics = [
+        {
+            title: 'AI-Powered Test Generation',
+            views: '45.2K',
+            trend: '+156%',
+            badge: 'Hot',
+            color: 'pink',
+        },
+        {
+            title: 'Shift-Left Testing Strategies',
+            views: '38.9K',
+            trend: '+124%',
+            badge: 'Trending',
+            color: 'blue',
+        },
+        {
+            title: 'API Testing with Postman & REST Assured',
+            views: '52.1K',
+            trend: '+98%',
+            badge: 'Popular',
+            color: 'violet',
+        },
+        {
+            title: 'Test Automation ROI Calculator',
+            views: '29.4K',
+            trend: '+187%',
+            badge: 'New',
+            color: 'emerald',
+        },
+    ];
+
+    const resources = [
+        {
+            title: 'Ultimate QA Checklist',
+            type: 'PDF Guide',
+            downloads: '23.5K',
+            icon: <FaDownload className="w-5 h-5" />,
+        },
+        {
+            title: 'Testing Tools Comparison',
+            type: 'Interactive Tool',
+            downloads: '18.2K',
+            icon: <FaChartLine className="w-5 h-5" />,
+        },
+        {
+            title: 'Video Tutorials Series',
+            type: '20+ Videos',
+            downloads: '31.7K',
+            icon: <FaPlay className="w-5 h-5" />,
+        },
+    ];
+
+    const handleEmailSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Handle email submission
+        console.log('Email submitted:', email);
+        setEmail('');
     };
 
     return (
-        <section className="bg-gradient-to-r from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl font-extrabold text-gray-900 mb-10 text-center sm:text-5xl">
-                    Explore Our QA Knowledge Hub
-                </h2>
-                
-                {/* Enhanced Introduction */}
-                <div className="text-lg text-gray-700 mb-12 max-w-7xl mx-auto">
-                    <p className="mb-6 text-center">
-                        At Testriq, we&apos;re dedicated to empowering software teams with expert quality assurance (QA) insights. Our QA Knowledge Hub is your go-to resource for
-                        mastering software testing, whether you&apos;re a QA engineer, developer, or business leader aiming to deliver flawless applications.
+        <section className="relative bg-slate-900 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+            {/* Animated Background */}
+            <div className="absolute inset-0 pointer-events-none">
+                {/* Gradient orbs */}
+                <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-bl from-blue-500/20 via-indigo-500/10 to-transparent rounded-full blur-3xl animate-pulse" />
+                <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-violet-500/20 via-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-gradient-to-l from-emerald-500/15 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+
+                {/* Grid pattern */}
+                <div
+                    className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                        backgroundImage: `linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px)`,
+                        backgroundSize: '50px 50px',
+                    }}
+                />
+            </div>
+
+            <div className="max-w-[1400px] mx-auto relative z-10">
+                {/* Header Section */}
+                <div className="text-center mb-16 lg:mb-20">
+                    {/* Animated Badge */}
+                    <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-500/10 to-violet-500/10 border border-blue-500/20 rounded-2xl mb-6 backdrop-blur-sm">
+                        <FaFire className="w-4 h-4 text-orange-400 animate-pulse" />
+                        <span className="text-sm text-blue-300 font-bold tracking-wide">INTERACTIVE LEARNING HUB</span>
+                    </div>
+
+                    {/* Heading */}
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.15]">
+                        Your Journey to{" "}
+                        <span className="relative inline-block">
+                            <span className="relative z-10 bg-gradient-to-r from-blue-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+                                Testing Excellence
+                            </span>
+                            <span className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-blue-500/30 via-violet-500/30 to-fuchsia-500/30 blur-lg" />
+                        </span>
+                    </h2>
+                    <p className="text-lg lg:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Structured learning paths, trending insights, and premium resources designed for modern QA professionals
                     </p>
-                    
-                    <div className="grid md:grid-cols-2 gap-8 mb-8">
-                        <div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Our Knowledge Hub?</h3>
-                            <p className="mb-4">
-                                Our blog stands out in the crowded landscape of software testing resources by offering content that bridges the gap between theoretical knowledge and practical application. Each article is crafted by ISTQB-certified professionals and industry veterans who bring years of hands-on experience to every piece of content.
-                            </p>
-                            <p className="mb-4">
-                                We understand that the software testing landscape is constantly evolving, with new tools, methodologies, and challenges emerging regularly. That&apos;s why our knowledge hub is continuously updated with the latest trends, from cutting-edge automation frameworks to emerging AI-driven testing approaches.
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">What Makes Us Different?</h3>
-                            <p className="mb-4">
-                                Unlike generic testing blogs, our content is rooted in real-world project experience. Every tutorial, guide, and best practice recommendation comes from actual implementations across diverse industries, from fintech to healthcare, e-commerce to enterprise software.
-                            </p>
-                            <p className="mb-4">
-                                Our comprehensive approach covers not just the technical aspects of testing, but also the business impact, team dynamics, and strategic considerations that make QA initiatives successful. We believe in empowering our readers with both the &apos;how&apos; and the &apos;why&apos; behind effective testing practices.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div className="bg-white rounded-lg p-6 shadow-md mb-8">
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Our Content Philosophy</h3>
-                        <p className="text-center mb-4">
-                            From automation tools like Selenium and Appium to Agile methodologies and performance testing, our blog offers the latest trends, practical tips, and real-world case studies to elevate your testing strategy. With insights from industry experts, we simplify complex QA concepts into actionable advice.
-                        </p>
-                        <p className="text-center">
-                            Whether you&apos;re looking to implement your first automation framework, optimize existing testing processes, or stay ahead of emerging trends in AI and machine learning testing, our knowledge hub provides the depth and breadth of information you need to succeed.
-                        </p>
-                    </div>
                 </div>
 
-                {/* Enhanced Category Grid with Detailed Descriptions */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {[
-                        {
-                            title: 'Automation Testing',
-                            description: 'Discover comprehensive guides on automation tools like Selenium, Appium, Cypress, and Playwright. Learn how to design robust test frameworks, implement CI/CD integration, and maximize ROI from test automation investments.',
-                            detailedInfo: 'Our automation testing section covers everything from beginner-friendly tutorials to advanced framework design patterns. Explore topics like Page Object Model implementation, data-driven testing strategies, and cross-browser compatibility solutions.',
-                            link: '/blog/category/automation-testing-services',
-                            topics: ['Selenium WebDriver', 'Appium Mobile Testing', 'CI/CD Integration', 'Framework Design']
-                        },
-                        {
-                            title: 'Manual Testing Best Practices',
-                            description: 'Master proven manual testing techniques that ensure comprehensive test coverage. Learn exploratory testing methods, test case design principles, and effective bug reporting strategies.',
-                            detailedInfo: 'Manual testing remains a cornerstone of quality assurance. Our guides help you develop systematic approaches to test planning, execution, and documentation that complement automated testing efforts.',
-                            link: '/blog/category/manual-testing',
-                            topics: ['Test Case Design', 'Exploratory Testing', 'Bug Reporting', 'Test Planning']
-                        },
-                        {
-                            title: 'Security Testing',
-                            description: 'Uncover vulnerabilities with advanced security testing tools and techniques. Learn about penetration testing, vulnerability assessments, and secure coding practices to ensure robust application security.',
-                            detailedInfo: 'Security testing is more critical than ever in today\'s threat landscape. Our content covers OWASP guidelines, security testing tools, and methodologies to identify and mitigate security risks.',
-                            link: '/blog/category/security-testing',
-                            topics: ['OWASP Testing', 'Penetration Testing', 'Vulnerability Assessment', 'Secure Code Review']
-                        },
-                        {
-                            title: 'AI Application Testing',
-                            description: 'Master cutting-edge testing strategies for AI-driven applications. Learn how to test machine learning models, validate AI algorithms, and ensure accuracy and reliability in intelligent systems.',
-                            detailedInfo: 'As AI becomes integral to modern applications, specialized testing approaches are essential. Explore model validation techniques, bias detection methods, and performance testing for AI systems.',
-                            link: '/blog/category/ai-application-testing',
-                            topics: ['ML Model Testing', 'AI Algorithm Validation', 'Bias Detection', 'Performance Testing']
-                        },
-                        {
-                            title: 'Performance Testing Essentials',
-                            description: 'Master performance testing tools like JMeter, LoadRunner, and K6 to optimize application speed and reliability. Learn load testing strategies, bottleneck identification, and scalability planning.',
-                            detailedInfo: 'Performance testing ensures your applications can handle real-world usage patterns. Our comprehensive guides cover everything from basic load testing to complex performance engineering scenarios.',
-                            link: '/blog/category/performance-testing-services',
-                            topics: ['Load Testing', 'Stress Testing', 'Scalability Planning', 'Performance Monitoring']
-                        },
-                        {
-                            title: 'Testriq Case Studies',
-                            description: 'Explore detailed real-world examples of how our QA solutions drive measurable business success. Learn from actual project implementations and their outcomes.',
-                            detailedInfo: 'Our case studies provide transparent insights into project challenges, solutions implemented, and results achieved. These real-world examples offer valuable lessons for your own QA initiatives.',
-                            link: '/case-studies',
-                            topics: ['Project Success Stories', 'ROI Analysis', 'Implementation Strategies', 'Lessons Learned']
-                        },
-                    ].map((topic, index) => (
-                        <div
-                            key={index}
-                            className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                        >
-                            <h3 className="text-xl font-semibold text-gray-900 mb-3">{topic.title}</h3>
-                            <p className="text-gray-600 mb-4">{topic.description}</p>
-                            <p className="text-sm text-gray-500 mb-4">{topic.detailedInfo}</p>
-                            
-                            <div className="mb-4">
-                                <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Topics:</h4>
-                                <div className="flex flex-wrap gap-2">
-                                    {topic.topics.map((topicItem, topicIndex) => (
-                                        <span key={topicIndex} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
-                                            {topicItem}
-                                        </span>
-                                    ))}
+                {/* Main Content Grid */}
+                <div className="grid lg:grid-cols-3 gap-8 mb-16">
+                    {/* Left Column - Learning Paths (2/3 width) */}
+                    <div className="lg:col-span-2 space-y-6">
+                        <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-violet-600 rounded-xl flex items-center justify-center">
+                                    <FaBookOpen className="w-5 h-5 text-white" />
                                 </div>
-                            </div>
-                            
-                            <Link
-                                href={topic.link}
-                                className="text-brand-blue font-medium hover:text-blue-800 transition-colors duration-200 inline-flex items-center"
-                            >
-                                Explore Now 
-                                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
+                                Curated Learning Paths
+                            </h3>
+                            <Link href="/learning-paths" className="text-blue-400 hover:text-blue-300 text-sm font-semibold flex items-center gap-2 transition-colors">
+                                View All
+                                <FaArrowRight className="w-3 h-3" />
                             </Link>
                         </div>
-                    ))}
-                </div>
 
-                {/* Additional Value Proposition Section */}
-                <div className="bg-white rounded-lg p-8 shadow-md mb-10">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">Why Industry Leaders Trust Our Insights</h3>
-                    
-                    <div className="grid md:grid-cols-3 gap-8 mb-8">
-                        <div className="text-center">
-                            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold mb-2">Expert Authorship</h4>
-                            <p className="text-gray-600">Content created by ISTQB-certified professionals and industry veterans with proven track records in delivering successful QA projects across multiple industries.</p>
-                        </div>
-                        
-                        <div className="text-center">
-                            <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold mb-2">Practical Implementation</h4>
-                            <p className="text-gray-600">Every article includes actionable insights, code examples, and step-by-step guides that you can immediately apply to your own testing projects and workflows.</p>
-                        </div>
-                        
-                        <div className="text-center">
-                            <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold mb-2">Current & Relevant</h4>
-                            <p className="text-gray-600">Stay ahead of the curve with content that covers the latest tools, methodologies, and industry trends, updated regularly to reflect the evolving QA landscape.</p>
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {learningPaths.map((path) => (
+                                <div
+                                    key={path.id}
+                                    onClick={() => setSelectedPath(path.id)}
+                                    className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl border-2 cursor-pointer transition-all duration-300 hover:-translate-y-1 ${selectedPath === path.id
+                                        ? 'border-blue-500 bg-slate-800/80'
+                                        : 'border-slate-700/50 hover:border-slate-600'
+                                        }`}
+                                >
+                                    {/* Gradient accent */}
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${path.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`} />
+
+                                    <div className="relative p-6">
+                                        {/* Header */}
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div className={`w-14 h-14 bg-gradient-to-br ${path.gradient} rounded-xl flex items-center justify-center text-white shadow-lg`}>
+                                                {path.icon}
+                                            </div>
+                                            <div className="flex items-center gap-1.5 px-3 py-1 bg-slate-700/50 rounded-lg">
+                                                <FaStar className="w-3 h-3 text-yellow-400" />
+                                                <span className="text-xs text-slate-300 font-semibold">{path.students}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Title */}
+                                        <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                                            {path.title}
+                                        </h4>
+
+                                        {/* Meta */}
+                                        <div className="flex items-center gap-4 mb-4 text-sm text-slate-400">
+                                            <span className="flex items-center gap-1.5">
+                                                <FaClock className="w-3.5 h-3.5" />
+                                                {path.duration}
+                                            </span>
+                                            <span className="flex items-center gap-1.5">
+                                                <FaBookOpen className="w-3.5 h-3.5" />
+                                                {path.modules} modules
+                                            </span>
+                                        </div>
+
+                                        {/* Topics */}
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {path.topics.map((topic, idx) => (
+                                                <span
+                                                    key={idx}
+                                                    className="px-2.5 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-lg border border-slate-600/50"
+                                                >
+                                                    {topic}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        {/* Level badge */}
+                                        <div className="pt-4 border-t border-slate-700/50">
+                                            <span className="inline-flex items-center gap-2 text-sm">
+                                                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                                                <span className="text-slate-400">{path.level}</span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Checkmark for selected */}
+                                    {selectedPath === path.id && (
+                                        <div className="absolute top-4 right-4 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                            <FaCheckCircle className="w-4 h-4 text-white" />
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
-                    
-                    <div className="text-center">
-                        <p className="text-lg text-gray-700 mb-6">
-                            Join thousands of QA professionals who rely on our insights to advance their careers and improve their testing practices. Our community-driven approach ensures that content remains relevant, practical, and immediately applicable to real-world scenarios.
-                        </p>
+
+                    {/* Right Column - Trending & Resources */}
+                    <div className="space-y-6">
+                        {/* Trending Topics */}
+                        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 p-6">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <FaFire className="w-5 h-5 text-orange-400" />
+                                Trending Now
+                            </h3>
+
+                            <div className="space-y-4">
+                                {trendingTopics.map((topic, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={`/blog/${topic.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                        className="group block"
+                                    >
+                                        <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-700/30 transition-colors">
+                                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-500 to-pink-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">
+                                                {idx + 1}
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <h4 className="text-sm font-semibold text-white mb-1 group-hover:text-blue-300 transition-colors line-clamp-2">
+                                                    {topic.title}
+                                                </h4>
+                                                <div className="flex items-center gap-3 text-xs">
+                                                    <span className="text-slate-400">{topic.views} views</span>
+                                                    <span className="text-green-400 font-semibold">{topic.trend}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Free Resources */}
+                        <div className="bg-gradient-to-br from-blue-500/10 to-violet-500/10 backdrop-blur-sm rounded-2xl border border-blue-500/20 p-6">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                                <FaDownload className="w-5 h-5 text-blue-400" />
+                                Free Resources
+                            </h3>
+
+                            <div className="space-y-3">
+                                {resources.map((resource, idx) => (
+                                    <button
+                                        key={idx}
+                                        className="w-full flex items-center gap-4 p-4 bg-slate-800/50 rounded-xl hover:bg-slate-800/80 transition-all group"
+                                    >
+                                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-violet-600 rounded-lg flex items-center justify-center text-white">
+                                            {resource.icon}
+                                        </div>
+                                        <div className="flex-1 text-left">
+                                            <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-blue-300 transition-colors">
+                                                {resource.title}
+                                            </h4>
+                                            <p className="text-xs text-slate-400">{resource.type}</p>
+                                        </div>
+                                        <FaArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all" />
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Call to Action Section */}
-                <div className="text-center">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        Ready to Transform Your Testing Strategy?
-                    </h3>
-                    <p className="text-lg text-gray-700 mb-6">
-                        Start your QA journey today with expert insights and practical solutions that deliver measurable results!
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link
-                            href="/blog#blog-categories"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                scrollToCategory();
-                            }}
-                            className="inline-block bg-brand-blue text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors duration-200"
-                        >
-                            Explore All Categories
-                        </Link>
-                        <Link
-                            href="/case-studies"
-                            className="inline-block bg-gray-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-colors duration-200"
-                        >
-                            View Success Stories
-                        </Link>
+                {/* Newsletter CTA - Lead Generation */}
+                <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-fuchsia-500/20 rounded-[2.5rem] blur-2xl" />
+
+                    <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-slate-700/50 overflow-hidden">
+                        {/* Decorative elements */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-2xl" />
+                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-violet-500/10 to-transparent rounded-full blur-2xl" />
+
+                        <div className="relative z-10 px-8 py-12 md:px-16 md:py-16">
+                            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                                {/* Left - Newsletter Form */}
+                                <div>
+                                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl mb-4">
+                                        <FaBell className="w-4 h-4 text-blue-400" />
+                                        <span className="text-sm text-blue-300 font-semibold">WEEKLY NEWSLETTER</span>
+                                    </div>
+
+                                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                                        Get Expert QA Insights{" "}
+                                        <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                                            Delivered Weekly
+                                        </span>
+                                    </h3>
+
+                                    <p className="text-slate-400 mb-6 leading-relaxed">
+                                        Join 50,000+ QA professionals receiving curated testing tips, industry news, and exclusive resources
+                                    </p>
+
+                                    <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
+                                        <input
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder="Enter your email"
+                                            className="flex-1 px-5 py-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                                            required
+                                        />
+                                        <button
+                                            type="submit"
+                                            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-violet-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-violet-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
+                                        >
+                                            <span>Subscribe</span>
+                                            <FaArrowRight className="w-4 h-4" />
+                                        </button>
+                                    </form>
+
+                                    <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+                                        <div className="flex items-center gap-2">
+                                            <FaCheckCircle className="w-4 h-4 text-green-400" />
+                                            <span>No spam, ever</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <FaCheckCircle className="w-4 h-4 text-green-400" />
+                                            <span>Unsubscribe anytime</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <FaCheckCircle className="w-4 h-4 text-green-400" />
+                                            <span>Free forever</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right - Stats Grid */}
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center hover:border-blue-500/30 transition-colors">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <FaBookOpen className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div className="text-3xl font-bold text-white mb-1">200+</div>
+                                        <div className="text-sm text-slate-400 font-medium">Expert Articles</div>
+                                    </div>
+
+                                    <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center hover:border-violet-500/30 transition-colors">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <FaUsers className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div className="text-3xl font-bold text-white mb-1">50K+</div>
+                                        <div className="text-sm text-slate-400 font-medium">Active Readers</div>
+                                    </div>
+
+                                    <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-colors">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <FaClock className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div className="text-3xl font-bold text-white mb-1">Weekly</div>
+                                        <div className="text-sm text-slate-400 font-medium">New Content</div>
+                                    </div>
+
+                                    <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 text-center hover:border-orange-500/30 transition-colors">
+                                        <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                                            <FaLightbulb className="w-6 h-6 text-white" />
+                                        </div>
+                                        <div className="text-3xl font-bold text-white mb-1">100%</div>
+                                        <div className="text-sm text-slate-400 font-medium">Free Access</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Trust Indicators */}
+                            <div className="mt-12 pt-8 border-t border-slate-700/50 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 bg-green-500/20 rounded-lg flex items-center justify-center border border-green-500/30">
+                                        <span className="text-green-400 font-bold text-xs">✓</span>
+                                    </div>
+                                    <span>ISTQB Certified Authors</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 bg-blue-500/20 rounded-lg flex items-center justify-center border border-blue-500/30">
+                                        <span className="text-blue-400 font-bold text-xs">✓</span>
+                                    </div>
+                                    <span>Industry Best Practices</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-5 h-5 bg-violet-500/20 rounded-lg flex items-center justify-center border border-violet-500/30">
+                                        <span className="text-violet-400 font-bold text-xs">✓</span>
+                                    </div>
+                                    <span>Real-World Case Studies</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -210,4 +457,3 @@ const QAKnowledgeHub: React.FC = () => {
 };
 
 export default QAKnowledgeHub;
-

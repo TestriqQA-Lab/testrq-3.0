@@ -1,4 +1,4 @@
-import { BlogHeroSection, BlogCategories, BlogQAKnowledgeHub, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
+import { BlogHeroSection, BlogQAKnowledgeHub } from "@/components/client-wrappers/BlogClientComponents";
 import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
@@ -130,9 +130,7 @@ export default async function BlogPage({
         trendingPosts={trendingPosts}
       />
 
-      <BlogCategories />
       <BlogQAKnowledgeHub />
-      <BlogNewsletter />
     </MainLayout>
   );
 }

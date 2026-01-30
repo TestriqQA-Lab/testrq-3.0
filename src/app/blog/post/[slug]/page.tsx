@@ -176,24 +176,42 @@ export default async function BlogPostPage({ params }: Props) {
 
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
 
         {/* Blog Post Header */}
         <BlogPostHeader post={post} />
-        <div className="max-w-7xl mx-auto py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 px-8 md:px-12 lg:px-8">
-            <div className="lg:col-span-2">
-              <BlogPostContent post={post} />
-              {/* <BlogPostComments postId={post.id} /> */}
-            </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-8">
-                <BlogPostSidebar post={post} />
+        {/* Main Content Area */}
+        <div className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50">
+          {/* Background Elements */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-20 left-0 w-[800px] h-[800px] bg-gradient-to-br from-blue-100/40 via-indigo-100/30 to-transparent rounded-full blur-3xl" />
+            <div className="absolute bottom-20 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-violet-100/40 via-purple-100/30 to-transparent rounded-full blur-3xl" />
+            {/* Dot Pattern */}
+            <div
+              className="absolute inset-0 opacity-[0.015]"
+              style={{
+                backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 1) 1px, transparent 1px)`,
+                backgroundSize: '30px 30px',
+              }}
+            />
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto py-16 lg:py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 px-4 sm:px-6 lg:px-8">
+              {/* Main Content - More Space */}
+              <div className="lg:col-span-7 xl:col-span-8">
+                <BlogPostContent post={post} />
+              </div>
+
+              {/* Sidebar */}
+              <div className="lg:col-span-5 xl:col-span-4">
+                <div className="sticky top-8">
+                  <BlogPostSidebar post={post} />
+                </div>
               </div>
             </div>
           </div>
@@ -201,12 +219,17 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* Related Posts Section with Suspense */}
         <Suspense fallback={
-          <div className="max-w-7xl mx-auto px-8 py-12">
-            <div className="h-8 bg-gray-200 rounded w-48 mb-8"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-96 bg-gray-100 rounded-xl animate-pulse"></div>
-              ))}
+          <div className="bg-gradient-to-b from-white via-slate-50 to-blue-50 py-20">
+            <div className="max-w-7xl mx-auto px-8">
+              <div className="text-center mb-12">
+                <div className="h-6 bg-slate-200 rounded-full w-32 mx-auto mb-4 animate-pulse" />
+                <div className="h-12 bg-slate-100 rounded-2xl w-64 mx-auto animate-pulse" />
+              </div>
+              <div className="grid grid-cols-12 gap-6 auto-rows-[200px]">
+                <div className="col-span-12 md:col-span-8 row-span-2 bg-slate-100 rounded-[2rem] animate-pulse" />
+                <div className="col-span-12 md:col-span-4 bg-slate-100 rounded-[2rem] animate-pulse" />
+                <div className="col-span-12 md:col-span-4 bg-slate-100 rounded-[2rem] animate-pulse" />
+              </div>
             </div>
           </div>
         }>

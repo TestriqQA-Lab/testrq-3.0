@@ -1,133 +1,63 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { FaCog, FaShieldAlt, FaRocket, FaMobile, FaDesktop, FaCloud, FaCode, FaChartLine } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
+import { FaCog, FaShieldAlt, FaRocket, FaMobile, FaDesktop, FaCloud, FaCode, FaChartLine, FaChevronLeft, FaChevronRight, FaLayerGroup } from "react-icons/fa";
 import Link from "next/link";
 import { getCategories } from "@/lib/wordpress-graphql";
 import { adaptWordPressCategory, Category } from "@/lib/wordpress-data-adapter";
-
-// Custom hook for incrementing animation
-const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
-  const [count, setCount] = useState(start);
-
-  useEffect(() => {
-    if (end === start) return;
-
-    const increment = (end - start) / (duration / 16); // 60fps
-    let current = start;
-    
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [end, duration, start]);
-
-  return count;
-};
-
-// Component for animated category card
-const AnimatedCategoryCard: React.FC<{
-  category: Category;
-  activeCategory: string;
-  setActiveCategory: (id: string) => void;
-  delay?: number;
-}> = ({ category, activeCategory, setActiveCategory, delay = 0 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const animatedCount = useCountUp(isVisible ? category.postCount : 0, 1500, 0);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  // Icon mapping for categories
-  const categoryIcons: Record<string, React.ReactElement> = {
-    'test automation': <FaCode className="w-5 h-5" />,
-    'automation': <FaCode className="w-5 h-5" />,
-    'performance testing': <FaRocket className="w-5 h-5" />,
-    'performance': <FaRocket className="w-5 h-5" />,
-    'security testing': <FaShieldAlt className="w-5 h-5" />,
-    'security': <FaShieldAlt className="w-5 h-5" />,
-    'mobile testing': <FaMobile className="w-5 h-5" />,
-    'mobile': <FaMobile className="w-5 h-5" />,
-    'web testing': <FaDesktop className="w-5 h-5" />,
-    'web': <FaDesktop className="w-5 h-5" />,
-    'cloud testing': <FaCloud className="w-5 h-5" />,
-    'cloud': <FaCloud className="w-5 h-5" />,
-    'qa analytics': <FaChartLine className="w-5 h-5" />,
-    'analytics': <FaChartLine className="w-5 h-5" />,
-    'api testing': <FaCode className="w-5 h-5" />,
-    'api': <FaCode className="w-5 h-5" />,
-    'default': <FaCog className="w-5 h-5" />
-  };
-
-  const getCategoryIcon = (categoryName: string): React.ReactElement => {
-    const lowerName = categoryName.toLowerCase();
-    for (const [key, icon] of Object.entries(categoryIcons)) {
-      if (lowerName.includes(key)) {
-        return icon;
-      }
-    }
-    return categoryIcons.default;
-  };
-
-  return (
-    <Link
-      href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
-      onClick={() => setActiveCategory(category.id)}
-      className={`group relative p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 block ${
-        activeCategory === category.id
-          ? 'shadow-xl ring-2 ring-[theme(color.brand.blue)] ring-opacity-50'
-          : 'shadow-lg hover:shadow-xl'
-      }`}
-    >
-      {/* Background Gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity`}></div>
-      
-      {/* Content */}
-      <div className="relative z-10 text-center">
-        {/* Icon */}
-        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} text-white mb-4 group-hover:scale-110 transition-transform`}>
-          {getCategoryIcon(category.name)}
-        </div>
-        
-        {/* Category Name */}
-        <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors">
-          {category.name}
-        </h3>
-        
-        {/* Animated Post Count */}
-        <div className="text-sm text-gray-500">
-          <span className={`${isVisible ? 'animate-pulse' : ''}`}>
-            {isVisible ? animatedCount : 0}
-          </span> articles
-        </div>
-      </div>
-
-      {/* Active Indicator */}
-      {activeCategory === category.id && (
-        <div className="absolute -top-2 -right-2 w-6 h-6 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-          <span className="text-white text-xs">✓</span>
-        </div>
-      )}
-    </Link>
-  );
-};
 
 const BlogCategories: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const categoryIcons: Record<string, React.ReactElement> = {
+    'test automation': <FaCode className="w-4 h-4" />,
+    'automation': <FaCode className="w-4 h-4" />,
+    'performance testing': <FaRocket className="w-4 h-4" />,
+    'performance': <FaRocket className="w-4 h-4" />,
+    'security testing': <FaShieldAlt className="w-4 h-4" />,
+    'security': <FaShieldAlt className="w-4 h-4" />,
+    'mobile testing': <FaMobile className="w-4 h-4" />,
+    'mobile': <FaMobile className="w-4 h-4" />,
+    'web testing': <FaDesktop className="w-4 h-4" />,
+    'web': <FaDesktop className="w-4 h-4" />,
+    'cloud testing': <FaCloud className="w-4 h-4" />,
+    'cloud': <FaCloud className="w-4 h-4" />,
+    'qa analytics': <FaChartLine className="w-4 h-4" />,
+    'analytics': <FaChartLine className="w-4 h-4" />,
+    'all': <FaLayerGroup className="w-4 h-4" />,
+    'default': <FaCog className="w-4 h-4" />
+  };
+
+  const getCategoryIcon = (categoryName: string): React.ReactElement => {
+    const lowerName = categoryName.toLowerCase();
+    if (lowerName === 'all posts') return categoryIcons.all;
+    for (const [key, icon] of Object.entries(categoryIcons)) {
+      if (lowerName.includes(key)) return icon;
+    }
+    return categoryIcons.default;
+  };
+
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  const scrollBy = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -300 : 300,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   useEffect(() => {
     async function fetchCategories() {
@@ -135,66 +65,57 @@ const BlogCategories: React.FC = () => {
         setLoading(true);
         const wpCategories = await getCategories();
         const adaptedCategories = wpCategories.map(adaptWordPressCategory);
-        
-        // Calculate total posts for "All Posts" category
         const totalPosts = adaptedCategories.reduce((sum, cat) => sum + cat.postCount, 0);
-        
-        // Add "All Posts" category at the beginning
+
         const allCategory: Category = {
           id: "all",
           name: "All Posts",
-          description: "Browse all our testing articles",
-          color: "from-gray-500 to-gray-600",
+          description: "Browse all articles",
+          color: "from-slate-500 to-slate-600",
           icon: "🏷️",
           postCount: totalPosts,
-          subscribers: Math.floor(totalPosts * 25), // Estimate subscribers
-          tags: ["All", "Testing", "QA"],
-          featuredTools: ["All Testing Tools"],
-          seo: {
-            title: "All Testing Articles | Testriq Blog",
-            description: "Browse all our comprehensive testing articles and tutorials",
-            keywords: "testing, qa, software testing, all articles"
-          }
+          subscribers: Math.floor(totalPosts * 25),
+          tags: ["All"],
+          featuredTools: [],
+          seo: { title: "", description: "", keywords: "" }
         };
 
         setCategories([allCategory, ...adaptedCategories]);
       } catch (error) {
         console.error("Error fetching categories:", error);
-        // Fallback to static categories if WordPress is not available
-        setCategories([
-          {
-            id: "all",
-            name: "All Posts",
-            description: "Browse all our testing articles",
-            color: "from-gray-500 to-gray-600",
-            icon: "🏷️",
-            postCount: 156,
-            subscribers: 3900,
-            tags: ["All", "Testing", "QA"],
-            featuredTools: ["All Testing Tools"],
-            seo: {
-              title: "All Testing Articles | Testriq Blog",
-              description: "Browse all our comprehensive testing articles and tutorials",
-              keywords: "testing, qa, software testing, all articles"
-            }
-          }
-        ]);
+        setCategories([{
+          id: "all",
+          name: "All Posts",
+          description: "Browse all articles",
+          color: "from-slate-500 to-slate-600",
+          icon: "🏷️",
+          postCount: 156,
+          subscribers: 3900,
+          tags: ["All"],
+          featuredTools: [],
+          seo: { title: "", description: "", keywords: "" }
+        }]);
       } finally {
         setLoading(false);
       }
     }
-
     fetchCategories();
   }, []);
 
+  useEffect(() => {
+    checkScrollPosition();
+    window.addEventListener('resize', checkScrollPosition);
+    return () => window.removeEventListener('resize', checkScrollPosition);
+  }, [categories]);
+
   if (loading) {
     return (
-      <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+      <section className="bg-white py-12 px-4 sm:px-6 lg:px-8 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center h-64">
-            <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading categories...</p>
+          <div className="flex items-center justify-center h-20">
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+              <span className="text-slate-500">Loading categories...</span>
             </div>
           </div>
         </div>
@@ -203,38 +124,91 @@ const BlogCategories: React.FC = () => {
   }
 
   return (
-    <section id="blog-categories" className="bg-white py-16 px-8 md:px-12 lg:px-24">
+    <section id="blog-categories" className="bg-white py-16 px-4 sm:px-6 lg:px-8 border-y border-slate-100">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Explore Testing{" "}
-            <span className="text-[theme(color.brand.blue)]">Categories</span>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">
+            Browse by{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              Category
+            </span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Browse our comprehensive collection of software testing articles organized by testing types, 
-            tools, and methodologies to find exactly what you need.
+          <p className="text-slate-500 max-w-2xl mx-auto">
+            Explore our testing resources organized by specialization
           </p>
         </div>
 
-        {/* Categories Grid with Staggered Animation */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-12">
-          {categories.slice(0, 100).map((category, index) => (
-            <AnimatedCategoryCard
-              key={category.id}
-              category={category}
-              activeCategory={activeCategory}
-              setActiveCategory={setActiveCategory}
-              delay={index * 100} // Stagger animation by 100ms for each card
-            />
-          ))}
+        {/* Scrollable Categories */}
+        <div className="relative group">
+          {canScrollLeft && (
+            <button
+              onClick={() => scrollBy('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all"
+              aria-label="Scroll left"
+            >
+              <FaChevronLeft className="w-4 h-4" />
+            </button>
+          )}
+
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          )}
+
+          <div
+            ref={scrollContainerRef}
+            onScroll={checkScrollPosition}
+            className="flex gap-3 overflow-x-auto py-2 px-1 scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {categories.slice(0, 15).map((category) => {
+              const isActive = activeCategory === category.id;
+
+              return (
+                <Link
+                  key={category.id}
+                  href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 ${isActive
+                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-600/25'
+                      : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                    }`}
+                >
+                  <span className={isActive ? 'text-blue-100' : 'text-slate-400'}>
+                    {getCategoryIcon(category.name)}
+                  </span>
+                  <span className="font-medium whitespace-nowrap">{category.name}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                    }`}>
+                    {category.postCount}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          )}
+
+          {canScrollRight && (
+            <button
+              onClick={() => scrollBy('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white border border-slate-200 rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-slate-900 hover:border-slate-300 transition-all"
+              aria-label="Scroll right"
+            >
+              <FaChevronRight className="w-4 h-4" />
+            </button>
+          )}
         </div>
+
         <div className="text-center mt-8">
           <Link
-            href="/blog/categories" // Assuming this is the categories landing page
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-[theme(color.brand.blue)] hover:bg-[theme(color.brand.blue)]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[theme(color.brand.blue)]"
+            href="/blog/categories"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors group"
           >
-            View All Categories
+            View all categories
+            <FaChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
@@ -243,4 +217,3 @@ const BlogCategories: React.FC = () => {
 };
 
 export default BlogCategories;
-

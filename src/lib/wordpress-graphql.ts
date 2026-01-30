@@ -1026,6 +1026,18 @@ export async function getTotalCategoryCount(): Promise<number> {
   }
 }
 
+// Fetch latest posts (most recent)
+export async function getLatestPosts(count: number = 3): Promise<WordPressPost[]> {
+  try {
+    const data = await getPosts(count);
+    return data.posts;
+  } catch (error) {
+    console.error('Error fetching latest posts:', error);
+    return [];
+  }
+}
+
+
 // New function to get all posts without pagination limit
 export async function getAllPosts(): Promise<WordPressPost[]> {
   let allPosts: WordPressPost[] = [];
