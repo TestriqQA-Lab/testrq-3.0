@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaArrowLeft, FaClock, FaUser, FaCalendar, FaBookOpen, FaChartLine, FaAward, FaCheckCircle, FaShare, FaBookmark, FaPrint } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaClock, FaUser, FaCalendar, FaBookOpen, FaChartLine, FaAward, FaCheckCircle, FaShare, FaBookmark, FaPrint } from "react-icons/fa";
 
 const BlogDemoHeroSection = () => {
     const scrollToContent = () => {
@@ -24,7 +24,7 @@ const BlogDemoHeroSection = () => {
             {/* Hero Section with Banner Image */}
             <section className="relative bg-slate-900 overflow-hidden">
                 {/* Large Banner Image with Overlay */}
-                <div className="relative h-[500px] lg:h-[600px]">
+                <div className="relative h-[800px] md:h-[600px]">
                     {/* Replace with actual blog post image */}
                     <Image
                         src="/blog-demo/hero_performance_dashboard_1769850360523.png"
@@ -51,18 +51,50 @@ const BlogDemoHeroSection = () => {
                     {/* Content Over Image */}
                     <div className="relative h-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
-                        {/* Top Navigation Bar */}
+                        {/* Breadcrumb Navigation */}
                         <div className="absolute top-0 left-0 right-0 z-10">
                             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                                <div className="flex items-center justify-between">
-                                    <Link
-                                        href="/blog"
-                                        className="inline-flex items-center gap-2 text-white hover:text-blue-600 transition-colors"
-                                    >
-                                        <FaArrowLeft className="w-4 h-4" />
-                                        <span className="text-sm font-semibold">Back to Resources</span>
-                                    </Link>
-                                </div>
+                                <nav aria-label="Breadcrumb" className="flex items-center">
+                                    <ol className="flex items-center gap-2 text-sm">
+                                        {/* Home */}
+                                        <li>
+                                            <Link
+                                                href="/"
+                                                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors group"
+                                            >
+                                                <FaHome className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                                                <span className="font-medium">Home</span>
+                                            </Link>
+                                        </li>
+
+                                        {/* Separator */}
+                                        <li>
+                                            <FaChevronRight className="w-3 h-3 text-white/40" />
+                                        </li>
+
+                                        {/* Blog */}
+                                        <li>
+                                            <Link
+                                                href="/blog"
+                                                className="text-white/80 hover:text-white transition-colors font-medium"
+                                            >
+                                                Blog
+                                            </Link>
+                                        </li>
+
+                                        {/* Separator */}
+                                        <li>
+                                            <FaChevronRight className="w-3 h-3 text-white/40" />
+                                        </li>
+
+                                        {/* Current Page */}
+                                        <li>
+                                            <span className="text-white font-semibold line-clamp-1 max-w-[300px] sm:max-w-none">
+                                                The Complete Guide to Performance Testing
+                                            </span>
+                                        </li>
+                                    </ol>
+                                </nav>
                             </div>
                         </div>
 
@@ -132,136 +164,6 @@ const BlogDemoHeroSection = () => {
                                         <FaBookOpen className="w-5 h-5" />
                                         <span>Start Reading</span>
                                     </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Content Section Below Hero */}
-            <section className="bg-gradient-to-b from-white via-slate-50 to-white pt-24 lg:pt-32 pb-16">
-                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-12 gap-12">
-                        {/* Main Content Area */}
-                        <div className="lg:col-span-8">
-                            {/* What You'll Learn */}
-                            <div className="bg-white border-2 border-slate-200 rounded-2xl p-8 lg:p-10 mb-8">
-                                <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                    <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
-                                        <FaBookOpen className="w-5 h-5 text-white" />
-                                    </div>
-                                    What You&apos;ll Learn
-                                </h2>
-
-                                <div className="grid sm:grid-cols-2 gap-4">
-                                    {[
-                                        'Load Testing Fundamentals & Methodology',
-                                        'Performance Testing Tool Selection',
-                                        'Metrics Analysis & Interpretation',
-                                        'Best Practices for Enterprise Apps',
-                                        'Scalability Planning & Strategy',
-                                        'Real-World Case Studies',
-                                        'Common Pitfalls & Solutions',
-                                        'Advanced Optimization Techniques'
-                                    ].map((item, idx) => (
-                                        <div key={idx} className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                                            <FaCheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                            <span className="text-slate-700 font-medium text-sm leading-relaxed">{item}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Sidebar */}
-                        <div className="lg:col-span-4 space-y-6">
-                            {/* Expertise Level */}
-                            <div className="bg-white border-2 border-slate-200 rounded-2xl p-6 sticky top-6">
-                                <h3 className="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
-                                    <FaAward className="w-5 h-5 text-blue-600" />
-                                    Expertise Breakdown
-                                </h3>
-
-                                <div className="space-y-4 mb-6">
-                                    <div>
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="text-sm font-medium text-slate-700">Beginner</span>
-                                            <span className="text-sm font-bold text-slate-900">40%</span>
-                                        </div>
-                                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                            <div className="h-full w-[40%] bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="text-sm font-medium text-slate-700">Intermediate</span>
-                                            <span className="text-sm font-bold text-slate-900">45%</span>
-                                        </div>
-                                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                            <div className="h-full w-[45%] bg-gradient-to-r from-violet-500 to-violet-600 rounded-full" />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div className="flex items-center justify-between mb-2">
-                                            <span className="text-sm font-medium text-slate-700">Advanced</span>
-                                            <span className="text-sm font-bold text-slate-900">15%</span>
-                                        </div>
-                                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                                            <div className="h-full w-[15%] bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full" />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="pt-5 border-t border-slate-200">
-                                    <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
-                                        <div className="flex items-start gap-3">
-                                            <FaAward className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                                            <div>
-                                                <h4 className="text-sm font-bold text-slate-900 mb-1">
-                                                    Industry Certified
-                                                </h4>
-                                                <p className="text-xs text-slate-600 leading-relaxed">
-                                                    Reviewed by ISTQB-certified professionals with 16+ years of experience
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Social Proof */}
-                            <div className="bg-white border-2 border-slate-200 rounded-2xl p-6">
-                                <h3 className="text-lg font-bold text-slate-900 mb-5">Article Stats</h3>
-
-                                <div className="space-y-4">
-                                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                                        <span className="text-sm text-slate-600">Total Readers</span>
-                                        <span className="text-lg font-bold text-slate-900">2,431</span>
-                                    </div>
-                                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                                        <span className="text-sm text-slate-600">Shares</span>
-                                        <span className="text-lg font-bold text-slate-900">156</span>
-                                    </div>
-                                    <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                                        <span className="text-sm text-slate-600">Bookmarks</span>
-                                        <span className="text-lg font-bold text-slate-900">89</span>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <span className="text-sm text-slate-600">Average Rating</span>
-                                        <div className="flex items-center gap-2">
-                                            <div className="flex gap-0.5">
-                                                {[1, 2, 3, 4, 5].map((star) => (
-                                                    <svg key={star} className="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20">
-                                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                                    </svg>
-                                                ))}
-                                            </div>
-                                            <span className="text-lg font-bold text-slate-900">4.8</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

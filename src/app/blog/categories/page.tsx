@@ -4,14 +4,15 @@ import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { getCategories } from "@/lib/wordpress-graphql";
 import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
+import FeaturedCategoriesSection from "@/components/sections/FeaturedCategoriesSection";
 
 const CategoriesHeroSection = dynamic(
   () => import("@/components/sections/CategoriesHeroSection"),
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
+      <div className="h-[600px] bg-slate-900 flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     ),
   }
@@ -22,8 +23,8 @@ const CategoriesGrid = dynamic(
   {
     ssr: true,
     loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-100">
-        <p className="text-gray-500">Loading...</p>
+      <div className="flex items-center justify-center h-64 bg-slate-50">
+        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     ),
   }
@@ -84,7 +85,7 @@ export default async function CategoriesPage() {
     .map(adaptWordPressCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-slate-50">
       <MainLayout>
         <BlogStructuredData
           type="category"
@@ -93,9 +94,28 @@ export default async function CategoriesPage() {
           url="https://www.testriq.com/blog/categories"
           postCount={categories.length}
         />
+
+        {/* Hero Section */}
         <CategoriesHeroSection />
-        <div className="max-w-7xl mx-auto py-12 px-8 md:px-12">
-          <CategoriesGrid categories={categories} />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 lg:-mt-10 z-20 pb-20">
+          {/* Featured Section - Elevated */}
+          {categories.length > 0 && (
+            <div className="mb-16">
+              <FeaturedCategoriesSection categories={categories} />
+            </div>
+          )}
+
+          {/* Main Categories Grid */}
+          <div className="bg-white rounded-3xl p-6 lg:p-10 shadow-xl border border-slate-100">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900">All Categories</h2>
+                <p className="text-slate-500">Browse our complete collection of testing topics</p>
+              </div>
+            </div>
+            <CategoriesGrid categories={categories} />
+          </div>
         </div>
       </MainLayout>
     </div>

@@ -70,14 +70,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({
 
                 {/* Title overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                    <div className="flex items-center gap-4 mb-4">
-                        <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl">
-                            {icon}
-                        </div>
-                        <span className="text-white/80 font-semibold text-sm uppercase tracking-wider">
-                            Section {index}
-                        </span>
-                    </div>
                     <h2 className="text-4xl md:text-5xl font-black text-white leading-tight max-w-3xl">
                         {title}
                     </h2>
@@ -124,14 +116,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({
                     <div className={`p-8 md:p-12 flex flex-col justify-center ${imageOnLeft ? "md:order-2" : "md:order-1"}`}>
                         {/* Header */}
                         <div className="mb-6">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-xl text-white">
-                                    {icon}
-                                </div>
-                                <span className="text-slate-500 font-semibold text-sm uppercase tracking-wider">
-                                    Section {index}
-                                </span>
-                            </div>
+
                             <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
                                 {title}
                             </h2>
@@ -174,14 +159,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({
             <div className="p-8 md:p-12 -mt-16 relative z-10">
                 {/* Header */}
                 <div className="mb-6">
-                    <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-xl text-white shadow-lg">
-                            {icon}
-                        </div>
-                        <span className="text-slate-500 font-semibold text-sm uppercase tracking-wider">
-                            Section {index}
-                        </span>
-                    </div>
                     <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
                         {title}
                     </h2>
