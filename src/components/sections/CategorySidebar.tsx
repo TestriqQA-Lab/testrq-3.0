@@ -3,20 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBell, FaArrowRight, FaTags, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
-import { getCategories, getTags } from "@/lib/wordpress-graphql"; // Import getTags
-import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
-
-interface Category {
-  id: string;
-  name: string;
-  description: string;
-  color: string;
-  icon: string;
-  postCount: number;
-  subscribers: number;
-  tags: string[];
-  featuredTools: string[];
-}
+import { sanityGetCategories as getCategories, sanityGetTags as getTags, Category } from "@/lib/sanity-data-adapter";
 
 interface CategorySidebarProps {
   category: Category;
@@ -50,40 +37,32 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
   useEffect(() => {
     const fetchSidebarData = async () => {
       try {
-        // Fetch all categories
-        const wpCategories = await getCategories();
-        const adaptedCategories = wpCategories
-          .filter(cat => cat.count > 0 && cat.slug !== category.id) // Exclude current category
-          .map(adaptWordPressCategory);
-
-        // Sort by post count and take top 4 for related categories
-        const sortedRelatedCategories = adaptedCategories
-          .sort((a, b) => b.postCount - a.postCount)
+        setLoading(true);
+        // Fetch all categories from Sanity
+        const sanityCategories = await getCategories();
+        const related = (sanityCategories as Category[])
+          .filter((cat: Category) => cat.postCount > 0 && cat.id !== category.id)
+          .sort((a: Category, b: Category) => b.postCount - a.postCount)
           .slice(0, 4)
-          .map(cat => ({
+          .map((cat: Category) => ({
             name: cat.name,
-            slug: cat.id, // Use the id which is the slug from adaptWordPressCategory
+            slug: cat.id,
             icon: cat.icon,
             color: cat.color,
             postCount: cat.postCount
           }));
-        setRelatedCategories(sortedRelatedCategories);
+        setRelatedCategories(related);
 
-        // Fetch all tags from WordPress GraphQL
-        const wpTags = await getTags(50);
-        const sortedPopularTags = wpTags
-          .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
-          .slice(0, 20) // Take top 20 popular tags
-          .map(tag => ({
-            name: tag.name,
-            slug: tag.slug,
-            count: tag.count
-          }));
+        // Fetch tags from Sanity
+        const tagsResult = await getTags();
+        const sortedPopularTags = (tagsResult as PopularTag[])
+          .sort((a: PopularTag, b: PopularTag) => b.count - a.count)
+          .slice(0, 20);
 
         setPopularTags(sortedPopularTags);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching sidebar data:", error);
+      } finally {
         setLoading(false);
       }
     };

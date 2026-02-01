@@ -4,21 +4,16 @@ import React, { useState } from "react";
 import { FaCalendarAlt, FaClock, FaArrowRight, FaSort } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { Category, Post } from "@/lib/wordpress-data-adapter";
-import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
+import { Category, Post } from "@/lib/sanity-data-adapter";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 interface CategoryPostsGridProps {
   category: Category;
   posts: Post[]; // Add posts prop
 }
 
-// Utility function to strip HTML tags from text
-const stripHtmlTags = (html: string): string => {
-  return html.replace(/<[^>]*>/g, "").trim();
-};
-
-// Utility function to truncate text
 const truncateText = (text: string, maxLength: number): string => {
+  if (!text) return "";
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength).trim() + "...";
 };
@@ -39,7 +34,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
 
   // Filter and sort posts
   let filteredPosts = posts;
-  
+
   if (filterBy !== "all") {
     filteredPosts = posts.filter(post => {
       switch (filterBy) {
@@ -95,7 +90,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
 
         <div className="flex flex-col sm:flex-row gap-3">
           {/* Filter Dropdown */}
-        
+
 
           {/* Sort Dropdown */}
           <div className="relative">
@@ -126,7 +121,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
               {/* Image */}
               <div className="md:w-1/3 relative">
                 <Image
-                title={post.title}
+                  title={post.title}
                   src={post.image}
                   alt={post.title}
                   width={400}
@@ -148,7 +143,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                     </span>
                   )}
                 </div>
-                
+
               </div>
 
               {/* Content */}
@@ -158,9 +153,9 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                     {post.title}
                   </Link>
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  {truncateText(decodeHtmlEntities(stripHtmlTags(post.excerpt)), 160)}
+                  {truncateText(post.excerpt, 160)}
                 </p>
 
                 {/* Tags */}
@@ -174,13 +169,13 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                     </span>
                   ))}
                 </div>
-                
+
                 {/* Meta Info */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500">
                     <div className="flex items-center gap-2">
                       <Image
-                      title={post.author}
+                        title={post.author}
                         src={post.authorImage}
                         alt={post.author}
                         width={20}
@@ -198,7 +193,7 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  
+
                   <Link
                     href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 mt-3 md:mt-0 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
@@ -225,21 +220,20 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
             >
               Previous
             </button>
-            
+
             {[...Array(totalPages)].map((_, index) => (
               <button
                 key={index + 1}
                 onClick={() => setCurrentPage(index + 1)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  currentPage === index + 1
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${currentPage === index + 1
                     ? "bg-[theme(color.brand.blue)] text-white"
                     : "text-gray-600 hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 {index + 1}
               </button>
             ))}
-            
+
             <button
               onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}

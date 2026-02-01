@@ -1,24 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaCalendarAlt, FaClock, FaArrowRight, FaSort,} from "react-icons/fa";
+import { FaCalendarAlt, FaClock, FaArrowRight, FaSort, } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from "@/lib/wordpress-data-adapter";
-import { WordPressTag } from "@/lib/wordpress-graphql";
+import { Post, Tag } from "@/lib/sanity-data-adapter";
+import { decodeHtmlEntities } from "@/lib/utils";
 
 interface TagPostsGridProps {
-  tag: WordPressTag;
+  tag: Tag;
   posts: Post[];
 }
 
-// Utility function to strip HTML tags from text
-const stripHtmlTags = (html: string): string => {
-  return html.replace(/<[^>]*>/g, '').trim();
-};
-
-// Utility function to truncate text
+// Utility function to truncate text if needed
 const truncateText = (text: string, maxLength: number): string => {
+  if (!text) return "";
   if (text.length <= maxLength) return text;
   return text.substring(0, maxLength).trim() + '...';
 };
@@ -131,9 +127,9 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                     {post.title}
                   </Link>
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 line-clamp-3">
-                  {truncateText(stripHtmlTags(post.excerpt), 160)}
+                  {truncateText(post.excerpt, 160)}
                 </p>
 
                 {/* Tags */}
@@ -142,17 +138,16 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                     <Link
                       key={index}
                       href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, "-")}`}
-                      className={`px-2 py-1 text-xs rounded-full transition-colors ${
-                        postTag.toLowerCase() === tag.name.toLowerCase()
+                      className={`px-2 py-1 text-xs rounded-full transition-colors ${postTag.toLowerCase() === tag.name.toLowerCase()
                           ? 'bg-purple-100 text-purple-700 font-semibold'
                           : 'bg-gray-100 text-gray-600 hover:bg-purple-50 hover:text-purple-600'
-                      }`}
+                        }`}
                     >
                       #{postTag}
                     </Link>
                   ))}
                 </div>
-                
+
                 {/* Meta Info */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -176,7 +171,7 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  
+
                   <Link
                     href={`/blog/post/${post.slug}`}
                     className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-sm transition-colors"
@@ -203,21 +198,20 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
             >
               Previous
             </button>
-            
+
             {[...Array(totalPages)].map((_, index) => (
               <button
                 key={index + 1}
                 onClick={() => setCurrentPage(index + 1)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  currentPage === index + 1
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${currentPage === index + 1
                     ? "bg-purple-600 text-white"
                     : "text-gray-600 hover:bg-gray-50"
-                }`}
+                  }`}
               >
                 {index + 1}
               </button>
             ))}
-            
+
             <button
               onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}

@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { getPosts, WordPressPost } from "../../lib/wordpress-graphql";
+import { sanityGetPosts as getPosts, Post } from "@/lib/sanity-data-adapter";
 
 const HomeInsightSection = () => {
   const heading = {
@@ -24,25 +24,19 @@ const HomeInsightSection = () => {
     return <span dangerouslySetInnerHTML={{ __html: formattedTitle }} />;
   };
 
-  const [blogPosts, setBlogPosts] = useState<WordPressPost[]>([]);
+  const [blogPosts, setBlogPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const data = await getPosts(3); // Fetch the latest 3 posts
-        setBlogPosts(data.posts);
+        const posts = await getPosts(); // Fetch latest posts
+        setBlogPosts(posts.slice(0, 3)); // Take top 3
       } catch (error) {
         console.error("Error fetching blog posts:", error);
       }
     };
     fetchPosts();
   }, []);
-
-  // Function to decode HTML entities
-  const decodeHtmlEntities = (html: string) => {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.documentElement.textContent;
-  };
 
   return (
     <section className="flex flex-col w-full mx-auto md:px-8 px-8 xl:px-24 py-10 gap-y-15">
@@ -55,25 +49,19 @@ const HomeInsightSection = () => {
 
       <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-10">
         {blogPosts.map((post) => {
-          const date = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-          // Decode HTML entities and remove HTML tags from excerpt
-          const decodedExcerpt = decodeHtmlEntities(post.excerpt || '') || '';
-          const cleanExcerpt = decodedExcerpt.replace(/<[^>]*>/g, '');
-          const readTime = Math.ceil(post.content.split(' ').length / 200); // Estimate read time based on 200 words per minute
-
           return (
             <div
               key={post.id}
               className="flex flex-col justify-start items-start ring-sky-200 ring-1 rounded-lg p-5 md:p-5 h-auto gap-y-5 transition duration-300 transform hover:shadow-sky-200 hover:shadow-xl hover:-translate-y-2"
             >
               <p className="text-xs text-blue-400 p-1.5 py-1 rounded-2xl bg-sky-100">
-                {post.categories.nodes[0]?.name || 'Uncategorized'}
+                {post.category}
               </p>
               <div className="flex text-sm text-gray-500 space-x-3">
-                <p>{date}</p> <span>.</span> <p>{readTime} min read</p>
+                <p>{post.date}</p> <span>.</span> <p>{post.readTime}</p>
               </div>
               <h2 className="text-xl">{post.title}</h2>
-              <p className="text-gray-500 text-sm">{cleanExcerpt.substring(0, 100)}...</p>
+              <p className="text-gray-500 text-sm">{post.excerpt.substring(0, 100)}...</p>
               <Link
                 href={`/blog/post/${post.slug}`}
                 className="text-sm text-[theme(color.brand.blue)] hover:underline"

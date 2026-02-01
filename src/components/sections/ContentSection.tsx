@@ -9,7 +9,6 @@ interface ContentSectionProps {
     content: React.ReactNode;
     image: string;
     imagePosition?: "left" | "right" | "full" | "top";
-    icon?: React.ReactNode;
     index: number;
 }
 
@@ -19,7 +18,6 @@ const ContentSection: React.FC<ContentSectionProps> = ({
     content,
     image,
     imagePosition = "right",
-    icon,
     index,
 }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -35,13 +33,14 @@ const ContentSection: React.FC<ContentSectionProps> = ({
             { threshold: 0.1 }
         );
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+        const currentSectionRef = sectionRef.current;
+        if (currentSectionRef) {
+            observer.observe(currentSectionRef);
         }
 
         return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
+            if (currentSectionRef) {
+                observer.unobserve(currentSectionRef);
             }
         };
     }, []);

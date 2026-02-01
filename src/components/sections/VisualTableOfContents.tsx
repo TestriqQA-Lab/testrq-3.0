@@ -53,7 +53,7 @@ const VisualTableOfContents: React.FC<VisualTableOfContentsProps> = ({ sections 
         handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [sections]);
+    }, [sections, progress]);
 
     // Auto-scroll TOC to keep active section in view
     useEffect(() => {

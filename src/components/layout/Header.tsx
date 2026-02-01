@@ -21,8 +21,12 @@ interface MenuItem {
   submenu?: Submenu;
 }
 
+import { usePathname } from "next/navigation";
+
 const Navbar = () => {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null); // State to track active submenu in mobile
   const [activeTabletSubmenu, setActiveTabletSubmenu] = useState<number | null>(
     null
@@ -32,6 +36,8 @@ const Navbar = () => {
   >(null); // State to track active submenu in desktop
   const [activeLink, setActiveLink] = useState<string>(""); // State to track the active link
   const [activeParent, setActiveParent] = useState<string>(""); // State to track the active parent menu item
+
+  if (pathname?.startsWith('/cms')) return null;
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 

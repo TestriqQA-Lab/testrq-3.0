@@ -52,7 +52,6 @@ export default function BlogDemoPage() {
                                 title="Why Performance Testing Matters in 2026"
                                 image="/blog-demo/hero_performance_dashboard_1769850360523.png"
                                 imagePosition="top"
-                                icon={sectionIcons.intro}
                                 index={1}
                                 content={
                                     <div>
@@ -77,7 +76,6 @@ export default function BlogDemoPage() {
                                 title="What is Performance Testing?"
                                 image="/blog-demo/metrics_comparison_visual_1769850381257.png"
                                 imagePosition="top"
-                                icon={sectionIcons.definition}
                                 index={2}
                                 content={
                                     <div>
@@ -117,7 +115,6 @@ export default function BlogDemoPage() {
                                 title="Types of Performance Tests"
                                 image="/blog-demo/test_types_comparison_1769850401800.png"
                                 imagePosition="top"
-                                icon={sectionIcons.types}
                                 index={3}
                                 content={
                                     <div>
@@ -151,7 +148,6 @@ export default function BlogDemoPage() {
                                 title="Top Performance Testing Tools"
                                 image="/blog-demo/testing_tools_showcase_1769850418872.png"
                                 imagePosition="top"
-                                icon={sectionIcons.tools}
                                 index={4}
                                 content={
                                     <div>
@@ -207,7 +203,6 @@ export default function BlogDemoPage() {
                                 title="Performance Testing Best Practices"
                                 image="/blog-demo/best_practices_checklist_1769850453177.png"
                                 imagePosition="top"
-                                icon={sectionIcons.practices}
                                 index={5}
                                 content={
                                     <div>
@@ -242,7 +237,6 @@ export default function BlogDemoPage() {
                                 title="Real-World Success Story"
                                 image="/blog-demo/case_study_results_1769850468764.png"
                                 imagePosition="top"
-                                icon={sectionIcons.caseStudy}
                                 index={6}
                                 content={
                                     <div>
@@ -287,7 +281,6 @@ export default function BlogDemoPage() {
                                 title="4-Week Implementation Roadmap"
                                 image="/blog-demo/roadmap_timeline_1769850487593.png"
                                 imagePosition="top"
-                                icon={sectionIcons.roadmap}
                                 index={7}
                                 content={
                                     <div>
@@ -367,7 +360,6 @@ export default function BlogDemoPage() {
                                 title="Conclusion & Next Steps"
                                 image="/blog-demo/hero_performance_dashboard_1769850360523.png"
                                 imagePosition="top"
-                                icon={sectionIcons.conclusion}
                                 index={8}
                                 content={
                                     <div>

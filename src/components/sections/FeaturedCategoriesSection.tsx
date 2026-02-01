@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaArrowRight, FaStar } from "react-icons/fa";
-import { Category } from "@/lib/wordpress-data-adapter";
+import { Category } from "@/lib/sanity-data-adapter";
 
 interface FeaturedCategoriesSectionProps {
     categories: Category[];

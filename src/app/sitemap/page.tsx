@@ -1,7 +1,6 @@
 import Link from "next/link";
 import MainLayout from "@/components/layout/MainLayout";
-import { getAllPosts, getAllCategories, getAllTags } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { sanityGetPosts as getAllPosts, sanityGetCategories as getAllCategories, sanityGetTags as getAllTags, Post, Category, Tag } from "@/lib/sanity-data-adapter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,15 +10,13 @@ export const metadata: Metadata = {
 
 export default async function SitemapPage() {
     // Fetch all content recursively
-    const postsData = await getAllPosts();
+    const posts = await getAllPosts();
     const categories = await getAllCategories();
     const tags = await getAllTags();
 
-    const posts = postsData.map(adaptWordPressPost);
-
     // Group posts by category for better UX
-    const postsByCategory: Record<string, typeof posts> = {};
-    posts.forEach(post => {
+    const postsByCategory: Record<string, Post[]> = {};
+    posts.forEach((post: Post) => {
         if (!postsByCategory[post.category]) {
             postsByCategory[post.category] = [];
         }
@@ -82,14 +79,14 @@ export default async function SitemapPage() {
                                         <span className="text-sm font-normal text-gray-500 ml-auto">{categories.length}</span>
                                     </h2>
                                     <ul className="space-y-3">
-                                        {categories.map((cat) => (
+                                        {categories.map((cat: Category) => (
                                             <li key={cat.id}>
                                                 <Link
-                                                    href={`/blog/category/${cat.slug}`}
+                                                    href={`/blog/category/${cat.id}`}
                                                     className="flex items-center justify-between group p-2 rounded-lg hover:bg-blue-50 transition-colors"
                                                 >
                                                     <span className="text-gray-700 font-medium group-hover:text-blue-600">{cat.name}</span>
-                                                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full group-hover:bg-blue-100">{cat.count}</span>
+                                                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full group-hover:bg-blue-100">{cat.postCount}</span>
                                                 </Link>
                                             </li>
                                         ))}
@@ -102,7 +99,7 @@ export default async function SitemapPage() {
                                         <span className="text-sm font-normal text-gray-500 ml-auto">{tags.length}</span>
                                     </h2>
                                     <ul className="flex flex-wrap gap-2">
-                                        {tags.map((tag) => (
+                                        {tags.map((tag: Tag) => (
                                             <li key={tag.id}>
                                                 <Link
                                                     href={`/blog/tag/${tag.slug}`}
@@ -131,7 +128,7 @@ export default async function SitemapPage() {
                                                 <span className="h-px bg-blue-100 flex-1"></span>
                                             </h3>
                                             <ul className="space-y-2">
-                                                {categoryPosts.map((post) => (
+                                                {categoryPosts.map((post: Post) => (
                                                     <li key={post.id}>
                                                         <Link
                                                             href={`/blog/post/${post.slug}`}

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FaSearch, FaBookOpen, FaUsers, FaRocket, FaChartLine, FaAward, FaShieldAlt, FaTrophy, FaHome, FaChevronRight } from "react-icons/fa";
-import { getTotalPostCount, getTotalCategoryCount } from "@/lib/wordpress-graphql";
+import { FaBookOpen, FaUsers, FaRocket, FaChartLine, FaAward, FaHome, FaChevronRight } from "react-icons/fa";
+import { sanityGetTotalPostCount as getTotalPostCount, sanityGetTotalCategoryCount as getTotalCategoryCount } from "@/lib/sanity-data-adapter";
 import { useEffect, useState } from "react";
 
 // Custom hook for incrementing animation

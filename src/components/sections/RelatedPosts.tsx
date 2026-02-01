@@ -1,21 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaClock, FaArrowRight, FaFire, FaBookReader } from "react-icons/fa";
-import { getRelatedPosts, WordPressPost } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { sanityGetRelatedPosts } from "@/lib/sanity-data-adapter";
+import type { Post } from "@/lib/sanity-data-adapter";
 
 interface RelatedPostsProps {
-  currentPost: WordPressPost;
+  currentPost: Post;
 }
 
 const RelatedPosts = async ({ currentPost }: RelatedPostsProps) => {
-  const relatedPostsRaw = await getRelatedPosts(currentPost, 6);
+  const relatedPosts = await sanityGetRelatedPosts(currentPost.id, 6);
 
-  if (!relatedPostsRaw || relatedPostsRaw.length === 0) {
+  if (!relatedPosts || relatedPosts.length === 0) {
     return null;
   }
-
-  const relatedPosts = relatedPostsRaw.map(adaptWordPressPost);
 
   return (
     <section className="relative py-20 overflow-hidden">
@@ -53,7 +51,7 @@ const RelatedPosts = async ({ currentPost }: RelatedPostsProps) => {
 
         {/* Creative Bento Grid */}
         <div className="grid grid-cols-12 gap-6 auto-rows-[200px]">
-          {relatedPosts.slice(0, 6).map((post, index) => {
+          {relatedPosts.slice(0, 6).map((post: Post, index: number) => {
             // Define different card sizes for visual interest
             const cardSizes = [
               'col-span-12 md:col-span-8 row-span-2', // Large featured

@@ -11,25 +11,34 @@ import {
   FaCopy,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import CustomImageRenderer from "../client-wrappers/CustomImageRenderer";
-import { decodeHtmlEntities } from "@/lib/utils";
-
-interface BlogPost {
-  id: string;
-  title: string;
-  content: string;
-  author: string;
-  authorImage: string;
-  authorBio: string;
-  likes: number;
-  shares: number;
-  slug: string;
-  tagsData?: { name: string; slug: string }[];
-}
+import { PortableText } from "@portabletext/react";
+import { Post } from "@/lib/sanity-data-adapter";
+import { urlFor } from "@/lib/sanity";
 
 interface BlogPostContentProps {
-  post: BlogPost;
+  post: Post;
 }
+
+const components = {
+  types: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    image: ({ value }: { value: any }) => {
+      if (!value?.asset?._ref) {
+        return null;
+      }
+      return (
+        <div className="relative w-full aspect-video my-8 rounded-xl overflow-hidden shadow-lg">
+          <Image
+            src={urlFor(value).width(1200).url()}
+            alt={value.alt || "Blog image"}
+            fill
+            className="object-cover"
+          />
+        </div>
+      );
+    },
+  },
+};
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const [fontSize, setFontSize] = useState("text-base");
@@ -173,11 +182,10 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
         </div>
       </div>
 
-      {/* Content */}
       <div
         className={`prose prose-lg px-6 max-w-none text-gray-800 ${fontSize}`}
       >
-        <CustomImageRenderer content={decodeHtmlEntities(post.content)} />
+        <PortableText value={post.content} components={components} />
       </div>
 
       {/* Author Bio */}

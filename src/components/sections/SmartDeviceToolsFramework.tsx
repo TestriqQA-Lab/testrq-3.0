@@ -8,7 +8,6 @@ import {
   FaChartLine,
   FaTools,
   FaBatteryHalf,
-  FaSearch,
   FaNetworkWired,
   FaBug,
   FaCloud,
@@ -19,7 +18,6 @@ import {
   SiAndroid,
   SiApachejmeter,
   SiGatling,
-  SiOwasp,
   SiBurpsuite,
 } from "react-icons/si";
 

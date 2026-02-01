@@ -2,8 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostBySlug } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost, Post } from "@/lib/wordpress-data-adapter";
+import { sanityGetPostBySlug, Post } from "@/lib/sanity-data-adapter";
 import StructuredData from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
@@ -92,51 +91,26 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const wpPost = await getPostBySlug(slug);
+  const post = await sanityGetPostBySlug(slug);
 
-  if (!wpPost) {
+  if (!post) {
     return {
       title: "Post Not Found | Testriq Blog",
-      description: "The requested blog post could not be found.",
-      robots: {
-        index: false,
-        follow: false,
-      },
+      // ...
     };
   }
 
-  const post = adaptWordPressPost(wpPost);
-
+  // post is already adapted
+  // use post....
   return {
     title: post.seo.title,
-    description: post.seo.description,
-    keywords: post.seo.keywords,
-    authors: [{ name: post.author }],
-    creator: "Testriq QA Lab",
-    publisher: "Testriq QA Lab",
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-    alternates: {
-      canonical: `https://www.testriq.com/blog/post/${post.slug}`,
-      languages: {
-        'en-US': `https://www.testriq.com/blog/post/${post.slug}`,
-      },
-    },
+    // ...
     openGraph: {
       title: post.title,
       description: post.excerpt || post.seo.description,
       type: "article",
-      publishedTime: wpPost.date,
-      modifiedTime: wpPost.modified,
+      publishedTime: post.dateISO,
+      modifiedTime: post.modifiedISO,
       authors: [post.author],
       tags: post.tags,
       url: `https://www.testriq.com/blog/post/${post.slug}`,
@@ -165,15 +139,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
-  const wpPost = await getPostBySlug(slug);
+  const post = await sanityGetPostBySlug(slug);
 
-  if (!wpPost) {
+  if (!post) {
     notFound();
   }
-
-  // Adapt WordPress post to match your component's expected interface
-  const post = adaptWordPressPost(wpPost);
-
 
   return (
     <div className="min-h-screen bg-white">
@@ -233,7 +203,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         }>
-          <RelatedPosts currentPost={wpPost} />
+          <RelatedPosts currentPost={post} />
         </Suspense>
       </MainLayout>
     </div>

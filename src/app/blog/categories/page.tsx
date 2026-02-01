@@ -2,32 +2,17 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { getCategories } from "@/lib/wordpress-graphql";
-import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
+import { sanityGetCategories, type Category } from "@/lib/sanity-data-adapter";
 import FeaturedCategoriesSection from "@/components/sections/FeaturedCategoriesSection";
 
 const CategoriesHeroSection = dynamic(
   () => import("@/components/sections/CategoriesHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="h-[600px] bg-slate-900 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <div className="h-[600px] bg-slate-900 flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div> }
 );
 
 const CategoriesGrid = dynamic(
   () => import("@/components/sections/CategoriesGrid"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-slate-50">
-        <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <div className="flex items-center justify-center h-64 bg-slate-50"><div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div></div> }
 );
 
 export const metadata: Metadata = {
@@ -79,10 +64,9 @@ export const metadata: Metadata = {
 };
 
 export default async function CategoriesPage() {
-  const wpCategories = await getCategories();
-  const categories = wpCategories
-    .filter(cat => cat.count > 0)
-    .map(adaptWordPressCategory);
+  const allCategories = await sanityGetCategories();
+  const categories = allCategories.filter((cat: Category) => cat.postCount > 0);
+
 
   return (
     <div className="min-h-screen bg-slate-50">

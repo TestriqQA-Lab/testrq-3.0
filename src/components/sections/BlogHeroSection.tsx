@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  getTotalPostCount,
-  getTotalCategoryCount,
-  getLatestPosts,
-  getCategories,
-} from "@/lib/wordpress-graphql";
-import { adaptWordPressPost, Post, adaptWordPressCategory, Category } from "@/lib/wordpress-data-adapter";
+  sanityGetTotalPostCount as getTotalPostCount,
+  sanityGetTotalCategoryCount as getTotalCategoryCount,
+  sanityGetPosts as getLatestPosts,
+  sanityGetCategories as getCategories,
+  Post,
+  Category
+} from "@/lib/sanity-data-adapter";
 import { decodeHtmlEntities } from "@/lib/utils";
 import { ChevronRight as ChevronRightIcon, Home } from "lucide-react";
 
@@ -107,12 +108,12 @@ const BlogHeroSection: React.FC = () => {
       setTotalPosts(postCount);
       setTotalCategories(categoryCount);
       if (latestPosts.length > 0) {
-        setLatestPost(adaptWordPressPost(latestPosts[0]));
+        setLatestPost(latestPosts[0]);
       }
 
-      // Adapt categories
-      const adaptedCategories = wpCategories.map(adaptWordPressCategory);
-      const totalPostsCount = adaptedCategories.reduce((sum, cat) => sum + cat.postCount, 0);
+      // Categories are already adapted
+      const adaptedCategories = wpCategories;
+      const totalPostsCount = adaptedCategories.reduce((sum: number, cat: Category) => sum + cat.postCount, 0);
 
       const allCategory: Category = {
         id: "all",

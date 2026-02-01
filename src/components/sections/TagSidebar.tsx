@@ -3,11 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { FaTag, FaArrowRight, FaBell, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
-import { WordPressTag } from "@/lib/wordpress-graphql";
-import { getTags } from "@/lib/wordpress-graphql";
+import { sanityGetTags as getTags, Tag } from "@/lib/sanity-data-adapter";
 
 interface TagSidebarProps {
-  tag: WordPressTag;
+  tag: Tag;
 }
 
 interface RelatedTag {
@@ -30,13 +29,14 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
   useEffect(() => {
     const fetchSidebarData = async () => {
       try {
-        // Fetch all tags
+        setLoading(true);
+        // Fetch all tags from Sanity
         const allTags = await getTags();
 
         // Filter out current tag and get related/popular tags
-        const otherTags = allTags
-          .filter(t => t.slug !== tag.slug)
-          .map(t => ({
+        const otherTags = (allTags as RelatedTag[])
+          .filter((t: RelatedTag) => t.slug !== tag.slug)
+          .map((t: RelatedTag) => ({
             name: t.name,
             slug: t.slug,
             count: t.count
@@ -44,14 +44,14 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
 
         // Sort by count for popular tags
         const popular = otherTags
-          .sort((a, b) => b.count - a.count)
+          .sort((a: RelatedTag, b: RelatedTag) => b.count - a.count)
           .slice(0, 20);
 
         setPopularTags(popular);
         setRelatedTags(popular.slice(0, 8)); // Use same as related for now
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching sidebar data:", error);
+      } finally {
         setLoading(false);
       }
     };

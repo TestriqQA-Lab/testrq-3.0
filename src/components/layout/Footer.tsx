@@ -89,7 +89,12 @@ const partners = [
   },
 ];
 
+import { usePathname } from "next/navigation";
+
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/cms')) return null;
+
   return (
     <footer className="bg-gray-100 border-t border-gray-200 py-16 px-8 md:px-12 lg:px-24">
       <div className="mx-auto">

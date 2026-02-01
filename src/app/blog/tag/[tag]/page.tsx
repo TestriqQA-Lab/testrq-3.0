@@ -3,8 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getPostsByTag } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
+import { sanityGetPostsByTag } from "@/lib/sanity-data-adapter";
 
 
 const TagHeroSection = dynamic(
@@ -53,7 +52,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
 
-  const tagData = await getPostsByTag(tag, 1);
+  const tagData = await sanityGetPostsByTag(tag);
 
   if (!tagData.tag) {
     return {
@@ -124,13 +123,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function TagPage({ params }: Props) {
   const { tag } = await params;
-  const tagData = await getPostsByTag(tag, 50);
+  const tagData = await sanityGetPostsByTag(tag);
 
   if (!tagData.tag || tagData.posts.length === 0) {
     notFound();
   }
 
-  const adaptedPosts = tagData.posts.map(adaptWordPressPost);
+  const adaptedPosts = tagData.posts;
   const tagName = tagData.tag.name;
   const tagDescription = tagData.tag.description || `Explore all articles tagged with ${tagName}. Find comprehensive guides, tutorials, and best practices related to ${tagName} from Testriq's ISTQB certified experts.`;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaRobot, FaBolt, FaShieldAlt, FaMobileAlt, FaLink, FaCheckDouble, FaFlask, FaCode } from "react-icons/fa";
+import { FaCheckDouble } from "react-icons/fa";
 
 interface CategoryQuickNavProps {
     categories: { id: string; name: string; icon: string; color: string }[];
@@ -16,8 +16,8 @@ const CategoryQuickNav: React.FC<CategoryQuickNavProps> = ({ categories, activeC
                 <button
                     onClick={() => onSelectCategory('all')}
                     className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${activeCategory === 'all'
-                            ? 'bg-slate-900 text-white shadow-lg scale-105'
-                            : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                        ? 'bg-slate-900 text-white shadow-lg scale-105'
+                        : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                 >
                     <FaCheckDouble className={activeCategory === 'all' ? 'text-blue-400' : 'text-slate-400'} />
@@ -29,8 +29,8 @@ const CategoryQuickNav: React.FC<CategoryQuickNavProps> = ({ categories, activeC
                         key={category.id}
                         onClick={() => onSelectCategory(category.id)}
                         className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 group ${activeCategory === category.id
-                                ? `bg-gradient-to-r ${category.color} text-white shadow-lg scale-105`
-                                : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                            ? `bg-gradient-to-r ${category.color} text-white shadow-lg scale-105`
+                            : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                             }`}
                     >
                         <span className={`text-lg ${activeCategory === category.id ? 'text-white' : 'grayscale group-hover:grayscale-0 transition-all'}`}>

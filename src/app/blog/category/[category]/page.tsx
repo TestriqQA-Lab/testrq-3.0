@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAdaptedCategoryData } from "@/lib/wordpress-data-adapter";
+import { sanityGetAdaptedCategoryData } from "@/lib/sanity-data-adapter";
 
 
 const CategoryHeroSection = dynamic(
@@ -52,19 +52,18 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
 
-  const categoryData = await getAdaptedCategoryData(category, 1);
+  const categoryData = await sanityGetAdaptedCategoryData(category);
 
   if (!categoryData) {
     return {
       title: "Category Not Found | Testriq Blog",
-      description: "The requested blog category could not be found.",
+      // ...
       robots: {
         index: false,
         follow: false,
       },
     };
   }
-
   const categoryName = categoryData.category.name;
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
 
@@ -123,7 +122,7 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  const categoryData = await getAdaptedCategoryData(category, 50);
+  const categoryData = await sanityGetAdaptedCategoryData(category);
 
   if (!categoryData) {
     notFound();

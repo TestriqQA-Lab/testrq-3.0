@@ -3,11 +3,11 @@
 import React from "react";
 import { FaTag, FaBookOpen, FaArrowLeft } from "react-icons/fa";
 import Link from "next/link";
-import { WordPressTag } from "@/lib/wordpress-graphql";
+import { Tag } from "@/lib/sanity-data-adapter";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
 interface TagHeroSectionProps {
-  tag: WordPressTag;
+  tag: Tag;
   postCount: number;
 }
 

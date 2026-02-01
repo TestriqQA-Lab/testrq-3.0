@@ -3,8 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaCog, FaShieldAlt, FaRocket, FaMobile, FaDesktop, FaCloud, FaCode, FaChartLine, FaChevronLeft, FaChevronRight, FaLayerGroup } from "react-icons/fa";
 import Link from "next/link";
-import { getCategories } from "@/lib/wordpress-graphql";
-import { adaptWordPressCategory, Category } from "@/lib/wordpress-data-adapter";
+import { sanityGetCategories as getCategories, Category } from "@/lib/sanity-data-adapter";
 
 const BlogCategories: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -64,8 +63,8 @@ const BlogCategories: React.FC = () => {
       try {
         setLoading(true);
         const wpCategories = await getCategories();
-        const adaptedCategories = wpCategories.map(adaptWordPressCategory);
-        const totalPosts = adaptedCategories.reduce((sum, cat) => sum + cat.postCount, 0);
+        const adaptedCategories = wpCategories;
+        const totalPosts = adaptedCategories.reduce((sum: number, cat: Category) => sum + cat.postCount, 0);
 
         const allCategory: Category = {
           id: "all",
@@ -170,8 +169,8 @@ const BlogCategories: React.FC = () => {
                   href={category.id === "all" ? "/blog" : `/blog/category/${category.id}`}
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 ${isActive
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-600/25'
-                      : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-transparent shadow-lg shadow-blue-600/25'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50'
                     }`}
                 >
                   <span className={isActive ? 'text-blue-100' : 'text-slate-400'}>

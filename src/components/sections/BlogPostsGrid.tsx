@@ -9,7 +9,7 @@ import {
   FaStar,
 } from "react-icons/fa";
 import Link from "next/link";
-import { Post } from "@/lib/wordpress-data-adapter";
+import { Post } from "@/lib/sanity-data-adapter";
 import { decodeHtmlEntities } from "@/lib/utils";
 // Removed stripHtmlTags and getAllPosts imports as they are not needed in the display component
 
@@ -83,7 +83,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
 
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
+                      <Link href={`/blog/post/${post.slug}`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -115,7 +115,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                           <span>{post.readTime}</span>
                         </div>
                         <Link
-                          href={`/blog/post/${post.id}`}
+                          href={`/blog/post/${post.slug}`}
                           className="flex items-center gap-2 text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold transition-colors"
                           aria-label={`Read more about ${post.title}`}
                         >
@@ -172,7 +172,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
 
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                      <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
+                      <Link href={`/blog/post/${post.slug}`}>{post.title}</Link>
                     </h3>
 
                     <p className="text-gray-600 mb-3 line-clamp-2 text-sm">
@@ -188,7 +188,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                     </div>
 
                     <Link
-                      href={`/blog/post/${post.id}`}
+                      href={`/blog/post/${post.slug}`}
                       className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                     >
                       Read Article →
@@ -253,7 +253,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
 
                     <div className="p-6">
                       <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[theme(color.brand.blue)] transition-colors line-clamp-2">
-                        <Link href={`/blog/post/${post.id}`}>{post.title}</Link>
+                        <Link href={`/blog/post/${post.slug}`}>{post.title}</Link>
                       </h3>
 
                       <p className="text-gray-600 mb-4 line-clamp-3">
@@ -280,7 +280,7 @@ const BlogPostsGrid: React.FC<BlogPostsGridProps> = ({
                         </div>
 
                         <Link
-                          href={`/blog/post/${post.id}`}
+                          href={`/blog/post/${post.slug}`}
                           className="text-[theme(color.brand.blue)] hover:text-blue-600 font-semibold text-sm transition-colors"
                           aria-label={`Read more about ${post.title}`}
                         >

@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
-import { searchPosts } from "@/lib/wordpress-graphql";
-import type { WordPressPost } from "@/lib/wordpress-graphql";
 import Link from "next/link";
+import { performSearch } from "@/actions/search-actions";
+import type { Post } from "@/lib/sanity-data-adapter";
 import { FaSearch, FaCalendar, FaUser, FaTag, FaArrowRight, FaLightbulb } from "react-icons/fa";
 
 // Loading component
@@ -14,50 +14,6 @@ export const SearchResultsLoading = () => (
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
     </div>
 );
-
-// Function to clean and render HTML content properly
-const renderContent = (content: string) => {
-    // Clean up the content and fix common WordPress issues
-    const cleanContent = content
-        // Remove excessive line breaks and normalize spacing
-        .replace(/\n\s*\n\s*\n/g, '\n\n')
-        // Fix image tags to ensure proper src attributes
-        .replace(/<img([^>]*?)src=["']([^"']*?)["']([^>]*?)>/gi, (match, before, src, after) => {
-            // Ensure the image has proper attributes
-            const altMatch = match.match(/alt=["']([^"']*?)["']/i);
-            const alt = altMatch ? altMatch[1] : '';
-            return `<img${before}src="${src}"${after} alt="${alt}" style="max-width: 100%; height: auto; margin: 1rem 0; border-radius: 8px;">`;
-        })
-        // Fix paragraph spacing
-        .replace(/<p>/g, '<p style="margin-bottom: 1rem; line-height: 1.7;">')
-        // Fix heading spacing
-        .replace(/<h1>/g, '<h1 style="font-size: 2rem; font-weight: bold; margin: 2rem 0 1rem 0; color: #1f2937;">')
-        .replace(/<h2>/g, '<h2 style="font-size: 1.75rem; font-weight: bold; margin: 1.75rem 0 1rem 0; color: #1f2937;">')
-        .replace(/<h3>/g, '<h3 style="font-size: 1.5rem; font-weight: bold; margin: 1.5rem 0 0.75rem 0; color: #1f2937;">')
-        .replace(/<h4>/g, '<h4 style="font-size: 1.25rem; font-weight: bold; margin: 1.25rem 0 0.75rem 0; color: #1f2937;">')
-        .replace(/<h5>/g, '<h5 style="font-size: 1.125rem; font-weight: bold; margin: 1.125rem 0 0.5rem 0; color: #1f2937;">')
-        .replace(/<h6>/g, '<h6 style="font-size: 1rem; font-weight: bold; margin: 1rem 0 0.5rem 0; color: #1f2937;">')
-        // Fix list spacing
-        .replace(/<ul>/g, '<ul style="margin: 1rem 0; padding-left: 1.5rem;">')
-        .replace(/<ol>/g, '<ol style="margin: 1rem 0; padding-left: 1.5rem;">')
-        .replace(/<li>/g, '<li style="margin-bottom: 0.5rem; line-height: 1.6;">')
-        // Fix blockquote styling
-        .replace(/<blockquote>/g, '<blockquote style="border-left: 4px solid #3b82f6; padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #4b5563;">')
-        // Fix figure and figcaption
-        .replace(/<figure>/g, '<figure style="margin: 1.5rem 0; text-align: center;">')
-        .replace(/<figcaption>/g, '<figcaption style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280; font-style: italic;">')
-        // Fix code blocks
-        .replace(/<pre>/g, '<pre style="background-color: #1f2937; color: #f9fafb; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0;">')
-        .replace(/<code>/g, '<code style="background-color: #f3f4f6; color: #1f2937; padding: 0.25rem 0.5rem; border-radius: 4px; font-family: monospace; font-size: 0.875rem;">')
-        // Fix table styling
-        .replace(/<table>/g, '<table style="width: 100%; border-collapse: collapse; margin: 1rem 0; border: 1px solid #e5e7eb;">')
-        .replace(/<th>/g, '<th style="padding: 0.75rem; background-color: #f9fafb; border: 1px solid #e5e7eb; font-weight: bold; text-align: left;">')
-        .replace(/<td>/g, '<td style="padding: 0.75rem; border: 1px solid #e5e7eb;">')
-        // Fix links
-        .replace(/<a([^>]*?)>/g, '<a$1 style="color: #3b82f6; text-decoration: underline; hover:color: #2563eb;">');
-
-    return cleanContent;
-};
 
 // Blog Search Hub - now only renders the search bar
 const BlogSearchHub: React.FC<{ searchQuery: string; setSearchQuery: (value: string) => void; handleSearch: (e: React.FormEvent) => void }> = ({ searchQuery, setSearchQuery, handleSearch }) => {
@@ -282,14 +238,14 @@ export const SearchInsights: React.FC = () => {
 export const SearchResults: React.FC = () => {
     const searchParams = useSearchParams();
     const query = searchParams.get("q") || "";
-    const [searchResults, setSearchResults] = useState<WordPressPost[]>([]);
+    const [searchResults, setSearchResults] = useState<Post[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState(query);
     const [currentPage, setCurrentPage] = useState(1);
     const postsPerPage = 20;
 
     useEffect(() => {
-        const performSearch = async () => {
+        const performSearchAction = async () => {
             if (!query.trim()) {
                 setSearchResults([]);
                 setLoading(false);
@@ -298,7 +254,7 @@ export const SearchResults: React.FC = () => {
 
             setLoading(true);
             try {
-                const results = await searchPosts(query.trim());
+                const results = await performSearch(query.trim());
                 setSearchResults(results);
                 setCurrentPage(1);
             } catch (error) {
@@ -309,7 +265,7 @@ export const SearchResults: React.FC = () => {
             }
         };
 
-        performSearch();
+        performSearchAction();
     }, [query]);
 
     const handleSearch = (e: React.FormEvent) => {
@@ -319,13 +275,13 @@ export const SearchResults: React.FC = () => {
         }
     };
 
-    const formatDate = (dateString: string) => {
-        return new Date(dateString).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        });
-    };
+    // const formatDate = (dateString: string) => {
+    //     return new Date(dateString).toLocaleDateString("en-US", {
+    //         year: "numeric",
+    //         month: "long",
+    //         day: "numeric",
+    //     });
+    // };
 
     const stripHtml = (html: string) => {
         const textarea = document.createElement("textarea");
@@ -380,39 +336,57 @@ export const SearchResults: React.FC = () => {
                                             className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden hover:scale-105"
                                         >
                                             <div className="p-6">
-                                                {post.categories?.nodes && post.categories.nodes.length > 0 && (
+                                                {post.category && (
                                                     <div className="flex flex-wrap gap-2 mb-4">
-                                                        {post.categories.nodes.slice(0, 2).map((category) => (
-                                                            <Link
-                                                                key={category.id}
-                                                                href={`/blog/category/${category.slug}`}
-                                                                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 hover:bg-cyan-200 transition-colors"
-                                                            >
-                                                                <FaTag className="w-3 h-3 mr-1" />
-                                                                {category.name}
-                                                            </Link>
-                                                        ))}
+                                                        {/* 
+                                                          Wait, sanity adapter 'category' field is a string (primary category). 
+                                                          But 'adaptSanityPost' logic:
+                                                          category: categoryName (string)
+                                                          categorySlug: slug
+                                                          
+                                                          It seemingly lacks the full 'categories' array in the transformed output?
+                                                          Let's check 'adaptSanityPost' in 'sanity-data-adapter.ts' again.
+                                                          I see: "tags: ...", "category: ...".
+                                                          It DOES NOT export a full categories array in the Post interface!
+                                                          It flattens it to a single 'category'.
+                                                          
+                                                          However, 'sanity-queries.ts' fetches all categories.
+                                                          'adaptSanityPost' logic:
+                                                          const primaryCategory = sanityPost.categories?.[0];
+                                                          
+                                                          So 'Post' interface has 'category' (string) and 'categorySlug' (string).
+                                                          It does NOT have 'categories' array.
+                                                          
+                                                          I need to verify the 'Post' interface in 'wordpress-data-adapter.ts' which sanity adapter re-exports.
+                                                          If I need to display multiple categories, I might need to update the interface AND adapter.
+                                                          But for now, I should use the primary 'category' field available.
+                                                        */}
+                                                        <Link
+                                                            href={`/blog/category/${post.categorySlug}`}
+                                                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-100 text-cyan-800 hover:bg-cyan-200 transition-colors"
+                                                        >
+                                                            <FaTag className="w-3 h-3 mr-1" />
+                                                            {post.category}
+                                                        </Link>
                                                     </div>
                                                 )}
                                                 <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-cyan-600 transition-colors">
                                                     <Link href={`/blog/post/${post.slug}`}>
-                                                        {stripHtml(post.title)}
+                                                        {post.title}
                                                     </Link>
                                                 </h3>
                                                 <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-4">
                                                     <div className="flex items-center">
                                                         <FaCalendar className="w-4 h-4 mr-2 text-cyan-500" />
-                                                        {formatDate(post.date)}
+                                                        {post.date}
                                                     </div>
                                                     <div className="flex items-center">
                                                         <FaUser className="w-4 h-4 mr-2 text-cyan-500" />
-                                                        {post.author?.node?.name || "Unknown Author"}
+                                                        {post.author}
                                                     </div>
                                                 </div>
-                                                <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3"
-                                                    dangerouslySetInnerHTML={{ __html: renderContent(post.excerpt) }}
-                                                >
-
+                                                <p className="text-gray-700 mb-4 leading-relaxed line-clamp-3">
+                                                    {post.excerpt}
                                                 </p>
                                                 <Link
                                                     href={`/blog/post/${post.slug}`}
