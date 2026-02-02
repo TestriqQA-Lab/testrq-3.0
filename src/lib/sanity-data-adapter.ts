@@ -153,27 +153,42 @@ export function adaptSanityPost(sanityPost: any): Post {
     const likes = generateConsistentValue(sanityPost._id + 'likes', 500) + 50;
     const shares = generateConsistentValue(sanityPost._id + 'shares', 100) + 10;
 
+    // Handle body content: 
+    // Prioritize Portable Text (Array) if available and populated.
+    // Fallback to bodyHtml (Legacy String) if Array is empty.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let adaptedContent: any = [];
+
+    if (Array.isArray(sanityPost.body) && sanityPost.body.length > 0) {
+        adaptedContent = sanityPost.body;
+    } else if (sanityPost.bodyHtml) {
+        adaptedContent = sanityPost.bodyHtml;
+    } else if (typeof sanityPost.body === 'string') {
+        // Fallback for any residual string bodies in the 'body' field
+        adaptedContent = sanityPost.body;
+    }
+
     return {
         id: sanityPost.slug?.current || '',
         slug: sanityPost.slug?.current || '',
         title: sanityPost.title || 'Untitled',
         excerpt: sanityPost.excerpt || '',
-        content: sanityPost.body || '', // This will be Portable Text, requires <PortableText> component in frontend
+        content: adaptedContent,
         category: categoryName,
         categorySlug: primaryCategory?.slug?.current || 'technology-stack',
         categoryColor,
         author: sanityPost.author?.name || 'Testriq Team',
-        authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : '/api/placeholder/60/60',
+        authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : 'https://placehold.co/60x60/png',
         authorBio: sanityPost.author?.bio || 'QA Expert',
-        date: new Date(sanityPost.publishedAt).toLocaleDateString('en-US', {
+        date: new Date(sanityPost.publishedAt || new Date().toISOString()).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
             day: 'numeric'
         }),
-        dateISO: sanityPost.publishedAt,
-        modifiedISO: sanityPost._updatedAt,
+        dateISO: sanityPost.publishedAt || new Date().toISOString(),
+        modifiedISO: sanityPost._updatedAt || new Date().toISOString(),
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
-        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(800).height(500).url() : '/api/placeholder/800/400',
+        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(800).height(500).url() : 'https://placehold.co/800x500/png',
         featured: generateConsistentValue(sanityPost._id + 'feat', 10) < 2,
         trending: generateConsistentValue(sanityPost._id + 'trend', 10) < 3,
         views,
@@ -194,23 +209,33 @@ export function adaptSanityPost(sanityPost: any): Post {
 
 // --- Data Fetching Functions ---
 
-export async function sanityGetPosts(limit?: number) {
+export async function sanityGetPosts(limit?: number): Promise<Post[]> {
     const query = limit ? groq`${queries.postsQuery}[0...${limit}]` : queries.postsQuery;
-    const posts = await client.fetch(query);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const posts: any[] = await client.fetch(query);
     return posts.map(adaptSanityPost);
 }
 
 export async function sanityGetPostBySlug(slug: string) {
-    const post = await client.fetch(queries.postBySlugQuery, { slug });
-    return post ? adaptSanityPost(post) : null;
+    console.log(`Fetching post for slug: ${slug}`);
+    try {
+        const post = await client.fetch(queries.postBySlugQuery, { slug });
+        console.log(`[DEBUG] Raw Sanity Post Data for ${slug}:`, JSON.stringify(post, null, 2));
+        console.log(`Sanity fetch result for ${slug}:`, post ? "Found" : "Not Found");
+        return post ? adaptSanityPost(post) : null;
+    } catch (error) {
+        console.error("Error fetching post by slug:", error);
+        return null;
+    }
 }
 
-export async function sanityGetCategories() {
-    const categories = await client.fetch(queries.categoriesQuery);
+export async function sanityGetCategories(): Promise<Category[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const categories: any[] = await client.fetch(queries.categoriesQuery);
     return categories.map(adaptSanityCategory);
 }
 
-export async function sanityGetPostsBySlugs(slugs: string[]) {
+export async function sanityGetPostsBySlugs(slugs: string[]): Promise<Post[]> {
     // Sanity doesn't need a specific "by slugs" query usually, we can filter
     // const query = groq`*[_type == "post" && slug.current in $slugs]{ ... }`; // simplified
     // Ideally reuse the full projection from postsQuery
@@ -220,7 +245,8 @@ export async function sanityGetPostsBySlugs(slugs: string[]) {
         "categories": categories[]->{title, slug, colorTheme, icon, description},
         "tags": tags[]->{title, slug}
     }`;
-    const posts = await client.fetch(fullQuery, { slugs });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const posts: any[] = await client.fetch(fullQuery, { slugs });
     return posts.map(adaptSanityPost);
 }
 
@@ -238,14 +264,15 @@ export async function sanityGetTotalCategoryCount() {
     return count;
 }
 
-export async function sanityGetPages() {
-    const pages = await client.fetch(groq`*[_type == "page"] {
+export async function sanityGetPages(): Promise<Page[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const pages: any[] = await client.fetch(groq`*[_type == "page"] {
         _id, title, slug, content, publishedAt, mainImage, seo
     }`);
     return pages.map(adaptSanityPage);
 }
 
-export async function sanityGetPageBySlug(slug: string) {
+export async function sanityGetPageBySlug(slug: string): Promise<Page | null> {
     const page = await client.fetch(groq`*[_type == "page" && slug.current == $slug][0] {
         _id, title, slug, content, publishedAt, mainImage, seo
     }`, { slug });
@@ -286,8 +313,9 @@ export async function sanityGetAdaptedCategoryData(categorySlug: string) {
     };
 }
 
-export async function sanitySearchPosts(term: string) {
-    const posts = await client.fetch(queries.searchPostsQuery, { searchTerm: term });
+export async function sanitySearchPosts(term: string): Promise<Post[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const posts: any[] = await client.fetch(queries.searchPostsQuery, { searchTerm: term });
     return posts.map(adaptSanityPost);
 }
 
@@ -318,8 +346,9 @@ export async function sanityGetPostsByTag(tagSlug: string) {
     };
 }
 
-export async function sanityGetTags() {
-    const tags = await client.fetch(queries.tagsQuery);
+export async function sanityGetTags(): Promise<Tag[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const tags: any[] = await client.fetch(queries.tagsQuery);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return tags.map((t: any) => ({
         id: t.slug.current,
@@ -329,9 +358,10 @@ export async function sanityGetTags() {
     }));
 }
 
-export async function sanityGetRelatedPosts(currentPostId: string, limit: number = 6) {
+export async function sanityGetRelatedPosts(currentPostId: string, limit: number = 6): Promise<Post[]> {
     // Determine query to fetch latest posts excluding current
-    const query = groq`*[_type == "post" && slug.current != $currentPostId] | order(publishedAt desc)[0...$limit]`;
-    const posts = await client.fetch(query, { currentPostId, limit });
+    const query = groq`*[_type == "post" && slug.current != $currentPostId] | order(publishedAt desc)[0...${limit}]`;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const posts: any[] = await client.fetch(query, { currentPostId, limit });
     return posts.map(adaptSanityPost);
 }

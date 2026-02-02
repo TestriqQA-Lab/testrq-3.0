@@ -5,7 +5,7 @@ import { FaCalendarAlt, FaClock, FaArrowRight, FaSort } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { Category, Post } from "@/lib/sanity-data-adapter";
-import { decodeHtmlEntities } from "@/lib/utils";
+
 
 interface CategoryPostsGridProps {
   category: Category;
@@ -226,8 +226,8 @@ const CategoryPostsGrid: React.FC<CategoryPostsGridProps> = ({ category, posts }
                 key={index + 1}
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${currentPage === index + 1
-                    ? "bg-[theme(color.brand.blue)] text-white"
-                    : "text-gray-600 hover:bg-gray-50"
+                  ? "bg-[theme(color.brand.blue)] text-white"
+                  : "text-gray-600 hover:bg-gray-50"
                   }`}
               >
                 {index + 1}

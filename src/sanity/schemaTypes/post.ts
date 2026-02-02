@@ -61,6 +61,12 @@ export default defineType({
             type: 'blockContent',
         }),
         defineField({
+            name: 'bodyHtml',
+            title: 'Body HTML (Legacy)',
+            type: 'text',
+            description: 'Raw HTML content migrated from outdated sources. If present, this overrides the Body field.',
+        }),
+        defineField({
             name: 'seo',
             title: 'SEO',
             type: 'object',

@@ -283,11 +283,7 @@ export const SearchResults: React.FC = () => {
     //     });
     // };
 
-    const stripHtml = (html: string) => {
-        const textarea = document.createElement("textarea");
-        textarea.innerHTML = html;
-        return textarea.textContent || "";
-    };
+
 
     const totalResults = searchResults.length;
     const totalPages = Math.ceil(totalResults / postsPerPage);

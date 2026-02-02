@@ -2,7 +2,7 @@
 
 import React from "react";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-import { decodeHtmlEntities } from "@/lib/utils";
+
 
 import { Category } from "@/lib/sanity-data-adapter";
 

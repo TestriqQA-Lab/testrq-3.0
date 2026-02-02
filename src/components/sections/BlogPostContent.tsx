@@ -37,6 +37,28 @@ const components = {
         </div>
       );
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    customTable: ({ value }: { value: any }) => {
+      if (!value?.rows?.length) return null;
+      return (
+        <div className="overflow-x-auto my-8">
+          <table className="min-w-full divide-y divide-gray-200 border border-gray-200">
+            <tbody className="bg-white divide-y divide-gray-200">
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+              {value.rows.map((row: any, rowIndex: number) => (
+                <tr key={rowIndex} className={rowIndex === 0 ? "bg-gray-50 font-semibold" : ""}>
+                  {row.cells.map((cell: string, cellIndex: number) => (
+                    <td key={cellIndex} className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border-r last:border-r-0 border-gray-200">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
   },
 };
 
@@ -185,7 +207,11 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
       <div
         className={`prose prose-lg px-6 max-w-none text-gray-800 ${fontSize}`}
       >
-        <PortableText value={post.content} components={components} />
+        {typeof post.content === 'string' ? (
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        ) : (
+          <PortableText value={post.content} components={components} />
+        )}
       </div>
 
       {/* Author Bio */}

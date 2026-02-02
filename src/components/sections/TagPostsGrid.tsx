@@ -5,7 +5,7 @@ import { FaCalendarAlt, FaClock, FaArrowRight, FaSort, } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import { Post, Tag } from "@/lib/sanity-data-adapter";
-import { decodeHtmlEntities } from "@/lib/utils";
+
 
 interface TagPostsGridProps {
   tag: Tag;
@@ -139,8 +139,8 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                       key={index}
                       href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, "-")}`}
                       className={`px-2 py-1 text-xs rounded-full transition-colors ${postTag.toLowerCase() === tag.name.toLowerCase()
-                          ? 'bg-purple-100 text-purple-700 font-semibold'
-                          : 'bg-gray-100 text-gray-600 hover:bg-purple-50 hover:text-purple-600'
+                        ? 'bg-purple-100 text-purple-700 font-semibold'
+                        : 'bg-gray-100 text-gray-600 hover:bg-purple-50 hover:text-purple-600'
                         }`}
                     >
                       #{postTag}
@@ -204,8 +204,8 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
                 key={index + 1}
                 onClick={() => setCurrentPage(index + 1)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${currentPage === index + 1
-                    ? "bg-purple-600 text-white"
-                    : "text-gray-600 hover:bg-gray-50"
+                  ? "bg-purple-600 text-white"
+                  : "text-gray-600 hover:bg-gray-50"
                   }`}
               >
                 {index + 1}
