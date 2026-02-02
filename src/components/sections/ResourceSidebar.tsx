@@ -4,8 +4,26 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope, FaDownload, FaTag, FaFolderOpen, FaNewspaper, FaChevronRight } from "react-icons/fa";
+import { urlFor } from "@/lib/sanity";
 
-const ResourceSidebar = () => {
+interface ResourceSidebarProps {
+    relatedPosts?: {
+        title: string;
+        image: any;
+        slug: string;
+        category?: string;
+        readTime?: string;
+    }[];
+    categories?: {
+        name: string;
+        count: number;
+        color?: string;
+        slug?: string;
+    }[];
+    tags?: string[];
+}
+
+const ResourceSidebar = ({ relatedPosts: propRelatedPosts, categories: propCategories, tags: propTags }: ResourceSidebarProps) => {
     const [email, setEmail] = useState("");
     const [subscribeStatus, setSubscribeStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -21,33 +39,51 @@ const ResourceSidebar = () => {
         }
     };
 
-    // Related blog posts
-    const relatedPosts = [
+    // Related blog posts (Fallback to demo data)
+    const relatedPosts = propRelatedPosts ? propRelatedPosts.map(p => {
+        let imageUrl = "/blog-demo/metrics_comparison_visual_1769850381257.png";
+        if (typeof p.image === 'string') {
+            imageUrl = p.image;
+        } else if (p.image) {
+            imageUrl = urlFor(p.image).width(400).url();
+        }
+
+        return {
+            title: p.title,
+            image: imageUrl,
+            category: p.category || "Performance",
+            readTime: p.readTime || "5 min",
+            url: `/blog/post/${p.slug}`
+        };
+    }) : [
         {
             title: "Load Testing Best Practices for 2026",
             image: "/blog-demo/metrics_comparison_visual_1769850381257.png",
             category: "Performance",
             readTime: "8 min",
-            url: "/blog/load-testing-best-practices"
+            url: "/blog/post/load-testing-best-practices"
         },
         {
             title: "Automation Testing Tool Comparison",
             image: "/blog-demo/testing_tools_showcase_1769850418872.png",
             category: "Tools",
             readTime: "12 min",
-            url: "/blog/automation-tools-comparison"
+            url: "/blog/post/automation-tools-comparison"
         },
         {
             title: "CI/CD Integration Guide",
             image: "/blog-demo/roadmap_timeline_1769850487593.png",
             category: "DevOps",
             readTime: "15 min",
-            url: "/blog/cicd-integration-guide"
+            url: "/blog/post/cicd-integration-guide"
         }
     ];
 
-    // Blog categories
-    const categories = [
+    // Blog categories (Fallback to demo data)
+    const categories = propCategories ? propCategories.map(c => ({
+        ...c,
+        color: c.color || "blue"
+    })) : [
         { name: "Performance Testing", count: 24, color: "blue" },
         { name: "Automation", count: 18, color: "indigo" },
         { name: "Security Testing", count: 15, color: "violet" },
@@ -56,8 +92,8 @@ const ResourceSidebar = () => {
         { name: "Case Studies", count: 12, color: "rose" }
     ];
 
-    // Popular tags
-    const tags = [
+    // Popular tags (Fallback to demo data)
+    const tags = propTags || [
         "Performance", "Load Testing", "JMeter", "K6", "Gatling",
         "CI/CD", "Automation", "API Testing", "Monitoring",
         "DevOps", "Best Practices", "Test Strategy", "Scalability",
@@ -173,11 +209,11 @@ const ResourceSidebar = () => {
                     {categories.map((category, index) => (
                         <Link
                             key={index}
-                            href={`/blog/category/${category.name.toLowerCase().replace(/\s+/g, '-')}`}
+                            href={`/blog/category/${category.slug || category.name.toLowerCase().replace(/\s+/g, '-')}`}
                             className="group flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors"
                         >
                             <div className="flex items-center gap-3">
-                                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center ${getCategoryColor(category.color)}`}>
+                                <div className={`w-8 h-8 rounded-lg border flex items-center justify-center ${getCategoryColor(category.color || 'blue')}`}>
                                     <FaFolderOpen className="w-4 h-4" />
                                 </div>
                                 <span className="text-sm font-semibold text-slate-700 group-hover:text-blue-600 transition-colors">

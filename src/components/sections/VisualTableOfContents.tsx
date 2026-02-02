@@ -11,49 +11,31 @@ interface Section {
     thumbnail?: string;
 }
 
-interface VisualTableOfContentsProps {
-    sections: Section[];
+interface Heading {
+    title: string;
+    slug: string;
+    level: number;
 }
 
-const VisualTableOfContents: React.FC<VisualTableOfContentsProps> = ({ sections }) => {
+interface VisualTableOfContentsProps {
+    headings?: Heading[];
+    sections?: Section[];
+}
+
+const VisualTableOfContents: React.FC<VisualTableOfContentsProps> = ({ headings = [], sections: propSections }) => {
     const [activeSection, setActiveSection] = useState(0);
-    const [progress, setProgress] = useState<number[]>(sections.map(() => 0));
     const navRef = useRef<HTMLDivElement>(null);
     const activeItemRef = useRef<HTMLButtonElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY + 200;
+    // Map headings to sections if not provided directly
+    const sections: Section[] = propSections || headings.map((h, i) => ({
+        id: h.slug,
+        title: h.title,
+        icon: i === 0 ? <FaBookOpen className="w-4 h-4" /> : <FaCheck className="w-4 h-4" />,
+        time: `${Math.max(2, Math.round(h.title.length / 10))} min`,
+    }));
 
-            // Find active section
-            sections.forEach((section, index) => {
-                const element = document.getElementById(section.id);
-                if (element) {
-                    const elementTop = element.offsetTop;
-                    const elementBottom = elementTop + element.offsetHeight;
-
-                    if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
-                        setActiveSection(index);
-
-                        // Calculate section progress
-                        const newProgress = [...progress];
-                        const sectionProgress = ((scrollPosition - elementTop) / element.offsetHeight) * 100;
-                        newProgress[index] = Math.min(100, Math.max(0, sectionProgress));
-                        setProgress(newProgress);
-                    } else if (scrollPosition >= elementBottom) {
-                        const newProgress = [...progress];
-                        newProgress[index] = 100;
-                        setProgress(newProgress);
-                    }
-                }
-            });
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [sections, progress]);
+    if (sections.length === 0) return null;
 
     // Auto-scroll TOC to keep active section in view
     useEffect(() => {
@@ -68,202 +50,143 @@ const VisualTableOfContents: React.FC<VisualTableOfContentsProps> = ({ sections 
             const relativeBottom = activeItemRect.bottom - containerRect.top;
 
             // Check if active item is outside visible area
-            if (relativeTop < 0) {
+            if (relativeTop < 20) {
                 // Scroll up
                 container.scrollTop += relativeTop - 20;
-            } else if (relativeBottom > containerRect.height) {
+            } else if (relativeBottom > containerRect.height - 20) {
                 // Scroll down
                 container.scrollTop += relativeBottom - containerRect.height + 20;
             }
         }
     }, [activeSection]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            // Offset to trigger earlier, adjusted for card spacing
+            const scrollPosition = window.scrollY + 250;
+
+            // Find valid headings on the page
+            const headingElements = sections.map(s => document.getElementById(s.id));
+
+            let current = 0;
+            for (let i = 0; i < headingElements.length; i++) {
+                const element = headingElements[i];
+                if (element && element.getBoundingClientRect().top + window.scrollY <= scrollPosition) {
+                    current = i;
+                }
+            }
+            setActiveSection(current);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        // Initial check
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [sections]);
+
+
     const scrollToSection = (id: string, index: number) => {
         const element = document.getElementById(id);
         if (element) {
-            // Immediately set the active section when clicked
-            setActiveSection(index);
+            setActiveSection(index); // Optimistic update
 
-            const offset = 120; // Increased offset to account for sticky header
+            const offset = 140; // Adjust for sticky header + card padding
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - offset;
 
             window.scrollTo({
                 top: offsetPosition,
-                behavior: "smooth",
+                behavior: 'smooth'
             });
         }
     };
 
     return (
-        <aside className="hidden xl:block sticky top-24 h-fit">
-            <div className="bg-white/90 backdrop-blur-xl border border-slate-200/50 rounded-3xl p-6 shadow-2xl shadow-slate-200/50">
-                {/* Header */}
-                <div className="mb-6 pb-4 border-b border-slate-100">
-                    <div className="flex items-center gap-3 mb-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                            <FaBookOpen className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
-                                Article Guide
-                            </h3>
-                            <p className="text-xs text-slate-500">{sections.length} Sections</p>
-                        </div>
-                    </div>
-                </div>
+        <aside className="hidden xl:block sticky top-24 h-[calc(100vh-6rem)] overflow-hidden">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col h-full max-h-full">
+                <h3 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-6 flex items-center gap-2 flex-shrink-0">
+                    <FaChartLine />
+                    In this article
+                </h3>
 
-                {/* Sections List - Auto-scrollable Container */}
                 <div
+                    className="relative flex-1 overflow-y-auto pr-2 custom-scrollbar"
                     ref={navRef}
-                    className="space-y-2 max-h-[calc(100vh-420px)] overflow-y-auto pr-2 scroll-smooth"
-                    style={{
-                        scrollbarWidth: 'thin',
-                        scrollbarColor: '#93c5fd #f1f5f9'
-                    }}
+                    style={{ scrollBehavior: 'smooth' }}
                 >
-                    <style jsx>{`
-            div::-webkit-scrollbar {
-              width: 6px;
-            }
-            div::-webkit-scrollbar-track {
-              background: #f1f5f9;
-              border-radius: 10px;
-            }
-            div::-webkit-scrollbar-thumb {
-              background: #93c5fd;
-              border-radius: 10px;
-            }
-            div::-webkit-scrollbar-thumb:hover {
-              background: #60a5fa;
-            }
-          `}</style>
+                    {/* Connecting Line - Fixed to container */}
+                    <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-slate-100" />
 
-                    {sections.map((section, index) => {
-                        const isActive = activeSection === index;
-                        const isCompleted = progress[index] === 100;
-                        const sectionProgress = progress[index];
+                    {/* Active Line Segment - Animated */}
+                    <div
+                        className="absolute left-6 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 transition-all duration-300 ease-out z-10"
+                        style={{
+                            top: `${activeSection * 64}px`, // Adjusted for list flow
+                            height: '48px',
+                            transform: 'translateY(8px)' // Initial offset
+                        }}
+                    />
 
-                        return (
-                            <button
-                                key={section.id}
-                                ref={isActive ? activeItemRef : null}
-                                onClick={() => scrollToSection(section.id, index)}
-                                className={`
-                  group w-full text-left rounded-2xl transition-all duration-300
-                  ${isActive
-                                        ? "bg-gradient-to-r from-blue-50 to-indigo-50 shadow-lg shadow-blue-100/50 scale-[1.02]"
-                                        : "hover:bg-slate-50"
-                                    }
-                `}
-                            >
-                                <div className="p-4">
-                                    <div className="flex items-start gap-3">
-                                        {/* Progress Ring */}
-                                        <div className="relative flex-shrink-0">
-                                            <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 48 48">
-                                                {/* Background ring */}
-                                                <circle
-                                                    cx="24"
-                                                    cy="24"
-                                                    r="20"
-                                                    fill="none"
-                                                    stroke={isActive ? "#E0E7FF" : "#F1F5F9"}
-                                                    strokeWidth="4"
-                                                />
-                                                {/* Progress ring */}
-                                                <circle
-                                                    cx="24"
-                                                    cy="24"
-                                                    r="20"
-                                                    fill="none"
-                                                    stroke={isCompleted ? "#10B981" : isActive ? "#3B82F6" : "#CBD5E1"}
-                                                    strokeWidth="4"
-                                                    strokeDasharray={`${2 * Math.PI * 20}`}
-                                                    strokeDashoffset={`${2 * Math.PI * 20 * (1 - sectionProgress / 100)}`}
-                                                    strokeLinecap="round"
-                                                    className="transition-all duration-500"
-                                                />
-                                            </svg>
+                    <div className="space-y-4 pt-2 pb-6">
+                        {sections.map((section, index) => {
+                            const isActive = activeSection === index;
+                            const isPast = activeSection > index;
 
-                                            {/* Icon or checkmark */}
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                {isCompleted ? (
-                                                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                                                        <FaCheck className="w-3 h-3 text-white" />
-                                                    </div>
-                                                ) : (
-                                                    <div className={`text-xl ${isActive ? "text-blue-600" : "text-slate-400"}`}>
-                                                        {section.icon}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
+                            return (
+                                <button
+                                    key={section.id}
+                                    ref={isActive ? activeItemRef : null}
+                                    onClick={() => scrollToSection(section.id, index)}
+                                    className={`group relative w-full flex items-center gap-4 p-2 rounded-xl transition-all duration-300 text-left shrink-0`}
+                                >
+                                    {/* Node Indicator */}
+                                    <div className={`relative z-20 flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all duration-300 bg-white ${isActive
+                                        ? 'border-blue-600 text-blue-600 shadow-lg shadow-blue-200 scale-110'
+                                        : isPast
+                                            ? 'border-blue-200 text-blue-600'
+                                            : 'border-slate-200 text-slate-300 group-hover:border-slate-300'
+                                        }`}>
+                                        {/* Inner Icon */}
+                                        <span className="text-xs">
+                                            {isPast ? <FaCheck /> : section.icon}
+                                        </span>
+                                    </div>
 
-                                        {/* Content */}
-                                        <div className="flex-1 min-w-0 pt-1">
-                                            <h4 className={`
-                        font-semibold text-sm leading-tight mb-1 transition-colors line-clamp-2
-                        ${isActive ? "text-blue-700" : "text-slate-700 group-hover:text-slate-900"}
-                      `}>
-                                                {section.title}
-                                            </h4>
-
-                                            <div className="flex items-center gap-2 text-xs text-slate-500">
-                                                <FaClock className="w-3 h-3" />
-                                                <span>{section.time}</span>
-                                                {isCompleted && (
-                                                    <span className="ml-auto text-green-600 font-semibold flex items-center gap-1">
-                                                        <FaCheck className="w-3 h-3" />
-                                                        Done
-                                                    </span>
-                                                )}
-                                            </div>
-
-                                            {/* Progress bar */}
-                                            {isActive && !isCompleted && (
-                                                <div className="mt-2 h-1 bg-blue-100 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300"
-                                                        style={{ width: `${sectionProgress}%` }}
-                                                    />
-                                                </div>
-                                            )}
+                                    {/* Text Content */}
+                                    <div className={`flex-1 transition-all duration-300 ${isActive ? 'opacity-100' : 'group-hover:opacity-80'
+                                        }`}>
+                                        <p className={`text-sm font-bold leading-tight mb-0.5 transition-colors line-clamp-2 ${isActive ? 'text-blue-600' : 'text-slate-800'
+                                            }`}>
+                                            {section.title}
+                                        </p>
+                                        <div className="flex items-center gap-2 text-xs text-slate-800 font-medium">
+                                            <FaClock className="w-3 h-3" />
+                                            <span>{section.time}</span>
                                         </div>
                                     </div>
-                                </div>
-                            </button>
-                        );
-                    })}
-                </div>
 
-                {/* Overall Progress */}
-                <div className="mt-6 pt-4 border-t border-slate-100">
-                    <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-semibold text-slate-600">Overall Progress</span>
-                        <span className="text-xs font-bold text-blue-600">
-                            {Math.round(progress.reduce((acc, val) => acc + val, 0) / sections.length)}%
-                        </span>
-                    </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div
-                            className="h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 transition-all duration-500 rounded-full"
-                            style={{ width: `${progress.reduce((acc, val) => acc + val, 0) / sections.length}%` }}
-                        />
+                                    {/* Active Glow Effect */}
+                                    {isActive && (
+                                        <div className="absolute inset-0 bg-blue-50/80 rounded-xl -z-10 opacity-100" />
+                                    )}
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
-
-                {/* Completion Badge */}
-                {progress.every(p => p === 100) && (
-                    <div className="mt-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-2xl text-center">
-                        <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                            <FaCheck className="w-6 h-6 text-white" />
-                        </div>
-                        <p className="text-sm font-bold text-green-900">Article Complete!</p>
-                        <p className="text-xs text-green-700 mt-1">Great job reading through</p>
-                    </div>
-                )}
             </div>
+            <style jsx>{`
+                .custom-scrollbar::-webkit-scrollbar {
+                    width: 4px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background-color: #e2e8f0;
+                    border-radius: 20px;
+                }
+            `}</style>
         </aside>
     );
 };

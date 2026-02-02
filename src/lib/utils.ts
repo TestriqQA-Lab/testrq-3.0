@@ -24,7 +24,7 @@ export const decodeHtmlEntities = (html: string): string => {
   };
 
   let decoded = html;
-  
+
   // Replace named entities
   Object.entries(entityMap).forEach(([entity, replacement]) => {
     decoded = decoded.replace(new RegExp(entity, 'g'), replacement);
@@ -87,4 +87,40 @@ export function extractStructuredData(htmlContent: string): unknown[] {
     }
   }
   return structuredData;
+}
+
+export function slugify(text: string): string {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')     // Replace spaces with -
+    .replace(/&/g, '-and-')   // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-');  // Replace multiple - with single -
+}
+
+export interface Heading {
+  title: string;
+  slug: string;
+  level: number;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function extractHeadings(content: any): Heading[] {
+  if (!content || !Array.isArray(content)) return [];
+
+  return content
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .filter((block: any) => block._type === 'block' && ['h2', 'h3'].includes(block.style))
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .map((block: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const text = block.children?.map((child: any) => child.text).join('') || '';
+      return {
+        title: text,
+        slug: slugify(text),
+        level: parseInt(block.style.substring(1)),
+      };
+    });
 }

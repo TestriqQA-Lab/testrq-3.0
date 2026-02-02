@@ -331,7 +331,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="/sitemap"
+                href="/website-map"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap

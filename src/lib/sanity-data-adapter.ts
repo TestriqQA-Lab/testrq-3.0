@@ -28,6 +28,7 @@ export interface Post {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content: any;
     category: string;
+    categories: { name: string; slug: string; colorTheme?: string }[];
     categorySlug: string;
     categoryColor: string;
     author: string;
@@ -38,6 +39,10 @@ export interface Post {
     modifiedISO: string;
     readTime: string;
     image: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    mainImage: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    authorImageRaw: any;
     featured: boolean;
     trending: boolean;
     views: string;
@@ -175,10 +180,16 @@ export function adaptSanityPost(sanityPost: any): Post {
         excerpt: sanityPost.excerpt || '',
         content: adaptedContent,
         category: categoryName,
+        categories: sanityPost.categories?.map((c: any) => ({
+            name: c.title,
+            slug: c.slug?.current,
+            colorTheme: c.colorTheme
+        })) || [],
         categorySlug: primaryCategory?.slug?.current || 'technology-stack',
         categoryColor,
         author: sanityPost.author?.name || 'Testriq Team',
         authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : 'https://placehold.co/60x60/png',
+        authorImageRaw: sanityPost.author?.image || null,
         authorBio: sanityPost.author?.bio || 'QA Expert',
         date: new Date(sanityPost.publishedAt || new Date().toISOString()).toLocaleDateString('en-US', {
             year: 'numeric',
@@ -189,6 +200,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         modifiedISO: sanityPost._updatedAt || new Date().toISOString(),
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
         image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(800).height(500).url() : 'https://placehold.co/800x500/png',
+        mainImage: sanityPost.mainImage || null,
         featured: generateConsistentValue(sanityPost._id + 'feat', 10) < 2,
         trending: generateConsistentValue(sanityPost._id + 'trend', 10) < 3,
         views,

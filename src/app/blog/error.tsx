@@ -20,8 +20,9 @@ export default function Error({
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           Something went wrong!
         </h2>
-        <p className="text-gray-600 mb-6">
-          There was an error loading the blog posts.
+        <p className="text-gray-600 mb-6 font-mono text-sm bg-gray-100 p-4 rounded">
+          {error.message || "There was an error loading the blog posts."}
+          {error.digest && <span className="block mt-2 text-xs text-gray-500">Digest: {error.digest}</span>}
         </p>
         <button
           onClick={() => reset()}

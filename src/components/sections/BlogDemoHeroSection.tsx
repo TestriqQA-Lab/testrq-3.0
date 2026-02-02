@@ -3,11 +3,19 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaHome, FaChevronRight, FaClock, FaCalendar, FaBookOpen, FaCheckCircle } from "react-icons/fa";
+import { FaHome, FaChevronRight, FaClock, FaCalendar, FaBookOpen, FaCheckCircle, FaUser } from "react-icons/fa";
+import { Post } from "@/lib/sanity-data-adapter";
+import { urlFor } from "@/lib/sanity";
 
-const BlogDemoHeroSection = () => {
+interface BlogDemoHeroSectionProps {
+    post?: Post;
+}
+
+const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
     const scrollToContent = () => {
-        const element = document.getElementById("introduction");
+        // Adjust ID if necessary, for now assuming the first heading might be the target
+        // or just scroll to the main content container
+        const element = document.getElementById(post ? "main-content" : "introduction");
         if (element) {
             const offset = 100;
             const elementPosition = element.getBoundingClientRect().top;
@@ -19,16 +27,26 @@ const BlogDemoHeroSection = () => {
             });
         }
     };
+
+    // Derived values
+    const title = post?.title || "The Complete Guide to Performance Testing";
+    const description = post?.excerpt || post?.seo?.description || "Master enterprise-grade performance testing with proven methodologies, industry best practices, and real-world strategies trusted by Fortune 500 companies.";
+    const imageUrl = post?.mainImage ? urlFor(post.mainImage).width(1400).url() : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
+    const author = post?.author || "Testriq QA Team";
+    const authorImage = post?.authorImageRaw ? urlFor(post.authorImageRaw).width(100).url() : (post?.authorImage || null);
+    const date = post?.date || "January 31, 2026";
+    const readTime = post?.readTime || "21 min read"; // You might need to calculate this for real posts if not available
+    const category = post?.categories?.[0]?.name || "Performance Testing";
+
     return (
         <>
             {/* Hero Section with Banner Image */}
             <section className="relative bg-slate-900 overflow-hidden">
                 {/* Large Banner Image with Overlay */}
-                <div className="relative h-[800px] md:h-[600px]">
-                    {/* Replace with actual blog post image */}
+                <div className="relative h-[600px] md:h-[600px]">
                     <Image
-                        src="/blog-demo/hero_performance_dashboard_1769850360523.png"
-                        alt="Performance Testing Guide"
+                        src={imageUrl}
+                        alt={title}
                         fill
                         className="object-cover"
                         priority
@@ -90,7 +108,7 @@ const BlogDemoHeroSection = () => {
                                         {/* Current Page */}
                                         <li>
                                             <span className="text-white font-semibold line-clamp-1 max-w-[300px] sm:max-w-none">
-                                                The Complete Guide to Performance Testing
+                                                {title}
                                             </span>
                                         </li>
                                     </ol>
@@ -98,42 +116,47 @@ const BlogDemoHeroSection = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col h-full pt-20">
+                        <div className="flex flex-col h-full pt-20 justify-center">
                             <div className="max-w-4xl">
                                 {/* Category & Status Badges */}
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
                                     <span className="px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-lg backdrop-blur-sm">
-                                        Performance Testing
+                                        {category}
                                     </span>
-                                    <span className="px-4 py-2 bg-white/10 backdrop-blur-md text-white text-sm font-semibold rounded-lg border border-white/20">
-                                        Expert Guide
-                                    </span>
+                                    {!post && (
+                                        <span className="px-4 py-2 bg-white/10 backdrop-blur-md text-white text-sm font-semibold rounded-lg border border-white/20">
+                                            Expert Guide
+                                        </span>
+                                    )}
                                     <div className="flex items-center gap-2 px-3 py-2 bg-emerald-500/90 backdrop-blur-sm text-white text-xs font-bold rounded-lg">
                                         <FaCheckCircle className="w-3 h-3" />
-                                        <span>Verified by ISTQB Experts</span>
+                                        <span>Verified by QA Experts</span>
                                     </div>
                                 </div>
 
                                 {/* Main Title */}
                                 <h1 className="text-4xl sm:text-5xl font-bold text-white leading-[1.1] mb-6 drop-shadow-2xl">
-                                    The Complete Guide to Performance Testing
+                                    {title}
                                 </h1>
 
                                 {/* Description */}
-                                <p className="text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 max-w-3xl drop-shadow-lg">
-                                    Master enterprise-grade performance testing with proven methodologies, industry best practices,
-                                    and real-world strategies trusted by Fortune 500 companies.
+                                <p className="text-lg lg:text-xl text-slate-200 leading-relaxed mb-8 max-w-3xl drop-shadow-lg line-clamp-3">
+                                    {description}
                                 </p>
 
                                 {/* Author & Meta */}
                                 <div className="flex flex-wrap items-center gap-6 mb-8">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center ring-2 ring-white/30">
-                                            <span className="text-white font-bold">TQ</span>
+                                        <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center ring-2 ring-white/30 overflow-hidden relative">
+                                            {authorImage ? (
+                                                <Image src={authorImage} alt={author} fill className="object-cover" />
+                                            ) : (
+                                                <span className="text-white font-bold"><FaUser /></span>
+                                            )}
                                         </div>
                                         <div>
-                                            <div className="text-sm font-bold text-white">Testriq QA Team</div>
-                                            <div className="text-xs text-slate-300">ISTQB Certified Professionals</div>
+                                            <div className="text-sm font-bold text-white">{author}</div>
+                                            <div className="text-xs text-slate-300">ISTQB Certified</div>
                                         </div>
                                     </div>
 
@@ -142,15 +165,11 @@ const BlogDemoHeroSection = () => {
                                     <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
                                         <div className="flex items-center gap-2">
                                             <FaCalendar className="w-4 h-4 text-slate-400" />
-                                            <span>January 31, 2026</span>
+                                            <span>{date}</span>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <FaClock className="w-4 h-4 text-slate-400" />
-                                            <span>21 min read</span>
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                            <FaBookOpen className="w-4 h-4 text-slate-400" />
-                                            <span>8 Chapters</span>
+                                            <span>{readTime}</span>
                                         </div>
                                     </div>
                                 </div>

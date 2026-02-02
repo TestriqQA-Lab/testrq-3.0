@@ -2,26 +2,15 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sanityGetPostBySlug, Post } from "@/lib/sanity-data-adapter";
+import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, Post } from "@/lib/sanity-data-adapter";
+import { extractHeadings } from "@/lib/utils";
 import StructuredData from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
 import RelatedPosts from "@/components/sections/RelatedPosts";
-
-const BlogPostHeader = dynamic(
-  () => import("@/components/sections/BlogPostHeader"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-50">
-        <div className="animate-pulse">
-          <div className="h-4 bg-gray-200 rounded w-32 mb-2"></div>
-          <div className="h-8 bg-gray-200 rounded w-64"></div>
-        </div>
-      </div>
-    ),
-  }
-);
+import BlogDemoHeroSection from "@/components/sections/BlogDemoHeroSection";
+import ResourceSidebar from "@/components/sections/ResourceSidebar";
+import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
 
 const BlogPostContent = dynamic(
   () => import("@/components/sections/BlogPostContent"),
@@ -33,21 +22,6 @@ const BlogPostContent = dynamic(
           <div className="h-4 bg-gray-200 rounded w-full"></div>
           <div className="h-4 bg-gray-200 rounded w-3/4"></div>
           <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-        </div>
-      </div>
-    ),
-  }
-);
-
-const BlogPostSidebar = dynamic(
-  () => import("@/components/sections/BlogPostSidebar"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-64 bg-gray-50">
-        <div className="animate-pulse space-y-4 w-full">
-          <div className="h-32 bg-gray-200 rounded"></div>
-          <div className="h-24 bg-gray-200 rounded"></div>
         </div>
       </div>
     ),
@@ -145,66 +119,52 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
+  // Fetch sidebar data
+  const relatedPosts = await sanityGetRelatedPosts(post.id, 4);
+  const categories = await sanityGetCategories();
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-slate-50">
       <MainLayout>
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
 
-        {/* Blog Post Header */}
-        <BlogPostHeader post={post} />
+        {/* Blog Demo Hero Section with dynamic post data */}
+        <BlogDemoHeroSection post={post} />
 
-        {/* Main Content Area */}
-        <div className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50">
-          {/* Background Elements */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-20 left-0 w-[800px] h-[800px] bg-gradient-to-br from-blue-100/40 via-indigo-100/30 to-transparent rounded-full blur-3xl" />
-            <div className="absolute bottom-20 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-violet-100/40 via-purple-100/30 to-transparent rounded-full blur-3xl" />
-            {/* Dot Pattern */}
-            <div
-              className="absolute inset-0 opacity-[0.015]"
-              style={{
-                backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 1) 1px, transparent 1px)`,
-                backgroundSize: '30px 30px',
-              }}
-            />
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto py-16 lg:py-20">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 px-4 sm:px-6 lg:px-8">
-              {/* Main Content - More Space */}
-              <div className="lg:col-span-7 xl:col-span-8">
-                <BlogPostContent post={post} />
+        {/* Main Content - Three Column Layout */}
+        <div className="relative max-w-[1600px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
+            {/* Left: Visual TOC */}
+            <div className="xl:col-span-3">
+              <div className="sticky top-24">
+                <VisualTableOfContents headings={extractHeadings(post.content)} />
               </div>
+            </div>
 
-              {/* Sidebar */}
-              <div className="lg:col-span-5 xl:col-span-4">
-                <div className="sticky top-8">
-                  <BlogPostSidebar post={post} />
-                </div>
-              </div>
+            {/* Center: Content */}
+            <div className="xl:col-span-6">
+              <BlogPostContent post={post} />
+            </div>
+
+            {/* Right: Resource Sidebar */}
+            <div className="xl:col-span-3">
+              <ResourceSidebar
+                tags={post.tags}
+                relatedPosts={relatedPosts}
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                categories={categories.map((c: any) => ({
+                  name: c.name,
+                  count: c.postCount || 0,
+                  color: c.color,
+                  slug: c.id
+                }))}
+              />
             </div>
           </div>
         </div>
 
-        {/* Related Posts Section with Suspense */}
-        <Suspense fallback={
-          <div className="bg-gradient-to-b from-white via-slate-50 to-blue-50 py-20">
-            <div className="max-w-7xl mx-auto px-8">
-              <div className="text-center mb-12">
-                <div className="h-6 bg-slate-200 rounded-full w-32 mx-auto mb-4 animate-pulse" />
-                <div className="h-12 bg-slate-100 rounded-2xl w-64 mx-auto animate-pulse" />
-              </div>
-              <div className="grid grid-cols-12 gap-6 auto-rows-[200px]">
-                <div className="col-span-12 md:col-span-8 row-span-2 bg-slate-100 rounded-[2rem] animate-pulse" />
-                <div className="col-span-12 md:col-span-4 bg-slate-100 rounded-[2rem] animate-pulse" />
-                <div className="col-span-12 md:col-span-4 bg-slate-100 rounded-[2rem] animate-pulse" />
-              </div>
-            </div>
-          </div>
-        }>
-          <RelatedPosts currentPost={post} />
-        </Suspense>
+
       </MainLayout>
     </div>
   );
