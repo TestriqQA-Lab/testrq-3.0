@@ -7,11 +7,11 @@ import { FaHome, FaChevronRight, FaClock, FaCalendar, FaBookOpen, FaCheckCircle,
 import { Post } from "@/lib/sanity-data-adapter";
 import { urlFor } from "@/lib/sanity";
 
-interface BlogDemoHeroSectionProps {
+interface BlogPostHeroSectionProps {
     post?: Post;
 }
 
-const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
+const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
     const scrollToContent = () => {
         // Adjust ID if necessary, for now assuming the first heading might be the target
         // or just scroll to the main content container
@@ -43,7 +43,7 @@ const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
             {/* Hero Section with Banner Image */}
             <section className="relative bg-slate-900 overflow-hidden">
                 {/* Large Banner Image with Overlay */}
-                <div className="relative h-[600px] md:h-[600px]">
+                <div className="relative min-h-[600px] lg:h-[700px]">
                     <Image
                         src={imageUrl}
                         alt={title}
@@ -70,7 +70,7 @@ const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
                     <div className="relative h-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
 
                         {/* Breadcrumb Navigation */}
-                        <div className="absolute top-0 left-0 right-0 z-10">
+                        <div className="absolute top-5 left-0 right-0 z-10">
                             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
                                 <nav aria-label="Breadcrumb" className="flex items-center">
                                     <ol className="flex items-center gap-2 text-sm">
@@ -107,8 +107,8 @@ const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
 
                                         {/* Current Page */}
                                         <li>
-                                            <span className="text-white font-semibold line-clamp-1 max-w-[300px] sm:max-w-none">
-                                                {title}
+                                            <span className="text-white font-semibold line-clamp-1 max-w-[150px] sm:max-w-[200px]" title={title}>
+                                                {title.length > 25 ? title.substring(0, 25) + "..." : title}
                                             </span>
                                         </li>
                                     </ol>
@@ -116,7 +116,7 @@ const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col h-full pt-20 justify-center">
+                        <div className="flex flex-col h-full min-h-[600px] lg:min-h-[700px] pt-20 pb-16 justify-center">
                             <div className="max-w-4xl">
                                 {/* Category & Status Badges */}
                                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -193,4 +193,4 @@ const BlogDemoHeroSection = ({ post }: BlogDemoHeroSectionProps) => {
     );
 };
 
-export default BlogDemoHeroSection;
+export default BlogPostHeroSection;

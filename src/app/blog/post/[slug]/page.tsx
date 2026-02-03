@@ -8,7 +8,7 @@ import StructuredData from "@/components/seo/StructuredData";
 
 import { Suspense } from "react";
 import RelatedPosts from "@/components/sections/RelatedPosts";
-import BlogDemoHeroSection from "@/components/sections/BlogDemoHeroSection";
+import BlogPostHeroSection from "@/components/sections/BlogPostHeroSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
 import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
 
@@ -129,11 +129,11 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Custom Structured Data from WordPress */}
         <PostStructuredData post={post} />
 
-        {/* Blog Demo Hero Section with dynamic post data */}
-        <BlogDemoHeroSection post={post} />
+        {/* Blog Post Hero Section with dynamic post data */}
+        <BlogPostHeroSection post={post} />
 
         {/* Main Content - Three Column Layout */}
-        <div className="relative max-w-[1600px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div id="main-content" className="relative max-w-[1600px] mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
             {/* Left: Visual TOC */}
             <div className="xl:col-span-3">

@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import VisualTableOfContents, { sectionIcons } from "@/components/sections/VisualTableOfContents";
 import ContentSection from "@/components/sections/ContentSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
-import BlogDemoHeroSection from "@/components/sections/BlogDemoHeroSection";
+import BlogDemoHeroSection from "@/components/sections/BlogPostHeroSection";
 import Link from "next/link";
 
 export const metadata: Metadata = {

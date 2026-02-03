@@ -9,6 +9,7 @@ import {
   FaFacebook,
   FaReddit,
   FaCopy,
+  FaCheck,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { slugify } from "@/lib/utils";
@@ -132,6 +133,7 @@ const components = {
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
   const [fontSize, setFontSize] = useState("text-base");
   const [showShareMenu, setShowShareMenu] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   const fontSizes = [
     { label: "Small", value: "text-sm" },
@@ -161,6 +163,8 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   };
 
   // Extract headings for Table of Contents
@@ -209,45 +213,67 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
   return (
     <div className="space-y-8 mb-16">
-      {/* Social Icons Header - Standalone Card */}
-      <div className="relative rounded-3xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 p-6 flex items-center justify-end">
-        <div className="flex items-center gap-4">
-          <button className="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+      {/* Social Icons Header - Redesigned Sharing Section */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-b border-gray-100 mb-8">
+        <div className="flex items-center gap-2 text-gray-500 font-medium">
+          <span className="bg-blue-50 text-blue-600 p-2 rounded-lg">
             <FaShare className="w-4 h-4" />
+          </span>
+          <span>Share Article</span>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <button
+            onClick={shareOnLinkedin}
+            className="p-2.5 text-gray-400 hover:text-white hover:bg-[#0a66c2] bg-gray-50 rounded-lg transition-all duration-300 group"
+            title="Share on LinkedIn"
+          >
+            <FaLinkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
           </button>
-          <div className="h-4 w-px bg-slate-200" />
-          <div className="flex items-center gap-2">
-            <button
-              onClick={shareOnFacebook}
-              className="p-2 text-slate-400 hover:text-[#1877f2] transition-colors"
-            >
-              <FaFacebook className="w-4 h-4" />
-            </button>
-            <button
-              onClick={shareOnX}
-              className="p-2 text-slate-400 hover:text-black transition-colors"
-            >
-              <FaSquareXTwitter className="w-4 h-4" />
-            </button>
-            <button
-              onClick={shareOnLinkedin}
-              className="p-2 text-slate-400 hover:text-[#0a66c2] transition-colors"
-            >
-              <FaLinkedin className="w-4 h-4" />
-            </button>
-            <button
-              onClick={shareOnReddit}
-              className="p-2 text-slate-400 hover:text-[#ff4500] transition-colors"
-            >
-              <FaReddit className="w-4 h-4" />
-            </button>
-            <button
-              onClick={copyToClipboard}
-              className="p-2 text-slate-400 hover:text-slate-600 transition-colors"
-            >
-              <FaCopy className="w-4 h-4" />
-            </button>
-          </div>
+          <button
+            onClick={shareOnX}
+            className="p-2.5 text-gray-400 hover:text-white hover:bg-black bg-gray-50 rounded-lg transition-all duration-300 group"
+            title="Share on X"
+          >
+            <FaSquareXTwitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </button>
+          <button
+            onClick={shareOnFacebook}
+            className="p-2.5 text-gray-400 hover:text-white hover:bg-[#1877f2] bg-gray-50 rounded-lg transition-all duration-300 group"
+            title="Share on Facebook"
+          >
+            <FaFacebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </button>
+          <button
+            onClick={shareOnReddit}
+            className="p-2.5 text-gray-400 hover:text-white hover:bg-[#ff4500] bg-gray-50 rounded-lg transition-all duration-300 group"
+            title="Share on Reddit"
+          >
+            <FaReddit className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </button>
+
+          <div className="h-6 w-px bg-gray-200 mx-1" />
+
+          <button
+            onClick={copyToClipboard}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${isCopied
+              ? "bg-green-50 text-green-600 ring-1 ring-green-500/20"
+              : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+              }`}
+            title="Copy Link"
+          >
+            {isCopied ? (
+              <>
+                <FaCheck className="w-4 h-4" />
+                <span>Copied!</span>
+              </>
+            ) : (
+              <>
+                <FaCopy className="w-4 h-4" />
+                <span>Copy Link</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
 
@@ -310,23 +336,62 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
       </div>
 
       {/* Author Bio */}
-      <div className="bg-gray-50 rounded-xl p-8 my-12">
-        <div className="flex items-start gap-6">
-          <Image
-            title={post.author}
-            src={post.authorImage}
-            alt={post.author}
-            width={80}
-            height={80}
-            className="w-20 h-20 rounded-full border-4 border-white shadow-md"
-          />
-          <div className="flex-1">
-            <h4 className="text-xl font-bold text-gray-900 mb-3">
-              About {post.author}
-            </h4>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              {post.authorBio}
-            </p>
+      {/* Author Bio - Redesigned */}
+      <div className="relative group">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+        <div className="relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+            <div className="flex-shrink-0 relative">
+              <div className="absolute -inset-1 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full opacity-30 blur-sm" />
+              <Image
+                title={post.author}
+                src={post.authorImage}
+                alt={post.author}
+                width={96}
+                height={96}
+                className="relative w-24 h-24 rounded-full border-4 border-white shadow-md object-cover"
+              />
+            </div>
+
+            <div className="flex-1 flex flex-col justify-center">
+              <div className="relative">
+                {/* Subtle top ambient line */}
+                <div className="absolute -top-4 left-0 right-0 flex items-center">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-stone-300/60 to-transparent" />
+                </div>
+
+                <div className="relative flex items-center gap-4">
+                  {/* Vertical accent connector */}
+                  <div className="flex flex-col items-center gap-[5px]">
+                    <div className="w-px h-5 bg-gradient-to-b from-transparent to-stone-300" />
+                    <div className="w-2 h-2 rounded-full border-2 border-orange-400 bg-white shadow-[0_0_6px_rgba(251,146,60,0.35)]" />
+                    <div className="w-px h-5 bg-gradient-to-t from-transparent to-stone-300" />
+                  </div>
+
+                  {/* Label + Name */}
+                  <div className="flex flex-col gap-[2px]">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-stone-400">
+                      Written by
+                    </span>
+                    <h4 className="text-[19px] font-semibold text-stone-800 tracking-[-0.02em]">
+                      {post.author}
+                    </h4>
+                  </div>
+                </div>
+              </div>
+
+              {/* Refined divider */}
+              <div className="mt-[18px] mb-[14px] flex items-center gap-2">
+                <div className="w-8 h-px bg-gradient-to-r from-stone-300 to-transparent" />
+                <div className="w-1 h-1 rounded-full bg-stone-300" />
+                <div className="w-5 h-px bg-gradient-to-r from-stone-200 to-transparent" />
+              </div>
+
+              {/* Bio */}
+              <p className="text-stone-500 text-[13px] leading-[1.7] max-w-[380px]">
+                {post.authorBio}
+              </p>
+            </div>
           </div>
         </div>
       </div>
