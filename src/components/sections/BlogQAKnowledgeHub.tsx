@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import {
@@ -18,11 +19,44 @@ import {
     FaBell,
     FaCheckCircle
 } from 'react-icons/fa';
+import { Post } from '@/lib/sanity-data-adapter';
 
-const QAKnowledgeHub: React.FC = () => {
+interface QAKnowledgeHubProps {
+    trendingPosts?: Post[];
+}
+
+const QAKnowledgeHub: React.FC<QAKnowledgeHubProps> = ({ trendingPosts = [] }) => {
     const [selectedPath, setSelectedPath] = useState<number | null>(null);
     const [email, setEmail] = useState('');
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string }>({ type: 'success', text: '' });
 
+    const handleEmailSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (!email) return;
+
+        setStatus('loading');
+        setMessage({ type: 'success', text: '' });
+
+        try {
+            const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) throw new Error(data.error || 'Failed to subscribe');
+
+            setStatus('success');
+            setMessage({ type: 'success', text: data.message });
+            setEmail('');
+        } catch (error) {
+            setStatus('error');
+            setMessage({ type: 'error', text: error instanceof Error ? error.message : 'Something went wrong. Please try again.' });
+        }
+    };
     const learningPaths = [
         {
             id: 1,
@@ -70,36 +104,9 @@ const QAKnowledgeHub: React.FC = () => {
         },
     ];
 
-    const trendingTopics = [
-        {
-            title: 'AI-Powered Test Generation',
-            views: '45.2K',
-            trend: '+156%',
-            badge: 'Hot',
-            color: 'pink',
-        },
-        {
-            title: 'Shift-Left Testing Strategies',
-            views: '38.9K',
-            trend: '+124%',
-            badge: 'Trending',
-            color: 'blue',
-        },
-        {
-            title: 'API Testing with Postman & REST Assured',
-            views: '52.1K',
-            trend: '+98%',
-            badge: 'Popular',
-            color: 'violet',
-        },
-        {
-            title: 'Test Automation ROI Calculator',
-            views: '29.4K',
-            trend: '+187%',
-            badge: 'New',
-            color: 'emerald',
-        },
-    ];
+    // Fallback dummy data if no real posts provided (optional, or just show real posts)
+    // We will map real posts to this structure
+    const displayPosts = trendingPosts.length > 0 ? trendingPosts.slice(0, 4) : [];
 
     const resources = [
         {
@@ -122,12 +129,7 @@ const QAKnowledgeHub: React.FC = () => {
         },
     ];
 
-    const handleEmailSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle email submission
-        console.log('Email submitted:', email);
-        setEmail('');
-    };
+
 
     return (
         <section className="relative bg-slate-900 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -273,10 +275,10 @@ const QAKnowledgeHub: React.FC = () => {
                             </h3>
 
                             <div className="space-y-4">
-                                {trendingTopics.map((topic, idx) => (
+                                {displayPosts.length > 0 ? displayPosts.map((post, idx) => (
                                     <Link
-                                        key={idx}
-                                        href={`/blog/${topic.title.toLowerCase().replace(/\s+/g, '-')}`}
+                                        key={post.id}
+                                        href={`/blog/post/${post.slug}`}
                                         className="group block"
                                     >
                                         <div className="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-700/30 transition-colors">
@@ -285,16 +287,18 @@ const QAKnowledgeHub: React.FC = () => {
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <h4 className="text-sm font-semibold text-white mb-1 group-hover:text-blue-300 transition-colors line-clamp-2">
-                                                    {topic.title}
+                                                    {post.title}
                                                 </h4>
                                                 <div className="flex items-center gap-3 text-xs">
-                                                    <span className="text-slate-400">{topic.views} views</span>
-                                                    <span className="text-green-400 font-semibold">{topic.trend}</span>
+                                                    <span className="text-slate-400">{post.views || '1.2K'} views</span>
+                                                    <span className="text-green-400 font-semibold">{post.trending ? '+Trending' : 'Popular'}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </Link>
-                                ))}
+                                )) : (
+                                    <p className="text-slate-400 text-sm">No trending posts available at the moment.</p>
+                                )}
                             </div>
                         </div>
 
@@ -340,7 +344,7 @@ const QAKnowledgeHub: React.FC = () => {
                         <div className="relative z-10 px-8 py-12 md:px-16 md:py-16">
                             <div className="grid lg:grid-cols-2 gap-12 items-center">
                                 {/* Left - Newsletter Form */}
-                                <div>
+                                <div className="mb-6">
                                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl mb-4">
                                         <FaBell className="w-4 h-4 text-blue-400" />
                                         <span className="text-sm text-blue-300 font-semibold">WEEKLY NEWSLETTER</span>
@@ -357,23 +361,37 @@ const QAKnowledgeHub: React.FC = () => {
                                         Join 50,000+ QA professionals receiving curated testing tips, industry news, and exclusive resources
                                     </p>
 
-                                    <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
-                                        <input
-                                            type="email"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="Enter your email"
-                                            className="flex-1 px-5 py-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                                            required
-                                        />
-                                        <button
-                                            type="submit"
-                                            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-violet-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-violet-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25"
-                                        >
-                                            <span>Subscribe</span>
-                                            <FaArrowRight className="w-4 h-4" />
-                                        </button>
-                                    </form>
+                                    {message.text ? (
+                                        <div className={`p-4 rounded-xl mb-6 ${message.type === 'success' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
+                                            {message.text}
+                                        </div>
+                                    ) : (
+                                        <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 mb-6">
+                                            <input
+                                                type="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                placeholder="Enter your email"
+                                                className="flex-1 px-5 py-4 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                                                required
+                                                disabled={status === 'loading'}
+                                            />
+                                            <button
+                                                type="submit"
+                                                disabled={status === 'loading'}
+                                                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-violet-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-violet-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            >
+                                                {status === 'loading' ? (
+                                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                ) : (
+                                                    <>
+                                                        <span>Subscribe</span>
+                                                        <FaArrowRight className="w-4 h-4" />
+                                                    </>
+                                                )}
+                                            </button>
+                                        </form>
+                                    )}
 
                                     <div className="flex flex-wrap gap-4 text-sm text-slate-400">
                                         <div className="flex items-center gap-2">

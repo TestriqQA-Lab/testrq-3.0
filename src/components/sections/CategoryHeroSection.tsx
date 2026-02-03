@@ -2,13 +2,17 @@
 
 import React from "react";
 import Breadcrumb from "@/components/ui/Breadcrumb";
-
-
 import { Category } from "@/lib/sanity-data-adapter";
+import { getCategoryIcon } from "@/lib/category-icons";
 
 interface CategoryHeroSectionProps {
   category: Category;
 }
+
+// Helper to strip HTML tags from description
+const stripHtml = (html: string): string => {
+  return html.replace(/<[^>]*>?/gm, "").trim();
+};
 
 
 const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
@@ -40,11 +44,16 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
           <div>
             {/* Category Icon and Badge */}
             <div className="flex items-center gap-4 mb-6">
-              <div
-                className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center text-2xl`}
-              >
-                {category.icon}
-              </div>
+              {(() => {
+                const IconComponent = getCategoryIcon(category.name);
+                return (
+                  <div
+                    className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center`}
+                  >
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                );
+              })()}
               <span
                 className={`px-4 py-2 bg-gradient-to-r ${category.color} text-white text-sm font-semibold rounded-full`}
               >
@@ -62,7 +71,7 @@ const CategoryHeroSection: React.FC<CategoryHeroSectionProps> = ({
 
             {/* Description */}
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              {category.description}
+              {stripHtml(category.description)}
             </p>
           </div>
 

@@ -1,9 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
-import { FaArrowRight, FaSearch, FaFilter } from "react-icons/fa";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Search, SlidersHorizontal, ArrowRight, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Category } from "@/lib/sanity-data-adapter";
+import { getCategoryIcon } from "@/lib/category-icons";
 
 interface CategoriesGridProps {
   categories: Category[];
@@ -12,19 +14,24 @@ interface CategoriesGridProps {
 const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("popular");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const sortOptions = [
     { value: "popular", label: "Most Popular" },
     { value: "posts", label: "Most Articles" },
     { value: "name", label: "Alphabetical" },
-    { value: "subscribers", label: "Most Subscribers" }
+    { value: "subscribers", label: "Most Readers" },
   ];
 
-  // Filter categories based on search term
-  const filteredCategories = categories.filter(category =>
-    category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    category.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    category.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  // Filter categories
+  const filteredCategories = categories.filter(
+    (category) =>
+      category.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.tags?.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
+      )
   );
 
   // Sort categories
@@ -36,38 +43,49 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
         return a.name.localeCompare(b.name);
       case "subscribers":
         return (b.subscribers || 0) - (a.subscribers || 0);
-      default: // popular
-        return ((b.postCount || 0) * 10 + (b.subscribers || 0)) - ((a.postCount || 0) * 10 + (a.subscribers || 0));
+      default:
+        return (
+          (b.postCount || 0) * 10 +
+          (b.subscribers || 0) -
+          ((a.postCount || 0) * 10 + (a.subscribers || 0))
+        );
     }
   });
 
   return (
-    <div>
-      {/* Search and Filter Section */}
-      <div className="mb-12">
-        <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-          {/* Search Bar */}
+    <section ref={ref} id="categories" className="scroll-mt-20">
+      {/* Search & Filter Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+        className="mb-10"
+      >
+        <div className="flex flex-col lg:flex-row gap-4 items-stretch lg:items-center justify-between">
+          {/* Search */}
           <div className="relative flex-1 max-w-md">
-            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
               type="text"
               placeholder="Search categories..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white shadow-sm"
+              className="w-full pl-12 pr-4 py-3.5 bg-white border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-sm"
             />
           </div>
 
-          {/* Sort Dropdown */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 text-gray-600">
-              <FaFilter className="w-4 h-4" />
-              <span className="text-sm font-medium">Sort by:</span>
+          {/* Sort */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-slate-500">
+              <SlidersHorizontal className="w-4 h-4" />
+              <span className="text-sm font-medium hidden sm:inline">
+                Sort by:
+              </span>
             </div>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="appearance-none bg-white border border-slate-200 rounded-xl px-4 py-3 pr-10 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer shadow-sm"
             >
               {sortOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -78,132 +96,160 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({ categories }) => {
           </div>
         </div>
 
-        {/* Results Count */}
-        <div className="mt-4 text-gray-600">
-          Showing {sortedCategories.length} of {categories.length} categories
+        {/* Results count */}
+        <div className="mt-4 text-sm text-slate-500">
+          Showing{" "}
+          <span className="font-semibold text-slate-700">
+            {sortedCategories.length}
+          </span>{" "}
+          of{" "}
+          <span className="font-semibold text-slate-700">
+            {categories.length}
+          </span>{" "}
+          categories
           {searchTerm && (
-            <span className="ml-2">
-              for &quot;<span className="font-semibold text-gray-900">{searchTerm}</span>&ldquo;
+            <span>
+              {" "}
+              for &ldquo;
+              <span className="font-semibold text-slate-900">{searchTerm}</span>
+              &rdquo;
             </span>
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        {sortedCategories.map((category) => (
-          <div
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {sortedCategories.map((category, index) => (
+          <motion.div
             key={category.id}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.5) }}
+            className="group relative"
           >
-            {/* Category Header */}
-            <div className={`bg-gradient-to-r ${category.color} p-6 text-white relative overflow-hidden`}>
-              <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10"></div>
-              <div className="absolute bottom-0 left-0 w-16 h-16 bg-white/10 rounded-full -ml-8 -mb-8"></div>
+            {/* Hover glow effect */}
+            <div
+              className={`absolute -inset-0.5 bg-gradient-to-r ${category.color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300`}
+            />
 
-              <div className="relative">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="text-4xl">{category.icon}</div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold">{category.postCount}</div>
-                    <div className="text-sm opacity-90">Articles</div>
+            <Link
+              href={`/blog/category/${category.id}`}
+              className="relative block bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-xl hover:border-slate-200 transition-all duration-300 h-full"
+            >
+              {/* Card Header with Gradient */}
+              <div
+                className={`relative bg-gradient-to-r ${category.color} p-5 overflow-hidden`}
+              >
+                {/* Background pattern */}
+                <div
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                    backgroundSize: "16px 16px",
+                  }}
+                />
+
+                {/* Icon */}
+                <div className="relative flex items-center justify-between">
+                  {(() => {
+                    const IconComponent = getCategoryIcon(category.name);
+                    return (
+                      <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                    );
+                  })()}
+                  <div className="flex items-center gap-1.5 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
+                    <BookOpen className="w-3.5 h-3.5 text-white" />
+                    <span className="text-sm font-bold text-white">
+                      {category.postCount}
+                    </span>
                   </div>
                 </div>
+              </div>
 
-                <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-200 transition-colors">
+              {/* Card Content */}
+              <div className="p-5">
+                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {category.name}
                 </h3>
 
-                <p className="text-sm opacity-90 line-clamp-2">
-                  {category.description}
+                <p className="text-sm text-slate-500 line-clamp-2 mb-4 leading-relaxed">
+                  {category.description.replace(/<[^>]*>?/gm, "")}
                 </p>
-              </div>
-            </div>
 
-            {/* Category Content */}
-            <div className="p-6">
-              {/* Featured Tools */}
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Featured Tools:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {category.featuredTools?.slice(0, 3).map((tool, index) => (
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {category.tags?.slice(0, 3).map((tag, tagIndex) => (
                     <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                      key={tagIndex}
+                      className="px-2 py-0.5 bg-slate-100 text-slate-600 text-xs rounded-md font-medium"
                     >
-                      {tool}
-                    </span>
-                  ))}
-                  {(category.featuredTools?.length || 0) > 3 && (
-                    <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
-                      +{(category.featuredTools?.length || 0) - 3} more
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Popular Tags */}
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-700 mb-2">Popular Tags:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {category.tags?.slice(0, 4).map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full"
-                    >
-                      #{tag}
+                      {tag}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              {/* CTA Button */}
-              <Link
-                href={`/blog/category/${category.id}`}
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors group"
-              >
-                <span>Explore Articles</span>
-                <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
+                {/* CTA */}
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                  <span>Explore Articles</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+          </motion.div>
         ))}
       </div>
 
-      {/* No Results */}
+      {/* Empty State */}
       {sortedCategories.length === 0 && (
-        <div className="text-center py-12">
-          <div className="text-gray-400 text-6xl mb-4">🔍</div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">No categories found</h3>
-          <p className="text-gray-600 mb-6">
-            Try adjusting your search terms or browse all available categories.
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-16"
+        >
+          <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <Search className="w-8 h-8 text-slate-400" />
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 mb-2">
+            No categories found
+          </h3>
+          <p className="text-slate-500 mb-6">
+            Try adjusting your search terms or browse all categories.
           </p>
           <button
             onClick={() => setSearchTerm("")}
-            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors"
           >
             Clear Search
           </button>
-        </div>
+        </motion.div>
       )}
 
-      {/* Call to Action Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
-        <h3 className="text-2xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h3>
+      {/* Bottom CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="mt-12 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-center text-white"
+      >
+        <h3 className="text-2xl font-bold mb-3">
+          Can&apos;t find what you&apos;re looking for?
+        </h3>
         <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-          Our comprehensive testing blog covers everything from basic concepts to advanced techniques.
-          Explore our latest articles or suggest a topic you&apos;d like us to cover.
+          Our comprehensive testing blog covers everything from basic concepts
+          to advanced techniques. Explore our latest articles or suggest a topic.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/blog"
-            className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
-          >
-            Browse All Articles
-          </Link>
-        </div>
-      </div>
-    </div>
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-xl hover:bg-blue-50 transition-colors"
+        >
+          Browse All Articles
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </motion.div>
+    </section>
   );
 };
 
