@@ -114,45 +114,6 @@ const ResourceSidebar = ({ relatedPosts: propRelatedPosts, categories: propCateg
 
     return (
         <aside className="sticky top-24 space-y-6 max-h-[calc(100vh-120px)] overflow-y-auto pr-2" style={{ scrollbarWidth: 'thin', scrollbarColor: '#93c5fd #f1f5f9' }}>
-            {/* Newsletter Signup */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-6 border border-blue-100 shadow-lg">
-                <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                        <FaEnvelope className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold text-slate-900">Stay Updated</h3>
-                        <p className="text-xs text-slate-600">Weekly QA insights</p>
-                    </div>
-                </div>
-
-                <form onSubmit={handleSubscribe} className="space-y-3">
-                    <div>
-                        <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter your email"
-                            className="w-full px-4 py-3 border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 transition-all"
-                    >
-                        Subscribe Now
-                    </button>
-
-                    {subscribeStatus === "success" && (
-                        <p className="text-sm text-green-600 font-medium">✓ Successfully subscribed!</p>
-                    )}
-                    {subscribeStatus === "error" && (
-                        <p className="text-sm text-red-600 font-medium">✗ Please enter a valid email</p>
-                    )}
-                </form>
-            </div>
-
             {/* Related Blog Posts */}
             <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-lg">
                 <div className="flex items-center gap-3 mb-6">

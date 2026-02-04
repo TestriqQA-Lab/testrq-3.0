@@ -32,6 +32,11 @@ export default defineType({
             title: 'Bio',
             type: 'text', // Or array of blocks
         }),
+        defineField({
+            name: 'linkedin',
+            title: 'LinkedIn URL',
+            type: 'url',
+        }),
     ],
     preview: {
         select: {

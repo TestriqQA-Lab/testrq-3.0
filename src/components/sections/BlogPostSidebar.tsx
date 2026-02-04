@@ -172,65 +172,6 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
 
   return (
     <aside className="space-y-8">
-      {/* Newsletter Signup */}
-      <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl p-6 text-white">
-        <div className="text-center">
-          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6" />
-          </div>
-          <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
-          <p className="text-blue-100 text-sm mb-4">
-            Get the latest testing insights delivered to your inbox weekly.
-          </p>
-          {!subscribed ? (
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              {error && (
-                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-2 text-red-200 text-xs">
-                  {error}
-                </div>
-              )}
-              <input
-                type="email"
-                placeholder="your.email@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 bg-white/20 border border-white/30 rounded-lg text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-white"
-                disabled={newsletterLoading}
-              />
-              <button
-                type="submit"
-                disabled={newsletterLoading}
-                className="w-full px-4 py-2 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {newsletterLoading ? (
-                  <div className="flex items-center justify-center gap-2">
-                    <FaSpinner className="w-4 h-4 animate-spin" />
-                    <span>Subscribing...</span>
-                  </div>
-                ) : (
-                  <span>Subscribe Now</span>
-                )}
-              </button>
-            </form>
-          ) : (
-            <div className="text-center py-2">
-              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                <span className="text-white text-lg">✓</span>
-              </div>
-              <h3 className="text-md font-bold text-white mb-1">
-                Subscribed!
-              </h3>
-              <p className="text-gray-100 text-sm">
-                Thank you for joining!
-              </p>
-            </div>
-          )}
-          <p className="text-xs text-blue-200 mt-3">
-            Join 10,000+ QA professionals
-          </p>
-        </div>
-      </div>
-
       {/* Related Posts - Dynamic */}
       <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
         <h3 className="text-lg font-bold text-gray-800 mb-4">

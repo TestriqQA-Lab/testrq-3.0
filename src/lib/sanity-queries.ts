@@ -10,7 +10,7 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
   excerpt,
   publishedAt,
   _updatedAt,
-  "author": author->{name, slug, image, bio},
+  "author": author->{name, slug, image, bio, linkedin},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
   "tags": tags[]->{title, slug}
 }`;
@@ -25,7 +25,7 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   body,
   publishedAt,
   _updatedAt,
-  "author": author->{name, slug, image, bio},
+  "author": author->{name, slug, image, bio, linkedin},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
   "tags": tags[]->{title, slug},
   seo

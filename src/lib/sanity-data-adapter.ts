@@ -34,6 +34,7 @@ export interface Post {
     author: string;
     authorImage: string;
     authorBio: string;
+    authorLinkedin?: string;
     date: string;
     dateISO: string;
     modifiedISO: string;
@@ -225,6 +226,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         authorImage: sanityPost.author?.image ? urlFor(sanityPost.author.image).width(60).height(60).url() : 'https://placehold.co/60x60/png',
         authorImageRaw: sanityPost.author?.image || null,
         authorBio: sanityPost.author?.bio || 'QA Expert',
+        authorLinkedin: sanityPost.author?.linkedin || null,
         date: new Date(sanityPost.publishedAt || new Date().toISOString()).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
