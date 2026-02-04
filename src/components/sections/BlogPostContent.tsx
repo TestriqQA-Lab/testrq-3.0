@@ -17,6 +17,8 @@ import { PortableText } from "@portabletext/react";
 import { Post } from "@/lib/sanity-data-adapter";
 import { urlFor } from "@/lib/sanity";
 import TableOfContents from "@/components/ui/TableOfContents";
+import ContactCTA from "@/components/ui/ContactCTA";
+import Link from "next/link";
 
 interface BlogPostContentProps {
   post: Post;
@@ -27,6 +29,25 @@ interface BlogPostContentProps {
 const getBlockText = (block: any) =>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   block.children?.map((child: any) => child.text).join('') || '';
+
+// Helper to check if a block is a "Contact Us" CTA
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const isContactBlock = (block: any) => {
+  if (block?._type !== 'block' || !block?.markDefs?.length) return false;
+
+  // Check if any markDef is a contact link
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const contactDef = block.markDefs.find((def: any) =>
+    def._type === 'link' && (def.href?.includes('/contact') || def.href?.includes('contact-us'))
+  );
+
+  if (!contactDef) return false;
+
+  // Check if the block text is short enough to be a button (e.g. "Contact Us", "Get in Touch")
+  // and not a full paragraph
+  const text = getBlockText(block);
+  return text.length < 60;
+};
 
 const components = {
   types: {
@@ -89,7 +110,32 @@ const components = {
       return <h4 id={slug} className="text-xl font-bold mt-6 mb-3 scroll-mt-24">{children}</h4>;
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    normal: ({ children }: any) => <p className="mb-6 leading-relaxed">{children}</p>,
+    normal: ({ children, value }: any) => {
+      // Check if this block matches our criteria for a manual CTA button
+      if (isContactBlock(value)) {
+        // Find the link href from markDefs
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const linkDef = value.markDefs.find((d: any) => d._type === 'link');
+        const href = linkDef?.href || '/contact-us';
+        const text = getBlockText(value);
+
+        // Render as a sleek button
+        return (
+          <div className="my-10 flex justify-center">
+            <Link
+              href={href}
+              className="group relative inline-flex items-center gap-2 px-8 py-3 bg-blue-600 text-white font-bold rounded-full shadow-lg hover:bg-blue-700 hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <span>{text}</span>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        );
+      }
+      return <p className="mb-6 leading-relaxed">{children}</p>;
+    },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     blockquote: ({ children }: any) => (
       <blockquote className="relative p-6 my-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100 shadow-sm">
@@ -209,6 +255,20 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
     return sections;
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [post.content]);
+
+  // Check if the very last block of the content is a manual CTA
+  // If so, we won't append our automatic ContactCTA
+  const hasManualCTAAtEnd = React.useMemo(() => {
+    if (!Array.isArray(post.content) || post.content.length === 0) return false;
+
+    // Check the last few blocks (tolerance for whitespace blocks)
+    for (let i = post.content.length - 1; i >= Math.max(0, post.content.length - 3); i--) {
+      if (isContactBlock(post.content[i])) {
+        return true;
+      }
+    }
+    return false;
   }, [post.content]);
 
   return (
@@ -332,6 +392,14 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
               </section>
             );
           })
+        )}
+
+
+        {/* Automatic Contact CTA (only if no manual one detected at the end) */}
+        {!hasManualCTAAtEnd && (
+          <div className="not-prose mt-12">
+            <ContactCTA />
+          </div>
         )}
       </div>
 

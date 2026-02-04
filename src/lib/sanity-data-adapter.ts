@@ -145,7 +145,41 @@ export function adaptSanityCategory(sanityCat: any): Category {
 
 // Adapter: Sanity Post -> Frontend Post
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function adaptSanityPost(sanityPost: any): Post {
+    if (!sanityPost) {
+        console.warn("adaptSanityPost received null/undefined post");
+        return {
+            id: 'missing-id',
+            slug: 'missing-slug',
+            title: 'Missing Post',
+            excerpt: '',
+            content: [],
+            category: 'Uncategorized',
+            categories: [],
+            categorySlug: '',
+            categoryColor: 'from-gray-500 to-gray-600',
+            author: 'Unknown',
+            authorImage: '',
+            authorImageRaw: null,
+            authorBio: '',
+            date: new Date().toLocaleDateString(),
+            dateISO: new Date().toISOString(),
+            modifiedISO: new Date().toISOString(),
+            readTime: '0 min read',
+            image: '',
+            mainImage: null,
+            featured: false,
+            trending: false,
+            views: '0',
+            likes: 0,
+            shares: 0,
+            tags: [],
+            tagsData: [],
+            seo: { title: '', description: '', keywords: '' }
+        };
+    }
+
     const primaryCategory = sanityPost.categories?.[0];
     const categoryName = primaryCategory?.title || 'Testing';
     const categoryColor = primaryCategory?.colorTheme
@@ -180,7 +214,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         excerpt: sanityPost.excerpt || '',
         content: adaptedContent,
         category: categoryName,
-        categories: sanityPost.categories?.map((c: any) => ({
+        categories: sanityPost.categories?.filter((c: any) => c).map((c: any) => ({
             name: c.title,
             slug: c.slug?.current,
             colorTheme: c.colorTheme
@@ -207,9 +241,9 @@ export function adaptSanityPost(sanityPost: any): Post {
         likes,
         shares,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        tags: sanityPost.tags?.map((t: any) => t.title) || [],
+        tags: sanityPost.tags?.filter((t: any) => t).map((t: any) => t.title) || [],
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        tagsData: sanityPost.tags?.map((t: any) => ({ name: t.title, slug: t.slug.current })) || [],
+        tagsData: sanityPost.tags?.filter((t: any) => t).map((t: any) => ({ name: t.title, slug: t.slug?.current })) || [],
         seo: {
             title: sanityPost.seo?.metaTitle || sanityPost.title,
             description: sanityPost.seo?.metaDescription || sanityPost.excerpt,
