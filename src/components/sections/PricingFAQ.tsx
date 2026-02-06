@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,30 +24,49 @@ const pricingFaqs = [
         question: "How do you handle security and IP protection?",
         answer: "Security is our top priority. All our engineers sign stringent NDAs, work on secure machines, and follow ISO/IEC 27001 standards. Data is always hosted on your servers or approved secure cloud providers.",
     },
+    {
+        question: "What happens if I need to scale up or down quickly?",
+        answer: "We offer flexible scaling. You can increase or decrease your QA team size with just 2 weeks notice. Our bench of pre-vetted specialists ensures rapid deployment when you need to scale up.",
+    },
 ];
 
 const PricingFAQ = () => {
     const [openIdx, setOpenIdx] = useState<number | null>(0);
 
     return (
-        <section className="py-24 bg-gray-50/50">
+        <section className="py-24 bg-slate-900">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Pricing & Engagement FAQs</h2>
-                    <p className="mt-4 text-gray-600 italic">Everything you need to know about partnering with Testriq</p>
+                    <span className="inline-block bg-slate-800 text-blue-400 text-sm font-bold px-4 py-2 rounded-full mb-4 border border-slate-700">
+                        FAQs
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Pricing & Engagement Questions
+                    </h2>
+                    <p className="text-slate-400">
+                        Everything you need to know about partnering with Testriq
+                    </p>
                 </div>
 
                 <div className="space-y-4">
                     {pricingFaqs.map((faq, idx) => (
-                        <div key={idx} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="bg-slate-800/50 rounded-2xl border border-slate-700/50 overflow-hidden backdrop-blur-sm"
+                        >
                             <button
                                 onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                                className="w-full px-8 py-6 text-left flex justify-between items-center bg-white hover:bg-gray-50 transition-colors"
+                                className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-slate-700/30 transition-colors"
                                 aria-expanded={openIdx === idx}
                             >
-                                <span className="font-bold text-gray-900 pr-8">{faq.question}</span>
-                                <span className="text-blue-500 flex-shrink-0">
-                                    {openIdx === idx ? <FaMinus /> : <FaPlus />}
+                                <span className="font-semibold text-white pr-8">{faq.question}</span>
+                                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIdx === idx ? "bg-blue-600 text-white" : "bg-slate-700 text-slate-400"
+                                    }`}>
+                                    {openIdx === idx ? <FaMinus className="w-3 h-3" /> : <FaPlus className="w-3 h-3" />}
                                 </span>
                             </button>
 
@@ -60,13 +78,13 @@ const PricingFAQ = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="px-8 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4">
+                                        <div className="px-8 pb-6 text-slate-300 text-sm leading-relaxed border-t border-slate-700/50 pt-4">
                                             {faq.answer}
                                         </div>
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

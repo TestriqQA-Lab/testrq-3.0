@@ -1,4 +1,3 @@
-
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
@@ -9,9 +8,9 @@ import StructuredData, {
 import { HeroLoader, ContentLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
-    title: "Service Packages & Pricing | Expert QA Outsourcing",
+    title: "QA Testing Packages & Pricing | Transparent Software Testing Costs",
     description:
-        "Transparent pricing for software testing services. Choose from monthly Managed QA retainers or project-based audits. Scalable solutions for startups and enterprises.",
+        "Transparent, predictable pricing for world-class software testing services. Choose from monthly Managed QA retainers or project-based audits. Scalable solutions for startups and global enterprises.",
     keywords: [
         "software testing pricing",
         "QA outsourcing cost",
@@ -19,13 +18,15 @@ export const metadata: Metadata = {
         "software testing retainer",
         "QA project pricing",
         "test automation pricing",
+        "VAPT pricing",
+        "API testing cost",
     ],
     alternates: {
         canonical: "https://www.testriq.com/pricing",
     },
     openGraph: {
         title: "QA Testing Packages & Pricing | Testriq",
-        description: "Flexible, transparent pricing for world-class software testing services.",
+        description: "No fluff, just results. Transparent pricing for world-class software testing services.",
         url: "https://www.testriq.com/pricing",
     }
 };
@@ -35,13 +36,13 @@ const PricingHeroSection = dynamic(
     { ssr: true, loading: () => <HeroLoader /> }
 );
 
-const PricingPlans = dynamic(
-    () => import("@/components/sections/PricingPlans"),
+const PricingPacksTable = dynamic(
+    () => import("@/components/sections/PricingPacksTable"),
     { ssr: true, loading: () => <ContentLoader /> }
 );
 
-const PricingComparison = dynamic(
-    () => import("@/components/sections/PricingComparison"),
+const PricingAddOns = dynamic(
+    () => import("@/components/sections/PricingAddOns"),
     { ssr: true, loading: () => <ContentLoader /> }
 );
 
@@ -62,8 +63,8 @@ export default function PricingPage() {
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <MainLayout>
                 <PricingHeroSection />
-                <PricingPlans />
-                <PricingComparison />
+                <PricingPacksTable />
+                <PricingAddOns />
                 <PricingFAQ />
             </MainLayout>
         </div>
