@@ -163,7 +163,7 @@ export const productServiceSchema = {
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
       "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/NoReturns"
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -171,6 +171,25 @@ export const productServiceSchema = {
         "@type": "MonetaryAmount",
         "value": "0",
         "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
       }
     }
   }

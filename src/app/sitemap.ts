@@ -214,15 +214,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...tagPages,
     ];
 
+    // Deduplicate entries based on URL
+    const uniqueEntriesMap = new Map<string, MetadataRoute.Sitemap[number]>();
+
+    allSitemapEntries.forEach(entry => {
+      // Normalize URL to avoid subtle dupes (e.g. trailing slash logic if needed, but strict here)
+      const url = entry.url;
+
+      if (!uniqueEntriesMap.has(url)) {
+        uniqueEntriesMap.set(url, entry);
+      } else {
+        // Conflict resolution: keep the one with higher priority, or if equal, the newer one
+        const existing = uniqueEntriesMap.get(url)!;
+
+        // If strict priority check needed:
+        if ((entry.priority || 0.5) > (existing.priority || 0.5)) {
+          uniqueEntriesMap.set(url, entry);
+        }
+      }
+    });
+
+    const uniqueSitemapEntries = Array.from(uniqueEntriesMap.values());
+
     // Sort by priority (highest first) and then by lastModified (newest first)
-    allSitemapEntries.sort((a, b) => {
+    uniqueSitemapEntries.sort((a, b) => {
       if (b.priority! !== a.priority!) {
         return b.priority! - a.priority!;
       }
       return new Date(b.lastModified!).getTime() - new Date(a.lastModified!).getTime();
     });
 
-    return allSitemapEntries;
+    return uniqueSitemapEntries;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
