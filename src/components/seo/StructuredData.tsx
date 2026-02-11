@@ -4429,3 +4429,113 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Embedded Testing Services
+export const embeddedTestingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Embedded Testing Services",
+      "alternateName": "Embedded Software Testing",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/embedded-testing-services",
+      "description": "Ensure precision & reliability with Testriq’s expert Embedded Testing Services. Comprehensive V&V for automotive, medical, IoT & safety-critical systems.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Embedded Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Model-in-the-loop (MIL) testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Software-in-the-loop (SIL) testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Embedded system security testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automotive embedded testing (ISO 26262)"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are embedded testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Embedded testing services involve the comprehensive verification and validation of embedded software and hardware systems. This ensures that embedded devices, from IoT gadgets to automotive control units, function reliably, securely, and according to their specifications in real-world environments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is embedded software testing important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Embedded software testing is critical because embedded systems often operate in safety-critical applications (e.g., medical devices, automotive). Thorough testing ensures reliability, prevents costly failures, enhances security against vulnerabilities, and guarantees compliance with industry-specific regulations and standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between HIL, SIL, and MIL testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Model-in-the-Loop (MIL) testing verifies the control algorithm using a mathematical model. Software-in-the-Loop (SIL) testing integrates the actual production code with a simulated environment. Hardware-in-the-Loop (HIL) testing connects the real embedded controller to a simulated plant model for real-time validation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to choose an embedded testing service provider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consider their expertise in your specific industry (e.g., automotive, medical), proficiency with relevant standards (e.g., ISO 26262, DO-178C), capabilities in HIL, SIL, and MIL testing, and experience with test automation frameworks for embedded systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the key challenges in embedded systems testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Challenges include the tight coupling of hardware and software, real-time constraints, limited debugging access, resource constraints, complex toolchains, and ensuring compliance with stringent safety and security standards."
+          }
+        }
+      ]
+    }
+  ]
+};
