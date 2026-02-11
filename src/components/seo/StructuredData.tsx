@@ -4429,3 +4429,85 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Migration Testing
+export const migrationServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Migration Testing Services",
+      "alternateName": "Data & Cloud Migration QA",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "telephone": "+91-915-2929-343",
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/migration-testing",
+      "description": "Ensure seamless data & application migrations with Testriq’s expert Migration Testing Services. Prevent data loss, ensure integrity & minimize downtime.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Migration QA Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Migration Testing",
+              "description": "Ensuring accuracy and completeness of large-scale data transfers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cloud Migration Testing",
+              "description": "Comprehensive testing for transitions to public, private, or hybrid clouds."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ERP Migration Testing",
+              "description": "Expert testing for complex ERP system migrations like SAP, Oracle."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ETL Testing",
+              "description": "Accuracy and efficiency of Extract, Transform, Load processes."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is migration testing and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Migration testing is the process of verifying that an application or data has been successfully moved from one environment to another without loss, corruption, or functional degradation. It is important to prevent data loss, ensure functional continuity, and minimize business downtime."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to ensure data integrity during a cloud migration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Implement automated reconciliation tools, perform row-count and checksum validations, verify transformations against rules, and conduct thorough post-migration functional checks."
+          }
+        }
+      ]
+    }
+  ]
+};
