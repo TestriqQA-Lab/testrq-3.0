@@ -4429,3 +4429,142 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+
+// Service Schema for Managed Testing Services
+export const managedTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Managed Testing Services | QA Outsourcing & Dedicated Teams",
+      "alternateName": "Managed QA Services",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/managed-testing-services",
+      "description": "Testriq's managed testing services provide dedicated QA teams, end-to-end testing solutions, and SLA-backed quality assurance for enterprises. Reduce costs, accelerate time-to-market, and scale testing with confidence.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Managed Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "End-to-End Managed Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Managed Test Automation Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Managed Performance & Scalability Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Managed Security & Compliance Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Managed Agile & DevOps Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cloud-Native Application Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI & Machine Learning Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "ERP & CRM Implementation Testing"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are managed testing services and how do they work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Managed testing services represent a strategic partnership where a vendor takes full responsibility for the testing function, including strategy, resources, tools, and outcomes. Unlike traditional outsourcing where you rent headcount, managed testing involves the vendor owning the entire testing process and being accountable for quality outcomes through Service Level Agreements (SLAs) and Key Performance Indicators (KPIs)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between QA outsourcing and managed testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While traditional QA outsourcing often focuses on staff augmentation (renting headcount), managed testing services involve the vendor owning the entire testing process and being accountable for outcomes. The key difference is who owns the responsibility and risk for quality outcomes. Managed testing uses outcome-based or fixed pricing with SLA-backed accountability."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the benefits of managed testing services for enterprises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Managed testing services provide cost predictability through fixed or outcome-based pricing, access to specialized global talent, faster time-to-market, reduced infrastructure investment, consistent quality through standardized processes, scalable testing capacity, and reduced management overhead. For regulated industries, it also provides compliance expertise and audit documentation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to choose the best managed testing service provider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Look for industry-specific experience, technical depth in automation and specialized testing, transparent reporting and clear SLAs, proven track record, ISTQB certification, global reach, and references from similar organizations. Evaluate their continuous improvement approach, scalability, and willingness to align testing strategy with your business objectives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do managed testing services reduce software development costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Managed testing reduces costs by eliminating in-house QA infrastructure needs, reducing recruitment and training expenses, preventing costly post-release defects, reducing management overhead, and providing cost predictability. The cumulative effect is typically 30-50% reduction in total QA costs compared to maintaining an equivalent in-house team."
+          }
+        }
+      ]
+    }
+  ]
+};
