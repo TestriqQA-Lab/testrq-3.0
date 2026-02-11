@@ -4429,3 +4429,93 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Accessibility Testing Services
+export const accessibilityServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Accessibility Testing Services",
+      "alternateName": "Digital Accessibility Testing",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "logo": "https://www.testriq.com/logo.png",
+        "telephone": "+91-915-2929-343"
+      },
+      "url": "https://www.testriq.com/accessibility-testing-services",
+      "description": "Comprehensive accessibility testing services ensuring digital inclusion. We specialize in WCAG 2.2, Section 508, and ADA compliance for web and mobile applications.",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Accessibility Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Accessibility Testing",
+              "description": "Ensuring websites meet WCAG 2.2 and ADA standards."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Accessibility Testing",
+              "description": "Validating iOS and Android apps for digital inclusion."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WCAG Compliance Audit",
+              "description": "Comprehensive evaluation against the latest accessibility guidelines."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are accessibility testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accessibility testing services ensure that digital products, such as websites, mobile apps, and software, are usable by people with disabilities. This involves evaluating compliance with accessibility standards like WCAG, ADA, and Section 508, ensuring equal access and an inclusive user experience for all individuals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is accessibility testing important for websites?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accessibility testing is crucial for websites to ensure legal compliance (e.g., ADA, WCAG), expand market reach to a broader audience, and enhance brand reputation. It improves the user experience for individuals with disabilities, preventing exclusion and potential legal challenges, while fostering an inclusive digital environment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between automated and manual accessibility testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Automated accessibility testing uses software tools to quickly scan digital content for common accessibility issues, such as missing alt text or color contrast problems. It is efficient for large-scale checks but can only detect a fraction of issues. Manual accessibility testing involves human testers, often using assistive technologies like screen readers, to evaluate complex interactions and user flows, identifying nuanced issues that automated tools miss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to achieve WCAG 2.2 compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Achieving WCAG 2.2 compliance involves conducting thorough accessibility audits, implementing guidelines for perceivable, operable, understandable, and robust content, and regularly testing with both automated tools and manual methods, including assistive technologies."
+          }
+        }
+      ]
+    }
+  ]
+};
