@@ -34,8 +34,8 @@ const FunctionalWhySection: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
-            <div className="container mx-auto px-6">
+        <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+            <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div className="flex-1">
                         <motion.div
@@ -43,11 +43,11 @@ const FunctionalWhySection: React.FC = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
                                 Why Functional Testing is <span className="text-brand-blue">Indispensable</span>
                             </h2>
-                            <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
-                                Functional testing is the cornerstone of software quality assurance, addressing the core question: <span className="text-gray-900 font-bold italic">"Does the software do what it's supposed to do?"</span>
+                            <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+                                Functional testing is the cornerstone of software quality assurance, addressing the core question: <span className="text-gray-900 font-bold italic">&quot;Does the software do what it&apos;s supposed to do?&quot;</span>
                                 Our approach validates every user journey meticulously.
                             </p>
 
@@ -55,7 +55,7 @@ const FunctionalWhySection: React.FC = () => {
                                 {pillars.map((item, idx) => (
                                     <motion.div
                                         key={idx}
-                                        className="flex items-start gap-5 p-6 rounded-3xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100 group"
+                                        className="flex items-start gap-5 p-6 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100 group"
                                         initial={{ opacity: 0, y: 10 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
@@ -65,10 +65,10 @@ const FunctionalWhySection: React.FC = () => {
                                             {item.icon}
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-black text-gray-900 mb-1 tracking-tighter uppercase">
+                                            <h3 className="text-xl font-semibold text-gray-900 mb-1">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-gray-500 font-medium text-sm leading-relaxed">
+                                            <p className="text-gray-500 text-base leading-relaxed">
                                                 {item.desc}
                                             </p>
                                         </div>
@@ -80,7 +80,7 @@ const FunctionalWhySection: React.FC = () => {
 
                     <div className="flex-1 relative">
                         <motion.div
-                            className="bg-brand-blue rounded-[3rem] p-12 text-white relative overflow-hidden"
+                            className="bg-brand-blue rounded-2xl p-12 text-white relative overflow-hidden"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -89,21 +89,21 @@ const FunctionalWhySection: React.FC = () => {
                             <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
                             <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
-                            <h3 className="text-2xl lg:text-3xl font-black mb-8 leading-tight relative z-10">
+                            <h3 className="text-2xl lg:text-3xl font-bold mb-8 leading-tight relative z-10">
                                 Validating Every User Journey with Precision
                             </h3>
                             <div className="space-y-8 relative z-10">
-                                <div className="p-6 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/10">
-                                    <span className="block text-4xl font-black mb-2">100%</span>
-                                    <span className="text-sm font-bold uppercase tracking-widest text-blue-100">Requirement Traceability</span>
+                                <div className="p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                                    <span className="block text-4xl font-bold mb-2">100%</span>
+                                    <span className="text-sm font-semibold uppercase tracking-wider text-blue-100">Requirement Traceability</span>
                                 </div>
-                                <div className="p-6 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/10">
-                                    <span className="block text-4xl font-black mb-2">40%</span>
-                                    <span className="text-sm font-bold uppercase tracking-widest text-blue-100">Faster Time to Market</span>
+                                <div className="p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                                    <span className="block text-4xl font-bold mb-2">40%</span>
+                                    <span className="text-sm font-semibold uppercase tracking-wider text-blue-100">Faster Time to Market</span>
                                 </div>
-                                <div className="p-6 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/10">
-                                    <span className="block text-4xl font-black mb-2">Zero</span>
-                                    <span className="text-sm font-bold uppercase tracking-widest text-blue-100">Critical Escaped Defects</span>
+                                <div className="p-6 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/10">
+                                    <span className="block text-4xl font-bold mb-2">Zero</span>
+                                    <span className="text-sm font-semibold uppercase tracking-wider text-blue-100">Critical Escaped Defects</span>
                                 </div>
                             </div>
                         </motion.div>

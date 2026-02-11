@@ -1,91 +1,182 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { FaArrowRight, FaCalendarAlt, FaEnvelope } from "react-icons/fa";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+    FaArrowRight,
+    FaCalendarAlt,
+    FaPhone,
+    FaEnvelope,
+} from "react-icons/fa";
 
 const FunctionalNextStepsSection: React.FC = () => {
     return (
-        <section className="py-24 bg-white overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none opacity-60" />
+        <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-brand-blue to-blue-600">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center text-white mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                        Ready to{" "}
+                        <span className="text-yellow-300">Guarantee</span> Flawless
+                        Performance?
+                    </h2>
+                    <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                        Partner with our expert functional testing team to deliver software that
+                        exceeds user expectations. Get comprehensive testing coverage,
+                        detailed insights, and reliable quality assurance for your
+                        applications.
+                    </p>
+                </div>
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="bg-slate-900 rounded-[3.5rem] p-8 md:p-16 lg:p-24 shadow-2xl overflow-hidden relative">
-                    {/* Interior Glows */}
-                    <div className="absolute top-0 left-0 w-64 h-64 bg-brand-blue/20 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Content */}
+                    <div className="text-white">
+                        <h3 className="text-2xl font-bold mb-6">
+                            What You Get with Our Functional Testing Services
+                        </h3>
 
-                    <div className="flex flex-col lg:flex-row items-center gap-16 relative z-10">
-                        <div className="flex-[1.2] text-center lg:text-left">
-                            <motion.span
-                                className="inline-block px-4 py-1.5 rounded-full bg-brand-blue/10 text-brand-blue text-[10px] font-black uppercase tracking-widest mb-6"
-                                initial={{ opacity: 0, y: 10 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                Take the Next Step
-                            </motion.span>
-                            <motion.h2
-                                className="text-4xl lg:text-6xl font-black text-white mb-8 leading-[1.1] tracking-tighter"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                Ready to <span className="text-brand-blue">Guarantee</span> Flawless Performance?
-                            </motion.h2>
-                            <motion.p
-                                className="text-gray-400 text-lg mb-10 font-medium leading-relaxed max-w-2xl"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                            >
-                                Partner with Testriq today for comprehensive QA, automation, and validation. Let's ensure your software performs exactly as intended, every single time.
-                            </motion.p>
-
-                            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
-                                <Link
-                                    href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1W3Eeyft1hJ_qD6g0x_G9lz_V9RUSlSxsz1G5jorkyssa8WxyvrQap44rv8CFFbGVpzUDHCjCl"
-                                    target="_blank"
-                                    className="bg-brand-blue text-white px-10 py-5 rounded-[2rem] font-black flex items-center hover:bg-blue-600 transition-all shadow-xl shadow-brand-blue/20 group w-full sm:w-auto justify-center"
-                                >
-                                    <FaCalendarAlt className="mr-3" /> Schedule a Call <FaArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                                <Link
-                                    href="/contact-us"
-                                    className="bg-white/5 text-white px-10 py-5 rounded-[2rem] font-black flex items-center hover:bg-white/10 transition-all border border-white/10 w-full sm:w-auto justify-center"
-                                >
-                                    <FaEnvelope className="mr-3" /> Get a Quote
-                                </Link>
-                            </div>
+                        <div className="space-y-4 mb-8">
+                            {[
+                                { title: "Comprehensive Test Coverage", desc: "Functional, integration, system, and acceptance testing" },
+                                { title: "Expert Quality Assurance", desc: "ISTQB certified testers with domain expertise" },
+                                { title: "Detailed Reporting", desc: "Comprehensive test reports with actionable insights" },
+                                { title: "Flexible Engagement", desc: "Dedicated teams, project-based, or on-demand testing" },
+                                { title: "24/7 Support", desc: "Round-the-clock support for critical testing needs" },
+                            ].map((item, idx) => (
+                                <div key={idx} className="flex items-start space-x-4">
+                                    <div className="bg-yellow-400 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                        <span className="text-blue-900 text-sm font-bold">✓</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold mb-1">{item.title}</h4>
+                                        <p className="text-blue-100 text-sm">{item.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
-                        <div className="flex-1 w-full lg:w-auto">
-                            <motion.div
-                                className="bg-white/10 backdrop-blur-md rounded-[3rem] p-10 border border-white/10"
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                            >
-                                <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-widest text-center">Service Roadmap</h3>
-                                <div className="space-y-6">
-                                    {[
-                                        { step: "01", title: "Discovery", text: "Requirement analysis & goal setting." },
-                                        { step: "02", title: "Strategy", text: "Custom test plan development." },
-                                        { step: "03", title: "Execution", text: "Rigorous testing & bug fixing." },
-                                        { step: "04", title: "Deployment", text: "Final validation & sign-off." }
-                                    ].map((s, i) => (
-                                        <div key={i} className="flex gap-5">
-                                            <span className="text-brand-blue font-black text-lg">{s.step}</span>
-                                            <div>
-                                                <h4 className="text-white font-black text-sm uppercase tracking-tighter">{s.title}</h4>
-                                                <p className="text-gray-400 text-xs font-medium">{s.text}</p>
-                                            </div>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <h4 className="text-lg font-semibold mb-4">
+                                Service Roadmap
+                            </h4>
+                            <div className="space-y-3">
+                                {[
+                                    { step: "01", title: "Discovery", text: "Requirement analysis & goal setting." },
+                                    { step: "02", title: "Strategy", text: "Custom test plan development." },
+                                    { step: "03", title: "Execution", text: "Rigorous testing & bug fixing." },
+                                    { step: "04", title: "Deployment", text: "Final validation & sign-off." }
+                                ].map((s, i) => (
+                                    <div key={i} className="flex gap-4">
+                                        <span className="text-yellow-300 font-bold text-lg">{s.step}</span>
+                                        <div>
+                                            <h4 className="font-semibold text-sm">{s.title}</h4>
+                                            <p className="text-blue-100 text-xs">{s.text}</p>
                                         </div>
-                                    ))}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Content - CTA */}
+                    <div className="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                            Start Your Functional Testing Journey
+                        </h3>
+
+                        <div className="space-y-6">
+                            {/* Primary CTA */}
+                            <Link href="/contact-us">
+                                <button className="w-full cursor-pointer bg-gradient-to-br from-brand-blue to-blue-600 text-white py-4 px-6 rounded-xl font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group">
+                                    <span>Get Free Consultation</span>
+                                    <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                                </button>
+                            </Link>
+
+                            <div className="text-center pt-4 text-gray-500">
+                                <span>or</span>
+                            </div>
+
+                            {/* Contact Options */}
+                            <div className="grid grid-cols-1 gap-4">
+                                <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
+                                    <button className="flex w-full items-center cursor-pointer justify-center space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 group">
+                                        <FaCalendarAlt className="text-blue-600 group-hover:scale-110 transition-transform" />
+                                        <span className="font-medium text-gray-700">
+                                            Schedule a Call
+                                        </span>
+                                    </button>
+                                </Link>
+
+                                <button
+                                    onClick={() => (window.location.href = "tel:+919152929343")}
+                                    className="flex w-full items-center justify-center cursor-pointer space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-300 group"
+                                >
+                                    <FaPhone className="text-green-600 group-hover:scale-110 transition-transform" />
+                                    <span className="font-medium text-gray-700">
+                                        Call Now: (+91) 915-2929-343
+                                    </span>
+                                </button>
+
+                                <button
+                                    onClick={() =>
+                                        (window.location.href = "mailto:contact@testriq.com")
+                                    }
+                                    className="flex w-full items-center justify-center cursor-pointer space-x-3 py-3 px-4 border-2 border-gray-200 rounded-xl hover:border-purple-300 hover:bg-purple-50 transition-all duration-300 group"
+                                >
+                                    <FaEnvelope className="text-purple-600 group-hover:scale-110 transition-transform" />
+                                    <span className="font-medium text-gray-700">
+                                        Email: contact@testriq.com
+                                    </span>
+                                </button>
+                            </div>
+
+                            {/* Trust Indicators */}
+                            <div className="pt-6 border-t border-gray-200">
+                                <div className="text-center text-sm text-gray-600 mb-4">
+                                    Trusted by 50+ companies worldwide
                                 </div>
-                            </motion.div>
+                                <div className="grid grid-cols-3 gap-4 text-center">
+                                    <div>
+                                        <div className="text-lg font-bold text-blue-600">30+</div>
+                                        <div className="text-xs text-gray-500">Years Experience</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-lg font-bold text-green-600">800+</div>
+                                        <div className="text-xs text-gray-500">Apps Tested</div>
+                                    </div>
+                                    <div>
+                                        <div className="text-lg font-bold text-purple-600">100%</div>
+                                        <div className="text-xs text-gray-500">Client Satisfaction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Section */}
+                <div className="mt-16 text-center">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <h3 className="text-xl font-bold text-white mb-4">
+                            Ready to Transform Your Software Quality?
+                        </h3>
+                        <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+                            Join leading companies who trust Testriq for comprehensive functional
+                            testing services. Let&apos;s discuss how we can help ensure your
+                            software delivers exceptional user experiences.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link href="/contact-us">
+                                <button className="bg-yellow-400 cursor-pointer text-blue-900 px-8 py-3 rounded-xl font-semibold hover:bg-yellow-300 transition-all duration-300">
+                                    Start Free Consultation
+                                </button>
+                            </Link>
+                            <Link href="/case-studies">
+                                <button className="border-2 cursor-pointer border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-brand-blue transition-all duration-300">
+                                    View Case Studies
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

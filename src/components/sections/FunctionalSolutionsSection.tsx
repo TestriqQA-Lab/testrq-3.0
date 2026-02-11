@@ -27,14 +27,14 @@ const FunctionalSolutionsSection: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 bg-slate-900 border-y border-white/5 relative overflow-hidden">
+        <section className="py-16 px-8 md:px-12 lg:px-24 bg-slate-900 border-y border-white/5 relative overflow-hidden">
             {/* Background Decorative Rings */}
             <div className="absolute top-0 left-0 w-[1000px] h-[1000px] bg-brand-blue/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-16">
                     <motion.h2
-                        className="text-4xl lg:text-6xl font-black text-white mb-6 tracking-tighter"
+                        className="text-3xl md:text-4xl font-bold text-white mb-6"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -42,7 +42,7 @@ const FunctionalSolutionsSection: React.FC = () => {
                         Comprehensive <span className="text-brand-blue">Functional</span> Solutions
                     </motion.h2>
                     <motion.p
-                        className="text-gray-400 text-lg max-w-2xl mx-auto font-medium"
+                        className="text-gray-400 text-lg max-w-2xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -56,19 +56,19 @@ const FunctionalSolutionsSection: React.FC = () => {
                     {services.map((service, idx) => (
                         <motion.div
                             key={idx}
-                            className="group p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-500"
+                            className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-brand-blue/30 transition-all duration-300"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: (idx % 3) * 0.1 }}
                         >
-                            <div className="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-500 shadow-xl shadow-brand-blue/0 group-hover:shadow-brand-blue/20">
+                            <div className="w-14 h-14 bg-brand-blue/10 text-brand-blue rounded-2xl flex items-center justify-center mb-6 text-2xl group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-xl shadow-brand-blue/0 group-hover:shadow-brand-blue/20">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-black text-white mb-3 uppercase tracking-tighter">
+                            <h3 className="text-xl font-semibold text-white mb-3">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-400 text-sm font-medium leading-relaxed">
+                            <p className="text-gray-400 text-base leading-relaxed">
                                 {service.desc}
                             </p>
                         </motion.div>

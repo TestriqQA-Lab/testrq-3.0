@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp, FaQuestionCircle } from "react-icons/fa";
+import { FaChevronDown, FaQuestionCircle } from "react-icons/fa";
 
 const FunctionalFAQs: React.FC = () => {
     const faqs = [
@@ -31,58 +32,77 @@ const FunctionalFAQs: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 bg-gray-50 border-t border-gray-100">
-            <div className="container mx-auto px-6">
-                <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-16">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-brand-blue text-[10px] font-black uppercase tracking-widest mb-4">
-                            Quick Guide
-                        </span>
-                        <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter">
-                            Functional Testing <span className="text-brand-blue">FAQs</span>
-                        </h2>
+        <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
+            <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-16">
+                    <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
+                        <span className="text-sm">● Frequently Asked Questions</span>
                     </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Frequently Asked <span className="text-brand-blue">Questions</span>
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Get answers to common questions about our functional testing services,
+                        processes, and how we can help ensure your software delivers
+                        exceptional quality and user experiences.
+                    </p>
+                </div>
 
-                    <div className="space-y-4">
-                        {faqs.map((faq, idx) => (
-                            <div
-                                key={idx}
-                                className={`rounded-[2rem] overflow-hidden transition-all duration-300 border ${activeIndex === idx ? "bg-white border-blue-100 shadow-xl shadow-blue-900/5" : "bg-white border-gray-100 shadow-sm hover:border-blue-100"}`}
+                <div className="space-y-4">
+                    {faqs.map((faq, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                        >
+                            <button
+                                onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
+                                aria-label="faq_question"
+                                className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors duration-300"
                             >
-                                <button
-                                    className="w-full text-left px-8 py-7 flex items-center justify-between group"
-                                    onClick={() => setActiveIndex(activeIndex === idx ? null : idx)}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        <FaQuestionCircle className={`flex-shrink-0 text-xl transition-colors duration-300 ${activeIndex === idx ? "text-brand-blue" : "text-gray-300 group-hover:text-brand-blue"}`} />
-                                        <span className={`text-lg font-black tracking-tight leading-snug ${activeIndex === idx ? "text-gray-900" : "text-gray-700"}`}>
-                                            {faq.question}
-                                        </span>
-                                    </div>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${activeIndex === idx ? "bg-brand-blue text-white rotate-180" : "bg-gray-100 text-gray-500"}`}>
-                                        <FaChevronDown className="text-xs" />
-                                    </div>
-                                </button>
+                                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                                    {faq.question}
+                                </h3>
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${activeIndex === idx ? "bg-brand-blue text-white rotate-180" : "bg-gray-200 text-gray-500"}`}>
+                                    <FaChevronDown className="text-xs" />
+                                </div>
+                            </button>
 
-                                <AnimatePresence>
-                                    {activeIndex === idx && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                        >
-                                            <div className="px-8 pb-8 ml-10">
-                                                <div className="w-full h-px bg-gray-50 mb-6" />
-                                                <p className="text-gray-600 font-medium leading-relaxed">
-                                                    {faq.answer}
-                                                </p>
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        ))}
+                            <AnimatePresence>
+                                {activeIndex === idx && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <div className="px-8 pb-6">
+                                            <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Contact CTA */}
+                <div className="text-center mt-16">
+                    <div className="bg-gradient-to-r from-blue-50 to-green-50 p-8 rounded-2xl">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                            Still Have Questions?
+                        </h3>
+                        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                            Our functional testing experts are here to help. Get personalized
+                            answers to your specific questions and learn how our services can
+                            benefit your project.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link href="/contact-us">
+                                <button className="border-2 cursor-pointer border-brand-blue text-brand-blue px-8 py-3 rounded-xl font-semibold hover:bg-brand-blue hover:text-white transition-all duration-300">
+                                    Schedule Consultation
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

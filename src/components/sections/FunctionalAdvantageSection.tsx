@@ -39,11 +39,11 @@ const FunctionalAdvantageSection: React.FC = () => {
     ];
 
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-20">
+        <section className="py-16 px-8 md:px-12 lg:px-24 bg-white relative overflow-hidden">
+            <div className="max-w-7xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-16">
                     <motion.h2
-                        className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight"
+                        className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -51,7 +51,7 @@ const FunctionalAdvantageSection: React.FC = () => {
                         The Testriq Advantage: <span className="text-brand-blue">Unparalleled</span> Expertise
                     </motion.h2>
                     <motion.p
-                        className="text-lg text-gray-600 font-medium"
+                        className="text-lg text-gray-600"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -65,19 +65,19 @@ const FunctionalAdvantageSection: React.FC = () => {
                     {advantages.map((adv, idx) => (
                         <motion.div
                             key={idx}
-                            className="p-10 rounded-[2.5rem] bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 group"
+                            className="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg transition-all duration-300 group"
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
                         >
-                            <div className="w-16 h-16 bg-white text-brand-blue rounded-2xl flex items-center justify-center mb-8 text-3xl shadow-sm border border-gray-100 group-hover:bg-brand-blue group-hover:text-white transition-all duration-500">
+                            <div className="w-16 h-16 bg-white text-brand-blue rounded-2xl flex items-center justify-center mb-8 text-3xl shadow-sm border border-gray-100 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                                 {adv.icon}
                             </div>
-                            <h3 className="text-xl font-black text-gray-900 mb-4 uppercase tracking-tighter leading-tight">
+                            <h3 className="text-xl font-semibold text-gray-900 mb-4 leading-tight">
                                 {adv.title}
                             </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed font-medium">
+                            <p className="text-gray-600 text-base leading-relaxed">
                                 {adv.desc}
                             </p>
                         </motion.div>
