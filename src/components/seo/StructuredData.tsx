@@ -4429,3 +4429,85 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Shift-Left Testing
+export const shiftLeftServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Shift-Left Testing Services",
+      "alternateName": "Early QA & Defect Prevention",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "telephone": "+91-915-2929-343",
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/shift-left-testing",
+      "description": "Accelerate releases and cut costs with Testriq's expert Shift-Left Testing Services. Early defect detection, DevOps integration, and continuous quality for Agile teams.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Shift-Left QA Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agile & Scrum QA Integration",
+              "description": "Embedding QA specialists directly into sprints for immediate feedback."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DevOps Pipeline Testing",
+              "description": "Integrating automated testing into CI/CD pipelines for rapid deployments."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Test-Driven Development (TDD) Coaching",
+              "description": "Empowering developers with unit testing and TDD skills."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shift-Left Security & Performance",
+              "description": "Early vulnerability assessments and scalability validation."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is shift-left testing and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shift-left testing is the practice of moving testing activities earlier in the software development lifecycle, ideally starting from the requirements and design phases. It is important because it helps catch defects when they are easiest and cheapest to fix, significantly reducing the overall cost of quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to implement shift-left testing in an Agile environment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Implementation involves involving QA in sprint planning, encouraging developer unit testing, automating CI/CD pipelines, and fostering a culture of shared quality responsibility."
+          }
+        }
+      ]
+    }
+  ]
+};
