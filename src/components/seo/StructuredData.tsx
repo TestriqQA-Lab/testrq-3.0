@@ -4429,3 +4429,142 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+
+// Service Schema for Ad-Hoc Testing Services
+export const adHocTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Ad-Hoc Testing Services | On-Demand QA Testing & Error Guessing",
+      "alternateName": "On-Demand QA Services",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/ad-hoc-testing",
+      "description": "Testriq's ad-hoc testing services provide rapid, on-demand QA for hotfixes, mobile apps, and urgent scenarios. Error guessing, monkey testing, and exploratory testing for fast feedback.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ad-Hoc Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Production Hotfix Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Rapid Release Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Agile Sprint Feedback QA"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monkey Testing & Stability Stress"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Error Guessing & Intuitive Probes"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Sanity & Smoke Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Buddy & Pair Testing Sessions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ad-Hoc Security Sanity Checks"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ad-hoc testing and when should it be used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ad-hoc testing is an informal, unstructured testing method where testers use domain knowledge, intuition, and error-guessing techniques to find bugs without predefined test cases. It should be used for hotfixes, mobile app rapid releases, agile sprint feedback, or startups needing cost-effective testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the main types of ad-hoc testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primary types include Buddy Testing, Pair Testing, Monkey Testing, Error Guessing, Sanity Testing, and Smoke Testing. Each serves different purposes from developer-tester collaboration to random stability stress testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ad-hoc testing differ from exploratory testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ad-hoc testing is completely unstructured and random with no documentation. Exploratory testing is semi-structured, guided by test charters, and involves systematic exploration with documented findings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the advantages and disadvantages of ad-hoc testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Advantages include speed, cost-effectiveness, and intuitive bug detection. Disadvantages include lack of documentation, reproducibility issues, and dependency on high-level tester expertise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best practices for effective ad-hoc testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Best practices include using experienced testers, focusing on high-risk areas, documenting bugs immediately, combining with formal testing, and conducting post-session analysis."
+          }
+        }
+      ]
+    }
+  ]
+};
