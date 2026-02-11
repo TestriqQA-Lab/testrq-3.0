@@ -4429,3 +4429,85 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Microservices Testing
+export const microservicesServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Microservices Testing Services",
+      "alternateName": "Distributed Systems Testing",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "telephone": "+91-915-2929-343",
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/microservices-testing",
+      "description": "Comprehensive microservices testing services including API testing, contract testing, chaos engineering, and cloud-native validation for distributed systems and Kubernetes environments.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Microservices QA Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consumer-Driven Contract Testing",
+              "description": "Validating service agreements using Pact and Spring Cloud Contract."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Chaos Engineering & Resilience",
+              "description": "Validating system behavior under failure conditions and network latency."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Kubernetes-Native Validation",
+              "description": "Testing microservices within container orchestration platforms and service meshes."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Observability-Driven Testing",
+              "description": "Using distributed tracing and monitoring to validate system flows."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is microservices testing and why is it complex?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Microservices testing is the comprehensive validation of independently deployable services in a distributed system architecture. It is complex due to network dependencies, service-to-service communication, data consistency challenges, and independent deployment cycles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does contract testing work in a microservices architecture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contract testing ensures that service consumers and providers agree on API contracts. It involves defining consumer expectations and validating provider implementations independently, allowing for faster and safer deployments."
+          }
+        }
+      ]
+    }
+  ]
+};
