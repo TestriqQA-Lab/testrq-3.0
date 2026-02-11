@@ -4429,3 +4429,85 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Functional Testing
+export const functionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Functional Testing Services",
+      "alternateName": "Software QA & Automation",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "telephone": "+91-915-2929-343",
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/functional-testing-services",
+      "description": "Ensure flawless software performance with Testriq’s expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Functional QA Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Functional Testing",
+              "description": "Ensuring robust performance and flawless user experience across all web platforms."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Functional Testing",
+              "description": "Validating functionality, usability, and performance on diverse mobile devices."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "API Testing Services",
+              "description": "Verifying the functionality, reliability, and security of application programming interfaces."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automated Functional Testing",
+              "description": "Accelerating development cycles with high-standard automated validation."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are functional testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is functional testing important for software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It identifies defects early, validates fulfillment of user requirements, and ensures changes do not break existing functionality, reducing costly fixes in production."
+          }
+        }
+      ]
+    }
+  ]
+};
