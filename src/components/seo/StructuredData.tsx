@@ -4429,3 +4429,117 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Blockchain App Testing
+export const blockchainServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Blockchain App Testing Services",
+  "description": "Expert blockchain application testing services including smart contract audits, dApp security testing, performance validation, and cross-chain interoperability audits.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Blockchain Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Blockchain QA Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Smart Contract Audit Services",
+          "description": "Multi-layered security audit involving manual code review and automated formal verification of smart contracts."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Decentralized Application (dApp) QA",
+          "description": "End-to-end testing of dApps, focusing on wallet connectivity, UI/UX, and smart contract integration."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Blockchain Performance & Load Testing",
+          "description": "Simulating high transaction volumes to validate network throughput and consensus latency."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Crypto Wallet & Exchange Security",
+          "description": "Validating private key encryption, multi-sig logic, and API security for crypto assets."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Interoperability & Cross-Chain Testing",
+          "description": "Security audits for cross-chain bridges and atomic swap protocols."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Blockchain App Testing
+export const blockchainFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the key stages of blockchain application testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The key stages include functional testing, security testing (smart contract audits), performance testing (throughput and latency), and integration testing (wallet and API connectivity)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is a smart contract audit necessary before deployment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deployment to a blockchain is immutable. Any bugs or vulnerabilities cannot be easily fixed and can be exploited by malicious actors, leading to total loss of funds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure security in decentralized applications (dApps)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security is ensured through rigorous smart contract audits, secure wallet integration, front-end penetration testing, and continuous monitoring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between blockchain testing and traditional software testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blockchain testing must account for decentralized consensus, cryptographic security, gas costs, and the immutability of data, requiring specialized knowledge."
+      }
+    }
+  ]
+};
+
+
+
+
