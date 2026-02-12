@@ -39,7 +39,7 @@ const EmbeddedTestingHeroSection: React.FC = () => {
                         </h1>
 
                         <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-                            From automotive and medical devices to IoT and aerospace, Testriq ensures your embedded systems function flawlessly. With over 30 years of experience, we provide comprehensive verification and validation (V&V) services that guarantee safety, security, and peak performance in mission-critical environments.
+                            From automotive and medical devices to IoT and aerospace, Testriq ensures your embedded systems function flawlessly. With over 15 years of experience, we provide comprehensive verification and validation (V&V) services that guarantee safety, security, and peak performance in mission-critical environments.
                         </p>
 
                         <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
