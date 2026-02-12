@@ -40,7 +40,7 @@ const MigrationCriticalitySection: React.FC = () => {
 
                         <div className="pt-4 flex items-center gap-6">
                             <div className="text-center">
-                                <div className="text-3xl font-bold text-brand-blue leading-none">30+</div>
+                                <div className="text-3xl font-bold text-brand-blue leading-none">15+</div>
                                 <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">Years Experience</div>
                             </div>
                             <div className="w-px h-10 bg-gray-200"></div>

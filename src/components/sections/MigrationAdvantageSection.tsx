@@ -31,7 +31,7 @@ const MigrationAdvantageSection: React.FC = () => {
                         <div className="w-full aspect-[4/3] bg-blue-50 rounded-[3rem] relative overflow-hidden flex flex-col justify-center p-12">
                             <div className="space-y-8 relative z-10">
                                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-                                    <div className="text-brand-blue font-bold text-3xl mb-1">30+ Years</div>
+                                    <div className="text-brand-blue font-bold text-3xl mb-1">15+ Years</div>
                                     <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">At the Forefront of QA</div>
                                 </div>
                                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 ml-12">

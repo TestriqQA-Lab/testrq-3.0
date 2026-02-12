@@ -54,7 +54,7 @@ const MigrationHeroSection: React.FC = () => {
                                 </div>
                                 <div>
                                     <div className="text-sm font-bold text-gray-900 leading-none">Global Delivery</div>
-                                    <div className="text-xs text-gray-500 font-medium">Over 30 Years Experience</div>
+                                    <div className="text-xs text-gray-500 font-medium">Over 15+ Years Experience</div>
                                 </div>
                             </div>
                         </div>
