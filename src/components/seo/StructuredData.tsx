@@ -4594,3 +4594,103 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+export const architectureServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Application Architecture Inspection Services",
+  "description": "Optimize your system design with Testriq's Application Architecture Inspection services. We offer microservices reviews, technical debt assessments, and cloud-native audits to ensure high-performance software delivery.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Technical Consulting",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Architecture Inspection Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Microservices & Distributed Systems Review",
+          "description": "Evaluating service boundaries, communication patterns, and data consistency models."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud-Native & Serverless Validation",
+          "description": "Inspecting IaC, container orchestration, and serverless configurations."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technical Debt & Codebase Health Audit",
+          "description": "Identifying architectural rot and providing modernization strategies."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scalability & Performance Inspection",
+          "description": "Identifying bottlenecks in data layer, caching, and load balancing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Legacy Modernization & Migration Audit",
+          "description": "Risk-assessed roadmap for breaking down monolithic systems."
+        }
+      }
+    ]
+  }
+};
+
+export const architectureFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an application architecture inspection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An application architecture inspection is a formal, technical review of a software system's design and structure. It aims to identify potential risks, scalability bottlenecks, security flaws, and technical debt, ensuring the system is aligned with business goals and industry best practices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is a software architecture audit important for enterprises?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For enterprises, an architecture audit is critical to prevent 'architectural rot,' reduce long-term maintenance costs, and ensure that the system can scale to meet growing business demands. It provides an objective assessment of the system's health and its readiness for future innovations like AI integration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to identify technical debt in legacy applications?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technical debt is identified by analyzing code complexity, frequency of bugs in specific modules, difficulty in implementing new features, and deviations from modern architectural patterns. Tools like static code analyzers and architectural dependency mapping are often used during this process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the benefits of a cloud-native architecture review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cloud-native review ensures that your application fully leverages the benefits of the cloud, such as dynamic scaling, self-healing, and cost-optimization. It validates that your architecture is resilient to infrastructure failures and can be deployed rapidly through automated pipelines."
+      }
+    }
+  ]
+};
+
