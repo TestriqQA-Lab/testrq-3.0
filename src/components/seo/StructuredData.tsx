@@ -4429,3 +4429,82 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+
+// Service Schema for Continuous Testing Services
+export const continuousTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Continuous Testing Services & CI/CD Integration",
+  "description": "World-class Continuous Testing Services designed to integrate seamlessly into your DevOps ecosystem. We help organizations shift quality left, ensuring every code commit leads to a more reliable, high-performing product.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Continuous Testing & CI/CD Quality Engineering",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Continuous Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "CI/CD Pipeline Integration",
+          "description": "Seamlessly embedding automated tests into Jenkins, GitLab, Azure DevOps, or AWS pipelines for zero-touch testing execution."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Shift-Left & Shift-Right Testing",
+          "description": "Moving testing earlier in development and monitoring performance in production for early defect detection."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Automated Regression Testing",
+          "description": "Ensuring new code changes don't break existing functionality across web and mobile apps."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Performance Testing",
+          "description": "Validating system scalability and performance with every build for proactive risk management."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Security Testing",
+          "description": "Automated vulnerability scanning and security posture validation within the CI/CD pipeline."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Test Data Management",
+          "description": "Providing high-quality, compliant data for realistic testing environments ensuring environmental parity."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
