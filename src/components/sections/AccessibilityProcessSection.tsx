@@ -47,7 +47,7 @@ const AccessibilityProcessSection: React.FC = () => {
                             With over three decades at the forefront of independent QA and testing, Testriq brings unparalleled Experience, Expertise, Authoritativeness, and Trustworthiness to the field of digital accessibility.
                         </p>
                         <div className="inline-block px-8 py-4 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
-                            <span className="font-bold text-2xl block text-white">30+ Years</span>
+                            <span className="font-bold text-2xl block text-white">15+ Years</span>
                             <span className="text-blue-200 text-sm italic">Woven into every service we provide</span>
                         </div>
                     </div>
