@@ -47,7 +47,7 @@ const ShiftLeftImperativeSection: React.FC = () => {
                                 ))}
                             </div>
                             <div className="text-sm">
-                                <div className="font-bold text-gray-900">30+ Years of Experience</div>
+                                <div className="font-bold text-gray-900">15+ Years of Experience</div>
                                 <div className="text-gray-500">Global Independent QA House</div>
                             </div>
                         </div>

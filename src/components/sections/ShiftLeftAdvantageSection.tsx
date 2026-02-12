@@ -36,7 +36,7 @@ const ShiftLeftAdvantageSection: React.FC = () => {
                         <div className="w-full aspect-square bg-blue-50 rounded-[3rem] relative overflow-hidden flex items-center justify-center">
                             <div className="grid grid-cols-2 gap-4 p-8 relative z-10 w-full">
                                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-                                    <span className="text-2xl font-bold text-brand-blue">30+</span>
+                                    <span className="text-2xl font-bold text-brand-blue">15+</span>
                                     <span className="text-[10px] font-bold text-gray-500 uppercase">Years Exp.</span>
                                 </div>
                                 <div className="p-6 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center translate-y-8">
