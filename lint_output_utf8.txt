@@ -1,0 +1,27 @@
+﻿
+> testrq-3.0@0.1.0 lint
+> next lint
+
+npm : Invalid 
+project directory 
+provided, no such 
+directory: C:\Users\a
+dmin\OneDrive\Documen
+ts\GitHub\testrq-3.0\
+lint
+At line:1 char:1
++ npm run lint > 
+lint_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Invalid   
+  project...testr    
+q-3.0\lint:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 

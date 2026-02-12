@@ -1,0 +1,25 @@
+﻿
+> testrq-3.0@0.1.0 build
+> cross-env NODE_OPTIONS='--max-old-space-size=4096' next build
+
+npm : Ô¿» Unable to 
+acquire lock at C:\Users\a
+dmin\OneDrive\Documents\Gi
+tHub\testrq-3.0\.next\lock
+, is another instance of 
+next build running?
+At line:1 char:1
++ npm run build > 
+build_log_v2.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (Ô  
+  ¿» Unable to a... bui   
+ ld running?:String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+  Suggestion: If you intended to restart next build, terminate the other process, and then try again.

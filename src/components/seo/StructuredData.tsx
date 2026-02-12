@@ -4390,6 +4390,101 @@ export const sapTestingSchema = {
     }
   ]
 };
+
+// Service Schema for Cyber Security Testing Service
+export const cyberSecurityServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Cyber Security Testing Services & Penetration Testing",
+      "alternateName": "Cyber Security Testing",
+      "serviceType": "Information Security QA",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/cyber-security-testing-services",
+      "description": "Professional cyber security testing services including penetration testing, vulnerability assessments, and security audits. ISTQB & CEH certified experts protecting business from 2026 threats.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Vulnerability Assessment and Penetration Testing (VAPT)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Application Security Testing (AST)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Infrastructure Security Audit"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ethical Hacking Services"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between a vulnerability assessment and a penetration test?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A vulnerability assessment identifies and reports potential security weaknesses in a system, application, or network. A penetration test goes a step further by actively exploiting identified vulnerabilities to determine the extent of potential damage and the effectiveness of existing security controls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should a company perform a security audit for compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The frequency depends on industry regulations and data sensitivity. For highly regulated industries, annual or bi-annual audits are often mandatory. For others, at least once a year or after significant system changes is recommended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does security testing fit into the DevSecOps lifecycle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In a DevSecOps model, security testing is integrated through the entire software development lifecycle. This shift-left approach helps identify and remediate security flaws early, reducing costs and improving overall security."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 // Professional Service Schema for Homepage/Local SEO
 export const professionalServiceSchema = {
   "@context": "https://schema.org",

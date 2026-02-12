@@ -1,0 +1,106 @@
+﻿Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+- Experiments (use with caution):
+  Ô£ô inlineCss
+  Ô£ô optimizeCss
+
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 3.1min
+  Running TypeScript ...
+npx : 
+At line:1 char:1
++ npx next build 
+--debug > 
+build_log_v3.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+<--- Last few GCs 
+--->
+
+[15012:000001FA1E1000
+80]   151238 ms: 
+Mark-Compact 
+(reduce) 2045.3 
+(2083.2) -> 2045.0 
+(2081.2) MB, 2180.85 
+/ 0.01 ms  (+ 9.1 ms 
+in 4 steps since 
+start of marking, 
+biggest step 3.9 ms, 
+walltime since start 
+of marking 2216 ms) 
+(average mu = 0.257, 
+current m
+
+<--- JS stacktrace 
+--->
+
+FATAL ERROR: 
+Ineffective 
+mark-compacts near 
+heap limit 
+Allocation failed - 
+JavaScript heap out 
+of memory
+----- Native stack 
+trace -----
+
+ 1: 00007FF636A3BFDB 
+node::SetCppgcReferen
+ce+19883
+ 2: 00007FF6369AAF98 
+v8::base::CPU::num_vi
+rtual_address_bits+93
+448
+ 3: 00007FF637424851 
+v8::Isolate::ReportEx
+ternalAllocationLimit
+Reached+65
+ 4: 00007FF63740DEE8 
+v8::Function::Experim
+ental_IsNopFunction+1
+336
+ 5: 00007FF63726F8D0 
+v8::Platform::SystemC
+lockTimeMillis+659328
+ 6: 00007FF63727BB43 
+v8::Platform::SystemC
+lockTimeMillis+709107
+ 7: 00007FF6372794A4 
+v8::Platform::SystemC
+lockTimeMillis+699220
+ 8: 00007FF63726C5F0 
+v8::Platform::SystemC
+lockTimeMillis+646304
+ 9: 00007FF637281C5A 
+v8::Platform::SystemC
+lockTimeMillis+733962
+10: 00007FF6372824D7 
+v8::Platform::SystemC
+lockTimeMillis+736135
+11: 00007FF637290DCF 
+v8::Platform::SystemC
+lockTimeMillis+795775
+12: 00007FF636F514B5 
+v8::CodeEvent::GetFun
+ctionName+116773
+13: 00007FF6374CF78E 
+v8::PropertyDescripto
+r::writable+650878
+14: 00007FF63749B736 
+v8::PropertyDescripto
+r::writable+437798
+15: 000001FA3E04976F 
+Next.js build worker 
+exited with code: 
+134 and signal: null
