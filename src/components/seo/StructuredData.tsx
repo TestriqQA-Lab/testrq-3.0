@@ -4594,3 +4594,102 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+export const tdmServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Test Data Management Services",
+  "description": "Optimize your QA with Testriq's Test Data Management services. We offer secure data masking, synthetic data generation, and automated TDM solutions to ensure high-quality testing with total compliance.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "TDM Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Masking & De-identification",
+          "description": "Protecting sensitive information with advanced data masking and de-identification services."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Synthetic Test Data Generation",
+          "description": "Creating high-fidelity datasets from scratch using AI-driven methods."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Subsetting & Provisioning",
+          "description": "Extracting smaller, referentially intact slices of production data for efficient testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compliance & Privacy Audits",
+          "description": "Ensuring QA environments are audit-ready and compliant with global privacy regulations."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "TDM for Performance & Load Testing",
+          "description": "Provisioning massive datasets for resilience and scalability validation."
+        }
+      }
+    ]
+  }
+};
+
+export const tdmFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is test data management and why is it important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Test Data Management (TDM) is the process of planning, creating, securing, and delivering the data required for software testing. It is important because it ensures that testing is realistic, secure, and compliant with privacy laws, while reducing the time and cost associated with manual data preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure GDPR compliance in test data management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GDPR compliance is ensured through techniques like data masking, pseudonymization, and synthetic data generation. These methods remove personally identifiable information (PII) from test environments, ensuring that no real user data is exposed during the QA process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between data masking and synthetic data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data masking involves taking real production data and obfuscating sensitive elements to make it secure for testing. Synthetic data, on the other hand, is artificially generated from scratch using algorithms or AI to mirror the characteristics of real data without containing any actual information from real users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to automate test data provisioning in DevOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automating test data provisioning involves integrating TDM tools with CI/CD pipelines. This allows for the automatic creation, masking, and delivery of fresh test datasets whenever a new build is triggered, enabling true self-service QA and faster release cycles."
+      }
+    }
+  ]
+};
