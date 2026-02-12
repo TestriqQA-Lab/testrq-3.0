@@ -4429,3 +4429,115 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+
+// Service Schema for Compatibility Testing
+export const compatibilityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Compatibility Testing Services",
+  "alternateName": "Cross-Platform Compatibility Testing",
+  "description": "Ensure seamless user experiences across all browsers, operating systems, and devices with Testriq's expert Compatibility Testing Services. Specialized in cross-browser, cross-OS, and mobile device validation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Compatibility Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cross-Browser Testing",
+          "description": "Validation across Chrome, Firefox, Safari, Edge, and other major browsers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile Device Compatibility Testing",
+          "description": "Testing on a vast range of iOS and Android devices, screen sizes, and OS versions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "OS Compatibility Testing",
+          "description": "Ensuring stability across Windows, macOS, Linux, and mobile operating systems."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Hardware Compatibility Testing",
+          "description": "Verifying integration with diverse hardware configurations and peripherals."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Backward & Forward Compatibility",
+          "description": "Validating software performance with older systems and upcoming technologies."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Compatibility Testing
+export const compatibilityFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are compatibility testing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compatibility testing services ensure that a software application or system functions correctly across various operating systems, browsers, hardware configurations, network environments, and devices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is compatibility testing important for software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It prevents poor user experiences, reduces customer churn, and avoids revenue loss due to application malfunctions on different platforms. It ensures the software reaches a wider audience and maintains brand reputation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the types of compatibility testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key types include Browser Compatibility Testing, Operating System Compatibility Testing, Mobile Device Compatibility Testing, Hardware Compatibility Testing, Network Compatibility Testing, Backward Compatibility Testing, and Forward Compatibility Testing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to perform compatibility testing for mobile apps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It involves testing across a wide range of real mobile devices, operating systems (iOS and Android), and versions, checking functionality, UI responsiveness, performance, and user experience on different screen sizes and network conditions."
+      }
+    }
+  ]
+};
+
