@@ -124,8 +124,8 @@ body {
 }
 
 .PhoneInput:focus-within {
-  border-color: theme('colors.brand.blue'); /* Focus ring color */
-  box-shadow: 0 0 0 2px theme('colors.brand.blue'); /* Focus ring */
+  border-color: var(--color-brand-blue); /* Focus ring color */
+  box-shadow: 0 0 0 2px var(--color-brand-blue); /* Focus ring */
   outline: none;
 }
 

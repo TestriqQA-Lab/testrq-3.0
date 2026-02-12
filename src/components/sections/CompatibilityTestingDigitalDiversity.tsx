@@ -71,7 +71,7 @@ const CompatibilityTestingDigitalDiversity: React.FC = () => {
                         <div className="relative bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
                             <h3 className="text-2xl font-bold text-gray-900 mb-6">Testriq&apos;s Expertise</h3>
                             <p className="text-gray-600 mb-8 leading-relaxed">
-                                As a global independent QA and testing house with over 30 years of experience, we specialize in guaranteeing your software delivers a seamless user experience, regardless of the environment.
+                                As a global independent QA and testing house with over 15 years of experience, we specialize in guaranteeing your software delivers a seamless user experience, regardless of the environment.
                             </p>
                             <ul className="space-y-4">
                                 {[
