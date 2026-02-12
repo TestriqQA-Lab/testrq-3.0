@@ -64,6 +64,13 @@ function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' 
   }
 }
 
+// Helper to reliably escape ampersands in image URLs for XML compatibility
+function escapeImage(url: string | null | undefined): string {
+  if (!url) return '';
+  // Only replace & if it's not already escaped
+  return url.replace(/&(?!(amp;|lt;|gt;|quot;|apos;))/g, '&amp;');
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.testriq.com';
   const currentDate = new Date();
@@ -147,7 +154,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Dynamic City Pages
     const allCities = getAllCities();
     const cityPages = allCities.map((city: CityData) => ({
-      url: `${baseUrl}/${city.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(city.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('city'),
       priority: getPriority('city'),
@@ -156,37 +163,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Dynamic Case Study Pages
     const allCaseStudies = getAllCaseStudies();
     const caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
-      url: `${baseUrl}/${caseStudy.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(caseStudy.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('case-study'),
       priority: getPriority('case-study'),
-      images: caseStudy.image ? [caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`] : undefined,
+      images: caseStudy.image ? [escapeImage(caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`)] : undefined,
     }));
 
     // Sanity Pages
     const sanityPagesData = await sanityGetPages();
     const sanityPages = sanityPagesData.map((page) => ({
-      url: `${baseUrl}/${page.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(page.slug)}`,
       lastModified: new Date(page.date || currentDate),
       changeFrequency: getChangeFrequency('page'),
       priority: getPriority('page', page.slug),
-      images: page.image ? [page.image] : undefined,
+      images: page.image ? [escapeImage(page.image)] : undefined,
     }));
 
     // Sanity Blog Posts
     const sanityPostsData = await sanityGetPosts();
     const blogPosts = sanityPostsData.map((post) => ({
-      url: `${baseUrl}/blog/post/${post.slug}`,
+      url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
       lastModified: new Date(post.modifiedISO || post.dateISO),
       changeFrequency: getChangeFrequency('post', post.modifiedISO),
       priority: getPriority('post'),
-      images: post.image ? [post.image] : undefined,
+      images: post.image ? [escapeImage(post.image)] : undefined,
     }));
 
     // Sanity Categories
     const sanityCategoriesData = await sanityGetCategories();
     const categoryPages = sanityCategoriesData.map((category) => ({
-      url: `${baseUrl}/blog/category/${category.id}`,
+      url: `${baseUrl}/blog/category/${encodeURIComponent(category.id)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('category'),
       priority: getPriority('category'),
@@ -195,7 +202,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity Tags
     const sanityTagsData = await sanityGetTags();
     const tagPages = sanityTagsData.map((tag) => ({
-      url: `${baseUrl}/blog/tag/${tag.slug}`,
+      url: `${baseUrl}/blog/tag/${encodeURIComponent(tag.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('tag'),
       priority: getPriority('tag'),
