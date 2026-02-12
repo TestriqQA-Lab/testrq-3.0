@@ -4390,6 +4390,101 @@ export const sapTestingSchema = {
     }
   ]
 };
+
+// Service Schema for Usability Testing Service
+export const usabilityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Usability Testing Services & UX Audit",
+      "alternateName": "User Experience Testing",
+      "serviceType": "UX and Usability QA",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/usability-testing-services",
+      "description": "Expert usability testing services and UX audits to elevate user experience and drive conversions. AI-driven insights and real-user testing for web and mobile apps.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usability Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Usability Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Usability & Conversion Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UX Audit & Heuristic Evaluation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI-Driven UX Insights"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the benefits of professional usability testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Professional usability testing services significantly enhance user satisfaction, reduce development costs by identifying issues early, improve conversion rates, and strengthen brand loyalty. It ensures your product is intuitive, efficient, and enjoyable for its target audience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a usability audit cost for a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of a usability audit for a mobile app varies based on scope, complexity, and desired depth of analysis. Testriq offers customized quotes following an initial consultation to understand your specific needs and provide an ROI-focused solution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is usability testing important for software development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usability testing is crucial for software development as it validates design decisions, uncovers critical user pain points, and ensures the final product meets user expectations. It minimizes rework, accelerates market adoption, and ultimately drives business success."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 // Professional Service Schema for Homepage/Local SEO
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
