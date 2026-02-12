@@ -46,7 +46,7 @@ const ContinuousTestingHeroSection: React.FC = () => {
 
                         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight text-left">
                             <span className="text-brand-blue">Continuous Testing</span>{" "}
-                            Services: Accelerate Your CI/CD Pipeline with Confidence
+                            Services - Accelerate Your CI/CD Pipeline with Confidence
                         </h1>
 
                         <div className="space-y-4">
