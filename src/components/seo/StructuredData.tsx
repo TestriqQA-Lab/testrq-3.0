@@ -1399,6 +1399,116 @@ export const regressionTestingServiceSchema = {
   }
 };
 
+// Service Schema for Azure Testing Services
+export const azureTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Azure Testing Services | Azure DevOps QA & Cloud Migration Testing - Testriq",
+  "description": "Secure and optimize your cloud infrastructure with Testriq's Azure testing services. We offer expert Azure DevOps QA, performance testing, and cloud migration validation for global enterprises.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Cloud Testing & QA",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Azure Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure DevOps & CI/CD Validation",
+          "description": "Continuous testing integration in Azure DevOps pipelines for rapid, high-quality releases."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure Cloud Migration Testing",
+          "description": "Validation of data integrity, security, and performance during transition from on-prem to Azure."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure Performance & Load Testing",
+          "description": "Simulation of real-world traffic to validate dynamic scalability and latency on Azure."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure Security & Penetration Testing",
+          "description": "Assessment of Azure network configs, identity management (Azure AD), and app security."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Azure AI & Data Services Testing",
+          "description": "Specialized testing for Azure AI/ML models and Azure Synapse Analytics data pipelines."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Azure Testing
+export const azureFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the best practices for Azure application testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Best practices include adopting a shift-left approach, integrating automated tests into Azure DevOps pipelines, using infrastructure-as-code (IaC) for test environments, and continuously monitoring performance using Azure-native tools like Application Insights."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to integrate automated testing in Azure DevOps pipelines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integration involves defining test tasks within your YAML-based build and release pipelines, leveraging Azure Test Plans for management, and ensuring that test results are automatically reported back to the DevOps dashboard for visibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure security during Azure cloud migration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Security is ensured by performing pre-migration risk assessments, validating identity and access management (IAM) configurations in Azure AD, encrypting data in transit and at rest, and conducting post-migration penetration testing of the new environment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the benefits of managed Azure testing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Managed services provide access to specialized Azure expertise, reduce the overhead of managing complex test environments, ensure compliance with global standards, and allow internal teams to focus on core development while QA experts handle cloud quality."
+      }
+    }
+  ]
+};
+
 // Service Schema for performance Testing Service
 export const performanceTestingServiceSchema = {
   "@context": "https://schema.org",
