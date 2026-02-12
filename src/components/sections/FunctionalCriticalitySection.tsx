@@ -36,7 +36,7 @@ const FunctionalCriticalitySection: React.FC = () => {
                             },
                             {
                                 icon: <FaHistory className="text-4xl text-brand-blue" />,
-                                title: "30+ Years Experience",
+                                title: "15+ Years Experience",
                                 text: "Global independent QA house specialized in providing comprehensive Software Functional Testing."
                             },
                             {

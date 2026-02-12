@@ -33,7 +33,7 @@ const FunctionalAdvantageSection: React.FC = () => {
         },
         {
             icon: <FaCheckDouble />,
-            title: "30+ Years Expertise",
+            title: "15+ Years Expertise",
             desc: "Deep domain knowledge across various industries, understanding unique functional challenges."
         }
     ];

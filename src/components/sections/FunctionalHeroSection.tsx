@@ -39,7 +39,7 @@ const FunctionalHeroSection: React.FC = () => {
                         >
                             <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-base md:text-sm mb-4">
                                 <FaCheckCircle className="mr-2" />
-                                30+ Years of QA Excellence
+                                15+ Years of QA Excellence
                             </div>
 
                             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -70,7 +70,7 @@ const FunctionalHeroSection: React.FC = () => {
                             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
                                 <div className="text-center">
                                     <div className="text-2xl md:text-3xl font-bold text-blue-600">
-                                        30+
+                                        15+
                                     </div>
                                     <div className="text-sm text-gray-600">Years Experience</div>
                                 </div>
