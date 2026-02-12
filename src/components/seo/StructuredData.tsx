@@ -1399,6 +1399,116 @@ export const regressionTestingServiceSchema = {
   }
 };
 
+// Service Schema for Agile Testing Services
+export const agileTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agile Testing Services | Agile QA & Continuous Testing Company",
+  "description": "Accelerate your release cycles with Testriq's Agile testing services. We offer continuous testing, shift-left QA, and expert Agile consulting to ensure high-quality software delivery in every sprint.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Agile Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Agile Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Testing & CI/CD Integration",
+          "description": "Automated validation for every code change, providing immediate feedback in Agile environments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Test Automation Services",
+          "description": "Maintainable, scalable frameworks for regression, functional, and API testing in sprints."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Exploratory Testing",
+          "description": "Expert-led discovery of edge cases and usability issues beyond scripted tests."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "BDD & TDD Implementation",
+          "description": "Behavior-Driven and Test-Driven Development to ensure clear requirements and testable code."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Regression Testing",
+          "description": "Optimized regression suites for high-speed sprint cycles and frequent releases."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Agile Testing
+export const agileFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the core principles of Agile testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core principles of Agile testing include continuous feedback, collaboration between testers and developers, testing early and often (shift-left), and focusing on delivering value to the customer through iterative improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Agile testing differ from traditional waterfall testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike waterfall testing, which occurs at the end of the development cycle, Agile testing is integrated into every stage of the process. It is iterative, collaborative, and focuses on continuous quality rather than a single final sign-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the role of a QA tester in an Agile team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In an Agile team, a QA tester is a collaborative partner who helps define requirements, provides continuous feedback, develops automated tests, and ensures that the final product meets the user's needs and expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to integrate automated testing into Agile sprints?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integrating automation into Agile sprints requires a focus on building maintainable scripts, prioritizing high-value test cases, and ensuring that automated tests are executed as part of the continuous integration (CI) pipeline."
+      }
+    }
+  ]
+};
+
 // Service Schema for performance Testing Service
 export const performanceTestingServiceSchema = {
   "@context": "https://schema.org",
