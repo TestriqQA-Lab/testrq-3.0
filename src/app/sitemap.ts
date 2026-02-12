@@ -127,6 +127,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'security-testing',
       'shopping-apps-certification',
       'trading-apps-certification',
+      'timezone-testing-services',
     ].map(service => ({
       url: `${baseUrl}/${service}`,
       lastModified: currentDate,

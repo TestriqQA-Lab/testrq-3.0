@@ -4594,3 +4594,103 @@ export const professionalServiceSchema = {
   ],
   "priceRange": "$$"
 };
+// Service Schema for Timezone Testing
+export const timezoneTestingServiceSchema: JsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Testing in Your Time Zone Services",
+  "description": "Accelerate your development with Testriq's Testing in Your Time Zone services. We offer real-time collaboration, follow-the-sun QA, and localized support for global enterprises.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Time Zone Aligned QA",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Timezone Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Real-Time Collaborative QA",
+          "description": "Testers participate in daily stand-ups, sprint planning, and retrospectives in your time zone."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Follow-the-Sun Continuous Testing",
+          "description": "Seamless handoff between global regions for a 24/7 continuous QA cycle."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Nearshore & Onshore Hybrid Models",
+          "description": "Geographic proximity and cultural alignment for North American and European enterprises."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Localized User Acceptance Testing (UAT)",
+          "description": "Linguistic accuracy, cultural relevance, and regional compliance validation."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Time-Critical Release Support",
+          "description": "Dedicated real-time support for hitting critical launch windows."
+        }
+      }
+    ]
+  }
+};
+
+// FAQ Schema for Timezone Testing
+export const timezoneFAQSchema: JsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the benefits of testing in the same time zone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Testing in the same time zone enables real-time collaboration, faster feedback loops, and immediate defect resolution. It eliminates the communication delays typical of traditional offshore models, ensuring that QA and development remain perfectly synchronized throughout the sprint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does follow-the-sun testing improve software quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow-the-sun testing provides a 24/7 QA cycle by leveraging teams in different global regions. This allows for continuous testing, where code developed in one region is tested in another while the original team sleeps, significantly reducing the overall testing lifecycle and improving time-to-market."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is real-time collaboration important in software QA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Real-time collaboration allows testers to clarify requirements instantly, developers to fix bugs as they are found, and stakeholders to have immediate visibility into the product's quality. This synchronous approach reduces misunderstandings, minimizes rework, and fosters a stronger culture of quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between onshore, nearshore, and offshore testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Onshore testing involves teams in the same country. Nearshore testing involves teams in a neighboring country or the same time zone. Offshore testing involves teams in a distant country with a significant time zone difference. Nearshore and onshore models are preferred for projects requiring high levels of real-time collaboration."
+      }
+    }
+  ]
+};
