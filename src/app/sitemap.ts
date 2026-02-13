@@ -7,6 +7,7 @@ import {
 } from '@/lib/sanity-data-adapter';
 import { getAllCities, CityData } from '@/app/lib/CityData';
 import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
+import { redirects } from '@/lib/redirects';
 
 // Function to determine change frequency based on content type and last modified date
 function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
@@ -64,6 +65,13 @@ function getPriority(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' 
   }
 }
 
+// Helper to reliably escape ampersands in image URLs for XML compatibility
+function escapeImage(url: string | null | undefined): string {
+  if (!url) return '';
+  // Only replace & if it's not already escaped
+  return url.replace(/&(?!(amp;|lt;|gt;|quot;|apos;))/g, '&amp;');
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.testriq.com';
   const currentDate = new Date();
@@ -119,7 +127,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'regression-testing',
       'security-testing',
       'shopping-apps-certification',
-      'software-testing-guide',
       'trading-apps-certification',
     ].map(service => ({
       url: `${baseUrl}/${service}`,
@@ -147,7 +154,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Dynamic City Pages
     const allCities = getAllCities();
     const cityPages = allCities.map((city: CityData) => ({
-      url: `${baseUrl}/${city.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(city.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('city'),
       priority: getPriority('city'),
@@ -156,37 +163,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Dynamic Case Study Pages
     const allCaseStudies = getAllCaseStudies();
     const caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
-      url: `${baseUrl}/${caseStudy.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(caseStudy.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('case-study'),
       priority: getPriority('case-study'),
-      images: caseStudy.image ? [caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`] : undefined,
+      images: caseStudy.image ? [escapeImage(caseStudy.image.startsWith('http') ? caseStudy.image : `${baseUrl}${caseStudy.image}`)] : undefined,
     }));
 
     // Sanity Pages
     const sanityPagesData = await sanityGetPages();
     const sanityPages = sanityPagesData.map((page) => ({
-      url: `${baseUrl}/${page.slug}`,
+      url: `${baseUrl}/${encodeURIComponent(page.slug)}`,
       lastModified: new Date(page.date || currentDate),
       changeFrequency: getChangeFrequency('page'),
       priority: getPriority('page', page.slug),
-      images: page.image ? [page.image] : undefined,
+      images: page.image ? [escapeImage(page.image)] : undefined,
     }));
 
     // Sanity Blog Posts
     const sanityPostsData = await sanityGetPosts();
-    const blogPosts = sanityPostsData.map((post) => ({
-      url: `${baseUrl}/blog/post/${post.slug}`,
-      lastModified: new Date(post.modifiedISO || post.dateISO),
-      changeFrequency: getChangeFrequency('post', post.modifiedISO),
-      priority: getPriority('post'),
-      images: post.image ? [post.image] : undefined,
-    }));
+    const blogPosts = sanityPostsData
+      .filter((post) => {
+        // Filter out posts that have a custom canonical URL different from their own URL
+        // uniqueEntriesMap will deduplicate based on URL, but this filter prevents "Non-canonical" error
+        // for pages that point elsewhere.
+        const postUrl = `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`;
+        if (post.seo?.canonicalUrl && post.seo.canonicalUrl !== postUrl) {
+          return false;
+        }
+        return true;
+      })
+      .map((post) => ({
+        url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
+        lastModified: new Date(post.modifiedISO || post.dateISO),
+        changeFrequency: getChangeFrequency('post', post.modifiedISO),
+        priority: getPriority('post'),
+        images: post.image ? [escapeImage(post.image)] : undefined,
+      }));
 
     // Sanity Categories
     const sanityCategoriesData = await sanityGetCategories();
     const categoryPages = sanityCategoriesData.map((category) => ({
-      url: `${baseUrl}/blog/category/${category.id}`,
+      url: `${baseUrl}/blog/category/${encodeURIComponent(category.id)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('category'),
       priority: getPriority('category'),
@@ -195,7 +213,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Sanity Tags
     const sanityTagsData = await sanityGetTags();
     const tagPages = sanityTagsData.map((tag) => ({
-      url: `${baseUrl}/blog/tag/${tag.slug}`,
+      url: `${baseUrl}/blog/tag/${encodeURIComponent(tag.slug)}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('tag'),
       priority: getPriority('tag'),
@@ -244,7 +262,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return new Date(b.lastModified!).getTime() - new Date(a.lastModified!).getTime();
     });
 
-    return uniqueSitemapEntries;
+    // ---------------------------------------------------------------------------
+    // FILTERING LOGIC: Remove Redirected & Broken URLs
+    // ---------------------------------------------------------------------------
+
+    // 1. Create a Set of all redirect sources (normalized)
+    const redirectSources = new Set(redirects.map((r) => r.source));
+
+    // 2. Define Manual Blocklist for known broken URLs (relative paths)
+    const BLOCKED_PATHS = new Set([
+      '/blog/tag/Regression-Testing',        // User reported redirect
+    ]);
+
+    const finalSitemapEntries = uniqueSitemapEntries.filter((entry) => {
+      try {
+        const urlObj = new URL(entry.url);
+        const path = urlObj.pathname;
+
+        // Check if path is in redirects
+        if (redirectSources.has(path)) {
+          // console.log(`[Sitemap] Excluding Redirected URL: ${entry.url}`);
+          return false;
+        }
+
+        // Check if path is in manual blocklist
+        if (BLOCKED_PATHS.has(path)) {
+          // console.log(`[Sitemap] Excluding Blocked URL: ${entry.url}`);
+          return false;
+        }
+
+        // Specific check for encoded slugs if needed, but pathname is usually decoded by browser/console 
+        // but here we deal with what we generated.
+        // We generated with encodeURIComponent. 
+        // URL.pathname is usually decoded. Let's match against exact generation if possible
+        // Or just check strictly against the source string from redirects which are like "/foo"
+
+        // Double check against unencoded path just in case
+        if (redirectSources.has(decodeURIComponent(path))) {
+          return false;
+        }
+
+        return true;
+      } catch (e) {
+        // If URL parsing fails, keep it or log error (unlikely here as we perform construction)
+        return true;
+      }
+    });
+
+    return finalSitemapEntries;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);

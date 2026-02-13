@@ -55,6 +55,7 @@ export interface Post {
         title: string;
         description: string;
         keywords: string;
+        canonicalUrl?: string;
     };
 }
 
@@ -81,27 +82,27 @@ export interface Tag {
     count: number;
 }
 
-// Helper to estimate read time for Portable Text or String
+// Helper to extract plain text from Portable Text or String
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function estimateReadTime(body: any): string {
-    if (!body) return '1 min read';
-
-    let text = '';
-    if (typeof body === 'string') {
-        text = body;
-    } else if (Array.isArray(body)) {
-        // Simple extraction from Portable Text
-        text = body
+function extractTextFromContent(body: any): string {
+    if (!body) return '';
+    if (typeof body === 'string') return body;
+    if (Array.isArray(body)) {
+        return body
             .map(block => {
                 if (block._type !== 'block' || !block.children) return '';
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 return block.children.map((child: any) => child.text).join(' ');
             })
             .join(' ');
-    } else {
-        text = JSON.stringify(body);
     }
+    return '';
+}
 
+// Helper to estimate read time for Portable Text or String
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function estimateReadTime(body: any): string {
+    const text = extractTextFromContent(body);
     const wordsPerMinute = 200;
     const wordCount = text.split(/\s+/).filter(Boolean).length;
     const minutes = Math.ceil(wordCount / wordsPerMinute) || 1;
@@ -177,7 +178,7 @@ export function adaptSanityPost(sanityPost: any): Post {
             shares: 0,
             tags: [],
             tagsData: [],
-            seo: { title: '', description: '', keywords: '' }
+            seo: { title: '', description: '', keywords: '', canonicalUrl: '' }
         };
     }
 
@@ -248,9 +249,20 @@ export function adaptSanityPost(sanityPost: any): Post {
         tagsData: sanityPost.tags?.filter((t: any) => t).map((t: any) => ({ name: t.title, slug: t.slug?.current })) || [],
         seo: {
             title: sanityPost.seo?.metaTitle || sanityPost.title,
-            description: sanityPost.seo?.metaDescription || sanityPost.excerpt,
+            description: (() => {
+                if (sanityPost.seo?.metaDescription) return sanityPost.seo.metaDescription;
+                if (sanityPost.excerpt) return sanityPost.excerpt;
+
+                const rawText = extractTextFromContent(sanityPost.body || sanityPost.bodyHtml);
+                // Create a 157 char summary (leaving room for '...')
+                if (!rawText) return '';
+                return rawText.length > 157
+                    ? rawText.substring(0, 157).trim() + '...'
+                    : rawText;
+            })(),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            keywords: sanityPost.tags?.map((t: any) => t.title).join(', ') || ''
+            keywords: sanityPost.tags?.map((t: any) => t.title).join(', ') || '',
+            canonicalUrl: sanityPost.seo?.canonicalUrl || null
         }
     };
 }

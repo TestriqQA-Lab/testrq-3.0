@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, Post } from "@/lib/sanity-data-adapter";
+import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 import { extractHeadings } from "@/lib/utils";
 import StructuredData from "@/components/seo/StructuredData";
 
@@ -11,6 +11,14 @@ import RelatedPosts from "@/components/sections/RelatedPosts";
 import BlogPostHeroSection from "@/components/sections/BlogPostHeroSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
 import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
+
+export const revalidate = 3600; // Revalidate every hour
+export const dynamicParams = true; // Allow rendering of new posts not generated at build time
+
+export async function generateStaticParams() {
+  const slugs = await sanityGetAllPostSlugs();
+  return slugs.map((slug: string) => ({ slug }));
+}
 
 const BlogPostContent = dynamic(
   () => import("@/components/sections/BlogPostContent"),
@@ -108,6 +116,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@testriqlab",
     },
     category: "Technology",
+    alternates: {
+      canonical: post.seo.canonicalUrl || `https://www.testriq.com/blog/post/${post.slug}`,
+      languages: {
+        'en-US': post.seo.canonicalUrl || `https://www.testriq.com/blog/post/${post.slug}`,
+      },
+    },
   };
 }
 

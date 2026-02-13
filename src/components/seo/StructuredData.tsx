@@ -160,10 +160,12 @@ export const productServiceSchema = {
     "price": "0",
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
-      "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -182,13 +184,13 @@ export const productServiceSchema = {
           "@type": "QuantitativeValue",
           "minValue": 0,
           "maxValue": 1,
-          "unitCode": "DAY"
+          "unitCode": "d"
         },
         "transitTime": {
           "@type": "QuantitativeValue",
           "minValue": 1,
           "maxValue": 5,
-          "unitCode": "DAY"
+          "unitCode": "d"
         }
       }
     }
@@ -1007,6 +1009,51 @@ export const manualTestingServiceSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-MANUAL-001",
+      "mpn": "TQ-MANUAL-SVC",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
+      },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
       "hasOfferCatalog": {
@@ -1138,12 +1185,50 @@ export const automationTestingServiceSchema = {
       },
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-AUTO-001",
+      "mpn": "TQ-AUTO-SVC",
       "offers": {
         "@type": "Offer",
-        "price": "0",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact"
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1618,6 +1703,51 @@ export const securityTestingServiceSchema = {
           "https://www.linkedin.com/company/testriq-qa-lab",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-SEC-001",
+      "mpn": "TQ-SEC-SVC",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -4012,49 +4142,106 @@ export const matrimonialAppCertificationSchema = {
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Dating App Trust Certification",
-  description:
-    "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  brand: {
+  "name": "Dating App Trust Certification",
+  "description": "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
+  "brand": {
     "@type": "Brand",
-    name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+    "name": "TESTRIQ QA Lab",
+    "url": "www.testriq.com",
+    "logo": "www.testriq.com/logo.png"
   },
-  category: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
+  "image": "https://www.testriq.com/logo.png",
+  "sku": "TQ-DATING-001",
+  "mpn": "TQ-DATING-CERT",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.testriq.com/contact",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "d"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 5,
+          "unitCode": "d"
+        }
+      }
+    }
+  },
+  "category": "Quality Assurance and Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    name: "Dating App Certification Tiers",
-    itemListElement: [
+    "name": "Dating App Certification Tiers",
+    "itemListElement": [
       {
         "@type": "Offer",
-        name: "Basic Certification",
-        description:
-          "Platform Functionality + Privacy + Content Moderation Checklist",
-        category: "New dating apps in MVP/early-launch phase",
+        "name": "Basic Certification",
+        "description": "Platform Functionality + Privacy + Content Moderation Checklist",
+        "category": "New dating apps in MVP/early-launch phase"
       },
       {
         "@type": "Offer",
-        name: "Advanced Certification",
-        description: "Basic + Identity Verification + Messaging Audit",
-        category: "Growth-stage or regionally scaling apps",
+        "name": "Advanced Certification",
+        "description": "Basic + Identity Verification + Messaging Audit",
+        "category": "Growth-stage or regionally scaling apps"
       },
       {
         "@type": "Offer",
-        name: "Enterprise Certification",
-        description:
-          "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
-        category: "Established or global dating platforms",
-      },
-    ],
+        "name": "Enterprise Certification",
+        "description": "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
+        "category": "Established or global dating platforms"
+      }
+    ]
   },
-  aggregateRating: {
+  "aggregateRating": {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
   },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "App Developer"
+      },
+      "datePublished": "2024-03-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "The certification process was thorough and helped us gain trust with our user base. Highly valuable."
+    }
+  ]
 };
 
 
