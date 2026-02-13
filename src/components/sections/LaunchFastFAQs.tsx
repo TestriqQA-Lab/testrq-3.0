@@ -11,7 +11,7 @@ const LaunchFastFAQs: React.FC = () => {
     {
       question: "How can I speed up product launch with agile QA?",
       answer:
-        (<>The best way to speed up product launch with agile QA is to integrate testing early in the SDLC. We use <Link title="CI/CD integration" href='/blog/post/ci-cd-integration-with-automated-tests' className="text-[theme(color.brand.blue)] hover:underline">CI/CD integration</Link> and automated testing training to catch bugs at the &apos;commit&apos; stage. This approach prevents expensive rework during the software release cycle.</>),
+        (<>The best way to speed up product launch with agile QA is to integrate testing early in the SDLC We use <Link title="CI/CD integration" href='/blog/post/ci-cd-integration-with-automated-tests' className="text-[theme(color.brand.blue)] hover:underline">CI/CD integration</Link> and automated testing training to catch bugs at the &apos;commit&apos; stage. This approach prevents expensive rework during the software release cycle.</>),
     },
     {
       question: "What are the benefits of on-demand QA services for startups?",
