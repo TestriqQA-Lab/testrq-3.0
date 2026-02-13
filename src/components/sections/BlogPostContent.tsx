@@ -517,7 +517,7 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
               {post.tagsData.map((tag: { name: string; slug: string }) => (
                 <a
                   key={tag.slug}
-                  href={`/blog/tag/${tag.slug}`}
+                  href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
                   className="px-4 py-2 bg-gray-50 text-gray-600 rounded-full text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors border border-gray-100"
                 >
                   #{tag.name}
