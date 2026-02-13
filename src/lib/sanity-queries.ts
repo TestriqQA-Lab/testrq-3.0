@@ -12,7 +12,8 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
   _updatedAt,
   "author": author->{name, slug, image, bio, linkedin},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
-  "tags": tags[]->{title, slug}
+  "tags": tags[]->{title, slug},
+  seo
 }`;
 
 // Query for fetching a single post by slug

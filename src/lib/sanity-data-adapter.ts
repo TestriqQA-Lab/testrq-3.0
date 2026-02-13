@@ -55,6 +55,7 @@ export interface Post {
         title: string;
         description: string;
         keywords: string;
+        canonicalUrl?: string;
     };
 }
 
@@ -177,7 +178,7 @@ export function adaptSanityPost(sanityPost: any): Post {
             shares: 0,
             tags: [],
             tagsData: [],
-            seo: { title: '', description: '', keywords: '' }
+            seo: { title: '', description: '', keywords: '', canonicalUrl: '' }
         };
     }
 
@@ -250,7 +251,8 @@ export function adaptSanityPost(sanityPost: any): Post {
             title: sanityPost.seo?.metaTitle || sanityPost.title,
             description: sanityPost.seo?.metaDescription || sanityPost.excerpt,
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            keywords: sanityPost.tags?.map((t: any) => t.title).join(', ') || ''
+            keywords: sanityPost.tags?.map((t: any) => t.title).join(', ') || '',
+            canonicalUrl: sanityPost.seo?.canonicalUrl || null
         }
     };
 }
