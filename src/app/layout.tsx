@@ -90,11 +90,11 @@ export const metadata: Metadata = {
     images: ["/OG/testriq-qa-lab-llp-twitter-img.webp"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.VERCEL_ENV === 'production',
+    follow: process.env.VERCEL_ENV === 'production',
     googleBot: {
-      index: true,
-      follow: true,
+      index: process.env.VERCEL_ENV === 'production',
+      follow: process.env.VERCEL_ENV === 'production',
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
