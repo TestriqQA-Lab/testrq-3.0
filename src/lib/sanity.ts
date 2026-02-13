@@ -10,7 +10,7 @@ export const client = createClient({
     projectId,
     dataset,
     apiVersion,
-    useCdn: false, // Set to false to ensure fresh data during migration validation, true for production usually
+    useCdn: true, // Enabled for production performance
 });
 
 const builder = imageUrlBuilder(client);

@@ -999,19 +999,17 @@ export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/manual-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/manual-testing-services/#service",
       "name": "Manual & Exploratory Testing Services",
-      "category": "Software Quality Assurance",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Software Quality Assurance",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
       "image": "https://www.testriq.com/assets/images/testriq-logo.png",
-      "sku": "TQ-MANUAL-001",
-      "mpn": "TQ-MANUAL-SVC",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -1173,12 +1171,12 @@ export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/automation-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/automation-testing-services/#service",
       "name": "Intelligent Automation Testing Services",
-      "category": "Test Automation & QA Architecture",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Test Automation & QA Architecture",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
@@ -1186,8 +1184,6 @@ export const automationTestingServiceSchema = {
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
       "image": "https://www.testriq.com/assets/images/testriq-logo.png",
-      "sku": "TQ-AUTO-001",
-      "mpn": "TQ-AUTO-SVC",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -1690,23 +1686,17 @@ export const securityTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/security-testing/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/security-testing/#service",
       "name": "VAPT & Security Testing Center of Excellence (TCoE)",
-      "category": "Cybersecurity & Penetration Testing",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Cybersecurity & Penetration Testing",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
-          "https://clutch.co/profile/testriq-qa-lab"
-        ]
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
       "image": "https://www.testriq.com/assets/images/testriq-logo.png",
-      "sku": "TQ-SEC-001",
-      "mpn": "TQ-SEC-SVC",
       "offers": {
         "@type": "Offer",
         "priceCurrency": "USD",
@@ -4141,18 +4131,17 @@ export const matrimonialAppCertificationSchema = {
 // Structured data for dating app certification service
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "Service",
   "name": "Dating App Trust Certification",
+  "serviceType": "Quality Assurance and Certification",
   "description": "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  "brand": {
-    "@type": "Brand",
+  "provider": {
+    "@type": "Organization",
     "name": "TESTRIQ QA Lab",
     "url": "www.testriq.com",
     "logo": "www.testriq.com/logo.png"
   },
   "image": "https://www.testriq.com/logo.png",
-  "sku": "TQ-DATING-001",
-  "mpn": "TQ-DATING-CERT",
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
@@ -4453,12 +4442,12 @@ export const sapTestingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/sap-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/sap-testing-services/#service",
       "name": "SAP Testing Services",
-      "category": "Enterprise Software QA",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Enterprise Software QA",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
