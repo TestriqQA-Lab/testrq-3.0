@@ -7,6 +7,7 @@ import {
 } from '@/lib/sanity-data-adapter';
 import { getAllCities, CityData } from '@/app/lib/CityData';
 import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
+import { redirects } from '@/lib/redirects';
 
 // Function to determine change frequency based on content type and last modified date
 function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
@@ -261,7 +262,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return new Date(b.lastModified!).getTime() - new Date(a.lastModified!).getTime();
     });
 
-    return uniqueSitemapEntries;
+    // ---------------------------------------------------------------------------
+    // FILTERING LOGIC: Remove Redirected & Broken URLs
+    // ---------------------------------------------------------------------------
+
+    // 1. Create a Set of all redirect sources (normalized)
+    const redirectSources = new Set(redirects.map((r) => r.source));
+
+    // 2. Define Manual Blocklist for known broken URLs (relative paths)
+    const BLOCKED_PATHS = new Set([
+      '/blog/tag/Regression-Testing',        // User reported redirect
+    ]);
+
+    const finalSitemapEntries = uniqueSitemapEntries.filter((entry) => {
+      try {
+        const urlObj = new URL(entry.url);
+        const path = urlObj.pathname;
+
+        // Check if path is in redirects
+        if (redirectSources.has(path)) {
+          // console.log(`[Sitemap] Excluding Redirected URL: ${entry.url}`);
+          return false;
+        }
+
+        // Check if path is in manual blocklist
+        if (BLOCKED_PATHS.has(path)) {
+          // console.log(`[Sitemap] Excluding Blocked URL: ${entry.url}`);
+          return false;
+        }
+
+        // Specific check for encoded slugs if needed, but pathname is usually decoded by browser/console 
+        // but here we deal with what we generated.
+        // We generated with encodeURIComponent. 
+        // URL.pathname is usually decoded. Let's match against exact generation if possible
+        // Or just check strictly against the source string from redirects which are like "/foo"
+
+        // Double check against unencoded path just in case
+        if (redirectSources.has(decodeURIComponent(path))) {
+          return false;
+        }
+
+        return true;
+      } catch (e) {
+        // If URL parsing fails, keep it or log error (unlikely here as we perform construction)
+        return true;
+      }
+    });
+
+    return finalSitemapEntries;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);

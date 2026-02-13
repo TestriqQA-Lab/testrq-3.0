@@ -160,10 +160,12 @@ export const productServiceSchema = {
     "price": "0",
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
-      "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -182,13 +184,13 @@ export const productServiceSchema = {
           "@type": "QuantitativeValue",
           "minValue": 0,
           "maxValue": 1,
-          "unitCode": "DAY"
+          "unitCode": "d"
         },
         "transitTime": {
           "@type": "QuantitativeValue",
           "minValue": 1,
           "maxValue": 5,
-          "unitCode": "DAY"
+          "unitCode": "d"
         }
       }
     }
@@ -1017,10 +1019,12 @@ export const manualTestingServiceSchema = {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
@@ -1039,13 +1043,13 @@ export const manualTestingServiceSchema = {
               "@type": "QuantitativeValue",
               "minValue": 0,
               "maxValue": 1,
-              "unitCode": "DAY"
+              "unitCode": "d"
             },
             "transitTime": {
               "@type": "QuantitativeValue",
               "minValue": 1,
               "maxValue": 5,
-              "unitCode": "DAY"
+              "unitCode": "d"
             }
           }
         }
@@ -1191,10 +1195,12 @@ export const automationTestingServiceSchema = {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
@@ -1213,13 +1219,13 @@ export const automationTestingServiceSchema = {
               "@type": "QuantitativeValue",
               "minValue": 0,
               "maxValue": 1,
-              "unitCode": "DAY"
+              "unitCode": "d"
             },
             "transitTime": {
               "@type": "QuantitativeValue",
               "minValue": 1,
               "maxValue": 5,
-              "unitCode": "DAY"
+              "unitCode": "d"
             }
           }
         }
@@ -1708,10 +1714,12 @@ export const securityTestingServiceSchema = {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "applicableCountry": "IN",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
@@ -1730,13 +1738,13 @@ export const securityTestingServiceSchema = {
               "@type": "QuantitativeValue",
               "minValue": 0,
               "maxValue": 1,
-              "unitCode": "DAY"
+              "unitCode": "d"
             },
             "transitTime": {
               "@type": "QuantitativeValue",
               "minValue": 1,
               "maxValue": 5,
-              "unitCode": "DAY"
+              "unitCode": "d"
             }
           }
         }
@@ -4134,29 +4142,30 @@ export const matrimonialAppCertificationSchema = {
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Dating App Trust Certification",
-  description:
-    "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  brand: {
+  "name": "Dating App Trust Certification",
+  "description": "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
+  "brand": {
     "@type": "Brand",
-    name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+    "name": "TESTRIQ QA Lab",
+    "url": "www.testriq.com",
+    "logo": "www.testriq.com/logo.png"
   },
-  image: "https://www.testriq.com/logo.png",
-  sku: "TQ-DATING-001",
-  mpn: "TQ-DATING-CERT",
-  offers: {
+  "image": "https://www.testriq.com/logo.png",
+  "sku": "TQ-DATING-001",
+  "mpn": "TQ-DATING-CERT",
+  "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
     "url": "https://www.testriq.com/contact",
+    "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
-      "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -4175,51 +4184,64 @@ export const datingAppCertificationSchema = {
           "@type": "QuantitativeValue",
           "minValue": 0,
           "maxValue": 1,
-          "unitCode": "DAY"
+          "unitCode": "d"
         },
         "transitTime": {
           "@type": "QuantitativeValue",
           "minValue": 1,
           "maxValue": 5,
-          "unitCode": "DAY"
+          "unitCode": "d"
         }
       }
     }
   },
-  category: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
+  "category": "Quality Assurance and Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    name: "Dating App Certification Tiers",
-    itemListElement: [
+    "name": "Dating App Certification Tiers",
+    "itemListElement": [
       {
         "@type": "Offer",
-        name: "Basic Certification",
-        description:
-          "Platform Functionality + Privacy + Content Moderation Checklist",
-        category: "New dating apps in MVP/early-launch phase",
+        "name": "Basic Certification",
+        "description": "Platform Functionality + Privacy + Content Moderation Checklist",
+        "category": "New dating apps in MVP/early-launch phase"
       },
       {
         "@type": "Offer",
-        name: "Advanced Certification",
-        description: "Basic + Identity Verification + Messaging Audit",
-        category: "Growth-stage or regionally scaling apps",
+        "name": "Advanced Certification",
+        "description": "Basic + Identity Verification + Messaging Audit",
+        "category": "Growth-stage or regionally scaling apps"
       },
       {
         "@type": "Offer",
-        name: "Enterprise Certification",
-        description:
-          "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
-        category: "Established or global dating platforms",
-      },
-    ],
+        "name": "Enterprise Certification",
+        "description": "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
+        "category": "Established or global dating platforms"
+      }
+    ]
   },
-  aggregateRating: {
+  "aggregateRating": {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
   },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "App Developer"
+      },
+      "datePublished": "2024-03-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "The certification process was thorough and helped us gain trust with our user base. Highly valuable."
+    }
+  ]
 };
 
 
@@ -4675,90 +4697,133 @@ export const continuousTestingServiceSchema = {
 };
 // Service Schema for Accessibility Testing Services
 export const accessibilityServiceSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Service",
-      "name": "Accessibility Testing Services",
-      "alternateName": "Digital Accessibility Testing",
-      "serviceType": "QA and Software Testing",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Testriq QA Lab",
-        "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/logo.png",
-        "telephone": "+91-915-2929-343"
+  // Service Schema for Functional Testing
+  export const functionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Accessibility Testing Services",
+        "alternateName": "Digital Accessibility Testing",
+        "name": "Functional Testing Services",
+        "alternateName": "Software QA & Automation",
+        "serviceType": "QA and Software Testing",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "Testriq QA Lab",
+          "url": "https://www.testriq.com",
+          "logo": "https://www.testriq.com/logo.png",
+          "telephone": "+91-915-2929-343"
+        },
+        "url": "https://www.testriq.com/accessibility-testing-services",
+        "description": "Comprehensive accessibility testing services ensuring digital inclusion. We specialize in WCAG 2.2, Section 508, and ADA compliance for web and mobile applications.",
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Accessibility Testing Solutions",
+          "telephone": "+91-915-2929-343",
+          "priceRange": "$$"
+        },
+        "url": "https://www.testriq.com/services/functional-testing-services",
+        "description": "Ensure flawless software performance with Testriq’s expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
+        "areaServed": "WorldWide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Functional QA Solutions",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Accessibility Testing",
+                "description": "Ensuring websites meet WCAG 2.2 and ADA standards."
+              "name": "Web Application Functional Testing",
+                "description": "Ensuring robust performance and flawless user experience across all web platforms."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mobile App Accessibility Testing",
+                "description": "Validating iOS and Android apps for digital inclusion."
+              "name": "Mobile App Functional Testing",
+                "description": "Validating functionality, usability, and performance on diverse mobile devices."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "WCAG Compliance Audit",
+                "description": "Comprehensive evaluation against the latest accessibility guidelines."
+              "name": "API Testing Services",
+                "description": "Verifying the functionality, reliability, and security of application programming interfaces."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Automated Functional Testing",
+                "description": "Accelerating development cycles with high-standard automated validation."
+              }
+            }
+          ]
+        }
       },
-      "url": "https://www.testriq.com/accessibility-testing-services",
-      "description": "Comprehensive accessibility testing services ensuring digital inclusion. We specialize in WCAG 2.2, Section 508, and ADA compliance for web and mobile applications.",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Accessibility Testing Solutions",
-        "itemListElement": [
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Web Accessibility Testing",
-              "description": "Ensuring websites meet WCAG 2.2 and ADA standards."
+            "@type": "Question",
+            "name": "What are accessibility testing services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Accessibility testing services ensure that digital products, such as websites, mobile apps, and software, are usable by people with disabilities. This involves evaluating compliance with accessibility standards like WCAG, ADA, and Section 508, ensuring equal access and an inclusive user experience for all individuals."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mobile App Accessibility Testing",
-              "description": "Validating iOS and Android apps for digital inclusion."
+            "@type": "Question",
+            "name": "What are functional testing services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs."
             }
           },
           {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "WCAG Compliance Audit",
-              "description": "Comprehensive evaluation against the latest accessibility guidelines."
+            "@type": "Question",
+            "name": "Why is accessibility testing important for websites?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Accessibility testing is crucial for websites to ensure legal compliance (e.g., ADA, WCAG), expand market reach to a broader audience, and enhance brand reputation. It improves the user experience for individuals with disabilities, preventing exclusion and potential legal challenges, while fostering an inclusive digital environment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between automated and manual accessibility testing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Automated accessibility testing uses software tools to quickly scan digital content for common accessibility issues, such as missing alt text or color contrast problems. It is efficient for large-scale checks but can only detect a fraction of issues. Manual accessibility testing involves human testers, often using assistive technologies like screen readers, to evaluate complex interactions and user flows, identifying nuanced issues that automated tools miss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to achieve WCAG 2.2 compliance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Achieving WCAG 2.2 compliance involves conducting thorough accessibility audits, implementing guidelines for perceivable, operable, understandable, and robust content, and regularly testing with both automated tools and manual methods, including assistive technologies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is functional testing important for software?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It identifies defects early, validates fulfillment of user requirements, and ensures changes do not break existing functionality, reducing costly fixes in production."
             }
           }
         ]
       }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are accessibility testing services?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Accessibility testing services ensure that digital products, such as websites, mobile apps, and software, are usable by people with disabilities. This involves evaluating compliance with accessibility standards like WCAG, ADA, and Section 508, ensuring equal access and an inclusive user experience for all individuals."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is accessibility testing important for websites?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Accessibility testing is crucial for websites to ensure legal compliance (e.g., ADA, WCAG), expand market reach to a broader audience, and enhance brand reputation. It improves the user experience for individuals with disabilities, preventing exclusion and potential legal challenges, while fostering an inclusive digital environment."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between automated and manual accessibility testing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Automated accessibility testing uses software tools to quickly scan digital content for common accessibility issues, such as missing alt text or color contrast problems. It is efficient for large-scale checks but can only detect a fraction of issues. Manual accessibility testing involves human testers, often using assistive technologies like screen readers, to evaluate complex interactions and user flows, identifying nuanced issues that automated tools miss."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How to achieve WCAG 2.2 compliance?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Achieving WCAG 2.2 compliance involves conducting thorough accessibility audits, implementing guidelines for perceivable, operable, understandable, and robust content, and regularly testing with both automated tools and manual methods, including assistive technologies."
-          }
-        }
-      ]
-    }
-  ]
-};
+    ]
+  };
