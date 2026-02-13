@@ -108,6 +108,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@testriqlab",
     },
     category: "Technology",
+    alternates: {
+      canonical: post.seo.canonicalUrl || `https://www.testriq.com/blog/post/${post.slug}`,
+      languages: {
+        'en-US': post.seo.canonicalUrl || `https://www.testriq.com/blog/post/${post.slug}`,
+      },
+    },
   };
 }
 

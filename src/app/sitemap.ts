@@ -126,7 +126,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'regression-testing',
       'security-testing',
       'shopping-apps-certification',
-      'software-testing-guide',
       'trading-apps-certification',
     ].map(service => ({
       url: `${baseUrl}/${service}`,
@@ -182,13 +181,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Sanity Blog Posts
     const sanityPostsData = await sanityGetPosts();
-    const blogPosts = sanityPostsData.map((post) => ({
-      url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
-      lastModified: new Date(post.modifiedISO || post.dateISO),
-      changeFrequency: getChangeFrequency('post', post.modifiedISO),
-      priority: getPriority('post'),
-      images: post.image ? [escapeImage(post.image)] : undefined,
-    }));
+    const blogPosts = sanityPostsData
+      .filter((post) => {
+        // Filter out posts that have a custom canonical URL different from their own URL
+        // uniqueEntriesMap will deduplicate based on URL, but this filter prevents "Non-canonical" error
+        // for pages that point elsewhere.
+        const postUrl = `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`;
+        if (post.seo?.canonicalUrl && post.seo.canonicalUrl !== postUrl) {
+          return false;
+        }
+        return true;
+      })
+      .map((post) => ({
+        url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
+        lastModified: new Date(post.modifiedISO || post.dateISO),
+        changeFrequency: getChangeFrequency('post', post.modifiedISO),
+        priority: getPriority('post'),
+        images: post.image ? [escapeImage(post.image)] : undefined,
+      }));
 
     // Sanity Categories
     const sanityCategoriesData = await sanityGetCategories();

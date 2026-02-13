@@ -1007,6 +1007,49 @@ export const manualTestingServiceSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-MANUAL-001",
+      "mpn": "TQ-MANUAL-SVC",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
+      },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
       "hasOfferCatalog": {
@@ -1138,12 +1181,48 @@ export const automationTestingServiceSchema = {
       },
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-AUTO-001",
+      "mpn": "TQ-AUTO-SVC",
       "offers": {
         "@type": "Offer",
-        "price": "0",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact"
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1618,6 +1697,49 @@ export const securityTestingServiceSchema = {
           "https://www.linkedin.com/company/testriq-qa-lab",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "sku": "TQ-SEC-001",
+      "mpn": "TQ-SEC-SVC",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "IN",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "DAY"
+            }
+          }
+        }
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -4020,6 +4142,49 @@ export const datingAppCertificationSchema = {
     name: "TESTRIQ QA Lab",
     url: "www.testriq.com",
     logo: "www.testriq.com/logo.png",
+  },
+  image: "https://www.testriq.com/logo.png",
+  sku: "TQ-DATING-001",
+  mpn: "TQ-DATING-CERT",
+  offers: {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.testriq.com/contact",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IN",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 5,
+          "unitCode": "DAY"
+        }
+      }
+    }
   },
   category: "Quality Assurance and Certification",
   areaServed: "Worldwide",
