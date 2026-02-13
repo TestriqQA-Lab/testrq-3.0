@@ -32,7 +32,7 @@ const AccessibilityHeroSection: React.FC = () => {
                         className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
                     >
                         Accessibility <br />
-                        <span className="text-blue-300">Testing Services.</span>
+                        <span className="text-blue-300">Testing Services</span>
                     </motion.h1>
 
                     <motion.p
