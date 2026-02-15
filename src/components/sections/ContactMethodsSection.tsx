@@ -89,7 +89,7 @@ const ContactMethodsSection: React.FC = () => {
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://www.linkedin.com/company/testriq-qa-lab",
+      url: "https://www.linkedin.com/company/testriq-qa-lab/",
       color: "bg-brand-blue hover:sky-700",
     },
     {
@@ -107,7 +107,7 @@ const ContactMethodsSection: React.FC = () => {
     {
       icon: FaInstagram,
       name: "Instagram",
-      url: "https://instagram.com/testriq",
+      url: "https://www.instagram.com/testriq",
       color: "bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-pink-600",
     },
   ];

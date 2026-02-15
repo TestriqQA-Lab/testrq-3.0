@@ -42,9 +42,9 @@ export default function BlogStructuredData({
           "height": 60
         },
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
-          "https://twitter.com/testriqlab",
-          "https://www.facebook.com/testriq.lab"
+          "https://www.linkedin.com/company/testriq-qa-lab/",
+          "https://x.com/testriq",
+          "https://www.facebook.com/testriq.lab/"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
@@ -203,9 +203,9 @@ export default function BlogStructuredData({
     "foundingDate": "2010",
     "serviceArea": "Global",
     "sameAs": [
-      "https://www.linkedin.com/company/testriq-qa-lab",
-      "https://twitter.com/testriqlab",
-      "https://www.facebook.com/testriq.lab"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq",
+      "https://www.facebook.com/testriq.lab/"
     ],
     "contactPoint": {
       "@type": "ContactPoint",

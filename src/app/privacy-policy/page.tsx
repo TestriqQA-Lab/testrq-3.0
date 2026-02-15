@@ -90,7 +90,7 @@ const PrivacyPolicy = () => {
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <Link href="https://www.facebook.com/testriq.lab" className="text-blue-600 hover:text-blue-800 underline">Follow Testriq on Facebook</Link>
+                <strong>Facebook Fan Page</strong> is a public profile named TESTRIQ QA Lab, LLP specifically created by the Company on the Facebook social network, accessible from <Link href="https://www.facebook.com/testriq.lab/" className="text-blue-600 hover:text-blue-800 underline">Follow Testriq on Facebook</Link>
               </p>
 
               <p className="text-gray-700 leading-relaxed">

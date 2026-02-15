@@ -52,8 +52,8 @@ export const organizationSchema = {
     "addressCountry": "US"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq",
-    "https://twitter.com/testriq",
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://x.com/testriq",
     "https://github.com/TestriqQA-Lab"
   ],
   "hasOfferCatalog": {
@@ -761,7 +761,7 @@ export const iotDeviceTestingSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -1587,8 +1587,8 @@ export const toolsPageSchema = {
         "addressCountry": "IN"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq.lab"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/"
       ]
     },
     {
@@ -2673,9 +2673,9 @@ export const aboutPageSchema = {
         "areaServed": "World"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq",
-        "https://twitter.com/testriq"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/",
+        "https://x.com/testriq"
         // Add other social links found in your footer
       ],
       "awards": [
@@ -2771,9 +2771,9 @@ export const ourTeamPageSchema = {
       "email": "contact@testriq.com"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://twitter.com/testriq",
-      "https://www.facebook.com/testriq"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq",
+      "https://www.facebook.com/testriq.lab/"
     ]
   },
   "hasPart": {
@@ -4452,7 +4452,7 @@ export const sapTestingSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -4600,8 +4600,8 @@ export const professionalServiceSchema = {
     "closes": "18:00"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq-qa-lab",
-    "https://www.facebook.com/testriq.lab"
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://www.facebook.com/testriq.lab/"
   ],
   "priceRange": "$$"
 };

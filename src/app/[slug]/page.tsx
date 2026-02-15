@@ -296,8 +296,8 @@ function generateCitySchema(cityData: CityData) {
     },
 
     "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://twitter.com/testriq"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq"
     ]
   };
 }
