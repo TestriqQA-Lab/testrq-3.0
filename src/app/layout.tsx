@@ -4,6 +4,7 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics"; // Import the new component
+import ApolloTracking from "@/components/ApolloTracking"; // Apollo tracking script
 import { RecaptchaProvider } from "@/lib/recaptcha/RecaptchaContext";
 
 import Navbar from "@/components/layout/Header";
@@ -128,6 +129,7 @@ export default function RootLayout({
         )}
 
         <GoogleAnalytics /> {/* Render the GoogleAnalytics component here */}
+        <ApolloTracking /> {/* Render the ApolloTracking component here */}
 
         <RecaptchaProvider>
           <Navbar />
