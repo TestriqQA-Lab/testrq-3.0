@@ -4,8 +4,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: ['/', '/_next/static/', '/_next/image'],
-      disallow: ['/private/', '/admin/', '/api/', '/_next/'],
+      allow: '/',
+      disallow: ['/private/', '/admin/', '/api/'],
     },
     sitemap: 'https://www.testriq.com/sitemap.xml',
   };

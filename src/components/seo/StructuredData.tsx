@@ -1909,6 +1909,7 @@ export const qaDocumentationServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -1980,6 +1981,7 @@ export const dataAnalysisServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2051,6 +2053,7 @@ export const completeTestingGuideSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "Free"
@@ -2131,6 +2134,7 @@ export const ecommerceTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2225,6 +2229,7 @@ export const elearningTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2304,6 +2309,7 @@ export const healthcareTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2398,6 +2404,7 @@ export const gamingTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2468,6 +2475,7 @@ export const iotTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2554,6 +2562,7 @@ export const bankingFinanceTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2632,6 +2641,7 @@ export const telecommunicationTestingSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -3465,8 +3475,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3505,8 +3517,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3545,8 +3559,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3585,8 +3601,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3625,8 +3643,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3665,8 +3685,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3705,8 +3727,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -4015,6 +4039,7 @@ export const smartDeviceTestingSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4121,6 +4146,7 @@ export const matrimonialAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4307,6 +4333,7 @@ export const fantasyAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4378,6 +4405,7 @@ export const tradingAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4462,8 +4490,42 @@ export const sapTestingSchema = {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact-us"
+        "url": "https://www.testriq.com/contact-us",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
