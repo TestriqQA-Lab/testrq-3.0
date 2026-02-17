@@ -236,21 +236,21 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
               <section
                 key={index}
                 id={headingSlug} // Set ID on the section wrapper for TOC
-                className="group relative mb-16 rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-3xl hover:shadow-slate-200/60"
+                className="group relative mb-16 p-8 rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-3xl hover:shadow-slate-200/60"
               >
                 {coverImage && (
-                  <div className="relative h-[400px] md:h-[450px] overflow-hidden">
+                  <div className="relative h-[400px] md:h-[450px] rounded-2xl overflow-hidden">
                     <Image
                       src={urlFor(coverImage).url()}
                       alt={coverImage.alt || 'Section Image'}
                       fill
-                      className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                      className="object-fit object-top transform group-hover:scale-102 transition-transform duration-1000"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
                     />
                   </div>
                 )}
 
-                <div className={`p-8 md:p-12 ${coverImage ? '-mt-20 relative z-10' : ''}`}>
+                <div>
                   <div className="prose prose-lg max-w-none prose-headings:scroll-mt-32">
                     <PortableText value={contentToRender} components={components} />
                   </div>
