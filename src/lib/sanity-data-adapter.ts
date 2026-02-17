@@ -236,7 +236,7 @@ export function adaptSanityPost(sanityPost: any): Post {
         dateISO: sanityPost.publishedAt || new Date().toISOString(),
         modifiedISO: sanityPost._updatedAt || new Date().toISOString(),
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
-        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(800).height(500).url() : 'https://placehold.co/800x500/png',
+        image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(1200).quality(90).url() : 'https://placehold.co/1200x675/png',
         mainImage: sanityPost.mainImage || null,
         featured: generateConsistentValue(sanityPost._id + 'feat', 10) < 2,
         trending: generateConsistentValue(sanityPost._id + 'trend', 10) < 3,

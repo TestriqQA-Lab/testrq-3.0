@@ -20,6 +20,18 @@ const getBlockText = (block: any) =>
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   block.children?.map((child: any) => child.text).join('') || '';
 
+// Helper to extract dimensions from Sanity asset ref
+const getImageDimensions = (ref: string) => {
+  if (!ref) return { width: 1200, height: 800, aspectRatio: 1.5 };
+  // Pattern: image-id-widthxheight-format
+  const pattern = /^image-([a-f\d]+)-(\d+){1}x(\d+){1}-(\w+)$/;
+  const match = ref.match(pattern);
+  if (!match) return { width: 1200, height: 800, aspectRatio: 1.5 };
+  const width = parseInt(match[2], 10);
+  const height = parseInt(match[3], 10);
+  return { width, height, aspectRatio: width / height };
+};
+
 // Helper to check if a block is a "Contact Us" CTA
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isContactBlock = (block: any) => {
@@ -46,13 +58,16 @@ const components = {
       if (!value?.asset?._ref) {
         return null;
       }
+      const { width, height } = getImageDimensions(value.asset._ref);
       return (
-        <div className="relative w-full aspect-video my-8 rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full my-8 rounded-xl overflow-hidden shadow-lg">
           <Image
-            src={urlFor(value).width(1200).url()}
+            src={urlFor(value).width(1200).quality(90).url()}
             alt={value.alt || "Blog image"}
-            fill
-            className="object-cover"
+            width={width}
+            height={height}
+            className="w-full h-auto object-contain"
+            sizes="(max-width: 768px) 100vw, 800px"
           />
         </div>
       );
@@ -238,17 +253,24 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
                 id={headingSlug} // Set ID on the section wrapper for TOC
                 className="group relative mb-16 p-8 rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-3xl hover:shadow-slate-200/60"
               >
-                {coverImage && (
-                  <div className="relative h-[400px] md:h-[450px] rounded-2xl overflow-hidden">
-                    <Image
-                      src={urlFor(coverImage).url()}
-                      alt={coverImage.alt || 'Section Image'}
-                      fill
-                      className="object-fit object-top transform group-hover:scale-102 transition-transform duration-1000"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
-                    />
-                  </div>
-                )}
+                {coverImage && (() => {
+                  const { width, height } = coverImage.asset?._ref
+                    ? getImageDimensions(coverImage.asset._ref)
+                    : { width: 1200, height: 600 };
+
+                  return (
+                    <div className="relative w-full overflow-hidden bg-slate-50 mb-8 rounded-2xl">
+                      <Image
+                        src={urlFor(coverImage).width(1200).quality(90).url()}
+                        alt={coverImage.alt || 'Section Image'}
+                        width={width}
+                        height={height}
+                        className="w-full h-auto object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
+                      />
+                    </div>
+                  );
+                })()}
 
                 <div>
                   <div className="prose prose-lg max-w-none prose-headings:scroll-mt-32">
