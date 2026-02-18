@@ -69,6 +69,7 @@ export default defineType({
         }),
         defineArrayMember({
             type: 'table',
+            title: 'Flexible Table',
         }),
     ],
 })
