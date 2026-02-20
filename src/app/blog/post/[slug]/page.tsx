@@ -12,7 +12,7 @@ import BlogPostHeroSection from "@/components/sections/BlogPostHeroSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
 import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 60; // Revalidate every minute
 export const dynamicParams = true; // Allow rendering of new posts not generated at build time
 
 export async function generateStaticParams() {

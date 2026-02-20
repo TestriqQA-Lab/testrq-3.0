@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sanityGetAdaptedCategoryData } from "@/lib/sanity-data-adapter";
 
+export const revalidate = 60; // Revalidate every minute
 
 const CategoryHeroSection = dynamic(
   () => import("@/components/sections/CategoryHeroSection"),

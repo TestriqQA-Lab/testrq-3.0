@@ -60,15 +60,17 @@ const components = {
       }
       const { width, height } = getImageDimensions(value.asset._ref);
       return (
-        <div className="relative w-full my-8 rounded-xl overflow-hidden shadow-lg">
-          <Image
-            src={urlFor(value).width(1200).quality(90).url()}
-            alt={value.alt || "Blog image"}
-            width={width}
-            height={height}
-            className="w-full h-auto object-contain"
-            sizes="(max-width: 768px) 100vw, 800px"
-          />
+        <div className="relative w-full my-10 flex justify-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl border border-slate-100/50 bg-slate-50 w-full max-w-4xl max-h-[70vh] flex items-center justify-center">
+            <Image
+              src={urlFor(value).width(1200).quality(90).url()}
+              alt={value.alt || "Blog image"}
+              width={width}
+              height={height}
+              className="w-full h-auto max-h-[70vh] object-contain rounded-2xl"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
+            />
+          </div>
         </div>
       );
     },
@@ -204,31 +206,6 @@ const components = {
 };
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
-  // Group content into sections based on H2
-  // Note: We need to use normal logic here, not useMemo since this is Server Component (run once per render)
-  // Actually, standard functional logic works fine.
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let contentSections: any[][] = [];
-
-  if (Array.isArray(post.content)) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let currentSection: any[] = [];
-    post.content.forEach((block) => {
-      if (block._type === 'block' && block.style === 'h2') {
-        if (currentSection.length > 0) {
-          contentSections.push(currentSection);
-        }
-        currentSection = [block];
-      } else {
-        currentSection.push(block);
-      }
-    });
-    if (currentSection.length > 0) {
-      contentSections.push(currentSection);
-    }
-  }
-
   // Check manual CTA at end
   const hasManualCTAAtEnd = (() => {
     if (!Array.isArray(post.content) || post.content.length === 0) return false;
@@ -247,61 +224,15 @@ const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {
 
       <div className="prose prose-lg max-w-none text-gray-800 text-base">
         {typeof post.content === 'string' ? (
-          <article className="relative rounded-3xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 p-8 md:p-12">
+          <article className="relative rounded-3xl overflow-hidden bg-white shadow-xl shadow-slate-200/50 p-8 md:p-12 mb-16 border border-slate-100">
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </article>
         ) : (
-          contentSections.map((sectionBlocks, index) => {
-            // Find the first image to use as the section cover
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const coverImageIndex = sectionBlocks.findIndex((b: any) => b._type === 'image');
-            const coverImage = coverImageIndex !== -1 ? sectionBlocks[coverImageIndex] : null;
-
-            // Find the H2 heading to use as the title
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const headingIndex = sectionBlocks.findIndex((b: any) => b._type === 'block' && b.style === 'h2');
-            const headingBlock = headingIndex !== -1 ? sectionBlocks[headingIndex] : null;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const headingText = headingBlock ? headingBlock.children?.map((c: any) => c.text).join('') : '';
-            const headingSlug = headingText ? slugify(headingText) : '';
-
-            const contentToRender = coverImage
-              ? sectionBlocks.filter((_: any, i: number) => i !== coverImageIndex)
-              : sectionBlocks;
-
-            return (
-              <section
-                key={index}
-                id={headingSlug} // Set ID on the section wrapper for TOC
-                className="group relative mb-16 p-8 rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:shadow-3xl hover:shadow-slate-200/60"
-              >
-                {coverImage && (() => {
-                  const { width, height } = coverImage.asset?._ref
-                    ? getImageDimensions(coverImage.asset._ref)
-                    : { width: 1200, height: 600 };
-
-                  return (
-                    <div className="relative w-full overflow-hidden bg-slate-50 mb-8 rounded-2xl">
-                      <Image
-                        src={urlFor(coverImage).width(1200).quality(90).url()}
-                        alt={coverImage.alt || 'Section Image'}
-                        width={width}
-                        height={height}
-                        className="w-full h-auto object-contain"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
-                      />
-                    </div>
-                  );
-                })()}
-
-                <div>
-                  <div className="prose prose-lg max-w-none prose-headings:scroll-mt-32">
-                    <PortableText value={contentToRender} components={components} />
-                  </div>
-                </div>
-              </section>
-            );
-          })
+          <article className="relative rounded-3xl overflow-hidden bg-white shadow-2xl shadow-slate-200/50 p-6 sm:p-8 md:p-12 lg:p-14 mb-16 transition-all duration-500 hover:shadow-3xl border border-slate-100">
+            <div className="prose prose-lg lg:prose-xl max-w-none text-slate-800 prose-headings:text-slate-900 prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-700 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-headings:scroll-mt-32 prose-blockquote:border-blue-500">
+              <PortableText value={post.content} components={components} />
+            </div>
+          </article>
         )}
 
         {/* Automatic Contact CTA */}
