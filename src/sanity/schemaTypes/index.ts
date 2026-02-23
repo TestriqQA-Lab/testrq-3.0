@@ -7,7 +7,8 @@ import tag from './tag'
 import blockContent from './blockContent'
 import customTable from './customTable'
 import subscriber from './subscriber'
+import caseStudy from './caseStudy'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [post, author, category, tag, blockContent, customTable, subscriber],
+    types: [post, author, category, tag, blockContent, customTable, subscriber, caseStudy],
 }

@@ -425,3 +425,266 @@ export async function sanityGetRelatedPosts(currentPostId: string, limit: number
     const posts: any[] = await client.fetch(query, { currentPostId, limit });
     return posts.map(adaptSanityPost);
 }
+
+// =============================================
+// Case Study Types & Adapters
+// =============================================
+
+export interface CaseStudy {
+    id: string;
+    slug: string;
+    title: string;
+    client: string;
+    industry: string;
+    duration: string;
+    description: string;
+    image: string;
+    metadata: {
+        title: string;
+        description: string;
+        keywords?: string[];
+        authors?: { name: string }[];
+        creator?: string;
+        publisher?: string;
+        formatDetection?: {
+            email?: boolean;
+            address?: boolean;
+            telephone?: boolean;
+        };
+        metadataBase?: string;
+        alternates?: {
+            canonical?: string;
+        };
+        openGraph?: {
+            type?: string;
+            locale?: string;
+            url?: string;
+            siteName?: string;
+            title?: string;
+            description?: string;
+            images?: {
+                url: string;
+                width?: number;
+                height?: number;
+                alt?: string;
+            }[];
+        };
+        twitter?: {
+            card?: "summary" | "summary_large_image" | "app" | "player";
+            site?: string;
+            creator?: string;
+            title?: string;
+            description?: string;
+            images?: string[];
+        };
+        robots?: {
+            index?: boolean;
+            follow?: boolean;
+            googleBot?: {
+                index?: boolean;
+                follow?: boolean;
+                "max-video-preview"?: number;
+                "max-image-preview"?: string;
+                "max-snippet"?: number;
+            };
+        };
+        verification?: {
+            google?: string;
+            yandex?: string;
+            yahoo?: string;
+            [key: string]: string | undefined;
+        };
+    };
+    overview: {
+        clientBackground: string;
+        projectScope: string;
+        teamSize: string;
+        timeline: string;
+    };
+    challenge: {
+        title: string;
+        description: string;
+        keyIssues: string[];
+        businessImpact: string;
+    };
+    solution: {
+        title: string;
+        description: string;
+        approach: string[];
+        methodology: string;
+        keyStrategies: string[];
+    };
+    results: {
+        bugReduction: string;
+        performanceImprovement: string;
+        roi: string;
+        additionalMetrics: {
+            label: string;
+            value: string;
+        }[];
+    };
+    technologies: {
+        name: string;
+        link: string;
+    }[];
+    testimonial: {
+        quote: string;
+        author: string;
+        role: string;
+        company: string;
+        rating: number;
+    };
+    timeline: {
+        phase: string;
+        duration: string;
+        activities: string[];
+    }[];
+    keyTakeaways: string[];
+    nextSteps: string[];
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function adaptSanityCaseStudy(raw: any): CaseStudy {
+    const slug = raw.slug?.current || '';
+    return {
+        id: raw._id || slug,
+        slug,
+        title: raw.title || '',
+        client: raw.client || '',
+        industry: raw.industry || '',
+        duration: raw.duration || '',
+        description: raw.description || '',
+        image: raw.image || '',
+        metadata: {
+            title: raw.seoMetadata?.title || raw.title || '',
+            description: raw.seoMetadata?.description || raw.description || '',
+            keywords: raw.seoMetadata?.keywords || [],
+            authors: [{ name: 'Testriq QA Lab' }],
+            creator: 'Testriq QA Lab LLP',
+            publisher: 'Testriq QA Lab LLP',
+            formatDetection: { email: false, address: false, telephone: false },
+            metadataBase: 'https://www.testriq.com/',
+            alternates: {
+                canonical: raw.seoMetadata?.canonicalUrl || `https://www.testriq.com/${slug}`,
+            },
+            openGraph: {
+                type: 'article',
+                locale: 'en_US',
+                url: raw.seoMetadata?.canonicalUrl || `https://www.testriq.com/${slug}`,
+                siteName: 'Testriq - QA Case Studies',
+                title: raw.seoMetadata?.openGraph?.title || raw.seoMetadata?.title || '',
+                description: raw.seoMetadata?.openGraph?.description || raw.seoMetadata?.description || '',
+                images: raw.seoMetadata?.openGraph?.imageUrl
+                    ? [{
+                        url: raw.seoMetadata.openGraph.imageUrl,
+                        width: 1200,
+                        height: 630,
+                        alt: raw.seoMetadata.openGraph.imageAlt || '',
+                    }]
+                    : [],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                site: '@testriq',
+                creator: '@testriq',
+                title: raw.seoMetadata?.twitter?.title || raw.seoMetadata?.title || '',
+                description: raw.seoMetadata?.twitter?.description || raw.seoMetadata?.description || '',
+                images: raw.seoMetadata?.twitter?.imageUrl
+                    ? [raw.seoMetadata.twitter.imageUrl]
+                    : [],
+            },
+            robots: {
+                index: true,
+                follow: true,
+                googleBot: {
+                    index: true,
+                    follow: true,
+                    'max-video-preview': -1,
+                    'max-image-preview': 'large',
+                    'max-snippet': -1,
+                },
+            },
+            verification: {
+                google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
+                yandex: 'ff703971283d110e',
+                yahoo: '0A67349B8CD11BF71173B38572028507',
+            },
+        },
+        overview: {
+            clientBackground: raw.overview?.clientBackground || '',
+            projectScope: raw.overview?.projectScope || '',
+            teamSize: raw.overview?.teamSize || '',
+            timeline: raw.overview?.timeline || '',
+        },
+        challenge: {
+            title: raw.challenge?.title || '',
+            description: raw.challenge?.description || '',
+            keyIssues: raw.challenge?.keyIssues || [],
+            businessImpact: raw.challenge?.businessImpact || '',
+        },
+        solution: {
+            title: raw.solution?.title || '',
+            description: raw.solution?.description || '',
+            approach: raw.solution?.approach || [],
+            methodology: raw.solution?.methodology || '',
+            keyStrategies: raw.solution?.keyStrategies || [],
+        },
+        results: {
+            bugReduction: raw.results?.bugReduction || '',
+            performanceImprovement: raw.results?.performanceImprovement || '',
+            roi: raw.results?.roi || '',
+            additionalMetrics: (raw.results?.additionalMetrics || []).map(
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (m: any) => ({ label: m.label || '', value: m.value || '' })
+            ),
+        },
+        technologies: (raw.technologies || []).map(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (t: any) => ({ name: t.name || '', link: t.link || '#' })
+        ),
+        testimonial: {
+            quote: raw.testimonial?.quote || '',
+            author: raw.testimonial?.author || '',
+            role: raw.testimonial?.role || '',
+            company: raw.testimonial?.company || '',
+            rating: raw.testimonial?.rating || 5,
+        },
+        timeline: (raw.timeline || []).map(
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (t: any) => ({
+                phase: t.phase || '',
+                duration: t.duration || '',
+                activities: t.activities || [],
+            })
+        ),
+        keyTakeaways: raw.keyTakeaways || [],
+        nextSteps: raw.nextSteps || [],
+    };
+}
+
+// --- Case Study Data Fetching Functions ---
+
+export async function sanityGetAllCaseStudies(): Promise<CaseStudy[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rawData: any[] = await client.fetch(queries.allCaseStudiesQuery);
+    return rawData.map(adaptSanityCaseStudy);
+}
+
+export async function sanityGetCaseStudyBySlug(slug: string): Promise<CaseStudy | null> {
+    const raw = await client.fetch(queries.caseStudyBySlugQuery, { slug });
+    return raw ? adaptSanityCaseStudy(raw) : null;
+}
+
+export async function sanityGetAllCaseStudySlugs(): Promise<string[]> {
+    return await client.fetch(queries.caseStudySlugsQuery);
+}
+
+export async function sanityGetRelatedCaseStudies(
+    currentSlug: string,
+    limit: number = 3
+): Promise<CaseStudy[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rawData: any[] = await client.fetch(queries.relatedCaseStudiesQuery, { slug: currentSlug, limit });
+    return rawData.map(adaptSanityCaseStudy);
+}
+
