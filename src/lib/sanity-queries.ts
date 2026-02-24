@@ -171,3 +171,43 @@ export const relatedCaseStudiesQuery = groq`*[_type == "caseStudy" && slug.curre
   image,
   results
 }`;
+
+// =============================================
+// Job Posting Queries
+// =============================================
+
+// Query for fetching all active job postings
+export const allJobPostingsQuery = groq`*[_type == "jobPosting" && isActive == true] | order(_createdAt desc) {
+  _id,
+  title,
+  slug,
+  location,
+  type,
+  experience,
+  description,
+  skills,
+  badges,
+  icon,
+  color,
+  salary,
+  department,
+  isActive
+}`;
+
+// Query for fetching a single job posting by slug
+export const jobPostingBySlugQuery = groq`*[_type == "jobPosting" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  location,
+  type,
+  experience,
+  description,
+  skills,
+  badges,
+  icon,
+  color,
+  salary,
+  department,
+  isActive
+}`;

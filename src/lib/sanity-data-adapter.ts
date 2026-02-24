@@ -688,3 +688,56 @@ export async function sanityGetRelatedCaseStudies(
     return rawData.map(adaptSanityCaseStudy);
 }
 
+// =============================================
+// Job Posting Types & Adapters
+// =============================================
+
+export interface SanityJobOpening {
+    id: number;
+    title: string;
+    slug: string;
+    location: string;
+    type: string;
+    experience: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    description: any;
+    skills: string[];
+    badges?: string[];
+    icon?: string;
+    color?: string;
+    salary?: string;
+    department?: string;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function adaptSanityJobPosting(raw: any, index: number): SanityJobOpening {
+    return {
+        id: index + 1,
+        title: raw.title || '',
+        slug: raw.slug?.current || '',
+        location: raw.location || '',
+        type: raw.type || '',
+        experience: raw.experience || '',
+        description: raw.description || '',
+        skills: raw.skills || [],
+        badges: raw.badges || [],
+        icon: raw.icon || 'bug',
+        color: raw.color || 'from-green-400 to-green-600',
+        salary: raw.salary || undefined,
+        department: raw.department || undefined,
+    };
+}
+
+// --- Job Posting Data Fetching Functions ---
+
+export async function sanityGetAllJobOpenings(): Promise<SanityJobOpening[]> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const rawData: any[] = await client.fetch(queries.allJobPostingsQuery);
+    return rawData.map((raw, index) => adaptSanityJobPosting(raw, index));
+}
+
+export async function sanityGetJobOpeningBySlug(slug: string): Promise<SanityJobOpening | null> {
+    const raw = await client.fetch(queries.jobPostingBySlugQuery, { slug });
+    return raw ? adaptSanityJobPosting(raw, 0) : null;
+}
+
