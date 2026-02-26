@@ -31,23 +31,13 @@ export const metadata: Metadata = {
     }
 };
 
-const PricingHeroSection = dynamic(
-    () => import("@/components/sections/PricingHeroSection"),
+const NewPricingHero = dynamic(
+    () => import("@/components/sections/NewPricingHero"),
     { ssr: true, loading: () => <HeroLoader /> }
 );
 
-const PricingPacksTable = dynamic(
-    () => import("@/components/sections/PricingPacksTable"),
-    { ssr: true, loading: () => <ContentLoader /> }
-);
-
-const PricingAddOns = dynamic(
-    () => import("@/components/sections/PricingAddOns"),
-    { ssr: true, loading: () => <ContentLoader /> }
-);
-
-const PricingFAQ = dynamic(
-    () => import("@/components/sections/PricingFAQ"),
+const NewPricingCards = dynamic(
+    () => import("@/components/sections/NewPricingCards"),
     { ssr: true, loading: () => <ContentLoader /> }
 );
 
@@ -58,14 +48,12 @@ export default function PricingPage() {
     ];
 
     return (
-        <div>
+        <div className="bg-slate-50 min-h-screen">
             <StructuredData data={pricingServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <MainLayout>
-                <PricingHeroSection />
-                <PricingPacksTable />
-                <PricingAddOns />
-                <PricingFAQ />
+                <NewPricingHero />
+                <NewPricingCards />
             </MainLayout>
         </div>
     );
