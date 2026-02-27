@@ -4880,158 +4880,222 @@ export const continuousTestingServiceSchema = {
   "@type": "Service",
   "name": "Continuous Testing Services & CI/CD Integration",
   "description": "World-class Continuous Testing Services designed to integrate seamlessly into your DevOps ecosystem. We help organizations shift quality left, ensuring every code commit leads to a more reliable, high-performing product.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "https://www.testriq.com"
-  },
-  "serviceType": "Continuous Testing & CI/CD Quality Engineering",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Continuous Testing Solutions",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "CI/CD Pipeline Integration",
-          "description": "Seamlessly embedding automated tests into Jenkins, GitLab, Azure DevOps, or AWS pipelines for zero-touch testing execution."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Shift-Left & Shift-Right Testing",
-          "description": "Moving testing earlier in development and monitoring performance in production for early defect detection."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Automated Regression Testing",
-          "description": "Ensuring new code changes don't break existing functionality across web and mobile apps."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Continuous Performance Testing",
-          "description": "Validating system scalability and performance with every build for proactive risk management."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Continuous Security Testing",
-          "description": "Automated vulnerability scanning and security posture validation within the CI/CD pipeline."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Test Data Management",
-          "description": "Providing high-quality, compliant data for realistic testing environments ensuring environmental parity."
-        }
-      }
-    ]
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "priceCurrency": "USD",
-    "priceSpecification": {
-      "@type": "PriceSpecification",
-      "price": "0"
-    }
-  }
-// Service Schema for User Acceptance Testing (UAT)
-export const uatServiceSchema = {
+  export const tdmServiceSchema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "name": "User Acceptance Testing Services",
-        "alternateName": "UAT Testing",
-        "serviceType": "QA and Business Validation",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Testriq QA Lab",
-          "image": "https://www.testriq.com/assets/images/logo.png",
-          "telephone": "+91-915-2929-343",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
-            "addressLocality": "Mira Bhayandar",
-            "addressRegion": "Maharashtra",
-            "postalCode": "401107",
-            "addressCountry": "IN"
-          },
-          "priceRange": "$$"
-        },
-        "url": "https://www.testriq.com/services/user-acceptance-testing",
-        "description": "Testriq's user acceptance testing services provide professional UAT testing, beta testing management, and end-user validation for enterprise software, ERP, CRM, and digital transformation projects.",
-        "areaServed": "WorldWide",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "UAT Testing Solutions",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Operational Acceptance Testing (OAT)"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Beta Testing Management"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "End-to-End Workflow Validation"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Compliance & Regulatory UAT"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
+    "@type": "Service",
+    "name": "Test Data Management Services",
+    "description": "Optimize your QA with Testriq's Test Data Management services. We offer secure data masking, synthetic data generation, and automated TDM solutions to ensure high-quality testing with total compliance.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Testriq QA Lab",
+      "url": "https://www.testriq.com"
+    },
+    "serviceType": "Continuous Testing & CI/CD Quality Engineering",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Continuous Testing Solutions",
+      "serviceType": "Quality Assurance",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TDM Solutions",
+        "itemListElement": [
           {
-            "@type": "Question",
-            "name": "What is User Acceptance Testing (UAT) and why is it important?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CI/CD Pipeline Integration",
+              "description": "Seamlessly embedding automated tests into Jenkins, GitLab, Azure DevOps, or AWS pipelines for zero-touch testing execution."
+          "name": "Data Masking & De-identification",
+              "description": "Protecting sensitive information with advanced data masking and de-identification services."
             }
           },
           {
-            "@type": "Question",
-            "name": "How does UAT differ from functional testing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shift-Left & Shift-Right Testing",
+              "description": "Moving testing earlier in development and monitoring performance in production for early defect detection."
+          "name": "Synthetic Test Data Generation",
+              "description": "Creating high-fidelity datasets from scratch using AI-driven methods."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automated Regression Testing",
+              "description": "Ensuring new code changes don't break existing functionality across web and mobile apps."
+          "name": "Data Subsetting & Provisioning",
+              "description": "Extracting smaller, referentially intact slices of production data for efficient testing."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Continuous Performance Testing",
+              "description": "Validating system scalability and performance with every build for proactive risk management."
+          "name": "Compliance & Privacy Audits",
+              "description": "Ensuring QA environments are audit-ready and compliant with global privacy regulations."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Continuous Security Testing",
+              "description": "Automated vulnerability scanning and security posture validation within the CI/CD pipeline."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Test Data Management",
+              "description": "Providing high-quality, compliant data for realistic testing environments ensuring environmental parity."
             }
           }
         ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "0"
+        }
       }
+// Service Schema for User Acceptance Testing (UAT)
+export const uatServiceSchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "name": "User Acceptance Testing Services",
+            "alternateName": "UAT Testing",
+            "serviceType": "QA and Business Validation",
+            "provider": {
+              "@type": "ProfessionalService",
+              "name": "Testriq QA Lab",
+              "image": "https://www.testriq.com/assets/images/logo.png",
+              "telephone": "+91-915-2929-343",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+                "addressLocality": "Mira Bhayandar",
+                "addressRegion": "Maharashtra",
+                "postalCode": "401107",
+                "addressCountry": "IN"
+              },
+              "priceRange": "$$"
+            },
+            "url": "https://www.testriq.com/services/user-acceptance-testing",
+            "description": "Testriq's user acceptance testing services provide professional UAT testing, beta testing management, and end-user validation for enterprise software, ERP, CRM, and digital transformation projects.",
+            "areaServed": "WorldWide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "UAT Testing Solutions",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Operational Acceptance Testing (OAT)"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Beta Testing Management"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "End-to-End Workflow Validation"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Compliance & Regulatory UAT"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is User Acceptance Testing (UAT) and why is it important?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does UAT differ from functional testing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
+                }
+              }
+            ]
+          }
+        ]
+      };
+      "name": "TDM for Performance & Load Testing",
+      "description": "Provisioning massive datasets for resilience and scalability validation."
+    }
+  }
     ]
-  };
+  }
+};
+
+export const tdmFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is test data management and why is it important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Test Data Management (TDM) is the process of planning, creating, securing, and delivering the data required for software testing. It is important because it ensures that testing is realistic, secure, and compliant with privacy laws, while reducing the time and cost associated with manual data preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure GDPR compliance in test data management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GDPR compliance is ensured through techniques like data masking, pseudonymization, and synthetic data generation. These methods remove personally identifiable information (PII) from test environments, ensuring that no real user data is exposed during the QA process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between data masking and synthetic data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data masking involves taking real production data and obfuscating sensitive elements to make it secure for testing. Synthetic data, on the other hand, is artificially generated from scratch using algorithms or AI to mirror the characteristics of real data without containing any actual information from real users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to automate test data provisioning in DevOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automating test data provisioning involves integrating TDM tools with CI/CD pipelines. This allows for the automatic creation, masking, and delivery of fresh test datasets whenever a new build is triggered, enabling true self-service QA and faster release cycles."
+      }
+    }
+  ]
+};
