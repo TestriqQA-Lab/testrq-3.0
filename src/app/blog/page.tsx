@@ -6,6 +6,8 @@ import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { sanityGetPostsBySlugs, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 
+export const revalidate = 60; // Revalidate every minute
+
 export async function generateMetadata({
   searchParams,
 }: {
