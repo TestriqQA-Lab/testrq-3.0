@@ -2,16 +2,15 @@ import React from "react";
 import { FaArrowRight, FaCalendarAlt, FaIndustry } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import { getRelatedCaseStudies } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 
 interface CaseStudyRelatedSectionProps {
-  currentSlug: string;
+  relatedCaseStudies: CaseStudy[];
 }
 
 const CaseStudyRelatedSection: React.FC<CaseStudyRelatedSectionProps> = ({
-  currentSlug,
+  relatedCaseStudies,
 }) => {
-  const relatedCaseStudies = getRelatedCaseStudies(currentSlug, 2);
 
   if (relatedCaseStudies.length === 0) {
     return null;

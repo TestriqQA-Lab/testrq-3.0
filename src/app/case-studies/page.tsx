@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import StructuredData, { caseStudiesSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import { sanityGetAllCaseStudies } from "@/lib/sanity-data-adapter";
 
 const MainLayout = dynamic(
   () => import("@/components/layout/MainLayout"),
@@ -13,6 +14,8 @@ const MainLayout = dynamic(
     ),
   }
 );
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Software Testing & QA Case Studies | Testriq QA Lab",
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
     url: "https://www.testriq.com/case-studies",
     images: [
       {
-        url: "/OG/case-study-og.webp", // 🔹 your OG image URL
+        url: "/OG/case-study-og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Case Studies & Client Success Stories",
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
     description:
       "Explore our client success stories and case studies showcasing real results from our software testing services.",
     images: [
-      "/OG/case-study-twitter.webp", // 🔹 your Twitter image URL
+      "/OG/case-study-twitter.webp",
     ],
   },
 };
@@ -149,7 +152,9 @@ const CaseStudiesReadyToStartSection = dynamic(
   }
 );
 
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage() {
+  const caseStudies = await sanityGetAllCaseStudies();
+
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Case Studies", url: "https://www.testriq.com/case-studies" }
@@ -162,7 +167,7 @@ export default function CaseStudiesPage() {
       <MainLayout>
         <CaseStudiesHeroSection />
         <CaseStudiesOverviewSection />
-        <CaseStudiesFeaturedSection />
+        <CaseStudiesFeaturedSection caseStudies={caseStudies} />
         <CaseStudiesIndustrySection />
         <CaseStudiesResultsSection />
         <CaseStudiesTestimonialsSection />
@@ -172,4 +177,3 @@ export default function CaseStudiesPage() {
     </div>
   );
 }
-
