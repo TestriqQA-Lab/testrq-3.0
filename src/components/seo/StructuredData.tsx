@@ -1480,6 +1480,116 @@ export const regressionTestingServiceSchema = {
   }
 };
 
+// Service Schema for Agile Testing Services
+export const agileTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agile Testing Services | Agile QA & Continuous Testing Company",
+  "description": "Accelerate your release cycles with Testriq's Agile testing services. We offer continuous testing, shift-left QA, and expert Agile consulting to ensure high-quality software delivery in every sprint.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Agile Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Agile Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Testing & CI/CD Integration",
+          "description": "Automated validation for every code change, providing immediate feedback in Agile environments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Test Automation Services",
+          "description": "Maintainable, scalable frameworks for regression, functional, and API testing in sprints."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Exploratory Testing",
+          "description": "Expert-led discovery of edge cases and usability issues beyond scripted tests."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "BDD & TDD Implementation",
+          "description": "Behavior-Driven and Test-Driven Development to ensure clear requirements and testable code."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Regression Testing",
+          "description": "Optimized regression suites for high-speed sprint cycles and frequent releases."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Agile Testing
+export const agileFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the core principles of Agile testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core principles of Agile testing include continuous feedback, collaboration between testers and developers, testing early and often (shift-left), and focusing on delivering value to the customer through iterative improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Agile testing differ from traditional waterfall testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike waterfall testing, which occurs at the end of the development cycle, Agile testing is integrated into every stage of the process. It is iterative, collaborative, and focuses on continuous quality rather than a single final sign-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the role of a QA tester in an Agile team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In an Agile team, a QA tester is a collaborative partner who helps define requirements, provides continuous feedback, develops automated tests, and ensures that the final product meets the user's needs and expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to integrate automated testing into Agile sprints?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integrating automation into Agile sprints requires a focus on building maintainable scripts, prioritizing high-value test cases, and ensuring that automated tests are executed as part of the continuous integration (CI) pipeline."
+      }
+    }
+  ]
+};
+
 // Service Schema for performance Testing Service
 export const performanceTestingServiceSchema = {
   "@context": "https://schema.org",
@@ -4628,6 +4738,101 @@ export const sapTestingSchema = {
     }
   ]
 };
+
+// Service Schema for Usability Testing Service
+export const usabilityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Usability Testing Services & UX Audit",
+      "alternateName": "User Experience Testing",
+      "serviceType": "UX and Usability QA",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/usability-testing-services",
+      "description": "Expert usability testing services and UX audits to elevate user experience and drive conversions. AI-driven insights and real-user testing for web and mobile apps.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usability Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Usability Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Usability & Conversion Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UX Audit & Heuristic Evaluation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI-Driven UX Insights"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the benefits of professional usability testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Professional usability testing services significantly enhance user satisfaction, reduce development costs by identifying issues early, improve conversion rates, and strengthen brand loyalty. It ensures your product is intuitive, efficient, and enjoyable for its target audience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a usability audit cost for a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of a usability audit for a mobile app varies based on scope, complexity, and desired depth of analysis. Testriq offers customized quotes following an initial consultation to understand your specific needs and provide an ROI-focused solution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is usability testing important for software development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usability testing is crucial for software development as it validates design decisions, uncovers critical user pain points, and ensures the final product meets user expectations. It minimizes rework, accelerates market adoption, and ultimately drives business success."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 // Professional Service Schema for Homepage/Local SEO
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
@@ -4690,42 +4895,81 @@ export const functionalServiceSchema = {
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Functional QA Solutions",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Web Application Functional Testing",
-              "description": "Ensuring robust performance and flawless user experience across all web platforms."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mobile App Functional Testing",
-              "description": "Validating functionality, usability, and performance on diverse mobile devices."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "API Testing Services",
-              "description": "Verifying the functionality, reliability, and security of application programming interfaces."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Automated Functional Testing",
-              "description": "Accelerating development cycles with high-standard automated validation."
-            }
-          }
-        ]
-      }
-    },
+
+        // Service Schema for Continuous Testing Services
+        export const continuousTestingServiceSchema = {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Continuous Testing Services & CI/CD Integration",
+          "description": "World-class Continuous Testing Services designed to integrate seamlessly into your DevOps ecosystem. We help organizations shift quality left, ensuring every code commit leads to a more reliable, high-performing product.",
+          export const tdmServiceSchema = {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Test Data Management Services",
+            "description": "Optimize your QA with Testriq's Test Data Management services. We offer secure data masking, synthetic data generation, and automated TDM solutions to ensure high-quality testing with total compliance.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Testriq QA Lab",
+              "url": "https://www.testriq.com"
+            },
+            "serviceType": "Continuous Testing & CI/CD Quality Engineering",
+            "areaServed": "Worldwide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Continuous Testing Solutions",
+              "serviceType": "Quality Assurance",
+              "areaServed": "Worldwide",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "TDM Solutions",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Web Application Functional Testing",
+                      "description": "Ensuring robust performance and flawless user experience across all web platforms."
+              "name": "CI/CD Pipeline Integration",
+                      "description": "Seamlessly embedding automated tests into Jenkins, GitLab, Azure DevOps, or AWS pipelines for zero-touch testing execution."
+          "name": "Data Masking & De-identification",
+                      "description": "Protecting sensitive information with advanced data masking and de-identification services."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Mobile App Functional Testing",
+                      "description": "Validating functionality, usability, and performance on diverse mobile devices."
+              "name": "Shift-Left & Shift-Right Testing",
+                      "description": "Moving testing earlier in development and monitoring performance in production for early defect detection."
+          "name": "Synthetic Test Data Generation",
+                      "description": "Creating high-fidelity datasets from scratch using AI-driven methods."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "API Testing Services",
+                      "description": "Verifying the functionality, reliability, and security of application programming interfaces."
+              "name": "Automated Regression Testing",
+                      "description": "Ensuring new code changes don't break existing functionality across web and mobile apps."
+          "name": "Data Subsetting & Provisioning",
+                      "description": "Extracting smaller, referentially intact slices of production data for efficient testing."
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Automated Functional Testing",
+                      "description": "Accelerating development cycles with high-standard automated validation."
+                    }
+                  }
+                ]
+              }
+            },
     {
       "@type": "FAQPage",
       "mainEntity": [
@@ -4746,6 +4990,167 @@ export const functionalServiceSchema = {
           }
         }
       ]
+              "name": "Continuous Performance Testing",
+      "description": "Validating system scalability and performance with every build for proactive risk management."
+          "name": "Compliance & Privacy Audits",
+      "description": "Ensuring QA environments are audit-ready and compliant with global privacy regulations."
+    }
+          },
+  {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Continuous Security Testing",
+      "description": "Automated vulnerability scanning and security posture validation within the CI/CD pipeline."
+            }
+  },
+  {
+    "@type": "Offer",
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Test Data Management",
+      "description": "Providing high-quality, compliant data for realistic testing environments ensuring environmental parity."
+            }
+  }
+        ]
+      },
+"offers": {
+  "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+      "priceCurrency": "USD",
+        "priceSpecification": {
+    "@type": "PriceSpecification",
+      "price": "0"
+  }
+}
+// Service Schema for User Acceptance Testing (UAT)
+export const uatServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "User Acceptance Testing Services",
+      "alternateName": "UAT Testing",
+      "serviceType": "QA and Business Validation",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/user-acceptance-testing",
+      "description": "Testriq's user acceptance testing services provide professional UAT testing, beta testing management, and end-user validation for enterprise software, ERP, CRM, and digital transformation projects.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "UAT Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Operational Acceptance Testing (OAT)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Beta Testing Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "End-to-End Workflow Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Compliance & Regulatory UAT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is User Acceptance Testing (UAT) and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does UAT differ from functional testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
+          }
+        }
+      ]
+    }
+  ]
+};
+"name": "TDM for Performance & Load Testing",
+  "description": "Provisioning massive datasets for resilience and scalability validation."
+    }
+  }
+    ]
+  }
+};
+
+export const tdmFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is test data management and why is it important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Test Data Management (TDM) is the process of planning, creating, securing, and delivering the data required for software testing. It is important because it ensures that testing is realistic, secure, and compliant with privacy laws, while reducing the time and cost associated with manual data preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure GDPR compliance in test data management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GDPR compliance is ensured through techniques like data masking, pseudonymization, and synthetic data generation. These methods remove personally identifiable information (PII) from test environments, ensuring that no real user data is exposed during the QA process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between data masking and synthetic data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data masking involves taking real production data and obfuscating sensitive elements to make it secure for testing. Synthetic data, on the other hand, is artificially generated from scratch using algorithms or AI to mirror the characteristics of real data without containing any actual information from real users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to automate test data provisioning in DevOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automating test data provisioning involves integrating TDM tools with CI/CD pipelines. This allows for the automatic creation, masking, and delivery of fresh test datasets whenever a new build is triggered, enabling true self-service QA and faster release cycles."
+      }
     }
   ]
 };
