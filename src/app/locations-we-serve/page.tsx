@@ -95,9 +95,9 @@ const structuredData = {
         ]
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq",
-        "https://twitter.com/testriq",
-        "https://www.facebook.com/testriq"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://x.com/testriq",
+        "https://www.facebook.com/testriq.lab/"
       ]
     },
     {

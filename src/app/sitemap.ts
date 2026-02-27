@@ -3,10 +3,11 @@ import {
   sanityGetPosts,
   sanityGetCategories,
   sanityGetTags,
-  sanityGetPages
+  sanityGetPages,
+  sanityGetAllCaseStudies,
+  CaseStudy
 } from '@/lib/sanity-data-adapter';
 import { getAllCities, CityData } from '@/app/lib/CityData';
-import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
 import { redirects } from '@/lib/redirects';
 
 // Function to determine change frequency based on content type and last modified date
@@ -160,8 +161,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getPriority('city'),
     }));
 
-    // Dynamic Case Study Pages
-    const allCaseStudies = getAllCaseStudies();
+    // Dynamic Case Study Pages (from Sanity)
+    const allCaseStudies = await sanityGetAllCaseStudies();
     const caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
       url: `${baseUrl}/${encodeURIComponent(caseStudy.slug)}`,
       lastModified: currentDate,
