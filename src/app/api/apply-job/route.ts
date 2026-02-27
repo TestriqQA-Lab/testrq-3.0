@@ -37,15 +37,19 @@ export async function POST(request: NextRequest) {
 
         console.log('[apply-job API] Received submission for:', email);
 
-        // Verify reCAPTCHA
-        if (!recaptchaToken) {
-            return NextResponse.json({ message: 'reCAPTCHA verification required' }, { status: 400 });
-        }
+        // Verify reCAPTCHA if secret key is configured (bypass for local dev without keys)
+        if (process.env.RECAPTCHA_SECRET_KEY) {
+            if (!recaptchaToken) {
+                return NextResponse.json({ message: 'reCAPTCHA verification required' }, { status: 400 });
+            }
 
-        const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-        if (!recaptchaResult.success || !isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
-            console.warn('[apply-job API] reCAPTCHA verification failed:', recaptchaResult);
-            return NextResponse.json({ message: 'Suspicious activity detected' }, { status: 400 });
+            const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+            if (!recaptchaResult.success || !isValidRecaptchaScore(recaptchaResult.score, 0.5)) {
+                console.warn('[apply-job API] reCAPTCHA verification failed:', recaptchaResult);
+                return NextResponse.json({ message: 'Suspicious activity detected' }, { status: 400 });
+            }
+        } else {
+            console.warn('[apply-job API] Bypassing reCAPTCHA verification because RECAPTCHA_SECRET_KEY is missing');
         }
 
 

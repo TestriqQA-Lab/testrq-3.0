@@ -154,7 +154,7 @@ const Footer = () => {
             {/* Social Media Links */}
             <div className="flex space-x-4 pt-4">
               <Link
-                href="https://www.linkedin.com/company/testriq-qa-lab"
+                href="https://www.linkedin.com/company/testriq-qa-lab/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
@@ -172,7 +172,7 @@ const Footer = () => {
                 <FaFacebookF className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
-                href="https://instagram.com/testriq"
+                href="https://www.instagram.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
