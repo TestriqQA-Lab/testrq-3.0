@@ -32,12 +32,12 @@ export function useRecaptchaForm(options: UseRecaptchaFormOptions): UseRecaptcha
       // Execute reCAPTCHA
       const recaptchaToken = await executeRecaptcha(action);
 
-      if (!recaptchaToken) {
+      if (!recaptchaToken && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
         throw new Error('Failed to generate reCAPTCHA token');
       }
 
-      // Call the submit function with the reCAPTCHA token
-      const result = await submitFunction(formData, recaptchaToken);
+      // Call the submit function with the reCAPTCHA token (or empty string if bypassed)
+      const result = await submitFunction(formData, recaptchaToken || '');
 
       if (onSuccess) {
         onSuccess(result);

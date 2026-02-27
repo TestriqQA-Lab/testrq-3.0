@@ -7,16 +7,26 @@ import {
     FaUsers,
     FaChevronDown,
     FaChevronUp,
+    FaBug,
+    FaCode,
 } from "react-icons/fa";
-import { JobOpening } from "@/app/lib/openings";
+import { SanityJobOpening } from "@/lib/sanity-data-adapter";
+import { PortableText } from '@portabletext/react';
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { IconType } from "react-icons";
+
+// Map icon string identifiers to React icon components
+const iconMap: Record<string, IconType> = {
+    bug: FaBug,
+    code: FaCode,
+};
 
 interface JobCardItemProps {
-    position: JobOpening;
+    position: SanityJobOpening;
     isExpanded: boolean;
     onToggle: (id: number) => void;
-    onApply: (position: JobOpening, e: React.MouseEvent<HTMLButtonElement>) => void;
+    onApply: (position: SanityJobOpening, e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const JobCardItem: React.FC<JobCardItemProps> = memo(({ position, isExpanded, onToggle, onApply }) => {
@@ -46,10 +56,10 @@ const JobCardItem: React.FC<JobCardItemProps> = memo(({ position, isExpanded, on
                             <div
                                 className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${position.color} rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0`}
                             >
-                                {position.icon &&
-                                    React.createElement(position.icon, {
-                                        className: "w-5 h-5 sm:w-6 sm:h-6 text-white",
-                                    })}
+                                {(() => {
+                                    const IconComponent = iconMap[position.icon || 'bug'] || FaBug;
+                                    return <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />;
+                                })()}
                             </div>
 
                             <div className="flex-1 min-w-0">
@@ -128,9 +138,15 @@ const JobCardItem: React.FC<JobCardItemProps> = memo(({ position, isExpanded, on
                             <div className="lg:col-span-2 order-2 lg:order-1">
                                 <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Job Description</h4>
                                 <div className="job-description prose prose-gray max-w-none text-sm sm:text-base">
-                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                        {position.description}
-                                    </ReactMarkdown>
+                                    <div className="prose prose-sm sm:prose-base max-w-none text-gray-600 sm:text-gray-700">
+                                        {typeof position.description === 'string' ? (
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                {position.description}
+                                            </ReactMarkdown>
+                                        ) : (
+                                            <PortableText value={position.description} />
+                                        )}
+                                    </div>
                                 </div>
                             </div>
 

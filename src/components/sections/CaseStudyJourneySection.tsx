@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRocket, FaHistory, FaVideo, FaPuzzlePiece } from "react-icons/fa";
-import { CaseStudy } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 
 interface CaseStudyJourneySectionProps {
   caseStudy: CaseStudy;
@@ -77,21 +77,18 @@ const CaseStudyJourneySection: React.FC<CaseStudyJourneySectionProps> = ({
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${
-                    isEven ? "flex-row" : "flex-row-reverse"
-                  }`}
+                  className={`flex items-center ${isEven ? "flex-row" : "flex-row-reverse"
+                    }`}
                 >
                   {/* Content */}
                   <div
-                    className={`w-5/12 ${
-                      isEven ? "pr-8 text-right" : "pl-8 text-left"
-                    }`}
+                    className={`w-5/12 ${isEven ? "pr-8 text-right" : "pl-8 text-left"
+                      }`}
                   >
                     <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                       <div
-                        className={`flex items-center gap-3 mb-4 ${
-                          isEven ? "justify-end" : "justify-start"
-                        }`}
+                        className={`flex items-center gap-3 mb-4 ${isEven ? "justify-end" : "justify-start"
+                          }`}
                       >
                         <div className="text-2xl font-bold text-[theme(color.brand.blue)]">
                           {milestone.year}
