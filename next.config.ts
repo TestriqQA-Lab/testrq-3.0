@@ -597,8 +597,6 @@ const nextConfig: NextConfig = {
       { source: "/ecommerce-testing-services", destination: "/e-commerce-testing-services", permanent: true },
       { source: "/database-testing", destination: "/data-analysis-services", permanent: true },
       { source: "/ar-vr-testing-services", destination: "/gaming-app-testing-services", permanent: true },
-      { source: "/accessibility-testing-services", destination: "/web-application-testing-services", permanent: true },
-      { source: "/functional-testing-services", destination: "/manual-testing-services", permanent: true },
       { source: "/sustainability-testing-services", destination: "/performance-testing-services", permanent: true },
       { source: "/big-data-testing-services", destination: "/data-analysis-services", permanent: true },
       { source: "/compliance-testing-services", destination: "/security-testing", permanent: true },

@@ -201,8 +201,8 @@ const BlogNewsletter: React.FC = () => {
                               onClick={() => handleInterestChange(interest.name)}
                               disabled={isSubmitting}
                               className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-all border ${isSelected
-                                  ? 'bg-blue-50 border-blue-300 text-blue-700'
-                                  : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'
+                                ? 'bg-blue-50 border-blue-300 text-blue-700'
+                                : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'
                                 }`}
                             >
                               <span>{interest.icon}</span>

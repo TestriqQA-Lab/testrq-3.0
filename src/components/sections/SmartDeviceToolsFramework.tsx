@@ -64,7 +64,7 @@ const SmartDeviceToolsFramework: React.FC = () => {
               <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Application security</Link> vulnerability testing
             </>
           ),
-          icon: <Image src="/OWASP_ZAP_Logo.png" alt="OWASP ZAP Logo" width={20} height={20} className="object-contain" />,
+          icon: <Image src="/Owasp_Zap_Logo.png" alt="OWASP ZAP Logo" width={20} height={20} className="object-contain" />,
         },
         {
           name: "Burp Suite",

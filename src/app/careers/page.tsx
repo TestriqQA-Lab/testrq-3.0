@@ -2,7 +2,10 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import StructuredData, { careersPageSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import { sanityGetAllJobOpenings } from "@/lib/sanity-data-adapter";
 
+// ISR: revalidate every 60 seconds
+export const revalidate = 60;
 
 const CareersHeroSection = dynamic(
   () => import("@/components/sections/CareersHeroSection"),
@@ -149,7 +152,10 @@ export const metadata: Metadata = {
 };
 
 
-const CareersPage: React.FC = () => {
+const CareersPage = async () => {
+  // Fetch job openings from Sanity (server-side, with ISR)
+  const jobOpenings = await sanityGetAllJobOpenings();
+
   const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Careers Page", url: "https://www.testriq.com/careers" }
@@ -161,7 +167,7 @@ const CareersPage: React.FC = () => {
       <main className="min-h-screen bg-gray-50">
         <CareersHeroSection />
         <CareersValuesSection />
-        <CareersOpenPositions />
+        <CareersOpenPositions jobOpenings={jobOpenings} />
         <CareersBenefitsSection />
         {/* <CareersCultureSection /> */}
         <CareersApplicationProcessSection />
