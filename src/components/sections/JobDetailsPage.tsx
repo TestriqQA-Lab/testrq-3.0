@@ -1,4 +1,3 @@
- 
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -17,32 +16,27 @@ import {
   FaTwitter,
   FaFacebook,
   FaCopy,
+  FaBug,
+  FaCode,
 } from "react-icons/fa";
 import { IconType } from "react-icons";
+import { PortableText } from '@portabletext/react';
 import Markdown from "react-markdown";
 import Link from "next/link";
+import { SanityJobOpening } from "@/lib/sanity-data-adapter";
 
-export interface JobPosition {
-  id: number;
-  title: string;
-  department: string;
-  location: string;
-  type: string;
-  experience: string;
-  description: string;
-  fullDescription: string;
-  skills: string[];
-  badges: string[];
-  icon: IconType;
-  color: string;
-}
+// Map icon string identifiers to React icon components
+const iconMap: Record<string, IconType> = {
+  bug: FaBug,
+  code: FaCode,
+};
 
 interface JobDetailsPageProps {
-  job: JobPosition;
+  job: SanityJobOpening;
 }
 
 // Job Application Modal Component
-const JobApplicationModal: React.FC<{ job: JobPosition | null; onClose: () => void }> = ({ job, onClose }) => {
+const JobApplicationModal: React.FC<{ job: SanityJobOpening | null; onClose: () => void }> = ({ job, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -155,7 +149,7 @@ const JobApplicationModal: React.FC<{ job: JobPosition | null; onClose: () => vo
         >
           &times;
         </button>
-        
+
         {submitStatus === 'success' ? (
           <div className="text-center py-12">
             <FaCheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
@@ -276,13 +270,13 @@ const JobApplicationModal: React.FC<{ job: JobPosition | null; onClose: () => vo
                   <p className="text-sm text-gray-500 mt-2">Selected file: {formData.resume.name}</p>
                 )}
               </div>
-              
+
               {submitStatus === 'error' && (
                 <div className="md:col-span-2 p-4 bg-red-50 border border-red-200 rounded-lg">
                   <p className="text-red-700">Failed to submit application. Please try again.</p>
                 </div>
               )}
-              
+
               <div className="md:col-span-2 text-right">
                 <button
                   type="submit"
@@ -321,7 +315,7 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
   const handleShare = (platform: string) => {
     const url = window.location.href;
     const title = `${job.title} at Testriq`;
-    
+
     switch (platform) {
       case 'linkedin':
         window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`);
@@ -359,7 +353,10 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-16 h-16 bg-gradient-to-r ${job.color} rounded-2xl flex items-center justify-center`}>
-                  <job.icon className="w-8 h-8 text-white" />
+                  {(() => {
+                    const IconComponent = iconMap[job.icon || 'bug'] || FaBug;
+                    return <IconComponent className="w-8 h-8 text-white" />;
+                  })()}
                 </div>
                 <div>
                   <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">{job.title}</h1>
@@ -383,10 +380,10 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
                   </div>
                 </div>
               </div>
-              
-              {job.badges.length > 0 && (
+
+              {(job.badges || []).length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {job.badges.map((badge: string, index: number) => (
+                  {(job.badges || []).map((badge: string, index: number) => (
                     <span
                       key={index}
                       className={`px-3 py-1 text-sm font-semibold rounded-full border ${getBadgeStyle(badge)}`}
@@ -396,12 +393,12 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
                   ))}
                 </div>
               )}
-              
+
               <p className="text-xl text-blue-100 leading-relaxed max-w-3xl">
                 {job.description}
               </p>
             </div>
-            
+
             <div className="lg:w-80">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <div className="flex items-center justify-between mb-6">
@@ -409,9 +406,8 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setIsBookmarked(!isBookmarked)}
-                      className={`p-2 rounded-lg transition-colors duration-300 ${
-                        isBookmarked ? 'bg-red-500 text-white' : 'bg-white/20 text-white hover:bg-white/30'
-                      }`}
+                      className={`p-2 rounded-lg transition-colors duration-300 ${isBookmarked ? 'bg-red-500 text-white' : 'bg-white/20 text-white hover:bg-white/30'
+                        }`}
                     >
                       <FaHeart className="w-4 h-4" />
                     </button>
@@ -472,7 +468,11 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Job Description</h2>
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              <Markdown>{job.fullDescription}</Markdown>
+              {typeof job.description === 'string' ? (
+                <Markdown>{job.description}</Markdown>
+              ) : (
+                <PortableText value={job.description} />
+              )}
             </div>
           </div>
 
@@ -499,7 +499,7 @@ const JobDetailsPage: React.FC<JobDetailsPageProps> = ({ job }) => {
             <ul className="space-y-4 text-gray-700">
               <li className="flex items-center gap-3">
                 <FaBuilding className="w-5 h-5 text-[theme(color.brand.blue)]" />
-                <span>Department: {job.department}</span>
+                <span>Department: {job.department || 'N/A'}</span>
               </li>
               <li className="flex items-center gap-3">
                 <FaMapMarkerAlt className="w-5 h-5 text-[theme(color.brand.blue)]" />

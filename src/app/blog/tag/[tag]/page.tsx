@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sanityGetPostsByTag } from "@/lib/sanity-data-adapter";
 
+export const revalidate = 60; // Revalidate every minute
 
 const TagHeroSection = dynamic(
   () => import("@/components/sections/TagHeroSection"),
