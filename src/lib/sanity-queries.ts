@@ -12,7 +12,8 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)] | ord
   _updatedAt,
   "author": author->{name, slug, image, bio, linkedin},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
-  "tags": tags[]->{title, slug}
+  "tags": tags[]->{title, slug},
+  seo
 }`;
 
 // Query for fetching a single post by slug
@@ -105,4 +106,108 @@ export const searchPostsQuery = groq`*[_type == "post" && (
   "author": author->{name, slug, image, bio},
   "categories": categories[]->{title, slug, colorTheme, icon, description},
   "tags": tags[]->{title, slug}
+}`;
+
+// =============================================
+// Case Study Queries
+// =============================================
+
+// Query for fetching all case studies
+export const allCaseStudiesQuery = groq`*[_type == "caseStudy"] | order(_createdAt asc) {
+  _id,
+  slug,
+  title,
+  client,
+  industry,
+  duration,
+  description,
+  image,
+  seoMetadata,
+  overview,
+  challenge,
+  solution,
+  results,
+  technologies,
+  testimonial,
+  timeline,
+  keyTakeaways,
+  nextSteps
+}`;
+
+// Query for fetching a single case study by slug
+export const caseStudyBySlugQuery = groq`*[_type == "caseStudy" && slug.current == $slug][0] {
+  _id,
+  slug,
+  title,
+  client,
+  industry,
+  duration,
+  description,
+  image,
+  seoMetadata,
+  overview,
+  challenge,
+  solution,
+  results,
+  technologies,
+  testimonial,
+  timeline,
+  keyTakeaways,
+  nextSteps
+}`;
+
+// Query for fetching all case study slugs (for static params)
+export const caseStudySlugsQuery = groq`*[_type == "caseStudy" && defined(slug.current)][].slug.current`;
+
+// Query for fetching related case studies (excluding current slug)
+export const relatedCaseStudiesQuery = groq`*[_type == "caseStudy" && slug.current != $slug][0...$limit] {
+  _id,
+  slug,
+  title,
+  client,
+  industry,
+  duration,
+  description,
+  image,
+  results
+}`;
+
+// =============================================
+// Job Posting Queries
+// =============================================
+
+// Query for fetching all active job postings
+export const allJobPostingsQuery = groq`*[_type == "jobPosting" && isActive == true] | order(_createdAt desc) {
+  _id,
+  title,
+  slug,
+  location,
+  type,
+  experience,
+  description,
+  skills,
+  badges,
+  icon,
+  color,
+  salary,
+  department,
+  isActive
+}`;
+
+// Query for fetching a single job posting by slug
+export const jobPostingBySlugQuery = groq`*[_type == "jobPosting" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  location,
+  type,
+  experience,
+  description,
+  skills,
+  badges,
+  icon,
+  color,
+  salary,
+  department,
+  isActive
 }`;

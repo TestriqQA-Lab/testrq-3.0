@@ -1,6 +1,6 @@
 import React from "react";
 import { FaQuoteLeft, FaStar, FaUser } from "react-icons/fa";
-import { CaseStudy } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 import Link from "next/link";
 
 interface CaseStudyTestimonialSectionProps {
@@ -14,9 +14,8 @@ const CaseStudyTestimonialSection: React.FC<
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
         key={index}
-        className={`w-5 h-5 ${
-          index < rating ? "text-yellow-400" : "text-gray-300"
-        }`}
+        className={`w-5 h-5 ${index < rating ? "text-yellow-400" : "text-gray-300"
+          }`}
       />
     ));
   };

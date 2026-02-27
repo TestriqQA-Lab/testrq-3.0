@@ -102,7 +102,7 @@ export default async function SitemapPage() {
                                         {tags.map((tag: Tag) => (
                                             <li key={tag.id}>
                                                 <Link
-                                                    href={`/blog/tag/${tag.slug}`}
+                                                    href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
                                                     className="inline-block px-3 py-1.5 bg-gray-100 text-gray-600 text-sm rounded-lg hover:bg-blue-600 hover:text-white transition-all"
                                                 >
                                                     {tag.name} <span className="opacity-60 ml-1 text-xs">({tag.count})</span>
