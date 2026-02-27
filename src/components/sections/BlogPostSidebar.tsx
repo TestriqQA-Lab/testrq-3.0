@@ -227,7 +227,7 @@ const BlogPostSidebar: React.FC<BlogPostSidebarProps> = ({ post }) => {
             popularTags.map((tag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${tag.slug}`}
+                href={`/blog/tag/${encodeURIComponent(tag.slug)}`}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-600 hover:text-white transition-colors"
               >
                 #{tag.name}

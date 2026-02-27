@@ -3,10 +3,12 @@ import {
   sanityGetPosts,
   sanityGetCategories,
   sanityGetTags,
-  sanityGetPages
+  sanityGetPages,
+  sanityGetAllCaseStudies,
+  CaseStudy
 } from '@/lib/sanity-data-adapter';
 import { getAllCities, CityData } from '@/app/lib/CityData';
-import { getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
+import { redirects } from '@/lib/redirects';
 
 // Function to determine change frequency based on content type and last modified date
 function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
@@ -126,7 +128,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       'regression-testing',
       'security-testing',
       'shopping-apps-certification',
-      'software-testing-guide',
       'trading-apps-certification',
     ].map(service => ({
       url: `${baseUrl}/${service}`,
@@ -160,8 +161,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getPriority('city'),
     }));
 
-    // Dynamic Case Study Pages
-    const allCaseStudies = getAllCaseStudies();
+    // Dynamic Case Study Pages (from Sanity)
+    const allCaseStudies = await sanityGetAllCaseStudies();
     const caseStudyPages = allCaseStudies.map((caseStudy: CaseStudy) => ({
       url: `${baseUrl}/${encodeURIComponent(caseStudy.slug)}`,
       lastModified: currentDate,
@@ -182,13 +183,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // Sanity Blog Posts
     const sanityPostsData = await sanityGetPosts();
-    const blogPosts = sanityPostsData.map((post) => ({
-      url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
-      lastModified: new Date(post.modifiedISO || post.dateISO),
-      changeFrequency: getChangeFrequency('post', post.modifiedISO),
-      priority: getPriority('post'),
-      images: post.image ? [escapeImage(post.image)] : undefined,
-    }));
+    const blogPosts = sanityPostsData
+      .filter((post) => {
+        // Filter out posts that have a custom canonical URL different from their own URL
+        // uniqueEntriesMap will deduplicate based on URL, but this filter prevents "Non-canonical" error
+        // for pages that point elsewhere.
+        const postUrl = `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`;
+        if (post.seo?.canonicalUrl && post.seo.canonicalUrl !== postUrl) {
+          return false;
+        }
+        return true;
+      })
+      .map((post) => ({
+        url: `${baseUrl}/blog/post/${encodeURIComponent(post.slug)}`,
+        lastModified: new Date(post.modifiedISO || post.dateISO),
+        changeFrequency: getChangeFrequency('post', post.modifiedISO),
+        priority: getPriority('post'),
+        images: post.image ? [escapeImage(post.image)] : undefined,
+      }));
 
     // Sanity Categories
     const sanityCategoriesData = await sanityGetCategories();
@@ -251,7 +263,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       return new Date(b.lastModified!).getTime() - new Date(a.lastModified!).getTime();
     });
 
-    return uniqueSitemapEntries;
+    // ---------------------------------------------------------------------------
+    // FILTERING LOGIC: Remove Redirected & Broken URLs
+    // ---------------------------------------------------------------------------
+
+    // 1. Create a Set of all redirect sources (normalized)
+    const redirectSources = new Set(redirects.map((r) => r.source));
+
+    // 2. Define Manual Blocklist for known broken URLs (relative paths)
+    const BLOCKED_PATHS = new Set([
+      '/blog/tag/Regression-Testing',        // User reported redirect
+    ]);
+
+    const finalSitemapEntries = uniqueSitemapEntries.filter((entry) => {
+      try {
+        const urlObj = new URL(entry.url);
+        const path = urlObj.pathname;
+
+        // Check if path is in redirects
+        if (redirectSources.has(path)) {
+          // console.log(`[Sitemap] Excluding Redirected URL: ${entry.url}`);
+          return false;
+        }
+
+        // Check if path is in manual blocklist
+        if (BLOCKED_PATHS.has(path)) {
+          // console.log(`[Sitemap] Excluding Blocked URL: ${entry.url}`);
+          return false;
+        }
+
+        // Specific check for encoded slugs if needed, but pathname is usually decoded by browser/console 
+        // but here we deal with what we generated.
+        // We generated with encodeURIComponent. 
+        // URL.pathname is usually decoded. Let's match against exact generation if possible
+        // Or just check strictly against the source string from redirects which are like "/foo"
+
+        // Double check against unencoded path just in case
+        if (redirectSources.has(decodeURIComponent(path))) {
+          return false;
+        }
+
+        return true;
+      } catch (e) {
+        // If URL parsing fails, keep it or log error (unlikely here as we perform construction)
+        return true;
+      }
+    });
+
+    return finalSitemapEntries;
 
   } catch (error) {
     console.error('Error generating sitemap:', error);
