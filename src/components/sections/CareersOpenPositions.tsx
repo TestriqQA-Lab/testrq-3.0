@@ -11,19 +11,19 @@ import {
   FaCheckCircle,
   FaCaretDown,
 } from "react-icons/fa";
-import { jobOpenings, JobOpening } from "@/app/lib/openings";
+import { SanityJobOpening } from "@/lib/sanity-data-adapter";
 import Link from "next/link";
 import JobCardItem from "./JobCardItem";
 import { useRecaptchaForm } from "@/lib/recaptcha/useRecaptchaForm";
 
 
-const CareersOpenPositions: React.FC = () => {
+const CareersOpenPositions: React.FC<{ jobOpenings: SanityJobOpening[] }> = ({ jobOpenings }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const deferredSearchTerm = useDeferredValue(searchTerm);
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [, startTransition] = useTransition();
   const [showApplicationModal, setShowApplicationModal] = useState(false);
-  const [selectedPosition, setSelectedPosition] = useState<JobOpening | null>(
+  const [selectedPosition, setSelectedPosition] = useState<SanityJobOpening | null>(
     null
   );
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -123,7 +123,7 @@ const CareersOpenPositions: React.FC = () => {
     };
   }, []);
 
-  const filteredPositions = jobOpenings.filter((position) => {
+  const filteredPositions = (jobOpenings || []).filter((position) => {
     const matchesSearch =
       position.title.toLowerCase().includes(deferredSearchTerm.toLowerCase()) ||
       position.skills.some((skill) =>
@@ -133,7 +133,7 @@ const CareersOpenPositions: React.FC = () => {
   });
 
   const handleApplyClick = useCallback(
-    (position: JobOpening, e: React.MouseEvent<HTMLButtonElement>) => {
+    (position: SanityJobOpening, e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
       setSelectedPosition(position);
       setShowApplicationModal(true);

@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import { SearchResults, SearchInsights, SearchResultsLoading } from "./SearchContent";
 
+export const revalidate = 60; // Revalidate every minute
+
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
