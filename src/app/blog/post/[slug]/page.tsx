@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, Post } from "@/lib/sanity-data-adapter";
+import { sanityGetPostBySlug, sanityGetRelatedPosts, sanityGetCategories, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
 import { extractHeadings } from "@/lib/utils";
 import StructuredData from "@/components/seo/StructuredData";
 
@@ -11,6 +11,14 @@ import RelatedPosts from "@/components/sections/RelatedPosts";
 import BlogPostHeroSection from "@/components/sections/BlogPostHeroSection";
 import ResourceSidebar from "@/components/sections/ResourceSidebar";
 import VisualTableOfContents from "@/components/sections/VisualTableOfContents";
+
+export const revalidate = 60; // Revalidate every minute
+export const dynamicParams = true; // Allow rendering of new posts not generated at build time
+
+export async function generateStaticParams() {
+  const slugs = await sanityGetAllPostSlugs();
+  return slugs.map((slug: string) => ({ slug }));
+}
 
 const BlogPostContent = dynamic(
   () => import("@/components/sections/BlogPostContent"),
@@ -78,7 +86,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // use post....
   return {
     title: post.seo.title,
-    // ...
+    description: post.seo.description,
     openGraph: {
       title: post.title,
       description: post.excerpt || post.seo.description,
