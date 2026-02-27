@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCalendarAlt, FaIndustry, FaHome, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
-import { CaseStudy } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 import Image from "next/image";
 
 interface CaseStudyHeroSectionProps {
@@ -99,7 +99,7 @@ const CaseStudyHeroSection: React.FC<CaseStudyHeroSectionProps> = ({
 
           {/* Image */}
           <div className="relative">
-            <div className={`rounded-2xl p-8 h-96 flex items-center justify-center ${caseStudy.id === 16
+            <div className={`rounded-2xl p-8 h-96 flex items-center justify-center ${caseStudy.id === 'caseStudy-ragnar-case-study'
               ? 'bg-gradient-to-br from-gray-800 to-gray-900'
               : 'bg-gradient-to-br from-gray-100 to-gray-200'
               }`}>

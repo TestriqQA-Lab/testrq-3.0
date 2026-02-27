@@ -3,15 +3,19 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaCalendarAlt, FaArrowRight, FaStar } from "react-icons/fa";
-import { caseStudiesData } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 import Image from "next/image";
 
-const CaseStudiesFeaturedSection = () => {
+interface CaseStudiesFeaturedSectionProps {
+  caseStudies: CaseStudy[];
+}
+
+const CaseStudiesFeaturedSection = ({ caseStudies }: CaseStudiesFeaturedSectionProps) => {
   const INITIAL_VISIBLE_COUNT = 4;
   const [showAll, setShowAll] = useState(false);
 
   // SEO Fix: We render ALL case studies to ensuring crawling, but hide extra ones visually
-  const visibleCaseStudies = caseStudiesData; // Render all
+  const visibleCaseStudies = caseStudies; // Render all
 
   return (
     <section id="case-studies-section" className="bg-white px-8 py-16 xl:px-24">
@@ -176,7 +180,7 @@ const CaseStudiesFeaturedSection = () => {
         </div>
 
         {/* Toggle Button */}
-        {caseStudiesData.length > INITIAL_VISIBLE_COUNT && (
+        {caseStudies.length > INITIAL_VISIBLE_COUNT && (
           <div className="text-center mt-16">
             <button
               onClick={() => setShowAll((prev) => !prev)}

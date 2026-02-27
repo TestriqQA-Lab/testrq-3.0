@@ -52,8 +52,8 @@ export const organizationSchema = {
     "addressCountry": "US"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq",
-    "https://twitter.com/testriq",
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://x.com/testriq",
     "https://github.com/TestriqQA-Lab"
   ],
   "hasOfferCatalog": {
@@ -160,10 +160,12 @@ export const productServiceSchema = {
     "price": "0",
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
     "hasMerchantReturnPolicy": {
       "@type": "MerchantReturnPolicy",
-      "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
     },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -182,13 +184,13 @@ export const productServiceSchema = {
           "@type": "QuantitativeValue",
           "minValue": 0,
           "maxValue": 1,
-          "unitCode": "DAY"
+          "unitCode": "d"
         },
         "transitTime": {
           "@type": "QuantitativeValue",
           "minValue": 1,
           "maxValue": 5,
-          "unitCode": "DAY"
+          "unitCode": "d"
         }
       }
     }
@@ -759,7 +761,7 @@ export const iotDeviceTestingSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -997,15 +999,58 @@ export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/manual-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/manual-testing-services/#service",
       "name": "Manual & Exploratory Testing Services",
-      "category": "Software Quality Assurance",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Software Quality Assurance",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
@@ -1126,24 +1171,60 @@ export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/automation-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/automation-testing-services/#service",
       "name": "Intelligent Automation Testing Services",
-      "category": "Test Automation & QA Architecture",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Test Automation & QA Architecture",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
       "offers": {
         "@type": "Offer",
-        "price": "0",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact"
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1506,8 +1587,8 @@ export const toolsPageSchema = {
         "addressCountry": "IN"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq.lab"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/"
       ]
     },
     {
@@ -1605,19 +1686,58 @@ export const securityTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/security-testing/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/security-testing/#service",
       "name": "VAPT & Security Testing Center of Excellence (TCoE)",
-      "category": "Cybersecurity & Penetration Testing",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Cybersecurity & Penetration Testing",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
-          "https://clutch.co/profile/testriq-qa-lab"
-        ]
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.testriq.com/contact",
+        "itemCondition": "https://schema.org/NewCondition",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -1789,6 +1909,7 @@ export const qaDocumentationServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -1860,6 +1981,7 @@ export const dataAnalysisServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -1931,6 +2053,7 @@ export const completeTestingGuideSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "Free"
@@ -2011,6 +2134,7 @@ export const ecommerceTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2105,6 +2229,7 @@ export const elearningTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2184,6 +2309,7 @@ export const healthcareTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2278,6 +2404,7 @@ export const gamingTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2348,6 +2475,7 @@ export const iotTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2434,6 +2562,7 @@ export const bankingFinanceTestingServiceSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2512,6 +2641,7 @@ export const telecommunicationTestingSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2553,9 +2683,9 @@ export const aboutPageSchema = {
         "areaServed": "World"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq",
-        "https://twitter.com/testriq"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/",
+        "https://x.com/testriq"
         // Add other social links found in your footer
       ],
       "awards": [
@@ -2651,9 +2781,9 @@ export const ourTeamPageSchema = {
       "email": "contact@testriq.com"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://twitter.com/testriq",
-      "https://www.facebook.com/testriq"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq",
+      "https://www.facebook.com/testriq.lab/"
     ]
   },
   "hasPart": {
@@ -3345,8 +3475,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3385,8 +3517,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3425,8 +3559,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3465,8 +3601,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3505,8 +3643,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3545,8 +3685,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3585,8 +3727,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3895,6 +4039,7 @@ export const smartDeviceTestingSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4001,6 +4146,7 @@ export const matrimonialAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4011,50 +4157,106 @@ export const matrimonialAppCertificationSchema = {
 // Structured data for dating app certification service
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Dating App Trust Certification",
-  description:
-    "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  brand: {
-    "@type": "Brand",
-    name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+  "@type": "Service",
+  "name": "Dating App Trust Certification",
+  "serviceType": "Quality Assurance and Certification",
+  "description": "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TESTRIQ QA Lab",
+    "url": "www.testriq.com",
+    "logo": "www.testriq.com/logo.png"
   },
-  category: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
+  "image": "https://www.testriq.com/logo.png",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.testriq.com/contact",
+    "itemCondition": "https://schema.org/NewCondition",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "US",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+      "merchantReturnLink": "https://www.testriq.com/contact"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "USD"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "US"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 1,
+          "unitCode": "d"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 5,
+          "unitCode": "d"
+        }
+      }
+    }
+  },
+  "category": "Quality Assurance and Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    name: "Dating App Certification Tiers",
-    itemListElement: [
+    "name": "Dating App Certification Tiers",
+    "itemListElement": [
       {
         "@type": "Offer",
-        name: "Basic Certification",
-        description:
-          "Platform Functionality + Privacy + Content Moderation Checklist",
-        category: "New dating apps in MVP/early-launch phase",
+        "name": "Basic Certification",
+        "description": "Platform Functionality + Privacy + Content Moderation Checklist",
+        "category": "New dating apps in MVP/early-launch phase"
       },
       {
         "@type": "Offer",
-        name: "Advanced Certification",
-        description: "Basic + Identity Verification + Messaging Audit",
-        category: "Growth-stage or regionally scaling apps",
+        "name": "Advanced Certification",
+        "description": "Basic + Identity Verification + Messaging Audit",
+        "category": "Growth-stage or regionally scaling apps"
       },
       {
         "@type": "Offer",
-        name: "Enterprise Certification",
-        description:
-          "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
-        category: "Established or global dating platforms",
-      },
-    ],
+        "name": "Enterprise Certification",
+        "description": "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
+        "category": "Established or global dating platforms"
+      }
+    ]
   },
-  aggregateRating: {
+  "aggregateRating": {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
   },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "App Developer"
+      },
+      "datePublished": "2024-03-10",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      },
+      "reviewBody": "The certification process was thorough and helped us gain trust with our user base. Highly valuable."
+    }
+  ]
 };
 
 
@@ -4131,6 +4333,7 @@ export const fantasyAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4202,6 +4405,7 @@ export const tradingAppCertificationSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4266,17 +4470,17 @@ export const sapTestingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/sap-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/sap-testing-services/#service",
       "name": "SAP Testing Services",
-      "category": "Enterprise Software QA",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Enterprise Software QA",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -4286,8 +4490,42 @@ export const sapTestingSchema = {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact-us"
+        "url": "https://www.testriq.com/contact-us",
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+          "merchantReturnLink": "https://www.testriq.com/contact"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "US"
+          },
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "d"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 1,
+              "maxValue": 5,
+              "unitCode": "d"
+            }
+          }
+        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -4424,8 +4662,8 @@ export const professionalServiceSchema = {
     "closes": "18:00"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq-qa-lab",
-    "https://www.facebook.com/testriq.lab"
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://www.facebook.com/testriq.lab/"
   ],
   "priceRange": "$$"
 };

@@ -144,7 +144,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
             relatedTags.map((relatedTag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${relatedTag.slug}`}
+                href={`/blog/tag/${encodeURIComponent(relatedTag.slug)}`}
                 className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-purple-50 transition-colors group"
               >
                 <div className="flex items-center gap-2">
@@ -179,7 +179,7 @@ const TagSidebar: React.FC<TagSidebarProps> = ({ tag }) => {
             popularTags.map((popularTag, index) => (
               <Link
                 key={index}
-                href={`/blog/tag/${popularTag.slug}`}
+                href={`/blog/tag/${encodeURIComponent(popularTag.slug)}`}
                 className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-purple-600 hover:text-white transition-colors"
               >
                 #{popularTag.name}

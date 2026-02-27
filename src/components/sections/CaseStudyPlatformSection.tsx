@@ -7,7 +7,7 @@ import {
   FaImages,
   FaFont,
 } from "react-icons/fa";
-import { CaseStudy } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 import Link from "next/link";
 
 interface CaseStudyPlatformSectionProps {

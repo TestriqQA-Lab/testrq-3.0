@@ -134,16 +134,16 @@ const TagPostsGrid: React.FC<TagPostsGridProps> = ({ tag, posts }) => {
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.slice(0, 4).map((postTag, index) => (
+                  {post.tagsData && post.tagsData.slice(0, 4).map((tagData, index) => (
                     <Link
                       key={index}
-                      href={`/blog/tag/${postTag.toLowerCase().replace(/\s+/g, "-")}`}
-                      className={`px-2 py-1 text-xs rounded-full transition-colors ${postTag.toLowerCase() === tag.name.toLowerCase()
+                      href={`/blog/tag/${encodeURIComponent(tagData.slug)}`}
+                      className={`px-2 py-1 text-xs rounded-full transition-colors ${tagData.name.toLowerCase() === tag.name.toLowerCase()
                         ? 'bg-purple-100 text-purple-700 font-semibold'
                         : 'bg-gray-100 text-gray-600 hover:bg-purple-50 hover:text-purple-600'
                         }`}
                     >
-                      #{postTag}
+                      #{tagData.name}
                     </Link>
                   ))}
                 </div>

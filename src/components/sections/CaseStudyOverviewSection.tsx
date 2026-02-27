@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBuilding, FaUsers, FaClock, FaProjectDiagram } from "react-icons/fa";
-import { CaseStudy } from "@/app/lib/caseStudies";
+import { CaseStudy } from "@/lib/sanity-data-adapter";
 
 interface CaseStudyOverviewSectionProps {
   caseStudy: CaseStudy;
