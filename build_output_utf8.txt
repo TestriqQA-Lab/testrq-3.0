@@ -1,0 +1,4 @@
+﻿
+> testrq-3.0@0.1.0 build
+> cross-env NODE_OPTIONS='--max-old-space-size=4096' next build
+
