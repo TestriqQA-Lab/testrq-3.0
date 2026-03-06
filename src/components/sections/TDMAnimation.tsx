@@ -147,7 +147,7 @@ const TDMAnimation = () => {
                         }}
                         animate={controls}
                     >
-                        {[x => x - 30, x => x, x => x + 30].map((fn, i) => (
+                        {[(x: number) => x - 30, (x: number) => x, (x: number) => x + 30].map((fn, i) => (
                             <motion.circle
                                 key={`syn-${i}`}
                                 cx={fn(400)} cy="105" r="5" fill={colors.synthetic}
