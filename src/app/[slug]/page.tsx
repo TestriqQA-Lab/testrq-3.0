@@ -306,7 +306,12 @@ export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
 
   // First check if it's a case study
-  const caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  let caseStudy = null;
+  try {
+    caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  } catch {
+    // Sanity unreachable during build - treat as city page
+  }
   if (caseStudy) {
     const metadata = caseStudy.metadata;
     // Fixed: Use unique title for each case study to avoid duplicate title tags
@@ -410,12 +415,19 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+export const revalidate = 60;
+
 export default async function SlugPage({ params }: PageProps) {
   const resolvedParams = await params;
   console.log("SlugPage resolvedParams:", resolvedParams);
 
   // First check if it's a case study
-  const caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  let caseStudy = null;
+  try {
+    caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  } catch {
+    // Sanity unreachable - fall through to city page
+  }
   if (caseStudy) {
     const caseStudySchema = generateCaseStudySchema(caseStudy);
     const relatedCaseStudies = await sanityGetRelatedCaseStudies(caseStudy.slug, 2);
@@ -466,14 +478,20 @@ export default async function SlugPage({ params }: PageProps) {
   );
 }
 
-export const revalidate = 60;
+export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const cities = getAllCities();
-  const caseStudySlugs = await sanityGetAllCaseStudySlugs();
+
+  let caseStudySlugs: string[] = [];
+  try {
+    caseStudySlugs = await sanityGetAllCaseStudySlugs();
+    console.log("Generated case study slugs:", caseStudySlugs);
+  } catch (err) {
+    console.warn("Could not fetch case study slugs from Sanity (network error during build). Case study pages will be rendered on-demand.", err);
+  }
 
   console.log("Generated city slugs:", cities.map((city) => city.slug));
-  console.log("Generated case study slugs:", caseStudySlugs);
 
   // Combine both city and case study slugs
   const allSlugs = [

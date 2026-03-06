@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheckCircle, FaLaptopCode, FaMobileAlt, FaHandSparkles, FaSearch, FaCogs, FaUserCheck, FaShoppingCart, FaUserLock, FaHospital, FaShieldAlt, FaBookOpen } from "react-icons/fa";
+import { FaCheckCircle, FaLaptopCode, FaMobileAlt, FaHandSparkles, FaSearch, FaCogs, FaUserCheck, FaShoppingCart, FaUserLock, FaHospital, FaShieldAlt, FaBookOpen, FaGlobe } from "react-icons/fa";
 
 const AccessibilityServicesListSection: React.FC = () => {
     const services = [
