@@ -6,6 +6,19 @@ import { notFound } from "next/navigation";
 import { sanityGetAdaptedCategoryData } from "@/lib/sanity-data-adapter";
 
 export const revalidate = 60; // Revalidate every minute
+export const dynamicParams = true; // Allow on-demand rendering for new/unknown categories
+
+export async function generateStaticParams() {
+  try {
+    const { sanityGetCategories } = await import("@/lib/sanity-data-adapter");
+    const categories = await sanityGetCategories();
+    return categories
+      .filter((cat) => cat.postCount > 0)
+      .map((cat) => ({ category: cat.id }));
+  } catch {
+    return [];
+  }
+}
 
 const CategoryHeroSection = dynamic(
   () => import("@/components/sections/CategoryHeroSection"),
@@ -52,8 +65,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { category } = await params;
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
 
-  const categoryData = await sanityGetAdaptedCategoryData(category);
+  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
   if (!categoryData) {
     return {
@@ -111,8 +126,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
       description: categoryDescription,
       images: [`https://www.testriq.com/images/categories/${category}-twitter.jpg`],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     alternates: {
       canonical: canonicalUrl,
@@ -123,7 +138,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  const categoryData = await sanityGetAdaptedCategoryData(category);
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
+  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
   if (!categoryData) {
     notFound();

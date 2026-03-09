@@ -1,5 +1,4 @@
 import { BlogHeroSection } from "@/components/client-wrappers/BlogClientComponents";
-import BlogQAKnowledgeHub from "@/components/sections/BlogQAKnowledgeHub";
 import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
@@ -58,8 +57,8 @@ export async function generateMetadata({
       title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
       description: "Stay updated with the latest trends, insights, and best practices in software testing and QA. Explore expert articles, tutorials, and industry news from Testriq's ISTQB certified experts.",
       images: ["https://www.testriq.com/images/testriq-blog-twitter.jpg"],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     alternates: {
       canonical: canonicalUrl,
@@ -121,8 +120,6 @@ export default async function BlogPage({
         featuredPosts={featuredPosts}
         trendingPosts={trendingPosts}
       />
-
-      <BlogQAKnowledgeHub trendingPosts={trendingPosts} />
     </MainLayout>
   );
 }
