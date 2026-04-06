@@ -42,6 +42,9 @@ export interface Post {
     image: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     mainImage: any;
+    mainImageAlt: string;
+    mainImageTitle?: string;
+    mainImageCaption?: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     authorImageRaw: any;
     featured: boolean;
@@ -171,6 +174,9 @@ export function adaptSanityPost(sanityPost: any): Post {
             readTime: '0 min read',
             image: '',
             mainImage: null,
+            mainImageAlt: '',
+            mainImageTitle: '',
+            mainImageCaption: '',
             featured: false,
             trending: false,
             views: '0',
@@ -238,6 +244,9 @@ export function adaptSanityPost(sanityPost: any): Post {
         readTime: estimateReadTime(sanityPost.body || sanityPost.excerpt),
         image: sanityPost.mainImage ? urlFor(sanityPost.mainImage).width(1200).quality(90).url() : 'https://placehold.co/1200x675/png',
         mainImage: sanityPost.mainImage || null,
+        mainImageAlt: sanityPost.mainImage?.alt || sanityPost.title || '',
+        mainImageTitle: sanityPost.mainImage?.title || '',
+        mainImageCaption: sanityPost.mainImage?.caption || '',
         featured: generateConsistentValue(sanityPost._id + 'feat', 10) < 2,
         trending: generateConsistentValue(sanityPost._id + 'trend', 10) < 3,
         views,
@@ -261,7 +270,14 @@ export function adaptSanityPost(sanityPost: any): Post {
                     : rawText;
             })(),
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            keywords: sanityPost.tags?.map((t: any) => t.title).join(', ') || '',
+            keywords: (() => {
+                if (sanityPost.seo?.metaKeywords) return sanityPost.seo.metaKeywords;
+                if (sanityPost.tags && sanityPost.tags.length > 0) {
+                    return sanityPost.tags.map((t: any) => t.title).join(', ');
+                }
+                // Global fallback for Testing blog
+                return "software testing, test automation, quality assurance, QA testing, selenium testing, performance testing, security testing, mobile testing, API testing, testing best practices, testing tutorials, testing frameworks, testing tools, automation testing, manual testing";
+            })(),
             canonicalUrl: sanityPost.seo?.canonicalUrl || null
         }
     };
@@ -280,7 +296,6 @@ export async function sanityGetPostBySlug(slug: string) {
     console.log(`Fetching post for slug: ${slug}`);
     try {
         const post = await client.fetch(queries.postBySlugQuery, { slug });
-        console.log(`[DEBUG] Raw Sanity Post Data for ${slug}:`, JSON.stringify(post, null, 2));
         console.log(`Sanity fetch result for ${slug}:`, post ? "Found" : "Not Found");
         return post ? adaptSanityPost(post) : null;
     } catch (error) {

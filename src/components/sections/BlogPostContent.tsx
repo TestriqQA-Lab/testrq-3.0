@@ -60,18 +60,24 @@ const components = {
       }
       const { width, height } = getImageDimensions(value.asset._ref);
       return (
-        <div className="relative w-full my-10 flex justify-center">
-          <div className="relative overflow-hidden rounded-2xl shadow-xl border border-slate-100/50 bg-slate-50 w-full max-w-4xl max-h-[70vh] flex items-center justify-center">
+        <figure className="relative w-full my-10 flex flex-col items-center">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl border border-slate-100/50 bg-slate-50 w-full max-w-4xl max-h-[70vh] flex items-center justify-center transition-all duration-300 hover:shadow-2xl hover:border-slate-200/80">
             <Image
               src={urlFor(value).width(1200).quality(90).url()}
               alt={value.alt || "Blog image"}
+              title={value.title || value.alt || "Blog image"}
               width={width}
               height={height}
               className="w-full h-auto max-h-[70vh] object-contain rounded-2xl"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw"
             />
           </div>
-        </div>
+          {value.caption && (
+            <figcaption className="mt-4 px-4 py-2 text-center text-sm italic text-slate-500 border-l-2 border-blue-500/30 bg-slate-50/50 rounded-r-lg max-w-2xl">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -202,7 +208,24 @@ const components = {
         <span className="flex-1 leading-relaxed">{children}</span>
       </li>
     ),
-  }
+  },
+  marks: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    link: ({ children, value }: any) => {
+      const href = value?.href || "#";
+      const isExternal = !href.startsWith("/") && !href.startsWith("https://www.testriq.com");
+      return (
+        <Link
+          href={href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="text-blue-600 font-medium hover:text-blue-700 hover:underline decoration-blue-500/30 underline-offset-4 transition-colors"
+        >
+          {children}
+        </Link>
+      );
+    },
+  },
 };
 
 const BlogPostContent: React.FC<BlogPostContentProps> = ({ post }) => {

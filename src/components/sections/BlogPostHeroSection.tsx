@@ -205,15 +205,23 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
                 Full-width container
             -------------------------------- */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
-                <figure className="relative aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 shadow-sm">
-                    <Image
-                        src={imageUrl}
-                        alt={title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1120px"
-                        priority
-                    />
+                <figure className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 shadow-sm transition-transform duration-500 hover:scale-[1.01]">
+                    <div className="relative aspect-[16/9]">
+                        <Image
+                            src={imageUrl}
+                            alt={post?.mainImageAlt || title}
+                            title={post?.mainImageTitle || title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1120px"
+                            priority
+                        />
+                    </div>
+                    {post?.mainImageCaption && (
+                        <figcaption className="mt-4 px-4 py-2 text-center text-sm italic text-gray-500 border-l-2 border-blue-500/30 bg-gray-50/50">
+                            {post.mainImageCaption}
+                        </figcaption>
+                    )}
                 </figure>
             </div>
 

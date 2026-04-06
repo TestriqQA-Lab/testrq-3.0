@@ -63,6 +63,26 @@ export default defineType({
         defineArrayMember({
             type: 'image',
             options: { hotspot: true },
+            fields: [
+                {
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alternative Text',
+                    description: 'Descriptive text for SEO and accessibility.',
+                },
+                {
+                    name: 'title',
+                    type: 'string',
+                    title: 'Image Title (Tooltip)',
+                    description: 'Text that appears when users hover over the image.',
+                },
+                {
+                    name: 'caption',
+                    type: 'string',
+                    title: 'Image Caption',
+                    description: 'Visible text displayed below the image.',
+                }
+            ]
         }),
         defineArrayMember({
             type: 'customTable',
