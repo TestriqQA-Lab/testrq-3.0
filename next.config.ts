@@ -703,6 +703,14 @@ const nextConfig: NextConfig = {
 
       // Critical Fix: Redirecting the missing guide page itself to Blog
       { source: "/software-testing-guide", destination: "/blog", permanent: true },
+
+      // Batch 12: Fix Semrush-Detected 4xx Category Errors (March 2026)
+      // devops-&-ci-cd → devops-and-ci-cd (literal & in URL)
+      { source: "/blog/category/devops-&-ci-cd", destination: "/blog/category/devops-and-ci-cd", permanent: true },
+      // devops-%26-ci-cd → devops-and-ci-cd (URL-encoded & = %26)
+      { source: "/blog/category/devops-%26-ci-cd", destination: "/blog/category/devops-and-ci-cd", permanent: true },
+      // software-quality-assurance with trailing space → clean slug
+      { source: "/blog/category/software-quality-assurance ", destination: "/blog/category/software-quality-assurance", permanent: true },
     ];
   },
 };

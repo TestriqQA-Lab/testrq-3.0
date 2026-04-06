@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "How does cross-browser compatibility testing impact SEO?",
     answer:
-      (<>If your app has layout issues on Safari or Firefox, your bounce rate increases, hurting rankings. A robust checklist for <Link href='/blog/post/cross-browser-testing-checklist-web-app' className="text-[theme(color.brand.blue)] hover:underline">cross-browser compatibility testing</Link> is essential for SEO success.</>),
+      (<>If your app has layout issues on Safari or Firefox, your bounce rate increases, hurting rankings. A robust checklist for cross-browser compatibility testing is essential for SEO success.</>),
   },
 ];
 

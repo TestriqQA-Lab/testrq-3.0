@@ -113,8 +113,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt || post.seo.description,
       images: post.image ? [post.image] : [],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     category: "Technology",
     alternates: {

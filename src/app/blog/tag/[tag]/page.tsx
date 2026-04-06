@@ -3,9 +3,19 @@ import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { sanityGetPostsByTag } from "@/lib/sanity-data-adapter";
+import { sanityGetPostsByTag, sanityGetTags } from "@/lib/sanity-data-adapter";
 
 export const revalidate = 60; // Revalidate every minute
+export const dynamicParams = true; // Allow on-demand rendering for new tags
+
+export async function generateStaticParams() {
+  try {
+    const tags = await sanityGetTags();
+    return tags.map((tag) => ({ tag: tag.slug }));
+  } catch {
+    return [];
+  }
+}
 
 const TagHeroSection = dynamic(
   () => import("@/components/sections/TagHeroSection"),
@@ -52,8 +62,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { tag } = await params;
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedTag = decodeURIComponent(tag).toLowerCase().trim();
 
-  const tagData = await sanityGetPostsByTag(tag);
+  const tagData = await sanityGetPostsByTag(normalizedTag);
 
   if (!tagData.tag) {
     return {
@@ -112,8 +124,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       title: `${tagName} Articles | Expert Testing Insights & Best Practices | Testriq`,
       description: tagDescription,
       images: [`https://www.testriq.com/images/tags/${tag}-twitter.jpg`],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     alternates: {
       canonical: canonicalUrl,
@@ -124,9 +136,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function TagPage({ params }: Props) {
   const { tag } = await params;
-  const tagData = await sanityGetPostsByTag(tag);
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedTag = decodeURIComponent(tag).toLowerCase().trim();
+  const tagData = await sanityGetPostsByTag(normalizedTag);
 
-  if (!tagData.tag || tagData.posts.length === 0) {
+  // Only 404 if the tag itself doesn't exist in Sanity.
+  // If the tag exists but has 0 posts, render an empty state page (preserves SEO equity).
+  if (!tagData.tag) {
     notFound();
   }
 

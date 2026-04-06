@@ -1,0 +1,45 @@
+﻿node.exe : 
+At C:\nvm4w\nodejs\npx.ps1:16 char:5
++     & "$basedir/node$exe"  
+"$basedir/node_modules/npm/bin/npx-cli.js" ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:Stri 
+   ng) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+<--- Last few GCs --->
+
+[16740:0000026C5C3E1000]    79171 ms: Scavenge 
+2043.1 (2082.8) -> 2041.3 (2086.8) MB, pooled: 0 
+MB, 3.45 / 0.00 ms  (average mu = 0.217, current 
+mu = 0.323) allocation failure; 
+[16740:0000026C5C3E1000]    79685 ms: Mark-Compact 
+(reduce) 2045.3 (2086.8) -> 2041.5 (2080.0) MB, 
+pooled: 0 MB, 227.27 / 0.00 ms  (+ 255.2 ms in 0 
+steps since start of marking, biggest step 0.0 ms, 
+walltime since start of marking 514 ms) (average 
+mu = 0.
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Ineffective mark-compacts near heap 
+limit Allocation failed - JavaScript heap out of 
+memory
+----- Native stack trace -----
+
+ 1: 00007FF72D0220AD node::SetCppgcReference+17245
+ 2: 00007FF72CF8A4D8 
+v8::base::CPU::num_virtual_address_bits+92376
+ 3: 00007FF72DB0A1B1 v8::Isolate::ReportExternalAll
+ocationLimitReached+65
+ 4: 00007FF72DAF7096 
+v8::Function::Experimental_IsNopFunction+2790
+ 5: 00007FF72D946920 v8::internal::StrongRootAlloca
+torBase::StrongRootAllocatorBase+31392
+ 6: 00007FF72D940644 v8::internal::StrongRootAlloca
+torBase::StrongRootAllocatorBase+6084
+ 7: 00007FF72D93BCF5 
+v8::CpuProfileNode::GetScriptResourceNameStr+188069
+ 8: 00007FF72D2C13BD BIO_ssl_shutdown+189
+ 9: 7FF8000000000000 

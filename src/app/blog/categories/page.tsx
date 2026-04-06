@@ -142,8 +142,8 @@ export const metadata: Metadata = {
     description:
       "Explore comprehensive testing and QA categories on Testriq Blog. Find expert guides, tutorials, and best practices for test automation, performance testing, security testing, mobile testing, API testing, and more.",
     images: ["/OG/Blog-Twitter-Img.webp"],
-    creator: "@testriqlab",
-    site: "@testriqlab",
+    creator: "@testriq",
+    site: "@testriq",
   },
   alternates: {
     canonical: "https://www.testriq.com/blog/categories",
