@@ -152,8 +152,8 @@ function buildRssFeed(posts: Post[]): string {
     <generator>Next.js + Sanity CMS</generator>
     <ttl>60</ttl>
     <image>
-      <url>${baseUrl}/OG/testriq-qa-lab-llp-og-img.webp</url>
-      <title>Testriq QA Lab Blog</title>
+      <url>${baseUrl}/OG/og_image_final.png</url>
+      <title>Testriq QA Lab Blog – Software Testing Insights &amp; Best Practices</title>
       <link>${baseUrl}/blog</link>
       <width>144</width>
       <height>144</height>
