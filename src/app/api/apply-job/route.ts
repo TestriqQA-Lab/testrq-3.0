@@ -65,12 +65,12 @@ export async function POST(request: NextRequest) {
         }
 
         const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
-            port: parseInt(process.env.EMAIL_PORT || '587'),
-            secure: process.env.EMAIL_SECURE === 'true',
+            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+            port: parseInt(process.env.SMTP_PORT || '587'),
+            secure: false, // Gmail port 587 uses STARTTLS, secure should be false
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
             },
         });
 
@@ -514,8 +514,8 @@ export async function POST(request: NextRequest) {
     `;
 
         const mailOptionsAdmin = {
-            from: process.env.EMAIL_USER,
-            to: process.env.ADMIN_EMAIL,
+            from: process.env.SMTP_USER,
+            to: process.env.ADMIN_EMAIL || process.env.PROFESSIONAL_EMAIL_TO || 'hr@testriq.com',
             subject: `New Job Application: ${jobTitle} - ${fullName}`,
             html: adminEmailHTML,
             attachments: resumeBuffer ? [
@@ -528,7 +528,7 @@ export async function POST(request: NextRequest) {
         };
 
         const mailOptionsUser = {
-            from: process.env.EMAIL_USER,
+            from: process.env.SMTP_USER,
             to: email,
             subject: `Application Received: ${jobTitle} - Testriq`,
             html: userEmailHTML,
@@ -647,8 +647,8 @@ export async function POST(request: NextRequest) {
                         'Job Role',
                         'Job ID',
                         'Full Name',
-                        'Email',
                         'Phone Number',
+                        'Email',
                         'Location',
                         'Total Experience',
                         'Current CTC',
