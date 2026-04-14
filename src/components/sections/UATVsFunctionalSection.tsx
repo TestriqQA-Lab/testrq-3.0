@@ -21,7 +21,7 @@ const UATVsFunctionalSection = () => {
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#3B82F6_0.5px,transparent_0.5px)] [background-size:24px_24px]" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 relative z-10">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 italic tracking-tight">
                         UAT <span className="text-blue-500">vs.</span> Functional Testing

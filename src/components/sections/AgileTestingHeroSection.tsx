@@ -15,7 +15,7 @@ import AgileTestingAnimation from "./AgileTestingAnimation";
 
 const AgileTestingHeroSection: React.FC = () => {
     return (
-        <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-sky-50 to-indigo-50 overflow-hidden">
+        <section className="relative pt-8 pb-24 lg:pb-32 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-sky-50 to-indigo-50 overflow-x-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
@@ -82,7 +82,7 @@ const AgileTestingHeroSection: React.FC = () => {
                     </div>
 
                     {/* Right Content */}
-                    <div className="relative">
+                    <div className="relative flex items-start justify-center lg:-mt-32 lg:-translate-y-24 mt-8">
                         <AgileTestingAnimation />
                         {/* Floating badge for experience */}
                         <div className="absolute -top-6 -right-6 bg-white p-4 rounded-2xl shadow-2xl border border-sky-50 animate-bounce">

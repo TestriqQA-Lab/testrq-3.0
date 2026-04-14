@@ -7,6 +7,7 @@ import {
     FaMicrochip, FaTag, FaAward, FaShoppingCart, FaCloud,
     FaUserCog, FaCubes, FaRocket, FaTools, FaLaptopCode, FaIndustry, FaWifi
 } from "react-icons/fa";
+import Link from "next/link";
 
 const CompatibilityTestingServicesSection: React.FC = () => {
     const services = [
@@ -70,9 +71,9 @@ const CompatibilityTestingServicesSection: React.FC = () => {
                     >
                         <h4 className="text-white font-bold text-xl">Custom Requirements?</h4>
                         <p className="text-blue-50 text-sm">We tailor our strategy to your specific platform matrix.</p>
-                        <button className="bg-white text-brand-blue px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-50 transition-colors">
+                        <Link href="/contact-us" className="bg-white text-brand-blue px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-50 transition-colors">
                             Talk to an Expert
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
             </div>

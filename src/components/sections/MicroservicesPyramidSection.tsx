@@ -10,40 +10,40 @@ const MicroservicesPyramidSection: React.FC = () => {
             subtitle: "Production Validation",
             description: "Real-time insights and distributed tracing to ensure system health.",
             color: "bg-emerald-600",
-            width: "w-[30%]"
+            width: "w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%]"
         },
         {
             title: "End-to-End Testing",
             subtitle: "System Flows",
             description: "Full user scenario validation across all integrated services.",
             color: "bg-blue-600",
-            width: "w-[45%]"
+            width: "w-[90%] sm:w-[70%] md:w-[55%] lg:w-[45%]"
         },
         {
             title: "Component & Contract Testing",
             subtitle: "Service Boundaries",
             description: "Ensuring services adhere to agreed API contracts and schemas.",
             color: "bg-indigo-600",
-            width: "w-[65%]"
+            width: "w-[95%] sm:w-[80%] md:w-[70%] lg:w-[65%]"
         },
         {
             title: "Integration Testing",
             subtitle: "Service Dependencies",
             description: "Validating communication between a service and its immediate dependencies.",
             color: "bg-violet-600",
-            width: "w-[80%]"
+            width: "w-full sm:w-[90%] md:w-[85%] lg:w-[80%]"
         },
         {
             title: "Unit Testing",
             subtitle: "Service Internal",
             description: "Verifying the internal logic and code of individual microservices.",
             color: "bg-slate-800",
-            width: "w-[100%]"
+            width: "w-full"
         }
     ];
 
     return (
-        <section className="bg-white py-16 px-8 md:px-12 lg:px-24">
+        <section className="bg-white py-16 px-4 sm:px-8 md:px-12 lg:px-24 overflow-x-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

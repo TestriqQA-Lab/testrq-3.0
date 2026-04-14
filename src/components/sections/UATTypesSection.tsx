@@ -33,7 +33,7 @@ const UATTypesSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 text-center">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4 text-center">
                 <div className="max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         The <span className="text-blue-600 italic">Four Types</span> of Acceptance Testing

@@ -1,32 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaChrome, FaFirefox, FaSafari, FaEdge, FaMobile, FaTablet, FaLaptop } from "react-icons/fa6";
 
 const CompatibilityTestingAnimation = () => {
     const [mounted, setMounted] = useState(false);
-    const controls = useAnimation();
 
     useEffect(() => {
         setMounted(true);
     }, []);
-
-    useEffect(() => {
-        if (!mounted) return;
-
-        let isMounted = true;
-        const sequence = async () => {
-            while (isMounted) {
-                await controls.start("hidden");
-                await controls.start("visible");
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            }
-        };
-        sequence();
-
-        return () => { isMounted = false; };
-    }, [controls, mounted]);
 
     if (!mounted) return <div className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 shadow-xl border border-blue-200" />;
 
@@ -64,17 +47,9 @@ const CompatibilityTestingAnimation = () => {
                 {devices.map((device, idx) => (
                     <motion.g
                         key={device.id}
-                        initial="hidden"
-                        animate={controls}
-                        variants={{
-                            hidden: { opacity: 0, scale: 0.8, y: 20 },
-                            visible: {
-                                opacity: 1,
-                                scale: 1,
-                                y: 0,
-                                transition: { duration: 0.6, delay: idx * 0.2 }
-                            }
-                        }}
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: idx * 0.2 }}
                     >
                         {/* Device Frame */}
                         <rect
@@ -118,6 +93,7 @@ const CompatibilityTestingAnimation = () => {
                                     y={device.y + 20}
                                     width="20"
                                     height="20"
+                                    xmlns="http://www.w3.org/1999/xhtml"
                                 >
                                     <div className="text-lg">
                                         {browser.icon}
@@ -146,33 +122,34 @@ const CompatibilityTestingAnimation = () => {
                     r="3"
                     fill="#3b82f6"
                     initial={{ opacity: 0 }}
-                    animate={controls}
-                    variants={{
-                        visible: {
-                            opacity: [0, 1, 0],
-                            cx: [100, 450, 620],
-                            cy: [100, 150, 200],
-                            transition: {
-                                duration: 2,
-                                repeat: 3,
-                                ease: "easeInOut",
-                                delay: 1.5
-                            }
-                        }
+                    animate={{
+                        opacity: [0, 1, 1, 0],
+                        cx: [100, 450, 450, 620],
+                        cy: [100, 150, 150, 200],
+                    }}
+                    transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatDelay: 1,
+                        ease: "linear",
+                        times: [0, 0.3, 0.6, 1],
+                        delay: 1.5
                     }}
                 />
 
                 {/* Success Indicator appearing at the end */}
                 <motion.g
                     initial={{ opacity: 0, scale: 0 }}
-                    animate={controls}
-                    variants={{
-                        visible: {
-                            opacity: 1,
-                            scale: 1,
-                            transition: { delay: 3.5, type: "spring" }
-                        },
-                        hidden: { opacity: 0, scale: 0 }
+                    animate={{
+                        opacity: [0, 1, 1, 0],
+                        scale: [0, 1, 1, 0]
+                    }}
+                    transition={{ 
+                        duration: 4, 
+                        repeat: Infinity, 
+                        repeatDelay: 1,
+                        times: [0, 0.2, 0.8, 1],
+                        delay: 3.5 
                     }}
                 >
                     <rect x="300" y="380" width="200" height="40" rx="20" fill="#22c55e" />
@@ -187,13 +164,8 @@ const CompatibilityTestingAnimation = () => {
                     height="2"
                     fill="url(#scanning-gradient)"
                     opacity="0.3"
-                    animate={controls}
-                    variants={{
-                        visible: {
-                            y: [0, 500, 0],
-                            transition: { duration: 4, repeat: 1, ease: "linear" }
-                        }
-                    }}
+                    animate={{ y: [0, 500, 0] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                 />
                 <defs>
                     <linearGradient id="scanning-gradient" x1="0" y1="0" x2="1" y2="0">

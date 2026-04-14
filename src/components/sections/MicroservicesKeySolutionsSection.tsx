@@ -53,14 +53,14 @@ const MicroservicesKeySolutionsSection: React.FC = () => {
                     {solutions.map((solution, index) => (
                         <div
                             key={index}
-                            className="group flex flex-col gap-5 p-2 rounded-2xl transition-all duration-300"
+                            className="group flex flex-col gap-5 p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-100 hover:-translate-y-1 transition-all duration-300"
                         >
-                            <div className={`w-14 h-14 ${solution.bgColor} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                            <div className={`w-14 h-14 ${solution.bgColor} rounded-2xl flex items-center justify-center shadow-lg shadow-${solution.bgColor.split('-')[1]}-500/30 group-hover:scale-110 transition-transform duration-300`}>
                                 {solution.icon}
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3">{solution.title}</h3>
-                                <p className="text-gray-600 text-base leading-relaxed">
+                                <p className="text-gray-600 text-sm leading-relaxed">
                                     {solution.description}
                                 </p>
                             </div>
@@ -68,7 +68,7 @@ const MicroservicesKeySolutionsSection: React.FC = () => {
                     ))}
 
                     {/* Solution Highlight */}
-                    <div className="lg:col-span-2 bg-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 overflow-hidden relative">
+                    <div className="md:col-span-2 lg:col-span-3 bg-slate-900 text-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 overflow-hidden relative">
                         <div className="flex-1 space-y-4 z-10">
                             <div className="text-blue-400 font-bold text-sm tracking-widest uppercase">Specialized Capability</div>
                             <h3 className="text-2xl md:text-3xl font-bold">Kubernetes-Native Testing</h3>

@@ -14,13 +14,13 @@ const AdHocTestingHeroSection: React.FC = () => {
     ];
 
     return (
-        <section className="relative pt-32 pb-20 px-8 md:px-12 lg:px-24 bg-white overflow-hidden">
+        <section className="relative pt-10 pb-24 lg:pb-32 px-8 lg:px-24 bg-white overflow-hidden">
             {/* Background elements */}
             <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-blue-50/50 blur-[100px] -z-10 rounded-full"></div>
             <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-indigo-50/50 blur-[100px] -z-10 rounded-full"></div>
 
             <div className="max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
                     <div>
                         {/* Breadcrumbs */}
                         <div className="flex items-center gap-2 text-sm text-gray-500 mb-8 font-medium">
@@ -57,7 +57,7 @@ const AdHocTestingHeroSection: React.FC = () => {
                         </div>
 
                         {/* Stats Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4">
                             {stats.map((stat, index) => (
                                 <div key={index} className="p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:border-blue-200 transition-colors">
                                     <div className="mb-2">{stat.icon}</div>
@@ -68,7 +68,7 @@ const AdHocTestingHeroSection: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="relative">
+                    <div className="relative lg:-mt-32 lg:-translate-y-24 mt-8 flex justify-center">
                         {/* Featured Animation Wrapper */}
                         <div className="relative z-10 w-full max-w-xl mx-auto">
                             <AdHocTestingAnimation />

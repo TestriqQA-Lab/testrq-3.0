@@ -38,7 +38,7 @@ const UATScenariosSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-white relative">
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4">
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         Real-World <span className="text-blue-600 italic">UAT Scenarios</span>

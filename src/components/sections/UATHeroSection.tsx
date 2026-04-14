@@ -7,7 +7,7 @@ import UATAnimation from "./UATAnimation";
 
 const UATHeroSection: React.FC = () => {
     return (
-        <section className="bg-white text-black pt-8 pb-16 px-8 md:px-12 lg:px-24">
+        <section className="bg-white text-black py-10 px-8 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
@@ -75,7 +75,7 @@ const UATHeroSection: React.FC = () => {
                     </div>
 
                     {/* Right Content */}
-                    <div className="relative flex justify-center items-center lg:mt-0 mt-8">
+                    <div className="relative flex justify-center items-start lg:-mt-8 lg:-translate-y-8">
                         <div className="absolute -inset-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-full blur-3xl opacity-50" />
                         <UATAnimation />
                     </div>

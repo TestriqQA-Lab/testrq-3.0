@@ -98,10 +98,8 @@ const CompatibilityTestingFAQs: React.FC = () => {
                             Our Compatibility testing experts are here to help you navigate the chaos of digital diversity.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="/contact-us">
-                                <button className="bg-white text-brand-blue px-10 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg">
-                                    Consult an Expert
-                                </button>
+                            <Link href="/contact-us" className="bg-white text-brand-blue px-10 py-4 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg">
+                                Consult an Expert
                             </Link>
                         </div>
                     </div>

@@ -104,13 +104,17 @@ const UsabilityTestingHeroSection: React.FC = () => {
                         <div className="absolute inset-0 bg-brand-blue/10 rounded-full blur-[100px] animate-pulse"></div>
                         <div className="relative z-10 p-4 bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/60 shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1470&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1470"
                                 alt="UX Testing Lab"
                                 className="rounded-[2.5rem] w-full h-[500px] object-cover shadow-inner"
                             />
 
                             {/* Floating UI Elements */}
-                            <div className="absolute top-1/2 -right-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 hidden md:block">
+                            <motion.div
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                                className="absolute top-1/2 -right-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 hidden md:block"
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 font-black">
                                         +42%
@@ -120,9 +124,13 @@ const UsabilityTestingHeroSection: React.FC = () => {
                                         <div className="text-xs text-gray-500">Post UX Optimization</div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
-                            <div className="absolute bottom-12 -left-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 hidden md:block">
+                            <motion.div
+                                animate={{ y: [0, 15, 0] }}
+                                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
+                                className="absolute bottom-12 -left-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 hidden md:block"
+                            >
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-brand-blue">
                                         <FaUserAstronaut />
@@ -132,7 +140,7 @@ const UsabilityTestingHeroSection: React.FC = () => {
                                         <div className="text-xs text-gray-500">98.5% Positivity Rate</div>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </div>

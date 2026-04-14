@@ -6,7 +6,7 @@ import { FaUniversalAccess, FaChevronRight } from "react-icons/fa";
 
 const AccessibilityAnyQuestions: React.FC = () => {
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-10 lg:py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="bg-gradient-to-r from-brand-blue to-blue-600 rounded-[3rem] p-12 lg:p-20 text-white relative">
                     <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
@@ -17,7 +17,7 @@ const AccessibilityAnyQuestions: React.FC = () => {
                         <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">
                             Ready to Ensure Digital Inclusion for Everyone?
                         </h2>
-                        <p className="text-xl text-blue-100 mb-12 leading-relaxed italic">
+                        <p className="text-xl text-white mb-12 leading-relaxed italic">
                             Don&apos;t exclude potential users due to accessibility barriers. Contact Testriq today for a comprehensive accessibility audit and ensure your digital presence is usable by all.
                         </p>
 
@@ -31,7 +31,7 @@ const AccessibilityAnyQuestions: React.FC = () => {
                             </button>
 
                             <div className="flex flex-col justify-center">
-                                <span className="text-sm uppercase tracking-widest font-bold text-blue-200 mb-1">Response Time</span>
+                                <span className="text-sm uppercase tracking-widest font-bold text-white mb-1">Response Time</span>
                                 <span className="font-bold">Under 24 Hours</span>
                             </div>
                         </div>

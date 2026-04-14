@@ -28,7 +28,7 @@ const UATFAQs: React.FC = () => {
 
     return (
         <section className="py-24 bg-slate-50">
-            <div className="max-w-4xl mx-auto px-8">
+            <div className="max-w-4xl mx-auto px-8 md:px-12 lg:px-4">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 text-blue-600 font-black tracking-[4px] uppercase text-[10px] mb-4">
                         <FaQuestionCircle /> FAQ

@@ -36,8 +36,8 @@ const ArchitectureServicesSection: React.FC = () => {
     return (
         <section className="py-24 px-8 md:px-12 lg:px-24 bg-white">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row gap-16 items-start">
-                    <div className="md:w-1/3 sticky top-24">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+                    <div className="w-full lg:w-1/3 relative lg:sticky lg:top-24 z-10 bg-white lg:bg-transparent">
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                             Comprehensive <span className="text-[theme(color.brand.blue)]">Architecture Inspection</span> Solutions
                         </h2>
@@ -52,7 +52,7 @@ const ArchitectureServicesSection: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="md:w-2/3 grid grid-cols-1 gap-12">
+                    <div className="w-full lg:w-2/3 grid grid-cols-1 gap-12">
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
@@ -60,7 +60,7 @@ const ArchitectureServicesSection: React.FC = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group relative flex gap-8 p-8 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 shadow-sm hover:shadow-md"
+                                className="group relative flex flex-col sm:flex-row gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100 shadow-sm hover:shadow-md"
                             >
                                 <div className="flex-shrink-0">
                                     <div className="w-16 h-16 rounded-xl bg-white shadow-sm flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">

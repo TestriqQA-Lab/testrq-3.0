@@ -39,16 +39,12 @@ const CompatibilityTestingReadyToStart: React.FC = () => {
                     transition={{ delay: 0.2 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Link href="/contact-us">
-                        <button className="bg-brand-blue text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 flex items-center group">
-                            Start Your Free Consultation
-                            <FaArrowRight className="ml-3 group-hover:translate-x-2 transition-transform h-5 w-5" />
-                        </button>
+                    <Link href="/contact-us" className="bg-brand-blue text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transition-all duration-300 flex items-center group">
+                        Start Your Free Consultation
+                        <FaArrowRight className="ml-3 group-hover:translate-x-2 transition-transform h-5 w-5" />
                     </Link>
-                    <Link href="/roi-calculator">
-                        <button className="bg-white/5 text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300">
-                            Calculate Testing ROI
-                        </button>
+                    <Link href="/roi-calculator" className="bg-white/5 text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300">
+                        Calculate Testing ROI
                     </Link>
                 </motion.div>
 

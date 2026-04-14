@@ -27,7 +27,7 @@ const AutomationTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">
+    <section className="relative pt-8 pb-24 lg:pb-32 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
@@ -43,7 +43,7 @@ const AutomationTestingHeroSection: React.FC = () => {
             Automation Testing
           </span>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-4">
             <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-base md:text-sm">
@@ -108,7 +108,7 @@ const AutomationTestingHeroSection: React.FC = () => {
           </div>
 
           {/* Right Content - Automation Testing Dashboard */}
-          <div className="relative">
+          <div className="relative lg:-mt-32 lg:-translate-y-24 mt-8 flex justify-center">
             <AutomationTestingAnimation />
           </div>
         </div>

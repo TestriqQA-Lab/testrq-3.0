@@ -8,7 +8,7 @@ import AzureTestingAnimation from "./AzureTestingAnimation";
 
 const AzureTestingHeroSection: React.FC = () => {
     return (
-        <section className="bg-white text-black pt-8 pb-16 px-8 md:px-12 lg:px-24">
+        <section className="bg-white text-black pt-8 pb-24 lg:pb-32 px-8 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
@@ -72,7 +72,7 @@ const AzureTestingHeroSection: React.FC = () => {
                     </div>
 
                     {/* Right Content - Cloud Animation */}
-                    <div className="relative w-full order-first xl:order-last">
+                    <div className="relative w-full flex items-start justify-center xl:-mt-32 xl:-translate-y-24 mt-8">
                         <AzureTestingAnimation />
                         {/* Decorative elements */}
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-50 rounded-full blur-3xl -z-10 opacity-50" />

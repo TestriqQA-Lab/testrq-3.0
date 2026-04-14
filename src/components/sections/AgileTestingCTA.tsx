@@ -61,14 +61,14 @@ const AgileTestingCTA: React.FC = () => {
 
                     {/* Right Content - Visual Metrics Card */}
                     <div className="relative group">
-                        <div className="bg-white rounded-[3rem] p-12 shadow-2xl border border-white/20 relative overflow-hidden">
+                        <div className="bg-white rounded-[2rem] md:rounded-[3rem] p-6 sm:p-8 md:p-12 shadow-2xl border border-white/20 relative overflow-hidden">
                             {/* Accent line */}
                             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-sky-400 to-indigo-500"></div>
 
                             <div className="space-y-10">
                                 <div className="text-center">
                                     <div className="text-xs font-black text-sky-600 uppercase tracking-widest mb-2">Quality Maturity</div>
-                                    <div className="text-5xl font-black text-gray-900">Tier 1 Compliance</div>
+                                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 break-words">Tier 1 Compliance</div>
                                 </div>
 
                                 <div className="space-y-6">
@@ -92,27 +92,27 @@ const AgileTestingCTA: React.FC = () => {
                                     ))}
                                 </div>
 
-                                <div className="pt-6 border-t border-gray-100 flex justify-between items-center text-center">
+                                <div className="pt-6 border-t border-gray-100 flex justify-between gap-2 items-center text-center">
                                     <div>
-                                        <div className="text-2xl font-black text-gray-900">150+</div>
-                                        <div className="text-[10px] font-bold text-gray-400 uppercase">Clients</div>
+                                        <div className="text-xl sm:text-2xl font-black text-gray-900">150+</div>
+                                        <div className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase">Clients</div>
                                     </div>
                                     <div>
-                                        <div className="text-2xl font-black text-gray-900">2026</div>
-                                        <div className="text-[10px] font-bold text-gray-400 uppercase">Framework</div>
+                                        <div className="text-xl sm:text-2xl font-black text-gray-900">2026</div>
+                                        <div className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase">Framework</div>
                                     </div>
                                     <div>
-                                        <div className="text-2xl font-black text-gray-900">4hr</div>
-                                        <div className="text-[10px] font-bold text-gray-400 uppercase">Audit Time</div>
+                                        <div className="text-xl sm:text-2xl font-black text-gray-900">4hr</div>
+                                        <div className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase">Audit Time</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         {/* Additional floating design element */}
-                        <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-indigo-500 rounded-full text-white flex flex-col items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-transform duration-500 border-8 border-indigo-600">
-                            <div className="text-2xl font-black leading-none italic">LIVE</div>
-                            <div className="text-[8px] font-bold uppercase tracking-tighter">Support</div>
+                        <div className="absolute -bottom-4 -right-4 w-24 h-24 md:-bottom-8 md:-right-8 md:w-32 md:h-32 bg-indigo-500 rounded-full text-white flex flex-col items-center justify-center shadow-2xl rotate-12 group-hover:rotate-0 transition-transform duration-500 border-[6px] md:border-8 border-indigo-600">
+                            <div className="text-xl md:text-2xl font-black leading-none italic">LIVE</div>
+                            <div className="text-[6px] md:text-[8px] font-bold uppercase tracking-tighter">Support</div>
                         </div>
                     </div>
                 </div>

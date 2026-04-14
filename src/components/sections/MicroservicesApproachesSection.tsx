@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaFileContract, FaPlug, FaBiohazard, FaSearchPlus, FaCloud } from "react-icons/fa";
 
 const MicroservicesApproachesSection: React.FC = () => {
@@ -75,7 +76,9 @@ const MicroservicesApproachesSection: React.FC = () => {
                     <div className="p-8 bg-brand-blue rounded-2xl flex flex-col justify-center text-white">
                         <h3 className="text-2xl font-bold mb-4 italic">&quot;We don&apos;t just test code; we test architectures.&quot;</h3>
                         <p className="text-blue-100 text-sm mb-6">Our methodology is designed for the high-velocity world of DevOps and microservices.</p>
-                        <button className="px-6 py-3 bg-white text-brand-blue font-bold rounded-lg text-sm self-start hover:bg-blue-50 transition-colors">Learn Our Full Process</button>
+                        <Link href="/contact-us" className="self-start">
+                            <button className="px-6 py-3 bg-white cursor-pointer text-brand-blue font-bold rounded-lg text-sm hover:bg-blue-50 transition-colors">Learn Our Full Process</button>
+                        </Link>
                     </div>
                 </div>
             </div>

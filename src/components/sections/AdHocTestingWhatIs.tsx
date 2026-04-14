@@ -66,11 +66,11 @@ const AdHocTestingWhatIs: React.FC = () => {
                         <div className="space-y-4">
                             {comparisonData.map((row, index) => (
                                 <div key={index} className="group relative">
-                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-gray-50 group-hover:bg-blue-50 transition-colors">
-                                        <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2 sm:mb-0 w-24">
+                                    <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row sm:items-start lg:items-stretch xl:items-start gap-2 sm:gap-4 lg:gap-3 xl:gap-4 p-4 rounded-2xl bg-gray-50 group-hover:bg-blue-50 transition-colors">
+                                        <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mt-0 sm:mt-1 lg:mt-0 xl:mt-1 w-full sm:w-36 md:w-40 lg:w-full xl:w-40 shrink-0">
                                             {row.aspect}
                                         </div>
-                                        <div className="grid grid-cols-2 gap-4 flex-1">
+                                        <div className="grid grid-cols-2 gap-4 flex-1 w-full">
                                             <div className="text-sm text-gray-600">
                                                 <span className="block font-bold text-gray-900">Ad-Hoc</span>
                                                 {row.adhoc}

@@ -17,7 +17,7 @@ const UATNextStepsSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">

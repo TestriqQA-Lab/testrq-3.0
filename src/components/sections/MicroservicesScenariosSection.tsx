@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaExclamationTriangle, FaLightbulb } from "react-icons/fa";
 
@@ -82,7 +83,7 @@ const MicroservicesScenariosSection: React.FC = () => {
                                 Our scenario-based testing methodology ensures that your microservices environment is hardened against the most common and complex failures.
                             </p>
                             <div className="pt-4">
-                                <button className="px-8 py-3 bg-brand-blue text-white font-bold rounded-lg hover:bg-blue-600 transition-colors">Request a System Audit</button>
+                                <Link href="/contact-us" className="inline-block px-8 py-3 bg-brand-blue text-white font-bold rounded-lg hover:bg-blue-600 transition-colors">Request a System Audit</Link>
                             </div>
                         </div>
                         <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 to-transparent pointer-events-none"></div>

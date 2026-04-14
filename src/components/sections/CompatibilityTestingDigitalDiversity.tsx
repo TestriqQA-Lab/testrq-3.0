@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGlobe, FaExclamationCircle, FaUserCheck } from "react-icons/fa";
+import { FaGlobe, FaExclamationCircle, FaUserCheck, FaApple, FaMicrosoft, FaAmazon, FaGoogle } from "react-icons/fa";
 
 const CompatibilityTestingDigitalDiversity: React.FC = () => {
     return (
@@ -94,8 +94,15 @@ const CompatibilityTestingDigitalDiversity: React.FC = () => {
                             </ul>
                             <div className="mt-8 pt-8 border-t border-gray-100 flex items-center justify-between">
                                 <div className="flex -space-x-3">
-                                    {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200" />
+                                    {[
+                                        { icon: <FaApple className="text-gray-800" />, bg: "bg-gray-100" },
+                                        { icon: <FaMicrosoft className="text-blue-600" />, bg: "bg-blue-50" },
+                                        { icon: <FaAmazon className="text-orange-500" />, bg: "bg-orange-50" },
+                                        { icon: <FaGoogle className="text-red-500" />, bg: "bg-red-50" }
+                                    ].map((client, i) => (
+                                        <div key={i} className={`w-10 h-10 rounded-full border-2 border-white ${client.bg} flex items-center justify-center text-sm`}>
+                                            {client.icon}
+                                        </div>
                                     ))}
                                     <div className="w-10 h-10 rounded-full border-2 border-white bg-brand-blue flex items-center justify-center text-xs text-white font-bold">+500</div>
                                 </div>

@@ -6,7 +6,7 @@ import { FaGlobe, FaHandshake, FaBullseye } from "react-icons/fa";
 
 const AccessibilitySolutionsSection: React.FC = () => {
     return (
-        <section className="py-24 bg-white">
+        <section className="py-10 lg:py-20 bg-white">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <motion.div

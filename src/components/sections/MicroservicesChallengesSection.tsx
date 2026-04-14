@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { FaProjectDiagram, FaDatabase, FaWifi, FaCloudUploadAlt, FaEye } from "react-icons/fa";
 
 const MicroservicesChallengesSection: React.FC = () => {
@@ -75,12 +76,12 @@ const MicroservicesChallengesSection: React.FC = () => {
                     ))}
 
                     {/* CTA Card */}
-                    <div className="p-8 rounded-2xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-center bg-white group cursor-pointer hover:border-brand-blue transition-colors">
+                    <Link href="/contact-us" className="p-8 rounded-2xl border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-center bg-white group cursor-pointer hover:border-brand-blue transition-colors">
                         <div className="text-gray-400 group-hover:text-brand-blue text-4xl mb-4 transition-colors">🚀</div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to Solve These?</h3>
                         <p className="text-gray-600 text-sm mb-6">Our experts specialize in distributed systems and cloud-native testing.</p>
-                        <button className="text-brand-blue font-bold text-sm hover:underline">Get a Free Audit &rarr;</button>
-                    </div>
+                        <span className="text-brand-blue font-bold text-sm group-hover:underline">Get a Free Audit &rarr;</span>
+                    </Link>
                 </div>
             </div>
         </section>

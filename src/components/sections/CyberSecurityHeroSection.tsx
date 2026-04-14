@@ -92,7 +92,7 @@ const CyberSecurityHeroSection: React.FC = () => {
                     </div>
 
                     {/* Right Content - Animation */}
-                    <div className="relative lg:h-[600px] flex items-center justify-center">
+                    <div className="relative lg:h-[600px] flex items-start justify-center lg:-mt-12 lg:-translate-y-8 pt-8 lg:pt-0">
                         <div className="absolute inset-0 bg-blue-100 rounded-full blur-[120px] opacity-20 scale-150"></div>
                         <SecurityTestingAnimation />
                     </div>

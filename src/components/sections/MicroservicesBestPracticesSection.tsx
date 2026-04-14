@@ -54,10 +54,6 @@ const MicroservicesBestPracticesSection: React.FC = () => {
                                 </div>
                             ))}
                         </div>
-
-                        <button className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/20">
-                            Download Strategy Guide
-                        </button>
                     </div>
 
                     {/* Right Side - Grid */}

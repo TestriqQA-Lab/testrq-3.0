@@ -14,7 +14,7 @@ const UATComparisonSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         UAT vs. Other <span className="text-blue-600">Testing Phases</span>

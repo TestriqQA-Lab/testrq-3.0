@@ -31,7 +31,7 @@ const AccessibilityFAQSection: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-10 lg:py-20 bg-gray-50">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">

@@ -82,15 +82,16 @@ const AdHocTestingMethodologies: React.FC = () => {
                 </div>
 
                 {/* Tab Selector for Mobile/Desktop */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
+                <div className="flex overflow-x-auto pb-4 mb-8 md:mb-12 md:flex-wrap md:justify-center gap-3 snap-x snap-mandatory 
+                                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                     {methods.map((method, index) => (
                         <button
                             key={index}
                             onClick={() => setActiveTab(index)}
-                            className={`px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 
+                            className={`whitespace-nowrap px-6 py-3 rounded-full text-sm font-bold transition-all flex items-center gap-2 snap-center shrink-0
                                 ${activeTab === index
-                                    ? "bg-brand-blue text-white shadow-lg"
-                                    : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-100"}`}
+                                    ? "bg-brand-blue text-white shadow-lg shadow-blue-500/30"
+                                    : "bg-white text-gray-600 hover:bg-gray-50 border border-gray-200"}`}
                         >
                             <span className={activeTab === index ? "text-white" : "text-brand-blue"}>{method.icon}</span>
                             {method.title}

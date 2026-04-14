@@ -32,7 +32,7 @@ const UATWhyChooseSection: React.FC = () => {
         <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[150px] -z-0" />
 
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 relative z-10">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <div className="inline-flex items-center gap-2 text-blue-500 font-black tracking-widest uppercase text-[10px] mb-6">

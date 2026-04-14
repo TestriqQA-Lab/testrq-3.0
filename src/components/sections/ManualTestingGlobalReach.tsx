@@ -57,7 +57,7 @@ const ManualTestingGlobalReach: React.FC = () => {
                     </div>
 
                     {/* Right Side: Visual Representation */}
-                    <div className="relative order-first lg:order-last">
+                    <div className="relative">
                         <div className="bg-gradient-to-br from-blue-600 to-purple-700 rounded-3xl p-12 text-white relative overflow-hidden shadow-2xl">
                             {/* Decorative background elements */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20"></div>

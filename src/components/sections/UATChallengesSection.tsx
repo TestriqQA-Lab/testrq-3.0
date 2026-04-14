@@ -40,7 +40,7 @@ const UATChallengesSection: React.FC = () => {
 
     return (
         <section className="py-24 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-24">
+            <div className="max-w-7xl mx-auto px-8 md:px-12 lg:px-4">
                 <div className="flex flex-col lg:flex-row justify-between items-end gap-8 mb-16">
                     <div className="max-w-2xl">
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">

@@ -73,7 +73,7 @@ const TimezoneTestingHero: React.FC = () => {
                     </div>
 
                     {/* Right Content */}
-                    <div className="relative order-first xl:order-last">
+                    <div className="relative flex items-start justify-center xl:-mt-5 xl:-translate-y-1">
                         <TimezoneTestingAnimation />
                     </div>
                 </div>
