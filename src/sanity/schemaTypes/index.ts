@@ -9,7 +9,8 @@ import customTable from './customTable'
 import subscriber from './subscriber'
 import caseStudy from './caseStudy'
 import jobPosting from './jobPosting'
+import certificate from './certificate'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-    types: [post, author, category, tag, blockContent, customTable, subscriber, caseStudy, jobPosting],
+    types: [post, author, category, tag, blockContent, customTable, subscriber, caseStudy, jobPosting, certificate],
 }

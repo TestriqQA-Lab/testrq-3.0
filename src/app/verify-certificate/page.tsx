@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { FileCheck, Download, AlertTriangle, Loader2, FileText, ArrowLeft, ShieldCheck, CheckCircle2, X, Send, User, Mail, Building2, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { client } from "@/lib/sanity";
 
 function CertificateContent() {
     const searchParams = useSearchParams();
@@ -17,6 +18,10 @@ function CertificateContent() {
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [formError, setFormError] = useState("");
     const [mounted, setMounted] = useState(false);
+    const [dynPdfUrl, setDynPdfUrl] = useState<string>("");
+    const [issueDate, setIssueDate] = useState<string>("");
+    const [recipientName, setRecipientName] = useState<string>("");
+    const [recipientOrg, setRecipientOrg] = useState<string>("");
 
     useEffect(() => {
         setMounted(true);
@@ -37,8 +42,26 @@ function CertificateContent() {
 
         const checkCertificate = async () => {
             try {
-                const response = await fetch(`/certificates/${certId}.pdf`, { method: "HEAD" });
-                setIsValid(response.ok);
+                const query = `*[_type == "certificate" && certificateId == $certId][0]{
+                    "pdfUrl": pdfFile.asset->url,
+                    name,
+                    organization,
+                    issueDate
+                }`;
+                const certData = await client.fetch(query, { certId });
+                
+                if (certData && certData.pdfUrl) {
+                    setIsValid(true);
+                    setDynPdfUrl(`${certData.pdfUrl}?dl=`);
+                    if (certData.name) setRecipientName(certData.name);
+                    if (certData.organization) setRecipientOrg(certData.organization);
+                    if (certData.issueDate) {
+                        const dateObj = new Date(certData.issueDate);
+                        setIssueDate(dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }));
+                    }
+                } else {
+                    setIsValid(false);
+                }
             } catch (_error) {
                 setIsValid(false);
             } finally {
@@ -75,7 +98,7 @@ function CertificateContent() {
                 // Trigger download after a short delay
                 setTimeout(() => {
                     const link = document.createElement('a');
-                    link.href = pdfUrl;
+                    link.href = dynPdfUrl;
                     link.download = `${certId}.pdf`;
                     link.target = "_blank";
                     document.body.appendChild(link);
@@ -93,7 +116,7 @@ function CertificateContent() {
         }
     };
 
-    const pdfUrl = `/certificates/${certId}.pdf`;
+    const pdfUrl = dynPdfUrl;
 
     if (loading) {
         return (
@@ -172,6 +195,22 @@ function CertificateContent() {
                             <p className="text-blue-50 text-lg max-w-2xl font-medium leading-relaxed opacity-95">
                                 Official validation of successful completion of Quality Assurance and testing protocols conducted by the Testriq Engineering Team.
                             </p>
+                            {recipientName && (
+                                <div className="mt-8 p-5 bg-white/10 rounded-2xl border border-white/20 inline-block backdrop-blur-sm animate-in fade-in duration-700">
+                                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/70 font-bold block mb-1.5">Issued To</span>
+                                    <span className="text-xl md:text-2xl font-bold text-white flex items-center flex-wrap gap-2">
+                                        <User size={20} className="text-blue-300" />
+                                        {recipientName} 
+                                        {recipientOrg && (
+                                            <>
+                                                <span className="text-white/30 hidden md:inline">|</span>
+                                                <Building2 size={18} className="text-blue-300 ml-1 md:ml-0" />
+                                                <span className="text-white/80 font-medium text-lg">{recipientOrg}</span>
+                                            </>
+                                        )}
+                                    </span>
+                                </div>
+                            )}
                         </div>
 
                         <div className="flex flex-wrap shrink-0 gap-4 lg:mb-1">
@@ -195,7 +234,7 @@ function CertificateContent() {
                     <div className="flex items-center gap-2">
                         <span className="text-[10px] uppercase tracking-tighter text-gray-400 font-bold">Verified On</span>
                         <span className="text-xs font-bold text-gray-700">
-                            {mounted ? new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) : "--"}
+                            {mounted ? (issueDate || new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })) : "--"}
                         </span>
                     </div>
                 </div>
