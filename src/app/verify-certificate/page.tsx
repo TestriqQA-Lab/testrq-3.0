@@ -52,7 +52,8 @@ function CertificateContent() {
                 
                 if (certData && certData.pdfUrl) {
                     setIsValid(true);
-                    setDynPdfUrl(`${certData.pdfUrl}?dl=`);
+                    // Keep the raw URL for the iframe preview
+                    setDynPdfUrl(certData.pdfUrl);
                     if (certData.name) setRecipientName(certData.name);
                     if (certData.organization) setRecipientOrg(certData.organization);
                     if (certData.issueDate) {
@@ -98,7 +99,8 @@ function CertificateContent() {
                 // Trigger download after a short delay
                 setTimeout(() => {
                     const link = document.createElement('a');
-                    link.href = dynPdfUrl;
+                    // Appending ?dl= forces the browser to download instead of opening a preview
+                    link.href = `${dynPdfUrl}?dl=${certId}.pdf`;
                     link.download = `${certId}.pdf`;
                     link.target = "_blank";
                     document.body.appendChild(link);
@@ -253,7 +255,7 @@ function CertificateContent() {
                                     Mobile browsers offer the best viewing experience when opened directly.
                                 </p>
                                 <a
-                                    href={pdfUrl}
+                                    href={`${pdfUrl}?dl=${certId}.pdf`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-3 px-10 py-5 bg-blue-600 text-white font-black rounded-2xl hover:bg-blue-700 transition-all shadow-lg active:scale-95 transform"
@@ -339,7 +341,7 @@ function CertificateContent() {
                                     <p className="text-gray-500 mb-6">Your request has been received. Your download should start automatically.</p>
                                     <div className="flex flex-col gap-3 items-center">
                                         <a
-                                            href={pdfUrl}
+                                            href={`${pdfUrl}?dl=${certId}.pdf`}
                                             download={`${certId}.pdf`}
                                             className="text-blue-600 font-bold text-sm hover:underline flex items-center gap-2"
                                         >
