@@ -309,7 +309,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-800">
-              © 2025 Testriq QA LAB LLP. All Rights Reserved
+              © {new Date().getFullYear()} Testriq QA LAB LLP. All Rights Reserved
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               <Link

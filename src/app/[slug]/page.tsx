@@ -415,7 +415,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export const revalidate = 60;
+export const revalidate = 3600; // 1 hour — city pages are static, case studies update via Sanity webhooks
 
 export default async function SlugPage({ params }: PageProps) {
   const resolvedParams = await params;

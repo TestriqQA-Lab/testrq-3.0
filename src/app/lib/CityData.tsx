@@ -14715,20 +14715,9 @@ export const cityData: Record<string, CityData> = {
 };
 
 export function getCityData(slug: string): CityData | undefined {
-  console.log('getCityData called with slug:', slug); // Debug
-  console.log('Available slugs:', Object.values(cityData).map((city) => city.slug)); // Debug
-  const city = Object.values(cityData).find((city) => city.slug === slug);
-  if (!city) {
-    console.log('No matching city found for slug:', slug); // Debug
-  }
-  return city;
+  return Object.values(cityData).find((city) => city.slug === slug);
 }
-
 
 export function getAllCities(): CityData[] {
-  console.log('cityData keys:', Object.keys(cityData)); // Debug
   return Object.values(cityData);
 }
-
-console.log('cityData initialized with keys:', Object.keys(cityData));
-

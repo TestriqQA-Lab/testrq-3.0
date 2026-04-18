@@ -138,39 +138,6 @@ export const productServiceSchema = {
     "priceValidUntil": "2026-12-31",
     "availability": "https://schema.org/InStock",
     "itemCondition": "https://schema.org/NewCondition",
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      "merchantReturnLink": "https://www.testriq.com/contact"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "US"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "d"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 5,
-          "unitCode": "d"
-        }
-      }
-    }
   }
 };
 
@@ -995,39 +962,6 @@ export const manualTestingServiceSchema = {
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
         "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
@@ -1148,39 +1082,6 @@ export const automationTestingServiceSchema = {
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
         "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1750,39 +1651,6 @@ export const securityTestingServiceSchema = {
         "availability": "https://schema.org/InStock",
         "url": "https://www.testriq.com/contact",
         "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -4215,39 +4083,6 @@ export const datingAppCertificationSchema = {
     "availability": "https://schema.org/InStock",
     "url": "https://www.testriq.com/contact",
     "itemCondition": "https://schema.org/NewCondition",
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      "merchantReturnLink": "https://www.testriq.com/contact"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "US"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "d"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 5,
-          "unitCode": "d"
-        }
-      }
-    }
   },
   "category": "Quality Assurance and Certification",
   "areaServed": "Worldwide",
@@ -4507,39 +4342,6 @@ export const sapTestingSchema = {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact-us",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
