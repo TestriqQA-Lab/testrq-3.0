@@ -67,7 +67,11 @@ const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData 
               Ready to Get Started?
             </h3>
             <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start space-y-4">
-              <Link href="/contact-us" className="w-xs md:w-md bg-white text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all duration-200 flex items-center shadow-lg">
+              <Link
+                href="https://calendar.app.google/uUHn8prcXbdqcvVb6"
+                target="_blank"
+                className="bg-brand-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all duration-300 w-full sm:w-auto text-center cursor-pointer shadow-lg hover:shadow-xl flex items-center"
+              >
                 Schedule Free Consultation
                 <ArrowRight className="ml-3 h-6 w-6" />
               </Link>

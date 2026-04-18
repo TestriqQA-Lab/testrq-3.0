@@ -13,6 +13,8 @@ import {
   CheckCircle,
   TrendingUp,
   ArrowRight,
+  Globe,
+  Users,
 } from "lucide-react";
 
 interface CityTestingServicesSectionProps {
@@ -26,6 +28,8 @@ const iconMap = {
   Shield: Shield,
   Smartphone: Smartphone,
   Link: LinkIcon, // ← ADD THIS
+  Globe: Globe,
+  Users: Users,
 };
 
 const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
@@ -54,11 +58,10 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             return (
               <div
                 key={index}
-                className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 cursor-pointer ${
-                  activeService === index
-                    ? "border-blue-500 bg-blue-50"
-                    : "border-gray-100 hover:border-blue-200"
-                }`}
+                className={`relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 cursor-pointer ${activeService === index
+                  ? "border-blue-500 bg-blue-50"
+                  : "border-gray-100 hover:border-blue-200"
+                  }`}
                 onClick={() => setActiveService(index)}
               >
                 {/* Trending Badge */}
@@ -71,7 +74,11 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
 
                 {/* Icon */}
                 <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-xl mb-6">
-                  <IconComponent className="h-8 w-8 text-blue-600" />
+                  {IconComponent ? (
+                    <IconComponent className="h-8 w-8 text-blue-600" />
+                  ) : (
+                    <CheckCircle className="h-8 w-8 text-blue-600" />
+                  )}
                 </div>
 
                 {/* Content */}
@@ -121,7 +128,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                   iconMap[
                     cityData.servicesContent.services[activeService]
                       .icon as keyof typeof iconMap
-                  ],
+                  ] || CheckCircle,
                   {
                     className: "h-12 w-12 text-brand-blue mr-4",
                   }
@@ -132,11 +139,11 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                   </h3>
                   {cityData.servicesContent.services[activeService]
                     .trending && (
-                    <div className="flex items-center text-orange-600 text-sm font-medium mt-1">
-                      <TrendingUp className="h-4 w-4 mr-1" />
-                      High Demand in {cityData.name}
-                    </div>
-                  )}
+                      <div className="flex items-center text-orange-600 text-sm font-medium mt-1">
+                        <TrendingUp className="h-4 w-4 mr-1" />
+                        High Demand in {cityData.name}
+                      </div>
+                    )}
                 </div>
               </div>
 
@@ -159,17 +166,17 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
               {/* CTA Button */}
               <Link href={cityData.servicesContent.services[activeService].link}>
                 <div className="mt-8">
-                <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center">
-                  Get Started with{" "}
-                  {
-                    cityData.servicesContent.services[activeService].name.split(
-                      " "
-                    )[0]
-                  }{" "}
-                  Testing
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </button>
-              </div>
+                  <button className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 inline-flex items-center cursor-pointer">
+                    Get Started with{" "}
+                    {
+                      cityData.servicesContent.services[activeService].name.split(
+                        " "
+                      )[0]
+                    }{" "}
+                    Testing
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </button>
+                </div>
               </Link>
             </div>
 
@@ -227,9 +234,9 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
-                  <div className="text-2xl font-bold text-brand-blue">50+</div>
+                  <div className="text-2xl font-bold text-brand-blue">500K+</div>
                   <div className="text-sm text-gray-600">
-                    Projects Completed
+                    Test Cases Executed
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-md text-center">
@@ -252,12 +259,12 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
             Our experts can design a tailored testing strategy that meets your
             specific requirements and industry standards.
           </p>
-          
-            <Link href="/contact-us" className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200">
-              Schedule Free Consultation
-            </Link>
-            
-          
+
+          <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" className="bg-brand-blue text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-200 cursor-pointer">
+            Schedule Free Consultation
+          </Link>
+
+
         </div>
       </div>
     </section>
