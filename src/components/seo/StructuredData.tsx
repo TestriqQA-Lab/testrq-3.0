@@ -36,8 +36,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "Testriq QA Lab",
   "alternateName": "Testriq",
-  "url": "www.testriq.com",
-  "logo": "www.testriq.com/logo.png",
+  "url": "https://www.testriq.com",
+  "logo": "https://www.testriq.com/logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
@@ -101,7 +101,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Testriq - Professional Software Testing Services",
-  "url": "www.testriq.com",
+  "url": "https://www.testriq.com",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation.",
   "publisher": {
     "@type": "Organization",
@@ -111,7 +111,7 @@ export const websiteSchema = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "www.testriq.com/search?q={search_term_string}"
+      "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -131,29 +131,6 @@ export const productServiceSchema = {
   },
   "sku": "TQ-QA-001",
   "mpn": "TQ-QA-MAIN",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "184",
-    "reviewCount": "184"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Enterprise Client"
-      },
-      "reviewBody": "Testriq provided exceptional QA support for our fintech application. Their attention to detail is unmatched."
-    }
-  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
@@ -369,7 +346,7 @@ export const aiTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "AI Testing Services",
   "areaServed": "Worldwide",
@@ -447,7 +424,7 @@ export const launchFastQASchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Rapid QA for Startups",
   "areaServed": "Worldwide",
@@ -526,7 +503,7 @@ export const exploratoryTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Exploratory Testing",
   "areaServed": "Worldwide",
@@ -605,7 +582,7 @@ export const desktopAppTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -925,7 +902,7 @@ export const etlTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "ETL QA Services",
   "areaServed": "Worldwide",
@@ -1088,28 +1065,7 @@ export const manualTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "44", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1260,28 +1216,7 @@ export const automationTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "120", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1349,7 +1284,7 @@ export const apiTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1411,7 +1346,7 @@ export const regressionTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1599,7 +1534,7 @@ export const performanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1885,13 +1820,7 @@ export const securityTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -1957,7 +1886,7 @@ export const qaDocumentationServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -2037,7 +1966,7 @@ export const dataAnalysisServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Data Analysis & Analytics",
   "areaServed": "Worldwide",
@@ -2182,7 +2111,7 @@ export const ecommerceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "E-Commerce QA Testing",
   "areaServed": "Worldwide",
@@ -2357,7 +2286,7 @@ export const healthcareTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Healthcare Software QA Testing",
   "areaServed": "Worldwide",
@@ -2436,7 +2365,7 @@ export const gamingTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Game Testing & QA",
   "areaServed": "Worldwide",
@@ -2531,7 +2460,7 @@ export const iotTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT Quality Assurance",
   "areaServed": "Worldwide",
@@ -2602,7 +2531,7 @@ export const bankingFinanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Banking & Finance Software Testing",
   "areaServed": "Worldwide",
@@ -2689,7 +2618,7 @@ export const telecommunicationTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Telecom Software Testing",
   "areaServed": "Worldwide",
@@ -2878,12 +2807,12 @@ export const ourTeamPageSchema = {
   "@type": "AboutPage",
   "name": "Meet Our Team - Testriq QA Lab",
   "description": "Meet the certified QA professionals behind Testriq's success. Our team of ISTQB-certified experts brings decades of software testing experience across multiple domains.",
-  "url": "www.testriq.com/our-team",
+  "url": "https://www.testriq.com/our-team",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9152929343",
@@ -2905,35 +2834,35 @@ export const ourTeamPageSchema = {
         "name": "Sandeep Maske",
         "jobTitle": "Founder & CEO",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#sandeep-maske"
+        "url": "https://www.testriq.com/our-team#sandeep-maske"
       },
       {
         "@type": "Person",
         "name": "Santosh Kakade",
         "jobTitle": "VP Operations",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#santosh-kakade"
+        "url": "https://www.testriq.com/our-team#santosh-kakade"
       },
       {
         "@type": "Person",
         "name": "Goutam Mishra",
         "jobTitle": "Head of QA and BD",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#goutam-mishra"
+        "url": "https://www.testriq.com/our-team#goutam-mishra"
       },
       {
         "@type": "Person",
         "name": "Rohan Maske",
         "jobTitle": "VP - Marketing",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#rohan-maske"
+        "url": "https://www.testriq.com/our-team#rohan-maske"
       },
       {
         "@type": "Person",
         "name": "Aatish Jadhav",
         "jobTitle": "Senior Manager - Strategic Growth",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#aatish-jadhav"
+        "url": "https://www.testriq.com/our-team#aatish-jadhav"
       }
     ]
   }
@@ -4027,13 +3956,13 @@ export const contactUsPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Us",
-  "url": "www.testriq.com/contact",
+  "url": "https://www.testriq.com/contact",
   "description": "Reach out to Testriq QA Lab for expert QA consultation, project inquiries, support requests, or partnership opportunities. Get in touch via call, email, video consultation, or schedule a meeting.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "email": "contact@testriq.com",
     "telephone": "+91-915-2929-343",
     "address": {
@@ -4087,7 +4016,7 @@ export const smartDeviceTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT & Smart Device Testing",
   "areaServed": "Worldwide",
@@ -4194,7 +4123,7 @@ export const matrimonialAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Application Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -4274,8 +4203,8 @@ export const datingAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "TESTRIQ QA Lab",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/logo.png"
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/logo.png"
   },
   "image": "https://www.testriq.com/logo.png",
   "offers": {
@@ -4346,27 +4275,7 @@ export const datingAppCertificationSchema = {
       }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "App Developer"
-      },
-      "datePublished": "2024-03-10",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "reviewBody": "The certification process was thorough and helped us gain trust with our user base. Highly valuable."
-    }
-  ]
+
 };
 
 
@@ -4381,7 +4290,7 @@ export const fantasyAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Fantasy Sports Platform Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -4461,7 +4370,7 @@ export const tradingAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Trading Platform Certification",
   "areaServed": "Worldwide",
@@ -4533,8 +4442,8 @@ export const shoppingAppCertificationSchema = {
   provider: {
     "@type": "Organization",
     name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+    url: "https://www.testriq.com",
+    logo: "https://www.testriq.com/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9004988859",
@@ -4567,12 +4476,7 @@ export const shoppingAppCertificationSchema = {
       },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "203",
-    bestRating: "5",
-  },
+
 };
 
 // Service Schema for SAP Testing Service
@@ -4664,25 +4568,7 @@ export const sapTestingSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "100",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Global Manufacturing Corp"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Testriq's rigorous testing strategy was crucial for our seamless transition to S/4HANA. We maintained full operational capability throughout the migration."
-      }
+
     },
     {
       "@type": "FAQPage",

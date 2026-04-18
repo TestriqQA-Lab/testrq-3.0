@@ -7,6 +7,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
 
+  trailingSlash: false,        // ✅ Prevent /about-us/ and /about-us from being separate URLs
   reactStrictMode: true, // ✅ Helps catch performance issues in dev
   experimental: {
     cssChunking: true,     // Split + reorder CSS per route

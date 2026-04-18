@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.testriq.com/",
   },
   openGraph: {
     type: "website",
