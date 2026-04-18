@@ -136,8 +136,7 @@ export const productServiceSchema = {
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
+    "availability": "https://schema.org/OnlineOnly",
   }
 };
 
@@ -373,7 +372,7 @@ export const aiTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -451,7 +450,7 @@ export const launchFastQASchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -530,7 +529,7 @@ export const exploratoryTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -609,7 +608,7 @@ export const desktopAppTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -680,7 +679,7 @@ export const mobileAppTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -851,7 +850,7 @@ export const roboticTestingSchema = {
 
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -929,7 +928,7 @@ export const etlTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -959,9 +958,8 @@ export const manualTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
       },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
@@ -1079,9 +1077,8 @@ export const automationTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1229,7 +1226,7 @@ export const apiTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1307,7 +1304,7 @@ export const regressionTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1377,7 +1374,7 @@ export const agileTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1495,7 +1492,7 @@ export const performanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1648,9 +1645,8 @@ export const securityTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -1814,7 +1810,7 @@ export const qaDocumentationServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -1886,7 +1882,7 @@ export const dataAnalysisServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -1958,7 +1954,7 @@ export const completeTestingGuideSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2039,7 +2035,7 @@ export const ecommerceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2134,7 +2130,7 @@ export const elearningTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2214,7 +2210,7 @@ export const healthcareTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2309,7 +2305,7 @@ export const gamingTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2380,7 +2376,7 @@ export const iotTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2467,7 +2463,7 @@ export const bankingFinanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2546,7 +2542,7 @@ export const telecommunicationTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -3944,7 +3940,7 @@ export const smartDeviceTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4051,7 +4047,7 @@ export const matrimonialAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4080,9 +4076,8 @@ export const datingAppCertificationSchema = {
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "url": "https://www.testriq.com/contact",
-    "itemCondition": "https://schema.org/NewCondition",
   },
   "category": "Quality Assurance and Certification",
   "areaServed": "Worldwide",
@@ -4185,7 +4180,7 @@ export const fantasyAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4257,7 +4252,7 @@ export const tradingAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4712,7 +4707,7 @@ export const continuousTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
