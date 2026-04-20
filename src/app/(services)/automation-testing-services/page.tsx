@@ -146,10 +146,6 @@ const AutomationTestingFAQs = dynamic(
   { ssr: true, loading: () => <FAQLoader /> }
 );
 
-const AutomationTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
-  { ssr: true, loading: () => <ContentLoader /> }
-);
 
 const ManualTestingFrameworkArchitecture = dynamic(
   () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
@@ -183,6 +179,7 @@ export default function AutomationTestingServices() {
         <AutomationTestingToolsFramework />
         <AutomationTestingCaseStudies />
         <AutomationTestingFAQs />
+        <AutomationTestingReadyToEnsureQuality />
       </MainLayout>
     </div>
   );

@@ -5215,3 +5215,75 @@ export const timezoneFAQSchema = {
     }
   ]
 };
+
+export const pricingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "QA Testing Packages & Pricing",
+  "description": "Transparent, predictable pricing for world-class software testing services. Choose from monthly Managed QA retainers or project-based audits.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Software Testing Services",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "QA Testing Bundles",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web App Testing bundle",
+          "description": "Functional, integration, cross-browser, and performance testing for SaaS, portals, and online stores."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "400",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile App Testing bundle",
+          "description": "Real device testing for iOS and Android, focusing on UI responsiveness, touch gestures, and network conditions."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "500",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "API Testing Pack",
+          "description": "Functional validation, schema validation, and performance testing for REST, GraphQL, or SOAP architectures."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "350",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "VAPT (Security) Pack",
+          "description": "Comprehensive security testing including vulnerability assessment and manual pentesting (OWASP Top 10)."
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "800",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+};

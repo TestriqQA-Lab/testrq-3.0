@@ -48,7 +48,7 @@ export default function Pricing5Page() {
     ];
 
     return (
-        <div className="bg-[#fafafa] min-h-screen">
+        <div className="bg-white min-h-screen">
             <StructuredData data={pricingServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <MainLayout>

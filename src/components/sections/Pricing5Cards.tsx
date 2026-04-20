@@ -12,12 +12,12 @@ const colorMap: Record<string, {
     dot: string;
     badgeBg: string;
     ring: string;
+    button: string;
 }> = {
-    // Vercel/Linear style usually favors monochrome or very subtle colors
-    blue: { text: "text-neutral-900", gradient: "from-neutral-800 to-neutral-900", dot: "bg-neutral-900", badgeBg: "bg-white text-neutral-800 border-neutral-200", ring: "ring-neutral-200" },
-    indigo: { text: "text-neutral-900", gradient: "from-neutral-800 to-neutral-900", dot: "bg-neutral-900", badgeBg: "bg-white text-neutral-800 border-neutral-200", ring: "ring-neutral-200" },
-    emerald: { text: "text-neutral-900", gradient: "from-neutral-800 to-neutral-900", dot: "bg-neutral-900", badgeBg: "bg-white text-neutral-800 border-neutral-200", ring: "ring-neutral-200" },
-    rose: { text: "text-neutral-900", gradient: "from-neutral-800 to-neutral-900", dot: "bg-neutral-900", badgeBg: "bg-white text-neutral-800 border-neutral-200", ring: "ring-neutral-200" },
+    blue: { text: "text-brand-blue", gradient: "from-brand-blue to-blue-600", dot: "bg-brand-blue", badgeBg: "bg-blue-50 text-brand-blue border-blue-100", ring: "ring-brand-blue/20", button: "bg-brand-blue hover:bg-blue-600" },
+    indigo: { text: "text-indigo-600", gradient: "from-indigo-600 to-indigo-700", dot: "bg-indigo-600", badgeBg: "bg-indigo-50 text-indigo-600 border-indigo-100", ring: "ring-indigo-600/20", button: "bg-indigo-600 hover:bg-indigo-700" },
+    emerald: { text: "text-emerald-600", gradient: "from-emerald-600 to-teal-600", dot: "bg-emerald-600", badgeBg: "bg-emerald-50 text-emerald-600 border-emerald-100", ring: "ring-emerald-600/20", button: "bg-emerald-600 hover:bg-emerald-700" },
+    rose: { text: "text-rose-600", gradient: "from-rose-600 to-pink-600", dot: "bg-rose-600", badgeBg: "bg-rose-50 text-rose-600 border-rose-100", ring: "ring-rose-600/20", button: "bg-rose-600 hover:bg-rose-700" },
 };
 
 interface AccordionSectionProps {
@@ -69,7 +69,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.45, delay: index * 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className={`flex flex-col bg-white rounded-xl border border-neutral-200 hover:border-neutral-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 min-w-[280px] snap-start ${pkg.badge ? "ring-1 " + theme.ring : ""}`}
+            className={`flex flex-col h-full bg-white rounded-2xl border border-gray-200 hover:border-brand-blue/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 min-w-[280px] lg:min-w-0 snap-start ${pkg.badge ? "ring-2 " + theme.ring : ""}`}
         >
             {/* Card Header */}
             <div className="p-6 pb-5">
@@ -82,22 +82,22 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
                 )}
 
                 <div className="flex items-center gap-3 mb-5">
-                    <div className={`text-neutral-800`}>
-                        {React.cloneElement(pkg.icon as React.ReactElement<Record<string, unknown>>, { className: "w-5 h-5" })}
+                    <div className={`${theme.text}`}>
+                        {React.cloneElement(pkg.icon as React.ReactElement<Record<string, unknown>>, { className: "w-6 h-6" })}
                     </div>
-                    <h3 className="text-base font-semibold text-neutral-900 tracking-tight">{pkg.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-900 tracking-tight">{pkg.name}</h3>
                 </div>
 
                 {/* Price */}
                 <div className="mb-4">
                     <div className="flex items-start gap-0.5">
-                        <span className="text-neutral-400 font-medium text-[10px] mt-2 uppercase tracking-widest">From</span>
-                        <span className="text-lg font-bold text-neutral-900 mt-0.5 ml-1.5">$</span>
-                        <span className="text-4xl font-bold text-neutral-900 tracking-tighter leading-none">
+                        <span className="text-gray-400 font-bold text-[10px] mt-2 uppercase tracking-widest">From</span>
+                        <span className="text-xl font-bold text-gray-900 mt-0.5 ml-1.5">$</span>
+                        <span className="text-5xl font-black text-gray-900 tracking-tighter leading-none">
                             {pkg.price.match(/\d+/) ? pkg.price.match(/\d+/)?.[0] : "Custom"}
                         </span>
                     </div>
-                    <p className="text-neutral-500 text-xs font-medium mt-1">{pkg.price.replace(/Starting from \d+ USD /, '')}</p>
+                    <p className="text-gray-500 text-xs font-semibold mt-1">{pkg.price.replace(/Starting from \d+ USD /, '')}</p>
                 </div>
 
                 {/* Delivery */}
@@ -168,16 +168,16 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
             </div>
 
             {/* Footer */}
-            <div className="p-6 pt-4 mt-auto border-t border-neutral-200 bg-neutral-50/50 rounded-b-xl flex flex-col gap-3">
-                <div className={`text-[10px] font-mono text-neutral-600 bg-white px-3 py-2 rounded-md border border-neutral-200 text-center tracking-wide`}>
+            <div className="p-7 pt-4 mt-auto border-t border-neutral-100 rounded-b-3xl flex flex-col gap-3">
+                <div className={`text-[10px] font-bold text-neutral-500 bg-neutral-50 px-3 py-2 rounded-lg border border-neutral-100 text-center tracking-wide`}>
                     ✨ {pkg.addOn.replace(/(\d+)\s*USD/, "$$$1")}
                 </div>
                 <Link
                     href="/contact-us"
-                    className={`w-full flex items-center justify-center gap-2 bg-neutral-900 hover:bg-black text-white px-5 py-2.5 rounded-md text-sm font-medium transition-all duration-200 group/btn shadow-sm`}
+                    className={`w-full flex items-center justify-center gap-2 ${theme.button} text-white px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 group/btn shadow-lg shadow-blue-500/10`}
                 >
                     Get Started
-                    <FaArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+                    <FaArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
             </div>
         </motion.div>
@@ -186,12 +186,14 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
 
 const Pricing5Cards: React.FC = () => {
     return (
-        <section className="bg-[#fafafa] py-16 px-4 md:px-8 lg:px-12 overflow-hidden">
+        <section className="bg-white py-2 px-4 md:px-8 lg:px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Horizontal scrollable on mobile, 4-col grid on lg */}
-                <div className="flex lg:grid lg:grid-cols-4 gap-5 items-start overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide lg:overflow-visible">
+                <div className="flex lg:grid lg:grid-cols-4 gap-4 items-stretch overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide lg:overflow-visible">
                     {pricingPackages.map((pkg, idx) => (
-                        <PricingCard key={pkg.id} pkg={pkg} index={idx} />
+                        <div key={pkg.id} className="h-full">
+                            <PricingCard pkg={pkg} index={idx} />
+                        </div>
                     ))}
                 </div>
             </div>
