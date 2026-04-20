@@ -3,20 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBell, FaArrowRight, FaTags, FaSpinner } from "react-icons/fa";
 import Link from "next/link";
-import { getCategories, getTags } from "@/lib/wordpress-graphql"; // Import getTags
-import { adaptWordPressCategory } from "@/lib/wordpress-data-adapter";
-
-interface Category {
-  id: string;
-  name: string;
-  description: string;
-  color: string;
-  icon: string;
-  postCount: number;
-  subscribers: number;
-  tags: string[];
-  featuredTools: string[];
-}
+import { sanityGetCategories as getCategories, sanityGetTags as getTags, Category } from "@/lib/sanity-data-adapter";
 
 interface CategorySidebarProps {
   category: Category;
@@ -50,40 +37,32 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
   useEffect(() => {
     const fetchSidebarData = async () => {
       try {
-        // Fetch all categories
-        const wpCategories = await getCategories();
-        const adaptedCategories = wpCategories
-          .filter(cat => cat.count > 0 && cat.slug !== category.id) // Exclude current category
-          .map(adaptWordPressCategory);
-
-        // Sort by post count and take top 4 for related categories
-        const sortedRelatedCategories = adaptedCategories
-          .sort((a, b) => b.postCount - a.postCount)
+        setLoading(true);
+        // Fetch all categories from Sanity
+        const sanityCategories = await getCategories();
+        const related = (sanityCategories as Category[])
+          .filter((cat: Category) => cat.postCount > 0 && cat.id !== category.id)
+          .sort((a: Category, b: Category) => b.postCount - a.postCount)
           .slice(0, 4)
-          .map(cat => ({
+          .map((cat: Category) => ({
             name: cat.name,
-            slug: cat.id, // Use the id which is the slug from adaptWordPressCategory
+            slug: cat.id,
             icon: cat.icon,
             color: cat.color,
             postCount: cat.postCount
           }));
-        setRelatedCategories(sortedRelatedCategories);
+        setRelatedCategories(related);
 
-        // Fetch all tags from WordPress GraphQL
-        const wpTags = await getTags(50);
-        const sortedPopularTags = wpTags
-          .sort((a, b) => b.count - a.count) // Sort by count to get popular tags
-          .slice(0, 20) // Take top 20 popular tags
-          .map(tag => ({
-            name: tag.name,
-            slug: tag.slug,
-            count: tag.count
-          }));
+        // Fetch tags from Sanity
+        const tagsResult = await getTags();
+        const sortedPopularTags = (tagsResult as PopularTag[])
+          .sort((a: PopularTag, b: PopularTag) => b.count - a.count)
+          .slice(0, 20);
 
         setPopularTags(sortedPopularTags);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching sidebar data:", error);
+      } finally {
         setLoading(false);
       }
     };
@@ -151,65 +130,6 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({ category }) => {
 
   return (
     <aside className="space-y-8">
-
-      {/* Newsletter Signup */}
-      <div className={`bg-gradient-to-br ${category.color} rounded-xl p-6 text-white`}>
-        <div className="text-center">
-          <div className="w-12 h-12 bg-gradient-to-br ${category.color} bg-opacity-20 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <FaBell className="w-6 h-6" />
-          </div>
-          <h3 className="text-lg font-bold mb-2">Stay Updated</h3>
-          <p className="text-white text-opacity-90 text-sm mb-4">
-            Get the latest {category.name.toLowerCase()} insights delivered weekly.
-          </p>
-          {!subscribed ? (
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              {error && (
-                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-2 text-red-200 text-xs">
-                  {error}
-                </div>
-              )}
-              <input
-                type="email"
-                placeholder="your.email@company.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 bg-white/90 border border-white/90 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
-                disabled={newsletterLoading}
-              />
-              <button
-                type="submit"
-                disabled={newsletterLoading}
-                className="w-full px-4 py-2 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {newsletterLoading ? (
-                  <>
-                    <FaSpinner className="w-4 h-4 animate-spin" />
-                    <span>Subscribing...</span>
-                  </>
-                ) : (
-                  <span>Subscribe Now</span>
-                )}
-              </button>
-            </form>
-          ) : (
-            <div className="text-center py-2">
-              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                <span className="text-white text-lg">✓</span>
-              </div>
-              <h3 className="text-md font-bold text-white mb-1">
-                Subscribed!
-              </h3>
-              <p className="text-gray-100 text-sm">
-                Thank you for joining!
-              </p>
-            </div>
-          )}
-          <p className="text-xs text-white text-opacity-70 mt-3">
-            Join {(category.subscribers / 1000).toFixed(1)}K+ subscribers
-          </p>
-        </div>
-      </div>
 
       {/* Related Categories */}
       <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">

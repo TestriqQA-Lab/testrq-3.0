@@ -10,63 +10,23 @@ const QADocumentationFAQs = () => {
   const faqs = [
     {
       category: "General",
-      question: "What types of QA documentation do you provide?",
-      answer: (<>We provide comprehensive QA documentation including <Link href="/blog/post/test-execution-comprehensive-testing-implementation">test plans</Link>, <Link href="/blog/post/checklist-20-essential-test-cases-for-mobile-apps">test cases</Link>, requirements documentation, process documentation, <Link href="/blog/post/user-acceptance-testing-in-manual-testing-use-cases-techniques">user acceptance testing</Link> documentation, technical documentation, compliance documentation, and reporting & metrics documentation. Our services cover all aspects of quality assurance documentation needed for successful software development projects.</>)
+      question: "What are the essential components of QA documentation?",
+      answer: (<>The core parts are the Master Test Plan and Test Case Specifications. We also include the RTM, Defect Reports, and a final Test Summary Report. All these should ideally follow the ISO/IEC/IEEE 29119-3 standard for global consistency.</>)
     },
     {
-      category: "Process",
-      question: "How long does it typically take to complete QA documentation projects?",
-      answer: "Project timelines vary based on scope and complexity. Typically, our documentation projects range from 1-4 weeks. Simple documentation updates may take 3-5 days, while comprehensive documentation suites for large enterprise projects may take 6-8 weeks. We provide detailed timeline estimates during our initial consultation based on your specific requirements."
+      category: "Importance",
+      question: "Why is documentation important in QA?",
+      answer: "Documentation ensures traceability, facilitates knowledge transfer, satisfies regulatory audits (like FDA or ISO), and provides a baseline for automated testing. Without it, software quality becomes 'tribal knowledge,' which is a major risk for scaling companies."
     },
     {
       category: "Compliance",
-      question: "Do you ensure compliance with industry standards and regulations?",
-      answer: (<>Yes, we specialize in creating documentation that meets various industry standards and <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory requirements</Link> including ISO 9001, FDA 21 CFR Part 11, HIPAA, SOX, GDPR, IEEE 829, and CMMI. Our team has extensive experience with compliance documentation and ensures all deliverables meet the specific regulatory requirements of your industry.</>)
+      question: "Can you provide QA documentation for regulatory compliance audits?",
+      answer: "Yes. We specialize in creating 'Audit-Ready' artifacts. We provide validation protocols and traceability matrices. These assets meet the strict requirements of FDA 21 CFR Part 11 and HIPAA."
     },
     {
-      category: "Collaboration",
-      question: "How do you collaborate with our existing development teams?",
-      answer: (<>We integrate seamlessly with your existing teams through your preferred collaboration <Link href="/technology-stack">tools</Link> and processes. We can work with platforms like Slack, Microsoft Teams, JIRA, Confluence, and Azure DevOps. Our team participates in your regular meetings, follows your development methodologies (<Link href="/blog/post/automated-etl-testing">Agile</Link>, Scrum, Waterfall), and adapts to your existing workflows to ensure smooth collaboration.</>)
-    },
-    {
-      category: "Quality",
-      question: "What quality assurance measures do you have for documentation?",
-      answer: "We follow a rigorous quality assurance process including multi-level reviews, peer reviews, stakeholder validation, and compliance checks. All documentation goes through our standardized review process with technical writers, subject matter experts, and quality assurance specialists. We also provide revision tracking, version control, and maintain detailed quality metrics for all deliverables."
-    },
-    {
-      category: "Customization",
-      question: "Can you customize documentation templates to match our company standards?",
-      answer: "Absolutely! We create customized documentation templates that align with your company's branding, style guidelines, and specific requirements. Our templates can incorporate your logos, color schemes, formatting preferences, and any specific sections or information required by your organization. We also ensure templates are easily maintainable and scalable for future use."
-    },
-    {
-      category: "Tools",
-      question: "What tools and platforms do you use for documentation creation?",
-      answer: "We use industry-leading tools including Confluence, SharePoint, Notion, GitBook for documentation creation; GitHub, GitLab, Azure DevOps for version control; Microsoft Teams, Slack for collaboration; and various analytics tools for tracking documentation effectiveness. We can adapt to your existing tool stack or recommend the best tools for your specific needs."
-    },
-    {
-      category: "Maintenance",
-      question: "Do you provide ongoing maintenance and updates for documentation?",
-      answer: "Yes, we offer ongoing maintenance services to keep your documentation current and effective. This includes regular updates based on software changes, process improvements, feedback incorporation, and periodic reviews to ensure continued relevance. We can provide maintenance on a scheduled basis or as-needed support depending on your requirements."
-    },
-    {
-      category: "Training",
-      question: "Do you provide training on how to use and maintain the documentation?",
-      answer: "Yes, we provide comprehensive training sessions for your team covering how to use, update, and maintain the documentation. Training includes hands-on sessions with the documentation tools, best practices for content creation, review processes, and guidelines for maintaining consistency. We also provide training materials and ongoing support to ensure your team can effectively manage the documentation."
-    },
-    {
-      category: "Pricing",
-      question: "How do you structure pricing for QA documentation services?",
-      answer: "Our pricing is structured based on project scope, complexity, timeline, and specific requirements. We offer both fixed-price project-based pricing and hourly consulting rates. For ongoing maintenance and support, we provide monthly retainer options. We always provide detailed estimates upfront with clear deliverables and timelines, ensuring transparency and no hidden costs."
-    },
-    {
-      category: "Integration",
-      question: "How do you integrate documentation with existing development workflows?",
-      answer: "We integrate documentation seamlessly into your existing development workflows through CI/CD pipelines, automated documentation generation, integration with project management tools, and alignment with your development methodologies. We can set up automated workflows that update documentation based on code changes, test results, and project milestones, ensuring documentation stays current with development progress."
-    },
-    {
-      category: "Security",
-      question: "How do you ensure the security and confidentiality of our documentation?",
-      answer: (<>We maintain strict security protocols including signed NDAs, secure file transfer methods, access controls, and <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data encryption</Link>. Our team follows industry best practices for <Link href="/blog/post/advanced-security-testing-for-healthcare-apps-protecting-patient-data-from-cyber-threats">data security</Link> and can work within your security requirements including VPN access, specific security <Link href="/technology-stack">tools</Link>, and compliance with your organization&apos;s security policies. All documentation is stored securely and access is limited to authorized personnel only.</>)
+      category: "Templates",
+      question: "Do you offer templates for comprehensive QA documentation?",
+      answer: "Yes, we provide a full suite of QA documentation templates. You can customize these to fit your specific tech stack and industry needs."
     }
   ];
 
@@ -109,8 +69,8 @@ const QADocumentationFAQs = () => {
                 setOpenFAQ(null); // close any open FAQ when switching category
               }}
               className={`px-4 py-2 rounded-lg text-sm font-medium border transition ${selectedCategory === category
-                  ? 'bg-blue-600 text-white border-blue-600'
-                  : 'bg-white text-gray-600 hover:bg-gray-100 border-gray-200'
+                ? 'bg-blue-600 text-white border-blue-600'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border-gray-200'
                 }`}
             >
               {category}

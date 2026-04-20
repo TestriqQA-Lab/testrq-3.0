@@ -1,13 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaArrowRight, FaPlay } from "react-icons/fa";
-import { FaMobile, FaApple, FaHome, FaChevronRight } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa6";
-import { MdOutlineSecurity } from "react-icons/md";
-import { BsLightningCharge } from "react-icons/bs";
+import { FaArrowRight, FaPlay, FaMobile, FaHome, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import Lightbox from "../VideoLightBox";
+import MobileTestingAnimation from "./MobileTestingAnimation";
 
 const MobileTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -45,31 +42,22 @@ const MobileTestingHeroSection: React.FC = () => {
               <span className="text-sm">Mobile Application Testing Experts</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-              Comprehensive{" "}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 text-left">
+              Global{" "}
               <span className="text-[theme(color.brand.blue)]">
                 Mobile-App Testing&nbsp;
               </span>
-              Services
+              Services: Ensuring Cross-Platform Excellence in 2026
             </h1>
 
-            <p className="text-gray-700 text-base md:text-lg mb-6 max-w-xl">
-              Ensure your mobile applications deliver seamless{" "}
-              <Link href="blog/post/user-experience-testing-for-smart-devices-usability-accessibility">
-                user experiences
-              </Link>{" "}
-              and top performance across all platforms. From Android to iOS, our
-              mobile app testing services include{" "}
-              <Link href="blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
-                functionality testing
-              </Link>
-              , <Link href="performance-testing-services">performance</Link>,{" "}
-              <Link href="blog/post/usability-testing-for-web-apps-improve-ux-accessibility-conversion-rates">
-                usability
-              </Link>
-              , and mobile <Link href="security-testing">security testing</Link>{" "}
-              for every device and scenario.
-            </p>
+            <div className="space-y-4 mb-6 text-left">
+              <p className="text-gray-700 text-base md:text-lg">
+                In the hyper-competitive mobile landscape of 2026, a single crash can lead to an <span className="font-semibold">88% uninstall rate</span> within the first 72 hours. At Testriq, we provide comprehensive <Link href="/blog/post/top-mobile-testing-frameworks-compared-appium-espresso-xcuitest" className="text-brand-blue hover:underline">mobile app testing</Link> and <Link href="/automation-testing-services" className="text-brand-blue hover:underline">application quality assurance</Link> designed to safeguard your digital presence. Our team specializes in mobile app QA for a global market, managing the testing challenges of over 24,000 <Link href="/blog/post/solving-the-top-5-challenges-in-mobile-application-testing" className="text-brand-blue hover:underline">Android device combinations</Link> alongside the <Link href="/blog/post/ios-vs-android-testing-key-differences-every-qa-should-know" className="text-brand-blue hover:underline">newest iOS 18/19 versions</Link>.
+              </p>
+              <p className="text-gray-700 text-base md:text-lg">
+                Testriq uses global benchmarks to deliver secure, <Link href="/performance-testing-services" className="text-brand-blue hover:underline">high-performance</Link> mobile apps. Our methodology defends against the 150% rise in mobile ransomware and optimizes software for <Link href="/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025" className="text-brand-blue hover:underline">5G</Link> and edge computing. From our Singapore hub, we deliver global <Link href="/security-testing" className="text-brand-blue hover:underline">Android security and penetration testing</Link>. Our strategies ensure a flawless launch in any market.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-8 w-full sm:w-auto">
               <Link
@@ -109,62 +97,7 @@ const MobileTestingHeroSection: React.FC = () => {
           {/* Right Content - Visual Elements */}
           <div className="flex justify-center xl:justify-end">
             <div className="relative w-full max-w-lg">
-              {/* Main Mobile Devices */}
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-12 shadow-lg">
-                <div className="flex justify-center items-center gap-8 mb-6">
-                  {/* iPhone */}
-                  <div className="relative">
-                    <div className="w-20 h-36 bg-gray-900 rounded-2xl p-1">
-                      <div className="w-full h-full bg-blue-500 rounded-xl flex items-center justify-center">
-                        <FaMobile className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-xs">
-                        <FaApple className="w-4 h-4" />
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Android */}
-                  <div className="relative">
-                    <div className="w-20 h-36 bg-gray-800 rounded-2xl p-1">
-                      <div className="w-full h-full bg-green-500 rounded-xl flex items-center justify-center">
-                        <FaMobile className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-xs">🤖</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating Icons */}
-                <div className="absolute -top-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <MdOutlineSecurity className="w-8 h-8 text-green-500" />
-                </div>
-
-                <div className="absolute -top-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <BsLightningCharge className="w-8 h-8 text-yellow-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-full p-4 shadow-lg">
-                  <FaUsers className="w-8 h-8 text-purple-500" />
-                </div>
-
-                <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
-                  <div className="w-8 h-8 bg-[theme(color.brand.blue)] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">QA</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Background Elements */}
-              <div className="absolute inset-0 -z-10">
-                <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"></div>
-                <div className="absolute bottom-10 right-10 w-16 h-16 bg-blue-300 rounded-full opacity-30"></div>
-                <div className="absolute top-1/2 left-0 w-12 h-12 bg-blue-400 rounded-full opacity-25"></div>
-              </div>
+              <MobileTestingAnimation />
             </div>
           </div>
         </div>

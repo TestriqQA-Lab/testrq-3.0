@@ -3,24 +3,15 @@
 import Link from "next/link";
 import React from "react";
 import {
-  FaShieldAlt,
-  FaRocket,
-  FaUsers,
-  FaChartLine,
   FaCheckCircle,
   FaUniversity,
   FaLock,
-  FaCreditCard,
+  FaUsers,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import BankingTestingAnimation from "./BankingTestingAnimation";
 const BankingHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "99.99%", label: "Security Compliance", icon: FaShieldAlt },
-    { value: "10+", label: "Fintech Platforms", icon: FaUniversity },
-    { value: "1M+", label: "Secure Transactions", icon: FaCreditCard },
-    { value: "24/7", label: "Monitoring Support", icon: FaRocket },
-  ];
 
   const trustBadges = [
     "PCI DSS Level 1 Certified",
@@ -67,29 +58,16 @@ const BankingHeroSection: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Strengthen
+              Banking & Financial Services (BFSI)
               <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
-                Financial Systems
+                Testing Services
               </span>
-              with Expert BFSI Testing
+              Ensuring Security and Compliance
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure bulletproof <Link href="/security-testing">security</Link>,{" "}
-              <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">
-                regulatory compliance
-              </Link>
-              , and flawless{" "}
-              <Link href="/performance-testing-services">performance</Link>{" "}
-              across all your banking and financial platforms. Our comprehensive
-              banking and{" "}
-              <Link href="/blog/post/etl-testing-case-studies">
-                finance testing services
-              </Link>{" "}
-              help you build customer trust, meet GDPR, PCI DSS, and SOX
-              compliance requirements, and stay ahead of evolving financial
-              threats through robust BFSI testing solutions.
+              Threat actors target financial services at <span className="font-semibold">300x the rate</span> of other industries. With data breaches costing an average of <span className="font-semibold">5.85 million USD</span>, our QA strategies are designed to safeguard multi-billion dollar transaction ecosystems and ensure <span className="font-semibold">100% audit pass rates</span> for your institution.
             </p>
 
             {/* Key Benefits */}
@@ -168,71 +146,9 @@ const BankingHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats & Visual */}
-          <div className="space-y-8 py-10">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven Banking Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Results that ensure financial security
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-green-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Results
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Security Vulnerability Reduction
-                  </span>
-                  <span className="font-bold text-green-600">-95%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Compliance Audit Success Rate
-                  </span>
-                  <span className="font-bold text-green-600">100%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    System Downtime Reduction
-                  </span>
-                  <span className="font-bold text-green-600">-80%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">Customer Trust Score</span>
-                  <span className="font-bold text-green-600">4.9/5</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Animated Banking Dashboard */}
+          <div className="py-10">
+            <BankingTestingAnimation />
           </div>
         </div>
 

@@ -4,25 +4,28 @@ import type { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, securityTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Security Testing Company | VAPT Services & SecureGuard™ Framework",
-  description: "Leading Security Testing Company (TCoE). Our Certified Ethical Hackers (CEH/OSCP) perform VAPT, GDPR Audits, and Source Code Review using the Testriq SecureGuard™ methodology",
+  title: "Security Testing Services & Pen-testing Services | Testriq",
+  description: "Protect your digital assets with Testriq's elite VAPT and Security Testing services. We leverage ISO 29119 standards for 2026 to ensure global resilience against evolving cyber threats.",
   keywords: [
-    "security testing company",
-    "vapt services",
-    "penetration testing service",
-    "security center of excellence",
-    "owasp top 10 testing",
-    "mobile app security testing",
-    "gdpr compliance audit"
+    "Security Testing Services",
+    "Pen-testing Services",
+    "VAPT",
+    "Application Security Testing",
+    "ISO 29119 Security",
+    "API Security Testing 2026",
+    "Shift-Left Security CI/CD",
+    "Digital Resilience",
+    "SaaS Security Audit",
+    "Cloud Infrastructure Security"
   ],
   openGraph: {
-    title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
-    description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
+    title: "Security Testing Services & Pen-testing Services | Testriq",
+    description: "Ensure your systems withstand modern cyber attacks with Testriq's comprehensive VAPT and Application Security Testing solutions.",
     url: "https://www.testriq.com/security-testing",
     type: "website",
     images: [
       {
-        url: "/OG/Security-Testing-Service-Og.webp",
+        url: "/OG/Security-Testing-Og.webp",
         width: 1200,
         height: 630,
         alt: "Security Testing Services by Testriq",
@@ -31,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Security Testing Services - Comprehensive Cybersecurity Testing | Testriq",
-    description: "Professional security testing services including penetration testing, vulnerability assessment, SAST, DAST, security code review, and compliance testing. Protect your applications from cyber threats with advanced security validation.",
-    images: ["/OG/Security-Testing-Service-Twitter.webp"],
+    title: "Security Testing Services & Pen-testing Services | Testriq",
+    description: "Ensure your systems withstand modern cyber attacks with Testriq's comprehensive VAPT and Application Security Testing solutions.",
+    images: ["/OG/Security-Testing-Twitter.webp"],
   },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
@@ -50,6 +53,18 @@ import SecurityTestingHeroSection from "@/components/sections/SecurityTestingHer
 
 const SecurityTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/SecurityTestingReadyToEnsureQuality"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const SecurityTestingChallenges = dynamic(
+  () => import("@/components/sections/SecurityTestingChallenges"),
   {
     ssr: true,
     loading: () => (
@@ -169,6 +184,7 @@ export default function SecurityTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <SecurityTestingHeroSection />
+        <SecurityTestingChallenges />
         <SecurityTestingComprehensiveSlider />
         <SecureGuardFramework />
         <SecurityTestingROISection />

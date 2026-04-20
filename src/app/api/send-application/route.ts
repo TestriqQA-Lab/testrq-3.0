@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { JWT } from 'google-auth-library';
+import { google } from 'googleapis';
+import { Readable } from 'stream';
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,9 +17,16 @@ export async function POST(request: NextRequest) {
     const role = formData.get('role') as string;
     const totalYearsExperience = formData.get('totalYearsExperience') as string;
     const currentCTC = formData.get('currentCTC') as string;
-    const resume = formData.get('resume') as File;
+    const resume = formData.get('resume') as File | null;
 
-    // Create transporter (you'll need to configure this with your email service)
+    // Convert resume to buffer for attachment & drive upload
+    let resumeBuffer: Buffer | undefined;
+    if (resume) {
+      const arrayBuffer = await resume.arrayBuffer();
+      resumeBuffer = Buffer.from(arrayBuffer);
+    }
+
+    // Create transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.SMTP_PORT || '587'),
@@ -33,8 +44,8 @@ export async function POST(request: NextRequest) {
       <p><strong>Applicant Details:</strong></p>
       <ul>
         <li><strong>Full Name:</strong> ${fullName}</li>
-        <li><strong>Email:</strong> ${emailAddress}</li>
         <li><strong>Mobile:</strong> ${mobileNumber}</li>
+        <li><strong>Email:</strong> ${emailAddress}</li>
         <li><strong>Current Location:</strong> ${currentLocation}</li>
         <li><strong>Notice Period:</strong> ${noticePeriod}</li>
         <li><strong>Total Experience:</strong> ${totalYearsExperience} years</li>
@@ -58,33 +69,155 @@ export async function POST(request: NextRequest) {
       <p>Best regards,<br>Testriq HR Team</p>
     `;
 
-    // Convert resume to buffer for attachment
-    let resumeBuffer: Buffer | undefined;
-    if (resume) {
-      const arrayBuffer = await resume.arrayBuffer();
-      resumeBuffer = Buffer.from(arrayBuffer);
+    const emailPromise = (async () => {
+        try {
+            await transporter.sendMail({
+                from: process.env.SMTP_USER,
+                to: 'prakash.mishra@testriq.com',
+                subject: `New Job Application - ${role} - ${fullName}`,
+                html: hrEmailContent,
+                attachments: resume && resumeBuffer ? [{
+                    filename: resume.name,
+                    content: resumeBuffer,
+                    contentType: 'application/pdf'
+                }] : []
+            });
+
+            await transporter.sendMail({
+                from: process.env.SMTP_USER,
+                to: emailAddress,
+                subject: `Application Received - ${role} Position at Testriq`,
+                html: applicantEmailContent,
+            });
+            console.log('[send-application API] Emails sent successfully');
+        } catch (error) {
+            console.error('[send-application API] Error sending emails:', error);
+            throw error;
+        }
+    })();
+
+    const sheetsPromise = (async () => {
+        try {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            let authClient: any;
+
+            if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET && process.env.GOOGLE_REFRESH_TOKEN) {
+                const oauth2Client = new google.auth.OAuth2(
+                    process.env.GOOGLE_CLIENT_ID,
+                    process.env.GOOGLE_CLIENT_SECRET
+                );
+                oauth2Client.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH_TOKEN });
+                authClient = oauth2Client;
+                console.log('[send-application API] Authenticating via OAuth2 (User Identity)');
+            } else if (process.env.GOOGLE_CLIENT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+                const SCOPES = [
+                    'https://www.googleapis.com/auth/spreadsheets',
+                    'https://www.googleapis.com/auth/drive.file',
+                ];
+                authClient = new JWT({
+                    email: process.env.GOOGLE_CLIENT_EMAIL,
+                    key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+                    scopes: SCOPES,
+                });
+                console.log(`[send-application API] Authenticating via Service Account: '${process.env.GOOGLE_CLIENT_EMAIL}'`);
+            }
+
+            if (authClient) {
+                let resumeLink = 'Not Provided';
+                if (resume && resumeBuffer) {
+                    try {
+                        const drive = google.drive({ version: 'v3', auth: authClient });
+                        const folderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
+                        const parents = folderId ? [folderId] : [];
+
+                        const fileMetadata = {
+                            name: `${fullName}_${role}_Resume.pdf`,
+                            parents: parents
+                        };
+
+                        const media = {
+                            mimeType: resume.type || 'application/pdf',
+                            body: Readable.from(resumeBuffer),
+                        };
+
+                        const file = await drive.files.create({
+                            requestBody: fileMetadata,
+                            media: media,
+                            fields: 'id, webViewLink',
+                        });
+
+                        console.log('[send-application API] Resume uploaded to Drive, ID:', file.data.id);
+
+                        await drive.permissions.create({
+                            fileId: file.data.id!,
+                            requestBody: { role: 'reader', type: 'anyone' },
+                        });
+
+                        resumeLink = file.data.webViewLink || 'Uploaded (Link unavailable)';
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    } catch (driveError: any) {
+                        console.error('[send-application API] Error uploading to Drive:', driveError.message);
+                        resumeLink = `Upload Failed: ${driveError.message || 'Unknown Error'}`;
+                    }
+                } else if (resume) {
+                    resumeLink = 'Attached in Email';
+                }
+
+                const doc = new GoogleSpreadsheet(process.env.GOOGLE_CAREER_SHEET_ID as string, authClient);
+                await doc.loadInfo();
+                const sheet = doc.sheetsByIndex[0];
+
+                // Setting header formats with Phone Number and Email interchanged per user request
+                const headers = [
+                    'Timestamp',
+                    'Job Role',
+                    'Full Name',
+                    'Phone Number',
+                    'Email Address',
+                    'Location',
+                    'Total Experience',
+                    'Current CTC',
+                    'Notice Period',
+                    'Resume/CV'
+                ];
+
+                await sheet.loadHeaderRow().catch(() => {}); // Catch if empty
+
+                // Always enforce new format headers
+                await sheet.setHeaderRow(headers);
+
+                await sheet.addRow({
+                    'Timestamp': new Date().toISOString(),
+                    'Job Role': role || 'Not Specified',
+                    'Full Name': fullName,
+                    'Phone Number': mobileNumber,
+                    'Email Address': emailAddress,
+                    'Location': currentLocation,
+                    'Total Experience': totalYearsExperience,
+                    'Current CTC': currentCTC,
+                    'Notice Period': noticePeriod,
+                    'Resume/CV': resumeLink
+                });
+                console.log('[send-application API] Added to Google Sheet');
+
+            } else {
+                console.warn('[send-application API] Google credentials missing. Sheet will not be updated.');
+            }
+        } catch (sheetError) {
+            console.error('[send-application API] Error updating Google Sheet:', sheetError);
+            throw sheetError;
+        }
+    })();
+
+    // Wait for both email and sheet actions to complete concurrently
+    const results = await Promise.allSettled([emailPromise, sheetsPromise]);
+
+    if (results[0].status === 'rejected') {
+        console.warn('Email sending failed.');
     }
-
-    // Send email to HR
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: 'prakash.mishra@testriq.com',
-      subject: `New Job Application - ${role} - ${fullName}`,
-      html: hrEmailContent,
-      attachments: resumeBuffer ? [{
-        filename: resume.name,
-        content: resumeBuffer,
-        contentType: 'application/pdf'
-      }] : []
-    });
-
-    // Send confirmation email to applicant
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: emailAddress,
-      subject: `Application Received - ${role} Position at Testriq`,
-      html: applicantEmailContent,
-    });
+    if (results[1].status === 'rejected') {
+        console.warn('Sheet update failed.');
+    }
 
     return NextResponse.json({ 
       success: true, 
@@ -92,11 +225,10 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('Error sending emails:', error);
+    console.error('Error submitting application:', error);
     return NextResponse.json({ 
       success: false, 
       message: 'Failed to submit application. Please try again.' 
     }, { status: 500 });
   }
 }
-

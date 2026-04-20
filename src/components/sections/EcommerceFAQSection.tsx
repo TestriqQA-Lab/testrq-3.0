@@ -9,101 +9,25 @@ const EcommerceFAQSection: React.FC = () => {
 
   const faqs = [
     {
-      question: "What types of e-commerce platforms do you test?",
-      answer: (
-        <>
-          We test all major e-commerce platforms including Shopify, WooCommerce,
-          Magento, BigCommerce, and custom-built solutions. Our team has
-          expertise in framework-specific risks,{" "}
-          <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
-            payment gateway testing
-          </Link>
-          , and best practices for each system’s{" "}
-          <Link href="/blog/post/core-principles-of-functional-mobile-application-testing">
-            functionality
-          </Link>{" "}
-          and <Link href="/performance-testing-services">performance</Link>.
-        </>
-      ),
+      question: "What is the difference between B2B and B2C e-commerce testing?",
+      answer: "The difference between B2B and B2C e-commerce testing lies in the complexity of the workflow. B2B testing focuses on bulk ordering, role-based permissions, and dynamic pricing contracts. B2C testing focuses on private user experience (UX), fast checkout flows, and mobile responsiveness."
     },
     {
-      question: "How long does e-commerce testing typically take?",
-      answer: (
-        <>
-          The duration depends on your platform&apos;s complexity and scope. A basic
-          e-commerce site typically takes 2-4 weeks for{" "}
-          <Link href="/blog/post/test-execution-comprehensive-testing-implementation">
-            comprehensive testing
-          </Link>
-          , while{" "}
-          <Link href="/blog/post/why-outsourcing-qa-makes-sense-for-startups-and-enterprises">
-            enterprise-level
-          </Link>{" "}
-          platforms may require 6-8 weeks. We provide detailed timelines during
-          our initial assessment.
-        </>
-      ),
+      question: "How to test payment gateway integration in a sandbox environment?",
+      answer: "Conduct payment integration testing in a sandbox environment using authorized test credentials from Stripe, PayPal, or other gateway providers. Validate successful transactions, declined cards, and partial refunds without processing real funds. Our e-commerce testing services ensure that the communication between your store and the gateway's API is error-free."
     },
     {
-      question: "Do you test payment gateway integrations?",
-      answer:
-        "Yes, we thoroughly test all payment gateway integrations including PayPal, Stripe, Square, and others. We validate transaction flows, security protocols, error handling, and PCI compliance to ensure safe and reliable payment processing.",
+      question: "Why is PCI DSS compliance important for my online store?",
+      answer: "PCI DSS compliance is a global security standard required for any business that processes credit card data. Failure to comply can lead to massive fines and the loss of your ability to process payments. Our website testing services include security audits that help you remain audit-ready."
     },
     {
-      question: "Can you help with mobile commerce optimization?",
-      answer: (
-        <>
-          Absolutely!{" "}
-          <Link href="/mobile-application-testing">
-            Mobile commerce testing
-          </Link>{" "}
-          is a core part of our services. We test responsive design, mobile
-          apps, touch interfaces, mobile payment methods, and ensure optimal
-          performance across all mobile devices and operating systems.
-        </>
-      ),
+      question: "What are the best practices for testing mobile shopping applications?",
+      answer: "Best practices for testing mobile shopping applications include private 'thumb-friendly' UI, testing under variable network conditions (3G/5G), and validating push notification performance. We utilize a real device cloud to ensure your app works on the latest iOS and Android versions."
     },
     {
-      question: "What security testing do you perform for e-commerce sites?",
-      answer: (
-        <>
-          We conduct comprehensive{" "}
-          <Link href="/security-testing">security testing</Link> including
-          vulnerability assessments,{" "}
-          <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">
-            penetration testing
-          </Link>
-          , data encryption validation, user authentication testing, and
-          compliance verification for standards like PCI DSS, GDPR, and CCPA.
-        </>
-      ),
-    },
-    {
-      question:
-        "How do you test during peak shopping periods like Black Friday?",
-      answer:
-        "We perform load testing that simulates peak traffic conditions, including Black Friday and holiday shopping spikes. We test your site's ability to handle concurrent users, process high transaction volumes, and maintain performance under extreme load.",
-    },
-    {
-      question: "Do you provide ongoing testing support after launch?",
-      answer:
-        "Yes, we offer ongoing testing support including regular health checks, performance monitoring, security updates validation, and testing for new features or integrations. We can establish maintenance contracts based on your needs.",
-    },
-    {
-      question: "What's included in your e-commerce testing reports?",
-      answer:
-        "Our reports include detailed findings, severity classifications, step-by-step reproduction instructions, screenshots/videos, recommendations for fixes, and priority rankings. We also provide executive summaries and ROI impact assessments.",
-    },
-    {
-      question: "Can you test third-party integrations and plugins?",
-      answer:
-        "Yes, we test all third-party integrations including inventory management systems, CRM tools, email marketing platforms, analytics tools, and any custom plugins or extensions your e-commerce site uses.",
-    },
-    {
-      question: "How do you ensure testing doesn't disrupt live operations?",
-      answer:
-        "We use staging environments, test data, and carefully planned testing schedules to avoid disrupting live operations. For production testing, we coordinate with your team and use non-intrusive methods that don't affect real customers or transactions.",
-    },
+      question: "How does performance testing prevent cart abandonment?",
+      answer: "Studies show a 1-second delay results in a 7% drop in conversions. Performance testing identifies database and server bottlenecks before they impact your customers. This ensures a fast checkout experience, even during massive traffic spikes."
+    }
   ];
 
   const toggleFAQ = (index: number) => {
@@ -163,11 +87,10 @@ const EcommerceFAQSection: React.FC = () => {
               </button>
 
               <div
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                  openFAQ === index
-                    ? "max-h-96 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index
+                  ? "max-h-96 opacity-100"
+                  : "max-h-0 opacity-0"
+                  }`}
               >
                 <div className="px-6 pb-4">
                   <div className="border-t border-gray-100 pt-4">

@@ -4,24 +4,15 @@ import Link from "next/link";
 import React from "react";
 import {
   FaShoppingCart,
-  FaCreditCard,
-  FaShieldAlt,
-  FaRocket,
-  FaChartLine,
   FaCheckCircle,
   FaArrowRight,
   FaPlay,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
+import EcommerceTestingAnimation from "./EcommerceTestingAnimation";
 
 const EcommerceHeroSection: React.FC = () => {
-  const keyStats = [
-    { value: "99.9%", label: "Uptime Guarantee", icon: FaRocket },
-    { value: "50+", label: "E-commerce Platforms", icon: FaShoppingCart },
-    { value: "98%", label: "Page Load Speed Optimization", icon: FaCreditCard },
-    { value: "24/7", label: "Monitoring Support", icon: FaShieldAlt },
-  ];
 
   const trustBadges = [
     "PCI DSS Compliant Testing",
@@ -68,36 +59,18 @@ const EcommerceHeroSection: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              Maximize Your
+              Global E-Commerce Testing Services:
               <span className="block bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 bg-clip-text text-transparent">
-                E-Commerce Success
+                Optimizing Conversions and Security for 2026
               </span>
-              with Expert QA Testing
             </h1>
 
             {/* Description */}
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Ensure flawless online shopping experiences,{" "}
-              <Link href="/blog/post/secure-payment-gateway-testing-for-e-commerce">
-                secure payment gateway
-              </Link>{" "}
-              transactions, and optimal{" "}
-              <Link href="/performance-testing-services">performance</Link>{" "}
-              across all browsers, devices, and operating systems. Our
-              end-to-end{" "}
-              <Link href="/e-commerce-testing-services">
-                e-commerce testing{" "}
-              </Link>
-              services include{" "}
-              <Link href="/blog/post/functional-testing-in-manual-testing-use-cases-techniques-best-practices">
-                functional testing
-              </Link>
-              , <Link href="/security-testing">security testing</Link>, and{" "}
-              <Link href="/blog/post/cross-platform-testing-ensuring-seamless-gaming-experiences-across-devices">
-                cross-platform
-              </Link>{" "}
-              validation - helping you reduce cart abandonment, boost conversion
-              rates, and build trust in your e-commerce platform.
+              In 2026, a one-second delay or a checkout glitch can ruin your brand&apos;s reputation. Testriq provides enterprise-grade e-commerce testing that balances fast deployment with total reliability. We don&apos;t just check functions; we build a <span className="font-semibold text-brand-blue">&quot;Conversion-First&quot; strategy</span> to protect your global revenue.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+              We stop transaction failures with rigorous payment testing and slash cart abandonment through better usability. Testriq is your trusted commerce partner for scaling <span className="font-semibold text-brand-blue">US Black Friday sales</span> and meeting complex <Link href="/qa-documentation-services" className="font-semibold text-brand-blue hover:underline">EU GDPR requirements</Link>.
             </p>
 
             {/* Key Benefits */}
@@ -113,13 +86,17 @@ const EcommerceHeroSection: React.FC = () => {
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Mobile Commerce Optimization
+                  <Link href="/mobile-application-testing" className="hover:text-brand-blue hover:underline">
+                    Mobile Commerce Optimization
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaCheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">
-                  Performance Under Load
+                  <Link href="/performance-testing-services" className="hover:text-brand-blue hover:underline">
+                    Performance Under Load
+                  </Link>
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -175,73 +152,9 @@ const EcommerceHeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Stats & Visual */}
-          <div className="space-y-8 py-10">
-            {/* Key Statistics */}
-            <div className="bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white border-opacity-50">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Proven E-Commerce Expertise
-                </h2>
-                <p className="text-gray-600">
-                  Results that drive business growth
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                {keyStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="text-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <stat.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Success Metrics */}
-            <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl p-8 border border-green-100">
-              <div className="flex items-center gap-3 mb-6">
-                <FaChartLine className="w-6 h-6 text-green-600" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  Average Client Results
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Conversion Rate Increase
-                  </span>
-                  <span className="font-bold text-green-600">+35%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Cart Abandonment Reduction
-                  </span>
-                  <span className="font-bold text-green-600">-28%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Page Load Time Improvement
-                  </span>
-                  <span className="font-bold text-green-600">-45%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-gray-700">
-                    Customer Satisfaction Score
-                  </span>
-                  <span className="font-bold text-green-600">4.8/5</span>
-                </div>
-              </div>
-            </div>
+          {/* Right Column - Animated E-commerce Dashboard */}
+          <div className="py-10">
+            <EcommerceTestingAnimation />
           </div>
         </div>
 

@@ -5,9 +5,9 @@ import React from "react";
 import {
   FaBug,
   FaClock,
-  FaDollarSign,
   FaCheckCircle,
   FaChartLine,
+  FaDollarSign,
 } from "react-icons/fa";
 
 const RegressionTestingROISection: React.FC = () => {
@@ -17,88 +17,73 @@ const RegressionTestingROISection: React.FC = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center bg-brand-blue gap-2 text-white px-3 py-2 rounded-full mb-5">
             <FaChartLine />
-            <span className="text-sm">Return on Investment</span>
+            <span className="text-sm">2026 Regression Landscapes</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Realizing the{" "}
-            <span className="text-brand-blue">ROI of Regression</span> Testing
+            The 2026 <span className="text-brand-blue">Regression Challenge</span>: Why Smart Strategy Matters
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Regression testing is a critical investment that ensures <Link href='blog/post/endurance-testing-validating-long-term-application-stability'>software
-            stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
-            reducing risks</Link>, it delivers significant returns and maintains user
+              stability</Link> and quality with every release. By <Link href='blog/post/why-discovery-analysis-matters-in-testing'>preventing defects and
+                reducing risks</Link>, it delivers significant returns and maintains user
             satisfaction.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {/* Enhanced Software Quality */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaCheckCircle className="text-2xl text-white" />
+        <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
+          {/* Release Pressure */}
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-blue-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <FaClock className="text-xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Enhanced Software Quality
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Ensure that new changes do not introduce defects or break existing
-              functionalities, leading to a more stable product.
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Release Pressure</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We solve the &quot;time vs. coverage&quot; trade-off by optimizing suites for tight sprints.
             </p>
-            <div className="mt-4 text-brand-blue font-bold text-lg">
-              99.8% Stability Rate
-            </div>
           </div>
 
-          {/* Reduced Production Defects */}
-          <div className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaBug className="text-2xl text-white" />
+          {/* Bloated Suites */}
+          <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-green-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <FaChartLine className="text-xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Reduced Production Defects
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Catch defects early in the development cycle, significantly
-              reducing the cost and effort of fixing them in production.
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Bloated Suites</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We prevent &quot;noisy&quot; results by pruning and organizing evolving test suites.
             </p>
-            <div className="mt-4 text-green-600 font-bold text-lg">
-              Up to 70% Fewer Defects
-            </div>
           </div>
 
-          {/* Faster Release Cycles */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaClock className="text-2xl text-white" />
+          {/* Flaky Tests */}
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-purple-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <FaBug className="text-xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Faster & Confident Release Cycles
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Automated and optimized regression testing enables quicker
-              validation, leading to faster and more confident software
-              releases.
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Flaky Tests</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We eliminate false positives that undermine trust in your automation.
             </p>
-            <div className="mt-4 text-purple-600 font-bold text-lg">
-              30% Faster Releases
-            </div>
           </div>
 
-          {/* Cost Savings */}
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl hover:shadow-lg transition-all duration-300 group">
-            <div className="bg-orange-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <FaDollarSign className="text-2xl text-white" />
+          {/* Skill Gaps */}
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-orange-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <FaCheckCircle className="text-xl text-white" />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Significant Cost Savings
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Minimize the costs associated with post-release defects, rework,
-              and emergency fixes.
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Skill Gaps</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Elite engineering talent in Selenium, Playwright, and Cypress.
             </p>
-            <div className="mt-4 text-orange-600 font-bold text-lg">
-              Up to 40% Cost Reduction
+          </div>
+
+          {/* Risk-Based Scope */}
+          <div className="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group">
+            <div className="bg-teal-600 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <FaDollarSign className="text-xl text-white" />
             </div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Risk-Based Scope</h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              We test what matters, using ISO 29119 standards for smarter selection.
+            </p>
           </div>
         </div>
 

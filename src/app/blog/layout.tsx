@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     languages: {
       "en-US": "/blog",
     },
+    types: {
+      "application/rss+xml": "https://www.testriq.com/blog/feed.xml",
+    },
   },
   openGraph: {
     title:

@@ -21,8 +21,8 @@ interface CityTestingToolsFrameworkSectionProps {
 const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectionProps> = ({ cityData }) => {
   const [activeCard, setActiveCard] = useState(0);
 
-  // Define the data for tools
-  const tools = [
+  // Define the fallback data for tools in case a location doesn't have custom tools mapped yet
+  const defaultTools = [
     {
       id: "selenium-webDriver",
       title: 'Selenium WebDriver',
@@ -31,6 +31,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "blue",
       progress: '100%',
+      link: '/automation-testing-services'
     },
     {
       id: "cypress",
@@ -40,6 +41,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "green",
       progress: '100%',
+      link: '/automation-testing-services'
     },
     {
       id: "apache-jmeter",
@@ -49,6 +51,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "indigo",
       progress: '100%',
+      link: '/performance-testing-services'
     },
     {
       id: "postman",
@@ -58,6 +61,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "orange",
       progress: '100%',
+      link: '/api-testing'
     },
     {
       id: "docker",
@@ -67,6 +71,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "teal",
       progress: '100%',
+      link: '/automation-testing-services'
     },
     {
       id: "jenkins",
@@ -76,8 +81,13 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
       level: 'Expert Level',
       color: "purple",
       progress: '100%',
+      link: '/automation-testing-services'
     },
   ];
+
+  const tools = cityData.toolsFrameworkContent.tools && cityData.toolsFrameworkContent.tools.length > 0 
+    ? cityData.toolsFrameworkContent.tools 
+    : defaultTools;
 
   const getColorClasses = (color: string) => {
     const colorMap = {
@@ -118,7 +128,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
           {/* Tech Stack Overview */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {tools.map((tool, index) => (
-              <button key={tool.id} onClick={() => setActiveCard(index)} className={`px-4 py-2 rounded-full shadow-sm 
+              <button key={tool.id} onClick={() => setActiveCard(index)} className={`px-4 py-2 rounded-full shadow-sm cursor-pointer
                   ${activeCard === index ? `${getColorClasses(tool.color)} border-2` : "text-gray-600 bg-white border-2 border-gray-200 hover:bg-gray-50"}
               `}>
                 <span className={`text-sm font-medium ${activeCard === index ? "" : "text-black"}`}>{tool.shortName}</span>
@@ -173,10 +183,12 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
                     <span className='text-sm font-semibold text-gray-500'>{tools[activeCard].progress}</span>
                   </div>
                 </div>
-                <button className={`w-full text-white py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center hover:scale-102 ${tools[activeCard].color === 'green' ? 'bg-green-600' : tools[activeCard].color === 'blue' ? 'bg-blue-600' : tools[activeCard].color === 'purple' ? 'bg-purple-600' : tools[activeCard].color === 'orange' ? 'bg-orange-600' : tools[activeCard].color === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'}`}>
-                  Learn More
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </button>
+                <Link href={tools[activeCard].link || '#'} passHref>
+                  <button className={`w-full text-white py-2 rounded-lg font-medium transition-colors duration-200 flex items-center justify-center hover:scale-102 cursor-pointer ${tools[activeCard].color === 'green' ? 'bg-green-600' : tools[activeCard].color === 'blue' ? 'bg-blue-600' : tools[activeCard].color === 'purple' ? 'bg-purple-600' : tools[activeCard].color === 'orange' ? 'bg-orange-600' : tools[activeCard].color === 'teal' ? 'bg-teal-600' : 'bg-indigo-600'}`}>
+                    Learn More
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -295,7 +307,7 @@ const CityTestingToolsFrameworkSection: React.FC<CityTestingToolsFrameworkSectio
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
                   <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.projectsCompleted}</div>
-                  <div className="text-sm text-brand-blue font-medium">Projects Completed</div>
+                  <div className="text-sm text-brand-blue font-medium">Test Cases Executed</div>
                 </div>
                 <div className="bg-white bg-opacity-25 rounded-xl p-6 text-center border border-white border-opacity-30 backdrop-blur-sm">
                   <div className="text-3xl font-bold mb-2 text-brand-blue">{cityData.toolsFrameworkContent.stats.clientSatisfaction}</div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -9,41 +8,25 @@ const SapFAQs: React.FC = () => {
 
     const faqs = [
         {
-            question: "What is the difference between functional and regression testing in SAP?",
-            answer:
-                (
-                    <>
-                        Functional testing verifies that specific SAP modules (like SD or MM) perform individual transactions correctly according to business requirements. <Link href='/automation-testing-services'>Regression testing</Link>, on the other hand, ensures that new configurations, patches, or updates haven&apos;t negatively impacted existing functionalities across the entire system.
-                    </>
-                ),
+            question: "What are the main challenges of performance testing in SAP environments?",
+            answer: "SAP performance testing presents several unique challenges. Key obstacles include simulating realistic Fiori tile launches and managing overlapping batch jobs. Aligned with ISO 29119, we recommend mirroring production environments to avoid 'blind spots'."
         },
         {
-            question: "Which SAP modules does Testriq specialize in testing?",
-            answer:
-                (
-                    <>
-                        We specialize in testing core modules including FICO (Finance & Controlling), SD (Sales & Distribution), MM (Materials Management), PP (Production Planning), and HCM (Human Capital Management). We also have deep expertise in industry-specific solutions (IS-Retail, IS-Utilities) and <Link href='/blog/post/sap-fiori-testing-best-practices'>SAP Fiori</Link> applications.
-                    </>
-                ),
+            question: "How do I find sap testing services for s 4hana migration projects?",
+            answer: "Searching for SAP S/4HANA migration services? Prioritize vendors who combine migration testing with ISO 29119 compliance. You should also ensure they use automated data validation tools for a smooth transition from legacy ECC."
         },
         {
-            question: "How does Testriq handle sensitive test data in SAP systems?",
-            answer:
-                (
-                    <>
-                        We employ a rigorous Test Data Management (TDM) strategy. We use industry-standard data masking and obfuscation techniques to protect sensitive PII and business data in non-production environments, ensuring full compliance with GDPR, HIPAA, and other data privacy regulations.
-                    </>
-                ),
+            question: "Can you automate SAP Fiori applications?",
+            answer: "Yes. Effective SAP Fiori automation requires the right tools and strategy. You can use model-based tools like Tosca or script-based frameworks like Selenium. Both methods need specialized logic to handle Fiori’s dynamic UI elements."
         },
         {
-            question: "What tools do you use for SAP automation?",
-            answer:
-                (
-                    <>
-                        We are tool-agnostic but highly experienced with industry leaders like <Link href='/technology-stack'>Tricentis Tosca</Link>, Worksoft Certify, and UFT One for robust, model-based automation. We also leverage Selenium for web-based Fiori testing and integrate these tools into your CI/CD pipeline for continuous testing.
-                    </>
-                ),
+            question: "What are the best SAP testing tools for ECC to S/4HANA migration?",
+            answer: "Top SAP testing tools for S/4HANA migrations serve specific roles. Tricentis Tosca leads in automation, while SAP Solution Manager (SolMan) handles lifecycle management. For performance validation, LoadRunner remains the industry standard."
         },
+        {
+            question: "Is SAP test automation cost-effective for B2B?",
+            answer: "Cost-effective SAP test automation helps B2B organizations reduce manual effort by up to 80% and accelerates release cycles by 40%. This significantly lowers the Total Cost of Ownership (TCO) for your SAP landscape."
+        }
     ];
 
     const toggleFAQ = (index: number) => {

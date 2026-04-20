@@ -20,26 +20,22 @@ const SecurityTestingReadyToEnsureQuality: React.FC = () => {
         {/* Main CTA Section */}
         <div className="text-center mb-16">
           <div className="bg-brand-blue w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
-            <FaShieldAlt className="text-3xl text-white" />
+            <FaUsers className="text-3xl text-white" />
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            Ready to{" "}
+            Why Hire Penetration Testers from{" "}
             <span className="text-transparent bg-clip-text bg-brand-blue">
-              Secure
-            </span>{" "}
-            Your Applications?
+              Testriq?
+            </span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            Partner with our expert security testing team to protect your
-            applications from cyber threats, ensure compliance with security
-            standards like PCI DSS, GDPR, and HIPAA, and maintain the highest
-            levels of data protection, application security, and user trust.
+            Our team holds <span className="font-bold text-brand-blue">CISSP, OSCP, and CEH</span> certifications. We support your security needs worldwide, Performing Network Security audits in London and Cloud Security Assessments in Singapore. We recognize that a large proportion of breaches stem from human error, providing knowledge-sharing as part of every engagement.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
               <button className="bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:bg-brand-blue hover:text-white cursor-pointer hover:shadow-lg transition-all duration-300 flex items-center space-x-2">
                 <FaCalendarAlt />
                 <span>Schedule Consultation</span>

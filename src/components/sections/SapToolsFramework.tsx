@@ -2,99 +2,83 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaTools, FaRocket, FaMobileAlt, FaDatabase } from "react-icons/fa";
+import { FaTools, FaRocket, FaDatabase, FaChartLine } from "react-icons/fa";
 
 const SapToolsFramework: React.FC = () => {
     const toolCategories = [
         {
             title: "SAP Automation Accelerators",
             icon: <FaRocket className="w-5 h-5 text-blue-600" />,
-            description: "Pre-built test libraries and scenarios for common SAP modules to jumpstart your automation journey.",
+            description: "Resilient, keyword-driven frameworks to jumpstart your S/4HANA journey.",
             tools: [
                 {
-                    name: "Pre-built Test Cases",
-                    description: "Ready-to-use scripts for SD, MM, FICO standard flows",
-                },
-                {
-                    name: "Reusable Components",
-                    description: "Modular automation blocks for login, navigation, and data entry",
-                },
-                {
-                    name: "Tricentis Tosca",
+                    name: (<><Link href="/technology-stack" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Tricentis Tosca</Link></>),
                     description: "Model-based automation for rapid script maintenance",
                 },
                 {
-                    name: "Worksoft Certify",
+                    name: (<><Link href="/automation-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Worksoft Certify</Link></>),
                     description: "Business process automation for end-to-end validation",
+                },
+                {
+                    name: (<><Link href="/automation-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Selenium for Fiori</Link></>),
+                    description: "Script-based framework for customized Fiori UI validation",
                 },
             ],
         },
         {
-            title: "Fiori & UI Testing",
-            icon: <FaMobileAlt className="w-5 h-5 text-purple-600" />,
-            description: "Comprehensive testing strategies for SAP's responsive Fiori UI across all devices and browsers.",
+            title: "Performance & Scalability",
+            icon: <FaChartLine className="w-5 h-5 text-green-600" />,
+            description: "Benchmarking OData services and infrastructure sizing for global rollouts.",
             tools: [
                 {
-                    name: "Cross-Browser Testing",
-                    description: "Selenium & Tricentis for Chrome, Edge, Firefox validation",
+                    name: (<><Link href="/performance-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Micro Focus LoadRunner</Link></>),
+                    description: "Industry standard for high-volume transaction testing",
                 },
                 {
-                    name: "Responsive Design",
-                    description: "Ensuring Fiori apps work seamlessly on mobile and tablet",
+                    name: (<><Link href="/performance-testing-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Apache JMeter</Link></>),
+                    description: "Cost-effective validation for web-based SAP services",
                 },
                 {
-                    name: "UX Validation",
-                    description: "Usability testing for intuitive user workflows",
+                    name: "SAP Cloud ALM",
+                    description: "Cloud-native performance monitoring & system lifecycle",
+                },
+            ],
+        },
+        {
+            title: "Lifecycle & Management",
+            icon: <FaTools className="w-5 h-5 text-orange-600" />,
+            description: "Integrating SAP quality assurance into modern Agile and DevOps pipelines.",
+            tools: [
+                {
+                    name: (<><Link href="/qa-documentation-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">SAP Solution Manager</Link></>),
+                    description: "Integrated SolMan (7.2+) for test lifecycle management",
                 },
                 {
-                    name: "Visual Regression",
-                    description: "Detecting UI layout issues after upgrades",
+                    name: (<><Link href="/technology-stack" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Jira / Xray / Azure DevOps</Link></>),
+                    description: "Agile management and defect tracking for enterprise",
+                },
+                {
+                    name: "Custom Readiness Checks",
+                    description: "System validity scripts for ECC to S/4HANA moves",
                 },
             ],
         },
         {
             title: "Test Data Management (TDM)",
-            icon: <FaDatabase className="w-5 h-5 text-green-600" />,
-            description: "Secure strategy for creating, masking, and refreshing realistic test data in non-production environments.",
+            icon: <FaDatabase className="w-5 h-5 text-purple-600" />,
+            description: "Automated provisioning of compliant, high-integrity datasets.",
             tools: [
                 {
-                    name: "Data Masking",
-                    description: "Protecting sensitive PII/GDPR data in test systems",
+                    name: (<><Link href="/data-analysis-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">SAP TDMS</Link></>),
+                    description: "Test Data Migration Server for efficient data refresh",
                 },
                 {
-                    name: "Synthetic Data",
-                    description: "Generating realistic test data for volume testing",
+                    name: "Delphix",
+                    description: "Data virtualization and masking across global landscapes",
                 },
                 {
-                    name: "Data Refresh",
-                    description: "Automated refresh of test environments from production",
-                },
-                {
-                    name: "SAP TDMS",
-                    description: "Test Data Migration Server for efficient data transfer",
-                },
-            ],
-        },
-        {
-            title: <Link href="/technology-stack">Core Tools Stack</Link>,
-            icon: <FaTools className="w-5 h-5 text-orange-600" />,
-            description: "Industry-standard tools we leverage to deliver robust SAP quality assurance.",
-            tools: [
-                {
-                    name: "SAP Solution Manager",
-                    description: "Integrated test management and ALM",
-                },
-                {
-                    name: "Micro Focus ALM",
-                    description: "Lifecycle management for enterprise projects",
-                },
-                {
-                    name: "Jira / Xray",
-                    description: "Agile test management and defect tracking",
-                },
-                {
-                    name: "LoadRunner",
-                    description: "Performance testing for high-volume transactions",
+                    name: (<><Link href="/data-analysis-services" className="text-gray-900 hover:text-brand-blue hover:underline decoration-brand-blue">Synthetic Generation</Link></>),
+                    description: "ISO 29119-3 compliant mock data for GDPR privacy",
                 },
             ],
         },

@@ -4,20 +4,20 @@ import { Metadata } from "next";
 import StructuredData, { apiTestingSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:  "API Integration Testing Services Company ",
-   
-  description: "We are one of the best API Integration Testing Services Company in Mumbai. With expertise in testing Web applications and mobile apps. Contact Us Now!",
+  title: "API Testing Services & REST API Automation | Testriq",
+
+  description: "Elite API testing for your 'invisible' layer. We ensure high-velocity REST, Graph-QL, and automated QA solutions that meet global standards like ISO 29119 and SOC2 Type II.",
   keywords: [
-    "API testing services",
-    "REST API testing",
-    "GraphQL testing",
-    "SOAP testing",
-    "API automation testing",
-    "API performance testing",
-    "API security testing",
-    "integration testing",
-    "microservices testing",
-    "Testriq API QA"
+    "API Testing Services",
+    "REST API Automation",
+    "GraphQL Testing",
+    "SOAP API Testing",
+    "ISO 29119 API Testing",
+    "API Performance Testing",
+    "API Security Testing OWASP",
+    "Microservices Integrated QA",
+    "Testriq API QA Lab",
+    "2026 API Testing Landscape"
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-metadataBase: new URL('https://www.testriq.com/'),
+  metadataBase: new URL('https://www.testriq.com/'),
   alternates: {
     canonical: 'https://www.testriq.com/api-testing',
   },
@@ -181,7 +181,7 @@ const ApiToolsFramework = dynamic(
 );
 
 export default function ApiTesting() {
-    const breadcrumbItems = [
+  const breadcrumbItems = [
     { name: "Home", url: "https://www.testriq.com/" },
     { name: "Services", url: "https://www.testriq.com/api-testing" },
     { name: "API Testing", url: "https://www.testriq.com/api-testing" }

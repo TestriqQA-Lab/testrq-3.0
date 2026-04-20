@@ -8,40 +8,26 @@ import StructuredData, {
 
 export const metadata: Metadata = {
   title: "Stress Testing Services | Performance Testing Services",
-  description:
-    "We are one of the best Load testing services and performance testing services Company services companies in Mumbai. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
+  description: "Testriq ensures your platforms remain resilient, responsive, and ready for global scale. Elite performance engineering and load testing using ISO 29119 standards for 2026.",
   keywords: [
-    "performance testing",
-    "performance testing services",
-    "load testing",
-    "stress testing",
-    "spike testing",
-    "endurance testing",
-    "scalability testing",
-    "volume testing",
-    "performance testing tools",
-    "JMeter testing",
-    "LoadRunner testing",
-    "Gatling testing",
-    "performance monitoring",
-    "application performance testing",
-    "web performance testing",
-    "mobile performance testing",
-    "API performance testing",
-    "database performance testing",
-    "cloud performance testing",
-    "performance test automation",
+    "Performance Testing Services",
+    "Load Testing Solutions",
+    "Stress Testing Services",
+    "Scalability Testing 2026",
+    "Endurance Testing QA",
+    "CI/CD Performance Integration",
+    "ISO 29119 Performance Testing",
+    "Testriq Performance Lab",
+    "Global Distributed Load Generation"
   ],
   openGraph: {
-    title:
-      "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
-    description:
-      "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    url: "/OG/Performance-Testing-Service-Og.webp",
+    title: "Performance Testing Services | Load & Stress Testing | Testriq",
+    description: "Ensure your platforms remain resilient and ready for global scale with Testriq's 2026 Performance Engineering solutions.",
+    url: "/services/performance-testing-services",
     type: "website",
     images: [
       {
-        url: "/OG/Performance-Testing-Service-Og.webp",
+        url: "/OG/Performance-Testing-Og.webp",
         width: 1200,
         height: 630,
         alt: "Performance Testing Services by Testriq",
@@ -50,11 +36,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Performance Testing Services - Load & Stress Testing Solutions | Testriq",
-    description:
-      "Professional performance testing services including load testing, stress testing, spike testing, endurance testing, and scalability testing. Ensure your applications perform optimally under any conditions with comprehensive performance validation.",
-    images: ["/OG/Performance-Testing-Service-Twitter.webp"],
+    title: "Performance Testing Services | Load & Stress Testing | Testriq",
+    description: "Ensure your platforms remain resilient and ready for global scale with Testriq's 2026 Performance Engineering solutions.",
+    images: ["/OG/Performance-Testing-Twitter.webp"],
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
@@ -70,6 +54,18 @@ import PerformanceTestingHeroSection from "@/components/sections/PerformanceTest
 
 const PerformanceTestingComprehensiveSlider = dynamic(
   () => import("@/components/sections/PerformanceTestingComprehensiveSlider"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const PerformanceTestingChallenges = dynamic(
+  () => import("@/components/sections/PerformanceTestingChallenges"),
   {
     ssr: true,
     loading: () => (
@@ -116,29 +112,17 @@ const PerformanceTestingToolsFramework = dynamic(
   }
 );
 
-// const PerformanceTestingCaseStudies = dynamic(
-//   () => import("@/components/sections/PerformanceTestingCaseStudies"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
-
-// const PerformanceTestingFAQs = dynamic(
-//   () => import("@/components/sections/PerformanceTestingFAQs"),
-//   {
-//     ssr: true,
-//     loading: () => (
-//       <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-//         <p className="text-gray-500">Loading...</p>
-//       </div>
-//     ),
-//   }
-// );
+const PerformanceTestingFAQs = dynamic(
+  () => import("@/components/sections/PerformanceTestingFAQs"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
 
 const PerformanceTestingReadyToEnsureQuality = dynamic(
   () => import("@/components/sections/PerformanceTestingReadyToEnsureQuality"),
@@ -171,10 +155,12 @@ export default function PerformanceTestingPage() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <PerformanceTestingHeroSection />
+        <PerformanceTestingChallenges />
         <PerformanceTestingComprehensiveSlider />
         <PerformanceTestingProvenTestingProcess />
         <PerformanceTestingWhyChooseTestriq />
         <PerformanceTestingToolsFramework />
+        <PerformanceTestingFAQs />
         <PerformanceTestingReadyToEnsureQuality />
       </MainLayout>
     </div>

@@ -7,6 +7,7 @@ import ETLToolsFramework from "@/components/sections/ETLToolsFramework";
 import ETLCaseStudies from "@/components/sections/ETLCaseStudies";
 import ETLFAQs from "@/components/sections/ETLFAQs";
 import ETLAnyQuestions from "@/components/sections/ETLAnyQuestions";
+import ETLComplianceTable from "@/components/sections/ETLComplianceTable";
 import { Metadata } from "next";
 import StructuredData, {
   createBreadcrumbSchema,
@@ -14,21 +15,22 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title: "ETL Testing Services Company",
+  title: "Cloud ETL Testing Services & Data Integrity USA | Testriq",
 
   description:
-    "We are one of the best ETL Testing Services Company in Mumbai. With expertise in testing Web applications and mobile apps. Contact Us Now!",
+    "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration (Snowflake, Databricks), high-velocity ETL automation, and performance testing for zero-defect pipelines.",
   keywords: [
-    "ETL testing",
-    "data pipeline testing",
-    "data validation",
-    "ETL QA services",
-    "data transformation testing",
-    "ETL performance testing",
-    "ETL data quality assurance",
-    "ETL automation",
-    "data loading validation",
-    "ETL testing company",
+    "Cloud ETL Testing Services",
+    "Data Integrity USA",
+    "ISO 8000-1:2022 Compliance",
+    "ETL Automation Testing",
+    "Snowflake Data Migration Validation",
+    "Source-to-Target Mapping QA",
+    "Big Data Performance Testing",
+    "Data Warehouse Testing Services",
+    "ETL Performance Benchmarking",
+    "Enterprise Data Quality Assurance",
+    "iCEDQ & QuerySurge Validation",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -46,11 +48,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/etl-testing-services",
-    siteName: "Testriq - ETL Testing Services",
+    siteName: "Testriq - Cloud ETL & Data Testing",
     title:
-      "ETL Testing Services - Data Pipeline Validation & Quality Assurance | Testriq",
+      "Cloud ETL Testing Services & Data Integrity USA | Testriq",
     description:
-      "End-to-end ETL testing services covering extraction, transformation, and loading. Ensure pipeline performance, data accuracy, and regulatory compliance with Testriq.",
+      "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
     images: [
       {
         url: "/OG/ETL-Testing-Service-Og.webp",
@@ -65,9 +67,9 @@ export const metadata: Metadata = {
     site: "@testriq",
     creator: "@testriq",
     title:
-      "ETL Testing Services - Data Pipeline Validation & Quality Assurance | Testriq",
+      "Cloud ETL Testing Services & Data Integrity USA | Testriq",
     description:
-      "End-to-end ETL testing services covering extraction, transformation, and loading. Ensure pipeline performance, data accuracy, and regulatory compliance with Testriq.",
+      "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
     images: ["/OG/ETL-TesTing-Service-Twitter.webp"],
   },
   robots: {
@@ -99,6 +101,7 @@ export default function ETLTestingPage() {
       <StructuredData data={etlTestingSchema} />
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <ETLTestingHeroSection />
+      <ETLComplianceTable />
       <ETLComprehensiveSlider />
       <ETLProvenTestingProcess />
       <ETLWhyChooseTestriq />

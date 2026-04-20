@@ -6,10 +6,6 @@ import {
   FaQuestionCircle,
   FaChevronDown,
   FaChevronUp,
-  FaShieldAlt,
-  FaGavel,
-  FaClock,
-  FaUsers,
 } from "react-icons/fa";
 
 const BankingFAQSection: React.FC = () => {
@@ -17,108 +13,34 @@ const BankingFAQSection: React.FC = () => {
 
   const faqs = [
     {
-      category: "Security Testing",
-      icon: FaShieldAlt,
-      questions: [
-        {
-          question:
-            "What types of security testing do you perform for banking applications?",
-          answer:
-            (<>We conduct comprehensive security testing for banking and financial applications, including <Link href="/blog/post/how-to-perform-penetration-testing-for-web-applications">penetration testing</Link>, vulnerability assessments, secure code reviews, authentication and authorization testing, <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">data encryption</Link> validation, and compliance testing aligned with regulatory standards such as PCI DSS, SOX, and GDPR. Our financial application security testing covers web applications, mobile banking apps, APIs, and core banking systems, ensuring end-to-end protection across all digital channels.</>),
-        },
-        {
-          question:
-            "How do you ensure the security of our sensitive financial data during testing?",
-          answer:
-            "We follow strict data protection protocols including data masking, synthetic data generation, secure test environments, encrypted data transmission, and signed NDAs. Our team is trained in banking security standards and we maintain ISO 27001 certification. All testing is performed in isolated environments with no production data exposure.",
-        },
-        {
-          question:
-            "Can you test for compliance with multiple regulatory standards simultaneously?",
-          answer:
-            "Yes, we have extensive experience testing for multiple compliance standards including PCI DSS, SOX, GDPR, Basel III, FFIEC guidelines, and regional banking regulations. Our testing frameworks are designed to validate compliance across multiple standards efficiently, reducing redundancy and ensuring comprehensive coverage.",
-        },
-      ],
+      question: "What is the importance of Banking API testing?",
+      answer: "Banking APIs are the backbone of modern fintech and open banking. Testing them is critical to ensure secure data exchange, validating functional logic, security (OAuth/Encryption), and performance under high concurrency."
     },
     {
-      category: "Compliance & Regulations",
-      icon: FaGavel,
-      questions: [
-        {
-          question:
-            "How do you stay updated with changing banking regulations?",
-          answer:
-            "Our team includes certified compliance experts who continuously monitor regulatory changes through industry associations, regulatory bodies, and compliance networks. We maintain partnerships with legal and compliance firms, attend industry conferences, and have dedicated research teams tracking regulatory updates across different jurisdictions.",
-        },
-        {
-          question: "What documentation do you provide for audit purposes?",
-          answer:
-            "We provide comprehensive audit-ready documentation including test plans, test cases, execution reports, compliance matrices, risk assessments, remediation recommendations, and certification reports. All documentation follows industry standards and regulatory requirements, making audit processes smoother and more efficient.",
-        },
-        {
-          question:
-            "How long does a typical compliance testing engagement take?",
-          answer:
-            "The duration depends on the scope and complexity of your systems. A basic PCI DSS assessment typically takes 2-4 weeks, while comprehensive multi-standard compliance testing can take 8-12 weeks. We provide detailed project timelines during the planning phase and offer expedited services for urgent compliance needs.",
-        },
-      ],
+      question: "How does PCI DSS compliance affect software testing?",
+      answer: "PCI DSS Compliance Testing requires strict security standards for any software handling credit card data. Non-compliance results in fines up to $100,000 per month and loss of processing ability."
     },
     {
-      category: "Testing Process",
-      icon: FaClock,
-      questions: [
-        {
-          question:
-            "How do you minimize disruption to our live banking systems?",
-          answer:
-            "We use non-intrusive testing methodologies, work during off-peak hours, utilize staging environments that mirror production, and employ gradual testing approaches. Our team coordinates closely with your operations team to ensure minimal impact on business operations while maintaining comprehensive test coverage.",
-        },
-        {
-          question: "What is your approach to testing core banking systems?",
-          answer:
-            "Our core banking testing approach includes functional testing of all modules, integration testing between systems, data integrity validation, performance testing under various loads, disaster recovery testing, and end-to-end transaction flow validation. We have experience with major core banking platforms like Temenos, FIS, and custom-built systems.",
-        },
-        {
-          question:
-            "Do you provide ongoing testing support after implementation?",
-          answer:
-            (<>Yes, we offer various ongoing support models including continuous testing services, regular security assessments, compliance monitoring, <Link href="/regression-testing">regression testing</Link> for updates, and 24/7 monitoring services. Our support packages are customizable based on your specific needs and can include dedicated testing teams.</>),
-        },
-      ],
+      question: "Why is User Acceptance Testing (UAT) critical in banking?",
+      answer: "UAT ensures software works in real-world business conditions, preventing costly errors in transaction logic and user experience. This reduces customer churn and direct financial loss."
     },
     {
-      category: "Technology & Tools",
-      icon: FaUsers,
-      questions: [
-        {
-          question:
-            "What testing tools and technologies do you use for banking applications?",
-          answer:
-            "We use industry-leading tools including Selenium for automation, LoadRunner and JMeter for performance testing, OWASP ZAP and Burp Suite for security testing, Postman for API testing, and specialized banking testing tools. We also have proprietary frameworks designed specifically for banking domain testing.",
-        },
-        {
-          question: "Can you integrate with our existing CI/CD pipelines?",
-          answer:
-            "Absolutely. We have experience integrating with popular CI/CD tools like Jenkins, GitLab CI, Azure DevOps, and AWS CodePipeline. Our automated testing frameworks can be seamlessly integrated into your development workflow, enabling continuous testing and faster release cycles while maintaining quality standards.",
-        },
-        {
-          question:
-            "How do you handle testing for mobile banking applications?",
-          answer:
-            "Our mobile banking testing covers iOS and Android platforms, including functional testing, security testing, performance testing, usability testing, and compatibility testing across different devices and OS versions. We test biometric authentication, offline functionality, push notifications, and integration with backend systems.",
-        },
-      ],
+      question: "What are the benefits of Automated Regression Testing in BFSI?",
+      answer: "Automated Regression Testing enables faster CI/CD updates with an ROI of over 300% for mid-sized banks. It reduces manual testing hours and prevents critical outages by ensuring new code doesn't break system functions."
     },
+    {
+      question: "How do you handle legacy system migration testing?",
+      answer: "We use Middleware and Integration Testing alongside heavy regression suites to secure your migration. We synchronize new digital front-ends with legacy COBOL mainframes to ensure seamless data flow."
+    }
   ];
 
-  const toggleFAQ = (categoryIndex: number, questionIndex: number) => {
-    const faqIndex = categoryIndex * 1000 + questionIndex;
-    setOpenFAQ(openFAQ === faqIndex ? null : faqIndex);
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   return (
     <section className="relative w-full mx-auto py-16 px-8 md:px-12 lg:px-24 2xl: min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-white bg-[theme(color.brand.blue)] bg-opacity-10 rounded-full px-6 py-2 mb-6">
@@ -127,71 +49,52 @@ const BankingFAQSection: React.FC = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Common Questions About
+            Banking & Financial
             <span className="block text-[theme(color.brand.blue)]">
-              Banking Testing Services
+              Questions Answered
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get answers to the most frequently asked questions about our banking
-            and <Link href="/blog/post/etl-testing-case-studies">finance testing services</Link>, compliance requirements, and
-            implementation processes.
+            Get answers to the most common questions about our BFSI testing
+            services, API security, and global compliance standards.
           </p>
         </div>
 
-        {/* FAQ Categories */}
-        <div className="space-y-12">
-          {faqs.map((category, categoryIndex) => (
+        {/* FAQ Items */}
+        <div className="space-y-4 mb-10">
+          {faqs.map((faq, index) => (
             <div
-              key={categoryIndex}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100"
+              key={index}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300"
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 rounded-xl flex items-center justify-center">
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">
-                  {category.category}
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                  {faq.question}
                 </h3>
-              </div>
+                <div className="flex-shrink-0">
+                  {openFAQ === index ? (
+                    <FaChevronUp className="w-5 h-5 text-[theme(color.brand.blue)]" />
+                  ) : (
+                    <FaChevronDown className="w-5 h-5 text-gray-400" />
+                  )}
+                </div>
+              </button>
 
-              {/* Questions */}
-              <div className="space-y-4">
-                {category.questions.map((faq, questionIndex) => {
-                  const faqIndex = categoryIndex * 1000 + questionIndex;
-                  const isOpen = openFAQ === faqIndex;
-
-                  return (
-                    <div
-                      key={questionIndex}
-                      className="border border-gray-200 rounded-2xl overflow-hidden hover:border-[theme(color.brand.blue)] transition-colors duration-300"
-                    >
-                      <button
-                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
-                        onClick={() => toggleFAQ(categoryIndex, questionIndex)}
-                      >
-                        <span className="font-semibold text-gray-900 pr-4">
-                          {faq.question}
-                        </span>
-                        {isOpen ? (
-                          <FaChevronUp className="w-5 h-5 text-[theme(color.brand.blue)] flex-shrink-0" />
-                        ) : (
-                          <FaChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
-                        )}
-                      </button>
-
-                      {isOpen && (
-                        <div className="px-6 pb-4 border-t border-gray-100 bg-gray-50">
-                          <p className="text-gray-600 leading-relaxed pt-4">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+              <div
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+              >
+                <div className="px-6 pb-4">
+                  <div className="border-t border-gray-100 pt-4">
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -209,7 +112,7 @@ const BankingFAQSection: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
               <button className="cursor-pointer bg-gradient-to-r from-[theme(color.brand.blue)] to-sky-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl hover:scale-98 transition-all duration-300">
                 Schedule Expert Consultation
               </button>

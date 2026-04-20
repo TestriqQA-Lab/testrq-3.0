@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaChevronRight, FaPlay } from "react-icons/fa";
+
 
 const SapProvenTestingProcess: React.FC = () => {
     const [activeStep, setActiveStep] = useState(0);
@@ -8,43 +10,97 @@ const SapProvenTestingProcess: React.FC = () => {
     const processSteps = [
         {
             id: 1,
-            title: "Risk-Based Test Strategy & Planning",
-            description:
-                "We focus on identifying high-impact business processes (critical transactions) and prioritizing test efforts based on risk analysis and module usage (e.g., FI/CO and HR are usually top priority).",
-            duration: "Planning Phase",
+            title: "System Readiness Assessment",
+            description: (
+                <>
+                    We use SAP <Link href="/qa-documentation-services" className="text-brand-blue hover:underline">Readiness Checks</Link> and Custom Code Migration Guides to evaluate your current ECC landscape before the move.
+                </>
+            ),
+            duration: "Phase 1",
             activities: [
-                "Business process mapping",
-                "Critical path identification",
-                "Risk analysis & prioritization",
-                "Test strategy definition",
+                "ECC Landscape audit",
+                "Readiness check analysis",
+                "Custom code migration guide",
+                "Potential gap identification",
             ],
-            nextStep: "Automation",
+            nextStep: "Risk Strategy",
         },
         {
             id: 2,
-            title: "Automation First with Industry-Leading Tools",
+            title: "Risk-Based Test Strategy",
             description:
-                "We adopt a tool-agnostic approach, leveraging high-value tools like Tricentis Tosca and Worksoft Certify. Our automation-first strategy accelerates testing from weeks to days.",
-            duration: "Execution Phase",
+                "We define testing goals based on business impact, focusing on 'Critical, Complex, and Changing' modules.",
+            duration: "Phase 2",
             activities: [
-                "Tool selection & configuration",
-                "Script development",
-                "Automated regression execution",
-                "Continuous testing integration",
+                "3C module assessment",
+                "Business impact analysis",
+                "Testing goal definition",
+                "Resource allocation plan",
             ],
-            nextStep: "Reporting",
+            nextStep: "Data Setup",
         },
         {
             id: 3,
-            title: "Real-Time Reporting & Compliance",
-            description:
-                "We provide clear, auditable reports, demonstrating adherence to internal quality standards and external regulations (e.g., SOX compliance), ensuring full transparency.",
-            duration: "Monitoring Phase",
+            title: "Test Data Setup & Masking",
+            description: (
+                <>
+                    Provisioning compliant, high-integrity data for SAP functional testing using <Link href="/data-analysis-services" className="text-brand-blue hover:underline">Test Data Setup</Link> and automated masking.
+                </>
+            ),
+            duration: "Phase 3",
             activities: [
-                "Real-time dashboards",
-                "Defect tracking & metrics",
-                "Compliance audit trails",
-                "Go-no-go decision support",
+                "Data provisioning",
+                "Compliant PII masking",
+                "High-integrity data set setup",
+                "Functional test data prep",
+            ],
+            nextStep: "Automation Build",
+        },
+        {
+            id: 4,
+            title: "Automated Regression Suite Build",
+            description: (
+                <>
+                    Deploying cost-effective SAP <Link href="/automation-testing-services" className="text-brand-blue hover:underline">Automated Regression</Link> solutions for B2B to cover core business processes.
+                </>
+            ),
+            duration: "Phase 4",
+            activities: [
+                "B2B core process mapping",
+                "Automation build deploy",
+                "Regression suite setup",
+                "Maintenance framework build",
+            ],
+            nextStep: "Integration & Perf",
+        },
+        {
+            id: 5,
+            title: "Integration & Performance Validation",
+            description: (
+                <>
+                    Running <Link href="/performance-testing-services" className="text-brand-blue hover:underline">Performance Validation</Link> on OData services and middleware (SAP CPI) for high-scale validation.
+                </>
+            ),
+            duration: "Phase 5",
+            activities: [
+                "OData service stress testing",
+                "SAP CPI middleware validation",
+                "End-to-end integration check",
+                "Performance bottleneck fix",
+            ],
+            nextStep: "UAT & Sign-off",
+        },
+        {
+            id: 6,
+            title: "UAT & Global Sign-off",
+            description:
+                "We manage SAP User Acceptance Testing with stakeholders across all time zones to ensure system is 'business-ready'.",
+            duration: "Phase 6",
+            activities: [
+                "Cross-timezone UAT mgmt",
+                "Stakeholder sign-off",
+                "Business-ready validation",
+                "Post-go-live readiness",
             ],
             nextStep: "Project Complete",
         },

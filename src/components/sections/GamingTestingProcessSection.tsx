@@ -83,9 +83,7 @@ const GamingTestingProcessSection: React.FC = () => {
         "Optimization testing for frame rates, loading times, memory usage, and system performance",
       details: [
         "Frame Rate Testing",
-        <>
-          <Link href="Load Time Analysis">Load Time Analysis</Link>
-        </>,
+        "Load Time Analysis",
         "Memory Optimization",
         <>
           <Link href="/blog/post/stress-testing-applications-identifying-breaking-points">

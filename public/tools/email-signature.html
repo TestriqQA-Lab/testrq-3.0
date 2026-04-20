@@ -1,82 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Testriq Email Signature Generator</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f7fa; padding: 30px; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-    h1 { color: #25a8e0; text-align: center; margin-bottom: 10px; }
-    input { width: 100%; padding: 10px; margin: 8px 0 16px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
-    label { font-weight: bold; color: #333; }
-    button { background: #25a8e0; color: white; padding: 14px 32px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; }
-    button:hover { background: #1e88b8; }
-    .preview-box { margin-top: 30px; padding: 20px; background: #f9f9f9; border: 2px dashed #25a8e0; border-radius: 8px; display: none; }
-    .success { color: #25a8e0; font-weight: bold; font-size: 18px; margin-bottom: 10px; text-align: center; }
-    .copy-btn { background: #25a8e0; color: white; padding: 12px 30px; font-size: 16px; margin: 20px auto; display: block; width: fit-content; border-radius: 6px; }
-    .copy-btn:hover { background: #1e88b8; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #25a8e0;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    button {
+      background: #25a8e0;
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1e88b8;
+    }
+
+    .preview-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f9f9f9;
+      border: 2px dashed #25a8e0;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .success {
+      color: #25a8e0;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .copy-btn {
+      background: #25a8e0;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      width: fit-content;
+      border-radius: 6px;
+    }
+
+    .copy-btn:hover {
+      background: #1e88b8;
+    }
   </style>
 </head>
+
 <body>
-<div class="container">
-  <h1>testriq Email Signature Generator</h1>
-  <p style="text-align:center;color:#555;">Fill details → Generate → Click blue button to copy formatted signature</p>
+  <div class="container">
+    <h1>testriq Email Signature Generator</h1>
+    <p style="text-align:center;color:#555;">Fill details → Generate → Click blue button to copy formatted signature</p>
 
-  <label>Full Name</label>
-  <input type="text" id="name" placeholder="Enter Your Name">
-  <label>Designation</label>
-  <input type="text" id="title" placeholder="Enter Your Designation">
-  <label>Mobile</label>
-  <input type="text" id="mobile" placeholder="+91 70395 50278">
-  <label>Email</label>
-  <input type="text" id="email" placeholder="Your Business Email">
-  <label>LinkedIn URL</label>
-  <input type="text" id="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
+    <label>Full Name</label>
+    <input type="text" id="name" placeholder="Enter Your Name">
+    <label>Designation</label>
+    <input type="text" id="title" placeholder="Enter Your Designation">
+    <label>Mobile</label>
+    <input type="text" id="mobile" placeholder="+91 70395 50278">
+    <label>Email</label>
+    <input type="text" id="email" placeholder="Your Business Email">
+    <label>LinkedIn URL</label>
+    <input type="text" id="linkedin" placeholder="https://www.linkedin.com/in/yourprofile">
 
-  <br><br>
-  <button onclick="generateSignature()">Generate Signature</button>
+    <br><br>
+    <button onclick="generateSignature()">Generate Signature</button>
 
-  <div id="preview" class="preview-box">
-    <div class="success">Your signature is ready!</div>
-    <div id="signature-preview" style="background:white; padding:20px; border:1px solid #eee; border-radius:6px;"></div>
-    
-    <button class="copy-btn" id="copyButton">
-      Copy Formatted Signature (Click Here)
-    </button>
-    
-    <p style="margin:15px 0 0; font-size:14px; text-align:center;">
-      After clicking → go to Gmail → Settings → Signature → Ctrl+V
-    </p>
+    <div id="preview" class="preview-box">
+      <div class="success">Your signature is ready!</div>
+      <div id="signature-preview" style="background:white; padding:20px; border:1px solid #eee; border-radius:6px;">
+      </div>
+
+      <button class="copy-btn" id="copyButton">
+        Copy Formatted Signature (Click Here)
+      </button>
+
+      <p style="margin:15px 0 0; font-size:14px; text-align:center;">
+        After clicking → go to Gmail → Settings → Signature → Ctrl+V
+      </p>
+    </div>
   </div>
-</div>
 
-<script>
-const LOGO_URL = "https://www.testriq.com/testriq-logo.png";
+  <script>
+    const LOGO_URL = "https://www.testriq.com/signatures/icons/testriq-logo.webp";
 
-const icons = {
-  name:       `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  designation:`<img src="https://www.testriq.com/signatures/icons/designation.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  phone:      `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  email:      `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  address:    `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  linkedin:   `<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
-  globe:      `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`
-};
+    const icons = {
+      name: `<img src="https://www.testriq.com/signatures/icons/name.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      designation: `<img src="https://www.testriq.com/signatures/icons/designation.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      phone: `<img src="https://www.testriq.com/signatures/icons/phone.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      email: `<img src="https://www.testriq.com/signatures/icons/email.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      address: `<img src="https://www.testriq.com/signatures/icons/address.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      linkedin: `<img src="https://www.testriq.com/signatures/icons/linkedin.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`,
+      globe: `<img src="https://www.testriq.com/signatures/icons/globe.png" width="20" height="20" alt="" style="vertical-align:middle;margin-right:8px;">`
+    };
 
-function generateSignature() {
-  const name = document.getElementById('name').value.trim() || "Your Name";
-  const title = document.getElementById('title').value.trim() || "Your Designation";
-  const mobile = document.getElementById('mobile').value.trim() || "+91 ";
-  const email = document.getElementById('email').value.trim() || "your.email@testriq.com";
-  let linkedin = document.getElementById('linkedin').value.trim() || "https://linkedin.com/in/yourprofile";
+    function generateSignature() {
+      const name = document.getElementById('name').value.trim() || "Your Name";
+      const title = document.getElementById('title').value.trim() || "Your Designation";
+      const mobile = document.getElementById('mobile').value.trim() || "+91 ";
+      const email = document.getElementById('email').value.trim() || "your.email@testriq.com";
+      let linkedin = document.getElementById('linkedin').value.trim() || "https://linkedin.com/in/yourprofile";
 
-  // Extract clean URL for display (removes https://www. if present)
-  const displayLinkedin = linkedin
-    .replace(/^https?:\/\//, '')
-    .replace(/^www\./, '')
-    .replace(/\/+$/, '');
+      // Extract clean URL for display (removes https://www. if present)
+      const displayLinkedin = linkedin
+        .replace(/^https?:\/\//, '')
+        .replace(/^www\./, '')
+        .replace(/\/+$/, '');
 
-  const signatureHTML = `
+      const signatureHTML = `
 <table cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:600px;font-family:Arial,sans-serif;font-size:14px;color:#333333;">
   <tr>
     <td style="padding-bottom:20px;">
@@ -89,7 +163,7 @@ function generateSignature() {
           <td valign="middle" style="padding-left:15px;line-height:1.9;">
             <strong style="font-size:16px;color:#000000;">${icons.name}${name}</strong><br>
             <span style="color:#25a8e0;font-weight:bold;">${icons.designation}${title}</span><br>
-            <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g,'')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
+            <span>${icons.phone}<a href="tel:${mobile.replace(/[^0-9+]/g, '')}" style="color:#25a8e0;text-decoration:none;">${mobile}</a></span><br>
             <span>${icons.email}<a href="mailto:${email}" style="color:#25a8e0;text-decoration:none;">${email}</a></span><br>
             <span>${icons.linkedin}<a href="${linkedin}" style="color:#25a8e0;text-decoration:none;">${displayLinkedin}</a></span><br>
             <span>${icons.address}Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road, Mira Bhayandar, Mumbai, Maharashtra 401107</span>
@@ -134,22 +208,23 @@ function generateSignature() {
   </tr>
 </table>`;
 
-  document.getElementById('signature-preview').innerHTML = signatureHTML;
-  document.getElementById('preview').style.display = 'block';
+      document.getElementById('signature-preview').innerHTML = signatureHTML;
+      document.getElementById('preview').style.display = 'block';
 
-  const copyButton = document.getElementById('copyButton');
-  copyButton.onclick = function() {
-    const range = document.createRange();
-    range.selectNode(document.getElementById('signature-preview'));
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-    document.execCommand('copy');
-    selection.removeAllRanges();
-    copyButton.textContent = "Copied! Paste in Gmail/Outlook";
-    setTimeout(() => copyButton.textContent = "Copy Formatted Signature (Click Here)", 2000);
-  };
-}
-</script>
+      const copyButton = document.getElementById('copyButton');
+      copyButton.onclick = function () {
+        const range = document.createRange();
+        range.selectNode(document.getElementById('signature-preview'));
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('copy');
+        selection.removeAllRanges();
+        copyButton.textContent = "Copied! Paste in Gmail/Outlook";
+        setTimeout(() => copyButton.textContent = "Copy Formatted Signature (Click Here)", 2000);
+      };
+    }
+  </script>
 </body>
+
 </html>

@@ -5,17 +5,15 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import {
   FaRobot,
-  FaCogs,
-  FaRocket,
-  FaBolt,
-  FaMobile,
-  FaDesktop,
-  FaCloud,
-  FaCode,
+
+  FaArrowRight,
+  FaPlay,
+  FaHome,
+  FaChevronRight
 } from "react-icons/fa";
-import { FaArrowRight, FaPlay, FaHome, FaChevronRight } from "react-icons/fa";
 
 const Lightbox = dynamic(() => import("../VideoLightBox"), { ssr: false });
+import AutomationTestingAnimation from "./AutomationTestingAnimation";
 
 const AutomationTestingHeroSection: React.FC = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -29,7 +27,7 @@ const AutomationTestingHeroSection: React.FC = () => {
     setIsLightboxOpen(false);
   };
   return (
-    <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">
+    <section className="relative pt-8 pb-24 lg:pb-32 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-purple-50 to-indigo-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm font-medium text-gray-600 mb-6">
@@ -45,7 +43,7 @@ const AutomationTestingHeroSection: React.FC = () => {
             Automation Testing
           </span>
         </div>
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="space-y-4">
             <div className="inline-flex items-center px-4 py-2 bg-brand-blue text-white rounded-full text-base md:text-sm">
@@ -53,22 +51,18 @@ const AutomationTestingHeroSection: React.FC = () => {
               Test Automation Experts
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-              <span className="text-transparent bg-clip-text bg-brand-blue">
-                End-to-End
-                {" "}
-              </span>
-              Test Automation Services & Framework Architecture
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight text-left">
+              Scalable <span className="text-brand-blue">Test Automation</span> Services: Global QA Solutions for 2026
             </h1>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Transform your testing strategy with cutting-edge automation
-              testing frameworks, seamless <Link href='/blog/post/ci-cd-test-automation-integration-deliver-faster-with-confidence'>CI/CD pipeline integration</Link>, and
-              intelligent test execution. Our advanced test automation solutions
-              using <Link href='/blog/post/getting-started-with-selenium-a-beginners-guide'>Selenium</Link>, <Link href='/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations'>API automation</Link>, and <Link href='/blog/post/mobile-automation-testing-guide-android-ios-frameworks'>Mobile Automation Testing for Android &amp; iOS</Link>{" "}
-              reduce testing time by up to 80%, while significantly improving test
-              coverage, reliability, and overall software quality.
-            </p>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-700 leading-relaxed text-left">
+                The demand for fast software testing is peaking. By 2026, many firms will automate over half of their QA. However, <span className="font-semibold text-brand-blue">process complexities for global teams make it hard to show <Link href="/roi-calculator" className="hover:underline">ROI</Link> or manage flaky tests</span>. At Testriq, we provide test automation services that go <span className="italic">beyond simple script writing</span>.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed text-left">
+                We align our automated testing frameworks with the latest international standards, including <Link href="/qa-documentation-services" className="text-brand-blue font-semibold hover:underline">ISO 29119-5:2024</Link>. This ensures our solutions are scalable, easy to maintain, and built for complex <Link href="/api-testing" className="text-brand-blue hover:underline">micro-services</Link> across the <span className="font-semibold">US, UK, EU, and Asia</span>.
+              </p>
+            </div>
 
 
             <div className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 mb-4 w-full sm:w-auto">
@@ -85,160 +79,37 @@ const AutomationTestingHeroSection: React.FC = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 pt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-purple-600">
-                  10,000+
+                  50%
                 </div>
-                <div className="text-sm text-gray-600">Automated Tests</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">Automated by 2026</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-indigo-600">
-                  80%
+                  ISO
                 </div>
-                <div className="text-sm text-gray-600">Time Reduction</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">29119-5:2024</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-600">
-                  300+
+                  High
                 </div>
-                <div className="text-sm text-gray-600">Projects Automated</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">Performance Results</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-green-600">
-                  24/7
+                  Global
                 </div>
-                <div className="text-sm text-gray-600">Continuous Testing</div>
+                <div className="text-xs text-gray-600 font-semibold uppercase tracking-wider">QA Standards</div>
               </div>
             </div>
           </div>
 
           {/* Right Content - Automation Testing Dashboard */}
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse will-change-transform"></div>
-                  <h2 className="text-lg font-semibold text-gray-900">
-                    Automation Control Center
-                  </h2>
-                </div>
-                <span className="text-sm text-purple-600 font-medium">
-                  Running
-                </span>
-              </div>
-
-              <div className="text-sm text-gray-600 mb-6">
-                Real-time automation execution & performance monitoring
-              </div>
-
-              {/* Testing Approach */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-purple-50 p-4 rounded-lg text-center">
-                  <FaCogs className="text-2xl text-purple-600 mx-auto mb-2" />
-                  <div className="text-sm font-medium text-purple-900">
-                    Configure
-                  </div>
-                  <div className="text-xs text-green-600 flex items-center justify-center mt-1">
-                    ✓ Complete
-                  </div>
-                </div>
-                <div className="bg-indigo-50 p-4 rounded-lg text-center">
-                  <FaRocket className="text-2xl text-indigo-600 mx-auto mb-2" />
-                  <div className="text-sm font-medium text-indigo-900">
-                    Execute
-                  </div>
-                  <div className="text-xs text-yellow-600 flex items-center justify-center mt-1">
-                    ⚡ Running
-                  </div>
-                </div>
-                <div className="bg-blue-50 p-4 rounded-lg text-center">
-                  <FaBolt className="text-2xl text-blue-600 mx-auto mb-2" />
-                  <div className="text-sm font-medium text-blue-900">
-                    Report
-                  </div>
-                  <div className="text-xs text-gray-600 flex items-center justify-center mt-1">
-                    ⏳ Pending
-                  </div>
-                </div>
-              </div>
-
-              {/* Automation Metrics */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <div className="text-xs text-gray-600">Test Suites</div>
-                  <div className="text-lg font-bold text-purple-600">
-                    24 Running
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <div className="text-xs text-gray-600">Success Rate</div>
-                  <div className="text-lg font-bold text-green-600">96.5%</div>
-                </div>
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <div className="text-xs text-gray-600">Execution Time</div>
-                  <div className="text-lg font-bold text-indigo-600">
-                    2h 15m
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <div className="text-xs text-gray-600">Coverage</div>
-                  <div className="text-lg font-bold text-blue-600">94%</div>
-                </div>
-              </div>
-
-              {/* Progress Bar */}
-              <div className="mb-4">
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600">Automation Progress</span>
-                  <span className="text-purple-600 font-medium">
-                    72% Complete
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="bg-gradient-to-r from-purple-600 to-indigo-600 h-3 rounded-full"
-                    style={{ width: "72%" }}
-                  ></div>
-                </div>
-              </div>
-
-              {/* Testing Areas */}
-              <div className="space-y-2 mb-6">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Selenium WebDriver</span>
-                  <span className="text-purple-600 font-medium">88%</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">API Automation</span>
-                  <span className="text-indigo-600 font-medium">75%</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Mobile Testing</span>
-                  <span className="text-blue-600 font-medium">65%</span>
-                </div>
-              </div>
-
-              {/* Platform Icons */}
-              <div className="flex justify-center space-x-6 pt-2 border-t border-gray-100">
-                <div className="text-center">
-                  <FaMobile className="text-xl text-purple-600 mx-auto mb-1" />
-                  <div className="text-xs text-gray-600">Mobile</div>
-                </div>
-                <div className="text-center">
-                  <FaDesktop className="text-xl text-indigo-600 mx-auto mb-1" />
-                  <div className="text-xs text-gray-600">Web</div>
-                </div>
-                <div className="text-center">
-                  <FaCloud className="text-xl text-blue-600 mx-auto mb-1" />
-                  <div className="text-xs text-gray-600">API</div>
-                </div>
-                <div className="text-center">
-                  <FaCode className="text-xl text-green-600 mx-auto mb-1" />
-                  <div className="text-xs text-gray-600">CI/CD</div>
-                </div>
-              </div>
-            </div>
+          <div className="relative lg:-mt-32 lg:-translate-y-24 mt-8 flex justify-center">
+            <AutomationTestingAnimation />
           </div>
         </div>
       </div>

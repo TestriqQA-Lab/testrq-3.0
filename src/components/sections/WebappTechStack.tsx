@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Link from 'next/link';
+import Image from "next/image";
 import {
     FaLaptopCode,
     FaTachometerAlt,
@@ -8,33 +9,143 @@ import {
     FaNetworkWired,
     FaCloud,
 } from "react-icons/fa";
+import {
+    SiSelenium,
+    SiCypress,
+    SiPuppeteer,
+    SiApachejmeter,
+    SiK6,
+    SiBurpsuite,
+    SiMetasploit,
+    SiPostman,
+    SiSaucelabs,
+} from "react-icons/si";
+
 
 const WebappTechStack: React.FC = () => {
     const techStack = [
         {
             category: "UI Automation",
-            tools: ["Selenium", "Cypress", "Playwright", "Puppeteer"],
-            icon: <FaLaptopCode className="text-3xl text-brand-blue" />,
+            tools: [
+                { name: "Selenium", icon: <SiSelenium className="text-[#43B02A]" size={30} /> },
+                { name: "Cypress", icon: <SiCypress className="text-[#17202C]" size={30} /> },
+                {
+                    name: "Playwright",
+                    icon: (
+                        <Image
+                            src="/Playwright_Logo.svg"
+                            alt="Playwright Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain"
+                        />
+                    )
+                },
+                { name: "Puppeteer", icon: <SiPuppeteer className="text-[#40B5A4]" size={30} /> },
+            ],
+            icon: <FaLaptopCode className="text-3xl text-brand-blue" size={30} />,
         },
         {
             category: "Performance & Load",
-            tools: ["Apache JMeter", "K6", "BlazeMeter"],
-            icon: <FaTachometerAlt className="text-3xl text-orange-500" />,
+            tools: [
+                { name: "Apache JMeter", icon: <SiApachejmeter className="text-[#D22128]" size={30} /> },
+                { name: "K6", icon: <SiK6 className="text-[#7D64FF]" size={30} /> },
+                {
+                    name: "BlazeMeter",
+                    icon: (
+                        <Image
+                            src="/BlazeMeter_Logo_New.png"
+                            alt="BlazeMeter Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain rounded-full"
+                        />
+                    )
+                },
+            ],
+            icon: <FaTachometerAlt className="text-3xl text-orange-500" size={30} />,
         },
         {
             category: <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline">Security & Pen Testing</Link>,
-            tools: ["Burp Suite", "OWASP ZAP", "Metasploit"],
-            icon: <FaShieldAlt className="text-3xl text-red-500" />,
+            tools: [
+                { name: "Burp Suite", icon: <SiBurpsuite className="text-[#FF6633]" size={30} /> },
+                {
+                    name: "OWASP ZAP",
+                    icon: (
+                        <Image
+                            src="/Owasp_Zap_Logo.png"
+                            alt="OWASP ZAP Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain"
+                        />
+                    )
+                },
+                { name: "Metasploit", icon: <SiMetasploit className="text-[#1B6AC6]" size={30} /> },
+            ],
+            icon: <FaShieldAlt className="text-3xl text-red-500" size={30} />,
         },
         {
             category: <Link href="/api-testing" className="text-[theme(color.brand.blue)] hover:underline">API Testing</Link>,
-            tools: ["Postman", "SoapUI", "Rest-Assured"],
-            icon: <FaNetworkWired className="text-3xl text-purple-500" />,
+            tools: [
+                { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" size={30} /> },
+                {
+                    name: "SoapUI",
+                    icon: (
+                        <Image
+                            src="/SoapUI_Logo.png"
+                            alt="SoapUI Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain"
+                        />
+                    )
+                },
+                {
+                    name: "Rest-Assured",
+                    icon: (
+                        <Image
+                            src="/RestAssured_Logo.png"
+                            alt="Rest-Assured Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain"
+                        />
+                    )
+                },
+            ],
+            icon: <FaNetworkWired className="text-3xl text-purple-500" size={30} />,
         },
         {
             category: "Cloud-Based Web Testing",
-            tools: ["Sauce Labs", "BrowserStack", "LambdaTest"],
-            icon: <FaCloud className="text-3xl text-cyan-500" />,
+            tools: [
+                { name: "Sauce Labs", icon: <SiSaucelabs className="text-[#3DDC91]" size={30} /> },
+                {
+                    name: "BrowserStack",
+                    icon: (
+                        <Image
+                            src="/BrowserStack_Logo.png"
+                            alt="BrowserStack Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain"
+                        />
+                    ),
+                },
+                {
+                    name: "LambdaTest",
+                    icon: (
+                        <Image
+                            src="/LambdaTest_Logo_New.png"
+                            alt="LambdaTest Logo"
+                            width={30}
+                            height={30}
+                            className="object-contain rounded-full"
+                        />
+                    )
+                },
+            ],
+            icon: <FaCloud className="text-3xl text-cyan-500" size={30} />,
         },
     ];
 
@@ -64,14 +175,18 @@ const WebappTechStack: React.FC = () => {
                                     {stack.category}
                                 </h3>
                             </div>
-                            <div className="flex flex-wrap gap-2">
+                            <div className="flex flex-wrap gap-3">
                                 {stack.tools.map((tool, idx) => (
-                                    <span
+                                    <div
                                         key={idx}
-                                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                                        className="flex items-center gap-2 px-3 py-2 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200 hover:bg-gray-100 transition-colors"
+                                        title={tool.name}
                                     >
-                                        {tool}
-                                    </span>
+                                        <div className="w-8 h-8 flex items-center justify-center child-svg:w-full child-svg:h-full">
+                                            {tool.icon}
+                                        </div>
+                                        <span>{tool.name}</span>
+                                    </div>
                                 ))}
                             </div>
                         </div>

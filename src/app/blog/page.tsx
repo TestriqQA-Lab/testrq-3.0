@@ -1,11 +1,11 @@
-import { BlogHeroSection, BlogCategories, BlogQAKnowledgeHub, BlogNewsletter } from "@/components/client-wrappers/BlogClientComponents";
+import { BlogHeroSection } from "@/components/client-wrappers/BlogClientComponents";
 import BlogPostsGrid from "@/components/sections/BlogPostsGrid";
 import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
-import { getPostsBySlugs, getAllPostSlugs } from "@/lib/wordpress-graphql";
-import { adaptWordPressPost } from "@/lib/wordpress-data-adapter";
-import { Post } from "@/lib/wordpress-data-adapter";
+import { sanityGetPostsBySlugs, sanityGetAllPostSlugs, Post } from "@/lib/sanity-data-adapter";
+
+export const revalidate = 60; // Revalidate every minute
 
 export async function generateMetadata({
   searchParams,
@@ -57,8 +57,8 @@ export async function generateMetadata({
       title: "Software Testing Blog | Expert QA Insights & Best Practices | Testriq",
       description: "Stay updated with the latest trends, insights, and best practices in software testing and QA. Explore expert articles, tutorials, and industry news from Testriq's ISTQB certified experts.",
       images: ["https://www.testriq.com/images/testriq-blog-twitter.jpg"],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     alternates: {
       canonical: canonicalUrl,
@@ -66,7 +66,6 @@ export async function generateMetadata({
     category: "Technology",
   };
 }
-
 export default async function BlogPage({
   searchParams,
 }: {
@@ -83,27 +82,19 @@ export default async function BlogPage({
 
   try {
     // 1. Get total count using lightweight slug fetch
-    const allSlugs = await getAllPostSlugs();
+    const allSlugs = await sanityGetAllPostSlugs();
     totalPages = Math.ceil(allSlugs.length / postsPerPage);
 
     // 2. Get slugs for current page
     const pageSlugs = allSlugs.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
-    // 3. Fetch posts by slugs
-    const posts = await getPostsBySlugs(pageSlugs);
-    currentPosts = posts.map(adaptWordPressPost);
+    // 3. Fetch posts by slugs - sanity adapter returns ADAPTED posts
+    if (pageSlugs.length > 0) {
+      currentPosts = await sanityGetPostsBySlugs(pageSlugs);
+    }
 
     // 4. For Featured/Trending, we only try to fetch on Page 1 to save resources.
-    // Since we are not fetching ALL posts, we can't filter the entire dataset.
-    // A separate query for featured posts would be ideal, but for now we will
-    // strictly limit this to Page 1 and maybe just use the first few as featured 
-    // if no specific tag logic is implemented in the paginated query.
-    // Note: The previous logic filtered *local* arrays.
-
     if (currentPage === 1) {
-      // Optional: explicit fetch for featured if we had a dedicated query.
-      // For now, we reuse the first few of the current page or fetch a small batch.
-      // Filter from the *currently fetched* batch as a fallback.
       featuredPosts = currentPosts.filter(p => p.featured);
       trendingPosts = currentPosts.filter(p => p.trending);
     }
@@ -129,10 +120,6 @@ export default async function BlogPage({
         featuredPosts={featuredPosts}
         trendingPosts={trendingPosts}
       />
-
-      <BlogCategories />
-      <BlogQAKnowledgeHub />
-      <BlogNewsletter />
     </MainLayout>
   );
 }

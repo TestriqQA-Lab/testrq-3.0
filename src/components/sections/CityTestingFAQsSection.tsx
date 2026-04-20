@@ -35,7 +35,7 @@ const CityTestingFAQsSection: React.FC<CityTestingFAQsSectionProps> = ({ cityDat
                 <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200">
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-6 text-left flex items-center justify-between"
+                    className="w-full px-6 py-6 text-left flex items-center justify-between cursor-pointer"
                   >
                     <h3 className="text-lg font-semibold text-gray-900 pr-4">
                       {faq.question}

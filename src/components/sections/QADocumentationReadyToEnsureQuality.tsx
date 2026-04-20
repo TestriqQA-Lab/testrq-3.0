@@ -31,13 +31,11 @@ const QADocumentationReadyToEnsureQuality = () => {
           </h2>
 
           <p className="text-xl lg:text-2xl mb-8 text-white max-w-3xl mx-auto leading-relaxed">
-            Join 500+ organizations that have transformed their testing
-            processes with our comprehensive QA documentation solutions. Start
-            your journey to better quality today.
+            Choosing Testriq means you are partnering with a <span className="font-bold text-yellow-300">Lead Global SEO and QA Consultant</span> team. We balance technical rigor with business logic through field-tested templates and senior architects with 10+ years of experience.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={ "_blank" }>
+            <Link href={"https://calendar.app.google/uUHn8prcXbdqcvVb6"} target={"_blank"}>
               <button className="inline-flex cursor-pointer items-center px-8 py-4 bg-yellow-300 text-blue-900 font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <FaCalendarAlt className="mr-3" />
                 Schedule Free Consultation

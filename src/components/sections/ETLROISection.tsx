@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 import { FaDollarSign, FaClock, FaShieldAlt, FaChartLine } from "react-icons/fa";
 
@@ -10,7 +11,11 @@ const ETLROISection: React.FC = () => {
       colour: "text-green-500",
       percentage: "45%",
       title: "Cost Reduction",
-      description: "Average cost savings through automated ETL testing and early defect detection in data pipelines"
+      description: (
+        <>
+          Average cost savings through <Link href="/automation-testing-services" className="text-green-500 hover:underline">automated ETL testing</Link> and early defect detection in data pipelines
+        </>
+      ),
     },
     {
       icon: <FaClock className="w-8 h-8" />,
@@ -24,7 +29,11 @@ const ETLROISection: React.FC = () => {
       colour: "text-red-500",
       percentage: "99.8%",
       title: "Data Accuracy",
-      description: "Critical data quality issues prevented from reaching production environments"
+      description: (
+        <>
+          Critical <Link href="/data-analysis-services" className="text-red-500 hover:underline">data quality issues</Link> prevented from reaching production environments
+        </>
+      ),
     },
     {
       icon: <FaChartLine className="w-8 h-8" />,

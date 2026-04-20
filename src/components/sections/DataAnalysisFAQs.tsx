@@ -1,13 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import React, { useState } from 'react';
 import {
   FaChevronRight,
   FaChartBar,
   FaBrain,
   FaDatabase,
-  FaCheckCircle,
 } from 'react-icons/fa';
 
 const DataAnalysisFAQs = () => {
@@ -15,90 +13,28 @@ const DataAnalysisFAQs = () => {
 
   const faqCategories = [
     {
-      category: 'Getting Started',
+      category: 'Data Analytics Strategy 2026',
       icon: <FaChartBar className="h-5 w-5" />,
       faqs: [
         {
-          question: 'What is data analysis and why is it important for businesses?',
-          answer: 'Data analysis is the process of examining, cleaning, transforming, and modeling data to discover useful information and support decision-making. It\'s crucial for businesses because it helps identify trends, optimize operations, understand customer behavior, reduce costs, and gain competitive advantages. In today\'s data-driven world, organizations that effectively leverage data analysis outperform their competitors by 5-6% in productivity and profitability.'
+          question: 'What is the difference between descriptive and prescriptive analytics?',
+          answer: 'Descriptive analytics summarizes past data to show "What happened." Prescriptive analytics goes even further. It uses predictive models to suggest the best steps to reach a specific goal.'
         },
         {
-          question: 'What types of data analysis services do you offer?',
-          answer: 'We offer comprehensive data analysis services including descriptive analytics (what happened), diagnostic analytics (why it happened), predictive analytics (what will happen), and prescriptive analytics (what should we do). Our services cover business intelligence, data visualization, statistical analysis, machine learning, customer analytics, financial analysis, and operational analytics across various industries.'
+          question: 'Why Should I Outsource My Data Analyzing and Modeling to Testriq?',
+          answer: 'Outsourcing to a dedicated analytics consulting firm like Testriq solves the global talent shortage. You get access to certified data scientists and an ISO 8000-aligned workflow. This provides elite results without the overhead of an in-house team.'
         },
         {
-          question: (<>How do you ensure data <Link href="/security-testing">security</Link> and <Link href="/blog/post/data-privacy-and-security-for-e-learning-platforms-protecting-student-data-and-ensuring-compliance">privacy</Link>?</>),
-          answer: (<>We implement enterprise-grade security measures including end-to-end <Link href="/blog/post/game-security-testing-protecting-your-game-from-hacks-cheats-and-data-breaches">encryption</Link>, secure data transmission, access controls, and compliance with regulations like GDPR, <Link href="/blog/post/what-is-hipaa-compliance-testing-ensuring-phi-protection-for-healthcare-apps">HIPAA</Link>, and SOX. Our team follows strict data governance protocols, uses secure cloud infrastructure, and maintains detailed audit trails. We also sign comprehensive NDAs and data processing agreements to protect your sensitive information.</>)
+          question: 'How Analyzing Data Improves Customer Retention?',
+          answer: 'By utilizing diagnostic analytics, we identify the "churn signals" in your customer data. This allows you to implement data-driven strategies that proactively engage at-risk customers before they leave.'
         },
         {
-          question: 'What industries do you serve?',
-          answer: (<>We serve diverse industries including <Link href="/blog/post/etl-testing-case-studies">finance, healthcare, retail, e-commerce, manufacturing, technology, telecommunications, energy, and government</Link>. Our team has deep domain expertise and understands industry-specific challenges, regulations, and KPIs. We tailor our analytics solutions to meet the unique requirements and compliance standards of each industry.</>)
-        }
-      ]
-    },
-    {
-      category: 'Technical Capabilities',
-      icon: <FaBrain className="h-5 w-5" />,
-      faqs: [
-        {
-          question: 'What tools and technologies do you use for data analysis?',
-          answer: (<>We use a comprehensive technology stack including Python, R, SQL, Tableau, Power BI, Apache Spark, TensorFlow, PyTorch, <Link href="/blog/post/cloud-integration-testing-for-iot-aws-iot-azure-iot-google-iot-core">AWS, Google Cloud, Azure</Link>, Snowflake, and many others. Our tool selection depends on your specific requirements, existing infrastructure, and project goals. We stay current with the latest technologies and best practices in data science and analytics.</>)
+          question: 'Do you handle both Structured and Unstructured Data?',
+          answer: 'Yes. Our solutions process both structured data like SQL databases and unstructured data such as emails and PDFs. This integration provides a 360-degree view of your entire business environment.'
         },
         {
-          question: 'Can you work with our existing data infrastructure?',
-          answer: 'Yes, we\'re experienced in integrating with various data infrastructures including on-premises databases, cloud platforms, data warehouses, data lakes, and hybrid environments. We can connect to your existing systems, APIs, and data sources while ensuring minimal disruption to your operations. Our team handles data migration, integration, and optimization as needed.'
-        },
-        {
-          question: 'Do you provide real-time analytics capabilities?',
-          answer: 'Absolutely. We implement real-time analytics solutions using streaming technologies like Apache Kafka, Apache Flink, and cloud-based streaming services. Our real-time analytics capabilities include live dashboards, automated alerts, streaming data processing, and instant decision support systems. This enables you to respond quickly to changing business conditions and opportunities.'
-        },
-        {
-          question: 'How do you handle big data and scalability?',
-          answer: 'We use distributed computing frameworks like Apache Spark, Hadoop, and cloud-based big data services to handle large-scale data processing. Our solutions are designed for horizontal scaling, can process petabytes of data, and leverage cloud auto-scaling capabilities. We optimize performance through data partitioning, caching, and parallel processing techniques.'
-        }
-      ]
-    },
-    {
-      category: 'Project Management',
-      icon: <FaDatabase className="h-5 w-5" />,
-      faqs: [
-        {
-          question: 'What is your typical project timeline?',
-          answer: (<>Project timelines vary based on scope and complexity. Simple analytics projects typically take 4-8 weeks, while comprehensive data science initiatives may require 3-6 months. We follow <Link href="/blog/post/how-does-exploratory-testing-align-with-agile-methodology">agile methodologies</Link> with regular milestones and deliverables. During the initial consultation, we provide detailed project timelines with clear phases, dependencies, and expected outcomes.</>)
-        },
-        {
-          question: 'How do you measure project success?',
-          answer: 'We establish clear success metrics at project inception, including business KPIs, technical performance indicators, and ROI measurements. Success is measured through improved decision-making speed, cost savings, revenue increases, operational efficiency gains, and user adoption rates. We provide regular progress reports and post-implementation reviews to ensure sustained value delivery.'
-        },
-        {
-          question: 'Do you provide training and knowledge transfer?',
-          answer: 'Yes, we believe in empowering your team with analytics capabilities. We provide comprehensive training programs, documentation, best practices guides, and hands-on workshops. Our knowledge transfer includes technical training on tools and models, business training on interpreting results, and ongoing support to ensure your team can maintain and extend the solutions independently.'
-        },
-        {
-          question: 'What ongoing support do you provide?',
-          answer: (<>We offer various support models including 24/7 monitoring, regular model maintenance, <Link href="/blog/post/performance-optimization-ensuring-smooth-gameplay-and-reduced-lag-across-platforms">performance optimization</Link>, system updates, and troubleshooting. Our support services include model retraining, <Link href="/blog/post/data-loading-testing-etl-performance-testing">data pipeline</Link> monitoring, dashboard maintenance, user support, and continuous improvement recommendations. We tailor support packages to match your specific needs and budget.</>)
-        }
-      ]
-    },
-    {
-      category: 'Business Value',
-      icon: <FaCheckCircle className="h-5 w-5" />,
-      faqs: [
-        {
-          question: (<>What <Link href="/blog/post/automation-testing-roi-how-to-justify-the-cost">ROI</Link> can we expect from data analysis projects?</>),
-          answer: 'ROI varies by industry and use case, but our clients typically see 300-500% ROI within the first year. Common benefits include 15-30% cost reductions, 20-40% efficiency improvements, 10-25% revenue increases, and significant risk mitigation. We work with you to establish baseline metrics and track measurable improvements throughout the project lifecycle.'
-        },
-        {
-          question: 'How quickly can we see results?',
-          answer: 'Initial insights and quick wins are often delivered within 2-4 weeks through exploratory data analysis and basic reporting. More sophisticated predictive models and automated systems typically show results within 2-3 months. We prioritize high-impact, low-effort opportunities early in the project to demonstrate immediate value while building toward long-term strategic goals.'
-        },
-        {
-          question: (<>Can you help with <Link href="/blog/post/medical-device-testing-ensuring-patient-safety-and-regulatory-compliance">regulatory compliance</Link> and reporting?</>),
-          answer: 'Yes, we have extensive experience with regulatory requirements across industries. We help ensure compliance with regulations like SOX, GDPR, HIPAA, Basel III, and others. Our solutions include automated compliance reporting, audit trails, data lineage tracking, and risk assessment frameworks. We work closely with your compliance teams to meet all regulatory requirements.'
-        },
-        {
-          question: (<>How do you ensure <Link href="/blog/post/data-quality-testing-in-etl">data quality</Link> and <Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">accuracy</Link>?</>),
-          answer: 'We implement comprehensive data quality frameworks including data profiling, validation rules, anomaly detection, and automated quality monitoring. Our process includes data cleansing, standardization, deduplication, and enrichment. We establish data governance protocols, implement quality scorecards, and provide ongoing monitoring to ensure sustained data accuracy and reliability.'
+          question: 'What are the best data visuales tools for my business?',
+          answer: 'The choice depends on your scale. For startups, we often recommend custom business intelligence dashboards via Power BI or Tableau. For larger enterprises, we may implement Looker or D3.js for deeper, more interactive data insights services.'
         }
       ]
     }
@@ -135,7 +71,7 @@ const DataAnalysisFAQs = () => {
                   <h3 className="text-xl font-semibold ml-3">{category.category}</h3>
                 </div>
               </div>
-              
+
               <div className="divide-y divide-gray-200">
                 {category.faqs.map((faq, faqIndex) => {
                   const isOpen = openFAQ === `${categoryIndex}-${faqIndex}`;
@@ -154,7 +90,7 @@ const DataAnalysisFAQs = () => {
                           <FaChevronRight className="h-5 w-5 text-gray-500 flex-shrink-0" />
                         )}
                       </button>
-                      
+
                       {isOpen && (
                         <div className="mt-4 pl-2">
                           <p className="text-gray-600 leading-relaxed">
@@ -185,7 +121,7 @@ const DataAnalysisFAQs = () => {
                 Explore detailed case studies and success stories from our clients.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <FaBrain className="h-8 w-8 text-blue-600" />
@@ -195,7 +131,7 @@ const DataAnalysisFAQs = () => {
                 Schedule a free consultation to discuss your specific requirements.
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <FaDatabase className="h-8 w-8 text-green-600" />

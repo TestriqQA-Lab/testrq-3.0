@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     title: "Search Testing Articles | Find QA Insights & Best Practices | Testriq Blog",
     description: "Search and find relevant articles, tutorials, and expert insights on software testing and QA. Discover best practices, testing guides, and industry knowledge from Testriq's ISTQB certified experts.",
     images: ["https://www.testriq.com/images/testriq-search-twitter.jpg"],
-    creator: "@testriqlab",
-    site: "@testriqlab",
+    creator: "@testriq",
+    site: "@testriq",
   },
   alternates: {
     canonical: "https://www.testriq.com/blog/search",

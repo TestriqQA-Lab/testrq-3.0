@@ -39,7 +39,7 @@ const DataAnalysisProvenTestingProcess = () => {
         "Multi-source data extraction",
         (<><Link href="/blog/post/ehr-emr-system-testing-and-integration-ensuring-data-integrity-and-interoperability">Data integration</Link> and consolidation</>),
         "Data validation and verification",
-        "Secure data storage setup",
+        (<><Link href="/security-testing" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Secure data storage</Link> setup</>),
       ],
       duration: "1-2 weeks",
       outcome: "Unified and validated dataset",
@@ -162,15 +162,13 @@ const DataAnalysisProvenTestingProcess = () => {
             {analysisSteps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Content Card */}
                 <div
-                  className={`w-full lg:w-5/12 ${
-                    index % 2 === 0 ? "lg:pr-8" : "lg:pl-8"
-                  }`}
+                  className={`w-full lg:w-5/12 ${index % 2 === 0 ? "lg:pr-8" : "lg:pl-8"
+                    }`}
                 >
                   <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
                     <div className="flex items-center mb-4">

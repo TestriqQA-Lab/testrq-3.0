@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from "react";
 import {
   FaAward,
@@ -15,8 +16,9 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
     {
       icon: <FaAward className="text-3xl text-blue-600" />,
       title: "ISTQB Certified Trainers",
-      description:
-        "Learn from industry experts with 10+ years of experience and international certifications.",
+      description: (
+        <>Learn from <Link href="/about-us" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">industry experts</Link> with 10+ years of experience and international certifications.</>
+      ),
       stats: "50+ Certified Instructors",
     },
     {
@@ -105,7 +107,7 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            With over a decade of experience in software testing and training,
+            With over a decade of experience in <Link href="/" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">software testing</Link> and training,
             we&apos;ve helped hundreds of organizations build world-class QA
             teams.
           </p>
@@ -169,33 +171,33 @@ const CorporateQATrainingWhyChooseTestriq: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Stats Section */}
-        <div className="mt-16 grid md:grid-cols-4 gap-8 text-center">
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
-              300+
+          {/* Stats Section */}
+          <div className="mt-16 grid md:grid-cols-4 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">
+                300+
+              </div>
+              <div className="text-gray-600">Professionals Trained</div>
             </div>
-            <div className="text-gray-600">Professionals Trained</div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
-              50+
+            <div className="p-6">
+              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">
+                50+
+              </div>
+              <div className="text-gray-600">Companies Served</div>
             </div>
-            <div className="text-gray-600">Companies Served</div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
-              99.5%
+            <div className="p-6">
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 mb-2">
+                99.5%
+              </div>
+              <div className="text-gray-600">Success Rate</div>
             </div>
-            <div className="text-gray-600">Success Rate</div>
-          </div>
-          <div className="p-6">
-            <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
-              10+
+            <div className="p-6">
+              <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-2">
+                10+
+              </div>
+              <div className="text-gray-600">Years Experience</div>
             </div>
-            <div className="text-gray-600">Years Experience</div>
           </div>
         </div>
       </div>

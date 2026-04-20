@@ -10,8 +10,11 @@ const AIFAQs: React.FC = () => {
   const faqs = [
     {
       question: "What is the difference between traditional testing and AI testing?",
-      answer:
-        "Traditional software quality assurance relies on fixed, predictable logic. Conversely, machine learning testing evaluates variable outcomes, requiring statistical validation to ensure reasoning remains safe and accurate.",
+      answer: (
+        <>
+          <Link href="/manual-testing-services" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">Traditional software quality assurance</Link> relies on fixed, predictable logic. Conversely, machine learning testing evaluates variable outcomes, requiring statistical validation to ensure reasoning remains safe and accurate.
+        </>
+      ),
     },
     {
       question: "How does the EU AI Act affect AI testing services?",
@@ -20,8 +23,11 @@ const AIFAQs: React.FC = () => {
     },
     {
       question: "Why is AI model validation necessary for Gen-AI?",
-      answer:
-        "AI models remain vulnerable to prompt injection and data errors. We use AI model validation and Red-Teaming to find these weak spots. We simulate attacks to stop hackers from stealing your data or breaking your safety rules.",
+      answer: (
+        <>
+          AI models remain vulnerable to <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">prompt injection</Link> and data errors. We use AI model validation and Red-Teaming to find these weak spots. We simulate attacks to stop hackers from stealing your data or breaking your safety rules.
+        </>
+      ),
     },
     {
       question: "What is the NIST AI RMF?",

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import {
-  FaChartBar,
   FaChartLine,
   FaBrain,
   FaDatabase,
@@ -18,166 +17,101 @@ const DataAnalysisComprehensiveSlider = () => {
 
   const analyticsTypes = [
     {
-      id: "descriptive",
-      title: "Descriptive Analytics",
-      icon: <FaChartBar className="h-6 w-6" />,
-      description:
-        "Understand what happened in your business through comprehensive data analysis",
-      content: {
-        overview:
-          (<>Descriptive analytics helps you understand historical data and current business <Link href="/performance-testing-services">performance</Link> through statistical analysis and data visualization.</>),
-        keyCapabilities: [
-          "Historical Data Analysis",
-          "Statistical Summaries",
-          "Data Visualization & Dashboards",
-          "Performance Metrics Tracking",
-          "Trend Identification",
-          "Comparative Analysis",
-        ],
-        benefits: [
-          "Clear understanding of business performance",
-          "Identification of patterns and trends",
-          "Data-driven reporting capabilities",
-          "Enhanced decision-making foundation",
-        ],
-        deliverables:
-          "Interactive Dashboards → Statistical Reports → Trend Analysis → Performance Metrics",
-      },
-    },
-    {
-      id: "diagnostic",
-      title: "Diagnostic Analytics",
-      icon: <FaBullseye className="h-6 w-6" />,
-      description:
-        "Discover why certain events occurred and identify root causes",
-      content: {
-        overview:
-          "Diagnostic analytics goes deeper to understand the reasons behind business outcomes and identify factors that influenced performance.",
-        keyCapabilities: [
-          "Root Cause Analysis",
-          "Correlation Analysis",
-          "Drill-down Investigations",
-          "Anomaly Detection",
-          "Factor Analysis",
-          "Comparative Studies",
-        ],
-        benefits: [
-          "Understanding of performance drivers",
-          "Identification of problem areas",
-          "Insights into cause-effect relationships",
-          "Improved problem-solving capabilities",
-        ],
-        deliverables:
-          "Root Cause Reports → Correlation Studies → Anomaly Analysis → Factor Identification",
-      },
-    },
-    {
-      id: "predictive",
-      title: "Predictive Analytics",
-      icon: <FaChartLine className="h-6 w-6" />,
-      description:
-        "Forecast future trends and outcomes using advanced statistical models",
-      content: {
-        overview:
-          "Predictive analytics uses machine learning and statistical models to forecast future events and trends based on historical data patterns.",
-        keyCapabilities: [
-          (<><Link href="/blog/post/model-validation-for-ai-applications">Forecasting Models</Link></>),
-          (<><Link href="/blog/post/risk-based-regression-testing-smarter-test-optimization">Risk Assessment</Link></>),
-          "Customer Behavior Prediction",
-          "Demand Forecasting",
-          "Churn Prediction",
-          "Market Trend Analysis",
-        ],
-        benefits: [
-          "Anticipate future business outcomes",
-          "Proactive decision-making capabilities",
-          "Risk mitigation strategies",
-          "Improved resource planning",
-        ],
-        deliverables:
-          "Forecast Models → Risk Assessments → Prediction Reports → Trend Projections",
-      },
-    },
-    {
       id: "prescriptive",
-      title: "Prescriptive Analytics",
+      title: "Prescriptive Intelligence",
       icon: <FaBrain className="h-6 w-6" />,
-      description:
-        "Get actionable recommendations for optimal business decisions",
+      description: "Data-driven strategies for success with actionable steps for growth.",
       content: {
-        overview:
-          "Prescriptive analytics provides specific recommendations and optimal actions based on predictive insights and business constraints.",
+        overview: "Prescriptive analytics provides actionable strategies to reach specific goals. We calculate the best course of action to grow small businesses and optimize large enterprises.",
         keyCapabilities: [
-          "Optimization Models",
+          "Actionable Growth Strategies",
+          "Business Logic Optimization",
           "Decision Support Systems",
-          "Scenario Analysis",
-          "Resource Allocation",
-          "Strategy Recommendations",
-          "Action Planning",
+          "Strategic Success Roadmaps",
+          "Enterprise Scaling Plans",
+          "Resource Optimization"
         ],
         benefits: [
-          "Optimal decision recommendations",
-          "Automated decision-making support",
-          "Resource optimization strategies",
-          "Maximized business outcomes",
+          "Data-driven strategic growth",
+          "Optimized ROI for enterprise projects",
+          "Confident stakeholder alignment",
+          "Proactive business maneuvering"
         ],
-        deliverables:
-          "Optimization Plans → Decision Models → Action Recommendations → Strategy Roadmaps",
+        deliverables: "Strategy Roadmaps → Action Plans → Optimization Models → Growth Forecasts"
       },
     },
     {
-      id: "cognitive",
-      title: "Cognitive Analytics",
-      icon: <FaBrain className="h-6 w-6" />,
-      description: "Leverage AI and machine learning for advanced insights",
+      id: "diagnostic-predictive",
+      title: "Diagnostic & Predictive",
+      icon: <FaChartLine className="h-6 w-6" />,
+      description: "Identify why events happened and forecast strategic trends.",
       content: {
-        overview:
-          "Cognitive analytics combines AI, machine learning, and natural language processing to provide human-like insights and automated analysis.",
+        overview: "We identify root causes using Python and R frameworks to forecast strategic trends and anticipate market shifts before they occur.",
         keyCapabilities: [
-          (<><Link href="/blog/post/ai-testing-learning-guide">Natural Language Processing</Link></>),
-          (<><Link href="/blog/post/ai-testing-learning-guide">Machine Learning Models</Link></>),
-          "Automated Insights Generation",
+          "Root Cause Identification",
+          "Strategic Trend Forecasting",
+          "Python & R Modeling",
+          "Market Shift Anticipation",
           "Pattern Recognition",
-          "Sentiment Analysis",
-          "Intelligent Automation",
+          "Anomaly Detection"
         ],
         benefits: [
-          "Automated insight generation",
-          "Advanced pattern recognition",
-          "Natural language understanding",
-          "Scalable analysis capabilities",
+          "Early problem detection",
+          "Anticipatory market positioning",
+          "High-fidelity trend analysis",
+          "Reduced operational risks"
         ],
-        deliverables:
-          "AI Models → Automated Reports → Intelligent Insights → Cognitive Dashboards",
+        deliverables: "Diagnostic Reports → Predictive Models → Trend Analysis → Risk Heatmaps"
       },
     },
     {
-      id: "realtime",
-      title: "Real-time Analytics",
+      id: "real-time",
+      title: "Real-Time Dashboards",
       icon: <FaDatabase className="h-6 w-6" />,
-      description:
-        "Monitor and analyze data as it happens for immediate insights",
+      description: "Monitor inventory, track shipping, and optimize pricing instantly.",
       content: {
-        overview:
-          "Real-time analytics processes data streams instantly to provide immediate insights and enable rapid response to changing conditions.",
+        overview: "In e-commerce and retail, real-time tools help you monitor inventory, track shipping, and optimize pricing instantly to prevent revenue loss.",
         keyCapabilities: [
-          "Stream Processing",
-          (<><Link href="/blog/post/data-synchronization-testing-ensuring-real-time-accuracy-across-iot-systems">Real-time Dashboards</Link></>),
-          "Alert Systems",
-          "Live Data Monitoring",
-          "Instant Notifications",
-          "Dynamic Reporting",
+          "E-commerce Real-time Monitoring",
+          "Inventory Tracking Tools",
+          "Live Pricing Optimization",
+          "Shipping Logistics Analysis",
+          "Instant Revenue Tracking",
+          "Dynamic KPI Dashboards"
         ],
         benefits: [
-          "Immediate insight availability",
-          "Rapid response capabilities",
-          "Continuous monitoring",
-          "Proactive issue detection",
+          "Zero-latency insights",
+          "Immediate pricing agility",
+          "Streamlined logistics",
+          "Maximized sales opportunities"
         ],
-        deliverables:
-          "Live Dashboards → Real-time Alerts → Stream Analytics → Dynamic Reports",
+        deliverables: "Real-time Dashboards → Live Alerts → Inventory Logs → Dynamic Metrics"
       },
     },
+    {
+      id: "quality-scrubbing",
+      title: "Data Quality & Scrubbing",
+      icon: <FaBullseye className="h-6 w-6" />,
+      description: "Validating data accuracy and completeness at the source (ISO 8000).",
+      content: {
+        overview: "We align our Data Cleaning & Scrubbing protocols with the ISO 8000-1:2022 benchmark to end the 'Garbage In, Garbage Out' cycle forever.",
+        keyCapabilities: [
+          "ISO 8000 Data Quality Audit",
+          "Automated Data Cleaning",
+          "Anomaly Correction",
+          "Duplicate Removal",
+          "Source-level Validation",
+          "Integrity Frameworking"
+        ],
+        benefits: [
+          "Trustworthy business intelligence",
+          "Compliance with global benchmarks",
+          "Clean-slate analysis ready",
+          "Reduced error propagation"
+        ],
+        deliverables: "Cleaned Data Sets → Integrity Reports → ISO Audit Logs → Validation Specs"
+      },
+    }
   ];
 
   return (
@@ -208,11 +142,10 @@ const DataAnalysisComprehensiveSlider = () => {
               <button
                 key={type.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
-                  activeTab === index
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-gray-600 hover:bg-gray-100"
-                }`}
+                className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-200 ${activeTab === index
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-white text-gray-600 hover:bg-gray-100"
+                  }`}
               >
                 {type.icon}
                 <span className="ml-2 hidden sm:inline">{type.title}</span>

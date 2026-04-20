@@ -1,0 +1,5 @@
+
+> testrq-3.0@0.1.0 build
+> cross-env NODE_OPTIONS='--max-old-space-size=4096' next build
+
+You are using Node.js 19.6.0. For Next.js, Node.js version "^18.18.0 || ^19.8.0 || >= 20.0.0" is required.

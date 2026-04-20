@@ -15,7 +15,7 @@
     "moduleResolution": "bundler", // ✅ Correct for Next.js 13+ with app router
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {

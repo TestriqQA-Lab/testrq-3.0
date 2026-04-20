@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 import {
     FaRocket,
@@ -12,6 +11,7 @@ import {
     FaCertificate,
 } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
+import SapTestingAnimation from "./SapTestingAnimation";
 
 const SapTestingHeroSection: React.FC = () => {
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -55,10 +55,10 @@ const SapTestingHeroSection: React.FC = () => {
                         </div>
 
                         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            <span className="text-brand-blue">SAP Testing Services:</span> Accelerated QA for Seamless S/4HANA Migrations & Upgrades
+                            <Link href="/" className="hover:text-brand-blue hover:underline decoration-brand-blue">SAP Testing Services</Link>: <span className="text-brand-blue">Enterprise-Grade QA</span> for S/4HANA Transitions
                         </h1>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            SAP deployments and upgrades are complex. A single integration failure or patch error can halt your entire business. Testriq provides independent, end-to-end SAP Quality Assurance to ensure your mission-critical applications are stable, compliant, and performant from day one.
+                            The SAP ECC support deadline (2026–2027) is rapidly approaching. At Testriq, we provide end-to-end SAP testing services for complex implementations. We ensure your <Link href="/qa-documentation-services" className="text-gray-600 hover:text-brand-blue hover:underline decoration-brand-blue">S/4HANA transition</Link> is more than a technical upgrade—it is a catalyst for digital excellence.
                         </p>
 
                         {/* Key Differentiators */}
@@ -104,19 +104,9 @@ const SapTestingHeroSection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Right Side - Hero Image */}
-                    <div className="relative flex justify-center lg:justify-center items-start animate-float">
-                        {/* Removed card styling (border, shadow, rounded container) for better blending */}
-                        <div className="relative w-full h-auto">
-                            <Image
-                                src="/services/sap-testing-hero.png"
-                                alt="SAP Testing Services Dashboard"
-                                width={600}
-                                height={400}
-                                className="w-full h-auto object-contain"
-                                priority
-                            />
-                        </div>
+                    {/* Right Side - Animated SAP Dashboard */}
+                    <div className="relative flex justify-center lg:justify-center items-start">
+                        <SapTestingAnimation />
                     </div>
                 </div>
             </div>

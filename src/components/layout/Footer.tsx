@@ -53,7 +53,6 @@ const specializedTesting = [
   { title: "Security Testing", path: "/security-testing" },
   { title: "QA Documentation Services", path: "/qa-documentation-services" },
   { title: "Data Analysis", path: "/data-analysis-services" },
-  { title: "Software Testing Guide", path: "/software-testing-guide" },
   { title: "Corporate QA Training", path: "/corporate-qa-training" },
   { title: "SAP Testing", path: "/sap-testing-services" },
   { title: "Telecom Testing", path: "/telecommunications-testing-services" },
@@ -90,7 +89,12 @@ const partners = [
   },
 ];
 
+import { usePathname } from "next/navigation";
+
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/cms')) return null;
+
   return (
     <footer className="bg-gray-100 border-t border-gray-200 py-16 px-8 md:px-12 lg:px-24">
       <div className="mx-auto">
@@ -150,7 +154,7 @@ const Footer = () => {
             {/* Social Media Links */}
             <div className="flex space-x-4 pt-4">
               <Link
-                href="https://www.linkedin.com/company/testriq-qa-lab"
+                href="https://www.linkedin.com/company/testriq-qa-lab/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
@@ -168,7 +172,7 @@ const Footer = () => {
                 <FaFacebookF className="h-5 w-5 text-gray-800 group-hover:text-blue-600 transition-colors" />
               </Link>
               <Link
-                href="https://instagram.com/testriq"
+                href="https://www.instagram.com/testriq"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 group"
@@ -291,7 +295,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-800">
-              © 2025 Testriq QA LAB LLP. All Rights Reserved
+              © {new Date().getFullYear()} Testriq QA LAB LLP. All Rights Reserved
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-6">
               <Link
@@ -313,7 +317,7 @@ const Footer = () => {
                 Cookies Policy
               </Link>
               <Link
-                href="/sitemap"
+                href="/website-map"
                 className="text-sm text-gray-800 hover:text-brand-blue transition-colors"
               >
                 Sitemap

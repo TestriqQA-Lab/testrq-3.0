@@ -18,7 +18,7 @@ export default function CardSlider() {
       days: "Phase 1",
       quote: "Architecture & Risk Analysis",
       content:
-        (<>We assess your application&apos;s architecture to identify specific <Link href='blog/post/front-end-testing-vs-back-end-testing-key-differences-and-integrations' className="text-[theme(color.brand.blue)] hover:underline">Front-end and Back-end</Link> testing requirements. Our security risk assessment identifies critical threats like SQL injection and XSS while verifying your HTTPS/SSL settings.</>),
+        (<>We assess your application&apos;s architecture to identify specific Front-end and Back-end testing requirements. Our security risk assessment identifies critical threats like SQL injection and XSS while verifying your HTTPS/SSL settings.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"
@@ -44,7 +44,7 @@ export default function CardSlider() {
       days: "Phase 2",
       quote: "Stability & Speed",
       content:
-        (<>We create stable, run in parallel test suites using Cloud-based web testing. This ensures stability during <Link href='blog/post/agile-testing-methodology-guide-for-developers-and-qa' className="text-[theme(color.brand.blue)] hover:underline">Agile sprints</Link> and prevents regressions in dynamic environments.</>),
+        (<>We create stable, run in parallel test suites using Cloud-based web testing. This ensures stability during Agile sprints and prevents regressions in dynamic environments.</>),
       icon: (
         <svg
           className="w-7 h-10 md:w-10 text-white"

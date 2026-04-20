@@ -36,8 +36,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "Testriq QA Lab",
   "alternateName": "Testriq",
-  "url": "www.testriq.com",
-  "logo": "www.testriq.com/logo.png",
+  "url": "https://www.testriq.com",
+  "logo": "https://www.testriq.com/logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
@@ -52,8 +52,8 @@ export const organizationSchema = {
     "addressCountry": "US"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq",
-    "https://twitter.com/testriq",
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://x.com/testriq",
     "https://github.com/TestriqQA-Lab"
   ],
   "hasOfferCatalog": {
@@ -101,7 +101,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Testriq - Professional Software Testing Services",
-  "url": "www.testriq.com",
+  "url": "https://www.testriq.com",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation.",
   "publisher": {
     "@type": "Organization",
@@ -111,7 +111,7 @@ export const websiteSchema = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "www.testriq.com/search?q={search_term_string}"
+      "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -131,48 +131,12 @@ export const productServiceSchema = {
   },
   "sku": "TQ-QA-001",
   "mpn": "TQ-QA-MAIN",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "184",
-    "reviewCount": "184"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Enterprise Client"
-      },
-      "reviewBody": "Testriq provided exceptional QA support for our fintech application. Their attention to detail is unmatched."
-    }
-  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "IN",
-      "returnPolicyCategory": "https://schema.org/NoReturns"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      }
-    }
+    "availability": "https://schema.org/OnlineOnly",
   }
 };
 
@@ -348,7 +312,7 @@ export const aiTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "AI Testing Services",
   "areaServed": "Worldwide",
@@ -408,7 +372,7 @@ export const aiTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -426,7 +390,7 @@ export const launchFastQASchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Rapid QA for Startups",
   "areaServed": "Worldwide",
@@ -486,7 +450,7 @@ export const launchFastQASchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -505,7 +469,7 @@ export const exploratoryTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Exploratory Testing",
   "areaServed": "Worldwide",
@@ -565,7 +529,7 @@ export const exploratoryTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -584,7 +548,7 @@ export const desktopAppTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -644,7 +608,7 @@ export const desktopAppTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -658,72 +622,64 @@ export const desktopAppTestingSchema = {
 export const mobileAppTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Mobile Application Testing Services",
-  "description": "End-to-end mobile app testing services across iOS and Android platforms, covering functionality, performance, security, usability, compatibility, and automation.",
+  "name": "Global Mobile Application Testing Services 2026",
+  "description": "Expert-led mobile app testing across iOS 19 and Android 15. Specialized in 5G optimization, security penetration testing, and ISO 29119 compliance for 24,000+ device combinations.",
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
-  "serviceType": "Mobile Testing",
+  "serviceType": "Mobile Quality Assurance",
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Mobile QA Services",
+    "name": "Advanced Mobile QA Solutions",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validating mobile features, user flows, and API integrations on iOS and Android."
+          "name": "5G & Performance Stress Testing",
+          "description": "Optimizing software for 5G and edge computing, preventing crashes during network-edge connectivity shifts."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Security Testing",
-          "description": "Mobile security testing including penetration, encryption, authentication, and OWASP validation."
+          "name": "ISO 29119-3 Compliance Mapping",
+          "description": "Standardized Test Environment Requirements and Test Design Specifications following international benchmarks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Battery usage, memory optimization, and load handling across devices and networks."
+          "name": "Elite Security Penetration Testing",
+          "description": "Mobile security audits mapped to OWASP Mobile Top 10 with biometric identity validation."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Usability Testing",
-          "description": "UI/UX assessment, accessibility checks, and user journey validation for mobile apps."
+          "name": "AI-Driven Automation (Appium)",
+          "description": "Self-healing AI tools and Model-Based Testing (MBT) for rapid iOS and Android release cycles."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Compatibility Testing",
-          "description": "Cross-device and OS version compatibility checks across 50+ iOS and Android devices."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Automation Testing",
-          "description": "Automated testing for regression, CI/CD integration, and fast release cycles."
+          "name": "Real Device Cloud Testing",
+          "description": "Exhaustive validation across over 24,000 Android device combinations and newest iOS versions."
         }
       }
     ]
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -748,7 +704,7 @@ export const iotDeviceTestingSchema = {
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -795,26 +751,26 @@ export const iotDeviceTestingSchema = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "How do you test IoT device security?",
+          "name": "What is the most critical challenge in testing IoT devices in 2026?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We perform comprehensive penetration testing on device firmware, mobile apps, and cloud APIs. This includes checking for unencrypted storage, weak authentication, and vulnerabilities in protocols like BLE and MQTT."
+            "text": "The most critical challenge is device diversity and interoperability across 21.1 billion active devices. We use ISO/IEC 29119 to ensure flawless Multi-Vendor Connectivity."
           }
         },
         {
           "@type": "Question",
-          "name": "What IoT protocols do you support?",
+          "name": "How to test IoT connection in remote locations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We specialize in testing major IoT protocols including MQTT, CoAP, Zigbee, Z-Wave, Bluetooth Low Energy (BLE), and LoRaWAN across various network conditions."
+            "text": "We use network conditioners to simulate satellite/cellular handovers and signal jammers to test device performance in 'dead zones' and high-interference environments."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you test OTA (Over-the-Air) firmware updates?",
+          "name": "Why is security testing for medical IoT devices so important?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, OTA testing is a core part of our service. We simulate interrupted updates, network failures, and version rollbacks to ensure your devices never 'brick' during a customer update."
+            "text": "Medical IoT breaches directly impact patient safety. Compliance with the Cyber Resilience Act (CRA) and HIPAA is essential for ransomware defense and data privacy."
           }
         }
       ]
@@ -828,65 +784,65 @@ export const iotDeviceTestingSchema = {
 export const roboticTestingSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Robotic Testing Services",
-  "description": "Expert robotic testing services covering safety validation, software logic, sensor precision, actuator accuracy, and performance for industrial and service robots.",
+  "name": "Enterprise RPA & Robotics Testing Services 2026",
+  "description": "Comprehensive robotics and RPA QA for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, AI-driven path planning, and enterprise RPA bot validation.",
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
-  "serviceType": "Robotic QA",
+  "serviceType": "Robotics Quality Assurance",
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Comprehensive Robotic QA Services",
+    "name": "Global Robotics & Automation Testing Solutions",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Functional Testing",
-          "description": "Validation of robotic movements, precision control, sensors, and actuators."
+          "name": "ISO 10218-1:2026 Compliance",
+          "description": "Functional safety validation for industrial co-bots and integrators following international 2026 benchmarks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Safety Validation",
-          "description": "Testing of safety features such as collision detection, emergency stops, and human-robot interaction protocols."
+          "name": "Sim2Real Gap Validation",
+          "description": "Bridging simulation-to-reality gaps using Digital Twin technology and Physical AI predictive modeling."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Performance Testing",
-          "description": "Speed, load, endurance, and accuracy testing for robotic efficiency and optimization."
+          "name": "HW-SW Integration (ROS2)",
+          "description": "Synchronizing sensors, actuators, and ROS/ROS2 middleware using FMEA and HAZOP frameworks."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Integration Testing",
-          "description": "Validation of robotic system communication with software platforms, PLCs, and control systems."
+          "name": "AI/ML Path Consistency",
+          "description": "Validating non-deterministic AI path planning (Move It) and human-robot collaborative safety (ISO 13482)."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Software Testing",
-          "description": "Validation of control algorithms, automation logic, sensor data handling, and decision engines."
+          "name": "Global Regulatory Safety (UL 3100)",
+          "description": "Stringent safety compliance audits including force interaction, proximity testing, and ANSI/RIA R15.06 standards."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Autonomous Testing",
-          "description": "Testing autonomous navigation, AI-driven actions, obstacle avoidance, and environment adaptability."
+          "name": "Enterprise RPA Testing Services",
+          "description": "Automated UI-level testing for virtual workforces (UiPath, Blue Prism) on legacy enterprise systems."
         }
       }
     ]
@@ -894,7 +850,7 @@ export const roboticTestingSchema = {
 
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -912,7 +868,7 @@ export const etlTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "ETL QA Services",
   "areaServed": "Worldwide",
@@ -972,7 +928,7 @@ export const etlTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -986,15 +942,24 @@ export const manualTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/manual-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/manual-testing-services/#service",
       "name": "Manual & Exploratory Testing Services",
-      "category": "Software Quality Assurance",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Software Quality Assurance",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact",
       },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
@@ -1032,28 +997,7 @@ export const manualTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "44", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1115,24 +1059,26 @@ export const automationTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/automation-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/automation-testing-services/#service",
       "name": "Intelligent Automation Testing Services",
-      "category": "Test Automation & QA Architecture",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Test Automation & QA Architecture",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
       },
       "areaServed": "Worldwide",
       "description": "Transform your testing strategy with AI-powered automation. We use Selenium, Playwright, and API automation to reduce testing time by 80% and improve coverage.",
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
       "offers": {
         "@type": "Offer",
-        "price": "0",
         "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact"
+        "url": "https://www.testriq.com/contact",
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1168,28 +1114,7 @@ export const automationTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "120", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1257,7 +1182,7 @@ export const apiTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1301,7 +1226,7 @@ export const apiTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1319,7 +1244,7 @@ export const regressionTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1379,13 +1304,123 @@ export const regressionTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
     }
   }
+};
+
+// Service Schema for Agile Testing Services
+export const agileTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Agile Testing Services | Agile QA & Continuous Testing Company",
+  "description": "Accelerate your release cycles with Testriq's Agile testing services. We offer continuous testing, shift-left QA, and expert Agile consulting to ensure high-quality software delivery in every sprint.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Agile Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Agile Testing Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Testing & CI/CD Integration",
+          "description": "Automated validation for every code change, providing immediate feedback in Agile environments."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Test Automation Services",
+          "description": "Maintainable, scalable frameworks for regression, functional, and API testing in sprints."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Exploratory Testing",
+          "description": "Expert-led discovery of edge cases and usability issues beyond scripted tests."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "BDD & TDD Implementation",
+          "description": "Behavior-Driven and Test-Driven Development to ensure clear requirements and testable code."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Agile Regression Testing",
+          "description": "Optimized regression suites for high-speed sprint cycles and frequent releases."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/OnlineOnly",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// FAQ Schema for Agile Testing
+export const agileFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the core principles of Agile testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core principles of Agile testing include continuous feedback, collaboration between testers and developers, testing early and often (shift-left), and focusing on delivering value to the customer through iterative improvements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Agile testing differ from traditional waterfall testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike waterfall testing, which occurs at the end of the development cycle, Agile testing is integrated into every stage of the process. It is iterative, collaborative, and focuses on continuous quality rather than a single final sign-off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the role of a QA tester in an Agile team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In an Agile team, a QA tester is a collaborative partner who helps define requirements, provides continuous feedback, develops automated tests, and ensures that the final product meets the user's needs and expectations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to integrate automated testing into Agile sprints?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Integrating automation into Agile sprints requires a focus on building maintainable scripts, prioritizing high-value test cases, and ensuring that automated tests are executed as part of the continuous integration (CI) pipeline."
+      }
+    }
+  ]
 };
 
 // Service Schema for performance Testing Service
@@ -1397,7 +1432,7 @@ export const performanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1457,7 +1492,7 @@ export const performanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1495,8 +1530,8 @@ export const toolsPageSchema = {
         "addressCountry": "IN"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq.lab"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/"
       ]
     },
     {
@@ -1594,19 +1629,24 @@ export const securityTestingServiceSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/security-testing/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/security-testing/#service",
       "name": "VAPT & Security Testing Center of Excellence (TCoE)",
-      "category": "Cybersecurity & Penetration Testing",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Cybersecurity & Penetration Testing",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
-        "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
-        "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
-          "https://clutch.co/profile/testriq-qa-lab"
-        ]
+        "logo": "https://www.testriq.com/assets/images/testriq-logo.png"
+      },
+      "image": "https://www.testriq.com/assets/images/testriq-logo.png",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceValidUntil": "2026-12-31",
+        "availability": "https://schema.org/OnlineOnly",
+        "url": "https://www.testriq.com/contact",
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -1644,13 +1684,7 @@ export const securityTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -1716,7 +1750,7 @@ export const qaDocumentationServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1776,8 +1810,9 @@ export const qaDocumentationServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -1795,7 +1830,7 @@ export const dataAnalysisServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Data Analysis & Analytics",
   "areaServed": "Worldwide",
@@ -1847,8 +1882,9 @@ export const dataAnalysisServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -1918,8 +1954,9 @@ export const completeTestingGuideSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "Free"
@@ -1938,7 +1975,7 @@ export const ecommerceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "E-Commerce QA Testing",
   "areaServed": "Worldwide",
@@ -1998,8 +2035,9 @@ export const ecommerceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2092,8 +2130,9 @@ export const elearningTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2111,7 +2150,7 @@ export const healthcareTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Healthcare Software QA Testing",
   "areaServed": "Worldwide",
@@ -2171,8 +2210,9 @@ export const healthcareTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2189,7 +2229,7 @@ export const gamingTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Game Testing & QA",
   "areaServed": "Worldwide",
@@ -2265,8 +2305,9 @@ export const gamingTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2283,7 +2324,7 @@ export const iotTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT Quality Assurance",
   "areaServed": "Worldwide",
@@ -2335,8 +2376,9 @@ export const iotTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2353,7 +2395,7 @@ export const bankingFinanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Banking & Finance Software Testing",
   "areaServed": "Worldwide",
@@ -2421,8 +2463,9 @@ export const bankingFinanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2439,7 +2482,7 @@ export const telecommunicationTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Telecom Software Testing",
   "areaServed": "Worldwide",
@@ -2499,8 +2542,9 @@ export const telecommunicationTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -2542,9 +2586,9 @@ export const aboutPageSchema = {
         "areaServed": "World"
       },
       "sameAs": [
-        "https://www.linkedin.com/company/testriq-qa-lab",
-        "https://www.facebook.com/testriq",
-        "https://twitter.com/testriq"
+        "https://www.linkedin.com/company/testriq-qa-lab/",
+        "https://www.facebook.com/testriq.lab/",
+        "https://x.com/testriq"
         // Add other social links found in your footer
       ],
       "awards": [
@@ -2627,12 +2671,12 @@ export const ourTeamPageSchema = {
   "@type": "AboutPage",
   "name": "Meet Our Team - Testriq QA Lab",
   "description": "Meet the certified QA professionals behind Testriq's success. Our team of ISTQB-certified experts brings decades of software testing experience across multiple domains.",
-  "url": "www.testriq.com/our-team",
+  "url": "https://www.testriq.com/our-team",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9152929343",
@@ -2640,9 +2684,9 @@ export const ourTeamPageSchema = {
       "email": "contact@testriq.com"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://twitter.com/testriq",
-      "https://www.facebook.com/testriq"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq",
+      "https://www.facebook.com/testriq.lab/"
     ]
   },
   "hasPart": {
@@ -2654,35 +2698,35 @@ export const ourTeamPageSchema = {
         "name": "Sandeep Maske",
         "jobTitle": "Founder & CEO",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#sandeep-maske"
+        "url": "https://www.testriq.com/our-team#sandeep-maske"
       },
       {
         "@type": "Person",
         "name": "Santosh Kakade",
         "jobTitle": "VP Operations",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#santosh-kakade"
+        "url": "https://www.testriq.com/our-team#santosh-kakade"
       },
       {
         "@type": "Person",
         "name": "Goutam Mishra",
         "jobTitle": "Head of QA and BD",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#goutam-mishra"
+        "url": "https://www.testriq.com/our-team#goutam-mishra"
       },
       {
         "@type": "Person",
         "name": "Rohan Maske",
         "jobTitle": "VP - Marketing",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#rohan-maske"
+        "url": "https://www.testriq.com/our-team#rohan-maske"
       },
       {
         "@type": "Person",
         "name": "Aatish Jadhav",
         "jobTitle": "Senior Manager - Strategic Growth",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#aatish-jadhav"
+        "url": "https://www.testriq.com/our-team#aatish-jadhav"
       }
     ]
   }
@@ -3334,8 +3378,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3374,8 +3420,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mira Road, Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3414,8 +3462,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3454,8 +3504,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3494,8 +3546,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3534,8 +3588,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3574,8 +3630,10 @@ export const careersPageSchema = {
         "@type": "Place",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressRegion": "MH",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
           "addressCountry": "IN"
         }
       },
@@ -3762,13 +3820,13 @@ export const contactUsPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Us",
-  "url": "www.testriq.com/contact",
+  "url": "https://www.testriq.com/contact",
   "description": "Reach out to Testriq QA Lab for expert QA consultation, project inquiries, support requests, or partnership opportunities. Get in touch via call, email, video consultation, or schedule a meeting.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "email": "contact@testriq.com",
     "telephone": "+91-915-2929-343",
     "address": {
@@ -3822,7 +3880,7 @@ export const smartDeviceTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT & Smart Device Testing",
   "areaServed": "Worldwide",
@@ -3882,8 +3940,9 @@ export const smartDeviceTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -3928,7 +3987,7 @@ export const matrimonialAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Application Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -3988,8 +4047,9 @@ export const matrimonialAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4000,50 +4060,52 @@ export const matrimonialAppCertificationSchema = {
 // Structured data for dating app certification service
 export const datingAppCertificationSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "Dating App Trust Certification",
-  description:
-    "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
-  brand: {
-    "@type": "Brand",
-    name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+  "@type": "Service",
+  "name": "Dating App Trust Certification",
+  "serviceType": "Quality Assurance and Certification",
+  "description": "Comprehensive trust certification program for dating apps covering identity verification, user safety, content moderation, privacy compliance, and platform stability.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TESTRIQ QA Lab",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/logo.png"
   },
-  category: "Quality Assurance and Certification",
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
+  "image": "https://www.testriq.com/logo.png",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/OnlineOnly",
+    "url": "https://www.testriq.com/contact",
+  },
+  "category": "Quality Assurance and Certification",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    name: "Dating App Certification Tiers",
-    itemListElement: [
+    "name": "Dating App Certification Tiers",
+    "itemListElement": [
       {
         "@type": "Offer",
-        name: "Basic Certification",
-        description:
-          "Platform Functionality + Privacy + Content Moderation Checklist",
-        category: "New dating apps in MVP/early-launch phase",
+        "name": "Basic Certification",
+        "description": "Platform Functionality + Privacy + Content Moderation Checklist",
+        "category": "New dating apps in MVP/early-launch phase"
       },
       {
         "@type": "Offer",
-        name: "Advanced Certification",
-        description: "Basic + Identity Verification + Messaging Audit",
-        category: "Growth-stage or regionally scaling apps",
+        "name": "Advanced Certification",
+        "description": "Basic + Identity Verification + Messaging Audit",
+        "category": "Growth-stage or regionally scaling apps"
       },
       {
         "@type": "Offer",
-        name: "Enterprise Certification",
-        description:
-          "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
-        category: "Established or global dating platforms",
-      },
-    ],
+        "name": "Enterprise Certification",
+        "description": "All of the above + AI-based Matching Audit + Threat Modeling + Pen Testing",
+        "category": "Established or global dating platforms"
+      }
+    ]
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "127",
-    bestRating: "5",
-  },
+
 };
 
 
@@ -4058,7 +4120,7 @@ export const fantasyAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Fantasy Sports Platform Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -4118,8 +4180,9 @@ export const fantasyAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4137,7 +4200,7 @@ export const tradingAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Trading Platform Certification",
   "areaServed": "Worldwide",
@@ -4189,8 +4252,9 @@ export const tradingAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
+    "priceValidUntil": "2026-12-31",
     "priceSpecification": {
       "@type": "PriceSpecification",
       "price": "0"
@@ -4208,8 +4272,8 @@ export const shoppingAppCertificationSchema = {
   provider: {
     "@type": "Organization",
     name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+    url: "https://www.testriq.com",
+    logo: "https://www.testriq.com/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9004988859",
@@ -4242,12 +4306,7 @@ export const shoppingAppCertificationSchema = {
       },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "203",
-    bestRating: "5",
-  },
+
 };
 
 // Service Schema for SAP Testing Service
@@ -4255,17 +4314,17 @@ export const sapTestingSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Product",
-      "@id": "https://www.testriq.com/sap-testing-services/#product",
+      "@type": "Service",
+      "@id": "https://www.testriq.com/sap-testing-services/#service",
       "name": "SAP Testing Services",
-      "category": "Enterprise Software QA",
-      "brand": {
-        "@type": "Brand",
+      "serviceType": "Enterprise Software QA",
+      "provider": {
+        "@type": "Organization",
         "name": "Testriq QA Lab",
         "url": "https://www.testriq.com",
         "logo": "https://www.testriq.com/assets/images/testriq-logo.png",
         "sameAs": [
-          "https://www.linkedin.com/company/testriq-qa-lab",
+          "https://www.linkedin.com/company/testriq-qa-lab/",
           "https://clutch.co/profile/testriq-qa-lab"
         ]
       },
@@ -4275,8 +4334,9 @@ export const sapTestingSchema = {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
+        "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
-        "url": "https://www.testriq.com/contact-us"
+        "url": "https://www.testriq.com/contact-us",
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -4305,25 +4365,7 @@ export const sapTestingSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "100",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Global Manufacturing Corp"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Testriq's rigorous testing strategy was crucial for our seamless transition to S/4HANA. We maintained full operational capability throughout the migration."
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -4379,6 +4421,101 @@ export const sapTestingSchema = {
     }
   ]
 };
+
+// Service Schema for Usability Testing Service
+export const usabilityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Usability Testing Services & UX Audit",
+      "alternateName": "User Experience Testing",
+      "serviceType": "UX and Usability QA",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/usability-testing-services",
+      "description": "Expert usability testing services and UX audits to elevate user experience and drive conversions. AI-driven insights and real-user testing for web and mobile apps.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usability Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Usability Testing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Usability & Conversion Optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "UX Audit & Heuristic Evaluation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI-Driven UX Insights"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the benefits of professional usability testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Professional usability testing services significantly enhance user satisfaction, reduce development costs by identifying issues early, improve conversion rates, and strengthen brand loyalty. It ensures your product is intuitive, efficient, and enjoyable for its target audience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a usability audit cost for a mobile app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The cost of a usability audit for a mobile app varies based on scope, complexity, and desired depth of analysis. Testriq offers customized quotes following an initial consultation to understand your specific needs and provide an ROI-focused solution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is usability testing important for software development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usability testing is crucial for software development as it validates design decisions, uncovers critical user pain points, and ensures the final product meets user expectations. It minimizes rework, accelerates market adoption, and ultimately drives business success."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 // Professional Service Schema for Homepage/Local SEO
 export const professionalServiceSchema = {
   "@context": "https://schema.org",
@@ -4413,52 +4550,668 @@ export const professionalServiceSchema = {
     "closes": "18:00"
   },
   "sameAs": [
-    "https://www.linkedin.com/company/testriq-qa-lab",
-    "https://www.facebook.com/testriq.lab"
+    "https://www.linkedin.com/company/testriq-qa-lab/",
+    "https://www.facebook.com/testriq.lab/"
   ],
   "priceRange": "$$"
 };
-// Pricing and Packages Service Schema
-export const pricingServiceSchema = {
+
+// Service Schema for Functional Testing
+export const functionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Functional Testing Services",
+      "alternateName": "Software QA & Automation",
+      "serviceType": "QA and Software Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "telephone": "+91-915-2929-343",
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/functional-testing-services",
+      "description": "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Functional QA Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Application Functional Testing",
+              "description": "Ensuring robust performance and flawless user experience across all web platforms."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile App Functional Testing",
+              "description": "Validating functionality, usability, and performance on diverse mobile devices."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "API Testing Services",
+              "description": "Verifying the functionality, reliability, and security of application programming interfaces."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automated Functional Testing",
+              "description": "Accelerating development cycles with high-standard automated validation."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are functional testing services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Functional testing services verify that a software system or application behaves according to its specified functional requirements and meets intended business needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is functional testing important for software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It identifies defects early, validates fulfillment of user requirements, and ensures changes do not break existing functionality, reducing costly fixes in production."
+          }
+        }
+      ]
+    }
+  ]
+};
+
+// Service Schema for Continuous Testing Services
+export const continuousTestingServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Software Testing Service Packages",
-  "description": "Flexible and transparent software testing packages including monthly retainers and project-based audits for startups and global enterprises.",
+  "name": "Continuous Testing Services & CI/CD Integration",
+  "description": "World-class Continuous Testing Services designed to integrate seamlessly into your DevOps ecosystem. We help organizations shift quality left, ensuring every code commit leads to a more reliable, high-performing product.",
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
     "url": "https://www.testriq.com"
   },
-  "serviceType": "QA Outsourcing",
+  "serviceType": "Continuous Testing & CI/CD Quality Engineering",
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "QA Packages",
+    "name": "Continuous Testing Solutions",
     "itemListElement": [
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Managed QA Startup",
-          "description": "Dedicated part-time QA support for early-stage companies."
+          "name": "CI/CD Pipeline Integration",
+          "description": "Seamlessly embedding automated tests into Jenkins, GitLab, Azure DevOps, or AWS pipelines for zero-touch testing execution."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Professional Growth",
-          "description": "Full-time senior QA support with automation and CI/CD integration."
+          "name": "Shift-Left and Shift-Right Testing",
+          "description": "Moving testing earlier in development and monitoring performance in production for early defect detection."
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Security & Compliance audit",
-          "description": "Fixed-scope vulnerability and compliance checks."
+          "name": "Automated Regression Testing",
+          "description": "Ensuring new code changes do not break existing functionality across web and mobile apps."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Performance Testing",
+          "description": "Validating system scalability and performance with every build for proactive risk management."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Continuous Security Testing",
+          "description": "Automated vulnerability scanning and security posture validation within the CI/CD pipeline."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Test Data Management",
+          "description": "Providing high-quality, compliant data for realistic testing environments ensuring environmental parity."
+        }
+      }
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/OnlineOnly",
+    "priceCurrency": "USD",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0"
+    }
+  }
+};
+
+// Service Schema for Test Data Management
+export const tdmServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Test Data Management Services",
+  "description": "Optimize your QA with Testriq's Test Data Management services. We offer secure data masking, synthetic data generation, and automated TDM solutions to ensure high-quality testing with total compliance.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Quality Assurance",
+  "areaServed": "Worldwide",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "TDM Solutions",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Masking and De-identification",
+          "description": "Protecting sensitive information with advanced data masking and de-identification services."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Synthetic Test Data Generation",
+          "description": "Creating high-fidelity datasets from scratch using AI-driven methods."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Subsetting and Provisioning",
+          "description": "Extracting smaller, referentially intact slices of production data for efficient testing."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Compliance and Privacy Audits",
+          "description": "Ensuring QA environments are audit-ready and compliant with global privacy regulations."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "TDM for Performance and Load Testing",
+          "description": "Provisioning massive datasets for resilience and scalability validation."
         }
       }
     ]
   }
+};
+
+// Service Schema for User Acceptance Testing (UAT)
+export const uatServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "User Acceptance Testing Services",
+      "alternateName": "UAT Testing",
+      "serviceType": "QA and Business Validation",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/services/user-acceptance-testing",
+      "description": "Testriq's user acceptance testing services provide professional UAT testing, beta testing management, and end-user validation for enterprise software, ERP, CRM, and digital transformation projects.",
+      "areaServed": "WorldWide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "UAT Testing Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Operational Acceptance Testing (OAT)"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Beta Testing Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "End-to-End Workflow Validation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Compliance & Regulatory UAT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is User Acceptance Testing (UAT) and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "User Acceptance Testing (UAT) is the final phase of software testing where actual end-users and business stakeholders validate that the software meets their business requirements. It's important because it identifies business misalignment and user experience issues that technical testing often misses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does UAT differ from functional testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Functional testing checks if the software works according to technical specifications. UAT validates if the software actually meets user needs and enables business workflows. Functional is done by QA pros; UAT is done by end-users."
+          }
+        }
+      ]
+    }
+  ]
+};
+export const tdmFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is test data management and why is it important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Test Data Management (TDM) is the process of planning, creating, securing, and delivering the data required for software testing. It is important because it ensures that testing is realistic, secure, and compliant with privacy laws, while reducing the time and cost associated with manual data preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to ensure GDPR compliance in test data management?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GDPR compliance is ensured through techniques like data masking, pseudonymization, and synthetic data generation. These methods remove personally identifiable information (PII) from test environments, ensuring that no real user data is exposed during the QA process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between data masking and synthetic data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data masking involves taking real production data and obfuscating sensitive elements to make it secure for testing. Synthetic data, on the other hand, is artificially generated from scratch using algorithms or AI to mirror the characteristics of real data without containing any actual information from real users."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How to automate test data provisioning in DevOps?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automating test data provisioning involves integrating TDM tools with CI/CD pipelines. This allows for the automatic creation, masking, and delivery of fresh test datasets whenever a new build is triggered, enabling true self-service QA and faster release cycles."
+      }
+    }
+  ]
+};
+
+// ============================================================
+// MISSING SERVICE SCHEMAS (referenced by service pages)
+// ============================================================
+
+export const accessibilityServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Accessibility Testing Services",
+  "description": "Comprehensive WCAG 2.2 and ADA compliance accessibility testing services to ensure your digital products are inclusive and accessible to all users.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Accessibility & WCAG Compliance Testing",
+  "areaServed": "Worldwide"
+};
+
+export const adHocTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Ad Hoc Testing Services",
+  "description": "Expert ad hoc and exploratory testing services for rapid defect identification without formal test plans. Ideal for agile teams needing flexible QA coverage.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Ad Hoc & Exploratory Testing",
+  "areaServed": "Worldwide"
+};
+
+export const architectureServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Application Architecture Inspection Services",
+  "description": "In-depth application architecture inspection and software architecture audit services to identify design flaws, scalability risks, and technical debt early.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Application Architecture Audit",
+  "areaServed": "Worldwide"
+};
+
+export const architectureFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is application architecture inspection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Application architecture inspection is a systematic review of a software system's structural design to identify weaknesses, scalability bottlenecks, security vulnerabilities, and deviations from best practices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is architecture inspection important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It helps identify design flaws and technical debt early, reducing long-term maintenance costs and improving system reliability, security, and performance."
+      }
+    }
+  ]
+};
+
+export const azureTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Enterprise Azure Testing Services",
+  "description": "Comprehensive Azure cloud testing services including cloud-native QA, DevOps integration, Azure DevTest Labs management, and performance validation for enterprise workloads.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Cloud & Azure Testing",
+  "areaServed": "Worldwide"
+};
+
+export const azureFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are Azure testing services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Azure testing services involve validating applications deployed on Microsoft Azure, including functional testing, performance testing, security auditing, and CI/CD pipeline integration using Azure DevOps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does Testriq support Azure DevOps testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Testriq integrates automated test suites directly into Azure DevOps pipelines, enabling continuous testing, faster release cycles, and real-time quality gates for enterprise cloud applications."
+      }
+    }
+  ]
+};
+
+export const blockchainServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Blockchain Application Testing Services",
+  "description": "Specialized blockchain testing services covering smart contract auditing, DeFi platform testing, NFT marketplace QA, and decentralized application security validation.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Blockchain & Smart Contract Testing",
+  "areaServed": "Worldwide"
+};
+
+export const blockchainFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does blockchain testing cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Blockchain testing covers smart contract functionality, consensus mechanism validation, security audits, network performance, tokenomics logic, and integration testing with external systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is smart contract auditing important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Smart contracts are immutable once deployed. A single bug can result in irreversible financial loss. Rigorous auditing ensures contract logic is correct, secure, and free from common vulnerabilities."
+      }
+    }
+  ]
+};
+
+export const compatibilityTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Compatibility Testing Services",
+  "description": "End-to-end compatibility testing across browsers, devices, operating systems, and network environments to ensure your application works flawlessly everywhere.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Cross-Browser & Cross-Device Compatibility Testing",
+  "areaServed": "Worldwide"
+};
+
+export const compatibilityFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is compatibility testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compatibility testing verifies that a software application works correctly across different browsers, devices, operating systems, screen resolutions, and network configurations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is cross-browser testing important?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Different browsers render web pages differently. Cross-browser testing ensures a consistent user experience across Chrome, Firefox, Safari, Edge, and other browsers."
+      }
+    }
+  ]
+};
+
+export const cyberSecurityServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cyber Security Testing Services",
+  "description": "Comprehensive cyber security testing including penetration testing, vulnerability assessments, VAPT, and security audits to protect your digital assets from threats.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Cyber Security & Penetration Testing",
+  "areaServed": "Worldwide"
+};
+
+export const embeddedTestingSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Embedded Systems Testing Services",
+  "description": "Specialized embedded software and hardware testing services for IoT devices, firmware validation, real-time systems, and safety-critical embedded applications.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Embedded & Firmware Testing",
+  "areaServed": "Worldwide"
+};
+
+export const managedTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Managed Testing Services",
+  "description": "End-to-end managed QA and testing services with dedicated testing teams, test management, and full ownership of your software quality lifecycle.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Managed QA & Testing Outsourcing",
+  "areaServed": "Worldwide"
+};
+
+export const microservicesServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Microservices Testing Services",
+  "description": "Comprehensive microservices testing including contract testing, API testing, service mesh validation, and end-to-end integration testing for distributed architectures.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Microservices & API Testing",
+  "areaServed": "Worldwide"
+};
+
+export const migrationServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Migration Testing Services",
+  "description": "Specialized migration testing services for database migrations, cloud migrations, platform upgrades, and data migration projects to ensure zero data loss and business continuity.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Data & System Migration Testing",
+  "areaServed": "Worldwide"
+};
+
+export const saasTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SaaS Application Testing Services",
+  "description": "Comprehensive SaaS testing services including multi-tenant architecture validation, subscription management testing, API integration testing, and scalability assessment.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "SaaS & Cloud Application Testing",
+  "areaServed": "Worldwide"
+};
+
+export const shiftLeftServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Shift Left Testing Services",
+  "description": "Shift-left testing services that integrate quality assurance early in the development lifecycle, reducing defect costs and accelerating software delivery.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Shift-Left QA & Early Testing",
+  "areaServed": "Worldwide"
+};
+
+export const timezoneTestingServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Timezone Testing Services",
+  "description": "Real-time QA and follow-the-sun testing services that provide round-the-clock quality assurance coverage across global time zones for uninterrupted software delivery.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Testriq QA Lab",
+    "url": "https://www.testriq.com"
+  },
+  "serviceType": "Timezone & Follow-the-Sun Testing",
+  "areaServed": "Worldwide"
+};
+
+export const timezoneFAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is timezone testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timezone testing ensures your application correctly handles date and time operations across multiple time zones, including daylight saving time transitions, locale-specific formatting, and scheduling logic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is follow-the-sun testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Follow-the-sun testing is a global testing model where QA teams in different time zones hand off work continuously, providing round-the-clock testing coverage without overtime costs."
+      }
+    }
+  ]
 };

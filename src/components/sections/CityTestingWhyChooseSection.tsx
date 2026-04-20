@@ -2,14 +2,21 @@
 
 import React from 'react';
 import { CityData } from "@/app/lib/CityData";
-import { 
-  MapPin, 
-  Award, 
-  Building, 
+import {
+  MapPin,
+  Award,
+  Building,
   Clock,
   Users,
   CheckCircle,
-  Quote
+  Quote,
+  AlertTriangle,
+  ThumbsDown,
+  Shield,
+  TrendingUp,
+  Globe,
+  Settings,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +29,15 @@ const iconMap = {
   Award,
   Building,
   Clock,
-  Users
+  Users,
+  AlertTriangle,
+  ThumbsDown,
+  Shield,
+  TrendingUp,
+  Globe,
+  CheckCircle,
+  Settings,
+  Zap
 };
 
 const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = ({ cityData }) => {
@@ -45,14 +60,18 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
           <div className="space-y-8">
             {cityData.whyChooseContent.reasons.map((reason, index) => {
               const IconComponent = iconMap[reason.icon as keyof typeof iconMap];
-              
+
               return (
                 <div key={index} className="flex items-start space-x-4">
                   {/* Icon */}
                   <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <IconComponent className="h-8 w-8 text-brand-blue" />
+                    {IconComponent ? (
+                      <IconComponent className="h-8 w-8 text-brand-blue" />
+                    ) : (
+                      <CheckCircle className="h-8 w-8 text-brand-blue" />
+                    )}
                   </div>
-                  
+
                   {/* Content */}
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
@@ -88,11 +107,11 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-brand-blue mb-1">200+</div>
-                  <div className="text-sm text-gray-600">Happy Clients</div>
+                  <div className="text-3xl font-bold text-brand-blue mb-1">500K+</div>
+                  <div className="text-sm text-gray-600">Test Cases Executed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
+                  <div className="text-3xl font-bold text-green-600 mb-1">100%</div>
                   <div className="text-sm text-gray-600">Success Rate</div>
                 </div>
                 <div className="text-center">
@@ -100,7 +119,7 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
                   <div className="text-sm text-gray-600">Support</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-orange-600 mb-1">8+</div>
+                  <div className="text-3xl font-bold text-orange-600 mb-1">15+</div>
                   <div className="text-sm text-gray-600">Years Experience</div>
                 </div>
               </div>
@@ -193,13 +212,21 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full gap-6">
             {cityData.industries.map((industry, index) => (
-              <div 
+              <Link
+                href={
+                  industry.includes("SaaS") ? "/saas-testing-services" :
+                    industry.includes("FinTech") ? "/banking-finance-industry-testing-services" :
+                      industry.includes("Healthcare") ? "/healthcare-testing-services" :
+                        industry.includes("E-commerce") ? "/e-commerce-testing-services" :
+                          industry.includes("EdTech") ? "/e-learning-testing-services" :
+                            industry.includes("IoT") ? "/iot-device-testing-services" : "/contact-us"
+                }
                 key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-200 group"
+                className="bg-white rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-200 group cursor-pointer"
               >
                 <Building className="h-8 w-8 text-brand-blue mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
-                <div className="text-sm font-medium text-gray-900">{industry}</div>
-              </div>
+                <div className="text-sm font-medium text-gray-900 group-hover:text-brand-blue transition-colors duration-200">{industry}</div>
+              </Link>
             ))}
           </div>
         </div>
@@ -211,13 +238,13 @@ const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = 
               Ready to Experience the Testriq Difference?
             </h3>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Join 200+ satisfied clients in {cityData.name} who trust us with their software quality
+              Join the 500K+ Test Cases Executed in {cityData.name} that trust us with their software quality
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact-us" className="bg-white text-brand-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200">
                 Start Your Project Today
               </Link>
-              <Link href="/contact-us#calendly-section" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-all duration-200">
+              <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-brand-blue transition-all duration-200 cursor-pointer">
                 Schedule Consultation
               </Link>
             </div>

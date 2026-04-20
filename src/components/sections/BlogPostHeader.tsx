@@ -6,30 +6,18 @@ import {
   FaCalendarAlt,
   FaClock,
 } from "react-icons/fa";
-import { stripHtmlTags } from "@/lib/wordpress-graphql"; // Import the utility function
+import { Post } from "@/lib/sanity-data-adapter";
 import { decodeHtmlEntities } from "@/lib/utils"; // Import the new utility function
 import Breadcrumb from "../ui/Breadcrumb";
 
-interface BlogPost {
-  id: string; // Changed from number to string
-  title: string;
-  excerpt: string;
-  category: string;
-  categoryColor: string;
-  author: string;
-  authorImage: string;
-  authorBio: string;
-  date: string;
-  readTime: string;
-  image: string;
-  views: string;
-  likes: number;
-  shares: number;
-  tags: string[]; // Added missing tags property
-}
+// Helper to strip HTML tags if needed, although Sanity body is Portable Text
+const stripHtmlTags = (html: string) => {
+  if (!html) return '';
+  return html.replace(/<[^>]*>?/gm, '');
+};
 
 interface BlogPostHeaderProps {
-  post: BlogPost;
+  post: Post;
 }
 
 const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {

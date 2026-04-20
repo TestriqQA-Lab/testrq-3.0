@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getCityData, getAllCities, CityData } from '@/app/lib/CityData';
-import { getCaseStudyBySlug, getAllCaseStudies, CaseStudy } from '@/app/lib/caseStudies';
+import { sanityGetCaseStudyBySlug, sanityGetAllCaseStudySlugs, sanityGetRelatedCaseStudies, CaseStudy } from '@/lib/sanity-data-adapter';
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData from "@/components/seo/StructuredData";
@@ -296,8 +296,8 @@ function generateCitySchema(cityData: CityData) {
     },
 
     "sameAs": [
-      "https://www.linkedin.com/company/testriq",
-      "https://twitter.com/testriq"
+      "https://www.linkedin.com/company/testriq-qa-lab/",
+      "https://x.com/testriq"
     ]
   };
 }
@@ -306,7 +306,12 @@ export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
 
   // First check if it's a case study
-  const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
+  let caseStudy = null;
+  try {
+    caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  } catch {
+    // Sanity unreachable during build - treat as city page
+  }
   if (caseStudy) {
     const metadata = caseStudy.metadata;
     // Fixed: Use unique title for each case study to avoid duplicate title tags
@@ -410,15 +415,22 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+export const revalidate = 3600; // 1 hour — city pages are static, case studies update via Sanity webhooks
+
 export default async function SlugPage({ params }: PageProps) {
   const resolvedParams = await params;
   console.log("SlugPage resolvedParams:", resolvedParams);
 
   // First check if it's a case study
-  const caseStudy = getCaseStudyBySlug(resolvedParams.slug);
+  let caseStudy = null;
+  try {
+    caseStudy = await sanityGetCaseStudyBySlug(resolvedParams.slug);
+  } catch {
+    // Sanity unreachable - fall through to city page
+  }
   if (caseStudy) {
-    console.log("SlugPage caseStudy:", caseStudy);
     const caseStudySchema = generateCaseStudySchema(caseStudy);
+    const relatedCaseStudies = await sanityGetRelatedCaseStudies(caseStudy.slug, 2);
 
     return (
       <div>
@@ -433,7 +445,7 @@ export default async function SlugPage({ params }: PageProps) {
           <CaseStudyJourneySection caseStudy={caseStudy} />
           <CaseStudyTestimonialSection caseStudy={caseStudy} />
           <CaseStudyTechnologiesSection caseStudy={caseStudy} />
-          <CaseStudyRelatedSection currentSlug={caseStudy.slug} />
+          <CaseStudyRelatedSection relatedCaseStudies={relatedCaseStudies} />
           <CaseStudyCallToActionSection />
         </MainLayout>
       </div>
@@ -466,17 +478,25 @@ export default async function SlugPage({ params }: PageProps) {
   );
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const cities = getAllCities();
-  const caseStudies = getAllCaseStudies();
+
+  let caseStudySlugs: string[] = [];
+  try {
+    caseStudySlugs = await sanityGetAllCaseStudySlugs();
+    console.log("Generated case study slugs:", caseStudySlugs);
+  } catch (err) {
+    console.warn("Could not fetch case study slugs from Sanity (network error during build). Case study pages will be rendered on-demand.", err);
+  }
 
   console.log("Generated city slugs:", cities.map((city) => city.slug));
-  console.log("Generated case study slugs:", caseStudies.map((caseStudy) => caseStudy.slug));
 
   // Combine both city and case study slugs
   const allSlugs = [
     ...cities.map((city) => ({ slug: city.slug })),
-    ...caseStudies.map((caseStudy) => ({ slug: caseStudy.slug }))
+    ...caseStudySlugs.map((slug: string) => ({ slug }))
   ];
 
   return allSlugs;

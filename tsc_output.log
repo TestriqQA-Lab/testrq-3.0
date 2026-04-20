@@ -1,0 +1,5 @@
+src/components/ImageSlider.tsx(5,20): error TS2307: Cannot find module '../../public/launchfastqa-1.svg' or its corresponding type declarations.
+src/components/ImageSlider.tsx(6,20): error TS2307: Cannot find module '../../public/Group-computers.svg' or its corresponding type declarations.
+src/components/ImageSlider.tsx(7,20): error TS2307: Cannot find module '../../public/Robot-AI.svg' or its corresponding type declarations.
+src/components/layout/Footer.tsx(15,18): error TS2307: Cannot find module '../../../public/images/Testriq_Logo.png' or its corresponding type declarations.
+src/components/layout/Header.tsx(7,26): error TS2307: Cannot find module '../../../public/images/Testriq_Logo.png' or its corresponding type declarations.

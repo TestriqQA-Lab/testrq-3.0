@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const ShoppingAppSecurityFeatures = () => {
+const ShoppingAppSecurityFeatures: React.FC = () => {
   const securityFeatures = [
     {
       icon: <Lock className="w-8 h-8" />,

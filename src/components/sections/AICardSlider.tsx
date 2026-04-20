@@ -12,8 +12,11 @@ const AICardSlider: React.FC = () => {
           Safe & Secure AI
         </Link>
       ),
-      description:
-        "We test your models against malicious inputs to ensure they stay secure and reliable against modern security risks.",
+      description: (
+        <>
+          We test your models against malicious inputs to ensure they stay secure and reliable against modern <Link href="/security-testing" className="text-[theme(color.brand.blue)] hover:underline hover:decoration-[theme(color.brand.blue)]">security risks</Link>.
+        </>
+      ),
       features: [
         "Prompt Injection Testing",
         "Data Threat Analysis",

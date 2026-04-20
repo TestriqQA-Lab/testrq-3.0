@@ -3,8 +3,22 @@ import MainLayout from "@/components/layout/MainLayout";
 import BlogStructuredData from "@/components/seo/BlogStructuredData";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAdaptedCategoryData } from "@/lib/wordpress-data-adapter";
+import { sanityGetAdaptedCategoryData } from "@/lib/sanity-data-adapter";
 
+export const revalidate = 60; // Revalidate every minute
+export const dynamicParams = true; // Allow on-demand rendering for new/unknown categories
+
+export async function generateStaticParams() {
+  try {
+    const { sanityGetCategories } = await import("@/lib/sanity-data-adapter");
+    const categories = await sanityGetCategories();
+    return categories
+      .filter((cat) => cat.postCount > 0)
+      .map((cat) => ({ category: cat.id }));
+  } catch {
+    return [];
+  }
+}
 
 const CategoryHeroSection = dynamic(
   () => import("@/components/sections/CategoryHeroSection"),
@@ -51,20 +65,21 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const { category } = await params;
   const resolvedSearchParams = await searchParams;
   const currentPage = Number(resolvedSearchParams.page) || 1;
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
 
-  const categoryData = await getAdaptedCategoryData(category, 1);
+  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
   if (!categoryData) {
     return {
       title: "Category Not Found | Testriq Blog",
-      description: "The requested blog category could not be found.",
+      // ...
       robots: {
         index: false,
         follow: false,
       },
     };
   }
-
   const categoryName = categoryData.category.name;
   const categoryDescription = categoryData.category.description || `Explore expert articles and insights about ${categoryName} testing. Learn best practices, tutorials, and industry insights from Testriq's ISTQB certified experts.`;
 
@@ -111,8 +126,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       title: `${categoryName} Testing Articles | Expert Insights & Best Practices | Testriq`,
       description: categoryDescription,
       images: [`https://www.testriq.com/images/categories/${category}-twitter.jpg`],
-      creator: "@testriqlab",
-      site: "@testriqlab",
+      creator: "@testriq",
+      site: "@testriq",
     },
     alternates: {
       canonical: canonicalUrl,
@@ -123,7 +138,9 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
 
 export default async function CategoryPage({ params }: Props) {
   const { category } = await params;
-  const categoryData = await getAdaptedCategoryData(category, 50);
+  // Normalize slug: decode URI encoding & trim whitespace to prevent slug mismatches
+  const normalizedCategory = decodeURIComponent(category).toLowerCase().trim();
+  const categoryData = await sanityGetAdaptedCategoryData(normalizedCategory);
 
   if (!categoryData) {
     notFound();

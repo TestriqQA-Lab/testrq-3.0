@@ -9,20 +9,21 @@ import StructuredData, {
 import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
-  title: "Expert Test Automation Services | Speed and Accuracy for Every Release",
+  title: "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
+
   description:
-    "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
+    "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA for enterprise software across the US, UK, EU, and Asia.",
   keywords: [
-    "automation testing services",
-    "test automation company",
-    "selenium testing services",
-    "playwright automation",
-    "appium mobile automation",
-    "CI/CD integration",
-    "regression automation",
-    "automated functional testing",
-    "quality assurance automation",
-    "software test automation",
+    "Automation Testing Services",
+    "ISO 29119-5:2024 Compliance",
+    "SOC2 Certified QA Automation",
+    "Selenium Automation Frameworks",
+    "Playwright Testing Experts",
+    "Cypress QA Automation",
+    "AI-Augmented Testing Solutions",
+    "Enterprise Test Automation Strategy",
+    "Mobile Automation Appium",
+    "Continuous Testing CI/CD",
   ],
   authors: [{ name: "Testriq QA Lab" }],
   creator: "Testriq QA Lab LLP",
@@ -40,10 +41,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.testriq.com/automation-testing-services",
-    siteName: "Testriq - Automation Testing Services",
-    title: "Expert Test Automation Services - Speed and Accuracy for Every Release",
+    siteName: "Testriq - Global Automation & QA",
+    title:
+      "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
     description:
-      "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
+      "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
     images: [
       {
         url: "/OG/Automation-Testing-Services-og.webp",
@@ -57,10 +59,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@testriq",
     creator: "@testriq",
-    title: "Expert Test Automation Services - Speed and Accuracy for Every Release",
+    title:
+      "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
     description:
-      "Accelerate your software delivery with Testriq's automation testing services. We use top frameworks like Selenium, Playwright, and Appium for robust, scalable QA.",
-    images: ["/OG/Automation-Testing-Services-Twitter.webp"],
+      "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
+    images: ["/OG/Automation-testing-Services-Twitter.webp"],
   },
   robots: {
     index: true,
@@ -80,9 +83,42 @@ export const metadata: Metadata = {
   },
 };
 
-const AutomationTestingHeroSection = dynamic(
-  () => import("@/components/sections/AutomationTestingHeroSection"),
-  { ssr: true, loading: () => <HeroLoader /> }
+import AutomationTestingHeroSection from "@/components/sections/AutomationTestingHeroSection"
+
+const AutomationTestingROISection = dynamic(
+  () => import("@/components/sections/AutomationTestingROISection"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const AutomationComplianceTable = dynamic(
+  () => import("@/components/sections/AutomationComplianceTable"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-[400px] bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
+);
+
+const AutomationTestingReadyToEnsureQuality = dynamic(
+  () => import("@/components/sections/AutomationTestingReadyToEnsureQuality"),
+  {
+    ssr: true,
+    loading: () => (
+      <div className="flex items-center justify-center h-[400px] bg-[theme(color.background)]">
+        <p className="text-gray-500">Loading...</p>
+      </div>
+    ),
+  }
 );
 
 const AutomationTestingComprehensiveSlider = dynamic(
@@ -139,7 +175,8 @@ export default function AutomationTestingServices() {
       <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
       <MainLayout>
         <AutomationTestingHeroSection />
-        <AutomationTestingReadyToEnsureQuality />
+        <AutomationComplianceTable />
+        <AutomationTestingROISection />
         <AutomationTestingComprehensiveSlider />
         <AutomationTestingProvenTestingProcess />
         <ManualTestingFrameworkArchitecture />

@@ -1,154 +1,348 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { FaSearch, FaBookOpen, FaUsers, FaRocket } from "react-icons/fa";
-import { getTotalPostCount, getTotalCategoryCount } from "@/lib/wordpress-graphql";
+import React, { useEffect, useState, useRef } from "react";
+import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import {
+  BookOpen,
+  FolderKanban,
+  Users,
+  Rocket,
+  Home,
+  ChevronRight,
+  ArrowRight,
+  MessageCircle,
+  Sparkles,
+} from "lucide-react";
+import {
+  sanityGetTotalPostCount as getTotalPostCount,
+  sanityGetTotalCategoryCount as getTotalCategoryCount,
+} from "@/lib/sanity-data-adapter";
 
-// Custom hook for incrementing animation
-const useCountUp = (end: number, duration: number = 2000, start: number = 0) => {
-  const [count, setCount] = useState(start);
+// Custom hook for animated counting
+const useCountUp = (
+  end: number,
+  duration: number = 2000,
+  shouldStart: boolean = false
+) => {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (end === start) return;
+    if (!shouldStart || end === 0) return;
 
-    const increment = (end - start) / (duration / 16); // 60fps
-    let current = start;
-    
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= end) {
-        setCount(end);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      setCount(Math.floor(easeOutQuart * end));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
       }
-    }, 16);
+    };
 
-    return () => clearInterval(timer);
-  }, [end, duration, start]);
+    animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration, shouldStart]);
 
   return count;
+};
+
+// Stats card component
+const StatCard: React.FC<{
+  icon: React.ReactNode;
+  value: number;
+  label: string;
+  sublabel: string;
+  gradient: string;
+  delay: number;
+  shouldAnimate: boolean;
+}> = ({ icon, value, label, sublabel, gradient, delay, shouldAnimate }) => {
+  const count = useCountUp(value, 2500, shouldAnimate);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={shouldAnimate ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay }}
+      className="group relative"
+    >
+      {/* Hover glow */}
+      <div
+        className={`absolute -inset-1 bg-gradient-to-br ${gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-500`}
+      />
+
+      <div className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl lg:rounded-3xl p-5 lg:p-6 hover:border-blue-500/30 transition-all duration-500">
+        {/* Icon */}
+        <div className="relative mb-4">
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradient} rounded-xl lg:rounded-2xl blur-md opacity-40`}
+          />
+          <div
+            className={`relative w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${gradient} rounded-xl lg:rounded-2xl flex items-center justify-center text-white`}
+          >
+            {icon}
+          </div>
+        </div>
+
+        {/* Value */}
+        <div className="text-3xl lg:text-4xl font-black text-white mb-1">
+          {count.toLocaleString()}
+          <span className="text-blue-400">+</span>
+        </div>
+
+        {/* Labels */}
+        <div className="text-sm font-bold text-slate-400 uppercase tracking-wide mb-0.5">
+          {label}
+        </div>
+        <div className="text-xs text-slate-500">{sublabel}</div>
+      </div>
+    </motion.div>
+  );
 };
 
 const CategoriesHeroSection: React.FC = () => {
   const [totalArticles, setTotalArticles] = useState(0);
   const [totalCategories, setTotalCategories] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Animated counters
-  const animatedArticles = useCountUp(totalArticles, 2000);
-  const animatedCategories = useCountUp(totalCategories, 2000);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     const fetchCounts = async () => {
       try {
-        const articlesCount = await getTotalPostCount();
-        const categoriesCount = await getTotalCategoryCount();
-        
+        const [articlesCount, categoriesCount] = await Promise.all([
+          getTotalPostCount(),
+          getTotalCategoryCount(),
+        ]);
         setTotalArticles(articlesCount);
         setTotalCategories(categoriesCount);
-        setIsLoaded(true);
       } catch (error) {
         console.error("Error fetching counts:", error);
-        // Set fallback values
         setTotalArticles(500);
         setTotalCategories(15);
-        setIsLoaded(true);
       }
     };
-
     fetchCounts();
   }, []);
 
-  // Format number for display (removed unnecessary rounding and K for exact numbers)
-  const formatNumber = (num: number) => {
-    return `${num}`;
-  };
+  const stats = [
+    {
+      icon: <BookOpen className="w-6 h-6 lg:w-7 lg:h-7" />,
+      value: totalArticles,
+      label: "Articles",
+      sublabel: "Expert guides",
+      gradient: "from-blue-500 to-indigo-600",
+    },
+    {
+      icon: <FolderKanban className="w-6 h-6 lg:w-7 lg:h-7" />,
+      value: totalCategories,
+      label: "Categories",
+      sublabel: "Testing domains",
+      gradient: "from-violet-500 to-purple-600",
+    },
+    {
+      icon: <Users className="w-6 h-6 lg:w-7 lg:h-7" />,
+      value: 200,
+      label: "QA Experts",
+      sublabel: "ISTQB certified",
+      gradient: "from-emerald-500 to-teal-600",
+    },
+    {
+      icon: <Rocket className="w-6 h-6 lg:w-7 lg:h-7" />,
+      value: 500,
+      label: "Projects",
+      sublabel: "Delivered globally",
+      gradient: "from-amber-500 to-orange-600",
+    },
+  ];
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width=\'60\%’ height=\'60\%’ viewBox=\'0 0 60 60\%’ xmlns=\'http://www.w3.org/2000/svg\%\u2019%3E%3Cg fill=\'none\%’ fill-rule=\'evenodd\%’%3E%3Cg fill=\'\%23ffffff\%’ fill-opacity=\'0.1\%’%3E%3Ccircle cx=\'30\%’ cy=\'30\%’ r=\'2\%’%3E%3C/circle%3E%3C/g%3E%3C/g%3E%3C/svg\%\u2019%3E")`,
-        }} />
+    <section
+      ref={ref}
+      className="relative min-h-[90vh] lg:min-h-screen bg-gradient-to-br from-slate-950 via-blue-950/80 to-slate-900 overflow-hidden flex items-center"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        {/* Gradient orbs - simplified for performance */}
+        <div
+          className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-3xl"
+          style={{ animation: "pulse 6s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl"
+          style={{ animation: "pulse 8s ease-in-out infinite 2s" }}
+        />
+
+        {/* Grid pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.5) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(59, 130, 246, 0.5) 1px, transparent 1px)`,
+            backgroundSize: "60px 60px",
+          }}
+        />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center">
-          {/* Main Heading */}
-          <div className="mb-6">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Explore All
-              <span className="block bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent py-3">
-                Testing Categories
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Discover comprehensive guides, tutorials, and best practices across all areas of software testing and quality assurance
-            </p>
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        {/* Breadcrumb */}
+        <motion.nav
+          initial={{ opacity: 0, y: -10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          aria-label="Breadcrumb"
+          className="flex items-center mb-8 lg:mb-12"
+        >
+          <ol className="flex items-center gap-2 text-sm">
+            <li>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
+              >
+                <Home className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <span className="font-medium">Home</span>
+              </Link>
+            </li>
+            <li>
+              <ChevronRight className="w-3 h-3 text-white/20" />
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-white/60 hover:text-white transition-colors font-medium"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <ChevronRight className="w-3 h-3 text-white/20" />
+            </li>
+            <li>
+              <span className="text-white font-semibold">Categories</span>
+            </li>
+          </ol>
+        </motion.nav>
+
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Content */}
+          <div className="lg:col-span-7 text-center lg:text-left space-y-8">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2 mx-auto lg:mx-0"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur-lg opacity-50" />
+                <div className="relative px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center gap-2 border border-blue-400/30">
+                  <Sparkles className="w-4 h-4 text-blue-200" />
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">
+                    Knowledge Base
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-4"
+            >
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+                Enterprise-Grade{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400">
+                  Testing Expertise
+                </span>
+              </h1>
+
+              <p className="text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Access comprehensive guides, proven methodologies, and industry
+                best practices across all areas of software testing and quality
+                assurance.
+              </p>
+            </motion.div>
+
+            {/* Feature pills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-3 justify-center lg:justify-start"
+            >
+              {[
+                "Expert-Verified Content",
+                "Real-World Case Studies",
+                "Step-by-Step Tutorials",
+                "Industry Standards",
+              ].map((text, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full"
+                >
+                  <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
+                  <span className="text-sm font-medium text-slate-300">
+                    {text}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+
+              <Link
+                href="/contact-us"
+                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 hover:border-white/30 transition-all duration-300"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>Free Consultation</span>
+              </Link>
+            </motion.div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-lg mx-auto mb-3">
-                <FaBookOpen className="w-6 h-6 text-white" />
-              </div>
-              <div className={`text-2xl font-bold text-white mb-1 ${
-                isLoaded ? '' : 'animate-pulse'
-              }`}>
-                {isLoaded ? formatNumber(animatedArticles) : "Loading..."}
-              </div>
-              <div className="text-blue-200 text-sm">Articles</div>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="flex items-center justify-center w-12 h-12 bg-green-500 rounded-lg mx-auto mb-3">
-                <FaUsers className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-white mb-1">50K+</div>
-              <div className="text-blue-200 text-sm">Readers</div>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="flex items-center justify-center w-12 h-12 bg-purple-500 rounded-lg mx-auto mb-3">
-                <FaRocket className="w-6 h-6 text-white" />
-              </div>
-              <div className={`text-2xl font-bold text-white mb-1 ${
-                isLoaded ? '' : 'animate-pulse'
-              }`}>
-                {isLoaded ? formatNumber(animatedCategories) : "Loading..."}
-              </div>
-              <div className="text-blue-200 text-sm">Categories</div>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <div className="flex items-center justify-center w-12 h-12 bg-orange-500 rounded-lg mx-auto mb-3">
-                <FaSearch className="w-6 h-6 text-white" />
-              </div>
-              <div className="text-2xl font-bold text-white mb-1">100+</div>
-              <div className="text-blue-200 text-sm">Tools Covered</div>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <p className="text-blue-200 mb-6">
-              From beginner guides to advanced techniques, find everything you need to excel in software testing
-            </p>
-            
+          {/* Right Stats Grid */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-4 lg:gap-5">
+            {stats.map((stat, index) => (
+              <StatCard
+                key={stat.label}
+                {...stat}
+                delay={0.3 + index * 0.1}
+                shouldAnimate={isInView}
+              />
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-400/20 rounded-full blur-xl"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-yellow-400/20 rounded-full blur-xl"></div>
+      {/* Bottom gradient line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+
+      {/* Keyframe animation for pulse */}
+      <style jsx>{`
+        @keyframes pulse {
+          0%,
+          100% {
+            opacity: 0.15;
+          }
+          50% {
+            opacity: 0.25;
+          }
+        }
+      `}</style>
     </section>
   );
 };
 
 export default CategoriesHeroSection;
-

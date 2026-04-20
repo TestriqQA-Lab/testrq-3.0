@@ -10,8 +10,8 @@ import { Metadata } from "next";
 import StructuredData, { createBreadcrumbSchema, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-  title:"E-Commerce Testing Services",
-  description: "Ensure your e-commerce platform is secure, fast, and error-free. Testriq offers expert QA testing services tailored to Magento, Shopify, WooCommerce & more.",
+  title: "E-Commerce Testing |QA Testing | Testriq",
+  description: "Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.",
   keywords: [
     "e-commerce testing",
     "online store QA",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "ecommerce security testing",
     "cross-browser testing",
     "load testing",
-    "GDPR PCI DSS compliance",
+    "PCI DSS 4.0 compliance",
     "ecommerce QA services"
   ],
   authors: [{ name: "Testriq QA Lab" }],
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.testriq.com/e-commerce-testing-services',
     siteName: 'Testriq - Professional Software Testing Services',
-    title: 'E-Commerce Testing Services - Boost Conversions & Security | Testriq',
-    description: 'Ensure flawless shopping experiences, secure transactions, and high performance with Testriq\'s e-commerce testing services. Improve conversions, reduce cart abandonment, and meet compliance standards across all major platforms.',
+    title: 'E-Commerce Testing |QA Testing | Testriq',
+    description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
     images: [
       {
         url: '/OG/E-commerce-Testing-Service-Og.webp',
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@testriq',
     creator: '@testriq',
-    title: 'E-Commerce Testing Services - Boost Conversions & Security | Testriq',
-    description: 'Ensure flawless shopping experiences, secure transactions, and high performance with Testriq\'s e-commerce testing services. Improve conversions, reduce cart abandonment, and meet compliance standards across all major platforms.',
+    title: 'E-Commerce Testing |QA Testing | Testriq',
+    description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
     images: ['/OG/E-commerce-Testing-Service-Twitter.webp'],
   },
   robots: {
@@ -87,18 +87,18 @@ const EcommerceTestingPage: React.FC = () => {
   ];
   return (
     <div>
-        <StructuredData data={ecommerceTestingServiceSchema} />
-        <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-    <main className="min-h-screen bg-white">
-      <EcommerceHeroSection />
-      <EcommerceChallengesSection />
-      <EcommerceTestingServicesSection />
-      <EcommerceTestingProcessSection />
-      <EcommercePlatformsSection />
-      {/* <EcommerceCaseStudiesSection /> */}
-      <EcommerceFAQSection />
-      <EcommerceContactSection />
-    </main>
+      <StructuredData data={ecommerceTestingServiceSchema} />
+      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <main className="min-h-screen bg-white">
+        <EcommerceHeroSection />
+        <EcommerceChallengesSection />
+        <EcommerceTestingServicesSection />
+        <EcommerceTestingProcessSection />
+        <EcommercePlatformsSection />
+        {/* <EcommerceCaseStudiesSection /> */}
+        <EcommerceFAQSection />
+        <EcommerceContactSection />
+      </main>
     </div>
   );
 };

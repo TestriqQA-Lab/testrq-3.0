@@ -2,60 +2,39 @@
 
 import Link from "next/link";
 import React from "react";
-import { FaSearch, FaCog, FaCheckCircle, FaRocket } from "react-icons/fa";
+import { FaSearch, FaMobile, FaShieldAlt, FaChartLine, FaCheckCircle, FaRocket } from "react-icons/fa";
 
 const EcommerceTestingProcessSection: React.FC = () => {
   const processSteps = [
     {
       icon: FaSearch,
-      title: "Analysis & Planning",
-      description: (
-        <>
-          <Link href="/blog/post/final-reporting-in-qa-delivering-comprehensive-quality-summary">
-            Comprehensive
-          </Link>{" "}
-          platform analysis and testing strategy development
-        </>
-      ),
-    },
-    {
-      icon: FaCog,
-      title: "Test Execution",
-      description: (
-        <>
-          Systematic testing of all e-commerce{" "}
-          <Link href="/blog/post/rapid-functional-testing-why-speed-matters-in-agile-qa">
-            functionalities
-          </Link>{" "}
-          and integrations
-        </>
-      ),
+      title: "Plan & Analyze Requirements",
+      description: (<>Mapping the order lifecycle, SKU management logic, and specific <Link href="/api-testing" className="text-white underline hover:text-gray-200">shipping API requirements</Link>.</>),
     },
     {
       icon: FaCheckCircle,
-      title: "Quality Assurance",
-      description: (
-        <>
-          Thorough validation and{" "}
-          <Link href="/blog/post/validation-optimization-in-desktop-app-testing-retesting-performance-ux-assurance">
-            verification
-          </Link>{" "}
-          of all test results
-        </>
-      ),
+      title: "Functional & Checkout Validation",
+      description: (<>Testing core &apos;Add to Cart&apos; and <Link href="/manual-testing-services" className="text-white underline hover:text-gray-200">checkout flows</Link>, including guest checkouts and discount code logic.</>),
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Payment Gateway & Security Audit",
+      description: (<>Validating PCI DSS compliance in a sandbox environment and performing <Link href="/security-testing" className="text-white underline hover:text-gray-200">SSL certification checks</Link>.</>),
+    },
+    {
+      icon: FaMobile,
+      title: "Omnichannel Compatibility Testing",
+      description: (<>Running parallel tests across iOS, Android, and <Link href="/desktop-application-testing-services" className="text-white underline hover:text-gray-200">Desktop browsers</Link> to ensure visual and functional parity.</>),
+    },
+    {
+      icon: FaChartLine,
+      title: "Inventory & High-Volume Load Testing",
+      description: (<>Simulating peak traffic events (Black Friday style) and validating <Link href="/performance-testing-services" className="text-white underline hover:text-gray-200">inventory updates</Link> correctly.</>),
     },
     {
       icon: FaRocket,
-      title: "Optimization",
-      description: (
-        <>
-          Performance improvements and final{" "}
-          <Link href="/blog/post/how-to-effectively-test-a-web-application-prior-to-deployment">
-            deployment
-          </Link>{" "}
-          preparation
-        </>
-      ),
+      title: "Post-Launch Monitoring",
+      description: "Real-time checking for broken links, payment latency, and cart abandonment triggers.",
     },
   ];
 
@@ -79,7 +58,7 @@ const EcommerceTestingProcessSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {processSteps.map((step, index) => (
             <div
               key={index}

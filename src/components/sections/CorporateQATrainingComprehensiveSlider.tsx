@@ -24,12 +24,12 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       description:
         "Comprehensive manual testing methodologies and best practices",
       features: [
-        "Test Case Design & Execution",
-        "Exploratory Testing Techniques",
-        "Bug Reporting & Tracking",
+        (<><Link href="/manual-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Test Case Design & Execution</Link></>),
+        (<><Link href="/manual-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Exploratory Testing Techniques</Link></>),
+        (<><Link href="/qa-documentation-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Bug Reporting & Tracking</Link></>),
         (<><Link href="/blog/post/user-experience-testing-for-smart-devices-usability-accessibility">User Experience Testing</Link></>),
         (<><Link href="/blog/post/device-interoperability-testing-ensuring-seamless-communication-across-iot-devices">Cross-browser Compatibility</Link></>),
-        "Mobile Testing Strategies",
+        (<><Link href="/mobile-application-testing" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Mobile Testing Strategies</Link></>),
       ],
       duration: "40 Hours",
       level: "Beginner to Advanced",
@@ -42,7 +42,7 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       description: "Advanced automation frameworks and tools mastery",
       features: [
         (<><Link href="Selenium WebDriver">Selenium WebDriver</Link></>),
-        "Test Framework Development",
+        (<><Link href="/automation-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Test Framework Development</Link></>),
         (<><Link href="/blog/post/ci-cd-integration-with-automated-tests">CI/CD Integration</Link></>),
         (<><Link href="/blog/post/api-test-automation-strategy-faster-releases-reliable-integrations">API Test Automation</Link></>),
         "Data-Driven Testing",
@@ -60,10 +60,10 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       features: [
         (<><Link href="/blog/post/load-testing-in-performance-testing-complete-guide">Load Testing Fundamentals</Link></>),
         (<><Link href="/blog/post/top-performance-testing-tools-compared-jmeter-loadrunner-etc">JMeter & LoadRunner</Link></>),
-        "Performance Monitoring",
+        (<><Link href="/performance-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Performance Monitoring</Link></>),
         (<><Link href="/blog/post/etl-performance-testing">Bottleneck Analysis</Link></>),
         (<><Link href="/blog/post/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users">Scalability Testing</Link></>),
-        "Performance Tuning",
+        (<><Link href="/performance-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Performance Tuning</Link></>),
       ],
       duration: "35 Hours",
       level: "Intermediate",
@@ -75,11 +75,11 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
       icon: <FaTools className="text-3xl text-orange-600" />,
       description: "Master industry-standard QA tools and frameworks",
       features: [
-        "Test Management Tools",
+        (<><Link href="/technology-stack" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Test Management Tools</Link></>),
         "Defect Tracking Systems",
         "Version Control (Git)",
-        "Continuous Integration",
-        "Reporting & Analytics",
+        (<><Link href="/automation-testing-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Continuous Integration</Link></>),
+        (<><Link href="/data-analysis-services" className="text-gray-700 hover:text-brand-blue hover:underline decoration-brand-blue">Reporting & Analytics</Link></>),
         "Quality Metrics",
       ],
       duration: "30 Hours",
@@ -122,16 +122,10 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
             <span className="text-sm">Comprehensive Training Programs</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Master Every Aspect of
-            <span className="bg-clip-text text-brand-blue">
-              {" "}
-              Quality Assurance
-            </span>
+            Future-Proof Your Workforce for <span className="bg-clip-text text-brand-blue">2026 & Beyond</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our structured training modules are designed to transform your team
-            into QA experts. From fundamentals to advanced techniques, we cover
-            everything your organization needs.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Our enterprise-grade modules move beyond simple instruction to drive workforce transformation. We align with ISO 29119 to ensure global consistency and measurable code quality.
           </p>
         </div>
 
@@ -143,8 +137,8 @@ const CorporateQATrainingComprehensiveSlider: React.FC = () => {
                 key={module.id}
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeTab === index
-                    ? "bg-brand-blue text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-brand-blue text-white shadow-lg"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
               >
                 {module.icon}

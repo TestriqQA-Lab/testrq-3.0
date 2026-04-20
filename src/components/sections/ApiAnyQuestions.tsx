@@ -80,12 +80,10 @@ const ApiAnyQuestions: React.FC = () => {
 
         <div className="bg-white p-8 rounded-xl shadow-lg text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Get Started?
+            Ready to Secure Your API Ecosystem?
           </h3>
-          <p className="text-gray-700 text-lg mb-6 max-w-2xl mx-auto">
-            Join 200+ companies who trust our API testing expertise. Schedule a
-            free consultation to discuss your API testing needs and get a
-            customized solution for your project.
+          <p className="text-gray-700 text-lg mb-6 max-w-4xl mx-auto">
+            Don&apos;t let unstable APIs or security vulnerabilities slow down your release cycle. Partner with Testriq to implement a standard-aligned API testing strategy that scales with your business. Whether you are launching a new project or need a global QA service, we are ready to help.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link

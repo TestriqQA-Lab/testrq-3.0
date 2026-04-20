@@ -33,6 +33,16 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: #25A8E0;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: #25A8E0;
+  color: #ffffff;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -124,8 +134,8 @@ body {
 }
 
 .PhoneInput:focus-within {
-  border-color: theme('colors.brand.blue'); /* Focus ring color */
-  box-shadow: 0 0 0 2px theme('colors.brand.blue'); /* Focus ring */
+  border-color: var(--color-brand-blue); /* Focus ring color */
+  box-shadow: 0 0 0 2px var(--color-brand-blue); /* Focus ring */
   outline: none;
 }
 

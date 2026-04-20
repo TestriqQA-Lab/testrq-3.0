@@ -61,7 +61,7 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
             return (
               <div 
                 key={index}
-                className={`relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border-2 transition-all duration-300 hover:shadow-xl ${
+                className={`relative bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border-2 transition-all duration-300 hover:shadow-xl cursor-pointer ${
                   activeService === index 
                     ? 'border-orange-500 shadow-lg bg-gradient-to-br from-orange-50 to-red-50' 
                     : 'border-gray-200 hover:border-orange-300'
@@ -82,9 +82,21 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                 </div>
 
                 {/* Service Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {service.name}
-                </h3>
+                <Link
+                  href={
+                    service.name.includes("SaaS") ? "/saas-testing-services" :
+                    service.name.includes("FinTech") ? "/banking-finance-industry-testing-services" :
+                    service.name.includes("Healthcare") ? "/healthcare-testing-services" :
+                    service.name.includes("E-commerce") ? "/e-commerce-testing-services" :
+                    service.name.includes("EdTech") ? "/e-learning-testing-services" :
+                    service.name.includes("IoT") ? "/iot-device-testing-services" : "/contact-us"
+                  }
+                  className="cursor-pointer hover:text-orange-600 block mb-4"
+                >
+                  <h3 className="text-xl font-bold text-gray-900 mb-0 cursor-pointer">
+                    {service.name}
+                  </h3>
+                </Link>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
@@ -253,10 +265,10 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                   <div>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-blue-800 font-medium">Client Satisfaction</span>
-                      <span className="text-blue-800 font-bold">98%</span>
+                      <span className="text-blue-800 font-bold">100%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{width: '98%'}}></div>
+                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{width: '100%'}}></div>
                     </div>
                   </div>
                 </div>
@@ -265,8 +277,8 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
               {/* Quick Stats */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center border border-white border-opacity-30 backdrop-blur-sm">
-                  <div className="text-2xl font-bold text-orange-400 mb-1">50+</div>
-                  <div className="text-sm text-blue-800 font-medium">Projects Delivered</div>
+                  <div className="text-2xl font-bold text-orange-400 mb-1">500K+</div>
+                  <div className="text-sm text-blue-800 font-medium">Test Cases Executed</div>
                 </div>
                 <div className="bg-white bg-opacity-20 rounded-lg p-4 text-center border border-white border-opacity-30 backdrop-blur-sm">
                   <div className="text-2xl font-bold text-green-400 mb-1">99%</div>
@@ -301,7 +313,7 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
               {/* <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-200">
                 Explore Trending Services
               </button> */}
-              <Link href="/contact-us#calendly-section" className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200">
+              <Link href="https://calendar.app.google/uUHn8prcXbdqcvVb6" target="_blank" className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all duration-200 cursor-pointer">
                 Schedule Demo
               </Link>
             </div>

@@ -3,16 +3,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaFileAlt,
-  FaClipboardList,
-  FaChartLine,
-  FaCog,
-  FaShieldAlt,
   FaArrowRight,
   FaPlay,
   FaHome,
   FaChevronRight,
 } from "react-icons/fa";
 import Lightbox from "../VideoLightBox";
+import QADocumentationAnimation from "./QADocumentationAnimation";
 
 const QADocumentationHeroSection = () => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -54,23 +51,19 @@ const QADocumentationHeroSection = () => {
 
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                Professional{" "}
-                <span className="text-brand-blue">QA Documentation</span>{" "}
-                Services
+                Global QA Documentation Services:{" "}
+                <span className="text-brand-blue">Enterprise-Grade Test Management</span>
               </h1>
 
               <p className="text-xl text-gray-600 leading-relaxed">
-                Comprehensive quality assurance documentation services to
-                streamline your <Link href="/blog/post/a-step-by-step-guide-to-the-qa-documentation-services-process">QA process</Link> documentation, ensure requirements
-                traceability, and maintain consistent QA standards documentation
-                across all <Link href="/blog/post/issue-documentation-in-software-testing-how-detailed-bug-reporting-enhances-web-application-quality">software development</Link> projects.
+                As software complexity accelerates in 2026, we bridge the gap between rapid deployment and quality assurance with audit-ready, <Link href="/automation-testing-services" className="text-brand-blue hover:underline decoration-brand-blue">scalable systems</Link>. Every artifact we produce aligns with the <span className="font-bold text-brand-blue">ISO/IEC/IEEE 29119-3</span> standard.
               </p>
 
+              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                In highly regulated industries like Healthcare, Finance, and Automotive, documentation is not just paperwork—it is your license to operate. We align your <Link href="/" className="hover:text-brand-blue hover:underline decoration-brand-blue">software testing</Link> lifecycle with global standards, ensuring your products are audit-ready from day one.
+              </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our expert technical writers and QA professionals create
-                detailed <Link href="/blog/post/test-execution-comprehensive-testing-implementation">test plans</Link>, test cases, requirements <Link href="/blog/post/issue-documentation-in-mobile-testing-bug-logging-reporting-resolution-workflow">documentation</Link>, and
-                QA deliverables that enhance client collaboration, reduce
-                errors, and accelerate project delivery.
+                Our team replaces simple spreadsheets with a single source of truth for global engineering teams, delivering precision-engineered QA documentation for <Link href="/" className="text-brand-blue hover:underline decoration-brand-blue">software testing</Link> and <Link href="/security-testing" className="text-brand-blue hover:underline decoration-brand-blue">regulatory audits</Link>.
               </p>
             </div>
 
@@ -113,130 +106,7 @@ const QADocumentationHeroSection = () => {
 
           {/* Right Content - Documentation Dashboard */}
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-4 md:p-6 border border-gray-100">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <FaFileAlt className="hidden md:block text-brand-blue" />
-                  <span className="ml-3 md:ml-0">QA Documentation Hub</span>
-                  <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">
-                    Active Session
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="text-lg font-semibold text-gray-800 mb-4">
-                  Real-time documentation creation & quality monitoring
-                </div>
-
-                {/* Documentation Status */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="text-center p-3 bg-blue-50 rounded-lg">
-                    <FaClipboardList className="mx-auto text-2xl text-blue-600 mb-2" />
-                    <div className="text-sm font-medium text-blue-800">
-                      Create
-                    </div>
-                    <div className="text-xs text-blue-600">Active</div>
-                  </div>
-                  <div className="text-center p-3 bg-purple-50 rounded-lg">
-                    <FaChartLine className="mx-auto text-2xl text-purple-600 mb-2" />
-                    <div className="text-sm font-medium text-purple-800">
-                      Review
-                    </div>
-                    <div className="text-xs text-purple-600">In Progress</div>
-                  </div>
-                  <div className="text-center p-3 bg-green-50 rounded-lg">
-                    <FaShieldAlt className="mx-auto text-2xl text-green-600 mb-2" />
-                    <div className="text-sm font-medium text-green-800">
-                      Approve
-                    </div>
-                    <div className="text-xs text-green-600">Queued</div>
-                  </div>
-                </div>
-
-                {/* Metrics */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <div className="text-sm text-gray-600">
-                      Documents Created
-                    </div>
-                    <div className="text-2xl font-bold text-blue-600">
-                      47 Completed
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-600">Quality Score</div>
-                    <div className="text-2xl font-bold text-green-600">98%</div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <div className="text-sm text-gray-600">Templates Used</div>
-                    <div className="text-2xl font-bold text-purple-600">
-                      12 Active
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-gray-600">Coverage</div>
-                    <div className="text-2xl font-bold text-orange-600">
-                      95%
-                    </div>
-                  </div>
-                </div>
-
-                {/* Progress Bar */}
-                <div className="mb-4">
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
-                    <span>Documentation Progress</span>
-                    <span>87% Complete</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
-                    <div
-                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
-                      style={{ width: "87%" }}
-                    ></div>
-                  </div>
-                </div>
-
-                {/* Document Types */}
-                <div className="space-y-2">
-                  <div className="flex justify-between items-center text-sm">
-                    <span>Test Plans</span>
-                    <span className="text-blue-600 font-medium">95%</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span>Test Cases</span>
-                    <span className="text-green-600 font-medium">92%</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm">
-                    <span>Requirements Docs</span>
-                    <span className="text-purple-600 font-medium">88%</span>
-                  </div>
-                </div>
-
-                {/* Platform Icons */}
-                <div className="flex justify-center space-x-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-center w-8 h-8 bg-blue-100 rounded">
-                    <FaFileAlt className="text-blue-600 text-sm" />
-                  </div>
-                  <div className="flex items-center justify-center w-8 h-8 bg-green-100 rounded">
-                    <FaClipboardList className="text-green-600 text-sm" />
-                  </div>
-                  <div className="flex items-center justify-center w-8 h-8 bg-purple-100 rounded">
-                    <FaChartLine className="text-purple-600 text-sm" />
-                  </div>
-                  <div className="flex items-center justify-center w-8 h-8 bg-orange-100 rounded">
-                    <FaCog className="text-orange-600 text-sm" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <QADocumentationAnimation />
           </div>
         </div>
       </div>
