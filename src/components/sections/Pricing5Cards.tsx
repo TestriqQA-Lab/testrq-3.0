@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaArrowRight, FaChevronDown } from "react-icons/fa";
-import Link from "next/link";
 import { pricingPackages, type PricingPackage } from "@/data/pricingPackages";
+import PricingFormModal from "@/components/sections/PricingFormModal";
 
 const colorMap: Record<string, {
     text: string;
@@ -48,9 +48,10 @@ const AccordionSection: React.FC<AccordionSectionProps> = ({ title, isOpen, onTo
 interface PricingCardProps {
     pkg: PricingPackage;
     index: number;
+    onGetStarted: (pkg: PricingPackage) => void;
 }
 
-const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
+const PricingCard: React.FC<PricingCardProps> = ({ pkg, index, onGetStarted }) => {
     const theme = colorMap[pkg.color];
     const [openSections, setOpenSections] = useState<Record<string, boolean>>({
         whatWeTest: false,
@@ -172,19 +173,37 @@ const PricingCard: React.FC<PricingCardProps> = ({ pkg, index }) => {
                 <div className={`text-[10px] font-bold text-neutral-500 bg-neutral-50 px-3 py-2 rounded-lg border border-neutral-100 text-center tracking-wide`}>
                     ✨ {pkg.addOn.replace(/(\d+)\s*USD/, "$$$1")}
                 </div>
-                <Link
-                    href="/contact-us"
-                    className={`w-full flex items-center justify-center gap-2 ${theme.button} text-white px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 group/btn shadow-lg shadow-blue-500/10`}
+                <button
+                    onClick={() => onGetStarted(pkg)}
+                    className={`w-full flex items-center justify-center gap-2 ${theme.button} text-white px-5 py-3 rounded-xl text-sm font-bold transition-all duration-300 group/btn shadow-lg shadow-blue-500/10 cursor-pointer`}
                 >
                     Get Started
                     <FaArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                </Link>
+                </button>
             </div>
         </motion.div>
     );
 };
 
 const Pricing5Cards: React.FC = () => {
+    const [selectedPkg, setSelectedPkg] = useState<PricingPackage | null>(null);
+
+    const handleGetStarted = useCallback((pkg: PricingPackage) => {
+        setSelectedPkg(pkg);
+    }, []);
+
+    const handleCloseModal = useCallback(() => {
+        setSelectedPkg(null);
+    }, []);
+
+    // Format the price for display in modal
+    const formatPrice = (price: string) => {
+        const match = price.match(/\d+/);
+        const amount = match ? `$${match[0]}` : "Custom";
+        const detail = price.replace(/Starting from \d+ USD /, '');
+        return `Starting from ${amount} - ${detail}`;
+    };
+
     return (
         <section className="bg-white py-2 px-4 md:px-8 lg:px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
@@ -192,11 +211,20 @@ const Pricing5Cards: React.FC = () => {
                 <div className="flex lg:grid lg:grid-cols-4 gap-4 items-stretch overflow-x-auto snap-x snap-mandatory pb-8 scrollbar-hide lg:overflow-visible">
                     {pricingPackages.map((pkg, idx) => (
                         <div key={pkg.id} className="h-full">
-                            <PricingCard pkg={pkg} index={idx} />
+                            <PricingCard pkg={pkg} index={idx} onGetStarted={handleGetStarted} />
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Pricing Form Popup Modal */}
+            <PricingFormModal
+                isOpen={!!selectedPkg}
+                onClose={handleCloseModal}
+                packageName={selectedPkg?.name || ""}
+                packagePrice={selectedPkg ? formatPrice(selectedPkg.price) : ""}
+                accentColor={selectedPkg?.color || "blue"}
+            />
         </section>
     );
 };
