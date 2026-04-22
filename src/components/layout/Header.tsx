@@ -34,6 +34,8 @@ const Navbar = () => {
   const [activeDesktopSubmenu, setActiveDesktopSubmenu] = useState<
     number | null
   >(null); // State to track active submenu in desktop
+  const [activeMegaMenuCategory, setActiveMegaMenuCategory] = useState<number>(0); // State for desktop mega menu active category tab
+  const [activeMobileMegaCategory, setActiveMobileMegaCategory] = useState<number | null>(null); // State for mobile mega menu nested accordion
   const [activeLink, setActiveLink] = useState<string>(""); // State to track the active link
   const [activeParent, setActiveParent] = useState<string>(""); // State to track the active parent menu item
 
@@ -73,6 +75,12 @@ const Navbar = () => {
     setActiveSubmenu(null);
     setActiveTabletSubmenu(null);
     setActiveDesktopSubmenu(null); // Also close desktop submenu
+    setActiveMegaMenuCategory(0); // Reset desktop mega menu
+    setActiveMobileMegaCategory(null); // Reset mobile mega menu
+  };
+
+  const toggleMobileMegaCategory = (index: number) => {
+    setActiveMobileMegaCategory(activeMobileMegaCategory === index ? null : index);
   };
 
   // Define menu items with proper types and links
@@ -91,135 +99,86 @@ const Navbar = () => {
       link: "",
       submenu: [
         {
-          heading: "By Expertise Focus Area",
+          heading: "By Testing Type / Specialized QA Services",
           services: [
-            { label: "LaunchFast QA", link: "/launchfast-qa" },
-            {
-              label: "Exploratory Testing",
-              link: "/exploratory-testing",
-            },
-            {
-              label: "Web Application Testing",
-              link: "/web-application-testing-services",
-            },
-            {
-              label: "Desktop Application Testing",
-              link: "/desktop-application-testing-services",
-            },
-            {
-              label: "Mobile Application Testing",
-              link: "/mobile-application-testing",
-            },
-            {
-              label: "IoT Testing",
-              link: "/iot-device-testing-services",
-            },
-            {
-              label: "AI Application Testing",
-              link: "/ai-application-testing",
-            },
-            {
-              label: "Robotics Testing",
-              link: "/robotics-testing-services",
-            },
-            {
-              label: "Smart Device Testing",
-              link: "/smart-device-testing-services",
-            },
-            {
-              label: "ETL Testing",
-              link: "/etl-testing-services",
-            },
+            { label: "Accessibility Testing", link: "/accessibility-testing-services" },
+            { label: "SaaS Testing", link: "/saas-testing-services" },
+            { label: "Managed Testing", link: "/managed-testing-services" },
+            { label: "Ad-hoc Testing", link: "/ad-hoc-testing" },
+            { label: "User Acceptance Testing (UAT)", link: "/user-acceptance-testing" },
+            { label: "Microservices Testing", link: "/microservices-testing" },
+            { label: "Migration Testing", link: "/migration-testing" },
+            { label: "Embedded Testing", link: "/embedded-testing-services" },
+            { label: "Usability Testing", link: "/usability-testing-services" },
+            { label: "Blockchain App Testing", link: "/blockchain-app-testing-services" },
+            { label: "Test Data Management", link: "/test-data-management-services" },
+            { label: "Application Architecture Inspection", link: "/application-architecture-inspection-services" },
+            { label: "Timezone Testing", link: "/timezone-testing-services" }
           ],
         },
         {
           heading: "By Testing Coverage",
           services: [
-            {
-              label: "Manual Testing",
-              link: "/manual-testing-services",
-            },
-            {
-              label: "Automation Testing",
-              link: "/automation-testing-services",
-            },
-            {
-              label: "API Testing",
-              link: "/api-testing",
-            },
+            { label: "Functional Testing", link: "/functional-testing-services" },
+            { label: "Manual Testing", link: "/manual-testing-services" },
+            { label: "Automation Testing", link: "/automation-testing-services" },
+            { label: "API Testing", link: "/api-testing" },
             { label: "Regression Testing", link: "/regression-testing" },
-            {
-              label: "Performance Testing",
-              link: "/performance-testing-services",
-            },
+            { label: "Performance Testing", link: "/performance-testing-services" },
             { label: "Security Testing", link: "/security-testing" },
-            {
-              label: "QA Documentation Services",
-              link: "/qa-documentation-services",
-            },
+            { label: "Cyber Security Testing", link: "/cyber-security-testing-services" },
+            { label: "Compatibility Testing", link: "/compatibility-testing-services" },
+            { label: "Continuous Testing (CI/CD)", link: "/continuous-testing-services-cicd-pipeline" },
+            { label: "QA Documentation Services", link: "/qa-documentation-services" },
             { label: "Data Analysis", link: "/data-analysis-services" },
-            {
-              label: "Corporate QA Training",
-              link: "/corporate-qa-training",
-            },
-            {
-              label: "SAP Testing",
-              link: "/sap-testing-services",
-            },
+            { label: "Corporate QA Training", link: "/corporate-qa-training" },
+            { label: "SAP Testing", link: "/sap-testing-services" }
+          ],
+        },
+        {
+          heading: "By Methodology / Approach",
+          services: [
+            { label: "Shift-Left Testing", link: "/shift-left-testing" },
+            { label: "Agile Testing", link: "/agile-testing-services" },
+            { label: "Continuous Testing (CI/CD)", link: "/continuous-testing-services-cicd-pipeline" }
+          ],
+        },
+        {
+          heading: "By Expertise Focus Area",
+          services: [
+            { label: "LaunchFast QA", link: "/launchfast-qa" },
+            { label: "Exploratory Testing", link: "/exploratory-testing" },
+            { label: "Web Application Testing", link: "/web-application-testing-services" },
+            { label: "Desktop Application Testing", link: "/desktop-application-testing-services" },
+            { label: "Mobile Application Testing", link: "/mobile-application-testing" },
+            { label: "IoT Testing", link: "/iot-device-testing-services" },
+            { label: "AI Application Testing", link: "/ai-application-testing" },
+            { label: "Robotics Testing", link: "/robotics-testing-services" },
+            { label: "Smart Device Testing", link: "/smart-device-testing-services" },
+            { label: "ETL Testing", link: "/etl-testing-services" },
+            { label: "Azure Testing", link: "/azure-testing-services" },
+            { label: "Microservices Testing", link: "/microservices-testing" }
           ],
         },
         {
           heading: "By Industries Expertise",
           services: [
-            {
-              label: "Ecommerce Testing Service",
-              link: "/e-commerce-testing-services",
-            },
-            {
-              label: "Elearning Testing Service",
-              link: "/e-learning-testing-services",
-            },
-            {
-              label: "Healthcare Testing Service",
-              link: "/healthcare-testing-services",
-            },
-            {
-              label: "Gaming App Testing Service",
-              link: "/gaming-app-testing-services",
-            },
-            {
-              label: "Iot Appliances & App Testing Service",
-              link: "/iot-appliances-and-apps-testing-services",
-            },
-            {
-              label: "Banking & Finance Testing Service",
-              link: "/banking-finance-industry-testing-services",
-            },
-            {
-              label: "Telecommunication Testing Service",
-              link: "/telecommunications-testing-services",
-            },
+            { label: "Ecommerce Testing Service", link: "/e-commerce-testing-services" },
+            { label: "Elearning Testing Service", link: "/e-learning-testing-services" },
+            { label: "Healthcare Testing Service", link: "/healthcare-testing-services" },
+            { label: "Gaming App Testing Service", link: "/gaming-app-testing-services" },
+            { label: "Iot Appliances & App Testing Service", link: "/iot-appliances-and-apps-testing-services" },
+            { label: "Banking & Finance Testing Service", link: "/banking-finance-industry-testing-services" },
+            { label: "Telecommunication Testing Service", link: "/telecommunications-testing-services" }
           ],
         },
         {
           heading: "Trust Certification",
           services: [
-            {
-              label: "Matrimonial Apps Certification",
-              link: "/matrimonial-apps-certification",
-            },
-            {
-              label: "Dating Apps Certification",
-              link: "/dating-app-certification",
-            },
-            {
-              label: "Trading Apps Certification",
-              link: "/trading-apps-certification",
-            },
-            {
-              label: "Shopping Apps Certification",
-              link: "/shopping-apps-certification",
-            },
+            { label: "Matrimonial Apps Certification", link: "/matrimonial-apps-certification" },
+            { label: "Dating Apps Certification", link: "/dating-app-certification" },
+            { label: "Trading Apps Certification", link: "/trading-apps-certification" },
+            { label: "Shopping Apps Certification", link: "/shopping-apps-certification" }
           ],
         },
       ],
@@ -249,11 +208,11 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl text-gray-700 text-sm xl:text-base relative">
+        <ul className="hidden xl:flex space-x-6 2xl:space-x-4 w-max-screen-xl text-gray-700 text-sm xl:text-base">
           {menuItems.map((item, idx) => (
             <li
               key={idx}
-              className="relative cursor-pointer"
+              className={`${item.label === "Services" ? "static" : "relative"} cursor-pointer`}
               onMouseEnter={() =>
                 item.submenu && handleDesktopSubmenuEnter(idx)
               }
@@ -291,76 +250,64 @@ const Navbar = () => {
               {item.label === "Services" &&
                 item.submenu &&
                 activeDesktopSubmenu === idx && (
-                  <div className="absolute top-full mt-0 left-10 right-0 ml-[calc(-42vw+50%)] mr-[calc(-50vw+50%)] bg-white shadow-lg z-[60] w-screen">
-                    <div className="max-w-7xl mx-auto grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-8 py-6 xl:py-8 px-6 xl:px-8">
+                  <div className="absolute top-full mt-0 left-1/2 -translate-x-1/2 z-[60] w-screen max-w-7xl before:content-[''] before:absolute before:-top-6 before:left-0 before:w-full before:h-6 before:bg-transparent">
+                    <div className="bg-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] rounded-b-xl overflow-hidden border border-gray-100 flex h-[500px] w-full">
+                      {/* Left Sidebar - Categories */}
+                      <div className="w-1/3 bg-gray-50/80 p-6 overflow-y-auto border-r border-gray-100 flex flex-col gap-1">
+                      <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-4">Services Catalog</h3>
                       {item.submenu.map((column, colIdx) => {
-                        // Check if the column is of type { heading: string, services: SubmenuItem[] }
-                        if ("label" in column && "link" in column) {
-                          return (
-                            <div
-                              key={colIdx}
-                              className="space-y-3 xl:space-y-4"
-                            >
-                              <Link
-                                href={column.link}
-                                onClick={() =>
-                                  handleLinkClick(column.link, item.label)
-                                }
-                                aria-label={column.label}
-                              >
-                                <h2
-                                  className={`text-base xl:text-lg font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer ${activeLink === column.link
-                                    ? "text-[theme(color.brand.blue)]"
-                                    : ""
-                                    }`}
-                                >
-                                  {column.label}
-                                </h2>
-                              </Link>
-                            </div>
-                          );
-                        }
-
-                        // If it's the complex object, render the heading and services
+                        if (!("heading" in column)) return null;
+                        const isActive = activeMegaMenuCategory === colIdx;
                         return (
-                          <div
+                          <button
                             key={colIdx}
-                            className="space-y-3 xl:space-y-4 xl:gap-8"
+                            onMouseEnter={() => setActiveMegaMenuCategory(colIdx)}
+                            onClick={() => setActiveMegaMenuCategory(colIdx)}
+                            className={`w-full text-left px-4 py-3 rounded-lg text-[15px] font-semibold transition-all duration-200 flex items-center justify-between group ${
+                              isActive
+                                ? "bg-white text-[theme(color.brand.blue)] shadow-sm border border-gray-100"
+                                : "text-gray-600 hover:bg-white hover:text-gray-900 border border-transparent"
+                            }`}
                           >
-                            <h2 className="text-base xl:text-lg font-semibold text-gray-800">
-                              {column.heading}
-                            </h2>
-                            <div className="flex flex-row">
-                              <ul className="space-y-2 xl:space-y-4">
-                                {column.services.map((service, subIdx) => (
-                                  <li key={subIdx}>
-                                    <Link
-                                      href={service.link}
-                                      onClick={() =>
-                                        handleLinkClick(
-                                          service.link,
-                                          item.label
-                                        )
-                                      }
-                                      aria-label={service.label}
-                                    >
-                                      <span
-                                        className={`text-sm xl:text-base text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer hover:bg-blue-50 rounded-md p-2 ${activeLink === service.link
-                                          ? "text-[theme(color.brand.blue)]"
-                                          : ""
-                                          }`}
-                                      >
-                                        {service.label}
-                                      </span>
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
+                            {column.heading}
+                            <FaArrowRight className={`w-3 h-3 transition-all duration-200 ${isActive ? 'translate-x-0 opacity-100 text-[theme(color.brand.blue)]' : '-translate-x-2 opacity-0 text-gray-400 group-hover:opacity-50 group-hover:-translate-x-1'}`} />
+                          </button>
                         );
                       })}
                     </div>
+
+                    {/* Right Content - Services Links */}
+                    <div className="w-2/3 bg-white p-8 overflow-y-auto relative">
+                      {(() => {
+                        const activeCol = item.submenu[activeMegaMenuCategory];
+                        if (!activeCol || !("services" in activeCol)) return null;
+
+                        return (
+                          <div className="animate-in fade-in slide-in-from-right-4 duration-300 fill-mode-both" key={activeMegaMenuCategory}>
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                              <span className="w-1.5 h-6 bg-[theme(color.brand.blue)] rounded-full"></span>
+                              {activeCol.heading}
+                            </h2>
+                            <div className="grid grid-cols-2 gap-x-8 gap-y-1">
+                              {activeCol.services.map((service, subIdx) => (
+                                <Link
+                                  key={subIdx}
+                                  href={service.link}
+                                  onClick={() => handleLinkClick(service.link, item.label)}
+                                  className="group flex items-start gap-3 py-2 px-3 rounded-xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100"
+                                >
+                                  <div className="w-1.5 h-1.5 rounded-full bg-blue-200 mt-2 group-hover:bg-[theme(color.brand.blue)] transition-colors shrink-0"></div>
+                                  <span className="text-base font-medium text-gray-700 group-hover:text-[theme(color.brand.blue)] transition-colors leading-snug">
+                                    {service.label}
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  </div>
                   </div>
                 )}
 
@@ -488,56 +435,42 @@ const Navbar = () => {
                 {item.submenu && activeTabletSubmenu === idx && (
                   <div className="absolute top-full left-0 bg-white shadow-lg rounded-md py-3 w-80 max-h-96 overflow-y-auto z-[60] mt-1 border">
                     {item.label === "Services" && item.submenu ? (
-                      <div className="px-4">
+                      <div className="px-2 space-y-1">
                         {item.submenu.map((column, colIdx) => {
-                          if ("label" in column && "link" in column) {
-                            return (
-                              <div key={colIdx} className="mb-4">
-                                <Link
-                                  href={column.link}
-                                  onClick={() =>
-                                    handleLinkClick(column.link, item.label)
-                                  }
-                                  aria-label={column.label}
-                                >
-                                  <h3
-                                    className={`text-sm font-semibold text-gray-700 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-gray-50 ${activeLink === column.link
-                                      ? "text-[theme(color.brand.blue)]"
-                                      : ""
-                                      }`}
-                                  >
-                                    {column.label}
-                                  </h3>
-                                </Link>
-                              </div>
-                            );
-                          }
+                          if ("label" in column && "link" in column) return null; // Fallback
+                          
+                          const isActive = activeMobileMegaCategory === colIdx;
                           return (
-                            <div key={colIdx} className="mb-4">
-                              <h3 className="text-sm font-semibold text-gray-800 mb-2 px-2 py-1 bg-gray-100 rounded-md">
+                            <div key={colIdx} className="bg-gray-50 rounded-lg overflow-hidden border border-gray-100">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  toggleMobileMegaCategory(colIdx);
+                                }}
+                                className={`w-full text-left px-4 py-3 flex items-center justify-between font-semibold text-sm transition-colors ${
+                                  isActive ? "text-[theme(color.brand.blue)] bg-blue-50/50" : "text-gray-700 hover:bg-gray-100"
+                                }`}
+                              >
                                 {column.heading}
-                              </h3>
-                              <div className="grid grid-cols-1 gap-1 ml-2">
-                                {column.services.map((service, subIdx) => (
-                                  <Link
-                                    key={subIdx}
-                                    href={service.link}
-                                    onClick={() =>
-                                      handleLinkClick(service.link, item.label)
-                                    }
-                                    aria-label={service.label}
-                                  >
-                                    <span
-                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] cursor-pointer p-1 rounded hover:bg-gray-50 ${activeLink === service.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
-                                        }`}
+                                <MdKeyboardArrowDown className={`w-4 h-4 transition-transform duration-200 ${isActive ? 'rotate-180 text-[theme(color.brand.blue)]' : 'text-gray-400'}`} />
+                              </button>
+                              
+                              {isActive && (
+                                <div className="px-4 py-3 bg-white space-y-1 border-t border-gray-100">
+                                  {column.services.map((service, subIdx) => (
+                                    <Link
+                                      key={subIdx}
+                                      href={service.link}
+                                      onClick={() => handleLinkClick(service.link, item.label)}
                                     >
-                                      {service.label}
-                                    </span>
-                                  </Link>
-                                ))}
-                              </div>
+                                      <span className={`flex items-center gap-2 text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-2 hover:bg-blue-50/30 px-2 rounded-md transition-colors ${activeLink === service.link ? "text-[theme(color.brand.blue)] font-medium" : ""}`}>
+                                        <span className="w-1 h-1 rounded-full bg-gray-300"></span>
+                                        {service.label}
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           );
                         })}
@@ -647,58 +580,44 @@ const Navbar = () => {
 
                 {/* Submenu for mobile */}
                 {item.submenu && activeSubmenu === idx && (
-                  <div className="mt-2 bg-gray-50 rounded-md p-3 max-h-80 overflow-y-auto">
+                  <div className="mt-2 bg-white rounded-xl p-2 max-h-[60vh] overflow-y-auto border border-gray-100 shadow-inner">
                     {item.label === "Services" && item.submenu ? (
-                      <div className="space-y-4">
+                      <div className="space-y-2">
                         {item.submenu.map((column, colIdx) => {
-                          if ("label" in column && "link" in column) {
-                            return (
-                              <div key={colIdx}>
-                                <Link
-                                  href={column.link}
-                                  onClick={() =>
-                                    handleLinkClick(column.link, item.label)
-                                  }
-                                  aria-label={column.label}
-                                >
-                                  <h3
-                                    className={`text-sm font-semibold text-gray-800 hover:text-[theme(color.brand.blue)] cursor-pointer p-2 rounded-md hover:bg-white ${activeLink === column.link
-                                      ? "text-[theme(color.brand.blue)]"
-                                      : ""
-                                      }`}
-                                  >
-                                    {column.label}
-                                  </h3>
-                                </Link>
-                              </div>
-                            );
-                          }
+                          if ("label" in column && "link" in column) return null; // Fallback
+                          
+                          const isActive = activeMobileMegaCategory === colIdx;
                           return (
-                            <div key={colIdx}>
-                              <h3 className="text-sm font-semibold text-gray-800 mb-2 px-2 py-1 bg-white rounded-md">
+                            <div key={colIdx} className="rounded-lg border border-gray-100 overflow-hidden shadow-sm bg-gray-50">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  toggleMobileMegaCategory(colIdx);
+                                }}
+                                className={`w-full text-left px-4 py-3 flex items-center justify-between font-semibold text-[15px] transition-colors ${
+                                  isActive ? "bg-blue-50 text-[theme(color.brand.blue)]" : "text-gray-700 hover:bg-gray-100"
+                                }`}
+                              >
                                 {column.heading}
-                              </h3>
-                              <div className="grid grid-cols-2 gap-1 ml-2">
-                                {column.services.map((service, subIdx) => (
-                                  <Link
-                                    key={subIdx}
-                                    href={service.link}
-                                    onClick={() =>
-                                      handleLinkClick(service.link, item.label)
-                                    }
-                                    aria-label={service.label}
-                                  >
-                                    <span
-                                      className={`block text-xs text-gray-600 hover:text-[theme(color.brand.blue)] py-1 cursor-pointer hover:bg-white rounded px-1 ${activeLink === service.link
-                                        ? "text-[theme(color.brand.blue)]"
-                                        : ""
-                                        }`}
+                                <MdKeyboardArrowDown className={`w-5 h-5 transition-transform duration-200 ${isActive ? 'rotate-180 text-[theme(color.brand.blue)]' : 'text-gray-400'}`} />
+                              </button>
+                              
+                              {isActive && (
+                                <div className="p-3 bg-white border-t border-gray-100">
+                                  {column.services.map((service, subIdx) => (
+                                    <Link
+                                      key={subIdx}
+                                      href={service.link}
+                                      onClick={() => handleLinkClick(service.link, item.label)}
                                     >
-                                      {service.label}
-                                    </span>
-                                  </Link>
-                                ))}
-                              </div>
+                                      <span className={`flex items-center gap-2 text-sm text-gray-600 hover:text-[theme(color.brand.blue)] py-2.5 px-3 rounded-md hover:bg-blue-50/50 transition-colors ${activeLink === service.link ? "text-[theme(color.brand.blue)] font-medium bg-blue-50/30" : ""}`}>
+                                        <div className="w-1 h-1 rounded-full bg-blue-200"></div>
+                                        {service.label}
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           );
                         })}
