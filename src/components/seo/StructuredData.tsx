@@ -5218,72 +5218,357 @@ export const timezoneFAQSchema = {
 
 export const pricingServiceSchema = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "QA Testing Packages & Pricing",
-  "description": "Transparent, predictable pricing for world-class software testing services. Choose from monthly Managed QA retainers or project-based audits.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Testriq QA Lab",
-    "url": "https://www.testriq.com"
-  },
-  "serviceType": "Software Testing Services",
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "QA Testing Bundles",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Web App Testing bundle",
-          "description": "Functional, integration, cross-browser, and performance testing for SaaS, portals, and online stores."
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "400",
-          "priceCurrency": "USD"
-        }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq",
+      "alternateName": "Testriq QA Company",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/testriq-logo.png",
+        "width": 250,
+        "height": 60
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile App Testing bundle",
-          "description": "Real device testing for iOS and Android, focusing on UI responsiveness, touch gestures, and network conditions."
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "500",
-          "priceCurrency": "USD"
-        }
+      "description": "ISTQB Certified partner providing end-to-end QA, DevSecOps, and AI-driven quality engineering. Global reach serving US, UK, EU, India, and UAE markets.",
+      "foundingDate": "2010",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+        "addressLocality": "Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "API Testing Pack",
-          "description": "Functional validation, schema validation, and performance testing for REST, GraphQL, or SOAP architectures."
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "350",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "VAPT (Security) Pack",
-          "description": "Comprehensive security testing including vulnerability assessment and manual pentesting (OWASP Top 10)."
-        },
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "800",
-          "priceCurrency": "USD"
-        }
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "customer service",
+        "email": "contact@testriq.com",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": ["US", "GB", "IN", "AE", "EU"]
+      }],
+      "sameAs": [
+        "linkedin.com/company/testriq-qa-lab/",
+        "https://twitter.com/testriq",
+        "https://www.facebook.com/testriq.lab/",
+        "https://www.instagram.com/testriq/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "425",
+        "reviewCount": "425"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.testriq.com/#website",
+      "name": "Testriq",
+      "url": "https://www.testriq.com",
+      "publisher": { "@id": "https://www.testriq.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/pricing",
+      "url": "https://www.testriq.com/pricing",
+      "name": "QA Testing Packages & Pricing | Transparent Software Testing Costs",
+      "description": "No fluff, just results. Transparent pricing for world-class software testing services.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://www.testriq.com/#website" },
+      "about": { "@id": "https://www.testriq.com/#organization" },
+      "breadcrumb": { "@id": "https://www.testriq.com/pricing#breadcrumb" },
+      "lastReviewed": "2026-04-23",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".pricing-hero > p:first-of-type"]
+      },
+      "significantLink": [
+        "https://www.testriq.com/contact-us",
+        "https://www.testriq.com/web-application-testing-services",
+        "https://www.testriq.com/mobile-application-testing",
+        "https://www.testriq.com/api-testing",
+        "https://www.testriq.com/security-testing"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/pricing#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.testriq.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://www.testriq.com/pricing#offer-catalog",
+      "name": "Testriq QA Testing Packages & Pricing",
+      "description": "Choose the perfect testing bundle for your project's phase. Clear deliverables, fast turnarounds, and no hidden fees.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#web-app-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#mobile-app-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#api-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#vapt-security" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#web-app-testing",
+      "name": "Web App Testing Bundle",
+      "description": "Comprehensive web application testing including Functional Testing, Integration Tests, Cross-Browser & Device Compatibility, Usability (UX), Performance, and Security testing. Deliverables include a Bug List with video/screenshot evidence, Vulnerability Report, and Performance Scorecard.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "Web Application Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web App Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integration Tests" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cross-Browser & Device Compatibility" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Usability (UX) Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Testing" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per mid size project",
+          "description": "Custom pricing per mid size project. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Browser Coverage", "value": "Windows, MAC, Android Phone & Tablets, Apple Phone & Tablets" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Bug List (Video/Screenshot + Steps), Vulnerability Report, Performance Scorecard" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#mobile-app-testing",
+      "name": "Mobile App Testing Bundle",
+      "description": "End-to-end mobile application testing for iOS and Android including Functional Testing, UI responsiveness, touch gestures, network condition testing (4G/5G vs Wi-Fi), API Integration Tests, Performance, and Security. Deliverables include Bug List, crash-report log, and UX Friction report.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "Mobile Application Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mobile App Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI Responsiveness on Small Screens" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Touch Gesture Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Network Condition Testing (4G/5G vs Wi-Fi)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API Integration Tests" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Testing" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per mid size App, iOS + Android",
+          "description": "Custom pricing per mid size mobile app (iOS + Android). Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Device Coverage", "value": "Real iOS & Android devices, latest to lowest OS versions" },
+        { "@type": "PropertyValue", "name": "Special Tests", "value": "Battery drain & heat check, Push notification delivery, Real world network conditions" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Bug List (Video/Screenshot + Steps), Crash-Report Log, UX Friction Report" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#api-testing",
+      "name": "API Testing Pack",
+      "description": "Comprehensive API testing for up to 20 endpoints including Functional Validation, Schema Validation (JSON/XML), Negative Testing (4xx/5xx), Auth & Header Validation (JWT/OAuth), Performance (latency, throughput, rate limiting), and Data Integrity checks. Covers REST, GraphQL, and SOAP architectures.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "API Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "API Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Validation — Endpoint Logic & CRUD Operations" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Schema Validation — JSON/XML Structure & Data Types" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Negative Testing — Error Codes (4xx, 5xx) & Edge Cases" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auth & Headers — Token Validation (JWT/OAuth) & API Keys" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance — Latency, Throughput & Rate Limiting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Integrity — Database Consistency After API Calls" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per project (up to 20 endpoints)",
+          "description": "Custom pricing per project covering up to 20 API endpoints. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Architecture Support", "value": "REST, GraphQL, SOAP" },
+        { "@type": "PropertyValue", "name": "Environment Support", "value": "Dev, Staging, Production" },
+        { "@type": "PropertyValue", "name": "Tools Included", "value": "Postman / Insomnia collections for easy re-running" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Full API Audit Report, Performance Benchmarks, Ready-to-use Postman Collection" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#vapt-security",
+      "name": "VAPT (Security) Pack",
+      "description": "Vulnerability Assessment and Penetration Testing for web or mobile applications. Includes automated scanning, manual pentesting, OWASP Top 10 coverage, sensitive data exposure checks, server configuration audits, and privilege escalation testing.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "VAPT Security Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "VAPT Security Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vulnerability Assessment — Automated Scanning" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manual Pentesting — Human-Led Exploitation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OWASP Top 10 Coverage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sensitive Data Exposure Checks" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Server Configuration — SSL/TLS & Port Audits" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Privilege Escalation Testing" } }
+        ]
+      },
+      "termsOfService": "1 complimentary re-scan after vulnerability fixes",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per audit (Web or Mobile)",
+          "description": "Custom pricing per security audit. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Approach", "value": "Hybrid — Automated Tools + Manual Expert Review" },
+        { "@type": "PropertyValue", "name": "Special Inclusions", "value": "Business Logic Audit, PoC for every vulnerability, Executive Summary + Tech Details" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "VAPT Audit Report (Critical/High/Medium/Low), Remediation Roadmap, Security Certificate" },
+        { "@type": "PropertyValue", "name": "Free Re-scan", "value": "1 complimentary re-scan after fixes" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.testriq.com/pricing#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in Testriq's Web App Testing bundle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Testriq's Web App Testing bundle includes Functional Testing, Integration Tests, Cross-Browser & Device Compatibility, Usability (UX), Performance, and Security testing. Testing covers Windows, MAC, Android Phone & Tablets, and Apple Phone & Tablets. You receive a Bug List with video/screenshot evidence, a Vulnerability Report, and a Performance Scorecard. Two bug verification cycles are included free of cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Mobile App Testing bundle cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Mobile App Testing bundle covers Functional Testing, UI responsiveness on small screens, touch gestures, app behavior on 4G/5G vs Wi-Fi, API Integration Tests, Performance, and Security testing. Testing is done on real iOS & Android devices across latest to lowest OS versions, including battery drain & heat checks, push notification delivery, and real-world network conditions. Deliverables include a Bug List, crash-report log, and UX Friction report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many API endpoints are covered in the API Testing Pack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The API Testing Pack covers up to 20 endpoints per project. It includes Functional Validation, Schema Validation (JSON/XML), Negative Testing (4xx/5xx error codes), Auth & Header Validation (JWT/OAuth), Performance testing (latency, throughput, rate limiting), and Data Integrity checks. Testing supports REST, GraphQL, and SOAP architectures across Dev, Staging, and Production environments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the VAPT (Security) Pack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The VAPT Pack includes Vulnerability Assessment (automated scanning), Manual Pentesting (human-led exploitation), OWASP Top 10 coverage (Injection, XSS, Broken Auth), Sensitive Data Exposure checks, Server Configuration audits (SSL/TLS & open ports), and Privilege Escalation testing. It uses a hybrid approach of automated tools and manual expert review. Deliverables include a categorized VAPT Audit Report, Remediation Roadmap, and a Security Certificate. One complimentary re-scan is included after you fix the vulnerabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Testriq offer custom pricing for larger projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All Testriq testing bundles are priced per project scope and can be customized based on application complexity, number of features, and testing depth. Contact our experts for a personalized quote with clear deliverables, fast turnarounds, and no hidden fees."
+          }
+        }
+      ]
+    }
+  ]
 };

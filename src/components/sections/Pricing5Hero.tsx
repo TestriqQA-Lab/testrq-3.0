@@ -41,14 +41,14 @@ const Pricing5Hero: React.FC = () => {
                         </span>
                     </motion.h1>
 
-                    <motion.p
+                    <motion.h2
                         initial={{ opacity: 0, y: 16 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.15 }}
                         className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium"
                     >
                         Choose the perfect testing bundle for your project&apos;s phase. Clear deliverables, fast turnarounds, and no hidden fees.
-                    </motion.p>
+                    </motion.h2>
                 </div>
             </div>
         </section>

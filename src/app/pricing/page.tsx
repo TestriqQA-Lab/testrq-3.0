@@ -3,12 +3,11 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     pricingServiceSchema,
-    createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
 import { HeroLoader, ContentLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
-    title: "QA Testing Packages & Pricing | Transparent Software Testing Costs",
+    title: "Software Testing Pricing & QA Packages",
     description:
         "Transparent, predictable pricing for world-class software testing services. Choose from monthly Managed QA retainers or project-based audits. Scalable solutions for startups and global enterprises.",
     keywords: [
@@ -31,29 +30,23 @@ export const metadata: Metadata = {
     }
 };
 
-const NewPricingHero = dynamic(
-    () => import("@/components/sections/NewPricingHero"),
+const Pricing5Hero = dynamic(
+    () => import("@/components/sections/Pricing5Hero"),
     { ssr: true, loading: () => <HeroLoader /> }
 );
 
-const NewPricingCards = dynamic(
-    () => import("@/components/sections/NewPricingCards"),
+const Pricing5Cards = dynamic(
+    () => import("@/components/sections/Pricing5Cards"),
     { ssr: true, loading: () => <ContentLoader /> }
 );
 
 export default function PricingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Pricing", url: "https://www.testriq.com/pricing" },
-    ];
-
     return (
-        <div className="bg-slate-50 min-h-screen">
+        <div className="bg-white min-h-screen">
             <StructuredData data={pricingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <MainLayout>
-                <NewPricingHero />
-                <NewPricingCards />
+                <Pricing5Hero />
+                <Pricing5Cards />
             </MainLayout>
         </div>
     );
