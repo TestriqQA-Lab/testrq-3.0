@@ -108,7 +108,7 @@ const AutomationTestingHeroSection: React.FC = () => {
           </div>
 
           {/* Right Content - Automation Testing Dashboard */}
-          <div className="relative lg:-mt-32 lg:-translate-y-24 mt-8 flex justify-center">
+          <div className="mt-8 lg:mt-0 flex justify-center items-start">
             <AutomationTestingAnimation />
           </div>
         </div>
