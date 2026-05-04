@@ -39,7 +39,7 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
     const rawDescription = post?.excerpt || post?.seo?.description || "Master enterprise-grade performance testing with proven methodologies, industry best practices, and real-world strategies trusted by Fortune 500 companies.";
     // Clean the description by stripping HTML tags and decoding HTML entities
     const description = decodeHtmlEntities(stripHtmlTags(rawDescription));
-    const imageUrl = post?.mainImage ? urlFor(post.mainImage).width(1200).height(630).url() : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
+    const imageUrl = post?.mainImage ? urlFor(post.mainImage).width(1600).quality(90).auto('format').url() : (post?.image || "/blog-demo/hero_performance_dashboard_1769850360523.png");
     const author = post?.author || "Testriq QA Team";
     const authorImage = post?.authorImageRaw ? urlFor(post.authorImageRaw).width(96).url() : (post?.authorImage || null);
     const authorBio = post?.authorBio;
@@ -206,17 +206,16 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
             -------------------------------- */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
                 <figure className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-gray-100 shadow-sm transition-transform duration-500 hover:scale-[1.01]">
-                    <div className="relative aspect-[16/9]">
-                        <Image
-                            src={imageUrl}
-                            alt={post?.mainImageAlt || title}
-                            title={post?.mainImageTitle || title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1120px"
-                            priority
-                        />
-                    </div>
+                    <Image
+                        src={imageUrl}
+                        alt={post?.mainImageAlt || title}
+                        title={post?.mainImageTitle || title}
+                        width={1600}
+                        height={900}
+                        className="w-full h-auto object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1120px"
+                        priority
+                    />
                     {post?.mainImageCaption && (
                         <figcaption className="mt-4 px-4 py-2 text-center text-sm italic text-gray-500 border-l-2 border-blue-500/30 bg-gray-50/50">
                             {post.mainImageCaption}
