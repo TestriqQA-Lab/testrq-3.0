@@ -5572,3 +5572,153 @@ export const pricingServiceSchema = {
     }
   ]
 };
+
+
+// Service Schema for ISO/IEC 42001:2023 Compliance Testing
+export const iso42001ComplianceTestingSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/iso-iec-42001-compliance-testing-services/#service",
+      "name": "ISO/IEC 42001:2023 Compliance Testing Services",
+      "alternateName": "AI Management System (AIMS) Compliance Testing",
+      "serviceType": "AI Governance & Compliance Testing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Testriq QA Lab",
+        "url": "https://www.testriq.com",
+        "image": "https://www.testriq.com/assets/images/logo.png",
+        "telephone": "+91-915-2929-343",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+          "addressLocality": "Mira Bhayandar",
+          "addressRegion": "Maharashtra",
+          "postalCode": "401107",
+          "addressCountry": "IN"
+        },
+        "priceRange": "$$"
+      },
+      "url": "https://www.testriq.com/iso-iec-42001-compliance-testing-services",
+      "description": "Expert ISO/IEC 42001:2023 compliance testing for Artificial Intelligence Management Systems (AIMS). We help organizations achieve certification readiness with comprehensive gap analysis, AI risk assessment, bias testing, explainability validation, data governance audits, and regulatory alignment with the EU AI Act and NIST AI RMF.",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "ISO 42001 Compliance Testing Suite",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AIMS Gap Assessment",
+              "description": "Clause-by-clause gap analysis of current AI management practices against ISO/IEC 42001:2023 requirements with prioritized remediation roadmap."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Risk & Impact Assessment",
+              "description": "Systematic identification and evaluation of AI risks including bias testing, fairness analysis, and societal impact assessment aligned with Annex A controls."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Transparency & Explainability Testing",
+              "description": "Validation of AI model interpretability, decision audit trails, and explainability metrics using SHAP, LIME, and other frameworks."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Data Governance Testing",
+              "description": "Comprehensive testing of data pipelines, training data quality, data provenance tracking, and GDPR privacy compliance for AI systems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Performance & Monitoring Validation",
+              "description": "Testing operational monitoring frameworks for model drift detection, performance threshold validation, and incident response readiness."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Certification Readiness Assessment",
+              "description": "Pre-audit simulation of the certification body evaluation process with evidence package review and certification readiness statement."
+            }
+          }
+        ]
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/OnlineOnly",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "0"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is ISO/IEC 42001:2023 and who needs it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO/IEC 42001:2023 is the first international standard for Artificial Intelligence Management Systems (AIMS). It provides a certifiable framework for organizations that develop, provide, or use AI-based products and services. Any organization seeking to demonstrate responsible AI governance can benefit from this certification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does ISO/IEC 42001 relate to the EU AI Act and NIST AI RMF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ISO/IEC 42001:2023 serves as a management system standard that can help organizations demonstrate compliance with multiple regulatory frameworks. The EU AI Act and NIST AI RMF share common objectives with ISO 42001, making it a gold standard bridge for global AI regulatory compliance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between ISO 42001 and ISO 27001?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While ISO 27001 focuses on Information Security Management Systems (ISMS), ISO 42001 specifically addresses AI Management Systems (AIMS). ISO 42001 extends beyond security to cover AI-specific concerns like bias, fairness, explainability, ethical use, societal impact, and AI lifecycle management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to achieve ISO/IEC 42001 certification?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The timeline typically ranges from 3-6 months depending on your organization's current AI maturity level. Organizations with existing management systems like ISO 27001 or ISO 9001 may accelerate this timeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the Annex A controls in ISO/IEC 42001:2023?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Annex A contains 38 controls organized across multiple domains including AI policy, AI impact assessment, data management for AI, AI system lifecycle, and third-party/supplier management. These controls provide specific implementation requirements that complement the main clauses (4-10) of the standard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Testriq help with both compliance testing and certification preparation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Testriq provides end-to-end support from initial gap analysis through testing execution, remediation guidance, and pre-certification audit simulation. Our 98% first-pass certification rate demonstrates the effectiveness of our approach."
+          }
+        }
+      ]
+    }
+  ]
+};
