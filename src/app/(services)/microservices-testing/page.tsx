@@ -37,6 +37,10 @@ export const metadata: Metadata = {
         "resilience testing",
         "service mesh validation"
     ],
+    openGraph: {
+        type: "website",
+        images: [{ url: "/OG/Microservices-testing-og-image.webp" }],
+    },
     alternates: {
         canonical: "https://www.testriq.com/services/microservices-testing",
     },

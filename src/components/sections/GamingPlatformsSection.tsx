@@ -19,11 +19,11 @@ import {
   FaRocket,
 } from "react-icons/fa";
 import {
-  SiNintendoswitch,
   SiUnity,
   SiUnrealengine,
   SiOculus,
 } from "react-icons/si";
+import { BsNintendoSwitch } from "react-icons/bs";
 
 const GamingPlatformsSection: React.FC = () => {
   const platforms = [
@@ -129,7 +129,7 @@ const GamingPlatformsSection: React.FC = () => {
     { icon: FaWindows, name: "Windows", color: "text-blue-600" },
     { icon: FaPlaystation, name: "PlayStation", color: "text-blue-800" },
     { icon: FaXbox, name: "Xbox", color: "text-green-700" },
-    { icon: SiNintendoswitch, name: "Switch", color: "text-red-600" },
+    { icon: BsNintendoSwitch, name: "Switch", color: "text-red-600" },
     { icon: FaSteam, name: "Steam", color: "text-gray-700" },
     { icon: SiOculus, name: "Oculus", color: "text-blue-500" },
   ];

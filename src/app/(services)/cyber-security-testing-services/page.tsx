@@ -46,7 +46,7 @@ export const metadata: Metadata = {
             "Fortify your digital defenses with Testriq's expert Cyber Security Testing Services. Comprehensive VAPT, security audits, and ethical hacking.",
         images: [
             {
-                url: "/OG/Cyber-Security-Testing-Og.webp",
+                url: "/OG/Cyber-security-testing-ogimage.webp",
                 width: 1200,
                 height: 630,
                 alt: "Cyber Security Testing Services - Testriq",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         title: "Cyber Security Testing Services & Penetration Testing | Testriq",
         description:
             "Global cyber security solutions. Expert VAPT and security audits for enterprise software across the US, UK, EU, and Asia.",
-        images: ["/OG/Cyber-Security-Testing-Twitter.webp"],
+        images: ["/OG/Cyber-security-testing-ogimage.webp"],
     },
     robots: {
         index: true,

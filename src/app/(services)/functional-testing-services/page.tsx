@@ -112,7 +112,7 @@ export const metadata: Metadata = {
             "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
         images: [
             {
-                url: "/OG/Functional-Testing-Service-Og.webp",
+                url: "/OG/functional-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Functional Testing Services by Testriq QA Lab",
@@ -127,7 +127,7 @@ export const metadata: Metadata = {
         title: "Functional Testing Services | Software QA & Automation | Testriq",
         description:
             "Ensure flawless software performance with Testriq's expert Functional Testing Services. Comprehensive QA, automation & validation for web, mobile & enterprise applications.",
-        images: ["/OG/Functional-Testing-Service-Twitter.webp"],
+        images: ["/OG/functional-testing-og-image.webp"],
     },
     robots: {
         index: true,
