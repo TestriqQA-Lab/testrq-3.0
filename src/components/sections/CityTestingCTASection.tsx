@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { CityData } from "@/app/lib/CityData";
 import { ArrowRight, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import Link from 'next/link';
@@ -8,6 +10,8 @@ interface CityTestingCTASectionProps {
 }
 
 const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-gray-900 to-blue-900">
       <div className="max-w-7xl mx-auto">
@@ -18,9 +22,19 @@ const CityTestingCTASection: React.FC<CityTestingCTASectionProps> = ({ cityData 
           <p className="text-xl text-gray-100 mb-4">
             {cityData.ctaContent.subtitle}
           </p>
-          <p className="text-lg text-gray-200 max-w-4xl mx-auto">
-            {cityData.ctaContent.description}
-          </p>
+          <div className="max-w-4xl mx-auto">
+            <p className={`text-lg text-gray-200 ${!isExpanded ? 'line-clamp-4' : ''}`}>
+              {cityData.ctaContent.description}
+            </p>
+            {cityData.ctaContent.description && cityData.ctaContent.description.length > 250 && (
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-blue-300 font-medium mt-2 hover:text-white hover:underline focus:outline-none inline-flex items-center text-sm transition-colors"
+              >
+                {isExpanded ? 'Show Less' : 'Read More'}
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">

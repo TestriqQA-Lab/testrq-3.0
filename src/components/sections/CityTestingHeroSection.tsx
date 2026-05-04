@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   MapPin,
   CheckCircle,
@@ -20,6 +20,8 @@ interface CityTestingHeroSectionProps {
 }
 
 const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityData }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <section className="relative pt-8 pb-16 px-8 md:px-12 lg:px-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
       {/* Background Pattern */}
@@ -68,9 +70,19 @@ const CityTestingHeroSection: React.FC<CityTestingHeroSectionProps> = ({ cityDat
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              {cityData.heroContent.description}
-            </p>
+            <div className="mb-8">
+              <p className={`text-lg text-gray-600 leading-relaxed ${!isExpanded ? 'line-clamp-4' : ''}`}>
+                {cityData.heroContent.description}
+              </p>
+              {cityData.heroContent.description && cityData.heroContent.description.length > 200 && (
+                <button 
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="text-brand-blue font-medium mt-2 hover:underline focus:outline-none flex items-center text-sm"
+                >
+                  {isExpanded ? 'Show Less' : 'Read More'}
+                </button>
+              )}
+            </div>
 
             {/* Key Benefits */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
