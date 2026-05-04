@@ -45,7 +45,7 @@ export const metadata: Metadata = {
             "Partner with global Azure testing specialists to secure your digital future. From comprehensive cloud migrations to continuous DevOps QA, Testriq provides the expertise you need.",
         images: [
             {
-                url: "/OG/Azure-Testing-Service-og.webp",
+                url: "/OG/Azure-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Azure Testing Services - Testriq",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         title: "Enterprise Azure Testing Services - Cloud-Native QA & DevOps",
         description:
             "Partner with global Azure testing specialists to secure your digital future. Comprehensive cloud migrations and continuous DevOps QA.",
-        images: ["/OG/Azure-Testing-Service-Twitter.webp"],
+        images: ["/OG/Azure-testing-og-image.webp"],
     },
     robots: {
         index: true,

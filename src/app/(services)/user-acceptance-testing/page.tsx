@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         siteName: "Testriq",
         images: [
             {
-                url: "/logo.png",
+                url: "/OG/user-acceptance-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Testriq UAT Services",

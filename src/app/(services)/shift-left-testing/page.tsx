@@ -31,6 +31,10 @@ export const metadata: Metadata = {
         "CI/CD testing integration",
         "early bug detection"
     ],
+    openGraph: {
+        type: "website",
+        images: [{ url: "/OG/Shift-left-testing-og-image.webp" }],
+    },
     alternates: {
         canonical: "https://www.testriq.com/services/shift-left-testing",
     },

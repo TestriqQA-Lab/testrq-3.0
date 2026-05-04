@@ -16,6 +16,10 @@ const MigrationNextStepsSection = dynamic(() => import("@/components/sections/Mi
 export const metadata: Metadata = {
     title: "Migration Testing Services | Data & Cloud Migration QA | Testriq",
     description: "Ensure seamless data & application migrations with Testriq’s expert Migration Testing Services. Prevent data loss, ensure integrity & minimize downtime. Partner with us!",
+    openGraph: {
+        type: "website",
+        images: [{ url: "/OG/migration-testing-og-image.webp" }],
+    },
     alternates: {
         canonical: "https://www.testriq.com/services/migration-testing",
     },

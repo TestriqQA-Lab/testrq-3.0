@@ -34,7 +34,7 @@ export const metadata: Metadata = {
         type: "website",
         images: [
             {
-                url: "/assets/images/embedded-testing-og.webp",
+                url: "/OG/Embedded-testing-service-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Embedded Testing Services by Testriq",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         title: "Embedded Testing Services | Software & Hardware QA | Testriq",
         description:
             "Ensure precision & reliability with Testriq’s expert Embedded Testing Services. Comprehensive V&V for automotive, medical, IoT & safety-critical systems.",
-        images: ["/assets/images/embedded-testing-twitter.webp"],
+        images: ["/OG/Embedded-testing-service-og-image.webp"],
     },
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {

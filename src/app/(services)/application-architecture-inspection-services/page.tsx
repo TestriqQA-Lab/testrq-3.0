@@ -45,7 +45,7 @@ export const metadata: Metadata = {
             "Engineering resilience into your digital core. Expert architecture reviews, technical debt audits, and cloud-native validation from Testriq.",
         images: [
             {
-                url: "/OG/architecture-inspection-services-og.webp",
+                url: "/OG/application-architecture-inspection-services-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Application Architecture Inspection Services - Testriq",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         title: "Application Architecture Inspection | Software Architecture Audit",
         description:
             "Optimize system design with expert microservices reviews and technical debt assessments from Testriq.",
-        images: ["/OG/architecture-inspection-services-twitter.webp"],
+        images: ["/OG/application-architecture-inspection-services-og-image.webp"],
     },
     robots: {
         index: true,

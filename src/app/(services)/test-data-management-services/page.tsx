@@ -45,7 +45,7 @@ export const metadata: Metadata = {
             "Transform your test data into a competitive advantage with Testriq. AI-powered synthetic data, advanced masking, and compliance-driven TDM.",
         images: [
             {
-                url: "/OG/test-data-management-services-og.webp",
+                url: "/OG/Test-data-management-service-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Test Data Management Services - Testriq",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         title: "Test Data Management Services | TDM QA & Synthetic Data",
         description:
             "Optimize QA with secure data masking, synthetic data, and automated TDM solutions from Testriq.",
-        images: ["/OG/test-data-management-services-twitter.webp"],
+        images: ["/OG/Test-data-management-service-og-image.webp"],
     },
     robots: {
         index: true,

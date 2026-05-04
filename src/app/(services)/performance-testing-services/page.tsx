@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OG/Performance-Testing-Og.webp",
+        url: "/OG/performance-testing-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Performance Testing Services by Testriq",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Performance Testing Services | Load & Stress Testing | Testriq",
     description: "Ensure your platforms remain resilient and ready for global scale with Testriq's 2026 Performance Engineering solutions.",
-    images: ["/OG/Performance-Testing-Twitter.webp"],
+    images: ["/OG/performance-testing-og-image.webp"],
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {
