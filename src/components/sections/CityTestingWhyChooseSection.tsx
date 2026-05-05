@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CityData } from "@/app/lib/CityData";
 import {
   MapPin,
@@ -41,17 +41,28 @@ const iconMap = {
 };
 
 const CityTestingWhyChooseSection: React.FC<CityTestingWhyChooseSectionProps> = ({ cityData }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   return (
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="mb-16 max-w-5xl mx-auto flex flex-col items-center">
+          <h2 className="text-4xl font-bold text-[#111111] text-center mb-8 leading-tight w-full">
             {cityData.whyChooseContent.title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {cityData.whyChooseContent.subtitle}
-          </p>
+          <div className="w-full text-left">
+            <p className={`text-xl text-[#4A4A4A] leading-[1.7] ${!isExpanded ? 'line-clamp-3' : ''}`}>
+              {cityData.whyChooseContent.subtitle}
+            </p>
+            {cityData.whyChooseContent.subtitle && cityData.whyChooseContent.subtitle.length > 200 && (
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-brand-blue font-medium mt-6 hover:underline focus:outline-none inline-flex items-center text-sm"
+              >
+                {isExpanded ? 'Show Less' : 'Read More'}
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Main Content Grid */}

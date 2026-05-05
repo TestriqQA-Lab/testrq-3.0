@@ -40,17 +40,19 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
     <section className="py-16 px-8 md:px-12 lg:px-24 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
           <div className="inline-flex items-center bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 px-6 py-3 rounded-full text-sm font-bold mb-6">
             <TrendingUp className="h-5 w-5 mr-2" />
             TRENDING IN {cityData.name.toUpperCase()}
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 max-w-4xl mx-auto leading-tight">
             {cityData.trendingServicesContent.title}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {cityData.trendingServicesContent.subtitle}
-          </p>
+          <div className="max-w-4xl mx-auto w-full">
+            <p className="text-xl text-gray-600">
+              {cityData.trendingServicesContent.subtitle}
+            </p>
+          </div>
         </div>
 
         {/* Trending Services Grid */}
@@ -97,7 +99,7 @@ const CityTestingTrendingServicesSection: React.FC<CityTestingTrendingServicesSe
                     {service.name}
                   </h3>
                 </Link>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
                   {service.description}
                 </p>
 

@@ -417,7 +417,7 @@ const ContactHeroSection: React.FC = () => {
                         className={`w-full phone-input-container ${phoneError ? "border-red-500" : "border-gray-300"
                           }`}
                         placeholder="Enter phone number"
-                        inputProps={{
+                        numberInputProps={{
                           className:
                             "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[theme(color.brand.blue)] focus:outline-none transition-all duration-300",
                         }}

@@ -133,7 +133,7 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
                     Large, bold, readable
                     Max width for optimal line length
                 -------------------------------- */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight mb-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#111111] leading-tight tracking-tight mb-6">
                     {title}
                 </h1>
 
@@ -141,7 +141,7 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
                     4. SHORT DESCRIPTION / EXCERPT
                     1-2 lines, slightly muted tone
                 -------------------------------- */}
-                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-3xl">
+                <p className="text-lg sm:text-xl text-[#4A4A4A] leading-[1.7] mb-8 w-full">
                     {description}
                 </p>
 

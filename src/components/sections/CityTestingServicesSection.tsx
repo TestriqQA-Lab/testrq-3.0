@@ -85,7 +85,7 @@ const CityTestingServicesSection: React.FC<CityTestingServicesSectionProps> = ({
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {service.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed line-clamp-4">
                   {service.description}
                 </p>
 
