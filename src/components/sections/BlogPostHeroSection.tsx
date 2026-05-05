@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaLinkedinIn, FaFacebookF, FaHome, FaChevronRight } from "react-icons/fa";
@@ -49,8 +49,11 @@ const BlogPostHeroSection = ({ post }: BlogPostHeroSectionProps) => {
     const category = post?.categories?.[0]?.name || "Performance Testing";
     const categorySlug = post?.categories?.[0]?.slug || post?.categorySlug || "performance-testing";
 
-    // Share URL for social buttons
-    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+    // Share URL for social buttons — deferred to client to avoid hydration mismatch
+    const [shareUrl, setShareUrl] = useState('');
+    useEffect(() => {
+        setShareUrl(window.location.href);
+    }, []);
     const encodedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(title);
 
