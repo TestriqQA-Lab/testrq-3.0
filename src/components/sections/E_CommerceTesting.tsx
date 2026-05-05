@@ -1,4 +1,4 @@
-import Head from 'next/head';
+// Metadata for this page is handled by the parent page's `export const metadata` (App Router API)
 
 const services = [
   {
@@ -74,10 +74,6 @@ const caseStudies = [
 export default function ECommerceTesting() {
   return (
     <div className="bg-gray-900 text-white font-sans">
-      <Head>
-        <title>E-Commerce Testing Services | Testriq</title>
-        <meta name="description" content="Elevate your e-commerce platform with Testriq’s expert testing services, ensuring functionality, security, performance, and user satisfaction." />
-      </Head>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-orange-500 to-orange-700 py-24">

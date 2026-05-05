@@ -74,7 +74,7 @@ const ApiTestingHeroSection: React.FC = () => {
           </div>
 
           {/* Right Content - API Testing Illustration */}
-          <div className="relative xl:-mt-32 xl:-translate-y-24 mt-8 flex justify-center">
+          <div className="mt-8 xl:mt-0 flex justify-center items-start">
             <APITestingAnimation />
           </div>
         </div>

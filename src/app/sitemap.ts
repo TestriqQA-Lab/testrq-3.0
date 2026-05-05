@@ -10,6 +10,9 @@ import {
 import { getAllCities, CityData } from '@/app/lib/CityData';
 import { redirects } from '@/lib/redirects';
 
+// Revalidate the sitemap every hour (matches service page revalidation)
+export const revalidate = 3600;
+
 // Function to determine change frequency based on content type and last modified date
 function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
   const now = new Date();

@@ -7,6 +7,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
 
+  trailingSlash: false,        // ✅ Prevent /about-us/ and /about-us from being separate URLs
   reactStrictMode: true, // ✅ Helps catch performance issues in dev
   experimental: {
     cssChunking: true,     // Split + reorder CSS per route
@@ -16,8 +17,8 @@ const nextConfig: NextConfig = {
 
 
   images: {
-    // Disable all Next.js/Vercel image optimization globally
-    unoptimized: false, // images will be served as-is, no optimizer requests [1][13]
+    // Enable Next.js/Vercel image optimization
+    unoptimized: false, // images WILL be optimized (this is the default, explicitly set for clarity)
     // Keep remotePatterns if still using <Image> with external sources (safe to keep)
     remotePatterns: [
       {
@@ -50,6 +51,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/software-qa-testing-services-in-bengaluru",
+        destination: "/software-qa-testing-services-in-bangalore",
+        permanent: true,
+      },
+      {
         source: "/manual-testing",
         destination: "/manual-testing-services",
         permanent: true,
@@ -69,7 +75,6 @@ const nextConfig: NextConfig = {
         destination: "/technology-stack",
         permanent: true,
       },
-      // Mumbai Station Redirects
       { source: "/software-qa-testing-services-in-andheri", destination: "/software-qa-testing-services-in-mumbai", permanent: true },
       { source: "/software-qa-testing-services-in-bandra", destination: "/software-qa-testing-services-in-mumbai", permanent: true },
       { source: "/software-qa-testing-services-in-bhandup", destination: "/software-qa-testing-services-in-mumbai", permanent: true },
@@ -140,8 +145,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/user-experience-testing", destination: "/blog/post/user-experience-testing-for-smart-devices-usability-accessibility", permanent: true },
       { source: "/blog/tag/mobile-learning", destination: "/blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices", permanent: true },
       { source: "/blog/tag/cyber-threats", destination: "/blog/post/iot-security-validation-protecting-devices-from-cyber-threats", permanent: true },
-
-      // Blog & Service Redirects
       { source: "/blog/tag/regression-automation-qa", destination: "/blog/post/automated-regression-testing-faster-smarter-qa-cycles", permanent: true },
       { source: "/blog/tag/mobile-testing-challenges", destination: "/blog/category/mobile-application-testing", permanent: true },
       { source: "/blog/tag/load-testing-lms", destination: "/blog/post/scalability-testing-for-learning-management-systems-lms-ensuring-a-smooth-experience-for-all-users", permanent: true },
@@ -173,8 +176,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/desktop-app-validation", destination: "/desktop-application-testing-services", permanent: true },
       { source: "/blog/tag/software-testing-best-practices", destination: "/blog/category/qa-testing", permanent: true },
       { source: "/blog/tag/owasp", destination: "/security-testing", permanent: true },
-
-      // Batch 2 Mappings
       { source: "/blog/tag/robotics-functional-testing", destination: "/robotics-testing-services", permanent: true },
       { source: "/blog/tag/hipaa-compliance-testing", destination: "/healthcare-testing-services", permanent: true },
       { source: "/blog/tag/responsive-testing", destination: "/web-application-testing-services", permanent: true },
@@ -225,8 +226,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/securitytesting", destination: "/security-testing", permanent: true },
       { source: "/blog/tag/cost-efficiency-in-app-development", destination: "/launchfast-qa", permanent: true },
       { source: "/blog/tag/secure-qa", destination: "/security-testing", permanent: true },
-
-      // Batch 3 Mappings
       { source: "/blog/tag/cloud-enabled-performance-testing", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/desktop-testing-benchmarks", destination: "/desktop-application-testing-services", permanent: true },
       { source: "/blog/post/the-future-of-software-testing-top-trends-for-the-next-decadee", destination: "/blog/category/qa-testing", permanent: true },
@@ -234,7 +233,7 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/robotic-system-validation", destination: "/robotics-testing-services", permanent: true },
       { source: "/trust-certification", destination: "/security-testing", permanent: true },
       { source: "/blog/tag/data-privacy", destination: "/security-testing", permanent: true },
-      { source: "/Load Time Analysis", destination: "/performance-testing-services", permanent: true },
+      { source: "/Load%20Time%20Analysis", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/desktop-testing-summary", destination: "/desktop-application-testing-services", permanent: true },
       { source: "/blog/tag/real-time-validation", destination: "/web-application-testing-services", permanent: true },
       { source: "/blog/tag/qa-techniques", destination: "/blog/category/qa-testing", permanent: true },
@@ -277,8 +276,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/performance-testing-in-agile", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/terraform", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/scorm-compliance-testing", destination: "/e-learning-testing-services", permanent: true },
-
-      // Batch 4 Mappings
       { source: "/blog/tag/scorm-and-xapi-qa", destination: "/e-learning-testing-services", permanent: true },
       { source: "/blog/tag/lms-testing", destination: "/e-learning-testing-services", permanent: true },
       { source: "/blog/tag/learning-analytics-testing", destination: "/e-learning-testing-services", permanent: true },
@@ -329,8 +326,6 @@ const nextConfig: NextConfig = {
       { source: "/ragnar-case-study", destination: "/ragnar-sports-platform", permanent: true },
       { source: "/blog/tag/section-508-compliance", destination: "/web-application-testing-services", permanent: true },
       { source: "/blog/tag/software-testing", destination: "/blog/category/qa-testing", permanent: true },
-
-      // Batch 5 Mappings
       { source: "/blog/tag/cicd", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/category/Performance Testing Services", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/concurrency-testing", destination: "/performance-testing-services", permanent: true },
@@ -381,8 +376,6 @@ const nextConfig: NextConfig = {
       { source: "/industries/banking-finance-testing", destination: "/banking-finance-industry-testing-services", permanent: true },
       { source: "/services/robotics-testing", destination: "/robotics-testing-services", permanent: true },
       { source: "/services/automation-testing", destination: "/automation-testing-services", permanent: true },
-
-      // Batch 6 Mappings
       { source: "/industries/iot-testing", destination: "/iot-device-testing-services", permanent: true },
       { source: "/services/smart-device-testing", destination: "/iot-device-testing-services", permanent: true },
       { source: "/certifications/shopping-apps", destination: "/shopping-apps-certification", permanent: true },
@@ -433,8 +426,6 @@ const nextConfig: NextConfig = {
       { source: "/iomt-testing", destination: "/iot-device-testing-services", permanent: true },
       { source: "/iot-appliances-app-testing-service", destination: "/iot-device-testing-services", permanent: true },
       { source: "/software-testing-services/", destination: "/blog/category/qa-testing", permanent: true },
-
-      // Batch 7 Mappings
       { source: "/web-application-testing", destination: "/web-application-testing-services", permanent: true },
       { source: "/banking-finance-testing-service", destination: "/banking-finance-industry-testing-services", permanent: true },
       { source: "/blog/post/top-cross-browser-testing-tools-2025", destination: "/blog/category/web-app-testing", permanent: true },
@@ -485,8 +476,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/enterprise-application-testing", destination: "/blog/category/qa-testing", permanent: true },
       { source: "/blog/tag/iot-data-privacy", destination: "/iot-device-testing-services", permanent: true },
       { source: "/blog/post/remote-testing-strategies-and-tools", destination: "/mobile-application-testing", permanent: true },
-
-      // Batch 8 Mappings
       { source: "/blog/post/integrating-performance-testing-into-ci-cd-for-devops-success-2", destination: "/blog/post/integrating-performance-testing-into-ci-cd-for-devops-success", permanent: true },
       { source: "/blog/tag/mobile-learning-optimization", destination: "/blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices", permanent: true },
       { source: "/blog/tag/devops-qa-strategy", destination: "/blog/category/automation-testing-services", permanent: true },
@@ -523,12 +512,9 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/exploratory-testing-techniques", destination: "/manual-testing-services", permanent: true },
       { source: "/blog/tag/mobile-performance-qa", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them", destination: "/blog/post/how-to-test-mobile-app-security-techniques-tools", permanent: true },
-      { source: "/blog/author/Testriq", has: [{ type: 'query', key: 'page', value: '16' }], destination: "/blog", permanent: true },
       { source: "/blog/tag/automation-tools", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/automation-testing-innovation", destination: "/automation-testing-services", permanent: true },
-      { source: "/blog/author/Testriq", has: [{ type: 'query', key: 'page', value: '15' }], destination: "/blog", permanent: true },
       { source: "/blog/tag/mobile-testing-trends", destination: "/mobile-application-testing", permanent: true },
-      { source: "/blog/author/Testriq", has: [{ type: 'query', key: 'page', value: '8' }], destination: "/blog", permanent: true },
       { source: "/blog/tag/stress-testing", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/devops", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/software-testing-challenges", destination: "/blog/category/qa-testing", permanent: true },
@@ -537,8 +523,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/scriptless-automation", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/future-of-qa", destination: "/blog", permanent: true },
       { source: "/regression-testings", destination: "/blog/category/qa-testing", permanent: true },
-
-      // Batch 9 Mappings
       { source: "/automation-testing/", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/software-testing-company", destination: "/blog/category/qa-testing", permanent: true },
       { source: "/blog/tag/performance-optimization", destination: "/performance-testing-services", permanent: true },
@@ -548,7 +532,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/e-learning-platform-performance", destination: "/e-learning-testing-services", permanent: true },
       { source: "/blog/tag/performance-analysis", destination: "/performance-testing-services", permanent: true },
       { source: "/blog/tag/qa-technologies", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/blog", destination: "/blog", permanent: true },
       { source: "/blog/tag/game-hacking-prevention", destination: "/gaming-app-testing-services", permanent: true },
       { source: "/blog/tag/cloud-based-regression-execution", destination: "/automation-testing-services", permanent: true },
       { source: "/blog/tag/cybersecurity-for-games", destination: "/security-testing", permanent: true },
@@ -586,8 +569,6 @@ const nextConfig: NextConfig = {
       { source: "/blog/why-do-we-need-exploratory-testing", destination: "/blog/post/what-are-the-principles-of-exploratory-testing", permanent: true },
       { source: "/blog/load-testing-desktop-applications", destination: "/desktop-application-testing-services", permanent: true },
       { source: "/blog/exploratory-software-testing", destination: "/manual-testing-services", permanent: true },
-
-      // Cleanup Redirects (Fixing cached 301s to 404 paths)
       { source: "/case-studies/canva-design-platform", destination: "/canva-design-platform", permanent: true },
       { source: "/case-studies/smart-video-doorbell-qa-case-study", destination: "/smart-video-doorbell-qa-case-study", permanent: true },
       { source: "/case-studies/indo-wings-security-testing-case-study", destination: "/indo-wings-security-testing-case-study", permanent: true },
@@ -602,15 +583,13 @@ const nextConfig: NextConfig = {
       { source: "/compliance-testing-services", destination: "/security-testing", permanent: true },
       { source: "/medical-device-testing-services", destination: "/healthcare-testing-services", permanent: true },
       { source: "/software-testing-services", destination: "/blog/category/qa-testing", permanent: true },
-
-      // Batch 10: Fixes for User Reported Broken Links (Feb 2026) - Mapped to Verified CMS Content
       { source: "/blog/tag/xss-prevention", destination: "/blog/category/security-testing", permanent: true },
-      { source: "/blog/tag/risk-assessment-in-testing", destination: "/blog/category/manual-testing", permanent: true }, // Fallback to Manual/Strategy
+      { source: "/blog/tag/risk-assessment-in-testing", destination: "/blog/category/manual-testing", permanent: true },
       { source: "/blog/tag/mobile-app-automation-testing-tools", destination: "/blog/category/mobile-application-testing", permanent: true },
       { source: "/blog/tag/jmeter-performance-testing-2024", destination: "/blog/category/performance-testing-services", permanent: true },
       { source: "/blog/tag/responsive-design-testing", destination: "/blog/category/web-app-testing", permanent: true },
       { source: "/blog/tag/conversion-optimization", destination: "/blog/category/web-app-testing", permanent: true },
-      { source: "/blog/post/using-assistive-technologies-in-accessibility-testing", destination: "/blog/category/web-app-testing", permanent: true }, // Accessibility usually under Web
+      { source: "/blog/post/using-assistive-technologies-in-accessibility-testing", destination: "/blog/category/web-app-testing", permanent: true },
       { source: "/blog/tag/mobile-usability-testing", destination: "/blog/category/mobile-application-testing", permanent: true },
       { source: "/blog/tag/top-software-testing-tools-2024", destination: "/blog/category/software-testing-tools", permanent: true },
       { source: "/blog/tag/streamlining", destination: "/blog/category/automation-testing-services", permanent: true },
@@ -626,91 +605,11 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/open-source-testing-tools-2024", destination: "/blog/category/software-testing-tools", permanent: true },
       { source: "/blog/tag/best-mobile-app-testing-tools", destination: "/blog/category/mobile-application-testing", permanent: true },
       { source: "/blog/tag/regression-automation", destination: "/blog/category/regression-testing", permanent: true },
-      { source: "/blog/category/Iot Appliances & App Testing Service", destination: "/blog/category/iot-appliances-app-testing-service", permanent: true },
       { source: "/blog/category/Iot%20Appliances%20&%20App%20Testing%20Service", destination: "/blog/category/iot-appliances-app-testing-service", permanent: true },
-      { source: "/blog/tag/regression-automation-qa", destination: "/blog/category/regression-testing", permanent: true },
-      { source: "/blog/tag/mobile-testing-challenges", destination: "/blog/category/mobile-application-testing", permanent: true },
-      { source: "/blog/tag/software-testing-best-practices", destination: "/blog/category/best-practices", permanent: true },
-      { source: "/blog/tag/software-testing-strategies", destination: "/blog/category/best-practices", permanent: true },
-      { source: "/blog/post/the-future-of-software-testing-top-trends-for-the-next-decadee", destination: "/blog/post/the-future-of-software-testing-top-trends-for-the-next-decade", permanent: true },
-      { source: "/blog/tag/types-of-software-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/Load Time Analysis", destination: "/blog/category/performance-testing-services", permanent: true },
-      { source: "/blog/tag/qa-continuous-improvement", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/repetitive-strain-syndrome", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/software-qa-process", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/test-case-metrics", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/product-launch-qa", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/dry-run-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/defect-tracking", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/software-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/qa-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/testing-methodologies", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/software-debugging", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/test-run-implementation", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/software-stability-qa", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/testing-tag", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/services/software-testing-guide", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/services/qa-documentation", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/version-compatibility-testing-best-practices", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025-2", destination: "/blog/post/5g-mobile-app-testing-strategies-for-smooth-performance-in-2025", permanent: true },
-      { source: "/integration-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/software-testing-services/", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/network-testing-tools-and-techniques", destination: "/blog/category/performance-testing-services", permanent: true },
-      { source: "/blog/post/best-practices-for-mobile-uiux-testing", destination: "/blog/post/best-practices-for-mobile-ui-ux-testing", permanent: true },
-      { source: "/blog/post/do-you-think-that-software-testing-is-a-destructive-activityy", destination: "/blog/post/do-you-think-that-software-testing-is-a-destructive-activity", permanent: true },
-      { source: "/blog/post/top-cross-browser-testing-tools-2025", destination: "/blog/category/web-app-testing", permanent: true },
-      { source: "/blog/tag/bug-discovery-in-qa", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/best-software-testing-companies-in-mumbai-for-2025-reviews-comparison-2", destination: "/blog/post/best-software-testing-companies-in-mumbai-for-2025-reviews-comparison", permanent: true },
-      { source: "/quality-assurance-services/", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/defect-discovery", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/ultrasonic-testing-techniques", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/defect-reporting", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/defect-detection", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/enterprise-application-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/integrating-performance-testing-into-ci-cd-for-devops-success-2", destination: "/blog/post/integrating-performance-testing-into-ci-cd-for-devops-success", permanent: true },
-      { source: "/blog/tag/mobile-learning-optimization", destination: "/blog/post/mobile-learning-optimization-enhancing-e-learning-platforms-for-mobile-devices", permanent: true },
-      { source: "/blog/tag/devops-qa-strategy", destination: "/blog/category/automation-testing-services", permanent: true },
-      { source: "/blog/tag/graphql-automation", destination: "/blog/category/api-testing", permanent: true },
-      { source: "/blog/tag/cross-browser-testing", destination: "/blog/category/web-app-testing", permanent: true },
-      { source: "/blog/tag/graphql-performance-testing", destination: "/blog/post/graphql-api-testing-strategies-for-queries-mutations-performance", permanent: true },
-      { source: "/blog/post/weld-inspection-testing-methods", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/magnetic-particle-inspection-techniques", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/control-system-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/qa-best-practices", destination: "/blog/category/best-practices", permanent: true },
-      { source: "/blog/tag/end-to-end-qa-scenarios", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/sdlc", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/creating-compatibility-matrix-for-software-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them", destination: "/blog/post/common-mobile-app-security-flaws-and-how-to-prevent-them-2", permanent: true },
-      { source: "/blog/tag/software-testing-challenges", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/regression-testings", destination: "/blog/category/regression-testing", permanent: true },
-      { source: "/blog/tag/software-testing-company", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/qa-technologies", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/blog/tag/end-to-end-testing", destination: "/blog/category/qa-testing", permanent: true },
-      { source: "/case-study/smart-doorbell-case-study", destination: "/smart-video-doorbell-qa-case-study", permanent: true },
-      { source: "/case-study/indo-wings-case-study", destination: "/indo-wings-security-testing-case-study", permanent: true },
-      { source: "/automated-etl-testing-best-practices", destination: "/blog/post/automated-etl-testing", permanent: true },
-      { source: "/blog/principles-of-exploratory-testing", destination: "/blog/post/what-are-the-principles-of-exploratory-testing", permanent: true },
-      { source: "/blog/why-do-we-need-exploratory-testing", destination: "/blog/category/exploratory-testing", permanent: true },
-
-      // Batch 11: Fix Invalid Category redirects (Spaces in source)
-      { source: "/blog/category/API Testing", destination: "/blog/category/api-testing", permanent: true },
-      { source: "/blog/category/Web Development", destination: "/blog/category/web-development", permanent: true },
-      { source: "/blog/category/Robotics Testing", destination: "/blog/category/robotics-testing", permanent: true },
-      { source: "/blog/category/Regression Testing", destination: "/blog/category/regression-testing", permanent: true },
-      { source: "/blog/category/Software Testing Tools", destination: "/blog/category/software-testing-tools", permanent: true },
-      { source: "/blog/category/Mobile Application Testing", destination: "/blog/category/mobile-application-testing", permanent: true },
-      { source: "/blog/category/Performance Testing Services", destination: "/blog/category/performance-testing-services", permanent: true },
-
-      // Critical Fix: Redirecting the missing guide page itself to Blog
       { source: "/software-testing-guide", destination: "/blog", permanent: true },
-
-      // Batch 12: Fix Semrush-Detected 4xx Category Errors (March 2026)
-      // devops-&-ci-cd → devops-and-ci-cd (literal & in URL)
       { source: "/blog/category/devops-&-ci-cd", destination: "/blog/category/devops-and-ci-cd", permanent: true },
-      // devops-%26-ci-cd → devops-and-ci-cd (URL-encoded & = %26)
       { source: "/blog/category/devops-%26-ci-cd", destination: "/blog/category/devops-and-ci-cd", permanent: true },
-      // software-quality-assurance with trailing space → clean slug
-      { source: "/blog/category/software-quality-assurance ", destination: "/blog/category/software-quality-assurance", permanent: true },
+      { source: "/blog/category/software-quality-assurance ", destination: "/blog/category/software-quality-assurance", permanent: true }
     ];
   },
 };

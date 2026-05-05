@@ -36,8 +36,8 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "Testriq QA Lab",
   "alternateName": "Testriq",
-  "url": "www.testriq.com",
-  "logo": "www.testriq.com/logo.png",
+  "url": "https://www.testriq.com",
+  "logo": "https://www.testriq.com/logo.png",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation testing solutions.",
   "foundingDate": "2010",
   "contactPoint": {
@@ -101,7 +101,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Testriq - Professional Software Testing Services",
-  "url": "www.testriq.com",
+  "url": "https://www.testriq.com",
   "description": "Leading software testing company providing comprehensive QA services including web app testing, mobile testing, API testing, and automation.",
   "publisher": {
     "@type": "Organization",
@@ -111,7 +111,7 @@ export const websiteSchema = {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "www.testriq.com/search?q={search_term_string}"
+      "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -131,69 +131,12 @@ export const productServiceSchema = {
   },
   "sku": "TQ-QA-001",
   "mpn": "TQ-QA-MAIN",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "bestRating": "5",
-    "worstRating": "1",
-    "ratingCount": "184",
-    "reviewCount": "184"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Organization",
-        "name": "Enterprise Client"
-      },
-      "reviewBody": "Testriq provided exceptional QA support for our fintech application. Their attention to detail is unmatched."
-    }
-  ],
   "offers": {
     "@type": "Offer",
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition",
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      "merchantReturnLink": "https://www.testriq.com/contact"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "US"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "d"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 5,
-          "unitCode": "d"
-        }
-      }
-    }
+    "availability": "https://schema.org/OnlineOnly",
   }
 };
 
@@ -369,7 +312,7 @@ export const aiTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "AI Testing Services",
   "areaServed": "Worldwide",
@@ -429,7 +372,7 @@ export const aiTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -447,7 +390,7 @@ export const launchFastQASchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Rapid QA for Startups",
   "areaServed": "Worldwide",
@@ -507,7 +450,7 @@ export const launchFastQASchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -526,7 +469,7 @@ export const exploratoryTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Exploratory Testing",
   "areaServed": "Worldwide",
@@ -586,7 +529,7 @@ export const exploratoryTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -605,7 +548,7 @@ export const desktopAppTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -665,7 +608,7 @@ export const desktopAppTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -736,7 +679,7 @@ export const mobileAppTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -907,7 +850,7 @@ export const roboticTestingSchema = {
 
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -925,7 +868,7 @@ export const etlTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "ETL QA Services",
   "areaServed": "Worldwide",
@@ -985,7 +928,7 @@ export const etlTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1015,42 +958,8 @@ export const manualTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "areaServed": "Worldwide",
       "description": "Expert Manual Testing services focusing on Exploratory Testing, User Acceptance Testing (UAT), and WCAG Accessibility Audits to find bugs automation misses.",
@@ -1088,28 +997,7 @@ export const manualTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "44", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1189,42 +1077,8 @@ export const automationTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1260,28 +1114,7 @@ export const automationTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "120", // Update with your real numbers
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Enterprise Client"
-          },
-          "datePublished": "2024-02-15",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "4.9"
-          },
-          "reviewBody": "Testriq's manual testing team identified critical edge cases we missed. Highly recommended."
-        }
-      ]
+
     },
     {
       "@type": "FAQPage",
@@ -1349,7 +1182,7 @@ export const apiTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1393,7 +1226,7 @@ export const apiTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1411,7 +1244,7 @@ export const regressionTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1471,7 +1304,7 @@ export const regressionTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1541,7 +1374,7 @@ export const agileTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1599,7 +1432,7 @@ export const performanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -1659,7 +1492,7 @@ export const performanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -1812,42 +1645,8 @@ export const securityTestingServiceSchema = {
         "priceCurrency": "USD",
         "price": "0",
         "priceValidUntil": "2026-12-31",
-        "availability": "https://schema.org/InStock",
+        "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact",
-        "itemCondition": "https://schema.org/NewCondition",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "areaServed": "Worldwide",
       "description": "Enterprise-grade VAPT services, GDPR Compliance Audits, and Source Code Review delivered by our CISSP & OSCP certified Security Center of Excellence.",
@@ -1885,13 +1684,7 @@ export const securityTestingServiceSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -1957,7 +1750,7 @@ export const qaDocumentationServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Software Testing",
   "areaServed": "Worldwide",
@@ -2017,7 +1810,7 @@ export const qaDocumentationServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2037,7 +1830,7 @@ export const dataAnalysisServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Data Analysis & Analytics",
   "areaServed": "Worldwide",
@@ -2089,7 +1882,7 @@ export const dataAnalysisServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2161,7 +1954,7 @@ export const completeTestingGuideSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2182,7 +1975,7 @@ export const ecommerceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "E-Commerce QA Testing",
   "areaServed": "Worldwide",
@@ -2242,7 +2035,7 @@ export const ecommerceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2337,7 +2130,7 @@ export const elearningTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2357,7 +2150,7 @@ export const healthcareTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Healthcare Software QA Testing",
   "areaServed": "Worldwide",
@@ -2417,7 +2210,7 @@ export const healthcareTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2436,7 +2229,7 @@ export const gamingTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Game Testing & QA",
   "areaServed": "Worldwide",
@@ -2512,7 +2305,7 @@ export const gamingTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2531,7 +2324,7 @@ export const iotTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT Quality Assurance",
   "areaServed": "Worldwide",
@@ -2583,7 +2376,7 @@ export const iotTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2602,7 +2395,7 @@ export const bankingFinanceTestingServiceSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Banking & Finance Software Testing",
   "areaServed": "Worldwide",
@@ -2670,7 +2463,7 @@ export const bankingFinanceTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2689,7 +2482,7 @@ export const telecommunicationTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Telecom Software Testing",
   "areaServed": "Worldwide",
@@ -2749,7 +2542,7 @@ export const telecommunicationTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -2878,12 +2671,12 @@ export const ourTeamPageSchema = {
   "@type": "AboutPage",
   "name": "Meet Our Team - Testriq QA Lab",
   "description": "Meet the certified QA professionals behind Testriq's success. Our team of ISTQB-certified experts brings decades of software testing experience across multiple domains.",
-  "url": "www.testriq.com/our-team",
+  "url": "https://www.testriq.com/our-team",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9152929343",
@@ -2905,35 +2698,35 @@ export const ourTeamPageSchema = {
         "name": "Sandeep Maske",
         "jobTitle": "Founder & CEO",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#sandeep-maske"
+        "url": "https://www.testriq.com/our-team#sandeep-maske"
       },
       {
         "@type": "Person",
         "name": "Santosh Kakade",
         "jobTitle": "VP Operations",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#santosh-kakade"
+        "url": "https://www.testriq.com/our-team#santosh-kakade"
       },
       {
         "@type": "Person",
         "name": "Goutam Mishra",
         "jobTitle": "Head of QA and BD",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#goutam-mishra"
+        "url": "https://www.testriq.com/our-team#goutam-mishra"
       },
       {
         "@type": "Person",
         "name": "Rohan Maske",
         "jobTitle": "VP - Marketing",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#rohan-maske"
+        "url": "https://www.testriq.com/our-team#rohan-maske"
       },
       {
         "@type": "Person",
         "name": "Aatish Jadhav",
         "jobTitle": "Senior Manager - Strategic Growth",
         "worksFor": { "@type": "Organization", "name": "Testriq QA Lab" },
-        "url": "www.testriq.com/our-team#aatish-jadhav"
+        "url": "https://www.testriq.com/our-team#aatish-jadhav"
       }
     ]
   }
@@ -4027,13 +3820,13 @@ export const contactUsPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contact Us",
-  "url": "www.testriq.com/contact",
+  "url": "https://www.testriq.com/contact",
   "description": "Reach out to Testriq QA Lab for expert QA consultation, project inquiries, support requests, or partnership opportunities. Get in touch via call, email, video consultation, or schedule a meeting.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Testriq QA Lab LLP",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/images/Testriq_Logo.png",
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/images/Testriq_Logo.png",
     "email": "contact@testriq.com",
     "telephone": "+91-915-2929-343",
     "address": {
@@ -4087,7 +3880,7 @@ export const smartDeviceTestingSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "IoT & Smart Device Testing",
   "areaServed": "Worldwide",
@@ -4147,7 +3940,7 @@ export const smartDeviceTestingSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4194,7 +3987,7 @@ export const matrimonialAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Application Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -4254,7 +4047,7 @@ export const matrimonialAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4274,8 +4067,8 @@ export const datingAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "TESTRIQ QA Lab",
-    "url": "www.testriq.com",
-    "logo": "www.testriq.com/logo.png"
+    "url": "https://www.testriq.com",
+    "logo": "https://www.testriq.com/logo.png"
   },
   "image": "https://www.testriq.com/logo.png",
   "offers": {
@@ -4283,42 +4076,8 @@ export const datingAppCertificationSchema = {
     "priceCurrency": "USD",
     "price": "0",
     "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "url": "https://www.testriq.com/contact",
-    "itemCondition": "https://schema.org/NewCondition",
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "US",
-      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-      "merchantReturnLink": "https://www.testriq.com/contact"
-    },
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "value": "0",
-        "currency": "USD"
-      },
-      "shippingDestination": {
-        "@type": "DefinedRegion",
-        "addressCountry": "US"
-      },
-      "deliveryTime": {
-        "@type": "ShippingDeliveryTime",
-        "handlingTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 0,
-          "maxValue": 1,
-          "unitCode": "d"
-        },
-        "transitTime": {
-          "@type": "QuantitativeValue",
-          "minValue": 1,
-          "maxValue": 5,
-          "unitCode": "d"
-        }
-      }
-    }
   },
   "category": "Quality Assurance and Certification",
   "areaServed": "Worldwide",
@@ -4346,27 +4105,7 @@ export const datingAppCertificationSchema = {
       }
     ]
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "127",
-    "bestRating": "5"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "App Developer"
-      },
-      "datePublished": "2024-03-10",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "reviewBody": "The certification process was thorough and helped us gain trust with our user base. Highly valuable."
-    }
-  ]
+
 };
 
 
@@ -4381,7 +4120,7 @@ export const fantasyAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Fantasy Sports Platform Security & Compliance Certification",
   "areaServed": "Worldwide",
@@ -4441,7 +4180,7 @@ export const fantasyAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4461,7 +4200,7 @@ export const tradingAppCertificationSchema = {
   "provider": {
     "@type": "Organization",
     "name": "Testriq QA Lab",
-    "url": "www.testriq.com"
+    "url": "https://www.testriq.com"
   },
   "serviceType": "Trading Platform Certification",
   "areaServed": "Worldwide",
@@ -4513,7 +4252,7 @@ export const tradingAppCertificationSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceValidUntil": "2026-12-31",
     "priceSpecification": {
@@ -4533,8 +4272,8 @@ export const shoppingAppCertificationSchema = {
   provider: {
     "@type": "Organization",
     name: "TESTRIQ QA Lab",
-    url: "www.testriq.com",
-    logo: "www.testriq.com/logo.png",
+    url: "https://www.testriq.com",
+    logo: "https://www.testriq.com/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-9004988859",
@@ -4567,12 +4306,7 @@ export const shoppingAppCertificationSchema = {
       },
     ],
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "203",
-    bestRating: "5",
-  },
+
 };
 
 // Service Schema for SAP Testing Service
@@ -4603,39 +4337,6 @@ export const sapTestingSchema = {
         "priceValidUntil": "2026-12-31",
         "availability": "https://schema.org/OnlineOnly",
         "url": "https://www.testriq.com/contact-us",
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "applicableCountry": "US",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
-          "merchantReturnLink": "https://www.testriq.com/contact"
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": {
-            "@type": "DefinedRegion",
-            "addressCountry": "US"
-          },
-          "deliveryTime": {
-            "@type": "ShippingDeliveryTime",
-            "handlingTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 0,
-              "maxValue": 1,
-              "unitCode": "d"
-            },
-            "transitTime": {
-              "@type": "QuantitativeValue",
-              "minValue": 1,
-              "maxValue": 5,
-              "unitCode": "d"
-            }
-          }
-        }
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -4664,25 +4365,7 @@ export const sapTestingSchema = {
           }
         ]
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "100",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Global Manufacturing Corp"
-        },
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "5"
-        },
-        "reviewBody": "Testriq's rigorous testing strategy was crucial for our seamless transition to S/4HANA. We maintained full operational capability throughout the migration."
-      }
+
     },
     {
       "@type": "FAQPage",
@@ -5024,7 +4707,7 @@ export const continuousTestingServiceSchema = {
   },
   "offers": {
     "@type": "Offer",
-    "availability": "https://schema.org/InStock",
+    "availability": "https://schema.org/OnlineOnly",
     "priceCurrency": "USD",
     "priceSpecification": {
       "@type": "PriceSpecification",
@@ -5529,6 +5212,363 @@ export const timezoneFAQSchema = {
         "@type": "Answer",
         "text": "Follow-the-sun testing is a global testing model where QA teams in different time zones hand off work continuously, providing round-the-clock testing coverage without overtime costs."
       }
+    }
+  ]
+};
+
+export const pricingServiceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.testriq.com/#organization",
+      "name": "Testriq",
+      "alternateName": "Testriq QA Company",
+      "url": "https://www.testriq.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.testriq.com/testriq-logo.png",
+        "width": 250,
+        "height": 60
+      },
+      "description": "ISTQB Certified partner providing end-to-end QA, DevSecOps, and AI-driven quality engineering. Global reach serving US, UK, EU, India, and UAE markets.",
+      "foundingDate": "2010",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Office #2, 2nd Floor, Ashley Tower, Kanakia Road, Vagad Nagar, Beverly Park, Mira Road",
+        "addressLocality": "Mira Bhayandar",
+        "addressRegion": "Maharashtra",
+        "postalCode": "401107",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+91-915-2929-343",
+        "contactType": "customer service",
+        "email": "contact@testriq.com",
+        "availableLanguage": ["English", "Hindi"],
+        "areaServed": ["US", "GB", "IN", "AE", "EU"]
+      }],
+      "sameAs": [
+        "linkedin.com/company/testriq-qa-lab/",
+        "https://twitter.com/testriq",
+        "https://www.facebook.com/testriq.lab/",
+        "https://www.instagram.com/testriq/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "425",
+        "reviewCount": "425"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.testriq.com/#website",
+      "name": "Testriq",
+      "url": "https://www.testriq.com",
+      "publisher": { "@id": "https://www.testriq.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.testriq.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.testriq.com/pricing",
+      "url": "https://www.testriq.com/pricing",
+      "name": "QA Testing Packages & Pricing | Transparent Software Testing Costs",
+      "description": "No fluff, just results. Transparent pricing for world-class software testing services.",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://www.testriq.com/#website" },
+      "about": { "@id": "https://www.testriq.com/#organization" },
+      "breadcrumb": { "@id": "https://www.testriq.com/pricing#breadcrumb" },
+      "lastReviewed": "2026-04-23",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", ".pricing-hero > p:first-of-type"]
+      },
+      "significantLink": [
+        "https://www.testriq.com/contact-us",
+        "https://www.testriq.com/web-application-testing-services",
+        "https://www.testriq.com/mobile-application-testing",
+        "https://www.testriq.com/api-testing",
+        "https://www.testriq.com/security-testing"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.testriq.com/pricing#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.testriq.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://www.testriq.com/pricing#offer-catalog",
+      "name": "Testriq QA Testing Packages & Pricing",
+      "description": "Choose the perfect testing bundle for your project's phase. Clear deliverables, fast turnarounds, and no hidden fees.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#web-app-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#mobile-app-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#api-testing" },
+        { "@type": "Service", "@id": "https://www.testriq.com/pricing#vapt-security" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#web-app-testing",
+      "name": "Web App Testing Bundle",
+      "description": "Comprehensive web application testing including Functional Testing, Integration Tests, Cross-Browser & Device Compatibility, Usability (UX), Performance, and Security testing. Deliverables include a Bug List with video/screenshot evidence, Vulnerability Report, and Performance Scorecard.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "Web Application Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web App Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integration Tests" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cross-Browser & Device Compatibility" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Usability (UX) Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Testing" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per mid size project",
+          "description": "Custom pricing per mid size project. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Browser Coverage", "value": "Windows, MAC, Android Phone & Tablets, Apple Phone & Tablets" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Bug List (Video/Screenshot + Steps), Vulnerability Report, Performance Scorecard" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#mobile-app-testing",
+      "name": "Mobile App Testing Bundle",
+      "description": "End-to-end mobile application testing for iOS and Android including Functional Testing, UI responsiveness, touch gestures, network condition testing (4G/5G vs Wi-Fi), API Integration Tests, Performance, and Security. Deliverables include Bug List, crash-report log, and UX Friction report.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "Mobile Application Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mobile App Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI Responsiveness on Small Screens" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Touch Gesture Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Network Condition Testing (4G/5G vs Wi-Fi)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API Integration Tests" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Testing" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Testing" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per mid size App, iOS + Android",
+          "description": "Custom pricing per mid size mobile app (iOS + Android). Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Device Coverage", "value": "Real iOS & Android devices, latest to lowest OS versions" },
+        { "@type": "PropertyValue", "name": "Special Tests", "value": "Battery drain & heat check, Push notification delivery, Real world network conditions" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Bug List (Video/Screenshot + Steps), Crash-Report Log, UX Friction Report" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#api-testing",
+      "name": "API Testing Pack",
+      "description": "Comprehensive API testing for up to 20 endpoints including Functional Validation, Schema Validation (JSON/XML), Negative Testing (4xx/5xx), Auth & Header Validation (JWT/OAuth), Performance (latency, throughput, rate limiting), and Data Integrity checks. Covers REST, GraphQL, and SOAP architectures.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "API Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "API Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Functional Validation — Endpoint Logic & CRUD Operations" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Schema Validation — JSON/XML Structure & Data Types" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Negative Testing — Error Codes (4xx, 5xx) & Edge Cases" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auth & Headers — Token Validation (JWT/OAuth) & API Keys" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance — Latency, Throughput & Rate Limiting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Integrity — Database Consistency After API Calls" } }
+        ]
+      },
+      "termsOfService": "2 bug verification cycles free of cost",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per project (up to 20 endpoints)",
+          "description": "Custom pricing per project covering up to 20 API endpoints. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Architecture Support", "value": "REST, GraphQL, SOAP" },
+        { "@type": "PropertyValue", "name": "Environment Support", "value": "Dev, Staging, Production" },
+        { "@type": "PropertyValue", "name": "Tools Included", "value": "Postman / Insomnia collections for easy re-running" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "Full API Audit Report, Performance Benchmarks, Ready-to-use Postman Collection" },
+        { "@type": "PropertyValue", "name": "Free Bug Verification Cycles", "value": "2" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.testriq.com/pricing#vapt-security",
+      "name": "VAPT (Security) Pack",
+      "description": "Vulnerability Assessment and Penetration Testing for web or mobile applications. Includes automated scanning, manual pentesting, OWASP Top 10 coverage, sensitive data exposure checks, server configuration audits, and privilege escalation testing.",
+      "provider": { "@id": "https://www.testriq.com/#organization" },
+      "serviceType": "VAPT Security Testing",
+      "category": "Software Testing Services",
+      "areaServed": [
+        { "@type": "Country", "name": "United States" },
+        { "@type": "Country", "name": "United Kingdom" },
+        { "@type": "Country", "name": "India" },
+        { "@type": "Country", "name": "United Arab Emirates" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "VAPT Security Testing Features",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vulnerability Assessment — Automated Scanning" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manual Pentesting — Human-Led Exploitation" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "OWASP Top 10 Coverage" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sensitive Data Exposure Checks" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Server Configuration — SSL/TLS & Port Audits" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Privilege Escalation Testing" } }
+        ]
+      },
+      "termsOfService": "1 complimentary re-scan after vulnerability fixes",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "0",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "USD",
+          "unitText": "per audit (Web or Mobile)",
+          "description": "Custom pricing per security audit. Contact for a personalized quote."
+        },
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01",
+        "url": "https://www.testriq.com/contact-us",
+        "seller": { "@id": "https://www.testriq.com/#organization" }
+      },
+      "additionalProperty": [
+        { "@type": "PropertyValue", "name": "Approach", "value": "Hybrid — Automated Tools + Manual Expert Review" },
+        { "@type": "PropertyValue", "name": "Special Inclusions", "value": "Business Logic Audit, PoC for every vulnerability, Executive Summary + Tech Details" },
+        { "@type": "PropertyValue", "name": "Deliverables", "value": "VAPT Audit Report (Critical/High/Medium/Low), Remediation Roadmap, Security Certificate" },
+        { "@type": "PropertyValue", "name": "Free Re-scan", "value": "1 complimentary re-scan after fixes" }
+      ],
+      "url": "https://www.testriq.com/pricing"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.testriq.com/pricing#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in Testriq's Web App Testing bundle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Testriq's Web App Testing bundle includes Functional Testing, Integration Tests, Cross-Browser & Device Compatibility, Usability (UX), Performance, and Security testing. Testing covers Windows, MAC, Android Phone & Tablets, and Apple Phone & Tablets. You receive a Bug List with video/screenshot evidence, a Vulnerability Report, and a Performance Scorecard. Two bug verification cycles are included free of cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Mobile App Testing bundle cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Mobile App Testing bundle covers Functional Testing, UI responsiveness on small screens, touch gestures, app behavior on 4G/5G vs Wi-Fi, API Integration Tests, Performance, and Security testing. Testing is done on real iOS & Android devices across latest to lowest OS versions, including battery drain & heat checks, push notification delivery, and real-world network conditions. Deliverables include a Bug List, crash-report log, and UX Friction report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many API endpoints are covered in the API Testing Pack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The API Testing Pack covers up to 20 endpoints per project. It includes Functional Validation, Schema Validation (JSON/XML), Negative Testing (4xx/5xx error codes), Auth & Header Validation (JWT/OAuth), Performance testing (latency, throughput, rate limiting), and Data Integrity checks. Testing supports REST, GraphQL, and SOAP architectures across Dev, Staging, and Production environments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is included in the VAPT (Security) Pack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The VAPT Pack includes Vulnerability Assessment (automated scanning), Manual Pentesting (human-led exploitation), OWASP Top 10 coverage (Injection, XSS, Broken Auth), Sensitive Data Exposure checks, Server Configuration audits (SSL/TLS & open ports), and Privilege Escalation testing. It uses a hybrid approach of automated tools and manual expert review. Deliverables include a categorized VAPT Audit Report, Remediation Roadmap, and a Security Certificate. One complimentary re-scan is included after you fix the vulnerabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Testriq offer custom pricing for larger projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All Testriq testing bundles are priced per project scope and can be customized based on application complexity, number of features, and testing depth. Contact our experts for a personalized quote with clear deliverables, fast turnarounds, and no hidden fees."
+          }
+        }
+      ]
     }
   ]
 };

@@ -15,7 +15,7 @@ export default function ApolloTracking() {
     return (
         <Script
             src={`https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${nocache}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             onLoad={() => {
                 // @ts-ignore
                 if (window.trackingFunctions && window.trackingFunctions.onLoad) {

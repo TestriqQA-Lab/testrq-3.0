@@ -1,3 +1,10 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 // Simple HTML entity decoding that works on both server and client
 export const decodeHtmlEntities = (html: string): string => {
   // Common HTML entities mapping

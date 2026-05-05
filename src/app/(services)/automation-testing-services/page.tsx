@@ -1,3 +1,4 @@
+
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
@@ -5,8 +6,7 @@ import StructuredData, {
   automationTestingServiceSchema,
   createBreadcrumbSchema,
 } from "@/components/seo/StructuredData";
-
-export const revalidate = 3600; // ISR: Revalidate every hour
+import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
 export const metadata: Metadata = {
   title: "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
@@ -48,11 +48,10 @@ export const metadata: Metadata = {
       "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
     images: [
       {
-        url: "/OG/Automation-Testing-Service-Og.webp",
+        url: "/OG/Automation-Testing-Services-og.webp",
         width: 1200,
         height: 630,
         alt: "Automation Testing Services - Testriq",
-        type: "image/webp",
       },
     ],
   },
@@ -124,85 +123,44 @@ const AutomationTestingReadyToEnsureQuality = dynamic(
 
 const AutomationTestingComprehensiveSlider = dynamic(
   () => import("@/components/sections/AutomationTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[800px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingProvenTestingProcess = dynamic(
   () => import("@/components/sections/AutomationTestingProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingFrameworkArchitecture = dynamic(
-  () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[700px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingToolsFramework = dynamic(
   () => import("@/components/sections/AutomationTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingCaseStudies = dynamic(
   () => import("@/components/sections/AutomationTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <ContentLoader /> }
 );
 
 const AutomationTestingFAQs = dynamic(
   () => import("@/components/sections/AutomationTestingFAQs"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
+  { ssr: true, loading: () => <FAQLoader /> }
 );
 
-export default function AutomationTestingPage() {
+
+const ManualTestingFrameworkArchitecture = dynamic(
+  () => import("@/components/sections/ManualTestingFrameworkArchitecture"),
+  { ssr: true, loading: () => <ContentLoader /> }
+);
+
+export default function AutomationTestingServices() {
   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com" },
+    { name: "Home", url: "https://www.testriq.com/" },
     {
       name: "Services",
       url: "https://www.testriq.com/automation-testing-services",
     },
     {
-      name: "Automation Testing",
+      name: "Automation Testing Services",
       url: "https://www.testriq.com/automation-testing-services",
     },
   ];
