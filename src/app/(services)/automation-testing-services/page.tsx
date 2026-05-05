@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
     images: [
       {
-        url: "/OG/Automation-Testing-Services-og.webp",
+        url: "/OG/Automation-testing-service-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Automation Testing Services - Testriq",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
       "Automation Testing | ISO 29119-5 & SOC2 Certified | Testriq",
     description:
       "Global automation solutions using Playwright, Selenium, and Cypress. We leverage ISO 29119-5 standards to deliver high-ROI, secure, and scalable QA.",
-    images: ["/OG/Automation-testing-Services-Twitter.webp"],
+    images: ["/OG/Automation-testing-service-og-image.webp"],
   },
   robots: {
     index: true,

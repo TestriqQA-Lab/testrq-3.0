@@ -302,6 +302,41 @@ function generateCitySchema(cityData: CityData) {
   };
 }
 
+// Map slugs to their specific OG image filenames. Includes overrides for typos in uploaded filenames.
+function getCityOgImage(slug: string): string {
+  const cityKey = slug.replace("software-qa-testing-services-in-", "");
+  
+  const overrides: Record<string, string> = {
+    "ahmedabad": "Ahemdabad-og-image.webp",
+    "ghaziabad": "Ghariabad-og-image.webp",
+    "jamshedpur": "Jameshdpur-og-image.webp", // Usually a typo like this
+    "manchester": "Manshester-og-image.webp",
+    "melbourne": "Melbourn-og-image.webp",
+    "christchurch": "Christchurc-og-image.webp",
+    "vadodara": "Vadodra-og-image.webp",
+    "bangalore": "Bengaluru-og-image.webp",
+    "secunderabad": "Secundarabad-og-image.webp",
+    "madurai": "Madurai-og-image.webp",
+    "ghayathi": "Ghayathi-og-image.webp",
+  };
+
+  // Cities with explicitly NO images uploaded
+  const noImageCities = ["abu-dhabi", "navi-mumbai", "al-jazirah-al-hamra"];
+  
+  if (noImageCities.includes(cityKey)) {
+    return "https://www.testriq.com/og-image.png";
+  }
+
+  // Capitalize first letter of each word to match filename convention (e.g., al-ain -> Al-ain)
+  const formatName = (name: string) => {
+    return name.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('-');
+  };
+
+  const filename = overrides[cityKey] || `${formatName(cityKey)}-og-image.webp`;
+  
+  return `https://www.testriq.com/OG/${filename}`;
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
 
@@ -375,6 +410,7 @@ export async function generateMetadata({ params }: PageProps) {
   const pageTitle = cityData.metadata.title;
   const pageDescription = cityData.metadata.description;
   const canonicalUrl = `https://www.testriq.com/${cityData.slug}`;
+  const ogImageUrl = getCityOgImage(resolvedParams.slug);
 
   return {
     title: pageTitle,
@@ -388,7 +424,7 @@ export async function generateMetadata({ params }: PageProps) {
       type: "website",
       images: [
         {
-          url: "https://www.testriq.com/og-image.png", // Replace with a relevant image for city pages
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: pageTitle,
@@ -399,7 +435,7 @@ export async function generateMetadata({ params }: PageProps) {
       card: "summary_large_image",
       title: pageTitle,
       description: pageDescription,
-      images: ["https://www.testriq.com/twitter-image.png"], // Replace with a relevant image for city pages
+      images: [ogImageUrl],
     },
     robots: {
       index: true,

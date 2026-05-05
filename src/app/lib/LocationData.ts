@@ -153,11 +153,14 @@ export const locationData: LocationData = {
   },
   "United Arab Emirates": {
     UAE: {
+      "Abu Dhabi": "/software-qa-testing-services-in-abu-dhabi",
       Ajman: "/software-qa-testing-services-in-ajman",
       "Al Ain":
         "/software-qa-testing-services-in-al-ain",
       "Al Dhannah":
         "/software-qa-testing-services-in-al-dhannah",
+      "Al Jazirah Al Hamra":
+        "/software-qa-testing-services-in-al-jazirah-al-hamra",
       "Ar Rams":
         "/software-qa-testing-services-in-ar-rams",
       "Dibba Al Fujairah":

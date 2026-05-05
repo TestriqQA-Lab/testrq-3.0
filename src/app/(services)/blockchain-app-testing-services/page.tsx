@@ -43,6 +43,7 @@ export const metadata: Metadata = {
         canonical: "https://www.testriq.com/blockchain-app-testing-services",
     },
     openGraph: {
+        images: [{ url: "/OG/Bloak-chain-app-testing-og-image.webp" }],
         title: "Blockchain App Testing Services | Smart Contract Audit & dApp QA - Testriq",
         description: "Secure your Web3 ecosystem with Testriq's blockchain app testing services.",
         url: "https://www.testriq.com/blockchain-app-testing-services",
