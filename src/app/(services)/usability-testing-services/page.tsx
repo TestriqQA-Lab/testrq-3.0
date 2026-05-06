@@ -41,7 +41,7 @@ export const metadata: Metadata = {
             "Transform your user experience with Testriq's AI-driven usability testing and UX audits. Drive higher engagement and conversion rates.",
         images: [
             {
-                url: "/OG/usability-testing-og-image.webp",
+                url: "https://www.testriq.com/OG/usability-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Usability Testing Services - Testriq",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         title: "Usability Testing Services | UX Audit & User Testing Company - Testriq",
         description:
             "Expert usability testing and user research for web and mobile apps. Elevate your UX and drive business growth.",
-        images: ["/OG/usability-testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/usability-testing-og-image.webp"],
     },
 };
 

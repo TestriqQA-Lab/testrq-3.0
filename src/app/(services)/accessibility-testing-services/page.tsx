@@ -39,7 +39,7 @@ export const metadata: Metadata = {
             "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
         images: [
             {
-                url: "/OG/Accessibility-testing-og-image.webp",
+                url: "https://www.testriq.com/OG/Accessibility-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Accessibility Testing Services - Testriq",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         title: "Accessibility Testing Services | Ensuring Digital Inclusion",
         description:
             "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
-        images: ["/OG/Accessibility-testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/Accessibility-testing-og-image.webp"],
     },
     robots: {
         index: true,

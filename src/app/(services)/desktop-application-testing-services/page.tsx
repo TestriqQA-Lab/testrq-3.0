@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
     images: [
       {
-        url: "/OG/Desktop-Application-Service-OG.webp",
+        url: "https://www.testriq.com/OG/Desktop-Application-Service-OG.webp",
         width: 1200,
         height: 630,
         alt: "Desktop Application Testing Services - Testriq",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: "Desktop App Testing & QA Services | Testriq",
     description:
       "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
-    images: ["/OG/Desktop-Application-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Desktop-Application-Service-Twitter.webp"],
   },
   robots: {
     index: true,

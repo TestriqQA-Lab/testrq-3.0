@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Transform your raw data into actionable business insights with Testriq's professional data analysis services. We deliver descriptive, predictive, and prescriptive analytics using advanced tools and expert data scientists.",
     images: [
       {
-        url: "/OG/Data-Analysis-Service-Og.webp",
+        url: "https://www.testriq.com/OG/Data-Analysis-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq - Professional Data Analysis Services",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Professional Data Analysis Services - Analytics, Insights & Reporting | Testriq",
     description:
       "Transform your raw data into actionable business insights with Testriq's professional data analysis services. We deliver descriptive, predictive, and prescriptive analytics using advanced tools and expert data scientists.",
-    images: ["/OG/Data-Analysis-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Data-Analysis-Service-Twitter.webp"],
   },
   robots: {
     index: true,

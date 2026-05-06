@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       "Certify your trading platform for security, performance, and global regulatory compliance. Trusted by 500+ apps for FINRA, SEC, MiFID II, and PCI DSS standards.",
     images: [
       {
-        url: "/OG/Trading-App-Certification-Og.webp",
+        url: "https://www.testriq.com/OG/Trading-App-Certification-Og.webp",
         width: 1200,
         height: 630,
         alt: "Trading App Certification by Testriq",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
       "Trading App Certification | Secure & Compliant Trading Platform Testing | Testriq",
     description:
       "Get your trading app certified for security, compliance, and performance. FINRA, MiFID II, SEC, GDPR compliant QA for fintech leaders.",
-    images: ["/OG/Trading-App-Certification-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Trading-App-Certification-Twitter.webp"],
   },
   robots: {
     index: true,

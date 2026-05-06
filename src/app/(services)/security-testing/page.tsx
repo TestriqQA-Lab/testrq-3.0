@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OG/Security-service-og-image.webp",
+        url: "https://www.testriq.com/OG/Security-service-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Security Testing Services by Testriq",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Security Testing Services & Pen-testing Services | Testriq",
     description: "Ensure your systems withstand modern cyber attacks with Testriq's comprehensive VAPT and Application Security Testing solutions.",
-    images: ["/OG/Security-service-og-image.webp"],
+    images: ["https://www.testriq.com/OG/Security-service-og-image.webp"],
   },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {

@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Expert robotics and RPA testing for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, and AI path planning.",
     images: [
       {
-        url: "/OG/Robotics-Testing-Service-Og.webp",
+        url: "https://www.testriq.com/OG/Robotics-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Robotic Testing Services - Testriq",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
       "Enterprise RPA Testing & QA Services USA | Testriq",
     description:
       "Expert robotics and RPA testing for the 2026 automation era. Specialized in ISO 10218 compliance, Sim2Real validation, and AI path planning.",
-    images: ["/OG/Robotics-Testing-service-twitter.webp"],
+    images: ["https://www.testriq.com/OG/Robotics-Testing-service-twitter.webp"],
   },
   robots: {
     index: true,

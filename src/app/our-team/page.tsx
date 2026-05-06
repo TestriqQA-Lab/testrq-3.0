@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'Meet Testriq’s team of ISTQB-certified QA professionals with decades of software testing experience. Get to know the leaders and departments behind our testing excellence.',
     images: [
       {
-        url: '/OG/Our_Team_og.webp',
+        url: 'https://www.testriq.com/OG/Our_Team_og.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq Certified QA Experts Team',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Meet Our Team - Certified QA Experts | Testriq',
     description: 'Meet Testriq’s team of ISTQB-certified QA professionals with decades of software testing experience. Get to know the leaders and departments behind our testing excellence.',
-    images: ['/OG/Out_Team_Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Out_Team_Twitter.webp'],
   },
   robots: {
     index: true,

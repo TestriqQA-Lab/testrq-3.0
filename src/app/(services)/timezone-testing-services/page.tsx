@@ -36,7 +36,7 @@ export const metadata: Metadata = {
             "Transform your global delivery model with Testriq's real-time QA services. Achieve synchronous engineering excellence with follow-the-sun cycles.",
         images: [
             {
-                url: "/OG/time-zone-tresting-og-image.webp",
+                url: "https://www.testriq.com/OG/time-zone-tresting-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Time Zone Aligned QA Services - Testriq",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         title: "Testing in Your Time Zone | Real-Time QA & Follow-the-Sun Testing - Testriq",
         description:
             "Accelerate development with real-time QA collaboration and localized support. Testriq's follow-the-sun model ensures continuous quality.",
-        images: ["/OG/time-zone-tresting-og-image.webp"],
+        images: ["https://www.testriq.com/OG/time-zone-tresting-og-image.webp"],
     },
 };
 

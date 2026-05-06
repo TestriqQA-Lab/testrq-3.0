@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
     images: [
       {
-        url: "/OG/Manual-Testing-Service-og.webp",
+        url: "https://www.testriq.com/OG/Manual-Testing-Service-og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Manual Testing Services by QA Experts",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
     description:
       "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
-    images: ["/OG/Manual-Testing-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Manual-Testing-Service-Twitter.webp"],
   },
   robots: {
     index: true,

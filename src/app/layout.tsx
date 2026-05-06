@@ -72,7 +72,7 @@ export const metadata: Metadata = {
       "ISTQB Certified partner providing end-to-end QA, DevSecOps, and AI-driven quality engineering. Global reach serving US, UK, EU, India, and UAE markets.",
     images: [
       {
-        url: "/OG/testriq-qa-lab-llp-og-img.webp",
+        url: "https://www.testriq.com/OG/testriq-qa-lab-llp-og-img.webp",
         width: 1200,
         height: 630,
         alt: "Testriq - Global Software Testing Services",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     title: "Pure-Play Software Testing Company & QA Outsourcing | Testriq",
     description:
       "Expert QA outsourcing and risk-based testing for global enterprises. Serving US, UK, EU, and Asia with ISTQB certified experts.",
-    images: ["/OG/testriq-qa-lab-llp-twitter-img.webp"],
+    images: ["https://www.testriq.com/OG/testriq-qa-lab-llp-twitter-img.webp"],
   },
   robots: {
     index: true,

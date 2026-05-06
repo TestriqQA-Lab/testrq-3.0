@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
     images: [
       {
-        url: '/OG/Regression-Testing-Services-Og.webp',
+        url: 'https://www.testriq.com/OG/Regression-Testing-Services-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Regression Testing Services - Testriq',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
     description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
-    images: ['/OG/Regression-Testing-Services-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Regression-Testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

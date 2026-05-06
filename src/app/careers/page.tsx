@@ -118,7 +118,7 @@ export const metadata: Metadata = {
     description: 'Explore QA career opportunities at Testriq. Join a global team of software testing professionals. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.',
     images: [
       {
-        url: '/OG/Careers-Og.webp',
+        url: 'https://www.testriq.com/OG/Careers-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Careers at Testriq - QA Testing Jobs',
@@ -131,7 +131,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Careers | Join Our QA Testing Team at Testriq | Testriq',
     description: 'Explore QA career opportunities at Testriq. Join a global team of software testing professionals. Enjoy remote-first work, growth opportunities, top-tier benefits, and a culture of innovation.',
-    images: ['/OG/Careers-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Careers-Twitter.webp'],
   },
   robots: {
     index: true,

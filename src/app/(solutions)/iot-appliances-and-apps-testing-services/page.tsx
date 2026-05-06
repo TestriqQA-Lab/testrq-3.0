@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: "Ensure flawless performance, connectivity, and security across your IoT ecosystem. Testriq offers specialized IoT testing services for smart devices, edge computing, protocol validation, and cloud integration.",
     images: [
       {
-        url: "/OG/IoT-Testing-Service-Og.webp",
+        url: "https://www.testriq.com/OG/IoT-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "IoT Testing Solutions by Testriq"
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: "@testriq",
     title: "IoT Testing Solutions – Smart Device & Connected App QA | Testriq",
     description: "Testriq ensures end-to-end QA for IoT systems including devices, edge, cloud, and mobile apps. Reduce latency, improve uptime, and secure your IoT ecosystem.",
-    images: ["/OG/IoT-Testing-Service-Twitter.webp"]
+    images: ["https://www.testriq.com/OG/IoT-Testing-Service-Twitter.webp"]
   },
   robots: {
     index: true,

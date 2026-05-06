@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "Safeguard your digital presence with comprehensive mobile app quality assurance. Expert JS/Android testing for 24,000+ device combinations.",
     images: [
       {
-        url: "/OG/Mobile_Application-Services-og.webp",
+        url: "https://www.testriq.com/OG/Mobile_Application-Services-og.webp",
         width: 1200,
         height: 630,
         alt: "Global Mobile App Testing Services - Testriq",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Ship Faster with Expert Mobile Test Automation | Testriq",
     description:
       "Expert-led mobile app testing for the 2026 landscape. Specialized in 5G, Security, and ISO 29119 compliance.",
-    images: ["/OG/Mobile_Application-Services-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Mobile_Application-Services-Twitter.webp"],
   },
   robots: {
     index: true,

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
     images: [
       {
-        url: '/OG/Matrimonial-App-Certification-OG.webp',
+        url: 'https://www.testriq.com/OG/Matrimonial-App-Certification-OG.webp',
         width: 1200,
         height: 630,
         alt: 'Matrimonial App Certification - Testriq QA Lab',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Matrimonial App Certification | Security, Privacy & Quality Compliance - Testriq',
     description: 'Get your matrimonial app certified for privacy, security, and performance. Testriq’s certification ensures GDPR, ISO 27001, and CCPA compliance while boosting user trust and reducing security risks.',
-    images: ['/OG/Matrimonial-App-Certification-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Matrimonial-App-Certification-Twitter.webp'],
   },
   robots: {
     index: true,

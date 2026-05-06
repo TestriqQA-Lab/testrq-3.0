@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     url: "https://www.testriq.com/contact-us",
     images: [
       {
-        url: "/OG/Contact-Us-Og.webp",
+        url: "https://www.testriq.com/OG/Contact-Us-Og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Contact Us OG Image",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     description: "Reach out to Testriq for your QA and software testing needs.",
     images: [
       {
-        url: "/OG/Contact-Us-Twitter.webp",
+        url: "https://www.testriq.com/OG/Contact-Us-Twitter.webp",
         width: 1200,
         height: 675,
         alt: "Testriq Contact Us Twitter Image",

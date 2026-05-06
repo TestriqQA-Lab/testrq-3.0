@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
     images: [
       {
-        url: '/OG/Telecommunication-Testing-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/Telecommunication-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Telecommunication Testing Solutions by Testriq',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Telecommunication Testing Solutions | 5G & Network QA Services | Testriq',
     description: 'Comprehensive telecommunication testing services including 5G, IoT, VoIP, network security, NFV/SDN, and performance optimization. Ensure seamless connectivity and superior network performance with Testriq.',
-    images: ['/OG/Telecommunication-Testing-Service-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Telecommunication-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,

@@ -66,9 +66,9 @@ export default function AgileTestingServicesPage() {
         <>
             <title>Expert Agile Testing Services | Agile QA & Continuous Testing | Testriq</title>
             <meta name="description" content="Accelerate your release cycles with Testriq's Agile testing services. Expert-led continuous testing, shift-left QA, and sprint-ready automation for global teams in 2026." />
-            <meta property="og:image" content="/OG/Agile-testing-og-image.webp" />
+            <meta property="og:image" content="https://www.testriq.com/OG/Agile-testing-og-image.webp" />
             <meta property="og:type" content="website" />
-            <meta name="twitter:image" content="/OG/Agile-testing-og-image.webp" />
+            <meta name="twitter:image" content="https://www.testriq.com/OG/Agile-testing-og-image.webp" />
 
             <StructuredData data={agileTestingSchema} />
             <StructuredData data={agileFAQSchema} />

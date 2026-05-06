@@ -48,7 +48,7 @@ export const metadata: Metadata = {
             "Premium SaaS testing services for cloud-first companies. Multi-tenant testing, GDPR HIPAA compliance, performance testing, and security audits.",
         images: [
             {
-                url: "/OG/SaaS-Testing-og-image.webp",
+                url: "https://www.testriq.com/OG/SaaS-Testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "SaaS Testing Services - Testriq",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
         title: "SaaS Testing Services | Expert Cloud Application QA & Security",
         description:
             "Premium SaaS testing services for cloud-first companies. Multi-tenant testing, GDPR HIPAA compliance, performance testing, and security audits.",
-        images: ["/OG/SaaS-Testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/SaaS-Testing-og-image.webp"],
     },
     robots: {
         index: true,

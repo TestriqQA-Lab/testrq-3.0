@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
     images: [
       {
-        url: '/OG/E-commerce-Testing-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/E-commerce-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'E-Commerce Testing Services - Testriq',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'E-Commerce Testing |QA Testing | Testriq',
     description: 'Optimizing conversions and security for e-commerce in 2026. Enterprise-grade testing for Magento, Shopify, and WooCommerce. PCI DSS 4.0 compliant QA for global digital commerce.',
-    images: ['/OG/E-commerce-Testing-Service-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/E-commerce-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,

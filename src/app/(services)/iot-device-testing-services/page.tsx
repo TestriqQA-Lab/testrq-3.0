@@ -44,7 +44,7 @@ export const metadata: Metadata = {
       "Ensuring reliability in a 21.1 Billion connected ecosystem. Expert smart device QA, firmware audits, and 5G-edge performance stress testing.",
     images: [
       {
-        url: "/OG/IoT-Testing-Services-og.webp",
+        url: "https://www.testriq.com/OG/IoT-Testing-Services-og.webp",
         width: 1200,
         height: 630,
         alt: "Global IoT Testing Services - Testriq",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "IoT Testing Services: Firmware, MQTT & Security | Testriq",
     description:
       "Expert IoT QA for the 2026 landscape. Specialized in Firmware, Protocols, and Cyber Resilience Act compliance.",
-    images: ["/OG/Iot-Testing_services-twitter.webp"],
+    images: ["https://www.testriq.com/OG/Iot-Testing_services-twitter.webp"],
   },
   robots: {
     index: true,

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
             "Global compatibility solutions for web and mobile. We ensure your application performs perfectly across every device, browser, and OS with ISO-certified QA.",
         images: [
             {
-                url: "/OG/Compatibility-testing-og-image.webp",
+                url: "https://www.testriq.com/OG/Compatibility-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Compatibility Testing Services - Testriq",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         title: "Compatibility Testing Services | Cross-Browser & Device QA | Testriq",
         description:
             "Expert cross-device and cross-browser testing for global enterprises. Partner for universal performance and flawless UX.",
-        images: ["/OG/Compatibility-testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/Compatibility-testing-og-image.webp"],
     },
     robots: {
         index: true,

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Ensure your APIs deliver reliable, secure, and high-performance integrations with our comprehensive API testing services. From REST to GraphQL, SOAP to microservices – we test it all with precision.',
     images: [
       {
-        url: '/OG/API-Testing-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/API-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'API Testing Services by Testriq QA Lab',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'API Testing Services - Secure & Reliable Integrations | Testriq',
     description: 'Ensure your APIs deliver reliable, secure, and high-performance integrations with our comprehensive API testing services. From REST to GraphQL, SOAP to microservices – we test it all with precision.',
-    images: ['/OG/Automation-testing-Services-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Automation-testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

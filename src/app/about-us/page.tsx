@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: '15+ Years Experience. 500K+ Test Cases Executed. Partner with the world\'s most trusted QA experts.',
     images: [
       {
-        url: '/OG/About-Us-og.webp',
+        url: 'https://www.testriq.com/OG/About-Us-og.webp',
         width: 1200,
         height: 630,
         alt: 'About Testriq QA Lab - Trusted Software Testing Company',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'About Us - Testriq QA Lab | Trusted Software Testing Company',
     description: 'Learn about Testriq QA Lab – a globally trusted software testing company with 14+ years of experience. Discover our mission, values, journey, certifications, and why top companies trust our QA excellence.',
-    images: ['/OG/About-us-twitter.webp'],
+    images: ['https://www.testriq.com/OG/About-us-twitter.webp'],
   },
   robots: {
     index: true,

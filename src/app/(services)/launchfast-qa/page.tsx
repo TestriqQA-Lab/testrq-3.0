@@ -54,7 +54,7 @@ export const metadata: Metadata = {
       "Rapid QA testing designed for startup MVP success. Agile integration, 24/7 support, and investor-ready traceability to accelerate your launch.",
     images: [
       {
-        url: "/OG/Launch-Fast-QA-Service-og.webp",
+        url: "https://www.testriq.com/OG/Launch-Fast-QA-Service-og.webp",
         width: 1200,
         height: 630,
         alt: "LaunchFast QA Services - Testriq",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "Launch-Fast QA Services for Companies | Testriq",
     description:
       "Rapid QA testing designed for startup MVP success. Agile integration, 24/7 support, and investor-ready traceability to accelerate your launch.",
-    images: ["/OG/Launch_Fast_QA-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Launch_Fast_QA-Twitter.webp"],
   },
   robots: {
     index: true,

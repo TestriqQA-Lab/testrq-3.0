@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
     images: [
       {
-        url: "/OG/Smart-Device-Testing-Service-Og.webp",
+        url: "https://www.testriq.com/OG/Smart-Device-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Smart Device Testing Services - Testriq QA Lab",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
       "Enterprise Smart Device & IoT Testing Services USA | Testriq",
     description:
       "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
-    images: ["/OG/Telecommunication-Testing-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Telecommunication-Testing-Service-Twitter.webp"],
   },
   robots: {
     index: true,

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
       "Deliver inclusive, scalable, and high-performing learning platforms with Testriq's e-learning testing services. We ensure compliance, security, mobile usability, and engaging learning experiences across devices.",
     images: [
       {
-        url: "/OG/E-Learing-Testing-Service-Og.webp",
+        url: "https://www.testriq.com/OG/E-Learing-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "E-Learning Testing Services - Testriq",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "E-Learning Testing Services | LMS & Educational Platform QA | Testriq",
     description:
       "Comprehensive e-learning QA including LMS testing, WCAG accessibility, SCORM/xAPI validation, performance optimization, and secure educational platforms.",
-    images: ["/OG/E-Learing-Testing-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/E-Learing-Testing-Service-Twitter.webp"],
   },
   robots: {
     index: true,

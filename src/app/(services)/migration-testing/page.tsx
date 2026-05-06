@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: "Ensure seamless data & application migrations with Testriq’s expert Migration Testing Services. Prevent data loss, ensure integrity & minimize downtime. Partner with us!",
     openGraph: {
         type: "website",
-        images: [{ url: "/OG/migration-testing-og-image.webp" }],
+        images: [{ url: "https://www.testriq.com/OG/migration-testing-og-image.webp" }],
     },
     alternates: {
         canonical: "https://www.testriq.com/services/migration-testing",

@@ -33,13 +33,13 @@ export const metadata: Metadata = {
     title: "Testing Tools & Frameworks | Professional QA Automation Solutions",
     description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing.",
     type: "website",
-    url: "/OG/Advance-Testing-tools-og.webp",
+    url: "https://www.testriq.com/OG/Advance-Testing-tools-og.webp",
   },
   twitter: {
     card: "summary_large_image",
     title: "Testing Tools & Frameworks | Professional QA Automation Solutions",
     description: "Discover our comprehensive suite of testing tools and frameworks for web application testing, mobile testing, API testing, and healthcare software testing.",
-    images: ['/OG/Advance-Testing-tools-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Advance-Testing-tools-Twitter.webp'],
   },
   metadataBase: new URL('https://www.testriq.com/'),
   alternates: {

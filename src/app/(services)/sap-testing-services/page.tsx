@@ -59,7 +59,7 @@ export const metadata: Metadata = {
             "Accelerate your SAP deployment and minimize risk with Testriq's ISTQB-certified SAP testing experts, leveraging intelligent automation for seamless S/4HANA migrations and upgrade stability.",
         images: [
             {
-                url: "/OG/SAP-testing-og-image.webp",
+                url: "https://www.testriq.com/OG/SAP-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "SAP Testing Services - Testriq",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
             "SAP Testing Services: Accelerated QA for Seamless S/4HANA Migrations & Upgrades",
         description:
             "Accelerate your SAP deployment and minimize risk with Testriq's ISTQB-certified SAP testing experts, leveraging intelligent automation for seamless S/4HANA migrations and upgrade stability.",
-        images: ["/OG/SAP-testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/SAP-testing-og-image.webp"],
     },
     robots: {
         index: true,

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/OG/Web-Application-Service-Og.webp",
+        url: "https://www.testriq.com/OG/Web-Application-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "Web Application Testing Services by Testriq",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Web Application Testing Services | QA Company | Testriq",
     description:
       "Secure your digital future with Testriq's global web application testing services. We specialize in Next.js, cross-browser compatibility, ISO 29119 compliance, and automated testing for scalable, secure web apps.",
-    images: ["/OG/Web-Application_Testing_Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Web-Application_Testing_Twitter.webp"],
   },
   metadataBase: new URL("https://www.testriq.com/"),
   alternates: {

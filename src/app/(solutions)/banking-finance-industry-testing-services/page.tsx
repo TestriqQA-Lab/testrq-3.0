@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Ensure secure, compliant, and high-performance banking platforms with Testriq’s comprehensive BFSI testing solutions. PCI DSS, SOX, GDPR compliant QA services.',
     images: [
       {
-        url: '/OG/Banking-App-Testing-Services-og.webp',
+        url: 'https://www.testriq.com/OG/Banking-App-Testing-Services-og.webp',
         width: 1200,
         height: 630,
         alt: 'Banking & Finance Testing Solutions | Testriq',
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Banking & Finance Testing Solutions | BFSI QA Services | Testriq',
     description: 'Secure your financial applications with Testriq’s expert BFSI testing services. Compliance, performance, and security all-in-one.',
-    images: ['/OG/Banking-App-Testing-Services-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Banking-App-Testing-Services-Twitter.webp'],
   },
   robots: {
     index: true,

@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       "Uncover critical risks with Testriq's exploratory testing services. We combine ISO 29119-2 standards, ISTQB-certified experts, and human intuition to find defects automated tests miss.",
     images: [
       {
-        url: "/OG/Exploratory-Testing-OG.webp",
+        url: "https://www.testriq.com/OG/Exploratory-Testing-OG.webp",
         width: 1200,
         height: 630,
         alt: "Exploratory Testing Services - Testriq",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "Exploratory Testing Services | Testriq QA Lab",
     description:
       "Uncover critical risks with Testriq's exploratory testing services. We combine ISO 29119-2 standards, ISTQB-certified experts, and human intuition to find defects automated tests miss.",
-    images: ["/OG/Exploratory-Testing-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/Exploratory-Testing-Twitter.webp"],
   },
   robots: {
     index: true,

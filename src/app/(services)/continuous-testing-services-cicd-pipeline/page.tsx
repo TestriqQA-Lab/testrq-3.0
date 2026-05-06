@@ -47,7 +47,7 @@ export const metadata: Metadata = {
             "Eliminate bottlenecks and shift quality left with Testriq's Continuous Testing Services. We integrate automated testing into your CI/CD pipeline for faster releases.",
         images: [
             {
-                url: "/OG/continues-testing-og-image.webp",
+                url: "https://www.testriq.com/OG/continues-testing-og-image.webp",
                 width: 1200,
                 height: 630,
                 alt: "Continuous Testing Services - Testriq",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         title: "Continuous Testing Services & CI/CD Integration | Testriq",
         description:
             "Eliminate bottlenecks and shift quality left with Testriq's Continuous Testing Services. We integrate automated testing into your CI/CD pipeline for faster releases.",
-        images: ["/OG/continues-testing-og-image.webp"],
+        images: ["https://www.testriq.com/OG/continues-testing-og-image.webp"],
     },
     robots: {
         index: true,

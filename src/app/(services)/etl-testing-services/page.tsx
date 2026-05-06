@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
     images: [
       {
-        url: "/OG/ETL-Testing-Service-Og.webp",
+        url: "https://www.testriq.com/OG/ETL-Testing-Service-Og.webp",
         width: 1200,
         height: 630,
         alt: "ETL Testing Services - Testriq",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
       "Cloud ETL Testing Services & Data Integrity USA | Testriq",
     description:
       "Expert-led ETL testing services for the 2026 zettabyte era. Specialized in ISO 8000-1:2022 compliance, cloud data migration, and automated data validation.",
-    images: ["/OG/ETL-TesTing-Service-Twitter.webp"],
+    images: ["https://www.testriq.com/OG/ETL-TesTing-Service-Twitter.webp"],
   },
   robots: {
     index: true,

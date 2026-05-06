@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description: 'Enterprise-grade QA documentation services. Bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems.',
     images: [
       {
-        url: '/OG/QA-Documentation-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/QA-Documentation-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'QA Documentation Services by Testriq',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Analyze Data to Improve QA Team Performance | Testriq',
     description: 'Enterprise-grade QA documentation services. Bridge the gap between rapid deployment and quality assurance with audit-ready, scalable systems.',
-    images: ['/OG/QA-Documentation-service-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/QA-Documentation-service-Twitter.webp'],
   },
   robots: {
     index: true,

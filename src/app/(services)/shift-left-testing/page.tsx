@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         type: "website",
-        images: [{ url: "/OG/Shift-left-testing-og-image.webp" }],
+        images: [{ url: "https://www.testriq.com/OG/Shift-left-testing-og-image.webp" }],
     },
     alternates: {
         canonical: "https://www.testriq.com/services/shift-left-testing",

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: "https://www.testriq.com/case-studies",
     images: [
       {
-        url: "/OG/case-study-og.webp",
+        url: "https://www.testriq.com/OG/case-study-og.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Case Studies & Client Success Stories",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description:
       "Explore our client success stories and case studies showcasing real results from our software testing services.",
     images: [
-      "/OG/case-study-twitter.webp",
+      "https://www.testriq.com/OG/case-study-twitter.webp",
     ],
   },
 };

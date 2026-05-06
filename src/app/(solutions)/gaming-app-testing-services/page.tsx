@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Testriq offers specialized game QA for mobile, console, and VR games—ensuring flawless gameplay, performance, and player retention. Trusted by 500+ gaming studios.',
     images: [
       {
-        url: '/OG/Gaming-App-Testing-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/Gaming-App-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Gaming QA Testing Services | Testriq'
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Gaming App Testing Solutions | Mobile Game QA & Performance Testing | Testriq',
     description: 'Deliver immersive, bug-free gaming experiences with Testriq’s expert QA testing—covering mobile, console, VR, and multiplayer games.',
-    images: ['/OG/Gaming-App-Testing-Service-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Gaming-App-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Transform your team with Testriq's comprehensive Corporate QA Training services. Expert-led training programs covering manual testing, automation, performance testing, and quality assurance best practices.",
     images: [
       {
-        url: "/OG/Corporate QA traing OG img.webp",
+        url: "https://www.testriq.com/OG/Corporate QA traing OG img.webp",
         width: 1200,
         height: 630,
         alt: "Testriq Corporate QA Training Services",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       "Corporate QA Training Services - Professional Software Testing Training | Testriq",
     description:
       "Transform your team with Testriq's comprehensive Corporate QA Training services. Expert-led training programs covering manual testing, automation, performance testing, and quality assurance best practices.",
-    images: ["/OG/Corporate QA traing OG twitter.webp"],
+    images: ["https://www.testriq.com/OG/Corporate QA traing OG twitter.webp"],
   },
   robots: {
     index: true,

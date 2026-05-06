@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Secure your healthcare software with Testriq’s expert QA testing services. Ensure HIPAA compliance, FDA validation, EHR integration, and patient data security.',
     images: [
       {
-        url: '/OG/Healthcare-Testing-Service-Og.webp',
+        url: 'https://www.testriq.com/OG/Healthcare-Testing-Service-Og.webp',
         width: 1200,
         height: 630,
         alt: 'Testriq - Healthcare Software Testing Services',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     creator: '@testriq',
     title: 'Healthcare Testing Solutions | Medical Software QA & HIPAA Compliance | Testriq',
     description: 'Secure your healthcare software with Testriq’s expert QA testing services. Ensure HIPAA compliance, FDA validation, EHR integration, and patient data security.',
-    images: ['/OG/Healthcare-Testing-Service-Twitter.webp'],
+    images: ['https://www.testriq.com/OG/Healthcare-Testing-Service-Twitter.webp'],
   },
   robots: {
     index: true,

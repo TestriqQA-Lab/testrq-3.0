@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     ],
     openGraph: {
         type: "website",
-        images: [{ url: "/OG/Microservices-testing-og-image.webp" }],
+        images: [{ url: "https://www.testriq.com/OG/Microservices-testing-og-image.webp" }],
     },
     alternates: {
         canonical: "https://www.testriq.com/services/microservices-testing",
