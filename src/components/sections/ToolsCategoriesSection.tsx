@@ -8,10 +8,19 @@ import {
   FaShieldAlt,
   FaChartLine,
   FaTools,
+  FaRobot,
 } from "react-icons/fa";
 
 const ToolsCategoriesSection = () => {
   const categories = [
+    {
+      icon: FaRobot,
+      title: "AI Validation & Testing",
+      description:
+        "Comprehensive tools for evaluating the quality, safety, and performance of AI-driven applications.",
+      tools: ["DeepEval", "Ragas", "Langsmith", "Promptfoo", "Guardrails AI", "Pytest"],
+      color: "teal",
+    },
     {
       icon: FaGlobe,
       title: (<><Link href="/web-application-testing-services">Web Application Testing</Link></>),
@@ -80,6 +89,7 @@ const ToolsCategoriesSection = () => {
       orange: "from-orange-50 to-orange-100 text-orange-600",
       red: "from-red-50 to-red-100 text-red-600",
       indigo: "from-indigo-50 to-indigo-100 text-indigo-600",
+      teal: "from-teal-50 to-teal-100 text-teal-600",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };

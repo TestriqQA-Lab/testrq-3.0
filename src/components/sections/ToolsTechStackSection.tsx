@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import {
   FaLayerGroup,
@@ -22,10 +23,102 @@ import {
   FaTerminal,
   FaSearchPlus,
   FaBox,
+  FaChartLine,
+  FaBug,
+  FaEye,
+  FaChartArea,
+  FaProjectDiagram,
+  FaWrench,
+  FaChartBar,
 } from "react-icons/fa";
+import {
+  SiPytorch,
+  SiOpenai,
+  SiPytest,
+} from "react-icons/si";
 
 const ToolsTechStackSection = () => {
   const techStack = {
+    "Evaluation & Scoring Frameworks For AI Validation": [
+      {
+        name: "DeepEval",
+        description: "Open-source unit testing framework for LLM applications.",
+        usage: "95%",
+        icon: <Image src="/Deeepevals_logo.png" alt="DeepEval Logo" width={32} height={32} className="w-8 h-8 object-contain" />,
+      },
+      {
+        name: "Ragas",
+        description: "Metrics-driven evaluation tailored for RAG pipelines.",
+        usage: "90%",
+        icon: <Image src="/RAGAS__logo.png" alt="Ragas Logo" width={32} height={32} className="w-8 h-8 object-contain" />,
+      },
+      {
+        name: "TruLens",
+        description: "Feedback-driven evaluation and performance tracking for LLMs.",
+        usage: "85%",
+        icon: <FaChartLine className="w-8 h-8" />,
+      },
+      {
+        name: "Langsmith",
+        description: "Unified platform for debugging, testing, and monitoring LLMs.",
+        usage: "95%",
+        icon: <Image src="/Langsmith_logo.png" alt="Langsmith Logo" width={32} height={32} className="w-8 h-8 object-contain" />,
+      },
+      {
+        name: "Promptfoo",
+        description: "Fast and reliable CLI tool for prompt testing and evaluation.",
+        usage: "85%",
+        icon: <Image src="/Promptfoo_logo.png" alt="Promptfoo Logo" width={32} height={32} className="w-8 h-8 object-contain" />,
+      },
+      {
+        name: "Evals (OpenAI)",
+        description: "Standardized framework for benchmarking AI model performance.",
+        usage: "90%",
+        icon: <SiOpenai className="w-8 h-8" />,
+      },
+    ],
+    "Red-Teaming & Safety Testing For AI Validation": [
+      {
+        name: "Garak",
+        description: "Automated vulnerability scanner for discovering LLM security risks.",
+        usage: "85%",
+        icon: <FaBug className="w-8 h-8" />,
+      },
+      {
+        name: "Guardrails AI",
+        description: "Robust safety enforcement and validation for AI outputs.",
+        usage: "90%",
+        icon: <FaShieldAlt className="w-8 h-8" />,
+      },
+    ],
+    "Observability & Monitoring For AI Validation": [
+      {
+        name: "Langfuse",
+        description: "Open-source observability and detailed analytics for LLMs.",
+        usage: "90%",
+        icon: <FaEye className="w-8 h-8" />,
+      },
+      {
+        name: "WhyLabs",
+        description: "Continuous health and performance monitoring for AI systems.",
+        usage: "85%",
+        icon: <FaChartArea className="w-8 h-8" />,
+      },
+    ],
+    "Automation & CI/CD For AI Validation": [
+      {
+        name: "Pytest",
+        description: "Scalable and robust testing framework for Python-based models.",
+        usage: "95%",
+        icon: <SiPytest className="w-8 h-8" />,
+      },
+      {
+        name: "MLFlow",
+        description: "Comprehensive platform for managing the machine learning lifecycle.",
+        usage: "90%",
+        icon: <FaProjectDiagram className="w-8 h-8" />,
+      },
+    ],
     "Programming Languages": [
       {
         name: "Java",
