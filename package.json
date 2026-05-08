@@ -28,7 +28,6 @@
     "html-react-parser": "^5.2.6",
     "jsdom": "^26.1.0",
     "libphonenumber-js": "^1.12.33",
-    "lightningcss": "^1.31.1",
     "line-clamp": "^1.0.0",
     "lucide-react": "^0.525.0",
     "mongodb": "^6.18.0",
@@ -71,8 +70,5 @@
     "defaults",
     "not IE 11",
     "not dead"
-  ],
-  "optionalDependencies": {
-    "lightningcss-win32-x64-msvc": "^1.31.1"
-  }
+  ]
 }
