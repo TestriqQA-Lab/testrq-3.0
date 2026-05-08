@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
 
   trailingSlash: false,        // ✅ Prevent /about-us/ and /about-us from being separate URLs
   reactStrictMode: true, // ✅ Helps catch performance issues in dev
+  poweredByHeader: false, // Suppress X-Powered-By: Next.js framework fingerprint on all responses
   experimental: {
     cssChunking: true,     // Split + reorder CSS per route
     optimizeCss: true,     // Inline critical CSS (Critters)
@@ -830,6 +831,23 @@ const nextConfig: NextConfig = {
       { source: "/blog/tag/iot-device-connectivity-testing", destination: "/blog/tag/iot-testing", permanent: true },
       { source: "/blog/tag/challenges-in-software-testing", destination: "/blog/tag/qa-strategy", permanent: true },
       { source: "/blog/tag/ios-automation-strategies", destination: "/blog/tag/ios-testing", permanent: true },
+    ];
+  },
+
+  async headers() {
+    return [
+      {
+        // Block search engines from indexing the Sanity Studio admin shell.
+        // Combined with robots.ts Disallow, this provides defense-in-depth:
+        // crawlers that fetch /cms anyway will see noindex on the response.
+        source: "/cms/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive",
+          },
+        ],
+      },
     ];
   },
 };

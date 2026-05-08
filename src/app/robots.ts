@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/', '/admin/', '/api/', '/llms.txt'],
+      disallow: ['/private/', '/admin/', '/api/', '/cms', '/cms/', '/llms.txt'],
     },
     sitemap: 'https://www.testriq.com/sitemap.xml',
   };
