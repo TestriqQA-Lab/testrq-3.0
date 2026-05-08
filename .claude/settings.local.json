@@ -23,7 +23,8 @@
       "Bash(curl -sI -A \"Mozilla/5.0\" -o /dev/null -w \"/blog -> %{http_code}\\\\n\" https://www.testriq.com/blog)",
       "Bash(curl -sI -A Mozilla/5.0 -o /dev/null -w '%{http_code}' https://www.testriq.com/__TRACKED_VAR__)",
       "Bash(git stash *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm install *)"
     ]
   }
 }
