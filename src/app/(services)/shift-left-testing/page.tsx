@@ -1,58 +1,68 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-    shiftLeftServiceSchema,
     createBreadcrumbSchema,
+    shiftLeftServiceSchema,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-// Dynamic imports for section components
-const ShiftLeftHeroSection = dynamic(() => import("@/components/sections/ShiftLeftHeroSection"));
-const ShiftLeftImperativeSection = dynamic(() => import("@/components/sections/ShiftLeftImperativeSection"));
-const ShiftLeftWhySection = dynamic(() => import("@/components/sections/ShiftLeftWhySection"));
-const ShiftLeftSolutionsSection = dynamic(() => import("@/components/sections/ShiftLeftSolutionsSection"));
-const ShiftLeftAdvantageSection = dynamic(() => import("@/components/sections/ShiftLeftAdvantageSection"));
-const ShiftLeftChallengesSection = dynamic(() => import("@/components/sections/ShiftLeftChallengesSection"));
-const ShiftLeftFAQs = dynamic(() => import("@/components/sections/ShiftLeftFAQs"));
-const ShiftLeftNextStepsSection = dynamic(() => import("@/components/sections/ShiftLeftNextStepsSection"));
+import ShiftLeftHeroSection from "@/components/sections/ShiftLeftHeroSection";
+import ShiftLeftImperativeSection from "@/components/sections/ShiftLeftImperativeSection";
+import ShiftLeftWhySection from "@/components/sections/ShiftLeftWhySection";
+import ShiftLeftSolutionsSection from "@/components/sections/ShiftLeftSolutionsSection";
+import ShiftLeftAdvantageSection from "@/components/sections/ShiftLeftAdvantageSection";
+import ShiftLeftChallengesSection from "@/components/sections/ShiftLeftChallengesSection";
+import ShiftLeftFAQs from "@/components/sections/ShiftLeftFAQs";
+import ShiftLeftNextStepsSection from "@/components/sections/ShiftLeftNextStepsSection";
 
-export const metadata: Metadata = {
-    title: "Shift-Left Testing Services | Early QA & Defect Prevention | Testriq",
-    description: "Accelerate releases & cut costs with Testriq's expert Shift-Left Testing Services. Early defect detection, DevOps integration & continuous quality for Agile teams. Partner with us!",
-    keywords: [
-        "shift-left testing services",
-        "early QA services",
-        "defect prevention",
-        "DevOps testing solutions",
-        "continuous quality assurance",
-        "Agile testing experts",
-        "test-driven development coaching",
-        "BDD consulting",
-        "CI/CD testing integration",
-        "early bug detection"
-    ],
-    openGraph: {
-        type: "website",
-        images: [{ url: "https://www.testriq.com/OG/Shift-left-testing-og-image.webp" }],
-    },
-    alternates: {
-        canonical: "https://www.testriq.com/services/shift-left-testing",
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/shift-left-testing",
+        title: "Shift-Left Testing Services | Early Defect Detection | Testriq",
+        description:
+            "Detect defects early with Testriq's shift-left testing services. CI/CD integration, TDD coaching, and BDD consulting for Agile and DevOps teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Shift-left-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Testriq Shift-Left Testing Services",
+            type: "image/webp",
+        },
+        keywords: [
+            "shift-left testing services",
+            "early defect detection",
+            "ci/cd testing integration",
+            "test-driven development",
+            "bdd consulting",
+            "devops testing solutions",
+            "agile testing services",
+            "continuous quality assurance",
+            "early qa services",
+            "defect prevention testing",
+        ],
+    });
+}
 
 export default function ShiftLeftTestingPage() {
+    // TODO(seo phase-2 audit): Pattern A fixed — canonical and og:url now derived from pathname
+    // via buildPageMetadata (previously pointed at /services/shift-left-testing). Pattern A*
+    // fixed — og:url was absent from the openGraph block entirely. Pattern D fixed — breadcrumb
+    // reduced from 3 items (Home / Services → /services/ / Shift-Left Testing →
+    // /services/shift-left-testing) to 2 canonical items per PR-2A/2B template.
+    // PR-3 will fix at breadcrumb component level cascading to 40 pages.
     const breadcrumbItems = [
         { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/services/" },
-        { name: "Shift-Left Testing", url: "https://www.testriq.com/services/shift-left-testing" },
+        {
+            name: "Shift-Left Testing",
+            url: "https://www.testriq.com/shift-left-testing",
+        },
     ];
 
     return (
-        <MainLayout>
+        <div>
             <StructuredData data={shiftLeftServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-
-            <main>
+            <MainLayout>
                 <ShiftLeftHeroSection />
                 <ShiftLeftImperativeSection />
                 <ShiftLeftWhySection />
@@ -61,7 +71,7 @@ export default function ShiftLeftTestingPage() {
                 <ShiftLeftChallengesSection />
                 <ShiftLeftFAQs />
                 <ShiftLeftNextStepsSection />
-            </main>
-        </MainLayout>
+            </MainLayout>
+        </div>
     );
 }
