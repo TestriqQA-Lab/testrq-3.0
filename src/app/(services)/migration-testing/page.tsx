@@ -1,53 +1,73 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import { migrationServiceSchema } from "@/components/seo/StructuredData";
-import StructuredData from "@/components/seo/StructuredData";
+import StructuredData, {
+    createBreadcrumbSchema,
+    migrationServiceSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-// Dynamic imports for optimized loading
-const MigrationHeroSection = dynamic(() => import("@/components/sections/MigrationHeroSection"));
-const MigrationCriticalitySection = dynamic(() => import("@/components/sections/MigrationCriticalitySection"));
-const MigrationWhySection = dynamic(() => import("@/components/sections/MigrationWhySection"));
-const MigrationSolutionsSection = dynamic(() => import("@/components/sections/MigrationSolutionsSection"));
-const MigrationAdvantageSection = dynamic(() => import("@/components/sections/MigrationAdvantageSection"));
-const MigrationFAQs = dynamic(() => import("@/components/sections/MigrationFAQs"));
-const MigrationNextStepsSection = dynamic(() => import("@/components/sections/MigrationNextStepsSection"));
+import MigrationHeroSection from "@/components/sections/MigrationHeroSection";
+import MigrationCriticalitySection from "@/components/sections/MigrationCriticalitySection";
+import MigrationWhySection from "@/components/sections/MigrationWhySection";
+import MigrationSolutionsSection from "@/components/sections/MigrationSolutionsSection";
+import MigrationAdvantageSection from "@/components/sections/MigrationAdvantageSection";
+import MigrationFAQs from "@/components/sections/MigrationFAQs";
+import MigrationNextStepsSection from "@/components/sections/MigrationNextStepsSection";
 
-export const metadata: Metadata = {
-    title: "Migration Testing Services | Data & Cloud Migration QA | Testriq",
-    description: "Ensure seamless data & application migrations with Testriq’s expert Migration Testing Services. Prevent data loss, ensure integrity & minimize downtime. Partner with us!",
-    openGraph: {
-        type: "website",
-        images: [{ url: "https://www.testriq.com/OG/migration-testing-og-image.webp" }],
-    },
-    alternates: {
-        canonical: "https://www.testriq.com/services/migration-testing",
-    },
-    keywords: [
-        "Migration Testing Services",
-        "Data Migration Testing",
-        "Cloud Migration Testing",
-        "Database Migration Testing",
-        "Application Migration Testing Solutions",
-        "Data Integrity Testing",
-        "ERP Migration Testing",
-        "ETL Testing Services"
-    ],
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/migration-testing",
+        title: "Migration Testing Services | Data & Cloud Migration QA | Testriq",
+        description:
+            "Prevent data loss and ensure seamless transitions with Testriq's migration testing. Expert ETL validation, data integrity checks, and cloud migration QA.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/migration-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Testriq Migration Testing Services",
+            type: "image/webp",
+        },
+        keywords: [
+            "migration testing services",
+            "data migration testing",
+            "cloud migration qa",
+            "database migration testing",
+            "etl testing services",
+            "data integrity testing",
+            "application migration testing",
+            "erp migration testing",
+            "zero-downtime migration qa",
+        ],
+    });
+}
 
-const MigrationTestingPage = () => {
+export default function MigrationTestingPage() {
+    // TODO(seo phase-2 audit): Pattern A fixed — canonical and og:url now derived from pathname
+    // via buildPageMetadata (previously pointed at /services/migration-testing). Pattern A* fixed —
+    // og:url was absent from the openGraph block entirely, causing it to be omitted from the HTML
+    // head; helper always emits og:url matching canonical. Breadcrumb schema ADDED — this page had
+    // none; 2 items per PR-2A template. PR-3 will fix at breadcrumb component level.
+    const breadcrumbItems = [
+        { name: "Home", url: "https://www.testriq.com/" },
+        {
+            name: "Migration Testing Services",
+            url: "https://www.testriq.com/migration-testing",
+        },
+    ];
+
     return (
-        <MainLayout>
+        <div>
             <StructuredData data={migrationServiceSchema} />
-            <MigrationHeroSection />
-            <MigrationCriticalitySection />
-            <MigrationWhySection />
-            <MigrationSolutionsSection />
-            <MigrationAdvantageSection />
-            <MigrationFAQs />
-            <MigrationNextStepsSection />
-        </MainLayout>
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <MainLayout>
+                <MigrationHeroSection />
+                <MigrationCriticalitySection />
+                <MigrationWhySection />
+                <MigrationSolutionsSection />
+                <MigrationAdvantageSection />
+                <MigrationFAQs />
+                <MigrationNextStepsSection />
+            </MainLayout>
+        </div>
     );
-};
-
-export default MigrationTestingPage;
+}
