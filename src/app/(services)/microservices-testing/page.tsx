@@ -1,64 +1,74 @@
-import { Metadata } from "next";
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-    microservicesServiceSchema,
     createBreadcrumbSchema,
+    microservicesServiceSchema,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-// Dynamic imports for section components
-const MicroservicesHeroSection = dynamic(() => import("@/components/sections/MicroservicesHeroSection"));
-const MicroservicesWhatIsSection = dynamic(() => import("@/components/sections/MicroservicesWhatIsSection"));
-const MicroservicesPyramidSection = dynamic(() => import("@/components/sections/MicroservicesPyramidSection"));
-const MicroservicesChallengesSection = dynamic(() => import("@/components/sections/MicroservicesChallengesSection"));
-const MicroservicesKeySolutionsSection = dynamic(() => import("@/components/sections/MicroservicesKeySolutionsSection"));
-const MicroservicesApproachesSection = dynamic(() => import("@/components/sections/MicroservicesApproachesSection"));
-const MicroservicesApplicationsSection = dynamic(() => import("@/components/sections/MicroservicesApplicationsSection"));
-const MicroservicesBestPracticesSection = dynamic(() => import("@/components/sections/MicroservicesBestPracticesSection"));
-const MicroservicesToolsSection = dynamic(() => import("@/components/sections/MicroservicesToolsSection"));
-const MicroservicesFAQs = dynamic(() => import("@/components/sections/MicroservicesFAQs"));
-const MicroservicesMethodologySection = dynamic(() => import("@/components/sections/MicroservicesMethodologySection"));
-const MicroservicesScenariosSection = dynamic(() => import("@/components/sections/MicroservicesScenariosSection"));
-const MicroservicesWhyChooseSection = dynamic(() => import("@/components/sections/MicroservicesWhyChooseSection"));
-const MicroservicesNextStepsSection = dynamic(() => import("@/components/sections/MicroservicesNextStepsSection"));
+import MicroservicesHeroSection from "@/components/sections/MicroservicesHeroSection";
+import MicroservicesWhatIsSection from "@/components/sections/MicroservicesWhatIsSection";
+import MicroservicesPyramidSection from "@/components/sections/MicroservicesPyramidSection";
+import MicroservicesChallengesSection from "@/components/sections/MicroservicesChallengesSection";
+import MicroservicesKeySolutionsSection from "@/components/sections/MicroservicesKeySolutionsSection";
+import MicroservicesApproachesSection from "@/components/sections/MicroservicesApproachesSection";
+import MicroservicesApplicationsSection from "@/components/sections/MicroservicesApplicationsSection";
+import MicroservicesBestPracticesSection from "@/components/sections/MicroservicesBestPracticesSection";
+import MicroservicesToolsSection from "@/components/sections/MicroservicesToolsSection";
+import MicroservicesMethodologySection from "@/components/sections/MicroservicesMethodologySection";
+import MicroservicesScenariosSection from "@/components/sections/MicroservicesScenariosSection";
+import MicroservicesWhyChooseSection from "@/components/sections/MicroservicesWhyChooseSection";
+import MicroservicesFAQs from "@/components/sections/MicroservicesFAQs";
+import MicroservicesNextStepsSection from "@/components/sections/MicroservicesNextStepsSection";
 
-export const metadata: Metadata = {
-    title: "Microservices Testing Services | API & Microservices Testing Solutions | Testriq",
-    description: "Testriq's microservices testing services provide comprehensive API testing, contract testing, chaos engineering, and cloud-native testing for distributed systems and Kubernetes environments.",
-    keywords: [
-        "microservices testing services",
-        "distributed systems testing",
-        "API testing solutions",
-        "contract testing",
-        "chaos engineering",
-        "kubernetes testing",
-        "cloud native testing",
-        "pact testing",
-        "resilience testing",
-        "service mesh validation"
-    ],
-    openGraph: {
-        type: "website",
-        images: [{ url: "https://www.testriq.com/OG/Microservices-testing-og-image.webp" }],
-    },
-    alternates: {
-        canonical: "https://www.testriq.com/services/microservices-testing",
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/microservices-testing",
+        title: "Microservices Testing Services | Contract & API Testing | Testriq",
+        description:
+            "Validate distributed systems with Testriq's microservices testing. Contract testing, chaos engineering, and Kubernetes API QA for cloud-native architectures.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Microservices-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Testriq Microservices Testing Services",
+            type: "image/webp",
+        },
+        keywords: [
+            "microservices testing services",
+            "contract testing",
+            "api testing for microservices",
+            "distributed systems testing",
+            "chaos engineering",
+            "kubernetes testing",
+            "cloud-native testing",
+            "pact testing",
+            "service mesh validation",
+            "consumer-driven contract testing",
+        ],
+    });
+}
 
 export default function MicroservicesTestingPage() {
+    // TODO(seo phase-2 audit): Pattern A fixed — canonical and og:url now derived from pathname
+    // via buildPageMetadata (previously pointed at /services/microservices-testing). Pattern A*
+    // fixed — og:url was absent from the openGraph block entirely. Pattern D fixed — breadcrumb
+    // reduced from 3 items (Home / Services → /services/ / Microservices Testing →
+    // /services/microservices-testing) to 2 canonical items per PR-2A/2B template.
+    // PR-3 will fix at breadcrumb component level cascading to 40 pages.
     const breadcrumbItems = [
         { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/services/" },
-        { name: "Microservices Testing", url: "https://www.testriq.com/services/microservices-testing" },
+        {
+            name: "Microservices Testing",
+            url: "https://www.testriq.com/microservices-testing",
+        },
     ];
 
     return (
-        <MainLayout>
+        <div>
             <StructuredData data={microservicesServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-
-            <main>
+            <MainLayout>
                 <MicroservicesHeroSection />
                 <MicroservicesWhatIsSection />
                 <MicroservicesPyramidSection />
@@ -73,7 +83,7 @@ export default function MicroservicesTestingPage() {
                 <MicroservicesWhyChooseSection />
                 <MicroservicesFAQs />
                 <MicroservicesNextStepsSection />
-            </main>
-        </MainLayout>
+            </MainLayout>
+        </div>
     );
 }
