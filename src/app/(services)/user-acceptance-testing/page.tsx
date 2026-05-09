@@ -1,67 +1,68 @@
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import { Metadata } from "next";
-import StructuredData, { uatServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, {
+    createBreadcrumbSchema,
+    uatServiceSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-    title: "User Acceptance Testing Services | UAT Testing for Enterprise Software | Testriq",
-    description: "Testriq's user acceptance testing services provide professional UAT testing, beta testing management, and end-user validation for enterprise software, ERP, CRM, and digital transformation projects.",
-    keywords: [
-        "User Acceptance Testing Services",
-        "UAT Testing Enterprise Software",
-        "Beta Testing Management",
-        "End-user Validation",
-        "ERP UAT Testing",
-        "CRM UAT Services",
-        "Digital Transformation QA",
-        "Operational Acceptance Testing",
-        "ISTQB UAT Facilitators"
-    ],
-    alternates: {
-        canonical: "https://www.testriq.com/services/user-acceptance-testing",
-    },
-    openGraph: {
-        title: "User Acceptance Testing Services | Testriq",
-        description: "Professional UAT testing and business-driven quality validation for enterprise software.",
-        url: "https://www.testriq.com/services/user-acceptance-testing",
-        siteName: "Testriq",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/user-acceptance-testing-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Testriq UAT Services",
-            },
+import UATHeroSection from "@/components/sections/UATHeroSection";
+import UATWhatIsSection from "@/components/sections/UATWhatIsSection";
+import UATTypesSection from "@/components/sections/UATTypesSection";
+import UATVsFunctionalSection from "@/components/sections/UATVsFunctionalSection";
+import UATChallengesSection from "@/components/sections/UATChallengesSection";
+import UATProcessSection from "@/components/sections/UATProcessSection";
+import UATApplicationsSection from "@/components/sections/UATApplicationsSection";
+import UATBestPracticesSection from "@/components/sections/UATBestPracticesSection";
+import UATComparisonSection from "@/components/sections/UATComparisonSection";
+import UATFAQs from "@/components/sections/UATFAQs";
+import UATScenariosSection from "@/components/sections/UATScenariosSection";
+import UATWhyChooseSection from "@/components/sections/UATWhyChooseSection";
+import UATNextStepsSection from "@/components/sections/UATNextStepsSection";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/user-acceptance-testing",
+        title: "User Acceptance Testing Services | Enterprise UAT | Testriq",
+        description:
+            "Validate software with real users through Testriq's UAT services. ISTQB-certified facilitators for ERP, CRM, and digital transformation acceptance testing.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/user-acceptance-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Testriq UAT Services",
+            type: "image/webp",
+        },
+        keywords: [
+            "user acceptance testing services",
+            "uat testing",
+            "beta testing management",
+            "end-user validation",
+            "erp uat testing",
+            "crm uat services",
+            "digital transformation qa",
+            "operational acceptance testing",
+            "istqb uat facilitators",
         ],
-        locale: "en_US",
-        type: "website",
-    },
-};
-
-// Dynamic imports for sections
-const UATHeroSection = dynamic(() => import("@/components/sections/UATHeroSection"));
-const UATWhatIsSection = dynamic(() => import("@/components/sections/UATWhatIsSection"));
-const UATTypesSection = dynamic(() => import("@/components/sections/UATTypesSection"));
-const UATVsFunctionalSection = dynamic(() => import("@/components/sections/UATVsFunctionalSection"));
-const UATChallengesSection = dynamic(() => import("@/components/sections/UATChallengesSection"));
-const UATProcessSection = dynamic(() => import("@/components/sections/UATProcessSection"));
-const UATApplicationsSection = dynamic(() => import("@/components/sections/UATApplicationsSection"));
-const UATBestPracticesSection = dynamic(() => import("@/components/sections/UATBestPracticesSection"));
-const UATComparisonSection = dynamic(() => import("@/components/sections/UATComparisonSection"));
-const UATFAQs = dynamic(() => import("@/components/sections/UATFAQs"));
-const UATScenariosSection = dynamic(() => import("@/components/sections/UATScenariosSection"));
-const UATWhyChooseSection = dynamic(() => import("@/components/sections/UATWhyChooseSection"));
-const UATNextStepsSection = dynamic(() => import("@/components/sections/UATNextStepsSection"));
+    });
+}
 
 export default function UserAcceptanceTestingPage() {
+    // TODO(seo phase-2 audit): Pattern A fixed — canonical and og:url now derived from pathname
+    // via buildPageMetadata (previously pointed at /services/user-acceptance-testing). Pattern D
+    // fixed — breadcrumb reduced from 3 items (Home / Services / User Acceptance Testing, all with
+    // /services/ prefix URLs) to 2 canonical items per PR-2A template. StructuredData moved inside
+    // <div> wrapper (was in <> fragment outside <MainLayout>) to match PR-2A template.
     const breadcrumbItems = [
         { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/services" },
-        { name: "User Acceptance Testing", url: "https://www.testriq.com/services/user-acceptance-testing" }
+        {
+            name: "User Acceptance Testing",
+            url: "https://www.testriq.com/user-acceptance-testing",
+        },
     ];
 
     return (
-        <>
+        <div>
             <StructuredData data={uatServiceSchema} />
             <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
             <MainLayout>
@@ -79,6 +80,6 @@ export default function UserAcceptanceTestingPage() {
                 <UATWhyChooseSection />
                 <UATNextStepsSection />
             </MainLayout>
-        </>
+        </div>
     );
 }
