@@ -293,6 +293,50 @@ describe("buildPageMetadata", () => {
         });
     });
 
+    describe("title template bypass (regression test for double-brand bug)", () => {
+        // The root layout (src/app/layout.tsx) sets a title.template of
+        // `"%s | Testriq"`. If buildPageMetadata returned `title: opts.title`
+        // as a plain string, Next.js would apply the template on top —
+        // producing "Foo | Testriq | Testriq" for an opts.title of
+        // "Foo | Testriq". The helper must use { absolute: opts.title } to
+        // bypass the template, since its contract requires callers to pass a
+        // complete brand-suffixed title.
+
+        it("returns title as { absolute } object, not a plain string", () => {
+            const m = buildPageMetadata({
+                ...minimalOpts,
+                title: "Agile Testing Services | Sprint-Ready QA | Testriq",
+            });
+            expect(typeof m.title).toBe("object");
+            expect(m.title).toEqual({
+                absolute: "Agile Testing Services | Sprint-Ready QA | Testriq",
+            });
+        });
+
+        it("title.absolute equals opts.title byte-for-byte (no transformation)", () => {
+            const opts = {
+                ...minimalOpts,
+                title: "Performance Testing Services | ISO 29119 | Testriq",
+            };
+            const m = buildPageMetadata(opts);
+            expect((m.title as { absolute: string }).absolute).toBe(opts.title);
+        });
+
+        it("OG title and Twitter title still receive plain string (no template applies to OG/Twitter anyway)", () => {
+            const m = buildPageMetadata({
+                ...minimalOpts,
+                title: "Foo Bar | Testriq",
+            });
+            const og = m.openGraph as { title?: string };
+            const tw = m.twitter as { title?: string };
+            // OG and Twitter titles should be the plain string — Next.js
+            // does not apply title.template to OG/Twitter, so no bypass
+            // is required there.
+            expect(og.title).toBe("Foo Bar | Testriq");
+            expect(tw.title).toBe("Foo Bar | Testriq");
+        });
+    });
+
     describe("default values", () => {
         it("defaults siteName, locale, twitter card, og type", () => {
             const m = buildPageMetadata(minimalOpts);

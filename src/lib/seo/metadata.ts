@@ -437,7 +437,13 @@ export function buildPageMetadata(opts: BuildPageMetadataOptions): Metadata {
     // on BuildPageMetadataOptions.jsonLd for the Phase 5 plan.
 
     return {
-        title: opts.title,
+        // Use `title.absolute` to BYPASS the root layout's `title.template`
+        // ("%s | Testriq"). The helper's contract is that callers pass a
+        // complete brand-suffixed title; without `absolute`, Next.js would
+        // append "| Testriq" a second time, producing
+        //   "Agile Testing Services | Sprint-Ready QA | Testriq | Testriq"
+        // for example. See README invariant I11.
+        title: { absolute: opts.title },
         description: opts.description,
         ...(opts.keywords && opts.keywords.length > 0 ? { keywords: opts.keywords } : {}),
         metadataBase: new URL(SITE_URL),

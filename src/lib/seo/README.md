@@ -131,6 +131,7 @@ in its rendered HTML. These are tested in
 | **I8** | `noindex` and `robots` are mutually exclusive — `robots` wins, dev-mode warns | Two ways to set the same thing always drift; the warning surfaces the contradictory call at the source. |
 | **I9** | `metadataBase` is set to `SITE_URL` so any nested relative URLs resolve correctly | Without this, Next.js emits a warning and falls back to the request URL (which is unstable). |
 | **I10** | The function has no I/O, no env reads at runtime (except `NODE_ENV` for dev assertions), no globals mutated | Pure function — safe to import from any Server Component, Route Handler, or build script. |
+| **I11** | Returned `title` is `{ absolute: opts.title }`, NOT a plain string — bypassing the root layout's `title.template` (`"%s \| Testriq"`) | Without this, Next.js appends `" \| Testriq"` to titles that already include the brand, producing duplicates like `"Foo \| Testriq \| Testriq"`. The helper's contract is that callers pass complete brand-suffixed titles. |
 
 ---
 
