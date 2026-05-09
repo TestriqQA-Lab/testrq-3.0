@@ -1,0 +1,74 @@
+===========================================================
+# /agile-testing-services — production BEFORE-state snapshot
+# Captured: 2026-05-09T04:04:33Z
+# URL: https://www.testriq.com/agile-testing-services
+# Purpose: baseline for TASK 2 (Server Component conversion + buildPageMetadata)
+===========================================================
+
+## 1. Response headers
+HTTP/1.1 200 OK
+Accept-Ranges: bytes
+Access-Control-Allow-Origin: *
+Age: 25217
+Cache-Control: public, max-age=0, must-revalidate
+Content-Disposition: inline
+Content-Length: 1046985
+Content-Type: text/html; charset=utf-8
+Date: Sat, 09 May 2026 04:04:33 GMT
+Etag: "24eba4f16531122c95fe92e15c0f242d"
+Server: Vercel
+Strict-Transport-Security: max-age=63072000
+Vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+X-Matched-Path: /agile-testing-services
+X-Nextjs-Prerender: 1
+X-Nextjs-Stale-Time: 300
+X-Vercel-Cache: HIT
+X-Vercel-Id: bom1::8cgln-1778299473140-168e360fa2c5
+
+
+## 2. <title> tags found in HTML  (any duplicates indicate the dual-title bug)
+<title>Expert Agile Testing Services | Agile QA &amp; Continuous Testing | Testriq</title>
+<title>Pure-Play Software Testing Company &amp; QA Outsourcing | Testriq</title>
+
+## 3. <meta name="description"> tag(s)
+<meta name="description" content="Accelerate your release cycles with Testriq&#x27;s Agile testing services. Expert-led continuous testing, shift-left QA, and sprint-ready automation for global teams in 2026."/>
+<meta name="description" content="Testriq is a leading pure-play software testing company offering expert QA outsourcing. Specialized in AI/ML validation, DevSecOps, and ISTQB-certified testing for global enterprises in US, UK, EU, and UAE."/>
+
+## 4. <link rel="canonical"> tag(s)
+<link rel="canonical" href="https://www.testriq.com"/>
+
+## 5. Open Graph tags (full)
+<meta property="og:description" content="ISTQB Certified partner providing end-to-end QA, DevSecOps, and AI-driven quality engineering. Global reach serving US, UK, EU, India, and UAE markets."/>
+<meta property="og:image" content="https://www.testriq.com/OG/Agile-testing-og-image.webp"/>
+<meta property="og:image" content="https://www.testriq.com/OG/testriq-qa-lab-llp-og-img.webp"/>
+<meta property="og:image:alt" content="Testriq - Global Software Testing Services"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:type" content="image/webp"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Testriq - Global Software Testing Services"/>
+<meta property="og:title" content="Pure-Play Software Testing Company &amp; QA Outsourcing | Testriq"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.testriq.com"/>
+
+## 6. Twitter card tags
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:creator" content="@testriq"/>
+<meta name="twitter:description" content="Expert QA outsourcing and risk-based testing for global enterprises. Serving US, UK, EU, and Asia with ISTQB certified experts."/>
+<meta name="twitter:image" content="https://www.testriq.com/OG/Agile-testing-og-image.webp"/>
+<meta name="twitter:image" content="https://www.testriq.com/OG/testriq-qa-lab-llp-twitter-img.webp"/>
+<meta name="twitter:site" content="@testriq"/>
+<meta name="twitter:title" content="Pure-Play Software Testing Company &amp; QA Outsourcing | Testriq"/>
+
+## 7. JSON-LD block count
+0
+
+## 8. Unique JSON-LD @type values present
+
+## 9. <h1> tag(s)
+
+## 10. robots meta
+<meta name="robots" content="index, follow"/>
+
+## 11. HTML payload size
+1046986
