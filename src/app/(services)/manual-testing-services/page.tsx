@@ -1,214 +1,85 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-  createBreadcrumbSchema,
-  manualTestingServiceSchema,
+    createBreadcrumbSchema,
+    manualTestingServiceSchema,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Manual Testing Services & Software QA | Testriq",
-  description:
-    "Strategic manual testing for 2025. Use ISO 29119 standards and human intelligence to navigate complex micro-services and rapid CI/CD releases.",
-  keywords: [
-    "exploratory testing services",
-    "managed UAT",
-    "manual regression testing",
-    "usability audit",
-    "wcag accessibility testing",
-    "manual mobile app testing",
-    "ad-hoc testing"
-  ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/manual-testing-services",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/manual-testing",
-    siteName: "Testriq - Professional Software Testing Services",
-    title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
-    description:
-      "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/Manual-Testing-Service-og.webp",
-        width: 1200,
-        height: 630,
-        alt: "Testriq Manual Testing Services by QA Experts",
-        type: "image/webp",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title: "Manual Testing Services - Expert QA Testing Solutions | Testriq",
-    description:
-      "Explore Testriq's manual testing services for comprehensive functional, usability, compatibility, and accessibility QA. Delivered by ISTQB-certified professionals with a human-centered approach.",
-    images: ["https://www.testriq.com/OG/Manual-Testing-Service-Twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0",
-    yandex: "ff703971283d110e",
-    yahoo: "0A67349B8CD11BF71173B38572028507",
-  },
-};
+import ManualTestingHeroSection from "@/components/sections/ManualTestingHeroSection";
+import ManualTestingComprehensiveSlider from "@/components/sections/ManualTestingComprehensiveSlider";
+import ManualTestingHumanAdvantage from "@/components/sections/ManualTestingHumanAdvantage";
+import ManualTestingProvenTestingProcess from "@/components/sections/ManualTestingProvenTestingProcess";
+import ManualTestingWhyChooseTestriq from "@/components/sections/ManualTestingWhyChooseTestriq";
+import ManualTestingToolsFramework from "@/components/sections/ManualTestingToolsFramework";
+import ManualTestingGlobalReach from "@/components/sections/ManualTestingGlobalReach";
+import ManualTestingCaseStudies from "@/components/sections/ManualTestingCaseStudies";
+import ManualTestingFAQs from "@/components/sections/ManualTestingFAQs";
+import ManualTestingReadyToEnsureQuality from "@/components/sections/ManualTestingReadyToEnsureQuality";
 
-import ManualTestingHeroSection from "@/components/sections/ManualTestingHeroSection"
-
-const ManualTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/ManualTestingReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingComprehensiveSlider = dynamic(
-  () => import("@/components/sections/ManualTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingHumanAdvantage = dynamic(
-  () => import("@/components/sections/ManualTestingHumanAdvantage"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingProvenTestingProcess = dynamic(
-  () => import("@/components/sections/ManualTestingProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/ManualTestingWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingToolsFramework = dynamic(
-  () => import("@/components/sections/ManualTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingCaseStudies = dynamic(
-  () => import("@/components/sections/ManualTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingGlobalReach = dynamic(
-  () => import("@/components/sections/ManualTestingGlobalReach"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const ManualTestingFAQs = dynamic(
-  () => import("@/components/sections/ManualTestingFAQs"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/manual-testing-services",
+        title: "Manual Testing Services | ISTQB-Certified QA | Testriq",
+        description:
+            "Validate complex apps with Testriq's manual testing services. ISTQB-certified QA, ISO 29119 standards, and human exploratory testing across all platforms.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Manual-Testing-Service-og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Testriq Manual Testing Services by QA Experts",
+            type: "image/webp",
+        },
+        twitterImage: "https://www.testriq.com/OG/Manual-Testing-Service-Twitter.webp",
+        keywords: [
+            "manual testing services",
+            "ISTQB certified QA",
+            "ISO 29119 testing",
+            "exploratory testing services",
+            "managed UAT",
+            "manual regression testing",
+            "usability audit",
+            "wcag accessibility testing",
+            "manual mobile app testing",
+            "ad-hoc testing",
+        ],
+    });
+}
 
 export default function ManualTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com" },
-    { name: "Services", url: "https://www.testriq.com/manual-testing" },
-    { name: "Manual Testing", url: "https://www.testriq.com/manual-testing" },
-  ];
+    // TODO(seo phase-2 audit): Pattern D anti-pattern fixed per-page here.
+    // PR-3 will fix at breadcrumb component level cascading to 40 pages.
+    //
+    // Pre-fix this page also exhibited Pattern B (slug typo: og:url declared
+    // /manual-testing instead of /manual-testing-services) and Pattern C
+    // (the typo'd URL is itself a 301 redirect source in next.config.ts).
+    // Both fixed automatically by buildPageMetadata, which derives og:url
+    // from the same pathname as canonical. The breadcrumb leaf URL below
+    // is also corrected from /manual-testing → /manual-testing-services.
+    const breadcrumbItems = [
+        { name: "Home", url: "https://www.testriq.com/" },
+        {
+            name: "Manual Testing Services",
+            url: "https://www.testriq.com/manual-testing-services",
+        },
+    ];
 
-  return (
-    <div>
-      <StructuredData data={manualTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-      <MainLayout>
-        <ManualTestingHeroSection />
-        <ManualTestingComprehensiveSlider />
-        <ManualTestingHumanAdvantage />
-        <ManualTestingProvenTestingProcess />
-        <ManualTestingWhyChooseTestriq />
-        <ManualTestingToolsFramework />
-        <ManualTestingGlobalReach />
-        <ManualTestingCaseStudies />
-        <ManualTestingFAQs />
-        <ManualTestingReadyToEnsureQuality />
-      </MainLayout>
-    </div>
-  );
+    return (
+        <div>
+            <StructuredData data={manualTestingServiceSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <MainLayout>
+                <ManualTestingHeroSection />
+                <ManualTestingComprehensiveSlider />
+                <ManualTestingHumanAdvantage />
+                <ManualTestingProvenTestingProcess />
+                <ManualTestingWhyChooseTestriq />
+                <ManualTestingToolsFramework />
+                <ManualTestingGlobalReach />
+                <ManualTestingCaseStudies />
+                <ManualTestingFAQs />
+                <ManualTestingReadyToEnsureQuality />
+            </MainLayout>
+        </div>
+    );
 }
