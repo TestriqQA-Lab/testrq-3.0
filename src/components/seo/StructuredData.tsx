@@ -1,32 +1,119 @@
-import Script from 'next/script';
+/**
+ * StructuredData component + Schema.org constants.
+ *
+ * This file is intentionally large (~5800 lines). It contains:
+ *   - Lines 1-119: The <StructuredData> component itself.
+ *   - Lines 120+: 74 named exports of pre-built Schema.org schema objects
+ *     (organizationSchema, agileTestingSchema, etc.) used across 141
+ *     call sites in 63 files.
+ *
+ * Why colocated: keeping schemas next to the rendering component made
+ * imports trivial during early development. A future refactor may split
+ * schemas into per-domain files (e.g., schemas/services/, schemas/blog/)
+ * — see docs/seo-audit/03-metadata-bug-inventory.md for the full
+ * structured-data architecture roadmap.
+ *
+ * The component portion of this file was rewritten in PR #X to fix
+ * Pattern F (broken next/script-based JSON-LD rendering). The schema
+ * constants below were not modified.
+ */
 
-// Proper JSON-LD type (no `any` anywhere)
+/**
+ * A single Schema.org JSON-LD object.
+ */
 type JsonLd = Record<string, unknown>;
 
+/**
+ * Component input — accepts a single schema OR an array.
+ * Backward-compatible: existing `<StructuredData data={schemaObj} />`
+ * call sites work unchanged. New call sites can pass arrays:
+ * `<StructuredData data={[s1, s2, s3]} />`.
+ */
+type JsonLdInput = JsonLd | JsonLd[];
+
 interface StructuredDataProps {
-  data: JsonLd;
+  data: JsonLdInput | null | undefined;
 }
 
 /**
- * Renders structured data (JSON-LD) via Next.js <Script>
- * Adds a unique ID based on the schema type + a hash of the content
- * → avoids duplicate ID errors when the same schema appears multiple times
+ * Renders Schema.org JSON-LD as inline `<script type="application/ld+json">`
+ * tags directly in the SSR HTML payload — so Google's crawler and AI
+ * engines can parse the schema on the first request, before any
+ * JavaScript runs.
+ *
+ * Previously this component wrapped its output in `next/script`'s
+ * `<Script>`, which is intended for executable scripts. With the default
+ * `afterInteractive` strategy, inline data scripts were not reliably
+ * emitted into the initial SSR HTML — verified live in Phase 2 §7
+ * (`/agile-testing-services` showed 0 ld+json blocks despite 3 calls).
+ * See `docs/seo-audit/03-metadata-bug-inventory.md` Pattern F for the
+ * full investigation across 63 consumer files / 141 call sites.
+ *
+ * The current implementation matches the sibling `BlogStructuredData`
+ * component and Next.js's official JSON-LD pattern documented at
+ * https://nextjs.org/docs/app/guides/json-ld.
+ *
+ * Edge case behavior:
+ *   - `data={schemaObj}` (single object — today's pattern) → 1 <script>
+ *   - `data={[s1, s2, s3]}` (array — new pattern) → 3 <script> elements
+ *   - `data={null}` or `data={undefined}` → returns null, no <script>
+ *   - `data={[]}` → returns null, no <script>
+ *   - Array containing null/undefined entries → entries filtered, no crash
+ *   - Array containing non-object entries → filtered, no crash
+ *   - Schema string contains `</script>` → escaped to `</script>` (XSS-safe)
+ *   - Schema with circular reference or non-stringifiable values
+ *     (BigInt, etc.) → entry skipped, component does not crash. In
+ *     development a console.error names the failed schema's `@type`.
  */
 export default function StructuredData({ data }: StructuredDataProps) {
-  // Create a stable but unique ID for this exact piece of JSON-LD
-  const type = (data['@type'] as string) || 'unknown';
-  const contentHash = JSON.stringify(data).slice(-12); // last 12 chars is enough for uniqueness
-  const id = `structured-data-${type}-${contentHash}`;
+  if (data == null) return null;
+
+  const schemas: JsonLd[] = Array.isArray(data) ? data : [data];
+
+  // Filter out null/undefined/non-object entries so dynamically-built
+  // schema arrays (where some fields might be optional) don't crash.
+  const valid = schemas.filter(
+    (s): s is JsonLd => s != null && typeof s === 'object',
+  );
+  if (valid.length === 0) return null;
 
   return (
-    <Script
-      id={id} // required by Next.js when using inline content
-      type="application/ld+json"
-      // Using children is slightly cleaner than dangerouslySetInnerHTML
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(data, null, 2),
-      }}
-    />
+    <>
+      {valid.map((schema, i) => {
+        let json: string;
+        try {
+          // XSS-safe: replace `<` with its unicode escape so embedded
+          // strings can never close the script tag prematurely (e.g.
+          // a schema description containing `</script>`).
+          // Per Next.js JSON-LD docs.
+          json = JSON.stringify(schema).replace(/</g, '\\u003c');
+        } catch (err) {
+          // JSON.stringify can throw on circular references, BigInt, etc.
+          // Don't crash the page — skip this entry. In dev, surface the
+          // problem so the broken schema can be fixed at the source.
+          if (process.env.NODE_ENV !== 'production') {
+            const type =
+              (schema as { '@type'?: unknown })['@type'] ?? 'unknown';
+            // eslint-disable-next-line no-console
+            console.error(
+              `[StructuredData] Failed to stringify schema (@type=${String(type)}). ` +
+                `Common causes: circular reference, BigInt, undefined values inside arrays. ` +
+                `Skipping this entry.`,
+              err,
+            );
+          }
+          return null;
+        }
+
+        return (
+          <script
+            key={`ld-${i}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: json }}
+          />
+        );
+      })}
+    </>
   );
 }
 
