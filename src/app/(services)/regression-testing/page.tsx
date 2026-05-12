@@ -1,207 +1,81 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, regressionTestingServiceSchema } from "@/components/seo/StructuredData";
+import MainLayout from "@/components/layout/MainLayout";
+import StructuredData, {
+    createBreadcrumbSchema,
+    regressionTestingServiceSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Software Regression Testing Services & QA Automation | Testriq",
-  description: "Transform regression from a bottleneck into a competitive advantage. Elite software regression testing using ISO 29119 for 2026 rapid-fire release cycles.",
-  keywords: [
-    "Software Regression Testing Services",
-    "QA Automation 2026",
-    "ISO 29119 Regression Testing",
-    "Selective Regression Testing",
-    "Impact Analysis QA",
-    "CI/CD Regression Automation",
-    "Enterprise Regression Strategy",
-    "Testriq QA Lab",
-    "Risk-Based Regression Scope"
-  ],
-  authors: [{ name: "Testriq QA Lab" }],
-  creator: "Testriq QA Lab LLP",
-  publisher: "Testriq QA Lab LLP",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://www.testriq.com/'),
-  alternates: {
-    canonical: 'https://www.testriq.com/regression-testing',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://www.testriq.com/regression-testings',
-    siteName: 'Testriq - Professional Software Testing Services',
-    title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
-    description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
-    images: [
-      {
-        url: 'https://www.testriq.com/OG/Regression-Testing-Services-Og.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Regression Testing Services - Testriq',
-        type: 'image/webp',
-      }
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@testriq',
-    creator: '@testriq',
-    title: 'Regression Testing Services - Comprehensive Quality Assurance | Testriq',
-    description: 'Ensure software stability with expert regression testing services from Testriq. Identify issues early, prevent functionality breaks, and accelerate releases using automated and risk-based testing strategies.',
-    images: ['https://www.testriq.com/OG/Regression-Testing-Services-Twitter.webp'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'LXeSv6xxgAa1jB9JlWwO9ysJ1FNvWzgN3i3GyQs2AD0',
-    yandex: 'ff703971283d110e',
-    yahoo: '0A67349B8CD11BF71173B38572028507',
-  },
-};
+import RegressionTestingHeroSection from "@/components/sections/RegressionTestingHeroSection";
+import RegressionTestingComprehensiveSlider from "@/components/sections/RegressionTestingComprehensiveSlider";
+import RegressionTestingROISection from "@/components/sections/RegressionTestingROISection";
+import RegressionTestingProvenTestingProcess from "@/components/sections/RegressionTestingProvenTestingProcess";
+import RegressionTestingWhyChooseTestriq from "@/components/sections/RegressionTestingWhyChooseTestriq";
+import RegressionTestingToolsFramework from "@/components/sections/RegressionTestingToolsFramework";
+import RegressionTestingCaseStudies from "@/components/sections/RegressionTestingCaseStudies";
+import RegressionTestingReadyToEnsureQuality from "@/components/sections/RegressionTestingReadyToEnsureQuality";
+import RegressionTestingFAQs from "@/components/sections/RegressionTestingFAQs";
 
-
-const RegressionTestingHeroSection = dynamic(
-  () => import("@/components/sections/RegressionTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-
-const RegressionTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/RegressionTestingReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingComprehensiveSlider = dynamic(
-  () => import("@/components/sections/RegressionTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingProvenTestingProcess = dynamic(
-  () => import("@/components/sections/RegressionTestingProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/RegressionTestingWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingToolsFramework = dynamic(
-  () => import("@/components/sections/RegressionTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingROISection = dynamic(
-  () => import("@/components/sections/RegressionTestingROISection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingCaseStudies = dynamic(
-  () => import("@/components/sections/RegressionTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const RegressionTestingFAQs = dynamic(() => import("@/components/sections/RegressionTestingFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
-export default function RegressionTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/regression-testing" },
-    { name: "Regression Testing", url: "https://www.testriq.com/regression-testing" }
-  ];
-
-  return (
-    <div>
-      <StructuredData data={regressionTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-      <MainLayout>
-        <RegressionTestingHeroSection />
-        <RegressionTestingComprehensiveSlider />
-        <RegressionTestingROISection />
-        <RegressionTestingProvenTestingProcess />
-        <RegressionTestingWhyChooseTestriq />
-        <RegressionTestingToolsFramework />
-        <RegressionTestingCaseStudies />
-        <RegressionTestingReadyToEnsureQuality />
-        <RegressionTestingFAQs />
-      </MainLayout>
-    </div>
-  );
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/regression-testing",
+        title: "Regression Testing Services | Automated & Risk-Based QA | Testriq",
+        description:
+            "Prevent release failures with Testriq's regression testing. Automated, selective, and risk-based QA for CI/CD pipelines and enterprise release cycles.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/Regression-Testing-Services-Og.webp",
+            width: 1200,
+            height: 630,
+            alt: "Regression Testing Services - Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "regression testing services",
+            "automated regression testing",
+            "risk-based regression testing",
+            "selective regression testing",
+            "ci/cd regression automation",
+            "impact analysis testing",
+            "regression qa services",
+            "enterprise regression testing",
+            "software stability testing",
+        ],
+    });
 }
 
+export default function RegressionTestingPage() {
+    // TODO(seo phase-2 audit): Pattern B fixed — og:url had slug typo
+    // "https://www.testriq.com/regression-testings" (extra 's' → 404); now derived from pathname
+    // via buildPageMetadata. Pattern D fixed — breadcrumb had 3 items where item 2 ("Services")
+    // URL pointed at /regression-testing instead of /; reduced to 2 canonical items per PR-2A/2B
+    // template. Double-brand fixed — title "...| Testriq" + root layout template produced
+    // "...Testriq | Testriq". og:title separator fixed " - " → " | ". og:image and twitter:image
+    // unified (were two separate .webp files). Junk page-level fields removed: verification,
+    // authors, creator, publisher, formatDetection (all belong in root layout only). 9 dynamic()
+    // → direct imports. PR-3 will fix at breadcrumb component level cascading to 40 pages.
+    const breadcrumbItems = [
+        { name: "Home", url: "https://www.testriq.com/" },
+        {
+            name: "Regression Testing",
+            url: "https://www.testriq.com/regression-testing",
+        },
+    ];
+
+    return (
+        <div>
+            <StructuredData data={regressionTestingServiceSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <MainLayout>
+                <RegressionTestingHeroSection />
+                <RegressionTestingComprehensiveSlider />
+                <RegressionTestingROISection />
+                <RegressionTestingProvenTestingProcess />
+                <RegressionTestingWhyChooseTestriq />
+                <RegressionTestingToolsFramework />
+                <RegressionTestingCaseStudies />
+                <RegressionTestingReadyToEnsureQuality />
+                <RegressionTestingFAQs />
+            </MainLayout>
+        </div>
+    );
+}
