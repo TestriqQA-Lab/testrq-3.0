@@ -10,7 +10,7 @@ import RoboticComplianceTable from "@/components/sections/RoboticComplianceTable
 import RoboticRPAServices from "@/components/sections/RoboticRPAServices";
 import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   roboticTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -90,18 +90,18 @@ export const metadata: Metadata = {
 };
 
 export default function RoboticTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/robotics-testing-services" },
-    {
-      name: "Robotic Testing Services",
-      url: "https://www.testriq.com/robotics-testing-services",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={roboticTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/robotics-testing-services",
+          "Robotic Testing Services"
+        )}
+      />
       <RoboticTestingHeroSection />
       <RoboticComplianceTable />
       <RoboticComprehensiveSlider />

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
-import StructuredData, { apiTestingSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { apiTestingSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "API Testing Services & REST API Automation | Testriq",
@@ -181,15 +181,15 @@ const ApiToolsFramework = dynamic(
 );
 
 export default function ApiTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/api-testing" },
-    { name: "API Testing", url: "https://www.testriq.com/api-testing" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={apiTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/api-testing", "API Testing")}
+      />
       <MainLayout>
         <ApiTestingHeroSection />
         <ApiComprehensiveSlider />

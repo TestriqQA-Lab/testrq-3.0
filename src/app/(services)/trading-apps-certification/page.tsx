@@ -9,7 +9,7 @@ import TradingAppFAQs from "@/components/sections/TradingAppFAQs";
 import TradingAppCTA from "@/components/sections/TradingAppCTA";
 import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   organizationSchema,
   tradingAppCertificationSchema,
   websiteSchema,
@@ -96,23 +96,18 @@ export const metadata: Metadata = {
 };
 
 export default function TradingAppsCertificationPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/trading-apps-certification",
-    },
-    {
-      name: "Trading App Certification ",
-      url: "https://www.testriq.com/trading-apps-certification",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal name had trailing whitespace) to 2 canonical items;
+  // URL now structurally derived from pathname.
   return (
     <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={tradingAppCertificationSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/trading-apps-certification", "Trading App Certification")}
+      />
 
       <main className="min-h-screen bg-white">
         <TradingAppHeroSection />

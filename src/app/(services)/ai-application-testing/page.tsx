@@ -4,7 +4,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
   aiTestingServiceSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
@@ -126,18 +126,18 @@ const AIToolsFramework = dynamic(
 );
 
 export default function AIApplicationTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/ai-application-testing" },
-    {
-      name: "AI Application Testing",
-      url: "https://www.testriq.com/ai-application-testing",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={aiTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/ai-application-testing",
+          "AI Application Testing"
+        )}
+      />
       <MainLayout>
         <AITestingHeroSection />
         <AIComprehensiveSlider />

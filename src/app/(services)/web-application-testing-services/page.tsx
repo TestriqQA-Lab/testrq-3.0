@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
   webAppTestingServiceSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -162,22 +162,18 @@ const CardSlider = dynamic(
 );
 
 export default function WebAppTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/web-application-testing-services",
-    },
-    {
-      name: "Web Application Testing",
-      url: "https://www.testriq.com/web-application-testing-services",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={webAppTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/web-application-testing-services",
+          "Web Application Testing"
+        )}
+      />
       <MainLayout>
         <WebappTestingHeroSection />
         <WebappChallenges />

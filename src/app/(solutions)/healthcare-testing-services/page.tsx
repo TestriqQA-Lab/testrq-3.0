@@ -9,7 +9,7 @@ import HealthcareROISection from "@/components/sections/HealthcareROISection";
 import HealthcareFAQSection from "@/components/sections/HealthcareFAQSection";
 import HealthcareContactSection from "@/components/sections/HealthcareContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, healthcareTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, healthcareTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Healthcare Testing Solutions ",
@@ -81,15 +81,18 @@ export const metadata: Metadata = {
 };
 
 const HealthcareTestingPage: React.FC = () => {
-    const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/healthcare-testing-services" },
-    { name: "Healthcare Testing Service", url: "https://www.testriq.com/healthcare-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
           <StructuredData data={ healthcareTestingServiceSchema} />
-          <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+          <StructuredData
+            data={createCanonicalBreadcrumb(
+              "/healthcare-testing-services",
+              "Healthcare Testing Service"
+            )}
+          />
 
     <main className="min-h-screen bg-white">
       <HealthcareHeroSection />

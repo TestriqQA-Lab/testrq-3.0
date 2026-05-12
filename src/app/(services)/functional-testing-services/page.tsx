@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
-import StructuredData, { functionalServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { functionalServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 import FunctionalHeroSection from "@/components/sections/FunctionalHeroSection";
 
@@ -148,16 +148,18 @@ export const metadata: Metadata = {
 };
 
 export default function FunctionalTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        { name: "Services", url: "https://www.testriq.com/functional-testing-services" },
-        { name: "Functional Testing", url: "https://www.testriq.com/functional-testing-services" },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={functionalServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/functional-testing-services",
+                    "Functional Testing"
+                )}
+            />
             <MainLayout>
                 <FunctionalHeroSection />
                 <FunctionalCriticalitySection />

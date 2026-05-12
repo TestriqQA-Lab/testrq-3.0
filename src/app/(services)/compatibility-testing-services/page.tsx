@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import StructuredData, {
     compatibilityTestingServiceSchema,
     compatibilityFAQSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600;
@@ -104,23 +104,19 @@ const CompatibilityTestingReadyToStart = dynamic(
 );
 
 export default function CompatibilityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/compatibility-testing-services",
-        },
-        {
-            name: "Compatibility Testing",
-            url: "https://www.testriq.com/compatibility-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={compatibilityTestingServiceSchema} />
             <StructuredData data={compatibilityFAQSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/compatibility-testing-services",
+                    "Compatibility Testing"
+                )}
+            />
             <MainLayout>
                 <CompatibilityTestingHeroSection />
                 <CompatibilityTestingDigitalDiversity />

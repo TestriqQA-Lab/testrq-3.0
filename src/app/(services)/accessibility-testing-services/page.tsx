@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     accessibilityServiceSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -97,19 +97,18 @@ const AccessibilityAnyQuestions = dynamic(
 );
 
 export default function AccessibilityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/accessibility-testing-services" },
-        {
-            name: "Accessibility Testing",
-            url: "https://www.testriq.com/accessibility-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={accessibilityServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/accessibility-testing-services",
+                    "Accessibility Testing"
+                )}
+            />
             <MainLayout>
                 <AccessibilityHeroSection />
                 <AccessibilitySolutionsSection />

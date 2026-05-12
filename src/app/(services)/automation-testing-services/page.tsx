@@ -4,7 +4,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
   automationTestingServiceSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 import { HeroLoader, ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
@@ -153,22 +153,18 @@ const ManualTestingFrameworkArchitecture = dynamic(
 );
 
 export default function AutomationTestingServices() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/automation-testing-services",
-    },
-    {
-      name: "Automation Testing Services",
-      url: "https://www.testriq.com/automation-testing-services",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={automationTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/automation-testing-services",
+          "Automation Testing Services"
+        )}
+      />
       <MainLayout>
         <AutomationTestingHeroSection />
         <AutomationComplianceTable />

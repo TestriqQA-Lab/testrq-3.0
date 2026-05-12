@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     cyberSecurityServiceSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600; // ISR: Revalidate every hour
@@ -120,22 +120,18 @@ const CyberSecurityCTASection = dynamic(
 );
 
 export default function CyberSecurityTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/services",
-        },
-        {
-            name: "Cyber Security Testing",
-            url: "https://www.testriq.com/cyber-security-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node pointing at
+    // /services) to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={cyberSecurityServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/cyber-security-testing-services",
+                    "Cyber Security Testing"
+                )}
+            />
             <MainLayout>
                 <CyberSecurityHeroSection />
                 <SecurityTestingCrucialSection />

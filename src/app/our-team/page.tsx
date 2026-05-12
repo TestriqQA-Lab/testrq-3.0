@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, ourTeamPageSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, ourTeamPageSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Testriq QA Leadership Team |Software Testing Experts",
@@ -135,15 +135,16 @@ const HomeReadyToElevate = dynamic(
 );
 
 export default function OurTeam() {
-   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/our-team" },
-    { name: "Our Team", url: "https://www.testriq.com/our-team" }
-  ]
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node — wrong section
+  // entirely, this is a non-service page — pointing at /our-team) to 2 canonical
+  // items; URL now structurally derived from pathname.
   return (
     <div>
         <StructuredData data={ourTeamPageSchema } />
-        <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+        <StructuredData
+          data={createCanonicalBreadcrumb("/our-team", "Our Team")}
+        />
       <MainLayout>
         <TeamHeroSection />
         <TeamLeadershipSection />

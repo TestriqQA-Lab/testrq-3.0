@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   mobileAppTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -184,21 +184,20 @@ const MobileCardSlider = dynamic(
 );
 
 export default function MobileAppTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/mobile-application-testing-services",
-    },
-    {
-      name: "Web Application Testing",
-      url: "https://www.testriq.com/mobile-application-testing-services",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL
+  // /mobile-application-testing-services; terminal item also mislabeled as
+  // "Web Application Testing") to 2 canonical items with correct name;
+  // URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={mobileAppTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/mobile-application-testing",
+          "Mobile Application Testing"
+        )}
+      />
       <MainLayout>
         <MobileTestingHeroSection />
         <MobileComprehensiveSection />

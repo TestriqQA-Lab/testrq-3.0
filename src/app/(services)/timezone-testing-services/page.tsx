@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import StructuredData, {
     timezoneTestingServiceSchema,
     timezoneFAQSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -62,20 +62,19 @@ const TimezoneFAQs = dynamic(() => import("@/components/sections/TimezoneFAQs"),
 const TimezoneCTA = dynamic(() => import("@/components/sections/TimezoneCTA"), { ssr: true });
 
 export default function TimezoneTestingServices() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/timezone-testing-services" },
-        {
-            name: "Testing in Your Time Zone",
-            url: "https://www.testriq.com/timezone-testing-services",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={timezoneTestingServiceSchema} />
             <StructuredData data={timezoneFAQSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/timezone-testing-services",
+                    "Testing in Your Time Zone"
+                )}
+            />
 
             <MainLayout>
                 <TimezoneTestingHero />

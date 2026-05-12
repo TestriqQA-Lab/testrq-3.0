@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   dataAnalysisServiceSchema,
 } from "@/components/seo/StructuredData";
 
@@ -184,18 +184,18 @@ const DataAnalysisReadyToEnsureQuality = dynamic(
 
 
 const DataAnalysisPage = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/data-analysis-services" },
-    {
-      name: "Data Analysis Services",
-      url: "https://www.testriq.com/data-analysis-services",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={dataAnalysisServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/data-analysis-services",
+          "Data Analysis Services"
+        )}
+      />
       <DataAnalysisHeroSection />
       <DataAnalysisChallenges />
       <DataAnalysisComprehensiveSlider />

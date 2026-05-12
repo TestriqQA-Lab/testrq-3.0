@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   organizationSchema,
   shoppingAppCertificationSchema,
   websiteSchema,
@@ -201,23 +201,18 @@ const faqSchema = {
 };
 
 export default function ShoppingAppsCertification() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/shopping-apps-certification",
-    },
-    {
-      name: "Shopping App Certification ",
-      url: "https://www.testriq.com/shopping-apps-certification",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal name had trailing whitespace) to 2 canonical items;
+  // URL now structurally derived from pathname.
   return (
     <div className="overflow-hidden">
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={shoppingAppCertificationSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/shopping-apps-certification", "Shopping App Certification")}
+      />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <ShoppingAppHeroSection scrollToId="shopping-app-certification-process" />

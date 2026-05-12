@@ -8,7 +8,7 @@ import BankingROISection from "@/components/sections/BankingROISection";
 import BankingFAQSection from "@/components/sections/BankingFAQSection";
 import BankingContactSection from "@/components/sections/BankingContactSection";
 import { Metadata } from "next";
-import StructuredData, { bankingFinanceTestingServiceSchema, createBreadcrumbSchema } from "@/components/seo/StructuredData";
+import StructuredData, { bankingFinanceTestingServiceSchema, createCanonicalBreadcrumb } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Banking & Financial Application Testing Services | testriq",
@@ -83,15 +83,20 @@ export const metadata: Metadata = {
 
 
 const BankingFinanceTestingPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/banking-finance-industry-testing-services" },
-    { name: "Banking FinanceTesting Service", url: "https://www.testriq.com/banking-finance-industry-testing-servicess" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal item also had missing space "Banking FinanceTesting Service" and a
+  // 404 URL with extra trailing "s") to 2 canonical items with corrected name;
+  // URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={bankingFinanceTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/banking-finance-industry-testing-services",
+          "Banking Finance Testing Service"
+        )}
+      />
       <main className="min-h-screen bg-white">
         <BankingHeroSection />
         <BankingChallengesSection />

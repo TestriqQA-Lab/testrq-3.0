@@ -8,7 +8,7 @@ import ElearningPerformanceSection from "@/components/sections/ElearningPerforma
 import ElearningFAQSection from "@/components/sections/ElearningFAQSection";
 import ElearningContactSection from "@/components/sections/ElearningContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, elearningTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, elearningTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "E-Learning Testing Services",
@@ -88,15 +88,19 @@ export const metadata: Metadata = {
 };
 
 const ElearningTestingPage: React.FC = () => {
-   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/e-learning-testing-servicess" },
-    { name: "E-Learning Testing", url: "https://www.testriq.com/e-learning-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with a 404
+  // URL containing extra trailing "s") to 2 canonical items; URL now structurally
+  // derived from pathname.
   return (
     <div>
       <StructuredData data={ elearningTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/e-learning-testing-services",
+          "E-Learning Testing"
+        )}
+      />
     <main className="min-h-screen bg-white">
       <ElearningHeroSection />
       <ElearningChallengesSection />

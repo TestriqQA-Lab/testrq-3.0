@@ -9,7 +9,7 @@ import GamingROISection from "@/components/sections/GamingROISection";
 import GamingFAQSection from "@/components/sections/GamingFAQSection";
 import GamingContactSection from "@/components/sections/GamingContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, gamingTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, gamingTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Gaming App Testing Services" ,
@@ -83,15 +83,18 @@ export const metadata: Metadata = {
 
 
 const GamingTestingPage: React.FC = () => {
-   const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/gaming-app-testing-services" },
-    { name: "Gaming Testing Service", url: "https://www.testriq.com/gaming-app-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
-    <div>  
+    <div>
       <StructuredData data={gamingTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/gaming-app-testing-services",
+          "Gaming Testing Service"
+        )}
+      />
     <main className="min-h-screen bg-white">
       <GamingHeroSection />
       <GamingChallengesSection />

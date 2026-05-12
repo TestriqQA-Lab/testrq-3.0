@@ -11,7 +11,7 @@ import ExploratoryFAQs from "@/components/sections/ExploratoryFAQs";
 import { Metadata } from "next";
 import StructuredData, {
   exploratoryTestingSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -87,18 +87,18 @@ export const metadata: Metadata = {
 };
 
 export default function ExploratoryTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/services" },
-    {
-      name: "Exploratory Testing",
-      url: "https://www.testriq.com/exploratory-testing",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node pointing at
+  // /services) to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={exploratoryTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/exploratory-testing",
+          "Exploratory Testing"
+        )}
+      />
       <ExploratoryTestingHeroSection />
       <ExploratoryChallenges />
       <ExploratoryVsScripted />

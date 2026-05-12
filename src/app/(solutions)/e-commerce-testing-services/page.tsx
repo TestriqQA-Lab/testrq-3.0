@@ -7,7 +7,7 @@ import EcommercePlatformsSection from "@/components/sections/EcommercePlatformsS
 import EcommerceFAQSection from "@/components/sections/EcommerceFAQSection";
 import EcommerceContactSection from "@/components/sections/EcommerceContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, ecommerceTestingServiceSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "E-Commerce Testing |QA Testing | Testriq",
@@ -80,15 +80,18 @@ export const metadata: Metadata = {
 
 
 const EcommerceTestingPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/e-commerce-testing-services" },
-    { name: "E-Commerce Testing", url: "https://www.testriq.com/e-commerce-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={ecommerceTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/e-commerce-testing-services",
+          "E-Commerce Testing"
+        )}
+      />
       <main className="min-h-screen bg-white">
         <EcommerceHeroSection />
         <EcommerceChallengesSection />

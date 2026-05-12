@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
   iso42001ComplianceTestingSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 import { ContentLoader, FAQLoader } from "@/components/ui/Loaders";
 
@@ -131,22 +131,18 @@ const ISO42001ReadyToStart = dynamic(
 );
 
 export default function ISO42001ComplianceTestingServices() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/iso-iec-42001-compliance-testing-services",
-    },
-    {
-      name: "ISO/IEC 42001 Compliance Testing",
-      url: "https://www.testriq.com/iso-iec-42001-compliance-testing-services",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={iso42001ComplianceTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/iso-iec-42001-compliance-testing-services",
+          "ISO/IEC 42001 Compliance Testing"
+        )}
+      />
       <MainLayout>
         <ISO42001HeroSection />
         <ISO42001WhatIsSection />

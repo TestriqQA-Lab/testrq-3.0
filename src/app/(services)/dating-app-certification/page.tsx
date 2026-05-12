@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   datingAppCertificationSchema,
   organizationSchema,
   websiteSchema,
@@ -200,23 +200,17 @@ const faqSchema = {
 };
 
 export default function DatingAppCertification() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/dating-app-certification",
-    },
-    {
-      name: "Dating App Certification",
-      url: "https://www.testriq.com/dating-app-certification",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={organizationSchema} />
       <StructuredData data={websiteSchema} />
       <StructuredData data={datingAppCertificationSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/dating-app-certification", "Dating App Certification")}
+      />
       <StructuredData data={faqSchema} />
       <MainLayout>
         <DatingAppHeroSection />

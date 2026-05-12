@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import { Metadata } from "next";
 import StructuredData, {
   desktopAppTestingSchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -163,22 +163,18 @@ const DesktopCardSlider = dynamic(
 );
 
 export default function DesktopAppTesting() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/desktop-application-testing-services",
-    },
-    {
-      name: "Desktop Application Service",
-      url: "https://www.testriq.com/desktop-application-testing-services",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={desktopAppTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/desktop-application-testing-services",
+          "Desktop Application Service"
+        )}
+      />
       <MainLayout>
         <DesktopTestingHeroSection />
         <DesktopChallenges />

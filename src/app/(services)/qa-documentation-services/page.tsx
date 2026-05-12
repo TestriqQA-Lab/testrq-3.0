@@ -9,7 +9,7 @@ import QADocumentationCaseStudies from '@/components/sections/QADocumentationCas
 import QADocumentationFAQs from '@/components/sections/QADocumentationFAQs';
 import QADocumentationReadyToEnsureQuality from '@/components/sections/QADocumentationReadyToEnsureQuality';
 import { Metadata } from 'next';
-import StructuredData, { createBreadcrumbSchema, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
+import StructuredData, { createCanonicalBreadcrumb, qaDocumentationServiceSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
   title: "Analyze Data to Improve QA Team Performance",
@@ -82,15 +82,18 @@ export const metadata: Metadata = {
 
 
 const QADocumentationServicesPage = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/qa-documentation-services" },
-    { name: "QA Documentation Services", url: "https://www.testriq.com/qa-documentation-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={qaDocumentationServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/qa-documentation-services",
+          "QA Documentation Services"
+        )}
+      />
       <QADocumentationHeroSection />
       <QADocumentationChallenges />
       <QADocumentationComprehensiveSlider />

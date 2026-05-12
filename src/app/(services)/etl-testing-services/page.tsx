@@ -10,7 +10,7 @@ import ETLAnyQuestions from "@/components/sections/ETLAnyQuestions";
 import ETLComplianceTable from "@/components/sections/ETLComplianceTable";
 import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   etlTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -91,15 +91,15 @@ export const metadata: Metadata = {
 };
 
 export default function ETLTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/etl-testing-services" },
-    { name: "ETL Testing", url: "https://www.testriq.com/etl-testing-services" },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <main className="min-h-screen bg-white">
       <StructuredData data={etlTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/etl-testing-services", "ETL Testing")}
+      />
       <ETLTestingHeroSection />
       <ETLComplianceTable />
       <ETLComprehensiveSlider />

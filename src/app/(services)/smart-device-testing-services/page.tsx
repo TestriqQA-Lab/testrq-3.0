@@ -10,7 +10,7 @@ import SmartDeviceAnyQuestions from "@/components/sections/SmartDeviceAnyQuestio
 import SmartDeviceComplianceTable from "@/components/sections/SmartDeviceComplianceTable";
 import { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
   smartDeviceTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -91,21 +91,19 @@ export const metadata: Metadata = {
 };
 
 export default function SmartDeviceTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/smart-device-testing-services",
-    },
-    {
-      name: "smart Device Testing Service",
-      url: "https://www.testriq.com/smart-device-testing-services",
-    },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal item had lowercase "smart" typo) to 2 canonical items with corrected
+  // casing; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={smartDeviceTestingSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb(
+          "/smart-device-testing-services",
+          "Smart Device Testing Service"
+        )}
+      />
       <SmartDeviceTestingHeroSection />
       <SmartDeviceComplianceTable />
       <SmartDeviceComprehensiveSlider />

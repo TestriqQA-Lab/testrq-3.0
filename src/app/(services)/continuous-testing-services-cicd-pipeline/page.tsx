@@ -3,7 +3,7 @@ import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
     continuousTestingServiceSchema,
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const revalidate = 3600; // ISR: Revalidate every hour
@@ -157,22 +157,18 @@ const ContinuousTestingReadyToAccelerate = dynamic(
 );
 
 export default function ContinuousTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com" },
-        {
-            name: "Services",
-            url: "https://www.testriq.com/continuous-testing-services-cicd-pipeline",
-        },
-        {
-            name: "Continuous Testing",
-            url: "https://www.testriq.com/continuous-testing-services-cicd-pipeline",
-        },
-    ];
-
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <div>
             <StructuredData data={continuousTestingServiceSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/continuous-testing-services-cicd-pipeline",
+                    "Continuous Testing"
+                )}
+            />
             <MainLayout>
                 <ContinuousTestingHeroSection />
                 <ContinuousTestingWhyDevOps />

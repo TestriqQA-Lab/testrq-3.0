@@ -8,7 +8,7 @@ import TelecomROISection from "@/components/sections/TelecomROISection";
 import TelecomFAQSection from "@/components/sections/TelecomFAQSection";
 import TelecomContactSection from "@/components/sections/TelecomContactSection";
 import { Metadata } from "next";
-import StructuredData, { createBreadcrumbSchema, telecommunicationTestingSchema } from "@/components/seo/StructuredData";
+import StructuredData, { createCanonicalBreadcrumb, telecommunicationTestingSchema } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
   title: "Telecommunication Testing Services",
@@ -82,15 +82,19 @@ export const metadata: Metadata = {
 
 
 const TelecommunicationTestingPage: React.FC = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/telecommunications-testing-services" },
-    { name: "Telecommunication Testing ", url: "https://www.testriq.com/telecommunications-testing-services" }
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
+  // terminal item had trailing whitespace) to 2 canonical items with trimmed name;
+  // URL now structurally derived from pathname.
   return (
     <div>
             <StructuredData data={telecommunicationTestingSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+              data={createCanonicalBreadcrumb(
+                "/telecommunications-testing-services",
+                "Telecommunication Testing"
+              )}
+            />
     <main className="min-h-screen bg-white">
       <TelecomHeroSection />
       <TelecomChallengesSection />

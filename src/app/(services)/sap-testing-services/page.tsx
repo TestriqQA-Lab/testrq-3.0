@@ -10,7 +10,7 @@ import SapFAQs from "@/components/sections/SapFAQs";
 import SapAnyQuestions from "@/components/sections/SapAnyQuestions";
 import { Metadata } from "next";
 import StructuredData, {
-    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
     sapTestingSchema,
 } from "@/components/seo/StructuredData";
 
@@ -95,15 +95,18 @@ export const metadata: Metadata = {
 };
 
 export default function SapTestingPage() {
-    const breadcrumbItems = [
-        { name: "Home", url: "https://www.testriq.com/" },
-        { name: "Services", url: "https://www.testriq.com/sap-testing-services" },
-        { name: "SAP Testing", url: "https://www.testriq.com/sap-testing-services" },
-    ];
+    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+    // to 2 canonical items; URL now structurally derived from pathname.
     return (
         <main className="min-h-screen bg-white">
             <StructuredData data={sapTestingSchema} />
-            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <StructuredData
+                data={createCanonicalBreadcrumb(
+                    "/sap-testing-services",
+                    "SAP Testing"
+                )}
+            />
             <SapTestingHeroSection />
             <SapTestingChallenges />
             <SapComprehensiveSlider />

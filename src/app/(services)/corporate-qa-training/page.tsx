@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
 import StructuredData, {
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -226,19 +226,15 @@ const corporateQATrainingServiceSchema = {
 };
 
 export default function CorporateQATrainingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com" },
-    { name: "Services", url: "https://www.testriq.com/corporate-qa-training" },
-    {
-      name: "Corporate QA Training",
-      url: "https://www.testriq.com/corporate-qa-training",
-    },
-  ];
-
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div>
       <StructuredData data={corporateQATrainingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/corporate-qa-training", "Corporate QA Training")}
+      />
       <MainLayout>
         <CorporateQATrainingHeroSection />
         <CorporateQATrainingChallenges />

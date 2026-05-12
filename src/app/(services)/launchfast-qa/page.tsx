@@ -10,7 +10,7 @@ import LaunchFastFAQs from "@/components/sections/LaunchFastFAQs";
 import type { Metadata } from "next";
 import StructuredData, {
   launchFastQASchema,
-  createBreadcrumbSchema,
+  createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
@@ -89,15 +89,15 @@ export const metadata: Metadata = {
 };
 
 export default function LaunchFastQAPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    { name: "Services", url: "https://www.testriq.com/launchfast-qa" },
-    { name: "LaunchFast QA", url: "https://www.testriq.com/launchfast-qa" },
-  ];
+  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
+  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
+  // to 2 canonical items; URL now structurally derived from pathname.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={launchFastQASchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+      <StructuredData
+        data={createCanonicalBreadcrumb("/launchfast-qa", "LaunchFast QA")}
+      />
       <LaunchFastQAHeroSection />
       <LaunchFastChallenges />
       <LaunchFastComprehensiveSlider />
