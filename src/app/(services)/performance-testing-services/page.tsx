@@ -1,168 +1,78 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
-  createBreadcrumbSchema,
-  performanceTestingServiceSchema,
+    createBreadcrumbSchema,
+    performanceTestingServiceSchema,
 } from "@/components/seo/StructuredData";
-
-export const metadata: Metadata = {
-  title: "Stress Testing Services | Performance Testing Services",
-  description: "Testriq ensures your platforms remain resilient, responsive, and ready for global scale. Elite performance engineering and load testing using ISO 29119 standards for 2026.",
-  keywords: [
-    "Performance Testing Services",
-    "Load Testing Solutions",
-    "Stress Testing Services",
-    "Scalability Testing 2026",
-    "Endurance Testing QA",
-    "CI/CD Performance Integration",
-    "ISO 29119 Performance Testing",
-    "Testriq Performance Lab",
-    "Global Distributed Load Generation"
-  ],
-  openGraph: {
-    title: "Performance Testing Services | Load & Stress Testing | Testriq",
-    description: "Ensure your platforms remain resilient and ready for global scale with Testriq's 2026 Performance Engineering solutions.",
-    url: "/services/performance-testing-services",
-    type: "website",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/performance-testing-og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "Performance Testing Services by Testriq",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Performance Testing Services | Load & Stress Testing | Testriq",
-    description: "Ensure your platforms remain resilient and ready for global scale with Testriq's 2026 Performance Engineering solutions.",
-    images: ["https://www.testriq.com/OG/performance-testing-og-image.webp"],
-  },
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/performance-testing-services",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 import PerformanceTestingHeroSection from "@/components/sections/PerformanceTestingHeroSection";
+import PerformanceTestingChallenges from "@/components/sections/PerformanceTestingChallenges";
+import PerformanceTestingComprehensiveSlider from "@/components/sections/PerformanceTestingComprehensiveSlider";
+import PerformanceTestingProvenTestingProcess from "@/components/sections/PerformanceTestingProvenTestingProcess";
+import PerformanceTestingWhyChooseTestriq from "@/components/sections/PerformanceTestingWhyChooseTestriq";
+import PerformanceTestingToolsFramework from "@/components/sections/PerformanceTestingToolsFramework";
+import PerformanceTestingFAQs from "@/components/sections/PerformanceTestingFAQs";
+import PerformanceTestingReadyToEnsureQuality from "@/components/sections/PerformanceTestingReadyToEnsureQuality";
 
-const PerformanceTestingComprehensiveSlider = dynamic(
-  () => import("@/components/sections/PerformanceTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingChallenges = dynamic(
-  () => import("@/components/sections/PerformanceTestingChallenges"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingProvenTestingProcess = dynamic(
-  () => import("@/components/sections/PerformanceTestingProvenTestingProcess"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/PerformanceTestingWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingToolsFramework = dynamic(
-  () => import("@/components/sections/PerformanceTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingFAQs = dynamic(
-  () => import("@/components/sections/PerformanceTestingFAQs"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const PerformanceTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/PerformanceTestingReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/performance-testing-services",
+        title: "Performance Testing Services | Load & Stress Testing | Testriq",
+        description:
+            "Validate application resilience at scale with Testriq's performance testing services. ISO 29119-compliant load, stress, and endurance testing for DevOps teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/performance-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Performance Testing Services by Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "performance testing services",
+            "load testing solutions",
+            "stress testing services",
+            "scalability testing",
+            "endurance testing qa",
+            "ci/cd performance testing",
+            "iso 29119 performance testing",
+            "application performance qa",
+            "distributed load testing",
+        ],
+    });
+}
 
 export default function PerformanceTestingPage() {
-  const breadcrumbItems = [
-    { name: "Home", url: "https://www.testriq.com/" },
-    {
-      name: "Services",
-      url: "https://www.testriq.com/performance-testing-services",
-    },
-    {
-      name: "Performance Testing",
-      url: "https://www.testriq.com/performance-testing-services",
-    },
-  ];
+    // TODO(seo phase-2 audit): Pattern A fixed — og:url was "/services/performance-testing-services"
+    // (relative path with /services/ prefix resolving via metadataBase to wrong URL); now derived
+    // from pathname via buildPageMetadata. Pattern D fixed — breadcrumb had 3 items where items 2
+    // ("Services") and 3 ("Performance Testing") both pointed at /performance-testing-services;
+    // reduced to 2 canonical items per PR-2A/2B template. Title fixed — was "Stress Testing
+    // Services | Performance Testing Services" (no brand, wrong leading keyword); og:title was a
+    // separate better value. 7 dynamic() → direct imports. PR-3 will fix at breadcrumb component
+    // level cascading to 40 pages.
+    const breadcrumbItems = [
+        { name: "Home", url: "https://www.testriq.com/" },
+        {
+            name: "Performance Testing",
+            url: "https://www.testriq.com/performance-testing-services",
+        },
+    ];
 
-  return (
-    <div>
-      <StructuredData data={performanceTestingServiceSchema} />
-      <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
-      <MainLayout>
-        <PerformanceTestingHeroSection />
-        <PerformanceTestingChallenges />
-        <PerformanceTestingComprehensiveSlider />
-        <PerformanceTestingProvenTestingProcess />
-        <PerformanceTestingWhyChooseTestriq />
-        <PerformanceTestingToolsFramework />
-        <PerformanceTestingFAQs />
-        <PerformanceTestingReadyToEnsureQuality />
-      </MainLayout>
-    </div>
-  );
+    return (
+        <div>
+            <StructuredData data={performanceTestingServiceSchema} />
+            <StructuredData data={createBreadcrumbSchema(breadcrumbItems)} />
+            <MainLayout>
+                <PerformanceTestingHeroSection />
+                <PerformanceTestingChallenges />
+                <PerformanceTestingComprehensiveSlider />
+                <PerformanceTestingProvenTestingProcess />
+                <PerformanceTestingWhyChooseTestriq />
+                <PerformanceTestingToolsFramework />
+                <PerformanceTestingFAQs />
+                <PerformanceTestingReadyToEnsureQuality />
+            </MainLayout>
+        </div>
+    );
 }
