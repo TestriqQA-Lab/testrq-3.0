@@ -23,14 +23,6 @@ export const metadata: Metadata = {
         "PII data masking",
         "test data subsetting",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
-    formatDetection: {
-        email: false,
-        address: false,
-        telephone: false,
-    },
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/test-data-management-services",

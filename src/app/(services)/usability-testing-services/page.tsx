@@ -24,9 +24,6 @@ export const metadata: Metadata = {
         "ISTQB Certified UX Testing",
         "Remote Usability Testing Agency",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/usability-testing-services",

@@ -22,9 +22,6 @@ export const metadata: Metadata = {
         "VPAT accessibility testing",
         "inclusive design testing",
     ],
-    authors: [{ name: "Testriq QA Lab" }],
-    creator: "Testriq QA Lab LLP",
-    publisher: "Testriq QA Lab LLP",
     metadataBase: new URL("https://www.testriq.com/"),
     alternates: {
         canonical: "https://www.testriq.com/accessibility-testing-services",
