@@ -7,7 +7,7 @@ import StructuredData, {
 } from "@/components/seo/StructuredData";
 
 export const metadata: Metadata = {
-    title: "Acessibility Testing Services | WCAG 2.2 & ADA Compliance | Testriq",
+    title: "Accessibility Testing Services | WCAG 2.2 & ADA Compliance | Testriq",
     description:
         "Ensure your digital products are inclusive with Testriq's expert Accessibility Testing Services. We specialize in WCAG 2.2, Section 508, and ADA compliance.",
     keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         siteName: "Testriq - Accessibility Testing Services",
         title: "Accessibility Testing Services | Ensuring Digital Inclusion",
         description:
-            "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
+            "Expert accessibility testing services to ensure your apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
         images: [
             {
                 url: "https://www.testriq.com/OG/Accessibility-testing-og-image.webp",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
         creator: "@testriq",
         title: "Accessibility Testing Services | Ensuring Digital Inclusion",
         description:
-            "Expert accessibility testing services to ensure yours apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
+            "Expert accessibility testing services to ensure your apps and sites are usable by everyone. WCAG, ADA, and Section 508 compliance.",
         images: ["https://www.testriq.com/OG/Accessibility-testing-og-image.webp"],
     },
     robots: {
