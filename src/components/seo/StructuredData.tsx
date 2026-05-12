@@ -21,7 +21,7 @@
 /**
  * A single Schema.org JSON-LD object.
  */
-import { buildCanonicalUrl, SITE_URL } from "@/lib/seo/metadata";
+import { buildCanonicalUrl, SITE_URL } from "../../lib/seo/metadata";
 
 type JsonLd = Record<string, unknown>;
 
