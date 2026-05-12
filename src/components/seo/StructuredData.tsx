@@ -21,6 +21,8 @@
 /**
  * A single Schema.org JSON-LD object.
  */
+import { buildCanonicalUrl, SITE_URL } from "@/lib/seo/metadata";
+
 type JsonLd = Record<string, unknown>;
 
 /**
@@ -4050,6 +4052,37 @@ export const createBreadcrumbSchema = (items: Array<{ name: string, url: string 
     "item": item.url
   }))
 });
+
+/**
+ * Build a canonical 2-item BreadcrumbList (Home → this page) for any Testriq
+ * service or solution page. The page URL is derived from `pathname` via
+ * `buildCanonicalUrl`, so:
+ *
+ *   - No way to introduce a slug typo (Pattern B) — the URL is whatever path
+ *     the page actually serves at.
+ *   - No way to introduce a /services/ prefix (Pattern A) — the helper takes
+ *     the public pathname directly.
+ *   - No way to ship a 3-item breadcrumb with an intermediate "Services" node
+ *     pointing at the page URL (Pattern D) — the helper structurally produces
+ *     exactly 2 items.
+ *
+ * Existing `createBreadcrumbSchema` remains available for legitimate
+ * multi-item cases (blog category trees, case-study hierarchies, etc.).
+ *
+ * @example
+ *   <StructuredData
+ *     data={createCanonicalBreadcrumb("/regression-testing", "Regression Testing")}
+ *   />
+ *
+ * @param pathname Public pathname of the page, with or without leading slash.
+ * @param pageName Display name for the breadcrumb's terminal node.
+ * @returns A Schema.org BreadcrumbList JSON-LD object.
+ */
+export const createCanonicalBreadcrumb = (pathname: string, pageName: string) =>
+  createBreadcrumbSchema([
+    { name: "Home", url: `${SITE_URL}/` },
+    { name: pageName, url: buildCanonicalUrl(pathname) },
+  ]);
 
 // FAQ Schema
 export const createFAQSchema = (faqs: Array<{ question: string, answer: string }>) => ({

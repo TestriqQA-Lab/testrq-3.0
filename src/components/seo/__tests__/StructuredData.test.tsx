@@ -16,7 +16,10 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 
-import StructuredData from "../StructuredData";
+import StructuredData, {
+    createBreadcrumbSchema,
+    createCanonicalBreadcrumb,
+} from "../StructuredData";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -279,5 +282,63 @@ describe("<StructuredData> — non-stringifiable schemas (Refinement 2)", () => 
         );
 
         expect(consoleErr).not.toHaveBeenCalled();
+    });
+});
+
+// ---------------------------------------------------------------------------
+// 10 — createCanonicalBreadcrumb helper
+// ---------------------------------------------------------------------------
+
+describe("createCanonicalBreadcrumb", () => {
+    it("produces exactly 2 items: Home + the page", () => {
+        const bc = createCanonicalBreadcrumb("/foo", "Foo Page") as ReturnType<
+            typeof createBreadcrumbSchema
+        >;
+        expect(bc.itemListElement).toHaveLength(2);
+    });
+
+    it("first item is Home pointing at root", () => {
+        const bc = createCanonicalBreadcrumb("/foo", "Foo Page") as ReturnType<
+            typeof createBreadcrumbSchema
+        >;
+        const [home] = bc.itemListElement;
+        expect(home.name).toBe("Home");
+        expect(home.item).toBe("https://www.testriq.com/");
+        expect(home.position).toBe(1);
+    });
+
+    it("second item uses the pageName and pathname-derived URL", () => {
+        const bc = createCanonicalBreadcrumb(
+            "/regression-testing",
+            "Regression Testing",
+        ) as ReturnType<typeof createBreadcrumbSchema>;
+        const [, page] = bc.itemListElement;
+        expect(page.name).toBe("Regression Testing");
+        expect(page.item).toBe("https://www.testriq.com/regression-testing");
+        expect(page.position).toBe(2);
+    });
+
+    it("normalizes pathnames without a leading slash", () => {
+        const bc = createCanonicalBreadcrumb(
+            "regression-testing",
+            "Regression Testing",
+        ) as ReturnType<typeof createBreadcrumbSchema>;
+        const [, page] = bc.itemListElement;
+        expect(page.item).toBe("https://www.testriq.com/regression-testing");
+    });
+
+    it("strips trailing slashes to match canonical posture", () => {
+        const bc = createCanonicalBreadcrumb(
+            "/regression-testing/",
+            "Regression Testing",
+        ) as ReturnType<typeof createBreadcrumbSchema>;
+        const [, page] = bc.itemListElement;
+        expect(page.item).toBe("https://www.testriq.com/regression-testing");
+    });
+
+    it("produces a valid BreadcrumbList @type", () => {
+        const bc = createCanonicalBreadcrumb("/foo", "Foo");
+        expect(bc["@context"]).toBe("https://schema.org");
+        expect(bc["@type"]).toBe("BreadcrumbList");
     });
 });
