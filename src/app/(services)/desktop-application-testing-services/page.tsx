@@ -1,158 +1,60 @@
-import dynamic from "next/dynamic";
+import type { Metadata } from "next";
 import MainLayout from "@/components/layout/MainLayout";
-import { Metadata } from "next";
 import StructuredData, {
   desktopAppTestingSchema,
   createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Desktop App Testing & QA Services | Testriq",
+import DesktopTestingHeroSection from "@/components/sections/DesktopTestingHeroSection";
+import DesktopChallenges from "@/components/sections/DesktopChallenges";
+import DesktopCompliance from "@/components/sections/DesktopCompliance";
+import DesktopTechStack from "@/components/sections/DesktopTechStack";
+import DesktopCardSlider from "@/components/sections/DesktopCardSlider";
+import DesktopWhyChooseTestriq from "@/components/sections/DesktopWhyChooseTestriq";
+import DesktopFAQs from "@/components/sections/DesktopFAQs";
 
-  description:
-    "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
-  keywords: [
-    "Desktop Application Testing",
-    "Desktop App QA Services",
-    "Windows App Testing",
-    "macOS Application Testing",
-    "Linux Desktop Testing",
-    "Cross-Platform Desktop Testing",
-    "WPF and WinForms Testing",
-    "Desktop Performance Testing",
-    "EXE and MSI Installer Testing",
-    "Offline Functionality Testing",
-    "Desktop Security Testing",
-    "Enterprise Software QA",
-  ],
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/desktop-application-testing-services",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/desktop-application-testing-services",
-    siteName: "Testriq - Desktop Application Testing",
-    title: "Desktop App Testing & QA Services | Testriq",
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/desktop-application-testing-services",
+    title: "Desktop Application Testing Services | Cross-Platform QA | Testriq",
     description:
-      "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/Desktop-Application-Service-OG.webp",
-        width: 1200,
-        height: 630,
-        alt: "Desktop Application Testing Services - Testriq",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title: "Desktop App Testing & QA Services | Testriq",
-    description:
-      "Secure your enterprise with Testriq's desktop application testing services. We specialize in Windows, macOS, and Linux compatibility, .EXE/.MSI installer testing, and performance optimization for high-availability enterprise software.",
-    images: ["https://www.testriq.com/OG/Desktop-Application-Service-Twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      "Validate desktop apps across Windows, macOS, and Linux with Testriq's testing. Installer, performance, and security QA for enterprise software.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/Desktop-Application-Service-OG.webp",
+      width: 1200,
+      height: 630,
+      alt: "Desktop Application Testing Services - Testriq",
+      type: "image/webp",
     },
-  },
-};
-
-const DesktopTestingHeroSection = dynamic(
-  () => import("@/components/sections/DesktopTestingHeroSection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DesktopChallenges = dynamic(
-  () => import("@/components/sections/DesktopChallenges"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DesktopCompliance = dynamic(
-  () => import("@/components/sections/DesktopCompliance"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DesktopTechStack = dynamic(
-  () => import("@/components/sections/DesktopTechStack"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DesktopWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/DesktopWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const DesktopFAQs = dynamic(() => import("@/components/sections/DesktopFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
-const DesktopCardSlider = dynamic(
-  () => import("@/components/sections/DesktopCardSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
+    keywords: [
+      "desktop application testing",
+      "desktop app qa services",
+      "windows app testing",
+      "macos application testing",
+      "linux desktop testing",
+      "cross-platform desktop testing",
+      "wpf and winforms testing",
+      "desktop performance testing",
+      "exe and msi installer testing",
+      "offline functionality testing",
+      "desktop security testing",
+      "enterprise software qa",
+    ],
+  });
+}
 
 export default function DesktopAppTesting() {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-  // to 2 canonical items; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. New title surfaces full primary keyword "Desktop
+  // Application Testing Services" (was abbreviated to "Desktop App
+  // Testing & QA Services"). Description rewritten — was ~236 chars
+  // (well over Google's snippet cutoff), now 144 with action-verb start.
+  // twitter:image unified with og:image (was a separate -Twitter.webp).
+  // ogImage.type "image/webp" added. Keywords lowercased. 7 dynamic()
+  // imports converted to direct ES imports. Breadcrumb already migrated
+  // in PR-3 — unchanged.
   return (
     <div>
       <StructuredData data={desktopAppTestingSchema} />
