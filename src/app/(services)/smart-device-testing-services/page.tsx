@@ -1,4 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
+import StructuredData, {
+  createCanonicalBreadcrumb,
+  smartDeviceTestingSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
 import SmartDeviceTestingHeroSection from "@/components/sections/SmartDeviceTestingHeroSection";
 import SmartDeviceComprehensiveSlider from "@/components/sections/SmartDeviceComprehensiveSlider";
 import SmartDeviceProvenTestingProcess from "@/components/sections/SmartDeviceProvenTestingProcess";
@@ -8,80 +15,49 @@ import SmartDeviceCaseStudies from "@/components/sections/SmartDeviceCaseStudies
 import SmartDeviceFAQs from "@/components/sections/SmartDeviceFAQs";
 import SmartDeviceAnyQuestions from "@/components/sections/SmartDeviceAnyQuestions";
 import SmartDeviceComplianceTable from "@/components/sections/SmartDeviceComplianceTable";
-import { Metadata } from "next";
-import StructuredData, {
-  createCanonicalBreadcrumb,
-  smartDeviceTestingSchema,
-} from "@/components/seo/StructuredData";
 
-export const metadata: Metadata = {
-  title: "Enterprise Smart Device & IoT Testing Services USA | Testriq",
-
-  description:
-    "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization for wearables and IoT ecosystems.",
-  keywords: [
-    "Enterprise Smart Device Testing Services",
-    "IoT Device Testing USA",
-    "ISO 29119-3 Compliance",
-    "Wearable Device QA",
-    "Smart Home Device Validation",
-    "5G & Protocol Testing",
-    "IoT Security Penetration Testing",
-    "Battery Life Optimization",
-    "Digital Twin IoT Simulation",
-    "Machine-to-Machine Communication Testing",
-    "Zigbee & MQTT Validation",
-  ],
-  metadataBase: new URL("https://www.testriq.com/"),
-  alternates: {
-    canonical: "https://www.testriq.com/smart-device-testing-services",
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.testriq.com/smart-device-testing-services",
-    siteName: "Testriq - Enterprise Smart Device Testing",
-    title:
-      "Enterprise Smart Device & IoT Testing Services USA | Testriq",
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/smart-device-testing-services",
+    title: "Enterprise Smart Device & IoT Testing Services | Testriq",
     description:
-      "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/Smart-Device-Testing-Service-Og.webp",
-        width: 1200,
-        height: 630,
-        alt: "Smart Device Testing Services - Testriq QA Lab",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@testriq",
-    creator: "@testriq",
-    title:
-      "Enterprise Smart Device & IoT Testing Services USA | Testriq",
-    description:
-      "Expert-led smart device and IoT testing services for the 2026 connected era. Specialized in ISO 29119-3 compliance, security penetration testing, network stability (5G/Wi-Fi 6), and battery life optimization.",
-    images: ["https://www.testriq.com/OG/Telecommunication-Testing-Service-Twitter.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      "Validate connected devices with Testriq's smart device and IoT testing. ISO 29119-3 compliance, 5G/Wi-Fi 6 stability, battery life, and security penetration QA.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/Smart-Device-Testing-Service-Og.webp",
+      width: 1200,
+      height: 630,
+      alt: "Smart Device Testing Services - Testriq QA Lab",
+      type: "image/webp",
     },
-  },
-};
+    keywords: [
+      "enterprise smart device testing services",
+      "iot device testing",
+      "iso 29119-3 compliance",
+      "wearable device qa",
+      "smart home device validation",
+      "5g and protocol testing",
+      "iot security penetration testing",
+      "battery life optimization",
+      "digital twin iot simulation",
+      "machine-to-machine communication testing",
+      "zigbee and mqtt validation",
+    ],
+  });
+}
 
 export default function SmartDeviceTestingPage() {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL;
-  // terminal item had lowercase "smart" typo) to 2 canonical items with corrected
-  // casing; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. Title dropped " USA" geo-restriction (hurt global
+  // SEO). Description rewritten — was ~241 chars with "2026 connected
+  // era" anchor; now 160 chars, action-verb start, surfaces ISO 29119-3
+  // + 5G/Wi-Fi 6 + battery. twitter:image FIXED — was pointing at the
+  // wrong asset (Telecommunication-Testing-Service-Twitter.webp from
+  // a different service page); now unified with og:image (Smart-Device-
+  // Testing-Service-Og.webp). ogImage.type "image/webp" added. Keyword
+  // "IoT Device Testing USA" normalized to "iot device testing". Other
+  // keywords lowercased. Section components were already direct imports.
+  // Breadcrumb already migrated in PR-3 — unchanged.
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={smartDeviceTestingSchema} />
