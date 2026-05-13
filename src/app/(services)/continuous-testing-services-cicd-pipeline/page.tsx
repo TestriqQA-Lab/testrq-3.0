@@ -1,152 +1,57 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
+import MainLayout from "@/components/layout/MainLayout";
 import StructuredData, {
     continuousTestingServiceSchema,
     createCanonicalBreadcrumb,
 } from "@/components/seo/StructuredData";
-
-export const revalidate = 3600; // ISR: Revalidate every hour
-
-export const metadata: Metadata = {
-    title: "Continuous Testing Services & CI/CD Integration | Testriq",
-    description:
-        "Eliminate bottlenecks and shift quality left with Testriq's Continuous Testing Services. We integrate automated testing into your CI/CD pipeline for faster releases and elite DevOps performance.",
-    keywords: [
-        "Continuous Testing Services",
-        "CI/CD Pipeline Testing",
-        "DevOps Testing Integration",
-        "Shift-Left Testing",
-        "Automated Regression Testing",
-        "Continuous Performance Testing",
-        "Continuous Security Testing",
-        "Test Data Management",
-        "DORA Metrics Optimization",
-        "CI/CD Quality Engineering",
-    ],
-    metadataBase: new URL("https://www.testriq.com/"),
-    alternates: {
-        canonical:
-            "https://www.testriq.com/continuous-testing-services-cicd-pipeline",
-    },
-    openGraph: {
-        type: "website",
-        locale: "en_US",
-        url: "https://www.testriq.com/continuous-testing-services-cicd-pipeline",
-        siteName: "Testriq - Global QA & Testing",
-        title: "Continuous Testing Services & CI/CD Integration | Testriq",
-        description:
-            "Eliminate bottlenecks and shift quality left with Testriq's Continuous Testing Services. We integrate automated testing into your CI/CD pipeline for faster releases.",
-        images: [
-            {
-                url: "https://www.testriq.com/OG/continues-testing-og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Continuous Testing Services - Testriq",
-                type: "image/webp",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        site: "@testriq",
-        creator: "@testriq",
-        title: "Continuous Testing Services & CI/CD Integration | Testriq",
-        description:
-            "Eliminate bottlenecks and shift quality left with Testriq's Continuous Testing Services. We integrate automated testing into your CI/CD pipeline for faster releases.",
-        images: ["https://www.testriq.com/OG/continues-testing-og-image.webp"],
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            "max-video-preview": -1,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-        },
-    },
-};
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 import ContinuousTestingHeroSection from "@/components/sections/ContinuousTestingHeroSection";
+import ContinuousTestingWhyDevOps from "@/components/sections/ContinuousTestingWhyDevOps";
+import ContinuousTestingBenefits from "@/components/sections/ContinuousTestingBenefits";
+import ContinuousTestingComprehensiveSlider from "@/components/sections/ContinuousTestingComprehensiveSlider";
+import ContinuousTestingSpecialized from "@/components/sections/ContinuousTestingSpecialized";
+import ContinuousTestingFAQs from "@/components/sections/ContinuousTestingFAQs";
+import ContinuousTestingReadyToAccelerate from "@/components/sections/ContinuousTestingReadyToAccelerate";
 
-const ContinuousTestingWhyDevOps = dynamic(
-    () => import("@/components/sections/ContinuousTestingWhyDevOps"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
+export const revalidate = 3600;
 
-const ContinuousTestingBenefits = dynamic(
-    () => import("@/components/sections/ContinuousTestingBenefits"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[500px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const ContinuousTestingComprehensiveSlider = dynamic(
-    () => import("@/components/sections/ContinuousTestingComprehensiveSlider"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[800px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const ContinuousTestingSpecialized = dynamic(
-    () => import("@/components/sections/ContinuousTestingSpecialized"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const ContinuousTestingFAQs = dynamic(
-    () => import("@/components/sections/ContinuousTestingFAQs"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
-
-const ContinuousTestingReadyToAccelerate = dynamic(
-    () => import("@/components/sections/ContinuousTestingReadyToAccelerate"),
-    {
-        ssr: true,
-        loading: () => (
-            <div className="flex items-center justify-center h-[600px] bg-[theme(color.background)]">
-                <p className="text-gray-500">Loading...</p>
-            </div>
-        ),
-    }
-);
+export async function generateMetadata(): Promise<Metadata> {
+    return buildPageMetadata({
+        pathname: "/continuous-testing-services-cicd-pipeline",
+        title: "Continuous Testing Services & CI/CD Integration | Testriq",
+        description:
+            "Shift quality left with Testriq's continuous testing. Automated regression, performance, and security gates integrated into your CI/CD for DevOps teams.",
+        ogImage: {
+            url: "https://www.testriq.com/OG/continues-testing-og-image.webp",
+            width: 1200,
+            height: 630,
+            alt: "Continuous Testing Services - Testriq",
+            type: "image/webp",
+        },
+        keywords: [
+            "continuous testing services",
+            "ci/cd pipeline testing",
+            "devops testing integration",
+            "shift-left testing",
+            "automated regression testing",
+            "continuous performance testing",
+            "continuous security testing",
+            "test data management",
+            "dora metrics optimization",
+            "ci/cd quality engineering",
+        ],
+    });
+}
 
 export default function ContinuousTestingPage() {
-    // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-    // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-    // to 2 canonical items; URL now structurally derived from pathname.
+    // TODO(seo phase-4): Migrated from static `export const metadata` to
+    // generateMetadata + buildPageMetadata. Double-brand title fixed via
+    // title.absolute. Description rewritten — was ~191 chars, now 153
+    // with action-verb start and explicit listing of CI/CD test types
+    // (regression / performance / security). Keywords lowercased.
+    // 6 dynamic() imports converted to direct ES imports. Breadcrumb
+    // already migrated in PR-3 — unchanged.
     return (
         <div>
             <StructuredData data={continuousTestingServiceSchema} />
