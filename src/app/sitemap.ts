@@ -1,3 +1,5 @@
+import { readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { MetadataRoute } from 'next';
 import {
   sanityGetPosts,
@@ -12,6 +14,49 @@ import { redirects } from '@/lib/redirects';
 
 // Revalidate the sitemap every hour (matches service page revalidation)
 export const revalidate = 3600;
+
+/**
+ * Discover all Next.js route directories inside a given App Router group.
+ *
+ * Scans `<projectRoot>/<groupPath>` for subdirectories that contain a
+ * `page.tsx` (the testriq-3.0 codebase convention) and returns their names
+ * sorted alphabetically — the names map directly to URL slugs because route
+ * groups (`(services)`, `(solutions)`) are stripped from the public URL.
+ *
+ * Filters out:
+ *   - Dynamic route segments (`[slug]`, `[...catchAll]`) — those need their
+ *     own data-driven sitemap entries
+ *   - Private folders (starting with `_`) — Next.js convention for non-route
+ *     directories
+ *   - Files (only directories count)
+ *   - Directories without a `page.tsx` — e.g. layout-only or component-only
+ *     subdirectories
+ *
+ * Returns `[]` and logs an error if the group directory cannot be read.
+ * This keeps the rest of the sitemap generation working in the rare case
+ * the FS scan fails (CI sandbox, etc.).
+ */
+function discoverRoutes(groupPath: string): string[] {
+  const groupDir = join(process.cwd(), groupPath);
+  try {
+    return readdirSync(groupDir, { withFileTypes: true })
+      .filter(entry => entry.isDirectory())
+      .filter(entry => !entry.name.startsWith('[') && !entry.name.startsWith('_'))
+      .filter(entry => {
+        try {
+          statSync(join(groupDir, entry.name, 'page.tsx'));
+          return true;
+        } catch {
+          return false;
+        }
+      })
+      .map(entry => entry.name)
+      .sort();
+  } catch (err) {
+    console.error(`[sitemap] Failed to scan ${groupPath}:`, err);
+    return [];
+  }
+}
 
 // Function to determine change frequency based on content type and last modified date
 function getChangeFrequency(contentType: 'home' | 'page' | 'post' | 'category' | 'tag' | 'service' | 'solution' | 'city' | 'case-study', lastModified?: string): 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' {
@@ -107,49 +152,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: getPriority(page.slug === '' ? 'home' : 'page', page.slug),
     }));
 
-    // Service pages
-    const servicePages = [
-      'web-application-testing-services',
-      'mobile-application-testing',
-      'api-testing',
-      'desktop-application-testing-services',
-      'ai-application-testing',
-      'iot-device-testing-services',
-      'etl-testing-services',
-      'robotics-testing-services',
-      'smart-device-testing-services',
-      'automation-testing-services',
-      'corporate-qa-training',
-      'data-analysis-services',
-      'dating-app-certification',
-      'exploratory-testing',
-      'launchfast-qa',
-      'manual-testing-services',
-      'matrimonial-apps-certification',
-      'performance-testing-services',
-      'qa-documentation-services',
-      'regression-testing',
-      'security-testing',
-      'shopping-apps-certification',
-      'trading-apps-certification',
-      'timezone-testing-services',
-    ].map(service => ({
+    // Service pages — auto-discovered from src/app/(services)/ filesystem.
+    // Previously a hardcoded 24-entry array that drifted out of sync with
+    // reality: as of 2026-05-13 the filesystem held 45 services but only
+    // 24 were in the sitemap (21 pages invisible to Google sitemap-based
+    // discovery despite all going through metadata/breadcrumb cleanup in
+    // Phases 1-4). Auto-discovery via discoverRoutes() eliminates the drift.
+    const servicePages = discoverRoutes('src/app/(services)').map(service => ({
       url: `${baseUrl}/${service}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('service'),
       priority: getPriority('service'),
     }));
 
-    // Solution pages
-    const solutionPages = [
-      'e-commerce-testing-services',
-      'e-learning-testing-services',
-      'healthcare-testing-services',
-      'gaming-app-testing-services',
-      'banking-finance-industry-testing-services',
-      'iot-appliances-and-apps-testing-services',
-      'telecommunications-testing-services',
-    ].map(solution => ({
+    // Solution pages — auto-discovered from src/app/(solutions)/ filesystem.
+    // Was already in sync (7 hardcoded / 7 on disk) but converted for
+    // consistency and to prevent future drift.
+    const solutionPages = discoverRoutes('src/app/(solutions)').map(solution => ({
       url: `${baseUrl}/${solution}`,
       lastModified: currentDate,
       changeFrequency: getChangeFrequency('solution'),
