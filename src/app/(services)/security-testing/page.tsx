@@ -1,178 +1,61 @@
-import dynamic from "next/dynamic";
-import MainLayout from "@/components/layout/MainLayout";
 import type { Metadata } from "next";
-import StructuredData, { createCanonicalBreadcrumb, securityTestingServiceSchema } from "@/components/seo/StructuredData";
+import MainLayout from "@/components/layout/MainLayout";
+import StructuredData, {
+  createCanonicalBreadcrumb,
+  securityTestingServiceSchema,
+} from "@/components/seo/StructuredData";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Security Testing Services & Pen-testing Services | Testriq",
-  description: "Protect your digital assets with Testriq's elite VAPT and Security Testing services. We leverage ISO 29119 standards for 2026 to ensure global resilience against evolving cyber threats.",
-  keywords: [
-    "Security Testing Services",
-    "Pen-testing Services",
-    "VAPT",
-    "Application Security Testing",
-    "ISO 29119 Security",
-    "API Security Testing 2026",
-    "Shift-Left Security CI/CD",
-    "Digital Resilience",
-    "SaaS Security Audit",
-    "Cloud Infrastructure Security"
-  ],
-  openGraph: {
-    title: "Security Testing Services & Pen-testing Services | Testriq",
-    description: "Ensure your systems withstand modern cyber attacks with Testriq's comprehensive VAPT and Application Security Testing solutions.",
-    url: "https://www.testriq.com/security-testing",
-    type: "website",
-    images: [
-      {
-        url: "https://www.testriq.com/OG/Security-service-og-image.webp",
-        width: 1200,
-        height: 630,
-        alt: "Security Testing Services by Testriq",
-      }
+import SecurityTestingHeroSection from "@/components/sections/SecurityTestingHeroSection";
+import SecurityTestingChallenges from "@/components/sections/SecurityTestingChallenges";
+import SecurityTestingComprehensiveSlider from "@/components/sections/SecurityTestingComprehensiveSlider";
+import SecureGuardFramework from "@/components/sections/SecureGuardFramework";
+import SecurityTestingROISection from "@/components/sections/SecurityTestingROISection";
+import SecurityTestingWhyChooseTestriq from "@/components/sections/SecurityTestingWhyChooseTestriq";
+import TestriqTCoE from "@/components/sections/TestriqTCoE";
+import SecurityTestingToolsFramework from "@/components/sections/SecurityTestingToolsFramework";
+import SecurityTestingCaseStudies from "@/components/sections/SecurityTestingCaseStudies";
+import SecurityTestingFAQs from "@/components/sections/SecurityTestingFAQs";
+import SecurityTestingReadyToEnsureQuality from "@/components/sections/SecurityTestingReadyToEnsureQuality";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata({
+    pathname: "/security-testing",
+    title: "Security Testing Services | VAPT & Penetration Testing | Testriq",
+    description:
+      "Protect digital assets with Testriq's security testing services. VAPT, application security audits, and ISO 29119-aligned cyber resilience for enterprise teams.",
+    ogImage: {
+      url: "https://www.testriq.com/OG/Security-service-og-image.webp",
+      width: 1200,
+      height: 630,
+      alt: "Security Testing Services - Testriq",
+      type: "image/webp",
+    },
+    keywords: [
+      "security testing services",
+      "vapt services",
+      "penetration testing",
+      "application security audits",
+      "iso 29119 security testing",
+      "cyber resilience testing",
+      "enterprise security qa",
+      "ethical hacking services",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Security Testing Services & Pen-testing Services | Testriq",
-    description: "Ensure your systems withstand modern cyber attacks with Testriq's comprehensive VAPT and Application Security Testing solutions.",
-    images: ["https://www.testriq.com/OG/Security-service-og-image.webp"],
-  },
-  metadataBase: new URL('https://www.testriq.com/'),
-  alternates: {
-    canonical: "https://www.testriq.com/security-testing",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-import SecurityTestingHeroSection from "@/components/sections/SecurityTestingHeroSection"
-
-
-const SecurityTestingReadyToEnsureQuality = dynamic(
-  () => import("@/components/sections/SecurityTestingReadyToEnsureQuality"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingChallenges = dynamic(
-  () => import("@/components/sections/SecurityTestingChallenges"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingComprehensiveSlider = dynamic(
-  () => import("@/components/sections/SecurityTestingComprehensiveSlider"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecureGuardFramework = dynamic(
-  () => import("@/components/sections/SecureGuardFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingWhyChooseTestriq = dynamic(
-  () => import("@/components/sections/SecurityTestingWhyChooseTestriq"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const TestriqTCoE = dynamic(
-  () => import("@/components/sections/TestriqTCoE"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingToolsFramework = dynamic(
-  () => import("@/components/sections/SecurityTestingToolsFramework"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingROISection = dynamic(
-  () => import("@/components/sections/SecurityTestingROISection"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingCaseStudies = dynamic(
-  () => import("@/components/sections/SecurityTestingCaseStudies"),
-  {
-    ssr: true,
-    loading: () => (
-      <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-        <p className="text-gray-500">Loading...</p>
-      </div>
-    ),
-  }
-);
-
-const SecurityTestingFAQs = dynamic(() => import("@/components/sections/SecurityTestingFAQs"), {
-  ssr: true,
-  loading: () => (
-    <div className="flex items-center justify-center h-screen bg-[theme(color.background)]">
-      <p className="text-gray-500">Loading...</p>
-    </div>
-  ),
-});
-
+  });
+}
 
 export default function SecurityTestingPage() {
-  // TODO(seo phase-3): Pattern D fixed via createCanonicalBreadcrumb helper —
-  // breadcrumb reduced from 3 items (intermediate "Services" node with wrong URL)
-  // to 2 canonical items; URL now structurally derived from pathname.
+  // TODO(seo phase-4): Migrated from static `export const metadata` to
+  // generateMetadata + buildPageMetadata. Double-brand title fixed via
+  // title.absolute. Title fixed "Services & ... Services" duplication
+  // (was "Security Testing Services & Pen-testing Services | Testriq",
+  // now leads with primary keyword + VAPT/Penetration as a clear
+  // qualifier). Description rewritten — was ~191 chars with "2026"
+  // anchor; now 160 chars, action-verb start, surfaces VAPT + ISO
+  // 29119. og:title and twitter:title now mirror page title (og had
+  // a third, different description string). ogImage.type "image/webp"
+  // added. Keywords lowercased. 9 dynamic() imports converted to
+  // direct ES imports. Breadcrumb already migrated in PR-3 — unchanged.
   return (
     <div>
       <StructuredData data={securityTestingServiceSchema} />
@@ -195,4 +78,3 @@ export default function SecurityTestingPage() {
     </div>
   );
 }
-
